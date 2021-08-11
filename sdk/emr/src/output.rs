@@ -773,7 +773,7 @@ impl ListStudiosOutput {
 pub struct ListStepsOutput {
     /// <p>The filtered list of steps for the cluster.</p>
     pub steps: std::option::Option<std::vec::Vec<crate::model::StepSummary>>,
-    /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+    /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
     pub marker: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListStepsOutput {
@@ -807,7 +807,7 @@ pub mod list_steps_output {
             self.steps = input;
             self
         }
-        /// <p>The pagination token that indicates the next set of results to retrieve.</p>
+        /// <p>The maximum number of steps that a single <code>ListSteps</code> action returns is 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions along with the <code>Marker</code> parameter, which is a pagination token that indicates the next set of results to retrieve.</p>
         pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
             self.marker = Some(input.into());
             self
@@ -902,6 +902,70 @@ impl ListSecurityConfigurationsOutput {
     /// Creates a new builder-style object to manufacture [`ListSecurityConfigurationsOutput`](crate::output::ListSecurityConfigurationsOutput)
     pub fn builder() -> crate::output::list_security_configurations_output::Builder {
         crate::output::list_security_configurations_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListReleaseLabelsOutput {
+    /// <p>The returned release labels.</p>
+    pub release_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListReleaseLabelsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListReleaseLabelsOutput");
+        formatter.field("release_labels", &self.release_labels);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListReleaseLabelsOutput`](crate::output::ListReleaseLabelsOutput)
+pub mod list_release_labels_output {
+    /// A builder for [`ListReleaseLabelsOutput`](crate::output::ListReleaseLabelsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) release_labels: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn release_labels(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.release_labels.unwrap_or_default();
+            v.push(input.into());
+            self.release_labels = Some(v);
+            self
+        }
+        pub fn set_release_labels(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.release_labels = input;
+            self
+        }
+        /// <p>Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code> request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListReleaseLabelsOutput`](crate::output::ListReleaseLabelsOutput)
+        pub fn build(self) -> crate::output::ListReleaseLabelsOutput {
+            crate::output::ListReleaseLabelsOutput {
+                release_labels: self.release_labels,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListReleaseLabelsOutput {
+    /// Creates a new builder-style object to manufacture [`ListReleaseLabelsOutput`](crate::output::ListReleaseLabelsOutput)
+    pub fn builder() -> crate::output::list_release_labels_output::Builder {
+        crate::output::list_release_labels_output::Builder::default()
     }
 }
 
@@ -1421,7 +1485,7 @@ pub struct GetBlockPublicAccessConfigurationOutput {
     /// </note>
     pub block_public_access_configuration:
         std::option::Option<crate::model::BlockPublicAccessConfiguration>,
-    /// <p>Properties that describe the AWS principal that created the
+    /// <p>Properties that describe the Amazon Web Services principal that created the
     /// <code>BlockPublicAccessConfiguration</code> using the
     /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
     /// the configuration was created. Each time a configuration for block public access is
@@ -1484,7 +1548,7 @@ pub mod get_block_public_access_configuration_output {
             self.block_public_access_configuration = input;
             self
         }
-        /// <p>Properties that describe the AWS principal that created the
+        /// <p>Properties that describe the Amazon Web Services principal that created the
         /// <code>BlockPublicAccessConfiguration</code> using the
         /// <code>PutBlockPublicAccessConfiguration</code> action as well as the date and time that
         /// the configuration was created. Each time a configuration for block public access is
@@ -1688,6 +1752,91 @@ impl DescribeSecurityConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`DescribeSecurityConfigurationOutput`](crate::output::DescribeSecurityConfigurationOutput)
     pub fn builder() -> crate::output::describe_security_configuration_output::Builder {
         crate::output::describe_security_configuration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeReleaseLabelOutput {
+    /// <p>The target release label described in the response.</p>
+    pub release_label: std::option::Option<std::string::String>,
+    /// <p>The list of applications available for the target release label. <code>Name</code> is the name of the application. <code>Version</code> is the concise version of the application.</p>
+    pub applications: std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
+    /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeReleaseLabelOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeReleaseLabelOutput");
+        formatter.field("release_label", &self.release_label);
+        formatter.field("applications", &self.applications);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeReleaseLabelOutput`](crate::output::DescribeReleaseLabelOutput)
+pub mod describe_release_label_output {
+    /// A builder for [`DescribeReleaseLabelOutput`](crate::output::DescribeReleaseLabelOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) release_label: std::option::Option<std::string::String>,
+        pub(crate) applications:
+            std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The target release label described in the response.</p>
+        pub fn release_label(mut self, input: impl Into<std::string::String>) -> Self {
+            self.release_label = Some(input.into());
+            self
+        }
+        pub fn set_release_label(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.release_label = input;
+            self
+        }
+        pub fn applications(
+            mut self,
+            input: impl Into<crate::model::SimplifiedApplication>,
+        ) -> Self {
+            let mut v = self.applications.unwrap_or_default();
+            v.push(input.into());
+            self.applications = Some(v);
+            self
+        }
+        pub fn set_applications(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SimplifiedApplication>>,
+        ) -> Self {
+            self.applications = input;
+            self
+        }
+        /// <p>The pagination token. Reserved for future use. Currently set to null.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeReleaseLabelOutput`](crate::output::DescribeReleaseLabelOutput)
+        pub fn build(self) -> crate::output::DescribeReleaseLabelOutput {
+            crate::output::DescribeReleaseLabelOutput {
+                release_label: self.release_label,
+                applications: self.applications,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeReleaseLabelOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeReleaseLabelOutput`](crate::output::DescribeReleaseLabelOutput)
+    pub fn builder() -> crate::output::describe_release_label_output::Builder {
+        crate::output::describe_release_label_output::Builder::default()
     }
 }
 

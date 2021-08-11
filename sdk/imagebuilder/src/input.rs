@@ -75,28 +75,28 @@ impl CancelImageCreationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -178,9 +178,19 @@ pub mod create_component_input {
             self.name = input;
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.
-        /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date
-        /// (2019.12.01).</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
@@ -246,8 +256,8 @@ pub mod create_component_input {
             self.data = input;
             self
         }
-        /// <p>The uri of the component. Must be an S3 URL and the requester must have permission to
-        /// access the S3 bucket. If you use S3, you can specify component content up to your service
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
         /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
         /// component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -347,28 +357,28 @@ impl CreateComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -477,7 +487,19 @@ pub mod create_container_recipe_input {
             self.description = input;
             self
         }
-        /// <p>The semantic version of the container recipe (<major>.<minor>.<patch>).</p>
+        /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
@@ -532,7 +554,7 @@ pub mod create_container_recipe_input {
             self.dockerfile_template_data = input;
             self
         }
-        /// <p>The S3 URI for the Dockerfile that will be used to build your container image.</p>
+        /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
         pub fn dockerfile_template_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.dockerfile_template_uri = Some(input.into());
             self
@@ -696,28 +718,28 @@ impl CreateContainerRecipeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -892,28 +914,28 @@ impl CreateDistributionConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1146,28 +1168,28 @@ impl CreateImageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1449,28 +1471,28 @@ impl CreateImagePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1540,6 +1562,8 @@ pub mod create_image_recipe_input {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) working_directory: std::option::Option<std::string::String>,
+        pub(crate) additional_instance_configuration:
+            std::option::Option<crate::model::AdditionalInstanceConfiguration>,
         pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -1561,7 +1585,19 @@ pub mod create_image_recipe_input {
             self.description = input;
             self
         }
-        /// <p>The semantic version of the image recipe.</p>
+        /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
@@ -1592,9 +1628,9 @@ pub mod create_image_recipe_input {
         /// <p>The parent image of the image recipe. The value of the string can be the ARN of the parent
         /// image or an AMI ID. The format for the ARN follows this example:
         /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-        /// You can provide the specific version that you want to use, or you can use a wildcard in all of
-        /// the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and
-        /// the AMI must be in the same Region in which you are using Image Builder.</p>
+        /// You can provide the specific version that you want to use, or you can use a wildcard in
+        /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
+        /// and the AMI must be in the same Region in which you are using Image Builder.</p>
         pub fn parent_image(mut self, input: impl Into<std::string::String>) -> Self {
             self.parent_image = Some(input.into());
             self
@@ -1638,7 +1674,7 @@ pub mod create_image_recipe_input {
             self.tags = input;
             self
         }
-        /// <p>The working directory to be used during build and test workflows.</p>
+        /// <p>The working directory used during build and test workflows.</p>
         pub fn working_directory(mut self, input: impl Into<std::string::String>) -> Self {
             self.working_directory = Some(input.into());
             self
@@ -1648,6 +1684,21 @@ pub mod create_image_recipe_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.working_directory = input;
+            self
+        }
+        /// <p>Specify additional settings and launch scripts for your build instances.</p>
+        pub fn additional_instance_configuration(
+            mut self,
+            input: crate::model::AdditionalInstanceConfiguration,
+        ) -> Self {
+            self.additional_instance_configuration = Some(input);
+            self
+        }
+        pub fn set_additional_instance_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+        ) -> Self {
+            self.additional_instance_configuration = input;
             self
         }
         /// <p>The idempotency token used to make this request idempotent.</p>
@@ -1675,6 +1726,7 @@ pub mod create_image_recipe_input {
                 block_device_mappings: self.block_device_mappings,
                 tags: self.tags,
                 working_directory: self.working_directory,
+                additional_instance_configuration: self.additional_instance_configuration,
                 client_token: self.client_token,
             })
         }
@@ -1710,28 +1762,28 @@ impl CreateImageRecipeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1839,7 +1891,7 @@ pub mod create_infrastructure_configuration_input {
             self.instance_types = input;
             self
         }
-        /// <p>The instance profile to associate with the instance used to customize your EC2 AMI.</p>
+        /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_profile_name = Some(input.into());
             self
@@ -1864,7 +1916,7 @@ pub mod create_infrastructure_configuration_input {
             self.security_group_ids = input;
             self
         }
-        /// <p>The subnet ID in which to place the instance used to customize your EC2 AMI.</p>
+        /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_id = Some(input.into());
             self
@@ -2024,28 +2076,28 @@ impl CreateInfrastructureConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2158,28 +2210,28 @@ impl DeleteComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2299,28 +2351,28 @@ impl DeleteContainerRecipeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2444,28 +2496,28 @@ impl DeleteDistributionConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2583,28 +2635,28 @@ impl DeleteImageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2724,28 +2776,28 @@ impl DeleteImagePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2865,28 +2917,28 @@ impl DeleteImageRecipeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3007,28 +3059,28 @@ impl DeleteInfrastructureConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3150,28 +3202,28 @@ impl GetComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3291,28 +3343,28 @@ impl GetComponentPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3429,28 +3481,28 @@ impl GetContainerRecipeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3571,28 +3623,28 @@ impl GetContainerRecipePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3717,28 +3769,28 @@ impl GetDistributionConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3856,28 +3908,28 @@ impl GetImageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -3995,28 +4047,28 @@ impl GetImagePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4133,28 +4185,28 @@ impl GetImagePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4271,28 +4323,28 @@ impl GetImageRecipeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4409,28 +4461,28 @@ impl GetImageRecipePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4552,28 +4604,28 @@ impl GetInfrastructureConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4666,9 +4718,17 @@ pub mod import_component_input {
             self.name = input;
             self
         }
-        /// <p>The semantic version of the component. This version follows the semantic version syntax.
-        /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date
-        /// (2019.12.01).</p>
+        /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+        /// automatically uses a wildcard for that, if applicable.</p>
+        /// </note>
         pub fn semantic_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.semantic_version = Some(input.into());
             self
@@ -4702,7 +4762,7 @@ pub mod import_component_input {
             self.change_description = input;
             self
         }
-        /// <p>The type of the component denotes whether the component is used to build the image or only
+        /// <p>The type of the component denotes whether the component is used to build the image, or only
         /// to test it.</p>
         pub fn r#type(mut self, input: crate::model::ComponentType) -> Self {
             self.r#type = Some(input);
@@ -4743,8 +4803,8 @@ pub mod import_component_input {
             self.data = input;
             self
         }
-        /// <p>The uri of the component. Must be an S3 URL and the requester must have permission to
-        /// access the S3 bucket. If you use S3, you can specify component content up to your service
+        /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+        /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
         /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
         /// component.</p>
         pub fn uri(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4845,28 +4905,28 @@ impl ImportComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5004,28 +5064,28 @@ impl ListComponentBuildVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5115,7 +5175,7 @@ pub mod list_components_input {
             self.filters = input;
             self
         }
-        /// <p>Returns the list of component build versions for the specified semantic version.</p>
+        /// <p>Returns the list of component build versions for the specified name.</p>
         pub fn by_name(mut self, input: bool) -> Self {
             self.by_name = Some(input);
             self
@@ -5186,28 +5246,28 @@ impl ListComponentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5354,28 +5414,28 @@ impl ListContainerRecipesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5514,28 +5574,28 @@ impl ListDistributionConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5686,28 +5746,28 @@ impl ListImageBuildVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5842,28 +5902,28 @@ impl ListImagePackagesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6015,28 +6075,28 @@ impl ListImagePipelineImagesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6173,28 +6233,28 @@ impl ListImagePipelinesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6345,28 +6405,28 @@ impl ListImageRecipesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6537,28 +6597,28 @@ impl ListImagesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6697,28 +6757,28 @@ impl ListInfrastructureConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6825,28 +6885,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6986,28 +7046,28 @@ impl PutComponentPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7132,28 +7192,28 @@ impl PutContainerRecipePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7273,28 +7333,28 @@ impl PutImagePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7418,28 +7478,28 @@ impl PutImageRecipePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7568,28 +7628,28 @@ impl StartImagePipelineExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7720,28 +7780,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7877,28 +7937,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8081,28 +8141,28 @@ impl UpdateDistributionConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8364,28 +8424,28 @@ impl UpdateImagePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8497,7 +8557,7 @@ pub mod update_infrastructure_configuration_input {
             self.instance_types = input;
             self
         }
-        /// <p>The instance profile to associate with the instance used to customize your EC2 AMI.</p>
+        /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
         pub fn instance_profile_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_profile_name = Some(input.into());
             self
@@ -8522,7 +8582,7 @@ pub mod update_infrastructure_configuration_input {
             self.security_group_ids = input;
             self
         }
-        /// <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+        /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_id = Some(input.into());
             self
@@ -8662,28 +8722,28 @@ impl UpdateInfrastructureConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8747,11 +8807,11 @@ pub struct UpdateInfrastructureConfigurationInput {
     /// instance types to use for this build. The service will pick one of these instance types based
     /// on availability.</p>
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The instance profile to associate with the instance used to customize your EC2 AMI.</p>
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
-    /// <p>The security group IDs to associate with the instance used to customize your EC2 AMI.</p>
+    /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The subnet ID to place the instance used to customize your EC2 AMI in.</p>
+    /// <p>The subnet ID to place the instance used to customize your Amazon EC2 AMI in.</p>
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub logging: std::option::Option<crate::model::Logging>,
@@ -9243,7 +9303,7 @@ pub struct ListComponentsInput {
     pub owner: std::option::Option<crate::model::Ownership>,
     /// <p>The filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
-    /// <p>Returns the list of component build versions for the specified semantic version.</p>
+    /// <p>Returns the list of component build versions for the specified name.</p>
     pub by_name: bool,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9289,16 +9349,24 @@ impl std::fmt::Debug for ListComponentBuildVersionsInput {
 pub struct ImportComponentInput {
     /// <p> The name of the component.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.
-    /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date
-    /// (2019.12.01).</p>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+    /// automatically uses a wildcard for that, if applicable.</p>
+    /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The change description of the component. Describes what change has been made in this
     /// version, or what makes this version different from other versions of this component.</p>
     pub change_description: std::option::Option<std::string::String>,
-    /// <p>The type of the component denotes whether the component is used to build the image or only
+    /// <p>The type of the component denotes whether the component is used to build the image, or only
     /// to test it.</p>
     pub r#type: std::option::Option<crate::model::ComponentType>,
     /// <p>The format of the resource that you want to import as a component.</p>
@@ -9308,8 +9376,8 @@ pub struct ImportComponentInput {
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
     /// <code>uri</code> can be used to specify the data within the component.</p>
     pub data: std::option::Option<std::string::String>,
-    /// <p>The uri of the component. Must be an S3 URL and the requester must have permission to
-    /// access the S3 bucket. If you use S3, you can specify component content up to your service
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
     /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
     /// component.</p>
     pub uri: std::option::Option<std::string::String>,
@@ -9625,11 +9693,11 @@ pub struct CreateInfrastructureConfigurationInput {
     /// instance types to use for this build. The service will pick one of these instance types based
     /// on availability.</p>
     pub instance_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The instance profile to associate with the instance used to customize your EC2 AMI.</p>
+    /// <p>The instance profile to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub instance_profile_name: std::option::Option<std::string::String>,
-    /// <p>The security group IDs to associate with the instance used to customize your EC2 AMI.</p>
+    /// <p>The security group IDs to associate with the instance used to customize your Amazon EC2 AMI.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The subnet ID in which to place the instance used to customize your EC2 AMI.</p>
+    /// <p>The subnet ID in which to place the instance used to customize your Amazon EC2 AMI.</p>
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub logging: std::option::Option<crate::model::Logging>,
@@ -9681,16 +9749,28 @@ pub struct CreateImageRecipeInput {
     pub name: std::option::Option<std::string::String>,
     /// <p> The description of the image recipe.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the image recipe.</p>
+    /// <p>The semantic version of the image recipe. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The components of the image recipe.</p>
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
     /// <p>The parent image of the image recipe. The value of the string can be the ARN of the parent
     /// image or an AMI ID. The format for the ARN follows this example:
     /// <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
-    /// You can provide the specific version that you want to use, or you can use a wildcard in all of
-    /// the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and
-    /// the AMI must be in the same Region in which you are using Image Builder.</p>
+    /// You can provide the specific version that you want to use, or you can use a wildcard in
+    /// all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI,
+    /// and the AMI must be in the same Region in which you are using Image Builder.</p>
     pub parent_image: std::option::Option<std::string::String>,
     /// <p>The block device mappings of the image recipe.</p>
     pub block_device_mappings:
@@ -9698,8 +9778,11 @@ pub struct CreateImageRecipeInput {
     /// <p> The tags of the image recipe.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The working directory to be used during build and test workflows.</p>
+    /// <p>The working directory used during build and test workflows.</p>
     pub working_directory: std::option::Option<std::string::String>,
+    /// <p>Specify additional settings and launch scripts for your build instances.</p>
+    pub additional_instance_configuration:
+        std::option::Option<crate::model::AdditionalInstanceConfiguration>,
     /// <p>The idempotency token used to make this request idempotent.</p>
     pub client_token: std::option::Option<std::string::String>,
 }
@@ -9714,6 +9797,10 @@ impl std::fmt::Debug for CreateImageRecipeInput {
         formatter.field("block_device_mappings", &self.block_device_mappings);
         formatter.field("tags", &self.tags);
         formatter.field("working_directory", &self.working_directory);
+        formatter.field(
+            "additional_instance_configuration",
+            &self.additional_instance_configuration,
+        );
         formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
@@ -9867,7 +9954,19 @@ pub struct CreateContainerRecipeInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The description of the container recipe.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the container recipe (<major>.<minor>.<patch>).</p>
+    /// <p>The semantic version of the container recipe. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>Components for build and test that are included in the container recipe.</p>
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -9875,7 +9974,7 @@ pub struct CreateContainerRecipeInput {
     pub instance_configuration: std::option::Option<crate::model::InstanceConfiguration>,
     /// <p>The Dockerfile template used to build your image as an inline data blob.</p>
     pub dockerfile_template_data: std::option::Option<std::string::String>,
-    /// <p>The S3 URI for the Dockerfile that will be used to build your container image.</p>
+    /// <p>The Amazon S3 URI for the Dockerfile that will be used to build your container image.</p>
     pub dockerfile_template_uri: std::option::Option<std::string::String>,
     /// <p>Specifies the operating system platform when you use a custom source image.</p>
     pub platform_override: std::option::Option<crate::model::Platform>,
@@ -9923,9 +10022,19 @@ impl std::fmt::Debug for CreateContainerRecipeInput {
 pub struct CreateComponentInput {
     /// <p>The name of the component.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the component. This version follows the semantic version syntax.
-    /// For example, major.minor.patch. This could be versioned like software (2.0.1) or like a date
-    /// (2019.12.01).</p>
+    /// <p>The semantic version of the component. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// </note>
     pub semantic_version: std::option::Option<std::string::String>,
     /// <p>The description of the component. Describes the contents of the component.</p>
     pub description: std::option::Option<std::string::String>,
@@ -9941,8 +10050,8 @@ pub struct CreateComponentInput {
     /// <p>The data of the component. Used to specify the data inline. Either <code>data</code> or
     /// <code>uri</code> can be used to specify the data within the component.</p>
     pub data: std::option::Option<std::string::String>,
-    /// <p>The uri of the component. Must be an S3 URL and the requester must have permission to
-    /// access the S3 bucket. If you use S3, you can specify component content up to your service
+    /// <p>The uri of the component. Must be an Amazon S3 URL and the requester must have permission to
+    /// access the Amazon S3 bucket. If you use Amazon S3, you can specify component content up to your service
     /// quota. Either <code>data</code> or <code>uri</code> can be used to specify the data within the
     /// component.</p>
     pub uri: std::option::Option<std::string::String>,

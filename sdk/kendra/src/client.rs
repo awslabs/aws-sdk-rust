@@ -77,6 +77,9 @@ where
     pub fn delete_index(&self) -> fluent_builders::DeleteIndex<C> {
         fluent_builders::DeleteIndex::new(self.handle.clone())
     }
+    pub fn delete_principal_mapping(&self) -> fluent_builders::DeletePrincipalMapping<C> {
+        fluent_builders::DeletePrincipalMapping::new(self.handle.clone())
+    }
     pub fn delete_query_suggestions_block_list(
         &self,
     ) -> fluent_builders::DeleteQuerySuggestionsBlockList<C> {
@@ -93,6 +96,9 @@ where
     }
     pub fn describe_index(&self) -> fluent_builders::DescribeIndex<C> {
         fluent_builders::DescribeIndex::new(self.handle.clone())
+    }
+    pub fn describe_principal_mapping(&self) -> fluent_builders::DescribePrincipalMapping<C> {
+        fluent_builders::DescribePrincipalMapping::new(self.handle.clone())
     }
     pub fn describe_query_suggestions_block_list(
         &self,
@@ -119,6 +125,11 @@ where
     pub fn list_faqs(&self) -> fluent_builders::ListFaqs<C> {
         fluent_builders::ListFaqs::new(self.handle.clone())
     }
+    pub fn list_groups_older_than_ordering_id(
+        &self,
+    ) -> fluent_builders::ListGroupsOlderThanOrderingId<C> {
+        fluent_builders::ListGroupsOlderThanOrderingId::new(self.handle.clone())
+    }
     pub fn list_indices(&self) -> fluent_builders::ListIndices<C> {
         fluent_builders::ListIndices::new(self.handle.clone())
     }
@@ -132,6 +143,9 @@ where
     }
     pub fn list_thesauri(&self) -> fluent_builders::ListThesauri<C> {
         fluent_builders::ListThesauri::new(self.handle.clone())
+    }
+    pub fn put_principal_mapping(&self) -> fluent_builders::PutPrincipalMapping<C> {
+        fluent_builders::PutPrincipalMapping::new(self.handle.clone())
     }
     pub fn query(&self) -> fluent_builders::Query<C> {
         fluent_builders::Query::new(self.handle.clone())
@@ -739,7 +753,7 @@ pub mod fluent_builders {
         /// <code>DEVELOPER_EDITION</code> for indexes intended for development,
         /// testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
         /// production databases. Once you set the edition for an index, it can't be
-        /// changed. </p>
+        /// changed.</p>
         /// <p>The <code>Edition</code> parameter is optional. If you don't supply a
         /// value, the default is <code>ENTERPRISE_EDITION</code>.</p>
         /// <p>For more information on quota limits for enterprise and developer editions,
@@ -755,7 +769,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_edition(input);
             self
         }
-        /// <p>An AWS Identity and Access Management (IAM) role that gives
+        /// <p>An Identity and Access Management(IAM) role that gives
         /// Amazon Kendra permissions to access your Amazon CloudWatch logs and
         /// metrics. This is also the role used when you use the
         /// <code>BatchPutDocument</code> operation to index documents from an
@@ -768,7 +782,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The identifier of the AWS KMS customer managed key (CMK) to use to
+        /// <p>The identifier of the KMScustomer managed key (CMK) to use to
         /// encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
         /// asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
@@ -1235,6 +1249,98 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeletePrincipalMapping<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_principal_mapping_input::Builder,
+    }
+    impl<C> DeletePrincipalMapping<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeletePrincipalMappingOutput,
+            smithy_http::result::SdkError<crate::error::DeletePrincipalMappingError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index you want to delete a group from.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input);
+            self
+        }
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the data source you want to delete a group from.</p>
+        /// <p>This is useful if a group is tied to multiple data sources and you want
+        /// to delete a group from accessing documents in a certain data source. For example,
+        /// the groups "Research", "Engineering", and "Sales and Marketing" are all tied to
+        /// the company's documents stored in the data sources Confluence and Salesforce.
+        /// You want to delete "Research" and "Engineering" groups from Salesforce, so that
+        /// these groups cannot access customer-related documents stored in Salesforce.
+        /// Only "Sales and Marketing" should access documents in the Salesforce data source.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input);
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source_id(input);
+            self
+        }
+        /// <p>The identifier of the group you want to delete.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input);
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not
+        /// override the latest <code>DELETE</code> action with previous actions.
+        /// The highest number ID, which is the ordering ID, is the latest action
+        /// you want to process and apply on top of other actions with lower number
+        /// IDs. This prevents previous actions with lower number IDs from possibly
+        /// overriding the latest action.</p>
+        /// <p>The ordering ID can be the UNIX time of the last update you made to a group
+        /// members list. You would then provide this list when calling
+        /// <code>PutPrincipalMapping</code>. This ensures your <code>DELETE</code> action
+        /// for that updated group with the latest members list doesn't get overwritten
+        /// by earlier <code>DELETE</code> actions for the same group which are yet to
+        /// be processed.</p>
+        /// <p>The default ordering ID is the current UNIX time in milliseconds that the
+        /// action was received by Amazon Kendra.
+        /// </p>
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.ordering_id(input);
+            self
+        }
+        pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_ordering_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteQuerySuggestionsBlockList<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::delete_query_suggestions_block_list_input::Builder,
@@ -1472,6 +1578,74 @@ pub mod fluent_builders {
         }
         pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribePrincipalMapping<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_principal_mapping_input::Builder,
+    }
+    impl<C> DescribePrincipalMapping<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribePrincipalMappingOutput,
+            smithy_http::result::SdkError<crate::error::DescribePrincipalMappingError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index required to check the processing of
+        /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
+        /// to their groups.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input);
+            self
+        }
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the data source to check the processing of
+        /// <code>PUT</code> and <code>DELETE</code> actions for mapping
+        /// users to their groups.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input);
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source_id(input);
+            self
+        }
+        /// <p>The identifier of the group required to check the processing of
+        /// <code>PUT</code> and <code>DELETE</code> actions for mapping users
+        /// to their groups.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input);
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
             self
         }
     }
@@ -1905,6 +2079,94 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListGroupsOlderThanOrderingId<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_groups_older_than_ordering_id_input::Builder,
+    }
+    impl<C> ListGroupsOlderThanOrderingId<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListGroupsOlderThanOrderingIdOutput,
+            smithy_http::result::SdkError<crate::error::ListGroupsOlderThanOrderingIdError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index for getting a list of groups mapped
+        /// to users before a given ordering or timestamp identifier.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input);
+            self
+        }
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the data source for getting a list of groups mapped
+        /// to users before a given ordering timestamp identifier.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input);
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source_id(input);
+            self
+        }
+        /// <p>The timestamp identifier used for the latest <code>PUT</code> or
+        /// <code>DELETE</code> action for mapping users to their groups.</p>
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.ordering_id(input);
+            self
+        }
+        pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_ordering_id(input);
+            self
+        }
+        /// <p>
+        /// The next items in the list of groups that go beyond the maximum.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>
+        /// The maximum results shown for a list of groups that are mapped to users before a
+        /// given ordering or timestamp identifier.
+        /// </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListIndices<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::list_indices_input::Builder,
@@ -2123,6 +2385,126 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct PutPrincipalMapping<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::put_principal_mapping_input::Builder,
+    }
+    impl<C> PutPrincipalMapping<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutPrincipalMappingOutput,
+            smithy_http::result::SdkError<crate::error::PutPrincipalMappingError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the index you want to map users to their groups.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.index_id(input);
+            self
+        }
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_index_id(input);
+            self
+        }
+        /// <p>The identifier of the data source you want to map users to their groups.</p>
+        /// <p>This is useful if a group is tied to multiple data sources, but you only want
+        /// the group to access documents of a certain data source. For example, the groups
+        /// "Research", "Engineering", and "Sales and Marketing" are all tied to the company's
+        /// documents stored in the data sources Confluence and Salesforce. However,
+        /// "Sales and Marketing" team only needs access to customer-related documents
+        /// stored in Salesforce.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_source_id(input);
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_source_id(input);
+            self
+        }
+        /// <p>The identifier of the group you want to map its users to.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.group_id(input);
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_group_id(input);
+            self
+        }
+        /// <p>The list that contains your users or sub groups that belong
+        /// the same group.</p>
+        /// <p>For example, the group "Company" includes the user "CEO" and the
+        /// sub groups "Research", "Engineering", and "Sales and Marketing".</p>
+        /// <p>If you have more than 1000 users and/or sub groups for a single group,
+        /// you need to provide the path to the S3 file that lists your users and
+        /// sub groups for a group. Your sub groups can contain more than 1000 users,
+        /// but the list of sub groups that belong to a group (and/or users) must be
+        /// no more than 1000.</p>
+        pub fn group_members(mut self, input: crate::model::GroupMembers) -> Self {
+            self.inner = self.inner.group_members(input);
+            self
+        }
+        pub fn set_group_members(
+            mut self,
+            input: std::option::Option<crate::model::GroupMembers>,
+        ) -> Self {
+            self.inner = self.inner.set_group_members(input);
+            self
+        }
+        /// <p>The timestamp identifier you specify to ensure Amazon Kendra does not override
+        /// the latest <code>PUT</code> action with previous actions. The highest number
+        /// ID, which is the ordering ID, is the latest action you want to process and
+        /// apply on top of other actions with lower number IDs. This prevents previous
+        /// actions with lower number IDs from possibly overriding the latest action.</p>
+        /// <p>The ordering ID can be the UNIX time of the last update you made to a
+        /// group members list. You would then provide this list when calling
+        /// <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action
+        /// for that updated group with the latest members list doesn't get overwritten
+        /// by earlier <code>PUT</code> actions for the same group which are yet to
+        /// be processed.</p>
+        /// <p>The default ordering ID is the current UNIX time in milliseconds that the
+        /// action was received by Amazon Kendra.</p>
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.inner = self.inner.ordering_id(input);
+            self
+        }
+        pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_ordering_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 file
+        /// that contains your list of users or sub groups that belong to a group.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html#iam-roles-ds">IAM roles for Amazon Kendra</a>.</p>
+        pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.role_arn(input);
+            self
+        }
+        pub fn set_role_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_role_arn(input);
             self
         }
     }

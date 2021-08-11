@@ -1018,6 +1018,88 @@ pub fn parse_describe_notebook_execution_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_release_label_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReleaseLabelOutput,
+    crate::error::DescribeReleaseLabelError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeReleaseLabelError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeReleaseLabelError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::DescribeReleaseLabelError {
+            meta: generic,
+            kind: crate::error::DescribeReleaseLabelErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeReleaseLabelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::DescribeReleaseLabelError {
+            meta: generic,
+            kind: crate::error::DescribeReleaseLabelErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeReleaseLabelError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::DescribeReleaseLabelError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_release_label_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReleaseLabelOutput,
+    crate::error::DescribeReleaseLabelError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_release_label_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_describe_release_label(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeReleaseLabelError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_security_configuration_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -1940,6 +2022,84 @@ pub fn parse_list_notebook_executions_response(
             output,
         )
         .map_err(crate::error::ListNotebookExecutionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_release_labels_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListReleaseLabelsOutput, crate::error::ListReleaseLabelsError>
+{
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListReleaseLabelsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListReleaseLabelsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalServerException" => crate::error::ListReleaseLabelsError {
+            meta: generic,
+            kind: crate::error::ListReleaseLabelsErrorKind::InternalServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListReleaseLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidRequestException" => crate::error::ListReleaseLabelsError {
+            meta: generic,
+            kind: crate::error::ListReleaseLabelsErrorKind::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListReleaseLabelsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListReleaseLabelsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_release_labels_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListReleaseLabelsOutput, crate::error::ListReleaseLabelsError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_release_labels_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_release_labels(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListReleaseLabelsError::unhandled)?;
         output.build()
     })
 }

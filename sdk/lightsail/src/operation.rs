@@ -70,7 +70,7 @@ impl smithy_http::response::ParseStrictResponse for AttachCertificateToDistribut
 /// to the instance with the specified disk name.</p>
 /// <p>The <code>attach disk</code> operation supports tag-based access control via resource tags
 /// applied to the resource identified by <code>disk name</code>. For more information, see the
-/// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AttachDisk {
     _private: (),
@@ -101,7 +101,7 @@ impl smithy_http::response::ParseStrictResponse for AttachDisk {
 /// status is available.</p>
 /// <p>The <code>attach instances to load balancer</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by <code>load balancer
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AttachInstancesToLoadBalancer {
     _private: (),
@@ -137,7 +137,7 @@ impl smithy_http::response::ParseStrictResponse for AttachInstancesToLoadBalance
 /// it will replace the existing one and become the attached certificate.</p>
 /// <p>The <code>AttachLoadBalancerTlsCertificate</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by <code>load balancer
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AttachLoadBalancerTlsCertificate {
     _private: (),
@@ -194,7 +194,7 @@ impl smithy_http::response::ParseStrictResponse for AttachStaticIp {
 /// <p>Closes ports for a specific Amazon Lightsail instance.</p>
 /// <p>The <code>CloseInstancePublicPorts</code> action supports tag-based access control via
 /// resource tags applied to the resource identified by <code>instanceName</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CloseInstancePublicPorts {
     _private: (),
@@ -254,6 +254,75 @@ impl smithy_http::response::ParseStrictResponse for CopySnapshot {
             crate::operation_deser::parse_copy_snapshot_error(response)
         } else {
             crate::operation_deser::parse_copy_snapshot_response(response)
+        }
+    }
+}
+
+/// <p>Creates an Amazon Lightsail bucket.</p>
+/// <p>A bucket is a cloud storage resource available in the Lightsail object storage service.
+/// Use buckets to store objects such as data and its descriptive metadata. For more information
+/// about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
+/// Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBucket {
+    _private: (),
+}
+impl CreateBucket {
+    /// Creates a new builder-style object to manufacture [`CreateBucketInput`](crate::input::CreateBucketInput)
+    pub fn builder() -> crate::input::create_bucket_input::Builder {
+        crate::input::create_bucket_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateBucket {
+    type Output =
+        std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_bucket_error(response)
+        } else {
+            crate::operation_deser::parse_create_bucket_response(response)
+        }
+    }
+}
+
+/// <p>Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of
+/// an access key ID and corresponding secret access key.</p>
+/// <p>Access keys grant full programmatic access to the specified bucket and its objects. You
+/// can have a maximum of two access keys per bucket. Use the <a>GetBucketAccessKeys</a> action to get a list of current access keys for a specific bucket. For more information
+/// about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
+/// <i>Amazon Lightsail Developer Guide</i>.</p>
+/// <important>
+/// <p>The <code>secretAccessKey</code> value is returned only in response to the
+/// <code>CreateBucketAccessKey</code> action. You can get a secret access key only when you
+/// first create an access key; you cannot get the secret access key later. If you lose the
+/// secret access key, you must create a new access key.</p>
+/// </important>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBucketAccessKey {
+    _private: (),
+}
+impl CreateBucketAccessKey {
+    /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyInput`](crate::input::CreateBucketAccessKeyInput)
+    pub fn builder() -> crate::input::create_bucket_access_key_input::Builder {
+        crate::input::create_bucket_access_key_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateBucketAccessKey {
+    type Output = std::result::Result<
+        crate::output::CreateBucketAccessKeyOutput,
+        crate::error::CreateBucketAccessKeyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_bucket_access_key_error(response)
+        } else {
+            crate::operation_deser::parse_create_bucket_access_key_response(response)
         }
     }
 }
@@ -403,7 +472,7 @@ impl smithy_http::response::ParseStrictResponse for CreateContainerService {
 /// configuration.</p>
 /// <p>You can deploy containers to your container service using container images from a public
 /// registry like Docker Hub, or from your local machine. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-container-images">Creating container images for your Amazon Lightsail container services</a> in the
-/// <i>Lightsail Dev Guide</i>.</p>
+/// <i>Amazon Lightsail Developer Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContainerServiceDeployment {
     _private: (),
@@ -449,7 +518,7 @@ impl smithy_http::response::ParseStrictResponse for CreateContainerServiceDeploy
 /// <p>This action is not required if you install and use the Lightsail Control
 /// (lightsailctl) plugin to push container images to your Lightsail container service. For
 /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a>
-/// in the <i>Lightsail Dev Guide</i>.</p>
+/// in the <i>Amazon Lightsail Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateContainerServiceRegistryLogin {
@@ -481,7 +550,7 @@ impl smithy_http::response::ParseStrictResponse for CreateContainerServiceRegist
 /// <p>Creates a block storage disk that can be attached to an Amazon Lightsail instance in the
 /// same Availability Zone (e.g., <code>us-east-2a</code>).</p>
 /// <p>The <code>create disk</code> operation supports tag-based access control via request tags.
-/// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDisk {
     _private: (),
@@ -512,7 +581,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDisk {
 /// <code>us-east-2a</code>).</p>
 /// <p>The <code>create disk from snapshot</code> operation supports tag-based access control via
 /// request tags and resource tags applied to the resource identified by <code>disk snapshot
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDiskFromSnapshot {
     _private: (),
@@ -558,7 +627,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDiskFromSnapshot {
 /// be created. After the snapshot is available, you can create a block storage disk from the
 /// snapshot and attach it to a running instance to access the data on the disk.</p>
 /// <p>The <code>create disk snapshot</code> operation supports tag-based access control via
-/// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDiskSnapshot {
     _private: (),
@@ -619,7 +688,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDistribution {
 
 /// <p>Creates a domain resource for the specified domain (e.g., example.com).</p>
 /// <p>The <code>create domain</code> operation supports tag-based access control via request
-/// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDomain {
     _private: (),
@@ -650,7 +719,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDomain {
 /// (SOA), service locator (SRV), or text (TXT).</p>
 /// <p>The <code>create domain entry</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by <code>domain name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDomainEntry {
     _private: (),
@@ -680,7 +749,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDomainEntry {
 
 /// <p>Creates one or more Amazon Lightsail instances.</p>
 /// <p>The <code>create instances</code> operation supports tag-based access control via request
-/// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInstances {
     _private: (),
@@ -712,7 +781,7 @@ impl smithy_http::response::ParseStrictResponse for CreateInstances {
 /// instance.</p>
 /// <p>The <code>create instances from snapshot</code> operation supports tag-based access
 /// control via request tags and resource tags applied to the resource identified by
-/// <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// <code>instance snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInstancesFromSnapshot {
     _private: (),
@@ -743,7 +812,7 @@ impl smithy_http::response::ParseStrictResponse for CreateInstancesFromSnapshot 
 /// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>.
 /// You can use a snapshot to create a new instance that is based on that snapshot.</p>
 /// <p>The <code>create instance snapshot</code> operation supports tag-based access control via
-/// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateInstanceSnapshot {
     _private: (),
@@ -773,7 +842,7 @@ impl smithy_http::response::ParseStrictResponse for CreateInstanceSnapshot {
 
 /// <p>Creates an SSH key pair.</p>
 /// <p>The <code>create key pair</code> operation supports tag-based access control via request
-/// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateKeyPair {
     _private: (),
@@ -800,13 +869,13 @@ impl smithy_http::response::ParseStrictResponse for CreateKeyPair {
 }
 
 /// <p>Creates a Lightsail load balancer. To learn more about deciding whether to load balance
-/// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/how-to/article/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 5
+/// your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 5
 /// load balancers per AWS Region in your account.</p>
 /// <p>When you create a load balancer, you can specify a unique name and port settings. To
 /// change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
 /// operation.</p>
 /// <p>The <code>create load balancer</code> operation supports tag-based access control via
-/// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLoadBalancer {
     _private: (),
@@ -838,7 +907,7 @@ impl smithy_http::response::ParseStrictResponse for CreateLoadBalancer {
 /// <p>TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>
 /// <p>The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by <code>load balancer
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateLoadBalancerTlsCertificate {
     _private: (),
@@ -868,7 +937,7 @@ impl smithy_http::response::ParseStrictResponse for CreateLoadBalancerTlsCertifi
 
 /// <p>Creates a new database in Amazon Lightsail.</p>
 /// <p>The <code>create relational database</code> operation supports tag-based access control
-/// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRelationalDatabase {
     _private: (),
@@ -902,7 +971,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRelationalDatabase {
 /// standard plan.</p>
 /// <p>The <code>create relational database from snapshot</code> operation supports tag-based
 /// access control via request tags and resource tags applied to the resource identified by
-/// relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRelationalDatabaseFromSnapshot {
     _private: (),
@@ -935,7 +1004,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRelationalDatabaseFrom
 /// <p>Creates a snapshot of your database in Amazon Lightsail. You can use snapshots for backups,
 /// to make copies of a database, and to save data before deleting a database.</p>
 /// <p>The <code>create relational database snapshot</code> operation supports tag-based access
-/// control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// control via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRelationalDatabaseSnapshot {
     _private: (),
@@ -993,7 +1062,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteAlarm {
     }
 }
 
-/// <p>Deletes an automatic snapshot of an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+/// <p>Deletes an automatic snapshot of an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteAutoSnapshot {
     _private: (),
@@ -1017,6 +1086,67 @@ impl smithy_http::response::ParseStrictResponse for DeleteAutoSnapshot {
             crate::operation_deser::parse_delete_auto_snapshot_error(response)
         } else {
             crate::operation_deser::parse_delete_auto_snapshot_response(response)
+        }
+    }
+}
+
+/// <p>Deletes a Amazon Lightsail bucket.</p>
+/// <note>
+/// <p>When you delete your bucket, the bucket name is released and can be reused for a new
+/// bucket in your account or another AWS account.</p>
+/// </note>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteBucket {
+    _private: (),
+}
+impl DeleteBucket {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketInput`](crate::input::DeleteBucketInput)
+    pub fn builder() -> crate::input::delete_bucket_input::Builder {
+        crate::input::delete_bucket_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteBucket {
+    type Output =
+        std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_bucket_error(response)
+        } else {
+            crate::operation_deser::parse_delete_bucket_response(response)
+        }
+    }
+}
+
+/// <p>Deletes an access key for the specified Amazon Lightsail bucket.</p>
+/// <p>We recommend that you delete an access key if the secret access key is compromised.</p>
+/// <p>For more information about access keys, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-creating-bucket-access-keys">Creating access keys for a bucket in Amazon Lightsail</a> in the
+/// <i>Amazon Lightsail Developer Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteBucketAccessKey {
+    _private: (),
+}
+impl DeleteBucketAccessKey {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyInput`](crate::input::DeleteBucketAccessKeyInput)
+    pub fn builder() -> crate::input::delete_bucket_access_key_input::Builder {
+        crate::input::delete_bucket_access_key_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteBucketAccessKey {
+    type Output = std::result::Result<
+        crate::output::DeleteBucketAccessKeyOutput,
+        crate::error::DeleteBucketAccessKeyError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_bucket_access_key_error(response)
+        } else {
+            crate::operation_deser::parse_delete_bucket_access_key_response(response)
         }
     }
 }
@@ -1149,7 +1279,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteContainerService {
 /// </note>
 /// <p>The <code>delete disk</code> operation supports tag-based access control via resource tags
 /// applied to the resource identified by <code>disk name</code>. For more information, see the
-/// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDisk {
     _private: (),
@@ -1183,7 +1313,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteDisk {
 /// to all the information needed to restore the disk.</p>
 /// <p>The <code>delete disk snapshot</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by <code>disk snapshot name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDiskSnapshot {
     _private: (),
@@ -1242,7 +1372,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteDistribution {
 /// <p>Deletes the specified domain recordset and all of its domain records.</p>
 /// <p>The <code>delete domain</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>domain name</code>. For more information, see
-/// the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDomain {
     _private: (),
@@ -1271,7 +1401,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteDomain {
 /// <p>Deletes a specific domain entry.</p>
 /// <p>The <code>delete domain entry</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by <code>domain name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDomainEntry {
     _private: (),
@@ -1302,7 +1432,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteDomainEntry {
 /// <p>Deletes an Amazon Lightsail instance.</p>
 /// <p>The <code>delete instance</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>instance name</code>. For more information,
-/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInstance {
     _private: (),
@@ -1332,7 +1462,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteInstance {
 /// <i>instance</i>).</p>
 /// <p>The <code>delete instance snapshot</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by <code>instance snapshot name</code>. For
-/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteInstanceSnapshot {
     _private: (),
@@ -1363,7 +1493,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteInstanceSnapshot {
 /// <p>Deletes a specific SSH key pair.</p>
 /// <p>The <code>delete key pair</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>key pair name</code>. For more information,
-/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteKeyPair {
     _private: (),
@@ -1395,7 +1525,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteKeyPair {
 /// <important>
 /// <p>Perform this operation only if you were expecting the host key or certificate mismatch
 /// or if you are familiar with the new host key or certificate on the instance. For more
-/// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP
+/// information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-troubleshooting-browser-based-ssh-rdp-client-connection">Troubleshooting connection issues when using the Amazon Lightsail browser-based SSH or RDP
 /// client</a>.</p>
 /// </important>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1430,7 +1560,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteKnownHostKeys {
 /// certificate, and verify domain ownership again.</p>
 /// <p>The <code>delete load balancer</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by <code>load balancer name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLoadBalancer {
     _private: (),
@@ -1461,7 +1591,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteLoadBalancer {
 /// <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>
 /// <p>The <code>DeleteLoadBalancerTlsCertificate</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by <code>load balancer
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteLoadBalancerTlsCertificate {
     _private: (),
@@ -1492,7 +1622,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteLoadBalancerTlsCertifi
 /// <p>Deletes a database in Amazon Lightsail.</p>
 /// <p>The <code>delete relational database</code> operation supports tag-based access control
 /// via resource tags applied to the resource identified by relationalDatabaseName. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRelationalDatabase {
     _private: (),
@@ -1523,7 +1653,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteRelationalDatabase {
 /// <p>Deletes a database snapshot in Amazon Lightsail.</p>
 /// <p>The <code>delete relational database snapshot</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by relationalDatabaseName. For
-/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteRelationalDatabaseSnapshot {
     _private: (),
@@ -1587,7 +1717,7 @@ impl smithy_http::response::ParseStrictResponse for DetachCertificateFromDistrib
 /// detaching the disk.</p>
 /// <p>The <code>detach disk</code> operation supports tag-based access control via resource tags
 /// applied to the resource identified by <code>disk name</code>. For more information, see the
-/// <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DetachDisk {
     _private: (),
@@ -1618,7 +1748,7 @@ impl smithy_http::response::ParseStrictResponse for DetachDisk {
 /// from the load balancer.</p>
 /// <p>The <code>detach instances from load balancer</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by <code>load balancer
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DetachInstancesFromLoadBalancer {
     _private: (),
@@ -1672,7 +1802,7 @@ impl smithy_http::response::ParseStrictResponse for DetachStaticIp {
     }
 }
 
-/// <p>Disables an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+/// <p>Disables an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableAddOn {
     _private: (),
@@ -1727,7 +1857,7 @@ impl smithy_http::response::ParseStrictResponse for DownloadDefaultKeyPair {
 }
 
 /// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see
-/// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+/// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableAddOn {
     _private: (),
@@ -1763,7 +1893,7 @@ impl smithy_http::response::ParseStrictResponse for EnableAddOn {
 /// <p></p>
 /// <p>The <code>export snapshot</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>source snapshot name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 /// <note>
 /// <p>Use the <code>get instance snapshots</code> or <code>get disk snapshots</code>
 /// operations to get a list of snapshots that you can export to Amazon EC2.</p>
@@ -1851,7 +1981,7 @@ impl smithy_http::response::ParseStrictResponse for GetAlarms {
 }
 
 /// <p>Returns the available automatic snapshots for an instance or disk. For more information,
-/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAutoSnapshots {
     _private: (),
@@ -1910,6 +2040,130 @@ impl smithy_http::response::ParseStrictResponse for GetBlueprints {
             crate::operation_deser::parse_get_blueprints_error(response)
         } else {
             crate::operation_deser::parse_get_blueprints_response(response)
+        }
+    }
+}
+
+/// <p>Returns the existing access key IDs for the specified Amazon Lightsail bucket.</p>
+/// <important>
+/// <p>This action does not return the secret access key value of an access key. You can get a
+/// secret access key only when you create it from the response of the <a>CreateBucketAccessKey</a> action. If you lose the secret access key, you must
+/// create a new access key.</p>
+/// </important>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBucketAccessKeys {
+    _private: (),
+}
+impl GetBucketAccessKeys {
+    /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysInput`](crate::input::GetBucketAccessKeysInput)
+    pub fn builder() -> crate::input::get_bucket_access_keys_input::Builder {
+        crate::input::get_bucket_access_keys_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBucketAccessKeys {
+    type Output = std::result::Result<
+        crate::output::GetBucketAccessKeysOutput,
+        crate::error::GetBucketAccessKeysError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_bucket_access_keys_error(response)
+        } else {
+            crate::operation_deser::parse_get_bucket_access_keys_response(response)
+        }
+    }
+}
+
+/// <p>Returns the bundles that you can apply to a Amazon Lightsail bucket.</p>
+/// <p>The bucket bundle specifies the monthly cost, storage quota, and data transfer quota for a
+/// bucket.</p>
+/// <p>Use the <a>UpdateBucketBundle</a> action to update the bundle for a
+/// bucket.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBucketBundles {
+    _private: (),
+}
+impl GetBucketBundles {
+    /// Creates a new builder-style object to manufacture [`GetBucketBundlesInput`](crate::input::GetBucketBundlesInput)
+    pub fn builder() -> crate::input::get_bucket_bundles_input::Builder {
+        crate::input::get_bucket_bundles_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBucketBundles {
+    type Output = std::result::Result<
+        crate::output::GetBucketBundlesOutput,
+        crate::error::GetBucketBundlesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_bucket_bundles_error(response)
+        } else {
+            crate::operation_deser::parse_get_bucket_bundles_response(response)
+        }
+    }
+}
+
+/// <p>Returns the data points of a specific metric for an Amazon Lightsail bucket.</p>
+/// <p>Metrics report the utilization of a bucket. View and collect metric data regularly to
+/// monitor the number of objects stored in a bucket (including object versions) and the storage
+/// space used by those objects.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBucketMetricData {
+    _private: (),
+}
+impl GetBucketMetricData {
+    /// Creates a new builder-style object to manufacture [`GetBucketMetricDataInput`](crate::input::GetBucketMetricDataInput)
+    pub fn builder() -> crate::input::get_bucket_metric_data_input::Builder {
+        crate::input::get_bucket_metric_data_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBucketMetricData {
+    type Output = std::result::Result<
+        crate::output::GetBucketMetricDataOutput,
+        crate::error::GetBucketMetricDataError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_bucket_metric_data_error(response)
+        } else {
+            crate::operation_deser::parse_get_bucket_metric_data_response(response)
+        }
+    }
+}
+
+/// <p>Returns information about one or more Amazon Lightsail buckets.</p>
+/// <p>For more information about buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/buckets-in-amazon-lightsail">Buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
+/// Guide</i>..</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBuckets {
+    _private: (),
+}
+impl GetBuckets {
+    /// Creates a new builder-style object to manufacture [`GetBucketsInput`](crate::input::GetBucketsInput)
+    pub fn builder() -> crate::input::get_buckets_input::Builder {
+        crate::input::get_buckets_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBuckets {
+    type Output =
+        std::result::Result<crate::output::GetBucketsOutput, crate::error::GetBucketsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_buckets_error(response)
+        } else {
+            crate::operation_deser::parse_get_buckets_response(response)
         }
     }
 }
@@ -2371,8 +2625,8 @@ impl smithy_http::response::ParseStrictResponse for GetDiskSnapshots {
     }
 }
 
-/// <p>Returns the list bundles that can be applied to you Amazon Lightsail content delivery
-/// network (CDN) distributions.</p>
+/// <p>Returns the bundles that can be applied to your Amazon Lightsail content delivery network
+/// (CDN) distributions.</p>
 /// <p>A distribution bundle specifies the monthly network transfer quota and monthly cost of
 /// your dsitribution.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2543,10 +2797,10 @@ impl smithy_http::response::ParseStrictResponse for GetDomains {
     }
 }
 
-/// <p>Returns the export snapshot record created as a result of the <code>export snapshot</code>
-/// operation.</p>
+/// <p>Returns all export snapshot records created as a result of the <code>export
+/// snapshot</code> operation.</p>
 /// <p>An export snapshot record can be used to create a new Amazon EC2 instance and its related
-/// resources with the <code>create cloud formation stack</code> operation.</p>
+/// resources with the <a>CreateCloudFormationStack</a> action.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetExportSnapshotRecords {
     _private: (),
@@ -2605,7 +2859,7 @@ impl smithy_http::response::ParseStrictResponse for GetInstance {
 /// <i>instance</i>.</p>
 /// <p>The <code>get instance access details</code> operation supports tag-based access control
 /// via resource tags applied to the resource identified by <code>instance name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetInstanceAccessDetails {
     _private: (),
@@ -3553,7 +3807,7 @@ impl smithy_http::response::ParseStrictResponse for IsVpcPeered {
 /// allowed to connect to the instance through the ports, and the protocol.</p>
 /// <p>The <code>OpenInstancePublicPorts</code> action supports tag-based access control via
 /// resource tags applied to the resource identified by <code>instanceName</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct OpenInstancePublicPorts {
     _private: (),
@@ -3581,7 +3835,7 @@ impl smithy_http::response::ParseStrictResponse for OpenInstancePublicPorts {
     }
 }
 
-/// <p>Tries to peer the Lightsail VPC with the user's default VPC.</p>
+/// <p>Peers the Lightsail VPC with the user's default VPC.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PeerVpc {
     _private: (),
@@ -3649,7 +3903,7 @@ impl smithy_http::response::ParseStrictResponse for PutAlarm {
 /// ports.</p>
 /// <p>The <code>PutInstancePublicPorts</code> action supports tag-based access control via
 /// resource tags applied to the resource identified by <code>instanceName</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutInstancePublicPorts {
     _private: (),
@@ -3680,7 +3934,7 @@ impl smithy_http::response::ParseStrictResponse for PutInstancePublicPorts {
 /// <p>Restarts a specific instance.</p>
 /// <p>The <code>reboot instance</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>instance name</code>. For more information,
-/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RebootInstance {
     _private: (),
@@ -3709,7 +3963,7 @@ impl smithy_http::response::ParseStrictResponse for RebootInstance {
 /// <p>Restarts a specific database in Amazon Lightsail.</p>
 /// <p>The <code>reboot relational database</code> operation supports tag-based access control
 /// via resource tags applied to the resource identified by relationalDatabaseName. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RebootRelationalDatabase {
     _private: (),
@@ -3742,7 +3996,7 @@ impl smithy_http::response::ParseStrictResponse for RebootRelationalDatabase {
 /// <p>This action is not required if you install and use the Lightsail Control
 /// (lightsailctl) plugin to push container images to your Lightsail container service. For
 /// more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-pushing-container-images">Pushing and managing container images on your Amazon Lightsail container services</a>
-/// in the <i>Lightsail Dev Guide</i>.</p>
+/// in the <i>Amazon Lightsail Developer Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RegisterContainerImage {
@@ -3901,16 +4155,47 @@ impl smithy_http::response::ParseStrictResponse for SetIpAddressType {
     }
 }
 
+/// <p>Sets the Amazon Lightsail resources that can access the specified Lightsail
+/// bucket.</p>
+/// <p>Lightsail buckets currently support setting access for Lightsail instances in the same
+/// AWS Region.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct SetResourceAccessForBucket {
+    _private: (),
+}
+impl SetResourceAccessForBucket {
+    /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketInput`](crate::input::SetResourceAccessForBucketInput)
+    pub fn builder() -> crate::input::set_resource_access_for_bucket_input::Builder {
+        crate::input::set_resource_access_for_bucket_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for SetResourceAccessForBucket {
+    type Output = std::result::Result<
+        crate::output::SetResourceAccessForBucketOutput,
+        crate::error::SetResourceAccessForBucketError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_set_resource_access_for_bucket_error(response)
+        } else {
+            crate::operation_deser::parse_set_resource_access_for_bucket_response(response)
+        }
+    }
+}
+
 /// <p>Starts a specific Amazon Lightsail instance from a stopped state. To restart an instance,
 /// use the <code>reboot instance</code> operation.</p>
 /// <note>
 /// <p>When you start a stopped instance, Lightsail assigns a new public IP address to the
 /// instance. To use the same IP address after stopping and starting an instance, create a
-/// static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.</p>
+/// static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail Developer Guide</a>.</p>
 /// </note>
 /// <p>The <code>start instance</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>instance name</code>. For more information,
-/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartInstance {
     _private: (),
@@ -3940,7 +4225,7 @@ impl smithy_http::response::ParseStrictResponse for StartInstance {
 /// use the <code>reboot relational database</code> operation.</p>
 /// <p>The <code>start relational database</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by relationalDatabaseName. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartRelationalDatabase {
     _private: (),
@@ -3972,11 +4257,11 @@ impl smithy_http::response::ParseStrictResponse for StartRelationalDatabase {
 /// <note>
 /// <p>When you start a stopped instance, Lightsail assigns a new public IP address to the
 /// instance. To use the same IP address after stopping and starting an instance, create a
-/// static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/lightsail-create-static-ip">Lightsail Dev Guide</a>.</p>
+/// static IP address and attach it to the instance. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/lightsail-create-static-ip">Amazon Lightsail Developer Guide</a>.</p>
 /// </note>
 /// <p>The <code>stop instance</code> operation supports tag-based access control via resource
 /// tags applied to the resource identified by <code>instance name</code>. For more information,
-/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StopInstance {
     _private: (),
@@ -4005,7 +4290,7 @@ impl smithy_http::response::ParseStrictResponse for StopInstance {
 /// <p>Stops a specific database that is currently running in Amazon Lightsail.</p>
 /// <p>The <code>stop relational database</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by relationalDatabaseName. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StopRelationalDatabase {
     _private: (),
@@ -4035,11 +4320,10 @@ impl smithy_http::response::ParseStrictResponse for StopRelationalDatabase {
 
 /// <p>Adds one or more tags to the specified Amazon Lightsail resource. Each resource can have a
 /// maximum of 50 tags. Each tag consists of a key and an optional value. Tag keys must be unique
-/// per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-/// Dev Guide</a>.</p>
+/// per resource. For more information about tags, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
 /// <p>The <code>tag resource</code> operation supports tag-based access control via request tags
 /// and resource tags applied to the resource identified by <code>resource name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -4097,7 +4381,7 @@ impl smithy_http::response::ParseStrictResponse for TestAlarm {
     }
 }
 
-/// <p>Attempts to unpeer the Lightsail VPC from the user's default VPC.</p>
+/// <p>Unpeers the Lightsail VPC from the user's default VPC.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UnpeerVpc {
     _private: (),
@@ -4126,7 +4410,7 @@ impl smithy_http::response::ParseStrictResponse for UnpeerVpc {
 /// resource.</p>
 /// <p>The <code>untag resource</code> operation supports tag-based access control via request
 /// tags and resource tags applied to the resource identified by <code>resource name</code>. For
-/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -4148,6 +4432,74 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// <p>Updates an existing Amazon Lightsail bucket.</p>
+/// <p>Use this action to update the configuration of an existing bucket, such as versioning,
+/// public accessibility, and the AWS accounts that can access the bucket.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateBucket {
+    _private: (),
+}
+impl UpdateBucket {
+    /// Creates a new builder-style object to manufacture [`UpdateBucketInput`](crate::input::UpdateBucketInput)
+    pub fn builder() -> crate::input::update_bucket_input::Builder {
+        crate::input::update_bucket_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateBucket {
+    type Output =
+        std::result::Result<crate::output::UpdateBucketOutput, crate::error::UpdateBucketError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_bucket_error(response)
+        } else {
+            crate::operation_deser::parse_update_bucket_response(response)
+        }
+    }
+}
+
+/// <p>Updates the bundle, or storage plan, of an existing Amazon Lightsail bucket.</p>
+/// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+/// bucket. You can update a bucket's bundle only one time within a monthly AWS billing cycle. To
+/// determine if you can update a bucket's bundle, use the <a>GetBuckets</a> action.
+/// The <code>ableToUpdateBundle</code> parameter in the response will indicate whether you can
+/// currently update a bucket's bundle.</p>
+/// <p>Update a bucket's bundle if it's consistently going over its storage space or data
+/// transfer quota, or if a bucket's usage is consistently in the lower range of its storage space
+/// or data transfer quota. Due to the unpredictable usage fluctuations that a bucket might
+/// experience, we strongly recommend that you update a bucket's bundle only as a long-term
+/// strategy, instead of as a short-term, monthly cost-cutting measure. Choose a bucket bundle
+/// that will provide the bucket with ample storage space and data transfer for a long time to
+/// come.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateBucketBundle {
+    _private: (),
+}
+impl UpdateBucketBundle {
+    /// Creates a new builder-style object to manufacture [`UpdateBucketBundleInput`](crate::input::UpdateBucketBundleInput)
+    pub fn builder() -> crate::input::update_bucket_bundle_input::Builder {
+        crate::input::update_bucket_bundle_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateBucketBundle {
+    type Output = std::result::Result<
+        crate::output::UpdateBucketBundleOutput,
+        crate::error::UpdateBucketBundleError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_bucket_bundle_error(response)
+        } else {
+            crate::operation_deser::parse_update_bucket_bundle_response(response)
         }
     }
 }
@@ -4182,7 +4534,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateContainerService {
 }
 
 /// <p>Updates an existing Amazon Lightsail content delivery network (CDN) distribution.</p>
-/// <p>Use this action to update the configuration of your existing distribution</p>
+/// <p>Use this action to update the configuration of your existing distribution.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDistribution {
     _private: (),
@@ -4250,7 +4602,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateDistributionBundle {
 /// <p>Updates a domain recordset after it is created.</p>
 /// <p>The <code>update domain entry</code> operation supports tag-based access control via
 /// resource tags applied to the resource identified by <code>domain name</code>. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateDomainEntry {
     _private: (),
@@ -4282,7 +4634,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateDomainEntry {
 /// a time.</p>
 /// <p>The <code>update load balancer attribute</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by <code>load balancer
-/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLoadBalancerAttribute {
     _private: (),
@@ -4315,7 +4667,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateLoadBalancerAttribute 
 /// are applied during the database's predefined maintenance window.</p>
 /// <p>The <code>update relational database</code> operation supports tag-based access control
 /// via resource tags applied to the resource identified by relationalDatabaseName. For more
-/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRelationalDatabase {
     _private: (),
@@ -4352,7 +4704,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateRelationalDatabase {
 /// the <code>reboot relational database</code> operation.</p>
 /// <p>The <code>update relational database parameters</code> operation supports tag-based access
 /// control via resource tags applied to the resource identified by relationalDatabaseName. For
-/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-controlling-access-using-tags">Lightsail Dev Guide</a>.</p>
+/// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon Lightsail Developer Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateRelationalDatabaseParameters {
     _private: (),

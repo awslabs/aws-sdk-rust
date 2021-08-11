@@ -2118,6 +2118,24 @@ pub fn parse_create_database_error(
                 tmp
             }),
         },
+        "ConcurrentModificationException" => crate::error::CreateDatabaseError {
+            meta: generic,
+            kind: crate::error::CreateDatabaseErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateDatabaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "GlueEncryptionException" => crate::error::CreateDatabaseError {
             meta: generic,
             kind: crate::error::CreateDatabaseErrorKind::GlueEncryptionException({
@@ -3669,6 +3687,24 @@ pub fn parse_create_table_error(
                 tmp
             }),
         },
+        "ConcurrentModificationException" => crate::error::CreateTableError {
+            meta: generic,
+            kind: crate::error::CreateTableErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "EntityNotFoundException" => crate::error::CreateTableError {
             meta: generic,
             kind: crate::error::CreateTableErrorKind::EntityNotFoundException({
@@ -4853,6 +4889,24 @@ pub fn parse_delete_database_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::DeleteDatabaseError {
+            meta: generic,
+            kind: crate::error::DeleteDatabaseErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteDatabaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "EntityNotFoundException" => crate::error::DeleteDatabaseError {
             meta: generic,
             kind: crate::error::DeleteDatabaseErrorKind::EntityNotFoundException({
@@ -6183,6 +6237,24 @@ pub fn parse_delete_table_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::DeleteTableError {
+            meta: generic,
+            kind: crate::error::DeleteTableErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteTableError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "EntityNotFoundException" => crate::error::DeleteTableError {
             meta: generic,
             kind: crate::error::DeleteTableErrorKind::EntityNotFoundException({
@@ -17906,6 +17978,24 @@ pub fn parse_update_database_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "ConcurrentModificationException" => crate::error::UpdateDatabaseError {
+            meta: generic,
+            kind: crate::error::UpdateDatabaseErrorKind::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_concurrent_modification_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateDatabaseError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "EntityNotFoundException" => crate::error::UpdateDatabaseError {
             meta: generic,
             kind: crate::error::UpdateDatabaseErrorKind::EntityNotFoundException({

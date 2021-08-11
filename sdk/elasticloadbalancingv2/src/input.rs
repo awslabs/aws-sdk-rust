@@ -74,28 +74,28 @@ impl AddListenerCertificatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -222,28 +222,28 @@ impl AddTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -460,28 +460,28 @@ impl CreateListenerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -725,28 +725,28 @@ impl CreateLoadBalancerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -913,28 +913,28 @@ impl CreateRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1122,7 +1122,7 @@ pub mod create_target_group_input {
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
         /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
@@ -1297,28 +1297,28 @@ impl CreateTargetGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1430,28 +1430,28 @@ impl DeleteListenerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1567,28 +1567,28 @@ impl DeleteLoadBalancerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1699,28 +1699,28 @@ impl DeleteRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1836,28 +1836,28 @@ impl DeleteTargetGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1988,28 +1988,28 @@ impl DeregisterTargetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2134,28 +2134,28 @@ impl DescribeAccountLimitsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2293,28 +2293,28 @@ impl DescribeListenerCertificatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2468,28 +2468,28 @@ impl DescribeListenersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2607,28 +2607,28 @@ impl DescribeLoadBalancerAttributesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2783,28 +2783,28 @@ impl DescribeLoadBalancersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2953,28 +2953,28 @@ impl DescribeRulesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3114,28 +3114,28 @@ impl DescribeSslPoliciesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3250,28 +3250,28 @@ impl DescribeTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3389,28 +3389,28 @@ impl DescribeTargetGroupAttributesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3579,28 +3579,28 @@ impl DescribeTargetGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3731,28 +3731,28 @@ impl DescribeTargetHealthInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3952,28 +3952,28 @@ impl ModifyListenerInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4107,28 +4107,28 @@ impl ModifyLoadBalancerAttributesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4269,28 +4269,28 @@ impl ModifyRuleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4375,10 +4375,12 @@ pub mod modify_target_group_input {
             self.target_group_arn = input;
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. The TCP
-        /// protocol is supported for health checks only if the protocol of the target group is TCP, TLS,
-        /// UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health
-        /// checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For
+        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
+        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
+        /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
+        /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+        /// protocols are not supported for health checks.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.health_check_protocol = Some(input);
@@ -4406,7 +4408,7 @@ pub mod modify_target_group_input {
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
         /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.health_check_path = Some(input.into());
             self
@@ -4533,28 +4535,28 @@ impl ModifyTargetGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4688,28 +4690,28 @@ impl ModifyTargetGroupAttributesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4839,28 +4841,28 @@ impl RegisterTargetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4990,28 +4992,28 @@ impl RemoveListenerCertificatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5141,28 +5143,28 @@ impl RemoveTagsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5295,28 +5297,28 @@ impl SetIpAddressTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5434,28 +5436,28 @@ impl SetRulePrioritiesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5586,28 +5588,28 @@ impl SetSecurityGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5769,28 +5771,28 @@ impl SetSubnetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6017,10 +6019,12 @@ impl std::fmt::Debug for ModifyTargetGroupAttributesInput {
 pub struct ModifyTargetGroupInput {
     /// <p>The Amazon Resource Name (ARN) of the target group.</p>
     pub target_group_arn: std::option::Option<std::string::String>,
-    /// <p>The protocol the load balancer uses when performing health checks on targets. The TCP
-    /// protocol is supported for health checks only if the protocol of the target group is TCP, TLS,
-    /// UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health
-    /// checks.</p>
+    /// <p>The protocol the load balancer uses when performing health checks on targets. For
+    /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
+    /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
+    /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
+    /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+    /// protocols are not supported for health checks.</p>
     /// <p>With Network Load Balancers, you can't modify this setting.</p>
     pub health_check_protocol: std::option::Option<crate::model::ProtocolEnum>,
     /// <p>The port the load balancer uses when performing health checks on targets.</p>
@@ -6028,7 +6032,7 @@ pub struct ModifyTargetGroupInput {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format
-    /// /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+    /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>Indicates whether health checks are enabled.</p>
     pub health_check_enabled: std::option::Option<bool>,
@@ -6521,7 +6525,7 @@ pub struct CreateTargetGroupInput {
     /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
     /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
     /// <p>[GRPC protocol version] The path of a custom health check method with the format
-    /// /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+    /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
     pub health_check_path: std::option::Option<std::string::String>,
     /// <p>The approximate amount of time, in seconds, between health checks of an individual target.
     /// If the target group protocol is TCP, TLS, UDP, or TCP_UDP, the supported values are 10 and 30

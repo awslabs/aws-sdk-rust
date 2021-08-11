@@ -88,15 +88,15 @@ impl PutSession {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for PutSession {
+impl smithy_http::response::ParseHttpResponse for PutSession {
     type Output =
         std::result::Result<crate::output::PutSessionOutput, crate::error::PutSessionError>;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_put_session(response))
@@ -187,17 +187,17 @@ impl RecognizeUtterance {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for RecognizeUtterance {
+impl smithy_http::response::ParseHttpResponse for RecognizeUtterance {
     type Output = std::result::Result<
         crate::output::RecognizeUtteranceOutput,
         crate::error::RecognizeUtteranceError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_recognize_utterance(response))

@@ -3763,9 +3763,15 @@ pub struct ReactiveAnomalySummary {
     /// </p>
     pub status: std::option::Option<crate::model::AnomalyStatus>,
     /// <p>
-    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
     /// </p>
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p>
     /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
     /// </p>
@@ -3787,6 +3793,10 @@ impl std::fmt::Debug for ReactiveAnomalySummary {
         formatter.field("severity", &self.severity);
         formatter.field("status", &self.status);
         formatter.field("anomaly_time_range", &self.anomaly_time_range);
+        formatter.field(
+            "anomaly_reported_time_range",
+            &self.anomaly_reported_time_range,
+        );
         formatter.field("source_details", &self.source_details);
         formatter.field("associated_insight_id", &self.associated_insight_id);
         formatter.field("resource_collection", &self.resource_collection);
@@ -3803,6 +3813,8 @@ pub mod reactive_anomaly_summary {
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
         pub(crate) status: std::option::Option<crate::model::AnomalyStatus>,
         pub(crate) anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+        pub(crate) anomaly_reported_time_range:
+            std::option::Option<crate::model::AnomalyReportedTimeRange>,
         pub(crate) source_details: std::option::Option<crate::model::AnomalySourceDetails>,
         pub(crate) associated_insight_id: std::option::Option<std::string::String>,
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
@@ -3848,7 +3860,9 @@ pub mod reactive_anomaly_summary {
             self
         }
         /// <p>
-        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
         /// </p>
         pub fn anomaly_time_range(mut self, input: crate::model::AnomalyTimeRange) -> Self {
             self.anomaly_time_range = Some(input);
@@ -3859,6 +3873,23 @@ pub mod reactive_anomaly_summary {
             input: std::option::Option<crate::model::AnomalyTimeRange>,
         ) -> Self {
             self.anomaly_time_range = input;
+            self
+        }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
+        pub fn anomaly_reported_time_range(
+            mut self,
+            input: crate::model::AnomalyReportedTimeRange,
+        ) -> Self {
+            self.anomaly_reported_time_range = Some(input);
+            self
+        }
+        pub fn set_anomaly_reported_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
+        ) -> Self {
+            self.anomaly_reported_time_range = input;
             self
         }
         /// <p>
@@ -3911,6 +3942,7 @@ pub mod reactive_anomaly_summary {
                 severity: self.severity,
                 status: self.status,
                 anomaly_time_range: self.anomaly_time_range,
+                anomaly_reported_time_range: self.anomaly_reported_time_range,
                 source_details: self.source_details,
                 associated_insight_id: self.associated_insight_id,
                 resource_collection: self.resource_collection,
@@ -4291,7 +4323,82 @@ impl CloudWatchMetricsDimension {
 }
 
 /// <p>
-/// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+/// A time range that specifies when DevOps Guru opens and then closes an anomaly. This is different from
+/// <code>AnomalyTimeRange</code>, which specifies the time range when DevOps Guru actually observes
+/// the anomalous behavior.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnomalyReportedTimeRange {
+    /// <p>
+    /// The time when an anomaly is opened.
+    /// </p>
+    pub open_time: std::option::Option<smithy_types::Instant>,
+    /// <p>
+    /// The time when an anomaly is closed.
+    /// </p>
+    pub close_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for AnomalyReportedTimeRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnomalyReportedTimeRange");
+        formatter.field("open_time", &self.open_time);
+        formatter.field("close_time", &self.close_time);
+        formatter.finish()
+    }
+}
+/// See [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange)
+pub mod anomaly_reported_time_range {
+    /// A builder for [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) open_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) close_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>
+        /// The time when an anomaly is opened.
+        /// </p>
+        pub fn open_time(mut self, input: smithy_types::Instant) -> Self {
+            self.open_time = Some(input);
+            self
+        }
+        pub fn set_open_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.open_time = input;
+            self
+        }
+        /// <p>
+        /// The time when an anomaly is closed.
+        /// </p>
+        pub fn close_time(mut self, input: smithy_types::Instant) -> Self {
+            self.close_time = Some(input);
+            self
+        }
+        pub fn set_close_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.close_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange)
+        pub fn build(self) -> crate::model::AnomalyReportedTimeRange {
+            crate::model::AnomalyReportedTimeRange {
+                open_time: self.open_time,
+                close_time: self.close_time,
+            }
+        }
+    }
+}
+impl AnomalyReportedTimeRange {
+    /// Creates a new builder-style object to manufacture [`AnomalyReportedTimeRange`](crate::model::AnomalyReportedTimeRange)
+    pub fn builder() -> crate::model::anomaly_reported_time_range::Builder {
+        crate::model::anomaly_reported_time_range::Builder::default()
+    }
+}
+
+/// <p>
+/// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+/// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+/// an anomaly.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4477,9 +4584,15 @@ pub struct ProactiveAnomalySummary {
     /// </p>
     pub update_time: std::option::Option<smithy_types::Instant>,
     /// <p>
-    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
     /// </p>
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p>
     /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
     /// </p>
@@ -4511,6 +4624,10 @@ impl std::fmt::Debug for ProactiveAnomalySummary {
         formatter.field("status", &self.status);
         formatter.field("update_time", &self.update_time);
         formatter.field("anomaly_time_range", &self.anomaly_time_range);
+        formatter.field(
+            "anomaly_reported_time_range",
+            &self.anomaly_reported_time_range,
+        );
         formatter.field("prediction_time_range", &self.prediction_time_range);
         formatter.field("source_details", &self.source_details);
         formatter.field("associated_insight_id", &self.associated_insight_id);
@@ -4530,6 +4647,8 @@ pub mod proactive_anomaly_summary {
         pub(crate) status: std::option::Option<crate::model::AnomalyStatus>,
         pub(crate) update_time: std::option::Option<smithy_types::Instant>,
         pub(crate) anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+        pub(crate) anomaly_reported_time_range:
+            std::option::Option<crate::model::AnomalyReportedTimeRange>,
         pub(crate) prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
         pub(crate) source_details: std::option::Option<crate::model::AnomalySourceDetails>,
         pub(crate) associated_insight_id: std::option::Option<std::string::String>,
@@ -4585,7 +4704,9 @@ pub mod proactive_anomaly_summary {
             self
         }
         /// <p>
-        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
         /// </p>
         pub fn anomaly_time_range(mut self, input: crate::model::AnomalyTimeRange) -> Self {
             self.anomaly_time_range = Some(input);
@@ -4596,6 +4717,23 @@ pub mod proactive_anomaly_summary {
             input: std::option::Option<crate::model::AnomalyTimeRange>,
         ) -> Self {
             self.anomaly_time_range = input;
+            self
+        }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
+        pub fn anomaly_reported_time_range(
+            mut self,
+            input: crate::model::AnomalyReportedTimeRange,
+        ) -> Self {
+            self.anomaly_reported_time_range = Some(input);
+            self
+        }
+        pub fn set_anomaly_reported_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
+        ) -> Self {
+            self.anomaly_reported_time_range = input;
             self
         }
         /// <p>
@@ -4675,6 +4813,7 @@ pub mod proactive_anomaly_summary {
                 status: self.status,
                 update_time: self.update_time,
                 anomaly_time_range: self.anomaly_time_range,
+                anomaly_reported_time_range: self.anomaly_reported_time_range,
                 prediction_time_range: self.prediction_time_range,
                 source_details: self.source_details,
                 associated_insight_id: self.associated_insight_id,
@@ -5937,9 +6076,15 @@ pub struct ReactiveAnomaly {
     /// </p>
     pub status: std::option::Option<crate::model::AnomalyStatus>,
     /// <p>
-    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
     /// </p>
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p>
     /// Details about the source of the analyzed operational data that triggered the anomaly. The one supported source is Amazon CloudWatch metrics.
     /// </p>
@@ -5961,6 +6106,10 @@ impl std::fmt::Debug for ReactiveAnomaly {
         formatter.field("severity", &self.severity);
         formatter.field("status", &self.status);
         formatter.field("anomaly_time_range", &self.anomaly_time_range);
+        formatter.field(
+            "anomaly_reported_time_range",
+            &self.anomaly_reported_time_range,
+        );
         formatter.field("source_details", &self.source_details);
         formatter.field("associated_insight_id", &self.associated_insight_id);
         formatter.field("resource_collection", &self.resource_collection);
@@ -5977,6 +6126,8 @@ pub mod reactive_anomaly {
         pub(crate) severity: std::option::Option<crate::model::AnomalySeverity>,
         pub(crate) status: std::option::Option<crate::model::AnomalyStatus>,
         pub(crate) anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+        pub(crate) anomaly_reported_time_range:
+            std::option::Option<crate::model::AnomalyReportedTimeRange>,
         pub(crate) source_details: std::option::Option<crate::model::AnomalySourceDetails>,
         pub(crate) associated_insight_id: std::option::Option<std::string::String>,
         pub(crate) resource_collection: std::option::Option<crate::model::ResourceCollection>,
@@ -6018,7 +6169,9 @@ pub mod reactive_anomaly {
             self
         }
         /// <p>
-        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
         /// </p>
         pub fn anomaly_time_range(mut self, input: crate::model::AnomalyTimeRange) -> Self {
             self.anomaly_time_range = Some(input);
@@ -6029,6 +6182,23 @@ pub mod reactive_anomaly {
             input: std::option::Option<crate::model::AnomalyTimeRange>,
         ) -> Self {
             self.anomaly_time_range = input;
+            self
+        }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
+        pub fn anomaly_reported_time_range(
+            mut self,
+            input: crate::model::AnomalyReportedTimeRange,
+        ) -> Self {
+            self.anomaly_reported_time_range = Some(input);
+            self
+        }
+        pub fn set_anomaly_reported_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
+        ) -> Self {
+            self.anomaly_reported_time_range = input;
             self
         }
         /// <p>
@@ -6081,6 +6251,7 @@ pub mod reactive_anomaly {
                 severity: self.severity,
                 status: self.status,
                 anomaly_time_range: self.anomaly_time_range,
+                anomaly_reported_time_range: self.anomaly_reported_time_range,
                 source_details: self.source_details,
                 associated_insight_id: self.associated_insight_id,
                 resource_collection: self.resource_collection,
@@ -6116,9 +6287,15 @@ pub struct ProactiveAnomaly {
     /// </p>
     pub update_time: std::option::Option<smithy_types::Instant>,
     /// <p>
-    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+    /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+    /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+    /// an anomaly.
     /// </p>
     pub anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+    /// <p>
+    /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+    /// </p>
+    pub anomaly_reported_time_range: std::option::Option<crate::model::AnomalyReportedTimeRange>,
     /// <p>
     /// The time range during which anomalous behavior in a proactive anomaly or an insight is expected to occur.
     /// </p>
@@ -6150,6 +6327,10 @@ impl std::fmt::Debug for ProactiveAnomaly {
         formatter.field("status", &self.status);
         formatter.field("update_time", &self.update_time);
         formatter.field("anomaly_time_range", &self.anomaly_time_range);
+        formatter.field(
+            "anomaly_reported_time_range",
+            &self.anomaly_reported_time_range,
+        );
         formatter.field("prediction_time_range", &self.prediction_time_range);
         formatter.field("source_details", &self.source_details);
         formatter.field("associated_insight_id", &self.associated_insight_id);
@@ -6169,6 +6350,8 @@ pub mod proactive_anomaly {
         pub(crate) status: std::option::Option<crate::model::AnomalyStatus>,
         pub(crate) update_time: std::option::Option<smithy_types::Instant>,
         pub(crate) anomaly_time_range: std::option::Option<crate::model::AnomalyTimeRange>,
+        pub(crate) anomaly_reported_time_range:
+            std::option::Option<crate::model::AnomalyReportedTimeRange>,
         pub(crate) prediction_time_range: std::option::Option<crate::model::PredictionTimeRange>,
         pub(crate) source_details: std::option::Option<crate::model::AnomalySourceDetails>,
         pub(crate) associated_insight_id: std::option::Option<std::string::String>,
@@ -6230,7 +6413,9 @@ pub mod proactive_anomaly {
             self
         }
         /// <p>
-        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended.
+        /// A time range that specifies when the observed unusual behavior in an anomaly started and ended. This is different from
+        /// <code>AnomalyReportedTimeRange</code>, which specifies the time range when DevOps Guru opens and then closes
+        /// an anomaly.
         /// </p>
         pub fn anomaly_time_range(mut self, input: crate::model::AnomalyTimeRange) -> Self {
             self.anomaly_time_range = Some(input);
@@ -6241,6 +6426,23 @@ pub mod proactive_anomaly {
             input: std::option::Option<crate::model::AnomalyTimeRange>,
         ) -> Self {
             self.anomaly_time_range = input;
+            self
+        }
+        /// <p>
+        /// A <code>AnomalyReportedTimeRange</code> object that specifies the time range between when the anomaly is opened and the time when it is closed.
+        /// </p>
+        pub fn anomaly_reported_time_range(
+            mut self,
+            input: crate::model::AnomalyReportedTimeRange,
+        ) -> Self {
+            self.anomaly_reported_time_range = Some(input);
+            self
+        }
+        pub fn set_anomaly_reported_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AnomalyReportedTimeRange>,
+        ) -> Self {
+            self.anomaly_reported_time_range = input;
             self
         }
         /// <p>
@@ -6320,6 +6522,7 @@ pub mod proactive_anomaly {
                 status: self.status,
                 update_time: self.update_time,
                 anomaly_time_range: self.anomaly_time_range,
+                anomaly_reported_time_range: self.anomaly_reported_time_range,
                 prediction_time_range: self.prediction_time_range,
                 source_details: self.source_details,
                 associated_insight_id: self.associated_insight_id,

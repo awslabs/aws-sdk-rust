@@ -1,7 +1,7 @@
 on: [ pull_request ]
 
 env:
-  rust_version: 1.51.0
+  rust_version: 1.52.1
 
 name: CI
 
@@ -19,9 +19,14 @@ jobs:
             ~/.cargo/git
             sdk/target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.toml') }}
+          restore-keys: |
+            ${{ runner.os }}-cargo-
       - uses: actions-rs/toolchain@v1
         with:
           toolchain: ${{ env.rust_version }}
+          default: true
       - name: Cargo Test
         run: cargo test
+        env:
+          CARGO_INCREMENTAL: 'false'
         working-directory: sdk

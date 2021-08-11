@@ -225,7 +225,7 @@ impl UpdateBackendAuthResourceConfig {
 pub struct UpdateBackendAuthUserPoolConfig {
     /// <p>Describes the forgot password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub forgot_password: std::option::Option<crate::model::UpdateBackendAuthForgotPasswordConfig>,
-    /// <p>Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+    /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub mfa: std::option::Option<crate::model::UpdateBackendAuthMfaConfig>,
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub o_auth: std::option::Option<crate::model::UpdateBackendAuthOAuthConfig>,
@@ -271,7 +271,7 @@ pub mod update_backend_auth_user_pool_config {
             self.forgot_password = input;
             self
         }
-        /// <p>Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+        /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
         pub fn mfa(mut self, input: crate::model::UpdateBackendAuthMfaConfig) -> Self {
             self.mfa = Some(input);
             self
@@ -469,9 +469,9 @@ pub struct UpdateBackendAuthOAuthConfig {
     pub o_auth_grant_type: std::option::Option<crate::model::OAuthGrantType>,
     /// <p>The list of OAuth-related flows that can allow users to authenticate from your Amplify app.</p>
     pub o_auth_scopes: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
-    /// <p>Redirect URLs used by OAuth when a user signs in to an Amplify app.</p>
+    /// <p>Redirect URLs that OAuth uses when a user signs in to an Amplify app.</p>
     pub redirect_sign_in_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+    /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
     pub redirect_sign_out_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Describes third-party social federation configurations for allowing your users to sign in with OAuth.</p>
     pub social_provider_settings: std::option::Option<crate::model::SocialProviderSettings>,
@@ -612,6 +612,8 @@ pub struct SocialProviderSettings {
     pub google: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
     /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
     pub login_with_amazon: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
+    /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
+    pub sign_in_with_apple: std::option::Option<crate::model::BackendAuthAppleProviderConfig>,
 }
 impl std::fmt::Debug for SocialProviderSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -619,6 +621,7 @@ impl std::fmt::Debug for SocialProviderSettings {
         formatter.field("facebook", &self.facebook);
         formatter.field("google", &self.google);
         formatter.field("login_with_amazon", &self.login_with_amazon);
+        formatter.field("sign_in_with_apple", &self.sign_in_with_apple);
         formatter.finish()
     }
 }
@@ -632,6 +635,8 @@ pub mod social_provider_settings {
         pub(crate) google: std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
         pub(crate) login_with_amazon:
             std::option::Option<crate::model::BackendAuthSocialProviderConfig>,
+        pub(crate) sign_in_with_apple:
+            std::option::Option<crate::model::BackendAuthAppleProviderConfig>,
     }
     impl Builder {
         /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
@@ -673,12 +678,28 @@ pub mod social_provider_settings {
             self.login_with_amazon = input;
             self
         }
+        /// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
+        pub fn sign_in_with_apple(
+            mut self,
+            input: crate::model::BackendAuthAppleProviderConfig,
+        ) -> Self {
+            self.sign_in_with_apple = Some(input);
+            self
+        }
+        pub fn set_sign_in_with_apple(
+            mut self,
+            input: std::option::Option<crate::model::BackendAuthAppleProviderConfig>,
+        ) -> Self {
+            self.sign_in_with_apple = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SocialProviderSettings`](crate::model::SocialProviderSettings)
         pub fn build(self) -> crate::model::SocialProviderSettings {
             crate::model::SocialProviderSettings {
                 facebook: self.facebook,
                 google: self.google,
                 login_with_amazon: self.login_with_amazon,
+                sign_in_with_apple: self.sign_in_with_apple,
             }
         }
     }
@@ -690,13 +711,102 @@ impl SocialProviderSettings {
     }
 }
 
+/// <p>Describes Apple social federation configurations for allowing your app users to sign in using OAuth.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BackendAuthAppleProviderConfig {
+    /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
+    pub client_id: std::option::Option<std::string::String>,
+    /// <p>Describes the key_id that comes from Apple.</p>
+    pub key_id: std::option::Option<std::string::String>,
+    /// <p>Describes the private_key that comes from Apple.</p>
+    pub private_key: std::option::Option<std::string::String>,
+    /// <p>Describes the team_id that comes from Apple.</p>
+    pub team_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for BackendAuthAppleProviderConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BackendAuthAppleProviderConfig");
+        formatter.field("client_id", &self.client_id);
+        formatter.field("key_id", &self.key_id);
+        formatter.field("private_key", &self.private_key);
+        formatter.field("team_id", &self.team_id);
+        formatter.finish()
+    }
+}
+/// See [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig)
+pub mod backend_auth_apple_provider_config {
+    /// A builder for [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_id: std::option::Option<std::string::String>,
+        pub(crate) key_id: std::option::Option<std::string::String>,
+        pub(crate) private_key: std::option::Option<std::string::String>,
+        pub(crate) team_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Describes the client_id (also called Services ID) that comes from Apple.</p>
+        pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_id = Some(input.into());
+            self
+        }
+        pub fn set_client_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_id = input;
+            self
+        }
+        /// <p>Describes the key_id that comes from Apple.</p>
+        pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_id = Some(input.into());
+            self
+        }
+        pub fn set_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_id = input;
+            self
+        }
+        /// <p>Describes the private_key that comes from Apple.</p>
+        pub fn private_key(mut self, input: impl Into<std::string::String>) -> Self {
+            self.private_key = Some(input.into());
+            self
+        }
+        pub fn set_private_key(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.private_key = input;
+            self
+        }
+        /// <p>Describes the team_id that comes from Apple.</p>
+        pub fn team_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.team_id = Some(input.into());
+            self
+        }
+        pub fn set_team_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.team_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig)
+        pub fn build(self) -> crate::model::BackendAuthAppleProviderConfig {
+            crate::model::BackendAuthAppleProviderConfig {
+                client_id: self.client_id,
+                key_id: self.key_id,
+                private_key: self.private_key,
+                team_id: self.team_id,
+            }
+        }
+    }
+}
+impl BackendAuthAppleProviderConfig {
+    /// Creates a new builder-style object to manufacture [`BackendAuthAppleProviderConfig`](crate::model::BackendAuthAppleProviderConfig)
+    pub fn builder() -> crate::model::backend_auth_apple_provider_config::Builder {
+        crate::model::backend_auth_apple_provider_config::Builder::default()
+    }
+}
+
 /// <p>Describes third-party social federation configurations for allowing your app users to sign in using OAuth.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BackendAuthSocialProviderConfig {
-    /// <p>Describes the client_id which can be obtained from the third-party social federation provider.</p>
+    /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
     pub client_id: std::option::Option<std::string::String>,
-    /// <p>Describes the client_secret which can be obtained from third-party social federation providers.</p>
+    /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
     pub client_secret: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BackendAuthSocialProviderConfig {
@@ -717,7 +827,7 @@ pub mod backend_auth_social_provider_config {
         pub(crate) client_secret: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Describes the client_id which can be obtained from the third-party social federation provider.</p>
+        /// <p>Describes the client_id, which can be obtained from the third-party social federation provider.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
             self
@@ -726,7 +836,7 @@ pub mod backend_auth_social_provider_config {
             self.client_id = input;
             self
         }
-        /// <p>Describes the client_secret which can be obtained from third-party social federation providers.</p>
+        /// <p>Describes the client_secret, which can be obtained from third-party social federation providers.</p>
         pub fn client_secret(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_secret = Some(input.into());
             self
@@ -1397,7 +1507,7 @@ impl AsRef<str> for Service {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateBackendAuthIdentityPoolConfig {
-    /// <p>A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.</p>
+    /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
     pub unauthenticated_login: bool,
 }
 impl std::fmt::Debug for UpdateBackendAuthIdentityPoolConfig {
@@ -1416,7 +1526,7 @@ pub mod update_backend_auth_identity_pool_config {
         pub(crate) unauthenticated_login: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>A boolean value which can be set to allow or disallow guest-level authorization into your Amplify app.</p>
+        /// <p>A boolean value that can be set to allow or disallow guest-level authorization into your Amplify app.</p>
         pub fn unauthenticated_login(mut self, input: bool) -> Self {
             self.unauthenticated_login = Some(input);
             self
@@ -1496,7 +1606,7 @@ impl AsRef<str> for AuthResources {
 pub struct BackendApiResourceConfig {
     /// <p>Additional authentication methods used to interact with your data models.</p>
     pub additional_auth_types: std::option::Option<std::vec::Vec<crate::model::BackendApiAuthType>>,
-    /// <p>The API name used to interact with the data model, configured as a part of the amplify project.</p>
+    /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
     pub api_name: std::option::Option<std::string::String>,
     /// <p>The conflict resolution strategy for your data stored in the data models.</p>
     pub conflict_resolution: std::option::Option<crate::model::BackendApiConflictResolution>,
@@ -1551,7 +1661,7 @@ pub mod backend_api_resource_config {
             self.additional_auth_types = input;
             self
         }
-        /// <p>The API name used to interact with the data model, configured as a part of the amplify project.</p>
+        /// <p>The API name used to interact with the data model, configured as a part of your Amplify project.</p>
         pub fn api_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_name = Some(input.into());
             self
@@ -2283,7 +2393,7 @@ impl CreateBackendAuthResourceConfig {
 pub struct CreateBackendAuthUserPoolConfig {
     /// <p>Describes the forgotten password policy for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub forgot_password: std::option::Option<crate::model::CreateBackendAuthForgotPasswordConfig>,
-    /// <p>Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+    /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
     pub mfa: std::option::Option<crate::model::CreateBackendAuthMfaConfig>,
     /// <p>Describes the OAuth policy and rules for your Amazon Cognito user pool, configured as a part of your Amplify project.</p>
     pub o_auth: std::option::Option<crate::model::CreateBackendAuthOAuthConfig>,
@@ -2346,7 +2456,7 @@ pub mod create_backend_auth_user_pool_config {
             self.forgot_password = input;
             self
         }
-        /// <p>Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+        /// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
         pub fn mfa(mut self, input: crate::model::CreateBackendAuthMfaConfig) -> Self {
             self.mfa = Some(input);
             self
@@ -2704,7 +2814,7 @@ pub struct CreateBackendAuthOAuthConfig {
     pub o_auth_scopes: std::option::Option<std::vec::Vec<crate::model::OAuthScopesElement>>,
     /// <p>The redirected URI for signing in to your Amplify app.</p>
     pub redirect_sign_in_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Redirect URLs used by OAuth when a user signs out of an Amplify app.</p>
+    /// <p>Redirect URLs that OAuth uses when a user signs out of an Amplify app.</p>
     pub redirect_sign_out_ur_is: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The settings for using social providers to access your Amplify app.</p>
     pub social_provider_settings: std::option::Option<crate::model::SocialProviderSettings>,
@@ -2835,11 +2945,11 @@ impl CreateBackendAuthOAuthConfig {
     }
 }
 
-/// <p>Describes whether multi-factor authentication policies should be applied for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
+/// <p>Describes whether to apply multi-factor authentication policies for your Amazon Cognito user pool configured as a part of your Amplify project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendAuthMfaConfig {
-    /// <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.</p>
+    /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
     pub mfa_mode: std::option::Option<crate::model::MfaMode>,
     /// <p>Describes the configuration settings and methods for your Amplify app users to use MFA.</p>
     pub settings: std::option::Option<crate::model::Settings>,
@@ -2862,7 +2972,7 @@ pub mod create_backend_auth_mfa_config {
         pub(crate) settings: std::option::Option<crate::model::Settings>,
     }
     impl Builder {
-        /// <p>Describes whether MFA should be [ON, OFF, OPTIONAL] for authentication in your Amplify project.</p>
+        /// <p>Describes whether MFA should be [ON, OFF, or OPTIONAL] for authentication in your Amplify project.</p>
         pub fn mfa_mode(mut self, input: crate::model::MfaMode) -> Self {
             self.mfa_mode = Some(input);
             self
@@ -2900,7 +3010,7 @@ impl CreateBackendAuthMfaConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateBackendAuthForgotPasswordConfig {
-    /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
+    /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
     pub delivery_method: std::option::Option<crate::model::DeliveryMethod>,
     /// <p>The configuration for the email sent when an app user forgets their password.</p>
     pub email_settings: std::option::Option<crate::model::EmailSettings>,
@@ -2927,7 +3037,7 @@ pub mod create_backend_auth_forgot_password_config {
         pub(crate) sms_settings: std::option::Option<crate::model::SmsSettings>,
     }
     impl Builder {
-        /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users that want to recover their password.</p>
+        /// <p>Describes which mode to use (either SMS or email) to deliver messages to app users who want to recover their password.</p>
         pub fn delivery_method(mut self, input: crate::model::DeliveryMethod) -> Self {
             self.delivery_method = Some(input);
             self

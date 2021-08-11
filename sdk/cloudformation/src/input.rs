@@ -19,7 +19,8 @@ pub mod activate_type_input {
     }
     impl Builder {
         /// <p>The extension type.</p>
-        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
             self.r#type = Some(input);
             self
@@ -32,7 +33,8 @@ pub mod activate_type_input {
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the public extension.</p>
-        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn public_type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_type_arn = Some(input.into());
             self
@@ -45,7 +47,8 @@ pub mod activate_type_input {
             self
         }
         /// <p>The ID of the extension publisher.</p>
-        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.publisher_id = Some(input.into());
             self
@@ -55,7 +58,8 @@ pub mod activate_type_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+        /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+        /// <code>Type</code>, and <code>PublisherId</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -64,8 +68,13 @@ pub mod activate_type_input {
             self.type_name = input;
             self
         }
-        /// <p>An alias to assign to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
-        /// <p>An extension alias must be unique within a given account and region. You can activate the same public resource multiple times in the same account and region, using different type name aliases.</p>
+        /// <p>An alias to assign to the public extension, in this account and region. If you specify
+        /// an alias for the extension, CloudFormation treats the alias as the extension type name
+        /// within this account and region. You must use the alias to refer to the extension in your
+        /// templates, API calls, and CloudFormation console.</p>
+        /// <p>An extension alias must be unique within a given account and region. You can activate
+        /// the same public resource multiple times in the same account and region, using different
+        /// type name aliases.</p>
         pub fn type_name_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name_alias = Some(input.into());
             self
@@ -77,7 +86,9 @@ pub mod activate_type_input {
             self.type_name_alias = input;
             self
         }
-        /// <p>Whether to automatically update the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
+        /// <p>Whether to automatically update the extension in this account and region when a new
+        /// <i>minor</i> version is published by the extension publisher. Major
+        /// versions released by the publisher must be manually updated.</p>
         /// <p>The default is <code>true</code>.</p>
         pub fn auto_update(mut self, input: bool) -> Self {
             self.auto_update = Some(input);
@@ -111,15 +122,19 @@ pub mod activate_type_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
+        /// <p>Manually updates a previously-activated type to a new major or minor version, if
+        /// available. You can also use this parameter to update the value of
+        /// <code>AutoUpdate</code>.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p>
+        /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major
+        /// version, if one is available.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p>
+        /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor
+        /// version, if one is available.</p>
         /// </li>
         /// </ul>
         pub fn version_bump(mut self, input: crate::model::VersionBump) -> Self {
@@ -133,8 +148,11 @@ pub mod activate_type_input {
             self.version_bump = input;
             self
         }
-        /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
-        /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
+        /// <p>The major version of this extension you want to activate, if multiple major versions are
+        /// available. The default is the latest major version. CloudFormation uses the latest
+        /// available <i>minor</i> version of the major version selected.</p>
+        /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not
+        /// both.</p>
         pub fn major_version(mut self, input: i64) -> Self {
             self.major_version = Some(input);
             self
@@ -190,28 +208,28 @@ impl ActivateTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -334,28 +352,28 @@ impl BatchDescribeTypeConfigurationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -430,10 +448,10 @@ pub mod cancel_update_stack_input {
             self
         }
         /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-        /// token if you plan to retry requests so that AWS CloudFormation knows that you're not
+        /// token if you plan to retry requests so that CloudFormation knows that you're not
         /// attempting to cancel an update on a stack with the same name. You might retry
-        /// <code>CancelUpdateStack</code> requests to ensure that AWS CloudFormation successfully
-        /// received them.</p>
+        /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -486,28 +504,28 @@ impl CancelUpdateStackInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -590,15 +608,14 @@ pub mod continue_update_rollback_input {
             self.stack_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to roll back the stack. AWS CloudFormation uses the role's
-        /// credentials to make calls on your behalf. AWS CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
-        /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was
+        /// previously associated with the stack. If no role is available, CloudFormation uses
+        /// a temporary session that is generated from your user credentials.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -621,9 +638,9 @@ pub mod continue_update_rollback_input {
             self
         }
         /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-        /// this token if you plan to retry requests so that AWS CloudFormation knows that you're not
-        /// attempting to continue the rollback to a stack with the same name. You might retry
-        /// <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+        /// this token if you plan to retry requests so that CloudFormationknows that you're
+        /// not attempting to continue the rollback to a stack with the same name. You might retry
+        /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
         /// successfully received them.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
@@ -679,28 +696,28 @@ impl ContinueUpdateRollbackInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -781,10 +798,10 @@ pub mod create_change_set_input {
         pub(crate) include_nested_stacks: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name or the unique ID of the stack for which you are creating a change set. AWS
-        /// CloudFormation generates the change set by comparing this stack's information with the
-        /// information that you submit, such as a modified template or different parameter input
-        /// values.</p>
+        /// <p>The name or the unique ID of the stack for which you are creating a change set.
+        /// CloudFormation generates the change set by comparing this stack's information
+        /// with the information that you submit, such as a modified template or different parameter
+        /// input values.</p>
         pub fn stack_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_name = Some(input.into());
             self
@@ -794,8 +811,8 @@ pub mod create_change_set_input {
             self
         }
         /// <p>A structure that contains the body of the revised template, with a minimum length of
-        /// 1 byte and a maximum length of 51,200 bytes. AWS CloudFormation generates the change set by
-        /// comparing this template with the template of the stack that you specified.</p>
+        /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change
+        /// set by comparing this template with the template of the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -811,8 +828,8 @@ pub mod create_change_set_input {
         }
         /// <p>The location of the file that contains the revised template. The URL must point to a
         /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
-        /// document. AWS CloudFormation generates the change set by comparing this template with the
-        /// stack that you specified.</p>
+        /// document. CloudFormation generates the change set by comparing this template with
+        /// the stack that you specified.</p>
         /// <p>Conditional: You must specify only <code>TemplateBody</code> or
         /// <code>TemplateURL</code>.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -872,15 +889,14 @@ pub mod create_change_set_input {
             self.resource_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes when executing the change set. AWS CloudFormation uses the
-        /// role's credentials to make calls on your behalf. AWS CloudFormation uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
-        /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the
+        /// role's credentials to make calls on your behalf. CloudFormation uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was
+        /// previously associated with the stack. If no role is available, CloudFormation uses
+        /// a temporary session that is generated from your user credentials.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -889,7 +905,7 @@ pub mod create_change_set_input {
             self.role_arn = input;
             self
         }
-        /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn rollback_configuration(
             mut self,
@@ -948,9 +964,9 @@ pub mod create_change_set_input {
             self
         }
         /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
-        /// to create another change set with the same name. You might retry
-        /// <code>CreateChangeSet</code> requests to ensure that AWS CloudFormation successfully
+        /// if you plan to retry requests so that CloudFormation knows that you're not
+        /// attempting to create another change set with the same name. You might retry
+        /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
         /// received them.</p>
         pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_token = Some(input.into());
@@ -973,12 +989,12 @@ pub mod create_change_set_input {
         /// <code>CREATE</code>. To create a change set for an existing stack, specify
         /// <code>UPDATE</code>. To create a change set for an import operation, specify
         /// <code>IMPORT</code>.</p>
-        /// <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a
-        /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+        /// <p>If you create a change set for a new stack, CloudFormation creates a stack
+        /// with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
         /// <code>REVIEW_IN_PROGRESS</code>
         /// </a> state until you execute the change
         /// set.</p>
-        /// <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the
+        /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
         /// <code>UPDATE</code> type to create a change set for a new stack or the
         /// <code>CREATE</code> type to create a change set for an existing stack.</p>
         pub fn change_set_type(mut self, input: crate::model::ChangeSetType) -> Self {
@@ -1074,28 +1090,28 @@ impl CreateChangeSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1192,7 +1208,7 @@ pub mod create_stack_input {
         }
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
         /// <code>TemplateURL</code> parameter, but not both.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1209,7 +1225,7 @@ pub mod create_stack_input {
         /// <p>Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
         /// <code>TemplateURL</code> parameter, but not both.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1246,7 +1262,7 @@ pub mod create_stack_input {
             self.disable_rollback = input;
             self
         }
-        /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn rollback_configuration(
             mut self,
@@ -1312,15 +1328,14 @@ pub mod create_stack_input {
             self.resource_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to create the stack. AWS CloudFormation uses the role's
-        /// credentials to make calls on your behalf. AWS CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
-        /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was
+        /// previously associated with the stack. If no role is available, CloudFormation uses
+        /// a temporary session that is generated from your user credentials.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -1346,9 +1361,9 @@ pub mod create_stack_input {
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-        /// to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>.
-        /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-        /// parameter, but not both.</p>
+        /// to Stack Resources</a> in the <i>CloudFormation User
+        /// Guide</i>. You can specify either the <code>StackPolicyBody</code> or the
+        /// <code>StackPolicyURL</code> parameter, but not both.</p>
         pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_body = Some(input.into());
             self
@@ -1361,9 +1376,9 @@ pub mod create_stack_input {
             self
         }
         /// <p>Location of a file containing the stack policy. The URL must point to a policy
-        /// (maximum size: 16 KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. You can
+        /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// parameter, but not both.</p>
         pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_url = Some(input.into());
             self
@@ -1389,9 +1404,9 @@ pub mod create_stack_input {
             self
         }
         /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
-        /// you plan to retry requests so that AWS CloudFormation knows that you're not attempting to
-        /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
-        /// ensure that AWS CloudFormation successfully received them.</p>
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to create a stack with the same name. You might retry <code>CreateStack</code> requests to
+        /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
         /// token, which you can use to track operations. For example, if you execute a
         /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
@@ -1417,7 +1432,7 @@ pub mod create_stack_input {
         /// <p>Whether to enable termination protection on the specified stack. If a user attempts
         /// to delete a stack with termination protection enabled, the operation fails and the stack
         /// remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
-        /// Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is
+        /// Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is
         /// disabled on stacks by default. </p>
         /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
         /// termination protection is set on the root stack and cannot be changed directly on the
@@ -1487,28 +1502,28 @@ impl CreateStackInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1606,8 +1621,10 @@ pub mod create_stack_instances_input {
             self.accounts = input;
             self
         }
-        /// <p>[Service-managed permissions] The AWS Organizations accounts for which to create stack instances in the specified Regions.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Service-managed permissions] The Organizations accounts for which to create
+        /// stack instances in the specified Regions.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
             self.deployment_targets = Some(input);
             self
@@ -1645,7 +1662,8 @@ pub mod create_stack_instances_input {
             self.parameter_overrides = input;
             self
         }
-        /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+        /// <p>Preferences for how CloudFormation performs this stack set
+        /// operation.</p>
         pub fn operation_preferences(
             mut self,
             input: crate::model::StackSetOperationPreferences,
@@ -1661,10 +1679,8 @@ pub mod create_stack_instances_input {
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that AWS
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
@@ -1676,15 +1692,20 @@ pub mod create_stack_instances_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -1745,28 +1766,28 @@ impl CreateStackInstancesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1831,6 +1852,7 @@ pub mod create_stack_set_input {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) template_body: std::option::Option<std::string::String>,
         pub(crate) template_url: std::option::Option<std::string::String>,
+        pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
         pub(crate) capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -1872,7 +1894,7 @@ pub mod create_stack_set_input {
         }
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
         /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
         /// but not both.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1889,7 +1911,7 @@ pub mod create_stack_set_input {
         /// <p>The location of the file that contains the template body. The URL must point to a
         /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
         /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
         /// but not both.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1898,6 +1920,16 @@ pub mod create_stack_set_input {
         }
         pub fn set_template_url(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.template_url = input;
+            self
+        }
+        /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Number
+        /// (ARN) of the stack.</p>
+        pub fn stack_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_id = Some(input.into());
+            self
+        }
+        pub fn set_stack_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.stack_id = input;
             self
         }
         pub fn parameters(mut self, input: impl Into<crate::model::Parameter>) -> Self {
@@ -1944,7 +1976,7 @@ pub mod create_stack_set_input {
         /// which users or groups can manage specific stack sets within the same administrator account.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
         /// Granting Permissions for Stack Set Operations</a> in the
-        /// <i>AWS CloudFormation User Guide</i>.</p>
+        /// <i>CloudFormation User Guide</i>.</p>
         pub fn administration_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.administration_role_arn = Some(input.into());
             self
@@ -1957,7 +1989,7 @@ pub mod create_stack_set_input {
             self
         }
         /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify
-        /// an execution role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+        /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
         /// for the stack set operation.</p>
         /// <p>Specify an IAM role only if you are using customized execution roles to control which
         /// stack resources users and groups can include in their stack sets.
@@ -1973,13 +2005,19 @@ pub mod create_stack_set_input {
             self.execution_role_name = input;
             self
         }
-        /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
+        /// <p>Describes how the IAM roles required for stack set operations are created. By default,
+        /// <code>SELF-MANAGED</code> is specified.</p>
         /// <ul>
         /// <li>
-        /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p>
+        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// <li>
-        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by Organizations. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
         pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
@@ -1993,7 +2031,9 @@ pub mod create_stack_set_input {
             self.permission_model = input;
             self
         }
-        /// <p>Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+        /// <p>Describes whether StackSets automatically deploys to Organizations accounts that
+        /// are added to the target organization or organizational unit (OU). Specify only if
+        /// <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
         pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
             self.auto_deployment = Some(input);
             self
@@ -2005,18 +2045,25 @@ pub mod create_stack_set_input {
             self.auto_deployment = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
-        /// <p>To create a stack set with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p>
+        /// <p>To create a stack set with service-managed permissions while signed in to the
+        /// management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>To create a stack set with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>To create a stack set with service-managed permissions while signed in to a
+        /// delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated admin in the
+        /// management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
-        /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+        /// <p>Stack sets with service-managed permissions are created in the management account,
+        /// including stack sets that are created by delegated administrators.</p>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
             self.call_as = Some(input);
             self
@@ -2026,9 +2073,10 @@ pub mod create_stack_set_input {
             self
         }
         /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-        /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
-        /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
-        /// requests to ensure that AWS CloudFormation successfully received them.</p>
+        /// if you plan to retry requests so that CloudFormation knows that you're not
+        /// attempting to create another stack set with the same name. You might retry
+        /// <code>CreateStackSet</code> requests to ensure that CloudFormation successfully
+        /// received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2054,6 +2102,7 @@ pub mod create_stack_set_input {
                 description: self.description,
                 template_body: self.template_body,
                 template_url: self.template_url,
+                stack_id: self.stack_id,
                 parameters: self.parameters,
                 capabilities: self.capabilities,
                 tags: self.tags,
@@ -2096,28 +2145,28 @@ impl CreateStackSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2183,8 +2232,10 @@ pub mod deactivate_type_input {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type name of the extension, in this account and region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
-        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>The type name of the extension, in this account and region. If you specified a type name
+        /// alias when enabling the extension, use the type name alias.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -2194,7 +2245,8 @@ pub mod deactivate_type_input {
             self
         }
         /// <p>The extension type.</p>
-        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
             self.r#type = Some(input);
             self
@@ -2207,7 +2259,8 @@ pub mod deactivate_type_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -2257,28 +2310,28 @@ impl DeactivateTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2406,28 +2459,28 @@ impl DeleteChangeSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2516,12 +2569,11 @@ pub mod delete_stack_input {
             self.retain_resources = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to delete the stack. AWS CloudFormation uses the role's
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's
         /// credentials to make calls on your behalf.</p>
-        /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was
+        /// previously associated with the stack. If no role is available, CloudFormation uses
+        /// a temporary session that is generated from your user credentials.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -2531,9 +2583,9 @@ pub mod delete_stack_input {
             self
         }
         /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
-        /// you plan to retry requests so that AWS CloudFormation knows that you're not attempting to
-        /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
-        /// ensure that AWS CloudFormation successfully received them.</p>
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
+        /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
         /// token, which you can use to track operations. For example, if you execute a
         /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
@@ -2597,28 +2649,28 @@ impl DeleteStackInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2716,8 +2768,10 @@ pub mod delete_stack_instances_input {
             self.accounts = input;
             self
         }
-        /// <p>[Service-managed permissions] The AWS Organizations accounts from which to delete stack instances.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Service-managed permissions] The Organizations accounts from which to delete
+        /// stack instances.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
             self.deployment_targets = Some(input);
             self
@@ -2742,7 +2796,8 @@ pub mod delete_stack_instances_input {
             self.regions = input;
             self
         }
-        /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+        /// <p>Preferences for how CloudFormation performs this stack set
+        /// operation.</p>
         pub fn operation_preferences(
             mut self,
             input: crate::model::StackSetOperationPreferences,
@@ -2771,10 +2826,8 @@ pub mod delete_stack_instances_input {
         }
         /// <p>The unique identifier for this stack set operation. </p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You can retry stack set operation requests to ensure that AWS
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2785,15 +2838,20 @@ pub mod delete_stack_instances_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -2854,28 +2912,28 @@ impl DeleteStackInstancesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2953,15 +3011,20 @@ pub mod delete_stack_set_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -3012,28 +3075,28 @@ impl DeleteStackSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3101,7 +3164,8 @@ pub mod deregister_type_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -3111,7 +3175,8 @@ pub mod deregister_type_input {
             self
         }
         /// <p>The kind of extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -3121,7 +3186,8 @@ pub mod deregister_type_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -3130,7 +3196,9 @@ pub mod deregister_type_input {
             self.type_name = input;
             self
         }
-        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
@@ -3181,28 +3249,28 @@ impl DeregisterTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3315,28 +3383,28 @@ impl DescribeAccountLimitsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3477,28 +3545,28 @@ impl DescribeChangeSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3563,7 +3631,9 @@ pub mod describe_publisher_input {
     }
     impl Builder {
         /// <p>The ID of the extension publisher.</p>
-        /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
+        /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+        /// publisher, <code>DescribePublisher</code> returns information about your own publisher
+        /// account.</p>
         pub fn publisher_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.publisher_id = Some(input.into());
             self
@@ -3612,28 +3682,28 @@ impl DescribePublisherInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3698,8 +3768,8 @@ pub mod describe_stack_drift_detection_status_input {
     }
     impl Builder {
         /// <p>The ID of the drift detection results of this operation. </p>
-        /// <p>AWS CloudFormation generates new results, with a new drift detection ID, each time this operation
-        /// is run. However, the number of drift results AWS CloudFormation retains for any given stack, and for how
+        /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
+        /// is run. However, the number of drift results CloudFormation retains for any given stack, and for how
         /// long, may vary. </p>
         pub fn stack_drift_detection_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_drift_detection_id = Some(input.into());
@@ -3756,28 +3826,28 @@ impl DescribeStackDriftDetectionStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3912,28 +3982,28 @@ impl DescribeStackEventsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4013,7 +4083,8 @@ pub mod describe_stack_instance_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>The ID of an AWS account that's associated with this stack instance.</p>
+        /// <p>The ID of an account that's associated with this stack
+        /// instance.</p>
         pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_instance_account = Some(input.into());
             self
@@ -4037,15 +4108,20 @@ pub mod describe_stack_instance_input {
             self.stack_instance_region = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -4099,28 +4175,28 @@ impl DescribeStackInstanceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4259,28 +4335,28 @@ impl DescribeStackResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4439,28 +4515,28 @@ impl DescribeStackResourceDriftsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4562,7 +4638,7 @@ pub mod describe_stack_resources_input {
             self
         }
         /// <p>The name or unique identifier that corresponds to a physical instance ID of a
-        /// resource supported by AWS CloudFormation.</p>
+        /// resource supported by CloudFormation.</p>
         /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
         /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
         /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
@@ -4623,28 +4699,28 @@ impl DescribeStackResourcesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4778,28 +4854,28 @@ impl DescribeStacksInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4876,15 +4952,20 @@ pub mod describe_stack_set_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -4936,28 +5017,28 @@ impl DescribeStackSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5044,15 +5125,20 @@ pub mod describe_stack_set_operation_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -5107,28 +5193,28 @@ impl DescribeStackSetOperationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5198,7 +5284,8 @@ pub mod describe_type_input {
     }
     impl Builder {
         /// <p>The kind of extension. </p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -5208,7 +5295,8 @@ pub mod describe_type_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -5218,7 +5306,8 @@ pub mod describe_type_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -5227,8 +5316,12 @@ pub mod describe_type_input {
             self.arn = input;
             self
         }
-        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-        /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.</p>
+        /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+        /// about that specific extension version. Otherwise, it returns information about the default
+        /// extension version.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
@@ -5302,28 +5395,28 @@ impl DescribeTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5388,7 +5481,8 @@ pub mod describe_type_registration_input {
     }
     impl Builder {
         /// <p>The identifier for this registration request.</p>
-        /// <p>This registration token is generated by CloudFormation when you initiate a registration request using <code>
+        /// <p>This registration token is generated by CloudFormation when you initiate a
+        /// registration request using <code>
         /// <a>RegisterType</a>
         /// </code>.</p>
         pub fn registration_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5443,28 +5537,28 @@ impl DescribeTypeRegistrationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5592,28 +5686,28 @@ impl DetectStackDriftInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5741,28 +5835,28 @@ impl DetectStackResourceDriftInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5842,7 +5936,7 @@ pub mod detect_stack_set_drift_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>The user-specified preferences for how AWS CloudFormation performs a stack set
+        /// <p>The user-specified preferences for how CloudFormation performs a stack set
         /// operation. </p>
         /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
         pub fn operation_preferences(
@@ -5870,15 +5964,20 @@ pub mod detect_stack_set_drift_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -5935,28 +6034,28 @@ impl DetectStackSetDriftInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6024,7 +6123,7 @@ pub mod estimate_template_cost_input {
     impl Builder {
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.)</p>
+        /// in the CloudFormation User Guide.)</p>
         /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6039,9 +6138,9 @@ pub mod estimate_template_cost_input {
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go
+        /// to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -6107,28 +6206,28 @@ impl EstimateTemplateCostInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6218,10 +6317,10 @@ pub mod execute_change_set_input {
             self
         }
         /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
-        /// token if you plan to retry requests so that AWS CloudFormation knows that you're not
+        /// token if you plan to retry requests so that CloudFormation knows that you're not
         /// attempting to execute a change set to update a stack with the same name. You might retry
-        /// <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation successfully
-        /// received them.</p>
+        /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation
+        /// successfully received them.</p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -6275,28 +6374,28 @@ impl ExecuteChangeSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6409,28 +6508,28 @@ impl GetStackPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6516,8 +6615,7 @@ pub mod get_template_input {
             self.stack_name = input;
             self
         }
-        /// <p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
-        /// returns the associated template. If you specify a name, you must also specify the
+        /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the
         /// <code>StackName</code>.</p>
         pub fn change_set_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.change_set_name = Some(input.into());
@@ -6530,12 +6628,11 @@ pub mod get_template_input {
             self.change_set_name = input;
             self
         }
-        /// <p>For templates that include transforms, the stage of the template that AWS
-        /// CloudFormation returns. To get the user-submitted template, specify <code>Original</code>.
-        /// To get the template after AWS CloudFormation has processed all transforms, specify
-        /// <code>Processed</code>. </p>
+        /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify
+        /// <code>Original</code>. To get the template after CloudFormation has processed
+        /// all transforms, specify <code>Processed</code>. </p>
         /// <p>If the template doesn't include transforms, <code>Original</code> and
-        /// <code>Processed</code> return the same template. By default, AWS CloudFormation
+        /// <code>Processed</code> return the same template. By default, CloudFormation
         /// specifies <code>Processed</code>.</p>
         pub fn template_stage(mut self, input: crate::model::TemplateStage) -> Self {
             self.template_stage = Some(input);
@@ -6588,28 +6685,28 @@ impl GetTemplateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6678,7 +6775,7 @@ pub mod get_template_summary_input {
     }
     impl Builder {
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
-        /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+        /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
@@ -6696,7 +6793,7 @@ pub mod get_template_summary_input {
         /// <p>Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
         /// <code>TemplateURL</code>.</p>
@@ -6737,15 +6834,20 @@ pub mod get_template_summary_input {
             self.stack_set_name = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -6800,28 +6902,28 @@ impl GetTemplateSummaryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6873,6 +6975,213 @@ impl GetTemplateSummaryInput {
     /// Creates a new builder-style object to manufacture [`GetTemplateSummaryInput`](crate::input::GetTemplateSummaryInput)
     pub fn builder() -> crate::input::get_template_summary_input::Builder {
         crate::input::get_template_summary_input::Builder::default()
+    }
+}
+
+/// See [`ImportStacksToStackSetInput`](crate::input::ImportStacksToStackSetInput)
+pub mod import_stacks_to_stack_set_input {
+    /// A builder for [`ImportStacksToStackSetInput`](crate::input::ImportStacksToStackSetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) stack_set_name: std::option::Option<std::string::String>,
+        pub(crate) stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) operation_preferences:
+            std::option::Option<crate::model::StackSetOperationPreferences>,
+        pub(crate) operation_id: std::option::Option<std::string::String>,
+        pub(crate) call_as: std::option::Option<crate::model::CallAs>,
+    }
+    impl Builder {
+        /// <p>The name of the stack set. The name must be unique in the Region where you create your
+        /// stack set.</p>
+        pub fn stack_set_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.stack_set_name = Some(input.into());
+            self
+        }
+        pub fn set_stack_set_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.stack_set_name = input;
+            self
+        }
+        pub fn stack_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.stack_ids.unwrap_or_default();
+            v.push(input.into());
+            self.stack_ids = Some(v);
+            self
+        }
+        pub fn set_stack_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.stack_ids = input;
+            self
+        }
+        /// <p>The user-specified preferences for how CloudFormation performs a stack set
+        /// operation. </p>
+        /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+        pub fn operation_preferences(
+            mut self,
+            input: crate::model::StackSetOperationPreferences,
+        ) -> Self {
+            self.operation_preferences = Some(input);
+            self
+        }
+        pub fn set_operation_preferences(
+            mut self,
+            input: std::option::Option<crate::model::StackSetOperationPreferences>,
+        ) -> Self {
+            self.operation_preferences = input;
+            self
+        }
+        /// <p>A unique, user defined, identifier for the stack set operation.</p>
+        pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.operation_id = Some(input.into());
+            self
+        }
+        pub fn set_operation_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.operation_id = input;
+            self
+        }
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
+        /// <ul>
+        /// <li>
+        /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
+            self.call_as = Some(input);
+            self
+        }
+        pub fn set_call_as(mut self, input: std::option::Option<crate::model::CallAs>) -> Self {
+            self.call_as = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ImportStacksToStackSetInput`](crate::input::ImportStacksToStackSetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ImportStacksToStackSetInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ImportStacksToStackSetInput {
+                stack_set_name: self.stack_set_name,
+                stack_ids: self.stack_ids,
+                operation_preferences: self.operation_preferences,
+                operation_id: self.operation_id,
+                call_as: self.call_as,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ImportStacksToStackSetInputOperationOutputAlias = crate::operation::ImportStacksToStackSet;
+#[doc(hidden)]
+pub type ImportStacksToStackSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ImportStacksToStackSetInput {
+    /// Consumes the builder and constructs an Operation<[`ImportStacksToStackSet`](crate::operation::ImportStacksToStackSet)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        mut self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ImportStacksToStackSet,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            if self.operation_id.is_none() {
+                self.operation_id = Some(_config.make_token.make_idempotency_token());
+            }
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_import_stacks_to_stack_set(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ImportStacksToStackSet::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ImportStacksToStackSet",
+                "cloudformation",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-www-form-urlencoded",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ImportStacksToStackSetInput`](crate::input::ImportStacksToStackSetInput)
+    pub fn builder() -> crate::input::import_stacks_to_stack_set_input::Builder {
+        crate::input::import_stacks_to_stack_set_input::Builder::default()
     }
 }
 
@@ -6946,28 +7255,28 @@ impl ListChangeSetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7079,28 +7388,28 @@ impl ListExportsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7165,7 +7474,7 @@ pub mod list_imports_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the exported output value. AWS CloudFormation returns the stack names
+        /// <p>The name of the exported output value. CloudFormation returns the stack names
         /// that are importing this value. </p>
         pub fn export_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.export_name = Some(input.into());
@@ -7225,28 +7534,28 @@ impl ListImportsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7367,7 +7676,8 @@ pub mod list_stack_instances_input {
             self.filters = input;
             self
         }
-        /// <p>The name of the AWS account that you want to list stack instances for.</p>
+        /// <p>The name of the account that you want to list stack instances
+        /// for.</p>
         pub fn stack_instance_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_instance_account = Some(input.into());
             self
@@ -7391,15 +7701,20 @@ pub mod list_stack_instances_input {
             self.stack_instance_region = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -7456,28 +7771,28 @@ impl ListStackInstancesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7613,28 +7928,28 @@ impl ListStackResourcesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7761,28 +8076,28 @@ impl ListStacksInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7898,15 +8213,20 @@ pub mod list_stack_set_operation_results_input {
             self.max_results = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -7963,28 +8283,28 @@ impl ListStackSetOperationResultsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8090,15 +8410,20 @@ pub mod list_stack_set_operations_input {
             self.max_results = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -8152,28 +8477,28 @@ impl ListStackSetOperationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8279,15 +8604,20 @@ pub mod list_stack_sets_input {
             self.status = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the management account or as a delegated administrator in a member
+        /// account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -8338,28 +8668,28 @@ impl ListStackSetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8430,7 +8760,8 @@ pub mod list_type_registrations_input {
     }
     impl Builder {
         /// <p>The kind of extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -8440,7 +8771,8 @@ pub mod list_type_registrations_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -8450,7 +8782,8 @@ pub mod list_type_registrations_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_arn = Some(input.into());
             self
@@ -8475,7 +8808,10 @@ pub mod list_type_registrations_input {
             self.registration_status_filter = input;
             self
         }
-        /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -8484,7 +8820,11 @@ pub mod list_type_registrations_input {
             self.max_results = input;
             self
         }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -8538,28 +8878,28 @@ impl ListTypeRegistrationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8629,12 +8969,14 @@ pub mod list_types_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
+        /// <p>The scope at which the extensions are visible and usable in CloudFormation
+        /// operations.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
+        /// <code>PRIVATE</code>: Extensions that are visible and usable within this account
+        /// and region. This includes:</p>
         /// <ul>
         /// <li>
         /// <p>Private extensions you have registered in this account and region.</p>
@@ -8646,7 +8988,9 @@ pub mod list_types_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon account. This includes extensions from Amazon, as well as third-party publishers.</p>
+        /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be
+        /// activated within any Amazon account. This includes extensions from Amazon, as well as
+        /// third-party publishers.</p>
         /// </li>
         /// </ul>
         /// <p>The default is <code>PRIVATE</code>.</p>
@@ -8661,20 +9005,26 @@ pub mod list_types_input {
             self.visibility = input;
             self
         }
-        /// <p>For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
+        /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the
+        /// provisioning type during registration, based on the types of handlers in the schema handler
+        /// package submitted.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p>
+        /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to
+        /// process updates to the type during stack update operations.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and must instead be replaced during stack update operations.</p>
+        /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+        /// the type cannot be updated and must instead be replaced during stack update
+        /// operations.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and therefore cannot actually be provisioned.</p>
+        /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
+        /// and delete handlers, and therefore cannot actually be provisioned.</p>
         /// </li>
         /// </ul>
         /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
@@ -8689,16 +9039,19 @@ pub mod list_types_input {
             self.provisioning_type = input;
             self
         }
-        /// <p>The deprecation status of the extension that you want to get summary information about.</p>
+        /// <p>The deprecation status of the extension that you want to get summary information
+        /// about.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p>
+        /// <code>LIVE</code>: The extension is registered for use in CloudFormation
+        /// operations.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations. </p>
+        /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
+        /// used in CloudFormation operations. </p>
         /// </li>
         /// </ul>
         pub fn deprecated_status(mut self, input: crate::model::DeprecatedStatus) -> Self {
@@ -8722,7 +9075,8 @@ pub mod list_types_input {
             self
         }
         /// <p>Filter criteria to use in determining which extensions to return.</p>
-        /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the list of types.</p>
+        /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
+        /// value when returning the list of types.</p>
         pub fn filters(mut self, input: crate::model::TypeFilters) -> Self {
             self.filters = Some(input);
             self
@@ -8734,7 +9088,10 @@ pub mod list_types_input {
             self.filters = input;
             self
         }
-        /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -8743,7 +9100,11 @@ pub mod list_types_input {
             self.max_results = input;
             self
         }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -8796,28 +9157,28 @@ impl ListTypesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -8886,7 +9247,8 @@ pub mod list_type_versions_input {
     }
     impl Builder {
         /// <p>The kind of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -8896,7 +9258,8 @@ pub mod list_type_versions_input {
             self
         }
         /// <p>The name of the extension for which you want version summary information.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -8905,8 +9268,10 @@ pub mod list_type_versions_input {
             self.type_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+        /// information.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -8915,7 +9280,10 @@ pub mod list_type_versions_input {
             self.arn = input;
             self
         }
-        /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+        /// <p>The maximum number of results to be returned with a single call. If the number of
+        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+        /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+        /// set of results.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -8924,7 +9292,11 @@ pub mod list_type_versions_input {
             self.max_results = input;
             self
         }
-        /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+        /// <p>If the previous paginated request didn't return all of the remaining results, the
+        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+        /// next set of results, call this action again and assign that token to the request object's
+        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -8933,16 +9305,19 @@ pub mod list_type_versions_input {
             self.next_token = input;
             self
         }
-        /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
+        /// <p>The deprecation status of the extension versions that you want to get summary
+        /// information about.</p>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p>
+        /// <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility
+        /// scope.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations. </p>
+        /// <code>DEPRECATED</code>: The extension version has been deregistered and can no
+        /// longer be used in CloudFormation operations. </p>
         /// </li>
         /// </ul>
         /// <p>The default is <code>LIVE</code>.</p>
@@ -9013,28 +9388,28 @@ impl ListTypeVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9102,7 +9477,8 @@ pub mod publish_type_input {
     }
     impl Builder {
         /// <p>The type of the extension.</p>
-        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
             self.r#type = Some(input);
             self
@@ -9115,7 +9491,8 @@ pub mod publish_type_input {
             self
         }
         /// <p>The Amazon Resource Number (ARN) of the extension.</p>
-        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -9125,7 +9502,8 @@ pub mod publish_type_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -9135,12 +9513,17 @@ pub mod publish_type_input {
             self
         }
         /// <p>The version number to assign to this version of the extension.</p>
-        /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension: </p>
+        /// <p>Use the following format, and adhere to semantic versioning when assigning a version
+        /// number to your extension: </p>
         /// <p>
         /// <code>MAJOR.MINOR.PATCH</code>
         /// </p>
-        /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
-        /// <p>If you do not specify a version number, CloudFormation increments the version number by one minor version release.</p>
+        /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning
+        /// 2.0.0</a>.</p>
+        /// <p>If you do not specify a version number, CloudFormation increments the version number by
+        /// one minor version release.</p>
+        /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
+        /// regardless of the value you specify.</p>
         pub fn public_version_number(mut self, input: impl Into<std::string::String>) -> Self {
             self.public_version_number = Some(input.into());
             self
@@ -9193,28 +9576,28 @@ impl PublishTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9411,28 +9794,28 @@ impl RecordHandlerProgressInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9497,7 +9880,9 @@ pub mod register_publisher_input {
         pub(crate) connection_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Whether you accept the terms and conditions for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to  register to publish public extensions to the CloudFormation registry.</p>
+        /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry.
+        /// You must accept the terms and conditions in order to register to publish public extensions
+        /// to the CloudFormation registry.</p>
         /// <p>The default is <code>false</code>.</p>
         pub fn accept_terms_and_conditions(mut self, input: bool) -> Self {
             self.accept_terms_and_conditions = Some(input);
@@ -9507,8 +9892,10 @@ pub mod register_publisher_input {
             self.accept_terms_and_conditions = input;
             self
         }
-        /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+        /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon
+        /// Resource Name (ARN) for your connection to that account.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation
+        /// extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
         pub fn connection_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.connection_arn = Some(input.into());
             self
@@ -9561,28 +9948,28 @@ impl RegisterPublisherInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9664,14 +10051,17 @@ pub mod register_type_input {
         /// <p>We recommend that extension names adhere to the following patterns: </p>
         /// <ul>
         /// <li>
-        /// <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
+        /// <p>For resource types,
+        /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
         /// </li>
         /// <li>
-        /// <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
+        /// <p>For modules,
+        /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>The following organization namespaces are reserved and cannot be used in your extension names:</p>
+        /// <p>The following organization namespaces are reserved and cannot be used in your
+        /// extension names:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -9713,14 +10103,17 @@ pub mod register_type_input {
             self.type_name = input;
             self
         }
-        /// <p>A url to the S3 bucket containing the extension project package that contains the neccessary files for the extension you want to register.</p>
-        /// <p>For information on generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+        /// <p>A url to the S3 bucket containing the extension project package that contains the
+        /// neccessary files for the extension you want to register.</p>
+        /// <p>For information on generating a schema handler package for the extension you want to
+        /// register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+        /// in the <i>CloudFormation CLI User Guide</i>.</p>
         /// <note>
-        /// <p>The
-        /// user registering the extension must be able to access the package in the S3 bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions
-        /// for the schema handler package. For
-        /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the
-        /// <i>AWS Identity and Access Management User Guide</i>.</p>
+        /// <p>The user registering the extension must be able to access the package in the S3
+        /// bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the
+        /// schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+        /// for Amazon S3</a> in the <i>Identity and Access Management User
+        /// Guide</i>.</p>
         /// </note>
         pub fn schema_handler_package(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_handler_package = Some(input.into());
@@ -9745,14 +10138,22 @@ pub mod register_type_input {
             self.logging_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.</p>
-        /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-        /// <p>If your extension calls AWS APIs in any of its handlers, you must create an
-        /// <i>
-        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
-        /// role</a>
-        /// </i> that includes the necessary permissions to call those
-        /// AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+        /// when invoking the extension.</p>
+        /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust
+        /// relationship with the CloudFormation service principle
+        /// (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding
+        /// trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User
+        /// Guide</i>.</p>
+        /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create
+        /// an <i>
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+        /// execution role</a>
+        /// </i> that includes the necessary permissions to call
+        /// those Amazon Web Services APIs, and provision that execution role in your account. When
+        /// CloudFormation needs to invoke the resource type handler, CloudFormation assumes this
+        /// execution role to create a temporary session token, which it then passes to the resource
+        /// type handler, thereby supplying your resource type with the appropriate credentials.</p>
         pub fn execution_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_role_arn = Some(input.into());
             self
@@ -9764,7 +10165,10 @@ pub mod register_type_input {
             self.execution_role_arn = input;
             self
         }
-        /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registeration request, even if the request is submitted multiple times. </p>
+        /// <p>A unique identifier that acts as an idempotency key for this registration request.
+        /// Specifying a client request token prevents CloudFormation from generating more
+        /// than one version of an extension from the same registeration request, even if the request
+        /// is submitted multiple times. </p>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_request_token = Some(input.into());
             self
@@ -9819,28 +10223,28 @@ impl RegisterTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9916,9 +10320,9 @@ pub mod set_stack_policy_input {
             self
         }
         /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-        /// to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either
-        /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
-        /// both.</p>
+        /// to Stack Resources</a> in the CloudFormation User Guide. You can specify
+        /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+        /// not both.</p>
         pub fn stack_policy_body(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_body = Some(input.into());
             self
@@ -9931,9 +10335,9 @@ pub mod set_stack_policy_input {
             self
         }
         /// <p>Location of a file containing the stack policy. The URL must point to a policy
-        /// (maximum size: 16 KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. You can
+        /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// parameter, but not both.</p>
         pub fn stack_policy_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.stack_policy_url = Some(input.into());
             self
@@ -9986,28 +10390,28 @@ impl SetStackPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10076,8 +10480,10 @@ pub mod set_type_configuration_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
-        /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
+        /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
+        /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+        /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the
+        /// configuration for an extension, but not for a specific extension version.</p>
         pub fn type_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_arn = Some(input.into());
             self
@@ -10087,7 +10493,9 @@ pub mod set_type_configuration_input {
             self
         }
         /// <p>The configuration data for the extension, in this account and region. </p>
-        /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+        /// <p>The configuration data must be formatted as JSON, and validate against the schema
+        /// returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the
+        /// <i>CloudFormation CLI User Guide</i>.</p>
         pub fn configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration = Some(input.into());
             self
@@ -10100,7 +10508,8 @@ pub mod set_type_configuration_input {
             self
         }
         /// <p>An alias by which to refer to this extension configuration data.</p>
-        /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
+        /// <p>Conditional: Specifying a configuration alias is required when setting a configuration
+        /// for a resource type extension.</p>
         pub fn configuration_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.configuration_alias = Some(input.into());
             self
@@ -10113,7 +10522,8 @@ pub mod set_type_configuration_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+        /// <code>TypeName</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -10123,7 +10533,8 @@ pub mod set_type_configuration_input {
             self
         }
         /// <p>The type of extension.</p>
-        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+        /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+        /// <code>TypeName</code>.</p>
         pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
             self.r#type = Some(input);
             self
@@ -10179,28 +10590,28 @@ impl SetTypeConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10267,8 +10678,10 @@ pub mod set_type_default_version_input {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+        /// information.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -10278,7 +10691,8 @@ pub mod set_type_default_version_input {
             self
         }
         /// <p>The kind of extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn r#type(mut self, input: crate::model::RegistryType) -> Self {
             self.r#type = Some(input);
             self
@@ -10288,7 +10702,8 @@ pub mod set_type_default_version_input {
             self
         }
         /// <p>The name of the extension.</p>
-        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+        /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+        /// <code>Arn</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -10297,7 +10712,9 @@ pub mod set_type_default_version_input {
             self.type_name = input;
             self
         }
-        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+        /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+        /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+        /// registered.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
@@ -10349,28 +10766,28 @@ impl SetTypeDefaultVersionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10473,7 +10890,7 @@ pub mod signal_resource_input {
             self
         }
         /// <p>The status of the signal, which is either success or failure. A failure signal causes
-        /// AWS CloudFormation to immediately fail the stack creation or update.</p>
+        /// CloudFormation to immediately fail the stack creation or update.</p>
         pub fn status(mut self, input: crate::model::ResourceSignalStatus) -> Self {
             self.status = Some(input);
             self
@@ -10527,28 +10944,28 @@ impl SignalResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10636,15 +11053,20 @@ pub mod stop_stack_set_operation_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -10697,28 +11119,28 @@ impl StopStackSetOperationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10787,7 +11209,8 @@ pub mod test_type_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the extension.</p>
-        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -10797,7 +11220,8 @@ pub mod test_type_input {
             self
         }
         /// <p>The type of the extension to test.</p>
-        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn r#type(mut self, input: crate::model::ThirdPartyType) -> Self {
             self.r#type = Some(input);
             self
@@ -10810,7 +11234,8 @@ pub mod test_type_input {
             self
         }
         /// <p>The name of the extension to test.</p>
-        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+        /// <code>Type</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -10820,8 +11245,10 @@ pub mod test_type_input {
             self
         }
         /// <p>The version of the extension to test.</p>
-        /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-        /// <p>If you do not specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+        /// <p>You can specify the version id with either <code>Arn</code>, or with
+        /// <code>TypeName</code> and <code>Type</code>.</p>
+        /// <p>If you do not specify a version, CloudFormation uses the default version of the
+        /// extension in this account and region for testing.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
@@ -10831,8 +11258,11 @@ pub mod test_type_input {
             self
         }
         /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
-        /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
-        /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
+        /// <p>CloudFormation delivers the logs by the time contract testing has completed and the
+        /// extension has been assigned a test type status of <code>PASSED</code> or
+        /// <code>FAILED</code>.</p>
+        /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3
+        /// bucket. Specifically, the user needs the following permissions:</p>
         /// <ul>
         /// <li>
         /// <p>GetObject</p>
@@ -10841,7 +11271,9 @@ pub mod test_type_input {
         /// <p>PutObject</p>
         /// </li>
         /// </ul>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and
+        /// Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and
+        /// Access Management User Guide</i>.</p>
         pub fn log_delivery_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.log_delivery_bucket = Some(input.into());
             self
@@ -10895,28 +11327,28 @@ impl TestTypeInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -11004,7 +11436,7 @@ pub mod update_stack_input {
         }
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.)</p>
+        /// in the CloudFormation User Guide.)</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
@@ -11020,9 +11452,9 @@ pub mod update_stack_input {
             self
         }
         /// <p>Location of file containing the template body. The URL must point to a template that
-        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go
+        /// to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
         /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
@@ -11068,10 +11500,9 @@ pub mod update_stack_input {
             self
         }
         /// <p>Location of a file containing the temporary overriding stack policy. The URL must
-        /// point to a policy (max size: 16KB) located in an S3 bucket in
-        /// the same Region as the stack. You can specify either the
-        /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
-        /// parameter, but not both.</p>
+        /// point to a policy (max size: 16KB) located in an S3 bucket in the same Region as the stack.
+        /// You can specify either the <code>StackPolicyDuringUpdateBody</code> or the
+        /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
         /// <p>If you want to update protected resources, specify a temporary overriding stack
         /// policy during this update. If you do not specify a stack policy, the current policy that is
         /// associated with the stack will be used.</p>
@@ -11128,15 +11559,14 @@ pub mod update_stack_input {
             self.resource_types = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-        /// that AWS CloudFormation assumes to update the stack. AWS CloudFormation uses the role's
-        /// credentials to make calls on your behalf. AWS CloudFormation always uses this role for all
-        /// future operations on the stack. As long as users have permission to operate on the stack,
-        /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-        /// Ensure that the role grants least privilege.</p>
-        /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-        /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-        /// session that is generated from your user credentials.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's
+        /// credentials to make calls on your behalf. CloudFormation always uses this role for
+        /// all future operations on the stack. As long as users have permission to operate on the
+        /// stack, CloudFormation uses this role even if the users don't have permission to
+        /// pass it. Ensure that the role grants least privilege.</p>
+        /// <p>If you don't specify a value, CloudFormation uses the role that was
+        /// previously associated with the stack. If no role is available, CloudFormation uses
+        /// a temporary session that is generated from your user credentials.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -11145,7 +11575,7 @@ pub mod update_stack_input {
             self.role_arn = input;
             self
         }
-        /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
+        /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
         /// updating operations, and for the specified monitoring period afterwards.</p>
         pub fn rollback_configuration(
             mut self,
@@ -11179,9 +11609,9 @@ pub mod update_stack_input {
             self
         }
         /// <p>Location of a file containing the updated stack policy. The URL must point to a
-        /// policy (max size: 16KB) located in an S3 bucket in the same
-        /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-        /// <code>StackPolicyURL</code> parameter, but not both.</p>
+        /// policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. You can
+        /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// parameter, but not both.</p>
         /// <p>You might update the stack policy, for example, in order to protect a new resource
         /// that you created during a stack update. If you do not specify a stack policy, the current
         /// policy that is associated with the stack is unchanged.</p>
@@ -11223,9 +11653,9 @@ pub mod update_stack_input {
             self
         }
         /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
-        /// you plan to retry requests so that AWS CloudFormation knows that you're not attempting to
-        /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
-        /// ensure that AWS CloudFormation successfully received them.</p>
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to update a stack with the same name. You might retry <code>UpdateStack</code> requests to
+        /// ensure that CloudFormation successfully received them.</p>
         /// <p>All events triggered by a given stack operation are assigned the same client request
         /// token, which you can use to track operations. For example, if you execute a
         /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
@@ -11301,28 +11731,28 @@ impl UpdateStackInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11419,8 +11849,13 @@ pub mod update_stack_instances_input {
             self.accounts = input;
             self
         }
-        /// <p>[Service-managed permissions] The AWS Organizations accounts for which you want to update parameter values for stack instances. If your update targets OUs, the overridden parameter values only apply to the accounts that are currently in the target OUs and their child OUs. Accounts added to the target OUs and their child OUs in the future won't use the overridden values.</p>
-        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+        /// <p>[Service-managed permissions] The Organizations accounts for which you want to
+        /// update parameter values for stack instances. If your update targets OUs, the overridden
+        /// parameter values only apply to the accounts that are currently in the target OUs and their
+        /// child OUs. Accounts added to the target OUs and their child OUs in the future won't use the
+        /// overridden values.</p>
+        /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+        /// both.</p>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
             self.deployment_targets = Some(input);
             self
@@ -11458,7 +11893,8 @@ pub mod update_stack_instances_input {
             self.parameter_overrides = input;
             self
         }
-        /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+        /// <p>Preferences for how CloudFormation performs this stack set
+        /// operation.</p>
         pub fn operation_preferences(
             mut self,
             input: crate::model::StackSetOperationPreferences,
@@ -11474,10 +11910,8 @@ pub mod update_stack_instances_input {
             self
         }
         /// <p>The unique identifier for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that AWS
-        /// CloudFormation successfully received them.</p>
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
         /// <p>If you don't specify an operation ID, the SDK generates one automatically.
         /// </p>
         pub fn operation_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11488,15 +11922,20 @@ pub mod update_stack_instances_input {
             self.operation_id = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -11557,28 +11996,28 @@ impl UpdateStackInstancesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11683,7 +12122,7 @@ pub mod update_stack_set_input {
         }
         /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
         /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true.</p>
@@ -11701,7 +12140,7 @@ pub mod update_stack_set_input {
         /// <p>The location of the file that contains the template body. The URL must point to a
         /// template (maximum size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems
         /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must specify only one of the following parameters:
         /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
         /// <code>UsePreviousTemplate</code> to true. </p>
@@ -11765,7 +12204,8 @@ pub mod update_stack_set_input {
             self.tags = input;
             self
         }
-        /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+        /// <p>Preferences for how CloudFormation performs this stack set
+        /// operation.</p>
         pub fn operation_preferences(
             mut self,
             input: crate::model::StackSetOperationPreferences,
@@ -11785,7 +12225,7 @@ pub mod update_stack_set_input {
         /// which users or groups can manage specific stack sets within the same administrator account.
         /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
         /// Permissions for Stack Set Operations</a> in the
-        /// <i>AWS CloudFormation User Guide</i>.</p>
+        /// <i>CloudFormation User Guide</i>.</p>
         /// <p>If you specified a customized administrator role when you created the stack set, you
         /// must specify a customized administrator role, even if it is the same customized
         /// administrator role used with this stack set previously.</p>
@@ -11801,13 +12241,12 @@ pub mod update_stack_set_input {
             self
         }
         /// <p>The name of the IAM execution role to use to update the stack set. If you do not specify
-        /// an execution role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+        /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
         /// for the stack set operation.</p>
         /// <p>Specify an IAM role only if you are using customized execution roles to control which
-        /// stack resources users and groups can include in their stack sets.
-        /// </p>
-        /// <p> If you specify a customized execution role, AWS CloudFormation uses that role to update the stack.
-        /// If you do not specify a customized execution role, AWS CloudFormation performs the update using the role
+        /// stack resources users and groups can include in their stack sets. </p>
+        /// <p> If you specify a customized execution role, CloudFormation uses that role to update the stack.
+        /// If you do not specify a customized execution role, CloudFormation performs the update using the role
         /// previously associated with the stack set, so long as you have permissions to perform
         /// operations on the stack set.</p>
         pub fn execution_role_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -11821,9 +12260,18 @@ pub mod update_stack_set_input {
             self.execution_role_name = input;
             self
         }
-        /// <p>[Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.</p>
-        /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-        /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+        /// <p>[Service-managed permissions] The Organizations accounts in which to update
+        /// associated stack instances.</p>
+        /// <p>To update all the stack instances associated with this stack set, do not specify
+        /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+        /// <p>If the stack set update includes changes to the template (that is, if
+        /// <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the
+        /// <code>Parameters</code>, CloudFormation marks all stack instances with a status
+        /// of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+        /// and Regions. If the stack set update does not include changes to the template or
+        /// parameters, CloudFormation updates the stack instances in the specified accounts
+        /// and Regions, while leaving all other stack instances with their existing stack instance
+        /// status.</p>
         pub fn deployment_targets(mut self, input: crate::model::DeploymentTargets) -> Self {
             self.deployment_targets = Some(input);
             self
@@ -11835,13 +12283,20 @@ pub mod update_stack_set_input {
             self.deployment_targets = input;
             self
         }
-        /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+        /// <p>Describes how the IAM roles required for stack set operations are created. You cannot
+        /// modify <code>PermissionModel</code> if there are stack instances associated with your stack
+        /// set.</p>
         /// <ul>
         /// <li>
-        /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p>
+        /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+        /// execution roles required to deploy to target accounts. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// Self-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// <li>
-        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+        /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+        /// IAM roles required to deploy to accounts managed by Organizations. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
         /// </li>
         /// </ul>
         pub fn permission_model(mut self, input: crate::model::PermissionModels) -> Self {
@@ -11855,8 +12310,11 @@ pub mod update_stack_set_input {
             self.permission_model = input;
             self
         }
-        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).</p>
-        /// <p>If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+        /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
+        /// Organizations accounts that are added to a target organization or organizational
+        /// unit (OU).</p>
+        /// <p>If you specify <code>AutoDeployment</code>, do not specify
+        /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
         pub fn auto_deployment(mut self, input: crate::model::AutoDeployment) -> Self {
             self.auto_deployment = Some(input);
             self
@@ -11869,11 +12327,9 @@ pub mod update_stack_set_input {
             self
         }
         /// <p>The unique ID for this stack set operation. </p>
-        /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-        /// CloudFormation performs the stack set operation only once, even if you retry the request
-        /// multiple times. You might retry stack set operation requests to ensure that AWS
-        /// CloudFormation successfully received them.</p>
-        /// <p>If you don't specify an operation ID, AWS CloudFormation generates one
+        /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+        /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+        /// <p>If you don't specify an operation ID, CloudFormation generates one
         /// automatically.</p>
         /// <p>Repeating this stack set operation with a new operation ID retries all stack
         /// instances whose status is <code>OUTDATED</code>. </p>
@@ -11911,15 +12367,20 @@ pub mod update_stack_set_input {
             self.regions = input;
             self
         }
-        /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+        /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+        /// administrator in the organization's management account or as a delegated administrator in a
+        /// member account.</p>
+        /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+        /// self-managed permissions.</p>
         /// <ul>
         /// <li>
         /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
         /// </li>
         /// <li>
-        /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-        /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+        /// <p>If you are signed in to a delegated administrator account, specify
+        /// <code>DELEGATED_ADMIN</code>.</p>
+        /// <p>Your account must be registered as a delegated administrator in
+        /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
         /// </li>
         /// </ul>
         pub fn call_as(mut self, input: crate::model::CallAs) -> Self {
@@ -11989,28 +12450,28 @@ impl UpdateStackSetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12140,28 +12601,28 @@ impl UpdateTerminationProtectionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12228,7 +12689,7 @@ pub mod validate_template_input {
     impl Builder {
         /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
         /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn template_body(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12245,7 +12706,7 @@ pub mod validate_template_input {
         /// <p>Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-        /// in the AWS CloudFormation User Guide.</p>
+        /// in the CloudFormation User Guide.</p>
         /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
         /// both are passed, only <code>TemplateBody</code> is used.</p>
         pub fn template_url(mut self, input: impl Into<std::string::String>) -> Self {
@@ -12296,28 +12757,28 @@ impl ValidateTemplateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12378,14 +12839,14 @@ impl ValidateTemplateInput {
 pub struct ValidateTemplateInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
     /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
     /// both are passed, only <code>TemplateBody</code> is used.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Location of file containing the template body. The URL must point to a template (max
     /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
     /// For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
     /// both are passed, only <code>TemplateBody</code> is used.</p>
     pub template_url: std::option::Option<std::string::String>,
@@ -12429,7 +12890,7 @@ pub struct UpdateStackSetInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
     /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
     /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
     /// <code>UsePreviousTemplate</code> to true.</p>
@@ -12437,7 +12898,7 @@ pub struct UpdateStackSetInput {
     /// <p>The location of the file that contains the template body. The URL must point to a
     /// template (maximum size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems
     /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
     /// <code>TemplateBody</code> or <code>TemplateURL</code>—or set
     /// <code>UsePreviousTemplate</code> to true. </p>
@@ -12451,7 +12912,7 @@ pub struct UpdateStackSetInput {
     /// <p>A list of input parameters for the stack set template. </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
-    /// capabilities in order for AWS CloudFormation to update the stack set and its associated stack
+    /// capabilities in order for CloudFormation to update the stack set and its associated stack
     /// instances.</p>
     /// <ul>
     /// <li>
@@ -12459,7 +12920,7 @@ pub struct UpdateStackSetInput {
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
     /// <p>Some stack templates might include resources that can affect permissions in
-    /// your AWS account; for example, by creating new AWS Identity and Access Management
+    /// your account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks sets, you must explicitly acknowledge this by
     /// specifying one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -12474,7 +12935,7 @@ pub struct UpdateStackSetInput {
     /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify either of these capabilities, AWS CloudFormation returns an
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
@@ -12524,36 +12985,35 @@ pub struct UpdateStackSetInput {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
-    /// Resources in AWS CloudFormation Templates</a>.</p>
+    /// Resources in CloudFormation Templates</a>.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CAPABILITY_AUTO_EXPAND</code>
     /// </p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros,
-    /// you must update the stack set directly from the processed template, without first
-    /// reviewing the resulting changes in a change set. To update the stack set directly, you must acknowledge this
-    /// capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS CloudFormation Macros to Perform Custom Processing on
-    /// Templates</a>.</p>
+    /// <p>Some templates reference macros. If your stack set template references one or more
+    /// macros, you must update the stack set directly from the processed template, without
+    /// first reviewing the resulting changes in a change set. To update the stack set
+    /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+    /// Perform Custom Processing on Templates</a>.</p>
     /// <important>
-    /// <p>Stack sets with service-managed permissions
-    /// do not currently support the use of macros in templates. (This includes
-    /// the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-    /// transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-    /// capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will
-    /// fail.</p>
+    /// <p>Stack sets with service-managed permissions do not currently support the use of
+    /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+    /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+    /// for a stack set with service-managed permissions, if you reference a macro in your
+    /// template the stack set operation will fail.</p>
     /// </important>
     /// </li>
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-    /// AWS CloudFormation also propagates these tags to supported resources that are created in
-    /// the stacks. You can specify a maximum number of 50 tags.</p>
+    /// CloudFormation also propagates these tags to supported resources that are
+    /// created in the stacks. You can specify a maximum number of 50 tags.</p>
     /// <p>If you specify tags for this parameter, those tags replace any list of tags that are
     /// currently associated with this stack set. This means:</p>
     /// <ul>
     /// <li>
-    /// <p>If you don't specify this parameter, AWS CloudFormation doesn't modify the
+    /// <p>If you don't specify this parameter, CloudFormation doesn't modify the
     /// stack's tags. </p>
     /// </li>
     /// <li>
@@ -12565,78 +13025,95 @@ pub struct UpdateStackSetInput {
     /// and resources as well. </p>
     /// </li>
     /// <li>
-    /// <p>If you specify an empty value, AWS CloudFormation removes all currently
+    /// <p>If you specify an empty value, CloudFormation removes all currently
     /// associated tags.</p>
     /// </li>
     /// </ul>
-    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, AWS
-    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-    /// you omit tags that are currently associated with the stack set from the list of tags you
-    /// specify, AWS CloudFormation assumes that you want to remove those tags from the stack set,
-    /// and checks to see if you have permission to untag resources. If you don't have the
+    /// <p>If you specify new tags as part of an <code>UpdateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+    /// If you omit tags that are currently associated with the stack set from the list of tags you
+    /// specify, CloudFormation assumes that you want to remove those tags from the stack
+    /// set, and checks to see if you have permission to untag resources. If you don't have the
     /// necessary permission(s), the entire <code>UpdateStackSet</code> action fails with an
     /// <code>access denied</code> error, and the stack set is not updated.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this stack set
+    /// operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
     /// <p>The Amazon Resource Number (ARN) of the IAM role to use to update this stack set.</p>
     /// <p>Specify an IAM role only if you are using customized administrator roles to control
     /// which users or groups can manage specific stack sets within the same administrator account.
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Granting
     /// Permissions for Stack Set Operations</a> in the
-    /// <i>AWS CloudFormation User Guide</i>.</p>
+    /// <i>CloudFormation User Guide</i>.</p>
     /// <p>If you specified a customized administrator role when you created the stack set, you
     /// must specify a customized administrator role, even if it is the same customized
     /// administrator role used with this stack set previously.</p>
     pub administration_role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the IAM execution role to use to update the stack set. If you do not specify
-    /// an execution role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+    /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
     /// for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which
-    /// stack resources users and groups can include in their stack sets.
-    /// </p>
-    /// <p> If you specify a customized execution role, AWS CloudFormation uses that role to update the stack.
-    /// If you do not specify a customized execution role, AWS CloudFormation performs the update using the role
+    /// stack resources users and groups can include in their stack sets. </p>
+    /// <p> If you specify a customized execution role, CloudFormation uses that role to update the stack.
+    /// If you do not specify a customized execution role, CloudFormation performs the update using the role
     /// previously associated with the stack set, so long as you have permissions to perform
     /// operations on the stack set.</p>
     pub execution_role_name: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] The AWS Organizations accounts in which to update associated stack instances.</p>
-    /// <p>To update all the stack instances associated with this stack set, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
-    /// <p>If the stack set update includes changes to the template (that is, if <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the <code>Parameters</code>, AWS CloudFormation marks all stack instances with a status of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts and Regions. If the stack set update does not include changes to the template or parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while leaving all other stack instances with their existing stack instance status.</p>
+    /// <p>[Service-managed permissions] The Organizations accounts in which to update
+    /// associated stack instances.</p>
+    /// <p>To update all the stack instances associated with this stack set, do not specify
+    /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    /// <p>If the stack set update includes changes to the template (that is, if
+    /// <code>TemplateBody</code> or <code>TemplateURL</code> is specified), or the
+    /// <code>Parameters</code>, CloudFormation marks all stack instances with a status
+    /// of <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
+    /// and Regions. If the stack set update does not include changes to the template or
+    /// parameters, CloudFormation updates the stack instances in the specified accounts
+    /// and Regions, while leaving all other stack instances with their existing stack instance
+    /// status.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
-    /// <p>Describes how the IAM roles required for stack set operations are created. You cannot modify <code>PermissionModel</code> if there are stack instances associated with your stack set.</p>
+    /// <p>Describes how the IAM roles required for stack set operations are created. You cannot
+    /// modify <code>PermissionModel</code> if there are stack instances associated with your stack
+    /// set.</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p>
+    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+    /// execution roles required to deploy to target accounts. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+    /// Self-Managed Stack Set Permissions</a>.</p>
     /// </li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+    /// IAM roles required to deploy to accounts managed by Organizations. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
     /// </li>
     /// </ul>
     pub permission_model: std::option::Option<crate::model::PermissionModels>,
-    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to a target organization or organizational unit (OU).</p>
-    /// <p>If you specify <code>AutoDeployment</code>, do not specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
+    /// <p>[Service-managed permissions] Describes whether StackSets automatically deploys to
+    /// Organizations accounts that are added to a target organization or organizational
+    /// unit (OU).</p>
+    /// <p>If you specify <code>AutoDeployment</code>, do not specify
+    /// <code>DeploymentTargets</code> or <code>Regions</code>.</p>
     pub auto_deployment: std::option::Option<crate::model::AutoDeployment>,
     /// <p>The unique ID for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that AWS
-    /// CloudFormation successfully received them.</p>
-    /// <p>If you don't specify an operation ID, AWS CloudFormation generates one
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
+    /// <p>If you don't specify an operation ID, CloudFormation generates one
     /// automatically.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack
     /// instances whose status is <code>OUTDATED</code>. </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The accounts in which to update associated stack instances. If you specify accounts, you
-    /// must also specify the Regions in which to update stack set instances.</p>
+    /// <p>[Self-managed permissions] The accounts in which to update associated stack instances.
+    /// If you specify accounts, you must also specify the Regions in which to update stack set
+    /// instances.</p>
     /// <p>To update <i>all</i> the stack instances associated with this stack set,
     /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
     /// <p>If the stack set update includes changes to the template (that is, if the
     /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
-    /// <code>Parameters</code> property, AWS CloudFormation marks all stack instances with a status of
+    /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
     /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
     /// and Regions. If the stack set update does not include changes to the template or
-    /// parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while
+    /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
     /// leaving all other stack instances with their existing stack instance status. </p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The Regions in which to update associated stack instances. If you specify Regions, you
@@ -12645,21 +13122,26 @@ pub struct UpdateStackSetInput {
     /// do not specify the <code>Accounts</code> or <code>Regions</code> properties.</p>
     /// <p>If the stack set update includes changes to the template (that is, if the
     /// <code>TemplateBody</code> or <code>TemplateURL</code> properties are specified), or the
-    /// <code>Parameters</code> property, AWS CloudFormation marks all stack instances with a status of
+    /// <code>Parameters</code> property, CloudFormation marks all stack instances with a status of
     /// <code>OUTDATED</code> prior to updating the stack instances in the specified accounts
     /// and Regions. If the stack set update does not include changes to the template or
-    /// parameters, AWS CloudFormation updates the stack instances in the specified accounts and Regions, while
+    /// parameters, CloudFormation updates the stack instances in the specified accounts and Regions, while
     /// leaving all other stack instances with their existing stack instance status. </p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -12694,13 +13176,20 @@ impl std::fmt::Debug for UpdateStackSetInput {
 pub struct UpdateStackInstancesInput {
     /// <p>The name or unique ID of the stack set associated with the stack instances.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The names of one or more AWS accounts for which you want to update parameter values
-    /// for stack instances. The overridden parameter values will be applied to all stack instances
-    /// in the specified accounts and Regions.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of one or more accounts for
+    /// which you want to update parameter values for stack instances. The overridden parameter
+    /// values will be applied to all stack instances in the specified accounts and
+    /// Regions.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>[Service-managed permissions] The AWS Organizations accounts for which you want to update parameter values for stack instances. If your update targets OUs, the overridden parameter values only apply to the accounts that are currently in the target OUs and their child OUs. Accounts added to the target OUs and their child OUs in the future won't use the overridden values.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Service-managed permissions] The Organizations accounts for which you want to
+    /// update parameter values for stack instances. If your update targets OUs, the overridden
+    /// parameter values only apply to the accounts that are currently in the target OUs and their
+    /// child OUs. Accounts added to the target OUs and their child OUs in the future won't use the
+    /// overridden values.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
     /// <p>The names of one or more Regions in which you want to update parameter values for
     /// stack instances. The overridden parameter values will be applied to all stack instances in
@@ -12710,7 +13199,7 @@ pub struct UpdateStackInstancesInput {
     /// instances. </p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the
     /// specified accounts and Regions. When specifying parameters and their values, be aware of
-    /// how AWS CloudFormation sets parameter values during stack instance update
+    /// how CloudFormation sets parameter values during stack instance update
     /// operations:</p>
     /// <ul>
     /// <li>
@@ -12718,22 +13207,14 @@ pub struct UpdateStackInstancesInput {
     /// specify its value.</p>
     /// </li>
     /// <li>
-    /// <p>To leave a parameter set to its present value, you can do one of the
-    /// following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do not include the parameter in the list.</p>
+    /// <p>To leave an overridden parameter set to its present value, include the
+    /// parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot
+    /// specify both a value and set <code>UsePreviousValue</code> to
+    /// <code>true</code>.)</p>
     /// </li>
     /// <li>
-    /// <p>Include the parameter and specify <code>UsePreviousValue</code> as
-    /// <code>true</code>. (You cannot specify both a value and set
-    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>To set all overridden parameter back to the values specified in the stack set,
-    /// specify a parameter list but do not include any parameters.</p>
+    /// <p>To set an overridden parameter back to the value specified in the stack set,
+    /// specify a parameter list but do not include the parameter in the list.</p>
     /// </li>
     /// <li>
     /// <p>To leave all parameters set to their present values, do not specify this
@@ -12750,25 +13231,29 @@ pub struct UpdateStackInstancesInput {
     /// new parameter, you can then override the parameter value using
     /// <code>UpdateStackInstances</code>.</p>
     pub parameter_overrides: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this stack set
+    /// operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
     /// <p>The unique identifier for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that AWS
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.
     /// </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -12796,15 +13281,15 @@ pub struct UpdateStackInput {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
     /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.)</p>
+    /// in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must specify only one of the following parameters:
     /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
     /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Location of file containing the template body. The URL must point to a template that
-    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go
+    /// to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
     /// <code>TemplateBody</code>, <code>TemplateURL</code>, or set the
     /// <code>UsePreviousTemplate</code> to <code>true</code>.</p>
@@ -12823,10 +13308,9 @@ pub struct UpdateStackInput {
     /// associated with the stack will be used.</p>
     pub stack_policy_during_update_body: std::option::Option<std::string::String>,
     /// <p>Location of a file containing the temporary overriding stack policy. The URL must
-    /// point to a policy (max size: 16KB) located in an S3 bucket in
-    /// the same Region as the stack. You can specify either the
-    /// <code>StackPolicyDuringUpdateBody</code> or the <code>StackPolicyDuringUpdateURL</code>
-    /// parameter, but not both.</p>
+    /// point to a policy (max size: 16KB) located in an S3 bucket in the same Region as the stack.
+    /// You can specify either the <code>StackPolicyDuringUpdateBody</code> or the
+    /// <code>StackPolicyDuringUpdateURL</code> parameter, but not both.</p>
     /// <p>If you want to update protected resources, specify a temporary overriding stack
     /// policy during this update. If you do not specify a stack policy, the current policy that is
     /// associated with the stack will be used.</p>
@@ -12836,14 +13320,14 @@ pub struct UpdateStackInput {
     /// type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
-    /// capabilities in order for AWS CloudFormation to update the stack.</p>
+    /// capabilities in order for CloudFormation to update the stack.</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
     /// <p>Some stack templates might include resources that can affect permissions in
-    /// your AWS account; for example, by creating new AWS Identity and Access Management
+    /// your account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -12858,7 +13342,7 @@ pub struct UpdateStackInput {
     /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify either of these capabilities, AWS CloudFormation returns an
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
@@ -12908,7 +13392,7 @@ pub struct UpdateStackInput {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
-    /// Resources in AWS CloudFormation Templates</a>.</p>
+    /// Resources in CloudFormation Templates</a>.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -12921,19 +13405,19 @@ pub struct UpdateStackInput {
     /// the macros before actually updating the stack. If your stack template contains one or
     /// more macros, and you choose to update a stack directly from the processed template,
     /// without first reviewing the resulting changes in a change set, you must acknowledge
-    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.</p>
-    /// <p>If you want to update a stack
-    /// from a stack template that contains macros <i>and</i> nested stacks,
-    /// you must update the stack directly from the template using this capability.</p>
+    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+    /// <p>If you want to update a stack from a stack template that contains macros
+    /// <i>and</i> nested stacks, you must update the stack directly from
+    /// the template using this capability.</p>
     /// <important>
     /// <p>You should only update stacks directly from a stack template that contains
     /// macros if you know what processing the macro performs.</p>
     /// <p>Each macro relies on an underlying Lambda service function for processing stack
     /// templates. Be aware that the Lambda function owner can update the function
-    /// operation without AWS CloudFormation being notified.</p>
+    /// operation without CloudFormation being notified.</p>
     /// </important>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-    /// AWS CloudFormation Macros to Perform Custom Processing on
+    /// CloudFormation Macros to Perform Custom Processing on
     /// Templates</a>.</p>
     /// </li>
     /// </ul>
@@ -12942,21 +13426,21 @@ pub struct UpdateStackInput {
     /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource that you're updating, the
-    /// stack update fails. By default, AWS CloudFormation grants permissions to all resource
-    /// types. AWS Identity and Access Management (IAM) uses this parameter for AWS
-    /// CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with AWS Identity and Access Management</a>.</p>
+    /// stack update fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+    /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-    /// that AWS CloudFormation assumes to update the stack. AWS CloudFormation uses the role's
-    /// credentials to make calls on your behalf. AWS CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
-    /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-    /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-    /// session that is generated from your user credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to update the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was
+    /// previously associated with the stack. If no role is available, CloudFormation uses
+    /// a temporary session that is generated from your user credentials.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
     /// updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
     /// <p>Structure containing a new stack policy body. You can specify either the
@@ -12967,28 +13451,27 @@ pub struct UpdateStackInput {
     /// policy that is associated with the stack is unchanged.</p>
     pub stack_policy_body: std::option::Option<std::string::String>,
     /// <p>Location of a file containing the updated stack policy. The URL must point to a
-    /// policy (max size: 16KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// policy (max size: 16KB) located in an S3 bucket in the same Region as the stack. You can
+    /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+    /// parameter, but not both.</p>
     /// <p>You might update the stack policy, for example, in order to protect a new resource
     /// that you created during a stack update. If you do not specify a stack policy, the current
     /// policy that is associated with the stack is unchanged.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
-    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that AWS
-    /// CloudFormation associates with the stack. Specify an empty list to remove all notification
-    /// topics.</p>
+    /// <p>Amazon Simple Notification Service topic Amazon Resource Names (ARNs) that CloudFormation associates with the stack. Specify an empty list to remove all
+    /// notification topics.</p>
     pub notification_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Key-value pairs to associate with this stack. AWS CloudFormation also propagates
+    /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
     /// these tags to supported resources in the stack. You can specify a maximum number of 50
     /// tags.</p>
-    /// <p>If you don't specify this parameter, AWS CloudFormation doesn't modify the stack's
-    /// tags. If you specify an empty value, AWS CloudFormation removes all associated
+    /// <p>If you don't specify this parameter, CloudFormation doesn't modify the
+    /// stack's tags. If you specify an empty value, CloudFormation removes all associated
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A unique identifier for this <code>UpdateStack</code> request. Specify this token if
-    /// you plan to retry requests so that AWS CloudFormation knows that you're not attempting to
-    /// update a stack with the same name. You might retry <code>UpdateStack</code> requests to
-    /// ensure that AWS CloudFormation successfully received them.</p>
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// to update a stack with the same name. You might retry <code>UpdateStack</code> requests to
+    /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
     /// token, which you can use to track operations. For example, if you execute a
     /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
@@ -13035,21 +13518,29 @@ impl std::fmt::Debug for UpdateStackInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TestTypeInput {
     /// <p>The Amazon Resource Number (ARN) of the extension.</p>
-    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The type of the extension to test.</p>
-    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub r#type: std::option::Option<crate::model::ThirdPartyType>,
     /// <p>The name of the extension to test.</p>
-    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The version of the extension to test.</p>
-    /// <p>You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code> and <code>Type</code>.</p>
-    /// <p>If you do not specify a version, CloudFormation uses the default version of the extension in this account and region for testing.</p>
+    /// <p>You can specify the version id with either <code>Arn</code>, or with
+    /// <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>If you do not specify a version, CloudFormation uses the default version of the
+    /// extension in this account and region for testing.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The S3 bucket to which CloudFormation delivers the contract test execution logs.</p>
-    /// <p>CloudFormation delivers the logs by the time contract testing has completed and the extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.</p>
-    /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3 bucket. Specifically, the user needs the following permissions:</p>
+    /// <p>CloudFormation delivers the logs by the time contract testing has completed and the
+    /// extension has been assigned a test type status of <code>PASSED</code> or
+    /// <code>FAILED</code>.</p>
+    /// <p>The user calling <code>TestType</code> must be able to access items in the specified S3
+    /// bucket. Specifically, the user needs the following permissions:</p>
     /// <ul>
     /// <li>
     /// <p>GetObject</p>
@@ -13058,7 +13549,9 @@ pub struct TestTypeInput {
     /// <p>PutObject</p>
     /// </li>
     /// </ul>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazons3.html">Actions, Resources, and
+    /// Condition Keys for Amazon S3</a> in the <i>Amazon Web Services Identity and
+    /// Access Management User Guide</i>.</p>
     pub log_delivery_bucket: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TestTypeInput {
@@ -13081,15 +13574,20 @@ pub struct StopStackSetOperationInput {
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>The ID of the stack operation. </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -13120,7 +13618,7 @@ pub struct SignalResourceInput {
     /// requires a different unique ID.</p>
     pub unique_id: std::option::Option<std::string::String>,
     /// <p>The status of the signal, which is either success or failure. A failure signal causes
-    /// AWS CloudFormation to immediately fail the stack creation or update.</p>
+    /// CloudFormation to immediately fail the stack creation or update.</p>
     pub status: std::option::Option<crate::model::ResourceSignalStatus>,
 }
 impl std::fmt::Debug for SignalResourceInput {
@@ -13137,16 +13635,22 @@ impl std::fmt::Debug for SignalResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTypeDefaultVersionInput {
-    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+    /// information.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The kind of extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+    /// registered.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SetTypeDefaultVersionInput {
@@ -13164,20 +13668,27 @@ impl std::fmt::Debug for SetTypeDefaultVersionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SetTypeConfigurationInput {
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
-    /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the configuration for an extension, but not for a specific extension version.</p>
+    /// <p>For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate the type</a> in this account and region. For private extensions, this will
+    /// be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register the type</a> in this account and region. </p>
+    /// <p>Do not include the extension versions suffix at the end of the ARN. You can set the
+    /// configuration for an extension, but not for a specific extension version.</p>
     pub type_arn: std::option::Option<std::string::String>,
     /// <p>The configuration data for the extension, in this account and region. </p>
-    /// <p>The configuration data must be formatted as JSON, and validate against the schema returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+    /// <p>The configuration data must be formatted as JSON, and validate against the schema
+    /// returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>. For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining account-level configuration data for an extension</a> in the
+    /// <i>CloudFormation CLI User Guide</i>.</p>
     pub configuration: std::option::Option<std::string::String>,
     /// <p>An alias by which to refer to this extension configuration data.</p>
-    /// <p>Conditional: Specifying a configuration alias is required when setting a configuration for a resource type extension.</p>
+    /// <p>Conditional: Specifying a configuration alias is required when setting a configuration
+    /// for a resource type extension.</p>
     pub configuration_alias: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+    /// <code>TypeName</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The type of extension.</p>
-    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and <code>TypeName</code>.</p>
+    /// <p>Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code> and
+    /// <code>TypeName</code>.</p>
     pub r#type: std::option::Option<crate::model::ThirdPartyType>,
 }
 impl std::fmt::Debug for SetTypeConfigurationInput {
@@ -13199,14 +13710,14 @@ pub struct SetStackPolicyInput {
     /// <p>The name or unique stack ID that you want to associate a policy with.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-    /// to Stack Resources</a> in the AWS CloudFormation User Guide. You can specify either
-    /// the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but not
-    /// both.</p>
+    /// to Stack Resources</a> in the CloudFormation User Guide. You can specify
+    /// either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
+    /// not both.</p>
     pub stack_policy_body: std::option::Option<std::string::String>,
     /// <p>Location of a file containing the stack policy. The URL must point to a policy
-    /// (maximum size: 16 KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. You can
+    /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+    /// parameter, but not both.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SetStackPolicyInput {
@@ -13228,14 +13739,17 @@ pub struct RegisterTypeInput {
     /// <p>We recommend that extension names adhere to the following patterns: </p>
     /// <ul>
     /// <li>
-    /// <p>For resource types, <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
+    /// <p>For resource types,
+    /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>.</p>
     /// </li>
     /// <li>
-    /// <p>For modules, <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
+    /// <p>For modules,
+    /// <i>company_or_organization</i>::<i>service</i>::<i>type</i>::MODULE.</p>
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>The following organization namespaces are reserved and cannot be used in your extension names:</p>
+    /// <p>The following organization namespaces are reserved and cannot be used in your
+    /// extension names:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -13270,28 +13784,42 @@ pub struct RegisterTypeInput {
     /// </ul>
     /// </note>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>A url to the S3 bucket containing the extension project package that contains the neccessary files for the extension you want to register.</p>
-    /// <p>For information on generating a schema handler package for the extension you want to register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+    /// <p>A url to the S3 bucket containing the extension project package that contains the
+    /// neccessary files for the extension you want to register.</p>
+    /// <p>For information on generating a schema handler package for the extension you want to
+    /// register, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+    /// in the <i>CloudFormation CLI User Guide</i>.</p>
     /// <note>
-    /// <p>The
-    /// user registering the extension must be able to access the package in the S3 bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions
-    /// for the schema handler package. For
-    /// more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys for Amazon S3</a> in the
-    /// <i>AWS Identity and Access Management User Guide</i>.</p>
+    /// <p>The user registering the extension must be able to access the package in the S3
+    /// bucket. That is, the user needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions for the
+    /// schema handler package. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+    /// for Amazon S3</a> in the <i>Identity and Access Management User
+    /// Guide</i>.</p>
     /// </note>
     pub schema_handler_package: std::option::Option<std::string::String>,
     /// <p>Specifies logging configuration information for an extension.</p>
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.</p>
-    /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust relationship with the CloudFormation service principle (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>AWS Identity and Access Management User Guide</i>.</p>
-    /// <p>If your extension calls AWS APIs in any of its handlers, you must create an
-    /// <i>
-    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution
-    /// role</a>
-    /// </i> that includes the necessary permissions to call those
-    /// AWS APIs, and provision that execution role in your account. When CloudFormation needs to invoke the resource type handler, CloudFormation assumes this execution role to create a temporary session token, which it then passes to the resource type handler, thereby supplying your resource type with the appropriate credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume
+    /// when invoking the extension.</p>
+    /// <p>For CloudFormation to assume the specified execution role, the role must contain a trust
+    /// relationship with the CloudFormation service principle
+    /// (<code>resources.cloudformation.amazonaws.com</code>). For more information on adding
+    /// trust relationships, see <a href="IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying a role trust policy</a> in the <i>Identity and Access Management User
+    /// Guide</i>.</p>
+    /// <p>If your extension calls Amazon Web Services APIs in any of its handlers, you must create
+    /// an <i>
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
+    /// execution role</a>
+    /// </i> that includes the necessary permissions to call
+    /// those Amazon Web Services APIs, and provision that execution role in your account. When
+    /// CloudFormation needs to invoke the resource type handler, CloudFormation assumes this
+    /// execution role to create a temporary session token, which it then passes to the resource
+    /// type handler, thereby supplying your resource type with the appropriate credentials.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that acts as an idempotency key for this registration request. Specifying a client request token prevents CloudFormation from generating more than one version of an extension from the same registeration request, even if the request is submitted multiple times. </p>
+    /// <p>A unique identifier that acts as an idempotency key for this registration request.
+    /// Specifying a client request token prevents CloudFormation from generating more
+    /// than one version of an extension from the same registeration request, even if the request
+    /// is submitted multiple times. </p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegisterTypeInput {
@@ -13310,11 +13838,15 @@ impl std::fmt::Debug for RegisterTypeInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPublisherInput {
-    /// <p>Whether you accept the terms and conditions for publishing extensions in the CloudFormation registry. You must accept the terms and conditions in order to  register to publish public extensions to the CloudFormation registry.</p>
+    /// <p>Whether you accept the <a href="https://cloudformation-registry-documents.s3.amazonaws.com/Terms_and_Conditions_for_AWS_CloudFormation_Registry_Publishers.pdf">Terms and Conditions</a> for publishing extensions in the CloudFormation registry.
+    /// You must accept the terms and conditions in order to register to publish public extensions
+    /// to the CloudFormation registry.</p>
     /// <p>The default is <code>false</code>.</p>
     pub accept_terms_and_conditions: std::option::Option<bool>,
-    /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon Resource Name (ARN) for your connection to that account.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
+    /// <p>If you are using a Bitbucket or GitHub account for identity verification, the Amazon
+    /// Resource Name (ARN) for your connection to that account.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html#publish-extension-prereqs">Registering your account to publish CloudFormation
+    /// extensions</a> in the <i>CloudFormation CLI User Guide</i>.</p>
     pub connection_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegisterPublisherInput {
@@ -13365,21 +13897,29 @@ impl std::fmt::Debug for RecordHandlerProgressInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PublishTypeInput {
     /// <p>The type of the extension.</p>
-    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub r#type: std::option::Option<crate::model::ThirdPartyType>,
     /// <p>The Amazon Resource Number (ARN) of the extension.</p>
-    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The version number to assign to this version of the extension.</p>
-    /// <p>Use the following format, and adhere to semantic versioning when assigning a version number to your extension: </p>
+    /// <p>Use the following format, and adhere to semantic versioning when assigning a version
+    /// number to your extension: </p>
     /// <p>
     /// <code>MAJOR.MINOR.PATCH</code>
     /// </p>
-    /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning 2.0.0</a>.</p>
-    /// <p>If you do not specify a version number, CloudFormation increments the version number by one minor version release.</p>
+    /// <p>For more information, see <a href="https://semver.org/">Semantic Versioning
+    /// 2.0.0</a>.</p>
+    /// <p>If you do not specify a version number, CloudFormation increments the version number by
+    /// one minor version release.</p>
+    /// <p>The first time you publish a type, CloudFormation sets the version number to <code>1.0.0</code>,
+    /// regardless of the value you specify.</p>
     pub public_version_number: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PublishTypeInput {
@@ -13397,28 +13937,42 @@ impl std::fmt::Debug for PublishTypeInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypeVersionsInput {
     /// <p>The kind of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension for which you want version summary information.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the extension for which you want version summary
+    /// information.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call this action again and assign that token to the request object's
+    /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The deprecation status of the extension versions that you want to get summary information about.</p>
+    /// <p>The deprecation status of the extension versions that you want to get summary
+    /// information about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility scope.</p>
+    /// <code>LIVE</code>: The extension version is registered and can be used in CloudFormation operations, dependent on its provisioning behavior and visibility
+    /// scope.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DEPRECATED</code>: The extension version has been deregistered and can no longer be used in CloudFormation operations. </p>
+    /// <code>DEPRECATED</code>: The extension version has been deregistered and can no
+    /// longer be used in CloudFormation operations. </p>
     /// </li>
     /// </ul>
     /// <p>The default is <code>LIVE</code>.</p>
@@ -13444,12 +13998,14 @@ impl std::fmt::Debug for ListTypeVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypesInput {
-    /// <p>The scope at which the extensions are visible and usable in CloudFormation operations.</p>
+    /// <p>The scope at which the extensions are visible and usable in CloudFormation
+    /// operations.</p>
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>PRIVATE</code>: Extensions that are visible and usable within this account and region. This includes:</p>
+    /// <code>PRIVATE</code>: Extensions that are visible and usable within this account
+    /// and region. This includes:</p>
     /// <ul>
     /// <li>
     /// <p>Private extensions you have registered in this account and region.</p>
@@ -13461,50 +14017,69 @@ pub struct ListTypesInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated within any Amazon account. This includes extensions from Amazon, as well as third-party publishers.</p>
+    /// <code>PUBLIC</code>: Extensions that are publicly visible and available to be
+    /// activated within any Amazon account. This includes extensions from Amazon, as well as
+    /// third-party publishers.</p>
     /// </li>
     /// </ul>
     /// <p>The default is <code>PRIVATE</code>.</p>
     pub visibility: std::option::Option<crate::model::Visibility>,
-    /// <p>For resource types, the provisioning behavior of the resource type. AWS CloudFormation determines the provisioning type during registration, based on the types of handlers in the schema handler package submitted.</p>
+    /// <p>For resource types, the provisioning behavior of the resource type. CloudFormation determines the
+    /// provisioning type during registration, based on the types of handlers in the schema handler
+    /// package submitted.</p>
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process updates to the type during stack update operations.</p>
+    /// <code>FULLY_MUTABLE</code>: The resource type includes an update handler to
+    /// process updates to the type during stack update operations.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so the type cannot be updated and must instead be replaced during stack update operations.</p>
+    /// <code>IMMUTABLE</code>: The resource type does not include an update handler, so
+    /// the type cannot be updated and must instead be replaced during stack update
+    /// operations.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read, and delete handlers, and therefore cannot actually be provisioned.</p>
+    /// <code>NON_PROVISIONABLE</code>: The resource type does not include create, read,
+    /// and delete handlers, and therefore cannot actually be provisioned.</p>
     /// </li>
     /// </ul>
     /// <p>The default is <code>FULLY_MUTABLE</code>.</p>
     pub provisioning_type: std::option::Option<crate::model::ProvisioningType>,
-    /// <p>The deprecation status of the extension that you want to get summary information about.</p>
+    /// <p>The deprecation status of the extension that you want to get summary information
+    /// about.</p>
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>LIVE</code>: The extension is registered for use in CloudFormation operations.</p>
+    /// <code>LIVE</code>: The extension is registered for use in CloudFormation
+    /// operations.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be used in CloudFormation operations. </p>
+    /// <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
+    /// used in CloudFormation operations. </p>
     /// </li>
     /// </ul>
     pub deprecated_status: std::option::Option<crate::model::DeprecatedStatus>,
     /// <p>The type of extension.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>Filter criteria to use in determining which extensions to return.</p>
-    /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code> value when returning the list of types.</p>
+    /// <p>If you specify a filter, CloudFormation ignores any specified <code>Visibility</code>
+    /// value when returning the list of types.</p>
     pub filters: std::option::Option<crate::model::TypeFilters>,
-    /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call this action again and assign that token to the request object's
+    /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTypesInput {
@@ -13525,20 +14100,30 @@ impl std::fmt::Debug for ListTypesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTypeRegistrationsInput {
     /// <p>The kind of extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub type_arn: std::option::Option<std::string::String>,
     /// <p>The current status of the extension registration request.</p>
     /// <p>The default is <code>IN_PROGRESS</code>.</p>
     pub registration_status_filter: std::option::Option<crate::model::RegistrationStatus>,
-    /// <p>The maximum number of results to be returned with a single call. If the number of available results exceeds this maximum, the response includes a <code>NextToken</code> value that you can assign to the <code>NextToken</code> request parameter to get the next set of results.</p>
+    /// <p>The maximum number of results to be returned with a single call. If the number of
+    /// available results exceeds this maximum, the response includes a <code>NextToken</code>
+    /// value that you can assign to the <code>NextToken</code> request parameter to get the next
+    /// set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>If the previous paginated request didn't return all of the remaining results, the response object's <code>NextToken</code> parameter value is set to a token. To retrieve the next set of results, call this action again and assign that token to the request object's <code>NextToken</code> parameter. If there are no remaining results, the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
+    /// <p>If the previous paginated request didn't return all of the remaining results, the
+    /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve the
+    /// next set of results, call this action again and assign that token to the request object's
+    /// <code>NextToken</code> parameter. If there are no remaining results, the previous
+    /// response object's <code>NextToken</code> parameter is set to <code>null</code>.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTypeRegistrationsInput {
@@ -13575,15 +14160,20 @@ pub struct ListStackSetsInput {
     /// <p>The status of the stack sets that you want to get summary information
     /// about.</p>
     pub status: std::option::Option<crate::model::StackSetStatus>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the management account or as a delegated administrator in a member
+    /// account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -13617,15 +14207,20 @@ pub struct ListStackSetOperationsInput {
     /// value that you can assign to the <code>NextToken</code> request parameter to get the next
     /// set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -13661,15 +14256,20 @@ pub struct ListStackSetOperationResultsInput {
     /// value that you can assign to the <code>NextToken</code> request parameter to get the next
     /// set of results.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -13755,19 +14355,25 @@ pub struct ListStackInstancesInput {
     pub max_results: std::option::Option<i32>,
     /// <p>The status that stack instances are filtered by.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::StackInstanceFilter>>,
-    /// <p>The name of the AWS account that you want to list stack instances for.</p>
+    /// <p>The name of the account that you want to list stack instances
+    /// for.</p>
     pub stack_instance_account: std::option::Option<std::string::String>,
     /// <p>The name of the Region where you want to list stack instances. </p>
     pub stack_instance_region: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -13789,7 +14395,7 @@ impl std::fmt::Debug for ListStackInstancesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImportsInput {
-    /// <p>The name of the exported output value. AWS CloudFormation returns the stack names
+    /// <p>The name of the exported output value. CloudFormation returns the stack names
     /// that are importing this value. </p>
     pub export_name: std::option::Option<std::string::String>,
     /// <p>A string (provided by the <a>ListImports</a> response output) that
@@ -13841,12 +14447,51 @@ impl std::fmt::Debug for ListChangeSetsInput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ImportStacksToStackSetInput {
+    /// <p>The name of the stack set. The name must be unique in the Region where you create your
+    /// stack set.</p>
+    pub stack_set_name: std::option::Option<std::string::String>,
+    /// <p>The IDs of the stacks you are importing into a stack set. You import up to 10 stacks per
+    /// stack set at a time.</p>
+    pub stack_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set
+    /// operation. </p>
+    /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
+    pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
+    /// <p>A unique, user defined, identifier for the stack set operation.</p>
+    pub operation_id: std::option::Option<std::string::String>,
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
+    /// <ul>
+    /// <li>
+    /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// </li>
+    /// </ul>
+    pub call_as: std::option::Option<crate::model::CallAs>,
+}
+impl std::fmt::Debug for ImportStacksToStackSetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ImportStacksToStackSetInput");
+        formatter.field("stack_set_name", &self.stack_set_name);
+        formatter.field("stack_ids", &self.stack_ids);
+        formatter.field("operation_preferences", &self.operation_preferences);
+        formatter.field("operation_id", &self.operation_id);
+        formatter.field("call_as", &self.call_as);
+        formatter.finish()
+    }
+}
+
 /// <p>The input for the <a>GetTemplateSummary</a> action.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTemplateSummaryInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
-    /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+    /// length of 51,200 bytes. For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
     /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
     /// <code>TemplateURL</code>.</p>
@@ -13854,7 +14499,7 @@ pub struct GetTemplateSummaryInput {
     /// <p>Location of file containing the template body. The URL must point to a template (max
     /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
     /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify only one of the following parameters:
     /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
     /// <code>TemplateURL</code>.</p>
@@ -13871,15 +14516,20 @@ pub struct GetTemplateSummaryInput {
     /// <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
     /// <code>TemplateURL</code>.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -13913,16 +14563,14 @@ pub struct GetTemplateInput {
     /// </ul>
     /// <p>Default: There is no default value.</p>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The name or Amazon Resource Name (ARN) of a change set for which AWS CloudFormation
-    /// returns the associated template. If you specify a name, you must also specify the
+    /// <p>The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns the associated template. If you specify a name, you must also specify the
     /// <code>StackName</code>.</p>
     pub change_set_name: std::option::Option<std::string::String>,
-    /// <p>For templates that include transforms, the stage of the template that AWS
-    /// CloudFormation returns. To get the user-submitted template, specify <code>Original</code>.
-    /// To get the template after AWS CloudFormation has processed all transforms, specify
-    /// <code>Processed</code>. </p>
+    /// <p>For templates that include transforms, the stage of the template that CloudFormation returns. To get the user-submitted template, specify
+    /// <code>Original</code>. To get the template after CloudFormation has processed
+    /// all transforms, specify <code>Processed</code>. </p>
     /// <p>If the template doesn't include transforms, <code>Original</code> and
-    /// <code>Processed</code> return the same template. By default, AWS CloudFormation
+    /// <code>Processed</code> return the same template. By default, CloudFormation
     /// specifies <code>Processed</code>.</p>
     pub template_stage: std::option::Option<crate::model::TemplateStage>,
 }
@@ -13963,10 +14611,10 @@ pub struct ExecuteChangeSetInput {
     /// associated with the change set you want to execute.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this
-    /// token if you plan to retry requests so that AWS CloudFormation knows that you're not
+    /// token if you plan to retry requests so that CloudFormation knows that you're not
     /// attempting to execute a change set to update a stack with the same name. You might retry
-    /// <code>ExecuteChangeSet</code> requests to ensure that AWS CloudFormation successfully
-    /// received them.</p>
+    /// <code>ExecuteChangeSet</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ExecuteChangeSetInput {
@@ -13985,14 +14633,14 @@ impl std::fmt::Debug for ExecuteChangeSetInput {
 pub struct EstimateTemplateCostInput {
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
     /// length of 51,200 bytes. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.)</p>
+    /// in the CloudFormation User Guide.)</p>
     /// <p>Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>. If
     /// both are passed, only <code>TemplateBody</code> is used.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Location of file containing the template body. The URL must point to a template that
-    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to
-    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// is located in an Amazon S3 bucket or a Systems Manager document. For more information, go
+    /// to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>. If
     /// both are passed, only <code>TemplateBody</code> is used.</p>
     pub template_url: std::option::Option<std::string::String>,
@@ -14014,7 +14662,7 @@ impl std::fmt::Debug for EstimateTemplateCostInput {
 pub struct DetectStackSetDriftInput {
     /// <p>The name of the stack set on which to perform the drift detection operation.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>The user-specified preferences for how AWS CloudFormation performs a stack set
+    /// <p>The user-specified preferences for how CloudFormation performs a stack set
     /// operation. </p>
     /// <p>For more information on maximum concurrent accounts and failure tolerance, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack set operation options</a>.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
@@ -14022,15 +14670,20 @@ pub struct DetectStackSetDriftInput {
     /// <i>The ID of the stack set operation.</i>
     /// </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14084,7 +14737,8 @@ impl std::fmt::Debug for DetectStackDriftInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTypeRegistrationInput {
     /// <p>The identifier for this registration request.</p>
-    /// <p>This registration token is generated by CloudFormation when you initiate a registration request using <code>
+    /// <p>This registration token is generated by CloudFormation when you initiate a
+    /// registration request using <code>
     /// <a>RegisterType</a>
     /// </code>.</p>
     pub registration_token: std::option::Option<std::string::String>,
@@ -14101,16 +14755,23 @@ impl std::fmt::Debug for DescribeTypeRegistrationInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTypeInput {
     /// <p>The kind of extension. </p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
-    /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific extension version. Otherwise, it returns information about the default extension version.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+    /// registered.</p>
+    /// <p>If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
+    /// about that specific extension version. Otherwise, it returns information about the default
+    /// extension version.</p>
     pub version_id: std::option::Option<std::string::String>,
     /// <p>The publisher ID of the extension publisher.</p>
     /// <p>Extensions provided by Amazon are not assigned a publisher ID.</p>
@@ -14138,15 +14799,20 @@ pub struct DescribeStackSetOperationInput {
     pub stack_set_name: std::option::Option<std::string::String>,
     /// <p>The unique ID of the stack set operation. </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14166,15 +14832,20 @@ impl std::fmt::Debug for DescribeStackSetOperationInput {
 pub struct DescribeStackSetInput {
     /// <p>The name or unique ID of the stack set whose description you want.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14240,7 +14911,7 @@ pub struct DescribeStackResourcesInput {
     /// <p>Default: There is no default value.</p>
     pub logical_resource_id: std::option::Option<std::string::String>,
     /// <p>The name or unique identifier that corresponds to a physical instance ID of a
-    /// resource supported by AWS CloudFormation.</p>
+    /// resource supported by CloudFormation.</p>
     /// <p>For example, for an Amazon Elastic Compute Cloud (EC2) instance,
     /// <code>PhysicalResourceId</code> corresponds to the <code>InstanceId</code>. You can pass
     /// the EC2 <code>InstanceId</code> to <code>DescribeStackResources</code> to find which stack
@@ -14285,7 +14956,7 @@ pub struct DescribeStackResourceDriftsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>NOT_CHECKED</code>: AWS CloudFormation does not currently return this value.</p>
+    /// <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.</p>
     /// </li>
     /// </ul>
     pub stack_resource_drift_status_filters:
@@ -14348,19 +15019,25 @@ pub struct DescribeStackInstanceInput {
     /// <p>The name or the unique stack ID of the stack set that you want to get stack instance
     /// information for.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>The ID of an AWS account that's associated with this stack instance.</p>
+    /// <p>The ID of an account that's associated with this stack
+    /// instance.</p>
     pub stack_instance_account: std::option::Option<std::string::String>,
     /// <p>The name of a Region that's associated with this stack instance.</p>
     pub stack_instance_region: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14409,8 +15086,8 @@ impl std::fmt::Debug for DescribeStackEventsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeStackDriftDetectionStatusInput {
     /// <p>The ID of the drift detection results of this operation. </p>
-    /// <p>AWS CloudFormation generates new results, with a new drift detection ID, each time this operation
-    /// is run. However, the number of drift results AWS CloudFormation retains for any given stack, and for how
+    /// <p>CloudFormation generates new results, with a new drift detection ID, each time this operation
+    /// is run. However, the number of drift results CloudFormation retains for any given stack, and for how
     /// long, may vary. </p>
     pub stack_drift_detection_id: std::option::Option<std::string::String>,
 }
@@ -14426,7 +15103,9 @@ impl std::fmt::Debug for DescribeStackDriftDetectionStatusInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePublisherInput {
     /// <p>The ID of the extension publisher.</p>
-    /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension publisher, <code>DescribePublisher</code> returns information about your own publisher account.</p>
+    /// <p>If you do not supply a <code>PublisherId</code>, and you have registered as an extension
+    /// publisher, <code>DescribePublisher</code> returns information about your own publisher
+    /// account.</p>
     pub publisher_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribePublisherInput {
@@ -14480,15 +15159,20 @@ impl std::fmt::Debug for DescribeAccountLimitsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeregisterTypeInput {
     /// <p>The Amazon Resource Name (ARN) of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The kind of extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub r#type: std::option::Option<crate::model::RegistryType>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.</p>
+    /// <p>Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or
+    /// <code>Arn</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name (ARN) assigned to the extension version when it is registered.</p>
+    /// <p>The ID of a specific version of the extension. The version ID is the value at the end of
+    /// the Amazon Resource Name (ARN) assigned to the extension version when it is
+    /// registered.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeregisterTypeInput {
@@ -14508,15 +15192,20 @@ pub struct DeleteStackSetInput {
     /// <p>The name or unique ID of the stack set that you're deleting. You can obtain this
     /// value by running <a>ListStackSets</a>.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14536,15 +15225,20 @@ pub struct DeleteStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to delete stack instances
     /// for.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The names of the AWS accounts that you want to delete stack instances for.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of the accounts that you want
+    /// to delete stack instances for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>[Service-managed permissions] The AWS Organizations accounts from which to delete stack instances.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Service-managed permissions] The Organizations accounts from which to delete
+    /// stack instances.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
     /// <p>The Regions where you want to delete stack set instances. </p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this stack set
+    /// operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
     /// <p>Removes the stack instances from the specified stack set, but doesn't delete the
     /// stacks. You can't reassociate a retained stack or add an existing, saved stack to a new
@@ -14553,22 +15247,25 @@ pub struct DeleteStackInstancesInput {
     pub retain_stacks: bool,
     /// <p>The unique identifier for this stack set operation. </p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You can retry stack set operation requests to ensure that AWS
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You can retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack
     /// instances whose status is <code>OUTDATED</code>. </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14595,22 +15292,20 @@ pub struct DeleteStackInput {
     /// <p>The name or the unique stack ID that is associated with the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>For stacks in the <code>DELETE_FAILED</code> state, a list of resource logical IDs
-    /// that are associated with the resources you want to retain. During deletion, AWS
-    /// CloudFormation deletes the stack but does not delete the retained resources.</p>
+    /// that are associated with the resources you want to retain. During deletion, CloudFormation deletes the stack but does not delete the retained resources.</p>
     /// <p>Retaining resources is useful when you cannot delete a resource, such as a non-empty
     /// S3 bucket, but you want to delete the stack.</p>
     pub retain_resources: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-    /// that AWS CloudFormation assumes to delete the stack. AWS CloudFormation uses the role's
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to delete the stack. CloudFormation uses the role's
     /// credentials to make calls on your behalf.</p>
-    /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-    /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-    /// session that is generated from your user credentials.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was
+    /// previously associated with the stack. If no role is available, CloudFormation uses
+    /// a temporary session that is generated from your user credentials.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this <code>DeleteStack</code> request. Specify this token if
-    /// you plan to retry requests so that AWS CloudFormation knows that you're not attempting to
-    /// delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
-    /// ensure that AWS CloudFormation successfully received them.</p>
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// to delete a stack with the same name. You might retry <code>DeleteStack</code> requests to
+    /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
     /// token, which you can use to track operations. For example, if you execute a
     /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
@@ -14658,14 +15353,18 @@ impl std::fmt::Debug for DeleteChangeSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeactivateTypeInput {
-    /// <p>The type name of the extension, in this account and region. If you specified a type name alias when enabling the extension, use the type name alias.</p>
-    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>The type name of the extension, in this account and region. If you specified a type name
+    /// alias when enabling the extension, use the type name alias.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The extension type.</p>
-    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub r#type: std::option::Option<crate::model::ThirdPartyType>,
     /// <p>The Amazon Resource Name (ARN) for the extension, in this account and region.</p>
-    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.</p>
+    /// <p>Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
+    /// <code>Type</code>.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeactivateTypeInput {
@@ -14694,21 +15393,24 @@ pub struct CreateStackSetInput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The structure that contains the template body, with a minimum length of 1 byte and a
     /// maximum length of 51,200 bytes. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
     /// but not both.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the file that contains the template body. The URL must point to a
     /// template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems
     /// Manager document. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter,
     /// but not both.</p>
     pub template_url: std::option::Option<std::string::String>,
+    /// <p>The stack ID you are importing into a new stack set. Specify the Amazon Resource Number
+    /// (ARN) of the stack.</p>
+    pub stack_id: std::option::Option<std::string::String>,
     /// <p>The input parameters for the stack set template. </p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack set template contains
-    /// certain capabilities in order for AWS CloudFormation to create the stack set and related stack
+    /// certain capabilities in order for CloudFormation to create the stack set and related stack
     /// instances.</p>
     /// <ul>
     /// <li>
@@ -14716,7 +15418,7 @@ pub struct CreateStackSetInput {
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
     /// <p>Some stack templates might include resources that can affect permissions in
-    /// your AWS account; for example, by creating new AWS Identity and Access Management
+    /// your account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stack sets, you must explicitly acknowledge this by specifying
     /// one of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -14731,7 +15433,7 @@ pub struct CreateStackSetInput {
     /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify either of these capabilities, AWS CloudFormation returns an
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
@@ -14781,34 +15483,32 @@ pub struct CreateStackSetInput {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
-    /// Resources in AWS CloudFormation Templates</a>.</p>
+    /// Resources in CloudFormation Templates</a>.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CAPABILITY_AUTO_EXPAND</code>
     /// </p>
-    /// <p>Some templates reference macros. If your stack set template references one or more macros,
-    /// you must create the stack set directly from the processed template, without first
-    /// reviewing the resulting changes in a change set. To create the stack set directly, you must acknowledge this
-    /// capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS CloudFormation Macros to Perform Custom Processing on
-    /// Templates</a>.</p>
+    /// <p>Some templates reference macros. If your stack set template references one or more
+    /// macros, you must create the stack set directly from the processed template, without
+    /// first reviewing the resulting changes in a change set. To create the stack set
+    /// directly, you must acknowledge this capability. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
+    /// Perform Custom Processing on Templates</a>.</p>
     /// <important>
-    /// <p>Stack sets with service-managed permissions
-    /// do not currently support the use of macros in templates. (This includes
-    /// the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
-    /// transforms, which are macros hosted by AWS CloudFormation.) Even if you specify this
-    /// capability for a stack set with service-managed permissions, if you reference a macro in your template the stack set operation will
-    /// fail.</p>
+    /// <p>Stack sets with service-managed permissions do not currently support the use of
+    /// macros in templates. (This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a>
+    /// transforms, which are macros hosted by CloudFormation.) Even if you specify this capability
+    /// for a stack set with service-managed permissions, if you reference a macro in your
+    /// template the stack set operation will fail.</p>
     /// </important>
     /// </li>
     /// </ul>
     pub capabilities: std::option::Option<std::vec::Vec<crate::model::Capability>>,
     /// <p>The key-value pairs to associate with this stack set and the stacks created from it.
-    /// AWS CloudFormation also propagates these tags to supported resources that are created in
-    /// the stacks. A maximum number of 50 tags can be specified.</p>
-    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, AWS
-    /// CloudFormation checks to see if you have the required IAM permission to tag resources. If
-    /// you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
+    /// CloudFormation also propagates these tags to supported resources that are
+    /// created in the stacks. A maximum number of 50 tags can be specified.</p>
+    /// <p>If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation checks to see if you have the required IAM permission to tag resources.
+    /// If you don't, the entire <code>CreateStackSet</code> action fails with an <code>access
     /// denied</code> error, and the stack set is not created.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set. </p>
@@ -14816,44 +15516,60 @@ pub struct CreateStackSetInput {
     /// which users or groups can manage specific stack sets within the same administrator account.
     /// For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites:
     /// Granting Permissions for Stack Set Operations</a> in the
-    /// <i>AWS CloudFormation User Guide</i>.</p>
+    /// <i>CloudFormation User Guide</i>.</p>
     pub administration_role_arn: std::option::Option<std::string::String>,
     /// <p>The name of the IAM execution role to use to create the stack set. If you do not specify
-    /// an execution role, AWS CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
+    /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code> role
     /// for the stack set operation.</p>
     /// <p>Specify an IAM role only if you are using customized execution roles to control which
     /// stack resources users and groups can include in their stack sets.
     /// </p>
     pub execution_role_name: std::option::Option<std::string::String>,
-    /// <p>Describes how the IAM roles required for stack set operations are created. By default, <code>SELF-MANAGED</code> is specified.</p>
+    /// <p>Describes how the IAM roles required for stack set operations are created. By default,
+    /// <code>SELF-MANAGED</code> is specified.</p>
     /// <ul>
     /// <li>
-    /// <p>With <code>self-managed</code> permissions, you must create the administrator and execution roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant Self-Managed Stack Set Permissions</a>.</p>
+    /// <p>With <code>self-managed</code> permissions, you must create the administrator and
+    /// execution roles required to deploy to target accounts. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+    /// Self-Managed Stack Set Permissions</a>.</p>
     /// </li>
     /// <li>
-    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the IAM roles required to deploy to accounts managed by AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
+    /// <p>With <code>service-managed</code> permissions, StackSets automatically creates the
+    /// IAM roles required to deploy to accounts managed by Organizations. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant Service-Managed Stack Set Permissions</a>.</p>
     /// </li>
     /// </ul>
     pub permission_model: std::option::Option<crate::model::PermissionModels>,
-    /// <p>Describes whether StackSets automatically deploys to AWS Organizations accounts that are added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
+    /// <p>Describes whether StackSets automatically deploys to Organizations accounts that
+    /// are added to the target organization or organizational unit (OU). Specify only if
+    /// <code>PermissionModel</code> is <code>SERVICE_MANAGED</code>.</p>
     pub auto_deployment: std::option::Option<crate::model::AutoDeployment>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to the management account, specify <code>SELF</code>.</p>
+    /// <p>To create a stack set with service-managed permissions while signed in to the
+    /// management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>To create a stack set with service-managed permissions while signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated admin in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>To create a stack set with service-managed permissions while signed in to a
+    /// delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated admin in the
+    /// management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
-    /// <p>Stack sets with service-managed permissions are created in the management account, including stack sets that are created by delegated administrators.</p>
+    /// <p>Stack sets with service-managed permissions are created in the management account,
+    /// including stack sets that are created by delegated administrators.</p>
     pub call_as: std::option::Option<crate::model::CallAs>,
     /// <p>A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-    /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
-    /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
-    /// requests to ensure that AWS CloudFormation successfully received them.</p>
+    /// if you plan to retry requests so that CloudFormation knows that you're not
+    /// attempting to create another stack set with the same name. You might retry
+    /// <code>CreateStackSet</code> requests to ensure that CloudFormation successfully
+    /// received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically.
     /// </p>
     pub client_request_token: std::option::Option<std::string::String>,
@@ -14865,6 +15581,7 @@ impl std::fmt::Debug for CreateStackSetInput {
         formatter.field("description", &self.description);
         formatter.field("template_body", &self.template_body);
         formatter.field("template_url", &self.template_url);
+        formatter.field("stack_id", &self.stack_id);
         formatter.field("parameters", &self.parameters);
         formatter.field("capabilities", &self.capabilities);
         formatter.field("tags", &self.tags);
@@ -14884,43 +15601,39 @@ pub struct CreateStackInstancesInput {
     /// <p>The name or unique ID of the stack set that you want to create stack instances
     /// from.</p>
     pub stack_set_name: std::option::Option<std::string::String>,
-    /// <p>[Self-managed permissions] The names of one or more AWS accounts that you want to create stack instances in the
-    /// specified Region(s) for.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Self-managed permissions] The names of one or more accounts that
+    /// you want to create stack instances in the specified Region(s) for.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>[Service-managed permissions] The AWS Organizations accounts for which to create stack instances in the specified Regions.</p>
-    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.</p>
+    /// <p>[Service-managed permissions] The Organizations accounts for which to create
+    /// stack instances in the specified Regions.</p>
+    /// <p>You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not
+    /// both.</p>
     pub deployment_targets: std::option::Option<crate::model::DeploymentTargets>,
     /// <p>The names of one or more Regions where you want to create stack instances using the
-    /// specified AWS account(s). </p>
+    /// specified accounts. </p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A list of stack set parameters whose values you want to override in the selected
     /// stack instances.</p>
     /// <p>Any overridden parameter values will be applied to all stack instances in the
     /// specified accounts and Regions. When specifying parameters and their values, be aware of
-    /// how AWS CloudFormation sets parameter values during stack instance operations:</p>
+    /// how CloudFormation sets parameter values during stack instance
+    /// operations:</p>
     /// <ul>
     /// <li>
     /// <p>To override the current value for a parameter, include the parameter and
     /// specify its value.</p>
     /// </li>
     /// <li>
-    /// <p>To leave a parameter set to its present value, you can do one of the
-    /// following:</p>
-    /// <ul>
-    /// <li>
-    /// <p>Do not include the parameter in the list.</p>
+    /// <p>To leave an overridden parameter set to its present value, include the
+    /// parameter and specify <code>UsePreviousValue</code> as <code>true</code>. (You cannot
+    /// specify both a value and set <code>UsePreviousValue</code> to
+    /// <code>true</code>.)</p>
     /// </li>
     /// <li>
-    /// <p>Include the parameter and specify <code>UsePreviousValue</code> as
-    /// <code>true</code>. (You cannot specify both a value and set
-    /// <code>UsePreviousValue</code> to <code>true</code>.)</p>
-    /// </li>
-    /// </ul>
-    /// </li>
-    /// <li>
-    /// <p>To set all overridden parameter back to the values specified in the stack set,
-    /// specify a parameter list but do not include any parameters.</p>
+    /// <p>To set an overridden parameter back to the value specified in the stack set,
+    /// specify a parameter list but do not include the parameter in the list.</p>
     /// </li>
     /// <li>
     /// <p>To leave all parameters set to their present values, do not specify this
@@ -14932,26 +15645,30 @@ pub struct CreateStackInstancesInput {
     /// <p>You can only override the parameter <i>values</i> that are specified in
     /// the stack set; to add or delete a parameter itself, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a> to update the stack set template.</p>
     pub parameter_overrides: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
-    /// <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+    /// <p>Preferences for how CloudFormation performs this stack set
+    /// operation.</p>
     pub operation_preferences: std::option::Option<crate::model::StackSetOperationPreferences>,
     /// <p>The unique identifier for this stack set operation. </p>
-    /// <p>The operation ID also functions as an idempotency token, to ensure that AWS
-    /// CloudFormation performs the stack set operation only once, even if you retry the request
-    /// multiple times. You might retry stack set operation requests to ensure that AWS
-    /// CloudFormation successfully received them.</p>
+    /// <p>The operation ID also functions as an idempotency token, to ensure that CloudFormation performs the stack set operation only once, even if you retry the request
+    /// multiple times. You might retry stack set operation requests to ensure that CloudFormation successfully received them.</p>
     /// <p>If you don't specify an operation ID, the SDK generates one automatically. </p>
     /// <p>Repeating this stack set operation with a new operation ID retries all stack
     /// instances whose status is <code>OUTDATED</code>. </p>
     pub operation_id: std::option::Option<std::string::String>,
-    /// <p>[Service-managed permissions] Specifies whether you are acting as an account administrator in the organization's management account or as a delegated administrator in a member account.</p>
-    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with self-managed permissions.</p>
+    /// <p>[Service-managed permissions] Specifies whether you are acting as an account
+    /// administrator in the organization's management account or as a delegated administrator in a
+    /// member account.</p>
+    /// <p>By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
+    /// self-managed permissions.</p>
     /// <ul>
     /// <li>
     /// <p>If you are signed in to the management account, specify <code>SELF</code>.</p>
     /// </li>
     /// <li>
-    /// <p>If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.</p>
-    /// <p>Your AWS account must be registered as a delegated administrator in the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+    /// <p>If you are signed in to a delegated administrator account, specify
+    /// <code>DELEGATED_ADMIN</code>.</p>
+    /// <p>Your account must be registered as a delegated administrator in
+    /// the management account. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-delegated-admin.html">Register a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p>
     /// </li>
     /// </ul>
     pub call_as: std::option::Option<crate::model::CallAs>,
@@ -14985,14 +15702,14 @@ pub struct CreateStackInput {
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>Structure containing the template body with a minimum length of 1 byte and a maximum
     /// length of 51,200 bytes. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
     /// <code>TemplateURL</code> parameter, but not both.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>Location of file containing the template body. The URL must point to a template (max
     /// size: 460,800 bytes) that is located in an Amazon S3 bucket or a Systems Manager document.
     /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
-    /// in the AWS CloudFormation User Guide.</p>
+    /// in the CloudFormation User Guide.</p>
     /// <p>Conditional: You must specify either the <code>TemplateBody</code> or the
     /// <code>TemplateURL</code> parameter, but not both.</p>
     pub template_url: std::option::Option<std::string::String>,
@@ -15006,7 +15723,7 @@ pub struct CreateStackInput {
     /// <p>Default: <code>false</code>
     /// </p>
     pub disable_rollback: std::option::Option<bool>,
-    /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
     /// updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
     /// <p>The amount of time that can pass before the stack status becomes CREATE_FAILED; if
@@ -15018,14 +15735,14 @@ pub struct CreateStackInput {
     /// (CLI).</p>
     pub notification_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
-    /// capabilities in order for AWS CloudFormation to create the stack.</p>
+    /// capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
     /// <p>Some stack templates might include resources that can affect permissions in
-    /// your AWS account; for example, by creating new AWS Identity and Access Management
+    /// your account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -15040,7 +15757,7 @@ pub struct CreateStackInput {
     /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify either of these capabilities, AWS CloudFormation returns an
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
@@ -15090,7 +15807,7 @@ pub struct CreateStackInput {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
-    /// Resources in AWS CloudFormation Templates</a>.</p>
+    /// Resources in CloudFormation Templates</a>.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -15103,19 +15820,19 @@ pub struct CreateStackInput {
     /// the macros before actually creating the stack. If your stack template contains one or
     /// more macros, and you choose to create a stack directly from the processed template,
     /// without first reviewing the resulting changes in a change set, you must acknowledge
-    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.</p>
-    /// <p>If you want to create a stack
-    /// from a stack template that contains macros <i>and</i> nested stacks,
-    /// you must create the stack directly from the template using this capability.</p>
+    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
+    /// <p>If you want to create a stack from a stack template that contains macros
+    /// <i>and</i> nested stacks, you must create the stack directly from
+    /// the template using this capability.</p>
     /// <important>
     /// <p>You should only create stacks directly from a stack template that contains
     /// macros if you know what processing the macro performs.</p>
     /// <p>Each macro relies on an underlying Lambda service function for processing stack
     /// templates. Be aware that the Lambda function owner can update the function
-    /// operation without AWS CloudFormation being notified.</p>
+    /// operation without CloudFormation being notified.</p>
     /// </important>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using
-    /// AWS CloudFormation Macros to Perform Custom Processing on
+    /// CloudFormation Macros to Perform Custom Processing on
     /// Templates</a>.</p>
     /// </li>
     /// </ul>
@@ -15123,27 +15840,28 @@ pub struct CreateStackInput {
     /// <p>The template resource types that you have permissions to work with for this create
     /// stack action, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>. Use the following syntax to describe template
-    /// resource types: <code>AWS::*</code> (for all AWS resource), <code>Custom::*</code> (for all
-    /// custom resources), <code>Custom::<i>logical_ID</i>
+    /// resource types: <code>AWS::*</code> (for all Amazon Web Services resources),
+    /// <code>Custom::*</code> (for all custom resources),
+    /// <code>Custom::<i>logical_ID</i>
     /// </code> (for a specific custom resource),
     /// <code>AWS::<i>service_name</i>::*</code> (for all resources of a
-    /// particular AWS service), and
+    /// particular Amazon Web Services service), and
     /// <code>AWS::<i>service_name</i>::<i>resource_logical_ID</i>
-    /// </code> (for a specific AWS resource).</p>
+    /// </code> (for a specific Amazon Web Services resource).</p>
     /// <p>If the list of resource types doesn't include a resource that you're creating, the
-    /// stack creation fails. By default, AWS CloudFormation grants permissions to all resource
-    /// types. AWS Identity and Access Management (IAM) uses this parameter for AWS
-    /// CloudFormation-specific condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with AWS Identity and Access Management</a>.</p>
+    /// stack creation fails. By default, CloudFormation grants permissions to all resource
+    /// types. Identity and Access Management (IAM) uses this parameter for CloudFormation-specific
+    /// condition keys in IAM policies. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a>.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-    /// that AWS CloudFormation assumes to create the stack. AWS CloudFormation uses the role's
-    /// credentials to make calls on your behalf. AWS CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
-    /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-    /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-    /// session that is generated from your user credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to create the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was
+    /// previously associated with the stack. If no role is available, CloudFormation uses
+    /// a temporary session that is generated from your user credentials.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Determines what action will be taken if stack creation fails. This must be one of:
     /// DO_NOTHING, ROLLBACK, or DELETE. You can specify either <code>OnFailure</code> or
@@ -15152,23 +15870,23 @@ pub struct CreateStackInput {
     /// </p>
     pub on_failure: std::option::Option<crate::model::OnFailure>,
     /// <p>Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html"> Prevent Updates
-    /// to Stack Resources</a> in the <i>AWS CloudFormation User Guide</i>.
-    /// You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-    /// parameter, but not both.</p>
+    /// to Stack Resources</a> in the <i>CloudFormation User
+    /// Guide</i>. You can specify either the <code>StackPolicyBody</code> or the
+    /// <code>StackPolicyURL</code> parameter, but not both.</p>
     pub stack_policy_body: std::option::Option<std::string::String>,
     /// <p>Location of a file containing the stack policy. The URL must point to a policy
-    /// (maximum size: 16 KB) located in an S3 bucket in the same
-    /// Region as the stack. You can specify either the <code>StackPolicyBody</code> or the
-    /// <code>StackPolicyURL</code> parameter, but not both.</p>
+    /// (maximum size: 16 KB) located in an S3 bucket in the same Region as the stack. You can
+    /// specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+    /// parameter, but not both.</p>
     pub stack_policy_url: std::option::Option<std::string::String>,
-    /// <p>Key-value pairs to associate with this stack. AWS CloudFormation also propagates
+    /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
     /// these tags to the resources created in the stack. A maximum number of 50 tags can be
     /// specified.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A unique identifier for this <code>CreateStack</code> request. Specify this token if
-    /// you plan to retry requests so that AWS CloudFormation knows that you're not attempting to
-    /// create a stack with the same name. You might retry <code>CreateStack</code> requests to
-    /// ensure that AWS CloudFormation successfully received them.</p>
+    /// you plan to retry requests so that CloudFormation knows that you're not attempting
+    /// to create a stack with the same name. You might retry <code>CreateStack</code> requests to
+    /// ensure that CloudFormation successfully received them.</p>
     /// <p>All events triggered by a given stack operation are assigned the same client request
     /// token, which you can use to track operations. For example, if you execute a
     /// <code>CreateStack</code> operation with the token <code>token1</code>, then all the
@@ -15184,7 +15902,7 @@ pub struct CreateStackInput {
     /// <p>Whether to enable termination protection on the specified stack. If a user attempts
     /// to delete a stack with termination protection enabled, the operation fails and the stack
     /// remains unchanged. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being
-    /// Deleted</a> in the <i>AWS CloudFormation User Guide</i>. Termination protection is
+    /// Deleted</a> in the <i>CloudFormation User Guide</i>. Termination protection is
     /// disabled on stacks by default. </p>
     /// <p> For <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html">nested stacks</a>,
     /// termination protection is set on the root stack and cannot be changed directly on the
@@ -15222,21 +15940,21 @@ impl std::fmt::Debug for CreateStackInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateChangeSetInput {
-    /// <p>The name or the unique ID of the stack for which you are creating a change set. AWS
-    /// CloudFormation generates the change set by comparing this stack's information with the
-    /// information that you submit, such as a modified template or different parameter input
-    /// values.</p>
+    /// <p>The name or the unique ID of the stack for which you are creating a change set.
+    /// CloudFormation generates the change set by comparing this stack's information
+    /// with the information that you submit, such as a modified template or different parameter
+    /// input values.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>A structure that contains the body of the revised template, with a minimum length of
-    /// 1 byte and a maximum length of 51,200 bytes. AWS CloudFormation generates the change set by
-    /// comparing this template with the template of the stack that you specified.</p>
+    /// 1 byte and a maximum length of 51,200 bytes. CloudFormation generates the change
+    /// set by comparing this template with the template of the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or
     /// <code>TemplateURL</code>.</p>
     pub template_body: std::option::Option<std::string::String>,
     /// <p>The location of the file that contains the revised template. The URL must point to a
     /// template (max size: 460,800 bytes) that is located in an S3 bucket or a Systems Manager
-    /// document. AWS CloudFormation generates the change set by comparing this template with the
-    /// stack that you specified.</p>
+    /// document. CloudFormation generates the change set by comparing this template with
+    /// the stack that you specified.</p>
     /// <p>Conditional: You must specify only <code>TemplateBody</code> or
     /// <code>TemplateURL</code>.</p>
     pub template_url: std::option::Option<std::string::String>,
@@ -15247,14 +15965,14 @@ pub struct CreateChangeSetInput {
     /// change set. For more information, see the <a>Parameter</a> data type.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::Parameter>>,
     /// <p>In some cases, you must explicitly acknowledge that your stack template contains certain
-    /// capabilities in order for AWS CloudFormation to create the stack.</p>
+    /// capabilities in order for CloudFormation to create the stack.</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code>
     /// </p>
     /// <p>Some stack templates might include resources that can affect permissions in
-    /// your AWS account; for example, by creating new AWS Identity and Access Management
+    /// your account; for example, by creating new Identity and Access Management
     /// (IAM) users. For those stacks, you must explicitly acknowledge this by specifying one
     /// of these capabilities.</p>
     /// <p>The following IAM resources require you to specify either the
@@ -15269,7 +15987,7 @@ pub struct CreateChangeSetInput {
     /// specify <code>CAPABILITY_NAMED_IAM</code>. </p>
     /// </li>
     /// <li>
-    /// <p>If you don't specify either of these capabilities, AWS CloudFormation returns an
+    /// <p>If you don't specify either of these capabilities, CloudFormation returns an
     /// <code>InsufficientCapabilities</code> error.</p>
     /// </li>
     /// </ul>
@@ -15319,7 +16037,7 @@ pub struct CreateChangeSetInput {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM
-    /// Resources in AWS CloudFormation Templates</a>.</p>
+    /// Resources in CloudFormation Templates</a>.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -15332,17 +16050,15 @@ pub struct CreateChangeSetInput {
     /// the macros before actually creating the stack. If your stack template contains one or
     /// more macros, and you choose to create a stack directly from the processed template,
     /// without first reviewing the resulting changes in a change set, you must acknowledge
-    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by AWS CloudFormation.</p>
+    /// this capability. This includes the <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/create-reusable-transform-function-snippets-and-add-to-your-template-with-aws-include-transform.html">AWS::Include</a> and <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-aws-serverless.html">AWS::Serverless</a> transforms, which are macros hosted by CloudFormation.</p>
     /// <note>
     /// <p>This capacity does not apply to creating change sets, and specifying it when
     /// creating change sets has no effect.</p>
-    /// <p>If you want to create
-    /// a stack from a stack template that contains macros <i>and</i> nested
-    /// stacks, you must create or update the stack directly from the template using the
-    /// <a>CreateStack</a> or <a>UpdateStack</a> action, and
-    /// specifying this capability.</p>
+    /// <p>If you want to create a stack from a stack template that contains macros
+    /// <i>and</i> nested stacks, you must create or update the stack
+    /// directly from the template using the <a>CreateStack</a> or <a>UpdateStack</a> action, and specifying this capability.</p>
     /// </note>
-    /// <p>For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using AWS CloudFormation Macros to
+    /// <p>For more information on macros, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-macros.html">Using CloudFormation Macros to
     /// Perform Custom Processing on Templates</a>.</p>
     /// </li>
     /// </ul>
@@ -15351,30 +16067,28 @@ pub struct CreateChangeSetInput {
     /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>, or
     /// <code>Custom::MyCustomInstance</code>.</p>
     /// <p>If the list of resource types doesn't include a resource type that you're updating,
-    /// the stack update fails. By default, AWS CloudFormation grants permissions to all resource
-    /// types. AWS Identity and Access Management (IAM) uses this parameter for condition keys in
-    /// IAM policies for AWS CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
-    /// AWS Identity and Access Management</a> in the AWS CloudFormation User
-    /// Guide.</p>
+    /// the stack update fails. By default, CloudFormation grants permissions to all
+    /// resource types. Identity and Access Management (IAM) uses this parameter for condition keys in IAM
+    /// policies for CloudFormation. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html">Controlling Access with
+    /// Identity and Access Management</a> in the CloudFormation User Guide.</p>
     pub resource_types: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-    /// that AWS CloudFormation assumes when executing the change set. AWS CloudFormation uses the
-    /// role's credentials to make calls on your behalf. AWS CloudFormation uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
-    /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-    /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-    /// session that is generated from your user credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes when executing the change set. CloudFormation uses the
+    /// role's credentials to make calls on your behalf. CloudFormation uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was
+    /// previously associated with the stack. If no role is available, CloudFormation uses
+    /// a temporary session that is generated from your user credentials.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The rollback triggers for AWS CloudFormation to monitor during stack creation and
+    /// <p>The rollback triggers for CloudFormation to monitor during stack creation and
     /// updating operations, and for the specified monitoring period afterwards.</p>
     pub rollback_configuration: std::option::Option<crate::model::RollbackConfiguration>,
     /// <p>The Amazon Resource Names (ARNs) of Amazon Simple Notification Service (Amazon SNS)
-    /// topics that AWS CloudFormation associates with the stack. To remove all associated
+    /// topics that CloudFormation associates with the stack. To remove all associated
     /// notification topics, specify an empty list.</p>
     pub notification_ar_ns: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Key-value pairs to associate with this stack. AWS CloudFormation also propagates
+    /// <p>Key-value pairs to associate with this stack. CloudFormation also propagates
     /// these tags to resources in the stack. You can specify a maximum of 50 tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The name of the change set. The name must be unique among all change sets that are
@@ -15384,9 +16098,9 @@ pub struct CreateChangeSetInput {
     /// characters.</p>
     pub change_set_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-    /// if you plan to retry requests so that AWS CloudFormation knows that you're not attempting
-    /// to create another change set with the same name. You might retry
-    /// <code>CreateChangeSet</code> requests to ensure that AWS CloudFormation successfully
+    /// if you plan to retry requests so that CloudFormation knows that you're not
+    /// attempting to create another change set with the same name. You might retry
+    /// <code>CreateChangeSet</code> requests to ensure that CloudFormation successfully
     /// received them.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A description to help you identify this change set.</p>
@@ -15395,12 +16109,12 @@ pub struct CreateChangeSetInput {
     /// <code>CREATE</code>. To create a change set for an existing stack, specify
     /// <code>UPDATE</code>. To create a change set for an import operation, specify
     /// <code>IMPORT</code>.</p>
-    /// <p>If you create a change set for a new stack, AWS Cloudformation creates a stack with a
-    /// unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
+    /// <p>If you create a change set for a new stack, CloudFormation creates a stack
+    /// with a unique stack ID, but no template or resources. The stack will be in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-describing-stacks.html#d0e11995">
     /// <code>REVIEW_IN_PROGRESS</code>
     /// </a> state until you execute the change
     /// set.</p>
-    /// <p>By default, AWS CloudFormation specifies <code>UPDATE</code>. You can't use the
+    /// <p>By default, CloudFormation specifies <code>UPDATE</code>. You can't use the
     /// <code>UPDATE</code> type to create a change set for a new stack or the
     /// <code>CREATE</code> type to create a change set for an existing stack.</p>
     pub change_set_type: std::option::Option<crate::model::ChangeSetType>,
@@ -15448,30 +16162,29 @@ pub struct ContinueUpdateRollbackInput {
     /// resource).</p>
     /// </note>
     pub stack_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role
-    /// that AWS CloudFormation assumes to roll back the stack. AWS CloudFormation uses the role's
-    /// credentials to make calls on your behalf. AWS CloudFormation always uses this role for all
-    /// future operations on the stack. As long as users have permission to operate on the stack,
-    /// AWS CloudFormation uses this role even if the users don't have permission to pass it.
-    /// Ensure that the role grants least privilege.</p>
-    /// <p>If you don't specify a value, AWS CloudFormation uses the role that was previously
-    /// associated with the stack. If no role is available, AWS CloudFormation uses a temporary
-    /// session that is generated from your user credentials.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that CloudFormation assumes to roll back the stack. CloudFormation uses the role's
+    /// credentials to make calls on your behalf. CloudFormation always uses this role for
+    /// all future operations on the stack. As long as users have permission to operate on the
+    /// stack, CloudFormation uses this role even if the users don't have permission to
+    /// pass it. Ensure that the role grants least privilege.</p>
+    /// <p>If you don't specify a value, CloudFormation uses the role that was
+    /// previously associated with the stack. If no role is available, CloudFormation uses
+    /// a temporary session that is generated from your user credentials.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>A list of the logical IDs of the resources that AWS CloudFormation skips during the
-    /// continue update rollback operation. You can specify only resources that are in the
+    /// <p>A list of the logical IDs of the resources that CloudFormation skips during
+    /// the continue update rollback operation. You can specify only resources that are in the
     /// <code>UPDATE_FAILED</code> state because a rollback failed. You can't specify resources
     /// that are in the <code>UPDATE_FAILED</code> state for other reasons, for example, because an
     /// update was cancelled. To check why a resource update failed, use the <a>DescribeStackResources</a> action, and view the resource status reason. </p>
     /// <important>
-    /// <p>Specify this property to skip rolling back resources that AWS CloudFormation can't
-    /// successfully roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"> troubleshoot</a> resources before skipping them. AWS CloudFormation sets the
-    /// status of the specified resources to <code>UPDATE_COMPLETE</code> and continues to roll
-    /// back the stack. After the rollback is complete, the state of the skipped resources will
-    /// be inconsistent with the state of the resources in the stack template. Before performing
-    /// another stack update, you must update the stack or resources to be consistent with each
-    /// other. If you don't, subsequent stack updates might fail, and the stack will become
-    /// unrecoverable. </p>
+    /// <p>Specify this property to skip rolling back resources that CloudFormation
+    /// can't successfully roll back. We recommend that you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"> troubleshoot</a> resources before skipping them. CloudFormation sets
+    /// the status of the specified resources to <code>UPDATE_COMPLETE</code> and continues to
+    /// roll back the stack. After the rollback is complete, the state of the skipped resources
+    /// will be inconsistent with the state of the resources in the stack template. Before
+    /// performing another stack update, you must update the stack or resources to be consistent
+    /// with each other. If you don't, subsequent stack updates might fail, and the stack will
+    /// become unrecoverable. </p>
     /// </important>
     /// <p>Specify the minimum number of resources required to successfully roll back your
     /// stack. For example, a failed resource update might cause dependent resources to fail. In
@@ -15489,9 +16202,9 @@ pub struct ContinueUpdateRollbackInput {
     /// </note>
     pub resources_to_skip: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-    /// this token if you plan to retry requests so that AWS CloudFormation knows that you're not
-    /// attempting to continue the rollback to a stack with the same name. You might retry
-    /// <code>ContinueUpdateRollback</code> requests to ensure that AWS CloudFormation
+    /// this token if you plan to retry requests so that CloudFormationknows that you're
+    /// not attempting to continue the rollback to a stack with the same name. You might retry
+    /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation
     /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
@@ -15513,10 +16226,10 @@ pub struct CancelUpdateStackInput {
     /// <p>The name or the unique stack ID that is associated with the stack.</p>
     pub stack_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-    /// token if you plan to retry requests so that AWS CloudFormation knows that you're not
+    /// token if you plan to retry requests so that CloudFormation knows that you're not
     /// attempting to cancel an update on a stack with the same name. You might retry
-    /// <code>CancelUpdateStack</code> requests to ensure that AWS CloudFormation successfully
-    /// received them.</p>
+    /// <code>CancelUpdateStack</code> requests to ensure that CloudFormation
+    /// successfully received them.</p>
     pub client_request_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancelUpdateStackInput {
@@ -15550,41 +16263,59 @@ impl std::fmt::Debug for BatchDescribeTypeConfigurationsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActivateTypeInput {
     /// <p>The extension type.</p>
-    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
     pub r#type: std::option::Option<crate::model::ThirdPartyType>,
     /// <p>The Amazon Resource Number (ARN) of the public extension.</p>
-    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
     pub public_type_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the extension publisher.</p>
-    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
     pub publisher_id: std::option::Option<std::string::String>,
     /// <p>The name of the extension.</p>
-    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>, <code>Type</code>, and <code>PublisherId</code>.</p>
+    /// <p>Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
+    /// <code>Type</code>, and <code>PublisherId</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>An alias to assign to the public extension, in this account and region. If you specify an alias for the extension, CloudFormation treats the alias as the extension type name within this account and region. You must use the alias to refer to the extension in your templates, API calls, and CloudFormation console.</p>
-    /// <p>An extension alias must be unique within a given account and region. You can activate the same public resource multiple times in the same account and region, using different type name aliases.</p>
+    /// <p>An alias to assign to the public extension, in this account and region. If you specify
+    /// an alias for the extension, CloudFormation treats the alias as the extension type name
+    /// within this account and region. You must use the alias to refer to the extension in your
+    /// templates, API calls, and CloudFormation console.</p>
+    /// <p>An extension alias must be unique within a given account and region. You can activate
+    /// the same public resource multiple times in the same account and region, using different
+    /// type name aliases.</p>
     pub type_name_alias: std::option::Option<std::string::String>,
-    /// <p>Whether to automatically update the extension in this account and region when a new <i>minor</i> version is published by the extension publisher. Major versions released by the publisher must be manually updated.</p>
+    /// <p>Whether to automatically update the extension in this account and region when a new
+    /// <i>minor</i> version is published by the extension publisher. Major
+    /// versions released by the publisher must be manually updated.</p>
     /// <p>The default is <code>true</code>.</p>
     pub auto_update: std::option::Option<bool>,
     /// <p>Contains logging configuration information for an extension.</p>
     pub logging_config: std::option::Option<crate::model::LoggingConfig>,
     /// <p>The name of the IAM execution role to use to activate the extension.</p>
     pub execution_role_arn: std::option::Option<std::string::String>,
-    /// <p>Manually updates a previously-activated type to a new major or minor version, if available. You can also use this parameter to update the value of <code>AutoUpdate</code>.</p>
+    /// <p>Manually updates a previously-activated type to a new major or minor version, if
+    /// available. You can also use this parameter to update the value of
+    /// <code>AutoUpdate</code>.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major version, if one is available.</p>
+    /// <code>MAJOR</code>: CloudFormation updates the extension to the newest major
+    /// version, if one is available.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor version, if one is available.</p>
+    /// <code>MINOR</code>: CloudFormation updates the extension to the newest minor
+    /// version, if one is available.</p>
     /// </li>
     /// </ul>
     pub version_bump: std::option::Option<crate::model::VersionBump>,
-    /// <p>The major version of this extension you want to activate, if multiple major versions are available. The default is the latest major version. CloudFormation uses the latest available <i>minor</i> version of the major version selected.</p>
-    /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.</p>
+    /// <p>The major version of this extension you want to activate, if multiple major versions are
+    /// available. The default is the latest major version. CloudFormation uses the latest
+    /// available <i>minor</i> version of the major version selected.</p>
+    /// <p>You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not
+    /// both.</p>
     pub major_version: std::option::Option<i64>,
 }
 impl std::fmt::Debug for ActivateTypeInput {

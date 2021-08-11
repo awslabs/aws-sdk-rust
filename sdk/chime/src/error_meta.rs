@@ -736,6 +736,25 @@ impl From<smithy_http::result::SdkError<crate::error::CreateChannelModeratorErro
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateMediaCapturePipelineErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::CreateMediaCapturePipelineErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateMeetingError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateMeetingError>) -> Self {
         match err {
@@ -1479,6 +1498,41 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEventsConfigurationE
                 crate::error::DeleteEventsConfigurationErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
                 crate::error::DeleteEventsConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteMediaCapturePipelineErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DeleteMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::DeleteMediaCapturePipelineErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteMediaCapturePipelineErrorKind::ServiceFailureException(
+                    inner,
+                ) => Error::ServiceFailureException(inner),
+                crate::error::DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::DeleteMediaCapturePipelineErrorKind::ThrottledClientException(
+                    inner,
+                ) => Error::ThrottledClientException(inner),
+                crate::error::DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(
+                    inner,
+                ) => Error::UnauthorizedClientException(inner),
+                crate::error::DeleteMediaCapturePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -2591,6 +2645,41 @@ impl From<smithy_http::result::SdkError<crate::error::GetGlobalSettingsError>> f
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetMediaCapturePipelineErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::GetMediaCapturePipelineErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException(inner) => {
+                    Error::ThrottledClientException(inner)
+                }
+                crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(
+                    inner,
+                ) => Error::UnauthorizedClientException(inner),
+                crate::error::GetMediaCapturePipelineErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::GetMeetingError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::GetMeetingError>) -> Self {
         match err {
@@ -3666,6 +3755,38 @@ impl From<smithy_http::result::SdkError<crate::error::ListChannelsModeratedByApp
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListMediaCapturePipelinesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListMediaCapturePipelinesErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::ListMediaCapturePipelinesErrorKind::ServiceFailureException(
+                    inner,
+                ) => Error::ServiceFailureException(inner),
+                crate::error::ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::ListMediaCapturePipelinesErrorKind::ThrottledClientException(
+                    inner,
+                ) => Error::ThrottledClientException(inner),
+                crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(
+                    inner,
+                ) => Error::UnauthorizedClientException(inner),
+                crate::error::ListMediaCapturePipelinesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ListMeetingsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ListMeetingsError>) -> Self {
         match err {
@@ -4723,6 +4844,65 @@ impl From<smithy_http::result::SdkError<crate::error::SendChannelMessageError>> 
                     Error::UnauthorizedClientException(inner)
                 }
                 crate::error::SendChannelMessageErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::StartMeetingTranscriptionErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(inner) => Error::ResourceLimitExceededException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::ServiceFailureException(inner) => Error::ServiceFailureException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::ThrottledClientException(inner) => Error::ThrottledClientException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::UnauthorizedClientException(inner) => Error::UnauthorizedClientException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
+                crate::error::StartMeetingTranscriptionErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StopMeetingTranscriptionErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::StopMeetingTranscriptionErrorKind::ForbiddenException(inner) => {
+                    Error::ForbiddenException(inner)
+                }
+                crate::error::StopMeetingTranscriptionErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::StopMeetingTranscriptionErrorKind::ServiceFailureException(inner) => {
+                    Error::ServiceFailureException(inner)
+                }
+                crate::error::StopMeetingTranscriptionErrorKind::ServiceUnavailableException(
+                    inner,
+                ) => Error::ServiceUnavailableException(inner),
+                crate::error::StopMeetingTranscriptionErrorKind::ThrottledClientException(
+                    inner,
+                ) => Error::ThrottledClientException(inner),
+                crate::error::StopMeetingTranscriptionErrorKind::UnauthorizedClientException(
+                    inner,
+                ) => Error::UnauthorizedClientException(inner),
+                crate::error::StopMeetingTranscriptionErrorKind::UnprocessableEntityException(
+                    inner,
+                ) => Error::UnprocessableEntityException(inner),
+                crate::error::StopMeetingTranscriptionErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

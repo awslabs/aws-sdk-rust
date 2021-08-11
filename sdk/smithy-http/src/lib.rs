@@ -12,10 +12,14 @@ pub mod header;
 pub mod label;
 pub mod middleware;
 pub mod operation;
-mod pin_util;
 pub mod property_bag;
 pub mod query;
 pub mod response;
 pub mod result;
 pub mod retry;
+
+#[cfg(feature = "event-stream")]
+pub mod event_stream;
+
+mod pin_util;
 mod urlencode;

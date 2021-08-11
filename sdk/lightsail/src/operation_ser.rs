@@ -88,6 +88,26 @@ pub fn serialize_operation_copy_snapshot(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_create_bucket(
+    input: &crate::input::CreateBucketInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_bucket_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_create_bucket_access_key(
+    input: &crate::input::CreateBucketAccessKeyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_bucket_access_key_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_create_certificate(
     input: &crate::input::CreateCertificateInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -322,6 +342,26 @@ pub fn serialize_operation_delete_auto_snapshot(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_delete_auto_snapshot_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_delete_bucket(
+    input: &crate::input::DeleteBucketInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_delete_bucket_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_delete_bucket_access_key(
+    input: &crate::input::DeleteBucketAccessKeyInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_delete_bucket_access_key_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -620,6 +660,46 @@ pub fn serialize_operation_get_blueprints(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_get_blueprints_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_bucket_access_keys(
+    input: &crate::input::GetBucketAccessKeysInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_bucket_access_keys_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_bucket_bundles(
+    input: &crate::input::GetBucketBundlesInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_bucket_bundles_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_bucket_metric_data(
+    input: &crate::input::GetBucketMetricDataInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_bucket_metric_data_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_get_buckets(
+    input: &crate::input::GetBucketsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_buckets_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -1310,6 +1390,16 @@ pub fn serialize_operation_set_ip_address_type(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_set_resource_access_for_bucket(
+    input: &crate::input::SetResourceAccessForBucketInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_set_resource_access_for_bucket_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_start_instance(
     input: &crate::input::StartInstanceInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -1382,6 +1472,26 @@ pub fn serialize_operation_untag_resource(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_untag_resource_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_bucket(
+    input: &crate::input::UpdateBucketInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_bucket_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_bucket_bundle(
+    input: &crate::input::UpdateBucketBundleInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_bucket_bundle_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

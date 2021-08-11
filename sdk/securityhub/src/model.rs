@@ -60,7 +60,7 @@ pub struct AwsSecurityFindingFilters {
     /// (security findings provider) after this provider's product (solution that generates
     /// findings) is registered with Security Hub.</p>
     pub product_arn: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
-    /// <p>The AWS account ID that a finding is generated in.</p>
+    /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
     pub aws_account_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The security findings provider-specific identifier for a finding.</p>
     pub id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -68,6 +68,8 @@ pub struct AwsSecurityFindingFilters {
     /// generated a finding. In various security-findings providers' solutions, this generator can
     /// be called a rule, a check, a detector, a plugin, etc.</p>
     pub generator_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+    /// <p>The Region from which the finding was generated.</p>
+    pub region: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>A finding type in the format of <code>namespace/category/classifier</code> that
     /// classifies a finding.</p>
     pub r#type: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
@@ -112,9 +114,11 @@ pub struct AwsSecurityFindingFilters {
     /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
     pub product_fields: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
     /// <p>The name of the solution (product) that generates findings.</p>
+    /// <p>Note that this is a filter against the <code>aws/securityhub/ProductName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>ProductName</code> field.</p>
     pub product_name: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The name of the findings provider (company) that owns the solution (product) that
     /// generates findings.</p>
+    /// <p>Note that this is a filter against the <code>aws/securityhub/CompanyName</code> field in <code>ProductFields</code>. It is not a filter for the top-level <code>CompanyName</code> field.</p>
     pub company_name: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom,
     /// user-defined fields added to a finding. </p>
@@ -183,11 +187,11 @@ pub struct AwsSecurityFindingFilters {
     pub resource_type: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The canonical identifier for the given resource type.</p>
     pub resource_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
-    /// <p>The canonical AWS partition name that the Region is assigned to.</p>
+    /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
     pub resource_partition: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
-    /// <p>The canonical AWS external Region name where this resource is located.</p>
+    /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
     pub resource_region: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
-    /// <p>A list of AWS tags associated with a resource at the time the finding was
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was
     /// processed.</p>
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
     /// <p>The instance type of the instance.</p>
@@ -226,12 +230,18 @@ pub struct AwsSecurityFindingFilters {
     /// <p>The user associated with the IAM access key related to a finding.</p>
     pub resource_aws_iam_access_key_user_name:
         std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+    /// <p>The name of the principal that is associated with an IAM access key.</p>
+    pub resource_aws_iam_access_key_principal_name:
+        std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The status of the IAM access key related to a finding.</p>
     pub resource_aws_iam_access_key_status:
         std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The creation date/time of the IAM access key related to a finding.</p>
     pub resource_aws_iam_access_key_created_at:
         std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
+    /// <p>The name of an IAM user.</p>
+    pub resource_aws_iam_user_user_name:
+        std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The name of the container related to a finding.</p>
     pub resource_container_name: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The identifier of the image related to a finding.</p>
@@ -246,7 +256,7 @@ pub struct AwsSecurityFindingFilters {
     /// defined.</p>
     pub resource_details_other: std::option::Option<std::vec::Vec<crate::model::MapFilter>>,
     /// <p>Exclusive to findings that are generated as the result of a check run against a specific
-    /// rule in a supported standard, such as CIS AWS Foundations. Contains security
+    /// rule in a supported standard, such as CIS Amazon Web Services Foundations. Contains security
     /// standard-related finding details.</p>
     pub compliance_status: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
     /// <p>The veracity of a finding.</p>
@@ -344,6 +354,7 @@ impl std::fmt::Debug for AwsSecurityFindingFilters {
         formatter.field("aws_account_id", &self.aws_account_id);
         formatter.field("id", &self.id);
         formatter.field("generator_id", &self.generator_id);
+        formatter.field("region", &self.region);
         formatter.field("r#type", &self.r#type);
         formatter.field("first_observed_at", &self.first_observed_at);
         formatter.field("last_observed_at", &self.last_observed_at);
@@ -464,12 +475,20 @@ impl std::fmt::Debug for AwsSecurityFindingFilters {
             &self.resource_aws_iam_access_key_user_name,
         );
         formatter.field(
+            "resource_aws_iam_access_key_principal_name",
+            &self.resource_aws_iam_access_key_principal_name,
+        );
+        formatter.field(
             "resource_aws_iam_access_key_status",
             &self.resource_aws_iam_access_key_status,
         );
         formatter.field(
             "resource_aws_iam_access_key_created_at",
             &self.resource_aws_iam_access_key_created_at,
+        );
+        formatter.field(
+            "resource_aws_iam_user_user_name",
+            &self.resource_aws_iam_user_user_name,
         );
         formatter.field("resource_container_name", &self.resource_container_name);
         formatter.field(
@@ -540,6 +559,7 @@ pub mod aws_security_finding_filters {
         pub(crate) aws_account_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) generator_id: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        pub(crate) region: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) r#type: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) first_observed_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
         pub(crate) last_observed_at: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
@@ -634,10 +654,14 @@ pub mod aws_security_finding_filters {
             std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) resource_aws_iam_access_key_user_name:
             std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        pub(crate) resource_aws_iam_access_key_principal_name:
+            std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) resource_aws_iam_access_key_status:
             std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) resource_aws_iam_access_key_created_at:
             std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
+        pub(crate) resource_aws_iam_user_user_name:
+            std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) resource_container_name:
             std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         pub(crate) resource_container_image_id:
@@ -729,6 +753,19 @@ pub mod aws_security_finding_filters {
             input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
         ) -> Self {
             self.generator_id = input;
+            self
+        }
+        pub fn region(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
+            let mut v = self.region.unwrap_or_default();
+            v.push(input.into());
+            self.region = Some(v);
+            self
+        }
+        pub fn set_region(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        ) -> Self {
+            self.region = input;
             self
         }
         pub fn r#type(mut self, input: impl Into<crate::model::StringFilter>) -> Self {
@@ -1618,6 +1655,24 @@ pub mod aws_security_finding_filters {
             self.resource_aws_iam_access_key_user_name = input;
             self
         }
+        pub fn resource_aws_iam_access_key_principal_name(
+            mut self,
+            input: impl Into<crate::model::StringFilter>,
+        ) -> Self {
+            let mut v = self
+                .resource_aws_iam_access_key_principal_name
+                .unwrap_or_default();
+            v.push(input.into());
+            self.resource_aws_iam_access_key_principal_name = Some(v);
+            self
+        }
+        pub fn set_resource_aws_iam_access_key_principal_name(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        ) -> Self {
+            self.resource_aws_iam_access_key_principal_name = input;
+            self
+        }
         pub fn resource_aws_iam_access_key_status(
             mut self,
             input: impl Into<crate::model::StringFilter>,
@@ -1650,6 +1705,22 @@ pub mod aws_security_finding_filters {
             input: std::option::Option<std::vec::Vec<crate::model::DateFilter>>,
         ) -> Self {
             self.resource_aws_iam_access_key_created_at = input;
+            self
+        }
+        pub fn resource_aws_iam_user_user_name(
+            mut self,
+            input: impl Into<crate::model::StringFilter>,
+        ) -> Self {
+            let mut v = self.resource_aws_iam_user_user_name.unwrap_or_default();
+            v.push(input.into());
+            self.resource_aws_iam_user_user_name = Some(v);
+            self
+        }
+        pub fn set_resource_aws_iam_user_user_name(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::StringFilter>>,
+        ) -> Self {
+            self.resource_aws_iam_user_user_name = input;
             self
         }
         pub fn resource_container_name(
@@ -2002,6 +2073,7 @@ pub mod aws_security_finding_filters {
                 aws_account_id: self.aws_account_id,
                 id: self.id,
                 generator_id: self.generator_id,
+                region: self.region,
                 r#type: self.r#type,
                 first_observed_at: self.first_observed_at,
                 last_observed_at: self.last_observed_at,
@@ -2068,8 +2140,11 @@ pub mod aws_security_finding_filters {
                 resource_aws_s3_bucket_owner_id: self.resource_aws_s3_bucket_owner_id,
                 resource_aws_s3_bucket_owner_name: self.resource_aws_s3_bucket_owner_name,
                 resource_aws_iam_access_key_user_name: self.resource_aws_iam_access_key_user_name,
+                resource_aws_iam_access_key_principal_name: self
+                    .resource_aws_iam_access_key_principal_name,
                 resource_aws_iam_access_key_status: self.resource_aws_iam_access_key_status,
                 resource_aws_iam_access_key_created_at: self.resource_aws_iam_access_key_created_at,
+                resource_aws_iam_user_user_name: self.resource_aws_iam_user_user_name,
                 resource_container_name: self.resource_container_name,
                 resource_container_image_id: self.resource_container_image_id,
                 resource_container_image_name: self.resource_container_image_name,
@@ -3031,7 +3106,7 @@ impl NoteUpdate {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAccount {
-    /// <p>The AWS account identifier of the Security Hub administrator account.</p>
+    /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the Security Hub administrator account. Indicates whether the account is
     /// currently enabled as a Security Hub administrator.</p>
@@ -3055,7 +3130,7 @@ pub mod admin_account {
         pub(crate) status: std::option::Option<crate::model::AdminStatus>,
     }
     impl Builder {
-        /// <p>The AWS account identifier of the Security Hub administrator account.</p>
+        /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -3144,14 +3219,14 @@ impl AsRef<str> for AdminStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
-    /// <p>The AWS account ID of the member account.</p>
+    /// <p>The Amazon Web Services account ID of the member account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The email address of the member account.</p>
     pub email: std::option::Option<std::string::String>,
     /// <p>This is replaced by <code>AdministratorID</code>.</p>
-    /// <p>The AWS account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     pub master_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the Security Hub administrator account associated with this member account.</p>
+    /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
     pub administrator_id: std::option::Option<std::string::String>,
     /// <p>The status of the relationship between the member account and its administrator account.
     /// </p>
@@ -3187,6 +3262,10 @@ pub struct Member {
     /// <p>
     /// <code>DELETED</code> - Indicates that the administrator account deleted the member
     /// account.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p>
     /// </li>
     /// </ul>
     pub member_status: std::option::Option<std::string::String>,
@@ -3224,7 +3303,7 @@ pub mod member {
         pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The AWS account ID of the member account.</p>
+        /// <p>The Amazon Web Services account ID of the member account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -3243,7 +3322,7 @@ pub mod member {
             self
         }
         /// <p>This is replaced by <code>AdministratorID</code>.</p>
-        /// <p>The AWS account ID of the Security Hub administrator account associated with this member account.</p>
+        /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
         pub fn master_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_id = Some(input.into());
             self
@@ -3252,7 +3331,7 @@ pub mod member {
             self.master_id = input;
             self
         }
-        /// <p>The AWS account ID of the Security Hub administrator account associated with this member account.</p>
+        /// <p>The Amazon Web Services account ID of the Security Hub administrator account associated with this member account.</p>
         pub fn administrator_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.administrator_id = Some(input.into());
             self
@@ -3298,6 +3377,10 @@ pub mod member {
         /// <p>
         /// <code>DELETED</code> - Indicates that the administrator account deleted the member
         /// account.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ACCOUNT_SUSPENDED</code> - Indicates that an organization account was suspended from Amazon Web Services at the same time that the administrator account tried to enable the organization account as a member account.</p>
         /// </li>
         /// </ul>
         pub fn member_status(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3450,7 +3533,7 @@ impl Invitation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Result {
-    /// <p>An AWS account ID of the account that was not processed.</p>
+    /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The reason that the account was not processed.</p>
     pub processing_result: std::option::Option<std::string::String>,
@@ -3473,7 +3556,7 @@ pub mod result {
         pub(crate) processing_result: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An AWS account ID of the account that was not processed.</p>
+        /// <p>An Amazon Web Services account ID of the account that was not processed.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -3769,11 +3852,10 @@ impl InsightResultValue {
 }
 
 /// <p>Provides consistent format for the contents of the Security Hub-aggregated findings.
-/// <code>AwsSecurityFinding</code> format enables you to share findings between AWS
+/// <code>AwsSecurityFinding</code> format enables you to share findings between Amazon Web Services
 /// security services and third-party solutions, and security standards checks.</p>
 /// <note>
-/// <p>A finding is a potential security issue generated either by AWS services (Amazon
-/// GuardDuty, Amazon Inspector, and Amazon Macie) or by the integrated third-party
+/// <p>A finding is a potential security issue generated either by Amazon Web Services services or by the integrated third-party
 /// solutions and standards checks.</p>
 /// </note>
 #[non_exhaustive]
@@ -3787,11 +3869,26 @@ pub struct AwsSecurityFinding {
     /// This can be the ARN for a third-party product that is integrated with Security Hub, or the ARN for
     /// a custom integration.</p>
     pub product_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the product that generated the finding.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
+    /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
+    /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductyName</code> attribute under <code>ProductFields</code>.</p>
+    /// <p>Security Hub does not synchronize those two attributes.</p>
+    pub product_name: std::option::Option<std::string::String>,
+    /// <p>The name of the company for the product that generated the finding.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot be updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
+    /// <p>When you use the Security Hub console to filter findings by company name, you use this attribute.</p>
+    /// <p>When you use the Security Hub API to filter findings by company name, you use the <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.</p>
+    /// <p>Security Hub does not synchronize those two attributes.</p>
+    pub company_name: std::option::Option<std::string::String>,
+    /// <p>The Region from which the finding was generated.</p>
+    /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+    pub region: std::option::Option<std::string::String>,
     /// <p>The identifier for the solution-specific component (a discrete unit of logic) that
     /// generated a finding. In various security-findings providers' solutions, this generator can
     /// be called a rule, a check, a detector, a plugin, etc. </p>
     pub generator_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that a finding is generated in.</p>
+    /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>One or more finding types in the format of <code>namespace/category/classifier</code>
     /// that classify a finding.</p>
@@ -3849,6 +3946,7 @@ pub struct AwsSecurityFinding {
     pub source_url: std::option::Option<std::string::String>,
     /// <p>A data type where security-findings providers can include additional solution-specific
     /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.</p>
+    /// <p>Can contain up to 50 key-value pairs. For each key-value pair, the key can contain up to 128 characters, and the value can contain up to 2048 characters.</p>
     pub product_fields:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of name/value string pairs associated with the finding. These are custom,
@@ -3871,7 +3969,7 @@ pub struct AwsSecurityFinding {
     /// to.</p>
     pub resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
     /// <p>This data type is exclusive to findings that are generated as the result of a check run
-    /// against a specific rule in a supported security standard, such as CIS AWS Foundations.
+    /// against a specific rule in a supported security standard, such as CIS Amazon Web Services Foundations.
     /// Contains security standard-related finding details.</p>
     pub compliance: std::option::Option<crate::model::Compliance>,
     /// <p>Indicates the veracity of a finding. </p>
@@ -3902,6 +4000,9 @@ impl std::fmt::Debug for AwsSecurityFinding {
         formatter.field("schema_version", &self.schema_version);
         formatter.field("id", &self.id);
         formatter.field("product_arn", &self.product_arn);
+        formatter.field("product_name", &self.product_name);
+        formatter.field("company_name", &self.company_name);
+        formatter.field("region", &self.region);
         formatter.field("generator_id", &self.generator_id);
         formatter.field("aws_account_id", &self.aws_account_id);
         formatter.field("types", &self.types);
@@ -3947,6 +4048,9 @@ pub mod aws_security_finding {
         pub(crate) schema_version: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) product_arn: std::option::Option<std::string::String>,
+        pub(crate) product_name: std::option::Option<std::string::String>,
+        pub(crate) company_name: std::option::Option<std::string::String>,
+        pub(crate) region: std::option::Option<std::string::String>,
         pub(crate) generator_id: std::option::Option<std::string::String>,
         pub(crate) aws_account_id: std::option::Option<std::string::String>,
         pub(crate) types: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -4022,6 +4126,42 @@ pub mod aws_security_finding {
             self.product_arn = input;
             self
         }
+        /// <p>The name of the product that generated the finding.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
+        /// <p>When you use the Security Hub console to filter findings by product name, you use this attribute.</p>
+        /// <p>When you use the Security Hub API to filter findings by product name, you use the <code>aws/securityhub/ProductyName</code> attribute under <code>ProductFields</code>.</p>
+        /// <p>Security Hub does not synchronize those two attributes.</p>
+        pub fn product_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.product_name = Some(input.into());
+            self
+        }
+        pub fn set_product_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.product_name = input;
+            self
+        }
+        /// <p>The name of the company for the product that generated the finding.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot be updated using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>. The exception to this is when you use a custom integration.</p>
+        /// <p>When you use the Security Hub console to filter findings by company name, you use this attribute.</p>
+        /// <p>When you use the Security Hub API to filter findings by company name, you use the <code>aws/securityhub/CompanyName</code> attribute under <code>ProductFields</code>.</p>
+        /// <p>Security Hub does not synchronize those two attributes.</p>
+        pub fn company_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.company_name = Some(input.into());
+            self
+        }
+        pub fn set_company_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.company_name = input;
+            self
+        }
+        /// <p>The Region from which the finding was generated.</p>
+        /// <p>Security Hub populates this attribute automatically for each finding. You cannot update it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
         /// <p>The identifier for the solution-specific component (a discrete unit of logic) that
         /// generated a finding. In various security-findings providers' solutions, this generator can
         /// be called a rule, a check, a detector, a plugin, etc. </p>
@@ -4033,7 +4173,7 @@ pub mod aws_security_finding {
             self.generator_id = input;
             self
         }
-        /// <p>The AWS account ID that a finding is generated in.</p>
+        /// <p>The Amazon Web Services account ID that a finding is generated in.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4311,7 +4451,7 @@ pub mod aws_security_finding {
             self
         }
         /// <p>This data type is exclusive to findings that are generated as the result of a check run
-        /// against a specific rule in a supported security standard, such as CIS AWS Foundations.
+        /// against a specific rule in a supported security standard, such as CIS Amazon Web Services Foundations.
         /// Contains security standard-related finding details.</p>
         pub fn compliance(mut self, input: crate::model::Compliance) -> Self {
             self.compliance = Some(input);
@@ -4447,6 +4587,9 @@ pub mod aws_security_finding {
                 schema_version: self.schema_version,
                 id: self.id,
                 product_arn: self.product_arn,
+                product_name: self.product_name,
+                company_name: self.company_name,
+                region: self.region,
                 generator_id: self.generator_id,
                 aws_account_id: self.aws_account_id,
                 types: self.types,
@@ -4806,7 +4949,7 @@ impl RelatedFinding {
 /// <p>Provides details about one of the following actions that affects or that was taken on a resource:</p>
 /// <ul>
 /// <li>
-/// <p>A remote IP address issued an AWS API call</p>
+/// <p>A remote IP address issued an Amazon Web Services API call</p>
 /// </li>
 /// <li>
 /// <p>A DNS request was received</p>
@@ -5714,7 +5857,7 @@ impl DnsRequestAction {
 pub struct AwsApiCallAction {
     /// <p>The name of the API method that was issued.</p>
     pub api: std::option::Option<std::string::String>,
-    /// <p>The name of the AWS service that the API method belongs to.</p>
+    /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>Indicates whether the API call originated from a remote IP address
     /// (<code>remoteip</code>) or from a DNS domain (<code>domain</code>).</p>
@@ -5776,7 +5919,7 @@ pub mod aws_api_call_action {
             self.api = input;
             self
         }
-        /// <p>The name of the AWS service that the API method belongs to.</p>
+        /// <p>The name of the Amazon Web Services service that the API method belongs to.</p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
             self
@@ -7205,8 +7348,8 @@ pub struct Compliance {
     /// <li>
     /// <p>
     /// <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-    /// outage, API error, or because the result of the AWS Config evaluation was
-    /// <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+    /// outage, API error, or because the result of the Config evaluation was
+    /// <code>NOT_APPLICABLE</code>. If the Config evaluation result was
     /// <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives
     /// the finding.</p>
     /// </li>
@@ -7219,7 +7362,7 @@ pub struct Compliance {
     pub related_requirements: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>For findings generated from controls, a list of reasons behind the value of
     /// <code>Status</code>. For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the
-    /// <i>AWS Security Hub User Guide</i>. </p>
+    /// <i>Security Hub User Guide</i>. </p>
     pub status_reasons: std::option::Option<std::vec::Vec<crate::model::StatusReason>>,
 }
 impl std::fmt::Debug for Compliance {
@@ -7265,8 +7408,8 @@ pub mod compliance {
         /// <li>
         /// <p>
         /// <code>NOT_AVAILABLE</code> - Check could not be performed due to a service
-        /// outage, API error, or because the result of the AWS Config evaluation was
-        /// <code>NOT_APPLICABLE</code>. If the AWS Config evaluation result was
+        /// outage, API error, or because the result of the Config evaluation was
+        /// <code>NOT_APPLICABLE</code>. If the Config evaluation result was
         /// <code>NOT_APPLICABLE</code>, then after 3 days, Security Hub automatically archives
         /// the finding.</p>
         /// </li>
@@ -7333,7 +7476,7 @@ impl Compliance {
 pub struct StatusReason {
     /// <p>A code that represents a reason for the control status. For the list of status reason
     /// codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the
-    /// <i>AWS Security Hub User Guide</i>. </p>
+    /// <i>Security Hub User Guide</i>. </p>
     pub reason_code: std::option::Option<std::string::String>,
     /// <p>The corresponding description for the status reason code.</p>
     pub description: std::option::Option<std::string::String>,
@@ -7358,7 +7501,7 @@ pub mod status_reason {
     impl Builder {
         /// <p>A code that represents a reason for the control status. For the list of status reason
         /// codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related information in the ASFF</a> in the
-        /// <i>AWS Security Hub User Guide</i>. </p>
+        /// <i>Security Hub User Guide</i>. </p>
         pub fn reason_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason_code = Some(input.into());
             self
@@ -7460,13 +7603,13 @@ pub struct Resource {
     pub r#type: std::option::Option<std::string::String>,
     /// <p>The canonical identifier for the given resource type.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The canonical AWS partition name that the Region is assigned to.</p>
+    /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
     pub partition: std::option::Option<crate::model::Partition>,
-    /// <p>The canonical AWS external Region name where this resource is located.</p>
+    /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>Identifies the role of the resource in the finding. A resource is either the actor or target of the finding activity,</p>
     pub resource_role: std::option::Option<std::string::String>,
-    /// <p>A list of AWS tags associated with a resource at the time the finding was
+    /// <p>A list of Amazon Web Services tags associated with a resource at the time the finding was
     /// processed.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
@@ -7530,7 +7673,7 @@ pub mod resource {
             self.id = input;
             self
         }
-        /// <p>The canonical AWS partition name that the Region is assigned to.</p>
+        /// <p>The canonical Amazon Web Services partition name that the Region is assigned to.</p>
         pub fn partition(mut self, input: crate::model::Partition) -> Self {
             self.partition = Some(input);
             self
@@ -7542,7 +7685,7 @@ pub mod resource {
             self.partition = input;
             self
         }
-        /// <p>The canonical AWS external Region name where this resource is located.</p>
+        /// <p>The canonical Amazon Web Services external Region name where this resource is located.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -7645,14 +7788,14 @@ pub struct ResourceDetails {
     /// <p>Details for an autoscaling group.</p>
     pub aws_auto_scaling_auto_scaling_group:
         std::option::Option<crate::model::AwsAutoScalingAutoScalingGroupDetails>,
-    /// <p>Details for an AWS CodeBuild project.</p>
+    /// <p>Details for an CodeBuild project.</p>
     pub aws_code_build_project: std::option::Option<crate::model::AwsCodeBuildProjectDetails>,
     /// <p>Details about a CloudFront distribution.</p>
     pub aws_cloud_front_distribution:
         std::option::Option<crate::model::AwsCloudFrontDistributionDetails>,
     /// <p>Details about an EC2 instance related to a finding.</p>
     pub aws_ec2_instance: std::option::Option<crate::model::AwsEc2InstanceDetails>,
-    /// <p>Details for an Amazon EC2 network interface.</p>
+    /// <p>Details for an EC2 network interface.</p>
     pub aws_ec2_network_interface: std::option::Option<crate::model::AwsEc2NetworkInterfaceDetails>,
     /// <p>Details for an EC2 security group.</p>
     pub aws_ec2_security_group: std::option::Option<crate::model::AwsEc2SecurityGroupDetails>,
@@ -7662,7 +7805,7 @@ pub struct ResourceDetails {
     pub aws_ec2_vpc: std::option::Option<crate::model::AwsEc2VpcDetails>,
     /// <p>Details about an Elastic IP address.</p>
     pub aws_ec2_eip: std::option::Option<crate::model::AwsEc2EipDetails>,
-    /// <p>Details about a subnet in EC2.</p>
+    /// <p>Details about a subnet in Amazon EC2.</p>
     pub aws_ec2_subnet: std::option::Option<crate::model::AwsEc2SubnetDetails>,
     /// <p>Details about an EC2 network access control list (ACL).</p>
     pub aws_ec2_network_acl: std::option::Option<crate::model::AwsEc2NetworkAclDetails>,
@@ -7673,12 +7816,12 @@ pub struct ResourceDetails {
         std::option::Option<crate::model::AwsElasticBeanstalkEnvironmentDetails>,
     /// <p>Details for an Elasticsearch domain.</p>
     pub aws_elasticsearch_domain: std::option::Option<crate::model::AwsElasticsearchDomainDetails>,
-    /// <p>Details about an Amazon S3 bucket related to a finding.</p>
+    /// <p>Details about an S3 bucket related to a finding.</p>
     pub aws_s3_bucket: std::option::Option<crate::model::AwsS3BucketDetails>,
     /// <p>Details about the Amazon S3 Public Access Block configuration for an account.</p>
     pub aws_s3_account_public_access_block:
         std::option::Option<crate::model::AwsS3AccountPublicAccessBlockDetails>,
-    /// <p>Details about an Amazon S3 object related to a finding.</p>
+    /// <p>Details about an S3 object related to a finding.</p>
     pub aws_s3_object: std::option::Option<crate::model::AwsS3ObjectDetails>,
     /// <p>Details about a Secrets Manager secret.</p>
     pub aws_secrets_manager_secret:
@@ -7703,7 +7846,7 @@ pub struct ResourceDetails {
     pub aws_cloud_trail_trail: std::option::Option<crate::model::AwsCloudTrailTrailDetails>,
     /// <p>Provides information about the state of a patch on an instance based on the patch baseline that was used to patch the instance.</p>
     pub aws_ssm_patch_compliance: std::option::Option<crate::model::AwsSsmPatchComplianceDetails>,
-    /// <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+    /// <p>Provides details about an Certificate Manager certificate.</p>
     pub aws_certificate_manager_certificate:
         std::option::Option<crate::model::AwsCertificateManagerCertificateDetails>,
     /// <p>Contains details about an Amazon Redshift cluster.</p>
@@ -7714,7 +7857,7 @@ pub struct ResourceDetails {
     pub aws_iam_group: std::option::Option<crate::model::AwsIamGroupDetails>,
     /// <p>Details about an IAM role.</p>
     pub aws_iam_role: std::option::Option<crate::model::AwsIamRoleDetails>,
-    /// <p>Details about a KMS key.</p>
+    /// <p>Details about an KMS key.</p>
     pub aws_kms_key: std::option::Option<crate::model::AwsKmsKeyDetails>,
     /// <p>Details about a Lambda function.</p>
     pub aws_lambda_function: std::option::Option<crate::model::AwsLambdaFunctionDetails>,
@@ -7726,7 +7869,7 @@ pub struct ResourceDetails {
     pub aws_sns_topic: std::option::Option<crate::model::AwsSnsTopicDetails>,
     /// <p>Details about an SQS queue.</p>
     pub aws_sqs_queue: std::option::Option<crate::model::AwsSqsQueueDetails>,
-    /// <p>Details for a WAF WebACL.</p>
+    /// <p>Details for an WAF WebACL.</p>
     pub aws_waf_web_acl: std::option::Option<crate::model::AwsWafWebAclDetails>,
     /// <p>Details about an Amazon RDS database snapshot.</p>
     pub aws_rds_db_snapshot: std::option::Option<crate::model::AwsRdsDbSnapshotDetails>,
@@ -7757,6 +7900,11 @@ pub struct ResourceDetails {
     /// </ul>
     pub other:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>Details about an RDS event notification subscription.</p>
+    pub aws_rds_event_subscription:
+        std::option::Option<crate::model::AwsRdsEventSubscriptionDetails>,
+    /// <p>Details about a service within an ECS cluster.</p>
+    pub aws_ecs_service: std::option::Option<crate::model::AwsEcsServiceDetails>,
 }
 impl std::fmt::Debug for ResourceDetails {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7829,6 +7977,11 @@ impl std::fmt::Debug for ResourceDetails {
         formatter.field("aws_ecs_task_definition", &self.aws_ecs_task_definition);
         formatter.field("container", &self.container);
         formatter.field("other", &self.other);
+        formatter.field(
+            "aws_rds_event_subscription",
+            &self.aws_rds_event_subscription,
+        );
+        formatter.field("aws_ecs_service", &self.aws_ecs_service);
         formatter.finish()
     }
 }
@@ -7909,6 +8062,9 @@ pub mod resource_details {
         pub(crate) other: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) aws_rds_event_subscription:
+            std::option::Option<crate::model::AwsRdsEventSubscriptionDetails>,
+        pub(crate) aws_ecs_service: std::option::Option<crate::model::AwsEcsServiceDetails>,
     }
     impl Builder {
         /// <p>Details for an autoscaling group.</p>
@@ -7926,7 +8082,7 @@ pub mod resource_details {
             self.aws_auto_scaling_auto_scaling_group = input;
             self
         }
-        /// <p>Details for an AWS CodeBuild project.</p>
+        /// <p>Details for an CodeBuild project.</p>
         pub fn aws_code_build_project(
             mut self,
             input: crate::model::AwsCodeBuildProjectDetails,
@@ -7968,7 +8124,7 @@ pub mod resource_details {
             self.aws_ec2_instance = input;
             self
         }
-        /// <p>Details for an Amazon EC2 network interface.</p>
+        /// <p>Details for an EC2 network interface.</p>
         pub fn aws_ec2_network_interface(
             mut self,
             input: crate::model::AwsEc2NetworkInterfaceDetails,
@@ -8034,7 +8190,7 @@ pub mod resource_details {
             self.aws_ec2_eip = input;
             self
         }
-        /// <p>Details about a subnet in EC2.</p>
+        /// <p>Details about a subnet in Amazon EC2.</p>
         pub fn aws_ec2_subnet(mut self, input: crate::model::AwsEc2SubnetDetails) -> Self {
             self.aws_ec2_subnet = Some(input);
             self
@@ -8103,7 +8259,7 @@ pub mod resource_details {
             self.aws_elasticsearch_domain = input;
             self
         }
-        /// <p>Details about an Amazon S3 bucket related to a finding.</p>
+        /// <p>Details about an S3 bucket related to a finding.</p>
         pub fn aws_s3_bucket(mut self, input: crate::model::AwsS3BucketDetails) -> Self {
             self.aws_s3_bucket = Some(input);
             self
@@ -8130,7 +8286,7 @@ pub mod resource_details {
             self.aws_s3_account_public_access_block = input;
             self
         }
-        /// <p>Details about an Amazon S3 object related to a finding.</p>
+        /// <p>Details about an S3 object related to a finding.</p>
         pub fn aws_s3_object(mut self, input: crate::model::AwsS3ObjectDetails) -> Self {
             self.aws_s3_object = Some(input);
             self
@@ -8295,7 +8451,7 @@ pub mod resource_details {
             self.aws_ssm_patch_compliance = input;
             self
         }
-        /// <p>Provides details about an AWS Certificate Manager (ACM) certificate.</p>
+        /// <p>Provides details about an Certificate Manager certificate.</p>
         pub fn aws_certificate_manager_certificate(
             mut self,
             input: crate::model::AwsCertificateManagerCertificateDetails,
@@ -8364,7 +8520,7 @@ pub mod resource_details {
             self.aws_iam_role = input;
             self
         }
-        /// <p>Details about a KMS key.</p>
+        /// <p>Details about an KMS key.</p>
         pub fn aws_kms_key(mut self, input: crate::model::AwsKmsKeyDetails) -> Self {
             self.aws_kms_key = Some(input);
             self
@@ -8442,7 +8598,7 @@ pub mod resource_details {
             self.aws_sqs_queue = input;
             self
         }
-        /// <p>Details for a WAF WebACL.</p>
+        /// <p>Details for an WAF WebACL.</p>
         pub fn aws_waf_web_acl(mut self, input: crate::model::AwsWafWebAclDetails) -> Self {
             self.aws_waf_web_acl = Some(input);
             self
@@ -8551,6 +8707,33 @@ pub mod resource_details {
             self.other = input;
             self
         }
+        /// <p>Details about an RDS event notification subscription.</p>
+        pub fn aws_rds_event_subscription(
+            mut self,
+            input: crate::model::AwsRdsEventSubscriptionDetails,
+        ) -> Self {
+            self.aws_rds_event_subscription = Some(input);
+            self
+        }
+        pub fn set_aws_rds_event_subscription(
+            mut self,
+            input: std::option::Option<crate::model::AwsRdsEventSubscriptionDetails>,
+        ) -> Self {
+            self.aws_rds_event_subscription = input;
+            self
+        }
+        /// <p>Details about a service within an ECS cluster.</p>
+        pub fn aws_ecs_service(mut self, input: crate::model::AwsEcsServiceDetails) -> Self {
+            self.aws_ecs_service = Some(input);
+            self
+        }
+        pub fn set_aws_ecs_service(
+            mut self,
+            input: std::option::Option<crate::model::AwsEcsServiceDetails>,
+        ) -> Self {
+            self.aws_ecs_service = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ResourceDetails`](crate::model::ResourceDetails)
         pub fn build(self) -> crate::model::ResourceDetails {
             crate::model::ResourceDetails {
@@ -8601,6 +8784,8 @@ pub mod resource_details {
                 aws_ecs_task_definition: self.aws_ecs_task_definition,
                 container: self.container,
                 other: self.other,
+                aws_rds_event_subscription: self.aws_rds_event_subscription,
+                aws_ecs_service: self.aws_ecs_service,
             }
         }
     }
@@ -8609,6 +8794,1482 @@ impl ResourceDetails {
     /// Creates a new builder-style object to manufacture [`ResourceDetails`](crate::model::ResourceDetails)
     pub fn builder() -> crate::model::resource_details::Builder {
         crate::model::resource_details::Builder::default()
+    }
+}
+
+/// <p>Provides details about a service within an ECS cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceDetails {
+    /// <p>The capacity provider strategy that the service uses.</p>
+    pub capacity_provider_strategy: std::option::Option<
+        std::vec::Vec<crate::model::AwsEcsServiceCapacityProviderStrategyDetails>,
+    >,
+    /// <p>The ARN of the cluster that hosts the service.</p>
+    pub cluster: std::option::Option<std::string::String>,
+    /// <p>Deployment parameters for the service. Includes the number of tasks that run and the order in which to start and stop tasks.</p>
+    pub deployment_configuration:
+        std::option::Option<crate::model::AwsEcsServiceDeploymentConfigurationDetails>,
+    /// <p>Contains the deployment controller type that the service uses.</p>
+    pub deployment_controller:
+        std::option::Option<crate::model::AwsEcsServiceDeploymentControllerDetails>,
+    /// <p>The number of instantiations of the task definition to run on the service.</p>
+    pub desired_count: i32,
+    /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
+    pub enable_ecs_managed_tags: bool,
+    /// <p>Whether the execute command functionality is enabled for the service.</p>
+    pub enable_execute_command: bool,
+    /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
+    pub health_check_grace_period_seconds: i32,
+    /// <p>The launch type that the service uses.</p>
+    /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code>
+    /// </p>
+    pub launch_type: std::option::Option<std::string::String>,
+    /// <p>Information about the load balancers that the service uses.</p>
+    pub load_balancers:
+        std::option::Option<std::vec::Vec<crate::model::AwsEcsServiceLoadBalancersDetails>>,
+    /// <p>The name of the service.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
+    pub network_configuration:
+        std::option::Option<crate::model::AwsEcsServiceNetworkConfigurationDetails>,
+    /// <p>The placement constraints for the tasks in the service.</p>
+    pub placement_constraints:
+        std::option::Option<std::vec::Vec<crate::model::AwsEcsServicePlacementConstraintsDetails>>,
+    /// <p>Information about how tasks for the service are placed.</p>
+    pub placement_strategies:
+        std::option::Option<std::vec::Vec<crate::model::AwsEcsServicePlacementStrategiesDetails>>,
+    /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
+    pub platform_version: std::option::Option<std::string::String>,
+    /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
+    /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code>
+    /// </p>
+    pub propagate_tags: std::option::Option<std::string::String>,
+    /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
+    pub role: std::option::Option<std::string::String>,
+    /// <p>The scheduling strategy to use for the service.</p>
+    /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
+    /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+    /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code>
+    /// </p>
+    pub scheduling_strategy: std::option::Option<std::string::String>,
+    /// <p>The ARN of the service.</p>
+    pub service_arn: std::option::Option<std::string::String>,
+    /// <p>The name of the service.</p>
+    /// <p>The name can contain up to 255 characters. It can use letters, numbers, underscores, and hyphens.</p>
+    pub service_name: std::option::Option<std::string::String>,
+    /// <p>Information about the service discovery registries to assign to the service.</p>
+    pub service_registries:
+        std::option::Option<std::vec::Vec<crate::model::AwsEcsServiceServiceRegistriesDetails>>,
+    /// <p>The task definition to use for tasks in the service.</p>
+    pub task_definition: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcsServiceDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceDetails");
+        formatter.field(
+            "capacity_provider_strategy",
+            &self.capacity_provider_strategy,
+        );
+        formatter.field("cluster", &self.cluster);
+        formatter.field("deployment_configuration", &self.deployment_configuration);
+        formatter.field("deployment_controller", &self.deployment_controller);
+        formatter.field("desired_count", &self.desired_count);
+        formatter.field("enable_ecs_managed_tags", &self.enable_ecs_managed_tags);
+        formatter.field("enable_execute_command", &self.enable_execute_command);
+        formatter.field(
+            "health_check_grace_period_seconds",
+            &self.health_check_grace_period_seconds,
+        );
+        formatter.field("launch_type", &self.launch_type);
+        formatter.field("load_balancers", &self.load_balancers);
+        formatter.field("name", &self.name);
+        formatter.field("network_configuration", &self.network_configuration);
+        formatter.field("placement_constraints", &self.placement_constraints);
+        formatter.field("placement_strategies", &self.placement_strategies);
+        formatter.field("platform_version", &self.platform_version);
+        formatter.field("propagate_tags", &self.propagate_tags);
+        formatter.field("role", &self.role);
+        formatter.field("scheduling_strategy", &self.scheduling_strategy);
+        formatter.field("service_arn", &self.service_arn);
+        formatter.field("service_name", &self.service_name);
+        formatter.field("service_registries", &self.service_registries);
+        formatter.field("task_definition", &self.task_definition);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+pub mod aws_ecs_service_details {
+    /// A builder for [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) capacity_provider_strategy: std::option::Option<
+            std::vec::Vec<crate::model::AwsEcsServiceCapacityProviderStrategyDetails>,
+        >,
+        pub(crate) cluster: std::option::Option<std::string::String>,
+        pub(crate) deployment_configuration:
+            std::option::Option<crate::model::AwsEcsServiceDeploymentConfigurationDetails>,
+        pub(crate) deployment_controller:
+            std::option::Option<crate::model::AwsEcsServiceDeploymentControllerDetails>,
+        pub(crate) desired_count: std::option::Option<i32>,
+        pub(crate) enable_ecs_managed_tags: std::option::Option<bool>,
+        pub(crate) enable_execute_command: std::option::Option<bool>,
+        pub(crate) health_check_grace_period_seconds: std::option::Option<i32>,
+        pub(crate) launch_type: std::option::Option<std::string::String>,
+        pub(crate) load_balancers:
+            std::option::Option<std::vec::Vec<crate::model::AwsEcsServiceLoadBalancersDetails>>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) network_configuration:
+            std::option::Option<crate::model::AwsEcsServiceNetworkConfigurationDetails>,
+        pub(crate) placement_constraints: std::option::Option<
+            std::vec::Vec<crate::model::AwsEcsServicePlacementConstraintsDetails>,
+        >,
+        pub(crate) placement_strategies: std::option::Option<
+            std::vec::Vec<crate::model::AwsEcsServicePlacementStrategiesDetails>,
+        >,
+        pub(crate) platform_version: std::option::Option<std::string::String>,
+        pub(crate) propagate_tags: std::option::Option<std::string::String>,
+        pub(crate) role: std::option::Option<std::string::String>,
+        pub(crate) scheduling_strategy: std::option::Option<std::string::String>,
+        pub(crate) service_arn: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+        pub(crate) service_registries:
+            std::option::Option<std::vec::Vec<crate::model::AwsEcsServiceServiceRegistriesDetails>>,
+        pub(crate) task_definition: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn capacity_provider_strategy(
+            mut self,
+            input: impl Into<crate::model::AwsEcsServiceCapacityProviderStrategyDetails>,
+        ) -> Self {
+            let mut v = self.capacity_provider_strategy.unwrap_or_default();
+            v.push(input.into());
+            self.capacity_provider_strategy = Some(v);
+            self
+        }
+        pub fn set_capacity_provider_strategy(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEcsServiceCapacityProviderStrategyDetails>,
+            >,
+        ) -> Self {
+            self.capacity_provider_strategy = input;
+            self
+        }
+        /// <p>The ARN of the cluster that hosts the service.</p>
+        pub fn cluster(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cluster = Some(input.into());
+            self
+        }
+        pub fn set_cluster(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cluster = input;
+            self
+        }
+        /// <p>Deployment parameters for the service. Includes the number of tasks that run and the order in which to start and stop tasks.</p>
+        pub fn deployment_configuration(
+            mut self,
+            input: crate::model::AwsEcsServiceDeploymentConfigurationDetails,
+        ) -> Self {
+            self.deployment_configuration = Some(input);
+            self
+        }
+        pub fn set_deployment_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AwsEcsServiceDeploymentConfigurationDetails>,
+        ) -> Self {
+            self.deployment_configuration = input;
+            self
+        }
+        /// <p>Contains the deployment controller type that the service uses.</p>
+        pub fn deployment_controller(
+            mut self,
+            input: crate::model::AwsEcsServiceDeploymentControllerDetails,
+        ) -> Self {
+            self.deployment_controller = Some(input);
+            self
+        }
+        pub fn set_deployment_controller(
+            mut self,
+            input: std::option::Option<crate::model::AwsEcsServiceDeploymentControllerDetails>,
+        ) -> Self {
+            self.deployment_controller = input;
+            self
+        }
+        /// <p>The number of instantiations of the task definition to run on the service.</p>
+        pub fn desired_count(mut self, input: i32) -> Self {
+            self.desired_count = Some(input);
+            self
+        }
+        pub fn set_desired_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.desired_count = input;
+            self
+        }
+        /// <p>Whether to enable Amazon ECS managed tags for the tasks in the service.</p>
+        pub fn enable_ecs_managed_tags(mut self, input: bool) -> Self {
+            self.enable_ecs_managed_tags = Some(input);
+            self
+        }
+        pub fn set_enable_ecs_managed_tags(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_ecs_managed_tags = input;
+            self
+        }
+        /// <p>Whether the execute command functionality is enabled for the service.</p>
+        pub fn enable_execute_command(mut self, input: bool) -> Self {
+            self.enable_execute_command = Some(input);
+            self
+        }
+        pub fn set_enable_execute_command(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable_execute_command = input;
+            self
+        }
+        /// <p>After a task starts, the amount of time in seconds that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks.</p>
+        pub fn health_check_grace_period_seconds(mut self, input: i32) -> Self {
+            self.health_check_grace_period_seconds = Some(input);
+            self
+        }
+        pub fn set_health_check_grace_period_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.health_check_grace_period_seconds = input;
+            self
+        }
+        /// <p>The launch type that the service uses.</p>
+        /// <p>Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code>
+        /// </p>
+        pub fn launch_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.launch_type = Some(input.into());
+            self
+        }
+        pub fn set_launch_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.launch_type = input;
+            self
+        }
+        pub fn load_balancers(
+            mut self,
+            input: impl Into<crate::model::AwsEcsServiceLoadBalancersDetails>,
+        ) -> Self {
+            let mut v = self.load_balancers.unwrap_or_default();
+            v.push(input.into());
+            self.load_balancers = Some(v);
+            self
+        }
+        pub fn set_load_balancers(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEcsServiceLoadBalancersDetails>,
+            >,
+        ) -> Self {
+            self.load_balancers = input;
+            self
+        }
+        /// <p>The name of the service.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
+        pub fn network_configuration(
+            mut self,
+            input: crate::model::AwsEcsServiceNetworkConfigurationDetails,
+        ) -> Self {
+            self.network_configuration = Some(input);
+            self
+        }
+        pub fn set_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AwsEcsServiceNetworkConfigurationDetails>,
+        ) -> Self {
+            self.network_configuration = input;
+            self
+        }
+        pub fn placement_constraints(
+            mut self,
+            input: impl Into<crate::model::AwsEcsServicePlacementConstraintsDetails>,
+        ) -> Self {
+            let mut v = self.placement_constraints.unwrap_or_default();
+            v.push(input.into());
+            self.placement_constraints = Some(v);
+            self
+        }
+        pub fn set_placement_constraints(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEcsServicePlacementConstraintsDetails>,
+            >,
+        ) -> Self {
+            self.placement_constraints = input;
+            self
+        }
+        pub fn placement_strategies(
+            mut self,
+            input: impl Into<crate::model::AwsEcsServicePlacementStrategiesDetails>,
+        ) -> Self {
+            let mut v = self.placement_strategies.unwrap_or_default();
+            v.push(input.into());
+            self.placement_strategies = Some(v);
+            self
+        }
+        pub fn set_placement_strategies(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEcsServicePlacementStrategiesDetails>,
+            >,
+        ) -> Self {
+            self.placement_strategies = input;
+            self
+        }
+        /// <p>The platform version on which to run the service. Only specified for tasks that are hosted on Fargate. If a platform version is not specified, the <code>LATEST</code> platform version is used by default.</p>
+        pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_version = Some(input.into());
+            self
+        }
+        pub fn set_platform_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_version = input;
+            self
+        }
+        /// <p>Indicates whether to propagate the tags from the task definition to the task or from the service to the task. If no value is provided, then tags are not propagated.</p>
+        /// <p>Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code>
+        /// </p>
+        pub fn propagate_tags(mut self, input: impl Into<std::string::String>) -> Self {
+            self.propagate_tags = Some(input.into());
+            self
+        }
+        pub fn set_propagate_tags(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.propagate_tags = input;
+            self
+        }
+        /// <p>The ARN of the IAM role that is associated with the service. The role allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</p>
+        pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.role = Some(input.into());
+            self
+        }
+        pub fn set_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.role = input;
+            self
+        }
+        /// <p>The scheduling strategy to use for the service.</p>
+        /// <p>The <code>REPLICA</code> scheduling strategy places and maintains the desired number of tasks across the cluster. By default, the service scheduler spreads tasks across Availability Zones. Task placement strategies and constraints are used to customize task placement decisions.</p>
+        /// <p>The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that are specified in the cluster. The service scheduler also evaluates the task placement constraints for running tasks and stops tasks that do not meet the placement constraints.</p>
+        /// <p>Valid values: <code>REPLICA</code> | <code>DAEMON</code>
+        /// </p>
+        pub fn scheduling_strategy(mut self, input: impl Into<std::string::String>) -> Self {
+            self.scheduling_strategy = Some(input.into());
+            self
+        }
+        pub fn set_scheduling_strategy(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.scheduling_strategy = input;
+            self
+        }
+        /// <p>The ARN of the service.</p>
+        pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_arn = Some(input.into());
+            self
+        }
+        pub fn set_service_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_arn = input;
+            self
+        }
+        /// <p>The name of the service.</p>
+        /// <p>The name can contain up to 255 characters. It can use letters, numbers, underscores, and hyphens.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        pub fn service_registries(
+            mut self,
+            input: impl Into<crate::model::AwsEcsServiceServiceRegistriesDetails>,
+        ) -> Self {
+            let mut v = self.service_registries.unwrap_or_default();
+            v.push(input.into());
+            self.service_registries = Some(v);
+            self
+        }
+        pub fn set_service_registries(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::AwsEcsServiceServiceRegistriesDetails>,
+            >,
+        ) -> Self {
+            self.service_registries = input;
+            self
+        }
+        /// <p>The task definition to use for tasks in the service.</p>
+        pub fn task_definition(mut self, input: impl Into<std::string::String>) -> Self {
+            self.task_definition = Some(input.into());
+            self
+        }
+        pub fn set_task_definition(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.task_definition = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceDetails {
+            crate::model::AwsEcsServiceDetails {
+                capacity_provider_strategy: self.capacity_provider_strategy,
+                cluster: self.cluster,
+                deployment_configuration: self.deployment_configuration,
+                deployment_controller: self.deployment_controller,
+                desired_count: self.desired_count.unwrap_or_default(),
+                enable_ecs_managed_tags: self.enable_ecs_managed_tags.unwrap_or_default(),
+                enable_execute_command: self.enable_execute_command.unwrap_or_default(),
+                health_check_grace_period_seconds: self
+                    .health_check_grace_period_seconds
+                    .unwrap_or_default(),
+                launch_type: self.launch_type,
+                load_balancers: self.load_balancers,
+                name: self.name,
+                network_configuration: self.network_configuration,
+                placement_constraints: self.placement_constraints,
+                placement_strategies: self.placement_strategies,
+                platform_version: self.platform_version,
+                propagate_tags: self.propagate_tags,
+                role: self.role,
+                scheduling_strategy: self.scheduling_strategy,
+                service_arn: self.service_arn,
+                service_name: self.service_name,
+                service_registries: self.service_registries,
+                task_definition: self.task_definition,
+            }
+        }
+    }
+}
+impl AwsEcsServiceDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDetails`](crate::model::AwsEcsServiceDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_details::Builder {
+        crate::model::aws_ecs_service_details::Builder::default()
+    }
+}
+
+/// <p>Information about a service discovery registry to assign to the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceServiceRegistriesDetails {
+    /// <p>The container name value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
+    /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
+    pub container_name: std::option::Option<std::string::String>,
+    /// <p>The port value to use for the service discovery service.</p>
+    /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
+    /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
+    pub container_port: i32,
+    /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
+    pub port: i32,
+    /// <p>The ARN of the service registry.</p>
+    pub registry_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcsServiceServiceRegistriesDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceServiceRegistriesDetails");
+        formatter.field("container_name", &self.container_name);
+        formatter.field("container_port", &self.container_port);
+        formatter.field("port", &self.port);
+        formatter.field("registry_arn", &self.registry_arn);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+pub mod aws_ecs_service_service_registries_details {
+    /// A builder for [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) container_name: std::option::Option<std::string::String>,
+        pub(crate) container_port: std::option::Option<i32>,
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) registry_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The container name value to use for the service discovery service.</p>
+        /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
+        /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
+            self
+        }
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
+            self
+        }
+        /// <p>The port value to use for the service discovery service.</p>
+        /// <p>If the task definition uses the <code>bridge</code> or <code>host</code> network mode, you must specify <code>ContainerName</code> and <code>ContainerPort</code>.</p>
+        /// <p>If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>, or <code>Port</code> , but not both.</p>
+        pub fn container_port(mut self, input: i32) -> Self {
+            self.container_port = Some(input);
+            self
+        }
+        pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.container_port = input;
+            self
+        }
+        /// <p>The port value to use for a service discovery service that specifies an SRV record. This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV records are used.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// <p>The ARN of the service registry.</p>
+        pub fn registry_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.registry_arn = Some(input.into());
+            self
+        }
+        pub fn set_registry_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.registry_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceServiceRegistriesDetails {
+            crate::model::AwsEcsServiceServiceRegistriesDetails {
+                container_name: self.container_name,
+                container_port: self.container_port.unwrap_or_default(),
+                port: self.port.unwrap_or_default(),
+                registry_arn: self.registry_arn,
+            }
+        }
+    }
+}
+impl AwsEcsServiceServiceRegistriesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceServiceRegistriesDetails`](crate::model::AwsEcsServiceServiceRegistriesDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_service_registries_details::Builder {
+        crate::model::aws_ecs_service_service_registries_details::Builder::default()
+    }
+}
+
+/// <p>A placement strategy that determines how to place the tasks for the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServicePlacementStrategiesDetails {
+    /// <p>The field to apply the placement strategy against.</p>
+    /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
+    /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
+    /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
+    pub field: std::option::Option<std::string::String>,
+    /// <p>The type of placement strategy.</p>
+    /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
+    /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
+    /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
+    /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code>
+    /// </p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcsServicePlacementStrategiesDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServicePlacementStrategiesDetails");
+        formatter.field("field", &self.field);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+pub mod aws_ecs_service_placement_strategies_details {
+    /// A builder for [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) field: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The field to apply the placement strategy against.</p>
+        /// <p>For the <code>spread</code> placement strategy, valid values are <code>instanceId</code> (or <code>host</code>, which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.</p>
+        /// <p>For the <code>binpack</code> placement strategy, valid values are <code>cpu</code> and <code>memory</code>.</p>
+        /// <p>For the <code>random</code> placement strategy, this attribute is not used.</p>
+        pub fn field(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field = Some(input.into());
+            self
+        }
+        pub fn set_field(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.field = input;
+            self
+        }
+        /// <p>The type of placement strategy.</p>
+        /// <p>The <code>random</code> placement strategy randomly places tasks on available candidates.</p>
+        /// <p>The <code>spread</code> placement strategy spreads placement across available candidates evenly based on the value of <code>Field</code>.</p>
+        /// <p>The <code>binpack</code> strategy places tasks on available candidates that have the least available amount of the resource that is specified in <code>Field</code>.</p>
+        /// <p>Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code>
+        /// </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+        pub fn build(self) -> crate::model::AwsEcsServicePlacementStrategiesDetails {
+            crate::model::AwsEcsServicePlacementStrategiesDetails {
+                field: self.field,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AwsEcsServicePlacementStrategiesDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementStrategiesDetails`](crate::model::AwsEcsServicePlacementStrategiesDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_placement_strategies_details::Builder {
+        crate::model::aws_ecs_service_placement_strategies_details::Builder::default()
+    }
+}
+
+/// <p>A placement constraint for the tasks in the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServicePlacementConstraintsDetails {
+    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
+    pub expression: std::option::Option<std::string::String>,
+    /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
+    /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code>
+    /// </p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcsServicePlacementConstraintsDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServicePlacementConstraintsDetails");
+        formatter.field("expression", &self.expression);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+pub mod aws_ecs_service_placement_constraints_details {
+    /// A builder for [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) expression: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <code>distinctInstance</code>.</p>
+        pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.expression = Some(input.into());
+            self
+        }
+        pub fn set_expression(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.expression = input;
+            self
+        }
+        /// <p>The type of constraint. Use <code>distinctInstance</code> to run each task in a particular group on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of valid candidates.</p>
+        /// <p>Valid values: <code>distinctInstance</code> | <code>memberOf</code>
+        /// </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+        pub fn build(self) -> crate::model::AwsEcsServicePlacementConstraintsDetails {
+            crate::model::AwsEcsServicePlacementConstraintsDetails {
+                expression: self.expression,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AwsEcsServicePlacementConstraintsDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServicePlacementConstraintsDetails`](crate::model::AwsEcsServicePlacementConstraintsDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_placement_constraints_details::Builder {
+        crate::model::aws_ecs_service_placement_constraints_details::Builder::default()
+    }
+}
+
+/// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceNetworkConfigurationDetails {
+    /// <p>The VPC subnet and security group configuration.</p>
+    pub aws_vpc_configuration: std::option::Option<
+        crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
+    >,
+}
+impl std::fmt::Debug for AwsEcsServiceNetworkConfigurationDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceNetworkConfigurationDetails");
+        formatter.field("aws_vpc_configuration", &self.aws_vpc_configuration);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+pub mod aws_ecs_service_network_configuration_details {
+    /// A builder for [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) aws_vpc_configuration: std::option::Option<
+            crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
+        >,
+    }
+    impl Builder {
+        /// <p>The VPC subnet and security group configuration.</p>
+        pub fn aws_vpc_configuration(
+            mut self,
+            input: crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
+        ) -> Self {
+            self.aws_vpc_configuration = Some(input);
+            self
+        }
+        pub fn set_aws_vpc_configuration(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails,
+            >,
+        ) -> Self {
+            self.aws_vpc_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceNetworkConfigurationDetails {
+            crate::model::AwsEcsServiceNetworkConfigurationDetails {
+                aws_vpc_configuration: self.aws_vpc_configuration,
+            }
+        }
+    }
+}
+impl AwsEcsServiceNetworkConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_network_configuration_details::Builder {
+        crate::model::aws_ecs_service_network_configuration_details::Builder::default()
+    }
+}
+
+/// <p>For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security group configuration.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+    /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
+    /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code>
+    /// </p>
+    pub assign_public_ip: std::option::Option<std::string::String>,
+    /// <p>The IDs of the security groups associated with the task or service.</p>
+    /// <p>You can provide up to five security groups.</p>
+    pub security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The IDs of the subnets associated with the task or service.</p>
+    /// <p>You can provide up to 16 subnets.</p>
+    pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails");
+        formatter.field("assign_public_ip", &self.assign_public_ip);
+        formatter.field("security_groups", &self.security_groups);
+        formatter.field("subnets", &self.subnets);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+pub mod aws_ecs_service_network_configuration_aws_vpc_configuration_details {
+    /// A builder for [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) assign_public_ip: std::option::Option<std::string::String>,
+        pub(crate) security_groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) subnets: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Whether the task's elastic network interface receives a public IP address. The default value is <code>DISABLED</code>.</p>
+        /// <p>Valid values: <code>ENABLED</code> | <code>DISABLED</code>
+        /// </p>
+        pub fn assign_public_ip(mut self, input: impl Into<std::string::String>) -> Self {
+            self.assign_public_ip = Some(input.into());
+            self
+        }
+        pub fn set_assign_public_ip(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.assign_public_ip = input;
+            self
+        }
+        pub fn security_groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.security_groups.unwrap_or_default();
+            v.push(input.into());
+            self.security_groups = Some(v);
+            self
+        }
+        pub fn set_security_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.security_groups = input;
+            self
+        }
+        pub fn subnets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.subnets.unwrap_or_default();
+            v.push(input.into());
+            self.subnets = Some(v);
+            self
+        }
+        pub fn set_subnets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.subnets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+            crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+                assign_public_ip: self.assign_public_ip,
+                security_groups: self.security_groups,
+                subnets: self.subnets,
+            }
+        }
+    }
+}
+impl AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails`](crate::model::AwsEcsServiceNetworkConfigurationAwsVpcConfigurationDetails)
+    pub fn builder(
+    ) -> crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder
+    {
+        crate::model::aws_ecs_service_network_configuration_aws_vpc_configuration_details::Builder::default()
+    }
+}
+
+/// <p>Information about a load balancer that the service uses.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceLoadBalancersDetails {
+    /// <p>The name of the container to associate with the load balancer.</p>
+    pub container_name: std::option::Option<std::string::String>,
+    /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
+    pub container_port: i32,
+    /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
+    /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
+    pub load_balancer_name: std::option::Option<std::string::String>,
+    /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+    /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
+    pub target_group_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcsServiceLoadBalancersDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceLoadBalancersDetails");
+        formatter.field("container_name", &self.container_name);
+        formatter.field("container_port", &self.container_port);
+        formatter.field("load_balancer_name", &self.load_balancer_name);
+        formatter.field("target_group_arn", &self.target_group_arn);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+pub mod aws_ecs_service_load_balancers_details {
+    /// A builder for [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) container_name: std::option::Option<std::string::String>,
+        pub(crate) container_port: std::option::Option<i32>,
+        pub(crate) load_balancer_name: std::option::Option<std::string::String>,
+        pub(crate) target_group_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the container to associate with the load balancer.</p>
+        pub fn container_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.container_name = Some(input.into());
+            self
+        }
+        pub fn set_container_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.container_name = input;
+            self
+        }
+        /// <p>The port on the container to associate with the load balancer. This port must correspond to a <code>containerPort</code> in the task definition the tasks in the service are using. For tasks that use the EC2 launch type, the container instance they are launched on must allow ingress traffic on the <code>hostPort</code> of the port mapping.</p>
+        pub fn container_port(mut self, input: i32) -> Self {
+            self.container_port = Some(input);
+            self
+        }
+        pub fn set_container_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.container_port = input;
+            self
+        }
+        /// <p>The name of the load balancer to associate with the Amazon ECS service or task set.</p>
+        /// <p>Only specified when using a Classic Load Balancer. For an Application Load Balancer or a Network Load Balancer, the load balancer name is omitted.</p>
+        pub fn load_balancer_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.load_balancer_name = Some(input.into());
+            self
+        }
+        pub fn set_load_balancer_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.load_balancer_name = input;
+            self
+        }
+        /// <p>The ARN of the Elastic Load Balancing target group or groups associated with a service or task set.</p>
+        /// <p>Only specified when using an Application Load Balancer or a Network Load Balancer. For a Classic Load Balancer, the target group ARN is omitted.</p>
+        pub fn target_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.target_group_arn = Some(input.into());
+            self
+        }
+        pub fn set_target_group_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.target_group_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceLoadBalancersDetails {
+            crate::model::AwsEcsServiceLoadBalancersDetails {
+                container_name: self.container_name,
+                container_port: self.container_port.unwrap_or_default(),
+                load_balancer_name: self.load_balancer_name,
+                target_group_arn: self.target_group_arn,
+            }
+        }
+    }
+}
+impl AwsEcsServiceLoadBalancersDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceLoadBalancersDetails`](crate::model::AwsEcsServiceLoadBalancersDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_load_balancers_details::Builder {
+        crate::model::aws_ecs_service_load_balancers_details::Builder::default()
+    }
+}
+
+/// <p>Information about the deployment controller type that the service uses.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceDeploymentControllerDetails {
+    /// <p>The rolling update (<code>ECS</code>) deployment type replaces the current running version of the container with the latest version.</p>
+    /// <p>The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model that is powered by CodeDeploy. This deployment model a new deployment of a service can be verified before production traffic is sent to it.</p>
+    /// <p>The external (<code>EXTERNAL</code>) deployment type allows the use of any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
+    /// <p>Valid values: <code>ECS</code> | <code>CODE_DEPLOY</code> | <code>EXTERNAL</code>
+    /// </p>
+    pub r#type: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsEcsServiceDeploymentControllerDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceDeploymentControllerDetails");
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+pub mod aws_ecs_service_deployment_controller_details {
+    /// A builder for [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The rolling update (<code>ECS</code>) deployment type replaces the current running version of the container with the latest version.</p>
+        /// <p>The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment model that is powered by CodeDeploy. This deployment model a new deployment of a service can be verified before production traffic is sent to it.</p>
+        /// <p>The external (<code>EXTERNAL</code>) deployment type allows the use of any third-party deployment controller for full control over the deployment process for an Amazon ECS service.</p>
+        /// <p>Valid values: <code>ECS</code> | <code>CODE_DEPLOY</code> | <code>EXTERNAL</code>
+        /// </p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceDeploymentControllerDetails {
+            crate::model::AwsEcsServiceDeploymentControllerDetails {
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AwsEcsServiceDeploymentControllerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentControllerDetails`](crate::model::AwsEcsServiceDeploymentControllerDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_deployment_controller_details::Builder {
+        crate::model::aws_ecs_service_deployment_controller_details::Builder::default()
+    }
+}
+
+/// <p>Optional deployment parameters for the service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceDeploymentConfigurationDetails {
+    /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
+    pub deployment_circuit_breaker: std::option::Option<
+        crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails,
+    >,
+    /// <p>For a service that uses the rolling update (<code>ECS</code>) deployment type, the maximum number of tasks in a service that are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, and for tasks that use the EC2 launch type, when any container instances are in the <code>DRAINING</code> state. Provided as a percentage of the desired number of tasks. The default value is 200%.</p>
+    /// <p>For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks that use the EC2 launch type, the maximum number of tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p>
+    /// <p>For the Fargate launch type, the maximum percent value is not used.</p>
+    pub maximum_percent: i32,
+    /// <p>For a service that uses the rolling update (<code>ECS</code>) deployment type, the minimum number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment, and while any container instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. Expressed as a percentage of the desired number of tasks. The default value is 100%.</p>
+    /// <p>For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks that use the EC2 launch type, the minimum number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p>
+    /// <p>For the Fargate launch type, the minimum healthy percent value is not used.</p>
+    pub minimum_healthy_percent: i32,
+}
+impl std::fmt::Debug for AwsEcsServiceDeploymentConfigurationDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceDeploymentConfigurationDetails");
+        formatter.field(
+            "deployment_circuit_breaker",
+            &self.deployment_circuit_breaker,
+        );
+        formatter.field("maximum_percent", &self.maximum_percent);
+        formatter.field("minimum_healthy_percent", &self.minimum_healthy_percent);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+pub mod aws_ecs_service_deployment_configuration_details {
+    /// A builder for [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) deployment_circuit_breaker: std::option::Option<
+            crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails,
+        >,
+        pub(crate) maximum_percent: std::option::Option<i32>,
+        pub(crate) minimum_healthy_percent: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
+        pub fn deployment_circuit_breaker(
+            mut self,
+            input: crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails,
+        ) -> Self {
+            self.deployment_circuit_breaker = Some(input);
+            self
+        }
+        pub fn set_deployment_circuit_breaker(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails,
+            >,
+        ) -> Self {
+            self.deployment_circuit_breaker = input;
+            self
+        }
+        /// <p>For a service that uses the rolling update (<code>ECS</code>) deployment type, the maximum number of tasks in a service that are allowed in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment, and for tasks that use the EC2 launch type, when any container instances are in the <code>DRAINING</code> state. Provided as a percentage of the desired number of tasks. The default value is 200%.</p>
+        /// <p>For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types, and tasks that use the EC2 launch type, the maximum number of tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p>
+        /// <p>For the Fargate launch type, the maximum percent value is not used.</p>
+        pub fn maximum_percent(mut self, input: i32) -> Self {
+            self.maximum_percent = Some(input);
+            self
+        }
+        pub fn set_maximum_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.maximum_percent = input;
+            self
+        }
+        /// <p>For a service that uses the rolling update (<code>ECS</code>) deployment type, the minimum number of tasks in a service that must remain in the <code>RUNNING</code> state during a deployment, and while any container instances are in the <code>DRAINING</code> state if the service contains tasks using the EC2 launch type. Expressed as a percentage of the desired number of tasks. The default value is 100%.</p>
+        /// <p>For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code> deployment types and tasks that use the EC2 launch type, the minimum number of the tasks in the service that remain in the <code>RUNNING</code> state while the container instances are in the <code>DRAINING</code> state.</p>
+        /// <p>For the Fargate launch type, the minimum healthy percent value is not used.</p>
+        pub fn minimum_healthy_percent(mut self, input: i32) -> Self {
+            self.minimum_healthy_percent = Some(input);
+            self
+        }
+        pub fn set_minimum_healthy_percent(mut self, input: std::option::Option<i32>) -> Self {
+            self.minimum_healthy_percent = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceDeploymentConfigurationDetails {
+            crate::model::AwsEcsServiceDeploymentConfigurationDetails {
+                deployment_circuit_breaker: self.deployment_circuit_breaker,
+                maximum_percent: self.maximum_percent.unwrap_or_default(),
+                minimum_healthy_percent: self.minimum_healthy_percent.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsEcsServiceDeploymentConfigurationDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_details::Builder {
+        crate::model::aws_ecs_service_deployment_configuration_details::Builder::default()
+    }
+}
+
+/// <p>Determines whether a service deployment fails if a service cannot reach a steady state.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+    /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
+    pub enable: bool,
+    /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+    pub rollback: bool,
+}
+impl std::fmt::Debug for AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails");
+        formatter.field("enable", &self.enable);
+        formatter.field("rollback", &self.rollback);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+pub mod aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details {
+    /// A builder for [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enable: std::option::Option<bool>,
+        pub(crate) rollback: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Whether to enable the deployment circuit breaker logic for the service.</p>
+        pub fn enable(mut self, input: bool) -> Self {
+            self.enable = Some(input);
+            self
+        }
+        pub fn set_enable(mut self, input: std::option::Option<bool>) -> Self {
+            self.enable = input;
+            self
+        }
+        /// <p>Whether to roll back the service if a service deployment fails. If rollback is enabled, when a service deployment fails, the service is rolled back to the last deployment that completed successfully.</p>
+        pub fn rollback(mut self, input: bool) -> Self {
+            self.rollback = Some(input);
+            self
+        }
+        pub fn set_rollback(mut self, input: std::option::Option<bool>) -> Self {
+            self.rollback = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails
+        {
+            crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+                enable: self.enable.unwrap_or_default(),
+                rollback: self.rollback.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails`](crate::model::AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder{
+        crate::model::aws_ecs_service_deployment_configuration_deployment_circuit_breaker_details::Builder::default()
+    }
+}
+
+/// <p>Strategy item for the capacity provider strategy that the service uses.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsEcsServiceCapacityProviderStrategyDetails {
+    /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
+    /// <p>The value must be between 0 and 100000.</p>
+    pub base: i32,
+    /// <p>The short name of the capacity provider.</p>
+    pub capacity_provider: std::option::Option<std::string::String>,
+    /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
+    /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
+    /// <p>The value can be between 0 and 1000.</p>
+    pub weight: i32,
+}
+impl std::fmt::Debug for AwsEcsServiceCapacityProviderStrategyDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsEcsServiceCapacityProviderStrategyDetails");
+        formatter.field("base", &self.base);
+        formatter.field("capacity_provider", &self.capacity_provider);
+        formatter.field("weight", &self.weight);
+        formatter.finish()
+    }
+}
+/// See [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+pub mod aws_ecs_service_capacity_provider_strategy_details {
+    /// A builder for [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) base: std::option::Option<i32>,
+        pub(crate) capacity_provider: std::option::Option<std::string::String>,
+        pub(crate) weight: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The minimum number of tasks to run on the capacity provider. Only one strategy item can specify a value for <code>Base</code>.</p>
+        /// <p>The value must be between 0 and 100000.</p>
+        pub fn base(mut self, input: i32) -> Self {
+            self.base = Some(input);
+            self
+        }
+        pub fn set_base(mut self, input: std::option::Option<i32>) -> Self {
+            self.base = input;
+            self
+        }
+        /// <p>The short name of the capacity provider.</p>
+        pub fn capacity_provider(mut self, input: impl Into<std::string::String>) -> Self {
+            self.capacity_provider = Some(input.into());
+            self
+        }
+        pub fn set_capacity_provider(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.capacity_provider = input;
+            self
+        }
+        /// <p>The relative percentage of the total number of tasks that should use the capacity provider.</p>
+        /// <p>If no weight is specified, the default value is 0. At least one capacity provider must have a weight greater than 0.</p>
+        /// <p>The value can be between 0 and 1000.</p>
+        pub fn weight(mut self, input: i32) -> Self {
+            self.weight = Some(input);
+            self
+        }
+        pub fn set_weight(mut self, input: std::option::Option<i32>) -> Self {
+            self.weight = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+        pub fn build(self) -> crate::model::AwsEcsServiceCapacityProviderStrategyDetails {
+            crate::model::AwsEcsServiceCapacityProviderStrategyDetails {
+                base: self.base.unwrap_or_default(),
+                capacity_provider: self.capacity_provider,
+                weight: self.weight.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsEcsServiceCapacityProviderStrategyDetails {
+    /// Creates a new builder-style object to manufacture [`AwsEcsServiceCapacityProviderStrategyDetails`](crate::model::AwsEcsServiceCapacityProviderStrategyDetails)
+    pub fn builder() -> crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder {
+        crate::model::aws_ecs_service_capacity_provider_strategy_details::Builder::default()
+    }
+}
+
+/// <p>Details about an Amazon RDS event notification subscription. The subscription allows Amazon RDS to post events to an SNS topic.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsRdsEventSubscriptionDetails {
+    /// <p>The identifier of the account that is associated with the event notification subscription.</p>
+    pub cust_subscription_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the event notification subscription.</p>
+    pub customer_aws_id: std::option::Option<std::string::String>,
+    /// <p>Whether the event notification subscription is enabled.</p>
+    pub enabled: bool,
+    /// <p>The list of event categories for the event notification subscription.</p>
+    pub event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The ARN of the event notification subscription.</p>
+    pub event_subscription_arn: std::option::Option<std::string::String>,
+    /// <p>The ARN of the SNS topic to post the event notifications to.</p>
+    pub sns_topic_arn: std::option::Option<std::string::String>,
+    /// <p>A list of source identifiers for the event notification subscription.</p>
+    pub source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The source type for the event notification subscription.</p>
+    pub source_type: std::option::Option<std::string::String>,
+    /// <p>The status of the event notification subscription.</p>
+    /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
+    /// </p>
+    pub status: std::option::Option<std::string::String>,
+    /// <p>The datetime when the event notification subscription was created.</p>
+    /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+    /// Date/Time Format</a>. The value cannot contain spaces. For example,
+    /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+    pub subscription_creation_time: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AwsRdsEventSubscriptionDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AwsRdsEventSubscriptionDetails");
+        formatter.field("cust_subscription_id", &self.cust_subscription_id);
+        formatter.field("customer_aws_id", &self.customer_aws_id);
+        formatter.field("enabled", &self.enabled);
+        formatter.field("event_categories_list", &self.event_categories_list);
+        formatter.field("event_subscription_arn", &self.event_subscription_arn);
+        formatter.field("sns_topic_arn", &self.sns_topic_arn);
+        formatter.field("source_ids_list", &self.source_ids_list);
+        formatter.field("source_type", &self.source_type);
+        formatter.field("status", &self.status);
+        formatter.field(
+            "subscription_creation_time",
+            &self.subscription_creation_time,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+pub mod aws_rds_event_subscription_details {
+    /// A builder for [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) cust_subscription_id: std::option::Option<std::string::String>,
+        pub(crate) customer_aws_id: std::option::Option<std::string::String>,
+        pub(crate) enabled: std::option::Option<bool>,
+        pub(crate) event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) event_subscription_arn: std::option::Option<std::string::String>,
+        pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
+        pub(crate) source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) source_type: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) subscription_creation_time: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the account that is associated with the event notification subscription.</p>
+        pub fn cust_subscription_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cust_subscription_id = Some(input.into());
+            self
+        }
+        pub fn set_cust_subscription_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cust_subscription_id = input;
+            self
+        }
+        /// <p>The identifier of the event notification subscription.</p>
+        pub fn customer_aws_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_aws_id = Some(input.into());
+            self
+        }
+        pub fn set_customer_aws_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.customer_aws_id = input;
+            self
+        }
+        /// <p>Whether the event notification subscription is enabled.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        pub fn event_categories_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.event_categories_list.unwrap_or_default();
+            v.push(input.into());
+            self.event_categories_list = Some(v);
+            self
+        }
+        pub fn set_event_categories_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.event_categories_list = input;
+            self
+        }
+        /// <p>The ARN of the event notification subscription.</p>
+        pub fn event_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.event_subscription_arn = Some(input.into());
+            self
+        }
+        pub fn set_event_subscription_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.event_subscription_arn = input;
+            self
+        }
+        /// <p>The ARN of the SNS topic to post the event notifications to.</p>
+        pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.sns_topic_arn = Some(input.into());
+            self
+        }
+        pub fn set_sns_topic_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.sns_topic_arn = input;
+            self
+        }
+        pub fn source_ids_list(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.source_ids_list.unwrap_or_default();
+            v.push(input.into());
+            self.source_ids_list = Some(v);
+            self
+        }
+        pub fn set_source_ids_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.source_ids_list = input;
+            self
+        }
+        /// <p>The source type for the event notification subscription.</p>
+        pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.source_type = Some(input.into());
+            self
+        }
+        pub fn set_source_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.source_type = input;
+            self
+        }
+        /// <p>The status of the event notification subscription.</p>
+        /// <p>Valid values: <code>creating</code> | <code>modifying</code> | <code>deleting</code> | <code>active</code> | <code>no-permission</code> | <code>topic-not-exist</code>
+        /// </p>
+        pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.status = Some(input.into());
+            self
+        }
+        pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The datetime when the event notification subscription was created.</p>
+        /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
+        /// Date/Time Format</a>. The value cannot contain spaces. For example,
+        /// <code>2020-03-22T13:22:13.933Z</code>.</p>
+        pub fn subscription_creation_time(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subscription_creation_time = Some(input.into());
+            self
+        }
+        pub fn set_subscription_creation_time(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subscription_creation_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+        pub fn build(self) -> crate::model::AwsRdsEventSubscriptionDetails {
+            crate::model::AwsRdsEventSubscriptionDetails {
+                cust_subscription_id: self.cust_subscription_id,
+                customer_aws_id: self.customer_aws_id,
+                enabled: self.enabled.unwrap_or_default(),
+                event_categories_list: self.event_categories_list,
+                event_subscription_arn: self.event_subscription_arn,
+                sns_topic_arn: self.sns_topic_arn,
+                source_ids_list: self.source_ids_list,
+                source_type: self.source_type,
+                status: self.status,
+                subscription_creation_time: self.subscription_creation_time,
+            }
+        }
+    }
+}
+impl AwsRdsEventSubscriptionDetails {
+    /// Creates a new builder-style object to manufacture [`AwsRdsEventSubscriptionDetails`](crate::model::AwsRdsEventSubscriptionDetails)
+    pub fn builder() -> crate::model::aws_rds_event_subscription_details::Builder {
+        crate::model::aws_rds_event_subscription_details::Builder::default()
     }
 }
 
@@ -8742,7 +10403,7 @@ pub struct AwsEcsTaskDefinitionDetails {
         std::option::Option<crate::model::AwsEcsTaskDefinitionProxyConfigurationDetails>,
     /// <p>The task launch types that the task definition was validated against.</p>
     pub requires_compatibilities: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call AWS API operations on your behalf.</p>
+    /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
     pub task_role_arn: std::option::Option<std::string::String>,
     /// <p>The data volume definitions for the task.</p>
     pub volumes:
@@ -8947,7 +10608,7 @@ pub mod aws_ecs_task_definition_details {
             self.requires_compatibilities = input;
             self
         }
-        /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call AWS API operations on your behalf.</p>
+        /// <p>The short name or ARN of the IAM role that grants containers in the task permission to call Amazon Web Services API operations on your behalf.</p>
         pub fn task_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_role_arn = Some(input.into());
             self
@@ -12981,10 +14642,10 @@ pub struct AwsRdsDbClusterDetails {
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>Whether the DB cluster is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p>The ARN of the AWS KMS master key that is used to encrypt the database instances in the
+    /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the
     /// DB cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the DB cluster. The identifier must be unique within each AWS Region
+    /// <p>The identifier of the DB cluster. The identifier must be unique within each Amazon Web Services Region
     /// and is immutable.</p>
     pub db_cluster_resource_id: std::option::Option<std::string::String>,
     /// <p>A list of the IAM roles that are associated with the DB cluster.</p>
@@ -13008,7 +14669,7 @@ pub struct AwsRdsDbClusterDetails {
     pub activity_stream_status: std::option::Option<std::string::String>,
     /// <p>Whether tags are copied from the DB cluster to snapshots of the DB cluster.</p>
     pub copy_tags_to_snapshot: bool,
-    /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different AWS
+    /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services
     /// account.</p>
     pub cross_account_clone: bool,
     /// <p>The Active Directory domain membership records that are associated with the DB
@@ -13366,7 +15027,7 @@ pub mod aws_rds_db_cluster_details {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The ARN of the AWS KMS master key that is used to encrypt the database instances in the
+        /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the
         /// DB cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -13376,7 +15037,7 @@ pub mod aws_rds_db_cluster_details {
             self.kms_key_id = input;
             self
         }
-        /// <p>The identifier of the DB cluster. The identifier must be unique within each AWS Region
+        /// <p>The identifier of the DB cluster. The identifier must be unique within each Amazon Web Services Region
         /// and is immutable.</p>
         pub fn db_cluster_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.db_cluster_resource_id = Some(input.into());
@@ -13484,7 +15145,7 @@ pub mod aws_rds_db_cluster_details {
             self.copy_tags_to_snapshot = input;
             self
         }
-        /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different AWS
+        /// <p>Whether the DB cluster is a clone of a DB cluster owned by a different Amazon Web Services
         /// account.</p>
         pub fn cross_account_clone(mut self, input: bool) -> Self {
             self.cross_account_clone = Some(input);
@@ -14076,7 +15737,7 @@ pub struct AwsRdsDbClusterSnapshotDetails {
     pub percent_progress: i32,
     /// <p>Whether the DB cluster is encrypted.</p>
     pub storage_encrypted: bool,
-    /// <p>The ARN of the AWS KMS master key that is used to encrypt the database instances in the
+    /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the
     /// DB cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The DB cluster identifier.</p>
@@ -14296,7 +15957,7 @@ pub mod aws_rds_db_cluster_snapshot_details {
             self.storage_encrypted = input;
             self
         }
-        /// <p>The ARN of the AWS KMS master key that is used to encrypt the database instances in the
+        /// <p>The ARN of the KMS master key that is used to encrypt the database instances in the
         /// DB cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -14417,7 +16078,7 @@ pub struct AwsRdsDbSnapshotDetails {
     pub option_group_name: std::option::Option<std::string::String>,
     /// <p>The percentage of the estimated data that has been transferred.</p>
     pub percent_progress: i32,
-    /// <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+    /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
     pub source_region: std::option::Option<std::string::String>,
     /// <p>The DB snapshot ARN that the DB snapshot was copied from.</p>
     pub source_db_snapshot_identifier: std::option::Option<std::string::String>,
@@ -14427,7 +16088,7 @@ pub struct AwsRdsDbSnapshotDetails {
     pub tde_credential_arn: std::option::Option<std::string::String>,
     /// <p>Whether the DB snapshot is encrypted.</p>
     pub encrypted: bool,
-    /// <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.</p>
+    /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The time zone of the DB snapshot.</p>
     pub timezone: std::option::Option<std::string::String>,
@@ -14697,7 +16358,7 @@ pub mod aws_rds_db_snapshot_details {
             self.percent_progress = input;
             self
         }
-        /// <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+        /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
         pub fn source_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_region = Some(input.into());
             self
@@ -14754,7 +16415,7 @@ pub mod aws_rds_db_snapshot_details {
             self.encrypted = input;
             self
         }
-        /// <p>If <code>Encrypted</code> is <code>true</code>, the AWS KMS key identifier for the encrypted DB snapshot.</p>
+        /// <p>If <code>Encrypted</code> is <code>true</code>, the KMS key identifier for the encrypted DB snapshot.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -14916,7 +16577,7 @@ impl AwsRdsDbProcessorFeature {
     }
 }
 
-/// <p>Details about a WAF WebACL.</p>
+/// <p>Details about an WAF WebACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsWafWebAclDetails {
@@ -15015,11 +16676,11 @@ impl AwsWafWebAclDetails {
     }
 }
 
-/// <p>Details for a rule in a WAF WebACL.</p>
+/// <p>Details for a rule in an WAF WebACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsWafWebAclRule {
-    /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the
+    /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the
     /// conditions in the rule. </p>
     pub action: std::option::Option<crate::model::WafAction>,
     /// <p>Rules to exclude from a rule group.</p>
@@ -15080,7 +16741,7 @@ pub mod aws_waf_web_acl_rule {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the action that CloudFront or AWS WAF takes when a web request matches the
+        /// <p>Specifies the action that CloudFront or WAF takes when a web request matches the
         /// conditions in the rule. </p>
         pub fn action(mut self, input: crate::model::WafAction) -> Self {
             self.action = Some(input);
@@ -15282,27 +16943,27 @@ impl WafExcludedRule {
     }
 }
 
-/// <p>Details about the action that CloudFront or AWS WAF takes when a web request matches the
+/// <p>Details about the action that CloudFront or WAF takes when a web request matches the
 /// conditions in the rule. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafAction {
-    /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a
+    /// <p>Specifies how you want WAF to respond to requests that match the settings in a
     /// rule.</p>
     /// <p>Valid settings include the following:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>ALLOW</code> - AWS WAF allows requests</p>
+    /// <code>ALLOW</code> - WAF allows requests</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>BLOCK</code> - AWS WAF blocks requests</p>
+    /// <code>BLOCK</code> - WAF blocks requests</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
-    /// of the conditions in the rule. AWS WAF then continues to inspect the web request
+    /// <code>COUNT</code> - WAF increments a counter of the requests that match all
+    /// of the conditions in the rule. WAF then continues to inspect the web request
     /// based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for
     /// the default action for a WebACL.</p>
     /// </li>
@@ -15325,22 +16986,22 @@ pub mod waf_action {
         pub(crate) r#type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies how you want AWS WAF to respond to requests that match the settings in a
+        /// <p>Specifies how you want WAF to respond to requests that match the settings in a
         /// rule.</p>
         /// <p>Valid settings include the following:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>ALLOW</code> - AWS WAF allows requests</p>
+        /// <code>ALLOW</code> - WAF allows requests</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>BLOCK</code> - AWS WAF blocks requests</p>
+        /// <code>BLOCK</code> - WAF blocks requests</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>COUNT</code> - AWS WAF increments a counter of the requests that match all
-        /// of the conditions in the rule. AWS WAF then continues to inspect the web request
+        /// <code>COUNT</code> - WAF increments a counter of the requests that match all
+        /// of the conditions in the rule. WAF then continues to inspect the web request
         /// based on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for
         /// the default action for a WebACL.</p>
         /// </li>
@@ -15372,9 +17033,9 @@ impl WafAction {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsSqsQueueDetails {
-    /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.</p>
+    /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
     pub kms_data_key_reuse_period_seconds: i32,
-    /// <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
+    /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom
     /// CMK.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the new queue.</p>
@@ -15408,7 +17069,7 @@ pub mod aws_sqs_queue_details {
         pub(crate) dead_letter_target_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again.</p>
+        /// <p>The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again.</p>
         pub fn kms_data_key_reuse_period_seconds(mut self, input: i32) -> Self {
             self.kms_data_key_reuse_period_seconds = Some(input);
             self
@@ -15420,7 +17081,7 @@ pub mod aws_sqs_queue_details {
             self.kms_data_key_reuse_period_seconds = input;
             self
         }
-        /// <p>The ID of an AWS managed customer master key (CMK) for Amazon SQS or a custom
+        /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom
         /// CMK.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
@@ -15479,10 +17140,10 @@ impl AwsSqsQueueDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsSnsTopicDetails {
-    /// <p>The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom
+    /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
     /// CMK.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
-    /// <p>Subscription is an embedded property that describes the subscription endpoints of an Amazon SNS topic.</p>
+    /// <p>Subscription is an embedded property that describes the subscription endpoints of an SNS topic.</p>
     pub subscription: std::option::Option<std::vec::Vec<crate::model::AwsSnsTopicSubscription>>,
     /// <p>The name of the topic.</p>
     pub topic_name: std::option::Option<std::string::String>,
@@ -15512,7 +17173,7 @@ pub mod aws_sns_topic_details {
         pub(crate) owner: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of an AWS managed customer master key (CMK) for Amazon SNS or a custom
+        /// <p>The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SNS or a custom
         /// CMK.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
@@ -15642,7 +17303,7 @@ impl AwsSnsTopicSubscription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsRdsDbInstanceDetails {
-    /// <p>The AWS Identity and Access Management (IAM) roles associated with the DB
+    /// <p>The IAM roles associated with the DB
     /// instance.</p>
     pub associated_roles:
         std::option::Option<std::vec::Vec<crate::model::AwsRdsDbInstanceAssociatedRole>>,
@@ -15659,8 +17320,8 @@ pub struct AwsRdsDbInstanceDetails {
     /// <p>Specifies the port that the DB instance listens on. If the DB instance is part of a DB
     /// cluster, this can be a different port than the DB cluster port.</p>
     pub db_instance_port: i32,
-    /// <p>The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-    /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
+    /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is
+    /// found in CloudTrail log entries whenever the KMS key for the DB instance is
     /// accessed. </p>
     pub dbi_resource_id: std::option::Option<std::string::String>,
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -15685,7 +17346,7 @@ pub struct AwsRdsDbInstanceDetails {
     pub engine: std::option::Option<std::string::String>,
     /// <p>Indicates the database engine version.</p>
     pub engine_version: std::option::Option<std::string::String>,
-    /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database
+    /// <p>True if mapping of IAM accounts to database
     /// accounts is enabled, and otherwise false.</p>
     /// <p>IAM database authentication can be enabled for the following database engines.</p>
     /// <ul>
@@ -15705,7 +17366,7 @@ pub struct AwsRdsDbInstanceDetails {
     /// Date/Time Format</a>. The value cannot contain spaces. For example,
     /// <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub instance_create_time: std::option::Option<std::string::String>,
-    /// <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
+    /// <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
     /// DB instance.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the accessibility options for the DB instance.</p>
@@ -15810,12 +17471,11 @@ pub struct AwsRdsDbInstanceDetails {
     pub timezone: std::option::Option<std::string::String>,
     /// <p>Indicates whether Performance Insights is enabled for the DB instance.</p>
     pub performance_insights_enabled: bool,
-    /// <p>The identifier of the AWS KMS key used to encrypt the Performance Insights data.</p>
+    /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
     pub performance_insights_kms_key_id: std::option::Option<std::string::String>,
     /// <p>The number of days to retain Performance Insights data.</p>
     pub performance_insights_retention_period: i32,
-    /// <p>A list of log types that this DB instance is configured to export to CloudWatch
-    /// Logs.</p>
+    /// <p>A list of log types that this DB instance is configured to export to CloudWatch Logs.</p>
     pub enabled_cloud_watch_logs_exports: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The number of CPU cores and the number of threads per core for the DB instance class of
     /// the DB instance.</p>
@@ -16079,8 +17739,8 @@ pub mod aws_rds_db_instance_details {
             self.db_instance_port = input;
             self
         }
-        /// <p>The AWS Region-unique, immutable identifier for the DB instance. This identifier is
-        /// found in AWS CloudTrail log entries whenever the AWS KMS key for the DB instance is
+        /// <p>The Amazon Web Services Region-unique, immutable identifier for the DB instance. This identifier is
+        /// found in CloudTrail log entries whenever the KMS key for the DB instance is
         /// accessed. </p>
         pub fn dbi_resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.dbi_resource_id = Some(input.into());
@@ -16156,7 +17816,7 @@ pub mod aws_rds_db_instance_details {
             self.engine_version = input;
             self
         }
-        /// <p>True if mapping of AWS Identity and Access Management (IAM) accounts to database
+        /// <p>True if mapping of IAM accounts to database
         /// accounts is enabled, and otherwise false.</p>
         /// <p>IAM database authentication can be enabled for the following database engines.</p>
         /// <ul>
@@ -16196,7 +17856,7 @@ pub mod aws_rds_db_instance_details {
             self.instance_create_time = input;
             self
         }
-        /// <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted
+        /// <p>If <code>StorageEncrypted</code> is true, the KMS key identifier for the encrypted
         /// DB instance.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -16669,7 +18329,7 @@ pub mod aws_rds_db_instance_details {
             self.performance_insights_enabled = input;
             self
         }
-        /// <p>The identifier of the AWS KMS key used to encrypt the Performance Insights data.</p>
+        /// <p>The identifier of the KMS key used to encrypt the Performance Insights data.</p>
         pub fn performance_insights_kms_key_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -17754,14 +19414,14 @@ impl AwsRdsDbParameterGroup {
     }
 }
 
-/// <p>An AWS Identity and Access Management (IAM) role associated with the DB instance.</p>
+/// <p>An IAM role associated with the DB instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsRdsDbInstanceAssociatedRole {
     /// <p>The ARN of the IAM role that is associated with the DB
     /// instance.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the feature associated with the IAM)role.</p>
+    /// <p>The name of the feature associated with the IAM role.</p>
     pub feature_name: std::option::Option<std::string::String>,
     /// <p>Describes the state of the association between the IAM role and the DB instance. The
     /// <code>Status</code> property returns one of the following values:</p>
@@ -17769,7 +19429,7 @@ pub struct AwsRdsDbInstanceAssociatedRole {
     /// <li>
     /// <p>
     /// <code>ACTIVE</code> - The IAM role ARN is associated with the DB instance and can
-    /// be used to access other AWS services on your behalf.</p>
+    /// be used to access other Amazon Web Services services on your behalf.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -17779,7 +19439,7 @@ pub struct AwsRdsDbInstanceAssociatedRole {
     /// <li>
     /// <p>
     /// <code>INVALID</code> - The IAM role ARN is associated with the DB instance. But
-    /// the DB instance is unable to assume the IAM role in order to access other AWS
+    /// the DB instance is unable to assume the IAM role in order to access other Amazon Web Services
     /// services on your behalf. </p>
     /// </li>
     /// </ul>
@@ -17815,7 +19475,7 @@ pub mod aws_rds_db_instance_associated_role {
             self.role_arn = input;
             self
         }
-        /// <p>The name of the feature associated with the IAM)role.</p>
+        /// <p>The name of the feature associated with the IAM role.</p>
         pub fn feature_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.feature_name = Some(input.into());
             self
@@ -17830,7 +19490,7 @@ pub mod aws_rds_db_instance_associated_role {
         /// <li>
         /// <p>
         /// <code>ACTIVE</code> - The IAM role ARN is associated with the DB instance and can
-        /// be used to access other AWS services on your behalf.</p>
+        /// be used to access other Amazon Web Services services on your behalf.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -17840,7 +19500,7 @@ pub mod aws_rds_db_instance_associated_role {
         /// <li>
         /// <p>
         /// <code>INVALID</code> - The IAM role ARN is associated with the DB instance. But
-        /// the DB instance is unable to assume the IAM role in order to access other AWS
+        /// the DB instance is unable to assume the IAM role in order to access other Amazon Web Services
         /// services on your behalf. </p>
         /// </li>
         /// </ul>
@@ -17976,7 +19636,7 @@ pub struct AwsLambdaFunctionDetails {
     pub function_name: std::option::Option<std::string::String>,
     /// <p>The function that Lambda calls to begin executing your function.</p>
     pub handler: std::option::Option<std::string::String>,
-    /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed CMK.</p>
+    /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed CMK.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>Indicates when the function was last updated.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
@@ -17997,7 +19657,7 @@ pub struct AwsLambdaFunctionDetails {
     pub runtime: std::option::Option<std::string::String>,
     /// <p>The amount of time that Lambda allows a function to run before stopping it.</p>
     pub timeout: i32,
-    /// <p>The function's AWS X-Ray tracing configuration.</p>
+    /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::AwsLambdaFunctionTracingConfig>,
     /// <p>The function's networking configuration.</p>
     pub vpc_config: std::option::Option<crate::model::AwsLambdaFunctionVpcConfig>,
@@ -18125,7 +19785,7 @@ pub mod aws_lambda_function_details {
             self.handler = input;
             self
         }
-        /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed CMK.</p>
+        /// <p>The KMS key that is used to encrypt the function's environment variables. This key is only returned if you've configured a customer managed CMK.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -18216,7 +19876,7 @@ pub mod aws_lambda_function_details {
             self.timeout = input;
             self
         }
-        /// <p>The function's AWS X-Ray tracing configuration.</p>
+        /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(
             mut self,
             input: crate::model::AwsLambdaFunctionTracingConfig,
@@ -18367,7 +20027,7 @@ impl AwsLambdaFunctionVpcConfig {
     }
 }
 
-/// <p>The function's AWS X-Ray tracing configuration.</p>
+/// <p>The function's X-Ray tracing configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLambdaFunctionTracingConfig {
@@ -18412,7 +20072,7 @@ impl AwsLambdaFunctionTracingConfig {
     }
 }
 
-/// <p>An AWS Lambda layer.</p>
+/// <p>An Lambda layer.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLambdaFunctionLayer {
@@ -18615,7 +20275,7 @@ impl AwsLambdaFunctionEnvironmentError {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLambdaFunctionDeadLetterConfig {
-    /// <p>The ARN of an Amazon SQS queue or Amazon SNS topic.</p>
+    /// <p>The ARN of an SQS queue or SNS topic.</p>
     pub target_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsLambdaFunctionDeadLetterConfig {
@@ -18634,7 +20294,7 @@ pub mod aws_lambda_function_dead_letter_config {
         pub(crate) target_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of an Amazon SQS queue or Amazon SNS topic.</p>
+        /// <p>The ARN of an SQS queue or SNS topic.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
@@ -18662,13 +20322,13 @@ impl AwsLambdaFunctionDeadLetterConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLambdaFunctionCode {
-    /// <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.</p>
+    /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
     pub s3_bucket: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 key of the deployment package.</p>
     pub s3_key: std::option::Option<std::string::String>,
     /// <p>For versioned objects, the version of the deployment package object to use.</p>
     pub s3_object_version: std::option::Option<std::string::String>,
-    /// <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
+    /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
     pub zip_file: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsLambdaFunctionCode {
@@ -18693,7 +20353,7 @@ pub mod aws_lambda_function_code {
         pub(crate) zip_file: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.</p>
+        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_bucket = Some(input.into());
             self
@@ -18723,7 +20383,7 @@ pub mod aws_lambda_function_code {
             self.s3_object_version = input;
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for you.</p>
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for you.</p>
         pub fn zip_file(mut self, input: impl Into<std::string::String>) -> Self {
             self.zip_file = Some(input.into());
             self
@@ -18754,7 +20414,7 @@ impl AwsLambdaFunctionCode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsKmsKeyDetails {
-    /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+    /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the CMK.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>Indicates when the CMK was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
@@ -18763,16 +20423,15 @@ pub struct AwsKmsKeyDetails {
     pub creation_date: f64,
     /// <p>The globally unique identifier for the CMK.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed.</p>
+    /// <p>The manager of the CMK. CMKs in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
     pub key_manager: std::option::Option<std::string::String>,
     /// <p>The state of the CMK.</p>
     pub key_state: std::option::Option<std::string::String>,
     /// <p>The source of the CMK's key material.</p>
-    /// <p>When this value is <code>AWS_KMS</code>, AWS KMS created the key material.</p>
+    /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
     /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your
     /// existing key management infrastructure or the CMK lacks key material.</p>
-    /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS
-    /// CloudHSM cluster associated with a custom key store.</p>
+    /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
     pub origin: std::option::Option<std::string::String>,
     /// <p>A description of the key.</p>
     pub description: std::option::Option<std::string::String>,
@@ -18805,7 +20464,7 @@ pub mod aws_kms_key_details {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The twelve-digit account ID of the AWS account that owns the CMK.</p>
+        /// <p>The twelve-digit account ID of the Amazon Web Services account that owns the CMK.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -18838,7 +20497,7 @@ pub mod aws_kms_key_details {
             self.key_id = input;
             self
         }
-        /// <p>The manager of the CMK. CMKs in your AWS account are either customer managed or AWS managed.</p>
+        /// <p>The manager of the CMK. CMKs in your Amazon Web Services account are either customer managed or Amazon Web Services managed.</p>
         pub fn key_manager(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_manager = Some(input.into());
             self
@@ -18857,11 +20516,10 @@ pub mod aws_kms_key_details {
             self
         }
         /// <p>The source of the CMK's key material.</p>
-        /// <p>When this value is <code>AWS_KMS</code>, AWS KMS created the key material.</p>
+        /// <p>When this value is <code>AWS_KMS</code>, KMS created the key material.</p>
         /// <p>When this value is <code>EXTERNAL</code>, the key material was imported from your
         /// existing key management infrastructure or the CMK lacks key material.</p>
-        /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the AWS
-        /// CloudHSM cluster associated with a custom key store.</p>
+        /// <p>When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the CloudHSM cluster associated with a custom key store.</p>
         pub fn origin(mut self, input: impl Into<std::string::String>) -> Self {
             self.origin = Some(input.into());
             self
@@ -21380,9 +23038,9 @@ pub struct AwsRedshiftClusterDetails {
     /// hardware security module (HSM) settings that were specified in a modify cluster
     /// command.</p>
     pub hsm_status: std::option::Option<crate::model::AwsRedshiftClusterHsmStatus>,
-    /// <p>A list of IAM roles that the cluster can use to access other AWS services.</p>
+    /// <p>A list of IAM roles that the cluster can use to access other Amazon Web Services services.</p>
     pub iam_roles: std::option::Option<std::vec::Vec<crate::model::AwsRedshiftClusterIamRole>>,
-    /// <p>The identifier of the AWS KMS encryption key that is used to encrypt data in the
+    /// <p>The identifier of the KMS encryption key that is used to encrypt data in the
     /// cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The name of the maintenance track for the cluster.</p>
@@ -21985,7 +23643,7 @@ pub mod aws_redshift_cluster_details {
             self.iam_roles = input;
             self
         }
-        /// <p>The identifier of the AWS KMS encryption key that is used to encrypt data in the
+        /// <p>The identifier of the KMS encryption key that is used to encrypt data in the
         /// cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -22781,7 +24439,7 @@ impl AwsRedshiftClusterPendingModifiedValues {
     }
 }
 
-/// <p>An IAM role that the cluster can use to access other AWS services.</p>
+/// <p>An IAM role that the cluster can use to access other Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsRedshiftClusterIamRole {
@@ -23648,7 +25306,7 @@ impl AwsRedshiftClusterClusterNode {
     }
 }
 
-/// <p>Provides details about an AWS Certificate Manager certificate.</p>
+/// <p>Provides details about an Certificate Manager certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCertificateManagerCertificateDetails {
@@ -23692,7 +25350,7 @@ pub struct AwsCertificateManagerCertificateDetails {
     /// Date/Time Format</a>. The value cannot contain spaces. For example,
     /// <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub imported_at: std::option::Option<std::string::String>,
-    /// <p>The list of ARNs for the AWS resources that use the certificate.</p>
+    /// <p>The list of ARNs for the Amazon Web Services resources that use the certificate.</p>
     pub in_use_by: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Indicates when the certificate was issued. Provided if the certificate type is
     /// <code>AMAZON_ISSUED</code>.</p>
@@ -23728,7 +25386,7 @@ pub struct AwsCertificateManagerCertificateDetails {
     /// <p>Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code>
     /// </p>
     pub renewal_eligibility: std::option::Option<std::string::String>,
-    /// <p>Information about the status of the AWS Certificate Manager managed renewal for the
+    /// <p>Information about the status of the Certificate Manager managed renewal for the
     /// certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
     pub renewal_summary:
         std::option::Option<crate::model::AwsCertificateManagerCertificateRenewalSummary>,
@@ -23751,7 +25409,7 @@ pub struct AwsCertificateManagerCertificateDetails {
     /// <p>The subject alternative names include the canonical domain name (CN) of the certificate
     /// and additional domain names that can be used to connect to the website.</p>
     pub subject_alternative_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The source of the certificate. For certificates that AWS Certificate Manager provides,
+    /// <p>The source of the certificate. For certificates that Certificate Manager provides,
     /// <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with
     /// <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>
     /// <p>Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> |
@@ -24056,7 +25714,7 @@ pub mod aws_certificate_manager_certificate_details {
             self.renewal_eligibility = input;
             self
         }
-        /// <p>Information about the status of the AWS Certificate Manager managed renewal for the
+        /// <p>Information about the status of the Certificate Manager managed renewal for the
         /// certificate. Provided only when the certificate type is <code>AMAZON_ISSUED</code>.</p>
         pub fn renewal_summary(
             mut self,
@@ -24131,7 +25789,7 @@ pub mod aws_certificate_manager_certificate_details {
             self.subject_alternative_names = input;
             self
         }
-        /// <p>The source of the certificate. For certificates that AWS Certificate Manager provides,
+        /// <p>The source of the certificate. For certificates that Certificate Manager provides,
         /// <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported with
         /// <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.</p>
         /// <p>Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> |
@@ -24182,18 +25840,18 @@ impl AwsCertificateManagerCertificateDetails {
     }
 }
 
-/// <p>Contains information about the AWS Certificate Manager managed renewal for an
+/// <p>Contains information about the Certificate Manager managed renewal for an
 /// <code>AMAZON_ISSUED</code> certificate.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCertificateManagerCertificateRenewalSummary {
     /// <p>Information about the validation of each domain name in the certificate, as it pertains
-    /// to AWS Certificate Manager managed renewal. Provided only when the certificate type is
+    /// to Certificate Manager managed renewal. Provided only when the certificate type is
     /// <code>AMAZON_ISSUED</code>.</p>
     pub domain_validation_options: std::option::Option<
         std::vec::Vec<crate::model::AwsCertificateManagerCertificateDomainValidationOption>,
     >,
-    /// <p>The status of the AWS Certificate Manager managed renewal of the certificate.</p>
+    /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
     /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> |
     /// <code>SUCCESS</code> | <code>FAILED</code>
     /// </p>
@@ -24257,7 +25915,7 @@ pub mod aws_certificate_manager_certificate_renewal_summary {
             self.domain_validation_options = input;
             self
         }
-        /// <p>The status of the AWS Certificate Manager managed renewal of the certificate.</p>
+        /// <p>The status of the Certificate Manager managed renewal of the certificate.</p>
         /// <p>Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code> |
         /// <code>SUCCESS</code> | <code>FAILED</code>
         /// </p>
@@ -24330,8 +25988,7 @@ impl AwsCertificateManagerCertificateRenewalSummary {
 /// <code>RequestCertificate</code> request</p>
 /// </li>
 /// <li>
-/// <p>The validation of each domain name in the certificate, as it pertains to AWS
-/// Certificate Manager managed renewal</p>
+/// <p>The validation of each domain name in the certificate, as it pertains to Certificate Manager managed renewal</p>
 /// </li>
 /// </ul>
 #[non_exhaustive]
@@ -24342,10 +25999,10 @@ pub struct AwsCertificateManagerCertificateDomainValidationOption {
     /// <p>The CNAME record that is added to the DNS database for domain validation.</p>
     pub resource_record:
         std::option::Option<crate::model::AwsCertificateManagerCertificateResourceRecord>,
-    /// <p>The domain name that AWS Certificate Manager uses to send domain validation
+    /// <p>The domain name that Certificate Manager uses to send domain validation
     /// emails.</p>
     pub validation_domain: std::option::Option<std::string::String>,
-    /// <p>A list of email addresses that AWS Certificate Manager uses to send domain validation
+    /// <p>A list of email addresses that Certificate Manager uses to send domain validation
     /// emails.</p>
     pub validation_emails: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The method used to validate the domain name.</p>
@@ -24407,7 +26064,7 @@ pub mod aws_certificate_manager_certificate_domain_validation_option {
             self.resource_record = input;
             self
         }
-        /// <p>The domain name that AWS Certificate Manager uses to send domain validation
+        /// <p>The domain name that Certificate Manager uses to send domain validation
         /// emails.</p>
         pub fn validation_domain(mut self, input: impl Into<std::string::String>) -> Self {
             self.validation_domain = Some(input.into());
@@ -25226,7 +26883,7 @@ impl AwsSsmComplianceSummary {
 pub struct AwsCloudTrailTrailDetails {
     /// <p>The ARN of the log group that CloudTrail logs are delivered to.</p>
     pub cloud_watch_logs_log_group_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes to the log
+    /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log
     /// group.</p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Indicates whether the trail has custom event selectors.</p>
@@ -25238,10 +26895,10 @@ pub struct AwsCloudTrailTrailDetails {
     pub include_global_service_events: bool,
     /// <p>Indicates whether the trail applies only to the current Region or to all Regions.</p>
     pub is_multi_region_trail: bool,
-    /// <p>Whether the trail is created for all accounts in an organization in AWS Organizations,
-    /// or only for the current AWS account.</p>
+    /// <p>Whether the trail is created for all accounts in an organization in Organizations,
+    /// or only for the current Amazon Web Services account.</p>
     pub is_organization_trail: bool,
-    /// <p>The AWS KMS key ID to use to encrypt the logs.</p>
+    /// <p>The KMS key ID to use to encrypt the logs.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether CloudTrail log file validation is enabled.</p>
     pub log_file_validation_enabled: bool,
@@ -25330,7 +26987,7 @@ pub mod aws_cloud_trail_trail_details {
             self.cloud_watch_logs_log_group_arn = input;
             self
         }
-        /// <p>The ARN of the role that the CloudWatch Logs endpoint assumes when it writes to the log
+        /// <p>The ARN of the role that the CloudWatch Events endpoint assumes when it writes to the log
         /// group.</p>
         pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_logs_role_arn = Some(input.into());
@@ -25383,8 +27040,8 @@ pub mod aws_cloud_trail_trail_details {
             self.is_multi_region_trail = input;
             self
         }
-        /// <p>Whether the trail is created for all accounts in an organization in AWS Organizations,
-        /// or only for the current AWS account.</p>
+        /// <p>Whether the trail is created for all accounts in an organization in Organizations,
+        /// or only for the current Amazon Web Services account.</p>
         pub fn is_organization_trail(mut self, input: bool) -> Self {
             self.is_organization_trail = Some(input);
             self
@@ -25393,7 +27050,7 @@ pub mod aws_cloud_trail_trail_details {
             self.is_organization_trail = input;
             self
         }
-        /// <p>The AWS KMS key ID to use to encrypt the logs.</p>
+        /// <p>The KMS key ID to use to encrypt the logs.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -25800,7 +27457,7 @@ pub struct AwsApiGatewayStageDetails {
     pub access_log_settings: std::option::Option<crate::model::AwsApiGatewayAccessLogSettings>,
     /// <p>Information about settings for canary deployment in the stage.</p>
     pub canary_settings: std::option::Option<crate::model::AwsApiGatewayCanarySettings>,
-    /// <p>Indicates whether active tracing with AWS X-Ray is enabled for the stage.</p>
+    /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
     pub tracing_enabled: bool,
     /// <p>Indicates when the stage was created.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet
@@ -26014,7 +27671,7 @@ pub mod aws_api_gateway_stage_details {
             self.canary_settings = input;
             self
         }
-        /// <p>Indicates whether active tracing with AWS X-Ray is enabled for the stage.</p>
+        /// <p>Indicates whether active tracing with X-Ray is enabled for the stage.</p>
         pub fn tracing_enabled(mut self, input: bool) -> Self {
             self.tracing_enabled = Some(input);
             self
@@ -27007,7 +28664,7 @@ pub struct AwsDynamoDbTableSseDescription {
     pub status: std::option::Option<std::string::String>,
     /// <p>The type of server-side encryption.</p>
     pub sse_type: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
+    /// <p>The ARN of the KMS customer master key (CMK) that is used for the KMS
     /// encryption.</p>
     pub kms_master_key_arn: std::option::Option<std::string::String>,
 }
@@ -27073,7 +28730,7 @@ pub mod aws_dynamo_db_table_sse_description {
             self.sse_type = input;
             self
         }
-        /// <p>The ARN of the AWS KMS customer master key (CMK) that is used for the AWS KMS
+        /// <p>The ARN of the KMS customer master key (CMK) that is used for the KMS
         /// encryption.</p>
         pub fn kms_master_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_arn = Some(input.into());
@@ -27216,7 +28873,7 @@ pub struct AwsDynamoDbTableReplica {
     pub global_secondary_indexes: std::option::Option<
         std::vec::Vec<crate::model::AwsDynamoDbTableReplicaGlobalSecondaryIndex>,
     >,
-    /// <p>The identifier of the AWS KMS customer master key (CMK) that will be used for AWS KMS
+    /// <p>The identifier of the KMS customer master key (CMK) that will be used for KMS
     /// encryption for the replica.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
     /// <p>Replica-specific configuration for the provisioned throughput.</p>
@@ -27282,7 +28939,7 @@ pub mod aws_dynamo_db_table_replica {
             self.global_secondary_indexes = input;
             self
         }
-        /// <p>The identifier of the AWS KMS customer master key (CMK) that will be used for AWS KMS
+        /// <p>The identifier of the KMS customer master key (CMK) that will be used for KMS
         /// encryption for the replica.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
@@ -29491,7 +31148,7 @@ pub struct AwsIamAccessKeyDetails {
     pub principal_type: std::option::Option<std::string::String>,
     /// <p>The name of the principal.</p>
     pub principal_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the account for the key.</p>
+    /// <p>The Amazon Web Services account ID of the account for the key.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the access key.</p>
     pub access_key_id: std::option::Option<std::string::String>,
@@ -29600,7 +31257,7 @@ pub mod aws_iam_access_key_details {
             self.principal_name = input;
             self
         }
-        /// <p>The AWS account ID of the account for the key.</p>
+        /// <p>The Amazon Web Services account ID of the account for the key.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -29746,7 +31403,7 @@ pub struct AwsIamAccessKeySessionContextSessionIssuer {
     pub principal_id: std::option::Option<std::string::String>,
     /// <p>The ARN of the session.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS account that created the session.</p>
+    /// <p>The identifier of the Amazon Web Services account that created the session.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the principal that created the session.</p>
     pub user_name: std::option::Option<std::string::String>,
@@ -29803,7 +31460,7 @@ pub mod aws_iam_access_key_session_context_session_issuer {
             self.arn = input;
             self
         }
-        /// <p>The identifier of the AWS account that created the session.</p>
+        /// <p>The identifier of the Amazon Web Services account that created the session.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -29960,7 +31617,7 @@ impl AsRef<str> for AwsIamAccessKeyStatus {
     }
 }
 
-/// <p>Details about an AWS Secrets Manager secret.</p>
+/// <p>Details about an Secrets Manager secret.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsSecretsManagerSecretDetails {
@@ -29968,7 +31625,7 @@ pub struct AwsSecretsManagerSecretDetails {
     pub rotation_rules: std::option::Option<crate::model::AwsSecretsManagerSecretRotationRules>,
     /// <p>Whether the rotation occurred within the specified rotation frequency.</p>
     pub rotation_occurred_within_frequency: bool,
-    /// <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to encrypt the
+    /// <p>The ARN, Key ID, or alias of the KMS customer master key (CMK) used to encrypt the
     /// <code>SecretString</code> or <code>SecretBinary</code> values for versions of this
     /// secret.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
@@ -30044,7 +31701,7 @@ pub mod aws_secrets_manager_secret_details {
             self.rotation_occurred_within_frequency = input;
             self
         }
-        /// <p>The ARN, Key ID, or alias of the AWS KMS customer master key (CMK) used to encrypt the
+        /// <p>The ARN, Key ID, or alias of the KMS customer master key (CMK) used to encrypt the
         /// <code>SecretString</code> or <code>SecretBinary</code> values for versions of this
         /// secret.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -30193,7 +31850,7 @@ pub struct AwsS3ObjectDetails {
     /// <p>If the object is stored using server-side encryption, the value of the server-side
     /// encryption algorithm used when storing this object in Amazon S3.</p>
     pub server_side_encryption: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer managed
+    /// <p>The identifier of the KMS symmetric customer managed
     /// customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
 }
@@ -30279,7 +31936,7 @@ pub mod aws_s3_object_details {
             self.server_side_encryption = input;
             self
         }
-        /// <p>The identifier of the AWS Key Management Service (AWS KMS) symmetric customer managed
+        /// <p>The identifier of the KMS symmetric customer managed
         /// customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -30322,7 +31979,7 @@ pub struct AwsS3AccountPublicAccessBlockDetails {
     pub block_public_policy: bool,
     /// <p>Indicates whether Amazon S3 ignores public ACLs that are associated with an S3 bucket.</p>
     pub ignore_public_acls: bool,
-    /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only AWS service principals and authorized users within the S3 bucket owner's account.</p>
+    /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only Amazon Web Services service principals and authorized users within the S3 bucket owner's account.</p>
     pub restrict_public_buckets: bool,
 }
 impl std::fmt::Debug for AwsS3AccountPublicAccessBlockDetails {
@@ -30374,7 +32031,7 @@ pub mod aws_s3_account_public_access_block_details {
             self.ignore_public_acls = input;
             self
         }
-        /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only AWS service principals and authorized users within the S3 bucket owner's account.</p>
+        /// <p>Indicates whether to restrict access to an access point or S3 bucket that has a public policy to only Amazon Web Services service principals and authorized users within the S3 bucket owner's account.</p>
         pub fn restrict_public_buckets(mut self, input: bool) -> Self {
             self.restrict_public_buckets = Some(input);
             self
@@ -31616,7 +33273,7 @@ impl AwsS3BucketServerSideEncryptionRule {
 pub struct AwsS3BucketServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
     pub sse_algorithm: std::option::Option<std::string::String>,
-    /// <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+    /// <p>KMS customer master key (CMK) ID to use for the default encryption.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsS3BucketServerSideEncryptionByDefault {
@@ -31649,7 +33306,7 @@ pub mod aws_s3_bucket_server_side_encryption_by_default {
             self.sse_algorithm = input;
             self
         }
-        /// <p>AWS KMS customer master key (CMK) ID to use for the default encryption.</p>
+        /// <p>KMS customer master key (CMK) ID to use for the default encryption.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -31677,33 +33334,36 @@ impl AwsS3BucketServerSideEncryptionByDefault {
     }
 }
 
-/// <p>Information about an Elasticsearch domain.</p>
+/// <p>Information about an Amazon Elasticsearch Service domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsElasticsearchDomainDetails {
-    /// <p>IAM policy document specifying the access policies for the new Amazon ES domain.</p>
+    /// <p>IAM policy document specifying the access policies for the new Elasticsearch domain.</p>
     pub access_policies: std::option::Option<std::string::String>,
     /// <p>Additional options for the domain endpoint.</p>
     pub domain_endpoint_options:
         std::option::Option<crate::model::AwsElasticsearchDomainDomainEndpointOptions>,
-    /// <p>Unique identifier for an Amazon ES domain.</p>
+    /// <p>Unique identifier for an Elasticsearch domain.</p>
     pub domain_id: std::option::Option<std::string::String>,
-    /// <p>Name of an Amazon ES domain.</p>
-    /// <p>Domain names are unique across all domains owned by the same account within an AWS
+    /// <p>Name of an Elasticsearch domain.</p>
+    /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services
     /// Region.</p>
     /// <p>Domain names must start with a lowercase letter and must be between 3 and 28
     /// characters.</p>
     /// <p>Valid characters are a-z (lowercase only), 0-9, and – (hyphen). </p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an
-    /// Amazon ES domain.</p>
+    /// Elasticsearch domain.</p>
     /// <p>The endpoint is a service URL. </p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The key-value pair that exists if the Amazon ES domain uses VPC endpoints.</p>
+    /// <p>The key-value pair that exists if the Elasticsearch domain uses VPC endpoints.</p>
     pub endpoints:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Elasticsearch version.</p>
     pub elasticsearch_version: std::option::Option<std::string::String>,
+    /// <p>Information about an Elasticsearch cluster configuration.</p>
+    pub elasticsearch_cluster_config:
+        std::option::Option<crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails>,
     /// <p>Details about the configuration for encryption at rest.</p>
     pub encryption_at_rest_options:
         std::option::Option<crate::model::AwsElasticsearchDomainEncryptionAtRestOptions>,
@@ -31716,7 +33376,7 @@ pub struct AwsElasticsearchDomainDetails {
     /// <p>Information about the status of a domain relative to the latest service software.</p>
     pub service_software_options:
         std::option::Option<crate::model::AwsElasticsearchDomainServiceSoftwareOptions>,
-    /// <p>Information that Amazon ES derives based on <code>VPCOptions</code> for the
+    /// <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for the
     /// domain.</p>
     pub vpc_options: std::option::Option<crate::model::AwsElasticsearchDomainVpcOptions>,
 }
@@ -31730,6 +33390,10 @@ impl std::fmt::Debug for AwsElasticsearchDomainDetails {
         formatter.field("endpoint", &self.endpoint);
         formatter.field("endpoints", &self.endpoints);
         formatter.field("elasticsearch_version", &self.elasticsearch_version);
+        formatter.field(
+            "elasticsearch_cluster_config",
+            &self.elasticsearch_cluster_config,
+        );
         formatter.field(
             "encryption_at_rest_options",
             &self.encryption_at_rest_options,
@@ -31760,6 +33424,9 @@ pub mod aws_elasticsearch_domain_details {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) elasticsearch_version: std::option::Option<std::string::String>,
+        pub(crate) elasticsearch_cluster_config: std::option::Option<
+            crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
+        >,
         pub(crate) encryption_at_rest_options:
             std::option::Option<crate::model::AwsElasticsearchDomainEncryptionAtRestOptions>,
         pub(crate) log_publishing_options:
@@ -31771,7 +33438,7 @@ pub mod aws_elasticsearch_domain_details {
         pub(crate) vpc_options: std::option::Option<crate::model::AwsElasticsearchDomainVpcOptions>,
     }
     impl Builder {
-        /// <p>IAM policy document specifying the access policies for the new Amazon ES domain.</p>
+        /// <p>IAM policy document specifying the access policies for the new Elasticsearch domain.</p>
         pub fn access_policies(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policies = Some(input.into());
             self
@@ -31798,7 +33465,7 @@ pub mod aws_elasticsearch_domain_details {
             self.domain_endpoint_options = input;
             self
         }
-        /// <p>Unique identifier for an Amazon ES domain.</p>
+        /// <p>Unique identifier for an Elasticsearch domain.</p>
         pub fn domain_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_id = Some(input.into());
             self
@@ -31807,8 +33474,8 @@ pub mod aws_elasticsearch_domain_details {
             self.domain_id = input;
             self
         }
-        /// <p>Name of an Amazon ES domain.</p>
-        /// <p>Domain names are unique across all domains owned by the same account within an AWS
+        /// <p>Name of an Elasticsearch domain.</p>
+        /// <p>Domain names are unique across all domains owned by the same account within an Amazon Web Services
         /// Region.</p>
         /// <p>Domain names must start with a lowercase letter and must be between 3 and 28
         /// characters.</p>
@@ -31822,7 +33489,7 @@ pub mod aws_elasticsearch_domain_details {
             self
         }
         /// <p>Domain-specific endpoint used to submit index, search, and data upload requests to an
-        /// Amazon ES domain.</p>
+        /// Elasticsearch domain.</p>
         /// <p>The endpoint is a service URL. </p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
@@ -31861,6 +33528,23 @@ pub mod aws_elasticsearch_domain_details {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.elasticsearch_version = input;
+            self
+        }
+        /// <p>Information about an Elasticsearch cluster configuration.</p>
+        pub fn elasticsearch_cluster_config(
+            mut self,
+            input: crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
+        ) -> Self {
+            self.elasticsearch_cluster_config = Some(input);
+            self
+        }
+        pub fn set_elasticsearch_cluster_config(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails,
+            >,
+        ) -> Self {
+            self.elasticsearch_cluster_config = input;
             self
         }
         /// <p>Details about the configuration for encryption at rest.</p>
@@ -31925,7 +33609,7 @@ pub mod aws_elasticsearch_domain_details {
             self.service_software_options = input;
             self
         }
-        /// <p>Information that Amazon ES derives based on <code>VPCOptions</code> for the
+        /// <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for the
         /// domain.</p>
         pub fn vpc_options(
             mut self,
@@ -31951,6 +33635,7 @@ pub mod aws_elasticsearch_domain_details {
                 endpoint: self.endpoint,
                 endpoints: self.endpoints,
                 elasticsearch_version: self.elasticsearch_version,
+                elasticsearch_cluster_config: self.elasticsearch_cluster_config,
                 encryption_at_rest_options: self.encryption_at_rest_options,
                 log_publishing_options: self.log_publishing_options,
                 node_to_node_encryption_options: self.node_to_node_encryption_options,
@@ -31967,7 +33652,7 @@ impl AwsElasticsearchDomainDetails {
     }
 }
 
-/// <p>Information that Amazon ES derives based on <code>VPCOptions</code> for the
+/// <p>Information that Elasticsearch derives based on <code>VPCOptions</code> for the
 /// domain.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -32272,12 +33957,16 @@ pub struct AwsElasticsearchDomainLogPublishingOptions {
     /// publishing.</p>
     pub search_slow_logs:
         std::option::Option<crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
+    /// <p>The log configuration.</p>
+    pub audit_logs:
+        std::option::Option<crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
 }
 impl std::fmt::Debug for AwsElasticsearchDomainLogPublishingOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("AwsElasticsearchDomainLogPublishingOptions");
         formatter.field("index_slow_logs", &self.index_slow_logs);
         formatter.field("search_slow_logs", &self.search_slow_logs);
+        formatter.field("audit_logs", &self.audit_logs);
         formatter.finish()
     }
 }
@@ -32290,6 +33979,8 @@ pub mod aws_elasticsearch_domain_log_publishing_options {
         pub(crate) index_slow_logs:
             std::option::Option<crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
         pub(crate) search_slow_logs:
+            std::option::Option<crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
+        pub(crate) audit_logs:
             std::option::Option<crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig>,
     }
     impl Builder {
@@ -32329,11 +34020,29 @@ pub mod aws_elasticsearch_domain_log_publishing_options {
             self.search_slow_logs = input;
             self
         }
+        /// <p>The log configuration.</p>
+        pub fn audit_logs(
+            mut self,
+            input: crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig,
+        ) -> Self {
+            self.audit_logs = Some(input);
+            self
+        }
+        pub fn set_audit_logs(
+            mut self,
+            input: std::option::Option<
+                crate::model::AwsElasticsearchDomainLogPublishingOptionsLogConfig,
+            >,
+        ) -> Self {
+            self.audit_logs = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AwsElasticsearchDomainLogPublishingOptions`](crate::model::AwsElasticsearchDomainLogPublishingOptions)
         pub fn build(self) -> crate::model::AwsElasticsearchDomainLogPublishingOptions {
             crate::model::AwsElasticsearchDomainLogPublishingOptions {
                 index_slow_logs: self.index_slow_logs,
                 search_slow_logs: self.search_slow_logs,
+                audit_logs: self.audit_logs,
             }
         }
     }
@@ -32474,6 +34183,211 @@ impl AwsElasticsearchDomainEncryptionAtRestOptions {
     /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainEncryptionAtRestOptions`](crate::model::AwsElasticsearchDomainEncryptionAtRestOptions)
     pub fn builder() -> crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder {
         crate::model::aws_elasticsearch_domain_encryption_at_rest_options::Builder::default()
+    }
+}
+
+/// <p>details about the configuration of an Elasticsearch cluster.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+    /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    pub dedicated_master_count: i32,
+    /// <p>Whether to use a dedicated master node for the Elasticsearch domain. A dedicated master node performs cluster management tasks, but doesn't hold data or respond to data upload requests.</p>
+    pub dedicated_master_enabled: bool,
+    /// <p>The hardware configuration of the computer that hosts the dedicated master node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+    pub dedicated_master_type: std::option::Option<std::string::String>,
+    /// <p>The number of data nodes to use in the Elasticsearch domain.</p>
+    pub instance_count: i32,
+    /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+    pub instance_type: std::option::Option<std::string::String>,
+    /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
+    pub zone_awareness_config: std::option::Option<
+        crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
+    >,
+    /// <p>Whether to enable zone awareness for the Elasticsearch domain. When zone awareness is enabled, Elasticsearch allocates the cluster's nodes and replica index shards across Availability Zones in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
+    pub zone_awareness_enabled: bool,
+}
+impl std::fmt::Debug for AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter =
+            f.debug_struct("AwsElasticsearchDomainElasticsearchClusterConfigDetails");
+        formatter.field("dedicated_master_count", &self.dedicated_master_count);
+        formatter.field("dedicated_master_enabled", &self.dedicated_master_enabled);
+        formatter.field("dedicated_master_type", &self.dedicated_master_type);
+        formatter.field("instance_count", &self.instance_count);
+        formatter.field("instance_type", &self.instance_type);
+        formatter.field("zone_awareness_config", &self.zone_awareness_config);
+        formatter.field("zone_awareness_enabled", &self.zone_awareness_enabled);
+        formatter.finish()
+    }
+}
+/// See [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_details {
+    /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) dedicated_master_count: std::option::Option<i32>,
+        pub(crate) dedicated_master_enabled: std::option::Option<bool>,
+        pub(crate) dedicated_master_type: std::option::Option<std::string::String>,
+        pub(crate) instance_count: std::option::Option<i32>,
+        pub(crate) instance_type: std::option::Option<std::string::String>,
+        pub(crate) zone_awareness_config: std::option::Option<crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
+        pub(crate) zone_awareness_enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The number of instances to use for the master node. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+        pub fn dedicated_master_count(mut self, input: i32) -> Self {
+            self.dedicated_master_count = Some(input);
+            self
+        }
+        pub fn set_dedicated_master_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.dedicated_master_count = input;
+            self
+        }
+        /// <p>Whether to use a dedicated master node for the Elasticsearch domain. A dedicated master node performs cluster management tasks, but doesn't hold data or respond to data upload requests.</p>
+        pub fn dedicated_master_enabled(mut self, input: bool) -> Self {
+            self.dedicated_master_enabled = Some(input);
+            self
+        }
+        pub fn set_dedicated_master_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.dedicated_master_enabled = input;
+            self
+        }
+        /// <p>The hardware configuration of the computer that hosts the dedicated master node. For example, <code>m3.medium.elasticsearch</code>. If this attribute is specified, then <code>DedicatedMasterEnabled</code> must be <code>true</code>.</p>
+        pub fn dedicated_master_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.dedicated_master_type = Some(input.into());
+            self
+        }
+        pub fn set_dedicated_master_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.dedicated_master_type = input;
+            self
+        }
+        /// <p>The number of data nodes to use in the Elasticsearch domain.</p>
+        pub fn instance_count(mut self, input: i32) -> Self {
+            self.instance_count = Some(input);
+            self
+        }
+        pub fn set_instance_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.instance_count = input;
+            self
+        }
+        /// <p>The instance type for your data nodes. For example, <code>m3.medium.elasticsearch</code>.</p>
+        pub fn instance_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_type = Some(input.into());
+            self
+        }
+        pub fn set_instance_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_type = input;
+            self
+        }
+        /// <p>Configuration options for zone awareness. Provided if <code>ZoneAwarenessEnabled</code> is <code>true</code>.</p>
+        pub fn zone_awareness_config(
+            mut self,
+            input: crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails,
+        ) -> Self {
+            self.zone_awareness_config = Some(input);
+            self
+        }
+        pub fn set_zone_awareness_config(
+            mut self,
+            input: std::option::Option<crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails>,
+        ) -> Self {
+            self.zone_awareness_config = input;
+            self
+        }
+        /// <p>Whether to enable zone awareness for the Elasticsearch domain. When zone awareness is enabled, Elasticsearch allocates the cluster's nodes and replica index shards across Availability Zones in the same Region. This prevents data loss and minimizes downtime if a node or data center fails.</p>
+        pub fn zone_awareness_enabled(mut self, input: bool) -> Self {
+            self.zone_awareness_enabled = Some(input);
+            self
+        }
+        pub fn set_zone_awareness_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.zone_awareness_enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+            crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+                dedicated_master_count: self.dedicated_master_count.unwrap_or_default(),
+                dedicated_master_enabled: self.dedicated_master_enabled.unwrap_or_default(),
+                dedicated_master_type: self.dedicated_master_type,
+                instance_count: self.instance_count.unwrap_or_default(),
+                instance_type: self.instance_type,
+                zone_awareness_config: self.zone_awareness_config,
+                zone_awareness_enabled: self.zone_awareness_enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl AwsElasticsearchDomainElasticsearchClusterConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigDetails)
+    pub fn builder(
+    ) -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder {
+        crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_details::Builder::default()
+    }
+}
+
+/// <p>Configuration options for zone awareness.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
+    /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+    pub availability_zone_count: i32,
+}
+impl std::fmt::Debug
+    for AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
+{
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct(
+            "AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails",
+        );
+        formatter.field("availability_zone_count", &self.availability_zone_count);
+        formatter.finish()
+    }
+}
+/// See [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+pub mod aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details {
+    /// A builder for [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) availability_zone_count: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>he number of Availability Zones that the domain uses. Valid values are 2 and 3. The default is 2.</p>
+        pub fn availability_zone_count(mut self, input: i32) -> Self {
+            self.availability_zone_count = Some(input);
+            self
+        }
+        pub fn set_availability_zone_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.availability_zone_count = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+        pub fn build(
+            self,
+        ) -> crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails
+        {
+            crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
+                availability_zone_count: self.availability_zone_count
+                    .unwrap_or_default()
+                ,
+            }
+        }
+    }
+}
+impl AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails {
+    /// Creates a new builder-style object to manufacture [`AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails`](crate::model::AwsElasticsearchDomainElasticsearchClusterConfigZoneAwarenessConfigDetails)
+    pub fn builder() -> crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder{
+        crate::model::aws_elasticsearch_domain_elasticsearch_cluster_config_zone_awareness_config_details::Builder::default()
     }
 }
 
@@ -33441,7 +35355,7 @@ pub struct AwsEc2NetworkAclDetails {
     pub is_default: bool,
     /// <p>The identifier of the network ACL.</p>
     pub network_acl_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS account that owns the network ACL.</p>
+    /// <p>The identifier of the Amazon Web Services account that owns the network ACL.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the VPC for the network ACL.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -33498,7 +35412,7 @@ pub mod aws_ec2_network_acl_details {
             self.network_acl_id = input;
             self
         }
-        /// <p>The identifier of the AWS account that owns the network ACL.</p>
+        /// <p>The identifier of the Amazon Web Services account that owns the network ACL.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -33925,7 +35839,7 @@ impl AwsEc2NetworkAclAssociation {
     }
 }
 
-/// <p>Contains information about a subnet in EC2.</p>
+/// <p>Contains information about a subnet in Amazon EC2.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEc2SubnetDetails {
@@ -33943,7 +35857,7 @@ pub struct AwsEc2SubnetDetails {
     pub default_for_az: bool,
     /// <p>Whether instances in this subnet receive a public IP address.</p>
     pub map_public_ip_on_launch: bool,
-    /// <p>The identifier of the AWS account that owns the subnet.</p>
+    /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The current state of the subnet.</p>
     pub state: std::option::Option<std::string::String>,
@@ -34079,7 +35993,7 @@ pub mod aws_ec2_subnet_details {
             self.map_public_ip_on_launch = input;
             self
         }
-        /// <p>The identifier of the AWS account that owns the subnet.</p>
+        /// <p>The identifier of the Amazon Web Services account that owns the subnet.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -34261,7 +36175,7 @@ pub struct AwsEc2EipDetails {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A public IP address that is associated with the EC2 instance.</p>
     pub public_ip: std::option::Option<std::string::String>,
-    /// <p>The identifier that AWS assigns to represent the allocation of the Elastic IP address
+    /// <p>The identifier that Amazon Web Services assigns to represent the allocation of the Elastic IP address
     /// for use with Amazon VPC.</p>
     pub allocation_id: std::option::Option<std::string::String>,
     /// <p>The identifier that represents the association of the Elastic IP address with an EC2
@@ -34278,7 +36192,7 @@ pub struct AwsEc2EipDetails {
     pub network_border_group: std::option::Option<std::string::String>,
     /// <p>The identifier of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the network interface.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
     pub network_interface_owner_id: std::option::Option<std::string::String>,
     /// <p>The private IP address that is associated with the Elastic IP address.</p>
     pub private_ip_address: std::option::Option<std::string::String>,
@@ -34338,7 +36252,7 @@ pub mod aws_ec2_eip_details {
             self.public_ip = input;
             self
         }
-        /// <p>The identifier that AWS assigns to represent the allocation of the Elastic IP address
+        /// <p>The identifier that Amazon Web Services assigns to represent the allocation of the Elastic IP address
         /// for use with Amazon VPC.</p>
         pub fn allocation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.allocation_id = Some(input.into());
@@ -34412,7 +36326,7 @@ pub mod aws_ec2_eip_details {
             self.network_interface_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the network interface.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
         pub fn network_interface_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_interface_owner_id = Some(input.into());
             self
@@ -34678,7 +36592,7 @@ pub struct AwsEc2VolumeDetails {
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>The volume state.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+    /// <p>The ARN of the KMS customer master key (CMK) that was
     /// used to protect the volume encryption key for the volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The volume attachments.</p>
@@ -34761,7 +36675,7 @@ pub mod aws_ec2_volume_details {
             self.status = input;
             self
         }
-        /// <p>The ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was
+        /// <p>The ARN of the KMS customer master key (CMK) that was
         /// used to protect the volume encryption key for the volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -34808,7 +36722,7 @@ impl AwsEc2VolumeDetails {
     }
 }
 
-/// <p>An attachment to an AWS EC2 volume.</p>
+/// <p>An attachment to an Amazon EC2 volume.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsEc2VolumeAttachment {
@@ -34905,7 +36819,7 @@ pub struct AwsEc2SecurityGroupDetails {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The ID of the security group.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the security group.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>[VPC only] The ID of the VPC for the security group.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -34962,7 +36876,7 @@ pub mod aws_ec2_security_group_details {
             self.group_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the security group.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -35060,14 +36974,14 @@ pub struct AwsEc2SecurityGroupIpPermission {
     /// <p>A value of -1 indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you
     /// must specify all codes.</p>
     pub to_port: i32,
-    /// <p>The security group and AWS account ID pairs.</p>
+    /// <p>The security group and Amazon Web Services account ID pairs.</p>
     pub user_id_group_pairs:
         std::option::Option<std::vec::Vec<crate::model::AwsEc2SecurityGroupUserIdGroupPair>>,
     /// <p>The IPv4 ranges.</p>
     pub ip_ranges: std::option::Option<std::vec::Vec<crate::model::AwsEc2SecurityGroupIpRange>>,
     /// <p>The IPv6 ranges.</p>
     pub ipv6_ranges: std::option::Option<std::vec::Vec<crate::model::AwsEc2SecurityGroupIpv6Range>>,
-    /// <p>[VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS
+    /// <p>[VPC only] The prefix list IDs for an Amazon Web Services service. With outbound rules, this is the Amazon Web Services
     /// service to access through a VPC endpoint from instances associated with the security
     /// group.</p>
     pub prefix_list_ids:
@@ -35393,7 +37307,7 @@ pub struct AwsEc2SecurityGroupUserIdGroupPair {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The status of a VPC peering connection, if applicable.</p>
     pub peering_status: std::option::Option<std::string::String>,
-    /// <p>The ID of an AWS account.</p>
+    /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced
     /// security group is returned in the response. If the referenced security group is deleted,
     /// this value is not returned.</p>
@@ -35461,7 +37375,7 @@ pub mod aws_ec2_security_group_user_id_group_pair {
             self.peering_status = input;
             self
         }
-        /// <p>The ID of an AWS account.</p>
+        /// <p>The ID of an Amazon Web Services account.</p>
         /// <p>For a referenced security group in another VPC, the account ID of the referenced
         /// security group is returned in the response. If the referenced security group is deleted,
         /// this value is not returned.</p>
@@ -35904,7 +37818,7 @@ pub struct AwsEc2NetworkInterfaceAttachment {
     pub device_index: i32,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the instance.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
     pub instance_owner_id: std::option::Option<std::string::String>,
     /// <p>The attachment state.</p>
     /// <p>Valid values: <code>attaching</code> | <code>attached</code> | <code>detaching</code> |
@@ -35992,7 +37906,7 @@ pub mod aws_ec2_network_interface_attachment {
             self.instance_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the instance.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
         pub fn instance_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_owner_id = Some(input.into());
             self
@@ -36320,7 +38234,7 @@ pub struct AwsCloudFrontDistributionDetails {
     pub origin_groups: std::option::Option<crate::model::AwsCloudFrontDistributionOriginGroups>,
     /// <p>Indicates the current status of the distribution.</p>
     pub status: std::option::Option<std::string::String>,
-    /// <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate with this distribution.</p>
+    /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution.</p>
     pub web_acl_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsCloudFrontDistributionDetails {
@@ -36488,7 +38402,7 @@ pub mod aws_cloud_front_distribution_details {
             self.status = input;
             self
         }
-        /// <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate with this distribution.</p>
+        /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate with this distribution.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
             self
@@ -36815,13 +38729,13 @@ impl AwsCloudFrontDistributionOrigins {
     }
 }
 
-/// <p>A complex type that describes the Amazon S3 bucket, HTTP server (for example, a web
-/// server), Amazon Elemental MediaStore, or other server from which CloudFront gets your
+/// <p>A complex type that describes the S3 bucket, HTTP server (for example, a web
+/// server), AWS Elemental MediaStore, or other server from which CloudFront gets your
 /// files.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCloudFrontDistributionOriginItem {
-    /// <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for this origin.</p>
+    /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
     pub domain_name: std::option::Option<std::string::String>,
     /// <p>A unique identifier for the origin or origin group.</p>
     pub id: std::option::Option<std::string::String>,
@@ -36855,7 +38769,7 @@ pub mod aws_cloud_front_distribution_origin_item {
             std::option::Option<crate::model::AwsCloudFrontDistributionOriginS3OriginConfig>,
     }
     impl Builder {
-        /// <p>Amazon S3 origins: The DNS name of the Amazon S3 bucket from which you want CloudFront to get objects for this origin.</p>
+        /// <p>Amazon S3 origins: The DNS name of the S3 bucket from which you want CloudFront to get objects for this origin.</p>
         pub fn domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.domain_name = Some(input.into());
             self
@@ -36972,7 +38886,7 @@ impl AwsCloudFrontDistributionOriginS3OriginConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCloudFrontDistributionLogging {
-    /// <p>The Amazon S3 bucket to store the access logs in.</p>
+    /// <p>The S3 bucket to store the access logs in.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>With this field, you can enable or disable the selected distribution.</p>
     pub enabled: bool,
@@ -37004,7 +38918,7 @@ pub mod aws_cloud_front_distribution_logging {
         pub(crate) prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon S3 bucket to store the access logs in.</p>
+        /// <p>The S3 bucket to store the access logs in.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -37288,11 +39202,11 @@ impl AwsCloudFrontDistributionCacheBehavior {
     }
 }
 
-/// <p>Information about an AWS CodeBuild project.</p>
+/// <p>Information about an CodeBuild project.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCodeBuildProjectDetails {
-    /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the
+    /// <p>The KMS customer master key (CMK) used to encrypt the
     /// build output artifacts.</p>
     /// <p>You can specify either the ARN of the CMK or, if available, the
     /// CMK alias (using the format alias/alias-name). </p>
@@ -37303,10 +39217,10 @@ pub struct AwsCodeBuildProjectDetails {
     pub name: std::option::Option<std::string::String>,
     /// <p>Information about the build input source code for this build project.</p>
     pub source: std::option::Option<crate::model::AwsCodeBuildProjectSource>,
-    /// <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent AWS
-    /// services on behalf of the AWS account.</p>
+    /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services
+    /// services on behalf of the Amazon Web Services account.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+    /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
     pub vpc_config: std::option::Option<crate::model::AwsCodeBuildProjectVpcConfig>,
 }
 impl std::fmt::Debug for AwsCodeBuildProjectDetails {
@@ -37335,7 +39249,7 @@ pub mod aws_code_build_project_details {
         pub(crate) vpc_config: std::option::Option<crate::model::AwsCodeBuildProjectVpcConfig>,
     }
     impl Builder {
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) used to encrypt the
+        /// <p>The KMS customer master key (CMK) used to encrypt the
         /// build output artifacts.</p>
         /// <p>You can specify either the ARN of the CMK or, if available, the
         /// CMK alias (using the format alias/alias-name). </p>
@@ -37383,8 +39297,8 @@ pub mod aws_code_build_project_details {
             self.source = input;
             self
         }
-        /// <p>The ARN of the IAM role that enables AWS CodeBuild to interact with dependent AWS
-        /// services on behalf of the AWS account.</p>
+        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services
+        /// services on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
@@ -37393,7 +39307,7 @@ pub mod aws_code_build_project_details {
             self.service_role = input;
             self
         }
-        /// <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+        /// <p>Information about the VPC configuration that CodeBuild accesses.</p>
         pub fn vpc_config(mut self, input: crate::model::AwsCodeBuildProjectVpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
@@ -37425,15 +39339,15 @@ impl AwsCodeBuildProjectDetails {
     }
 }
 
-/// <p>Information about the VPC configuration that AWS CodeBuild accesses.</p>
+/// <p>Information about the VPC configuration that CodeBuild accesses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCodeBuildProjectVpcConfig {
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>A list of one or more subnet IDs in your Amazon VPC.</p>
+    /// <p>A list of one or more subnet IDs in your VPC.</p>
     pub subnets: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of one or more security group IDs in your Amazon VPC.</p>
+    /// <p>A list of one or more security group IDs in your VPC.</p>
     pub security_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for AwsCodeBuildProjectVpcConfig {
@@ -37521,13 +39435,13 @@ pub struct AwsCodeBuildProjectSource {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>CODECOMMIT</code> - The source code is in an AWS CodeCommit
+    /// <code>CODECOMMIT</code> - The source code is in an CodeCommit
     /// repository.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>CODEPIPELINE</code> - The source code settings are specified in the source
-    /// action of a pipeline in AWS CodePipeline.</p>
+    /// action of a pipeline in CodePipeline.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -37553,12 +39467,11 @@ pub struct AwsCodeBuildProjectSource {
     /// <ul>
     /// <li>
     /// <p>For source code settings that are specified in the source action of a pipeline in
-    /// AWS CodePipeline, location should not be specified. If it is specified, AWS
-    /// CodePipeline ignores it. This is because AWS CodePipeline uses the settings in a
+    /// CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a
     /// pipeline's source action instead of this value.</p>
     /// </li>
     /// <li>
-    /// <p>For source code in an AWS CodeCommit repository, the HTTPS clone URL to the
+    /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the
     /// repository that contains the source code and the build spec file (for example,
     /// <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
     /// ).</p>
@@ -37622,13 +39535,13 @@ pub mod aws_code_build_project_source {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>CODECOMMIT</code> - The source code is in an AWS CodeCommit
+        /// <code>CODECOMMIT</code> - The source code is in an CodeCommit
         /// repository.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>CODEPIPELINE</code> - The source code settings are specified in the source
-        /// action of a pipeline in AWS CodePipeline.</p>
+        /// action of a pipeline in CodePipeline.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -37661,12 +39574,11 @@ pub mod aws_code_build_project_source {
         /// <ul>
         /// <li>
         /// <p>For source code settings that are specified in the source action of a pipeline in
-        /// AWS CodePipeline, location should not be specified. If it is specified, AWS
-        /// CodePipeline ignores it. This is because AWS CodePipeline uses the settings in a
+        /// CodePipeline, location should not be specified. If it is specified, CodePipeline ignores it. This is because CodePipeline uses the settings in a
         /// pipeline's source action instead of this value.</p>
         /// </li>
         /// <li>
-        /// <p>For source code in an AWS CodeCommit repository, the HTTPS clone URL to the
+        /// <p>For source code in an CodeCommit repository, the HTTPS clone URL to the
         /// repository that contains the source code and the build spec file (for example,
         /// <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
         /// ).</p>
@@ -37743,23 +39655,23 @@ impl AwsCodeBuildProjectSource {
 pub struct AwsCodeBuildProjectEnvironment {
     /// <p>The certificate to use with this build project.</p>
     pub certificate: std::option::Option<std::string::String>,
-    /// <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
+    /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
     /// <p>Valid values:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This
-    /// requires that you modify your ECR repository policy to trust the AWS CodeBuild
+    /// <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This
+    /// requires that you modify your ECR repository policy to trust the CodeBuild
     /// service principal.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's
+    /// <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
     /// service role.</p>
     /// </li>
     /// </ul>
     /// <p>When you use a cross-account or private registry image, you must use
-    /// <code>SERVICE_ROLE</code> credentials. When you use an AWS CodeBuild curated image, you
+    /// <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you
     /// must use <code>CODEBUILD</code> credentials.</p>
     pub image_pull_credentials_type: std::option::Option<std::string::String>,
     /// <p>The credentials for access to a private registry.</p>
@@ -37819,23 +39731,23 @@ pub mod aws_code_build_project_environment {
             self.certificate = input;
             self
         }
-        /// <p>The type of credentials AWS CodeBuild uses to pull images in your build.</p>
+        /// <p>The type of credentials CodeBuild uses to pull images in your build.</p>
         /// <p>Valid values:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>CODEBUILD</code> specifies that AWS CodeBuild uses its own credentials. This
-        /// requires that you modify your ECR repository policy to trust the AWS CodeBuild
+        /// <code>CODEBUILD</code> specifies that CodeBuild uses its own credentials. This
+        /// requires that you modify your ECR repository policy to trust the CodeBuild
         /// service principal.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>SERVICE_ROLE</code> specifies that AWS CodeBuild uses your build project's
+        /// <code>SERVICE_ROLE</code> specifies that CodeBuild uses your build project's
         /// service role.</p>
         /// </li>
         /// </ul>
         /// <p>When you use a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When you use an AWS CodeBuild curated image, you
+        /// <code>SERVICE_ROLE</code> credentials. When you use an CodeBuild curated image, you
         /// must use <code>CODEBUILD</code> credentials.</p>
         pub fn image_pull_credentials_type(
             mut self,
@@ -37915,15 +39827,14 @@ impl AwsCodeBuildProjectEnvironment {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsCodeBuildProjectEnvironmentRegistryCredential {
-    /// <p>The ARN or name of credentials created using AWS Secrets
-    /// Manager.</p>
+    /// <p>The ARN or name of credentials created using Secrets Manager.</p>
     /// <note>
     /// <p>The credential can use the name of the credentials only if they exist in your current
-    /// AWS Region. </p>
+    /// Amazon Web Services Region. </p>
     /// </note>
     pub credential: std::option::Option<std::string::String>,
     /// <p>The service that created the credentials to access a private Docker registry.</p>
-    /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for AWS Secrets Manager.</p>
+    /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
     pub credential_provider: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsCodeBuildProjectEnvironmentRegistryCredential {
@@ -37944,11 +39855,10 @@ pub mod aws_code_build_project_environment_registry_credential {
         pub(crate) credential_provider: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN or name of credentials created using AWS Secrets
-        /// Manager.</p>
+        /// <p>The ARN or name of credentials created using Secrets Manager.</p>
         /// <note>
         /// <p>The credential can use the name of the credentials only if they exist in your current
-        /// AWS Region. </p>
+        /// Amazon Web Services Region. </p>
         /// </note>
         pub fn credential(mut self, input: impl Into<std::string::String>) -> Self {
             self.credential = Some(input.into());
@@ -37959,7 +39869,7 @@ pub mod aws_code_build_project_environment_registry_credential {
             self
         }
         /// <p>The service that created the credentials to access a private Docker registry.</p>
-        /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for AWS Secrets Manager.</p>
+        /// <p>The valid value,<code> SECRETS_MANAGER</code>, is for Secrets Manager.</p>
         pub fn credential_provider(mut self, input: impl Into<std::string::String>) -> Self {
             self.credential_provider = Some(input.into());
             self
@@ -40558,7 +42468,7 @@ impl Recommendation {
 pub struct Severity {
     /// <p>Deprecated. This attribute is being deprecated. Instead of providing
     /// <code>Product</code>, provide <code>Original</code>.</p>
-    /// <p>The native severity as defined by the AWS service or integrated partner product that
+    /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that
     /// generated the finding.</p>
     pub product: f64,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
@@ -40664,7 +42574,7 @@ pub mod severity {
     impl Builder {
         /// <p>Deprecated. This attribute is being deprecated. Instead of providing
         /// <code>Product</code>, provide <code>Original</code>.</p>
-        /// <p>The native severity as defined by the AWS service or integrated partner product that
+        /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that
         /// generated the finding.</p>
         pub fn product(mut self, input: f64) -> Self {
             self.product = Some(input);
@@ -41152,7 +43062,7 @@ pub struct StandardsControl {
     /// documentation.</p>
     pub remediation_url: std::option::Option<std::string::String>,
     /// <p>The severity of findings generated from this security standard control.</p>
-    /// <p>The finding severity is based on an assessment of how easy it would be to compromise AWS
+    /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services
     /// resources if the issue is detected.</p>
     pub severity_rating: std::option::Option<crate::model::SeverityRating>,
     /// <p>The list of requirements that are related to this control.</p>
@@ -41284,7 +43194,7 @@ pub mod standards_control {
             self
         }
         /// <p>The severity of findings generated from this security standard control.</p>
-        /// <p>The finding severity is based on an assessment of how easy it would be to compromise AWS
+        /// <p>The finding severity is based on an assessment of how easy it would be to compromise Amazon Web Services
         /// resources if the issue is detected.</p>
         pub fn severity_rating(mut self, input: crate::model::SeverityRating) -> Self {
             self.severity_rating = Some(input);
@@ -41525,8 +43435,8 @@ pub struct Product {
     /// </li>
     /// </ul>
     pub integration_types: std::option::Option<std::vec::Vec<crate::model::IntegrationType>>,
-    /// <p>For integrations with AWS services, the AWS Console URL from which to activate the service.</p>
-    /// <p>For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase the product.</p>
+    /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
+    /// <p>For integrations with third-party products, the Marketplace URL from which to subscribe to or purchase the product.</p>
     pub marketplace_url: std::option::Option<std::string::String>,
     /// <p>The URL to the service or product documentation about the integration with Security Hub, including how to activate the integration.</p>
     pub activation_url: std::option::Option<std::string::String>,
@@ -41634,8 +43544,8 @@ pub mod product {
             self.integration_types = input;
             self
         }
-        /// <p>For integrations with AWS services, the AWS Console URL from which to activate the service.</p>
-        /// <p>For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase the product.</p>
+        /// <p>For integrations with Amazon Web Services services, the Amazon Web Services Console URL from which to activate the service.</p>
+        /// <p>For integrations with third-party products, the Marketplace URL from which to subscribe to or purchase the product.</p>
         pub fn marketplace_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.marketplace_url = Some(input.into());
             self
@@ -41832,13 +43742,13 @@ impl ActionTarget {
     }
 }
 
-/// <p>The details of an AWS account.</p>
+/// <p>The details of an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountDetails {
-    /// <p>The ID of an AWS account.</p>
+    /// <p>The ID of an Amazon Web Services account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The email of an AWS account.</p>
+    /// <p>The email of an Amazon Web Services account.</p>
     pub email: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountDetails {
@@ -41859,7 +43769,7 @@ pub mod account_details {
         pub(crate) email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of an AWS account.</p>
+        /// <p>The ID of an Amazon Web Services account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -41868,7 +43778,7 @@ pub mod account_details {
             self.account_id = input;
             self
         }
-        /// <p>The email of an AWS account.</p>
+        /// <p>The email of an Amazon Web Services account.</p>
         pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
             self.email = Some(input.into());
             self
@@ -42197,7 +44107,7 @@ pub struct SeverityUpdate {
     /// </li>
     /// </ul>
     pub normalized: i32,
-    /// <p>The native severity as defined by the AWS service or integrated partner product that
+    /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that
     /// generated the finding.</p>
     pub product: f64,
     /// <p>The severity value of the finding. The allowed values are the following.</p>
@@ -42280,7 +44190,7 @@ pub mod severity_update {
             self.normalized = input;
             self
         }
-        /// <p>The native severity as defined by the AWS service or integrated partner product that
+        /// <p>The native severity as defined by the Amazon Web Services service or integrated partner product that
         /// generated the finding.</p>
         pub fn product(mut self, input: f64) -> Self {
             self.product = Some(input);
@@ -42428,9 +44338,7 @@ impl ImportFindingsError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StandardsSubscriptionRequest {
     /// <p>The ARN of the standard that you want to enable. To view the list of available standards
-    /// and their ARNs, use the <code>
-    /// <a>DescribeStandards</a>
-    /// </code> operation.</p>
+    /// and their ARNs, use the <code>DescribeStandards</code> operation.</p>
     pub standards_arn: std::option::Option<std::string::String>,
     /// <p>A key-value pair of input for the standard.</p>
     pub standards_input:
@@ -42457,9 +44365,7 @@ pub mod standards_subscription_request {
     }
     impl Builder {
         /// <p>The ARN of the standard that you want to enable. To view the list of available standards
-        /// and their ARNs, use the <code>
-        /// <a>DescribeStandards</a>
-        /// </code> operation.</p>
+        /// and their ARNs, use the <code>DescribeStandards</code> operation.</p>
         pub fn standards_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.standards_arn = Some(input.into());
             self

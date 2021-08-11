@@ -4124,6 +4124,200 @@ pub fn parse_create_channel_moderator_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_media_capture_pipeline_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateMediaCapturePipelineOutput,
+    crate::error::CreateMediaCapturePipelineError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::CreateMediaCapturePipelineError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::CreateMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::CreateMediaCapturePipelineErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::CreateMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::CreateMediaCapturePipelineErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceLimitExceededException" => crate::error::CreateMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_limit_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ServiceFailureException" => crate::error::CreateMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::CreateMediaCapturePipelineErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::CreateMediaCapturePipelineError {
+                meta: generic,
+                kind:
+                    crate::error::CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::service_unavailable_exception::Builder::default();
+                                let _ = response;
+                                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "ThrottledClientException" => crate::error::CreateMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::CreateMediaCapturePipelineErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttled_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => {
+            crate::error::CreateMediaCapturePipelineError {
+                meta: generic,
+                kind:
+                    crate::error::CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::unauthorized_client_exception::Builder::default();
+                                let _ = response;
+                                output = crate::json_deser::deser_structure_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        _ => crate::error::CreateMediaCapturePipelineError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_media_capture_pipeline_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateMediaCapturePipelineOutput,
+    crate::error::CreateMediaCapturePipelineError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_media_capture_pipeline_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_create_media_capture_pipeline(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateMediaCapturePipelineError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_create_meeting_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateMeetingOutput, crate::error::CreateMeetingError> {
@@ -8719,6 +8913,196 @@ pub fn parse_delete_events_configuration_response(
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::delete_events_configuration_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_media_capture_pipeline_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteMediaCapturePipelineOutput,
+    crate::error::DeleteMediaCapturePipelineError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DeleteMediaCapturePipelineError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::DeleteMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::DeleteMediaCapturePipelineErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::DeleteMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::DeleteMediaCapturePipelineErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::DeleteMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::DeleteMediaCapturePipelineErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::DeleteMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::DeleteMediaCapturePipelineErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::DeleteMediaCapturePipelineError {
+                meta: generic,
+                kind:
+                    crate::error::DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::service_unavailable_exception::Builder::default();
+                                let _ = response;
+                                output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        "ThrottledClientException" => crate::error::DeleteMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::DeleteMediaCapturePipelineErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttled_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => {
+            crate::error::DeleteMediaCapturePipelineError {
+                meta: generic,
+                kind:
+                    crate::error::DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(
+                        {
+                            #[allow(unused_mut)]
+                            let mut tmp = {
+                                #[allow(unused_mut)]
+                                let mut output =
+                                    crate::error::unauthorized_client_exception::Builder::default();
+                                let _ = response;
+                                output = crate::json_deser::deser_structure_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteMediaCapturePipelineError::unhandled)?;
+                                output.build()
+                            };
+                            if (&tmp.message).is_none() {
+                                tmp.message = _error_message;
+                            }
+                            tmp
+                        },
+                    ),
+            }
+        }
+        _ => crate::error::DeleteMediaCapturePipelineError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_media_capture_pipeline_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteMediaCapturePipelineOutput,
+    crate::error::DeleteMediaCapturePipelineError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_media_capture_pipeline_output::Builder::default();
         let _ = response;
         output.build()
     })
@@ -15077,6 +15461,199 @@ pub fn parse_get_global_settings_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_media_capture_pipeline_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMediaCapturePipelineOutput,
+    crate::error::GetMediaCapturePipelineError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetMediaCapturePipelineError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::GetMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::GetMediaCapturePipelineErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::GetMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::GetMediaCapturePipelineErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::GetMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::GetMediaCapturePipelineErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::GetMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::GetMediaCapturePipelineErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::GetMediaCapturePipelineError {
+                meta: generic,
+                kind: crate::error::GetMediaCapturePipelineErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "ThrottledClientException" => crate::error::GetMediaCapturePipelineError {
+            meta: generic,
+            kind: crate::error::GetMediaCapturePipelineErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttled_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => {
+            crate::error::GetMediaCapturePipelineError {
+                meta: generic,
+                kind: crate::error::GetMediaCapturePipelineErrorKind::UnauthorizedClientException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unauthorized_client_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        _ => crate::error::GetMediaCapturePipelineError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_media_capture_pipeline_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetMediaCapturePipelineOutput,
+    crate::error::GetMediaCapturePipelineError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_media_capture_pipeline_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_media_capture_pipeline(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetMediaCapturePipelineError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_meeting_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetMeetingOutput, crate::error::GetMeetingError> {
@@ -21272,6 +21849,178 @@ pub fn parse_list_channels_moderated_by_app_instance_user_response(
             output,
         )
         .map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_media_capture_pipelines_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMediaCapturePipelinesOutput,
+    crate::error::ListMediaCapturePipelinesError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::ListMediaCapturePipelinesError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::ListMediaCapturePipelinesError {
+            meta: generic,
+            kind: crate::error::ListMediaCapturePipelinesErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::ListMediaCapturePipelinesError {
+            meta: generic,
+            kind: crate::error::ListMediaCapturePipelinesErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::ListMediaCapturePipelinesError {
+            meta: generic,
+            kind: crate::error::ListMediaCapturePipelinesErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::ListMediaCapturePipelinesError {
+                meta: generic,
+                kind: crate::error::ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "ThrottledClientException" => crate::error::ListMediaCapturePipelinesError {
+            meta: generic,
+            kind: crate::error::ListMediaCapturePipelinesErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttled_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => {
+            crate::error::ListMediaCapturePipelinesError {
+                meta: generic,
+                kind: crate::error::ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unauthorized_client_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        _ => crate::error::ListMediaCapturePipelinesError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_media_capture_pipelines_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListMediaCapturePipelinesOutput,
+    crate::error::ListMediaCapturePipelinesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_media_capture_pipelines_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_media_capture_pipelines(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListMediaCapturePipelinesError::unhandled)?;
         output.build()
     })
 }
@@ -27500,6 +28249,447 @@ pub fn parse_send_channel_message_response(
             output,
         )
         .map_err(crate::error::SendChannelMessageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_meeting_transcription_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartMeetingTranscriptionOutput,
+    crate::error::StartMeetingTranscriptionError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StartMeetingTranscriptionError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceLimitExceededException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_limit_exceeded_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_limit_exceeded_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
+        "ServiceFailureException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::StartMeetingTranscriptionError {
+                meta: generic,
+                kind: crate::error::StartMeetingTranscriptionErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "ThrottledClientException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttled_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => {
+            crate::error::StartMeetingTranscriptionError {
+                meta: generic,
+                kind: crate::error::StartMeetingTranscriptionErrorKind::UnauthorizedClientException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unauthorized_client_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "UnprocessableEntityException" => crate::error::StartMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StartMeetingTranscriptionErrorKind::UnprocessableEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unprocessable_entity_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::StartMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::StartMeetingTranscriptionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_meeting_transcription_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StartMeetingTranscriptionOutput,
+    crate::error::StartMeetingTranscriptionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_meeting_transcription_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_meeting_transcription_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopMeetingTranscriptionOutput,
+    crate::error::StopMeetingTranscriptionError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::StopMeetingTranscriptionError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ForbiddenException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::forbidden_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_forbidden_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceFailureException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::StopMeetingTranscriptionError {
+                meta: generic,
+                kind: crate::error::StopMeetingTranscriptionErrorKind::ServiceUnavailableException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::service_unavailable_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "ThrottledClientException" => crate::error::StopMeetingTranscriptionError {
+            meta: generic,
+            kind: crate::error::StopMeetingTranscriptionErrorKind::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttled_client_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "UnauthorizedClientException" => {
+            crate::error::StopMeetingTranscriptionError {
+                meta: generic,
+                kind: crate::error::StopMeetingTranscriptionErrorKind::UnauthorizedClientException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unauthorized_client_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_unauthorized_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "UnprocessableEntityException" => {
+            crate::error::StopMeetingTranscriptionError {
+                meta: generic,
+                kind: crate::error::StopMeetingTranscriptionErrorKind::UnprocessableEntityException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::unprocessable_entity_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_unprocessable_entity_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StopMeetingTranscriptionError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        _ => crate::error::StopMeetingTranscriptionError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_stop_meeting_transcription_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::StopMeetingTranscriptionOutput,
+    crate::error::StopMeetingTranscriptionError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::stop_meeting_transcription_output::Builder::default();
+        let _ = response;
         output.build()
     })
 }

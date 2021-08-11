@@ -487,7 +487,7 @@ impl AsRef<str> for SmbSecurityStrategy {
     }
 }
 
-/// <p>The refresh cache information for the file share.</p>
+/// <p>The refresh cache information for the file share or FSx file systems.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheAttributes {
@@ -495,7 +495,7 @@ pub struct CacheAttributes {
     /// time since the last refresh after which access to the directory would cause the file
     /// gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL
     /// duration is in seconds.</p>
-    /// <p>Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
+    /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
     pub cache_stale_timeout_in_seconds: std::option::Option<i32>,
 }
 impl std::fmt::Debug for CacheAttributes {
@@ -521,7 +521,7 @@ pub mod cache_attributes {
         /// time since the last refresh after which access to the directory would cause the file
         /// gateway to first refresh that directory's contents from the Amazon S3 bucket or Amazon FSx file system. The TTL
         /// duration is in seconds.</p>
-        /// <p>Valid Values: 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
+        /// <p>Valid Values:0, 300 to 2,592,000 seconds (5 minutes to 30 days)</p>
         pub fn cache_stale_timeout_in_seconds(mut self, input: i32) -> Self {
             self.cache_stale_timeout_in_seconds = Some(input);
             self
@@ -599,7 +599,7 @@ impl AsRef<str> for CaseSensitivity {
 }
 
 /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-/// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+/// that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -677,7 +677,7 @@ impl AsRef<str> for ObjectAcl {
 /// as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions
 /// assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
 /// represent files and folders are assigned these default Unix permissions. This operation is
-/// only supported for file gateways.</p>
+/// only supported for S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NfsFileShareDefaults {
@@ -776,6 +776,59 @@ impl NfsFileShareDefaults {
     /// Creates a new builder-style object to manufacture [`NfsFileShareDefaults`](crate::model::NfsFileShareDefaults)
     pub fn builder() -> crate::model::nfs_file_share_defaults::Builder {
         crate::model::nfs_file_share_defaults::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum GatewayCapacity {
+    Large,
+    Medium,
+    Small,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for GatewayCapacity {
+    fn from(s: &str) -> Self {
+        match s {
+            "Large" => GatewayCapacity::Large,
+            "Medium" => GatewayCapacity::Medium,
+            "Small" => GatewayCapacity::Small,
+            other => GatewayCapacity::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for GatewayCapacity {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(GatewayCapacity::from(s))
+    }
+}
+impl GatewayCapacity {
+    pub fn as_str(&self) -> &str {
+        match self {
+            GatewayCapacity::Large => "Large",
+            GatewayCapacity::Medium => "Medium",
+            GatewayCapacity::Small => "Small",
+            GatewayCapacity::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Large", "Medium", "Small"]
+    }
+}
+impl AsRef<str> for GatewayCapacity {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -1129,7 +1182,7 @@ pub struct VolumeInfo {
     /// <p>Valid Values: 50 to 500 lowercase letters, numbers, periods (.), and hyphens (-).</p>
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier assigned to your gateway during activation. This ID becomes part
     /// of the gateway Amazon Resource Name (ARN), which you use as input for other
@@ -1198,7 +1251,7 @@ pub mod volume_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1387,7 +1440,7 @@ pub struct TapeInfo {
     /// <p>The status of the tape.</p>
     pub tape_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that you want to add your tape to for archiving. The tape in this
     /// pool is archived in the S3 storage class that is associated with the pool. When you use
@@ -1469,7 +1522,7 @@ pub mod tape_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -1544,7 +1597,7 @@ impl TapeInfo {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PoolInfo {
     /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list of custom tape pools for your
-    /// account and AWS Region.</p>
+    /// account and Region.</p>
     pub pool_arn: std::option::Option<std::string::String>,
     /// <p>The name of the custom tape pool. <code>PoolName</code> can use all ASCII characters,
     /// except '/' and '\'.</p>
@@ -1554,9 +1607,9 @@ pub struct PoolInfo {
     /// Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>
     pub storage_class: std::option::Option<crate::model::TapeStorageClass>,
     /// <p>Tape retention lock type, which can be configured in two modes. When configured in
-    /// governance mode, AWS accounts with specific IAM permissions are authorized to remove the
+    /// governance mode, accounts with specific IAM permissions are authorized to remove the
     /// tape retention lock from archived virtual tapes. When configured in compliance mode, the
-    /// tape retention lock cannot be removed by any user, including the root AWS account.</p>
+    /// tape retention lock cannot be removed by any user, including the root account.</p>
     pub retention_lock_type: std::option::Option<crate::model::RetentionLockType>,
     /// <p>Tape retention lock time is set in days. Tape retention lock can be enabled for up to
     /// 100 years (36,500 days).</p>
@@ -1595,7 +1648,7 @@ pub mod pool_info {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the custom tape pool. Use the <a>ListTapePools</a> operation to return a list of custom tape pools for your
-        /// account and AWS Region.</p>
+        /// account and Region.</p>
         pub fn pool_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.pool_arn = Some(input.into());
             self
@@ -1629,9 +1682,9 @@ pub mod pool_info {
             self
         }
         /// <p>Tape retention lock type, which can be configured in two modes. When configured in
-        /// governance mode, AWS accounts with specific IAM permissions are authorized to remove the
+        /// governance mode, accounts with specific IAM permissions are authorized to remove the
         /// tape retention lock from archived virtual tapes. When configured in compliance mode, the
-        /// tape retention lock cannot be removed by any user, including the root AWS account.</p>
+        /// tape retention lock cannot be removed by any user, including the root account.</p>
         pub fn retention_lock_type(mut self, input: crate::model::RetentionLockType) -> Self {
             self.retention_lock_type = Some(input);
             self
@@ -2013,7 +2066,7 @@ pub struct GatewayInfo {
     /// operations.</p>
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>The type of the gateway.</p>
     pub gateway_type: std::option::Option<std::string::String>,
@@ -2025,7 +2078,7 @@ pub struct GatewayInfo {
     pub gateway_name: std::option::Option<std::string::String>,
     /// <p>The ID of the Amazon EC2 instance that was used to launch the gateway.</p>
     pub ec2_instance_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where the Amazon EC2 instance is located.</p>
+    /// <p>The Region where the Amazon EC2 instance is located.</p>
     pub ec2_instance_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GatewayInfo {
@@ -2068,7 +2121,7 @@ pub mod gateway_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2121,7 +2174,7 @@ pub mod gateway_info {
             self.ec2_instance_id = input;
             self
         }
-        /// <p>The AWS Region where the Amazon EC2 instance is located.</p>
+        /// <p>The Region where the Amazon EC2 instance is located.</p>
         pub fn ec2_instance_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.ec2_instance_region = Some(input.into());
             self
@@ -2164,11 +2217,11 @@ pub struct FileSystemAssociationSummary {
     /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
     pub file_system_association_arn: std::option::Option<std::string::String>,
     /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-    /// <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
+    /// <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
     /// </p>
     pub file_system_association_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileSystemAssociationSummary {
@@ -2230,7 +2283,7 @@ pub mod file_system_association_summary {
             self
         }
         /// <p>The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-        /// <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
+        /// <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
         /// </p>
         pub fn file_system_association_status(
             mut self,
@@ -2247,7 +2300,7 @@ pub mod file_system_association_summary {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2274,7 +2327,7 @@ impl FileSystemAssociationSummary {
     }
 }
 
-/// <p>Describes a file share.</p>
+/// <p>Describes a file share. Only supported S3 File Gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FileShareInfo {
@@ -2290,7 +2343,7 @@ pub struct FileShareInfo {
     /// </p>
     pub file_share_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for FileShareInfo {
@@ -2369,7 +2422,7 @@ pub mod file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2459,7 +2512,7 @@ pub struct AutomaticTapeCreationPolicyInfo {
     pub automatic_tape_creation_rules:
         std::option::Option<std::vec::Vec<crate::model::AutomaticTapeCreationRule>>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AutomaticTapeCreationPolicyInfo {
@@ -2501,7 +2554,7 @@ pub mod automatic_tape_creation_policy_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -2848,8 +2901,7 @@ pub struct Tape {
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub tape_used_in_bytes: std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that contains tapes that will be archived. The tapes in this pool are
@@ -2987,8 +3039,7 @@ pub mod tape {
             self.tape_used_in_bytes = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -3198,8 +3249,7 @@ pub struct TapeArchive {
     /// <p>This value is not available for tapes created prior to May 13, 2015.</p>
     /// </note>
     pub tape_used_in_bytes: std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The ID of the pool that was used to archive the tape. The tapes in this pool are
@@ -3343,8 +3393,7 @@ pub mod tape_archive {
             self.tape_used_in_bytes = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -3478,8 +3527,7 @@ pub struct StorediScsiVolume {
     /// store data on the volume.</p>
     /// </note>
     pub volume_used_in_bytes: std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a
@@ -3692,8 +3740,7 @@ pub mod storedi_scsi_volume {
             self.volume_used_in_bytes = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -3854,8 +3901,8 @@ impl VolumeiScsiAttributes {
 }
 
 /// <p>The Windows file permissions and ownership information assigned, by default, to native
-/// S3 objects when file gateway discovers them in S3 buckets. This operation is only supported
-/// for file gateways.</p>
+/// S3 objects when S3 File Gateway discovers them in S3 buckets. This operation is only supported
+/// for S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SmbFileShareInfo {
@@ -3869,33 +3916,32 @@ pub struct SmbFileShareInfo {
     /// </p>
     pub file_share_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: bool,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The file share path used by the SMB client to identify the mount point.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that file gateway assumes when it accesses the underlying
+    /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying
     /// storage.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
     /// the S3 bucket name. It must end with a "/".</p>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
     /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
     /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
     /// </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-    /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+    /// that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
     /// <p>A value that sets the write status of a file share. Set this value to <code>true</code>
     /// to set the write status to read-only, otherwise set to <code>false</code>.</p>
@@ -3925,7 +3971,7 @@ pub struct SmbFileShareInfo {
     /// is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that
     /// file and directory permissions are mapped to the POSIX permission.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-    /// control access to an SMB file share</a> in the <i>AWS Storage Gateway User
+    /// control access to an SMB file share</a> in the <i>Storage Gateway User
     /// Guide</i>.</p>
     pub smbacl_enabled: std::option::Option<bool>,
     /// <p>Indicates whether <code>AccessBasedEnumeration</code> is enabled.</p>
@@ -3992,6 +4038,26 @@ pub struct SmbFileShareInfo {
     /// <code>{}</code>
     /// </p>
     pub notification_policy: std::option::Option<std::string::String>,
+    /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p>
+    /// <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p>
+    /// <note>
+    /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+    /// </note>
+    pub bucket_region: std::option::Option<std::string::String>,
+    /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+    /// <note>
+    /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+    /// access to files with the same name in different case.</p>
+    /// </note>
+    /// <p>Valid Values: <code>true</code> | <code>false</code>
+    /// </p>
+    pub oplocks_enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for SmbFileShareInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4022,6 +4088,9 @@ impl std::fmt::Debug for SmbFileShareInfo {
         formatter.field("file_share_name", &self.file_share_name);
         formatter.field("cache_attributes", &self.cache_attributes);
         formatter.field("notification_policy", &self.notification_policy);
+        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
+        formatter.field("bucket_region", &self.bucket_region);
+        formatter.field("oplocks_enabled", &self.oplocks_enabled);
         formatter.finish()
     }
 }
@@ -4057,6 +4126,9 @@ pub mod smb_file_share_info {
         pub(crate) file_share_name: std::option::Option<std::string::String>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
         pub(crate) notification_policy: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+        pub(crate) bucket_region: std::option::Option<std::string::String>,
+        pub(crate) oplocks_enabled: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the file share.</p>
@@ -4099,7 +4171,7 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4108,7 +4180,7 @@ pub mod smb_file_share_info {
             self.gateway_arn = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -4120,8 +4192,7 @@ pub mod smb_file_share_info {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -4140,7 +4211,7 @@ pub mod smb_file_share_info {
             self.path = input;
             self
         }
-        /// <p>The ARN of the IAM role that file gateway assumes when it accesses the underlying
+        /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying
         /// storage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
@@ -4160,7 +4231,7 @@ pub mod smb_file_share_info {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
         /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -4177,7 +4248,7 @@ pub mod smb_file_share_info {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+        /// that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
             self.object_acl = Some(input);
             self
@@ -4238,7 +4309,7 @@ pub mod smb_file_share_info {
         /// is enabled on the SMB file share. If it is set to <code>false</code>, it indicates that
         /// file and directory permissions are mapped to the POSIX permission.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/smb-acl.html">Using Microsoft Windows ACLs to
-        /// control access to an SMB file share</a> in the <i>AWS Storage Gateway User
+        /// control access to an SMB file share</a> in the <i>Storage Gateway User
         /// Guide</i>.</p>
         pub fn smbacl_enabled(mut self, input: bool) -> Self {
             self.smbacl_enabled = Some(input);
@@ -4409,6 +4480,53 @@ pub mod smb_file_share_info {
             self.notification_policy = input;
             self
         }
+        /// <p>Specifies the DNS name for the VPC endpoint that the SMB file share uses to connect to Amazon S3.</p>
+        /// <note>
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// </note>
+        pub fn vpc_endpoint_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_dns_name = Some(input.into());
+            self
+        }
+        pub fn set_vpc_endpoint_dns_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_dns_name = input;
+            self
+        }
+        /// <p>Specifies the Region of the S3 bucket where the SMB file share stores files.</p>
+        /// <note>
+        /// <p>This parameter is required for SMB file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a VPC access point.</p>
+        /// </note>
+        pub fn bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_region = Some(input.into());
+            self
+        }
+        pub fn set_bucket_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_region = input;
+            self
+        }
+        /// <p>Specifies whether opportunistic locking is enabled for the SMB file share.</p>
+        /// <note>
+        /// <p>Enabling opportunistic locking on case-sensitive shares is not recommended for workloads that involve
+        /// access to files with the same name in different case.</p>
+        /// </note>
+        /// <p>Valid Values: <code>true</code> | <code>false</code>
+        /// </p>
+        pub fn oplocks_enabled(mut self, input: bool) -> Self {
+            self.oplocks_enabled = Some(input);
+            self
+        }
+        pub fn set_oplocks_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.oplocks_enabled = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SmbFileShareInfo`](crate::model::SmbFileShareInfo)
         pub fn build(self) -> crate::model::SmbFileShareInfo {
             crate::model::SmbFileShareInfo {
@@ -4438,6 +4556,9 @@ pub mod smb_file_share_info {
                 file_share_name: self.file_share_name,
                 cache_attributes: self.cache_attributes,
                 notification_policy: self.notification_policy,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
+                bucket_region: self.bucket_region,
+                oplocks_enabled: self.oplocks_enabled,
             }
         }
     }
@@ -4450,8 +4571,8 @@ impl SmbFileShareInfo {
 }
 
 /// <p>The Unix file permissions and ownership information assigned, by default, to native S3
-/// objects when file gateway discovers them in S3 buckets. This operation is only supported in
-/// file gateways.</p>
+/// objects when an S3 File Gateway discovers them in S3 buckets. This operation is only supported in
+/// S3 File Gateways.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NfsFileShareInfo {
@@ -4459,7 +4580,7 @@ pub struct NfsFileShareInfo {
     /// as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions
     /// assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
     /// represent files and folders are assigned these default Unix permissions. This operation is
-    /// only supported for file gateways.</p>
+    /// only supported for S3 File Gateways.</p>
     pub nfs_file_share_defaults: std::option::Option<crate::model::NfsFileShareDefaults>,
     /// <p>The Amazon Resource Name (ARN) of the file share.</p>
     pub file_share_arn: std::option::Option<std::string::String>,
@@ -4471,35 +4592,34 @@ pub struct NfsFileShareInfo {
     /// </p>
     pub file_share_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
-    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+    /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
     /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
     /// <p>Valid Values: <code>true</code> | <code>false</code>
     /// </p>
     pub kms_encrypted: bool,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The file share path used by the NFS client to identify the mount point.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM role that file gateway assumes when it accesses the underlying
+    /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying
     /// storage.</p>
     pub role: std::option::Option<std::string::String>,
     /// <p>The ARN of the backend storage used for storing file data. A prefix name can be added to
     /// the S3 bucket name. It must end with a "/".</p>
     pub location_arn: std::option::Option<std::string::String>,
-    /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+    /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
     /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
     /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
     /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
     /// </p>
     pub default_storage_class: std::option::Option<std::string::String>,
     /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-    /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+    /// that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
     pub object_acl: std::option::Option<crate::model::ObjectAcl>,
-    /// <p>The list of clients that are allowed to access the file gateway. The list must contain
+    /// <p>The list of clients that are allowed to access the S3 File Gateway. The list must contain
     /// either valid IP addresses or valid CIDR blocks.</p>
     pub client_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The user mapped to anonymous user. Valid options are the following:</p>
@@ -4575,6 +4695,20 @@ pub struct NfsFileShareInfo {
     /// <code>{}</code>
     /// </p>
     pub notification_policy: std::option::Option<std::string::String>,
+    /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+    /// <note>
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+    /// VPC access point.</p>
+    /// </note>
+    pub vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+    /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p>
+    /// <note>
+    /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+    /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+    /// VPC access point.</p>
+    /// </note>
+    pub bucket_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NfsFileShareInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4600,6 +4734,8 @@ impl std::fmt::Debug for NfsFileShareInfo {
         formatter.field("file_share_name", &self.file_share_name);
         formatter.field("cache_attributes", &self.cache_attributes);
         formatter.field("notification_policy", &self.notification_policy);
+        formatter.field("vpc_endpoint_dns_name", &self.vpc_endpoint_dns_name);
+        formatter.field("bucket_region", &self.bucket_region);
         formatter.finish()
     }
 }
@@ -4630,13 +4766,15 @@ pub mod nfs_file_share_info {
         pub(crate) file_share_name: std::option::Option<std::string::String>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
         pub(crate) notification_policy: std::option::Option<std::string::String>,
+        pub(crate) vpc_endpoint_dns_name: std::option::Option<std::string::String>,
+        pub(crate) bucket_region: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Describes Network File System (NFS) file share default values. Files and folders stored
         /// as Amazon S3 objects in S3 buckets don't, by default, have Unix file permissions
         /// assigned to them. Upon discovery in an S3 bucket by Storage Gateway, the S3 objects that
         /// represent files and folders are assigned these default Unix permissions. This operation is
-        /// only supported for file gateways.</p>
+        /// only supported for S3 File Gateways.</p>
         pub fn nfs_file_share_defaults(
             mut self,
             input: crate::model::NfsFileShareDefaults,
@@ -4691,7 +4829,7 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -4700,7 +4838,7 @@ pub mod nfs_file_share_info {
             self.gateway_arn = input;
             self
         }
-        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS
+        /// <p>Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
         /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.</p>
         /// <p>Valid Values: <code>true</code> | <code>false</code>
         /// </p>
@@ -4712,8 +4850,7 @@ pub mod nfs_file_share_info {
             self.kms_encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -4732,7 +4869,7 @@ pub mod nfs_file_share_info {
             self.path = input;
             self
         }
-        /// <p>The ARN of the IAM role that file gateway assumes when it accesses the underlying
+        /// <p>The ARN of the IAM role that an S3 File Gateway assumes when it accesses the underlying
         /// storage.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
             self.role = Some(input.into());
@@ -4752,7 +4889,7 @@ pub mod nfs_file_share_info {
             self.location_arn = input;
             self
         }
-        /// <p>The default storage class for objects put into an Amazon S3 bucket by the file gateway.
+        /// <p>The default storage class for objects put into an Amazon S3 bucket by the S3 File Gateway.
         /// The default value is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
         /// <p>Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
         /// <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
@@ -4769,7 +4906,7 @@ pub mod nfs_file_share_info {
             self
         }
         /// <p>A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a file gateway puts objects into. The default value is <code>private</code>.</p>
+        /// that an S3 File Gateway puts objects into. The default value is <code>private</code>.</p>
         pub fn object_acl(mut self, input: crate::model::ObjectAcl) -> Self {
             self.object_acl = Some(input);
             self
@@ -4934,6 +5071,40 @@ pub mod nfs_file_share_info {
             self.notification_policy = input;
             self
         }
+        /// <p>Specifies the DNS name for the VPC endpoint that the NFS file share uses to connect to Amazon S3.</p>
+        /// <note>
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+        /// VPC access point.</p>
+        /// </note>
+        pub fn vpc_endpoint_dns_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_endpoint_dns_name = Some(input.into());
+            self
+        }
+        pub fn set_vpc_endpoint_dns_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_endpoint_dns_name = input;
+            self
+        }
+        /// <p>Specifies the Region of the S3 bucket where the NFS file share stores files.</p>
+        /// <note>
+        /// <p>This parameter is required for NFS file shares that connect to Amazon S3
+        /// through a VPC endpoint, a VPC access point, or an access point alias that points to a
+        /// VPC access point.</p>
+        /// </note>
+        pub fn bucket_region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket_region = Some(input.into());
+            self
+        }
+        pub fn set_bucket_region(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.bucket_region = input;
+            self
+        }
         /// Consumes the builder and constructs a [`NfsFileShareInfo`](crate::model::NfsFileShareInfo)
         pub fn build(self) -> crate::model::NfsFileShareInfo {
             crate::model::NfsFileShareInfo {
@@ -4958,6 +5129,8 @@ pub mod nfs_file_share_info {
                 file_share_name: self.file_share_name,
                 cache_attributes: self.cache_attributes,
                 notification_policy: self.notification_policy,
+                vpc_endpoint_dns_name: self.vpc_endpoint_dns_name,
+                bucket_region: self.bucket_region,
             }
         }
     }
@@ -5124,18 +5297,26 @@ pub struct FileSystemAssociationInfo {
     pub location_arn: std::option::Option<std::string::String>,
     /// <p>The status of the file system association.
     /// Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-    /// <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
+    /// <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
     /// </p>
     pub file_system_association_status: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the storage used for the audit logs.</p>
     pub audit_destination_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-    /// operation to return a list of gateways for your account and AWS Region.</p>
+    /// operation to return a list of gateways for your account and Region.</p>
     pub gateway_arn: std::option::Option<std::string::String>,
     /// <p>A list of up to 50 tags assigned to the SMB file share, sorted alphabetically by key name. Each tag is a key-value pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The refresh cache information for the file share.</p>
+    /// <p>The refresh cache information for the file share or FSx file systems.</p>
     pub cache_attributes: std::option::Option<crate::model::CacheAttributes>,
+    /// <p>Specifies network configuration information for the gateway associated with the
+    /// Amazon FSx file system.</p>
+    /// <note>
+    /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+    /// field is required.</p>
+    /// </note>
+    pub endpoint_network_configuration:
+        std::option::Option<crate::model::EndpointNetworkConfiguration>,
 }
 impl std::fmt::Debug for FileSystemAssociationInfo {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5153,6 +5334,10 @@ impl std::fmt::Debug for FileSystemAssociationInfo {
         formatter.field("gateway_arn", &self.gateway_arn);
         formatter.field("tags", &self.tags);
         formatter.field("cache_attributes", &self.cache_attributes);
+        formatter.field(
+            "endpoint_network_configuration",
+            &self.endpoint_network_configuration,
+        );
         formatter.finish()
     }
 }
@@ -5169,6 +5354,8 @@ pub mod file_system_association_info {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) cache_attributes: std::option::Option<crate::model::CacheAttributes>,
+        pub(crate) endpoint_network_configuration:
+            std::option::Option<crate::model::EndpointNetworkConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the file system association.</p>
@@ -5199,7 +5386,7 @@ pub mod file_system_association_info {
         }
         /// <p>The status of the file system association.
         /// Valid Values: <code>AVAILABLE</code> | <code>CREATING</code> | <code>DELETING</code> |
-        /// <code>FORCE_DELETING</code> | <code>MISCONFIGURED</code> | <code>UPDATING</code> | <code>UNAVAILABLE</code>
+        /// <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
         /// </p>
         pub fn file_system_association_status(
             mut self,
@@ -5228,7 +5415,7 @@ pub mod file_system_association_info {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
-        /// operation to return a list of gateways for your account and AWS Region.</p>
+        /// operation to return a list of gateways for your account and Region.</p>
         pub fn gateway_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.gateway_arn = Some(input.into());
             self
@@ -5250,7 +5437,7 @@ pub mod file_system_association_info {
             self.tags = input;
             self
         }
-        /// <p>The refresh cache information for the file share.</p>
+        /// <p>The refresh cache information for the file share or FSx file systems.</p>
         pub fn cache_attributes(mut self, input: crate::model::CacheAttributes) -> Self {
             self.cache_attributes = Some(input);
             self
@@ -5260,6 +5447,26 @@ pub mod file_system_association_info {
             input: std::option::Option<crate::model::CacheAttributes>,
         ) -> Self {
             self.cache_attributes = input;
+            self
+        }
+        /// <p>Specifies network configuration information for the gateway associated with the
+        /// Amazon FSx file system.</p>
+        /// <note>
+        /// <p>If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+        /// field is required.</p>
+        /// </note>
+        pub fn endpoint_network_configuration(
+            mut self,
+            input: crate::model::EndpointNetworkConfiguration,
+        ) -> Self {
+            self.endpoint_network_configuration = Some(input);
+            self
+        }
+        pub fn set_endpoint_network_configuration(
+            mut self,
+            input: std::option::Option<crate::model::EndpointNetworkConfiguration>,
+        ) -> Self {
+            self.endpoint_network_configuration = input;
             self
         }
         /// Consumes the builder and constructs a [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo)
@@ -5272,6 +5479,7 @@ pub mod file_system_association_info {
                 gateway_arn: self.gateway_arn,
                 tags: self.tags,
                 cache_attributes: self.cache_attributes,
+                endpoint_network_configuration: self.endpoint_network_configuration,
             }
         }
     }
@@ -5280,6 +5488,61 @@ impl FileSystemAssociationInfo {
     /// Creates a new builder-style object to manufacture [`FileSystemAssociationInfo`](crate::model::FileSystemAssociationInfo)
     pub fn builder() -> crate::model::file_system_association_info::Builder {
         crate::model::file_system_association_info::Builder::default()
+    }
+}
+
+/// <p>Specifies network configuration information for the gateway associated with the
+/// Amazon FSx file system.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EndpointNetworkConfiguration {
+    /// <p>A list of gateway IP addresses on which the associated Amazon FSx file system is available.</p>
+    /// <note>
+    /// <p>If multiple file systems are associated with this gateway, this field is required.</p>
+    /// </note>
+    pub ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for EndpointNetworkConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EndpointNetworkConfiguration");
+        formatter.field("ip_addresses", &self.ip_addresses);
+        formatter.finish()
+    }
+}
+/// See [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+pub mod endpoint_network_configuration {
+    /// A builder for [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ip_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn ip_addresses(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.ip_addresses.unwrap_or_default();
+            v.push(input.into());
+            self.ip_addresses = Some(v);
+            self
+        }
+        pub fn set_ip_addresses(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.ip_addresses = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+        pub fn build(self) -> crate::model::EndpointNetworkConfiguration {
+            crate::model::EndpointNetworkConfiguration {
+                ip_addresses: self.ip_addresses,
+            }
+        }
+    }
+}
+impl EndpointNetworkConfiguration {
+    /// Creates a new builder-style object to manufacture [`EndpointNetworkConfiguration`](crate::model::EndpointNetworkConfiguration)
+    pub fn builder() -> crate::model::endpoint_network_configuration::Builder {
+        crate::model::endpoint_network_configuration::Builder::default()
     }
 }
 
@@ -5441,8 +5704,7 @@ pub struct CachediScsiVolume {
     /// store data on the volume.</p>
     /// </note>
     pub volume_used_in_bytes: std::option::Option<i64>,
-    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-    /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+    /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
     /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
     pub kms_key: std::option::Option<std::string::String>,
     /// <p>The name of the iSCSI target used by an initiator to connect to a volume and used as a
@@ -5627,8 +5889,7 @@ pub mod cachedi_scsi_volume {
             self.volume_used_in_bytes = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
-        /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
+        /// <p>The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This value can
         /// only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.</p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());

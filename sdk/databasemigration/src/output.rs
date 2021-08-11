@@ -2325,7 +2325,7 @@ pub struct DescribeApplicableIndividualAssessmentsOutput {
     /// run that you start based on the specified request parameters. For more information on the
     /// available individual assessments, including compatibility with different migration task
     /// configurations, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.AssessmentReport.html">Working with premigration assessment runs</a> in the
-    /// <i>AWS Database Migration Service User Guide.</i>
+    /// <i>Database Migration Service User Guide.</i>
     /// </p>
     pub individual_assessment_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Pagination token returned for you to pass to a subsequent request. If you pass this
@@ -2406,16 +2406,16 @@ impl DescribeApplicableIndividualAssessmentsOutput {
 pub struct DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
-    /// <p>A unique AWS DMS identifier for an account in a particular AWS Region. The value of this
+    /// <p>A unique DMS identifier for an account in a particular Region. The value of this
     /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
     /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-    /// for storing task assessment reports in a given AWS Region. The format of this S3 bucket
+    /// for storing task assessment reports in a given Region. The format of this S3 bucket
     /// name is the following:
     /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
     /// Here is an example name for this default S3 bucket:
     /// <code>dms-111122223333-c44445555666</code>.</p>
     /// <note>
-    /// <p>AWS DMS supports the <code>UniqueAccountIdentifier</code> parameter in
+    /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
     /// versions 3.1.4 and later.</p>
     /// </note>
     pub unique_account_identifier: std::option::Option<std::string::String>,
@@ -2451,16 +2451,16 @@ pub mod describe_account_attributes_output {
             self.account_quotas = input;
             self
         }
-        /// <p>A unique AWS DMS identifier for an account in a particular AWS Region. The value of this
+        /// <p>A unique DMS identifier for an account in a particular Region. The value of this
         /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
         /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-        /// for storing task assessment reports in a given AWS Region. The format of this S3 bucket
+        /// for storing task assessment reports in a given Region. The format of this S3 bucket
         /// name is the following:
         /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
         /// Here is an example name for this default S3 bucket:
         /// <code>dms-111122223333-c44445555666</code>.</p>
         /// <note>
-        /// <p>AWS DMS supports the <code>UniqueAccountIdentifier</code> parameter in
+        /// <p>DMS supports the <code>UniqueAccountIdentifier</code> parameter in
         /// versions 3.1.4 and later.</p>
         /// </note>
         pub fn unique_account_identifier(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3191,7 +3191,7 @@ impl CancelReplicationTaskAssessmentRunOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ApplyPendingMaintenanceActionOutput {
-    /// <p>The AWS DMS resource that the pending maintenance action will be applied to.</p>
+    /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
     pub resource_pending_maintenance_actions:
         std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
 }
@@ -3215,7 +3215,7 @@ pub mod apply_pending_maintenance_action_output {
             std::option::Option<crate::model::ResourcePendingMaintenanceActions>,
     }
     impl Builder {
-        /// <p>The AWS DMS resource that the pending maintenance action will be applied to.</p>
+        /// <p>The DMS resource that the pending maintenance action will be applied to.</p>
         pub fn resource_pending_maintenance_actions(
             mut self,
             input: crate::model::ResourcePendingMaintenanceActions,

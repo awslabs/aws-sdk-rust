@@ -2908,6 +2908,201 @@ impl std::error::Error for GetIntentVersionsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetMigrationError {
+    pub kind: GetMigrationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMigrationErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    InternalFailureException(crate::error::InternalFailureException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMigrationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMigrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetMigrationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            GetMigrationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            GetMigrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetMigrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetMigrationError {
+    fn code(&self) -> Option<&str> {
+        GetMigrationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMigrationError {
+    pub fn new(kind: GetMigrationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMigrationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMigrationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetMigrationErrorKind::BadRequestException(_))
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMigrationErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, GetMigrationErrorKind::LimitExceededException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetMigrationErrorKind::NotFoundException(_))
+    }
+}
+impl std::error::Error for GetMigrationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMigrationErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetMigrationErrorKind::InternalFailureException(_inner) => Some(_inner),
+            GetMigrationErrorKind::LimitExceededException(_inner) => Some(_inner),
+            GetMigrationErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetMigrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetMigrationsError {
+    pub kind: GetMigrationsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMigrationsErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    InternalFailureException(crate::error::InternalFailureException),
+    LimitExceededException(crate::error::LimitExceededException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMigrationsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMigrationsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetMigrationsErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            GetMigrationsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            GetMigrationsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetMigrationsError {
+    fn code(&self) -> Option<&str> {
+        GetMigrationsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMigrationsError {
+    pub fn new(kind: GetMigrationsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMigrationsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMigrationsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetMigrationsErrorKind::BadRequestException(_))
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMigrationsErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMigrationsErrorKind::LimitExceededException(_)
+        )
+    }
+}
+impl std::error::Error for GetMigrationsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMigrationsErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetMigrationsErrorKind::InternalFailureException(_inner) => Some(_inner),
+            GetMigrationsErrorKind::LimitExceededException(_inner) => Some(_inner),
+            GetMigrationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetSlotTypeError {
     pub kind: GetSlotTypeErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3937,6 +4132,117 @@ impl std::error::Error for StartImportError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct StartMigrationError {
+    pub kind: StartMigrationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartMigrationErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    BadRequestException(crate::error::BadRequestException),
+    InternalFailureException(crate::error::InternalFailureException),
+    LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartMigrationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartMigrationErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            StartMigrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StartMigrationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            StartMigrationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            StartMigrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StartMigrationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for StartMigrationError {
+    fn code(&self) -> Option<&str> {
+        StartMigrationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartMigrationError {
+    pub fn new(kind: StartMigrationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartMigrationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartMigrationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMigrationErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, StartMigrationErrorKind::BadRequestException(_))
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMigrationErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMigrationErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, StartMigrationErrorKind::NotFoundException(_))
+    }
+}
+impl std::error::Error for StartMigrationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartMigrationErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            StartMigrationErrorKind::BadRequestException(_inner) => Some(_inner),
+            StartMigrationErrorKind::InternalFailureException(_inner) => Some(_inner),
+            StartMigrationErrorKind::LimitExceededException(_inner) => Some(_inner),
+            StartMigrationErrorKind::NotFoundException(_inner) => Some(_inner),
+            StartMigrationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4467,6 +4773,67 @@ impl BadRequestException {
     }
 }
 
+/// <p>Your IAM user or role does not have permission to call the Amazon Lex V2 APIs
+/// required to migrate your bot.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
+    }
+}
+
 /// <p> The checksum of the resource that you are trying to change does
 /// not match the checksum in the request. Check the resource's checksum and
 /// try again.</p>
@@ -4490,8 +4857,8 @@ impl PreconditionFailedException {
 impl std::fmt::Display for PreconditionFailedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "PreconditionFailedException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }
@@ -4572,8 +4939,8 @@ impl ResourceInUseException {
 impl std::fmt::Display for ResourceInUseException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceInUseException")?;
-        if let Some(inner_7) = &self.message {
-            write!(f, ": {}", inner_7)?;
+        if let Some(inner_8) = &self.message {
+            write!(f, ": {}", inner_8)?;
         }
         Ok(())
     }

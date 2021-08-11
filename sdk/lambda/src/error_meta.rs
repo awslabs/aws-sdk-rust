@@ -390,6 +390,7 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteFunctionEventInvokeC
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1194,6 +1195,7 @@ impl From<smithy_http::result::SdkError<crate::error::PutFunctionEventInvokeConf
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
                 crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::PutFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
@@ -1473,6 +1475,7 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateFunctionEventInvokeC
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException(inner) => Error::ResourceConflictException(inner),
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::ServiceException(inner) => Error::ServiceException(inner),
                 crate::error::UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),

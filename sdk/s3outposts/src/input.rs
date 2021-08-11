@@ -9,9 +9,11 @@ pub mod create_endpoint_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) security_group_id: std::option::Option<std::string::String>,
+        pub(crate) access_type: std::option::Option<crate::model::EndpointAccessType>,
+        pub(crate) customer_owned_ipv4_pool: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Outpost. </p>
+        /// <p>The ID of the AWS Outposts. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
@@ -20,7 +22,8 @@ pub mod create_endpoint_input {
             self.outpost_id = input;
             self
         }
-        /// <p>The ID of the subnet in the selected VPC.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
+        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.subnet_id = Some(input.into());
             self
@@ -41,6 +44,33 @@ pub mod create_endpoint_input {
             self.security_group_id = input;
             self
         }
+        /// <p>The type of access for the on-premise network connectivity for the
+        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
+        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
+            self.access_type = Some(input);
+            self
+        }
+        pub fn set_access_type(
+            mut self,
+            input: std::option::Option<crate::model::EndpointAccessType>,
+        ) -> Self {
+            self.access_type = input;
+            self
+        }
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
+        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+            self.customer_owned_ipv4_pool = Some(input.into());
+            self
+        }
+        pub fn set_customer_owned_ipv4_pool(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.customer_owned_ipv4_pool = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEndpointInput`](crate::input::CreateEndpointInput)
         pub fn build(
             self,
@@ -52,6 +82,8 @@ pub mod create_endpoint_input {
                 outpost_id: self.outpost_id,
                 subnet_id: self.subnet_id,
                 security_group_id: self.security_group_id,
+                access_type: self.access_type,
+                customer_owned_ipv4_pool: self.customer_owned_ipv4_pool,
             })
         }
     }
@@ -82,28 +114,28 @@ impl CreateEndpointInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -165,7 +197,7 @@ pub mod delete_endpoint_input {
         pub(crate) outpost_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the end point.</p>
+        /// <p>The ID of the endpoint.</p>
         pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_id = Some(input.into());
             self
@@ -174,7 +206,7 @@ pub mod delete_endpoint_input {
             self.endpoint_id = input;
             self
         }
-        /// <p>The ID of the AWS Outpost. </p>
+        /// <p>The ID of the AWS Outposts. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
@@ -221,28 +253,28 @@ impl DeleteEndpointInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -368,28 +400,28 @@ impl ListEndpointsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -474,9 +506,9 @@ impl std::fmt::Debug for ListEndpointsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEndpointInput {
-    /// <p>The ID of the end point.</p>
+    /// <p>The ID of the endpoint.</p>
     pub endpoint_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS Outpost. </p>
+    /// <p>The ID of the AWS Outposts. </p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteEndpointInput {
@@ -491,12 +523,20 @@ impl std::fmt::Debug for DeleteEndpointInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEndpointInput {
-    /// <p>The ID of the AWS Outpost. </p>
+    /// <p>The ID of the AWS Outposts. </p>
     pub outpost_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the subnet in the selected VPC.</p>
+    /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
+    /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The ID of the security group to use with the endpoint.</p>
     pub security_group_id: std::option::Option<std::string::String>,
+    /// <p>The type of access for the on-premise network connectivity for the
+    /// Outpost endpoint. To access the endpoint from an on-premises network, you must
+    /// specify the access type and provide the customer owned IPv4 pool.</p>
+    pub access_type: std::option::Option<crate::model::EndpointAccessType>,
+    /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
+    /// IP addresses will be allocated from this pool for the endpoint.</p>
+    pub customer_owned_ipv4_pool: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateEndpointInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -504,6 +544,8 @@ impl std::fmt::Debug for CreateEndpointInput {
         formatter.field("outpost_id", &self.outpost_id);
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("security_group_id", &self.security_group_id);
+        formatter.field("access_type", &self.access_type);
+        formatter.field("customer_owned_ipv4_pool", &self.customer_owned_ipv4_pool);
         formatter.finish()
     }
 }

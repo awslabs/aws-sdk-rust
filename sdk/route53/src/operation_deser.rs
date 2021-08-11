@@ -36,6 +36,27 @@ pub fn parse_activate_key_signing_key_error(
                 tmp
             }),
         },
+        "InvalidInput" => crate::error::ActivateKeySigningKeyError {
+            meta: generic,
+            kind: crate::error::ActivateKeySigningKeyErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ActivateKeySigningKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidKeySigningKeyStatus" => {
             crate::error::ActivateKeySigningKeyError {
                 meta: generic,
@@ -2074,6 +2095,27 @@ pub fn parse_deactivate_key_signing_key_error(
                 tmp
             }),
         },
+        "InvalidInput" => crate::error::DeactivateKeySigningKeyError {
+            meta: generic,
+            kind: crate::error::DeactivateKeySigningKeyErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeactivateKeySigningKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidKeySigningKeyStatus" => {
             crate::error::DeactivateKeySigningKeyError {
                 meta: generic,
@@ -2457,6 +2499,27 @@ pub fn parse_delete_key_signing_key_error(
                     let mut output = crate::error::concurrent_modification::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_concurrent_modification_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteKeySigningKeyError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInput" => crate::error::DeleteKeySigningKeyError {
+            meta: generic,
+            kind: crate::error::DeleteKeySigningKeyErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_input_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -3213,6 +3276,27 @@ pub fn parse_disable_hosted_zone_dnssec_error(
                 tmp
             }),
         },
+        "InvalidInput" => crate::error::DisableHostedZoneDNSSECError {
+            meta: generic,
+            kind: crate::error::DisableHostedZoneDNSSECErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DisableHostedZoneDNSSECError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidKeySigningKeyStatus" => {
             crate::error::DisableHostedZoneDNSSECError {
                 meta: generic,
@@ -3572,6 +3656,27 @@ pub fn parse_enable_hosted_zone_dnssec_error(
                 tmp
             }),
         },
+        "InvalidInput" => crate::error::EnableHostedZoneDNSSECError {
+            meta: generic,
+            kind: crate::error::EnableHostedZoneDNSSECErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_input_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::EnableHostedZoneDNSSECError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "InvalidKeySigningKeyStatus" => {
             crate::error::EnableHostedZoneDNSSECError {
                 meta: generic,
@@ -3857,6 +3962,27 @@ pub fn parse_get_dnssec_error(
                     let mut output = crate::error::invalid_argument::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_invalid_argument_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetDNSSECError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidInput" => crate::error::GetDNSSECError {
+            meta: generic,
+            kind: crate::error::GetDNSSECErrorKind::InvalidInput({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_invalid_input_xml_err(
                         response.body().as_ref(),
                         output,
                     )

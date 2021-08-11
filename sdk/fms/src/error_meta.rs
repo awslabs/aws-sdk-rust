@@ -36,6 +36,9 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateAdminAccountError
                 crate::error::AssociateAdminAccountErrorKind::InvalidOperationException(inner) => {
                     Error::InvalidOperationException(inner)
                 }
+                crate::error::AssociateAdminAccountErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
                 crate::error::AssociateAdminAccountErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
                 }

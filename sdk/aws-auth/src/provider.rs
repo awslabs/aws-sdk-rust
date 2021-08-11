@@ -24,6 +24,7 @@ use std::error::Error;
 use std::fmt;
 use std::fmt::{Debug, Display, Formatter};
 use std::future::{self, Future};
+use std::marker::PhantomData;
 use std::pin::Pin;
 use std::sync::Arc;
 use std::time::Duration;
@@ -79,13 +80,18 @@ pub type CredentialsProvider = Arc<dyn AsyncProvideCredentials>;
 ///
 /// See [`async_provide_credentials_fn`] for more details.
 #[derive(Copy, Clone)]
-pub struct AsyncProvideCredentialsFn<T: Send + Sync> {
+pub struct AsyncProvideCredentialsFn<'c, T, F>
+where
+    T: Fn() -> F + Send + Sync + 'c,
+    F: Future<Output = CredentialsResult> + Send + 'static,
+{
     f: T,
+    phantom: PhantomData<&'c T>,
 }
 
-impl<T, F> AsyncProvideCredentials for AsyncProvideCredentialsFn<T>
+impl<'c, T, F> AsyncProvideCredentials for AsyncProvideCredentialsFn<'c, T, F>
 where
-    T: Fn() -> F + Send + Sync,
+    T: Fn() -> F + Send + Sync + 'c,
     F: Future<Output = CredentialsResult> + Send + 'static,
 {
     fn provide_credentials<'a>(&'a self) -> BoxFuture<'a, CredentialsResult>
@@ -116,12 +122,15 @@ where
 ///     Ok(credentials)
 /// });
 /// ```
-pub fn async_provide_credentials_fn<T, F>(f: T) -> AsyncProvideCredentialsFn<T>
+pub fn async_provide_credentials_fn<'c, T, F>(f: T) -> AsyncProvideCredentialsFn<'c, T, F>
 where
-    T: Fn() -> F + Send + Sync,
+    T: Fn() -> F + Send + Sync + 'c,
     F: Future<Output = CredentialsResult> + Send + 'static,
 {
-    AsyncProvideCredentialsFn { f }
+    AsyncProvideCredentialsFn {
+        f,
+        phantom: Default::default(),
+    }
 }
 
 /// A synchronous credentials provider
@@ -162,7 +171,9 @@ pub fn set_provider(config: &mut PropertyBag, provider: Arc<dyn AsyncProvideCred
 
 #[cfg(test)]
 mod test {
-    use crate::provider::{AsyncProvideCredentials, BoxFuture, CredentialsResult};
+    use crate::provider::{
+        async_provide_credentials_fn, AsyncProvideCredentials, BoxFuture, CredentialsResult,
+    };
     use crate::Credentials;
     use async_trait::async_trait;
 
@@ -190,5 +201,35 @@ mod test {
             let inner_fut = self.inner.creds();
             Box::pin(async move { Ok(inner_fut.await) })
         }
+    }
+
+    // Test that the closure passed to `async_provide_credentials_fn` is allowed to borrow things
+    #[tokio::test]
+    async fn async_provide_credentials_fn_closure_can_borrow() {
+        fn check_is_str_ref(_input: &str) {}
+        async fn test_async_provider(input: String) -> CredentialsResult {
+            Ok(Credentials::from_keys(&input, &input, None))
+        }
+
+        let things_to_borrow = vec!["one".to_string(), "two".to_string()];
+
+        let mut providers = Vec::new();
+        for thing in &things_to_borrow {
+            let provider = async_provide_credentials_fn(move || {
+                check_is_str_ref(thing);
+                test_async_provider(thing.into())
+            });
+            providers.push(provider);
+        }
+
+        let (two, one) = (providers.pop().unwrap(), providers.pop().unwrap());
+        assert_eq!(
+            "one",
+            one.provide_credentials().await.unwrap().access_key_id()
+        );
+        assert_eq!(
+            "two",
+            two.provide_credentials().await.unwrap().access_key_id()
+        );
     }
 }

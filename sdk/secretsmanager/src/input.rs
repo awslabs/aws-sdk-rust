@@ -73,28 +73,28 @@ impl CancelRotateSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -192,7 +192,7 @@ pub mod create_secret_input {
         /// initial version is created as part of the secret, and this parameter specifies a unique
         /// identifier for the new version. </p>
         /// <note>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
         /// as the value for this parameter in the request. If you don't use the SDK and instead
         /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
@@ -241,13 +241,13 @@ pub mod create_secret_input {
             self.description = input;
             self
         }
-        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to
+        /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
         /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
         /// versions stored in this secret.</p>
-        /// <p>You can specify any of the supported ways to identify a AWS KMS key ID. If you need to
+        /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
         /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-        /// <p>If you don't specify this value, then Secrets Manager defaults to using the AWS account's
-        /// default CMK (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+        /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
+        /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
         /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
         /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
         /// <important>
@@ -271,7 +271,7 @@ pub mod create_secret_input {
         /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
         /// both. They cannot both be empty.</p>
         /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-        /// using the AWS CLI or one of the AWS SDKs.</p>
+        /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
         pub fn secret_binary(mut self, input: smithy_types::Blob) -> Self {
             self.secret_binary = Some(input);
             self
@@ -291,7 +291,7 @@ pub mod create_secret_input {
         /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
         /// specify key/value pairs. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
         /// <p>
         /// <code>{"username":"bob","password":"abc123xyz456"}</code>
         /// </p>
@@ -401,28 +401,28 @@ impl CreateSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -555,28 +555,28 @@ impl DeleteResourcePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -692,7 +692,7 @@ pub mod delete_secret_input {
         /// retry logic.</p>
         /// <important>
         /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-        /// waiting period before the permanent deletion that AWS would normally impose with the
+        /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
         /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
         /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
         /// the secret. You lose the secret permanently.</p>
@@ -753,28 +753,28 @@ impl DeleteSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -906,28 +906,28 @@ impl DescribeSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1142,28 +1142,28 @@ impl GetRandomPasswordInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1296,28 +1296,28 @@ impl GetResourcePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1486,28 +1486,28 @@ impl GetSecretValueInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1673,28 +1673,28 @@ impl ListSecretsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1872,28 +1872,28 @@ impl ListSecretVersionIdsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1988,11 +1988,11 @@ pub mod put_resource_policy_input {
             self.secret_id = input;
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
         /// resource-based policy. The policy in the string identifies who can access or manage this
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_policy = Some(input.into());
             self
@@ -2056,28 +2056,28 @@ impl PutResourcePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2177,7 +2177,7 @@ pub mod put_secret_value_input {
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
         /// <note>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
         /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
         /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
@@ -2241,7 +2241,7 @@ pub mod put_secret_value_input {
         /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
         /// specify key/value pairs. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>.</p>
         /// <p> For example:</p>
         /// <p>
         /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
@@ -2318,28 +2318,28 @@ impl PutSecretValueInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2474,28 +2474,28 @@ impl RemoveRegionsFromReplicationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2650,28 +2650,28 @@ impl ReplicateSecretToRegionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2802,28 +2802,28 @@ impl RestoreSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2921,7 +2921,7 @@ pub mod rotate_secret_input {
         }
         /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
         /// ensure idempotency. </p>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
         /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
         /// request to the Secrets Manager service endpoint, then you must generate a
@@ -3012,28 +3012,28 @@ impl RotateSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3152,28 +3152,28 @@ impl StopReplicationToReplicaInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3319,28 +3319,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3486,28 +3486,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3608,7 +3608,7 @@ pub mod update_secret_input {
         }
         /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
         /// unique identifier for the new version that helps ensure idempotency. </p>
-        /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+        /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
         /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
         /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
         /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
@@ -3656,7 +3656,7 @@ pub mod update_secret_input {
             self.description = input;
             self
         }
-        /// <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master key (CMK) to be
+        /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) to be
         /// used to encrypt the protected text in new versions of this secret.</p>
         /// <important>
         /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
@@ -3697,7 +3697,7 @@ pub mod update_secret_input {
         /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
         /// specify key/value pairs. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-        /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+        /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
         /// <p>
         /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
         /// </p>
@@ -3766,28 +3766,28 @@ impl UpdateSecretInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3971,28 +3971,28 @@ impl UpdateSecretVersionStageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4087,11 +4087,11 @@ pub mod validate_resource_policy_input {
             self.secret_id = input;
             self
         }
-        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+        /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
         /// resource-based policy. The policy in the string identifies who can access or manage this
         /// secret and its versions. For information on how to format a JSON parameter for the various
         /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-        /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi</p>
+        /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
         pub fn resource_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_policy = Some(input.into());
             self
@@ -4144,28 +4144,28 @@ impl ValidateResourcePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4246,11 +4246,11 @@ pub struct ValidateResourcePolicyInput {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
     /// resource-based policy. The policy in the string identifies who can access or manage this
     /// secret and its versions. For information on how to format a JSON parameter for the various
     /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.publi</p>
+    /// JSON for Parameters</a> in the <i>CLI User Guide</i>.publi</p>
     pub resource_policy: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ValidateResourcePolicyInput {
@@ -4331,7 +4331,7 @@ pub struct UpdateSecretInput {
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>(Optional) If you want to add a new version to the secret, this parameter specifies a
     /// unique identifier for the new version that helps ensure idempotency. </p>
-    /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
     /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
     /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the Secrets Manager
     /// service endpoint, then you must generate a <code>ClientRequestToken</code> yourself for new
@@ -4362,7 +4362,7 @@ pub struct UpdateSecretInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies an updated user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies an updated ARN or alias of the AWS KMS customer master key (CMK) to be
+    /// <p>(Optional) Specifies an updated ARN or alias of the Amazon Web Services KMS customer master key (CMK) to be
     /// used to encrypt the protected text in new versions of this secret.</p>
     /// <important>
     /// <p>You can only use the account's default CMK to encrypt and decrypt if you call this
@@ -4389,7 +4389,7 @@ pub struct UpdateSecretInput {
     /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
     /// specify key/value pairs. For information on how to format a JSON parameter for the various
     /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+    /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
     /// <p>
     /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
     /// </p>
@@ -4439,7 +4439,7 @@ pub struct UntagResourceInput {
     /// <p>A list of tag key names to remove from the secret. You don't specify the value. Both the
     /// key and its associated value are removed.</p>
     /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-    /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+    /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UntagResourceInput {
@@ -4474,8 +4474,8 @@ pub struct TagResourceInput {
     /// <p>The tags to attach to the secret. Each element in the list consists of a <code>Key</code>
     /// and a <code>Value</code>.</p>
     /// <p>This parameter to the API requires a JSON text string argument. For information on how to
-    /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the
-    /// AWS CLI, you can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
+    /// format a JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for Parameters</a> in the <i>CLI User Guide</i>. For the
+    /// CLI, you can also use the syntax: <code>--Tags Key="Key1",Value="Value1"
     /// Key="Key2",Value="Value2"[,…]</code>
     /// </p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4525,7 +4525,7 @@ pub struct RotateSecretInput {
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies a unique identifier for the new version of the secret that helps
     /// ensure idempotency. </p>
-    /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
     /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
     /// in the request for this parameter. If you don't use the SDK and instead generate a raw HTTP
     /// request to the Secrets Manager service endpoint, then you must generate a
@@ -4647,7 +4647,7 @@ pub struct PutSecretValueInput {
     pub secret_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies a unique identifier for the new version of the secret. </p>
     /// <note>
-    /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
     /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes that
     /// in the request. If you don't use the SDK and instead generate a raw HTTP request to the
     /// Secrets Manager service endpoint, then you must generate a <code>ClientRequestToken</code> yourself
@@ -4694,7 +4694,7 @@ pub struct PutSecretValueInput {
     /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
     /// specify key/value pairs. For information on how to format a JSON parameter for the various
     /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+    /// Parameters</a> in the <i>CLI User Guide</i>.</p>
     /// <p> For example:</p>
     /// <p>
     /// <code>[{"username":"bob"},{"password":"abc123xyz456"}]</code>
@@ -4744,11 +4744,11 @@ pub struct PutResourcePolicyInput {
     /// you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your permissions.</p>
     /// </note>
     pub secret_id: std::option::Option<std::string::String>,
-    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an AWS
+    /// <p>A JSON-formatted string constructed according to the grammar and syntax for an Amazon Web Services
     /// resource-based policy. The policy in the string identifies who can access or manage this
     /// secret and its versions. For information on how to format a JSON parameter for the various
     /// command line tool environments, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
-    /// JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.</p>
+    /// JSON for Parameters</a> in the <i>CLI User Guide</i>.</p>
     pub resource_policy: std::option::Option<std::string::String>,
     /// <p>(Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you
     /// block resource-based policies that allow broad access to the secret.</p>
@@ -5041,7 +5041,7 @@ pub struct DeleteSecretInput {
     /// retry logic.</p>
     /// <important>
     /// <p>Use this parameter with caution. This parameter causes the operation to skip the normal
-    /// waiting period before the permanent deletion that AWS would normally impose with the
+    /// waiting period before the permanent deletion that Amazon Web Services would normally impose with the
     /// <code>RecoveryWindowInDays</code> parameter. If you delete a secret with the
     /// <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to recover
     /// the secret. You lose the secret permanently.</p>
@@ -5111,7 +5111,7 @@ pub struct CreateSecretInput {
     /// initial version is created as part of the secret, and this parameter specifies a unique
     /// identifier for the new version. </p>
     /// <note>
-    /// <p>If you use the AWS CLI or one of the AWS SDK to call this operation, then you can
+    /// <p>If you use the Amazon Web Services CLI or one of the Amazon Web Services SDK to call this operation, then you can
     /// leave this parameter empty. The CLI or SDK generates a random UUID for you and includes it
     /// as the value for this parameter in the request. If you don't use the SDK and instead
     /// generate a raw HTTP request to the Secrets Manager service endpoint, then you must generate a
@@ -5143,13 +5143,13 @@ pub struct CreateSecretInput {
     pub client_request_token: std::option::Option<std::string::String>,
     /// <p>(Optional) Specifies a user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the AWS KMS customer master key (CMK) to
+    /// <p>(Optional) Specifies the ARN, Key ID, or alias of the Amazon Web Services KMS customer master key (CMK) to
     /// be used to encrypt the <code>SecretString</code> or <code>SecretBinary</code> values in the
     /// versions stored in this secret.</p>
-    /// <p>You can specify any of the supported ways to identify a AWS KMS key ID. If you need to
+    /// <p>You can specify any of the supported ways to identify a Amazon Web Services KMS key ID. If you need to
     /// reference a CMK in a different account, you can use only the key ARN or the alias ARN.</p>
-    /// <p>If you don't specify this value, then Secrets Manager defaults to using the AWS account's
-    /// default CMK (the one named <code>aws/secretsmanager</code>). If a AWS KMS CMK with that name doesn't yet
+    /// <p>If you don't specify this value, then Secrets Manager defaults to using the Amazon Web Services account's
+    /// default CMK (the one named <code>aws/secretsmanager</code>). If a Amazon Web Services KMS CMK with that name doesn't yet
     /// exist, then Secrets Manager creates it for you automatically the first time it needs to encrypt a
     /// version's <code>SecretString</code> or <code>SecretBinary</code> fields.</p>
     /// <important>
@@ -5166,7 +5166,7 @@ pub struct CreateSecretInput {
     /// <p>Either <code>SecretString</code> or <code>SecretBinary</code> must have a value, but not
     /// both. They cannot both be empty.</p>
     /// <p>This parameter is not available using the Secrets Manager console. It can be accessed only by
-    /// using the AWS CLI or one of the AWS SDKs.</p>
+    /// using the Amazon Web Services CLI or one of the Amazon Web Services SDKs.</p>
     pub secret_binary: std::option::Option<smithy_types::Blob>,
     /// <p>(Optional) Specifies text data that you want to encrypt and store in this new version of
     /// the secret.</p>
@@ -5179,7 +5179,7 @@ pub struct CreateSecretInput {
     /// <p>For storing multiple values, we recommend that you use a JSON text string argument and
     /// specify key/value pairs. For information on how to format a JSON parameter for the various
     /// command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+    /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
     /// <p>
     /// <code>{"username":"bob","password":"abc123xyz456"}</code>
     /// </p>
@@ -5206,7 +5206,7 @@ pub struct CreateSecretInput {
     /// </important>
     /// <p>This parameter requires a JSON text string argument. For information on how to format a
     /// JSON parameter for the various command line tool environments, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
-    /// Parameters</a> in the <i>AWS CLI User Guide</i>. For example:</p>
+    /// Parameters</a> in the <i>CLI User Guide</i>. For example:</p>
     /// <p>
     /// <code>[{"Key":"CostCenter","Value":"12345"},{"Key":"environment","Value":"production"}]</code>
     /// </p>
@@ -5227,8 +5227,8 @@ pub struct CreateSecretInput {
     /// <p>Tag keys and values are case sensitive.</p>
     /// </li>
     /// <li>
-    /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it
-    /// for AWS use. You can't edit or delete tag names or values with this
+    /// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
+    /// for Amazon Web Services use. You can't edit or delete tag names or values with this
     /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
     /// </li>
     /// <li>

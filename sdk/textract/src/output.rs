@@ -515,6 +515,77 @@ impl DetectDocumentTextOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnalyzeExpenseOutput {
+    /// <p>Information about the input document.</p>
+    pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+    /// <p>The expenses detected by Amazon Textract.</p>
+    pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+}
+impl std::fmt::Debug for AnalyzeExpenseOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalyzeExpenseOutput");
+        formatter.field("document_metadata", &self.document_metadata);
+        formatter.field("expense_documents", &self.expense_documents);
+        formatter.finish()
+    }
+}
+/// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+pub mod analyze_expense_output {
+    /// A builder for [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
+        pub(crate) expense_documents:
+            std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+    }
+    impl Builder {
+        /// <p>Information about the input document.</p>
+        pub fn document_metadata(mut self, input: crate::model::DocumentMetadata) -> Self {
+            self.document_metadata = Some(input);
+            self
+        }
+        pub fn set_document_metadata(
+            mut self,
+            input: std::option::Option<crate::model::DocumentMetadata>,
+        ) -> Self {
+            self.document_metadata = input;
+            self
+        }
+        pub fn expense_documents(
+            mut self,
+            input: impl Into<crate::model::ExpenseDocument>,
+        ) -> Self {
+            let mut v = self.expense_documents.unwrap_or_default();
+            v.push(input.into());
+            self.expense_documents = Some(v);
+            self
+        }
+        pub fn set_expense_documents(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+        ) -> Self {
+            self.expense_documents = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+        pub fn build(self) -> crate::output::AnalyzeExpenseOutput {
+            crate::output::AnalyzeExpenseOutput {
+                document_metadata: self.document_metadata,
+                expense_documents: self.expense_documents,
+            }
+        }
+    }
+}
+impl AnalyzeExpenseOutput {
+    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput)
+    pub fn builder() -> crate::output::analyze_expense_output::Builder {
+        crate::output::analyze_expense_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AnalyzeDocumentOutput {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
     pub document_metadata: std::option::Option<crate::model::DocumentMetadata>,

@@ -354,6 +354,122 @@ impl UpdateContainerServiceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBucketBundleOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for UpdateBucketBundleOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBucketBundleOutput");
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput)
+pub mod update_bucket_bundle_output {
+    /// A builder for [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput)
+        pub fn build(self) -> crate::output::UpdateBucketBundleOutput {
+            crate::output::UpdateBucketBundleOutput {
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl UpdateBucketBundleOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBucketBundleOutput`](crate::output::UpdateBucketBundleOutput)
+    pub fn builder() -> crate::output::update_bucket_bundle_output::Builder {
+        crate::output::update_bucket_bundle_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateBucketOutput {
+    /// <p>An object that describes the bucket that is updated.</p>
+    pub bucket: std::option::Option<crate::model::Bucket>,
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for UpdateBucketOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateBucketOutput");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`UpdateBucketOutput`](crate::output::UpdateBucketOutput)
+pub mod update_bucket_output {
+    /// A builder for [`UpdateBucketOutput`](crate::output::UpdateBucketOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<crate::model::Bucket>,
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        /// <p>An object that describes the bucket that is updated.</p>
+        pub fn bucket(mut self, input: crate::model::Bucket) -> Self {
+            self.bucket = Some(input);
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<crate::model::Bucket>) -> Self {
+            self.bucket = input;
+            self
+        }
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateBucketOutput`](crate::output::UpdateBucketOutput)
+        pub fn build(self) -> crate::output::UpdateBucketOutput {
+            crate::output::UpdateBucketOutput {
+                bucket: self.bucket,
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl UpdateBucketOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateBucketOutput`](crate::output::UpdateBucketOutput)
+    pub fn builder() -> crate::output::update_bucket_output::Builder {
+        crate::output::update_bucket_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
@@ -757,6 +873,57 @@ impl StartInstanceOutput {
     /// Creates a new builder-style object to manufacture [`StartInstanceOutput`](crate::output::StartInstanceOutput)
     pub fn builder() -> crate::output::start_instance_output::Builder {
         crate::output::start_instance_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SetResourceAccessForBucketOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for SetResourceAccessForBucketOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SetResourceAccessForBucketOutput");
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput)
+pub mod set_resource_access_for_bucket_output {
+    /// A builder for [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput)
+        pub fn build(self) -> crate::output::SetResourceAccessForBucketOutput {
+            crate::output::SetResourceAccessForBucketOutput {
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl SetResourceAccessForBucketOutput {
+    /// Creates a new builder-style object to manufacture [`SetResourceAccessForBucketOutput`](crate::output::SetResourceAccessForBucketOutput)
+    pub fn builder() -> crate::output::set_resource_access_for_bucket_output::Builder {
+        crate::output::set_resource_access_for_bucket_output::Builder::default()
     }
 }
 
@@ -4895,6 +5062,246 @@ impl GetBundlesOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketsOutput {
+    /// <p>An array of objects that describe buckets.</p>
+    pub buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+    /// <p>The token to advance to the next page of results from your request.</p>
+    /// <p>A next page token is not returned if there are no more results to display.</p>
+    /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
+    /// specify the next page token using the <code>pageToken</code> parameter.</p>
+    pub next_page_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetBucketsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketsOutput");
+        formatter.field("buckets", &self.buckets);
+        formatter.field("next_page_token", &self.next_page_token);
+        formatter.finish()
+    }
+}
+/// See [`GetBucketsOutput`](crate::output::GetBucketsOutput)
+pub mod get_buckets_output {
+    /// A builder for [`GetBucketsOutput`](crate::output::GetBucketsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+        pub(crate) next_page_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn buckets(mut self, input: impl Into<crate::model::Bucket>) -> Self {
+            let mut v = self.buckets.unwrap_or_default();
+            v.push(input.into());
+            self.buckets = Some(v);
+            self
+        }
+        pub fn set_buckets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Bucket>>,
+        ) -> Self {
+            self.buckets = input;
+            self
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>A next page token is not returned if there are no more results to display.</p>
+        /// <p>To get the next page of results, perform another <code>GetBuckets</code> request and
+        /// specify the next page token using the <code>pageToken</code> parameter.</p>
+        pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_page_token = Some(input.into());
+            self
+        }
+        pub fn set_next_page_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.next_page_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketsOutput`](crate::output::GetBucketsOutput)
+        pub fn build(self) -> crate::output::GetBucketsOutput {
+            crate::output::GetBucketsOutput {
+                buckets: self.buckets,
+                next_page_token: self.next_page_token,
+            }
+        }
+    }
+}
+impl GetBucketsOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketsOutput`](crate::output::GetBucketsOutput)
+    pub fn builder() -> crate::output::get_buckets_output::Builder {
+        crate::output::get_buckets_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketMetricDataOutput {
+    /// <p>The name of the metric returned.</p>
+    pub metric_name: std::option::Option<crate::model::BucketMetricName>,
+    /// <p>An array of objects that describe the metric data returned.</p>
+    pub metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
+}
+impl std::fmt::Debug for GetBucketMetricDataOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketMetricDataOutput");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("metric_data", &self.metric_data);
+        formatter.finish()
+    }
+}
+/// See [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput)
+pub mod get_bucket_metric_data_output {
+    /// A builder for [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<crate::model::BucketMetricName>,
+        pub(crate) metric_data: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
+    }
+    impl Builder {
+        /// <p>The name of the metric returned.</p>
+        pub fn metric_name(mut self, input: crate::model::BucketMetricName) -> Self {
+            self.metric_name = Some(input);
+            self
+        }
+        pub fn set_metric_name(
+            mut self,
+            input: std::option::Option<crate::model::BucketMetricName>,
+        ) -> Self {
+            self.metric_name = input;
+            self
+        }
+        pub fn metric_data(mut self, input: impl Into<crate::model::MetricDatapoint>) -> Self {
+            let mut v = self.metric_data.unwrap_or_default();
+            v.push(input.into());
+            self.metric_data = Some(v);
+            self
+        }
+        pub fn set_metric_data(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDatapoint>>,
+        ) -> Self {
+            self.metric_data = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput)
+        pub fn build(self) -> crate::output::GetBucketMetricDataOutput {
+            crate::output::GetBucketMetricDataOutput {
+                metric_name: self.metric_name,
+                metric_data: self.metric_data,
+            }
+        }
+    }
+}
+impl GetBucketMetricDataOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketMetricDataOutput`](crate::output::GetBucketMetricDataOutput)
+    pub fn builder() -> crate::output::get_bucket_metric_data_output::Builder {
+        crate::output::get_bucket_metric_data_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketBundlesOutput {
+    /// <p>An object that describes bucket bundles.</p>
+    pub bundles: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
+}
+impl std::fmt::Debug for GetBucketBundlesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketBundlesOutput");
+        formatter.field("bundles", &self.bundles);
+        formatter.finish()
+    }
+}
+/// See [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput)
+pub mod get_bucket_bundles_output {
+    /// A builder for [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bundles: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
+    }
+    impl Builder {
+        pub fn bundles(mut self, input: impl Into<crate::model::BucketBundle>) -> Self {
+            let mut v = self.bundles.unwrap_or_default();
+            v.push(input.into());
+            self.bundles = Some(v);
+            self
+        }
+        pub fn set_bundles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::BucketBundle>>,
+        ) -> Self {
+            self.bundles = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput)
+        pub fn build(self) -> crate::output::GetBucketBundlesOutput {
+            crate::output::GetBucketBundlesOutput {
+                bundles: self.bundles,
+            }
+        }
+    }
+}
+impl GetBucketBundlesOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketBundlesOutput`](crate::output::GetBucketBundlesOutput)
+    pub fn builder() -> crate::output::get_bucket_bundles_output::Builder {
+        crate::output::get_bucket_bundles_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetBucketAccessKeysOutput {
+    /// <p>An object that describes the access keys for the specified bucket.</p>
+    pub access_keys: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
+}
+impl std::fmt::Debug for GetBucketAccessKeysOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetBucketAccessKeysOutput");
+        formatter.field("access_keys", &self.access_keys);
+        formatter.finish()
+    }
+}
+/// See [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput)
+pub mod get_bucket_access_keys_output {
+    /// A builder for [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_keys: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
+    }
+    impl Builder {
+        pub fn access_keys(mut self, input: impl Into<crate::model::AccessKey>) -> Self {
+            let mut v = self.access_keys.unwrap_or_default();
+            v.push(input.into());
+            self.access_keys = Some(v);
+            self
+        }
+        pub fn set_access_keys(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AccessKey>>,
+        ) -> Self {
+            self.access_keys = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput)
+        pub fn build(self) -> crate::output::GetBucketAccessKeysOutput {
+            crate::output::GetBucketAccessKeysOutput {
+                access_keys: self.access_keys,
+            }
+        }
+    }
+}
+impl GetBucketAccessKeysOutput {
+    /// Creates a new builder-style object to manufacture [`GetBucketAccessKeysOutput`](crate::output::GetBucketAccessKeysOutput)
+    pub fn builder() -> crate::output::get_bucket_access_keys_output::Builder {
+        crate::output::get_bucket_access_keys_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetBlueprintsOutput {
     /// <p>An array of key-value pairs that contains information about the available
     /// blueprints.</p>
@@ -6450,6 +6857,108 @@ impl DeleteCertificateOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBucketAccessKeyOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for DeleteBucketAccessKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBucketAccessKeyOutput");
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput)
+pub mod delete_bucket_access_key_output {
+    /// A builder for [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput)
+        pub fn build(self) -> crate::output::DeleteBucketAccessKeyOutput {
+            crate::output::DeleteBucketAccessKeyOutput {
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl DeleteBucketAccessKeyOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketAccessKeyOutput`](crate::output::DeleteBucketAccessKeyOutput)
+    pub fn builder() -> crate::output::delete_bucket_access_key_output::Builder {
+        crate::output::delete_bucket_access_key_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteBucketOutput {
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for DeleteBucketOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteBucketOutput");
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+pub mod delete_bucket_output {
+    /// A builder for [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+        pub fn build(self) -> crate::output::DeleteBucketOutput {
+            crate::output::DeleteBucketOutput {
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl DeleteBucketOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteBucketOutput`](crate::output::DeleteBucketOutput)
+    pub fn builder() -> crate::output::delete_bucket_output::Builder {
+        crate::output::delete_bucket_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAutoSnapshotOutput {
     /// <p>An array of objects that describe the result of the action, such as the status of the
     /// request, the timestamp of the request, and the resources affected by the request.</p>
@@ -7701,6 +8210,139 @@ impl CreateCertificateOutput {
     /// Creates a new builder-style object to manufacture [`CreateCertificateOutput`](crate::output::CreateCertificateOutput)
     pub fn builder() -> crate::output::create_certificate_output::Builder {
         crate::output::create_certificate_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBucketAccessKeyOutput {
+    /// <p>An object that describes the access key that is created.</p>
+    pub access_key: std::option::Option<crate::model::AccessKey>,
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for CreateBucketAccessKeyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBucketAccessKeyOutput");
+        formatter.field("access_key", &self.access_key);
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput)
+pub mod create_bucket_access_key_output {
+    /// A builder for [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) access_key: std::option::Option<crate::model::AccessKey>,
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        /// <p>An object that describes the access key that is created.</p>
+        pub fn access_key(mut self, input: crate::model::AccessKey) -> Self {
+            self.access_key = Some(input);
+            self
+        }
+        pub fn set_access_key(
+            mut self,
+            input: std::option::Option<crate::model::AccessKey>,
+        ) -> Self {
+            self.access_key = input;
+            self
+        }
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput)
+        pub fn build(self) -> crate::output::CreateBucketAccessKeyOutput {
+            crate::output::CreateBucketAccessKeyOutput {
+                access_key: self.access_key,
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl CreateBucketAccessKeyOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBucketAccessKeyOutput`](crate::output::CreateBucketAccessKeyOutput)
+    pub fn builder() -> crate::output::create_bucket_access_key_output::Builder {
+        crate::output::create_bucket_access_key_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateBucketOutput {
+    /// <p>An object that describes the bucket that is created.</p>
+    pub bucket: std::option::Option<crate::model::Bucket>,
+    /// <p>An array of objects that describe the result of the action, such as the status of the
+    /// request, the timestamp of the request, and the resources affected by the request.</p>
+    pub operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+}
+impl std::fmt::Debug for CreateBucketOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateBucketOutput");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("operations", &self.operations);
+        formatter.finish()
+    }
+}
+/// See [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+pub mod create_bucket_output {
+    /// A builder for [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<crate::model::Bucket>,
+        pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+    }
+    impl Builder {
+        /// <p>An object that describes the bucket that is created.</p>
+        pub fn bucket(mut self, input: crate::model::Bucket) -> Self {
+            self.bucket = Some(input);
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<crate::model::Bucket>) -> Self {
+            self.bucket = input;
+            self
+        }
+        pub fn operations(mut self, input: impl Into<crate::model::Operation>) -> Self {
+            let mut v = self.operations.unwrap_or_default();
+            v.push(input.into());
+            self.operations = Some(v);
+            self
+        }
+        pub fn set_operations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Operation>>,
+        ) -> Self {
+            self.operations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+        pub fn build(self) -> crate::output::CreateBucketOutput {
+            crate::output::CreateBucketOutput {
+                bucket: self.bucket,
+                operations: self.operations,
+            }
+        }
+    }
+}
+impl CreateBucketOutput {
+    /// Creates a new builder-style object to manufacture [`CreateBucketOutput`](crate::output::CreateBucketOutput)
+    pub fn builder() -> crate::output::create_bucket_output::Builder {
+        crate::output::create_bucket_output::Builder::default()
     }
 }
 

@@ -827,7 +827,7 @@ pub mod fluent_builders {
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
         /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_path(input);
             self
@@ -2157,10 +2157,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_group_arn(input);
             self
         }
-        /// <p>The protocol the load balancer uses when performing health checks on targets. The TCP
-        /// protocol is supported for health checks only if the protocol of the target group is TCP, TLS,
-        /// UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP protocols are not supported for health
-        /// checks.</p>
+        /// <p>The protocol the load balancer uses when performing health checks on targets. For
+        /// Application Load Balancers, the default is HTTP. For Network Load Balancers and Gateway Load
+        /// Balancers, the default is TCP. The TCP protocol is not supported for health checks if the
+        /// protocol of the target group is HTTP or HTTPS. It is supported for health checks only if the
+        /// protocol of the target group is TCP, TLS, UDP, or TCP_UDP. The GENEVE, TLS, UDP, and TCP_UDP
+        /// protocols are not supported for health checks.</p>
         /// <p>With Network Load Balancers, you can't modify this setting.</p>
         pub fn health_check_protocol(mut self, input: crate::model::ProtocolEnum) -> Self {
             self.inner = self.inner.health_check_protocol(input);
@@ -2188,7 +2190,7 @@ pub mod fluent_builders {
         /// <p>[HTTP/HTTPS health checks] The destination for health checks on the targets.</p>
         /// <p>[HTTP1 or HTTP2 protocol version] The ping path. The default is /.</p>
         /// <p>[GRPC protocol version] The path of a custom health check method with the format
-        /// /package.service/method. The default is /AWS.ALB/healthcheck.</p>
+        /// /package.service/method. The default is /Amazon Web Services.ALB/healthcheck.</p>
         pub fn health_check_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.health_check_path(input);
             self

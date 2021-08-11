@@ -1381,7 +1381,7 @@ impl ListFieldLevelEncryptionConfigsOutput {
 }
 
 /// <p>The response to a request to list the distributions that are associated with a
-/// specified AWS WAF web ACL. </p>
+/// specified WAF web ACL.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionsByWebAclIdOutput {
@@ -1675,6 +1675,59 @@ impl ListDistributionsOutput {
     /// Creates a new builder-style object to manufacture [`ListDistributionsOutput`](crate::output::ListDistributionsOutput)
     pub fn builder() -> crate::output::list_distributions_output::Builder {
         crate::output::list_distributions_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListConflictingAliasesOutput {
+    /// <p>A list of conflicting aliases.</p>
+    pub conflicting_aliases_list: std::option::Option<crate::model::ConflictingAliasesList>,
+}
+impl std::fmt::Debug for ListConflictingAliasesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListConflictingAliasesOutput");
+        formatter.field("conflicting_aliases_list", &self.conflicting_aliases_list);
+        formatter.finish()
+    }
+}
+/// See [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput)
+pub mod list_conflicting_aliases_output {
+    /// A builder for [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) conflicting_aliases_list:
+            std::option::Option<crate::model::ConflictingAliasesList>,
+    }
+    impl Builder {
+        /// <p>A list of conflicting aliases.</p>
+        pub fn conflicting_aliases_list(
+            mut self,
+            input: crate::model::ConflictingAliasesList,
+        ) -> Self {
+            self.conflicting_aliases_list = Some(input);
+            self
+        }
+        pub fn set_conflicting_aliases_list(
+            mut self,
+            input: std::option::Option<crate::model::ConflictingAliasesList>,
+        ) -> Self {
+            self.conflicting_aliases_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput)
+        pub fn build(self) -> crate::output::ListConflictingAliasesOutput {
+            crate::output::ListConflictingAliasesOutput {
+                conflicting_aliases_list: self.conflicting_aliases_list,
+            }
+        }
+    }
+}
+impl ListConflictingAliasesOutput {
+    /// Creates a new builder-style object to manufacture [`ListConflictingAliasesOutput`](crate::output::ListConflictingAliasesOutput)
+    pub fn builder() -> crate::output::list_conflicting_aliases_output::Builder {
+        crate::output::list_conflicting_aliases_output::Builder::default()
     }
 }
 
@@ -4751,5 +4804,34 @@ impl CreateCachePolicyOutput {
     /// Creates a new builder-style object to manufacture [`CreateCachePolicyOutput`](crate::output::CreateCachePolicyOutput)
     pub fn builder() -> crate::output::create_cache_policy_output::Builder {
         crate::output::create_cache_policy_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateAliasOutput {}
+impl std::fmt::Debug for AssociateAliasOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateAliasOutput");
+        formatter.finish()
+    }
+}
+/// See [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
+pub mod associate_alias_output {
+    /// A builder for [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
+        pub fn build(self) -> crate::output::AssociateAliasOutput {
+            crate::output::AssociateAliasOutput {}
+        }
+    }
+}
+impl AssociateAliasOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateAliasOutput`](crate::output::AssociateAliasOutput)
+    pub fn builder() -> crate::output::associate_alias_output::Builder {
+        crate::output::associate_alias_output::Builder::default()
     }
 }

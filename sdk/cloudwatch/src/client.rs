@@ -1475,7 +1475,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metric_name(input);
             self
         }
-        /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension. CloudWatch treats each unique combination of dimensions as a separate metric.
+        /// <p>The dimensions. If the metric contains multiple dimensions, you must include a value for each dimension.
+        /// CloudWatch treats each unique combination of dimensions as a separate metric.
         /// If a specific combination of dimensions was not published, you can't retrieve statistics for it.
         /// You must specify the same dimensions that were used when the metrics were created. For an example,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#dimension-combinations">Dimension Combinations</a> in the <i>Amazon CloudWatch User Guide</i>. For more information about specifying dimensions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing Metrics</a> in the
@@ -1729,7 +1730,7 @@ pub mod fluent_builders {
         /// <code></GetMetricWidgetImageResponse></code>
         /// </p>
         /// <p>The <code>image/png</code> setting is intended only for custom HTTP requests. For most
-        /// use cases, and all actions using an AWS SDK, you should use <code>png</code>. If you specify
+        /// use cases, and all actions using an Amazon Web Services SDK, you should use <code>png</code>. If you specify
         /// <code>image/png</code>, the HTTP response has a content-type set to <code>image/png</code>,
         /// and the body of the response is a PNG image. </p>
         pub fn output_format(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2531,11 +2532,14 @@ pub mod fluent_builders {
         /// </code>
         /// | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
         /// </code>
+        /// | <code>arn:aws:ssm-incidents::<i>account-id</i>:response-plan:<i>response-plan-name</i>
+        /// </code>
         /// </p>
         /// <p>Valid Values (for use with IAM roles):
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Stop/1.0</code> |
         /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Terminate/1.0</code> |
-        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code>
+        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Reboot/1.0</code> |
+        /// <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
         /// </p>
         pub fn alarm_actions(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alarm_actions(inp);
@@ -2866,7 +2870,7 @@ pub mod fluent_builders {
         }
         /// <p>The namespace for the metric data.</p>
         /// <p>To avoid conflicts
-        /// with AWS service namespaces, you should not specify a namespace that begins with <code>AWS/</code>
+        /// with Amazon Web Services service namespaces, you should not specify a namespace that begins with <code>AWS/</code>
         /// </p>
         pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.namespace(input);
@@ -3013,6 +3017,10 @@ pub mod fluent_builders {
         /// <p>Tags can help you organize and categorize your resources. You can also use them to scope user
         /// permissions by granting a user
         /// permission to access or change only resources with certain tag values.</p>
+        /// <p>You can use this parameter only when you are creating a new metric stream. If you are using this operation to update an existing metric stream, any tags
+        /// you specify in this parameter are ignored. To change the tags of an existing metric stream, use
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self

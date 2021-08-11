@@ -1981,7 +1981,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_workload_arn(input);
             self
         }
-        /// <p>The keys of the tags to be removed.</p>
+        /// <p>A list of tag keys. Existing tags of the resource
+        /// whose keys are members of this list are removed from the resource.</p>
         pub fn tag_keys(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.tag_keys(inp);
             self
@@ -2066,6 +2067,25 @@ pub mod fluent_builders {
             self.inner = self.inner.set_selected_choices(input);
             self
         }
+        /// <p>A list of choices to update on a question in your workload.  The String key
+        /// corresponds to the choice ID to be updated.</p>
+        pub fn choice_updates(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::ChoiceUpdate>,
+        ) -> Self {
+            self.inner = self.inner.choice_updates(k, v);
+            self
+        }
+        pub fn set_choice_updates(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::ChoiceUpdate>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_choice_updates(input);
+            self
+        }
         /// <p>The notes associated with the workload.</p>
         pub fn notes(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.notes(input);
@@ -2082,6 +2102,18 @@ pub mod fluent_builders {
         }
         pub fn set_is_applicable(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_is_applicable(input);
+            self
+        }
+        /// <p>The reason why a question is not applicable to your workload.</p>
+        pub fn reason(mut self, input: crate::model::AnswerReason) -> Self {
+            self.inner = self.inner.reason(input);
+            self
+        }
+        pub fn set_reason(
+            mut self,
+            input: std::option::Option<crate::model::AnswerReason>,
+        ) -> Self {
+            self.inner = self.inner.set_reason(input);
             self
         }
     }

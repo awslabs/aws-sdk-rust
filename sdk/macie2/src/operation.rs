@@ -415,7 +415,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeClassificationJob {
     }
 }
 
-/// <p>Retrieves the Amazon Macie configuration settings for an AWS organization.</p>
+/// <p>Retrieves the Amazon Macie configuration settings for an Amazon Web Services organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOrganizationConfiguration {
     _private: (),
@@ -469,7 +469,7 @@ impl smithy_http::response::ParseStrictResponse for DisableMacie {
     }
 }
 
-/// <p>Disables an account as the delegated Amazon Macie administrator account for an AWS organization.</p>
+/// <p>Disables an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisableOrganizationAdminAccount {
     _private: (),
@@ -607,7 +607,7 @@ impl smithy_http::response::ParseStrictResponse for EnableMacie {
     }
 }
 
-/// <p>Designates an account as the delegated Amazon Macie administrator account for an AWS organization.</p>
+/// <p>Designates an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct EnableOrganizationAdminAccount {
     _private: (),
@@ -801,7 +801,7 @@ impl smithy_http::response::ParseStrictResponse for GetFindingsFilter {
     }
 }
 
-/// <p>Retrieves the configuration settings for publishing findings to AWS Security Hub.</p>
+/// <p>Retrieves the configuration settings for publishing findings to Security Hub.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFindingsPublicationConfiguration {
     _private: (),
@@ -1184,7 +1184,7 @@ impl smithy_http::response::ParseStrictResponse for ListMembers {
     }
 }
 
-/// <p>Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.</p>
+/// <p>Retrieves information about the delegated Amazon Macie administrator account for an Amazon Web Services organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOrganizationAdminAccounts {
     _private: (),
@@ -1268,7 +1268,7 @@ impl smithy_http::response::ParseStrictResponse for PutClassificationExportConfi
     }
 }
 
-/// <p>Updates the configuration settings for publishing findings to AWS Security Hub.</p>
+/// <p>Updates the configuration settings for publishing findings to Security Hub.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutFindingsPublicationConfiguration {
     _private: (),
@@ -1296,7 +1296,7 @@ impl smithy_http::response::ParseStrictResponse for PutFindingsPublicationConfig
     }
 }
 
-/// <p>Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and analyzes.</p>
+/// <p>Retrieves (queries) statistical data and other information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SearchResources {
     _private: (),
@@ -1516,7 +1516,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateMemberSession {
     }
 }
 
-/// <p>Updates the Amazon Macie configuration settings for an AWS organization.</p>
+/// <p>Updates the Amazon Macie configuration settings for an Amazon Web Services organization.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOrganizationConfiguration {
     _private: (),

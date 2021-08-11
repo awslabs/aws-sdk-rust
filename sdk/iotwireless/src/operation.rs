@@ -686,7 +686,8 @@ impl smithy_http::response::ParseStrictResponse for GetDeviceProfile {
     }
 }
 
-/// <p>Returns current default log-levels, or log levels by resource types, could be for wireless device log options or wireless gateway log options.</p>
+/// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be
+/// for wireless device log options or wireless gateway log options.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetLogLevelsByResourceTypes {
     _private: (),
@@ -742,7 +743,8 @@ impl smithy_http::response::ParseStrictResponse for GetPartnerAccount {
     }
 }
 
-/// <p>Fetches the log-level override if any for a given resource-ID and resource-type, coulde be a wireless device or a wireless gateway.</p>
+/// <p>Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for
+/// a wireless device or a wireless gateway.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetResourceLogLevel {
     _private: (),
@@ -1276,7 +1278,8 @@ impl smithy_http::response::ParseStrictResponse for ListWirelessGatewayTaskDefin
     }
 }
 
-/// <p>Sets the log-level override for a resource-ID and resource-type, could be a wireless gateway or a wireless device.</p>
+/// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway
+/// or a wireless device. A limit of 200 log level override can be set per account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutResourceLogLevel {
     _private: (),
@@ -1304,7 +1307,7 @@ impl smithy_http::response::ParseStrictResponse for PutResourceLogLevel {
     }
 }
 
-/// <p>Remove log-level overrides if any for all resources (both wireless devices and wireless gateways).</p>
+/// <p>Removes the log-level overrides for all resources; both wireless devices and wireless gateways.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResetAllResourceLogLevels {
     _private: (),
@@ -1332,7 +1335,8 @@ impl smithy_http::response::ParseStrictResponse for ResetAllResourceLogLevels {
     }
 }
 
-/// <p>Remove log-level override if any for a specific resource-ID and resource-type, could be a wireless device or a wireless gateway.</p>
+/// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for
+/// a wireless device or a wireless gateway.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResetResourceLogLevel {
     _private: (),
@@ -1496,7 +1500,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateDestination {
     }
 }
 
-/// <p>Set default log level, or log levels by resource types, could be for wireless device log options or wireless gateways log options. This is to control the log messages that will be displayed in CloudWatch.</p>
+/// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or
+/// wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateLogLevelsByResourceTypes {
     _private: (),

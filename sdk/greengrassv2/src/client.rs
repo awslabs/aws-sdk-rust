@@ -168,7 +168,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entries(input);
             self
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -231,7 +231,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_entries(input);
             self
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -345,7 +345,7 @@ pub mod fluent_builders {
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more
         /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -361,6 +361,19 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+        /// idempotent requests for up to 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -395,7 +408,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input);
             self
@@ -405,10 +418,6 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the deployment.</p>
-        /// <p>You can create deployments without names. If you create a deployment without a name, the
-        /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-        /// deployment target.</p>
         pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.deployment_name(input);
             self
@@ -473,7 +482,7 @@ pub mod fluent_builders {
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more
         /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,
@@ -489,6 +498,19 @@ pub mod fluent_builders {
             >,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+        /// idempotent requests for up to 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_token(input);
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_client_token(input);
             self
         }
     }
@@ -564,7 +586,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -760,7 +782,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -850,7 +872,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -1035,7 +1057,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT thing group by which to filter. If you specify this parameter, the
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
         /// list includes only core devices that are members of this thing group.</p>
         pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.thing_group_arn(input);
@@ -1053,11 +1075,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
         /// on the core device.</p>
         /// </li>
         /// </ul>
@@ -1122,7 +1144,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_arn(input);
             self
@@ -1206,7 +1228,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -1268,7 +1290,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.core_device_thing_name(input);
             self
@@ -1441,7 +1463,7 @@ pub mod fluent_builders {
         }
         /// <p>A list of key-value pairs that contain metadata for the resource. For more
         /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-        /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+        /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
         pub fn tags(
             mut self,
             k: impl Into<std::string::String>,

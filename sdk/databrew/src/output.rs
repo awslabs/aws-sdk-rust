@@ -1870,6 +1870,10 @@ pub struct DescribeJobRunOutput {
     pub execution_time: i32,
     /// <p>The name of the job being processed during this run.</p>
     pub job_name: std::option::Option<std::string::String>,
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+    /// and override default parameters of evaluations. When configuration is null, the
+    /// profile job will run with default settings.</p>
+    pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>The unique identifier of the job run.</p>
     pub run_id: std::option::Option<std::string::String>,
     /// <p>The current state of the job run entity itself.</p>
@@ -1881,8 +1885,11 @@ pub struct DescribeJobRunOutput {
     pub log_group_name: std::option::Option<std::string::String>,
     /// <p>One or more output artifacts from a job run.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
-    /// <p>One or more artifacts that represent the AWS Glue Data Catalog output from running the job.</p>
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+    /// <p>Represents a list of JDBC database output objects which defines the output
+    /// destination for a DataBrew recipe job to write into.</p>
+    pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the user who started the job run.</p>
@@ -1904,12 +1911,14 @@ impl std::fmt::Debug for DescribeJobRunOutput {
         formatter.field("error_message", &self.error_message);
         formatter.field("execution_time", &self.execution_time);
         formatter.field("job_name", &self.job_name);
+        formatter.field("profile_configuration", &self.profile_configuration);
         formatter.field("run_id", &self.run_id);
         formatter.field("state", &self.state);
         formatter.field("log_subscription", &self.log_subscription);
         formatter.field("log_group_name", &self.log_group_name);
         formatter.field("outputs", &self.outputs);
         formatter.field("data_catalog_outputs", &self.data_catalog_outputs);
+        formatter.field("database_outputs", &self.database_outputs);
         formatter.field("recipe_reference", &self.recipe_reference);
         formatter.field("started_by", &self.started_by);
         formatter.field("started_on", &self.started_on);
@@ -1929,6 +1938,7 @@ pub mod describe_job_run_output {
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) execution_time: std::option::Option<i32>,
         pub(crate) job_name: std::option::Option<std::string::String>,
+        pub(crate) profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
         pub(crate) run_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::JobRunState>,
         pub(crate) log_subscription: std::option::Option<crate::model::LogSubscription>,
@@ -1936,6 +1946,8 @@ pub mod describe_job_run_output {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
         pub(crate) data_catalog_outputs:
             std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+        pub(crate) database_outputs:
+            std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
         pub(crate) recipe_reference: std::option::Option<crate::model::RecipeReference>,
         pub(crate) started_by: std::option::Option<std::string::String>,
         pub(crate) started_on: std::option::Option<smithy_types::Instant>,
@@ -2000,6 +2012,20 @@ pub mod describe_job_run_output {
         }
         pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.job_name = input;
+            self
+        }
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+        /// and override default parameters of evaluations. When configuration is null, the
+        /// profile job will run with default settings.</p>
+        pub fn profile_configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
+            self.profile_configuration = Some(input);
+            self
+        }
+        pub fn set_profile_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProfileConfiguration>,
+        ) -> Self {
+            self.profile_configuration = input;
             self
         }
         /// <p>The unique identifier of the job run.</p>
@@ -2074,6 +2100,19 @@ pub mod describe_job_run_output {
             self.data_catalog_outputs = input;
             self
         }
+        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+            let mut v = self.database_outputs.unwrap_or_default();
+            v.push(input.into());
+            self.database_outputs = Some(v);
+            self
+        }
+        pub fn set_database_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
+        ) -> Self {
+            self.database_outputs = input;
+            self
+        }
         /// <p>Represents the name and version of a DataBrew recipe.</p>
         pub fn recipe_reference(mut self, input: crate::model::RecipeReference) -> Self {
             self.recipe_reference = Some(input);
@@ -2128,12 +2167,14 @@ pub mod describe_job_run_output {
                 error_message: self.error_message,
                 execution_time: self.execution_time.unwrap_or_default(),
                 job_name: self.job_name,
+                profile_configuration: self.profile_configuration,
                 run_id: self.run_id,
                 state: self.state,
                 log_subscription: self.log_subscription,
                 log_group_name: self.log_group_name,
                 outputs: self.outputs,
                 data_catalog_outputs: self.data_catalog_outputs,
+                database_outputs: self.database_outputs,
                 recipe_reference: self.recipe_reference,
                 started_by: self.started_by,
                 started_on: self.started_on,
@@ -2203,10 +2244,17 @@ pub struct DescribeJobOutput {
     pub max_retries: i32,
     /// <p>One or more artifacts that represent the output from running the job.</p>
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
-    /// <p>One or more artifacts that represent the AWS Glue Data Catalog output from running the job.</p>
+    /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
     pub data_catalog_outputs: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+    /// <p>Represents a list of JDBC database output objects which defines the output
+    /// destination for a DataBrew recipe job to write into.</p>
+    pub database_outputs: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
     /// <p>The DataBrew project associated with this job.</p>
     pub project_name: std::option::Option<std::string::String>,
+    /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+    /// and override default parameters of evaluations. When configuration is null, the
+    /// profile job will run with default settings.</p>
+    pub profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
     /// <p>Represents the name and version of a DataBrew recipe.</p>
     pub recipe_reference: std::option::Option<crate::model::RecipeReference>,
     /// <p>The Amazon Resource Name (ARN) of the job.</p>
@@ -2241,7 +2289,9 @@ impl std::fmt::Debug for DescribeJobOutput {
         formatter.field("max_retries", &self.max_retries);
         formatter.field("outputs", &self.outputs);
         formatter.field("data_catalog_outputs", &self.data_catalog_outputs);
+        formatter.field("database_outputs", &self.database_outputs);
         formatter.field("project_name", &self.project_name);
+        formatter.field("profile_configuration", &self.profile_configuration);
         formatter.field("recipe_reference", &self.recipe_reference);
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("role_arn", &self.role_arn);
@@ -2272,7 +2322,10 @@ pub mod describe_job_output {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
         pub(crate) data_catalog_outputs:
             std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
+        pub(crate) database_outputs:
+            std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
         pub(crate) project_name: std::option::Option<std::string::String>,
+        pub(crate) profile_configuration: std::option::Option<crate::model::ProfileConfiguration>,
         pub(crate) recipe_reference: std::option::Option<crate::model::RecipeReference>,
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) role_arn: std::option::Option<std::string::String>,
@@ -2463,6 +2516,19 @@ pub mod describe_job_output {
             self.data_catalog_outputs = input;
             self
         }
+        pub fn database_outputs(mut self, input: impl Into<crate::model::DatabaseOutput>) -> Self {
+            let mut v = self.database_outputs.unwrap_or_default();
+            v.push(input.into());
+            self.database_outputs = Some(v);
+            self
+        }
+        pub fn set_database_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
+        ) -> Self {
+            self.database_outputs = input;
+            self
+        }
         /// <p>The DataBrew project associated with this job.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
@@ -2470,6 +2536,20 @@ pub mod describe_job_output {
         }
         pub fn set_project_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.project_name = input;
+            self
+        }
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+        /// and override default parameters of evaluations. When configuration is null, the
+        /// profile job will run with default settings.</p>
+        pub fn profile_configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
+            self.profile_configuration = Some(input);
+            self
+        }
+        pub fn set_profile_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProfileConfiguration>,
+        ) -> Self {
+            self.profile_configuration = input;
             self
         }
         /// <p>Represents the name and version of a DataBrew recipe.</p>
@@ -2562,7 +2642,9 @@ pub mod describe_job_output {
                 max_retries: self.max_retries.unwrap_or_default(),
                 outputs: self.outputs,
                 data_catalog_outputs: self.data_catalog_outputs,
+                database_outputs: self.database_outputs,
                 project_name: self.project_name,
+                profile_configuration: self.profile_configuration,
                 recipe_reference: self.recipe_reference,
                 resource_arn: self.resource_arn,
                 role_arn: self.role_arn,

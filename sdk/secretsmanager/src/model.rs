@@ -420,6 +420,8 @@ pub struct SecretVersionsListEntry {
     pub last_accessed_date: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time this version of the secret was created.</p>
     pub created_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The KMS keys used to encrypt the secret version.</p>
+    pub kms_key_ids: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for SecretVersionsListEntry {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -428,6 +430,7 @@ impl std::fmt::Debug for SecretVersionsListEntry {
         formatter.field("version_stages", &self.version_stages);
         formatter.field("last_accessed_date", &self.last_accessed_date);
         formatter.field("created_date", &self.created_date);
+        formatter.field("kms_key_ids", &self.kms_key_ids);
         formatter.finish()
     }
 }
@@ -441,6 +444,7 @@ pub mod secret_versions_list_entry {
         pub(crate) version_stages: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_accessed_date: std::option::Option<smithy_types::Instant>,
         pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) kms_key_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
         /// <p>The unique version identifier of this version of the secret.</p>
@@ -490,6 +494,19 @@ pub mod secret_versions_list_entry {
             self.created_date = input;
             self
         }
+        pub fn kms_key_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.kms_key_ids.unwrap_or_default();
+            v.push(input.into());
+            self.kms_key_ids = Some(v);
+            self
+        }
+        pub fn set_kms_key_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.kms_key_ids = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SecretVersionsListEntry`](crate::model::SecretVersionsListEntry)
         pub fn build(self) -> crate::model::SecretVersionsListEntry {
             crate::model::SecretVersionsListEntry {
@@ -497,6 +514,7 @@ pub mod secret_versions_list_entry {
                 version_stages: self.version_stages,
                 last_accessed_date: self.last_accessed_date,
                 created_date: self.created_date,
+                kms_key_ids: self.kms_key_ids,
             }
         }
     }
@@ -516,7 +534,7 @@ impl SecretVersionsListEntry {
 pub struct SecretListEntry {
     /// <p>The Amazon Resource Name (ARN) of the secret.</p>
     /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-    /// <i>AWS Secrets Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The friendly name of the secret. You can use forward slashes in the name to represent a
     /// path hierarchy. For example, <code>/prod/databases/dbserver1</code> could represent the secret
@@ -525,14 +543,14 @@ pub struct SecretListEntry {
     pub name: std::option::Option<std::string::String>,
     /// <p>The user-provided description of the secret.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the
+    /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
     /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
     /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
     /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether automatic, scheduled rotation is enabled for this secret.</p>
     pub rotation_enabled: std::option::Option<bool>,
-    /// <p>The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the
+    /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
     /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
     pub rotation_lambda_arn: std::option::Option<std::string::String>,
     /// <p>A structure that defines the rotation configuration for the secret.</p>
@@ -618,7 +636,7 @@ pub mod secret_list_entry {
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the secret.</p>
         /// <p>For more information about ARNs in Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#iam-resources">Policy Resources</a> in the
-        /// <i>AWS Secrets Manager User Guide</i>.</p>
+        /// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -648,7 +666,7 @@ pub mod secret_list_entry {
             self.description = input;
             self
         }
-        /// <p>The ARN or alias of the AWS KMS customer master key (CMK) used to encrypt the
+        /// <p>The ARN or alias of the Amazon Web Services KMS customer master key (CMK) used to encrypt the
         /// <code>SecretString</code> and <code>SecretBinary</code> fields in each version of the
         /// secret. If you don't provide a key, then Secrets Manager defaults to encrypting the secret fields with
         /// the default KMS CMK, the key named <code>awssecretsmanager</code>, for this account.</p>
@@ -669,7 +687,7 @@ pub mod secret_list_entry {
             self.rotation_enabled = input;
             self
         }
-        /// <p>The ARN of an AWS Lambda function invoked by Secrets Manager to rotate and expire the
+        /// <p>The ARN of an Amazon Web Services Lambda function invoked by Secrets Manager to rotate and expire the
         /// secret either automatically per the schedule or manually by a call to <a>RotateSecret</a>.</p>
         pub fn rotation_lambda_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.rotation_lambda_arn = Some(input.into());

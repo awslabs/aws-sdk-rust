@@ -69,6 +69,12 @@ where
     pub fn copy_snapshot(&self) -> fluent_builders::CopySnapshot<C> {
         fluent_builders::CopySnapshot::new(self.handle.clone())
     }
+    pub fn create_bucket(&self) -> fluent_builders::CreateBucket<C> {
+        fluent_builders::CreateBucket::new(self.handle.clone())
+    }
+    pub fn create_bucket_access_key(&self) -> fluent_builders::CreateBucketAccessKey<C> {
+        fluent_builders::CreateBucketAccessKey::new(self.handle.clone())
+    }
     pub fn create_certificate(&self) -> fluent_builders::CreateCertificate<C> {
         fluent_builders::CreateCertificate::new(self.handle.clone())
     }
@@ -149,6 +155,12 @@ where
     }
     pub fn delete_auto_snapshot(&self) -> fluent_builders::DeleteAutoSnapshot<C> {
         fluent_builders::DeleteAutoSnapshot::new(self.handle.clone())
+    }
+    pub fn delete_bucket(&self) -> fluent_builders::DeleteBucket<C> {
+        fluent_builders::DeleteBucket::new(self.handle.clone())
+    }
+    pub fn delete_bucket_access_key(&self) -> fluent_builders::DeleteBucketAccessKey<C> {
+        fluent_builders::DeleteBucketAccessKey::new(self.handle.clone())
     }
     pub fn delete_certificate(&self) -> fluent_builders::DeleteCertificate<C> {
         fluent_builders::DeleteCertificate::new(self.handle.clone())
@@ -244,6 +256,18 @@ where
     }
     pub fn get_blueprints(&self) -> fluent_builders::GetBlueprints<C> {
         fluent_builders::GetBlueprints::new(self.handle.clone())
+    }
+    pub fn get_bucket_access_keys(&self) -> fluent_builders::GetBucketAccessKeys<C> {
+        fluent_builders::GetBucketAccessKeys::new(self.handle.clone())
+    }
+    pub fn get_bucket_bundles(&self) -> fluent_builders::GetBucketBundles<C> {
+        fluent_builders::GetBucketBundles::new(self.handle.clone())
+    }
+    pub fn get_bucket_metric_data(&self) -> fluent_builders::GetBucketMetricData<C> {
+        fluent_builders::GetBucketMetricData::new(self.handle.clone())
+    }
+    pub fn get_buckets(&self) -> fluent_builders::GetBuckets<C> {
+        fluent_builders::GetBuckets::new(self.handle.clone())
     }
     pub fn get_bundles(&self) -> fluent_builders::GetBundles<C> {
         fluent_builders::GetBundles::new(self.handle.clone())
@@ -478,6 +502,9 @@ where
     pub fn set_ip_address_type(&self) -> fluent_builders::SetIpAddressType<C> {
         fluent_builders::SetIpAddressType::new(self.handle.clone())
     }
+    pub fn set_resource_access_for_bucket(&self) -> fluent_builders::SetResourceAccessForBucket<C> {
+        fluent_builders::SetResourceAccessForBucket::new(self.handle.clone())
+    }
     pub fn start_instance(&self) -> fluent_builders::StartInstance<C> {
         fluent_builders::StartInstance::new(self.handle.clone())
     }
@@ -501,6 +528,12 @@ where
     }
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C> {
         fluent_builders::UntagResource::new(self.handle.clone())
+    }
+    pub fn update_bucket(&self) -> fluent_builders::UpdateBucket<C> {
+        fluent_builders::UpdateBucket::new(self.handle.clone())
+    }
+    pub fn update_bucket_bundle(&self) -> fluent_builders::UpdateBucketBundle<C> {
+        fluent_builders::UpdateBucketBundle::new(self.handle.clone())
     }
     pub fn update_container_service(&self) -> fluent_builders::UpdateContainerService<C> {
         fluent_builders::UpdateContainerService::new(self.handle.clone())
@@ -988,7 +1021,7 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn source_resource_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1016,7 +1049,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn restore_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1038,7 +1071,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when copying an automatic snapshot as a manual snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-keeping-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
@@ -1074,6 +1107,130 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RegionName>,
         ) -> Self {
             self.inner = self.inner.set_source_region(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateBucket<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_bucket_input::Builder,
+    }
+    impl<C> CreateBucket<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBucketOutput,
+            smithy_http::result::SdkError<crate::error::CreateBucketError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name for the bucket.</p>
+        /// <p>For more information about bucket names, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/bucket-naming-rules-in-amazon-lightsail">Bucket naming rules in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
+        /// Guide</i>.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The ID of the bundle to use for the bucket.</p>
+        /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a
+        /// bucket.</p>
+        /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
+        /// specify.</p>
+        /// <p>Use the <a>UpdateBucketBundle</a> action to change the bundle after the bucket
+        /// is created.</p>
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input);
+            self
+        }
+        pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bundle_id(input);
+            self
+        }
+        /// <p>The tag keys and optional values to add to the bucket during creation.</p>
+        /// <p>Use the <a>TagResource</a> action to tag the bucket after it's created.</p>
+        pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
+            self.inner = self.inner.tags(inp);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to enable versioning of objects in the
+        /// bucket.</p>
+        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the
+        /// <i>Amazon Lightsail Developer Guide</i>.</p>
+        pub fn enable_object_versioning(mut self, input: bool) -> Self {
+            self.inner = self.inner.enable_object_versioning(input);
+            self
+        }
+        pub fn set_enable_object_versioning(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_enable_object_versioning(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateBucketAccessKey<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_bucket_access_key_input::Builder,
+    }
+    impl<C> CreateBucketAccessKey<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateBucketAccessKeyOutput,
+            smithy_http::result::SdkError<crate::error::CreateBucketAccessKeyError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket that the new access key will belong to, and grant access to.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
             self
         }
     }
@@ -1389,9 +1546,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scale(input);
             self
         }
-        /// <p>The tag keys and optional values for the container service.</p>
-        /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
-        /// Dev Guide</a>.</p>
+        /// <p>The tag keys and optional values to add to the certificate during create.</p>
+        /// <p>Use the <code>TagResource</code> action to tag a resource after it's created.</p>
+        /// <p>For more information about tags in Lightsail, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-tags">Amazon Lightsail Developer Guide</a>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1772,7 +1929,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn source_disk_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1801,7 +1958,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn restore_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1822,7 +1979,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when creating a new disk from an automatic snapshot. For
-        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
@@ -2288,7 +2445,7 @@ pub mod fluent_builders {
         /// <p>Depending on the machine image you choose, the command to get software on your instance
         /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
         /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev Guide</a>.</p>
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
         pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_data(input);
@@ -2469,7 +2626,7 @@ pub mod fluent_builders {
         /// <p>Depending on the machine image you choose, the command to get software on your instance
         /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use
         /// <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a complete list, see the
-        /// <a href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev Guide</a>.</p>
+        /// <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/compare-options-choose-lightsail-instance-image">Amazon Lightsail Developer Guide</a>.</p>
         /// </note>
         pub fn user_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_data(input);
@@ -2542,7 +2699,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn source_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2571,7 +2728,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn restore_date(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2592,7 +2749,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>Define this parameter only when creating a new instance from an automatic snapshot.
-        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Lightsail Dev Guide</a>.</p>
+        /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>
         /// </li>
         /// </ul>
         pub fn use_latest_restorable_auto_snapshot(mut self, input: bool) -> Self {
@@ -3673,6 +3830,132 @@ pub mod fluent_builders {
         }
         pub fn set_date(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_date(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteBucket<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_bucket_input::Builder,
+    }
+    impl<C> DeleteBucket<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteBucketOutput,
+            smithy_http::result::SdkError<crate::error::DeleteBucketError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket to delete.</p>
+        /// <p>Use the <a>GetBuckets</a> action to get a list of bucket names that you can
+        /// specify.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to force delete the bucket.</p>
+        /// <p>You must force delete the bucket if it has one of the following conditions:</p>
+        /// <ul>
+        /// <li>
+        /// <p>The bucket is the origin of a distribution.</p>
+        /// </li>
+        /// <li>
+        /// <p>The bucket has instances that were granted access to it using the <a>SetResourceAccessForBucket</a> action.</p>
+        /// </li>
+        /// <li>
+        /// <p>The bucket has objects.</p>
+        /// </li>
+        /// <li>
+        /// <p>The bucket has access keys.</p>
+        /// </li>
+        /// </ul>
+        /// <important>
+        /// <p>Force deleting a bucket might impact other resources that rely on the bucket, such as
+        /// instances, distributions, or software that use the issued access keys.</p>
+        /// </important>
+        pub fn force_delete(mut self, input: bool) -> Self {
+            self.inner = self.inner.force_delete(input);
+            self
+        }
+        pub fn set_force_delete(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_force_delete(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteBucketAccessKey<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_bucket_access_key_input::Builder,
+    }
+    impl<C> DeleteBucketAccessKey<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteBucketAccessKeyOutput,
+            smithy_http::result::SdkError<crate::error::DeleteBucketAccessKeyError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket that the access key belongs to.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The ID of the access key to delete.</p>
+        /// <p>Use the <a>GetBucketAccessKeys</a> action to get a list of access key IDs that
+        /// you can specify.</p>
+        pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.access_key_id(input);
+            self
+        }
+        pub fn set_access_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_access_key_id(input);
             self
         }
     }
@@ -5129,6 +5412,321 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetBucketAccessKeys<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_bucket_access_keys_input::Builder,
+    }
+    impl<C> GetBucketAccessKeys<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBucketAccessKeysOutput,
+            smithy_http::result::SdkError<crate::error::GetBucketAccessKeysError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket for which to return access keys.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetBucketBundles<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_bucket_bundles_input::Builder,
+    }
+    impl<C> GetBucketBundles<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBucketBundlesOutput,
+            smithy_http::result::SdkError<crate::error::GetBucketBundlesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>A Boolean value that indicates whether to include inactive (unavailable) bundles in the
+        /// response.</p>
+        pub fn include_inactive(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_inactive(input);
+            self
+        }
+        pub fn set_include_inactive(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_inactive(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetBucketMetricData<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_bucket_metric_data_input::Builder,
+    }
+    impl<C> GetBucketMetricData<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBucketMetricDataOutput,
+            smithy_http::result::SdkError<crate::error::GetBucketMetricDataError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket for which to get metric data.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The metric for which you want to return information.</p>
+        /// <p>Valid bucket metric names are listed below, along with the most useful statistics to
+        /// include in your request, and the published unit value.</p>
+        /// <note>
+        /// <p>These bucket metrics are reported once per day.</p>
+        /// </note>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>BucketSizeBytes</code>
+        /// </b> - The amount of data in
+        /// bytes stored in a bucket. This value is calculated by summing the size of all objects in
+        /// the bucket (including object versions), including the size of all parts for all incomplete
+        /// multipart uploads to the bucket.</p>
+        /// <p>Statistics: The most useful statistic is <code>Maximum</code>.</p>
+        /// <p>Unit: The published unit is <code>Bytes</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <b>
+        /// <code>NumberOfObjects</code>
+        /// </b> - The total number of
+        /// objects stored in a bucket. This value is calculated by counting all objects in the bucket
+        /// (including object versions) and the total number of parts for all incomplete multipart
+        /// uploads to the bucket.</p>
+        /// <p>Statistics: The most useful statistic is <code>Average</code>.</p>
+        /// <p>Unit: The published unit is <code>Count</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn metric_name(mut self, input: crate::model::BucketMetricName) -> Self {
+            self.inner = self.inner.metric_name(input);
+            self
+        }
+        pub fn set_metric_name(
+            mut self,
+            input: std::option::Option<crate::model::BucketMetricName>,
+        ) -> Self {
+            self.inner = self.inner.set_metric_name(input);
+            self
+        }
+        /// <p>The timestamp indicating the earliest data to be returned.</p>
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.start_time(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_start_time(input);
+            self
+        }
+        /// <p>The timestamp indicating the latest data to be returned.</p>
+        pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.end_time(input);
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.inner = self.inner.set_end_time(input);
+            self
+        }
+        /// <p>The granularity, in seconds, of the returned data points.</p>
+        /// <note>
+        /// <p>Bucket storage metrics are reported once per day. Therefore, you should specify a period
+        /// of 86400 seconds, which is the number of seconds in a day.</p>
+        /// </note>
+        pub fn period(mut self, input: i32) -> Self {
+            self.inner = self.inner.period(input);
+            self
+        }
+        pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_period(input);
+            self
+        }
+        /// <p>The statistic for the metric.</p>
+        /// <p>The following statistics are available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Minimum</code> - The lowest value observed during the specified period. Use this
+        /// value to determine low volumes of activity for your application.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Maximum</code> - The highest value observed during the specified period. Use
+        /// this value to determine high volumes of activity for your application.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Sum</code> - The sum of all values submitted for the matching metric. You can
+        /// use this statistic to determine the total volume of a metric.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
+        /// the specified period. By comparing this statistic with the <code>Minimum</code> and
+        /// <code>Maximum</code> values, you can determine the full scope of a metric and how close
+        /// the average use is to the <code>Minimum</code> and <code>Maximum</code> values. This
+        /// comparison helps you to know when to increase or decrease your resources.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>SampleCount</code> - The count, or number, of data points used for the
+        /// statistical calculation.</p>
+        /// </li>
+        /// </ul>
+        pub fn statistics(mut self, inp: impl Into<crate::model::MetricStatistic>) -> Self {
+            self.inner = self.inner.statistics(inp);
+            self
+        }
+        pub fn set_statistics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricStatistic>>,
+        ) -> Self {
+            self.inner = self.inner.set_statistics(input);
+            self
+        }
+        /// <p>The unit for the metric data request.</p>
+        /// <p>Valid units depend on the metric data being requested. For the valid units with each
+        /// available metric, see the <code>metricName</code> parameter.</p>
+        pub fn unit(mut self, input: crate::model::MetricUnit) -> Self {
+            self.inner = self.inner.unit(input);
+            self
+        }
+        pub fn set_unit(mut self, input: std::option::Option<crate::model::MetricUnit>) -> Self {
+            self.inner = self.inner.set_unit(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetBuckets<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_buckets_input::Builder,
+    }
+    impl<C> GetBuckets<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetBucketsOutput,
+            smithy_http::result::SdkError<crate::error::GetBucketsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket for which to return information.</p>
+        /// <p>When omitted, the response includes all of your buckets in the AWS Region where the
+        /// request is made.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The token to advance to the next page of results from your request.</p>
+        /// <p>To get a page token, perform an initial <code>GetBuckets</code> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as the page
+        /// token in a subsequent request.</p>
+        pub fn page_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.page_token(input);
+            self
+        }
+        pub fn set_page_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_page_token(input);
+            self
+        }
+        /// <p>A Boolean value that indicates whether to include Lightsail instances that were given
+        /// access to the bucket using the <a>SetResourceAccessForBucket</a> action.</p>
+        pub fn include_connected_resources(mut self, input: bool) -> Self {
+            self.inner = self.inner.include_connected_resources(input);
+            self
+        }
+        pub fn set_include_connected_resources(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_include_connected_resources(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetBundles<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::get_bundles_input::Builder,
@@ -6355,8 +6953,6 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the distribution for which to return information.</p>
-        /// <p>Use the <code>GetDistributions</code> action to get a list of distribution names that you
-        /// can specify.</p>
         /// <p>When omitted, the response includes all of your distributions in the AWS Region where
         /// the request is made.</p>
         pub fn distribution_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -9643,6 +10239,84 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct SetResourceAccessForBucket<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::set_resource_access_for_bucket_input::Builder,
+    }
+    impl<C> SetResourceAccessForBucket<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::SetResourceAccessForBucketOutput,
+            smithy_http::result::SdkError<crate::error::SetResourceAccessForBucketError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Lightsail instance for which to set bucket access. The instance must be
+        /// in a running or stopped state.</p>
+        pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_name(input);
+            self
+        }
+        pub fn set_resource_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_name(input);
+            self
+        }
+        /// <p>The name of the bucket for which to set access to another Lightsail resource.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The access setting.</p>
+        /// <p>The following access settings are available:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>allow</code> - Allows access to the bucket and its objects.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>deny</code> - Denies access to the bucket and its objects. Use this setting to
+        /// remove access for a resource previously set to <code>allow</code>.</p>
+        /// </li>
+        /// </ul>
+        pub fn access(mut self, input: crate::model::ResourceBucketAccess) -> Self {
+            self.inner = self.inner.access(input);
+            self
+        }
+        pub fn set_access(
+            mut self,
+            input: std::option::Option<crate::model::ResourceBucketAccess>,
+        ) -> Self {
+            self.inner = self.inner.set_access(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct StartInstance<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::start_instance_input::Builder,
@@ -10074,6 +10748,145 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<std::string::String>>,
         ) -> Self {
             self.inner = self.inner.set_tag_keys(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateBucket<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_bucket_input::Builder,
+    }
+    impl<C> UpdateBucket<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateBucketOutput,
+            smithy_http::result::SdkError<crate::error::UpdateBucketError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket to update.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>An object that sets the public accessibility of objects in the specified bucket.</p>
+        pub fn access_rules(mut self, input: crate::model::AccessRules) -> Self {
+            self.inner = self.inner.access_rules(input);
+            self
+        }
+        pub fn set_access_rules(
+            mut self,
+            input: std::option::Option<crate::model::AccessRules>,
+        ) -> Self {
+            self.inner = self.inner.set_access_rules(input);
+            self
+        }
+        /// <p>Specifies whether to enable or suspend versioning of objects in the bucket.</p>
+        /// <p>The following options can be specified:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Enabled</code> - Enables versioning of objects in the specified bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Suspended</code> - Suspends versioning of objects in the specified bucket.
+        /// Existing object versions are retained.</p>
+        /// </li>
+        /// </ul>
+        pub fn versioning(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.versioning(input);
+            self
+        }
+        pub fn set_versioning(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_versioning(input);
+            self
+        }
+        /// <p>An array of strings to specify the AWS account IDs that can access the bucket.</p>
+        /// <p>You can give a maximum of 10 AWS accounts access to a bucket.</p>
+        pub fn readonly_access_accounts(mut self, inp: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.readonly_access_accounts(inp);
+            self
+        }
+        pub fn set_readonly_access_accounts(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inner = self.inner.set_readonly_access_accounts(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateBucketBundle<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_bucket_bundle_input::Builder,
+    }
+    impl<C> UpdateBucketBundle<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateBucketBundleOutput,
+            smithy_http::result::SdkError<crate::error::UpdateBucketBundleError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the bucket for which to update the bundle.</p>
+        pub fn bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bucket_name(input);
+            self
+        }
+        pub fn set_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bucket_name(input);
+            self
+        }
+        /// <p>The ID of the new bundle to apply to the bucket.</p>
+        /// <p>Use the <a>GetBucketBundles</a> action to get a list of bundle IDs that you can
+        /// specify.</p>
+        pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.bundle_id(input);
+            self
+        }
+        pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_bundle_id(input);
             self
         }
     }

@@ -39,6 +39,9 @@ impl<C> Client<C>
 where
     C: aws_hyper::SmithyConnector,
 {
+    pub fn associate_alias(&self) -> fluent_builders::AssociateAlias<C> {
+        fluent_builders::AssociateAlias::new(self.handle.clone())
+    }
     pub fn create_cache_policy(&self) -> fluent_builders::CreateCachePolicy<C> {
         fluent_builders::CreateCachePolicy::new(self.handle.clone())
     }
@@ -229,6 +232,9 @@ where
     ) -> fluent_builders::ListCloudFrontOriginAccessIdentities<C> {
         fluent_builders::ListCloudFrontOriginAccessIdentities::new(self.handle.clone())
     }
+    pub fn list_conflicting_aliases(&self) -> fluent_builders::ListConflictingAliases<C> {
+        fluent_builders::ListConflictingAliases::new(self.handle.clone())
+    }
     pub fn list_distributions(&self) -> fluent_builders::ListDistributions<C> {
         fluent_builders::ListDistributions::new(self.handle.clone())
     }
@@ -344,6 +350,59 @@ where
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct AssociateAlias<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::associate_alias_input::Builder,
+    }
+    impl<C> AssociateAlias<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::AssociateAliasOutput,
+            smithy_http::result::SdkError<crate::error::AssociateAliasError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the distribution that you’re associating the alias with.</p>
+        pub fn target_distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.target_distribution_id(input);
+            self
+        }
+        pub fn set_target_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_target_distribution_id(input);
+            self
+        }
+        /// <p>The alias (also known as a CNAME) to add to the target distribution.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input);
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CreateCachePolicy<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
@@ -2772,12 +2831,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by AWS.</p>
+        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your AWS
-        /// account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
@@ -2859,6 +2917,81 @@ pub mod fluent_builders {
         }
         /// <p>The maximum number of origin access identities you want in the response body.
         /// </p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_items(input);
+            self
+        }
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_items(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListConflictingAliases<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_conflicting_aliases_input::Builder,
+    }
+    impl<C> ListConflictingAliases<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListConflictingAliasesOutput,
+            smithy_http::result::SdkError<crate::error::ListConflictingAliasesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of a distribution in your account that has an attached SSL/TLS certificate that
+        /// includes the provided alias.</p>
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.distribution_id(input);
+            self
+        }
+        pub fn set_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_distribution_id(input);
+            self
+        }
+        /// <p>The alias (also called a CNAME) to search for conflicting aliases.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.alias(input);
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_alias(input);
+            self
+        }
+        /// <p>Use this field when paginating results to indicate where to begin in the list of
+        /// conflicting aliases. The response includes conflicting aliases in the list that occur
+        /// after the marker. To get the next page of the list, set this field’s value to the value
+        /// of <code>NextMarker</code> from the current page’s response.</p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.marker(input);
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_marker(input);
+            self
+        }
+        /// <p>The maximum number of conflicting aliases that you want in the response.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
@@ -3250,9 +3383,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_items(input);
             self
         }
-        /// <p>The ID of the AWS WAF web ACL that you want to list the associated distributions.
+        /// <p>The ID of the WAF web ACL that you want to list the associated distributions.
         /// If you specify "null" for the ID, the request returns a list of the distributions that aren't
-        /// associated with a web ACL. </p>
+        /// associated with a web ACL.</p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.web_acl_id(input);
             self
@@ -3589,12 +3722,11 @@ pub mod fluent_builders {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>managed</code> – Returns only the managed policies created by AWS.</p>
+        /// <code>managed</code> – Returns only the managed policies created by Amazon Web Services.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>custom</code> – Returns only the custom policies created in your AWS
-        /// account.</p>
+        /// <code>custom</code> – Returns only the custom policies created in your account.</p>
         /// </li>
         /// </ul>
         pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {

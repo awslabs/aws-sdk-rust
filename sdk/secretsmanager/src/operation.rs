@@ -96,22 +96,22 @@ impl smithy_http::response::ParseStrictResponse for CancelRotateSecret {
 /// <li>
 /// <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
 /// or <code>SecretBinary</code> for a secret in the same account as the calling user and that
-/// secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the account's default
-/// AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+/// secret doesn't specify a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
+/// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
 /// doesn't already exist in your account then Secrets Manager creates it for you automatically. All
-/// users and roles in the same AWS account automatically have access to use the default CMK.
-/// Note that if an Secrets Manager API call results in AWS creating the account's
-/// AWS-managed CMK, it can result in a one-time significant delay in returning the
+/// users and roles in the same Amazon Web Services account automatically have access to use the default CMK.
+/// Note that if an Secrets Manager API call results in Amazon Web Services creating the account's
+/// Amazon Web Services-managed CMK, it can result in a one-time significant delay in returning the
 /// result.</p>
 /// </li>
 /// <li>
-/// <p>If the secret resides in a different AWS account from the credentials calling an API that
+/// <p>If the secret resides in a different Amazon Web Services account from the credentials calling an API that
 /// requires encryption or decryption of the secret value then you must create and use a custom
-/// AWS KMS CMK because you can't access the default CMK for the account using credentials
-/// from a different AWS account. Store the ARN of the CMK in the secret when you create the
+/// Amazon Web Services KMS CMK because you can't access the default CMK for the account using credentials
+/// from a different Amazon Web Services account. Store the ARN of the CMK in the secret when you create the
 /// secret or when you update it by including it in the <code>KMSKeyId</code>. If you call an
 /// API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-/// using credentials from a different account then the AWS KMS key policy must grant cross-account
+/// using credentials from a different account then the Amazon Web Services KMS key policy must grant cross-account
 /// access to that other account's user or role for both the kms:GenerateDataKey and
 /// kms:Decrypt operations.</p>
 /// </li>
@@ -127,13 +127,13 @@ impl smithy_http::response::ParseStrictResponse for CancelRotateSecret {
 /// <p>secretsmanager:CreateSecret</p>
 /// </li>
 /// <li>
-/// <p>kms:GenerateDataKey - needed only if you use a customer-managed AWS KMS key to encrypt
-/// the secret. You do not need this permission to use the account default AWS managed CMK
+/// <p>kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services KMS key to encrypt
+/// the secret. You do not need this permission to use the account default Amazon Web Services managed CMK
 /// for Secrets Manager.</p>
 /// </li>
 /// <li>
-/// <p>kms:Decrypt - needed only if you use a customer-managed AWS KMS key to encrypt the
-/// secret. You do not need this permission to use the account default AWS managed CMK for
+/// <p>kms:Decrypt - needed only if you use a customer-managed Amazon Web Services KMS key to encrypt the
+/// secret. You do not need this permission to use the account default Amazon Web Services managed CMK for
 /// Secrets Manager.</p>
 /// </li>
 /// <li>
@@ -338,7 +338,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteSecret {
 /// <p>To retrieve the encrypted secret information in a version of the secret, use <a>GetSecretValue</a>.</p>
 /// </li>
 /// <li>
-/// <p>To list all of the secrets in the AWS account, use <a>ListSecrets</a>.</p>
+/// <p>To list all of the secrets in the Amazon Web Services account, use <a>ListSecrets</a>.</p>
 /// </li>
 /// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -472,8 +472,8 @@ impl smithy_http::response::ParseStrictResponse for GetResourcePolicy {
 /// <p>secretsmanager:GetSecretValue</p>
 /// </li>
 /// <li>
-/// <p>kms:Decrypt - required only if you use a customer-managed AWS KMS key to encrypt the
-/// secret. You do not need this permission to use the account's default AWS managed CMK for
+/// <p>kms:Decrypt - required only if you use a customer-managed Amazon Web Services KMS key to encrypt the
+/// secret. You do not need this permission to use the account's default Amazon Web Services managed CMK for
 /// Secrets Manager.</p>
 /// </li>
 /// </ul>
@@ -513,7 +513,7 @@ impl smithy_http::response::ParseStrictResponse for GetSecretValue {
     }
 }
 
-/// <p>Lists all of the secrets that are stored by Secrets Manager in the AWS account. To list the
+/// <p>Lists all of the secrets that are stored by Secrets Manager in the Amazon Web Services account. To list the
 /// versions currently stored for a specific secret, use <a>ListSecretVersionIds</a>.
 /// The encrypted fields <code>SecretString</code> and <code>SecretBinary</code> are not included
 /// in the output. To get that information, call the <a>GetSecretValue</a>
@@ -630,7 +630,7 @@ impl smithy_http::response::ParseStrictResponse for ListSecretVersionIds {
 /// <code>Resources</code> element. You can also use a combination of both identity-based and
 /// resource-based policies. The affected users and roles receive the permissions that are
 /// permitted by all of the relevant policies. For more information, see <a href="http://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_resource-based-policies.html">Using Resource-Based
-/// Policies for AWS Secrets Manager</a>. For the complete description of the AWS policy syntax and
+/// Policies for Amazon Web Services Secrets Manager</a>. For the complete description of the Amazon Web Services policy syntax and
 /// grammar, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON
 /// Policy Reference</a> in the <i>IAM User Guide</i>.</p>
 /// <p>
@@ -689,8 +689,8 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// specify the staging labels that are initially attached to the new version.</p>
 /// <note>
 /// <p>The Secrets Manager console uses only the <code>SecretString</code> field. To add binary data to a
-/// secret with the <code>SecretBinary</code> field you must use the AWS CLI or one of the
-/// AWS SDKs.</p>
+/// secret with the <code>SecretBinary</code> field you must use the Amazon Web Services CLI or one of the
+/// Amazon Web Services SDKs.</p>
 /// </note>
 /// <ul>
 /// <li>
@@ -719,22 +719,22 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// <li>
 /// <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
 /// or <code>SecretBinary</code> for a secret in the same account as the calling user and that
-/// secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the account's default
-/// AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+/// secret doesn't specify a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
+/// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
 /// doesn't already exist in your account then Secrets Manager creates it for you automatically. All
-/// users and roles in the same AWS account automatically have access to use the default CMK.
-/// Note that if an Secrets Manager API call results in AWS creating the account's
-/// AWS-managed CMK, it can result in a one-time significant delay in returning the
+/// users and roles in the same Amazon Web Services account automatically have access to use the default CMK.
+/// Note that if an Secrets Manager API call results in Amazon Web Services creating the account's
+/// Amazon Web Services-managed CMK, it can result in a one-time significant delay in returning the
 /// result.</p>
 /// </li>
 /// <li>
-/// <p>If the secret resides in a different AWS account from the credentials calling an API that
+/// <p>If the secret resides in a different Amazon Web Services account from the credentials calling an API that
 /// requires encryption or decryption of the secret value then you must create and use a custom
-/// AWS KMS CMK because you can't access the default CMK for the account using credentials
-/// from a different AWS account. Store the ARN of the CMK in the secret when you create the
+/// Amazon Web Services KMS CMK because you can't access the default CMK for the account using credentials
+/// from a different Amazon Web Services account. Store the ARN of the CMK in the secret when you create the
 /// secret or when you update it by including it in the <code>KMSKeyId</code>. If you call an
 /// API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-/// using credentials from a different account then the AWS KMS key policy must grant cross-account
+/// using credentials from a different account then the Amazon Web Services KMS key policy must grant cross-account
 /// access to that other account's user or role for both the kms:GenerateDataKey and
 /// kms:Decrypt operations.</p>
 /// </li>
@@ -749,8 +749,8 @@ impl smithy_http::response::ParseStrictResponse for PutResourcePolicy {
 /// <p>secretsmanager:PutSecretValue</p>
 /// </li>
 /// <li>
-/// <p>kms:GenerateDataKey - needed only if you use a customer-managed AWS KMS key to encrypt
-/// the secret. You do not need this permission to use the account's default AWS managed CMK
+/// <p>kms:GenerateDataKey - needed only if you use a customer-managed Amazon Web Services KMS key to encrypt
+/// the secret. You do not need this permission to use the account's default Amazon Web Services managed CMK
 /// for Secrets Manager.</p>
 /// </li>
 /// </ul>
@@ -902,14 +902,14 @@ impl smithy_http::response::ParseStrictResponse for RestoreSecret {
 /// starts a rotation. If you do not include the configuration parameters, the operation starts a
 /// rotation with the values already stored in the secret. After the rotation completes, the
 /// protected service and its clients all use the new version of the secret. </p>
-/// <p>This required configuration information includes the ARN of an AWS Lambda function and
-/// the time between scheduled rotations. The Lambda rotation function creates a new version of
-/// the secret and creates or updates the credentials on the protected service to match. After
-/// testing the new credentials, the function marks the new secret with the staging label
-/// <code>AWSCURRENT</code> so that your clients all immediately begin to use the new version. For more
+/// <p>This required configuration information includes the ARN of an Amazon Web Services Lambda function and
+/// optionally, the time between scheduled rotations. The Lambda rotation function creates a new
+/// version of the secret and creates or updates the credentials on the protected service to
+/// match. After testing the new credentials, the function marks the new secret with the staging
+/// label <code>AWSCURRENT</code> so that your clients all immediately begin to use the new version. For more
 /// information about rotating secrets and how to configure a Lambda function to rotate the
-/// secrets for your protected service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating Secrets in AWS Secrets Manager</a> in the
-/// <i>AWS Secrets Manager User Guide</i>.</p>
+/// secrets for your protected service, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotating Secrets in Amazon Web Services Secrets Manager</a> in the
+/// <i>Amazon Web Services Secrets Manager User Guide</i>.</p>
 /// <p>Secrets Manager schedules the next rotation when the previous
 /// one completes. Secrets Manager schedules the date by adding the rotation interval (number of days) to the
 /// actual date of the last rotation. The service chooses the hour within that 24-hour date window
@@ -1031,8 +1031,8 @@ impl smithy_http::response::ParseStrictResponse for StopReplicationToReplica {
 /// <p>Tag keys and values are case sensitive.</p>
 /// </li>
 /// <li>
-/// <p>Do not use the <code>aws:</code> prefix in your tag names or values because AWS reserves it
-/// for AWS use. You can't edit or delete tag names or values with this
+/// <p>Do not use the <code>aws:</code> prefix in your tag names or values because Amazon Web Services reserves it
+/// for Amazon Web Services use. You can't edit or delete tag names or values with this
 /// prefix. Tags with this prefix do not count against your tags per secret limit.</p>
 /// </li>
 /// <li>
@@ -1156,7 +1156,7 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// <note>
 /// <p>The Secrets Manager console uses only the <code>SecretString</code> parameter and therefore limits
 /// you to encrypting and storing only a text string. To encrypt and store binary data as part
-/// of the version of a secret, you must use either the AWS CLI or one of the AWS
+/// of the version of a secret, you must use either the Amazon Web Services CLI or one of the Amazon Web Services
 /// SDKs.</p>
 /// </note>
 /// <ul>
@@ -1176,22 +1176,22 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// <li>
 /// <p>If you call an operation to encrypt or decrypt the <code>SecretString</code>
 /// or <code>SecretBinary</code> for a secret in the same account as the calling user and that
-/// secret doesn't specify a AWS KMS encryption key, Secrets Manager uses the account's default
-/// AWS managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
+/// secret doesn't specify a Amazon Web Services KMS encryption key, Secrets Manager uses the account's default
+/// Amazon Web Services managed customer master key (CMK) with the alias <code>aws/secretsmanager</code>. If this key
 /// doesn't already exist in your account then Secrets Manager creates it for you automatically. All
-/// users and roles in the same AWS account automatically have access to use the default CMK.
-/// Note that if an Secrets Manager API call results in AWS creating the account's
-/// AWS-managed CMK, it can result in a one-time significant delay in returning the
+/// users and roles in the same Amazon Web Services account automatically have access to use the default CMK.
+/// Note that if an Secrets Manager API call results in Amazon Web Services creating the account's
+/// Amazon Web Services-managed CMK, it can result in a one-time significant delay in returning the
 /// result.</p>
 /// </li>
 /// <li>
-/// <p>If the secret resides in a different AWS account from the credentials calling an API that
+/// <p>If the secret resides in a different Amazon Web Services account from the credentials calling an API that
 /// requires encryption or decryption of the secret value then you must create and use a custom
-/// AWS KMS CMK because you can't access the default CMK for the account using credentials
-/// from a different AWS account. Store the ARN of the CMK in the secret when you create the
+/// Amazon Web Services KMS CMK because you can't access the default CMK for the account using credentials
+/// from a different Amazon Web Services account. Store the ARN of the CMK in the secret when you create the
 /// secret or when you update it by including it in the <code>KMSKeyId</code>. If you call an
 /// API that must encrypt or decrypt <code>SecretString</code> or <code>SecretBinary</code>
-/// using credentials from a different account then the AWS KMS key policy must grant cross-account
+/// using credentials from a different account then the Amazon Web Services KMS key policy must grant cross-account
 /// access to that other account's user or role for both the kms:GenerateDataKey and
 /// kms:Decrypt operations.</p>
 /// </li>
@@ -1206,13 +1206,13 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
 /// <p>secretsmanager:UpdateSecret</p>
 /// </li>
 /// <li>
-/// <p>kms:GenerateDataKey - needed only if you use a custom AWS KMS key to encrypt the secret.
-/// You do not need this permission to use the account's AWS managed CMK for
+/// <p>kms:GenerateDataKey - needed only if you use a custom Amazon Web Services KMS key to encrypt the secret.
+/// You do not need this permission to use the account's Amazon Web Services managed CMK for
 /// Secrets Manager.</p>
 /// </li>
 /// <li>
-/// <p>kms:Decrypt - needed only if you use a custom AWS KMS key to encrypt the secret. You do
-/// not need this permission to use the account's AWS managed CMK for Secrets Manager.</p>
+/// <p>kms:Decrypt - needed only if you use a custom Amazon Web Services KMS key to encrypt the secret. You do
+/// not need this permission to use the account's Amazon Web Services managed CMK for Secrets Manager.</p>
 /// </li>
 /// </ul>
 /// <p>
@@ -1262,7 +1262,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecret {
 /// label to only one version of a secret at a time. If a staging label to be added is already
 /// attached to another version, then it is moved--removed from the other version first and
 /// then attached to this one. For more information about staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/terms-concepts.html#term_staging-label">Staging
-/// Labels</a> in the <i>AWS Secrets Manager User Guide</i>. </p>
+/// Labels</a> in the <i>Amazon Web Services Secrets Manager User Guide</i>. </p>
 /// <p>The staging labels that you specify in the <code>VersionStage</code> parameter are added
 /// to the existing list of staging labels--they don't replace it.</p>
 /// <p>You can move the <code>AWSCURRENT</code> staging label to this version by including it in this

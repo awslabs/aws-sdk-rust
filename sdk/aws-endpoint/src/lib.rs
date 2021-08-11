@@ -145,12 +145,12 @@ impl ResolveAwsEndpoint for Endpoint {
 }
 
 type AwsEndpointResolver = Arc<dyn ResolveAwsEndpoint>;
-pub fn get_endpoint_resolver(config: &PropertyBag) -> Option<&AwsEndpointResolver> {
-    config.get()
+pub fn get_endpoint_resolver(properties: &PropertyBag) -> Option<&AwsEndpointResolver> {
+    properties.get()
 }
 
-pub fn set_endpoint_resolver(config: &mut PropertyBag, provider: AwsEndpointResolver) {
-    config.insert(provider);
+pub fn set_endpoint_resolver(properties: &mut PropertyBag, provider: AwsEndpointResolver) {
+    properties.insert(provider);
 }
 
 /// Middleware Stage to Add an Endpoint to a Request
@@ -182,10 +182,10 @@ impl MapRequest for AwsEndpointStage {
     type Error = AwsEndpointStageError;
 
     fn apply(&self, request: Request) -> Result<Request, Self::Error> {
-        request.augment(|mut http_req, config| {
+        request.augment(|mut http_req, props| {
             let provider =
-                get_endpoint_resolver(config).ok_or(AwsEndpointStageError::NoEndpointResolver)?;
-            let region = config
+                get_endpoint_resolver(props).ok_or(AwsEndpointStageError::NoEndpointResolver)?;
+            let region = props
                 .get::<Region>()
                 .ok_or(AwsEndpointStageError::NoRegion)?;
             let endpoint = provider
@@ -195,13 +195,13 @@ impl MapRequest for AwsEndpointStage {
                 .credential_scope
                 .region
                 .unwrap_or_else(|| region.clone().into());
-            config.insert::<SigningRegion>(signing_region);
+            props.insert::<SigningRegion>(signing_region);
             if let Some(signing_service) = endpoint.credential_scope.service {
-                config.insert::<SigningService>(signing_service);
+                props.insert::<SigningService>(signing_service);
             }
             endpoint
                 .endpoint
-                .set_endpoint(http_req.uri_mut(), config.get::<EndpointPrefix>());
+                .set_endpoint(http_req.uri_mut(), props.get::<EndpointPrefix>());
             // host is only None if authority is not. `set_endpoint` guarantees that authority is not None
             let host = http_req
                 .uri()
@@ -243,18 +243,18 @@ mod test {
         let region = Region::new("us-east-1");
         let mut req = operation::Request::new(req);
         {
-            let mut conf = req.config_mut();
-            conf.insert(region.clone());
-            conf.insert(SigningService::from_static("kinesis"));
-            set_endpoint_resolver(&mut conf, provider);
+            let mut props = req.properties_mut();
+            props.insert(region.clone());
+            props.insert(SigningService::from_static("kinesis"));
+            set_endpoint_resolver(&mut props, provider);
         };
         let req = AwsEndpointStage.apply(req).expect("should succeed");
         assert_eq!(
-            req.config().get(),
+            req.properties().get(),
             Some(&SigningRegion::from(region.clone()))
         );
         assert_eq!(
-            req.config().get(),
+            req.properties().get(),
             Some(&SigningService::from_static("kinesis"))
         );
 
@@ -284,18 +284,18 @@ mod test {
         let region = Region::new("us-east-1");
         let mut req = operation::Request::new(req);
         {
-            let mut conf = req.config_mut();
-            conf.insert(region.clone());
-            conf.insert(SigningService::from_static("kinesis"));
-            set_endpoint_resolver(&mut conf, provider);
+            let mut props = req.properties_mut();
+            props.insert(region.clone());
+            props.insert(SigningService::from_static("kinesis"));
+            set_endpoint_resolver(&mut props, provider);
         };
         let req = AwsEndpointStage.apply(req).expect("should succeed");
         assert_eq!(
-            req.config().get(),
+            req.properties().get(),
             Some(&SigningRegion::from(Region::new("us-east-override")))
         );
         assert_eq!(
-            req.config().get(),
+            req.properties().get(),
             Some(&SigningService::from_static("qldb-override"))
         );
     }

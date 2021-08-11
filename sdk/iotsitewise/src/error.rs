@@ -3307,6 +3307,142 @@ impl std::error::Error for DescribeProjectError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeStorageConfigurationError {
+    pub kind: DescribeStorageConfigurationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeStorageConfigurationErrorKind {
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeStorageConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeStorageConfigurationErrorKind::ConflictingOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeStorageConfigurationErrorKind::InternalFailureException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeStorageConfigurationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeStorageConfigurationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            DescribeStorageConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeStorageConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeStorageConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeStorageConfigurationError {
+    fn code(&self) -> Option<&str> {
+        DescribeStorageConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeStorageConfigurationError {
+    pub fn new(kind: DescribeStorageConfigurationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeStorageConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeStorageConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageConfigurationErrorKind::ConflictingOperationException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageConfigurationErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageConfigurationErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeStorageConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeStorageConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeStorageConfigurationErrorKind::ConflictingOperationException(_inner) => {
+                Some(_inner)
+            }
+            DescribeStorageConfigurationErrorKind::InternalFailureException(_inner) => Some(_inner),
+            DescribeStorageConfigurationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeStorageConfigurationErrorKind::LimitExceededException(_inner) => Some(_inner),
+            DescribeStorageConfigurationErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            DescribeStorageConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeStorageConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DisassociateAssetsError {
     pub kind: DisassociateAssetsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5309,6 +5445,147 @@ impl std::error::Error for PutLoggingOptionsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct PutStorageConfigurationError {
+    pub kind: PutStorageConfigurationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutStorageConfigurationErrorKind {
+    ConflictingOperationException(crate::error::ConflictingOperationException),
+    InternalFailureException(crate::error::InternalFailureException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceAlreadyExistsException(crate::error::ResourceAlreadyExistsException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutStorageConfigurationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutStorageConfigurationErrorKind::ConflictingOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutStorageConfigurationErrorKind::InternalFailureException(_inner) => _inner.fmt(f),
+            PutStorageConfigurationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            PutStorageConfigurationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            PutStorageConfigurationErrorKind::ResourceAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutStorageConfigurationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutStorageConfigurationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            PutStorageConfigurationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutStorageConfigurationError {
+    fn code(&self) -> Option<&str> {
+        PutStorageConfigurationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutStorageConfigurationError {
+    pub fn new(kind: PutStorageConfigurationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutStorageConfigurationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutStorageConfigurationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_conflicting_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::ConflictingOperationException(_)
+        )
+    }
+    pub fn is_internal_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::InternalFailureException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::ResourceAlreadyExistsException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutStorageConfigurationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for PutStorageConfigurationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutStorageConfigurationErrorKind::ConflictingOperationException(_inner) => Some(_inner),
+            PutStorageConfigurationErrorKind::InternalFailureException(_inner) => Some(_inner),
+            PutStorageConfigurationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            PutStorageConfigurationErrorKind::LimitExceededException(_inner) => Some(_inner),
+            PutStorageConfigurationErrorKind::ResourceAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            PutStorageConfigurationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutStorageConfigurationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            PutStorageConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct TagResourceError {
     pub kind: TagResourceErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -6639,9 +6916,9 @@ impl std::error::Error for UpdateProjectError {
 }
 
 /// <p>Your request exceeded a rate limit. For example, you might have exceeded the number of
-/// AWS IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
+/// IoT SiteWise assets that can be created per second, the allowed number of messages per second, and so
 /// on.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -6822,7 +7099,7 @@ impl InvalidRequestException {
     }
 }
 
-/// <p>AWS IoT SiteWise can't process your request right now. Try again later.</p>
+/// <p>IoT SiteWise can't process your request right now. Try again later.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalFailureException {
@@ -6974,7 +7251,7 @@ impl ConflictingOperationException {
 /// <p>You've reached the limit for a resource. For example, this can occur if you're trying to
 /// associate more than the allowed number of child assets or attempting to create more than the
 /// allowed number of properties for an asset model.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededException {
@@ -7184,7 +7461,7 @@ impl UnauthorizedException {
 
 /// <p>You've reached the limit for the number of tags allowed for a resource. For more
 /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions">Tag naming limits and
-/// requirements</a> in the <i>AWS General Reference</i>.</p>
+/// requirements</a> in the <i>Amazon Web Services General Reference</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TooManyTagsException {

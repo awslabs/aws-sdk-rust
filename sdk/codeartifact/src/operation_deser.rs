@@ -2694,11 +2694,12 @@ pub fn parse_get_domain_permissions_policy_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_package_version_asset(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<
     crate::output::GetPackageVersionAssetOutput,
     crate::error::GetPackageVersionAssetError,
 > {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_package_version_asset_output::Builder::default();

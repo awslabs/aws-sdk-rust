@@ -467,6 +467,32 @@ impl smithy_http::response::ParseStrictResponse for GetPlaybackConfiguration {
     }
 }
 
+/// <p>Returns a list of alerts for the given resource.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAlerts {
+    _private: (),
+}
+impl ListAlerts {
+    /// Creates a new builder-style object to manufacture [`ListAlertsInput`](crate::input::ListAlertsInput)
+    pub fn builder() -> crate::input::list_alerts_input::Builder {
+        crate::input::list_alerts_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListAlerts {
+    type Output =
+        std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_alerts_error(response)
+        } else {
+            crate::operation_deser::parse_list_alerts_response(response)
+        }
+    }
+}
+
 /// <p>Retrieves a list of channels that are associated with this account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannels {

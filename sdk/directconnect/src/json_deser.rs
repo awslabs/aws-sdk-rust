@@ -243,6 +243,13 @@ pub fn deser_operation_allocate_connection_on_interconnect(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "hasLogicalRedundancy" => {
                         builder = builder.set_has_logical_redundancy(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -500,6 +507,13 @@ pub fn deser_operation_allocate_hosted_connection(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "hasLogicalRedundancy" => {
                         builder = builder.set_has_logical_redundancy(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -737,6 +751,13 @@ pub fn deser_operation_allocate_private_virtual_interface(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "tags" => {
                         builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
                     }
@@ -932,6 +953,13 @@ pub fn deser_operation_allocate_public_virtual_interface(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "tags" => {
                         builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
                     }
@@ -1104,6 +1132,13 @@ pub fn deser_operation_associate_connection_with_lag(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -1283,6 +1318,13 @@ pub fn deser_operation_associate_hosted_connection(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -1564,6 +1606,13 @@ pub fn deser_operation_associate_virtual_interface(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -1920,6 +1969,13 @@ pub fn deser_operation_create_connection(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "hasLogicalRedundancy" => {
                         builder = builder.set_has_logical_redundancy(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -2198,6 +2254,13 @@ pub fn deser_operation_create_interconnect(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "hasLogicalRedundancy" => {
                         builder = builder.set_has_logical_redundancy(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -2324,6 +2387,13 @@ pub fn deser_operation_create_lag(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -2574,6 +2644,13 @@ pub fn deser_operation_create_private_virtual_interface(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "tags" => {
                         builder = builder.set_tags(crate::json_deser::deser_list_tag_list(tokens)?);
                     }
@@ -2764,6 +2841,13 @@ pub fn deser_operation_create_public_virtual_interface(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -2975,6 +3059,13 @@ pub fn deser_operation_delete_connection(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -3294,6 +3385,13 @@ pub fn deser_operation_delete_lag(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -4182,6 +4280,13 @@ pub fn deser_operation_disassociate_connection_from_lag(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "hasLogicalRedundancy" => {
                         builder = builder.set_has_logical_redundancy(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -4532,6 +4637,13 @@ pub fn deser_operation_update_connection(
                                 .transpose()?,
                         );
                     }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "hasLogicalRedundancy" => {
                         builder = builder.set_has_logical_redundancy(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -4724,6 +4836,13 @@ pub fn deser_operation_update_lag(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -4969,6 +5088,13 @@ pub fn deser_operation_update_virtual_interface_attributes(
                     }
                     "awsDeviceV2" => {
                         builder = builder.set_aws_device_v2(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
+                    "awsLogicalDeviceId" => {
+                        builder = builder.set_aws_logical_device_id(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
                                 .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                 .transpose()?,
@@ -5472,6 +5598,15 @@ where
                             }
                             "awsDeviceV2" => {
                                 builder = builder.set_aws_device_v2(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "awsLogicalDeviceId" => {
+                                builder = builder.set_aws_logical_device_id(
                                     smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -6648,6 +6783,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "awsLogicalDeviceId" => {
+                                builder = builder.set_aws_logical_device_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -6803,6 +6947,15 @@ where
                             }
                             "awsDeviceV2" => {
                                 builder = builder.set_aws_device_v2(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "awsLogicalDeviceId" => {
+                                builder = builder.set_aws_logical_device_id(
                                     smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?
@@ -7113,6 +7266,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "awsLogicalDeviceId" => {
+                                builder = builder.set_aws_logical_device_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "hasLogicalRedundancy" => {
                                 builder = builder.set_has_logical_redundancy(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -7268,6 +7430,15 @@ where
                             }
                             "awsDeviceV2" => {
                                 builder = builder.set_aws_device_v2(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "awsLogicalDeviceId" => {
+                                builder = builder.set_aws_logical_device_id(
                                     smithy_json::deserialize::token::expect_string_or_null(
                                         tokens.next(),
                                     )?

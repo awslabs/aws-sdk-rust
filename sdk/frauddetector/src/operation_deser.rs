@@ -425,6 +425,26 @@ pub fn parse_create_batch_prediction_job_error(
                 tmp
             }),
         },
+        "ResourceNotFoundException" => {
+            crate::error::CreateBatchPredictionJobError {
+                meta: generic,
+                kind: crate::error::CreateBatchPredictionJobErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateBatchPredictionJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
         "ValidationException" => crate::error::CreateBatchPredictionJobError {
             meta: generic,
             kind: crate::error::CreateBatchPredictionJobErrorKind::ValidationException({

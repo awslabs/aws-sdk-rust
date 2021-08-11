@@ -2764,7 +2764,7 @@ pub struct InstanceRecommendationOption {
     /// The performance
     /// risk of the recommended instance is calculated as the maximum performance risk score
     /// across the analyzed resource specifications.</p>
-    /// <p>The value ranges from <code>0</code> to <code>5</code>, with <code>0</code> meaning
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
     /// recommendation will meet the performance requirements of your workload before migrating
@@ -2855,7 +2855,7 @@ pub mod instance_recommendation_option {
         /// The performance
         /// risk of the recommended instance is calculated as the maximum performance risk score
         /// across the analyzed resource specifications.</p>
-        /// <p>The value ranges from <code>0</code> to <code>5</code>, with <code>0</code> meaning
+        /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
         /// recommendation will meet the performance requirements of your workload before migrating
@@ -3965,7 +3965,7 @@ pub struct VolumeRecommendationOption {
     /// <p>The performance risk of the volume recommendation option.</p>
     /// <p>Performance risk is the likelihood of the recommended volume type meeting the
     /// performance requirement of your workload.</p>
-    /// <p>The value ranges from <code>0</code> to <code>5</code>, with <code>0</code> meaning
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
     /// that the recommended resource is predicted to always provide enough hardware capability.
     /// The higher the performance risk is, the more likely you should validate whether the
     /// recommendation will meet the performance requirements of your workload before migrating
@@ -4010,7 +4010,7 @@ pub mod volume_recommendation_option {
         /// <p>The performance risk of the volume recommendation option.</p>
         /// <p>Performance risk is the likelihood of the recommended volume type meeting the
         /// performance requirement of your workload.</p>
-        /// <p>The value ranges from <code>0</code> to <code>5</code>, with <code>0</code> meaning
+        /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
         /// that the recommended resource is predicted to always provide enough hardware capability.
         /// The higher the performance risk is, the more likely you should validate whether the
         /// recommendation will meet the performance requirements of your workload before migrating
@@ -4832,10 +4832,11 @@ pub struct AutoScalingGroupRecommendationOption {
     /// The performance
     /// risk of the recommended instance is calculated as the maximum performance risk score
     /// across the analyzed resource specifications.</p>
-    /// <p>The value ranges from 0 to 5, with 0 meaning that the recommended resource is
-    /// predicted to always provide enough hardware capability. The higher the performance risk
-    /// is, the more likely you should validate whether the recommended resource meets the
-    /// performance requirements of your workload before migrating your resource.</p>
+    /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
+    /// that the recommended resource is predicted to always provide enough hardware capability.
+    /// The higher the performance risk is, the more likely you should validate whether the
+    /// recommendation will meet the performance requirements of your workload before migrating
+    /// your resource.</p>
     pub performance_risk: f64,
     /// <p>The rank of the Auto Scaling group recommendation option.</p>
     /// <p>The top recommendation option is ranked as <code>1</code>.</p>
@@ -4903,10 +4904,11 @@ pub mod auto_scaling_group_recommendation_option {
         /// The performance
         /// risk of the recommended instance is calculated as the maximum performance risk score
         /// across the analyzed resource specifications.</p>
-        /// <p>The value ranges from 0 to 5, with 0 meaning that the recommended resource is
-        /// predicted to always provide enough hardware capability. The higher the performance risk
-        /// is, the more likely you should validate whether the recommended resource meets the
-        /// performance requirements of your workload before migrating your resource.</p>
+        /// <p>The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
+        /// that the recommended resource is predicted to always provide enough hardware capability.
+        /// The higher the performance risk is, the more likely you should validate whether the
+        /// recommendation will meet the performance requirements of your workload before migrating
+        /// your resource.</p>
         pub fn performance_risk(mut self, input: f64) -> Self {
             self.performance_risk = Some(input);
             self

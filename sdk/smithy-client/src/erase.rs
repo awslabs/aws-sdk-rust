@@ -178,7 +178,7 @@ pub struct DynMiddleware<C>(
     BoxCloneLayer<
         smithy_http_tower::dispatch::DispatchService<C>,
         smithy_http::operation::Request,
-        http::Response<SdkBody>,
+        smithy_http::operation::Response,
         smithy_http_tower::SendOperationError,
     >,
 );
@@ -199,7 +199,7 @@ impl<C> DynMiddleware<C> {
 impl<C> Layer<smithy_http_tower::dispatch::DispatchService<C>> for DynMiddleware<C> {
     type Service = BoxCloneService<
         smithy_http::operation::Request,
-        http::Response<SdkBody>,
+        smithy_http::operation::Response,
         smithy_http_tower::SendOperationError,
     >;
 

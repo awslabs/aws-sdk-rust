@@ -23,7 +23,7 @@ pub mod associate_assets_input {
         }
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
         /// of assets to be formed that all come from the same asset model. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hierarchy_id = Some(input.into());
             self
@@ -98,10 +98,10 @@ impl AssociateAssetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -109,28 +109,28 @@ impl AssociateAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -289,7 +289,7 @@ impl BatchAssociateProjectAssetsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -297,28 +297,28 @@ impl BatchAssociateProjectAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -481,7 +481,7 @@ impl BatchDisassociateProjectAssetsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -489,28 +489,28 @@ impl BatchDisassociateProjectAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -652,7 +652,7 @@ impl BatchPutAssetPropertyValueInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -660,28 +660,28 @@ impl BatchPutAssetPropertyValueInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -748,7 +748,7 @@ pub mod create_access_policy_input {
         >,
     }
     impl Builder {
-        /// <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
             self
@@ -760,7 +760,7 @@ pub mod create_access_policy_input {
             self.access_policy_identity = input;
             self
         }
-        /// <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+        /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
             self.access_policy_resource = Some(input);
             self
@@ -862,7 +862,7 @@ impl CreateAccessPolicyInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -870,28 +870,28 @@ impl CreateAccessPolicyInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1050,10 +1050,10 @@ impl CreateAssetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1061,28 +1061,28 @@ impl CreateAssetInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1305,10 +1305,10 @@ impl CreateAssetModelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1316,28 +1316,28 @@ impl CreateAssetModelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1439,7 +1439,7 @@ pub mod create_dashboard_input {
             self
         }
         /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_definition = Some(input.into());
             self
@@ -1529,7 +1529,7 @@ impl CreateDashboardInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1537,28 +1537,28 @@ impl CreateDashboardInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1703,10 +1703,10 @@ impl CreateGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1714,28 +1714,28 @@ impl CreateGatewayInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1828,7 +1828,7 @@ pub mod create_portal_input {
             self.portal_description = input;
             self
         }
-        /// <p>The AWS administrator's contact email address.</p>
+        /// <p>The Amazon Web Services administrator's contact email address.</p>
         pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_contact_email = Some(input.into());
             self
@@ -1862,9 +1862,9 @@ pub mod create_portal_input {
             self.portal_logo_image_file = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -1897,15 +1897,15 @@ pub mod create_portal_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage
-        /// user permissions. Before you can create a portal that uses AWS SSO, you must enable AWS SSO.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS SSO</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than
+        /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+        /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
+        /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
         /// the China Regions.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage
+        /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
         /// user permissions. This option is only available in the China Regions.</p>
         /// </li>
         /// </ul>
@@ -1925,8 +1925,9 @@ pub mod create_portal_input {
         }
         /// <p>The email address that sends alarm notifications.</p>
         /// <important>
-        /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
+        /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
+        /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+        /// address in Amazon SES</a>.</p>
         /// </important>
         pub fn notification_sender_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_sender_email = Some(input.into());
@@ -1939,8 +1940,9 @@ pub mod create_portal_input {
             self.notification_sender_email = input;
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.alarms = Some(input);
             self
@@ -2002,7 +2004,7 @@ impl CreatePortalInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2010,28 +2012,28 @@ impl CreatePortalInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2204,7 +2206,7 @@ impl CreateProjectInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2212,28 +2214,28 @@ impl CreateProjectInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2360,7 +2362,7 @@ impl DeleteAccessPolicyInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2368,28 +2370,28 @@ impl DeleteAccessPolicyInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2534,10 +2536,10 @@ impl DeleteAssetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2545,28 +2547,28 @@ impl DeleteAssetInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2711,10 +2713,10 @@ impl DeleteAssetModelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2722,28 +2724,28 @@ impl DeleteAssetModelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2893,7 +2895,7 @@ impl DeleteDashboardInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2901,28 +2903,28 @@ impl DeleteDashboardInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3054,10 +3056,10 @@ impl DeleteGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3065,28 +3067,28 @@ impl DeleteGatewayInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3228,7 +3230,7 @@ impl DeletePortalInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3236,28 +3238,28 @@ impl DeletePortalInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3402,7 +3404,7 @@ impl DeleteProjectInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3410,28 +3412,28 @@ impl DeleteProjectInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3567,7 +3569,7 @@ impl DescribeAccessPolicyInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3575,28 +3577,28 @@ impl DescribeAccessPolicyInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3721,10 +3723,10 @@ impl DescribeAssetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3732,28 +3734,28 @@ impl DescribeAssetInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3878,10 +3880,10 @@ impl DescribeAssetModelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3889,28 +3891,28 @@ impl DescribeAssetModelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4048,10 +4050,10 @@ impl DescribeAssetPropertyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4059,28 +4061,28 @@ impl DescribeAssetPropertyInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4226,7 +4228,7 @@ impl DescribeDashboardInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4234,28 +4236,28 @@ impl DescribeDashboardInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4371,28 +4373,39 @@ impl DescribeDefaultEncryptionConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4499,10 +4512,10 @@ impl DescribeGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4510,28 +4523,28 @@ impl DescribeGatewayInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4624,7 +4637,7 @@ pub mod describe_gateway_capability_configuration_input {
         }
         /// <p>The namespace of the capability configuration.
         /// For example, if you configure OPC-UA
-        /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4678,10 +4691,10 @@ impl DescribeGatewayCapabilityConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4689,28 +4702,28 @@ impl DescribeGatewayCapabilityConfigurationInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4840,10 +4853,10 @@ impl DescribeLoggingOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4851,28 +4864,28 @@ impl DescribeLoggingOptionsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4982,7 +4995,7 @@ impl DescribePortalInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4990,28 +5003,28 @@ impl DescribePortalInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5137,7 +5150,7 @@ impl DescribeProjectInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5145,28 +5158,28 @@ impl DescribeProjectInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5234,6 +5247,133 @@ impl DescribeProjectInput {
     }
 }
 
+/// See [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput)
+pub mod describe_storage_configuration_input {
+    /// A builder for [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::DescribeStorageConfigurationInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::DescribeStorageConfigurationInput {})
+        }
+    }
+}
+#[doc(hidden)]
+pub type DescribeStorageConfigurationInputOperationOutputAlias =
+    crate::operation::DescribeStorageConfiguration;
+#[doc(hidden)]
+pub type DescribeStorageConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl DescribeStorageConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`DescribeStorageConfiguration`](crate::operation::DescribeStorageConfiguration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::DescribeStorageConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::DescribeStorageConfiguration::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "DescribeStorageConfiguration",
+                "iotsitewise",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/configuration/account/storage").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("GET").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`DescribeStorageConfigurationInput`](crate::input::DescribeStorageConfigurationInput)
+    pub fn builder() -> crate::input::describe_storage_configuration_input::Builder {
+        crate::input::describe_storage_configuration_input::Builder::default()
+    }
+}
+
 /// See [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput)
 pub mod disassociate_assets_input {
     /// A builder for [`DisassociateAssetsInput`](crate::input::DisassociateAssetsInput)
@@ -5258,7 +5398,7 @@ pub mod disassociate_assets_input {
         /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
         /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
         /// to identify the correct asset to disassociate. For more information, see
-        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hierarchy_id = Some(input.into());
             self
@@ -5334,10 +5474,10 @@ impl DisassociateAssetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5345,28 +5485,28 @@ impl DisassociateAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5471,10 +5611,10 @@ pub mod get_asset_property_aggregates_input {
             self.property_id = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self
@@ -5562,7 +5702,7 @@ pub mod get_asset_property_aggregates_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -5623,7 +5763,7 @@ impl GetAssetPropertyAggregatesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5631,28 +5771,28 @@ impl GetAssetPropertyAggregatesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5789,10 +5929,10 @@ pub mod get_asset_property_value_input {
             self.property_id = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self
@@ -5846,7 +5986,7 @@ impl GetAssetPropertyValueInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5854,28 +5994,28 @@ impl GetAssetPropertyValueInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5975,10 +6115,10 @@ pub mod get_asset_property_value_history_input {
             self.property_id = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self
@@ -6044,7 +6184,7 @@ pub mod get_asset_property_value_history_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 100</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -6103,7 +6243,7 @@ impl GetAssetPropertyValueHistoryInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6111,28 +6251,28 @@ impl GetAssetPropertyValueHistoryInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6270,10 +6410,10 @@ pub mod get_interpolated_asset_property_values_input {
             self.property_id = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
             self
@@ -6352,8 +6492,7 @@ pub mod get_interpolated_asset_property_values_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.
-        /// If not specified, the default value is 10.</p>
+        /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -6425,7 +6564,7 @@ impl GetInterpolatedAssetPropertyValuesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("data.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6433,28 +6572,28 @@ impl GetInterpolatedAssetPropertyValuesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6579,7 +6718,7 @@ pub mod list_access_policies_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required
+        /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
         /// if you specify <code>identityId</code>.</p>
         pub fn identity_type(mut self, input: crate::model::IdentityType) -> Self {
             self.identity_type = Some(input);
@@ -6645,7 +6784,7 @@ pub mod list_access_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -6701,7 +6840,7 @@ impl ListAccessPoliciesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6709,28 +6848,28 @@ impl ListAccessPoliciesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6829,7 +6968,7 @@ pub mod list_asset_models_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -6877,10 +7016,10 @@ impl ListAssetModelsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6888,28 +7027,28 @@ impl ListAssetModelsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7025,7 +7164,7 @@ pub mod list_asset_relationships_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -7074,10 +7213,10 @@ impl ListAssetRelationshipsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7085,28 +7224,28 @@ impl ListAssetRelationshipsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7215,7 +7354,7 @@ pub mod list_assets_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -7303,10 +7442,10 @@ impl ListAssetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7314,28 +7453,28 @@ impl ListAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7432,7 +7571,7 @@ pub mod list_associated_assets_input {
         /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
         /// parameter is required if you choose <code>CHILD</code> for
         /// <code>traversalDirection</code>.</p>
-        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn hierarchy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hierarchy_id = Some(input.into());
             self
@@ -7476,7 +7615,7 @@ pub mod list_associated_assets_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -7527,10 +7666,10 @@ impl ListAssociatedAssetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7538,28 +7677,28 @@ impl ListAssociatedAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7678,7 +7817,7 @@ pub mod list_dashboards_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -7730,7 +7869,7 @@ impl ListDashboardsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7738,28 +7877,28 @@ impl ListDashboardsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7846,7 +7985,7 @@ pub mod list_gateways_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -7892,10 +8031,10 @@ impl ListGatewaysInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7903,28 +8042,28 @@ impl ListGatewaysInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8008,7 +8147,7 @@ pub mod list_portals_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -8057,7 +8196,7 @@ impl ListPortalsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8065,28 +8204,28 @@ impl ListPortalsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8180,7 +8319,7 @@ pub mod list_project_assets_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -8232,7 +8371,7 @@ impl ListProjectAssetsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8240,28 +8379,28 @@ impl ListProjectAssetsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8375,7 +8514,7 @@ pub mod list_projects_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of results to be returned per paginated request.</p>
+        /// <p>The maximum number of results to return for each paginated request.</p>
         /// <p>Default: 50</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
@@ -8425,7 +8564,7 @@ impl ListProjectsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8433,28 +8572,28 @@ impl ListProjectsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8577,28 +8716,39 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8679,8 +8829,8 @@ pub mod put_default_encryption_configuration_input {
             self.encryption_type = input;
             self
         }
-        /// <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you use
-        /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+        /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
+        /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -8734,28 +8884,39 @@ impl PutDefaultEncryptionConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8868,10 +9029,10 @@ impl PutLoggingOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8879,28 +9040,28 @@ impl PutLoggingOptionsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8949,6 +9110,177 @@ impl PutLoggingOptionsInput {
     /// Creates a new builder-style object to manufacture [`PutLoggingOptionsInput`](crate::input::PutLoggingOptionsInput)
     pub fn builder() -> crate::input::put_logging_options_input::Builder {
         crate::input::put_logging_options_input::Builder::default()
+    }
+}
+
+/// See [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput)
+pub mod put_storage_configuration_input {
+    /// A builder for [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) storage_type: std::option::Option<crate::model::StorageType>,
+        pub(crate) multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+    }
+    impl Builder {
+        /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+        /// </li>
+        /// </ul>
+        pub fn storage_type(mut self, input: crate::model::StorageType) -> Self {
+            self.storage_type = Some(input);
+            self
+        }
+        pub fn set_storage_type(
+            mut self,
+            input: std::option::Option<crate::model::StorageType>,
+        ) -> Self {
+            self.storage_type = input;
+            self
+        }
+        /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
+        /// you must specify a <code>MultiLayerStorage</code> object.</p>
+        pub fn multi_layer_storage(mut self, input: crate::model::MultiLayerStorage) -> Self {
+            self.multi_layer_storage = Some(input);
+            self
+        }
+        pub fn set_multi_layer_storage(
+            mut self,
+            input: std::option::Option<crate::model::MultiLayerStorage>,
+        ) -> Self {
+            self.multi_layer_storage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutStorageConfigurationInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutStorageConfigurationInput {
+                storage_type: self.storage_type,
+                multi_layer_storage: self.multi_layer_storage,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutStorageConfigurationInputOperationOutputAlias =
+    crate::operation::PutStorageConfiguration;
+#[doc(hidden)]
+pub type PutStorageConfigurationInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl PutStorageConfigurationInput {
+    /// Consumes the builder and constructs an Operation<[`PutStorageConfiguration`](crate::operation::PutStorageConfiguration)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutStorageConfiguration,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_put_storage_configuration(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutStorageConfiguration::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutStorageConfiguration",
+                "iotsitewise",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/configuration/account/storage").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutStorageConfigurationInput`](crate::input::PutStorageConfigurationInput)
+    pub fn builder() -> crate::input::put_storage_configuration_input::Builder {
+        crate::input::put_storage_configuration_input::Builder::default()
     }
 }
 
@@ -9031,28 +9363,39 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9179,28 +9522,39 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9289,7 +9643,7 @@ pub mod update_access_policy_input {
             self.access_policy_id = input;
             self
         }
-        /// <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.</p>
+        /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
         pub fn access_policy_identity(mut self, input: crate::model::Identity) -> Self {
             self.access_policy_identity = Some(input);
             self
@@ -9301,7 +9655,7 @@ pub mod update_access_policy_input {
             self.access_policy_identity = input;
             self
         }
-        /// <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+        /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
         pub fn access_policy_resource(mut self, input: crate::model::Resource) -> Self {
             self.access_policy_resource = Some(input);
             self
@@ -9384,7 +9738,7 @@ impl UpdateAccessPolicyInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -9392,28 +9746,28 @@ impl UpdateAccessPolicyInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9566,10 +9920,10 @@ impl UpdateAssetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -9577,28 +9931,28 @@ impl UpdateAssetInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9825,10 +10179,10 @@ impl UpdateAssetModelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -9836,28 +10190,28 @@ impl UpdateAssetModelInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9961,10 +10315,10 @@ pub mod update_asset_property_input {
             self.property_id = input;
             self
         }
-        /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+        /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
         /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
         /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the alias is removed from the property.</p>
         pub fn property_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.property_alias = Some(input.into());
@@ -9978,8 +10332,8 @@ pub mod update_asset_property_input {
             self
         }
         /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-        /// When the notification state is enabled, AWS IoT SiteWise publishes property value
-        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// When the notification state is enabled, IoT SiteWise publishes property value
+        /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
         /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
         pub fn property_notification_state(
             mut self,
@@ -10051,10 +10405,10 @@ impl UpdateAssetPropertyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("model.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -10062,28 +10416,28 @@ impl UpdateAssetPropertyInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10218,7 +10572,7 @@ pub mod update_dashboard_input {
             self
         }
         /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn dashboard_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.dashboard_definition = Some(input.into());
             self
@@ -10288,7 +10642,7 @@ impl UpdateDashboardInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -10296,28 +10650,28 @@ impl UpdateDashboardInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10456,10 +10810,10 @@ impl UpdateGatewayInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -10467,28 +10821,28 @@ impl UpdateGatewayInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10582,7 +10936,7 @@ pub mod update_gateway_capability_configuration_input {
         }
         /// <p>The namespace of the gateway capability configuration to be updated.
         /// For example, if you configure OPC-UA
-        /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+        /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
         /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
         /// <code>1</code>.</p>
         pub fn capability_namespace(mut self, input: impl Into<std::string::String>) -> Self {
@@ -10597,7 +10951,7 @@ pub mod update_gateway_capability_configuration_input {
             self
         }
         /// <p>The JSON document that defines the configuration for the gateway capability. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
         pub fn capability_configuration(mut self, input: impl Into<std::string::String>) -> Self {
             self.capability_configuration = Some(input.into());
             self
@@ -10656,10 +11010,10 @@ impl UpdateGatewayCapabilityConfigurationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("edge.");
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("api.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -10667,28 +11021,28 @@ impl UpdateGatewayCapabilityConfigurationInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10807,7 +11161,7 @@ pub mod update_portal_input {
             self.portal_description = input;
             self
         }
-        /// <p>The AWS administrator's contact email address.</p>
+        /// <p>The Amazon Web Services administrator's contact email address.</p>
         pub fn portal_contact_email(mut self, input: impl Into<std::string::String>) -> Self {
             self.portal_contact_email = Some(input.into());
             self
@@ -10839,9 +11193,9 @@ pub mod update_portal_input {
             self.portal_logo_image = input;
             self
         }
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise
-        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-        /// <i>AWS IoT SiteWise User Guide</i>.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+        /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+        /// <i>IoT SiteWise User Guide</i>.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -10871,8 +11225,9 @@ pub mod update_portal_input {
             self.notification_sender_email = input;
             self
         }
-        /// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+        /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+        /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
         pub fn alarms(mut self, input: crate::model::Alarms) -> Self {
             self.alarms = Some(input);
             self
@@ -10933,7 +11288,7 @@ impl UpdatePortalInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -10941,28 +11296,28 @@ impl UpdatePortalInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11128,7 +11483,7 @@ impl UpdateProjectInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("monitor.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -11136,28 +11491,28 @@ impl UpdateProjectInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11257,7 +11612,7 @@ pub struct UpdatePortalInput {
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>A new description for the portal.</p>
     pub portal_description: std::option::Option<std::string::String>,
-    /// <p>The AWS administrator's contact email address.</p>
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub portal_contact_email: std::option::Option<std::string::String>,
     /// <p>Contains an image that is one of the following:</p>
     /// <ul>
@@ -11269,16 +11624,17 @@ pub struct UpdatePortalInput {
     /// </li>
     /// </ul>
     pub portal_logo_image: std::option::Option<crate::model::Image>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>The email address that sends alarm notifications.</p>
     pub notification_sender_email: std::option::Option<std::string::String>,
-    /// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-    /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+    /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
 impl std::fmt::Debug for UpdatePortalInput {
@@ -11304,12 +11660,12 @@ pub struct UpdateGatewayCapabilityConfigurationInput {
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The namespace of the gateway capability configuration to be updated.
     /// For example, if you configure OPC-UA
-    /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
     /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
     /// <code>1</code>.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
     /// <p>The JSON document that defines the configuration for the gateway capability. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/configure-sources.html#configure-source-cli">Configuring data sources (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub capability_configuration: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateGatewayCapabilityConfigurationInput {
@@ -11349,7 +11705,7 @@ pub struct UpdateDashboardInput {
     /// <p>A new description for the dashboard.</p>
     pub dashboard_description: std::option::Option<std::string::String>,
     /// <p>The new dashboard definition, as specified in a JSON literal. For detailed information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
@@ -11373,15 +11729,15 @@ pub struct UpdateAssetPropertyInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property to be updated.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the alias is removed from the property.</p>
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The MQTT notification state (enabled or disabled) for this asset property.
-    /// When the notification state is enabled, AWS IoT SiteWise publishes property value
-    /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// When the notification state is enabled, IoT SiteWise publishes property value
+    /// updates to a unique MQTT topic. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/interact-with-other-services.html">Interacting with other services</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>If you omit this parameter, the notification state is set to <code>DISABLED</code>.</p>
     pub property_notification_state: std::option::Option<crate::model::PropertyNotificationState>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
@@ -11412,16 +11768,16 @@ pub struct UpdateAssetModelInput {
     /// <p>A description for the asset model.</p>
     pub asset_model_description: std::option::Option<std::string::String>,
     /// <p>The updated property definitions of the asset model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_properties:
         std::option::Option<std::vec::Vec<crate::model::AssetModelProperty>>,
     /// <p>The updated hierarchy definitions of the asset model. Each hierarchy specifies an asset
     /// model whose assets can be children of any other assets created from this asset model. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_hierarchies:
         std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchy>>,
     /// <p>The composite asset models that are part of this asset model.
@@ -11475,9 +11831,9 @@ impl std::fmt::Debug for UpdateAssetInput {
 pub struct UpdateAccessPolicyInput {
     /// <p>The ID of the access policy.</p>
     pub access_policy_id: std::option::Option<std::string::String>,
-    /// <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.</p>
+    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
-    /// <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub access_policy_permission: std::option::Option<crate::model::Permission>,
@@ -11519,8 +11875,8 @@ pub struct TagResourceInput {
     /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the resource to tag.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -11529,6 +11885,34 @@ impl std::fmt::Debug for TagResourceInput {
         let mut formatter = f.debug_struct("TagResourceInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutStorageConfigurationInput {
+    /// <p>The type of storage that you specified for your data. The storage type can be one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SITEWISE_DEFAULT_STORAGE</code> – IoT SiteWise replicates your data into a service managed database.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MULTI_LAYER_STORAGE</code> – IoT SiteWise replicates your data into a service managed database and saves a copy of your raw data and metadata in an Amazon S3 object that you specified.</p>
+    /// </li>
+    /// </ul>
+    pub storage_type: std::option::Option<crate::model::StorageType>,
+    /// <p>Identifies a storage destination. If you specified <code>MULTI_LAYER_STORAGE</code> for the storage type,
+    /// you must specify a <code>MultiLayerStorage</code> object.</p>
+    pub multi_layer_storage: std::option::Option<crate::model::MultiLayerStorage>,
+}
+impl std::fmt::Debug for PutStorageConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutStorageConfigurationInput");
+        formatter.field("storage_type", &self.storage_type);
+        formatter.field("multi_layer_storage", &self.multi_layer_storage);
         formatter.finish()
     }
 }
@@ -11552,8 +11936,8 @@ impl std::fmt::Debug for PutLoggingOptionsInput {
 pub struct PutDefaultEncryptionConfigurationInput {
     /// <p>The type of encryption used for the encryption configuration.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Key ID of the customer managed customer master key (CMK) used for AWS KMS encryption. This is required if you use
-    /// <code>KMS_BASED_ENCRYPTION</code>.</p>
+    /// <p>The Key ID of the customer managed customer master key (CMK) used for KMS encryption.
+    /// This is required if you use <code>KMS_BASED_ENCRYPTION</code>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutDefaultEncryptionConfigurationInput {
@@ -11586,7 +11970,7 @@ pub struct ListProjectsInput {
     pub portal_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11607,7 +11991,7 @@ pub struct ListProjectAssetsInput {
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11626,7 +12010,7 @@ impl std::fmt::Debug for ListProjectAssetsInput {
 pub struct ListPortalsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11644,7 +12028,7 @@ impl std::fmt::Debug for ListPortalsInput {
 pub struct ListGatewaysInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11664,7 +12048,7 @@ pub struct ListDashboardsInput {
     pub project_id: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11687,7 +12071,7 @@ pub struct ListAssociatedAssetsInput {
     /// hierarchy ID, use the <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAsset.html">DescribeAsset</a> or <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModel.html">DescribeAssetModel</a> operations. This
     /// parameter is required if you choose <code>CHILD</code> for
     /// <code>traversalDirection</code>.</p>
-    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: std::option::Option<std::string::String>,
     /// <p>The direction to list associated assets. Choose one of the following options:</p>
     /// <ul>
@@ -11707,7 +12091,7 @@ pub struct ListAssociatedAssetsInput {
     pub traversal_direction: std::option::Option<crate::model::TraversalDirection>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11728,7 +12112,7 @@ impl std::fmt::Debug for ListAssociatedAssetsInput {
 pub struct ListAssetsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The ID of the asset model by which to filter the list of assets. This parameter is
@@ -11781,7 +12165,7 @@ pub struct ListAssetRelationshipsInput {
     pub traversal_type: std::option::Option<crate::model::TraversalType>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListAssetRelationshipsInput {
@@ -11800,7 +12184,7 @@ impl std::fmt::Debug for ListAssetRelationshipsInput {
 pub struct ListAssetModelsInput {
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11816,7 +12200,7 @@ impl std::fmt::Debug for ListAssetModelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAccessPoliciesInput {
-    /// <p>The type of identity (AWS SSO user, AWS SSO group, or IAM user). This parameter is required
+    /// <p>The type of identity (Amazon Web Services SSO user, Amazon Web Services SSO group, or IAM user). This parameter is required
     /// if you specify <code>identityId</code>.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,
     /// <p>The ID of the identity. This parameter is required if you specify <code>USER</code> or
@@ -11834,7 +12218,7 @@ pub struct ListAccessPoliciesInput {
     pub iam_arn: std::option::Option<std::string::String>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 50</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11859,10 +12243,10 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The exclusive start of the range from which to interpolate data, expressed in seconds in
     /// Unix epoch time.</p>
@@ -11882,8 +12266,7 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     pub interval_in_seconds: std::option::Option<i64>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.
-    /// If not specified, the default value is 10.</p>
+    /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The interpolation type.</p>
     /// <p>Valid values: <code>LINEAR_INTERPOLATION</code>
@@ -11919,10 +12302,10 @@ pub struct GetAssetPropertyValueHistoryInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The exclusive start of the range from which to query historical data, expressed in seconds in Unix epoch time.</p>
     pub start_date: std::option::Option<smithy_types::Instant>,
@@ -11936,7 +12319,7 @@ pub struct GetAssetPropertyValueHistoryInput {
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 100</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -11963,10 +12346,10 @@ pub struct GetAssetPropertyValueInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetAssetPropertyValueInput {
@@ -11986,10 +12369,10 @@ pub struct GetAssetPropertyAggregatesInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of the asset property.</p>
     pub property_id: std::option::Option<std::string::String>,
-    /// <p>The property alias that identifies the property, such as an OPC-UA server data stream path
+    /// <p>The alias that identifies the property, such as an OPC-UA server data stream path
     /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information, see
     /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping industrial data streams to asset properties</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub property_alias: std::option::Option<std::string::String>,
     /// <p>The data aggregating function.</p>
     pub aggregate_types: std::option::Option<std::vec::Vec<crate::model::AggregateType>>,
@@ -12007,7 +12390,7 @@ pub struct GetAssetPropertyAggregatesInput {
     pub time_ordering: std::option::Option<crate::model::TimeOrdering>,
     /// <p>The token to be used for the next set of paginated results.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of results to be returned per paginated request.</p>
+    /// <p>The maximum number of results to return for each paginated request.</p>
     /// <p>Default: 100</p>
     pub max_results: std::option::Option<i32>,
 }
@@ -12037,7 +12420,7 @@ pub struct DisassociateAssetsInput {
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
     /// of assets to be formed that all come from the same asset model. You can use the hierarchy ID
     /// to identify the correct asset to disassociate. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: std::option::Option<std::string::String>,
     /// <p>The ID of the child asset to disassociate.</p>
     pub child_asset_id: std::option::Option<std::string::String>,
@@ -12051,6 +12434,16 @@ impl std::fmt::Debug for DisassociateAssetsInput {
         formatter.field("hierarchy_id", &self.hierarchy_id);
         formatter.field("child_asset_id", &self.child_asset_id);
         formatter.field("client_token", &self.client_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeStorageConfigurationInput {}
+impl std::fmt::Debug for DescribeStorageConfigurationInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeStorageConfigurationInput");
         formatter.finish()
     }
 }
@@ -12100,7 +12493,7 @@ pub struct DescribeGatewayCapabilityConfigurationInput {
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The namespace of the capability configuration.
     /// For example, if you configure OPC-UA
-    /// sources from the AWS IoT SiteWise console, your OPC-UA capability configuration has the namespace
+    /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the namespace
     /// <code>iotsitewise:opcuacollector:version</code>, where <code>version</code> is a number such as
     /// <code>1</code>.</p>
     pub capability_namespace: std::option::Option<std::string::String>,
@@ -12339,8 +12732,8 @@ pub struct CreateProjectInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the project. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12363,20 +12756,20 @@ pub struct CreatePortalInput {
     pub portal_name: std::option::Option<std::string::String>,
     /// <p>A description for the portal.</p>
     pub portal_description: std::option::Option<std::string::String>,
-    /// <p>The AWS administrator's contact email address.</p>
+    /// <p>The Amazon Web Services administrator's contact email address.</p>
     pub portal_contact_email: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A logo image to display in the portal. Upload a square, high-resolution image. The
     /// image is displayed on a dark background.</p>
     pub portal_logo_image_file: std::option::Option<crate::model::ImageFile>,
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your AWS IoT SiteWise
-    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for AWS IoT SiteWise Monitor</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of a service role that allows the portal's users to access your IoT SiteWise
+    /// resources on your behalf. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-service-role.html">Using service roles for IoT SiteWise Monitor</a> in the
+    /// <i>IoT SiteWise User Guide</i>.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the portal. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The service to use to authenticate users to the portal. Choose from the following
@@ -12384,15 +12777,15 @@ pub struct CreatePortalInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>SSO</code> – The portal uses AWS Single Sign-On to authenticate users and manage
-    /// user permissions. Before you can create a portal that uses AWS SSO, you must enable AWS SSO.
-    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling AWS SSO</a> in the
-    /// <i>AWS IoT SiteWise User Guide</i>. This option is only available in AWS Regions other than
+    /// <code>SSO</code> – The portal uses Amazon Web Services Single Sign On to authenticate users and manage
+    /// user permissions. Before you can create a portal that uses Amazon Web Services SSO, you must enable Amazon Web Services SSO.
+    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/monitor-get-started.html#mon-gs-sso">Enabling Amazon Web Services SSO</a> in the
+    /// <i>IoT SiteWise User Guide</i>. This option is only available in Amazon Web Services Regions other than
     /// the China Regions.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>IAM</code> – The portal uses AWS Identity and Access Management (IAM) to authenticate users and manage
+    /// <code>IAM</code> – The portal uses Identity and Access Management to authenticate users and manage
     /// user permissions. This option is only available in the China Regions.</p>
     /// </li>
     /// </ul>
@@ -12402,12 +12795,14 @@ pub struct CreatePortalInput {
     pub portal_auth_mode: std::option::Option<crate::model::AuthMode>,
     /// <p>The email address that sends alarm notifications.</p>
     /// <important>
-    /// <p>If you use the AWS IoT Events managed AWS Lambda function to manage your emails, you must
-    /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email address in Amazon SES</a>.</p>
+    /// <p>If you use the <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/lambda-support.html">IoT Events managed Lambda
+    /// function</a> to manage your emails, you must <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify the sender email
+    /// address in Amazon SES</a>.</p>
     /// </important>
     pub notification_sender_email: std::option::Option<std::string::String>,
-    /// <p>Contains the configuration information of an alarm created in an AWS IoT SiteWise Monitor portal.
-    /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range. For more information, see .</p>
+    /// <p>Contains the configuration information of an alarm created in an IoT SiteWise Monitor portal.
+    /// You can use the alarm to monitor an asset property and get notified when the asset property value is outside a specified range.
+    /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/appguide/monitor-alarms.html">Monitoring with alarms</a> in the <i>IoT SiteWise Application Guide</i>.</p>
     pub alarms: std::option::Option<crate::model::Alarms>,
 }
 impl std::fmt::Debug for CreatePortalInput {
@@ -12435,8 +12830,8 @@ pub struct CreateGatewayInput {
     /// <p>The gateway's platform. You can only specify one platform in a gateway.</p>
     pub gateway_platform: std::option::Option<crate::model::GatewayPlatform>,
     /// <p>A list of key-value pairs that contain metadata for the gateway. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12460,13 +12855,13 @@ pub struct CreateDashboardInput {
     /// <p>A description for the dashboard.</p>
     pub dashboard_description: std::option::Option<std::string::String>,
     /// <p>The dashboard definition specified in a JSON literal. For detailed information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-dashboards-using-aws-cli.html">Creating dashboards (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub dashboard_definition: std::option::Option<std::string::String>,
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the dashboard. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12491,16 +12886,16 @@ pub struct CreateAssetModelInput {
     /// <p>A description for the asset model.</p>
     pub asset_model_description: std::option::Option<std::string::String>,
     /// <p>The property definitions of the asset model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-properties.html">Asset properties</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 200 properties per asset model. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_properties:
         std::option::Option<std::vec::Vec<crate::model::AssetModelPropertyDefinition>>,
     /// <p>The hierarchy definitions of the asset model. Each hierarchy specifies an asset model
     /// whose assets can be children of any other assets created from this asset model. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     /// <p>You can specify up to 10 hierarchies per asset model. For more
-    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/quotas.html">Quotas</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub asset_model_hierarchies:
         std::option::Option<std::vec::Vec<crate::model::AssetModelHierarchyDefinition>>,
     /// <p>The composite asset models that are part of this asset model.
@@ -12512,8 +12907,8 @@ pub struct CreateAssetModelInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the asset model. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12544,8 +12939,8 @@ pub struct CreateAssetInput {
     /// <p>A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.</p>
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the asset. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your AWS IoT SiteWise
-    /// resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your IoT SiteWise
+    /// resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12563,9 +12958,9 @@ impl std::fmt::Debug for CreateAssetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAccessPolicyInput {
-    /// <p>The identity for this access policy. Choose an AWS SSO user, an AWS SSO group, or an IAM user.</p>
+    /// <p>The identity for this access policy. Choose an Amazon Web Services SSO user, an Amazon Web Services SSO group, or an IAM user.</p>
     pub access_policy_identity: std::option::Option<crate::model::Identity>,
-    /// <p>The AWS IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
+    /// <p>The IoT SiteWise Monitor resource for this access policy. Choose either a portal or a project.</p>
     pub access_policy_resource: std::option::Option<crate::model::Resource>,
     /// <p>The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code> is also known as a project owner.</p>
     pub access_policy_permission: std::option::Option<crate::model::Permission>,
@@ -12573,7 +12968,7 @@ pub struct CreateAccessPolicyInput {
     pub client_token: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the access policy. For more
     /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/tag-resources.html">Tagging your
-    /// AWS IoT SiteWise resources</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// IoT SiteWise resources</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -12651,7 +13046,7 @@ pub struct AssociateAssetsInput {
     pub asset_id: std::option::Option<std::string::String>,
     /// <p>The ID of a hierarchy in the parent asset's model. Hierarchies allow different groupings
     /// of assets to be formed that all come from the same asset model. For more information, see
-    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>AWS IoT SiteWise User Guide</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset hierarchies</a> in the <i>IoT SiteWise User Guide</i>.</p>
     pub hierarchy_id: std::option::Option<std::string::String>,
     /// <p>The ID of the child asset to be associated.</p>
     pub child_asset_id: std::option::Option<std::string::String>,

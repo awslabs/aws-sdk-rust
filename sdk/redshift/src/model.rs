@@ -188,7 +188,7 @@ pub struct Cluster {
     pub cluster_availability_status: std::option::Option<std::string::String>,
     /// <p>The status of a modify operation, if any, initiated for the cluster.</p>
     pub modify_status: std::option::Option<std::string::String>,
-    /// <p>The master user name for the cluster. This name is used to connect to the database
+    /// <p>The admin user name for the cluster. This name is used to connect to the database
     /// that is specified in the <b>DBName</b> parameter. </p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The name of the initial database that was created when the cluster was created.
@@ -274,7 +274,7 @@ pub struct Cluster {
     pub cluster_revision_number: std::option::Option<std::string::String>,
     /// <p>The list of tags for the cluster.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
+    /// <p>The Key Management Service (KMS) key ID of the encryption key used to
     /// encrypt data in the cluster.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>An option that specifies whether to create the cluster with enhanced VPC routing
@@ -284,8 +284,8 @@ pub struct Cluster {
     /// <p>If this option is <code>true</code>, enhanced VPC routing is enabled. </p>
     /// <p>Default: false</p>
     pub enhanced_vpc_routing: bool,
-    /// <p>A list of AWS Identity and Access Management (IAM) roles that can be used by the
-    /// cluster to access other AWS services.</p>
+    /// <p>A list of Identity and Access Management (IAM) roles that can be used by the
+    /// cluster to access other Amazon Web Services services.</p>
     pub iam_roles: std::option::Option<std::vec::Vec<crate::model::ClusterIamRole>>,
     /// <p>Cluster operations that are waiting to be started.</p>
     pub pending_actions: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -674,7 +674,7 @@ pub mod cluster {
             self.modify_status = input;
             self
         }
-        /// <p>The master user name for the cluster. This name is used to connect to the database
+        /// <p>The admin user name for the cluster. This name is used to connect to the database
         /// that is specified in the <b>DBName</b> parameter. </p>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_username = Some(input.into());
@@ -1029,7 +1029,7 @@ pub mod cluster {
             self.tags = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) key ID of the encryption key used to
+        /// <p>The Key Management Service (KMS) key ID of the encryption key used to
         /// encrypt data in the cluster.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -1361,7 +1361,7 @@ pub struct AquaConfiguration {
     /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
     /// <ul>
     /// <li>
-    /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+    /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
     /// </li>
     /// <li>
     /// <p>disabled - Don't use AQUA. </p>
@@ -1417,7 +1417,7 @@ pub mod aqua_configuration {
         /// <p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p>
         /// <ul>
         /// <li>
-        /// <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p>
+        /// <p>enabled - Use AQUA if it is available for the current Amazon Web Services Region and Amazon Redshift node type.</p>
         /// </li>
         /// <li>
         /// <p>disabled - Don't use AQUA. </p>
@@ -1772,8 +1772,8 @@ impl DeferredMaintenanceWindow {
     }
 }
 
-/// <p>An AWS Identity and Access Management (IAM) role that can be used by the associated
-/// Amazon Redshift cluster to access other AWS services.</p>
+/// <p>An Identity and Access Management (IAM) role that can be used by the associated
+/// Amazon Redshift cluster to access other Amazon Web Services services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClusterIamRole {
@@ -2591,7 +2591,7 @@ impl RestoreStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PendingModifiedValues {
-    /// <p>The pending or in-progress change of the master user password for the
+    /// <p>The pending or in-progress change of the admin user password for the
     /// cluster.</p>
     pub master_user_password: std::option::Option<std::string::String>,
     /// <p>The pending or in-progress change of the cluster's node type.</p>
@@ -2662,7 +2662,7 @@ pub mod pending_modified_values {
         pub(crate) encryption_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The pending or in-progress change of the master user password for the
+        /// <p>The pending or in-progress change of the admin user password for the
         /// cluster.</p>
         pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_user_password = Some(input.into());
@@ -3513,7 +3513,7 @@ pub struct Snapshot {
     pub availability_zone: std::option::Option<std::string::String>,
     /// <p>The time (UTC) when the cluster was originally created.</p>
     pub cluster_create_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The master user name for the cluster.</p>
+    /// <p>The admin user name for the cluster.</p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>
     pub cluster_version: std::option::Option<std::string::String>,
@@ -3533,19 +3533,19 @@ pub struct Snapshot {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>If <code>true</code>, the data in the snapshot is encrypted at rest.</p>
     pub encrypted: bool,
-    /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that was used to
+    /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to
     /// encrypt data in the cluster from which the snapshot was taken.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A boolean that indicates whether the snapshot data is encrypted using the HSM keys
     /// of the source cluster. <code>true</code> indicates that the data is encrypted using HSM
     /// keys.</p>
     pub encrypted_with_hsm: bool,
-    /// <p>A list of the AWS customer accounts authorized to restore the snapshot. Returns
+    /// <p>A list of the Amazon Web Services accounts authorized to restore the snapshot. Returns
     /// <code>null</code> if no accounts are authorized. Visible only to the snapshot owner.
     /// </p>
     pub accounts_with_restore_access:
         std::option::Option<std::vec::Vec<crate::model::AccountWithRestoreAccess>>,
-    /// <p>For manual snapshots, the AWS customer account used to create or copy the snapshot.
+    /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot.
     /// For automatic snapshots, the owner of the cluster. The owner can perform all snapshot
     /// actions, such as sharing a manual snapshot.</p>
     pub owner_account: std::option::Option<std::string::String>,
@@ -3795,7 +3795,7 @@ pub mod snapshot {
             self.cluster_create_time = input;
             self
         }
-        /// <p>The master user name for the cluster.</p>
+        /// <p>The admin user name for the cluster.</p>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_username = Some(input.into());
             self
@@ -3890,7 +3890,7 @@ pub mod snapshot {
             self.encrypted = input;
             self
         }
-        /// <p>The AWS Key Management Service (KMS) key ID of the encryption key that was used to
+        /// <p>The Key Management Service (KMS) key ID of the encryption key that was used to
         /// encrypt data in the cluster from which the snapshot was taken.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -3927,7 +3927,7 @@ pub mod snapshot {
             self.accounts_with_restore_access = input;
             self
         }
-        /// <p>For manual snapshots, the AWS customer account used to create or copy the snapshot.
+        /// <p>For manual snapshots, the Amazon Web Services account used to create or copy the snapshot.
         /// For automatic snapshots, the owner of the cluster. The owner can perform all snapshot
         /// actions, such as sharing a manual snapshot.</p>
         pub fn owner_account(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4175,15 +4175,15 @@ impl Snapshot {
     }
 }
 
-/// <p>Describes an AWS customer account authorized to restore a snapshot.</p>
+/// <p>Describes an Amazon Web Services account authorized to restore a snapshot.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountWithRestoreAccess {
-    /// <p>The identifier of an AWS customer account authorized to restore a
+    /// <p>The identifier of an Amazon Web Services account authorized to restore a
     /// snapshot.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The identifier of an AWS support account authorized to restore a snapshot. For AWS
-    /// support, the identifier is <code>amazon-redshift-support</code>. </p>
+    /// <p>The identifier of an Amazon Web Services support account authorized to restore a
+    /// snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
     pub account_alias: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccountWithRestoreAccess {
@@ -4204,7 +4204,7 @@ pub mod account_with_restore_access {
         pub(crate) account_alias: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of an AWS customer account authorized to restore a
+        /// <p>The identifier of an Amazon Web Services account authorized to restore a
         /// snapshot.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
@@ -4214,8 +4214,8 @@ pub mod account_with_restore_access {
             self.account_id = input;
             self
         }
-        /// <p>The identifier of an AWS support account authorized to restore a snapshot. For AWS
-        /// support, the identifier is <code>amazon-redshift-support</code>. </p>
+        /// <p>The identifier of an Amazon Web Services support account authorized to restore a
+        /// snapshot. For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>. </p>
         pub fn account_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_alias = Some(input.into());
             self
@@ -4512,7 +4512,7 @@ pub struct Ec2SecurityGroup {
     pub status: std::option::Option<std::string::String>,
     /// <p>The name of the EC2 Security Group.</p>
     pub ec2_security_group_name: std::option::Option<std::string::String>,
-    /// <p>The AWS ID of the owner of the EC2 security group specified in the
+    /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the
     /// <code>EC2SecurityGroupName</code> field. </p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
     /// <p>The list of tags for the EC2 security group.</p>
@@ -4564,7 +4564,7 @@ pub mod ec2_security_group {
             self.ec2_security_group_name = input;
             self
         }
-        /// <p>The AWS ID of the owner of the EC2 security group specified in the
+        /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the
         /// <code>EC2SecurityGroupName</code> field. </p>
         pub fn ec2_security_group_owner_id(
             mut self,
@@ -5180,6 +5180,179 @@ impl ParameterApplyType {
     }
 }
 impl AsRef<str> for ParameterApplyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The association of a datashare from a producer account with a data consumer.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataShareAssociation {
+    /// <p>The name of the consumer accounts that have an association with a producer
+    /// datashare.</p>
+    pub consumer_identifier: std::option::Option<std::string::String>,
+    /// <p>The status of the datashare that is associated.</p>
+    pub status: std::option::Option<crate::model::DataShareStatus>,
+    /// <p>The creation date of the datashare that is associated.</p>
+    pub created_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The status change data of the datashare that is associated.</p>
+    pub status_change_date: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for DataShareAssociation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataShareAssociation");
+        formatter.field("consumer_identifier", &self.consumer_identifier);
+        formatter.field("status", &self.status);
+        formatter.field("created_date", &self.created_date);
+        formatter.field("status_change_date", &self.status_change_date);
+        formatter.finish()
+    }
+}
+/// See [`DataShareAssociation`](crate::model::DataShareAssociation)
+pub mod data_share_association {
+    /// A builder for [`DataShareAssociation`](crate::model::DataShareAssociation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) consumer_identifier: std::option::Option<std::string::String>,
+        pub(crate) status: std::option::Option<crate::model::DataShareStatus>,
+        pub(crate) created_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) status_change_date: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the consumer accounts that have an association with a producer
+        /// datashare.</p>
+        pub fn consumer_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.consumer_identifier = Some(input.into());
+            self
+        }
+        pub fn set_consumer_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.consumer_identifier = input;
+            self
+        }
+        /// <p>The status of the datashare that is associated.</p>
+        pub fn status(mut self, input: crate::model::DataShareStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::DataShareStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The creation date of the datashare that is associated.</p>
+        pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
+            self.created_date = Some(input);
+            self
+        }
+        pub fn set_created_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.created_date = input;
+            self
+        }
+        /// <p>The status change data of the datashare that is associated.</p>
+        pub fn status_change_date(mut self, input: smithy_types::Instant) -> Self {
+            self.status_change_date = Some(input);
+            self
+        }
+        pub fn set_status_change_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.status_change_date = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataShareAssociation`](crate::model::DataShareAssociation)
+        pub fn build(self) -> crate::model::DataShareAssociation {
+            crate::model::DataShareAssociation {
+                consumer_identifier: self.consumer_identifier,
+                status: self.status,
+                created_date: self.created_date,
+                status_change_date: self.status_change_date,
+            }
+        }
+    }
+}
+impl DataShareAssociation {
+    /// Creates a new builder-style object to manufacture [`DataShareAssociation`](crate::model::DataShareAssociation)
+    pub fn builder() -> crate::model::data_share_association::Builder {
+        crate::model::data_share_association::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataShareStatus {
+    Active,
+    Authorized,
+    Available,
+    Deauthorized,
+    PendingAuthorization,
+    Rejected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataShareStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => DataShareStatus::Active,
+            "AUTHORIZED" => DataShareStatus::Authorized,
+            "AVAILABLE" => DataShareStatus::Available,
+            "DEAUTHORIZED" => DataShareStatus::Deauthorized,
+            "PENDING_AUTHORIZATION" => DataShareStatus::PendingAuthorization,
+            "REJECTED" => DataShareStatus::Rejected,
+            other => DataShareStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataShareStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataShareStatus::from(s))
+    }
+}
+impl DataShareStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataShareStatus::Active => "ACTIVE",
+            DataShareStatus::Authorized => "AUTHORIZED",
+            DataShareStatus::Available => "AVAILABLE",
+            DataShareStatus::Deauthorized => "DEAUTHORIZED",
+            DataShareStatus::PendingAuthorization => "PENDING_AUTHORIZATION",
+            DataShareStatus::Rejected => "REJECTED",
+            DataShareStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "AUTHORIZED",
+            "AVAILABLE",
+            "DEAUTHORIZED",
+            "PENDING_AUTHORIZATION",
+            "REJECTED",
+        ]
+    }
+}
+impl AsRef<str> for DataShareStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -6220,7 +6393,7 @@ impl ResizeClusterMessage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EventSubscription {
-    /// <p>The AWS customer account associated with the Amazon Redshift event notification
+    /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification
     /// subscription.</p>
     pub customer_aws_id: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon Redshift event notification subscription.</p>
@@ -6254,7 +6427,7 @@ pub struct EventSubscription {
     pub source_ids_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The list of Amazon Redshift event categories specified in the event notification
     /// subscription.</p>
-    /// <p>Values: Configuration, Management, Monitoring, Security</p>
+    /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
     pub event_categories_list: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The event severity specified in the Amazon Redshift event notification
     /// subscription.</p>
@@ -6305,7 +6478,7 @@ pub mod event_subscription {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The AWS customer account associated with the Amazon Redshift event notification
+        /// <p>The Amazon Web Services account associated with the Amazon Redshift event notification
         /// subscription.</p>
         pub fn customer_aws_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.customer_aws_id = Some(input.into());
@@ -7500,7 +7673,7 @@ impl SnapshotSchedule {
 }
 
 /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-/// snapshots with the specified customer master key (CMK) from AWS KMS in the destination
+/// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
 /// region.</p>
 /// <p>
 /// For more information about managing snapshot copy grants, go to
@@ -7512,7 +7685,7 @@ impl SnapshotSchedule {
 pub struct SnapshotCopyGrant {
     /// <p>The name of the snapshot copy grant.</p>
     pub snapshot_copy_grant_name: std::option::Option<std::string::String>,
-    /// <p>The unique identifier of the customer master key (CMK) in AWS KMS to which
+    /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which
     /// Amazon Redshift is granted permission.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A list of tag instances.</p>
@@ -7550,7 +7723,7 @@ pub mod snapshot_copy_grant {
             self.snapshot_copy_grant_name = input;
             self
         }
-        /// <p>The unique identifier of the customer master key (CMK) in AWS KMS to which
+        /// <p>The unique identifier of the customer master key (CMK) in Amazon Web Services KMS to which
         /// Amazon Redshift is granted permission.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -8857,7 +9030,7 @@ pub struct Event {
     /// <p>The text of this event.</p>
     pub message: std::option::Option<std::string::String>,
     /// <p>A list of the event categories.</p>
-    /// <p>Values: Configuration, Management, Monitoring, Security</p>
+    /// <p>Values: Configuration, Management, Monitoring, Security, Pending</p>
     pub event_categories: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The severity of the event.</p>
     /// <p>Values: ERROR, INFO</p>
@@ -9220,13 +9393,13 @@ impl EventInfoMap {
     }
 }
 
-/// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.</p>
+/// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EndpointAuthorization {
-    /// <p>The AWS account ID of the cluster owner.</p>
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     pub grantor: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the grantee of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     pub grantee: std::option::Option<std::string::String>,
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -9275,7 +9448,7 @@ pub mod endpoint_authorization {
         pub(crate) endpoint_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID of the cluster owner.</p>
+        /// <p>The Amazon Web Services account ID of the cluster owner.</p>
         pub fn grantor(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantor = Some(input.into());
             self
@@ -9284,7 +9457,7 @@ pub mod endpoint_authorization {
             self.grantor = input;
             self
         }
-        /// <p>The AWS account ID of the grantee of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
         pub fn grantee(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee = Some(input.into());
             self
@@ -9401,7 +9574,7 @@ impl EndpointAuthorization {
 pub struct EndpointAccess {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
     pub subnet_group_name: std::option::Option<std::string::String>,
@@ -9468,7 +9641,7 @@ pub mod endpoint_access {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
@@ -9687,6 +9860,229 @@ impl DefaultClusterParameters {
     /// Creates a new builder-style object to manufacture [`DefaultClusterParameters`](crate::model::DefaultClusterParameters)
     pub fn builder() -> crate::model::default_cluster_parameters::Builder {
         crate::model::default_cluster_parameters::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataShare {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub allow_publicly_accessible_consumers: bool,
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub data_share_associations:
+        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl std::fmt::Debug for DataShare {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataShare");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field(
+            "allow_publicly_accessible_consumers",
+            &self.allow_publicly_accessible_consumers,
+        );
+        formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.finish()
+    }
+}
+/// See [`DataShare`](crate::model::DataShare)
+pub mod data_share {
+    /// A builder for [`DataShare`](crate::model::DataShare)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
+        pub(crate) data_share_associations:
+            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
+            self.allow_publicly_accessible_consumers = Some(input);
+            self
+        }
+        pub fn set_allow_publicly_accessible_consumers(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_publicly_accessible_consumers = input;
+            self
+        }
+        pub fn data_share_associations(
+            mut self,
+            input: impl Into<crate::model::DataShareAssociation>,
+        ) -> Self {
+            let mut v = self.data_share_associations.unwrap_or_default();
+            v.push(input.into());
+            self.data_share_associations = Some(v);
+            self
+        }
+        pub fn set_data_share_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        ) -> Self {
+            self.data_share_associations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataShare`](crate::model::DataShare)
+        pub fn build(self) -> crate::model::DataShare {
+            crate::model::DataShare {
+                data_share_arn: self.data_share_arn,
+                producer_arn: self.producer_arn,
+                allow_publicly_accessible_consumers: self
+                    .allow_publicly_accessible_consumers
+                    .unwrap_or_default(),
+                data_share_associations: self.data_share_associations,
+            }
+        }
+    }
+}
+impl DataShare {
+    /// Creates a new builder-style object to manufacture [`DataShare`](crate::model::DataShare)
+    pub fn builder() -> crate::model::data_share::Builder {
+        crate::model::data_share::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataShareStatusForProducer {
+    Active,
+    Authorized,
+    Deauthorized,
+    PendingAuthorization,
+    Rejected,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataShareStatusForProducer {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => DataShareStatusForProducer::Active,
+            "AUTHORIZED" => DataShareStatusForProducer::Authorized,
+            "DEAUTHORIZED" => DataShareStatusForProducer::Deauthorized,
+            "PENDING_AUTHORIZATION" => DataShareStatusForProducer::PendingAuthorization,
+            "REJECTED" => DataShareStatusForProducer::Rejected,
+            other => DataShareStatusForProducer::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataShareStatusForProducer {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataShareStatusForProducer::from(s))
+    }
+}
+impl DataShareStatusForProducer {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataShareStatusForProducer::Active => "ACTIVE",
+            DataShareStatusForProducer::Authorized => "AUTHORIZED",
+            DataShareStatusForProducer::Deauthorized => "DEAUTHORIZED",
+            DataShareStatusForProducer::PendingAuthorization => "PENDING_AUTHORIZATION",
+            DataShareStatusForProducer::Rejected => "REJECTED",
+            DataShareStatusForProducer::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "ACTIVE",
+            "AUTHORIZED",
+            "DEAUTHORIZED",
+            "PENDING_AUTHORIZATION",
+            "REJECTED",
+        ]
+    }
+}
+impl AsRef<str> for DataShareStatusForProducer {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DataShareStatusForConsumer {
+    Active,
+    Available,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DataShareStatusForConsumer {
+    fn from(s: &str) -> Self {
+        match s {
+            "ACTIVE" => DataShareStatusForConsumer::Active,
+            "AVAILABLE" => DataShareStatusForConsumer::Available,
+            other => DataShareStatusForConsumer::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DataShareStatusForConsumer {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DataShareStatusForConsumer::from(s))
+    }
+}
+impl DataShareStatusForConsumer {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DataShareStatusForConsumer::Active => "ACTIVE",
+            DataShareStatusForConsumer::Available => "AVAILABLE",
+            DataShareStatusForConsumer::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ACTIVE", "AVAILABLE"]
+    }
+}
+impl AsRef<str> for DataShareStatusForConsumer {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10472,6 +10868,87 @@ impl RevisionTarget {
     /// Creates a new builder-style object to manufacture [`RevisionTarget`](crate::model::RevisionTarget)
     pub fn builder() -> crate::model::revision_target::Builder {
         crate::model::revision_target::Builder::default()
+    }
+}
+
+/// <p>Describes an authentication profile.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuthenticationProfile {
+    /// <p>The name of the authentication profile.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+    /// <p>The content of the authentication profile in JSON format.
+    /// The maximum length of the JSON string is determined by a quota for your account.</p>
+    pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AuthenticationProfile {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthenticationProfile");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.field(
+            "authentication_profile_content",
+            &self.authentication_profile_content,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AuthenticationProfile`](crate::model::AuthenticationProfile)
+pub mod authentication_profile {
+    /// A builder for [`AuthenticationProfile`](crate::model::AuthenticationProfile)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+        pub(crate) authentication_profile_content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// <p>The content of the authentication profile in JSON format.
+        /// The maximum length of the JSON string is determined by a quota for your account.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthenticationProfile`](crate::model::AuthenticationProfile)
+        pub fn build(self) -> crate::model::AuthenticationProfile {
+            crate::model::AuthenticationProfile {
+                authentication_profile_name: self.authentication_profile_name,
+                authentication_profile_content: self.authentication_profile_content,
+            }
+        }
+    }
+}
+impl AuthenticationProfile {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfile`](crate::model::AuthenticationProfile)
+    pub fn builder() -> crate::model::authentication_profile::Builder {
+        crate::model::authentication_profile::Builder::default()
     }
 }
 

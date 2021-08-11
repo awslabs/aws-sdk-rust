@@ -1506,6 +1506,132 @@ impl std::error::Error for DeleteIndexError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeletePrincipalMappingError {
+    pub kind: DeletePrincipalMappingErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeletePrincipalMappingErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeletePrincipalMappingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeletePrincipalMappingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DeletePrincipalMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeletePrincipalMappingErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DeletePrincipalMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeletePrincipalMappingErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeletePrincipalMappingErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DeletePrincipalMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeletePrincipalMappingError {
+    fn code(&self) -> Option<&str> {
+        DeletePrincipalMappingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeletePrincipalMappingError {
+    pub fn new(kind: DeletePrincipalMappingErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeletePrincipalMappingErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeletePrincipalMappingErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePrincipalMappingErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePrincipalMappingErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePrincipalMappingErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePrincipalMappingErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePrincipalMappingErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeletePrincipalMappingErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DeletePrincipalMappingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeletePrincipalMappingErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DeletePrincipalMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            DeletePrincipalMappingErrorKind::InternalServerException(_inner) => Some(_inner),
+            DeletePrincipalMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeletePrincipalMappingErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeletePrincipalMappingErrorKind::ValidationException(_inner) => Some(_inner),
+            DeletePrincipalMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteQuerySuggestionsBlockListError {
     pub kind: DeleteQuerySuggestionsBlockListErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2083,6 +2209,123 @@ impl std::error::Error for DescribeIndexError {
             DescribeIndexErrorKind::ThrottlingException(_inner) => Some(_inner),
             DescribeIndexErrorKind::ValidationException(_inner) => Some(_inner),
             DescribeIndexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribePrincipalMappingError {
+    pub kind: DescribePrincipalMappingErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribePrincipalMappingErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribePrincipalMappingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribePrincipalMappingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            DescribePrincipalMappingErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            DescribePrincipalMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribePrincipalMappingErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribePrincipalMappingErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            DescribePrincipalMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribePrincipalMappingError {
+    fn code(&self) -> Option<&str> {
+        DescribePrincipalMappingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribePrincipalMappingError {
+    pub fn new(kind: DescribePrincipalMappingErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribePrincipalMappingErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribePrincipalMappingErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePrincipalMappingErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePrincipalMappingErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePrincipalMappingErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePrincipalMappingErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribePrincipalMappingErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribePrincipalMappingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribePrincipalMappingErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            DescribePrincipalMappingErrorKind::InternalServerException(_inner) => Some(_inner),
+            DescribePrincipalMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribePrincipalMappingErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribePrincipalMappingErrorKind::ValidationException(_inner) => Some(_inner),
+            DescribePrincipalMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2941,6 +3184,138 @@ impl std::error::Error for ListFaqsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListGroupsOlderThanOrderingIdError {
+    pub kind: ListGroupsOlderThanOrderingIdErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListGroupsOlderThanOrderingIdErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListGroupsOlderThanOrderingIdError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListGroupsOlderThanOrderingIdErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            ListGroupsOlderThanOrderingIdErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            ListGroupsOlderThanOrderingIdErrorKind::InternalServerException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListGroupsOlderThanOrderingIdErrorKind::ResourceNotFoundException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListGroupsOlderThanOrderingIdErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListGroupsOlderThanOrderingIdErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            ListGroupsOlderThanOrderingIdErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListGroupsOlderThanOrderingIdError {
+    fn code(&self) -> Option<&str> {
+        ListGroupsOlderThanOrderingIdError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListGroupsOlderThanOrderingIdError {
+    pub fn new(kind: ListGroupsOlderThanOrderingIdErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListGroupsOlderThanOrderingIdErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListGroupsOlderThanOrderingIdErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsOlderThanOrderingIdErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsOlderThanOrderingIdErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsOlderThanOrderingIdErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsOlderThanOrderingIdErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsOlderThanOrderingIdErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListGroupsOlderThanOrderingIdErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for ListGroupsOlderThanOrderingIdError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListGroupsOlderThanOrderingIdErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            ListGroupsOlderThanOrderingIdErrorKind::ConflictException(_inner) => Some(_inner),
+            ListGroupsOlderThanOrderingIdErrorKind::InternalServerException(_inner) => Some(_inner),
+            ListGroupsOlderThanOrderingIdErrorKind::ResourceNotFoundException(_inner) => {
+                Some(_inner)
+            }
+            ListGroupsOlderThanOrderingIdErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListGroupsOlderThanOrderingIdErrorKind::ValidationException(_inner) => Some(_inner),
+            ListGroupsOlderThanOrderingIdErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListIndicesError {
     pub kind: ListIndicesErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3381,6 +3756,141 @@ impl std::error::Error for ListThesauriError {
             ListThesauriErrorKind::ThrottlingException(_inner) => Some(_inner),
             ListThesauriErrorKind::ValidationException(_inner) => Some(_inner),
             ListThesauriErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct PutPrincipalMappingError {
+    pub kind: PutPrincipalMappingErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutPrincipalMappingErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ConflictException(crate::error::ConflictException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutPrincipalMappingError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutPrincipalMappingErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::ServiceQuotaExceededException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            PutPrincipalMappingErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutPrincipalMappingError {
+    fn code(&self) -> Option<&str> {
+        PutPrincipalMappingError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutPrincipalMappingError {
+    pub fn new(kind: PutPrincipalMappingErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutPrincipalMappingErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutPrincipalMappingErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutPrincipalMappingErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for PutPrincipalMappingError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutPrincipalMappingErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::InternalServerException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::ServiceQuotaExceededException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::ThrottlingException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::ValidationException(_inner) => Some(_inner),
+            PutPrincipalMappingErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }

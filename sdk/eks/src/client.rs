@@ -337,8 +337,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_cluster_name(input);
             self
         }
-        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code>
+        /// <p>The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
+        /// <code>DescribeAddonVersions</code>
         /// </a>.</p>
         pub fn addon_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.addon_name(input);
@@ -478,7 +478,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control
-        /// plane to make calls to AWS API operations on your behalf. For more information, see
+        /// plane to make calls to Amazon Web Services API operations on your behalf. For more information, see
         /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS
         /// Service IAM Role</a> in the <i>
         /// <i>Amazon EKS User Guide</i>
@@ -525,13 +525,13 @@ pub mod fluent_builders {
         }
         /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
         /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane Logs</a> in the
+        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster control plane logs</a> in the
         /// <i>
         /// <i>Amazon EKS User Guide</i>
         /// </i>.</p>
         /// <note>
         /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
             self.inner = self.inner.logging(input);
@@ -860,7 +860,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role to associate with your node group. The Amazon EKS worker
-        /// node <code>kubelet</code> daemon makes calls to AWS APIs on your behalf. Nodes receive
+        /// node <code>kubelet</code> daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive
         /// permissions for these API calls through an IAM instance profile and associated
         /// policies. Before you can launch nodes and register them into a cluster, you must create
         /// an IAM role for those nodes to use when they are launched. For more information, see
@@ -959,6 +959,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_template(input);
             self
         }
+        /// <p>The node group update configuration.</p>
         pub fn update_config(mut self, input: crate::model::NodegroupUpdateConfig) -> Self {
             self.inner = self.inner.update_config(input);
             self
@@ -1857,7 +1858,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the Amazon EKS cluster that you would like to listFargate profiles in.</p>
+        /// <p>The name of the Amazon EKS cluster that you would like to list Fargate profiles in.</p>
         pub fn cluster_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cluster_name(input);
             self
@@ -2447,13 +2448,13 @@ pub mod fluent_builders {
         }
         /// <p>Enable or disable exporting the Kubernetes control plane logs for your cluster to
         /// CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane Logs</a> in the
+        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS cluster control plane logs</a> in the
         /// <i>
         /// <i>Amazon EKS User Guide</i>
         /// </i>.</p>
         /// <note>
         /// <p>CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported
-        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
+        /// control plane logs. For more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">CloudWatch Pricing</a>.</p>
         /// </note>
         pub fn logging(mut self, input: crate::model::Logging) -> Self {
             self.inner = self.inner.logging(input);
@@ -2630,6 +2631,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scaling_config(input);
             self
         }
+        /// <p>The node group update configuration.</p>
         pub fn update_config(mut self, input: crate::model::NodegroupUpdateConfig) -> Self {
             self.inner = self.inner.update_config(input);
             self

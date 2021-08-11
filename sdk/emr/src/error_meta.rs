@@ -258,6 +258,24 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeNotebookExecutionE
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DescribeReleaseLabelError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeReleaseLabelError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeReleaseLabelErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::DescribeReleaseLabelErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeReleaseLabelErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DescribeSecurityConfigurationError>>
     for Error
 {
@@ -459,6 +477,24 @@ impl From<smithy_http::result::SdkError<crate::error::ListNotebookExecutionsErro
                     Error::InvalidRequestException(inner)
                 }
                 crate::error::ListNotebookExecutionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListReleaseLabelsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListReleaseLabelsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListReleaseLabelsErrorKind::InternalServerException(inner) => {
+                    Error::InternalServerException(inner)
+                }
+                crate::error::ListReleaseLabelsErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListReleaseLabelsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

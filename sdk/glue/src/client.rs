@@ -3313,6 +3313,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+        /// before EventBridge event trigger fires.</p>
+        pub fn event_batching_condition(
+            mut self,
+            input: crate::model::EventBatchingCondition,
+        ) -> Self {
+            self.inner = self.inner.event_batching_condition(input);
+            self
+        }
+        pub fn set_event_batching_condition(
+            mut self,
+            input: std::option::Option<crate::model::EventBatchingCondition>,
+        ) -> Self {
+            self.inner = self.inner.set_event_batching_condition(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateUserDefinedFunction<C = aws_hyper::DynConnector> {
@@ -8691,7 +8707,7 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// <li>
-        /// <p>By using the <b>Grant permissions</b> command on the Management Console.</p>
+        /// <p>By using the <b>Grant permissions</b> command on the Amazon Web Services Management Console.</p>
         /// </li>
         /// </ul>
         /// <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to

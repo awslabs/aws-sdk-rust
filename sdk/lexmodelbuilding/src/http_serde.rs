@@ -215,6 +215,22 @@ pub fn deser_header_get_intent_versions_limit_exceeded_exception_retry_after_sec
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_header_get_migration_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_get_migrations_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
 pub fn deser_header_get_slot_type_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
@@ -288,6 +304,14 @@ pub fn deser_header_put_slot_type_limit_exceeded_exception_retry_after_seconds(
 }
 
 pub fn deser_header_start_import_limit_exceeded_exception_retry_after_seconds(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("Retry-After").iter();
+    smithy_http::header::one_or_none(headers)
+}
+
+pub fn deser_header_start_migration_limit_exceeded_exception_retry_after_seconds(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
 {

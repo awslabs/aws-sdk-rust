@@ -9,10 +9,10 @@ pub mod associate_admin_account_input {
         pub(crate) admin_account: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager
-        /// administrator account. This can be an AWS Organizations master account or a member account.
-        /// For more information about AWS Organizations and master accounts, see
-        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS Accounts in Your Organization</a>.  </p>
+        /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
+        /// administrator account. This must be an Organizations member account.
+        /// For more information about Organizations, see
+        /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
         pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account = Some(input.into());
             self
@@ -64,28 +64,28 @@ impl AssociateAdminAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -203,28 +203,28 @@ impl DeleteAppsListInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -330,28 +330,28 @@ impl DeleteNotificationChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -432,10 +432,10 @@ pub mod delete_policy_input {
             self
         }
         /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
-        /// <p>For AWS WAF and Shield Advanced policies, the cleanup does the following:</p>
+        /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
         /// <ul>
         /// <li>
-        /// <p>Deletes rule groups created by AWS Firewall Manager</p>
+        /// <p>Deletes rule groups created by Firewall Manager</p>
         /// </li>
         /// <li>
         /// <p>Removes web ACLs from in-scope resources</p>
@@ -508,28 +508,28 @@ impl DeletePolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -645,28 +645,28 @@ impl DeleteProtocolsListInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -772,28 +772,28 @@ impl DisassociateAdminAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -897,28 +897,28 @@ impl GetAdminAccountInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -988,7 +988,7 @@ pub mod get_apps_list_input {
         pub(crate) default_list: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Firewall Manager applications list that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
         pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.list_id = Some(input.into());
             self
@@ -997,7 +997,7 @@ pub mod get_apps_list_input {
             self.list_id = input;
             self
         }
-        /// <p>Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
         pub fn default_list(mut self, input: bool) -> Self {
             self.default_list = Some(input);
             self
@@ -1045,28 +1045,28 @@ impl GetAppsListInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1143,7 +1143,7 @@ pub mod get_compliance_detail_input {
             self.policy_id = input;
             self
         }
-        /// <p>The AWS account that owns the resources that you want to get the details for.</p>
+        /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
         pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_account = Some(input.into());
             self
@@ -1196,28 +1196,28 @@ impl GetComplianceDetailInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1322,28 +1322,28 @@ impl GetNotificationChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1412,7 +1412,7 @@ pub mod get_policy_input {
         pub(crate) policy_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
@@ -1459,28 +1459,28 @@ impl GetPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -1558,7 +1558,7 @@ pub mod get_protection_status_input {
             self.policy_id = input;
             self
         }
-        /// <p>The AWS account that is in scope of the policy that you want to get the details
+        /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
         /// for.</p>
         pub fn member_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_account_id = Some(input.into());
@@ -1572,8 +1572,7 @@ pub mod get_protection_status_input {
             self
         }
         /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by AWS Firewall
-        /// Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
+        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
         /// allowed.</p>
         pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
             self.start_time = Some(input);
@@ -1584,8 +1583,7 @@ pub mod get_protection_status_input {
             self
         }
         /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-        /// request syntax listing indicates a <code>number</code> type because the default used by AWS Firewall
-        /// Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
+        /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
         /// allowed.</p>
         pub fn end_time(mut self, input: smithy_types::Instant) -> Self {
             self.end_time = Some(input);
@@ -1596,7 +1594,7 @@ pub mod get_protection_status_input {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-        /// for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
+        /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
         /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
         /// from the previous response to get information about another batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1607,7 +1605,7 @@ pub mod get_protection_status_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of objects that you want AWS Firewall Manager to return for this request. If you have more
+        /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
         /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
         /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
@@ -1663,28 +1661,28 @@ impl GetProtectionStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1754,7 +1752,7 @@ pub mod get_protocols_list_input {
         pub(crate) default_list: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Firewall Manager protocols list that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
         pub fn list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.list_id = Some(input.into());
             self
@@ -1763,7 +1761,7 @@ pub mod get_protocols_list_input {
             self.list_id = input;
             self
         }
-        /// <p>Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
         pub fn default_list(mut self, input: bool) -> Self {
             self.default_list = Some(input);
             self
@@ -1813,28 +1811,28 @@ impl GetProtocolsListInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1906,7 +1904,7 @@ pub mod get_violation_details_input {
         pub(crate) resource_type: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+        /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
@@ -1915,7 +1913,7 @@ pub mod get_violation_details_input {
             self.policy_id = input;
             self
         }
-        /// <p>The AWS account ID that you want the details for.</p>
+        /// <p>The Amazon Web Services account ID that you want the details for.</p>
         pub fn member_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.member_account = Some(input.into());
             self
@@ -1936,7 +1934,7 @@ pub mod get_violation_details_input {
             self.resource_id = input;
             self
         }
-        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS Resource Types Reference</a>.
+        /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
         /// Supported resource types are:
         /// <code>AWS::EC2::Instance</code>,
         /// <code>AWS::EC2::NetworkInterface</code>,
@@ -1998,28 +1996,28 @@ impl GetViolationDetailsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2090,7 +2088,7 @@ pub mod list_apps_lists_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
         pub fn default_lists(mut self, input: bool) -> Self {
             self.default_lists = Some(input);
             self
@@ -2100,7 +2098,7 @@ pub mod list_apps_lists_input {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// AWS Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
+        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
         /// in the request parameters, to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -2110,10 +2108,10 @@ pub mod list_apps_lists_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-        /// objects are available, in the response, AWS Firewall Manager provides a
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
+        /// objects are available, in the response, Firewall Manager provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        /// <p>If you don't specify this, AWS Firewall Manager returns all available objects.</p>
+        /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -2161,28 +2159,28 @@ impl ListAppsListsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2253,7 +2251,7 @@ pub mod list_compliance_status_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+        /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
         pub fn policy_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_id = Some(input.into());
             self
@@ -2264,7 +2262,7 @@ pub mod list_compliance_status_input {
         }
         /// <p>If you specify a value for <code>MaxResults</code> and you have more
         /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
+        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
         /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
         /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
         /// <code>NextToken</code> from the previous response to get information about another batch of
@@ -2277,7 +2275,7 @@ pub mod list_compliance_status_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS
+        /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
         /// Firewall Manager to return for this request. If you have more
         /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
         /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
@@ -2332,28 +2330,28 @@ impl ListComplianceStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2424,7 +2422,7 @@ pub mod list_member_accounts_input {
     }
     impl Builder {
         /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-        /// number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a
+        /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
         /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
         /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
         /// value of <code>NextToken</code> from the previous response to get information about another
@@ -2437,7 +2435,7 @@ pub mod list_member_accounts_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of member account IDs that you want AWS Firewall Manager to return
+        /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
         /// for this request. If you have more IDs than the number that you specify for
         /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
         /// use to get another batch of member account IDs.</p>
@@ -2490,28 +2488,28 @@ impl ListMemberAccountsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2583,7 +2581,7 @@ pub mod list_policies_input {
     impl Builder {
         /// <p>If you specify a value for <code>MaxResults</code> and you have more
         /// <code>PolicySummary</code> objects than the number that you specify for
-        /// <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
+        /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
         /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
         /// second and subsequent <code>ListPolicies</code> requests, specify the value of
         /// <code>NextToken</code> from the previous response to get information about another batch of
@@ -2596,8 +2594,7 @@ pub mod list_policies_input {
             self.next_token = input;
             self
         }
-        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall
-        /// Manager to return for this request. If you have more <code>PolicySummary</code> objects than
+        /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
         /// the number that you specify for <code>MaxResults</code>, the response includes a
         /// <code>NextToken</code> value that you can use to get another batch of
         /// <code>PolicySummary</code> objects.</p>
@@ -2648,28 +2645,28 @@ impl ListPoliciesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2737,7 +2734,7 @@ pub mod list_protocols_lists_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.</p>
+        /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
         pub fn default_lists(mut self, input: bool) -> Self {
             self.default_lists = Some(input);
             self
@@ -2747,7 +2744,7 @@ pub mod list_protocols_lists_input {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// AWS Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
+        /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
         /// in the request parameters, to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
@@ -2757,10 +2754,10 @@ pub mod list_protocols_lists_input {
             self.next_token = input;
             self
         }
-        /// <p>The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-        /// objects are available, in the response, AWS Firewall Manager provides a
+        /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
+        /// objects are available, in the response, Firewall Manager provides a
         /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-        /// <p>If you don't specify this, AWS Firewall Manager returns all available objects.</p>
+        /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -2811,28 +2808,28 @@ impl ListProtocolsListsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2901,7 +2898,7 @@ pub mod list_tags_for_resource_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -2950,28 +2947,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3041,7 +3038,7 @@ pub mod put_apps_list_input {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The details of the AWS Firewall Manager applications list to be created.</p>
+        /// <p>The details of the Firewall Manager applications list to be created.</p>
         pub fn apps_list(mut self, input: crate::model::AppsListData) -> Self {
             self.apps_list = Some(input);
             self
@@ -3105,28 +3102,28 @@ impl PutAppsListInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3193,7 +3190,7 @@ pub mod put_notification_channel_input {
         pub(crate) sns_role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS
+        /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
         /// Firewall Manager.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
@@ -3206,7 +3203,7 @@ pub mod put_notification_channel_input {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS
+        /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
         /// Firewall Manager activity. </p>
         pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_role_name = Some(input.into());
@@ -3260,28 +3257,28 @@ impl PutNotificationChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3351,7 +3348,7 @@ pub mod put_policy_input {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The details of the AWS Firewall Manager policy to be created.</p>
+        /// <p>The details of the Firewall Manager policy to be created.</p>
         pub fn policy(mut self, input: crate::model::Policy) -> Self {
             self.policy = Some(input);
             self
@@ -3412,28 +3409,28 @@ impl PutPolicyInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -3498,7 +3495,7 @@ pub mod put_protocols_list_input {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+        /// <p>The details of the Firewall Manager protocols list to be created.</p>
         pub fn protocols_list(mut self, input: crate::model::ProtocolsListData) -> Self {
             self.protocols_list = Some(input);
             self
@@ -3564,28 +3561,28 @@ impl PutProtocolsListInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3655,7 +3652,7 @@ pub mod tag_resource_input {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -3716,28 +3713,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3804,7 +3801,7 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+        /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -3865,28 +3862,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3949,7 +3946,7 @@ impl UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The keys of the tags to remove from the resource. </p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3966,7 +3963,7 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The tags to add to the resource.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3983,7 +3980,7 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProtocolsListInput {
-    /// <p>The details of the AWS Firewall Manager protocols list to be created.</p>
+    /// <p>The details of the Firewall Manager protocols list to be created.</p>
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The tags associated with the resource.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4000,9 +3997,9 @@ impl std::fmt::Debug for PutProtocolsListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyInput {
-    /// <p>The details of the AWS Firewall Manager policy to be created.</p>
+    /// <p>The details of the Firewall Manager policy to be created.</p>
     pub policy: std::option::Option<crate::model::Policy>,
-    /// <p>The tags to add to the AWS resource.</p>
+    /// <p>The tags to add to the Amazon Web Services resource.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
 impl std::fmt::Debug for PutPolicyInput {
@@ -4017,10 +4014,10 @@ impl std::fmt::Debug for PutPolicyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutNotificationChannelInput {
-    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from AWS
+    /// <p>The Amazon Resource Name (ARN) of the SNS topic that collects notifications from
     /// Firewall Manager.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record AWS
+    /// <p>The Amazon Resource Name (ARN) of the IAM role that allows Amazon SNS to record
     /// Firewall Manager activity. </p>
     pub sns_role_name: std::option::Option<std::string::String>,
 }
@@ -4036,7 +4033,7 @@ impl std::fmt::Debug for PutNotificationChannelInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppsListInput {
-    /// <p>The details of the AWS Firewall Manager applications list to be created.</p>
+    /// <p>The details of the Firewall Manager applications list to be created.</p>
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The tags associated with the resource.</p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -4053,7 +4050,7 @@ impl std::fmt::Debug for PutAppsListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
-    /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The AWS Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
+    /// <p>The Amazon Resource Name (ARN) of the resource to return tags for. The Firewall Manager resources that support tagging are policies, applications lists, and protocols lists. </p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
@@ -4067,16 +4064,16 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListProtocolsListsInput {
-    /// <p>Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.</p>
+    /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     pub default_lists: bool,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// AWS Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
+    /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
     /// in the request parameters, to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-    /// objects are available, in the response, AWS Firewall Manager provides a
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
+    /// objects are available, in the response, Firewall Manager provides a
     /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify this, AWS Firewall Manager returns all available objects.</p>
+    /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListProtocolsListsInput {
@@ -4094,14 +4091,13 @@ impl std::fmt::Debug for ListProtocolsListsInput {
 pub struct ListPoliciesInput {
     /// <p>If you specify a value for <code>MaxResults</code> and you have more
     /// <code>PolicySummary</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
+    /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
     /// response that allows you to list another group of <code>PolicySummary</code> objects. For the
     /// second and subsequent <code>ListPolicies</code> requests, specify the value of
     /// <code>NextToken</code> from the previous response to get information about another batch of
     /// <code>PolicySummary</code> objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>PolicySummary</code> objects that you want AWS Firewall
-    /// Manager to return for this request. If you have more <code>PolicySummary</code> objects than
+    /// <p>Specifies the number of <code>PolicySummary</code> objects that you want Firewall Manager to return for this request. If you have more <code>PolicySummary</code> objects than
     /// the number that you specify for <code>MaxResults</code>, the response includes a
     /// <code>NextToken</code> value that you can use to get another batch of
     /// <code>PolicySummary</code> objects.</p>
@@ -4120,13 +4116,13 @@ impl std::fmt::Debug for ListPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMemberAccountsInput {
     /// <p>If you specify a value for <code>MaxResults</code> and you have more account IDs than the
-    /// number that you specify for <code>MaxResults</code>, AWS Firewall Manager returns a
+    /// number that you specify for <code>MaxResults</code>, Firewall Manager returns a
     /// <code>NextToken</code> value in the response that allows you to list another group of IDs.
     /// For the second and subsequent <code>ListMemberAccountsRequest</code> requests, specify the
     /// value of <code>NextToken</code> from the previous response to get information about another
     /// batch of member account IDs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of member account IDs that you want AWS Firewall Manager to return
+    /// <p>Specifies the number of member account IDs that you want Firewall Manager to return
     /// for this request. If you have more IDs than the number that you specify for
     /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
     /// use to get another batch of member account IDs.</p>
@@ -4144,17 +4140,17 @@ impl std::fmt::Debug for ListMemberAccountsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListComplianceStatusInput {
-    /// <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>If you specify a value for <code>MaxResults</code> and you have more
     /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
-    /// <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the
+    /// <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the
     /// response that allows you to list another group of <code>PolicyComplianceStatus</code> objects.
     /// For the second and subsequent <code>ListComplianceStatus</code> requests, specify the value of
     /// <code>NextToken</code> from the previous response to get information about another batch of
     /// <code>PolicyComplianceStatus</code> objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want AWS
+    /// <p>Specifies the number of <code>PolicyComplianceStatus</code> objects that you want
     /// Firewall Manager to return for this request. If you have more
     /// <code>PolicyComplianceStatus</code> objects than the number that you specify for
     /// <code>MaxResults</code>, the response includes a <code>NextToken</code> value that you can
@@ -4174,16 +4170,16 @@ impl std::fmt::Debug for ListComplianceStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAppsListsInput {
-    /// <p>Specifies whether the lists to retrieve are default lists owned by AWS Firewall Manager.</p>
+    /// <p>Specifies whether the lists to retrieve are default lists owned by Firewall Manager.</p>
     pub default_lists: bool,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// AWS Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
+    /// Firewall Manager returns this token in the response. For all but the first request, you provide the token returned by the prior request
     /// in the request parameters, to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you want AWS Firewall Manager to return for this request. If more
-    /// objects are available, in the response, AWS Firewall Manager provides a
+    /// <p>The maximum number of objects that you want Firewall Manager to return for this request. If more
+    /// objects are available, in the response, Firewall Manager provides a
     /// <code>NextToken</code> value that you can use in a subsequent call to get the next batch of objects.</p>
-    /// <p>If you don't specify this, AWS Firewall Manager returns all available objects.</p>
+    /// <p>If you don't specify this, Firewall Manager returns all available objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for ListAppsListsInput {
@@ -4199,13 +4195,13 @@ impl std::fmt::Debug for ListAppsListsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetViolationDetailsInput {
-    /// <p>The ID of the AWS Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for. This currently only supports security group content audit policies.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that you want the details for.</p>
+    /// <p>The Amazon Web Services account ID that you want the details for.</p>
     pub member_account: std::option::Option<std::string::String>,
     /// <p>The ID of the resource that has violations.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS Resource Types Reference</a>.
+    /// <p>The resource type. This is in the format shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services Resource Types Reference</a>.
     /// Supported resource types are:
     /// <code>AWS::EC2::Instance</code>,
     /// <code>AWS::EC2::NetworkInterface</code>,
@@ -4229,9 +4225,9 @@ impl std::fmt::Debug for GetViolationDetailsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtocolsListInput {
-    /// <p>The ID of the AWS Firewall Manager protocols list that you want the details for.</p>
+    /// <p>The ID of the Firewall Manager protocols list that you want the details for.</p>
     pub list_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.</p>
+    /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub default_list: bool,
 }
 impl std::fmt::Debug for GetProtocolsListInput {
@@ -4248,25 +4244,23 @@ impl std::fmt::Debug for GetProtocolsListInput {
 pub struct GetProtectionStatusInput {
     /// <p>The ID of the policy for which you want to get the attack information.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account that is in scope of the policy that you want to get the details
+    /// <p>The Amazon Web Services account that is in scope of the policy that you want to get the details
     /// for.</p>
     pub member_account_id: std::option::Option<std::string::String>,
     /// <p>The start of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-    /// request syntax listing indicates a <code>number</code> type because the default used by AWS Firewall
-    /// Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
+    /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
     /// allowed.</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The end of the time period to query for the attacks. This is a <code>timestamp</code> type. The
-    /// request syntax listing indicates a <code>number</code> type because the default used by AWS Firewall
-    /// Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
+    /// request syntax listing indicates a <code>number</code> type because the default used by Firewall Manager is Unix time in seconds. However, any valid <code>timestamp</code> format is
     /// allowed.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>If you specify a value for <code>MaxResults</code> and you have more objects than the number that you specify
-    /// for <code>MaxResults</code>, AWS Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
+    /// for <code>MaxResults</code>, Firewall Manager returns a <code>NextToken</code> value in the response, which you can use to retrieve another group of
     /// objects. For the second and subsequent <code>GetProtectionStatus</code> requests, specify the value of <code>NextToken</code>
     /// from the previous response to get information about another batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Specifies the number of objects that you want AWS Firewall Manager to return for this request. If you have more
+    /// <p>Specifies the number of objects that you want Firewall Manager to return for this request. If you have more
     /// objects than the number that you specify for <code>MaxResults</code>, the response includes a
     /// <code>NextToken</code> value that you can use to get another batch of objects.</p>
     pub max_results: std::option::Option<i32>,
@@ -4287,7 +4281,7 @@ impl std::fmt::Debug for GetProtectionStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyInput {
-    /// <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+    /// <p>The ID of the Firewall Manager policy that you want the details for.</p>
     pub policy_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetPolicyInput {
@@ -4314,7 +4308,7 @@ pub struct GetComplianceDetailInput {
     /// <p>The ID of the policy that you want to get the details for. <code>PolicyId</code> is
     /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account that owns the resources that you want to get the details for.</p>
+    /// <p>The Amazon Web Services account that owns the resources that you want to get the details for.</p>
     pub member_account: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetComplianceDetailInput {
@@ -4329,9 +4323,9 @@ impl std::fmt::Debug for GetComplianceDetailInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppsListInput {
-    /// <p>The ID of the AWS Firewall Manager applications list that you want the details for.</p>
+    /// <p>The ID of the Firewall Manager applications list that you want the details for.</p>
     pub list_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the list to retrieve is a default list owned by AWS Firewall Manager.</p>
+    /// <p>Specifies whether the list to retrieve is a default list owned by Firewall Manager.</p>
     pub default_list: bool,
 }
 impl std::fmt::Debug for GetAppsListInput {
@@ -4385,10 +4379,10 @@ pub struct DeletePolicyInput {
     /// <code>PutPolicy</code> and <code>ListPolicies</code>.</p>
     pub policy_id: std::option::Option<std::string::String>,
     /// <p>If <code>True</code>, the request performs cleanup according to the policy type. </p>
-    /// <p>For AWS WAF and Shield Advanced policies, the cleanup does the following:</p>
+    /// <p>For WAF and Shield Advanced policies, the cleanup does the following:</p>
     /// <ul>
     /// <li>
-    /// <p>Deletes rule groups created by AWS Firewall Manager</p>
+    /// <p>Deletes rule groups created by Firewall Manager</p>
     /// </li>
     /// <li>
     /// <p>Removes web ACLs from in-scope resources</p>
@@ -4456,10 +4450,10 @@ impl std::fmt::Debug for DeleteAppsListInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateAdminAccountInput {
-    /// <p>The AWS account ID to associate with AWS Firewall Manager as the AWS Firewall Manager
-    /// administrator account. This can be an AWS Organizations master account or a member account.
-    /// For more information about AWS Organizations and master accounts, see
-    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the AWS Accounts in Your Organization</a>.  </p>
+    /// <p>The Amazon Web Services account ID to associate with Firewall Manager as the Firewall Manager
+    /// administrator account. This must be an Organizations member account.
+    /// For more information about Organizations, see
+    /// <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.  </p>
     pub admin_account: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AssociateAdminAccountInput {

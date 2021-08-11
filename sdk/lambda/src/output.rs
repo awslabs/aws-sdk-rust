@@ -184,12 +184,12 @@ pub struct UpdateFunctionConfigurationOutput {
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The function's environment variables.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
     /// configured a customer managed CMK.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The function's AWS X-Ray tracing configuration.</p>
+    /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub master_arn: std::option::Option<std::string::String>,
@@ -214,7 +214,7 @@ pub struct UpdateFunctionConfigurationOutput {
     /// <p>The reason code for the last update that was performed on the function.</p>
     pub last_update_status_reason_code:
         std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub package_type: std::option::Option<crate::model::PackageType>,
@@ -447,7 +447,7 @@ pub mod update_function_configuration_output {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The function's environment variables.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
             self.environment = Some(input);
             self
@@ -469,7 +469,7 @@ pub mod update_function_configuration_output {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The function's AWS X-Ray tracing configuration.</p>
+        /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
             self.tracing_config = Some(input);
             self
@@ -728,12 +728,12 @@ pub struct UpdateFunctionCodeOutput {
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The function's environment variables.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
     /// configured a customer managed CMK.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The function's AWS X-Ray tracing configuration.</p>
+    /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub master_arn: std::option::Option<std::string::String>,
@@ -758,7 +758,7 @@ pub struct UpdateFunctionCodeOutput {
     /// <p>The reason code for the last update that was performed on the function.</p>
     pub last_update_status_reason_code:
         std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub package_type: std::option::Option<crate::model::PackageType>,
@@ -991,7 +991,7 @@ pub mod update_function_code_output {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The function's environment variables.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
             self.environment = Some(input);
             self
@@ -1013,7 +1013,7 @@ pub mod update_function_code_output {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The function's AWS X-Ray tracing configuration.</p>
+        /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
             self.tracing_config = Some(input);
             self
@@ -1240,61 +1240,60 @@ impl UpdateFunctionCodeOutput {
     }
 }
 
-/// <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-    /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The maximum number of items to retrieve in a single batch.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
-    /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
     pub last_modified: std::option::Option<smithy_types::Instant>,
-    /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+    /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
     /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
     /// <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-    /// service.</p>
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
     pub topics: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// (MQ) The name of the Amazon MQ broker destination queue to consume.
-    /// </p>
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-    /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
-    /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -1386,8 +1385,8 @@ pub mod update_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-        /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+        /// streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
@@ -1421,7 +1420,7 @@ pub mod update_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -1433,7 +1432,7 @@ pub mod update_event_source_mapping_output {
             self.maximum_batching_window_in_seconds = input;
             self
         }
-        /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+        /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
             self.parallelization_factor = Some(input);
             self
@@ -1463,7 +1462,7 @@ pub mod update_event_source_mapping_output {
             self.function_arn = input;
             self
         }
-        /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+        /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
@@ -1475,7 +1474,7 @@ pub mod update_event_source_mapping_output {
             self.last_modified = input;
             self
         }
-        /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+        /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_processing_result = Some(input.into());
             self
@@ -1498,8 +1497,7 @@ pub mod update_event_source_mapping_output {
             self.state = input;
             self
         }
-        /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-        /// service.</p>
+        /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_transition_reason = Some(input.into());
             self
@@ -1511,7 +1509,7 @@ pub mod update_event_source_mapping_output {
             self.state_transition_reason = input;
             self
         }
-        /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+        /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
@@ -1565,7 +1563,7 @@ pub mod update_event_source_mapping_output {
             self.source_access_configurations = input;
             self
         }
-        /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+        /// <p>The self-managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
             input: crate::model::SelfManagedEventSource,
@@ -1580,7 +1578,8 @@ pub mod update_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
@@ -1592,7 +1591,7 @@ pub mod update_event_source_mapping_output {
             self.maximum_record_age_in_seconds = input;
             self
         }
-        /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+        /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
             self.bisect_batch_on_function_error = Some(input);
             self
@@ -1604,7 +1603,8 @@ pub mod update_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
@@ -1613,7 +1613,7 @@ pub mod update_event_source_mapping_output {
             self.maximum_retry_attempts = input;
             self
         }
-        /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.tumbling_window_in_seconds = Some(input);
             self
@@ -2451,12 +2451,12 @@ pub struct PublishVersionOutput {
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The function's environment variables.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
     /// configured a customer managed CMK.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The function's AWS X-Ray tracing configuration.</p>
+    /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub master_arn: std::option::Option<std::string::String>,
@@ -2481,7 +2481,7 @@ pub struct PublishVersionOutput {
     /// <p>The reason code for the last update that was performed on the function.</p>
     pub last_update_status_reason_code:
         std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub package_type: std::option::Option<crate::model::PackageType>,
@@ -2714,7 +2714,7 @@ pub mod publish_version_output {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The function's environment variables.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
             self.environment = Some(input);
             self
@@ -2736,7 +2736,7 @@ pub mod publish_version_output {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The function's AWS X-Ray tracing configuration.</p>
+        /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
             self.tracing_config = Some(input);
             self
@@ -4772,12 +4772,12 @@ pub struct GetFunctionConfigurationOutput {
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The function's environment variables.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
     /// configured a customer managed CMK.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The function's AWS X-Ray tracing configuration.</p>
+    /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub master_arn: std::option::Option<std::string::String>,
@@ -4802,7 +4802,7 @@ pub struct GetFunctionConfigurationOutput {
     /// <p>The reason code for the last update that was performed on the function.</p>
     pub last_update_status_reason_code:
         std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub package_type: std::option::Option<crate::model::PackageType>,
@@ -5035,7 +5035,7 @@ pub mod get_function_configuration_output {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The function's environment variables.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
             self.environment = Some(input);
             self
@@ -5057,7 +5057,7 @@ pub mod get_function_configuration_output {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The function's AWS X-Ray tracing configuration.</p>
+        /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
             self.tracing_config = Some(input);
             self
@@ -5552,61 +5552,60 @@ impl GetFunctionOutput {
     }
 }
 
-/// <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-    /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The maximum number of items to retrieve in a single batch.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
-    /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
     pub last_modified: std::option::Option<smithy_types::Instant>,
-    /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+    /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
     /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
     /// <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-    /// service.</p>
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
     pub topics: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// (MQ) The name of the Amazon MQ broker destination queue to consume.
-    /// </p>
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-    /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
-    /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -5698,8 +5697,8 @@ pub mod get_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-        /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+        /// streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
@@ -5733,7 +5732,7 @@ pub mod get_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -5745,7 +5744,7 @@ pub mod get_event_source_mapping_output {
             self.maximum_batching_window_in_seconds = input;
             self
         }
-        /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+        /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
             self.parallelization_factor = Some(input);
             self
@@ -5775,7 +5774,7 @@ pub mod get_event_source_mapping_output {
             self.function_arn = input;
             self
         }
-        /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+        /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
@@ -5787,7 +5786,7 @@ pub mod get_event_source_mapping_output {
             self.last_modified = input;
             self
         }
-        /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+        /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_processing_result = Some(input.into());
             self
@@ -5810,8 +5809,7 @@ pub mod get_event_source_mapping_output {
             self.state = input;
             self
         }
-        /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-        /// service.</p>
+        /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_transition_reason = Some(input.into());
             self
@@ -5823,7 +5821,7 @@ pub mod get_event_source_mapping_output {
             self.state_transition_reason = input;
             self
         }
-        /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+        /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
@@ -5877,7 +5875,7 @@ pub mod get_event_source_mapping_output {
             self.source_access_configurations = input;
             self
         }
-        /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+        /// <p>The self-managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
             input: crate::model::SelfManagedEventSource,
@@ -5892,7 +5890,8 @@ pub mod get_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
@@ -5904,7 +5903,7 @@ pub mod get_event_source_mapping_output {
             self.maximum_record_age_in_seconds = input;
             self
         }
-        /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+        /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
             self.bisect_batch_on_function_error = Some(input);
             self
@@ -5916,7 +5915,8 @@ pub mod get_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
@@ -5925,7 +5925,7 @@ pub mod get_event_source_mapping_output {
             self.maximum_retry_attempts = input;
             self
         }
-        /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.tumbling_window_in_seconds = Some(input);
             self
@@ -6400,61 +6400,60 @@ impl DeleteFunctionOutput {
     }
 }
 
-/// <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-    /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The maximum number of items to retrieve in a single batch.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
-    /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
     pub last_modified: std::option::Option<smithy_types::Instant>,
-    /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+    /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
     /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
     /// <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-    /// service.</p>
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
     pub topics: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// (MQ) The name of the Amazon MQ broker destination queue to consume.
-    /// </p>
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-    /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
-    /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -6546,8 +6545,8 @@ pub mod delete_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-        /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+        /// streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
@@ -6581,7 +6580,7 @@ pub mod delete_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -6593,7 +6592,7 @@ pub mod delete_event_source_mapping_output {
             self.maximum_batching_window_in_seconds = input;
             self
         }
-        /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+        /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
             self.parallelization_factor = Some(input);
             self
@@ -6623,7 +6622,7 @@ pub mod delete_event_source_mapping_output {
             self.function_arn = input;
             self
         }
-        /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+        /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
@@ -6635,7 +6634,7 @@ pub mod delete_event_source_mapping_output {
             self.last_modified = input;
             self
         }
-        /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+        /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_processing_result = Some(input.into());
             self
@@ -6658,8 +6657,7 @@ pub mod delete_event_source_mapping_output {
             self.state = input;
             self
         }
-        /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-        /// service.</p>
+        /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_transition_reason = Some(input.into());
             self
@@ -6671,7 +6669,7 @@ pub mod delete_event_source_mapping_output {
             self.state_transition_reason = input;
             self
         }
-        /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+        /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
@@ -6725,7 +6723,7 @@ pub mod delete_event_source_mapping_output {
             self.source_access_configurations = input;
             self
         }
-        /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+        /// <p>The self-managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
             input: crate::model::SelfManagedEventSource,
@@ -6740,7 +6738,8 @@ pub mod delete_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
@@ -6752,7 +6751,7 @@ pub mod delete_event_source_mapping_output {
             self.maximum_record_age_in_seconds = input;
             self
         }
-        /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+        /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
             self.bisect_batch_on_function_error = Some(input);
             self
@@ -6764,7 +6763,8 @@ pub mod delete_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
@@ -6773,7 +6773,7 @@ pub mod delete_event_source_mapping_output {
             self.maximum_retry_attempts = input;
             self
         }
-        /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.tumbling_window_in_seconds = Some(input);
             self
@@ -6924,12 +6924,12 @@ pub struct CreateFunctionOutput {
     pub vpc_config: std::option::Option<crate::model::VpcConfigResponse>,
     /// <p>The function's dead letter queue.</p>
     pub dead_letter_config: std::option::Option<crate::model::DeadLetterConfig>,
-    /// <p>The function's environment variables.</p>
+    /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
     pub environment: std::option::Option<crate::model::EnvironmentResponse>,
     /// <p>The KMS key that's used to encrypt the function's environment variables. This key is only returned if you've
     /// configured a customer managed CMK.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
-    /// <p>The function's AWS X-Ray tracing configuration.</p>
+    /// <p>The function's X-Ray tracing configuration.</p>
     pub tracing_config: std::option::Option<crate::model::TracingConfigResponse>,
     /// <p>For Lambda@Edge functions, the ARN of the master function.</p>
     pub master_arn: std::option::Option<std::string::String>,
@@ -6954,7 +6954,7 @@ pub struct CreateFunctionOutput {
     /// <p>The reason code for the last update that was performed on the function.</p>
     pub last_update_status_reason_code:
         std::option::Option<crate::model::LastUpdateStatusReasonCode>,
-    /// <p>Connection settings for an Amazon EFS file system.</p>
+    /// <p>Connection settings for an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-filesystem.html">Amazon EFS file system</a>.</p>
     pub file_system_configs: std::option::Option<std::vec::Vec<crate::model::FileSystemConfig>>,
     /// <p>The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip file archive.</p>
     pub package_type: std::option::Option<crate::model::PackageType>,
@@ -7187,7 +7187,7 @@ pub mod create_function_output {
             self.dead_letter_config = input;
             self
         }
-        /// <p>The function's environment variables.</p>
+        /// <p>The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html">environment variables</a>.</p>
         pub fn environment(mut self, input: crate::model::EnvironmentResponse) -> Self {
             self.environment = Some(input);
             self
@@ -7209,7 +7209,7 @@ pub mod create_function_output {
             self.kms_key_arn = input;
             self
         }
-        /// <p>The function's AWS X-Ray tracing configuration.</p>
+        /// <p>The function's X-Ray tracing configuration.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfigResponse) -> Self {
             self.tracing_config = Some(input);
             self
@@ -7436,61 +7436,60 @@ impl CreateFunctionOutput {
     }
 }
 
-/// <p>A mapping between an AWS resource and an AWS Lambda function. See <a>CreateEventSourceMapping</a> for details.</p>
+/// <p>A mapping between an Amazon Web Services resource and a Lambda function. For details, see <a>CreateEventSourceMapping</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateEventSourceMappingOutput {
     /// <p>The identifier of the event source mapping.</p>
     pub uuid: std::option::Option<std::string::String>,
-    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-    /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+    /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+    /// streams.</p>
     pub starting_position: std::option::Option<crate::model::EventSourcePosition>,
     /// <p>With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
     /// reading.</p>
     pub starting_position_timestamp: std::option::Option<smithy_types::Instant>,
     /// <p>The maximum number of items to retrieve in a single batch.</p>
     pub batch_size: std::option::Option<i32>,
-    /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+    /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
     pub maximum_batching_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+    /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
     pub parallelization_factor: std::option::Option<i32>,
     /// <p>The Amazon Resource Name (ARN) of the event source.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
-    /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+    /// <p>The date that the event source mapping was last updated or that its state changed.</p>
     pub last_modified: std::option::Option<smithy_types::Instant>,
-    /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+    /// <p>The result of the last Lambda invocation of your function.</p>
     pub last_processing_result: std::option::Option<std::string::String>,
     /// <p>The state of the event source mapping. It can be one of the following: <code>Creating</code>,
     /// <code>Enabling</code>, <code>Enabled</code>, <code>Disabling</code>, <code>Disabled</code>,
     /// <code>Updating</code>, or <code>Deleting</code>.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-    /// service.</p>
+    /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+    /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
     pub destination_config: std::option::Option<crate::model::DestinationConfig>,
     /// <p>The name of the Kafka topic.</p>
     pub topics: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// (MQ) The name of the Amazon MQ broker destination queue to consume.
-    /// </p>
+    /// <p> (Amazon MQ) The name of the Amazon MQ broker destination queue to consume.</p>
     pub queues: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
+    /// <p>An array of the authentication protocol, VPC components, or virtual host to secure and define your event source.</p>
     pub source_access_configurations:
         std::option::Option<std::vec::Vec<crate::model::SourceAccessConfiguration>>,
-    /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+    /// <p>The self-managed Apache Kafka cluster for your event source.</p>
     pub self_managed_event_source: std::option::Option<crate::model::SelfManagedEventSource>,
-    /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+    /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
     pub maximum_record_age_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+    /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
     pub bisect_batch_on_function_error: std::option::Option<bool>,
-    /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+    /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+    /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
     pub maximum_retry_attempts: std::option::Option<i32>,
-    /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+    /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
     pub tumbling_window_in_seconds: std::option::Option<i32>,
-    /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
+    /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
     pub function_response_types:
         std::option::Option<std::vec::Vec<crate::model::FunctionResponseType>>,
 }
@@ -7582,8 +7581,8 @@ pub mod create_event_source_mapping_output {
             self.uuid = input;
             self
         }
-        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK Streams
-        /// sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.</p>
+        /// <p>The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon MSK stream sources. <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis
+        /// streams.</p>
         pub fn starting_position(mut self, input: crate::model::EventSourcePosition) -> Self {
             self.starting_position = Some(input);
             self
@@ -7617,7 +7616,7 @@ pub mod create_event_source_mapping_output {
             self.batch_size = input;
             self
         }
-        /// <p>(Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
+        /// <p>(Streams and Amazon SQS standard queues) The maximum amount of time to gather records before invoking the function, in seconds. The default value is zero.</p>
         pub fn maximum_batching_window_in_seconds(mut self, input: i32) -> Self {
             self.maximum_batching_window_in_seconds = Some(input);
             self
@@ -7629,7 +7628,7 @@ pub mod create_event_source_mapping_output {
             self.maximum_batching_window_in_seconds = input;
             self
         }
-        /// <p>(Streams) The number of batches to process from each shard concurrently. The default value is 1.</p>
+        /// <p>(Streams only) The number of batches to process concurrently from each shard. The default value is 1.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
             self.parallelization_factor = Some(input);
             self
@@ -7659,7 +7658,7 @@ pub mod create_event_source_mapping_output {
             self.function_arn = input;
             self
         }
-        /// <p>The date that the event source mapping was last updated, or its state changed.</p>
+        /// <p>The date that the event source mapping was last updated or that its state changed.</p>
         pub fn last_modified(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified = Some(input);
             self
@@ -7671,7 +7670,7 @@ pub mod create_event_source_mapping_output {
             self.last_modified = input;
             self
         }
-        /// <p>The result of the last AWS Lambda invocation of your Lambda function.</p>
+        /// <p>The result of the last Lambda invocation of your function.</p>
         pub fn last_processing_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_processing_result = Some(input.into());
             self
@@ -7694,8 +7693,7 @@ pub mod create_event_source_mapping_output {
             self.state = input;
             self
         }
-        /// <p>Indicates whether the last change to the event source mapping was made by a user, or by the Lambda
-        /// service.</p>
+        /// <p>Indicates whether a user or Lambda made the last change to the event source mapping.</p>
         pub fn state_transition_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.state_transition_reason = Some(input.into());
             self
@@ -7707,7 +7705,7 @@ pub mod create_event_source_mapping_output {
             self.state_transition_reason = input;
             self
         }
-        /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+        /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.destination_config = Some(input);
             self
@@ -7761,7 +7759,7 @@ pub mod create_event_source_mapping_output {
             self.source_access_configurations = input;
             self
         }
-        /// <p>The Self-Managed Apache Kafka cluster for your event source.</p>
+        /// <p>The self-managed Apache Kafka cluster for your event source.</p>
         pub fn self_managed_event_source(
             mut self,
             input: crate::model::SelfManagedEventSource,
@@ -7776,7 +7774,8 @@ pub mod create_event_source_mapping_output {
             self.self_managed_event_source = input;
             self
         }
-        /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is -1,
+        /// which sets the maximum age to infinite. When the value is set to infinite, Lambda never discards old records.  </p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.maximum_record_age_in_seconds = Some(input);
             self
@@ -7788,7 +7787,7 @@ pub mod create_event_source_mapping_output {
             self.maximum_record_age_in_seconds = input;
             self
         }
-        /// <p>(Streams) If the function returns an error, split the batch in two and retry. The default value is false.</p>
+        /// <p>(Streams only) If the function returns an error, split the batch in two and retry. The default value is false.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
             self.bisect_batch_on_function_error = Some(input);
             self
@@ -7800,7 +7799,8 @@ pub mod create_event_source_mapping_output {
             self.bisect_batch_on_function_error = input;
             self
         }
-        /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records are retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is -1,
+        /// which sets the maximum number of retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries failed records until the record expires in the event source.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.maximum_retry_attempts = Some(input);
             self
@@ -7809,7 +7809,7 @@ pub mod create_event_source_mapping_output {
             self.maximum_retry_attempts = input;
             self
         }
-        /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is 1–900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.tumbling_window_in_seconds = Some(input);
             self

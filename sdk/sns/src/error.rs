@@ -5322,8 +5322,8 @@ impl SubscriptionLimitExceededException {
     }
 }
 
-/// <p>Indicates that the number of filter polices in your AWS account exceeds the limit. To
-/// add more filter polices, submit an SNS Limit Increase case in the AWS Support
+/// <p>Indicates that the number of filter polices in your account exceeds the limit. To
+/// add more filter polices, submit an SNS Limit Increase case in the Amazon Web Services Support
 /// Center.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5448,7 +5448,7 @@ impl PlatformApplicationDisabledException {
 
 /// <p>The request was denied due to request throttling. For more information about
 /// throttling, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#requests-per-second">Limits</a> in
-/// the <i>AWS Key Management Service Developer Guide.</i>
+/// the <i>Key Management Service Developer Guide.</i>
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5509,7 +5509,7 @@ impl KmsThrottlingException {
     }
 }
 
-/// <p>The AWS access key ID needs a subscription for the service.</p>
+/// <p>The Amazon Web Services access key ID needs a subscription for the service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KmsOptInRequired {
@@ -5632,7 +5632,7 @@ impl KmsNotFoundException {
 
 /// <p>The request was rejected because the state of the specified resource isn't valid for
 /// this request. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects Use of a
-/// Customer Master Key</a> in the <i>AWS Key Management Service Developer
+/// Customer Master Key</a> in the <i>Key Management Service Developer
 /// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6122,7 +6122,7 @@ impl TopicLimitExceededException {
 }
 
 /// <p>Indicates that the specified phone number opted out of receiving SMS messages from
-/// your AWS account. You can't send SMS messages to phone numbers that opt out.</p>
+/// your account. You can't send SMS messages to phone numbers that opt out.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OptedOutException {

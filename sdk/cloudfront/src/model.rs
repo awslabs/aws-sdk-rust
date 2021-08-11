@@ -9,7 +9,7 @@ pub struct StreamingDistribution {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your AWS account ID.</p>
+    /// <code>123456789012</code> is your account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the RTMP distribution. When the status is <code>Deployed</code>,
     /// the distribution's information is propagated to all CloudFront edge locations.</p>
@@ -18,13 +18,13 @@ pub struct StreamingDistribution {
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>. </p>
     pub domain_name: std::option::Option<std::string::String>,
-    /// <p>A complex type that lists the AWS accounts, if any, that you included in the
+    /// <p>A complex type that lists the accounts, if any, that you included in the
     /// <code>TrustedSigners</code> complex type for this distribution. These are the accounts that
     /// you want to allow to create signed URLs for private content.</p>
-    /// <p>The <code>Signer</code> complex type lists the AWS account number of the trusted
-    /// signer or <code>self</code> if the signer is the AWS account that created the distribution.
+    /// <p>The <code>Signer</code> complex type lists the account number of the trusted
+    /// signer or <code>self</code> if the signer is the account that created the distribution.
     /// The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are
-    /// associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element
+    /// associated with the trusted signer's account. If no <code>KeyPairId</code> element
     /// appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
     /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
@@ -77,7 +77,7 @@ pub mod streaming_distribution {
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your AWS account ID.</p>
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -117,13 +117,13 @@ pub mod streaming_distribution {
             self.domain_name = input;
             self
         }
-        /// <p>A complex type that lists the AWS accounts, if any, that you included in the
+        /// <p>A complex type that lists the accounts, if any, that you included in the
         /// <code>TrustedSigners</code> complex type for this distribution. These are the accounts that
         /// you want to allow to create signed URLs for private content.</p>
-        /// <p>The <code>Signer</code> complex type lists the AWS account number of the trusted
-        /// signer or <code>self</code> if the signer is the AWS account that created the distribution.
+        /// <p>The <code>Signer</code> complex type lists the account number of the trusted
+        /// signer or <code>self</code> if the signer is the account that created the distribution.
         /// The <code>Signer</code> element also includes the IDs of any active CloudFront key pairs that are
-        /// associated with the trusted signer's AWS account. If no <code>KeyPairId</code> element
+        /// associated with the trusted signer's account. If no <code>KeyPairId</code> element
         /// appears for a <code>Signer</code>, that signer can't create signed URLs.</p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private
         /// Content through CloudFront</a> in the <i>Amazon CloudFront Developer Guide</i>. </p>
@@ -196,7 +196,7 @@ pub struct StreamingDistributionConfig {
     /// <p>A complex type that controls whether access logs are written for the streaming
     /// distribution. </p>
     pub logging: std::option::Option<crate::model::StreamingLoggingConfig>,
-    /// <p>A complex type that specifies any AWS accounts that you want to permit to create signed
+    /// <p>A complex type that specifies any accounts that you want to permit to create signed
     /// URLs for private content. If you want the distribution to use signed URLs, include this
     /// element; if you want the distribution to use public URLs, remove this element. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through
@@ -298,7 +298,7 @@ pub mod streaming_distribution_config {
             self.logging = input;
             self
         }
-        /// <p>A complex type that specifies any AWS accounts that you want to permit to create signed
+        /// <p>A complex type that specifies any accounts that you want to permit to create signed
         /// URLs for private content. If you want the distribution to use signed URLs, include this
         /// element; if you want the distribution to use public URLs, remove this element. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content through
@@ -412,18 +412,18 @@ impl AsRef<str> for PriceClass {
     }
 }
 
-/// <p>A list of AWS accounts whose public keys CloudFront can use to verify the signatures of signed
+/// <p>A list of accounts whose public keys CloudFront can use to verify the signatures of signed
 /// URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrustedSigners {
-    /// <p>This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can
+    /// <p>This field is <code>true</code> if any of the accounts have public keys that CloudFront can
     /// use to verify the signatures of signed URLs and signed cookies. If not, this field is
     /// <code>false</code>.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The number of AWS accounts in the list.</p>
+    /// <p>The number of accounts in the list.</p>
     pub quantity: std::option::Option<i32>,
-    /// <p>A list of AWS account identifiers.</p>
+    /// <p>A list of account identifiers.</p>
     pub items: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for TrustedSigners {
@@ -446,7 +446,7 @@ pub mod trusted_signers {
         pub(crate) items: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can
+        /// <p>This field is <code>true</code> if any of the accounts have public keys that CloudFront can
         /// use to verify the signatures of signed URLs and signed cookies. If not, this field is
         /// <code>false</code>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -457,7 +457,7 @@ pub mod trusted_signers {
             self.enabled = input;
             self
         }
-        /// <p>The number of AWS accounts in the list.</p>
+        /// <p>The number of accounts in the list.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
@@ -745,18 +745,18 @@ impl S3Origin {
     }
 }
 
-/// <p>A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use
+/// <p>A list of accounts and the active CloudFront key pairs in each account that CloudFront can use
 /// to verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ActiveTrustedSigners {
-    /// <p>This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront
+    /// <p>This field is <code>true</code> if any of the accounts in the list have active CloudFront
     /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
     /// If not, this field is <code>false</code>.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The number of AWS accounts in the list.</p>
+    /// <p>The number of accounts in the list.</p>
     pub quantity: std::option::Option<i32>,
-    /// <p>A list of AWS accounts and the identifiers of active CloudFront key pairs in each account that
+    /// <p>A list of accounts and the identifiers of active CloudFront key pairs in each account that
     /// CloudFront can use to verify the signatures of signed URLs and signed cookies.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::Signer>>,
 }
@@ -780,7 +780,7 @@ pub mod active_trusted_signers {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Signer>>,
     }
     impl Builder {
-        /// <p>This field is <code>true</code> if any of the AWS accounts in the list have active CloudFront
+        /// <p>This field is <code>true</code> if any of the accounts in the list have active CloudFront
         /// key pairs that CloudFront can use to verify the signatures of signed URLs and signed cookies.
         /// If not, this field is <code>false</code>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
@@ -791,7 +791,7 @@ pub mod active_trusted_signers {
             self.enabled = input;
             self
         }
-        /// <p>The number of AWS accounts in the list.</p>
+        /// <p>The number of accounts in the list.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
@@ -830,13 +830,13 @@ impl ActiveTrustedSigners {
     }
 }
 
-/// <p>A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to
+/// <p>A list of accounts and the active CloudFront key pairs in each account that CloudFront can use to
 /// verify the signatures of signed URLs and signed cookies.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Signer {
-    /// <p>An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
-    /// signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs
+    /// <p>An account number that contains active CloudFront key pairs that CloudFront can use to verify the
+    /// signatures of signed URLs and signed cookies. If the account that owns the key pairs
     /// is the same account that owns the CloudFront distribution, the value of this field is
     /// <code>self</code>.</p>
     pub aws_account_number: std::option::Option<std::string::String>,
@@ -861,8 +861,8 @@ pub mod signer {
         pub(crate) key_pair_ids: std::option::Option<crate::model::KeyPairIds>,
     }
     impl Builder {
-        /// <p>An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
-        /// signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs
+        /// <p>An account number that contains active CloudFront key pairs that CloudFront can use to verify the
+        /// signatures of signed URLs and signed cookies. If the account that owns the key pairs
         /// is the same account that owns the CloudFront distribution, the value of this field is
         /// <code>self</code>.</p>
         pub fn aws_account_number(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1163,7 +1163,7 @@ impl EndPoint {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct KinesisStreamConfig {
-    /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that
+    /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
     /// CloudFront can use to send real-time log data to your Kinesis data stream.</p>
     /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -1190,7 +1190,7 @@ pub mod kinesis_stream_config {
         pub(crate) stream_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that
+        /// <p>The Amazon Resource Name (ARN) of an Identity and Access Management (IAM) role that
         /// CloudFront can use to send real-time log data to your Kinesis data stream.</p>
         /// <p>For more information the IAM role, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/real-time-logs.html#understand-real-time-log-config-iam-role">Real-time log configuration IAM role</a> in the
         /// <i>Amazon CloudFront Developer Guide</i>.</p>
@@ -4008,7 +4008,7 @@ pub struct Distribution {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your AWS account ID.</p>
+    /// <code>123456789012</code> is your account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>This response element indicates the current status of the distribution. When the status
     /// is <code>Deployed</code>, the distribution's information is fully propagated to all CloudFront edge
@@ -4026,7 +4026,7 @@ pub struct Distribution {
     /// </important>
     /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in
     /// this distribution to serve private content using trusted signers. This field contains a
-    /// list of AWS account IDs and the active CloudFront key pairs in each account that CloudFront can use
+    /// list of account IDs and the active CloudFront key pairs in each account that CloudFront can use
     /// to verify the signatures of signed URLs or signed cookies.</p>
     pub active_trusted_signers: std::option::Option<crate::model::ActiveTrustedSigners>,
     /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache
@@ -4038,11 +4038,11 @@ pub struct Distribution {
     /// request to the <code>/<i>CloudFront API version</i>/distribution ID/config</code>
     /// resource.</p>
     pub distribution_config: std::option::Option<crate::model::DistributionConfig>,
-    /// <p>AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+    /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
     /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
     /// recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-    /// Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.</p>
+    /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub alias_icp_recordals: std::option::Option<std::vec::Vec<crate::model::AliasIcpRecordal>>,
 }
 impl std::fmt::Debug for Distribution {
@@ -4096,7 +4096,7 @@ pub mod distribution {
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your AWS account ID.</p>
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -4155,7 +4155,7 @@ pub mod distribution {
         /// </important>
         /// <p>CloudFront automatically adds this field to the response if you’ve configured a cache behavior in
         /// this distribution to serve private content using trusted signers. This field contains a
-        /// list of AWS account IDs and the active CloudFront key pairs in each account that CloudFront can use
+        /// list of account IDs and the active CloudFront key pairs in each account that CloudFront can use
         /// to verify the signatures of signed URLs or signed cookies.</p>
         pub fn active_trusted_signers(mut self, input: crate::model::ActiveTrustedSigners) -> Self {
             self.active_trusted_signers = Some(input);
@@ -4240,12 +4240,12 @@ impl Distribution {
     }
 }
 
-/// <p>AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+/// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
 /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
 /// recordal status for CNAMEs associated with distributions. The status is returned in the CloudFront response; you can't configure
 /// it yourself.</p>
 /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-/// Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.</p>
+/// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AliasIcpRecordal {
@@ -4491,18 +4491,18 @@ pub struct DistributionConfig {
     /// <p>A complex type that identifies ways in which you want to restrict distribution of your
     /// content.</p>
     pub restrictions: std::option::Option<crate::model::Restrictions>,
-    /// <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-    /// with this distribution. To specify a web ACL created using the latest version of AWS
+    /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate
+    /// with this distribution. To specify a web ACL created using the latest version of
     /// WAF, use the ACL ARN, for example
     /// <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-    /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+    /// To specify a web ACL created using WAF Classic, use the ACL ID, for example
     /// <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
-    /// <p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS
+    /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS
     /// requests that are forwarded to CloudFront, and lets you control access to your content. Based on
     /// conditions that you specify, such as the IP addresses that requests originate from or the
     /// values of query strings, CloudFront responds to requests either with the requested content or with
     /// an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page
-    /// when a request is blocked. For more information about AWS WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS WAF
+    /// when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
     /// Developer Guide</a>. </p>
     pub web_acl_id: std::option::Option<std::string::String>,
     /// <p>(Optional) Specify the maximum HTTP version that you want viewers to use to communicate
@@ -4525,9 +4525,8 @@ pub struct DistributionConfig {
     /// you want to restrict access to some content by IP address and not restrict access to other
     /// content (or restrict access but not by IP address), you can create two distributions. For more
     /// information, see  
-    /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-    /// Guide</i>.</p>
-    /// <p>If you're using an Amazon Route 53 alias resource record set to route traffic to your CloudFront
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+    /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
     /// distribution, you need to create a second alias resource record set when both of the following
     /// are true:</p>
     /// <ul>
@@ -4539,9 +4538,9 @@ pub struct DistributionConfig {
     /// </li>
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic
-    /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
+    /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
     /// Developer Guide</i>.</p>
-    /// <p>If you created a CNAME resource record set, either with Amazon Route 53 or with another DNS
+    /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
     /// service, you don't need to make any changes. A CNAME record will route traffic to your
     /// distribution regardless of the IP address format of the viewer request.</p>
     pub is_ipv6_enabled: std::option::Option<bool>,
@@ -4805,18 +4804,18 @@ pub mod distribution_config {
             self.restrictions = input;
             self
         }
-        /// <p>A unique identifier that specifies the AWS WAF web ACL, if any, to associate
-        /// with this distribution. To specify a web ACL created using the latest version of AWS
+        /// <p>A unique identifier that specifies the WAF web ACL, if any, to associate
+        /// with this distribution. To specify a web ACL created using the latest version of
         /// WAF, use the ACL ARN, for example
         /// <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using AWS WAF Classic, use the ACL ID, for example
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example
         /// <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.</p>
-        /// <p>AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS
+        /// <p>WAF is a web application firewall that lets you monitor the HTTP and HTTPS
         /// requests that are forwarded to CloudFront, and lets you control access to your content. Based on
         /// conditions that you specify, such as the IP addresses that requests originate from or the
         /// values of query strings, CloudFront responds to requests either with the requested content or with
         /// an HTTP 403 status code (Forbidden). You can also configure CloudFront to return a custom error page
-        /// when a request is blocked. For more information about AWS WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">AWS WAF
+        /// when a request is blocked. For more information about WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
         /// Developer Guide</a>. </p>
         pub fn web_acl_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_id = Some(input.into());
@@ -4856,9 +4855,8 @@ pub mod distribution_config {
         /// you want to restrict access to some content by IP address and not restrict access to other
         /// content (or restrict access but not by IP address), you can create two distributions. For more
         /// information, see  
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer
-        /// Guide</i>.</p>
-        /// <p>If you're using an Amazon Route 53 alias resource record set to route traffic to your CloudFront
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-creating-signed-url-custom-policy.html">Creating a Signed URL Using a Custom Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
+        /// <p>If you're using an Route 53 Amazon Web Services Integration alias resource record set to route traffic to your CloudFront
         /// distribution, you need to create a second alias resource record set when both of the following
         /// are true:</p>
         /// <ul>
@@ -4870,9 +4868,9 @@ pub mod distribution_config {
         /// </li>
         /// </ul>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-cloudfront-distribution.html">Routing Traffic
-        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Amazon Route 53
+        /// to an Amazon CloudFront Web Distribution by Using Your Domain Name</a> in the <i>Route 53 Amazon Web Services Integration
         /// Developer Guide</i>.</p>
-        /// <p>If you created a CNAME resource record set, either with Amazon Route 53 or with another DNS
+        /// <p>If you created a CNAME resource record set, either with Route 53 Amazon Web Services Integration or with another DNS
         /// service, you don't need to make any changes. A CNAME record will route traffic to your
         /// distribution regardless of the IP address format of the viewer request.</p>
         pub fn is_ipv6_enabled(mut self, input: bool) -> Self {
@@ -5229,8 +5227,7 @@ impl AsRef<str> for GeoRestrictionType {
 /// <p>To accept HTTPS connections from all viewers, including those that don’t support SNI,
 /// set <code>SSLSupportMethod</code> to <code>vip</code>. This is not
 /// recommended, and results in additional monthly charges from
-/// CloudFront.
-/// </p>
+/// CloudFront.</p>
 /// </li>
 /// </ul>
 /// </li>
@@ -5241,8 +5238,7 @@ impl AsRef<str> for GeoRestrictionType {
 /// <i>Amazon CloudFront Developer Guide</i>.</p>
 /// </li>
 /// <li>
-/// <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS
-/// Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and Access Management (AWS IAM)</a>. You specify the location
+/// <p>The location of the SSL/TLS certificate, <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a> (recommended) or <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>. You specify the location
 /// by setting a value in one of the following fields (not both):</p>
 /// <ul>
 /// <li>
@@ -5293,20 +5289,17 @@ pub struct ViewerCertificate {
     /// </ul>
     pub cloud_front_default_certificate: std::option::Option<bool>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-    /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-    /// Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
+    /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>, provide the ID of the IAM
     /// certificate.</p>
     /// <p>If you specify an IAM certificate ID, you must also specify values for
-    /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
-    /// </p>
+    /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
     pub iam_certificate_id: std::option::Option<std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-    /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a>, provide the Amazon Resource
+    /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>, provide the Amazon Resource
     /// Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates in the US
     /// East (N. Virginia) Region (<code>us-east-1</code>).</p>
     /// <p>If you specify an ACM certificate ARN, you must also specify values for
-    /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
-    /// </p>
+    /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
     pub acm_certificate_arn: std::option::Option<std::string::String>,
     /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs), specify
     /// which viewers the distribution accepts HTTPS connections from.</p>
@@ -5328,7 +5321,7 @@ pub struct ViewerCertificate {
     /// <code>static-ip</code> - Do not specify this value unless your distribution
     /// has been enabled for this feature by the CloudFront team. If you have a use case
     /// that requires static IP addresses for a distribution, contact CloudFront through
-    /// the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.</p>
+    /// the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p>
     /// </li>
     /// </ul>
     /// <p>If the distribution uses the CloudFront domain name such as
@@ -5354,8 +5347,7 @@ pub struct ViewerCertificate {
     /// Policy</b>.</p>
     /// </note>
     /// <p>When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
-    /// you must specify <code>TLSv1</code> or higher.
-    /// </p>
+    /// you must specify <code>TLSv1</code> or higher.</p>
     /// <p>If the distribution uses the CloudFront domain name such as
     /// <code>d111111abcdef8.cloudfront.net</code> (you set
     /// <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront automatically sets
@@ -5466,12 +5458,10 @@ pub mod viewer_certificate {
             self
         }
         /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS
-        /// Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM
+        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity and Access Management (IAM)</a>, provide the ID of the IAM
         /// certificate.</p>
         /// <p>If you specify an IAM certificate ID, you must also specify values for
-        /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
-        /// </p>
+        /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>. </p>
         pub fn iam_certificate_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_certificate_id = Some(input.into());
             self
@@ -5484,12 +5474,11 @@ pub mod viewer_certificate {
             self
         }
         /// <p>If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">AWS Certificate Manager (ACM)</a>, provide the Amazon Resource
+        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate Manager (ACM)</a>, provide the Amazon Resource
         /// Name (ARN) of the ACM certificate. CloudFront only supports ACM certificates in the US
         /// East (N. Virginia) Region (<code>us-east-1</code>).</p>
         /// <p>If you specify an ACM certificate ARN, you must also specify values for
-        /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
-        /// </p>
+        /// <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.</p>
         pub fn acm_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.acm_certificate_arn = Some(input.into());
             self
@@ -5521,7 +5510,7 @@ pub mod viewer_certificate {
         /// <code>static-ip</code> - Do not specify this value unless your distribution
         /// has been enabled for this feature by the CloudFront team. If you have a use case
         /// that requires static IP addresses for a distribution, contact CloudFront through
-        /// the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.</p>
+        /// the <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Support Center</a>.</p>
         /// </li>
         /// </ul>
         /// <p>If the distribution uses the CloudFront domain name such as
@@ -5557,8 +5546,7 @@ pub mod viewer_certificate {
         /// Policy</b>.</p>
         /// </note>
         /// <p>When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
-        /// you must specify <code>TLSv1</code> or higher.
-        /// </p>
+        /// you must specify <code>TLSv1</code> or higher.</p>
         /// <p>If the distribution uses the CloudFront domain name such as
         /// <code>d111111abcdef8.cloudfront.net</code> (you set
         /// <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront automatically sets
@@ -6344,11 +6332,11 @@ pub struct CacheBehavior {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
     /// <code>TrustedSigners</code>.</p>
     /// </important>
-    /// <p>A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed
+    /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
     /// cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
     /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-    /// the private key of a CloudFront key pair in the trusted signer’s AWS account. The signed URL
+    /// the private key of a CloudFront key pair in the trusted signer’s account. The signed URL
     /// or cookie contains information about which public key CloudFront should use to verify the
     /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
@@ -6421,7 +6409,7 @@ pub struct CacheBehavior {
     /// If so, specify true; if not, specify false. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     pub compress: std::option::Option<bool>,
-    /// <p>A complex type that contains zero or more Lambda function associations for a cache
+    /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache
     /// behavior.</p>
     pub lambda_function_associations: std::option::Option<crate::model::LambdaFunctionAssociations>,
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must
@@ -6585,11 +6573,11 @@ pub mod cache_behavior {
         /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
         /// <code>TrustedSigners</code>.</p>
         /// </important>
-        /// <p>A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
         /// cookies.</p>
         /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
         /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-        /// the private key of a CloudFront key pair in the trusted signer’s AWS account. The signed URL
+        /// the private key of a CloudFront key pair in the trusted signer’s account. The signed URL
         /// or cookie contains information about which public key CloudFront should use to verify the
         /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn trusted_signers(mut self, input: crate::model::TrustedSigners) -> Self {
@@ -6716,7 +6704,7 @@ pub mod cache_behavior {
             self.compress = input;
             self
         }
-        /// <p>A complex type that contains zero or more Lambda function associations for a cache
+        /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache
         /// behavior.</p>
         pub fn lambda_function_associations(
             mut self,
@@ -7241,7 +7229,7 @@ pub struct CookiePreference {
     /// element and its child elements, CloudFront deletes them automatically.</p>
     /// <p>For the current limit on the number of cookie names that you can whitelist for each
     /// cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-    /// CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+    /// CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub whitelisted_names: std::option::Option<crate::model::CookieNames>,
 }
 impl std::fmt::Debug for CookiePreference {
@@ -7301,7 +7289,7 @@ pub mod cookie_preference {
         /// element and its child elements, CloudFront deletes them automatically.</p>
         /// <p>For the current limit on the number of cookie names that you can whitelist for each
         /// cache behavior, see <a href="https://docs.aws.amazon.com/general/latest/gr/xrefaws_service_limits.html#limits_cloudfront">
-        /// CloudFront Limits</a> in the <i>AWS General Reference</i>.</p>
+        /// CloudFront Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn whitelisted_names(mut self, input: crate::model::CookieNames) -> Self {
             self.whitelisted_names = Some(input);
             self
@@ -7583,21 +7571,20 @@ impl AsRef<str> for EventType {
     }
 }
 
-/// <p>A complex type that specifies a list of Lambda functions associations for a cache
+/// <p>A complex type that specifies a list of Lambda@Edge functions associations for a cache
 /// behavior.</p>
-/// <p>If you want to invoke one or more Lambda functions triggered by requests that match the
+/// <p>If you want to invoke one or more Lambda@Edge functions triggered by requests that match the
 /// <code>PathPattern</code> of the cache behavior, specify the applicable values for
 /// <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4
 /// <code>LambdaFunctionAssociation</code> items in this list (one for each possible value of
-/// <code>EventType</code>) and each <code>EventType</code> can be associated with the Lambda
-/// function only once.</p>
-/// <p>If you don't want to invoke any Lambda functions for the requests that match
+/// <code>EventType</code>) and each <code>EventType</code> can be associated with only one function.</p>
+/// <p>If you don't want to invoke any Lambda@Edge functions for the requests that match
 /// <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit
 /// <code>Items</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionAssociations {
-    /// <p>The number of Lambda function associations for this cache behavior.</p>
+    /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>
     /// <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code> items
@@ -7623,7 +7610,7 @@ pub mod lambda_function_associations {
             std::option::Option<std::vec::Vec<crate::model::LambdaFunctionAssociation>>,
     }
     impl Builder {
-        /// <p>The number of Lambda function associations for this cache behavior.</p>
+        /// <p>The number of Lambda@Edge function associations for this cache behavior.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
@@ -7661,14 +7648,14 @@ impl LambdaFunctionAssociations {
     }
 }
 
-/// <p>A complex type that contains a Lambda function association.</p>
+/// <p>A complex type that contains a Lambda@Edge function association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionAssociation {
-    /// <p>The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+    /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
     /// or $LATEST.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
-    /// <p>Specifies the event type that triggers a Lambda function invocation. You can specify the following values:</p>
+    /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -7694,7 +7681,7 @@ pub struct LambdaFunctionAssociation {
     /// </li>
     /// </ul>
     pub event_type: std::option::Option<crate::model::EventType>,
-    /// <p>A flag that allows a Lambda function to have read access to the body content. For more information,
+    /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the
     /// Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
     pub include_body: std::option::Option<bool>,
@@ -7719,7 +7706,7 @@ pub mod lambda_function_association {
         pub(crate) include_body: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ARN of the Lambda function. You must specify the ARN of a function version; you can't specify a Lambda alias
+        /// <p>The ARN of the Lambda@Edge function. You must specify the ARN of a function version; you can't specify an alias
         /// or $LATEST.</p>
         pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_function_arn = Some(input.into());
@@ -7732,7 +7719,7 @@ pub mod lambda_function_association {
             self.lambda_function_arn = input;
             self
         }
-        /// <p>Specifies the event type that triggers a Lambda function invocation. You can specify the following values:</p>
+        /// <p>Specifies the event type that triggers a Lambda@Edge function invocation. You can specify the following values:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -7768,7 +7755,7 @@ pub mod lambda_function_association {
             self.event_type = input;
             self
         }
-        /// <p>A flag that allows a Lambda function to have read access to the body content. For more information,
+        /// <p>A flag that allows a Lambda@Edge function to have read access to the body content. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/lambda-include-body-access.html">Accessing the Request Body by Choosing the
         /// Include Body Option</a> in the Amazon CloudFront Developer Guide.</p>
         pub fn include_body(mut self, input: bool) -> Self {
@@ -8230,11 +8217,11 @@ pub struct DefaultCacheBehavior {
     /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
     /// <code>TrustedSigners</code>.</p>
     /// </important>
-    /// <p>A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed
+    /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
     /// cookies.</p>
     /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
     /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-    /// the private key of a CloudFront key pair in a trusted signer’s AWS account. The signed URL or
+    /// the private key of a CloudFront key pair in a trusted signer’s account. The signed URL or
     /// cookie contains information about which public key CloudFront should use to verify the
     /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub trusted_signers: std::option::Option<crate::model::TrustedSigners>,
@@ -8309,7 +8296,7 @@ pub struct DefaultCacheBehavior {
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/ServingCompressedFiles.html">Serving Compressed Files</a> in
     /// the <i>Amazon CloudFront Developer Guide</i>.</p>
     pub compress: std::option::Option<bool>,
-    /// <p>A complex type that contains zero or more Lambda function associations for a cache
+    /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache
     /// behavior.</p>
     pub lambda_function_associations: std::option::Option<crate::model::LambdaFunctionAssociations>,
     /// <p>A list of CloudFront functions that are associated with this cache behavior. CloudFront functions must
@@ -8448,11 +8435,11 @@ pub mod default_cache_behavior {
         /// <p>We recommend using <code>TrustedKeyGroups</code> instead of
         /// <code>TrustedSigners</code>.</p>
         /// </important>
-        /// <p>A list of AWS account IDs whose public keys CloudFront can use to validate signed URLs or signed
+        /// <p>A list of account IDs whose public keys CloudFront can use to validate signed URLs or signed
         /// cookies.</p>
         /// <p>When a cache behavior contains trusted signers, CloudFront requires signed URLs or signed cookies
         /// for all requests that match the cache behavior. The URLs or cookies must be signed with
-        /// the private key of a CloudFront key pair in a trusted signer’s AWS account. The signed URL or
+        /// the private key of a CloudFront key pair in a trusted signer’s account. The signed URL or
         /// cookie contains information about which public key CloudFront should use to verify the
         /// signature. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving private content</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn trusted_signers(mut self, input: crate::model::TrustedSigners) -> Self {
@@ -8581,7 +8568,7 @@ pub mod default_cache_behavior {
             self.compress = input;
             self
         }
-        /// <p>A complex type that contains zero or more Lambda function associations for a cache
+        /// <p>A complex type that contains zero or more Lambda@Edge function associations for a cache
         /// behavior.</p>
         pub fn lambda_function_associations(
             mut self,
@@ -9491,13 +9478,13 @@ pub struct OriginShield {
     /// help protect your origin. When it’s disabled, CloudFront might send requests directly to
     /// your origin from multiple edge locations or regional edge caches.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>The AWS Region for Origin Shield.</p>
-    /// <p>Specify the AWS Region that has the lowest latency to your origin.
+    /// <p>The Region for Origin Shield.</p>
+    /// <p>Specify the Region that has the lowest latency to your origin.
     /// To specify a region, use the region code, not the region name.
     /// For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
-    /// <p>When you enable CloudFront Origin Shield, you must specify the AWS Region for Origin
-    /// Shield. For the list of AWS Regions that you can specify, and for help choosing the best
-    /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the AWS Region for Origin Shield</a> in the
+    /// <p>When you enable CloudFront Origin Shield, you must specify the Region for Origin
+    /// Shield. For the list of Regions that you can specify, and for help choosing the best
+    /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Region for Origin Shield</a> in the
     /// <i>Amazon CloudFront Developer Guide</i>.</p>
     pub origin_shield_region: std::option::Option<std::string::String>,
 }
@@ -9531,13 +9518,13 @@ pub mod origin_shield {
             self.enabled = input;
             self
         }
-        /// <p>The AWS Region for Origin Shield.</p>
-        /// <p>Specify the AWS Region that has the lowest latency to your origin.
+        /// <p>The Region for Origin Shield.</p>
+        /// <p>Specify the Region that has the lowest latency to your origin.
         /// To specify a region, use the region code, not the region name.
         /// For example, specify the US East (Ohio) region as <code>us-east-2</code>.</p>
-        /// <p>When you enable CloudFront Origin Shield, you must specify the AWS Region for Origin
-        /// Shield. For the list of AWS Regions that you can specify, and for help choosing the best
-        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the AWS Region for Origin Shield</a> in the
+        /// <p>When you enable CloudFront Origin Shield, you must specify the Region for Origin
+        /// Shield. For the list of Regions that you can specify, and for help choosing the best
+        /// Region for your origin, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html#choose-origin-shield-region">Choosing the Region for Origin Shield</a> in the
         /// <i>Amazon CloudFront Developer Guide</i>.</p>
         pub fn origin_shield_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.origin_shield_region = Some(input.into());
@@ -11920,11 +11907,11 @@ pub struct StreamingDistributionList {
     /// results were truncated, you can make a follow-up pagination request using the
     /// <code>Marker</code> request parameter to retrieve more distributions in the list. </p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of streaming distributions that were created by the current AWS account.
+    /// <p>The number of streaming distributions that were created by the current account.
     /// </p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>StreamingDistributionSummary</code> element for
-    /// each distribution that was created by the current AWS account.</p>
+    /// each distribution that was created by the current account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::StreamingDistributionSummary>>,
 }
 impl std::fmt::Debug for StreamingDistributionList {
@@ -11994,7 +11981,7 @@ pub mod streaming_distribution_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of streaming distributions that were created by the current AWS account.
+        /// <p>The number of streaming distributions that were created by the current account.
         /// </p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
@@ -12048,7 +12035,7 @@ pub struct StreamingDistributionSummary {
     pub id: std::option::Option<std::string::String>,
     /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your AWS account ID.</p>
+    /// <code>123456789012</code> is your account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p> Indicates the current status of the distribution. When the status is
     /// <code>Deployed</code>, the distribution's information is fully propagated throughout the
@@ -12064,7 +12051,7 @@ pub struct StreamingDistributionSummary {
     /// <p>A complex type that contains information about CNAMEs (alternate domain names), if any,
     /// for this streaming distribution.</p>
     pub aliases: std::option::Option<crate::model::Aliases>,
-    /// <p>A complex type that specifies the AWS accounts, if any, that you want to allow to
+    /// <p>A complex type that specifies the accounts, if any, that you want to allow to
     /// create signed URLs for private content. If you want to require signed URLs in requests for
     /// objects in the target origin that match the <code>PathPattern</code> for this cache behavior,
     /// specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for
@@ -12133,7 +12120,7 @@ pub mod streaming_distribution_summary {
         }
         /// <p> The ARN (Amazon Resource Name) for the streaming distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your AWS account ID.</p>
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -12194,7 +12181,7 @@ pub mod streaming_distribution_summary {
             self.aliases = input;
             self
         }
-        /// <p>A complex type that specifies the AWS accounts, if any, that you want to allow to
+        /// <p>A complex type that specifies the accounts, if any, that you want to allow to
         /// create signed URLs for private content. If you want to require signed URLs in requests for
         /// objects in the target origin that match the <code>PathPattern</code> for this cache behavior,
         /// specify <code>true</code> for <code>Enabled</code>, and specify the applicable values for
@@ -12698,8 +12685,8 @@ impl OriginRequestPolicyList {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OriginRequestPolicySummary {
-    /// <p>The type of origin request policy, either <code>managed</code> (created by AWS) or
-    /// <code>custom</code> (created in this AWS account).</p>
+    /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
+    /// <code>custom</code> (created in this account).</p>
     pub r#type: std::option::Option<crate::model::OriginRequestPolicyType>,
     /// <p>The origin request policy.</p>
     pub origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
@@ -12722,8 +12709,8 @@ pub mod origin_request_policy_summary {
         pub(crate) origin_request_policy: std::option::Option<crate::model::OriginRequestPolicy>,
     }
     impl Builder {
-        /// <p>The type of origin request policy, either <code>managed</code> (created by AWS) or
-        /// <code>custom</code> (created in this AWS account).</p>
+        /// <p>The type of origin request policy, either <code>managed</code> (created by Amazon Web Services) or
+        /// <code>custom</code> (created in this account).</p>
         pub fn r#type(mut self, input: crate::model::OriginRequestPolicyType) -> Self {
             self.r#type = Some(input);
             self
@@ -12976,11 +12963,11 @@ pub struct InvalidationList {
     /// <code>Marker</code> request parameter to retrieve more invalidation batches in the
     /// list.</p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of invalidation batches that were created by the current AWS account.
+    /// <p>The number of invalidation batches that were created by the current account.
     /// </p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>InvalidationSummary</code> element for each
-    /// invalidation batch created by the current AWS account.</p>
+    /// invalidation batch created by the current account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::InvalidationSummary>>,
 }
 impl std::fmt::Debug for InvalidationList {
@@ -13050,7 +13037,7 @@ pub mod invalidation_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of invalidation batches that were created by the current AWS account.
+        /// <p>The number of invalidation batches that were created by the current account.
         /// </p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
@@ -13734,10 +13721,10 @@ pub struct DistributionList {
     /// were truncated, you can make a follow-up pagination request using the <code>Marker</code>
     /// request parameter to retrieve more distributions in the list.</p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of distributions that were created by the current AWS account. </p>
+    /// <p>The number of distributions that were created by the current account.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>DistributionSummary</code> element for each
-    /// distribution that was created by the current AWS account.</p>
+    /// distribution that was created by the current account.</p>
     pub items: std::option::Option<std::vec::Vec<crate::model::DistributionSummary>>,
 }
 impl std::fmt::Debug for DistributionList {
@@ -13806,7 +13793,7 @@ pub mod distribution_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of distributions that were created by the current AWS account. </p>
+        /// <p>The number of distributions that were created by the current account.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
@@ -13857,7 +13844,7 @@ pub struct DistributionSummary {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
     /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-    /// <code>123456789012</code> is your AWS account ID.</p>
+    /// <code>123456789012</code> is your account ID.</p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The current status of the distribution. When the status is <code>Deployed</code>, the
     /// distribution's information is propagated to all CloudFront edge locations.</p>
@@ -13907,11 +13894,11 @@ pub struct DistributionSummary {
     /// <p>Whether CloudFront responds to IPv6 DNS requests with an IPv6 address for your
     /// distribution.</p>
     pub is_ipv6_enabled: std::option::Option<bool>,
-    /// <p>AWS services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
+    /// <p>Amazon Web Services services in China customers must file for an Internet Content Provider (ICP) recordal if they want to serve content
     /// publicly on an alternate domain name, also known as a CNAME, that they've added to CloudFront. AliasICPRecordal provides the ICP
     /// recordal status for CNAMEs associated with distributions.</p>
     /// <p>For more information about ICP recordals, see  <a href="https://docs.amazonaws.cn/en_us/aws/latest/userguide/accounts-and-credentials.html">
-    /// Signup, Accounts, and Credentials</a> in <i>Getting Started with AWS services in China</i>.</p>
+    /// Signup, Accounts, and Credentials</a> in <i>Getting Started with Amazon Web Services services in China</i>.</p>
     pub alias_icp_recordals: std::option::Option<std::vec::Vec<crate::model::AliasIcpRecordal>>,
 }
 impl std::fmt::Debug for DistributionSummary {
@@ -13981,7 +13968,7 @@ pub mod distribution_summary {
         }
         /// <p>The ARN (Amazon Resource Name) for the distribution. For example:
         /// <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>, where
-        /// <code>123456789012</code> is your AWS account ID.</p>
+        /// <code>123456789012</code> is your account ID.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -14361,6 +14348,189 @@ impl DistributionIdList {
     }
 }
 
+/// <p>A list of aliases (also called CNAMEs) and the CloudFront distributions and Amazon Web Services accounts that
+/// they are associated with. In the list, the distribution and account IDs are partially
+/// hidden, which allows you to identify the distributions and accounts that you own, but
+/// helps to protect the information of ones that you don’t own.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictingAliasesList {
+    /// <p>If there are more items in the list than are in this response, this element is present. It
+    /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+    /// request to continue listing conflicting aliases where you left off.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of conflicting aliases requested.</p>
+    pub max_items: std::option::Option<i32>,
+    /// <p>The number of conflicting aliases returned in the response.</p>
+    pub quantity: std::option::Option<i32>,
+    /// <p>Contains the conflicting aliases in the list.</p>
+    pub items: std::option::Option<std::vec::Vec<crate::model::ConflictingAlias>>,
+}
+impl std::fmt::Debug for ConflictingAliasesList {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictingAliasesList");
+        formatter.field("next_marker", &self.next_marker);
+        formatter.field("max_items", &self.max_items);
+        formatter.field("quantity", &self.quantity);
+        formatter.field("items", &self.items);
+        formatter.finish()
+    }
+}
+/// See [`ConflictingAliasesList`](crate::model::ConflictingAliasesList)
+pub mod conflicting_aliases_list {
+    /// A builder for [`ConflictingAliasesList`](crate::model::ConflictingAliasesList)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) max_items: std::option::Option<i32>,
+        pub(crate) quantity: std::option::Option<i32>,
+        pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ConflictingAlias>>,
+    }
+    impl Builder {
+        /// <p>If there are more items in the list than are in this response, this element is present. It
+        /// contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// request to continue listing conflicting aliases where you left off.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// <p>The maximum number of conflicting aliases requested.</p>
+        pub fn max_items(mut self, input: i32) -> Self {
+            self.max_items = Some(input);
+            self
+        }
+        pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_items = input;
+            self
+        }
+        /// <p>The number of conflicting aliases returned in the response.</p>
+        pub fn quantity(mut self, input: i32) -> Self {
+            self.quantity = Some(input);
+            self
+        }
+        pub fn set_quantity(mut self, input: std::option::Option<i32>) -> Self {
+            self.quantity = input;
+            self
+        }
+        pub fn items(mut self, input: impl Into<crate::model::ConflictingAlias>) -> Self {
+            let mut v = self.items.unwrap_or_default();
+            v.push(input.into());
+            self.items = Some(v);
+            self
+        }
+        pub fn set_items(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ConflictingAlias>>,
+        ) -> Self {
+            self.items = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictingAliasesList`](crate::model::ConflictingAliasesList)
+        pub fn build(self) -> crate::model::ConflictingAliasesList {
+            crate::model::ConflictingAliasesList {
+                next_marker: self.next_marker,
+                max_items: self.max_items,
+                quantity: self.quantity,
+                items: self.items,
+            }
+        }
+    }
+}
+impl ConflictingAliasesList {
+    /// Creates a new builder-style object to manufacture [`ConflictingAliasesList`](crate::model::ConflictingAliasesList)
+    pub fn builder() -> crate::model::conflicting_aliases_list::Builder {
+        crate::model::conflicting_aliases_list::Builder::default()
+    }
+}
+
+/// <p>An alias (also called a CNAME) and the CloudFront distribution and Amazon Web Services account ID that it’s
+/// associated with. The distribution and account IDs are partially hidden, which allows you
+/// to identify the distributions and accounts that you own, but helps to protect the
+/// information of ones that you don’t own.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ConflictingAlias {
+    /// <p>An alias (also called a CNAME).</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
+    pub distribution_id: std::option::Option<std::string::String>,
+    /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s
+    /// associated with the alias.</p>
+    pub account_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ConflictingAlias {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ConflictingAlias");
+        formatter.field("alias", &self.alias);
+        formatter.field("distribution_id", &self.distribution_id);
+        formatter.field("account_id", &self.account_id);
+        formatter.finish()
+    }
+}
+/// See [`ConflictingAlias`](crate::model::ConflictingAlias)
+pub mod conflicting_alias {
+    /// A builder for [`ConflictingAlias`](crate::model::ConflictingAlias)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) distribution_id: std::option::Option<std::string::String>,
+        pub(crate) account_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>An alias (also called a CNAME).</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The (partially hidden) ID of the CloudFront distribution associated with the alias.</p>
+        pub fn distribution_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.distribution_id = Some(input.into());
+            self
+        }
+        pub fn set_distribution_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.distribution_id = input;
+            self
+        }
+        /// <p>The (partially hidden) ID of the Amazon Web Services account that owns the distribution that’s
+        /// associated with the alias.</p>
+        pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.account_id = Some(input.into());
+            self
+        }
+        pub fn set_account_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.account_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ConflictingAlias`](crate::model::ConflictingAlias)
+        pub fn build(self) -> crate::model::ConflictingAlias {
+            crate::model::ConflictingAlias {
+                alias: self.alias,
+                distribution_id: self.distribution_id,
+                account_id: self.account_id,
+            }
+        }
+    }
+}
+impl ConflictingAlias {
+    /// Creates a new builder-style object to manufacture [`ConflictingAlias`](crate::model::ConflictingAlias)
+    pub fn builder() -> crate::model::conflicting_alias::Builder {
+        crate::model::conflicting_alias::Builder::default()
+    }
+}
+
 /// <p>Lists the origin access identities for CloudFront.Send a <code>GET</code> request to the
 /// <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code>
 /// resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code> element with
@@ -14388,12 +14558,10 @@ pub struct CloudFrontOriginAccessIdentityList {
     /// your results were truncated, you can make a follow-up pagination request using the
     /// <code>Marker</code> request parameter to retrieve more items in the list.</p>
     pub is_truncated: std::option::Option<bool>,
-    /// <p>The number of CloudFront origin access identities that were created by the current AWS
-    /// account. </p>
+    /// <p>The number of CloudFront origin access identities that were created by the current account.</p>
     pub quantity: std::option::Option<i32>,
     /// <p>A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
-    /// element for each origin access identity that was created by the current AWS
-    /// account.</p>
+    /// element for each origin access identity that was created by the current account.</p>
     pub items:
         std::option::Option<std::vec::Vec<crate::model::CloudFrontOriginAccessIdentitySummary>>,
 }
@@ -14469,8 +14637,7 @@ pub mod cloud_front_origin_access_identity_list {
             self.is_truncated = input;
             self
         }
-        /// <p>The number of CloudFront origin access identities that were created by the current AWS
-        /// account. </p>
+        /// <p>The number of CloudFront origin access identities that were created by the current account.</p>
         pub fn quantity(mut self, input: i32) -> Self {
             self.quantity = Some(input);
             self
@@ -14702,8 +14869,8 @@ impl CachePolicyList {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CachePolicySummary {
-    /// <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-    /// <code>custom</code> (created in this AWS account).</p>
+    /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
+    /// <code>custom</code> (created in this account).</p>
     pub r#type: std::option::Option<crate::model::CachePolicyType>,
     /// <p>The cache policy.</p>
     pub cache_policy: std::option::Option<crate::model::CachePolicy>,
@@ -14726,8 +14893,8 @@ pub mod cache_policy_summary {
         pub(crate) cache_policy: std::option::Option<crate::model::CachePolicy>,
     }
     impl Builder {
-        /// <p>The type of cache policy, either <code>managed</code> (created by AWS) or
-        /// <code>custom</code> (created in this AWS account).</p>
+        /// <p>The type of cache policy, either <code>managed</code> (created by Amazon Web Services) or
+        /// <code>custom</code> (created in this account).</p>
         pub fn r#type(mut self, input: crate::model::CachePolicyType) -> Self {
             self.r#type = Some(input);
             self

@@ -176,6 +176,71 @@ impl AsRef<str> for ByoipCidrState {
     }
 }
 
+/// <p>Describes the description of a security group rule.</p>
+/// <p>You can use this when you want to update the security group rule description for either an inbound or outbound rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityGroupRuleDescription {
+    /// <p>The ID of the security group rule.</p>
+    pub security_group_rule_id: std::option::Option<std::string::String>,
+    /// <p>The description of the security group rule.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SecurityGroupRuleDescription {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityGroupRuleDescription");
+        formatter.field("security_group_rule_id", &self.security_group_rule_id);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+pub mod security_group_rule_description {
+    /// A builder for [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_rule_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the security group rule.</p>
+        pub fn security_group_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_group_rule_id = Some(input.into());
+            self
+        }
+        pub fn set_security_group_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_group_rule_id = input;
+            self
+        }
+        /// <p>The description of the security group rule.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+        pub fn build(self) -> crate::model::SecurityGroupRuleDescription {
+            crate::model::SecurityGroupRuleDescription {
+                security_group_rule_id: self.security_group_rule_id,
+                description: self.description,
+            }
+        }
+    }
+}
+impl SecurityGroupRuleDescription {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleDescription`](crate::model::SecurityGroupRuleDescription)
+    pub fn builder() -> crate::model::security_group_rule_description::Builder {
+        crate::model::security_group_rule_description::Builder::default()
+    }
+}
+
 /// <p>Describes a set of permissions for a security group rule.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -203,7 +268,7 @@ pub struct IpPermission {
     /// of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types,
     /// you must specify all codes.</p>
     pub to_port: std::option::Option<i32>,
-    /// <p>The security group and AWS account ID pairs.</p>
+    /// <p>The security group and Amazon Web Services account ID pairs.</p>
     pub user_id_group_pairs: std::option::Option<std::vec::Vec<crate::model::UserIdGroupPair>>,
 }
 impl std::fmt::Debug for IpPermission {
@@ -349,7 +414,7 @@ impl IpPermission {
     }
 }
 
-/// <p>Describes a security group and AWS account ID pair.</p>
+/// <p>Describes a security group and Amazon Web Services account ID pair.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdGroupPair {
@@ -368,12 +433,12 @@ pub struct UserIdGroupPair {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The status of a VPC peering connection, if applicable.</p>
     pub peering_status: std::option::Option<std::string::String>,
-    /// <p>The ID of an AWS account.</p>
+    /// <p>The ID of an Amazon Web Services account.</p>
     /// <p>For a referenced security group in another VPC, the account ID of the referenced
     /// security group is returned in the response. If the referenced security group is deleted,
     /// this value is not returned.</p>
     /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group
-    /// in another AWS account.</p>
+    /// in another Amazon Web Services account.</p>
     pub user_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC for the referenced security group, if applicable.</p>
     pub vpc_id: std::option::Option<std::string::String>,
@@ -454,12 +519,12 @@ pub mod user_id_group_pair {
             self.peering_status = input;
             self
         }
-        /// <p>The ID of an AWS account.</p>
+        /// <p>The ID of an Amazon Web Services account.</p>
         /// <p>For a referenced security group in another VPC, the account ID of the referenced
         /// security group is returned in the response. If the referenced security group is deleted,
         /// this value is not returned.</p>
         /// <p>[EC2-Classic] Required when adding or removing rules that reference a security group
-        /// in another AWS account.</p>
+        /// in another Amazon Web Services account.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
@@ -1392,7 +1457,7 @@ pub struct NetworkInsightsAnalysis {
     pub network_insights_analysis_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the path.</p>
     pub network_insights_path_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Names (ARN) of the AWS resources that the path must traverse.</p>
+    /// <p>The Amazon Resource Names (ARN) of the Amazon Web Services resources that the path must traverse.</p>
     pub filter_in_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time the analysis started.</p>
     pub start_date: std::option::Option<smithy_types::Instant>,
@@ -2905,7 +2970,7 @@ impl PortRange {
 pub struct AnalysisRouteTableRoute {
     /// <p>The destination IPv4 address, in CIDR notation.</p>
     pub destination_cidr: std::option::Option<std::string::String>,
-    /// <p>The prefix of the AWS service.</p>
+    /// <p>The prefix of the Amazon Web Service.</p>
     pub destination_prefix_list_id: std::option::Option<std::string::String>,
     /// <p>The ID of an egress-only internet gateway.</p>
     pub egress_only_internet_gateway_id: std::option::Option<std::string::String>,
@@ -2990,7 +3055,7 @@ pub mod analysis_route_table_route {
             self.destination_cidr = input;
             self
         }
-        /// <p>The prefix of the AWS service.</p>
+        /// <p>The prefix of the Amazon Web Service.</p>
         pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_prefix_list_id = Some(input.into());
             self
@@ -3815,7 +3880,7 @@ pub struct TagSpecification {
     /// <code>export-image-task</code>
     /// | <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
     /// <code>host-reservation</code> | <code>image</code>| <code>import-image-task</code> |
-    /// <code>import-snapshot-task</code> | <code>instance</code> |
+    /// <code>import-snapshot-task</code> | <code>instance</code> | <code>instance-event-window</code> |
     /// <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
     /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> | <code>placement-group</code> |
     /// <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
@@ -3826,7 +3891,7 @@ pub struct TagSpecification {
     /// <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
     /// <code>volume</code> |<code>vpc</code> | <code> vpc-peering-connection</code> |
     /// <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-    /// <code>vpc-endpoint-service</code> (for AWS PrivateLink) | <code>vpc-flow-log</code> |
+    /// <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
     /// <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
     /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -3858,7 +3923,7 @@ pub mod tag_specification {
         /// <code>export-image-task</code>
         /// | <code>export-instance-task</code> | <code>fleet</code> | <code>fpga-image</code> |
         /// <code>host-reservation</code> | <code>image</code>| <code>import-image-task</code> |
-        /// <code>import-snapshot-task</code> | <code>instance</code> |
+        /// <code>import-snapshot-task</code> | <code>instance</code> | <code>instance-event-window</code> |
         /// <code>internet-gateway</code> | <code>ipv4pool-ec2</code> | <code>ipv6pool-ec2</code> |
         /// <code>key-pair</code> | <code>launch-template</code> | <code>local-gateway-route-table-vpc-association</code> | <code>placement-group</code> |
         /// <code>prefix-list</code> | <code>natgateway</code> | <code>network-acl</code> | <code>network-interface</code> |
@@ -3869,7 +3934,7 @@ pub mod tag_specification {
         /// <code>transit-gateway-attachment</code> | <code>transit-gateway-multicast-domain</code> | <code>transit-gateway-route-table</code> |
         /// <code>volume</code> |<code>vpc</code> | <code> vpc-peering-connection</code> |
         /// <code>vpc-endpoint</code> (for interface and gateway endpoints) |
-        /// <code>vpc-endpoint-service</code> (for AWS PrivateLink) | <code>vpc-flow-log</code> |
+        /// <code>vpc-endpoint-service</code> (for Amazon Web Services PrivateLink) | <code>vpc-flow-log</code> |
         /// <code>vpn-connection</code> | <code>vpn-gateway</code>.</p>
         /// <p>To tag a resource after it has been created, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
@@ -3939,6 +4004,7 @@ pub enum ResourceType {
     ImportImageTask,
     ImportSnapshotTask,
     Instance,
+    InstanceEventWindow,
     InternetGateway,
     KeyPair,
     LaunchTemplate,
@@ -3946,13 +4012,13 @@ pub enum ResourceType {
     Natgateway,
     NetworkAcl,
     NetworkInsightsAnalysis,
-    NetworkInsightsBoundary,
     NetworkInsightsPath,
     NetworkInterface,
     PlacementGroup,
     ReservedInstances,
     RouteTable,
     SecurityGroup,
+    SecurityGroupRule,
     Snapshot,
     SpotFleetRequest,
     SpotInstancesRequest,
@@ -3993,6 +4059,7 @@ impl std::convert::From<&str> for ResourceType {
             "import-image-task" => ResourceType::ImportImageTask,
             "import-snapshot-task" => ResourceType::ImportSnapshotTask,
             "instance" => ResourceType::Instance,
+            "instance-event-window" => ResourceType::InstanceEventWindow,
             "internet-gateway" => ResourceType::InternetGateway,
             "key-pair" => ResourceType::KeyPair,
             "launch-template" => ResourceType::LaunchTemplate,
@@ -4002,13 +4069,13 @@ impl std::convert::From<&str> for ResourceType {
             "natgateway" => ResourceType::Natgateway,
             "network-acl" => ResourceType::NetworkAcl,
             "network-insights-analysis" => ResourceType::NetworkInsightsAnalysis,
-            "network-insights-boundary" => ResourceType::NetworkInsightsBoundary,
             "network-insights-path" => ResourceType::NetworkInsightsPath,
             "network-interface" => ResourceType::NetworkInterface,
             "placement-group" => ResourceType::PlacementGroup,
             "reserved-instances" => ResourceType::ReservedInstances,
             "route-table" => ResourceType::RouteTable,
             "security-group" => ResourceType::SecurityGroup,
+            "security-group-rule" => ResourceType::SecurityGroupRule,
             "snapshot" => ResourceType::Snapshot,
             "spot-fleet-request" => ResourceType::SpotFleetRequest,
             "spot-instances-request" => ResourceType::SpotInstancesRequest,
@@ -4057,6 +4124,7 @@ impl ResourceType {
             ResourceType::ImportImageTask => "import-image-task",
             ResourceType::ImportSnapshotTask => "import-snapshot-task",
             ResourceType::Instance => "instance",
+            ResourceType::InstanceEventWindow => "instance-event-window",
             ResourceType::InternetGateway => "internet-gateway",
             ResourceType::KeyPair => "key-pair",
             ResourceType::LaunchTemplate => "launch-template",
@@ -4066,13 +4134,13 @@ impl ResourceType {
             ResourceType::Natgateway => "natgateway",
             ResourceType::NetworkAcl => "network-acl",
             ResourceType::NetworkInsightsAnalysis => "network-insights-analysis",
-            ResourceType::NetworkInsightsBoundary => "network-insights-boundary",
             ResourceType::NetworkInsightsPath => "network-insights-path",
             ResourceType::NetworkInterface => "network-interface",
             ResourceType::PlacementGroup => "placement-group",
             ResourceType::ReservedInstances => "reserved-instances",
             ResourceType::RouteTable => "route-table",
             ResourceType::SecurityGroup => "security-group",
+            ResourceType::SecurityGroupRule => "security-group-rule",
             ResourceType::Snapshot => "snapshot",
             ResourceType::SpotFleetRequest => "spot-fleet-request",
             ResourceType::SpotInstancesRequest => "spot-instances-request",
@@ -4112,6 +4180,7 @@ impl ResourceType {
             "import-image-task",
             "import-snapshot-task",
             "instance",
+            "instance-event-window",
             "internet-gateway",
             "key-pair",
             "launch-template",
@@ -4119,13 +4188,13 @@ impl ResourceType {
             "natgateway",
             "network-acl",
             "network-insights-analysis",
-            "network-insights-boundary",
             "network-insights-path",
             "network-interface",
             "placement-group",
             "reserved-instances",
             "route-table",
             "security-group",
+            "security-group-rule",
             "snapshot",
             "spot-fleet-request",
             "spot-instances-request",
@@ -8314,7 +8383,7 @@ pub struct InstanceNetworkInterface {
     pub mac_address: std::option::Option<std::string::String>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that created the network interface.</p>
+    /// <p>The ID of the Amazon Web Services account that created the network interface.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The private DNS name.</p>
     pub private_dns_name: std::option::Option<std::string::String>,
@@ -8335,6 +8404,10 @@ pub struct InstanceNetworkInterface {
     /// <p>Valid values: <code>interface</code> | <code>efa</code> | <code>trunk</code>
     /// </p>
     pub interface_type: std::option::Option<std::string::String>,
+    /// <p>The IPv4 delegated prefixes that are assigned to the network interface.</p>
+    pub ipv4_prefixes: std::option::Option<std::vec::Vec<crate::model::InstanceIpv4Prefix>>,
+    /// <p>The IPv6 delegated prefixes that are assigned to the network interface.</p>
+    pub ipv6_prefixes: std::option::Option<std::vec::Vec<crate::model::InstanceIpv6Prefix>>,
 }
 impl std::fmt::Debug for InstanceNetworkInterface {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8355,6 +8428,8 @@ impl std::fmt::Debug for InstanceNetworkInterface {
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("vpc_id", &self.vpc_id);
         formatter.field("interface_type", &self.interface_type);
+        formatter.field("ipv4_prefixes", &self.ipv4_prefixes);
+        formatter.field("ipv6_prefixes", &self.ipv6_prefixes);
         formatter.finish()
     }
 }
@@ -8384,6 +8459,10 @@ pub mod instance_network_interface {
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) vpc_id: std::option::Option<std::string::String>,
         pub(crate) interface_type: std::option::Option<std::string::String>,
+        pub(crate) ipv4_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::InstanceIpv4Prefix>>,
+        pub(crate) ipv6_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::InstanceIpv6Prefix>>,
     }
     impl Builder {
         /// <p>The association information for an Elastic IPv4 associated with the network
@@ -8476,7 +8555,7 @@ pub mod instance_network_interface {
             self.network_interface_id = input;
             self
         }
-        /// <p>The ID of the account that created the network interface.</p>
+        /// <p>The ID of the Amazon Web Services account that created the network interface.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -8578,6 +8657,32 @@ pub mod instance_network_interface {
             self.interface_type = input;
             self
         }
+        pub fn ipv4_prefixes(mut self, input: impl Into<crate::model::InstanceIpv4Prefix>) -> Self {
+            let mut v = self.ipv4_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv4_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceIpv4Prefix>>,
+        ) -> Self {
+            self.ipv4_prefixes = input;
+            self
+        }
+        pub fn ipv6_prefixes(mut self, input: impl Into<crate::model::InstanceIpv6Prefix>) -> Self {
+            let mut v = self.ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceIpv6Prefix>>,
+        ) -> Self {
+            self.ipv6_prefixes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceNetworkInterface`](crate::model::InstanceNetworkInterface)
         pub fn build(self) -> crate::model::InstanceNetworkInterface {
             crate::model::InstanceNetworkInterface {
@@ -8597,6 +8702,8 @@ pub mod instance_network_interface {
                 subnet_id: self.subnet_id,
                 vpc_id: self.vpc_id,
                 interface_type: self.interface_type,
+                ipv4_prefixes: self.ipv4_prefixes,
+                ipv6_prefixes: self.ipv6_prefixes,
             }
         }
     }
@@ -8605,6 +8712,100 @@ impl InstanceNetworkInterface {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterface`](crate::model::InstanceNetworkInterface)
     pub fn builder() -> crate::model::instance_network_interface::Builder {
         crate::model::instance_network_interface::Builder::default()
+    }
+}
+
+/// <p>Information about an IPv6 delegated prefix.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceIpv6Prefix {
+    /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+    pub ipv6_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InstanceIpv6Prefix {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceIpv6Prefix");
+        formatter.field("ipv6_prefix", &self.ipv6_prefix);
+        formatter.finish()
+    }
+}
+/// See [`InstanceIpv6Prefix`](crate::model::InstanceIpv6Prefix)
+pub mod instance_ipv6_prefix {
+    /// A builder for [`InstanceIpv6Prefix`](crate::model::InstanceIpv6Prefix)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+        pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv6_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv6_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv6_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceIpv6Prefix`](crate::model::InstanceIpv6Prefix)
+        pub fn build(self) -> crate::model::InstanceIpv6Prefix {
+            crate::model::InstanceIpv6Prefix {
+                ipv6_prefix: self.ipv6_prefix,
+            }
+        }
+    }
+}
+impl InstanceIpv6Prefix {
+    /// Creates a new builder-style object to manufacture [`InstanceIpv6Prefix`](crate::model::InstanceIpv6Prefix)
+    pub fn builder() -> crate::model::instance_ipv6_prefix::Builder {
+        crate::model::instance_ipv6_prefix::Builder::default()
+    }
+}
+
+/// <p>Information about an IPv4 delegated prefix.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceIpv4Prefix {
+    /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+    pub ipv4_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InstanceIpv4Prefix {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceIpv4Prefix");
+        formatter.field("ipv4_prefix", &self.ipv4_prefix);
+        formatter.finish()
+    }
+}
+/// See [`InstanceIpv4Prefix`](crate::model::InstanceIpv4Prefix)
+pub mod instance_ipv4_prefix {
+    /// A builder for [`InstanceIpv4Prefix`](crate::model::InstanceIpv4Prefix)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+        pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv4_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv4_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv4_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceIpv4Prefix`](crate::model::InstanceIpv4Prefix)
+        pub fn build(self) -> crate::model::InstanceIpv4Prefix {
+            crate::model::InstanceIpv4Prefix {
+                ipv4_prefix: self.ipv4_prefix,
+            }
+        }
+    }
+}
+impl InstanceIpv4Prefix {
+    /// Creates a new builder-style object to manufacture [`InstanceIpv4Prefix`](crate::model::InstanceIpv4Prefix)
+    pub fn builder() -> crate::model::instance_ipv4_prefix::Builder {
+        crate::model::instance_ipv4_prefix::Builder::default()
     }
 }
 
@@ -10265,8 +10466,10 @@ pub enum InstanceType {
     G38xlarge,
     G3sXlarge,
     G4ad16xlarge,
+    G4ad2xlarge,
     G4ad4xlarge,
     G4ad8xlarge,
+    G4adXlarge,
     G4dn12xlarge,
     G4dn16xlarge,
     G4dn2xlarge,
@@ -10677,8 +10880,10 @@ impl std::convert::From<&str> for InstanceType {
             "g3.8xlarge" => InstanceType::G38xlarge,
             "g3s.xlarge" => InstanceType::G3sXlarge,
             "g4ad.16xlarge" => InstanceType::G4ad16xlarge,
+            "g4ad.2xlarge" => InstanceType::G4ad2xlarge,
             "g4ad.4xlarge" => InstanceType::G4ad4xlarge,
             "g4ad.8xlarge" => InstanceType::G4ad8xlarge,
+            "g4ad.xlarge" => InstanceType::G4adXlarge,
             "g4dn.12xlarge" => InstanceType::G4dn12xlarge,
             "g4dn.16xlarge" => InstanceType::G4dn16xlarge,
             "g4dn.2xlarge" => InstanceType::G4dn2xlarge,
@@ -11097,8 +11302,10 @@ impl InstanceType {
             InstanceType::G38xlarge => "g3.8xlarge",
             InstanceType::G3sXlarge => "g3s.xlarge",
             InstanceType::G4ad16xlarge => "g4ad.16xlarge",
+            InstanceType::G4ad2xlarge => "g4ad.2xlarge",
             InstanceType::G4ad4xlarge => "g4ad.4xlarge",
             InstanceType::G4ad8xlarge => "g4ad.8xlarge",
+            InstanceType::G4adXlarge => "g4ad.xlarge",
             InstanceType::G4dn12xlarge => "g4dn.12xlarge",
             InstanceType::G4dn16xlarge => "g4dn.16xlarge",
             InstanceType::G4dn2xlarge => "g4dn.2xlarge",
@@ -11508,8 +11715,10 @@ impl InstanceType {
             "g3.8xlarge",
             "g3s.xlarge",
             "g4ad.16xlarge",
+            "g4ad.2xlarge",
             "g4ad.4xlarge",
             "g4ad.8xlarge",
+            "g4ad.xlarge",
             "g4dn.12xlarge",
             "g4dn.16xlarge",
             "g4dn.2xlarge",
@@ -12467,16 +12676,7 @@ pub struct SpotMarketOptions {
     /// Instance requests are only supported when the instance interruption behavior is either <code>hibernate</code> or
     /// <code>stop</code>.</p>
     pub spot_instance_type: std::option::Option<crate::model::SpotInstanceType>,
-    /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes.
-    /// This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-    /// <p>The duration period starts as soon as your Spot Instance receives its instance ID. At
-    /// the end of the duration period, Amazon EC2 marks the Spot Instance for termination and
-    /// provides a Spot Instance termination notice, which gives the instance a two-minute
-    /// warning before it terminates.</p>
-    /// <p>You can't specify an Availability Zone group or a launch group if you specify a
-    /// duration.</p>
-    /// <p>New accounts or accounts with no previous billing history with Amazon Web Services are not eligible
-    /// for Spot Instances with a defined duration (also known as Spot blocks).</p>
+    /// <p>Deprecated.</p>
     pub block_duration_minutes: std::option::Option<i32>,
     /// <p>The end date of the request, in UTC format
     /// (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
@@ -12550,16 +12750,7 @@ pub mod spot_market_options {
             self.spot_instance_type = input;
             self
         }
-        /// <p>The required duration for the Spot Instances (also known as Spot blocks), in minutes.
-        /// This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
-        /// <p>The duration period starts as soon as your Spot Instance receives its instance ID. At
-        /// the end of the duration period, Amazon EC2 marks the Spot Instance for termination and
-        /// provides a Spot Instance termination notice, which gives the instance a two-minute
-        /// warning before it terminates.</p>
-        /// <p>You can't specify an Availability Zone group or a launch group if you specify a
-        /// duration.</p>
-        /// <p>New accounts or accounts with no previous billing history with Amazon Web Services are not eligible
-        /// for Spot Instances with a defined duration (also known as Spot blocks).</p>
+        /// <p>Deprecated.</p>
         pub fn block_duration_minutes(mut self, input: i32) -> Self {
             self.block_duration_minutes = Some(input);
             self
@@ -13049,6 +13240,20 @@ pub struct InstanceNetworkInterfaceSpecification {
     /// The primary network interface must be assigned to network card index 0.
     /// The default is network card index 0.</p>
     pub network_card_index: std::option::Option<i32>,
+    /// <p>One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot
+    /// use this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    pub ipv4_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+    /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface.
+    /// You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
+    pub ipv4_prefix_count: std::option::Option<i32>,
+    /// <p>One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot
+    /// use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    pub ipv6_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+    /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface.
+    /// You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
+    pub ipv6_prefix_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for InstanceNetworkInterfaceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -13077,6 +13282,10 @@ impl std::fmt::Debug for InstanceNetworkInterfaceSpecification {
         );
         formatter.field("interface_type", &self.interface_type);
         formatter.field("network_card_index", &self.network_card_index);
+        formatter.field("ipv4_prefixes", &self.ipv4_prefixes);
+        formatter.field("ipv4_prefix_count", &self.ipv4_prefix_count);
+        formatter.field("ipv6_prefixes", &self.ipv6_prefixes);
+        formatter.field("ipv6_prefix_count", &self.ipv6_prefix_count);
         formatter.finish()
     }
 }
@@ -13103,6 +13312,12 @@ pub mod instance_network_interface_specification {
         pub(crate) associate_carrier_ip_address: std::option::Option<bool>,
         pub(crate) interface_type: std::option::Option<std::string::String>,
         pub(crate) network_card_index: std::option::Option<i32>,
+        pub(crate) ipv4_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+        pub(crate) ipv4_prefix_count: std::option::Option<i32>,
+        pub(crate) ipv6_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+        pub(crate) ipv6_prefix_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Indicates whether to assign a public IPv4 address to an instance you launch in a VPC. The
@@ -13297,6 +13512,58 @@ pub mod instance_network_interface_specification {
             self.network_card_index = input;
             self
         }
+        pub fn ipv4_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv4PrefixSpecificationRequest>,
+        ) -> Self {
+            let mut v = self.ipv4_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv4_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+        ) -> Self {
+            self.ipv4_prefixes = input;
+            self
+        }
+        /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the network interface.
+        /// You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
+        pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
+            self.ipv4_prefix_count = Some(input);
+            self
+        }
+        pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.ipv4_prefix_count = input;
+            self
+        }
+        pub fn ipv6_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv6PrefixSpecificationRequest>,
+        ) -> Self {
+            let mut v = self.ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+        ) -> Self {
+            self.ipv6_prefixes = input;
+            self
+        }
+        /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network interface.
+        /// You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
+        pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
+            self.ipv6_prefix_count = Some(input);
+            self
+        }
+        pub fn set_ipv6_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.ipv6_prefix_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceNetworkInterfaceSpecification`](crate::model::InstanceNetworkInterfaceSpecification)
         pub fn build(self) -> crate::model::InstanceNetworkInterfaceSpecification {
             crate::model::InstanceNetworkInterfaceSpecification {
@@ -13315,6 +13582,10 @@ pub mod instance_network_interface_specification {
                 associate_carrier_ip_address: self.associate_carrier_ip_address,
                 interface_type: self.interface_type,
                 network_card_index: self.network_card_index,
+                ipv4_prefixes: self.ipv4_prefixes,
+                ipv4_prefix_count: self.ipv4_prefix_count,
+                ipv6_prefixes: self.ipv6_prefixes,
+                ipv6_prefix_count: self.ipv6_prefix_count,
             }
         }
     }
@@ -13323,6 +13594,102 @@ impl InstanceNetworkInterfaceSpecification {
     /// Creates a new builder-style object to manufacture [`InstanceNetworkInterfaceSpecification`](crate::model::InstanceNetworkInterfaceSpecification)
     pub fn builder() -> crate::model::instance_network_interface_specification::Builder {
         crate::model::instance_network_interface_specification::Builder::default()
+    }
+}
+
+/// <p>Describes the IPv4 Prefix Delegation option for a network interface.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ipv6PrefixSpecificationRequest {
+    /// <p>The IPv6 Prefix Delegation prefix.</p>
+    pub ipv6_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ipv6PrefixSpecificationRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ipv6PrefixSpecificationRequest");
+        formatter.field("ipv6_prefix", &self.ipv6_prefix);
+        formatter.finish()
+    }
+}
+/// See [`Ipv6PrefixSpecificationRequest`](crate::model::Ipv6PrefixSpecificationRequest)
+pub mod ipv6_prefix_specification_request {
+    /// A builder for [`Ipv6PrefixSpecificationRequest`](crate::model::Ipv6PrefixSpecificationRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IPv6 Prefix Delegation prefix.</p>
+        pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv6_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv6_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv6_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ipv6PrefixSpecificationRequest`](crate::model::Ipv6PrefixSpecificationRequest)
+        pub fn build(self) -> crate::model::Ipv6PrefixSpecificationRequest {
+            crate::model::Ipv6PrefixSpecificationRequest {
+                ipv6_prefix: self.ipv6_prefix,
+            }
+        }
+    }
+}
+impl Ipv6PrefixSpecificationRequest {
+    /// Creates a new builder-style object to manufacture [`Ipv6PrefixSpecificationRequest`](crate::model::Ipv6PrefixSpecificationRequest)
+    pub fn builder() -> crate::model::ipv6_prefix_specification_request::Builder {
+        crate::model::ipv6_prefix_specification_request::Builder::default()
+    }
+}
+
+/// <p>Describes the IPv4 Prefix Delegation option for a network interface.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ipv4PrefixSpecificationRequest {
+    /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub ipv4_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ipv4PrefixSpecificationRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ipv4PrefixSpecificationRequest");
+        formatter.field("ipv4_prefix", &self.ipv4_prefix);
+        formatter.finish()
+    }
+}
+/// See [`Ipv4PrefixSpecificationRequest`](crate::model::Ipv4PrefixSpecificationRequest)
+pub mod ipv4_prefix_specification_request {
+    /// A builder for [`Ipv4PrefixSpecificationRequest`](crate::model::Ipv4PrefixSpecificationRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv4_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv4_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv4_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ipv4PrefixSpecificationRequest`](crate::model::Ipv4PrefixSpecificationRequest)
+        pub fn build(self) -> crate::model::Ipv4PrefixSpecificationRequest {
+            crate::model::Ipv4PrefixSpecificationRequest {
+                ipv4_prefix: self.ipv4_prefix,
+            }
+        }
+    }
+}
+impl Ipv4PrefixSpecificationRequest {
+    /// Creates a new builder-style object to manufacture [`Ipv4PrefixSpecificationRequest`](crate::model::Ipv4PrefixSpecificationRequest)
+    pub fn builder() -> crate::model::ipv4_prefix_specification_request::Builder {
+        crate::model::ipv4_prefix_specification_request::Builder::default()
     }
 }
 
@@ -19012,7 +19379,7 @@ impl UnsuccessfulItem {
     }
 }
 
-/// <p>Information about the error that occurred. For more information about errors, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error Codes</a>.</p>
+/// <p>Information about the error that occurred. For more information about errors, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error codes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsuccessfulItemError {
@@ -21323,7 +21690,7 @@ impl AsRef<str> for PaymentOption {
 }
 
 /// <p>Provides authorization for Amazon to bring a specific IP address range to a specific
-/// account using bring your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Configuring your BYOIP address range</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// Amazon Web Services account using bring your own IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Configuring your BYOIP address range</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CidrAuthorizationContext {
@@ -26810,9 +27177,9 @@ impl AsRef<str> for OperationType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVolumePermissionModifications {
-    /// <p>Adds the specified AWS account ID or group to the list.</p>
+    /// <p>Adds the specified Amazon Web Services account ID or group to the list.</p>
     pub add: std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
-    /// <p>Removes the specified AWS account ID or group from the list.</p>
+    /// <p>Removes the specified Amazon Web Services account ID or group from the list.</p>
     pub remove: std::option::Option<std::vec::Vec<crate::model::CreateVolumePermission>>,
 }
 impl std::fmt::Debug for CreateVolumePermissionModifications {
@@ -26882,7 +27249,7 @@ impl CreateVolumePermissionModifications {
 pub struct CreateVolumePermission {
     /// <p>The group to be added or removed. The possible value is <code>all</code>.</p>
     pub group: std::option::Option<crate::model::PermissionGroup>,
-    /// <p>The AWS account ID to be added or removed.</p>
+    /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
     pub user_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateVolumePermission {
@@ -26915,7 +27282,7 @@ pub mod create_volume_permission {
             self.group = input;
             self
         }
-        /// <p>The AWS account ID to be added or removed.</p>
+        /// <p>The ID of the Amazon Web Services account to be added or removed.</p>
         pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_id = Some(input.into());
             self
@@ -26984,6 +27351,249 @@ impl PermissionGroup {
 impl AsRef<str> for PermissionGroup {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Describes an update to a security group rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityGroupRuleUpdate {
+    /// <p>The ID of the security group rule.</p>
+    pub security_group_rule_id: std::option::Option<std::string::String>,
+    /// <p>Information about the security group rule.</p>
+    pub security_group_rule: std::option::Option<crate::model::SecurityGroupRuleRequest>,
+}
+impl std::fmt::Debug for SecurityGroupRuleUpdate {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityGroupRuleUpdate");
+        formatter.field("security_group_rule_id", &self.security_group_rule_id);
+        formatter.field("security_group_rule", &self.security_group_rule);
+        formatter.finish()
+    }
+}
+/// See [`SecurityGroupRuleUpdate`](crate::model::SecurityGroupRuleUpdate)
+pub mod security_group_rule_update {
+    /// A builder for [`SecurityGroupRuleUpdate`](crate::model::SecurityGroupRuleUpdate)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_rule_id: std::option::Option<std::string::String>,
+        pub(crate) security_group_rule: std::option::Option<crate::model::SecurityGroupRuleRequest>,
+    }
+    impl Builder {
+        /// <p>The ID of the security group rule.</p>
+        pub fn security_group_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_group_rule_id = Some(input.into());
+            self
+        }
+        pub fn set_security_group_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_group_rule_id = input;
+            self
+        }
+        /// <p>Information about the security group rule.</p>
+        pub fn security_group_rule(
+            mut self,
+            input: crate::model::SecurityGroupRuleRequest,
+        ) -> Self {
+            self.security_group_rule = Some(input);
+            self
+        }
+        pub fn set_security_group_rule(
+            mut self,
+            input: std::option::Option<crate::model::SecurityGroupRuleRequest>,
+        ) -> Self {
+            self.security_group_rule = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityGroupRuleUpdate`](crate::model::SecurityGroupRuleUpdate)
+        pub fn build(self) -> crate::model::SecurityGroupRuleUpdate {
+            crate::model::SecurityGroupRuleUpdate {
+                security_group_rule_id: self.security_group_rule_id,
+                security_group_rule: self.security_group_rule,
+            }
+        }
+    }
+}
+impl SecurityGroupRuleUpdate {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleUpdate`](crate::model::SecurityGroupRuleUpdate)
+    pub fn builder() -> crate::model::security_group_rule_update::Builder {
+        crate::model::security_group_rule_update::Builder::default()
+    }
+}
+
+/// <p>Describes a security group rule.</p>
+/// <p>You must specify exactly one of the following parameters, based on the rule type:</p>
+/// <ul>
+/// <li>
+/// <p>CidrIpv4</p>
+/// </li>
+/// <li>
+/// <p>CidrIpv6</p>
+/// </li>
+/// <li>
+/// <p>PrefixListId</p>
+/// </li>
+/// <li>
+/// <p>ReferencedGroupId</p>
+/// </li>
+/// </ul>
+/// <p>When you modify a rule, you cannot change the rule type. For example, if the rule  
+/// uses an IPv4 address range, you must use <code>CidrIpv4</code> to specify a new IPv4
+/// address range.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityGroupRuleRequest {
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+    /// <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
+    /// <p>Use <code>-1</code> to specify all protocols.</p>
+    pub ip_protocol: std::option::Option<std::string::String>,
+    /// <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+    pub from_port: std::option::Option<i32>,
+    /// <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
+    pub to_port: std::option::Option<i32>,
+    /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
+    pub cidr_ipv4: std::option::Option<std::string::String>,
+    /// <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix length.</p>
+    pub cidr_ipv6: std::option::Option<std::string::String>,
+    /// <p>The ID of the prefix list.</p>
+    pub prefix_list_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the security group that is referenced in the security group rule.</p>
+    pub referenced_group_id: std::option::Option<std::string::String>,
+    /// <p>The description of the security group rule.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for SecurityGroupRuleRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityGroupRuleRequest");
+        formatter.field("ip_protocol", &self.ip_protocol);
+        formatter.field("from_port", &self.from_port);
+        formatter.field("to_port", &self.to_port);
+        formatter.field("cidr_ipv4", &self.cidr_ipv4);
+        formatter.field("cidr_ipv6", &self.cidr_ipv6);
+        formatter.field("prefix_list_id", &self.prefix_list_id);
+        formatter.field("referenced_group_id", &self.referenced_group_id);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`SecurityGroupRuleRequest`](crate::model::SecurityGroupRuleRequest)
+pub mod security_group_rule_request {
+    /// A builder for [`SecurityGroupRuleRequest`](crate::model::SecurityGroupRuleRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ip_protocol: std::option::Option<std::string::String>,
+        pub(crate) from_port: std::option::Option<i32>,
+        pub(crate) to_port: std::option::Option<i32>,
+        pub(crate) cidr_ipv4: std::option::Option<std::string::String>,
+        pub(crate) cidr_ipv6: std::option::Option<std::string::String>,
+        pub(crate) prefix_list_id: std::option::Option<std::string::String>,
+        pub(crate) referenced_group_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+        /// <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
+        /// <p>Use <code>-1</code> to specify all protocols.</p>
+        pub fn ip_protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_protocol = Some(input.into());
+            self
+        }
+        pub fn set_ip_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_protocol = input;
+            self
+        }
+        /// <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type. A value of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must specify all codes.</p>
+        pub fn from_port(mut self, input: i32) -> Self {
+            self.from_port = Some(input);
+            self
+        }
+        pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.from_port = input;
+            self
+        }
+        /// <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
+        pub fn to_port(mut self, input: i32) -> Self {
+            self.to_port = Some(input);
+            self
+        }
+        pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.to_port = input;
+            self
+        }
+        /// <p>The IPv4 CIDR range. To specify a single IPv4 address, use the /32 prefix length. </p>
+        pub fn cidr_ipv4(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr_ipv4 = Some(input.into());
+            self
+        }
+        pub fn set_cidr_ipv4(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr_ipv4 = input;
+            self
+        }
+        /// <p>The IPv6 CIDR range. To specify a single IPv6 address, use the /128 prefix length.</p>
+        pub fn cidr_ipv6(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr_ipv6 = Some(input.into());
+            self
+        }
+        pub fn set_cidr_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr_ipv6 = input;
+            self
+        }
+        /// <p>The ID of the prefix list.</p>
+        pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix_list_id = Some(input.into());
+            self
+        }
+        pub fn set_prefix_list_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.prefix_list_id = input;
+            self
+        }
+        /// <p>The ID of the security group that is referenced in the security group rule.</p>
+        pub fn referenced_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.referenced_group_id = Some(input.into());
+            self
+        }
+        pub fn set_referenced_group_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.referenced_group_id = input;
+            self
+        }
+        /// <p>The description of the security group rule.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityGroupRuleRequest`](crate::model::SecurityGroupRuleRequest)
+        pub fn build(self) -> crate::model::SecurityGroupRuleRequest {
+            crate::model::SecurityGroupRuleRequest {
+                ip_protocol: self.ip_protocol,
+                from_port: self.from_port,
+                to_port: self.to_port,
+                cidr_ipv4: self.cidr_ipv4,
+                cidr_ipv6: self.cidr_ipv6,
+                prefix_list_id: self.prefix_list_id,
+                referenced_group_id: self.referenced_group_id,
+                description: self.description,
+            }
+        }
+    }
+}
+impl SecurityGroupRuleRequest {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRuleRequest`](crate::model::SecurityGroupRuleRequest)
+    pub fn builder() -> crate::model::security_group_rule_request::Builder {
+        crate::model::security_group_rule_request::Builder::default()
     }
 }
 
@@ -27610,6 +28220,572 @@ impl Affinity {
 impl AsRef<str> for Affinity {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>The event window.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindow {
+    /// <p>The ID of the event window.</p>
+    pub instance_event_window_id: std::option::Option<std::string::String>,
+    /// <p>One or more time ranges defined for the event window.</p>
+    pub time_ranges: std::option::Option<std::vec::Vec<crate::model::InstanceEventWindowTimeRange>>,
+    /// <p>The name of the event window.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The cron expression defined for the event window.</p>
+    pub cron_expression: std::option::Option<std::string::String>,
+    /// <p>One or more targets associated with the event window.</p>
+    pub association_target: std::option::Option<crate::model::InstanceEventWindowAssociationTarget>,
+    /// <p>The current state of the event window.</p>
+    pub state: std::option::Option<crate::model::InstanceEventWindowState>,
+    /// <p>The instance tags associated with the event window.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for InstanceEventWindow {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindow");
+        formatter.field("instance_event_window_id", &self.instance_event_window_id);
+        formatter.field("time_ranges", &self.time_ranges);
+        formatter.field("name", &self.name);
+        formatter.field("cron_expression", &self.cron_expression);
+        formatter.field("association_target", &self.association_target);
+        formatter.field("state", &self.state);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindow`](crate::model::InstanceEventWindow)
+pub mod instance_event_window {
+    /// A builder for [`InstanceEventWindow`](crate::model::InstanceEventWindow)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window_id: std::option::Option<std::string::String>,
+        pub(crate) time_ranges:
+            std::option::Option<std::vec::Vec<crate::model::InstanceEventWindowTimeRange>>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) cron_expression: std::option::Option<std::string::String>,
+        pub(crate) association_target:
+            std::option::Option<crate::model::InstanceEventWindowAssociationTarget>,
+        pub(crate) state: std::option::Option<crate::model::InstanceEventWindowState>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the event window.</p>
+        pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_event_window_id = Some(input.into());
+            self
+        }
+        pub fn set_instance_event_window_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_event_window_id = input;
+            self
+        }
+        pub fn time_ranges(
+            mut self,
+            input: impl Into<crate::model::InstanceEventWindowTimeRange>,
+        ) -> Self {
+            let mut v = self.time_ranges.unwrap_or_default();
+            v.push(input.into());
+            self.time_ranges = Some(v);
+            self
+        }
+        pub fn set_time_ranges(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::InstanceEventWindowTimeRange>>,
+        ) -> Self {
+            self.time_ranges = input;
+            self
+        }
+        /// <p>The name of the event window.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The cron expression defined for the event window.</p>
+        pub fn cron_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cron_expression = Some(input.into());
+            self
+        }
+        pub fn set_cron_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.cron_expression = input;
+            self
+        }
+        /// <p>One or more targets associated with the event window.</p>
+        pub fn association_target(
+            mut self,
+            input: crate::model::InstanceEventWindowAssociationTarget,
+        ) -> Self {
+            self.association_target = Some(input);
+            self
+        }
+        pub fn set_association_target(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindowAssociationTarget>,
+        ) -> Self {
+            self.association_target = input;
+            self
+        }
+        /// <p>The current state of the event window.</p>
+        pub fn state(mut self, input: crate::model::InstanceEventWindowState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindowState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindow`](crate::model::InstanceEventWindow)
+        pub fn build(self) -> crate::model::InstanceEventWindow {
+            crate::model::InstanceEventWindow {
+                instance_event_window_id: self.instance_event_window_id,
+                time_ranges: self.time_ranges,
+                name: self.name,
+                cron_expression: self.cron_expression,
+                association_target: self.association_target,
+                state: self.state,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl InstanceEventWindow {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindow`](crate::model::InstanceEventWindow)
+    pub fn builder() -> crate::model::instance_event_window::Builder {
+        crate::model::instance_event_window::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum InstanceEventWindowState {
+    Active,
+    Creating,
+    Deleted,
+    Deleting,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for InstanceEventWindowState {
+    fn from(s: &str) -> Self {
+        match s {
+            "active" => InstanceEventWindowState::Active,
+            "creating" => InstanceEventWindowState::Creating,
+            "deleted" => InstanceEventWindowState::Deleted,
+            "deleting" => InstanceEventWindowState::Deleting,
+            other => InstanceEventWindowState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for InstanceEventWindowState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(InstanceEventWindowState::from(s))
+    }
+}
+impl InstanceEventWindowState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            InstanceEventWindowState::Active => "active",
+            InstanceEventWindowState::Creating => "creating",
+            InstanceEventWindowState::Deleted => "deleted",
+            InstanceEventWindowState::Deleting => "deleting",
+            InstanceEventWindowState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["active", "creating", "deleted", "deleting"]
+    }
+}
+impl AsRef<str> for InstanceEventWindowState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>One or more targets associated with the event window.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindowAssociationTarget {
+    /// <p>The IDs of the instances associated with the event window.</p>
+    pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The instance tags associated with the event window. Any instances associated with the tags
+    /// will be associated with the event window.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The IDs of the Dedicated Hosts associated with the event window.</p>
+    pub dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for InstanceEventWindowAssociationTarget {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindowAssociationTarget");
+        formatter.field("instance_ids", &self.instance_ids);
+        formatter.field("tags", &self.tags);
+        formatter.field("dedicated_host_ids", &self.dedicated_host_ids);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindowAssociationTarget`](crate::model::InstanceEventWindowAssociationTarget)
+pub mod instance_event_window_association_target {
+    /// A builder for [`InstanceEventWindowAssociationTarget`](crate::model::InstanceEventWindowAssociationTarget)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.instance_ids.unwrap_or_default();
+            v.push(input.into());
+            self.instance_ids = Some(v);
+            self
+        }
+        pub fn set_instance_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.instance_ids = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        pub fn dedicated_host_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dedicated_host_ids.unwrap_or_default();
+            v.push(input.into());
+            self.dedicated_host_ids = Some(v);
+            self
+        }
+        pub fn set_dedicated_host_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.dedicated_host_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindowAssociationTarget`](crate::model::InstanceEventWindowAssociationTarget)
+        pub fn build(self) -> crate::model::InstanceEventWindowAssociationTarget {
+            crate::model::InstanceEventWindowAssociationTarget {
+                instance_ids: self.instance_ids,
+                tags: self.tags,
+                dedicated_host_ids: self.dedicated_host_ids,
+            }
+        }
+    }
+}
+impl InstanceEventWindowAssociationTarget {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindowAssociationTarget`](crate::model::InstanceEventWindowAssociationTarget)
+    pub fn builder() -> crate::model::instance_event_window_association_target::Builder {
+        crate::model::instance_event_window_association_target::Builder::default()
+    }
+}
+
+/// <p>The start day and time and the end day and time of the time range, in UTC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindowTimeRange {
+    /// <p>The day on which the time range begins.</p>
+    pub start_week_day: std::option::Option<crate::model::WeekDay>,
+    /// <p>The hour when the time range begins.</p>
+    pub start_hour: std::option::Option<i32>,
+    /// <p>The day on which the time range ends.</p>
+    pub end_week_day: std::option::Option<crate::model::WeekDay>,
+    /// <p>The hour when the time range ends.</p>
+    pub end_hour: std::option::Option<i32>,
+}
+impl std::fmt::Debug for InstanceEventWindowTimeRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindowTimeRange");
+        formatter.field("start_week_day", &self.start_week_day);
+        formatter.field("start_hour", &self.start_hour);
+        formatter.field("end_week_day", &self.end_week_day);
+        formatter.field("end_hour", &self.end_hour);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindowTimeRange`](crate::model::InstanceEventWindowTimeRange)
+pub mod instance_event_window_time_range {
+    /// A builder for [`InstanceEventWindowTimeRange`](crate::model::InstanceEventWindowTimeRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_week_day: std::option::Option<crate::model::WeekDay>,
+        pub(crate) start_hour: std::option::Option<i32>,
+        pub(crate) end_week_day: std::option::Option<crate::model::WeekDay>,
+        pub(crate) end_hour: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The day on which the time range begins.</p>
+        pub fn start_week_day(mut self, input: crate::model::WeekDay) -> Self {
+            self.start_week_day = Some(input);
+            self
+        }
+        pub fn set_start_week_day(
+            mut self,
+            input: std::option::Option<crate::model::WeekDay>,
+        ) -> Self {
+            self.start_week_day = input;
+            self
+        }
+        /// <p>The hour when the time range begins.</p>
+        pub fn start_hour(mut self, input: i32) -> Self {
+            self.start_hour = Some(input);
+            self
+        }
+        pub fn set_start_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_hour = input;
+            self
+        }
+        /// <p>The day on which the time range ends.</p>
+        pub fn end_week_day(mut self, input: crate::model::WeekDay) -> Self {
+            self.end_week_day = Some(input);
+            self
+        }
+        pub fn set_end_week_day(
+            mut self,
+            input: std::option::Option<crate::model::WeekDay>,
+        ) -> Self {
+            self.end_week_day = input;
+            self
+        }
+        /// <p>The hour when the time range ends.</p>
+        pub fn end_hour(mut self, input: i32) -> Self {
+            self.end_hour = Some(input);
+            self
+        }
+        pub fn set_end_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindowTimeRange`](crate::model::InstanceEventWindowTimeRange)
+        pub fn build(self) -> crate::model::InstanceEventWindowTimeRange {
+            crate::model::InstanceEventWindowTimeRange {
+                start_week_day: self.start_week_day,
+                start_hour: self.start_hour,
+                end_week_day: self.end_week_day,
+                end_hour: self.end_hour,
+            }
+        }
+    }
+}
+impl InstanceEventWindowTimeRange {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindowTimeRange`](crate::model::InstanceEventWindowTimeRange)
+    pub fn builder() -> crate::model::instance_event_window_time_range::Builder {
+        crate::model::instance_event_window_time_range::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum WeekDay {
+    Friday,
+    Monday,
+    Saturday,
+    Sunday,
+    Thursday,
+    Tuesday,
+    Wednesday,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for WeekDay {
+    fn from(s: &str) -> Self {
+        match s {
+            "friday" => WeekDay::Friday,
+            "monday" => WeekDay::Monday,
+            "saturday" => WeekDay::Saturday,
+            "sunday" => WeekDay::Sunday,
+            "thursday" => WeekDay::Thursday,
+            "tuesday" => WeekDay::Tuesday,
+            "wednesday" => WeekDay::Wednesday,
+            other => WeekDay::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for WeekDay {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(WeekDay::from(s))
+    }
+}
+impl WeekDay {
+    pub fn as_str(&self) -> &str {
+        match self {
+            WeekDay::Friday => "friday",
+            WeekDay::Monday => "monday",
+            WeekDay::Saturday => "saturday",
+            WeekDay::Sunday => "sunday",
+            WeekDay::Thursday => "thursday",
+            WeekDay::Tuesday => "tuesday",
+            WeekDay::Wednesday => "wednesday",
+            WeekDay::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "friday",
+            "monday",
+            "saturday",
+            "sunday",
+            "thursday",
+            "tuesday",
+            "wednesday",
+        ]
+    }
+}
+impl AsRef<str> for WeekDay {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>The start day and time and the end day and time of the time range, in UTC.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindowTimeRangeRequest {
+    /// <p>The day on which the time range begins.</p>
+    pub start_week_day: std::option::Option<crate::model::WeekDay>,
+    /// <p>The hour when the time range begins.</p>
+    pub start_hour: std::option::Option<i32>,
+    /// <p>The day on which the time range ends.</p>
+    pub end_week_day: std::option::Option<crate::model::WeekDay>,
+    /// <p>The hour when the time range ends.</p>
+    pub end_hour: std::option::Option<i32>,
+}
+impl std::fmt::Debug for InstanceEventWindowTimeRangeRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindowTimeRangeRequest");
+        formatter.field("start_week_day", &self.start_week_day);
+        formatter.field("start_hour", &self.start_hour);
+        formatter.field("end_week_day", &self.end_week_day);
+        formatter.field("end_hour", &self.end_hour);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindowTimeRangeRequest`](crate::model::InstanceEventWindowTimeRangeRequest)
+pub mod instance_event_window_time_range_request {
+    /// A builder for [`InstanceEventWindowTimeRangeRequest`](crate::model::InstanceEventWindowTimeRangeRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_week_day: std::option::Option<crate::model::WeekDay>,
+        pub(crate) start_hour: std::option::Option<i32>,
+        pub(crate) end_week_day: std::option::Option<crate::model::WeekDay>,
+        pub(crate) end_hour: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The day on which the time range begins.</p>
+        pub fn start_week_day(mut self, input: crate::model::WeekDay) -> Self {
+            self.start_week_day = Some(input);
+            self
+        }
+        pub fn set_start_week_day(
+            mut self,
+            input: std::option::Option<crate::model::WeekDay>,
+        ) -> Self {
+            self.start_week_day = input;
+            self
+        }
+        /// <p>The hour when the time range begins.</p>
+        pub fn start_hour(mut self, input: i32) -> Self {
+            self.start_hour = Some(input);
+            self
+        }
+        pub fn set_start_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_hour = input;
+            self
+        }
+        /// <p>The day on which the time range ends.</p>
+        pub fn end_week_day(mut self, input: crate::model::WeekDay) -> Self {
+            self.end_week_day = Some(input);
+            self
+        }
+        pub fn set_end_week_day(
+            mut self,
+            input: std::option::Option<crate::model::WeekDay>,
+        ) -> Self {
+            self.end_week_day = input;
+            self
+        }
+        /// <p>The hour when the time range ends.</p>
+        pub fn end_hour(mut self, input: i32) -> Self {
+            self.end_hour = Some(input);
+            self
+        }
+        pub fn set_end_hour(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_hour = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindowTimeRangeRequest`](crate::model::InstanceEventWindowTimeRangeRequest)
+        pub fn build(self) -> crate::model::InstanceEventWindowTimeRangeRequest {
+            crate::model::InstanceEventWindowTimeRangeRequest {
+                start_week_day: self.start_week_day,
+                start_hour: self.start_hour,
+                end_week_day: self.end_week_day,
+                end_hour: self.end_hour,
+            }
+        }
+    }
+}
+impl InstanceEventWindowTimeRangeRequest {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindowTimeRangeRequest`](crate::model::InstanceEventWindowTimeRangeRequest)
+    pub fn builder() -> crate::model::instance_event_window_time_range_request::Builder {
+        crate::model::instance_event_window_time_range_request::Builder::default()
     }
 }
 
@@ -32675,6 +33851,206 @@ impl TransitGatewayAttachmentPropagation {
     }
 }
 
+/// <p>Describes a subnet CIDR reservation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SubnetCidrReservation {
+    /// <p>The ID of the subnet CIDR reservation.</p>
+    pub subnet_cidr_reservation_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the subnet.</p>
+    pub subnet_id: std::option::Option<std::string::String>,
+    /// <p>The CIDR that has been reserved.</p>
+    pub cidr: std::option::Option<std::string::String>,
+    /// <p>The type of reservation. </p>
+    pub reservation_type: std::option::Option<crate::model::SubnetCidrReservationType>,
+    /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
+    pub owner_id: std::option::Option<std::string::String>,
+    /// <p>The
+    /// description
+    /// assigned to the subnet CIDR
+    /// reservation.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The tags assigned to the subnet CIDR reservation.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for SubnetCidrReservation {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SubnetCidrReservation");
+        formatter.field(
+            "subnet_cidr_reservation_id",
+            &self.subnet_cidr_reservation_id,
+        );
+        formatter.field("subnet_id", &self.subnet_id);
+        formatter.field("cidr", &self.cidr);
+        formatter.field("reservation_type", &self.reservation_type);
+        formatter.field("owner_id", &self.owner_id);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`SubnetCidrReservation`](crate::model::SubnetCidrReservation)
+pub mod subnet_cidr_reservation {
+    /// A builder for [`SubnetCidrReservation`](crate::model::SubnetCidrReservation)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) subnet_cidr_reservation_id: std::option::Option<std::string::String>,
+        pub(crate) subnet_id: std::option::Option<std::string::String>,
+        pub(crate) cidr: std::option::Option<std::string::String>,
+        pub(crate) reservation_type: std::option::Option<crate::model::SubnetCidrReservationType>,
+        pub(crate) owner_id: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the subnet CIDR reservation.</p>
+        pub fn subnet_cidr_reservation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_cidr_reservation_id = Some(input.into());
+            self
+        }
+        pub fn set_subnet_cidr_reservation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.subnet_cidr_reservation_id = input;
+            self
+        }
+        /// <p>The ID of the subnet.</p>
+        pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.subnet_id = Some(input.into());
+            self
+        }
+        pub fn set_subnet_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.subnet_id = input;
+            self
+        }
+        /// <p>The CIDR that has been reserved.</p>
+        pub fn cidr(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr = Some(input.into());
+            self
+        }
+        pub fn set_cidr(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr = input;
+            self
+        }
+        /// <p>The type of reservation. </p>
+        pub fn reservation_type(mut self, input: crate::model::SubnetCidrReservationType) -> Self {
+            self.reservation_type = Some(input);
+            self
+        }
+        pub fn set_reservation_type(
+            mut self,
+            input: std::option::Option<crate::model::SubnetCidrReservationType>,
+        ) -> Self {
+            self.reservation_type = input;
+            self
+        }
+        /// <p>The ID of the account that owns the subnet CIDR reservation. </p>
+        pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owner_id = Some(input.into());
+            self
+        }
+        pub fn set_owner_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owner_id = input;
+            self
+        }
+        /// <p>The
+        /// description
+        /// assigned to the subnet CIDR
+        /// reservation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SubnetCidrReservation`](crate::model::SubnetCidrReservation)
+        pub fn build(self) -> crate::model::SubnetCidrReservation {
+            crate::model::SubnetCidrReservation {
+                subnet_cidr_reservation_id: self.subnet_cidr_reservation_id,
+                subnet_id: self.subnet_id,
+                cidr: self.cidr,
+                reservation_type: self.reservation_type,
+                owner_id: self.owner_id,
+                description: self.description,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl SubnetCidrReservation {
+    /// Creates a new builder-style object to manufacture [`SubnetCidrReservation`](crate::model::SubnetCidrReservation)
+    pub fn builder() -> crate::model::subnet_cidr_reservation::Builder {
+        crate::model::subnet_cidr_reservation::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SubnetCidrReservationType {
+    Explicit,
+    Prefix,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SubnetCidrReservationType {
+    fn from(s: &str) -> Self {
+        match s {
+            "explicit" => SubnetCidrReservationType::Explicit,
+            "prefix" => SubnetCidrReservationType::Prefix,
+            other => SubnetCidrReservationType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SubnetCidrReservationType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SubnetCidrReservationType::from(s))
+    }
+}
+impl SubnetCidrReservationType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SubnetCidrReservationType::Explicit => "explicit",
+            SubnetCidrReservationType::Prefix => "prefix",
+            SubnetCidrReservationType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["explicit", "prefix"]
+    }
+}
+impl AsRef<str> for SubnetCidrReservationType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>The total value of the new Convertible Reserved Instances.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -33202,7 +34578,7 @@ pub struct ResponseLaunchTemplateData {
         std::option::Option<crate::model::LaunchTemplateInstanceMarketOptions>,
     /// <p>The credit option for CPU usage of the instance.</p>
     pub credit_specification: std::option::Option<crate::model::CreditSpecification>,
-    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <i>Amazon Elastic Compute Cloud User
+    /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon Elastic Compute Cloud User
     /// Guide</i>.</p>
     pub cpu_options: std::option::Option<crate::model::LaunchTemplateCpuOptions>,
     /// <p>Information about the Capacity Reservation targeting option.</p>
@@ -33213,12 +34589,12 @@ pub struct ResponseLaunchTemplateData {
         std::option::Option<std::vec::Vec<crate::model::LaunchTemplateLicenseConfiguration>>,
     /// <p>Indicates whether an instance is configured for hibernation. For more information, see
     /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-    /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub hibernation_options: std::option::Option<crate::model::LaunchTemplateHibernationOptions>,
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User Data</a> in the
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub metadata_options: std::option::Option<crate::model::LaunchTemplateInstanceMetadataOptions>,
-    /// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
     pub enclave_options: std::option::Option<crate::model::LaunchTemplateEnclaveOptions>,
 }
 impl std::fmt::Debug for ResponseLaunchTemplateData {
@@ -33588,7 +34964,7 @@ pub mod response_launch_template_data {
             self.credit_specification = input;
             self
         }
-        /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <i>Amazon Elastic Compute Cloud User
+        /// <p>The CPU options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU options</a> in the <i>Amazon Elastic Compute Cloud User
         /// Guide</i>.</p>
         pub fn cpu_options(mut self, input: crate::model::LaunchTemplateCpuOptions) -> Self {
             self.cpu_options = Some(input);
@@ -33638,7 +35014,7 @@ pub mod response_launch_template_data {
         }
         /// <p>Indicates whether an instance is configured for hibernation. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate
-        /// Your Instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        /// your instance</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn hibernation_options(
             mut self,
             input: crate::model::LaunchTemplateHibernationOptions,
@@ -33653,7 +35029,7 @@ pub mod response_launch_template_data {
             self.hibernation_options = input;
             self
         }
-        /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User Data</a> in the
+        /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn metadata_options(
             mut self,
@@ -33669,7 +35045,7 @@ pub mod response_launch_template_data {
             self.metadata_options = input;
             self
         }
-        /// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+        /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
         pub fn enclave_options(
             mut self,
             input: crate::model::LaunchTemplateEnclaveOptions,
@@ -33725,12 +35101,12 @@ impl ResponseLaunchTemplateData {
     }
 }
 
-/// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves.</p>
+/// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateEnclaveOptions {
-    /// <p>If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves;
-    /// otherwise, it is not enabled for AWS Nitro Enclaves.</p>
+    /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+    /// otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.</p>
     pub enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for LaunchTemplateEnclaveOptions {
@@ -33749,8 +35125,8 @@ pub mod launch_template_enclave_options {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>If this parameter is set to <code>true</code>, the instance is enabled for AWS Nitro Enclaves;
-        /// otherwise, it is not enabled for AWS Nitro Enclaves.</p>
+        /// <p>If this parameter is set to <code>true</code>, the instance is enabled for Amazon Web Services Nitro Enclaves;
+        /// otherwise, it is not enabled for Amazon Web Services Nitro Enclaves.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
@@ -34967,7 +36343,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecification {
     /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
     /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate
     /// a Carrier IP address with the network interface. For more information about Carrier IP
-    /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>AWS Wavelength Developer
+    /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer
     /// Guide</i>.</p>
     pub associate_carrier_ip_address: std::option::Option<bool>,
     /// <p>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</p>
@@ -34999,6 +36375,18 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The index of the network card.</p>
     pub network_card_index: std::option::Option<i32>,
+    /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+    pub ipv4_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationResponse>>,
+    /// <p>The number of IPv4 delegated prefixes that AWS automatically assigned to the
+    /// network interface.</p>
+    pub ipv4_prefix_count: std::option::Option<i32>,
+    /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+    pub ipv6_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationResponse>>,
+    /// <p>The number of IPv6 delegated prefixes that AWS automatically assigned to the network
+    /// interface.</p>
+    pub ipv6_prefix_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for LaunchTemplateInstanceNetworkInterfaceSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35027,6 +36415,10 @@ impl std::fmt::Debug for LaunchTemplateInstanceNetworkInterfaceSpecification {
         );
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("network_card_index", &self.network_card_index);
+        formatter.field("ipv4_prefixes", &self.ipv4_prefixes);
+        formatter.field("ipv4_prefix_count", &self.ipv4_prefix_count);
+        formatter.field("ipv6_prefixes", &self.ipv6_prefixes);
+        formatter.field("ipv6_prefix_count", &self.ipv6_prefix_count);
         formatter.finish()
     }
 }
@@ -35053,12 +36445,18 @@ pub mod launch_template_instance_network_interface_specification {
         pub(crate) secondary_private_ip_address_count: std::option::Option<i32>,
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) network_card_index: std::option::Option<i32>,
+        pub(crate) ipv4_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationResponse>>,
+        pub(crate) ipv4_prefix_count: std::option::Option<i32>,
+        pub(crate) ipv6_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationResponse>>,
+        pub(crate) ipv6_prefix_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Indicates whether to associate a Carrier IP address with eth0 for a new network interface.</p>
         /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate
         /// a Carrier IP address with the network interface. For more information about Carrier IP
-        /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>AWS Wavelength Developer
+        /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer
         /// Guide</i>.</p>
         pub fn associate_carrier_ip_address(mut self, input: bool) -> Self {
             self.associate_carrier_ip_address = Some(input);
@@ -35227,6 +36625,62 @@ pub mod launch_template_instance_network_interface_specification {
             self.network_card_index = input;
             self
         }
+        pub fn ipv4_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv4PrefixSpecificationResponse>,
+        ) -> Self {
+            let mut v = self.ipv4_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv4_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::Ipv4PrefixSpecificationResponse>,
+            >,
+        ) -> Self {
+            self.ipv4_prefixes = input;
+            self
+        }
+        /// <p>The number of IPv4 delegated prefixes that AWS automatically assigned to the
+        /// network interface.</p>
+        pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
+            self.ipv4_prefix_count = Some(input);
+            self
+        }
+        pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.ipv4_prefix_count = input;
+            self
+        }
+        pub fn ipv6_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv6PrefixSpecificationResponse>,
+        ) -> Self {
+            let mut v = self.ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::Ipv6PrefixSpecificationResponse>,
+            >,
+        ) -> Self {
+            self.ipv6_prefixes = input;
+            self
+        }
+        /// <p>The number of IPv6 delegated prefixes that AWS automatically assigned to the network
+        /// interface.</p>
+        pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
+            self.ipv6_prefix_count = Some(input);
+            self
+        }
+        pub fn set_ipv6_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.ipv6_prefix_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchTemplateInstanceNetworkInterfaceSpecification`](crate::model::LaunchTemplateInstanceNetworkInterfaceSpecification)
         pub fn build(self) -> crate::model::LaunchTemplateInstanceNetworkInterfaceSpecification {
             crate::model::LaunchTemplateInstanceNetworkInterfaceSpecification {
@@ -35245,6 +36699,10 @@ pub mod launch_template_instance_network_interface_specification {
                 secondary_private_ip_address_count: self.secondary_private_ip_address_count,
                 subnet_id: self.subnet_id,
                 network_card_index: self.network_card_index,
+                ipv4_prefixes: self.ipv4_prefixes,
+                ipv4_prefix_count: self.ipv4_prefix_count,
+                ipv6_prefixes: self.ipv6_prefixes,
+                ipv6_prefix_count: self.ipv6_prefix_count,
             }
         }
     }
@@ -35254,6 +36712,102 @@ impl LaunchTemplateInstanceNetworkInterfaceSpecification {
     pub fn builder(
     ) -> crate::model::launch_template_instance_network_interface_specification::Builder {
         crate::model::launch_template_instance_network_interface_specification::Builder::default()
+    }
+}
+
+/// <p>Information about the IPv6 delegated prefixes assigned
+/// to a network interface.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ipv6PrefixSpecificationResponse {
+    /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+    pub ipv6_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ipv6PrefixSpecificationResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ipv6PrefixSpecificationResponse");
+        formatter.field("ipv6_prefix", &self.ipv6_prefix);
+        formatter.finish()
+    }
+}
+/// See [`Ipv6PrefixSpecificationResponse`](crate::model::Ipv6PrefixSpecificationResponse)
+pub mod ipv6_prefix_specification_response {
+    /// A builder for [`Ipv6PrefixSpecificationResponse`](crate::model::Ipv6PrefixSpecificationResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>One or more IPv6 delegated prefixes assigned to the network interface.</p>
+        pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv6_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv6_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv6_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ipv6PrefixSpecificationResponse`](crate::model::Ipv6PrefixSpecificationResponse)
+        pub fn build(self) -> crate::model::Ipv6PrefixSpecificationResponse {
+            crate::model::Ipv6PrefixSpecificationResponse {
+                ipv6_prefix: self.ipv6_prefix,
+            }
+        }
+    }
+}
+impl Ipv6PrefixSpecificationResponse {
+    /// Creates a new builder-style object to manufacture [`Ipv6PrefixSpecificationResponse`](crate::model::Ipv6PrefixSpecificationResponse)
+    pub fn builder() -> crate::model::ipv6_prefix_specification_response::Builder {
+        crate::model::ipv6_prefix_specification_response::Builder::default()
+    }
+}
+
+/// <p>Information about the IPv4 delegated prefixes assigned
+/// to a network interface.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ipv4PrefixSpecificationResponse {
+    /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+    pub ipv4_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ipv4PrefixSpecificationResponse {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ipv4PrefixSpecificationResponse");
+        formatter.field("ipv4_prefix", &self.ipv4_prefix);
+        formatter.finish()
+    }
+}
+/// See [`Ipv4PrefixSpecificationResponse`](crate::model::Ipv4PrefixSpecificationResponse)
+pub mod ipv4_prefix_specification_response {
+    /// A builder for [`Ipv4PrefixSpecificationResponse`](crate::model::Ipv4PrefixSpecificationResponse)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>One or more IPv4 delegated prefixes assigned to the network interface.</p>
+        pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv4_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv4_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv4_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ipv4PrefixSpecificationResponse`](crate::model::Ipv4PrefixSpecificationResponse)
+        pub fn build(self) -> crate::model::Ipv4PrefixSpecificationResponse {
+            crate::model::Ipv4PrefixSpecificationResponse {
+                ipv4_prefix: self.ipv4_prefix,
+            }
+        }
+    }
+}
+impl Ipv4PrefixSpecificationResponse {
+    /// Creates a new builder-style object to manufacture [`Ipv4PrefixSpecificationResponse`](crate::model::Ipv4PrefixSpecificationResponse)
+    pub fn builder() -> crate::model::ipv4_prefix_specification_response::Builder {
+        crate::model::ipv4_prefix_specification_response::Builder::default()
     }
 }
 
@@ -35359,7 +36913,7 @@ pub struct LaunchTemplateEbsBlockDevice {
     pub delete_on_termination: std::option::Option<bool>,
     /// <p>The number of I/O operations per second (IOPS) that the volume supports. </p>
     pub iops: std::option::Option<i32>,
-    /// <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.</p>
+    /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -35427,7 +36981,7 @@ pub mod launch_template_ebs_block_device {
             self.iops = input;
             self
         }
-        /// <p>The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.</p>
+        /// <p>The ARN of the Key Management Service (KMS) CMK used for encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -35564,7 +37118,7 @@ impl LaunchTemplateIamInstanceProfileSpecification {
 pub struct CapacityReservationGroup {
     /// <p>The ARN of the resource group.</p>
     pub group_arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the resource group.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
     pub owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CapacityReservationGroup {
@@ -35594,7 +37148,7 @@ pub mod capacity_reservation_group {
             self.group_arn = input;
             self
         }
-        /// <p>The ID of the account that owns the resource group.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the resource group.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -35940,9 +37494,9 @@ impl CoipAddressUsage {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceUsage {
-    /// <p>The ID of the account that is making use of the Capacity Reservation.</p>
+    /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The number of instances the account currently has in the Capacity Reservation.</p>
+    /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
     pub used_instance_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for InstanceUsage {
@@ -35963,7 +37517,7 @@ pub mod instance_usage {
         pub(crate) used_instance_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The ID of the account that is making use of the Capacity Reservation.</p>
+        /// <p>The ID of the Amazon Web Services account that is making use of the Capacity Reservation.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -35972,7 +37526,7 @@ pub mod instance_usage {
             self.account_id = input;
             self
         }
-        /// <p>The number of instances the account currently has in the Capacity Reservation.</p>
+        /// <p>The number of instances the Amazon Web Services account currently has in the Capacity Reservation.</p>
         pub fn used_instance_count(mut self, input: i32) -> Self {
             self.used_instance_count = Some(input);
             self
@@ -36827,9 +38381,9 @@ pub struct EnableFastSnapshotRestoreSuccessItem {
     /// </li>
     /// </ul>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that enabled fast snapshot restores on the snapshot.</p>
+    /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
+    /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
     pub owner_alias: std::option::Option<std::string::String>,
     /// <p>The time at which fast snapshot restores entered the <code>enabling</code> state.</p>
     pub enabling_time: std::option::Option<smithy_types::Instant>,
@@ -36935,7 +38489,7 @@ pub mod enable_fast_snapshot_restore_success_item {
             self.state_transition_reason = input;
             self
         }
-        /// <p>The ID of the AWS account that enabled fast snapshot restores on the snapshot.</p>
+        /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -36944,7 +38498,7 @@ pub mod enable_fast_snapshot_restore_success_item {
             self.owner_id = input;
             self
         }
-        /// <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
+        /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
@@ -37782,6 +39336,94 @@ impl AsRef<str> for SubnetCidrBlockStateCode {
     }
 }
 
+/// <p>The targets to disassociate from the specified event window.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindowDisassociationRequest {
+    /// <p>The IDs of the instances to disassociate from the event window.</p>
+    pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The instance tags to disassociate from the event window. Any instances associated with
+    /// the tags will be disassociated from the event window.</p>
+    pub instance_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The IDs of the Dedicated Hosts to disassociate from the event window.</p>
+    pub dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for InstanceEventWindowDisassociationRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindowDisassociationRequest");
+        formatter.field("instance_ids", &self.instance_ids);
+        formatter.field("instance_tags", &self.instance_tags);
+        formatter.field("dedicated_host_ids", &self.dedicated_host_ids);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindowDisassociationRequest`](crate::model::InstanceEventWindowDisassociationRequest)
+pub mod instance_event_window_disassociation_request {
+    /// A builder for [`InstanceEventWindowDisassociationRequest`](crate::model::InstanceEventWindowDisassociationRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) instance_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.instance_ids.unwrap_or_default();
+            v.push(input.into());
+            self.instance_ids = Some(v);
+            self
+        }
+        pub fn set_instance_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.instance_ids = input;
+            self
+        }
+        pub fn instance_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.instance_tags.unwrap_or_default();
+            v.push(input.into());
+            self.instance_tags = Some(v);
+            self
+        }
+        pub fn set_instance_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.instance_tags = input;
+            self
+        }
+        pub fn dedicated_host_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dedicated_host_ids.unwrap_or_default();
+            v.push(input.into());
+            self.dedicated_host_ids = Some(v);
+            self
+        }
+        pub fn set_dedicated_host_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.dedicated_host_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindowDisassociationRequest`](crate::model::InstanceEventWindowDisassociationRequest)
+        pub fn build(self) -> crate::model::InstanceEventWindowDisassociationRequest {
+            crate::model::InstanceEventWindowDisassociationRequest {
+                instance_ids: self.instance_ids,
+                instance_tags: self.instance_tags,
+                dedicated_host_ids: self.dedicated_host_ids,
+            }
+        }
+    }
+}
+impl InstanceEventWindowDisassociationRequest {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindowDisassociationRequest`](crate::model::InstanceEventWindowDisassociationRequest)
+    pub fn builder() -> crate::model::instance_event_window_disassociation_request::Builder {
+        crate::model::instance_event_window_disassociation_request::Builder::default()
+    }
+}
+
 /// <p>Describes the state of a target network association.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -38139,9 +39781,9 @@ pub struct DisableFastSnapshotRestoreSuccessItem {
     /// </li>
     /// </ul>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that enabled fast snapshot restores on the snapshot.</p>
+    /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
+    /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
     pub owner_alias: std::option::Option<std::string::String>,
     /// <p>The time at which fast snapshot restores entered the <code>enabling</code> state.</p>
     pub enabling_time: std::option::Option<smithy_types::Instant>,
@@ -38247,7 +39889,7 @@ pub mod disable_fast_snapshot_restore_success_item {
             self.state_transition_reason = input;
             self
         }
-        /// <p>The ID of the AWS account that enabled fast snapshot restores on the snapshot.</p>
+        /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -38256,7 +39898,7 @@ pub mod disable_fast_snapshot_restore_success_item {
             self.owner_id = input;
             self
         }
-        /// <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
+        /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
@@ -38630,7 +40272,7 @@ pub struct Vpc {
     pub state: std::option::Option<crate::model::VpcState>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the VPC.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The allowed tenancy of instances launched into the VPC.</p>
     pub instance_tenancy: std::option::Option<crate::model::Tenancy>,
@@ -38726,7 +40368,7 @@ pub mod vpc {
             self.vpc_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the VPC.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -39174,7 +40816,7 @@ pub struct VpcPeeringConnectionVpcInfo {
     pub ipv6_cidr_block_set: std::option::Option<std::vec::Vec<crate::model::Ipv6CidrBlock>>,
     /// <p>Information about the IPv4 CIDR blocks for the VPC.</p>
     pub cidr_block_set: std::option::Option<std::vec::Vec<crate::model::CidrBlock>>,
-    /// <p>The AWS account ID of the VPC owner.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Information about the VPC peering connection options for the accepter or requester VPC.</p>
     pub peering_options: std::option::Option<crate::model::VpcPeeringConnectionOptionsDescription>,
@@ -39251,7 +40893,7 @@ pub mod vpc_peering_connection_vpc_info {
             self.cidr_block_set = input;
             self
         }
-        /// <p>The AWS account ID of the VPC owner.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the VPC.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -42474,7 +44116,7 @@ pub struct Volume {
     pub create_time: std::option::Option<smithy_types::Instant>,
     /// <p>Indicates whether the volume is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
     /// volume encryption key for the volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
@@ -42594,7 +44236,7 @@ pub mod volume {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
         /// volume encryption key for the volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -45251,7 +46893,7 @@ pub struct Subnet {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC the subnet is in.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the subnet.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether a network interface created in this subnet (including a network
     /// interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
@@ -45440,7 +47082,7 @@ pub mod subnet {
             self.vpc_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the subnet.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the subnet.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -47034,7 +48676,7 @@ pub struct SpotDatafeedSubscription {
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The fault codes for the Spot Instance request, if any.</p>
     pub fault: std::option::Option<crate::model::SpotInstanceStateFault>,
-    /// <p>The account ID of the account.</p>
+    /// <p>The Amazon Web Services account ID of the account.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The prefix for the data feed files.</p>
     pub prefix: std::option::Option<std::string::String>,
@@ -47086,7 +48728,7 @@ pub mod spot_datafeed_subscription {
             self.fault = input;
             self
         }
-        /// <p>The account ID of the account.</p>
+        /// <p>The Amazon Web Services account ID of the account.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -47199,10 +48841,10 @@ pub struct Snapshot {
     pub description: std::option::Option<std::string::String>,
     /// <p>Indicates whether the snapshot is encrypted.</p>
     pub encrypted: std::option::Option<bool>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
     /// volume encryption key for the parent volume.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the EBS snapshot owner.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The progress of the snapshot, as a percentage.</p>
     pub progress: std::option::Option<std::string::String>,
@@ -47214,7 +48856,7 @@ pub struct Snapshot {
     /// <p>The snapshot state.</p>
     pub state: std::option::Option<crate::model::SnapshotState>,
     /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-    /// (for example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
+    /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
     /// state details to help you diagnose why the error occurred. This parameter is only returned by
     /// <a>DescribeSnapshots</a>.</p>
     pub state_message: std::option::Option<std::string::String>,
@@ -47223,10 +48865,10 @@ pub struct Snapshot {
     pub volume_id: std::option::Option<std::string::String>,
     /// <p>The size of the volume, in GiB.</p>
     pub volume_size: std::option::Option<i32>,
-    /// <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-    /// the user-configured AWS account alias set using the IAM console.</p>
+    /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
+    /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
     pub owner_alias: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the snapshot.</p>
@@ -47310,7 +48952,7 @@ pub mod snapshot {
             self.encrypted = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) KMS key that was used to protect the
         /// volume encryption key for the parent volume.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -47320,7 +48962,7 @@ pub mod snapshot {
             self.kms_key_id = input;
             self
         }
-        /// <p>The AWS account ID of the EBS snapshot owner.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -47370,7 +49012,7 @@ pub mod snapshot {
             self
         }
         /// <p>Encrypted Amazon EBS snapshots are copied asynchronously. If a snapshot copy operation fails
-        /// (for example, if the proper AWS Key Management Service (AWS KMS) permissions are not obtained) this field displays error
+        /// (for example, if the proper Key Management Service (KMS) permissions are not obtained) this field displays error
         /// state details to help you diagnose why the error occurred. This parameter is only returned by
         /// <a>DescribeSnapshots</a>.</p>
         pub fn state_message(mut self, input: impl Into<std::string::String>) -> Self {
@@ -47403,8 +49045,8 @@ pub mod snapshot {
             self.volume_size = input;
             self
         }
-        /// <p>The AWS owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
-        /// the user-configured AWS account alias set using the IAM console.</p>
+        /// <p>The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>). This is not  
+        /// the user-configured Amazon Web Services account alias set using the IAM console.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
@@ -47413,7 +49055,7 @@ pub mod snapshot {
             self.owner_alias = input;
             self
         }
-        /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
@@ -47518,7 +49160,7 @@ impl AsRef<str> for SnapshotState {
     }
 }
 
-/// <p>Describes a security group</p>
+/// <p>Describes a security group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityGroup {
@@ -47528,7 +49170,7 @@ pub struct SecurityGroup {
     pub group_name: std::option::Option<std::string::String>,
     /// <p>The inbound rules associated with the security group.</p>
     pub ip_permissions: std::option::Option<std::vec::Vec<crate::model::IpPermission>>,
-    /// <p>The AWS account ID of the owner of the security group.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of the security group.</p>
     pub group_id: std::option::Option<std::string::String>,
@@ -47601,7 +49243,7 @@ pub mod security_group {
             self.ip_permissions = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the security group.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the security group.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -47676,6 +49318,358 @@ impl SecurityGroup {
     /// Creates a new builder-style object to manufacture [`SecurityGroup`](crate::model::SecurityGroup)
     pub fn builder() -> crate::model::security_group::Builder {
         crate::model::security_group::Builder::default()
+    }
+}
+
+/// <p>Describes a security group rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SecurityGroupRule {
+    /// <p>The ID of the security group rule.</p>
+    pub security_group_rule_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the security group.</p>
+    pub group_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
+    pub group_owner_id: std::option::Option<std::string::String>,
+    /// <p>Indicates whether the security group rule is an outbound rule.</p>
+    pub is_egress: std::option::Option<bool>,
+    /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+    /// <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
+    /// <p>Use <code>-1</code> to specify all protocols.</p>
+    pub ip_protocol: std::option::Option<std::string::String>,
+    /// <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type. A value
+    /// of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must
+    /// specify all codes.</p>
+    pub from_port: std::option::Option<i32>,
+    /// <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
+    pub to_port: std::option::Option<i32>,
+    /// <p>The IPv4 CIDR range.</p>
+    pub cidr_ipv4: std::option::Option<std::string::String>,
+    /// <p>The IPv6 CIDR range.</p>
+    pub cidr_ipv6: std::option::Option<std::string::String>,
+    /// <p>The ID of the prefix list.</p>
+    pub prefix_list_id: std::option::Option<std::string::String>,
+    /// <p>Describes the security group that is referenced in the rule.</p>
+    pub referenced_group_info: std::option::Option<crate::model::ReferencedSecurityGroup>,
+    /// <p>The security group rule description.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The tags applied to the security group rule.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for SecurityGroupRule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SecurityGroupRule");
+        formatter.field("security_group_rule_id", &self.security_group_rule_id);
+        formatter.field("group_id", &self.group_id);
+        formatter.field("group_owner_id", &self.group_owner_id);
+        formatter.field("is_egress", &self.is_egress);
+        formatter.field("ip_protocol", &self.ip_protocol);
+        formatter.field("from_port", &self.from_port);
+        formatter.field("to_port", &self.to_port);
+        formatter.field("cidr_ipv4", &self.cidr_ipv4);
+        formatter.field("cidr_ipv6", &self.cidr_ipv6);
+        formatter.field("prefix_list_id", &self.prefix_list_id);
+        formatter.field("referenced_group_info", &self.referenced_group_info);
+        formatter.field("description", &self.description);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`SecurityGroupRule`](crate::model::SecurityGroupRule)
+pub mod security_group_rule {
+    /// A builder for [`SecurityGroupRule`](crate::model::SecurityGroupRule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) security_group_rule_id: std::option::Option<std::string::String>,
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) group_owner_id: std::option::Option<std::string::String>,
+        pub(crate) is_egress: std::option::Option<bool>,
+        pub(crate) ip_protocol: std::option::Option<std::string::String>,
+        pub(crate) from_port: std::option::Option<i32>,
+        pub(crate) to_port: std::option::Option<i32>,
+        pub(crate) cidr_ipv4: std::option::Option<std::string::String>,
+        pub(crate) cidr_ipv6: std::option::Option<std::string::String>,
+        pub(crate) prefix_list_id: std::option::Option<std::string::String>,
+        pub(crate) referenced_group_info:
+            std::option::Option<crate::model::ReferencedSecurityGroup>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>The ID of the security group rule.</p>
+        pub fn security_group_rule_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.security_group_rule_id = Some(input.into());
+            self
+        }
+        pub fn set_security_group_rule_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.security_group_rule_id = input;
+            self
+        }
+        /// <p>The ID of the security group.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        /// <p>The ID of the Amazon Web Services account that owns the security group. </p>
+        pub fn group_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_owner_id = Some(input.into());
+            self
+        }
+        pub fn set_group_owner_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.group_owner_id = input;
+            self
+        }
+        /// <p>Indicates whether the security group rule is an outbound rule.</p>
+        pub fn is_egress(mut self, input: bool) -> Self {
+            self.is_egress = Some(input);
+            self
+        }
+        pub fn set_is_egress(mut self, input: std::option::Option<bool>) -> Self {
+            self.is_egress = input;
+            self
+        }
+        /// <p>The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>,
+        /// <code>icmpv6</code>) or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol Numbers</a>). </p>
+        /// <p>Use <code>-1</code> to specify all protocols.</p>
+        pub fn ip_protocol(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ip_protocol = Some(input.into());
+            self
+        }
+        pub fn set_ip_protocol(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ip_protocol = input;
+            self
+        }
+        /// <p>The start of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type. A value
+        /// of -1 indicates all ICMP/ICMPv6 types. If you specify all ICMP/ICMPv6 types, you must
+        /// specify all codes.</p>
+        pub fn from_port(mut self, input: i32) -> Self {
+            self.from_port = Some(input);
+            self
+        }
+        pub fn set_from_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.from_port = input;
+            self
+        }
+        /// <p>The end of port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6 types, you must specify all codes. </p>
+        pub fn to_port(mut self, input: i32) -> Self {
+            self.to_port = Some(input);
+            self
+        }
+        pub fn set_to_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.to_port = input;
+            self
+        }
+        /// <p>The IPv4 CIDR range.</p>
+        pub fn cidr_ipv4(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr_ipv4 = Some(input.into());
+            self
+        }
+        pub fn set_cidr_ipv4(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr_ipv4 = input;
+            self
+        }
+        /// <p>The IPv6 CIDR range.</p>
+        pub fn cidr_ipv6(mut self, input: impl Into<std::string::String>) -> Self {
+            self.cidr_ipv6 = Some(input.into());
+            self
+        }
+        pub fn set_cidr_ipv6(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.cidr_ipv6 = input;
+            self
+        }
+        /// <p>The ID of the prefix list.</p>
+        pub fn prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.prefix_list_id = Some(input.into());
+            self
+        }
+        pub fn set_prefix_list_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.prefix_list_id = input;
+            self
+        }
+        /// <p>Describes the security group that is referenced in the rule.</p>
+        pub fn referenced_group_info(
+            mut self,
+            input: crate::model::ReferencedSecurityGroup,
+        ) -> Self {
+            self.referenced_group_info = Some(input);
+            self
+        }
+        pub fn set_referenced_group_info(
+            mut self,
+            input: std::option::Option<crate::model::ReferencedSecurityGroup>,
+        ) -> Self {
+            self.referenced_group_info = input;
+            self
+        }
+        /// <p>The security group rule description.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SecurityGroupRule`](crate::model::SecurityGroupRule)
+        pub fn build(self) -> crate::model::SecurityGroupRule {
+            crate::model::SecurityGroupRule {
+                security_group_rule_id: self.security_group_rule_id,
+                group_id: self.group_id,
+                group_owner_id: self.group_owner_id,
+                is_egress: self.is_egress,
+                ip_protocol: self.ip_protocol,
+                from_port: self.from_port,
+                to_port: self.to_port,
+                cidr_ipv4: self.cidr_ipv4,
+                cidr_ipv6: self.cidr_ipv6,
+                prefix_list_id: self.prefix_list_id,
+                referenced_group_info: self.referenced_group_info,
+                description: self.description,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl SecurityGroupRule {
+    /// Creates a new builder-style object to manufacture [`SecurityGroupRule`](crate::model::SecurityGroupRule)
+    pub fn builder() -> crate::model::security_group_rule::Builder {
+        crate::model::security_group_rule::Builder::default()
+    }
+}
+
+/// <p> Describes the security group that is referenced in the security group rule.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ReferencedSecurityGroup {
+    /// <p>The ID of the security group.</p>
+    pub group_id: std::option::Option<std::string::String>,
+    /// <p>The status of a VPC peering connection, if applicable.</p>
+    pub peering_status: std::option::Option<std::string::String>,
+    /// <p>The Amazon Web Services account ID.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the VPC.</p>
+    pub vpc_id: std::option::Option<std::string::String>,
+    /// <p>The ID of the VPC peering connection.</p>
+    pub vpc_peering_connection_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ReferencedSecurityGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ReferencedSecurityGroup");
+        formatter.field("group_id", &self.group_id);
+        formatter.field("peering_status", &self.peering_status);
+        formatter.field("user_id", &self.user_id);
+        formatter.field("vpc_id", &self.vpc_id);
+        formatter.field("vpc_peering_connection_id", &self.vpc_peering_connection_id);
+        formatter.finish()
+    }
+}
+/// See [`ReferencedSecurityGroup`](crate::model::ReferencedSecurityGroup)
+pub mod referenced_security_group {
+    /// A builder for [`ReferencedSecurityGroup`](crate::model::ReferencedSecurityGroup)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) peering_status: std::option::Option<std::string::String>,
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_id: std::option::Option<std::string::String>,
+        pub(crate) vpc_peering_connection_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The ID of the security group.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        /// <p>The status of a VPC peering connection, if applicable.</p>
+        pub fn peering_status(mut self, input: impl Into<std::string::String>) -> Self {
+            self.peering_status = Some(input.into());
+            self
+        }
+        pub fn set_peering_status(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.peering_status = input;
+            self
+        }
+        /// <p>The Amazon Web Services account ID.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// <p>The ID of the VPC.</p>
+        pub fn vpc_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_id = Some(input.into());
+            self
+        }
+        pub fn set_vpc_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vpc_id = input;
+            self
+        }
+        /// <p>The ID of the VPC peering connection.</p>
+        pub fn vpc_peering_connection_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vpc_peering_connection_id = Some(input.into());
+            self
+        }
+        pub fn set_vpc_peering_connection_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vpc_peering_connection_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ReferencedSecurityGroup`](crate::model::ReferencedSecurityGroup)
+        pub fn build(self) -> crate::model::ReferencedSecurityGroup {
+            crate::model::ReferencedSecurityGroup {
+                group_id: self.group_id,
+                peering_status: self.peering_status,
+                user_id: self.user_id,
+                vpc_id: self.vpc_id,
+                vpc_peering_connection_id: self.vpc_peering_connection_id,
+            }
+        }
+    }
+}
+impl ReferencedSecurityGroup {
+    /// Creates a new builder-style object to manufacture [`ReferencedSecurityGroup`](crate::model::ReferencedSecurityGroup)
+    pub fn builder() -> crate::model::referenced_security_group::Builder {
+        crate::model::referenced_security_group::Builder::default()
     }
 }
 
@@ -48270,7 +50264,7 @@ pub struct RouteTable {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the VPC.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the route table.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
     pub owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RouteTable {
@@ -48379,7 +50373,7 @@ pub mod route_table {
             self.vpc_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the route table.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the route table.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -48417,7 +50411,7 @@ pub struct Route {
     pub destination_cidr_block: std::option::Option<std::string::String>,
     /// <p>The IPv6 CIDR block used for the destination match.</p>
     pub destination_ipv6_cidr_block: std::option::Option<std::string::String>,
-    /// <p>The prefix of the AWS service.</p>
+    /// <p>The prefix of the Amazon Web Service.</p>
     pub destination_prefix_list_id: std::option::Option<std::string::String>,
     /// <p>The ID of the egress-only internet gateway.</p>
     pub egress_only_internet_gateway_id: std::option::Option<std::string::String>,
@@ -48425,7 +50419,7 @@ pub struct Route {
     pub gateway_id: std::option::Option<std::string::String>,
     /// <p>The ID of a NAT instance in your VPC.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the instance.</p>
+    /// <p>The ID of Amazon Web Services account that owns the instance.</p>
     pub instance_owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of a NAT gateway.</p>
     pub nat_gateway_id: std::option::Option<std::string::String>,
@@ -48540,7 +50534,7 @@ pub mod route {
             self.destination_ipv6_cidr_block = input;
             self
         }
-        /// <p>The prefix of the AWS service.</p>
+        /// <p>The prefix of the Amazon Web Service.</p>
         pub fn destination_prefix_list_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_prefix_list_id = Some(input.into());
             self
@@ -48585,7 +50579,7 @@ pub mod route {
             self.instance_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the instance.</p>
+        /// <p>The ID of Amazon Web Services account that owns the instance.</p>
         pub fn instance_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_owner_id = Some(input.into());
             self
@@ -51897,7 +53891,7 @@ pub struct NetworkInterface {
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Outpost.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
-    /// <p>The account ID of the owner of the network interface.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The private DNS name.</p>
     pub private_dns_name: std::option::Option<std::string::String>,
@@ -51906,7 +53900,15 @@ pub struct NetworkInterface {
     /// <p>The private IPv4 addresses associated with the network interface.</p>
     pub private_ip_addresses:
         std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePrivateIpAddress>>,
-    /// <p>The alias or account ID of the principal or service that created the network interface.</p>
+    /// <p>The IPv4 Prefix Delegation prefixes
+    /// that are
+    /// assigned to the network interface.</p>
+    pub ipv4_prefixes: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
+    /// <p>The IPv6 Prefix Delegation prefixes
+    /// that are
+    /// assigned to the network interface.</p>
+    pub ipv6_prefixes: std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecification>>,
+    /// <p>The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p>
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>Indicates whether the network interface is being managed by Amazon Web Services.</p>
     pub requester_managed: std::option::Option<bool>,
@@ -51938,6 +53940,8 @@ impl std::fmt::Debug for NetworkInterface {
         formatter.field("private_dns_name", &self.private_dns_name);
         formatter.field("private_ip_address", &self.private_ip_address);
         formatter.field("private_ip_addresses", &self.private_ip_addresses);
+        formatter.field("ipv4_prefixes", &self.ipv4_prefixes);
+        formatter.field("ipv6_prefixes", &self.ipv6_prefixes);
         formatter.field("requester_id", &self.requester_id);
         formatter.field("requester_managed", &self.requester_managed);
         formatter.field("source_dest_check", &self.source_dest_check);
@@ -51970,6 +53974,10 @@ pub mod network_interface {
         pub(crate) private_ip_address: std::option::Option<std::string::String>,
         pub(crate) private_ip_addresses:
             std::option::Option<std::vec::Vec<crate::model::NetworkInterfacePrivateIpAddress>>,
+        pub(crate) ipv4_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
+        pub(crate) ipv6_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecification>>,
         pub(crate) requester_id: std::option::Option<std::string::String>,
         pub(crate) requester_managed: std::option::Option<bool>,
         pub(crate) source_dest_check: std::option::Option<bool>,
@@ -52095,7 +54103,7 @@ pub mod network_interface {
             self.outpost_arn = input;
             self
         }
-        /// <p>The account ID of the owner of the network interface.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the network interface.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -52146,7 +54154,39 @@ pub mod network_interface {
             self.private_ip_addresses = input;
             self
         }
-        /// <p>The alias or account ID of the principal or service that created the network interface.</p>
+        pub fn ipv4_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv4PrefixSpecification>,
+        ) -> Self {
+            let mut v = self.ipv4_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv4_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
+        ) -> Self {
+            self.ipv4_prefixes = input;
+            self
+        }
+        pub fn ipv6_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv6PrefixSpecification>,
+        ) -> Self {
+            let mut v = self.ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecification>>,
+        ) -> Self {
+            self.ipv6_prefixes = input;
+            self
+        }
+        /// <p>The alias or Amazon Web Services account ID of the principal or service that created the network interface.</p>
         pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_id = Some(input.into());
             self
@@ -52233,6 +54273,8 @@ pub mod network_interface {
                 private_dns_name: self.private_dns_name,
                 private_ip_address: self.private_ip_address,
                 private_ip_addresses: self.private_ip_addresses,
+                ipv4_prefixes: self.ipv4_prefixes,
+                ipv6_prefixes: self.ipv6_prefixes,
                 requester_id: self.requester_id,
                 requester_managed: self.requester_managed,
                 source_dest_check: self.source_dest_check,
@@ -52248,6 +54290,102 @@ impl NetworkInterface {
     /// Creates a new builder-style object to manufacture [`NetworkInterface`](crate::model::NetworkInterface)
     pub fn builder() -> crate::model::network_interface::Builder {
         crate::model::network_interface::Builder::default()
+    }
+}
+
+/// <p>Describes the IPv6 Prefix Delegation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ipv6PrefixSpecification {
+    /// <p>The IPv6 Prefix Delegation prefix.</p>
+    pub ipv6_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ipv6PrefixSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ipv6PrefixSpecification");
+        formatter.field("ipv6_prefix", &self.ipv6_prefix);
+        formatter.finish()
+    }
+}
+/// See [`Ipv6PrefixSpecification`](crate::model::Ipv6PrefixSpecification)
+pub mod ipv6_prefix_specification {
+    /// A builder for [`Ipv6PrefixSpecification`](crate::model::Ipv6PrefixSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv6_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IPv6 Prefix Delegation prefix.</p>
+        pub fn ipv6_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv6_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv6_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv6_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ipv6PrefixSpecification`](crate::model::Ipv6PrefixSpecification)
+        pub fn build(self) -> crate::model::Ipv6PrefixSpecification {
+            crate::model::Ipv6PrefixSpecification {
+                ipv6_prefix: self.ipv6_prefix,
+            }
+        }
+    }
+}
+impl Ipv6PrefixSpecification {
+    /// Creates a new builder-style object to manufacture [`Ipv6PrefixSpecification`](crate::model::Ipv6PrefixSpecification)
+    pub fn builder() -> crate::model::ipv6_prefix_specification::Builder {
+        crate::model::ipv6_prefix_specification::Builder::default()
+    }
+}
+
+/// <p>Describes an IPv4 Prefix Delegation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Ipv4PrefixSpecification {
+    /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+    /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+    pub ipv4_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for Ipv4PrefixSpecification {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Ipv4PrefixSpecification");
+        formatter.field("ipv4_prefix", &self.ipv4_prefix);
+        formatter.finish()
+    }
+}
+/// See [`Ipv4PrefixSpecification`](crate::model::Ipv4PrefixSpecification)
+pub mod ipv4_prefix_specification {
+    /// A builder for [`Ipv4PrefixSpecification`](crate::model::Ipv4PrefixSpecification)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) ipv4_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The IPv4 Prefix Delegation prefix. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the
+        /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+        pub fn ipv4_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ipv4_prefix = Some(input.into());
+            self
+        }
+        pub fn set_ipv4_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.ipv4_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Ipv4PrefixSpecification`](crate::model::Ipv4PrefixSpecification)
+        pub fn build(self) -> crate::model::Ipv4PrefixSpecification {
+            crate::model::Ipv4PrefixSpecification {
+                ipv4_prefix: self.ipv4_prefix,
+            }
+        }
+    }
+}
+impl Ipv4PrefixSpecification {
+    /// Creates a new builder-style object to manufacture [`Ipv4PrefixSpecification`](crate::model::Ipv4PrefixSpecification)
+    pub fn builder() -> crate::model::ipv4_prefix_specification::Builder {
+        crate::model::ipv4_prefix_specification::Builder::default()
     }
 }
 
@@ -52617,7 +54755,7 @@ pub struct NetworkInterfaceAttachment {
     pub network_card_index: std::option::Option<i32>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The account ID of the owner of the instance.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
     pub instance_owner_id: std::option::Option<std::string::String>,
     /// <p>The attachment state.</p>
     pub status: std::option::Option<crate::model::AttachmentStatus>,
@@ -52712,7 +54850,7 @@ pub mod network_interface_attachment {
             self.instance_id = input;
             self
         }
-        /// <p>The account ID of the owner of the instance.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the instance.</p>
         pub fn instance_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_owner_id = Some(input.into());
             self
@@ -52766,7 +54904,7 @@ pub struct NetworkInterfacePermission {
     pub network_interface_permission_id: std::option::Option<std::string::String>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
-    /// <p>The account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Web Service.</p>
     pub aws_service: std::option::Option<std::string::String>,
@@ -52832,7 +54970,7 @@ pub mod network_interface_permission {
             self.network_interface_id = input;
             self
         }
-        /// <p>The account ID.</p>
+        /// <p>The Amazon Web Services account ID.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -53139,13 +55277,13 @@ pub struct NetworkInsightsPath {
     pub network_insights_path_arn: std::option::Option<std::string::String>,
     /// <p>The time stamp when the path was created.</p>
     pub created_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The AWS resource that is the source of the path.</p>
+    /// <p>The Amazon Web Services resource that is the source of the path.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>The AWS resource that is the destination of the path.</p>
+    /// <p>The Amazon Web Services resource that is the destination of the path.</p>
     pub destination: std::option::Option<std::string::String>,
-    /// <p>The IP address of the AWS resource that is the source of the path.</p>
+    /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
     pub source_ip: std::option::Option<std::string::String>,
-    /// <p>The IP address of the AWS resource that is the destination of the path.</p>
+    /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
     pub destination_ip: std::option::Option<std::string::String>,
     /// <p>The protocol.</p>
     pub protocol: std::option::Option<crate::model::Protocol>,
@@ -53224,7 +55362,7 @@ pub mod network_insights_path {
             self.created_date = input;
             self
         }
-        /// <p>The AWS resource that is the source of the path.</p>
+        /// <p>The Amazon Web Services resource that is the source of the path.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
@@ -53233,7 +55371,7 @@ pub mod network_insights_path {
             self.source = input;
             self
         }
-        /// <p>The AWS resource that is the destination of the path.</p>
+        /// <p>The Amazon Web Services resource that is the destination of the path.</p>
         pub fn destination(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination = Some(input.into());
             self
@@ -53242,7 +55380,7 @@ pub mod network_insights_path {
             self.destination = input;
             self
         }
-        /// <p>The IP address of the AWS resource that is the source of the path.</p>
+        /// <p>The IP address of the Amazon Web Services resource that is the source of the path.</p>
         pub fn source_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_ip = Some(input.into());
             self
@@ -53251,7 +55389,7 @@ pub mod network_insights_path {
             self.source_ip = input;
             self
         }
-        /// <p>The IP address of the AWS resource that is the destination of the path.</p>
+        /// <p>The IP address of the Amazon Web Services resource that is the destination of the path.</p>
         pub fn destination_ip(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_ip = Some(input.into());
             self
@@ -53384,7 +55522,7 @@ pub struct NetworkAcl {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the VPC for the network ACL.</p>
     pub vpc_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the network ACL.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the network ACL.</p>
     pub owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NetworkAcl {
@@ -53488,7 +55626,7 @@ pub mod network_acl {
             self.vpc_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the network ACL.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the network ACL.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -53798,7 +55936,8 @@ pub struct NatGateway {
     pub nat_gateway_addresses: std::option::Option<std::vec::Vec<crate::model::NatGatewayAddress>>,
     /// <p>The ID of the NAT gateway.</p>
     pub nat_gateway_id: std::option::Option<std::string::String>,
-    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+    /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through
+    /// the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
     pub provisioned_bandwidth: std::option::Option<crate::model::ProvisionedBandwidth>,
     /// <p>The state of the NAT gateway.</p>
     /// <ul>
@@ -53973,7 +56112,8 @@ pub mod nat_gateway {
             self.nat_gateway_id = input;
             self
         }
-        /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
+        /// <p>Reserved. If you need to sustain traffic greater than the <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">documented limits</a>, contact us through
+        /// the <a href="https://console.aws.amazon.com/support/home?">Support Center</a>.</p>
         pub fn provisioned_bandwidth(mut self, input: crate::model::ProvisionedBandwidth) -> Self {
             self.provisioned_bandwidth = Some(input);
             self
@@ -55645,7 +57785,7 @@ pub struct KeyPairInfo {
     /// <p>The ID of the key pair.</p>
     pub key_pair_id: std::option::Option<std::string::String>,
     /// <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-    /// If you used <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
+    /// If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>The name of the key pair.</p>
     pub key_name: std::option::Option<std::string::String>,
@@ -55684,7 +57824,7 @@ pub mod key_pair_info {
             self
         }
         /// <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-        /// If you used <a>ImportKeyPair</a> to provide AWS the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
+        /// If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
         pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_fingerprint = Some(input.into());
             self
@@ -55887,7 +58027,7 @@ pub struct InternetGateway {
     pub attachments: std::option::Option<std::vec::Vec<crate::model::InternetGatewayAttachment>>,
     /// <p>The ID of the internet gateway.</p>
     pub internet_gateway_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the internet gateway.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the internet gateway.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -55943,7 +58083,7 @@ pub mod internet_gateway {
             self.internet_gateway_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the internet gateway.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the internet gateway.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -59279,10 +61419,10 @@ pub struct Reservation {
     pub groups: std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
     /// <p>The instances.</p>
     pub instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
-    /// <p>The ID of the account that owns the reservation.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of the requester that launched the instances on your behalf (for example,
-    /// Management Console or Auto Scaling).</p>
+    /// Amazon Web Services Management Console or Auto Scaling).</p>
     pub requester_id: std::option::Option<std::string::String>,
     /// <p>The ID of the reservation.</p>
     pub reservation_id: std::option::Option<std::string::String>,
@@ -59337,7 +61477,7 @@ pub mod reservation {
             self.instances = input;
             self
         }
-        /// <p>The ID of the account that owns the reservation.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the reservation.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -59347,7 +61487,7 @@ pub mod reservation {
             self
         }
         /// <p>The ID of the requester that launched the instances on your behalf (for example,
-        /// Management Console or Auto Scaling).</p>
+        /// Amazon Web Services Management Console or Auto Scaling).</p>
         pub fn requester_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.requester_id = Some(input.into());
             self
@@ -60582,7 +62722,7 @@ pub struct Host {
     /// If the value is <code>off</code>, the Dedicated Host supports a single instance type only.</p>
     pub allows_multiple_instance_types:
         std::option::Option<crate::model::AllowsMultipleInstanceTypes>,
-    /// <p>The ID of the account that owns the Dedicated Host.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the Dedicated Host.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The ID of the Availability Zone in which the Dedicated Host is allocated.</p>
     pub availability_zone_id: std::option::Option<std::string::String>,
@@ -60816,7 +62956,7 @@ pub mod host {
             self.allows_multiple_instance_types = input;
             self
         }
-        /// <p>The ID of the account that owns the Dedicated Host.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the Dedicated Host.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -61010,7 +63150,7 @@ pub struct HostInstance {
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The instance type (for example, <code>m3.medium</code>) of the running instance.</p>
     pub instance_type: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the instance.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the instance.</p>
     pub owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HostInstance {
@@ -61054,7 +63194,7 @@ pub mod host_instance {
             self.instance_type = input;
             self
         }
-        /// <p>The ID of the account that owns the instance.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the instance.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -65122,9 +67262,9 @@ pub struct DescribeFastSnapshotRestoreSuccessItem {
     /// </li>
     /// </ul>
     pub state_transition_reason: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that enabled fast snapshot restores on the snapshot.</p>
+    /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
     pub owner_id: std::option::Option<std::string::String>,
-    /// <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
+    /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
     pub owner_alias: std::option::Option<std::string::String>,
     /// <p>The time at which fast snapshot restores entered the <code>enabling</code> state.</p>
     pub enabling_time: std::option::Option<smithy_types::Instant>,
@@ -65230,7 +67370,7 @@ pub mod describe_fast_snapshot_restore_success_item {
             self.state_transition_reason = input;
             self
         }
-        /// <p>The ID of the AWS account that enabled fast snapshot restores on the snapshot.</p>
+        /// <p>The ID of the Amazon Web Services account that enabled fast snapshot restores on the snapshot.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -65239,7 +67379,7 @@ pub mod describe_fast_snapshot_restore_success_item {
             self.owner_id = input;
             self
         }
-        /// <p>The AWS owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
+        /// <p>The Amazon Web Services owner alias that enabled fast snapshot restores on the snapshot. This is intended for future use.</p>
         pub fn owner_alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_alias = Some(input.into());
             self
@@ -66369,7 +68509,7 @@ pub struct DhcpOptions {
     pub dhcp_configurations: std::option::Option<std::vec::Vec<crate::model::DhcpConfiguration>>,
     /// <p>The ID of the set of DHCP options.</p>
     pub dhcp_options_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS account that owns the DHCP options set.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Any tags assigned to the DHCP options set.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -66425,7 +68565,7 @@ pub mod dhcp_options {
             self.dhcp_options_id = input;
             self
         }
-        /// <p>The ID of the AWS account that owns the DHCP options set.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -69120,7 +71260,7 @@ pub struct CarrierGateway {
     pub vpc_id: std::option::Option<std::string::String>,
     /// <p>The state of the carrier gateway.</p>
     pub state: std::option::Option<crate::model::CarrierGatewayState>,
-    /// <p>The AWS account ID of the owner of the carrier gateway.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the carrier gateway.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The tags assigned to the carrier gateway.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -69182,7 +71322,7 @@ pub mod carrier_gateway {
             self.state = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the carrier gateway.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the carrier gateway.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -69285,7 +71425,7 @@ impl AsRef<str> for CarrierGatewayState {
 pub struct CapacityReservation {
     /// <p>The ID of the Capacity Reservation.</p>
     pub capacity_reservation_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the Capacity Reservation.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the Capacity Reservation.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Capacity Reservation.</p>
     pub capacity_reservation_arn: std::option::Option<std::string::String>,
@@ -69301,11 +71441,11 @@ pub struct CapacityReservation {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.</p>
+    /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single account.</p>
+    /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p>
     /// </li>
     /// </ul>
     pub tenancy: std::option::Option<crate::model::CapacityReservationTenancy>,
@@ -69462,7 +71602,7 @@ pub mod capacity_reservation {
             self.capacity_reservation_id = input;
             self
         }
-        /// <p>The ID of the account that owns the Capacity Reservation.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the Capacity Reservation.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -69538,11 +71678,11 @@ pub mod capacity_reservation {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other accounts.</p>
+        /// <code>default</code> - The Capacity Reservation is created on hardware that is shared with other Amazon Web Services accounts.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single account.</p>
+        /// <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware that is dedicated to a single Amazon Web Services account.</p>
         /// </li>
         /// </ul>
         pub fn tenancy(mut self, input: crate::model::CapacityReservationTenancy) -> Self {
@@ -70838,7 +72978,7 @@ pub struct Address {
     pub domain: std::option::Option<crate::model::DomainType>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the account that owns the network interface.</p>
+    /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
     pub network_interface_owner_id: std::option::Option<std::string::String>,
     /// <p>The private IP address associated with the Elastic IP address.</p>
     pub private_ip_address: std::option::Option<std::string::String>,
@@ -70966,7 +73106,7 @@ pub mod address {
             self.network_interface_id = input;
             self
         }
-        /// <p>The ID of the account that owns the network interface.</p>
+        /// <p>The ID of the Amazon Web Services account that owns the network interface.</p>
         pub fn network_interface_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.network_interface_owner_id = Some(input.into());
             self
@@ -72150,6 +74290,73 @@ impl DeleteLaunchTemplateVersionsResponseSuccessItem {
     pub fn builder() -> crate::model::delete_launch_template_versions_response_success_item::Builder
     {
         crate::model::delete_launch_template_versions_response_success_item::Builder::default()
+    }
+}
+
+/// <p>The state of the event window.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindowStateChange {
+    /// <p>The ID of the event window.</p>
+    pub instance_event_window_id: std::option::Option<std::string::String>,
+    /// <p>The current state of the event window.</p>
+    pub state: std::option::Option<crate::model::InstanceEventWindowState>,
+}
+impl std::fmt::Debug for InstanceEventWindowStateChange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindowStateChange");
+        formatter.field("instance_event_window_id", &self.instance_event_window_id);
+        formatter.field("state", &self.state);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindowStateChange`](crate::model::InstanceEventWindowStateChange)
+pub mod instance_event_window_state_change {
+    /// A builder for [`InstanceEventWindowStateChange`](crate::model::InstanceEventWindowStateChange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_event_window_id: std::option::Option<std::string::String>,
+        pub(crate) state: std::option::Option<crate::model::InstanceEventWindowState>,
+    }
+    impl Builder {
+        /// <p>The ID of the event window.</p>
+        pub fn instance_event_window_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.instance_event_window_id = Some(input.into());
+            self
+        }
+        pub fn set_instance_event_window_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.instance_event_window_id = input;
+            self
+        }
+        /// <p>The current state of the event window.</p>
+        pub fn state(mut self, input: crate::model::InstanceEventWindowState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::InstanceEventWindowState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindowStateChange`](crate::model::InstanceEventWindowStateChange)
+        pub fn build(self) -> crate::model::InstanceEventWindowStateChange {
+            crate::model::InstanceEventWindowStateChange {
+                instance_event_window_id: self.instance_event_window_id,
+                state: self.state,
+            }
+        }
+    }
+}
+impl InstanceEventWindowStateChange {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindowStateChange`](crate::model::InstanceEventWindowStateChange)
+    pub fn builder() -> crate::model::instance_event_window_state_change::Builder {
+        crate::model::instance_event_window_state_change::Builder::default()
     }
 }
 
@@ -73756,7 +75963,7 @@ pub struct SnapshotInfo {
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Snapshot id that can be used to describe this snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
+    /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub outpost_arn: std::option::Option<std::string::String>,
 }
@@ -73895,7 +76102,7 @@ pub mod snapshot_info {
             self.snapshot_id = input;
             self
         }
-        /// <p>The ARN of the AWS Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">EBS Local Snapshot on Outposts</a> in the
+        /// <p>The ARN of the Outpost on which the snapshot is stored. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html">Amazon EBS local snapshots on Outposts</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn outpost_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_arn = Some(input.into());
@@ -74394,18 +76601,18 @@ pub struct RequestLaunchTemplateData {
     /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only
     /// if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
     /// prerequisites</a>. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+    /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub hibernation_options:
         std::option::Option<crate::model::LaunchTemplateHibernationOptionsRequest>,
-    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User Data</a> in the
+    /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the
     /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
     pub metadata_options:
         std::option::Option<crate::model::LaunchTemplateInstanceMetadataOptionsRequest>,
-    /// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
+    /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
     /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-    /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>    
-    /// <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+    /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>    
+    /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
     pub enclave_options: std::option::Option<crate::model::LaunchTemplateEnclaveOptionsRequest>,
 }
 impl std::fmt::Debug for RequestLaunchTemplateData {
@@ -74870,7 +77077,7 @@ pub mod request_launch_template_data {
         /// <p>Indicates whether an instance is enabled for hibernation. This parameter is valid only
         /// if the instance meets the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html#hibernating-prerequisites">hibernation
         /// prerequisites</a>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate Your Instance</a> in the
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Hibernate.html">Hibernate your instance</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn hibernation_options(
             mut self,
@@ -74886,7 +77093,7 @@ pub mod request_launch_template_data {
             self.hibernation_options = input;
             self
         }
-        /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance Metadata and User Data</a> in the
+        /// <p>The metadata options for the instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance metadata and user data</a> in the
         /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
         pub fn metadata_options(
             mut self,
@@ -74902,10 +77109,10 @@ pub mod request_launch_template_data {
             self.metadata_options = input;
             self
         }
-        /// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
+        /// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
         /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-        /// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>    
-        /// <p>You can't enable AWS Nitro Enclaves and hibernation on the same instance.</p>
+        /// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>    
+        /// <p>You can't enable Amazon Web Services Nitro Enclaves and hibernation on the same instance.</p>
         pub fn enclave_options(
             mut self,
             input: crate::model::LaunchTemplateEnclaveOptionsRequest,
@@ -74961,13 +77168,13 @@ impl RequestLaunchTemplateData {
     }
 }
 
-/// <p>Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information,
+/// <p>Indicates whether the instance is enabled for Amazon Web Services Nitro Enclaves. For more information,
 /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html">
-/// What is AWS Nitro Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+/// What is Amazon Web Services Nitro Enclaves?</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateEnclaveOptionsRequest {
-    /// <p>To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.</p>
+    /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.</p>
     pub enabled: std::option::Option<bool>,
 }
 impl std::fmt::Debug for LaunchTemplateEnclaveOptionsRequest {
@@ -74986,7 +77193,7 @@ pub mod launch_template_enclave_options_request {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>.</p>
+        /// <p>To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter to <code>true</code>.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
@@ -75950,7 +78157,7 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
     /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate
     /// a Carrier IP address with the network interface. For more information about Carrier IP
-    /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>AWS Wavelength Developer
+    /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer
     /// Guide</i>.</p>
     pub associate_carrier_ip_address: std::option::Option<bool>,
     /// <p>Associates a public IPv4 address with eth0 for a new network interface.</p>
@@ -75990,6 +78197,20 @@ pub struct LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     /// The primary network interface must be assigned to network card index 0.
     /// The default is network card index 0.</p>
     pub network_card_index: std::option::Option<i32>,
+    /// <p>One or more IPv4 delegated prefixes to be assigned to the network interface. You cannot use
+    /// this option if you use the <code>Ipv4PrefixCount</code> option.</p>
+    pub ipv4_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+    /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+    /// network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
+    pub ipv4_prefix_count: std::option::Option<i32>,
+    /// <p>One or more IPv6 delegated prefixes to be assigned to the network interface. You cannot
+    /// use this option if you use the <code>Ipv6PrefixCount</code> option.</p>
+    pub ipv6_prefixes:
+        std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+    /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network
+    /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
+    pub ipv6_prefix_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for LaunchTemplateInstanceNetworkInterfaceSpecificationRequest {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -76019,6 +78240,10 @@ impl std::fmt::Debug for LaunchTemplateInstanceNetworkInterfaceSpecificationRequ
         );
         formatter.field("subnet_id", &self.subnet_id);
         formatter.field("network_card_index", &self.network_card_index);
+        formatter.field("ipv4_prefixes", &self.ipv4_prefixes);
+        formatter.field("ipv4_prefix_count", &self.ipv4_prefix_count);
+        formatter.field("ipv6_prefixes", &self.ipv6_prefixes);
+        formatter.field("ipv6_prefix_count", &self.ipv6_prefix_count);
         formatter.finish()
     }
 }
@@ -76045,12 +78270,18 @@ pub mod launch_template_instance_network_interface_specification_request {
         pub(crate) secondary_private_ip_address_count: std::option::Option<i32>,
         pub(crate) subnet_id: std::option::Option<std::string::String>,
         pub(crate) network_card_index: std::option::Option<i32>,
+        pub(crate) ipv4_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+        pub(crate) ipv4_prefix_count: std::option::Option<i32>,
+        pub(crate) ipv6_prefixes:
+            std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+        pub(crate) ipv6_prefix_count: std::option::Option<i32>,
     }
     impl Builder {
         /// <p>Associates a Carrier IP address with eth0 for a new network interface.</p>
         /// <p>Use this option when you launch an instance in a Wavelength Zone and want to associate
         /// a Carrier IP address with the network interface. For more information about Carrier IP
-        /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>AWS Wavelength Developer
+        /// addresses, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#provider-owned-ip">Carrier IP addresses</a> in the <i>Wavelength Developer
         /// Guide</i>.</p>
         pub fn associate_carrier_ip_address(mut self, input: bool) -> Self {
             self.associate_carrier_ip_address = Some(input);
@@ -76226,6 +78457,58 @@ pub mod launch_template_instance_network_interface_specification_request {
             self.network_card_index = input;
             self
         }
+        pub fn ipv4_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv4PrefixSpecificationRequest>,
+        ) -> Self {
+            let mut v = self.ipv4_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv4_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv4_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecificationRequest>>,
+        ) -> Self {
+            self.ipv4_prefixes = input;
+            self
+        }
+        /// <p>The number of IPv4 delegated prefixes to be automatically assigned to the
+        /// network interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.</p>
+        pub fn ipv4_prefix_count(mut self, input: i32) -> Self {
+            self.ipv4_prefix_count = Some(input);
+            self
+        }
+        pub fn set_ipv4_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.ipv4_prefix_count = input;
+            self
+        }
+        pub fn ipv6_prefixes(
+            mut self,
+            input: impl Into<crate::model::Ipv6PrefixSpecificationRequest>,
+        ) -> Self {
+            let mut v = self.ipv6_prefixes.unwrap_or_default();
+            v.push(input.into());
+            self.ipv6_prefixes = Some(v);
+            self
+        }
+        pub fn set_ipv6_prefixes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Ipv6PrefixSpecificationRequest>>,
+        ) -> Self {
+            self.ipv6_prefixes = input;
+            self
+        }
+        /// <p>The number of IPv6 delegated prefixes to be automatically assigned to the network
+        /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.</p>
+        pub fn ipv6_prefix_count(mut self, input: i32) -> Self {
+            self.ipv6_prefix_count = Some(input);
+            self
+        }
+        pub fn set_ipv6_prefix_count(mut self, input: std::option::Option<i32>) -> Self {
+            self.ipv6_prefix_count = input;
+            self
+        }
         /// Consumes the builder and constructs a [`LaunchTemplateInstanceNetworkInterfaceSpecificationRequest`](crate::model::LaunchTemplateInstanceNetworkInterfaceSpecificationRequest)
         pub fn build(
             self,
@@ -76246,6 +78529,10 @@ pub mod launch_template_instance_network_interface_specification_request {
                 secondary_private_ip_address_count: self.secondary_private_ip_address_count,
                 subnet_id: self.subnet_id,
                 network_card_index: self.network_card_index,
+                ipv4_prefixes: self.ipv4_prefixes,
+                ipv4_prefix_count: self.ipv4_prefix_count,
+                ipv6_prefixes: self.ipv6_prefixes,
+                ipv6_prefix_count: self.ipv6_prefix_count,
             }
         }
     }
@@ -76438,7 +78725,7 @@ pub struct LaunchTemplateEbsBlockDeviceRequest {
     /// <p>This parameter is supported for <code>io1</code>, <code>io2</code>, and <code>gp3</code> volumes only. This parameter is not supported for
     /// <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
     pub iops: std::option::Option<i32>,
-    /// <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+    /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
     /// encryption.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot.</p>
@@ -76552,7 +78839,7 @@ pub mod launch_template_ebs_block_device_request {
             self.iops = input;
             self
         }
-        /// <p>The ARN of the symmetric AWS Key Management Service (AWS KMS) CMK used for
+        /// <p>The ARN of the symmetric Key Management Service (KMS) CMK used for
         /// encryption.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -78530,6 +80817,98 @@ impl CancelSpotFleetRequestsSuccessItem {
     /// Creates a new builder-style object to manufacture [`CancelSpotFleetRequestsSuccessItem`](crate::model::CancelSpotFleetRequestsSuccessItem)
     pub fn builder() -> crate::model::cancel_spot_fleet_requests_success_item::Builder {
         crate::model::cancel_spot_fleet_requests_success_item::Builder::default()
+    }
+}
+
+/// <p>One or more targets associated with the specified event window. Only one
+/// <i>type</i> of target (instance ID, instance tag, or Dedicated Host ID)
+/// can be associated with an event window.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InstanceEventWindowAssociationRequest {
+    /// <p>The IDs of the instances to associate with the event window. If the instance is on a
+    /// Dedicated Host, you can't specify the Instance ID parameter; you must use the Dedicated
+    /// Host ID parameter.</p>
+    pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The instance tags to associate with the event window. Any instances associated with the
+    /// tags will be associated with the event window.</p>
+    pub instance_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The IDs of the Dedicated Hosts to associate with the event window.</p>
+    pub dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for InstanceEventWindowAssociationRequest {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InstanceEventWindowAssociationRequest");
+        formatter.field("instance_ids", &self.instance_ids);
+        formatter.field("instance_tags", &self.instance_tags);
+        formatter.field("dedicated_host_ids", &self.dedicated_host_ids);
+        formatter.finish()
+    }
+}
+/// See [`InstanceEventWindowAssociationRequest`](crate::model::InstanceEventWindowAssociationRequest)
+pub mod instance_event_window_association_request {
+    /// A builder for [`InstanceEventWindowAssociationRequest`](crate::model::InstanceEventWindowAssociationRequest)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) instance_tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) dedicated_host_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        pub fn instance_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.instance_ids.unwrap_or_default();
+            v.push(input.into());
+            self.instance_ids = Some(v);
+            self
+        }
+        pub fn set_instance_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.instance_ids = input;
+            self
+        }
+        pub fn instance_tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.instance_tags.unwrap_or_default();
+            v.push(input.into());
+            self.instance_tags = Some(v);
+            self
+        }
+        pub fn set_instance_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.instance_tags = input;
+            self
+        }
+        pub fn dedicated_host_ids(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.dedicated_host_ids.unwrap_or_default();
+            v.push(input.into());
+            self.dedicated_host_ids = Some(v);
+            self
+        }
+        pub fn set_dedicated_host_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.dedicated_host_ids = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InstanceEventWindowAssociationRequest`](crate::model::InstanceEventWindowAssociationRequest)
+        pub fn build(self) -> crate::model::InstanceEventWindowAssociationRequest {
+            crate::model::InstanceEventWindowAssociationRequest {
+                instance_ids: self.instance_ids,
+                instance_tags: self.instance_tags,
+                dedicated_host_ids: self.dedicated_host_ids,
+            }
+        }
+    }
+}
+impl InstanceEventWindowAssociationRequest {
+    /// Creates a new builder-style object to manufacture [`InstanceEventWindowAssociationRequest`](crate::model::InstanceEventWindowAssociationRequest)
+    pub fn builder() -> crate::model::instance_event_window_association_request::Builder {
+        crate::model::instance_event_window_association_request::Builder::default()
     }
 }
 

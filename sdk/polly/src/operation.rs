@@ -266,17 +266,17 @@ impl SynthesizeSpeech {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for SynthesizeSpeech {
+impl smithy_http::response::ParseHttpResponse for SynthesizeSpeech {
     type Output = std::result::Result<
         crate::output::SynthesizeSpeechOutput,
         crate::error::SynthesizeSpeechError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_synthesize_speech(response))

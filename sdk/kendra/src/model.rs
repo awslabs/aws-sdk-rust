@@ -1118,6 +1118,9 @@ pub struct DataSourceConfiguration {
     /// <p>Provides the configuration information required for Amazon Kendra
     /// web crawler.</p>
     pub web_crawler_configuration: std::option::Option<crate::model::WebCrawlerConfiguration>,
+    /// <p>Provides the configuration information to connect to WorkDocs
+    /// as your data source.</p>
+    pub work_docs_configuration: std::option::Option<crate::model::WorkDocsConfiguration>,
 }
 impl std::fmt::Debug for DataSourceConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1134,6 +1137,7 @@ impl std::fmt::Debug for DataSourceConfiguration {
             &self.google_drive_configuration,
         );
         formatter.field("web_crawler_configuration", &self.web_crawler_configuration);
+        formatter.field("work_docs_configuration", &self.work_docs_configuration);
         formatter.finish()
     }
 }
@@ -1159,6 +1163,8 @@ pub mod data_source_configuration {
             std::option::Option<crate::model::GoogleDriveConfiguration>,
         pub(crate) web_crawler_configuration:
             std::option::Option<crate::model::WebCrawlerConfiguration>,
+        pub(crate) work_docs_configuration:
+            std::option::Option<crate::model::WorkDocsConfiguration>,
     }
     impl Builder {
         /// <p>Provides information to create a data source connector for a
@@ -1302,6 +1308,22 @@ pub mod data_source_configuration {
             self.web_crawler_configuration = input;
             self
         }
+        /// <p>Provides the configuration information to connect to WorkDocs
+        /// as your data source.</p>
+        pub fn work_docs_configuration(
+            mut self,
+            input: crate::model::WorkDocsConfiguration,
+        ) -> Self {
+            self.work_docs_configuration = Some(input);
+            self
+        }
+        pub fn set_work_docs_configuration(
+            mut self,
+            input: std::option::Option<crate::model::WorkDocsConfiguration>,
+        ) -> Self {
+            self.work_docs_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
         pub fn build(self) -> crate::model::DataSourceConfiguration {
             crate::model::DataSourceConfiguration {
@@ -1314,6 +1336,7 @@ pub mod data_source_configuration {
                 confluence_configuration: self.confluence_configuration,
                 google_drive_configuration: self.google_drive_configuration,
                 web_crawler_configuration: self.web_crawler_configuration,
+                work_docs_configuration: self.work_docs_configuration,
             }
         }
     }
@@ -1322,6 +1345,286 @@ impl DataSourceConfiguration {
     /// Creates a new builder-style object to manufacture [`DataSourceConfiguration`](crate::model::DataSourceConfiguration)
     pub fn builder() -> crate::model::data_source_configuration::Builder {
         crate::model::data_source_configuration::Builder::default()
+    }
+}
+
+/// <p>Provides the configuration information to connect to Amazon WorkDocs
+/// as your data source.</p>
+/// <p>Amazon WorkDocs connector is available in Oregon, North Virginia, Sydney, Singapore and Ireland
+/// regions.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WorkDocsConfiguration {
+    /// <p>The identifier of the directory corresponding to your
+    /// Amazon WorkDocs site repository.</p>
+    /// <p>You can find the organization ID in the
+    /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+    /// <b>Active Directory</b>, then
+    /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
+    /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
+    /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+    /// for the directory in the Amazon WorkDocs console.</p>
+    pub organization_id: std::option::Option<std::string::String>,
+    /// <p>
+    /// <code>TRUE</code> to include comments on documents
+    /// in your index. Including comments in your index means each comment
+    /// is a document that can be searched on.</p>
+    /// <p>The default is set to <code>FALSE</code>.</p>
+    pub crawl_comments: bool,
+    /// <p>
+    /// <code>TRUE</code> to use the change logs to update documents in your
+    /// index instead of scanning all documents.</p>
+    /// <p>If you are syncing your Amazon WorkDocs data source with your index for the
+    /// first time, all documents are scanned. After your first sync, you can
+    /// use the change logs to update your documents in your index for
+    /// future syncs.</p>
+    /// <p>The default is set to <code>FALSE</code>.</p>
+    pub use_change_log: bool,
+    /// <p>A list of regular expression patterns to include certain files
+    /// in your Amazon WorkDocs site repository. Files that match the patterns
+    /// are included in the index. Files that don't match the patterns are
+    /// excluded from the index. If a file matches both an inclusion pattern
+    /// and an exclusion pattern, the exclusion pattern takes precedence and
+    /// the file isn’t included in the index.</p>
+    pub inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of regular expression patterns to exclude certain files
+    /// in your Amazon WorkDocs site repository. Files that match the patterns
+    /// are excluded from the index. Files that don’t match the patterns
+    /// are included in the index. If a file matches both an inclusion
+    /// pattern and an exclusion pattern, the exclusion pattern takes
+    /// precedence and the file isn’t included in the index.</p>
+    pub exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>A list of <code>DataSourceToIndexFieldMapping</code> objects that map
+    /// Amazon WorkDocs field names to custom index field names in Amazon Kendra. You must first
+    /// create the custom index fields using the <code>UpdateIndex</code> operation before
+    /// you map to Amazon WorkDocs fields. For more information, see
+    /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+    /// Data Source Fields</a>. The Amazon WorkDocs data source field names
+    /// need to exist in your Amazon WorkDocs custom metadata.</p>
+    pub field_mappings:
+        std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+}
+impl std::fmt::Debug for WorkDocsConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WorkDocsConfiguration");
+        formatter.field("organization_id", &self.organization_id);
+        formatter.field("crawl_comments", &self.crawl_comments);
+        formatter.field("use_change_log", &self.use_change_log);
+        formatter.field("inclusion_patterns", &self.inclusion_patterns);
+        formatter.field("exclusion_patterns", &self.exclusion_patterns);
+        formatter.field("field_mappings", &self.field_mappings);
+        formatter.finish()
+    }
+}
+/// See [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration)
+pub mod work_docs_configuration {
+    /// A builder for [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) organization_id: std::option::Option<std::string::String>,
+        pub(crate) crawl_comments: std::option::Option<bool>,
+        pub(crate) use_change_log: std::option::Option<bool>,
+        pub(crate) inclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) exclusion_patterns: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) field_mappings:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+    }
+    impl Builder {
+        /// <p>The identifier of the directory corresponding to your
+        /// Amazon WorkDocs site repository.</p>
+        /// <p>You can find the organization ID in the
+        /// <a href="https://console.aws.amazon.com/directoryservicev2/">AWS Directory Service</a> by going to
+        /// <b>Active Directory</b>, then
+        /// <b>Directories</b>. Your Amazon WorkDocs site directory has an
+        /// ID, which is the organization ID. You can also set up a new Amazon WorkDocs
+        /// directory in the AWS Directory Service console and enable a Amazon WorkDocs site
+        /// for the directory in the Amazon WorkDocs console.</p>
+        pub fn organization_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.organization_id = Some(input.into());
+            self
+        }
+        pub fn set_organization_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.organization_id = input;
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to include comments on documents
+        /// in your index. Including comments in your index means each comment
+        /// is a document that can be searched on.</p>
+        /// <p>The default is set to <code>FALSE</code>.</p>
+        pub fn crawl_comments(mut self, input: bool) -> Self {
+            self.crawl_comments = Some(input);
+            self
+        }
+        pub fn set_crawl_comments(mut self, input: std::option::Option<bool>) -> Self {
+            self.crawl_comments = input;
+            self
+        }
+        /// <p>
+        /// <code>TRUE</code> to use the change logs to update documents in your
+        /// index instead of scanning all documents.</p>
+        /// <p>If you are syncing your Amazon WorkDocs data source with your index for the
+        /// first time, all documents are scanned. After your first sync, you can
+        /// use the change logs to update your documents in your index for
+        /// future syncs.</p>
+        /// <p>The default is set to <code>FALSE</code>.</p>
+        pub fn use_change_log(mut self, input: bool) -> Self {
+            self.use_change_log = Some(input);
+            self
+        }
+        pub fn set_use_change_log(mut self, input: std::option::Option<bool>) -> Self {
+            self.use_change_log = input;
+            self
+        }
+        pub fn inclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.inclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.inclusion_patterns = Some(v);
+            self
+        }
+        pub fn set_inclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.inclusion_patterns = input;
+            self
+        }
+        pub fn exclusion_patterns(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.exclusion_patterns.unwrap_or_default();
+            v.push(input.into());
+            self.exclusion_patterns = Some(v);
+            self
+        }
+        pub fn set_exclusion_patterns(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.exclusion_patterns = input;
+            self
+        }
+        pub fn field_mappings(
+            mut self,
+            input: impl Into<crate::model::DataSourceToIndexFieldMapping>,
+        ) -> Self {
+            let mut v = self.field_mappings.unwrap_or_default();
+            v.push(input.into());
+            self.field_mappings = Some(v);
+            self
+        }
+        pub fn set_field_mappings(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceToIndexFieldMapping>>,
+        ) -> Self {
+            self.field_mappings = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration)
+        pub fn build(self) -> crate::model::WorkDocsConfiguration {
+            crate::model::WorkDocsConfiguration {
+                organization_id: self.organization_id,
+                crawl_comments: self.crawl_comments.unwrap_or_default(),
+                use_change_log: self.use_change_log.unwrap_or_default(),
+                inclusion_patterns: self.inclusion_patterns,
+                exclusion_patterns: self.exclusion_patterns,
+                field_mappings: self.field_mappings,
+            }
+        }
+    }
+}
+impl WorkDocsConfiguration {
+    /// Creates a new builder-style object to manufacture [`WorkDocsConfiguration`](crate::model::WorkDocsConfiguration)
+    pub fn builder() -> crate::model::work_docs_configuration::Builder {
+        crate::model::work_docs_configuration::Builder::default()
+    }
+}
+
+/// <p>Maps a column or attribute in the data source to an index field.
+/// You must first create the fields in the index using the
+/// <code>UpdateIndex</code> operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceToIndexFieldMapping {
+    /// <p>The name of the column or attribute in the data source.</p>
+    pub data_source_field_name: std::option::Option<std::string::String>,
+    /// <p>The type of data stored in the column or attribute.</p>
+    pub date_field_format: std::option::Option<std::string::String>,
+    /// <p>The name of the field in the index.</p>
+    pub index_field_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DataSourceToIndexFieldMapping {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
+        formatter.field("data_source_field_name", &self.data_source_field_name);
+        formatter.field("date_field_format", &self.date_field_format);
+        formatter.field("index_field_name", &self.index_field_name);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+pub mod data_source_to_index_field_mapping {
+    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
+        pub(crate) date_field_format: std::option::Option<std::string::String>,
+        pub(crate) index_field_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the column or attribute in the data source.</p>
+        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_field_name = Some(input.into());
+            self
+        }
+        pub fn set_data_source_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_field_name = input;
+            self
+        }
+        /// <p>The type of data stored in the column or attribute.</p>
+        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
+            self.date_field_format = Some(input.into());
+            self
+        }
+        pub fn set_date_field_format(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.date_field_format = input;
+            self
+        }
+        /// <p>The name of the field in the index.</p>
+        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_field_name = Some(input.into());
+            self
+        }
+        pub fn set_index_field_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.index_field_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
+            crate::model::DataSourceToIndexFieldMapping {
+                data_source_field_name: self.data_source_field_name,
+                date_field_format: self.date_field_format,
+                index_field_name: self.index_field_name,
+            }
+        }
+    }
+}
+impl DataSourceToIndexFieldMapping {
+    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
+    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
+        crate::model::data_source_to_index_field_mapping::Builder::default()
     }
 }
 
@@ -2178,7 +2481,7 @@ impl AsRef<str> for WebCrawlerMode {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GoogleDriveConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret
+    /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret
     /// that contains the credentials required to connect to Google Drive.
     /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data
     /// source</a>.</p>
@@ -2248,7 +2551,7 @@ pub mod google_drive_configuration {
         pub(crate) exclude_shared_drives: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of a AWS Secrets Manager secret
+        /// <p>The Amazon Resource Name (ARN) of a Secrets Managersecret
         /// that contains the credentials required to connect to Google Drive.
         /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-google-drive.html">Using a Google Workspace Drive data
         /// source</a>.</p>
@@ -2362,92 +2665,6 @@ impl GoogleDriveConfiguration {
     }
 }
 
-/// <p>Maps a column or attribute in the data source to an index field.
-/// You must first create the fields in the index using the
-/// <code>UpdateIndex</code> operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct DataSourceToIndexFieldMapping {
-    /// <p>The name of the column or attribute in the data source.</p>
-    pub data_source_field_name: std::option::Option<std::string::String>,
-    /// <p>The type of data stored in the column or attribute.</p>
-    pub date_field_format: std::option::Option<std::string::String>,
-    /// <p>The name of the field in the index.</p>
-    pub index_field_name: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for DataSourceToIndexFieldMapping {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("DataSourceToIndexFieldMapping");
-        formatter.field("data_source_field_name", &self.data_source_field_name);
-        formatter.field("date_field_format", &self.date_field_format);
-        formatter.field("index_field_name", &self.index_field_name);
-        formatter.finish()
-    }
-}
-/// See [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-pub mod data_source_to_index_field_mapping {
-    /// A builder for [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) data_source_field_name: std::option::Option<std::string::String>,
-        pub(crate) date_field_format: std::option::Option<std::string::String>,
-        pub(crate) index_field_name: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The name of the column or attribute in the data source.</p>
-        pub fn data_source_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.data_source_field_name = Some(input.into());
-            self
-        }
-        pub fn set_data_source_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.data_source_field_name = input;
-            self
-        }
-        /// <p>The type of data stored in the column or attribute.</p>
-        pub fn date_field_format(mut self, input: impl Into<std::string::String>) -> Self {
-            self.date_field_format = Some(input.into());
-            self
-        }
-        pub fn set_date_field_format(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.date_field_format = input;
-            self
-        }
-        /// <p>The name of the field in the index.</p>
-        pub fn index_field_name(mut self, input: impl Into<std::string::String>) -> Self {
-            self.index_field_name = Some(input.into());
-            self
-        }
-        pub fn set_index_field_name(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.index_field_name = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-        pub fn build(self) -> crate::model::DataSourceToIndexFieldMapping {
-            crate::model::DataSourceToIndexFieldMapping {
-                data_source_field_name: self.data_source_field_name,
-                date_field_format: self.date_field_format,
-                index_field_name: self.index_field_name,
-            }
-        }
-    }
-}
-impl DataSourceToIndexFieldMapping {
-    /// Creates a new builder-style object to manufacture [`DataSourceToIndexFieldMapping`](crate::model::DataSourceToIndexFieldMapping)
-    pub fn builder() -> crate::model::data_source_to_index_field_mapping::Builder {
-        crate::model::data_source_to_index_field_mapping::Builder::default()
-    }
-}
-
 /// <p>Provides configuration information for data sources that connect
 /// to Confluence.</p>
 #[non_exhaustive]
@@ -2458,7 +2675,7 @@ pub struct ConfluenceConfiguration {
     /// You can also use an IP address, for example,
     /// <code>https://192.168.1.113/</code>.</p>
     pub server_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
     /// that contains the key/value pairs required to connect to your
     /// Confluence server. The secret must contain a JSON structure with the
     /// following keys:</p>
@@ -2558,7 +2775,7 @@ pub mod confluence_configuration {
             self.server_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
         /// that contains the key/value pairs required to connect to your
         /// Confluence server. The secret must contain a JSON structure with the
         /// following keys:</p>
@@ -3940,7 +4157,7 @@ pub struct ServiceNowConfiguration {
     /// <code>{instance}.service-now.com.</code>
     /// </p>
     pub host_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret
+    /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret
     /// that contains the user name and password required to connect to the
     /// ServiceNow instance.</p>
     pub secret_arn: std::option::Option<std::string::String>,
@@ -4018,7 +4235,7 @@ pub mod service_now_configuration {
             self.host_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Secret Manager secret
+        /// <p>The Amazon Resource Name (ARN) of the Secrets Manager secret
         /// that contains the user name and password required to connect to the
         /// ServiceNow instance.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4596,7 +4813,7 @@ impl AsRef<str> for ServiceNowBuildVersionType {
 pub struct OneDriveConfiguration {
     /// <p>The Azure Active Directory domain of the organization. </p>
     pub tenant_domain: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
     /// that contains the user name and password to connect to OneDrive. The
     /// user namd should be the application ID for the OneDrive application,
     /// and the password is the application key for the OneDrive
@@ -4669,7 +4886,7 @@ pub mod one_drive_configuration {
             self.tenant_domain = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
         /// that contains the user name and password to connect to OneDrive. The
         /// user namd should be the application ID for the OneDrive application,
         /// and the password is the application key for the OneDrive
@@ -4851,7 +5068,7 @@ pub struct SalesforceConfiguration {
     /// <p>The instance URL for the Salesforce site that you want to
     /// index.</p>
     pub server_url: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret
+    /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
     /// that contains the key/value pairs required to connect to your
     /// Salesforce instance. The secret must contain a JSON structure with
     /// the following keys:</p>
@@ -4984,7 +5201,7 @@ pub mod salesforce_configuration {
             self.server_url = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of an AWS Secrets Manager secret
+        /// <p>The Amazon Resource Name (ARN) of an Secrets Managersecret
         /// that contains the key/value pairs required to connect to your
         /// Salesforce instance. The secret must contain a JSON structure with
         /// the following keys:</p>
@@ -6517,13 +6734,13 @@ pub struct ConnectionConfiguration {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>The name of the table that contains the document data.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of credentials stored in AWS
-    /// Secrets Manager. The credentials should be a user/password pair. For
+    /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager.
+    /// The credentials should be a user/password pair. For
     /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a
-    /// Database Data Source</a>. For more information about AWS
-    /// Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS
-    /// Secrets Manager </a> in the <i>AWS Secrets
-    /// Manager</i> user guide.</p>
+    /// Database Data Source</a>. For more information about
+    /// Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+    /// Secrets Manager</a> in the <i> Secrets Manager
+    /// </i> user guide.</p>
     pub secret_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConnectionConfiguration {
@@ -6593,13 +6810,13 @@ pub mod connection_configuration {
             self.table_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of credentials stored in AWS
-        /// Secrets Manager. The credentials should be a user/password pair. For
+        /// <p>The Amazon Resource Name (ARN) of credentials stored in Secrets Manager.
+        /// The credentials should be a user/password pair. For
         /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-database.html">Using a
-        /// Database Data Source</a>. For more information about AWS
-        /// Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS
-        /// Secrets Manager </a> in the <i>AWS Secrets
-        /// Manager</i> user guide.</p>
+        /// Database Data Source</a>. For more information about
+        /// Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+        /// Secrets Manager</a> in the <i> Secrets Manager
+        /// </i> user guide.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
@@ -6699,13 +6916,15 @@ pub struct SharePointConfiguration {
     /// <p>The URLs of the Microsoft SharePoint site that contains the
     /// documents that should be indexed.</p>
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Amazon Resource Name (ARN) of credentials stored in AWS
-    /// Secrets Manager. The credentials should be a user/password pair. For
+    /// <p>The Amazon Resource Name (ARN) of credentials stored in
+    /// Secrets Manager. The credentials should be a user/password pair.
+    /// If you use SharePoint Server, you also need to provide the sever
+    /// domain name as part of the credentials. For
     /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
     /// Microsoft SharePoint Data Source</a>. For more information
-    /// about AWS Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS
-    /// Secrets Manager </a> in the <i>AWS Secrets
-    /// Manager</i> user guide.</p>
+    /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+    /// Secrets Manager</a> in the <i>Secrets Manager
+    /// </i> user guide.</p>
     pub secret_arn: std::option::Option<std::string::String>,
     /// <p>
     /// <code>TRUE</code> to include attachments to documents stored in
@@ -6821,13 +7040,15 @@ pub mod share_point_configuration {
             self.urls = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of credentials stored in AWS
-        /// Secrets Manager. The credentials should be a user/password pair. For
+        /// <p>The Amazon Resource Name (ARN) of credentials stored in
+        /// Secrets Manager. The credentials should be a user/password pair.
+        /// If you use SharePoint Server, you also need to provide the sever
+        /// domain name as part of the credentials. For
         /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using a
         /// Microsoft SharePoint Data Source</a>. For more information
-        /// about AWS Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is AWS
-        /// Secrets Manager </a> in the <i>AWS Secrets
-        /// Manager</i> user guide.</p>
+        /// about Secrets Manager, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"> What Is
+        /// Secrets Manager</a> in the <i>Secrets Manager
+        /// </i> user guide.</p>
         pub fn secret_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_arn = Some(input.into());
             self
@@ -7250,7 +7471,7 @@ impl S3DataSourceConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessControlListConfiguration {
-    /// <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+    /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
     pub key_path: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessControlListConfiguration {
@@ -7269,7 +7490,7 @@ pub mod access_control_list_configuration {
         pub(crate) key_path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Path to the AWS S3 bucket that contains the ACL files.</p>
+        /// <p>Path to the Amazon Web Services S3 bucket that contains the ACL files.</p>
         pub fn key_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_path = Some(input.into());
             self
@@ -7300,7 +7521,7 @@ impl AccessControlListConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentsMetadataConfiguration {
-    /// <p>A prefix used to filter metadata configuration files in the AWS S3
+    /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3
     /// bucket. The S3 bucket might contain multiple metadata files. Use
     /// <code>S3Prefix</code> to include only the desired metadata
     /// files.</p>
@@ -7322,7 +7543,7 @@ pub mod documents_metadata_configuration {
         pub(crate) s3_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A prefix used to filter metadata configuration files in the AWS S3
+        /// <p>A prefix used to filter metadata configuration files in the Amazon Web Services S3
         /// bucket. The S3 bucket might contain multiple metadata files. Use
         /// <code>S3Prefix</code> to include only the desired metadata
         /// files.</p>
@@ -8720,16 +8941,42 @@ impl AsRef<str> for QueryResultType {
 }
 
 /// <p>Provides information about the user context for a Amazon Kendra index.</p>
+/// <p>This is used for filtering search results for different users based on their access
+/// to documents.</p>
+/// <p>You provide one of the following:</p>
+/// <ul>
+/// <li>
+/// <p>User token</p>
+/// </li>
+/// <li>
+/// <p>User ID, the groups the user belongs to, and the data sources
+/// the groups can access</p>
+/// </li>
+/// </ul>
+/// <p>If you provide both, an exception is thrown.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserContext {
-    /// <p>The user context token. It must be a JWT or a JSON token.</p>
+    /// <p>The user context token for filtering search results for a user. It must
+    /// be a JWT or a JSON token.</p>
     pub token: std::option::Option<std::string::String>,
+    /// <p>The identifier of the user you want to filter search results based on their
+    /// access to documents.</p>
+    pub user_id: std::option::Option<std::string::String>,
+    /// <p>The list of groups you want to filter search results based on the
+    /// groups' access to documents.</p>
+    pub groups: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>The list of data source groups you want to filter search results
+    /// based on groups' access to documents in that data source.</p>
+    pub data_source_groups: std::option::Option<std::vec::Vec<crate::model::DataSourceGroup>>,
 }
 impl std::fmt::Debug for UserContext {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("UserContext");
         formatter.field("token", &self.token);
+        formatter.field("user_id", &self.user_id);
+        formatter.field("groups", &self.groups);
+        formatter.field("data_source_groups", &self.data_source_groups);
         formatter.finish()
     }
 }
@@ -8740,9 +8987,14 @@ pub mod user_context {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) token: std::option::Option<std::string::String>,
+        pub(crate) user_id: std::option::Option<std::string::String>,
+        pub(crate) groups: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) data_source_groups:
+            std::option::Option<std::vec::Vec<crate::model::DataSourceGroup>>,
     }
     impl Builder {
-        /// <p>The user context token. It must be a JWT or a JSON token.</p>
+        /// <p>The user context token for filtering search results for a user. It must
+        /// be a JWT or a JSON token.</p>
         pub fn token(mut self, input: impl Into<std::string::String>) -> Self {
             self.token = Some(input.into());
             self
@@ -8751,9 +9003,53 @@ pub mod user_context {
             self.token = input;
             self
         }
+        /// <p>The identifier of the user you want to filter search results based on their
+        /// access to documents.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        pub fn groups(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.groups.unwrap_or_default();
+            v.push(input.into());
+            self.groups = Some(v);
+            self
+        }
+        pub fn set_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.groups = input;
+            self
+        }
+        pub fn data_source_groups(
+            mut self,
+            input: impl Into<crate::model::DataSourceGroup>,
+        ) -> Self {
+            let mut v = self.data_source_groups.unwrap_or_default();
+            v.push(input.into());
+            self.data_source_groups = Some(v);
+            self
+        }
+        pub fn set_data_source_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataSourceGroup>>,
+        ) -> Self {
+            self.data_source_groups = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UserContext`](crate::model::UserContext)
         pub fn build(self) -> crate::model::UserContext {
-            crate::model::UserContext { token: self.token }
+            crate::model::UserContext {
+                token: self.token,
+                user_id: self.user_id,
+                groups: self.groups,
+                data_source_groups: self.data_source_groups,
+            }
         }
     }
 }
@@ -8761,6 +9057,82 @@ impl UserContext {
     /// Creates a new builder-style object to manufacture [`UserContext`](crate::model::UserContext)
     pub fn builder() -> crate::model::user_context::Builder {
         crate::model::user_context::Builder::default()
+    }
+}
+
+/// <p>
+/// Data source information for user context filtering.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DataSourceGroup {
+    /// <p>The identifier of the group you want to add to your list
+    /// of groups. This is for filtering search results based on the
+    /// groups' access to documents.</p>
+    pub group_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the data source group you want to add
+    /// to your list of data source groups. This is for filtering
+    /// search results based on the groups' access to documents in
+    /// that data source.</p>
+    pub data_source_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DataSourceGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DataSourceGroup");
+        formatter.field("group_id", &self.group_id);
+        formatter.field("data_source_id", &self.data_source_id);
+        formatter.finish()
+    }
+}
+/// See [`DataSourceGroup`](crate::model::DataSourceGroup)
+pub mod data_source_group {
+    /// A builder for [`DataSourceGroup`](crate::model::DataSourceGroup)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) data_source_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the group you want to add to your list
+        /// of groups. This is for filtering search results based on the
+        /// groups' access to documents.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        /// <p>The identifier of the data source group you want to add
+        /// to your list of data source groups. This is for filtering
+        /// search results based on the groups' access to documents in
+        /// that data source.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_id = Some(input.into());
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DataSourceGroup`](crate::model::DataSourceGroup)
+        pub fn build(self) -> crate::model::DataSourceGroup {
+            crate::model::DataSourceGroup {
+                group_id: self.group_id,
+                data_source_id: self.data_source_id,
+            }
+        }
+    }
+}
+impl DataSourceGroup {
+    /// Creates a new builder-style object to manufacture [`DataSourceGroup`](crate::model::DataSourceGroup)
+    pub fn builder() -> crate::model::data_source_group::Builder {
+        crate::model::data_source_group::Builder::default()
     }
 }
 
@@ -9094,6 +9466,9 @@ impl Facet {
 /// <code>ValidationException</code> exception with the message
 /// "<code>AttributeFilter</code> cannot have a depth of more than
 /// 2."</p>
+/// <p>If you use more than 10 attribute filters, you receive a
+/// <code>ValidationException</code> exception with the message
+/// "<code>AttributeFilter</code> cannot have a length of more than 10".</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AttributeFilter {
@@ -9328,6 +9703,218 @@ impl AttributeFilter {
     /// Creates a new builder-style object to manufacture [`AttributeFilter`](crate::model::AttributeFilter)
     pub fn builder() -> crate::model::attribute_filter::Builder {
         crate::model::attribute_filter::Builder::default()
+    }
+}
+
+/// <p>A list of users or sub groups that belong to a group. Users and groups
+/// are useful for filtering search results to different users based on their
+/// group's access to documents.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GroupMembers {
+    /// <p>A list of sub groups that belong to a group. For example, the sub
+    /// groups "Research", "Engineering", and "Sales and Marketing" all belong
+    /// to the group "Company".</p>
+    pub member_groups: std::option::Option<std::vec::Vec<crate::model::MemberGroup>>,
+    /// <p>A list of users that belong to a group. For example, a list of interns
+    /// all belong to the "Interns" group.</p>
+    pub member_users: std::option::Option<std::vec::Vec<crate::model::MemberUser>>,
+    /// <p>If you have more than 1000 users and/or sub groups for a single group,
+    /// you need to provide the path to the S3 file that lists your users and sub
+    /// groups for a group. Your sub groups can contain more than 1000 users, but
+    /// the list of sub groups that belong to a group (and/or users) must be no
+    /// more than 1000.</p>
+    pub s3_pathfor_group_members: std::option::Option<crate::model::S3Path>,
+}
+impl std::fmt::Debug for GroupMembers {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GroupMembers");
+        formatter.field("member_groups", &self.member_groups);
+        formatter.field("member_users", &self.member_users);
+        formatter.field("s3_pathfor_group_members", &self.s3_pathfor_group_members);
+        formatter.finish()
+    }
+}
+/// See [`GroupMembers`](crate::model::GroupMembers)
+pub mod group_members {
+    /// A builder for [`GroupMembers`](crate::model::GroupMembers)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) member_groups: std::option::Option<std::vec::Vec<crate::model::MemberGroup>>,
+        pub(crate) member_users: std::option::Option<std::vec::Vec<crate::model::MemberUser>>,
+        pub(crate) s3_pathfor_group_members: std::option::Option<crate::model::S3Path>,
+    }
+    impl Builder {
+        pub fn member_groups(mut self, input: impl Into<crate::model::MemberGroup>) -> Self {
+            let mut v = self.member_groups.unwrap_or_default();
+            v.push(input.into());
+            self.member_groups = Some(v);
+            self
+        }
+        pub fn set_member_groups(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MemberGroup>>,
+        ) -> Self {
+            self.member_groups = input;
+            self
+        }
+        pub fn member_users(mut self, input: impl Into<crate::model::MemberUser>) -> Self {
+            let mut v = self.member_users.unwrap_or_default();
+            v.push(input.into());
+            self.member_users = Some(v);
+            self
+        }
+        pub fn set_member_users(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MemberUser>>,
+        ) -> Self {
+            self.member_users = input;
+            self
+        }
+        /// <p>If you have more than 1000 users and/or sub groups for a single group,
+        /// you need to provide the path to the S3 file that lists your users and sub
+        /// groups for a group. Your sub groups can contain more than 1000 users, but
+        /// the list of sub groups that belong to a group (and/or users) must be no
+        /// more than 1000.</p>
+        pub fn s3_pathfor_group_members(mut self, input: crate::model::S3Path) -> Self {
+            self.s3_pathfor_group_members = Some(input);
+            self
+        }
+        pub fn set_s3_pathfor_group_members(
+            mut self,
+            input: std::option::Option<crate::model::S3Path>,
+        ) -> Self {
+            self.s3_pathfor_group_members = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GroupMembers`](crate::model::GroupMembers)
+        pub fn build(self) -> crate::model::GroupMembers {
+            crate::model::GroupMembers {
+                member_groups: self.member_groups,
+                member_users: self.member_users,
+                s3_pathfor_group_members: self.s3_pathfor_group_members,
+            }
+        }
+    }
+}
+impl GroupMembers {
+    /// Creates a new builder-style object to manufacture [`GroupMembers`](crate::model::GroupMembers)
+    pub fn builder() -> crate::model::group_members::Builder {
+        crate::model::group_members::Builder::default()
+    }
+}
+
+/// <p>The users that belong to a group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MemberUser {
+    /// <p>The identifier of the user you want to map to a group.</p>
+    pub user_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MemberUser {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MemberUser");
+        formatter.field("user_id", &self.user_id);
+        formatter.finish()
+    }
+}
+/// See [`MemberUser`](crate::model::MemberUser)
+pub mod member_user {
+    /// A builder for [`MemberUser`](crate::model::MemberUser)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) user_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the user you want to map to a group.</p>
+        pub fn user_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_id = Some(input.into());
+            self
+        }
+        pub fn set_user_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.user_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MemberUser`](crate::model::MemberUser)
+        pub fn build(self) -> crate::model::MemberUser {
+            crate::model::MemberUser {
+                user_id: self.user_id,
+            }
+        }
+    }
+}
+impl MemberUser {
+    /// Creates a new builder-style object to manufacture [`MemberUser`](crate::model::MemberUser)
+    pub fn builder() -> crate::model::member_user::Builder {
+        crate::model::member_user::Builder::default()
+    }
+}
+
+/// <p>The sub groups that belong to a group.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MemberGroup {
+    /// <p>The identifier of the sub group you want to map to a group.</p>
+    pub group_id: std::option::Option<std::string::String>,
+    /// <p>The identifier of the data source for the sub group
+    /// you want to map to a group.</p>
+    pub data_source_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for MemberGroup {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MemberGroup");
+        formatter.field("group_id", &self.group_id);
+        formatter.field("data_source_id", &self.data_source_id);
+        formatter.finish()
+    }
+}
+/// See [`MemberGroup`](crate::model::MemberGroup)
+pub mod member_group {
+    /// A builder for [`MemberGroup`](crate::model::MemberGroup)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) data_source_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier of the sub group you want to map to a group.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        /// <p>The identifier of the data source for the sub group
+        /// you want to map to a group.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_id = Some(input.into());
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MemberGroup`](crate::model::MemberGroup)
+        pub fn build(self) -> crate::model::MemberGroup {
+            crate::model::MemberGroup {
+                group_id: self.group_id,
+                data_source_id: self.data_source_id,
+            }
+        }
+    }
+}
+impl MemberGroup {
+    /// Creates a new builder-style object to manufacture [`MemberGroup`](crate::model::MemberGroup)
+    pub fn builder() -> crate::model::member_group::Builder {
+        crate::model::member_group::Builder::default()
     }
 }
 
@@ -9951,6 +10538,79 @@ impl IndexEdition {
 impl AsRef<str> for IndexEdition {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>
+/// Group summary information.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GroupSummary {
+    /// <p>
+    /// The identifier of the group you want group summary information on.
+    /// </p>
+    pub group_id: std::option::Option<std::string::String>,
+    /// <p>
+    /// The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
+    /// action.
+    /// </p>
+    pub ordering_id: std::option::Option<i64>,
+}
+impl std::fmt::Debug for GroupSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GroupSummary");
+        formatter.field("group_id", &self.group_id);
+        formatter.field("ordering_id", &self.ordering_id);
+        formatter.finish()
+    }
+}
+/// See [`GroupSummary`](crate::model::GroupSummary)
+pub mod group_summary {
+    /// A builder for [`GroupSummary`](crate::model::GroupSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) ordering_id: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>
+        /// The identifier of the group you want group summary information on.
+        /// </p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        /// <p>
+        /// The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
+        /// action.
+        /// </p>
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.ordering_id = Some(input);
+            self
+        }
+        pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.ordering_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GroupSummary`](crate::model::GroupSummary)
+        pub fn build(self) -> crate::model::GroupSummary {
+            crate::model::GroupSummary {
+                group_id: self.group_id,
+                ordering_id: self.ordering_id,
+            }
+        }
+    }
+}
+impl GroupSummary {
+    /// Creates a new builder-style object to manufacture [`GroupSummary`](crate::model::GroupSummary)
+    pub fn builder() -> crate::model::group_summary::Builder {
+        crate::model::group_summary::Builder::default()
     }
 }
 
@@ -10899,6 +11559,7 @@ pub enum DataSourceType {
     Servicenow,
     Sharepoint,
     Webcrawler,
+    Workdocs,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -10915,6 +11576,7 @@ impl std::convert::From<&str> for DataSourceType {
             "SERVICENOW" => DataSourceType::Servicenow,
             "SHAREPOINT" => DataSourceType::Sharepoint,
             "WEBCRAWLER" => DataSourceType::Webcrawler,
+            "WORKDOCS" => DataSourceType::Workdocs,
             other => DataSourceType::Unknown(other.to_owned()),
         }
     }
@@ -10939,6 +11601,7 @@ impl DataSourceType {
             DataSourceType::Servicenow => "SERVICENOW",
             DataSourceType::Sharepoint => "SHAREPOINT",
             DataSourceType::Webcrawler => "WEBCRAWLER",
+            DataSourceType::Workdocs => "WORKDOCS",
             DataSourceType::Unknown(s) => s.as_ref(),
         }
     }
@@ -10954,6 +11617,7 @@ impl DataSourceType {
             "SERVICENOW",
             "SHAREPOINT",
             "WEBCRAWLER",
+            "WORKDOCS",
         ]
     }
 }
@@ -11260,6 +11924,201 @@ impl AsRef<str> for QuerySuggestionsStatus {
     }
 }
 
+/// <p>Information on the processing of <code>PUT</code> and <code>DELETE</code> actions
+/// for mapping users to their groups.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GroupOrderingIdSummary {
+    /// <p>The current processing status of actions for mapping users to their groups.
+    /// The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>,
+    /// <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
+    pub status: std::option::Option<crate::model::PrincipalMappingStatus>,
+    /// <p>The last date-time an action was updated. An action can be a
+    /// <code>PUT</code> or <code>DELETE</code> action for mapping users
+    /// to their groups.</p>
+    pub last_updated_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The date-time an action was received by Amazon Kendra. An action can be a
+    /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
+    /// their groups.</p>
+    pub received_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The order in which actions should complete processing. An action can
+    /// be a <code>PUT</code> or <code>DELETE</code> action for mapping users
+    /// to their groups.</p>
+    pub ordering_id: std::option::Option<i64>,
+    /// <p>The reason an action could not be processed. An action can be a
+    /// <code>PUT</code> or <code>DELETE</code> action for mapping users
+    /// to their groups.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GroupOrderingIdSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GroupOrderingIdSummary");
+        formatter.field("status", &self.status);
+        formatter.field("last_updated_at", &self.last_updated_at);
+        formatter.field("received_at", &self.received_at);
+        formatter.field("ordering_id", &self.ordering_id);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary)
+pub mod group_ordering_id_summary {
+    /// A builder for [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::PrincipalMappingStatus>,
+        pub(crate) last_updated_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) received_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) ordering_id: std::option::Option<i64>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The current processing status of actions for mapping users to their groups.
+        /// The status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>,
+        /// <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.</p>
+        pub fn status(mut self, input: crate::model::PrincipalMappingStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::PrincipalMappingStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The last date-time an action was updated. An action can be a
+        /// <code>PUT</code> or <code>DELETE</code> action for mapping users
+        /// to their groups.</p>
+        pub fn last_updated_at(mut self, input: smithy_types::Instant) -> Self {
+            self.last_updated_at = Some(input);
+            self
+        }
+        pub fn set_last_updated_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_updated_at = input;
+            self
+        }
+        /// <p>The date-time an action was received by Amazon Kendra. An action can be a
+        /// <code>PUT</code> or <code>DELETE</code> action for mapping users to
+        /// their groups.</p>
+        pub fn received_at(mut self, input: smithy_types::Instant) -> Self {
+            self.received_at = Some(input);
+            self
+        }
+        pub fn set_received_at(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.received_at = input;
+            self
+        }
+        /// <p>The order in which actions should complete processing. An action can
+        /// be a <code>PUT</code> or <code>DELETE</code> action for mapping users
+        /// to their groups.</p>
+        pub fn ordering_id(mut self, input: i64) -> Self {
+            self.ordering_id = Some(input);
+            self
+        }
+        pub fn set_ordering_id(mut self, input: std::option::Option<i64>) -> Self {
+            self.ordering_id = input;
+            self
+        }
+        /// <p>The reason an action could not be processed. An action can be a
+        /// <code>PUT</code> or <code>DELETE</code> action for mapping users
+        /// to their groups.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary)
+        pub fn build(self) -> crate::model::GroupOrderingIdSummary {
+            crate::model::GroupOrderingIdSummary {
+                status: self.status,
+                last_updated_at: self.last_updated_at,
+                received_at: self.received_at,
+                ordering_id: self.ordering_id,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl GroupOrderingIdSummary {
+    /// Creates a new builder-style object to manufacture [`GroupOrderingIdSummary`](crate::model::GroupOrderingIdSummary)
+    pub fn builder() -> crate::model::group_ordering_id_summary::Builder {
+        crate::model::group_ordering_id_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum PrincipalMappingStatus {
+    Deleted,
+    Deleting,
+    Failed,
+    Processing,
+    Succeeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for PrincipalMappingStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "DELETED" => PrincipalMappingStatus::Deleted,
+            "DELETING" => PrincipalMappingStatus::Deleting,
+            "FAILED" => PrincipalMappingStatus::Failed,
+            "PROCESSING" => PrincipalMappingStatus::Processing,
+            "SUCCEEDED" => PrincipalMappingStatus::Succeeded,
+            other => PrincipalMappingStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for PrincipalMappingStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(PrincipalMappingStatus::from(s))
+    }
+}
+impl PrincipalMappingStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            PrincipalMappingStatus::Deleted => "DELETED",
+            PrincipalMappingStatus::Deleting => "DELETING",
+            PrincipalMappingStatus::Failed => "FAILED",
+            PrincipalMappingStatus::Processing => "PROCESSING",
+            PrincipalMappingStatus::Succeeded => "SUCCEEDED",
+            PrincipalMappingStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DELETED", "DELETING", "FAILED", "PROCESSING", "SUCCEEDED"]
+    }
+}
+impl AsRef<str> for PrincipalMappingStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Provides information about the number of documents and the number
 /// of questions and answers in an index.</p>
 #[non_exhaustive]
@@ -11455,13 +12314,13 @@ impl FaqStatistics {
     }
 }
 
-/// <p>Provides the identifier of the AWS KMS customer master key (CMK)
+/// <p>Provides the identifier of the KMScustomer master key (CMK)
 /// used to encrypt data indexed by Amazon Kendra. Amazon Kendra doesn't support
 /// asymmetric CMKs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServerSideEncryptionConfiguration {
-    /// <p>The identifier of the AWS KMS customer master key (CMK). Amazon Kendra
+    /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra
     /// doesn't support asymmetric CMKs.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
 }
@@ -11481,7 +12340,7 @@ pub mod server_side_encryption_configuration {
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier of the AWS KMS customer master key (CMK). Amazon Kendra
+        /// <p>The identifier of the KMScustomer master key (CMK). Amazon Kendra
         /// doesn't support asymmetric CMKs.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
@@ -11603,7 +12462,7 @@ pub struct Document {
     /// <p>The contents of the document. </p>
     /// <p>Documents passed to the <code>Blob</code> parameter must be base64
     /// encoded. Your code might not need to encode the document file bytes
-    /// if you're using an AWS SDK to call Amazon Kendra operations. If you are
+    /// if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
     /// calling the Amazon Kendra endpoint directly using REST, you must base64
     /// encode the contents before sending.</p>
     pub blob: std::option::Option<smithy_types::Blob>,
@@ -11615,8 +12474,13 @@ pub struct Document {
     /// provide facets for refining searches, and to provide additional
     /// information in the query response.</p>
     pub attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
-    /// <p>Information to use for user context filtering.</p>
+    /// <p>Information on user and group access rights, which is used for
+    /// user context filtering.</p>
     pub access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+    /// <p>The list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+    /// that define the hierarchy for which documents users should have access to.</p>
+    pub hierarchical_access_control_list:
+        std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
     /// <p>The file type of the document in the <code>Blob</code>
     /// field.</p>
     pub content_type: std::option::Option<crate::model::ContentType>,
@@ -11630,6 +12494,10 @@ impl std::fmt::Debug for Document {
         formatter.field("s3_path", &self.s3_path);
         formatter.field("attributes", &self.attributes);
         formatter.field("access_control_list", &self.access_control_list);
+        formatter.field(
+            "hierarchical_access_control_list",
+            &self.hierarchical_access_control_list,
+        );
         formatter.field("content_type", &self.content_type);
         formatter.finish()
     }
@@ -11646,6 +12514,8 @@ pub mod document {
         pub(crate) s3_path: std::option::Option<crate::model::S3Path>,
         pub(crate) attributes: std::option::Option<std::vec::Vec<crate::model::DocumentAttribute>>,
         pub(crate) access_control_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        pub(crate) hierarchical_access_control_list:
+            std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
         pub(crate) content_type: std::option::Option<crate::model::ContentType>,
     }
     impl Builder {
@@ -11670,7 +12540,7 @@ pub mod document {
         /// <p>The contents of the document. </p>
         /// <p>Documents passed to the <code>Blob</code> parameter must be base64
         /// encoded. Your code might not need to encode the document file bytes
-        /// if you're using an AWS SDK to call Amazon Kendra operations. If you are
+        /// if you're using an Amazon Web Services SDK to call Amazon Kendra operations. If you are
         /// calling the Amazon Kendra endpoint directly using REST, you must base64
         /// encode the contents before sending.</p>
         pub fn blob(mut self, input: smithy_types::Blob) -> Self {
@@ -11717,6 +12587,22 @@ pub mod document {
             self.access_control_list = input;
             self
         }
+        pub fn hierarchical_access_control_list(
+            mut self,
+            input: impl Into<crate::model::HierarchicalPrincipal>,
+        ) -> Self {
+            let mut v = self.hierarchical_access_control_list.unwrap_or_default();
+            v.push(input.into());
+            self.hierarchical_access_control_list = Some(v);
+            self
+        }
+        pub fn set_hierarchical_access_control_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HierarchicalPrincipal>>,
+        ) -> Self {
+            self.hierarchical_access_control_list = input;
+            self
+        }
         /// <p>The file type of the document in the <code>Blob</code>
         /// field.</p>
         pub fn content_type(mut self, input: crate::model::ContentType) -> Self {
@@ -11739,6 +12625,7 @@ pub mod document {
                 s3_path: self.s3_path,
                 attributes: self.attributes,
                 access_control_list: self.access_control_list,
+                hierarchical_access_control_list: self.hierarchical_access_control_list,
                 content_type: self.content_type,
             }
         }
@@ -11810,6 +12697,62 @@ impl AsRef<str> for ContentType {
     }
 }
 
+/// <p>
+/// Information to define the hierarchy for which documents users should have access to.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HierarchicalPrincipal {
+    /// <p>A list of <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_Principal.html">principal</a> lists
+    /// that define the hierarchy for which documents users should have access to.
+    /// Each hierarchical list specifies which user or group has allow or deny
+    /// access for each document.</p>
+    pub principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+}
+impl std::fmt::Debug for HierarchicalPrincipal {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HierarchicalPrincipal");
+        formatter.field("principal_list", &self.principal_list);
+        formatter.finish()
+    }
+}
+/// See [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal)
+pub mod hierarchical_principal {
+    /// A builder for [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) principal_list: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+    }
+    impl Builder {
+        pub fn principal_list(mut self, input: impl Into<crate::model::Principal>) -> Self {
+            let mut v = self.principal_list.unwrap_or_default();
+            v.push(input.into());
+            self.principal_list = Some(v);
+            self
+        }
+        pub fn set_principal_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Principal>>,
+        ) -> Self {
+            self.principal_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal)
+        pub fn build(self) -> crate::model::HierarchicalPrincipal {
+            crate::model::HierarchicalPrincipal {
+                principal_list: self.principal_list,
+            }
+        }
+    }
+}
+impl HierarchicalPrincipal {
+    /// Creates a new builder-style object to manufacture [`HierarchicalPrincipal`](crate::model::HierarchicalPrincipal)
+    pub fn builder() -> crate::model::hierarchical_principal::Builder {
+        crate::model::hierarchical_principal::Builder::default()
+    }
+}
+
 /// <p>Provides user and group information for document access
 /// filtering.</p>
 #[non_exhaustive]
@@ -11821,6 +12764,9 @@ pub struct Principal {
     pub r#type: std::option::Option<crate::model::PrincipalType>,
     /// <p>Whether to allow or deny access to the principal.</p>
     pub access: std::option::Option<crate::model::ReadAccessType>,
+    /// <p>The identifier of the data source the principal should
+    /// access documents from.</p>
+    pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Principal {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11828,6 +12774,7 @@ impl std::fmt::Debug for Principal {
         formatter.field("name", &self.name);
         formatter.field("r#type", &self.r#type);
         formatter.field("access", &self.access);
+        formatter.field("data_source_id", &self.data_source_id);
         formatter.finish()
     }
 }
@@ -11840,6 +12787,7 @@ pub mod principal {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) r#type: std::option::Option<crate::model::PrincipalType>,
         pub(crate) access: std::option::Option<crate::model::ReadAccessType>,
+        pub(crate) data_source_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the user or group.</p>
@@ -11872,12 +12820,26 @@ pub mod principal {
             self.access = input;
             self
         }
+        /// <p>The identifier of the data source the principal should
+        /// access documents from.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_id = Some(input.into());
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Principal`](crate::model::Principal)
         pub fn build(self) -> crate::model::Principal {
             crate::model::Principal {
                 name: self.name,
                 r#type: self.r#type,
                 access: self.access,
+                data_source_id: self.data_source_id,
             }
         }
     }

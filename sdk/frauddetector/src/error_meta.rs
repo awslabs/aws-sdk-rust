@@ -109,6 +109,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateBatchPredictionJobEr
                 crate::error::CreateBatchPredictionJobErrorKind::InternalServerException(inner) => {
                     Error::InternalServerException(inner)
                 }
+                crate::error::CreateBatchPredictionJobErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
                 crate::error::CreateBatchPredictionJobErrorKind::ValidationException(inner) => {
                     Error::ValidationException(inner)
                 }

@@ -3070,6 +3070,145 @@ impl std::error::Error for GetTemplateSummaryError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ImportStacksToStackSetError {
+    pub kind: ImportStacksToStackSetErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ImportStacksToStackSetErrorKind {
+    InvalidOperationException(crate::error::InvalidOperationException),
+    LimitExceededException(crate::error::LimitExceededException),
+    OperationIdAlreadyExistsException(crate::error::OperationIdAlreadyExistsException),
+    OperationInProgressException(crate::error::OperationInProgressException),
+    StackNotFoundException(crate::error::StackNotFoundException),
+    StackSetNotFoundException(crate::error::StackSetNotFoundException),
+    StaleRequestException(crate::error::StaleRequestException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ImportStacksToStackSetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ImportStacksToStackSetErrorKind::InvalidOperationException(_inner) => _inner.fmt(f),
+            ImportStacksToStackSetErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                _inner.fmt(f)
+            }
+            ImportStacksToStackSetErrorKind::OperationInProgressException(_inner) => _inner.fmt(f),
+            ImportStacksToStackSetErrorKind::StackNotFoundException(_inner) => _inner.fmt(f),
+            ImportStacksToStackSetErrorKind::StackSetNotFoundException(_inner) => _inner.fmt(f),
+            ImportStacksToStackSetErrorKind::StaleRequestException(_inner) => _inner.fmt(f),
+            ImportStacksToStackSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ImportStacksToStackSetError {
+    fn code(&self) -> Option<&str> {
+        ImportStacksToStackSetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ImportStacksToStackSetError {
+    pub fn new(kind: ImportStacksToStackSetErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ImportStacksToStackSetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ImportStacksToStackSetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::InvalidOperationException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_operation_id_already_exists_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(_)
+        )
+    }
+    pub fn is_operation_in_progress_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::OperationInProgressException(_)
+        )
+    }
+    pub fn is_stack_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::StackNotFoundException(_)
+        )
+    }
+    pub fn is_stack_set_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::StackSetNotFoundException(_)
+        )
+    }
+    pub fn is_stale_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportStacksToStackSetErrorKind::StaleRequestException(_)
+        )
+    }
+}
+impl std::error::Error for ImportStacksToStackSetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ImportStacksToStackSetErrorKind::InvalidOperationException(_inner) => Some(_inner),
+            ImportStacksToStackSetErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ImportStacksToStackSetErrorKind::OperationIdAlreadyExistsException(_inner) => {
+                Some(_inner)
+            }
+            ImportStacksToStackSetErrorKind::OperationInProgressException(_inner) => Some(_inner),
+            ImportStacksToStackSetErrorKind::StackNotFoundException(_inner) => Some(_inner),
+            ImportStacksToStackSetErrorKind::StackSetNotFoundException(_inner) => Some(_inner),
+            ImportStacksToStackSetErrorKind::StaleRequestException(_inner) => Some(_inner),
+            ImportStacksToStackSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListChangeSetsError {
     pub kind: ListChangeSetsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5999,7 +6138,8 @@ impl OperationNotFoundException {
     }
 }
 
-/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
+/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
+/// users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OperationStatusCheckFailedException {
@@ -6059,7 +6199,8 @@ impl OperationStatusCheckFailedException {
     }
 }
 
-/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to users.</p>
+/// <p>Error reserved for use by the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/what-is-cloudformation-cli.html">CloudFormation CLI</a>. CloudFormation does not return this error to
+/// users.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidStateTransitionException {
@@ -6119,6 +6260,129 @@ impl InvalidStateTransitionException {
     }
 }
 
+/// <p>The specified stack ARN doesn’t exist or stack doesn’t exist corresponding to the ARN in
+/// input.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StackNotFoundException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for StackNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StackNotFoundException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl StackNotFoundException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for StackNotFoundException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "StackNotFoundException")?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for StackNotFoundException {}
+/// See [`StackNotFoundException`](crate::error::StackNotFoundException)
+pub mod stack_not_found_exception {
+    /// A builder for [`StackNotFoundException`](crate::error::StackNotFoundException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StackNotFoundException`](crate::error::StackNotFoundException)
+        pub fn build(self) -> crate::error::StackNotFoundException {
+            crate::error::StackNotFoundException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl StackNotFoundException {
+    /// Creates a new builder-style object to manufacture [`StackNotFoundException`](crate::error::StackNotFoundException)
+    pub fn builder() -> crate::error::stack_not_found_exception::Builder {
+        crate::error::stack_not_found_exception::Builder::default()
+    }
+}
+
+/// <p>The quota for the resource has already been reached.</p>
+/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
+/// the <i>CloudFormation User Guide</i>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The specified change set name or ID doesn't exit. To view valid change sets for a
 /// stack, use the <code>ListChangeSets</code> action.</p>
 #[non_exhaustive]
@@ -6141,8 +6405,8 @@ impl ChangeSetNotFoundException {
 impl std::fmt::Display for ChangeSetNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ChangeSetNotFoundException")?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
@@ -6203,8 +6467,8 @@ impl InvalidChangeSetStatusException {
 impl std::fmt::Display for InvalidChangeSetStatusException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidChangeSetStatusException")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_17) = &self.message {
+            write!(f, ": {}", inner_17)?;
         }
         Ok(())
     }
@@ -6265,8 +6529,8 @@ impl StackSetNotEmptyException {
 impl std::fmt::Display for StackSetNotEmptyException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "StackSetNotEmptyException")?;
-        if let Some(inner_16) = &self.message {
-            write!(f, ": {}", inner_16)?;
+        if let Some(inner_18) = &self.message {
+            write!(f, ": {}", inner_18)?;
         }
         Ok(())
     }
@@ -6325,8 +6589,8 @@ impl NameAlreadyExistsException {
 impl std::fmt::Display for NameAlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "NameAlreadyExistsException")?;
-        if let Some(inner_17) = &self.message {
-            write!(f, ": {}", inner_17)?;
+        if let Some(inner_19) = &self.message {
+            write!(f, ": {}", inner_19)?;
         }
         Ok(())
     }
@@ -6364,68 +6628,6 @@ impl NameAlreadyExistsException {
     }
 }
 
-/// <p>The quota for the resource has already been reached.</p>
-/// <p>For information on resource and stack limitations, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cloudformation-limits.html">Limits</a> in
-/// the <i>AWS CloudFormation User Guide</i>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl LimitExceededException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_18) = &self.message {
-            write!(f, ": {}", inner_18)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
-pub mod limit_exceeded_exception {
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
-    }
-}
-
 /// <p>The specified resource exists, but has been changed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6447,8 +6649,8 @@ impl CreatedButModifiedException {
 impl std::fmt::Display for CreatedButModifiedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CreatedButModifiedException")?;
-        if let Some(inner_19) = &self.message {
-            write!(f, ": {}", inner_19)?;
+        if let Some(inner_20) = &self.message {
+            write!(f, ": {}", inner_20)?;
         }
         Ok(())
     }
@@ -6507,8 +6709,8 @@ impl AlreadyExistsException {
 impl std::fmt::Display for AlreadyExistsException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AlreadyExistsException")?;
-        if let Some(inner_20) = &self.message {
-            write!(f, ": {}", inner_20)?;
+        if let Some(inner_21) = &self.message {
+            write!(f, ": {}", inner_21)?;
         }
         Ok(())
     }
@@ -6567,8 +6769,8 @@ impl TypeConfigurationNotFoundException {
 impl std::fmt::Display for TypeConfigurationNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TypeConfigurationNotFoundException")?;
-        if let Some(inner_21) = &self.message {
-            write!(f, ": {}", inner_21)?;
+        if let Some(inner_22) = &self.message {
+            write!(f, ": {}", inner_22)?;
         }
         Ok(())
     }

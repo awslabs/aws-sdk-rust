@@ -81,12 +81,12 @@ impl<H, R> Operation<H, R> {
         Self { request, parts }
     }
 
-    pub fn config_mut(&mut self) -> impl DerefMut<Target = PropertyBag> + '_ {
-        self.request.config_mut()
+    pub fn properties_mut(&mut self) -> impl DerefMut<Target = PropertyBag> + '_ {
+        self.request.properties_mut()
     }
 
-    pub fn config(&self) -> impl Deref<Target = PropertyBag> + '_ {
-        self.request.config()
+    pub fn properties(&self) -> impl Deref<Target = PropertyBag> + '_ {
+        self.request.properties()
     }
 
     pub fn with_metadata(mut self, metadata: Metadata) -> Self {
@@ -135,6 +135,9 @@ impl<H> Operation<H, ()> {
     }
 }
 
+/// Operation request type that associates a property bag with an underlying HTTP request.
+/// This type represents the request in the Tower `Service` in middleware so that middleware
+/// can share information with each other via the properties.
 #[derive(Debug)]
 pub struct Request {
     /// The underlying HTTP Request
@@ -144,47 +147,56 @@ pub struct Request {
     ///
     /// Middleware can read and write from the property bag and use its
     /// contents to augment the request (see [`Request::augment`](Request::augment))
-    configuration: Arc<Mutex<PropertyBag>>,
+    properties: Arc<Mutex<PropertyBag>>,
 }
 
 impl Request {
-    pub fn new(base: http::Request<SdkBody>) -> Self {
+    /// Creates a new operation `Request` with the given `inner` HTTP request.
+    pub fn new(inner: http::Request<SdkBody>) -> Self {
         Request {
-            inner: base,
-            configuration: Arc::new(Mutex::new(PropertyBag::new())),
+            inner,
+            properties: Arc::new(Mutex::new(PropertyBag::new())),
         }
     }
 
+    /// Allows modification of the HTTP request and associated properties with a fallible closure.
     pub fn augment<T>(
         self,
         f: impl FnOnce(http::Request<SdkBody>, &mut PropertyBag) -> Result<http::Request<SdkBody>, T>,
     ) -> Result<Request, T> {
         let inner = {
-            let configuration: &mut PropertyBag = &mut self.configuration.lock().unwrap();
-            f(self.inner, configuration)?
+            let properties: &mut PropertyBag = &mut self.properties.lock().unwrap();
+            f(self.inner, properties)?
         };
         Ok(Request {
             inner,
-            configuration: self.configuration,
+            properties: self.properties,
         })
     }
 
-    pub fn config_mut(&mut self) -> MutexGuard<'_, PropertyBag> {
-        self.configuration.lock().unwrap()
+    /// Gives mutable access to the properties.
+    pub fn properties_mut(&mut self) -> MutexGuard<'_, PropertyBag> {
+        self.properties.lock().unwrap()
     }
 
-    pub fn config(&self) -> MutexGuard<'_, PropertyBag> {
-        self.configuration.lock().unwrap()
+    /// Gives readonly access to the properties.
+    pub fn properties(&self) -> MutexGuard<'_, PropertyBag> {
+        self.properties.lock().unwrap()
     }
 
-    pub fn request_mut(&mut self) -> &mut http::Request<SdkBody> {
+    /// Gives mutable access to the underlying HTTP request.
+    pub fn http_mut(&mut self) -> &mut http::Request<SdkBody> {
         &mut self.inner
     }
 
-    pub fn request(&self) -> &http::Request<SdkBody> {
+    /// Gives readonly access to the underlying HTTP request.
+    pub fn http(&self) -> &http::Request<SdkBody> {
         &self.inner
     }
 
+    /// Attempts to clone the operation `Request`. This can fail if the
+    /// request body can't be cloned, such as if it is being streamed and the
+    /// stream can't be recreated.
     pub fn try_clone(&self) -> Option<Request> {
         let cloned_body = self.inner.body().try_clone()?;
         let mut cloned_request = http::Request::builder()
@@ -199,12 +211,65 @@ impl Request {
             .expect("a clone of a valid request should be a valid request");
         Some(Request {
             inner,
-            configuration: self.configuration.clone(),
+            properties: self.properties.clone(),
         })
     }
 
+    /// Consumes the operation `Request` and returns the underlying HTTP request and properties.
     pub fn into_parts(self) -> (http::Request<SdkBody>, Arc<Mutex<PropertyBag>>) {
-        (self.inner, self.configuration)
+        (self.inner, self.properties)
+    }
+}
+
+/// Operation response type that associates a property bag with an underlying HTTP response.
+/// This type represents the response in the Tower `Service` in middleware so that middleware
+/// can share information with each other via the properties.
+#[derive(Debug)]
+pub struct Response {
+    /// The underlying HTTP Response
+    inner: http::Response<SdkBody>,
+
+    /// Property bag of configuration options
+    properties: Arc<Mutex<PropertyBag>>,
+}
+
+impl Response {
+    /// Creates a new operation `Response` with the given `inner` HTTP response.
+    pub fn new(inner: http::Response<SdkBody>) -> Self {
+        Response {
+            inner,
+            properties: Arc::new(Mutex::new(PropertyBag::new())),
+        }
+    }
+
+    /// Gives mutable access to the properties.
+    pub fn properties_mut(&mut self) -> MutexGuard<'_, PropertyBag> {
+        self.properties.lock().unwrap()
+    }
+
+    /// Gives readonly access to the properties.
+    pub fn properties(&self) -> MutexGuard<'_, PropertyBag> {
+        self.properties.lock().unwrap()
+    }
+
+    /// Gives mutable access to the underlying HTTP response.
+    pub fn http_mut(&mut self) -> &mut http::Response<SdkBody> {
+        &mut self.inner
+    }
+
+    /// Gives readonly access to the underlying HTTP response.
+    pub fn http(&self) -> &http::Response<SdkBody> {
+        &self.inner
+    }
+
+    /// Consumes the operation `Request` and returns the underlying HTTP response and properties.
+    pub fn into_parts(self) -> (http::Response<SdkBody>, Arc<Mutex<PropertyBag>>) {
+        (self.inner, self.properties)
+    }
+
+    /// Creates a new operation `Response` from an HTTP response and property bag.
+    pub fn from_parts(inner: http::Response<SdkBody>, properties: Arc<Mutex<PropertyBag>>) -> Self {
+        Response { inner, properties }
     }
 }
 
@@ -226,7 +291,7 @@ mod test {
                 .body(SdkBody::from("hello world!"))
                 .expect("valid request"),
         );
-        request.config_mut().insert("hello");
+        request.properties_mut().insert("hello");
         let cloned = request.try_clone().expect("request is cloneable");
 
         let (request, config) = cloned.into_parts();

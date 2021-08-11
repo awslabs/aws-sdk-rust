@@ -51,6 +51,7 @@ impl From<smithy_http::result::SdkError<crate::error::CreateReplicationConfigura
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::CreateReplicationConfigurationTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
                 crate::error::CreateReplicationConfigurationTemplateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -496,6 +497,7 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateReplicationConfigura
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateReplicationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateReplicationConfigurationErrorKind::ConflictException(inner) => Error::ConflictException(inner),
                 crate::error::UpdateReplicationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateReplicationConfigurationErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
@@ -516,6 +518,7 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateReplicationConfigura
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::UninitializedAccountException(inner) => Error::UninitializedAccountException(inner),
                 crate::error::UpdateReplicationConfigurationTemplateErrorKind::ValidationException(inner) => Error::ValidationException(inner),

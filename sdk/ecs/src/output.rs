@@ -2081,7 +2081,7 @@ pub struct DescribeTaskDefinitionOutput {
     /// <li>
     /// <p>Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase
     /// combination of such as a prefix for either keys or values as it is reserved for
-    /// AWS use. You cannot edit or delete tag keys or values with this prefix. Tags with
+    /// Amazon Web Services use. You cannot edit or delete tag keys or values with this prefix. Tags with
     /// this prefix do not count against your tags per resource limit.</p>
     /// </li>
     /// </ul>
@@ -2832,7 +2832,7 @@ impl DeleteAccountSettingOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateTaskSetOutput {
-    /// <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+    /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
     /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
     /// number of tasks, how many tasks are running, and whether the task set serves production
     /// traffic.</p>
@@ -2854,7 +2854,7 @@ pub mod create_task_set_output {
         pub(crate) task_set: std::option::Option<crate::model::TaskSet>,
     }
     impl Builder {
-        /// <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+        /// <p>Information about a set of Amazon ECS tasks in either an CodeDeploy or an
         /// <code>EXTERNAL</code> deployment. A task set includes details such as the desired
         /// number of tasks, how many tasks are running, and whether the task set serves production
         /// traffic.</p>
@@ -2885,6 +2885,9 @@ impl CreateTaskSetOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateServiceOutput {
     /// <p>The full description of your service following the create call.</p>
+    /// <p>A service will return either a <code>capacityProviderStrategy</code> or
+    /// <code>launchType</code> parameter, but not both, depending on which one was
+    /// specified during creation.</p>
     /// <p>If a service is using the <code>ECS</code> deployment controller, the
     /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
     /// returned.</p>
@@ -2911,6 +2914,9 @@ pub mod create_service_output {
     }
     impl Builder {
         /// <p>The full description of your service following the create call.</p>
+        /// <p>A service will return either a <code>capacityProviderStrategy</code> or
+        /// <code>launchType</code> parameter, but not both, depending on which one was
+        /// specified during creation.</p>
         /// <p>If a service is using the <code>ECS</code> deployment controller, the
         /// <code>deploymentController</code> and <code>taskSets</code> parameters will not be
         /// returned.</p>

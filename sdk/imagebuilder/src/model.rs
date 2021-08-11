@@ -545,15 +545,15 @@ impl Distribution {
     }
 }
 
-/// <p>Identifies an EC2 launch template to use for a specific account.</p>
+/// <p>Identifies an Amazon EC2 launch template to use for a specific account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchTemplateConfiguration {
-    /// <p>Identifies the EC2 launch template to use.</p>
+    /// <p>Identifies the Amazon EC2 launch template to use.</p>
     pub launch_template_id: std::option::Option<std::string::String>,
     /// <p>The account ID that this configuration applies to.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Set the specified EC2 launch template as the default launch template for the specified account.</p>
+    /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
     pub set_default_version: bool,
 }
 impl std::fmt::Debug for LaunchTemplateConfiguration {
@@ -576,7 +576,7 @@ pub mod launch_template_configuration {
         pub(crate) set_default_version: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Identifies the EC2 launch template to use.</p>
+        /// <p>Identifies the Amazon EC2 launch template to use.</p>
         pub fn launch_template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.launch_template_id = Some(input.into());
             self
@@ -597,7 +597,7 @@ pub mod launch_template_configuration {
             self.account_id = input;
             self
         }
-        /// <p>Set the specified EC2 launch template as the default launch template for the specified account.</p>
+        /// <p>Set the specified Amazon EC2 launch template as the default launch template for the specified account.</p>
         pub fn set_default_version(mut self, input: bool) -> Self {
             self.set_default_version = Some(input);
             self
@@ -834,7 +834,7 @@ pub struct AmiDistributionConfiguration {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Launch permissions can be used to configure which AWS accounts can use the AMI to launch
+    /// <p> Launch permissions can be used to configure which accounts can use the AMI to launch
     /// instances.</p>
     pub launch_permission: std::option::Option<crate::model::LaunchPermissionConfiguration>,
 }
@@ -926,7 +926,7 @@ pub mod ami_distribution_configuration {
             self.kms_key_id = input;
             self
         }
-        /// <p> Launch permissions can be used to configure which AWS accounts can use the AMI to launch
+        /// <p> Launch permissions can be used to configure which accounts can use the AMI to launch
         /// instances.</p>
         pub fn launch_permission(
             mut self,
@@ -963,14 +963,14 @@ impl AmiDistributionConfiguration {
 }
 
 /// <p>Describes the configuration for a launch permission. The launch permission modification request is sent to the
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2 ModifyImageAttribute</a>
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a>
 /// API on behalf of the user for each Region they have selected to distribute the AMI. To make an AMI public,
 /// set the launch permission authorized accounts to <code>all</code>. See the examples for making an AMI public at
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">EC2 ModifyImageAttribute</a>.</p>
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyImageAttribute.html">Amazon EC2 ModifyImageAttribute</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchPermissionConfiguration {
-    /// <p>The AWS account ID.</p>
+    /// <p>The account ID.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the group.</p>
     pub user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1035,7 +1035,7 @@ impl LaunchPermissionConfiguration {
     }
 }
 
-/// <p>The infrastructure used when building EC2 AMIs.</p>
+/// <p>The infrastructure used when building Amazon EC2 AMIs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InfrastructureConfigurationSummary {
@@ -1294,26 +1294,60 @@ impl Filter {
     }
 }
 
-/// <p>An image semantic version.</p>
+/// <p>The defining characteristics of a specific version of an Image Builder image.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImageVersion {
-    /// <p>The Amazon Resource Name (ARN) of the image semantic version.</p>
+    /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The name of the image semantic version.</p>
+    /// <p>The name of this specific version of an Image Builder image.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Specifies whether this is an AMI or container image.</p>
+    /// <p>Specifies whether this image is an AMI or a container image.</p>
     pub r#type: std::option::Option<crate::model::ImageType>,
-    /// <p>The semantic version of the image semantic version.</p>
+    /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+    /// automatically uses a wildcard for that, if applicable.</p>
+    /// </note>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The platform of the image semantic version.</p>
+    /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
     pub platform: std::option::Option<crate::model::Platform>,
-    /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or
+    /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or
     /// Microsoft Windows Server 2019.</p>
     pub os_version: std::option::Option<std::string::String>,
-    /// <p>The owner of the image semantic version.</p>
+    /// <p>The owner of the image version.</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The date at which this image semantic version was created.</p>
+    /// <p>The date on which this specific version of the Image Builder image was created.</p>
     pub date_created: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImageVersion {
@@ -1346,7 +1380,23 @@ pub mod image_version {
         pub(crate) date_created: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the image semantic version.</p>
+        /// <p>The Amazon Resource Name (ARN) of a specific version of an Image Builder image.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -1355,7 +1405,7 @@ pub mod image_version {
             self.arn = input;
             self
         }
-        /// <p>The name of the image semantic version.</p>
+        /// <p>The name of this specific version of an Image Builder image.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -1364,7 +1414,7 @@ pub mod image_version {
             self.name = input;
             self
         }
-        /// <p>Specifies whether this is an AMI or container image.</p>
+        /// <p>Specifies whether this image is an AMI or a container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
             self.r#type = Some(input);
             self
@@ -1373,7 +1423,25 @@ pub mod image_version {
             self.r#type = input;
             self
         }
-        /// <p>The semantic version of the image semantic version.</p>
+        /// <p>Details for a specific version of an Image Builder image. This version follows the semantic version syntax.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+        /// automatically uses a wildcard for that, if applicable.</p>
+        /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
@@ -1382,7 +1450,7 @@ pub mod image_version {
             self.version = input;
             self
         }
-        /// <p>The platform of the image semantic version.</p>
+        /// <p>The platform of the image version, for example "Windows" or "Linux".</p>
         pub fn platform(mut self, input: crate::model::Platform) -> Self {
             self.platform = Some(input);
             self
@@ -1391,7 +1459,7 @@ pub mod image_version {
             self.platform = input;
             self
         }
-        /// <p>The operating system version of the instance. For example, Amazon Linux 2, Ubuntu 18, or
+        /// <p>The operating system version of the Amazon EC2 build instance. For example, Amazon Linux 2, Ubuntu 18, or
         /// Microsoft Windows Server 2019.</p>
         pub fn os_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.os_version = Some(input.into());
@@ -1401,7 +1469,7 @@ pub mod image_version {
             self.os_version = input;
             self
         }
-        /// <p>The owner of the image semantic version.</p>
+        /// <p>The owner of the image version.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -1410,7 +1478,7 @@ pub mod image_version {
             self.owner = input;
             self
         }
-        /// <p>The date at which this image semantic version was created.</p>
+        /// <p>The date on which this specific version of the Image Builder image was created.</p>
         pub fn date_created(mut self, input: impl Into<std::string::String>) -> Self {
             self.date_created = Some(input.into());
             self
@@ -2289,7 +2357,7 @@ impl ImageSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OutputResources {
-    /// <p>The EC2 AMIs created by this image.</p>
+    /// <p>The Amazon EC2 AMIs created by this image.</p>
     pub amis: std::option::Option<std::vec::Vec<crate::model::Ami>>,
     /// <p>Container images that the pipeline has generated and stored in the output repository.</p>
     pub containers: std::option::Option<std::vec::Vec<crate::model::Container>>,
@@ -2419,17 +2487,17 @@ impl Container {
     }
 }
 
-/// <p> Details of an EC2 AMI.</p>
+/// <p> Details of an Amazon EC2 AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ami {
-    /// <p>The AWS Region of the EC2 AMI.</p>
+    /// <p>The Region of the Amazon EC2 AMI.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The AMI ID of the EC2 AMI.</p>
+    /// <p>The AMI ID of the Amazon EC2 AMI.</p>
     pub image: std::option::Option<std::string::String>,
-    /// <p>The name of the EC2 AMI.</p>
+    /// <p>The name of the Amazon EC2 AMI.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>
+    /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p> Image state shows the image status and the reason for that status.</p>
     pub state: std::option::Option<crate::model::ImageState>,
@@ -2462,7 +2530,7 @@ pub mod ami {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Region of the EC2 AMI.</p>
+        /// <p>The Region of the Amazon EC2 AMI.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -2471,7 +2539,7 @@ pub mod ami {
             self.region = input;
             self
         }
-        /// <p>The AMI ID of the EC2 AMI.</p>
+        /// <p>The AMI ID of the Amazon EC2 AMI.</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.image = Some(input.into());
             self
@@ -2480,7 +2548,7 @@ pub mod ami {
             self.image = input;
             self
         }
-        /// <p>The name of the EC2 AMI.</p>
+        /// <p>The name of the Amazon EC2 AMI.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -2489,7 +2557,7 @@ pub mod ami {
             self.name = input;
             self
         }
-        /// <p>The description of the EC2 AMI. Minimum and maximum length are in characters.</p>
+        /// <p>The description of the Amazon EC2 AMI. Minimum and maximum length are in characters.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -3106,15 +3174,49 @@ impl AsRef<str> for ContainerType {
     }
 }
 
-/// <p>A high-level overview of a component semantic version.</p>
+/// <p>The defining characteristics of a specific version of an TOE component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentVersion {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the component.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the component.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+    /// automatically uses a wildcard for that, if applicable.</p>
+    /// </note>
     pub version: std::option::Option<std::string::String>,
     /// <p>The description of the component.</p>
     pub description: std::option::Option<std::string::String>,
@@ -3165,6 +3267,22 @@ pub mod component_version {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -3183,6 +3301,24 @@ pub mod component_version {
             self
         }
         /// <p>The semantic version of the component.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+        /// automatically uses a wildcard for that, if applicable.</p>
+        /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
@@ -3601,7 +3737,7 @@ pub struct InfrastructureConfiguration {
     pub subnet_id: std::option::Option<std::string::String>,
     /// <p>The logging configuration of the infrastructure configuration.</p>
     pub logging: std::option::Option<crate::model::Logging>,
-    /// <p>The EC2 key pair of the infrastructure configuration.</p>
+    /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
     pub key_pair: std::option::Option<std::string::String>,
     /// <p>The terminate instance on failure configuration of the infrastructure
     /// configuration.</p>
@@ -3753,7 +3889,7 @@ pub mod infrastructure_configuration {
             self.logging = input;
             self
         }
-        /// <p>The EC2 key pair of the infrastructure configuration.</p>
+        /// <p>The Amazon EC2 key pair of the infrastructure configuration.</p>
         pub fn key_pair(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_pair = Some(input.into());
             self
@@ -3878,7 +4014,8 @@ impl InfrastructureConfiguration {
 pub struct ImageRecipe {
     /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+    /// <p>Specifies which type of image is created by the recipe - an AMI or a
+    /// container image.</p>
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The name of the image recipe.</p>
     pub name: std::option::Option<std::string::String>,
@@ -3904,6 +4041,12 @@ pub struct ImageRecipe {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The working directory to be used during build and test workflows.</p>
     pub working_directory: std::option::Option<std::string::String>,
+    /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to
+    /// build and test your image configuration. Instance configuration adds a layer
+    /// of control over those instances. You can define settings and add scripts to
+    /// run when an instance is launched from your AMI.</p>
+    pub additional_instance_configuration:
+        std::option::Option<crate::model::AdditionalInstanceConfiguration>,
 }
 impl std::fmt::Debug for ImageRecipe {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3921,6 +4064,10 @@ impl std::fmt::Debug for ImageRecipe {
         formatter.field("date_created", &self.date_created);
         formatter.field("tags", &self.tags);
         formatter.field("working_directory", &self.working_directory);
+        formatter.field(
+            "additional_instance_configuration",
+            &self.additional_instance_configuration,
+        );
         formatter.finish()
     }
 }
@@ -3947,6 +4094,8 @@ pub mod image_recipe {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) working_directory: std::option::Option<std::string::String>,
+        pub(crate) additional_instance_configuration:
+            std::option::Option<crate::model::AdditionalInstanceConfiguration>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image recipe.</p>
@@ -3958,7 +4107,8 @@ pub mod image_recipe {
             self.arn = input;
             self
         }
-        /// <p>Specifies which type of image is created by the recipe - an AMI or a container image.</p>
+        /// <p>Specifies which type of image is created by the recipe - an AMI or a
+        /// container image.</p>
         pub fn r#type(mut self, input: crate::model::ImageType) -> Self {
             self.r#type = Some(input);
             self
@@ -4093,6 +4243,24 @@ pub mod image_recipe {
             self.working_directory = input;
             self
         }
+        /// <p>Before you create a new AMI, Image Builder launches temporary Amazon EC2 instances to
+        /// build and test your image configuration. Instance configuration adds a layer
+        /// of control over those instances. You can define settings and add scripts to
+        /// run when an instance is launched from your AMI.</p>
+        pub fn additional_instance_configuration(
+            mut self,
+            input: crate::model::AdditionalInstanceConfiguration,
+        ) -> Self {
+            self.additional_instance_configuration = Some(input);
+            self
+        }
+        pub fn set_additional_instance_configuration(
+            mut self,
+            input: std::option::Option<crate::model::AdditionalInstanceConfiguration>,
+        ) -> Self {
+            self.additional_instance_configuration = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImageRecipe`](crate::model::ImageRecipe)
         pub fn build(self) -> crate::model::ImageRecipe {
             crate::model::ImageRecipe {
@@ -4109,6 +4277,7 @@ pub mod image_recipe {
                 date_created: self.date_created,
                 tags: self.tags,
                 working_directory: self.working_directory,
+                additional_instance_configuration: self.additional_instance_configuration,
             }
         }
     }
@@ -4117,6 +4286,143 @@ impl ImageRecipe {
     /// Creates a new builder-style object to manufacture [`ImageRecipe`](crate::model::ImageRecipe)
     pub fn builder() -> crate::model::image_recipe::Builder {
         crate::model::image_recipe::Builder::default()
+    }
+}
+
+/// <p>In addition to your infrastruction configuration, these settings provide an extra layer of
+/// control over your build instances. For instances where Image Builder installs the SSM agent,
+/// you can choose whether to keep it for the AMI that you create. You can also specify commands
+/// to run on launch for all of your build instances.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AdditionalInstanceConfiguration {
+    /// <p>Contains settings for the SSM agent on your build instance.</p>
+    pub systems_manager_agent: std::option::Option<crate::model::SystemsManagerAgent>,
+    /// <p>Use this property to provide commands or a command script to run when you launch
+    /// your build instance.</p>
+    /// <note>
+    /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure
+    /// that SSM is installed on your Linux build instance. If you override the user data,
+    /// make sure that you add commands to install SSM, if it is not pre-installed on your
+    /// source image.</p>
+    /// </note>
+    pub user_data_override: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AdditionalInstanceConfiguration {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AdditionalInstanceConfiguration");
+        formatter.field("systems_manager_agent", &self.systems_manager_agent);
+        formatter.field("user_data_override", &self.user_data_override);
+        formatter.finish()
+    }
+}
+/// See [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration)
+pub mod additional_instance_configuration {
+    /// A builder for [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) systems_manager_agent: std::option::Option<crate::model::SystemsManagerAgent>,
+        pub(crate) user_data_override: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Contains settings for the SSM agent on your build instance.</p>
+        pub fn systems_manager_agent(mut self, input: crate::model::SystemsManagerAgent) -> Self {
+            self.systems_manager_agent = Some(input);
+            self
+        }
+        pub fn set_systems_manager_agent(
+            mut self,
+            input: std::option::Option<crate::model::SystemsManagerAgent>,
+        ) -> Self {
+            self.systems_manager_agent = input;
+            self
+        }
+        /// <p>Use this property to provide commands or a command script to run when you launch
+        /// your build instance.</p>
+        /// <note>
+        /// <p>The userDataOverride property replaces any commands that Image Builder might have added to ensure
+        /// that SSM is installed on your Linux build instance. If you override the user data,
+        /// make sure that you add commands to install SSM, if it is not pre-installed on your
+        /// source image.</p>
+        /// </note>
+        pub fn user_data_override(mut self, input: impl Into<std::string::String>) -> Self {
+            self.user_data_override = Some(input.into());
+            self
+        }
+        pub fn set_user_data_override(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.user_data_override = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration)
+        pub fn build(self) -> crate::model::AdditionalInstanceConfiguration {
+            crate::model::AdditionalInstanceConfiguration {
+                systems_manager_agent: self.systems_manager_agent,
+                user_data_override: self.user_data_override,
+            }
+        }
+    }
+}
+impl AdditionalInstanceConfiguration {
+    /// Creates a new builder-style object to manufacture [`AdditionalInstanceConfiguration`](crate::model::AdditionalInstanceConfiguration)
+    pub fn builder() -> crate::model::additional_instance_configuration::Builder {
+        crate::model::additional_instance_configuration::Builder::default()
+    }
+}
+
+/// <p>Contains settings for the SSM agent on your build instance.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SystemsManagerAgent {
+    /// <p>Controls whether the SSM agent is removed from your final build image, prior to creating
+    /// the new AMI. If this is set to true, then the agent is removed from the final image. If it's
+    /// set to false, then the agent is left in, so that it is included in the new AMI. The default
+    /// value is false.</p>
+    pub uninstall_after_build: std::option::Option<bool>,
+}
+impl std::fmt::Debug for SystemsManagerAgent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SystemsManagerAgent");
+        formatter.field("uninstall_after_build", &self.uninstall_after_build);
+        formatter.finish()
+    }
+}
+/// See [`SystemsManagerAgent`](crate::model::SystemsManagerAgent)
+pub mod systems_manager_agent {
+    /// A builder for [`SystemsManagerAgent`](crate::model::SystemsManagerAgent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) uninstall_after_build: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Controls whether the SSM agent is removed from your final build image, prior to creating
+        /// the new AMI. If this is set to true, then the agent is removed from the final image. If it's
+        /// set to false, then the agent is left in, so that it is included in the new AMI. The default
+        /// value is false.</p>
+        pub fn uninstall_after_build(mut self, input: bool) -> Self {
+            self.uninstall_after_build = Some(input);
+            self
+        }
+        pub fn set_uninstall_after_build(mut self, input: std::option::Option<bool>) -> Self {
+            self.uninstall_after_build = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SystemsManagerAgent`](crate::model::SystemsManagerAgent)
+        pub fn build(self) -> crate::model::SystemsManagerAgent {
+            crate::model::SystemsManagerAgent {
+                uninstall_after_build: self.uninstall_after_build,
+            }
+        }
+    }
+}
+impl SystemsManagerAgent {
+    /// Creates a new builder-style object to manufacture [`SystemsManagerAgent`](crate::model::SystemsManagerAgent)
+    pub fn builder() -> crate::model::systems_manager_agent::Builder {
+        crate::model::systems_manager_agent::Builder::default()
     }
 }
 
@@ -4417,11 +4723,14 @@ impl AsRef<str> for EbsVolumeType {
 pub struct ComponentConfiguration {
     /// <p>The Amazon Resource Name (ARN) of the component.</p>
     pub component_arn: std::option::Option<std::string::String>,
+    /// <p>A group of parameter settings that are used to configure the component for a specific recipe.</p>
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
 }
 impl std::fmt::Debug for ComponentConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ComponentConfiguration");
         formatter.field("component_arn", &self.component_arn);
+        formatter.field("parameters", &self.parameters);
         formatter.finish()
     }
 }
@@ -4432,6 +4741,7 @@ pub mod component_configuration {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) component_arn: std::option::Option<std::string::String>,
+        pub(crate) parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the component.</p>
@@ -4446,10 +4756,24 @@ pub mod component_configuration {
             self.component_arn = input;
             self
         }
+        pub fn parameters(mut self, input: impl Into<crate::model::ComponentParameter>) -> Self {
+            let mut v = self.parameters.unwrap_or_default();
+            v.push(input.into());
+            self.parameters = Some(v);
+            self
+        }
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ComponentParameter>>,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ComponentConfiguration`](crate::model::ComponentConfiguration)
         pub fn build(self) -> crate::model::ComponentConfiguration {
             crate::model::ComponentConfiguration {
                 component_arn: self.component_arn,
+                parameters: self.parameters,
             }
         }
     }
@@ -4461,17 +4785,118 @@ impl ComponentConfiguration {
     }
 }
 
-/// <p>An image build version.</p>
+/// <p>Contains a key/value pair that sets the named component parameter.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ComponentParameter {
+    /// <p>The name of the component parameter to set.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Sets the value for the named component parameter.</p>
+    pub value: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for ComponentParameter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ComponentParameter");
+        formatter.field("name", &self.name);
+        formatter.field("value", &self.value);
+        formatter.finish()
+    }
+}
+/// See [`ComponentParameter`](crate::model::ComponentParameter)
+pub mod component_parameter {
+    /// A builder for [`ComponentParameter`](crate::model::ComponentParameter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) value: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>The name of the component parameter to set.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.value.unwrap_or_default();
+            v.push(input.into());
+            self.value = Some(v);
+            self
+        }
+        pub fn set_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.value = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ComponentParameter`](crate::model::ComponentParameter)
+        pub fn build(self) -> crate::model::ComponentParameter {
+            crate::model::ComponentParameter {
+                name: self.name,
+                value: self.value,
+            }
+        }
+    }
+}
+impl ComponentParameter {
+    /// Creates a new builder-style object to manufacture [`ComponentParameter`](crate::model::ComponentParameter)
+    pub fn builder() -> crate::model::component_parameter::Builder {
+        crate::model::component_parameter::Builder::default()
+    }
+}
+
+/// <p>An Image Builder image. You must specify exactly one recipe for the image – either
+/// a container recipe (<code>containerRecipe</code>), which creates a container
+/// image, or an image recipe (<code>imageRecipe</code>), which creates an AMI.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Image {
     /// <p>The Amazon Resource Name (ARN) of the image.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies whether this is an AMI or container image.</p>
     pub r#type: std::option::Option<crate::model::ImageType>,
     /// <p>The name of the image.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The semantic version of the image.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+    /// automatically uses a wildcard for that, if applicable.</p>
+    /// </note>
     pub version: std::option::Option<std::string::String>,
     /// <p>The platform of the image.</p>
     pub platform: std::option::Option<crate::model::Platform>,
@@ -4486,7 +4911,7 @@ pub struct Image {
     pub state: std::option::Option<crate::model::ImageState>,
     /// <p>The image recipe used when creating the image.</p>
     pub image_recipe: std::option::Option<crate::model::ImageRecipe>,
-    /// <p>The container recipe used to create the container image type.</p>
+    /// <p>The recipe that is used to create an Image Builder container image.</p>
     pub container_recipe: std::option::Option<crate::model::ContainerRecipe>,
     /// <p>The name of the image pipeline that created this image.</p>
     pub source_pipeline_name: std::option::Option<std::string::String>,
@@ -4572,6 +4997,22 @@ pub mod image {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the image.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -4599,6 +5040,24 @@ pub mod image {
             self
         }
         /// <p>The semantic version of the image.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+        /// automatically uses a wildcard for that, if applicable.</p>
+        /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
@@ -4661,7 +5120,7 @@ pub mod image {
             self.image_recipe = input;
             self
         }
-        /// <p>The container recipe used to create the container image type.</p>
+        /// <p>The recipe that is used to create an Image Builder container image.</p>
         pub fn container_recipe(mut self, input: crate::model::ContainerRecipe) -> Self {
             self.container_recipe = Some(input);
             self
@@ -4982,6 +5441,22 @@ impl DistributionConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerRecipe {
     /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+    /// <note>
+    /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+    /// at the level that applies to that object as follows:</p>
+    /// <ol>
+    /// <li>
+    /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+    /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+    /// </li>
+    /// <li>
+    /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+    /// </li>
+    /// <li>
+    /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+    /// </li>
+    /// </ol>
+    /// </note>
     pub arn: std::option::Option<std::string::String>,
     /// <p>Specifies the type of container, such as Docker.</p>
     pub container_type: std::option::Option<crate::model::ContainerType>,
@@ -4993,7 +5468,25 @@ pub struct ContainerRecipe {
     pub platform: std::option::Option<crate::model::Platform>,
     /// <p>The owner of the container recipe.</p>
     pub owner: std::option::Option<std::string::String>,
-    /// <p>The semantic version of the container recipe (<major>.<minor>.<patch>).</p>
+    /// <p>The semantic version of the container recipe.</p>
+    /// <note>
+    /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+    /// You can assign values for the first three, and can filter on all of them.</p>
+    /// <p>
+    /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+    /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+    /// build number, and that is not open for updates.</p>
+    /// <p>
+    /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+    /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+    /// a date, such as 2021.01.01.</p>
+    /// <p>
+    /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+    /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+    /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+    /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+    /// automatically uses a wildcard for that, if applicable.</p>
+    /// </note>
     pub version: std::option::Option<std::string::String>,
     /// <p>Components for build and test that are included in the container recipe.</p>
     pub components: std::option::Option<std::vec::Vec<crate::model::ComponentConfiguration>>,
@@ -5069,6 +5562,22 @@ pub mod container_recipe {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the container recipe.</p>
+        /// <note>
+        /// <p>Semantic versioning is included in each object's Amazon Resource Name (ARN),
+        /// at the level that applies to that object as follows:</p>
+        /// <ol>
+        /// <li>
+        /// <p>Versionless ARNs and Name ARNs do not include specific values in any of the nodes. The nodes are
+        /// either left off entirely, or they are specified as wildcards, for example: x.x.x.</p>
+        /// </li>
+        /// <li>
+        /// <p>Version ARNs have only the first three nodes: <major>.<minor>.<patch></p>
+        /// </li>
+        /// <li>
+        /// <p>Build version ARNs have all four nodes, and point to a specific build for a specific version of an object.</p>
+        /// </li>
+        /// </ol>
+        /// </note>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -5125,7 +5634,25 @@ pub mod container_recipe {
             self.owner = input;
             self
         }
-        /// <p>The semantic version of the container recipe (<major>.<minor>.<patch>).</p>
+        /// <p>The semantic version of the container recipe.</p>
+        /// <note>
+        /// <p>The semantic version has four nodes: <major>.<minor>.<patch>/<build>.
+        /// You can assign values for the first three, and can filter on all of them.</p>
+        /// <p>
+        /// <b>Assignment:</b> For the first three nodes you can assign any positive integer value, including
+        /// zero, with an upper limit of 2^30-1, or 1073741823 for each node. Image Builder automatically assigns the
+        /// build number, and that is not open for updates.</p>
+        /// <p>
+        /// <b>Patterns:</b> You can use any numeric pattern that adheres to the assignment requirements for
+        /// the nodes that you can assign. For example, you might choose a software version pattern, such as 1.0.0, or
+        /// a date, such as 2021.01.01.</p>
+        /// <p>
+        /// <b>Filtering:</b> When you retrieve or reference a resource with a semantic version, you can use
+        /// wildcards (x) to filter your results. When you use a wildcard in any node, all nodes to the right of the
+        /// first wildcard must also be wildcards. For example, specifying "1.2.x", or "1.x.x" works to filter list
+        /// results, but neither "1.x.2", nor "x.2.x" will work. You do not have to specify the build - Image Builder
+        /// automatically uses a wildcard for that, if applicable.</p>
+        /// </note>
         pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
             self.version = Some(input.into());
             self
@@ -5383,6 +5910,8 @@ pub struct Component {
     /// available, a prefix match is performed against the parent image OS version during image recipe
     /// creation.</p>
     pub supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Contains parameter details for each of the parameters that are defined for the component.</p>
+    pub parameters: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
     /// <p>The owner of the component.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The data of the component.</p>
@@ -5408,6 +5937,7 @@ impl std::fmt::Debug for Component {
         formatter.field("r#type", &self.r#type);
         formatter.field("platform", &self.platform);
         formatter.field("supported_os_versions", &self.supported_os_versions);
+        formatter.field("parameters", &self.parameters);
         formatter.field("owner", &self.owner);
         formatter.field("data", &self.data);
         formatter.field("kms_key_id", &self.kms_key_id);
@@ -5431,6 +5961,8 @@ pub mod component {
         pub(crate) r#type: std::option::Option<crate::model::ComponentType>,
         pub(crate) platform: std::option::Option<crate::model::Platform>,
         pub(crate) supported_os_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) parameters:
+            std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
         pub(crate) owner: std::option::Option<std::string::String>,
         pub(crate) data: std::option::Option<std::string::String>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
@@ -5521,6 +6053,22 @@ pub mod component {
             self.supported_os_versions = input;
             self
         }
+        pub fn parameters(
+            mut self,
+            input: impl Into<crate::model::ComponentParameterDetail>,
+        ) -> Self {
+            let mut v = self.parameters.unwrap_or_default();
+            v.push(input.into());
+            self.parameters = Some(v);
+            self
+        }
+        pub fn set_parameters(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ComponentParameterDetail>>,
+        ) -> Self {
+            self.parameters = input;
+            self
+        }
         /// <p>The owner of the component.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
@@ -5596,6 +6144,7 @@ pub mod component {
                 r#type: self.r#type,
                 platform: self.platform,
                 supported_os_versions: self.supported_os_versions,
+                parameters: self.parameters,
                 owner: self.owner,
                 data: self.data,
                 kms_key_id: self.kms_key_id,
@@ -5610,5 +6159,98 @@ impl Component {
     /// Creates a new builder-style object to manufacture [`Component`](crate::model::Component)
     pub fn builder() -> crate::model::component::Builder {
         crate::model::component::Builder::default()
+    }
+}
+
+/// <p>Defines a parameter that is used to provide configuration details for the component.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ComponentParameterDetail {
+    /// <p>The name of this input parameter.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The default value of this parameter if no input is provided.</p>
+    pub default_value: std::option::Option<std::vec::Vec<std::string::String>>,
+    /// <p>Describes this parameter.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ComponentParameterDetail {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ComponentParameterDetail");
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("default_value", &self.default_value);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+/// See [`ComponentParameterDetail`](crate::model::ComponentParameterDetail)
+pub mod component_parameter_detail {
+    /// A builder for [`ComponentParameterDetail`](crate::model::ComponentParameterDetail)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) default_value: std::option::Option<std::vec::Vec<std::string::String>>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of this input parameter.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of input this parameter provides. The currently supported value is "string".</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.default_value.unwrap_or_default();
+            v.push(input.into());
+            self.default_value = Some(v);
+            self
+        }
+        pub fn set_default_value(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.default_value = input;
+            self
+        }
+        /// <p>Describes this parameter.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ComponentParameterDetail`](crate::model::ComponentParameterDetail)
+        pub fn build(self) -> crate::model::ComponentParameterDetail {
+            crate::model::ComponentParameterDetail {
+                name: self.name,
+                r#type: self.r#type,
+                default_value: self.default_value,
+                description: self.description,
+            }
+        }
+    }
+}
+impl ComponentParameterDetail {
+    /// Creates a new builder-style object to manufacture [`ComponentParameterDetail`](crate::model::ComponentParameterDetail)
+    pub fn builder() -> crate::model::component_parameter_detail::Builder {
+        crate::model::component_parameter_detail::Builder::default()
     }
 }

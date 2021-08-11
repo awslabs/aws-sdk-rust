@@ -447,6 +447,20 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_location(input);
             self
         }
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+        /// and override default parameters of evaluations. When configuration is null, the
+        /// profile job will run with default settings.</p>
+        pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
+            self
+        }
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProfileConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
         /// be assumed when DataBrew runs the job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -810,7 +824,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outputs(input);
             self
         }
-        /// <p>One or more artifacts that represent the AWS Glue Data Catalog output from running the job.</p>
+        /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
         pub fn data_catalog_outputs(
             mut self,
             inp: impl Into<crate::model::DataCatalogOutput>,
@@ -823,6 +837,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
         ) -> Self {
             self.inner = self.inner.set_data_catalog_outputs(input);
+            self
+        }
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for
+        /// a DataBrew recipe job to write to. </p>
+        pub fn database_outputs(mut self, inp: impl Into<crate::model::DatabaseOutput>) -> Self {
+            self.inner = self.inner.database_outputs(inp);
+            self
+        }
+        pub fn set_database_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
+        ) -> Self {
+            self.inner = self.inner.set_database_outputs(input);
             self
         }
         /// <p>Either the name of an existing project, or a combination of a recipe and a dataset to
@@ -2439,6 +2466,20 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
+        /// <p>Configuration for profile jobs. Used to select columns, do evaluations,
+        /// and override default parameters of evaluations. When configuration is null, the
+        /// profile job will run with default settings.</p>
+        pub fn configuration(mut self, input: crate::model::ProfileConfiguration) -> Self {
+            self.inner = self.inner.configuration(input);
+            self
+        }
+        pub fn set_configuration(
+            mut self,
+            input: std::option::Option<crate::model::ProfileConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_configuration(input);
+            self
+        }
         /// <p>The Amazon Resource Name (ARN) of an encryption key that is used to protect the
         /// job.</p>
         pub fn encryption_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2807,7 +2848,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outputs(input);
             self
         }
-        /// <p>One or more artifacts that represent the AWS Glue Data Catalog output from running the job.</p>
+        /// <p>One or more artifacts that represent the Glue Data Catalog output from running the job.</p>
         pub fn data_catalog_outputs(
             mut self,
             inp: impl Into<crate::model::DataCatalogOutput>,
@@ -2820,6 +2861,19 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::DataCatalogOutput>>,
         ) -> Self {
             self.inner = self.inner.set_data_catalog_outputs(input);
+            self
+        }
+        /// <p>Represents a list of JDBC database output objects which defines the output destination for a
+        /// DataBrew recipe job to write into.</p>
+        pub fn database_outputs(mut self, inp: impl Into<crate::model::DatabaseOutput>) -> Self {
+            self.inner = self.inner.database_outputs(inp);
+            self
+        }
+        pub fn set_database_outputs(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DatabaseOutput>>,
+        ) -> Self {
+            self.inner = self.inner.set_database_outputs(input);
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to

@@ -132,13 +132,13 @@ impl AsRef<str> for ValidationExceptionReason {
 }
 
 /// <p>
-/// The settings object that holds all supported AWS Audit Manager settings.
+/// The settings object that holds all supported Audit Manager settings.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Settings {
     /// <p>
-    /// Specifies whether AWS Organizations is enabled.
+    /// Specifies whether Organizations is enabled.
     /// </p>
     pub is_aws_org_enabled: std::option::Option<bool>,
     /// <p>
@@ -155,7 +155,7 @@ pub struct Settings {
     /// </p>
     pub default_process_owners: std::option::Option<std::vec::Vec<crate::model::Role>>,
     /// <p>
-    /// The AWS KMS key details.
+    /// The KMS key details.
     /// </p>
     pub kms_key: std::option::Option<std::string::String>,
 }
@@ -188,7 +188,7 @@ pub mod settings {
     }
     impl Builder {
         /// <p>
-        /// Specifies whether AWS Organizations is enabled.
+        /// Specifies whether Organizations is enabled.
         /// </p>
         pub fn is_aws_org_enabled(mut self, input: bool) -> Self {
             self.is_aws_org_enabled = Some(input);
@@ -240,7 +240,7 @@ pub mod settings {
             self
         }
         /// <p>
-        /// The AWS KMS key details.
+        /// The KMS key details.
         /// </p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key = Some(input.into());
@@ -270,7 +270,7 @@ impl Settings {
 }
 
 /// <p>
-/// The wrapper that contains the AWS Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
+/// The wrapper that contains the Audit Manager role information of the current user, such as the role type and IAM Amazon Resource Name (ARN).
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -401,7 +401,7 @@ impl AsRef<str> for RoleType {
 }
 
 /// <p>
-/// The location in which AWS Audit Manager saves assessment reports for the given assessment.
+/// The location in which Audit Manager saves assessment reports for the given assessment.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -526,7 +526,7 @@ impl AsRef<str> for AssessmentReportDestinationType {
 }
 
 /// <p>
-/// A control in AWS Audit Manager.
+/// A control in Audit Manager.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -564,7 +564,7 @@ pub struct Control {
     /// </p>
     pub action_plan_instructions: std::option::Option<std::string::String>,
     /// <p>
-    /// The data source that determines from where AWS Audit Manager collects evidence for the control.
+    /// The data source that determines from where Audit Manager collects evidence for the control.
     /// </p>
     pub control_sources: std::option::Option<std::string::String>,
     /// <p>
@@ -739,7 +739,7 @@ pub mod control {
             self
         }
         /// <p>
-        /// The data source that determines from where AWS Audit Manager collects evidence for the control.
+        /// The data source that determines from where Audit Manager collects evidence for the control.
         /// </p>
         pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_sources = Some(input.into());
@@ -867,7 +867,7 @@ impl Control {
 }
 
 /// <p>
-/// The data source that determines from where AWS Audit Manager collects evidence for the control.
+/// The data source that determines from where Audit Manager collects evidence for the control.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -893,7 +893,7 @@ pub struct ControlMappingSource {
     /// </p>
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>
-    /// The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
+    /// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
     /// </p>
     pub source_keyword: std::option::Option<crate::model::SourceKeyword>,
     /// <p>
@@ -1000,7 +1000,7 @@ pub mod control_mapping_source {
             self
         }
         /// <p>
-        /// The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
+        /// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
         /// </p>
         pub fn source_keyword(mut self, input: crate::model::SourceKeyword) -> Self {
             self.source_keyword = Some(input);
@@ -1117,7 +1117,7 @@ impl AsRef<str> for SourceFrequency {
 }
 
 /// <p>
-/// The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
+/// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1127,7 +1127,7 @@ pub struct SourceKeyword {
     /// </p>
     pub keyword_input_type: std::option::Option<crate::model::KeywordInputType>,
     /// <p>
-    /// The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.
+    /// The value of the keyword used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source.
     /// </p>
     pub keyword_value: std::option::Option<std::string::String>,
 }
@@ -1164,7 +1164,7 @@ pub mod source_keyword {
             self
         }
         /// <p>
-        /// The value of the keyword used to search AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names when mapping a control data source.
+        /// The value of the keyword used to search CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names when mapping a control data source.
         /// </p>
         pub fn keyword_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.keyword_value = Some(input.into());
@@ -1406,7 +1406,7 @@ impl AsRef<str> for ControlType {
 }
 
 /// <p>
-/// An entity that defines the scope of audit evidence collected by AWS Audit Manager. An AWS Audit Manager assessment is an implementation of an AWS Audit Manager framework.
+/// An entity that defines the scope of audit evidence collected by Audit Manager. An Audit Manager assessment is an implementation of an Audit Manager framework.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1416,7 +1416,7 @@ pub struct Assessment {
     /// </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>
-    /// The AWS account associated with the assessment.
+    /// The account associated with the assessment.
     /// </p>
     pub aws_account: std::option::Option<crate::model::AwsAccount>,
     /// <p>
@@ -1471,7 +1471,7 @@ pub mod assessment {
             self
         }
         /// <p>
-        /// The AWS account associated with the assessment.
+        /// The account associated with the assessment.
         /// </p>
         pub fn aws_account(mut self, input: crate::model::AwsAccount) -> Self {
             self.aws_account = Some(input);
@@ -1551,7 +1551,7 @@ impl Assessment {
 }
 
 /// <p>
-/// The file used to structure and automate AWS Audit Manager assessments for a given compliance standard.
+/// The file used to structure and automate Audit Manager assessments for a given compliance standard.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1667,7 +1667,7 @@ impl AssessmentFramework {
 }
 
 /// <p>
-/// Represents a set of controls in an AWS Audit Manager assessment.
+/// Represents a set of controls in an Audit Manager assessment.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2161,7 +2161,7 @@ impl AsRef<str> for DelegationStatus {
 }
 
 /// <p>
-/// The control entity that represents a standard or custom control used in an AWS Audit Manager assessment.
+/// The control entity that represents a standard or custom control used in an Audit Manager assessment.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -2771,7 +2771,7 @@ pub struct AssessmentMetadata {
     pub assessment_reports_destination:
         std::option::Option<crate::model::AssessmentReportsDestination>,
     /// <p>
-    /// The wrapper of AWS accounts and services in scope for the assessment.
+    /// The wrapper of accounts and services in scope for the assessment.
     /// </p>
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>
@@ -2910,7 +2910,7 @@ pub mod assessment_metadata {
             self
         }
         /// <p>
-        /// The wrapper of AWS accounts and services in scope for the assessment.
+        /// The wrapper of accounts and services in scope for the assessment.
         /// </p>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.scope = Some(input);
@@ -3000,17 +3000,17 @@ impl AssessmentMetadata {
 }
 
 /// <p>
-/// The wrapper that contains the AWS accounts and AWS services in scope for the assessment.
+/// The wrapper that contains the accounts and services in scope for the assessment.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Scope {
     /// <p>
-    /// The AWS accounts included in the scope of the assessment.
+    /// The accounts included in the scope of the assessment.
     /// </p>
     pub aws_accounts: std::option::Option<std::vec::Vec<crate::model::AwsAccount>>,
     /// <p>
-    /// The AWS services included in the scope of the assessment.
+    /// The Amazon Web Services services included in the scope of the assessment.
     /// </p>
     pub aws_services: std::option::Option<std::vec::Vec<crate::model::AwsService>>,
 }
@@ -3075,13 +3075,13 @@ impl Scope {
 }
 
 /// <p>
-/// An AWS service such as Amazon S3, AWS CloudTrail, and so on.
+/// An Amazon Web Service such as Amazon S3, CloudTrail, and so on.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsService {
     /// <p>
-    /// The name of the AWS service.
+    /// The name of the Amazon Web Service.
     /// </p>
     pub service_name: std::option::Option<std::string::String>,
 }
@@ -3102,7 +3102,7 @@ pub mod aws_service {
     }
     impl Builder {
         /// <p>
-        /// The name of the AWS service.
+        /// The name of the Amazon Web Service.
         /// </p>
         pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_name = Some(input.into());
@@ -3128,21 +3128,21 @@ impl AwsService {
 }
 
 /// <p>
-/// The wrapper of AWS account details, such as account ID, email address, and so on.
+/// The wrapper of account details, such as account ID, email address, and so on.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAccount {
     /// <p>
-    /// The identifier for the specified AWS account.
+    /// The identifier for the specified account.
     /// </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>
-    /// The email address associated with the specified AWS account.
+    /// The email address associated with the specified account.
     /// </p>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>
-    /// The name of the specified AWS account.
+    /// The name of the specified account.
     /// </p>
     pub name: std::option::Option<std::string::String>,
 }
@@ -3167,7 +3167,7 @@ pub mod aws_account {
     }
     impl Builder {
         /// <p>
-        /// The identifier for the specified AWS account.
+        /// The identifier for the specified account.
         /// </p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -3178,7 +3178,7 @@ pub mod aws_account {
             self
         }
         /// <p>
-        /// The email address associated with the specified AWS account.
+        /// The email address associated with the specified account.
         /// </p>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
@@ -3192,7 +3192,7 @@ pub mod aws_account {
             self
         }
         /// <p>
-        /// The name of the specified AWS account.
+        /// The name of the specified account.
         /// </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -3270,7 +3270,7 @@ impl AsRef<str> for AssessmentStatus {
 }
 
 /// <p>
-/// The file used to structure and automate AWS Audit Manager assessments for a given compliance standard.
+/// The file used to structure and automate Audit Manager assessments for a given compliance standard.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3304,7 +3304,7 @@ pub struct Framework {
     /// </p>
     pub logo: std::option::Option<std::string::String>,
     /// <p>
-    /// The sources from which AWS Audit Manager collects evidence for the control.
+    /// The sources from which Audit Manager collects evidence for the control.
     /// </p>
     pub control_sources: std::option::Option<std::string::String>,
     /// <p>
@@ -3458,7 +3458,7 @@ pub mod framework {
             self
         }
         /// <p>
-        /// The sources from which AWS Audit Manager collects evidence for the control.
+        /// The sources from which Audit Manager collects evidence for the control.
         /// </p>
         pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_sources = Some(input.into());
@@ -3582,7 +3582,7 @@ impl Framework {
 }
 
 /// <p>
-/// A set of controls in AWS Audit Manager.
+/// A set of controls in Audit Manager.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3723,7 +3723,7 @@ impl AsRef<str> for FrameworkType {
 }
 
 /// <p>
-/// A <code>controlSet</code> entity that represents a collection of controls in AWS Audit Manager. This does not contain the control set ID.
+/// A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This does not contain the control set ID.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3821,7 +3821,7 @@ impl UpdateAssessmentFrameworkControlSet {
 }
 
 /// <p>
-/// Control entity attributes that uniquely identify an existing control to be added to a framework in AWS Audit Manager.
+/// Control entity attributes that uniquely identify an existing control to be added to a framework in Audit Manager.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3925,7 +3925,7 @@ impl AsRef<str> for AccountStatus {
 }
 
 /// <p>
-/// The notification used to inform a user of an update in AWS Audit Manager. For example, this includes the notification that is sent when a control set is delegated for review.
+/// The notification used to inform a user of an update in Audit Manager. For example, this includes the notification that is sent when a control set is delegated for review.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4134,7 +4134,7 @@ pub struct ControlMetadata {
     /// </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>
-    /// The data source that determines from where AWS Audit Manager collects evidence for the control.
+    /// The data source that determines from where Audit Manager collects evidence for the control.
     /// </p>
     pub control_sources: std::option::Option<std::string::String>,
     /// <p>
@@ -4206,7 +4206,7 @@ pub mod control_metadata {
             self
         }
         /// <p>
-        /// The data source that determines from where AWS Audit Manager collects evidence for the control.
+        /// The data source that determines from where Audit Manager collects evidence for the control.
         /// </p>
         pub fn control_sources(mut self, input: impl Into<std::string::String>) -> Self {
             self.control_sources = Some(input.into());
@@ -4265,7 +4265,7 @@ impl ControlMetadata {
 }
 
 /// <p>
-/// A metadata object associated with an assessment in AWS Audit Manager.
+/// A metadata object associated with an assessment in Audit Manager.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5010,25 +5010,25 @@ impl AsRef<str> for SettingAttribute {
 }
 
 /// <p>
-/// The metadata associated with the specified AWS service.
+/// The metadata associated with the specified Amazon Web Service.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceMetadata {
     /// <p>
-    /// The name of the AWS service.
+    /// The name of the Amazon Web Service.
     /// </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>
-    /// The display name of the AWS service.
+    /// The display name of the Amazon Web Service.
     /// </p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>
-    /// The description of the specified AWS service.
+    /// The description of the specified Amazon Web Service.
     /// </p>
     pub description: std::option::Option<std::string::String>,
     /// <p>
-    /// The category in which the AWS service belongs, such as compute, storage, database, and so on.
+    /// The category in which the Amazon Web Service belongs, such as compute, storage, database, and so on.
     /// </p>
     pub category: std::option::Option<std::string::String>,
 }
@@ -5055,7 +5055,7 @@ pub mod service_metadata {
     }
     impl Builder {
         /// <p>
-        /// The name of the AWS service.
+        /// The name of the Amazon Web Service.
         /// </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -5066,7 +5066,7 @@ pub mod service_metadata {
             self
         }
         /// <p>
-        /// The display name of the AWS service.
+        /// The display name of the Amazon Web Service.
         /// </p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
@@ -5077,7 +5077,7 @@ pub mod service_metadata {
             self
         }
         /// <p>
-        /// The description of the specified AWS service.
+        /// The description of the specified Amazon Web Service.
         /// </p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -5088,7 +5088,7 @@ pub mod service_metadata {
             self
         }
         /// <p>
-        /// The category in which the AWS service belongs, such as compute, storage, database, and so on.
+        /// The category in which the Amazon Web Service belongs, such as compute, storage, database, and so on.
         /// </p>
         pub fn category(mut self, input: impl Into<std::string::String>) -> Self {
             self.category = Some(input.into());
@@ -5117,7 +5117,7 @@ impl ServiceMetadata {
 }
 
 /// <p>
-/// The folder in which AWS Audit Manager stores evidence for an assessment.
+/// The folder in which Audit Manager stores evidence for an assessment.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5147,7 +5147,7 @@ pub struct AssessmentEvidenceFolder {
     /// </p>
     pub id: std::option::Option<std::string::String>,
     /// <p>
-    /// The AWS service from which the evidence was collected.
+    /// The Amazon Web Service from which the evidence was collected.
     /// </p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>
@@ -5171,7 +5171,7 @@ pub struct AssessmentEvidenceFolder {
     /// </p>
     pub evidence_resources_included_count: i32,
     /// <p>
-    /// The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other AWS services such as Amazon EC2, Amazon S3, or IAM.
+    /// The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
     /// </p>
     pub evidence_by_type_configuration_data_count: i32,
     /// <p>
@@ -5179,20 +5179,19 @@ pub struct AssessmentEvidenceFolder {
     /// </p>
     pub evidence_by_type_manual_count: i32,
     /// <p>
-    /// The number of evidence that falls under the compliance check category. This evidence is collected from AWS Config or AWS Security Hub.
+    /// The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.
     /// </p>
     pub evidence_by_type_compliance_check_count: i32,
     /// <p>
-    /// The total number of issues that were reported directly from AWS Security
-    /// Hub, AWS Config, or both.
+    /// The total number of issues that were reported directly from Security Hub, Config, or both.
     /// </p>
     pub evidence_by_type_compliance_check_issues_count: i32,
     /// <p>
-    /// The number of evidence that falls under the user activity category. This evidence is collected from AWS CloudTrail logs.
+    /// The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs.
     /// </p>
     pub evidence_by_type_user_activity_count: i32,
     /// <p>
-    /// The total number of AWS resources assessed to generate the evidence.
+    /// The total number of Amazon Web Services resources assessed to generate the evidence.
     /// </p>
     pub evidence_aws_service_source_count: i32,
 }
@@ -5343,7 +5342,7 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p>
-        /// The AWS service from which the evidence was collected.
+        /// The Amazon Web Service from which the evidence was collected.
         /// </p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
@@ -5415,7 +5414,7 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p>
-        /// The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other AWS services such as Amazon EC2, Amazon S3, or IAM.
+        /// The number of evidence that falls under the configuration data category. This evidence is collected from configuration snapshots of other Amazon Web Services services such as Amazon EC2, Amazon S3, or IAM.
         /// </p>
         pub fn evidence_by_type_configuration_data_count(mut self, input: i32) -> Self {
             self.evidence_by_type_configuration_data_count = Some(input);
@@ -5443,7 +5442,7 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p>
-        /// The number of evidence that falls under the compliance check category. This evidence is collected from AWS Config or AWS Security Hub.
+        /// The number of evidence that falls under the compliance check category. This evidence is collected from Config or Security Hub.
         /// </p>
         pub fn evidence_by_type_compliance_check_count(mut self, input: i32) -> Self {
             self.evidence_by_type_compliance_check_count = Some(input);
@@ -5457,8 +5456,7 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p>
-        /// The total number of issues that were reported directly from AWS Security
-        /// Hub, AWS Config, or both.
+        /// The total number of issues that were reported directly from Security Hub, Config, or both.
         /// </p>
         pub fn evidence_by_type_compliance_check_issues_count(mut self, input: i32) -> Self {
             self.evidence_by_type_compliance_check_issues_count = Some(input);
@@ -5472,7 +5470,7 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p>
-        /// The number of evidence that falls under the user activity category. This evidence is collected from AWS CloudTrail logs.
+        /// The number of evidence that falls under the user activity category. This evidence is collected from CloudTrail logs.
         /// </p>
         pub fn evidence_by_type_user_activity_count(mut self, input: i32) -> Self {
             self.evidence_by_type_user_activity_count = Some(input);
@@ -5486,7 +5484,7 @@ pub mod assessment_evidence_folder {
             self
         }
         /// <p>
-        /// The total number of AWS resources assessed to generate the evidence.
+        /// The total number of Amazon Web Services resources assessed to generate the evidence.
         /// </p>
         pub fn evidence_aws_service_source_count(mut self, input: i32) -> Self {
             self.evidence_aws_service_source_count = Some(input);
@@ -5558,7 +5556,7 @@ pub struct Evidence {
     /// </p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>
-    /// The identifier for the specified AWS account.
+    /// The identifier for the specified account.
     /// </p>
     pub evidence_aws_account_id: std::option::Option<std::string::String>,
     /// <p>
@@ -5566,7 +5564,7 @@ pub struct Evidence {
     /// </p>
     pub time: std::option::Option<smithy_types::Instant>,
     /// <p>
-    /// The AWS service from which the evidence is collected.
+    /// The Amazon Web Service from which the evidence is collected.
     /// </p>
     pub event_source: std::option::Option<std::string::String>,
     /// <p>
@@ -5591,16 +5589,16 @@ pub struct Evidence {
     /// </p>
     pub iam_id: std::option::Option<std::string::String>,
     /// <p> The evaluation status for evidence that falls under the compliance check category. For
-    /// evidence collected from AWS Security Hub, a <i>Pass</i> or
-    /// <i>Fail</i> result is shown. For evidence collected from AWS Config, a
+    /// evidence collected from Security Hub, a <i>Pass</i> or
+    /// <i>Fail</i> result is shown. For evidence collected from Config, a
     /// <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
     pub compliance_check: std::option::Option<std::string::String>,
     /// <p>
-    /// The AWS account from which the evidence is collected, and its AWS organization path.
+    /// The account from which the evidence is collected, and its organization path.
     /// </p>
     pub aws_organization: std::option::Option<std::string::String>,
     /// <p>
-    /// The identifier for the specified AWS account.
+    /// The identifier for the specified account.
     /// </p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>
@@ -5676,7 +5674,7 @@ pub mod evidence {
             self
         }
         /// <p>
-        /// The identifier for the specified AWS account.
+        /// The identifier for the specified account.
         /// </p>
         pub fn evidence_aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.evidence_aws_account_id = Some(input.into());
@@ -5701,7 +5699,7 @@ pub mod evidence {
             self
         }
         /// <p>
-        /// The AWS service from which the evidence is collected.
+        /// The Amazon Web Service from which the evidence is collected.
         /// </p>
         pub fn event_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source = Some(input.into());
@@ -5780,8 +5778,8 @@ pub mod evidence {
             self
         }
         /// <p> The evaluation status for evidence that falls under the compliance check category. For
-        /// evidence collected from AWS Security Hub, a <i>Pass</i> or
-        /// <i>Fail</i> result is shown. For evidence collected from AWS Config, a
+        /// evidence collected from Security Hub, a <i>Pass</i> or
+        /// <i>Fail</i> result is shown. For evidence collected from Config, a
         /// <i>Compliant</i> or <i>Noncompliant</i> result is shown. </p>
         pub fn compliance_check(mut self, input: impl Into<std::string::String>) -> Self {
             self.compliance_check = Some(input.into());
@@ -5795,7 +5793,7 @@ pub mod evidence {
             self
         }
         /// <p>
-        /// The AWS account from which the evidence is collected, and its AWS organization path.
+        /// The account from which the evidence is collected, and its organization path.
         /// </p>
         pub fn aws_organization(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_organization = Some(input.into());
@@ -5809,7 +5807,7 @@ pub mod evidence {
             self
         }
         /// <p>
-        /// The identifier for the specified AWS account.
+        /// The identifier for the specified account.
         /// </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -5893,7 +5891,7 @@ impl Evidence {
 }
 
 /// <p>
-/// A system asset that is evaluated in an AWS Audit Manager assessment.  
+/// A system asset that is evaluated in an Audit Manager assessment.  
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6140,7 +6138,7 @@ impl DelegationMetadata {
 }
 
 /// <p>
-/// The record of a change within AWS Audit Manager, such as a modified assessment, a delegated control set, and so on.
+/// The record of a change within Audit Manager, such as a modified assessment, a delegated control set, and so on.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6494,7 +6492,7 @@ pub struct CreateControlMappingSource {
     /// </p>
     pub source_name: std::option::Option<std::string::String>,
     /// <p>
-    /// The description of the data source that determines from where AWS Audit Manager collects evidence for the control.
+    /// The description of the data source that determines from where Audit Manager collects evidence for the control.
     /// </p>
     pub source_description: std::option::Option<std::string::String>,
     /// <p>
@@ -6506,7 +6504,7 @@ pub struct CreateControlMappingSource {
     /// </p>
     pub source_type: std::option::Option<crate::model::SourceType>,
     /// <p>
-    /// The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
+    /// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
     /// </p>
     pub source_keyword: std::option::Option<crate::model::SourceKeyword>,
     /// <p>
@@ -6558,7 +6556,7 @@ pub mod create_control_mapping_source {
             self
         }
         /// <p>
-        /// The description of the data source that determines from where AWS Audit Manager collects evidence for the control.
+        /// The description of the data source that determines from where Audit Manager collects evidence for the control.
         /// </p>
         pub fn source_description(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_description = Some(input.into());
@@ -6600,7 +6598,7 @@ pub mod create_control_mapping_source {
             self
         }
         /// <p>
-        /// The keyword to search for in AWS CloudTrail logs, AWS Config rules, AWS Security Hub checks, and AWS API names.
+        /// The keyword to search for in CloudTrail logs, Config rules, Security Hub checks, and Amazon Web Services API names.
         /// </p>
         pub fn source_keyword(mut self, input: crate::model::SourceKeyword) -> Self {
             self.source_keyword = Some(input);
@@ -6663,7 +6661,7 @@ impl CreateControlMappingSource {
 }
 
 /// <p>
-/// A finalized document generated from an AWS Audit Manager assessment. These reports summarize the relevant evidence collected for your audit, and link to the relevant evidence folders which are named and organized according to the controls specified in your assessment.
+/// A finalized document generated from an Audit Manager assessment. These reports summarize the relevant evidence collected for your audit, and link to the relevant evidence folders which are named and organized according to the controls specified in your assessment.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6681,7 +6679,7 @@ pub struct AssessmentReport {
     /// </p>
     pub description: std::option::Option<std::string::String>,
     /// <p>
-    /// The identifier for the specified AWS account.
+    /// The identifier for the specified account.
     /// </p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>
@@ -6771,7 +6769,7 @@ pub mod assessment_report {
             self
         }
         /// <p>
-        /// The identifier for the specified AWS account.
+        /// The identifier for the specified account.
         /// </p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
@@ -6875,7 +6873,7 @@ impl AssessmentReport {
 }
 
 /// <p>
-/// A <code>controlSet</code> entity that represents a collection of controls in AWS Audit Manager. This does not contain the control set ID.
+/// A <code>controlSet</code> entity that represents a collection of controls in Audit Manager. This does not contain the control set ID.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -6961,7 +6959,7 @@ impl CreateAssessmentFrameworkControlSet {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchImportEvidenceToAssessmentControlError {
     /// <p>
-    /// Manual evidence that cannot be collected automatically by AWS Audit Manager.
+    /// Manual evidence that cannot be collected automatically by Audit Manager.
     /// </p>
     pub manual_evidence: std::option::Option<crate::model::ManualEvidence>,
     /// <p>
@@ -6994,7 +6992,7 @@ pub mod batch_import_evidence_to_assessment_control_error {
     }
     impl Builder {
         /// <p>
-        /// Manual evidence that cannot be collected automatically by AWS Audit Manager.
+        /// Manual evidence that cannot be collected automatically by Audit Manager.
         /// </p>
         pub fn manual_evidence(mut self, input: crate::model::ManualEvidence) -> Self {
             self.manual_evidence = Some(input);
@@ -7050,7 +7048,7 @@ impl BatchImportEvidenceToAssessmentControlError {
 }
 
 /// <p>
-/// Evidence that is uploaded to AWS Audit Manager manually.
+/// Evidence that is uploaded to Audit Manager manually.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7299,7 +7297,7 @@ impl BatchDeleteDelegationByAssessmentError {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchCreateDelegationByAssessmentError {
     /// <p>
-    /// The API request to batch create delegations in AWS Audit Manager.
+    /// The API request to batch create delegations in Audit Manager.
     /// </p>
     pub create_delegation_request: std::option::Option<crate::model::CreateDelegationRequest>,
     /// <p>
@@ -7333,7 +7331,7 @@ pub mod batch_create_delegation_by_assessment_error {
     }
     impl Builder {
         /// <p>
-        /// The API request to batch create delegations in AWS Audit Manager.
+        /// The API request to batch create delegations in Audit Manager.
         /// </p>
         pub fn create_delegation_request(
             mut self,
@@ -7392,7 +7390,7 @@ impl BatchCreateDelegationByAssessmentError {
 }
 
 /// <p>
-/// A collection of attributes used to create a delegation for an assessment in AWS Audit Manager.
+/// A collection of attributes used to create a delegation for an assessment in Audit Manager.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

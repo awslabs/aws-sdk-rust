@@ -64,6 +64,7 @@ where
             Err(_) => return RetryKind::NotRetryable,
         };
         if let Some(retry_after_delay) = response
+            .http()
             .headers()
             .get("x-amz-retry-after")
             .and_then(|header| header.to_str().ok())
@@ -82,7 +83,7 @@ where
                 return RetryKind::Error(ErrorKind::TransientError);
             }
         };
-        if TRANSIENT_ERROR_STATUS_CODES.contains(&response.status().as_u16()) {
+        if TRANSIENT_ERROR_STATUS_CODES.contains(&response.http().status().as_u16()) {
             return RetryKind::Error(ErrorKind::TransientError);
         };
         // TODO: is IDPCommunicationError modeled yet?
@@ -94,6 +95,7 @@ where
 mod test {
     use crate::AwsErrorRetryPolicy;
     use smithy_http::body::SdkBody;
+    use smithy_http::operation;
     use smithy_http::result::{SdkError, SdkSuccess};
     use smithy_http::retry::ClassifyResponse;
     use smithy_types::retry::{ErrorKind, ProvideErrorKind, RetryKind};
@@ -131,7 +133,7 @@ mod test {
     ) -> Result<SdkSuccess<()>, SdkError<E>> {
         Err(SdkError::ServiceError {
             err,
-            raw: raw.map(|b| SdkBody::from(b)),
+            raw: operation::Response::new(raw.map(|b| SdkBody::from(b))),
         })
     }
 

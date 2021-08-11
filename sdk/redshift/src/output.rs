@@ -154,13 +154,13 @@ impl RevokeSnapshotAccessOutput {
     }
 }
 
-/// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.</p>
+/// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeEndpointAccessOutput {
-    /// <p>The AWS account ID of the cluster owner.</p>
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     pub grantor: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the grantee of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     pub grantee: std::option::Option<std::string::String>,
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -209,7 +209,7 @@ pub mod revoke_endpoint_access_output {
         pub(crate) endpoint_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID of the cluster owner.</p>
+        /// <p>The Amazon Web Services account ID of the cluster owner.</p>
         pub fn grantor(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantor = Some(input.into());
             self
@@ -218,7 +218,7 @@ pub mod revoke_endpoint_access_output {
             self.grantor = input;
             self
         }
-        /// <p>The AWS account ID of the grantee of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
         pub fn grantee(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee = Some(input.into());
             self
@@ -635,6 +635,114 @@ impl ResetClusterParameterGroupOutput {
     /// Creates a new builder-style object to manufacture [`ResetClusterParameterGroupOutput`](crate::output::ResetClusterParameterGroupOutput)
     pub fn builder() -> crate::output::reset_cluster_parameter_group_output::Builder {
         crate::output::reset_cluster_parameter_group_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RejectDataShareOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub allow_publicly_accessible_consumers: bool,
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub data_share_associations:
+        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl std::fmt::Debug for RejectDataShareOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RejectDataShareOutput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field(
+            "allow_publicly_accessible_consumers",
+            &self.allow_publicly_accessible_consumers,
+        );
+        formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.finish()
+    }
+}
+/// See [`RejectDataShareOutput`](crate::output::RejectDataShareOutput)
+pub mod reject_data_share_output {
+    /// A builder for [`RejectDataShareOutput`](crate::output::RejectDataShareOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
+        pub(crate) data_share_associations:
+            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
+            self.allow_publicly_accessible_consumers = Some(input);
+            self
+        }
+        pub fn set_allow_publicly_accessible_consumers(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_publicly_accessible_consumers = input;
+            self
+        }
+        pub fn data_share_associations(
+            mut self,
+            input: impl Into<crate::model::DataShareAssociation>,
+        ) -> Self {
+            let mut v = self.data_share_associations.unwrap_or_default();
+            v.push(input.into());
+            self.data_share_associations = Some(v);
+            self
+        }
+        pub fn set_data_share_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        ) -> Self {
+            self.data_share_associations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RejectDataShareOutput`](crate::output::RejectDataShareOutput)
+        pub fn build(self) -> crate::output::RejectDataShareOutput {
+            crate::output::RejectDataShareOutput {
+                data_share_arn: self.data_share_arn,
+                producer_arn: self.producer_arn,
+                allow_publicly_accessible_consumers: self
+                    .allow_publicly_accessible_consumers
+                    .unwrap_or_default(),
+                data_share_associations: self.data_share_associations,
+            }
+        }
+    }
+}
+impl RejectDataShareOutput {
+    /// Creates a new builder-style object to manufacture [`RejectDataShareOutput`](crate::output::RejectDataShareOutput)
+    pub fn builder() -> crate::output::reject_data_share_output::Builder {
+        crate::output::reject_data_share_output::Builder::default()
     }
 }
 
@@ -1444,7 +1552,7 @@ impl ModifyEventSubscriptionOutput {
 pub struct ModifyEndpointAccessOutput {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
     pub subnet_group_name: std::option::Option<std::string::String>,
@@ -1511,7 +1619,7 @@ pub mod modify_endpoint_access_output {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
@@ -2022,6 +2130,84 @@ impl ModifyClusterOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ModifyAuthenticationProfileOutput {
+    /// <p>The name of the authentication profile that was replaced.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+    /// <p>The updated content of the authentication profile in JSON format.</p>
+    pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ModifyAuthenticationProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ModifyAuthenticationProfileOutput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.field(
+            "authentication_profile_content",
+            &self.authentication_profile_content,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ModifyAuthenticationProfileOutput`](crate::output::ModifyAuthenticationProfileOutput)
+pub mod modify_authentication_profile_output {
+    /// A builder for [`ModifyAuthenticationProfileOutput`](crate::output::ModifyAuthenticationProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+        pub(crate) authentication_profile_content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile that was replaced.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// <p>The updated content of the authentication profile in JSON format.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ModifyAuthenticationProfileOutput`](crate::output::ModifyAuthenticationProfileOutput)
+        pub fn build(self) -> crate::output::ModifyAuthenticationProfileOutput {
+            crate::output::ModifyAuthenticationProfileOutput {
+                authentication_profile_name: self.authentication_profile_name,
+                authentication_profile_content: self.authentication_profile_content,
+            }
+        }
+    }
+}
+impl ModifyAuthenticationProfileOutput {
+    /// Creates a new builder-style object to manufacture [`ModifyAuthenticationProfileOutput`](crate::output::ModifyAuthenticationProfileOutput)
+    pub fn builder() -> crate::output::modify_authentication_profile_output::Builder {
+        crate::output::modify_authentication_profile_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyAquaConfigurationOutput {
     /// <p>The updated AQUA configuration of the cluster. </p>
     pub aqua_configuration: std::option::Option<crate::model::AquaConfiguration>,
@@ -2413,6 +2599,114 @@ impl EnableLoggingOutput {
     /// Creates a new builder-style object to manufacture [`EnableLoggingOutput`](crate::output::EnableLoggingOutput)
     pub fn builder() -> crate::output::enable_logging_output::Builder {
         crate::output::enable_logging_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DisassociateDataShareConsumerOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub allow_publicly_accessible_consumers: bool,
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub data_share_associations:
+        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl std::fmt::Debug for DisassociateDataShareConsumerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DisassociateDataShareConsumerOutput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field(
+            "allow_publicly_accessible_consumers",
+            &self.allow_publicly_accessible_consumers,
+        );
+        formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.finish()
+    }
+}
+/// See [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput)
+pub mod disassociate_data_share_consumer_output {
+    /// A builder for [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
+        pub(crate) data_share_associations:
+            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
+            self.allow_publicly_accessible_consumers = Some(input);
+            self
+        }
+        pub fn set_allow_publicly_accessible_consumers(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_publicly_accessible_consumers = input;
+            self
+        }
+        pub fn data_share_associations(
+            mut self,
+            input: impl Into<crate::model::DataShareAssociation>,
+        ) -> Self {
+            let mut v = self.data_share_associations.unwrap_or_default();
+            v.push(input.into());
+            self.data_share_associations = Some(v);
+            self
+        }
+        pub fn set_data_share_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        ) -> Self {
+            self.data_share_associations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput)
+        pub fn build(self) -> crate::output::DisassociateDataShareConsumerOutput {
+            crate::output::DisassociateDataShareConsumerOutput {
+                data_share_arn: self.data_share_arn,
+                producer_arn: self.producer_arn,
+                allow_publicly_accessible_consumers: self
+                    .allow_publicly_accessible_consumers
+                    .unwrap_or_default(),
+                data_share_associations: self.data_share_associations,
+            }
+        }
+    }
+}
+impl DisassociateDataShareConsumerOutput {
+    /// Creates a new builder-style object to manufacture [`DisassociateDataShareConsumerOutput`](crate::output::DisassociateDataShareConsumerOutput)
+    pub fn builder() -> crate::output::disassociate_data_share_consumer_output::Builder {
+        crate::output::disassociate_data_share_consumer_output::Builder::default()
     }
 }
 
@@ -2974,7 +3268,7 @@ impl DescribeSnapshotSchedulesOutput {
 pub struct DescribeSnapshotCopyGrantsOutput {
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-    /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -3004,7 +3298,7 @@ pub mod describe_snapshot_copy_grants_output {
     impl Builder {
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <code>DescribeSnapshotCopyGrant</code> request exceed the
-        /// value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -3054,7 +3348,7 @@ impl DescribeSnapshotCopyGrantsOutput {
 pub struct DescribeScheduledActionsOutput {
     /// <p>An optional parameter that specifies the starting point to return a set of response
     /// records. When the results of a <a>DescribeScheduledActions</a> request
-    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
     /// <code>Marker</code> field of the response. You can retrieve the next set of response
     /// records by providing the returned marker value in the <code>Marker</code> parameter and
     /// retrying the request. </p>
@@ -3083,7 +3377,7 @@ pub mod describe_scheduled_actions_output {
     impl Builder {
         /// <p>An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeScheduledActions</a> request
-        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// exceed the value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in the
         /// <code>Marker</code> field of the response. You can retrieve the next set of response
         /// records by providing the returned marker value in the <code>Marker</code> parameter and
         /// retrying the request. </p>
@@ -4554,6 +4848,218 @@ impl DescribeDefaultClusterParametersOutput {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataSharesForProducerOutput {
+    /// <p>Shows the results of datashares available for producers.</p>
+    pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDataSharesForProducerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataSharesForProducerOutput");
+        formatter.field("data_shares", &self.data_shares);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDataSharesForProducerOutput`](crate::output::DescribeDataSharesForProducerOutput)
+pub mod describe_data_shares_for_producer_output {
+    /// A builder for [`DescribeDataSharesForProducerOutput`](crate::output::DescribeDataSharesForProducerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+            let mut v = self.data_shares.unwrap_or_default();
+            v.push(input.into());
+            self.data_shares = Some(v);
+            self
+        }
+        pub fn set_data_shares(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+        ) -> Self {
+            self.data_shares = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeDataSharesForProducer</a> request
+        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataSharesForProducerOutput`](crate::output::DescribeDataSharesForProducerOutput)
+        pub fn build(self) -> crate::output::DescribeDataSharesForProducerOutput {
+            crate::output::DescribeDataSharesForProducerOutput {
+                data_shares: self.data_shares,
+                marker: self.marker,
+            }
+        }
+    }
+}
+impl DescribeDataSharesForProducerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesForProducerOutput`](crate::output::DescribeDataSharesForProducerOutput)
+    pub fn builder() -> crate::output::describe_data_shares_for_producer_output::Builder {
+        crate::output::describe_data_shares_for_producer_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataSharesForConsumerOutput {
+    /// <p>Shows the results of datashares available for consumers.</p>
+    pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+    /// <p>An optional parameter that specifies the starting point to return a set of response
+    /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+    /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+    /// <code>Marker</code> field of the response. You can retrieve the next set of response
+    /// records by providing the returned marker value in the <code>Marker</code> parameter and
+    /// retrying the request. </p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDataSharesForConsumerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataSharesForConsumerOutput");
+        formatter.field("data_shares", &self.data_shares);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDataSharesForConsumerOutput`](crate::output::DescribeDataSharesForConsumerOutput)
+pub mod describe_data_shares_for_consumer_output {
+    /// A builder for [`DescribeDataSharesForConsumerOutput`](crate::output::DescribeDataSharesForConsumerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+            let mut v = self.data_shares.unwrap_or_default();
+            v.push(input.into());
+            self.data_shares = Some(v);
+            self
+        }
+        pub fn set_data_shares(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+        ) -> Self {
+            self.data_shares = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response
+        /// records. When the results of a <a>DescribeDataSharesForConsumer</a> request
+        /// exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the
+        /// <code>Marker</code> field of the response. You can retrieve the next set of response
+        /// records by providing the returned marker value in the <code>Marker</code> parameter and
+        /// retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataSharesForConsumerOutput`](crate::output::DescribeDataSharesForConsumerOutput)
+        pub fn build(self) -> crate::output::DescribeDataSharesForConsumerOutput {
+            crate::output::DescribeDataSharesForConsumerOutput {
+                data_shares: self.data_shares,
+                marker: self.marker,
+            }
+        }
+    }
+}
+impl DescribeDataSharesForConsumerOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesForConsumerOutput`](crate::output::DescribeDataSharesForConsumerOutput)
+    pub fn builder() -> crate::output::describe_data_shares_for_consumer_output::Builder {
+        crate::output::describe_data_shares_for_consumer_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeDataSharesOutput {
+    /// <p>The results returned from describing datashares.</p>
+    pub data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+    /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+    pub marker: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeDataSharesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeDataSharesOutput");
+        formatter.field("data_shares", &self.data_shares);
+        formatter.field("marker", &self.marker);
+        formatter.finish()
+    }
+}
+/// See [`DescribeDataSharesOutput`](crate::output::DescribeDataSharesOutput)
+pub mod describe_data_shares_output {
+    /// A builder for [`DescribeDataSharesOutput`](crate::output::DescribeDataSharesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_shares: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+        pub(crate) marker: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn data_shares(mut self, input: impl Into<crate::model::DataShare>) -> Self {
+            let mut v = self.data_shares.unwrap_or_default();
+            v.push(input.into());
+            self.data_shares = Some(v);
+            self
+        }
+        pub fn set_data_shares(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShare>>,
+        ) -> Self {
+            self.data_shares = input;
+            self
+        }
+        /// <p>An optional parameter that specifies the starting point to return a set of response records. When the results of a <a>DescribeDataShares</a> request exceed the value specified in <code>MaxRecords</code>, AWS returns a value in the <code>Marker</code> field of the response. You can retrieve the next set of response records by providing the returned marker value in the <code>Marker</code> parameter and retrying the request. </p>
+        pub fn marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.marker = Some(input.into());
+            self
+        }
+        pub fn set_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.marker = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeDataSharesOutput`](crate::output::DescribeDataSharesOutput)
+        pub fn build(self) -> crate::output::DescribeDataSharesOutput {
+            crate::output::DescribeDataSharesOutput {
+                data_shares: self.data_shares,
+                marker: self.marker,
+            }
+        }
+    }
+}
+impl DescribeDataSharesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeDataSharesOutput`](crate::output::DescribeDataSharesOutput)
+    pub fn builder() -> crate::output::describe_data_shares_output::Builder {
+        crate::output::describe_data_shares_output::Builder::default()
+    }
+}
+
 /// <p>Contains the output from the <a>DescribeClusterVersions</a> action.
 /// </p>
 #[non_exhaustive]
@@ -5236,6 +5742,61 @@ impl DescribeClusterDbRevisionsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAuthenticationProfilesOutput {
+    /// <p>The list of authentication profiles.</p>
+    pub authentication_profiles:
+        std::option::Option<std::vec::Vec<crate::model::AuthenticationProfile>>,
+}
+impl std::fmt::Debug for DescribeAuthenticationProfilesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAuthenticationProfilesOutput");
+        formatter.field("authentication_profiles", &self.authentication_profiles);
+        formatter.finish()
+    }
+}
+/// See [`DescribeAuthenticationProfilesOutput`](crate::output::DescribeAuthenticationProfilesOutput)
+pub mod describe_authentication_profiles_output {
+    /// A builder for [`DescribeAuthenticationProfilesOutput`](crate::output::DescribeAuthenticationProfilesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profiles:
+            std::option::Option<std::vec::Vec<crate::model::AuthenticationProfile>>,
+    }
+    impl Builder {
+        pub fn authentication_profiles(
+            mut self,
+            input: impl Into<crate::model::AuthenticationProfile>,
+        ) -> Self {
+            let mut v = self.authentication_profiles.unwrap_or_default();
+            v.push(input.into());
+            self.authentication_profiles = Some(v);
+            self
+        }
+        pub fn set_authentication_profiles(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AuthenticationProfile>>,
+        ) -> Self {
+            self.authentication_profiles = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAuthenticationProfilesOutput`](crate::output::DescribeAuthenticationProfilesOutput)
+        pub fn build(self) -> crate::output::DescribeAuthenticationProfilesOutput {
+            crate::output::DescribeAuthenticationProfilesOutput {
+                authentication_profiles: self.authentication_profiles,
+            }
+        }
+    }
+}
+impl DescribeAuthenticationProfilesOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAuthenticationProfilesOutput`](crate::output::DescribeAuthenticationProfilesOutput)
+    pub fn builder() -> crate::output::describe_authentication_profiles_output::Builder {
+        crate::output::describe_authentication_profiles_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAccountAttributesOutput {
     /// <p>A list of attributes assigned to an account.</p>
     pub account_attributes: std::option::Option<std::vec::Vec<crate::model::AccountAttribute>>,
@@ -5589,7 +6150,7 @@ impl DeleteEventSubscriptionOutput {
 pub struct DeleteEndpointAccessOutput {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
     pub subnet_group_name: std::option::Option<std::string::String>,
@@ -5656,7 +6217,7 @@ pub mod delete_endpoint_access_output {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
@@ -5962,6 +6523,169 @@ impl DeleteClusterOutput {
     /// Creates a new builder-style object to manufacture [`DeleteClusterOutput`](crate::output::DeleteClusterOutput)
     pub fn builder() -> crate::output::delete_cluster_output::Builder {
         crate::output::delete_cluster_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteAuthenticationProfileOutput {
+    /// <p>The name of the authentication profile that was deleted.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DeleteAuthenticationProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteAuthenticationProfileOutput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DeleteAuthenticationProfileOutput`](crate::output::DeleteAuthenticationProfileOutput)
+pub mod delete_authentication_profile_output {
+    /// A builder for [`DeleteAuthenticationProfileOutput`](crate::output::DeleteAuthenticationProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile that was deleted.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeleteAuthenticationProfileOutput`](crate::output::DeleteAuthenticationProfileOutput)
+        pub fn build(self) -> crate::output::DeleteAuthenticationProfileOutput {
+            crate::output::DeleteAuthenticationProfileOutput {
+                authentication_profile_name: self.authentication_profile_name,
+            }
+        }
+    }
+}
+impl DeleteAuthenticationProfileOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteAuthenticationProfileOutput`](crate::output::DeleteAuthenticationProfileOutput)
+    pub fn builder() -> crate::output::delete_authentication_profile_output::Builder {
+        crate::output::delete_authentication_profile_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeauthorizeDataShareOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub allow_publicly_accessible_consumers: bool,
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub data_share_associations:
+        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl std::fmt::Debug for DeauthorizeDataShareOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeauthorizeDataShareOutput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field(
+            "allow_publicly_accessible_consumers",
+            &self.allow_publicly_accessible_consumers,
+        );
+        formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.finish()
+    }
+}
+/// See [`DeauthorizeDataShareOutput`](crate::output::DeauthorizeDataShareOutput)
+pub mod deauthorize_data_share_output {
+    /// A builder for [`DeauthorizeDataShareOutput`](crate::output::DeauthorizeDataShareOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
+        pub(crate) data_share_associations:
+            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
+            self.allow_publicly_accessible_consumers = Some(input);
+            self
+        }
+        pub fn set_allow_publicly_accessible_consumers(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_publicly_accessible_consumers = input;
+            self
+        }
+        pub fn data_share_associations(
+            mut self,
+            input: impl Into<crate::model::DataShareAssociation>,
+        ) -> Self {
+            let mut v = self.data_share_associations.unwrap_or_default();
+            v.push(input.into());
+            self.data_share_associations = Some(v);
+            self
+        }
+        pub fn set_data_share_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        ) -> Self {
+            self.data_share_associations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DeauthorizeDataShareOutput`](crate::output::DeauthorizeDataShareOutput)
+        pub fn build(self) -> crate::output::DeauthorizeDataShareOutput {
+            crate::output::DeauthorizeDataShareOutput {
+                data_share_arn: self.data_share_arn,
+                producer_arn: self.producer_arn,
+                allow_publicly_accessible_consumers: self
+                    .allow_publicly_accessible_consumers
+                    .unwrap_or_default(),
+                data_share_associations: self.data_share_associations,
+            }
+        }
+    }
+}
+impl DeauthorizeDataShareOutput {
+    /// Creates a new builder-style object to manufacture [`DeauthorizeDataShareOutput`](crate::output::DeauthorizeDataShareOutput)
+    pub fn builder() -> crate::output::deauthorize_data_share_output::Builder {
+        crate::output::deauthorize_data_share_output::Builder::default()
     }
 }
 
@@ -6352,7 +7076,7 @@ impl CreateSnapshotScheduleOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateSnapshotCopyGrantOutput {
     /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-    /// snapshots with the specified customer master key (CMK) from AWS KMS in the destination
+    /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
     /// region.</p>
     /// <p>
     /// For more information about managing snapshot copy grants, go to
@@ -6378,7 +7102,7 @@ pub mod create_snapshot_copy_grant_output {
     }
     impl Builder {
         /// <p>The snapshot copy grant that grants Amazon Redshift permission to encrypt copied
-        /// snapshots with the specified customer master key (CMK) from AWS KMS in the destination
+        /// snapshots with the specified customer master key (CMK) from Amazon Web Services KMS in the destination
         /// region.</p>
         /// <p>
         /// For more information about managing snapshot copy grants, go to
@@ -6780,7 +7504,7 @@ impl CreateEventSubscriptionOutput {
 pub struct CreateEndpointAccessOutput {
     /// <p>The cluster identifier of the cluster associated with the endpoint.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
     pub resource_owner: std::option::Option<std::string::String>,
     /// <p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>
     pub subnet_group_name: std::option::Option<std::string::String>,
@@ -6847,7 +7571,7 @@ pub mod create_endpoint_access_output {
             self.cluster_identifier = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the cluster.</p>
         pub fn resource_owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_owner = Some(input.into());
             self
@@ -7217,6 +7941,84 @@ impl CreateClusterOutput {
     /// Creates a new builder-style object to manufacture [`CreateClusterOutput`](crate::output::CreateClusterOutput)
     pub fn builder() -> crate::output::create_cluster_output::Builder {
         crate::output::create_cluster_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAuthenticationProfileOutput {
+    /// <p>The name of the authentication profile that was created.</p>
+    pub authentication_profile_name: std::option::Option<std::string::String>,
+    /// <p>The content of the authentication profile in JSON format.</p>
+    pub authentication_profile_content: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateAuthenticationProfileOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAuthenticationProfileOutput");
+        formatter.field(
+            "authentication_profile_name",
+            &self.authentication_profile_name,
+        );
+        formatter.field(
+            "authentication_profile_content",
+            &self.authentication_profile_content,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CreateAuthenticationProfileOutput`](crate::output::CreateAuthenticationProfileOutput)
+pub mod create_authentication_profile_output {
+    /// A builder for [`CreateAuthenticationProfileOutput`](crate::output::CreateAuthenticationProfileOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authentication_profile_name: std::option::Option<std::string::String>,
+        pub(crate) authentication_profile_content: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the authentication profile that was created.</p>
+        pub fn authentication_profile_name(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_name = input;
+            self
+        }
+        /// <p>The content of the authentication profile in JSON format.</p>
+        pub fn authentication_profile_content(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = Some(input.into());
+            self
+        }
+        pub fn set_authentication_profile_content(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authentication_profile_content = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAuthenticationProfileOutput`](crate::output::CreateAuthenticationProfileOutput)
+        pub fn build(self) -> crate::output::CreateAuthenticationProfileOutput {
+            crate::output::CreateAuthenticationProfileOutput {
+                authentication_profile_name: self.authentication_profile_name,
+                authentication_profile_content: self.authentication_profile_content,
+            }
+        }
+    }
+}
+impl CreateAuthenticationProfileOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAuthenticationProfileOutput`](crate::output::CreateAuthenticationProfileOutput)
+    pub fn builder() -> crate::output::create_authentication_profile_output::Builder {
+        crate::output::create_authentication_profile_output::Builder::default()
     }
 }
 
@@ -7801,13 +8603,13 @@ impl AuthorizeSnapshotAccessOutput {
     }
 }
 
-/// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.</p>
+/// <p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeEndpointAccessOutput {
-    /// <p>The AWS account ID of the cluster owner.</p>
+    /// <p>The Amazon Web Services account ID of the cluster owner.</p>
     pub grantor: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the grantee of the cluster.</p>
+    /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
     pub grantee: std::option::Option<std::string::String>,
     /// <p>The cluster identifier.</p>
     pub cluster_identifier: std::option::Option<std::string::String>,
@@ -7856,7 +8658,7 @@ pub mod authorize_endpoint_access_output {
         pub(crate) endpoint_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The AWS account ID of the cluster owner.</p>
+        /// <p>The Amazon Web Services account ID of the cluster owner.</p>
         pub fn grantor(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantor = Some(input.into());
             self
@@ -7865,7 +8667,7 @@ pub mod authorize_endpoint_access_output {
             self.grantor = input;
             self
         }
-        /// <p>The AWS account ID of the grantee of the cluster.</p>
+        /// <p>The Amazon Web Services account ID of the grantee of the cluster.</p>
         pub fn grantee(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee = Some(input.into());
             self
@@ -7978,6 +8780,114 @@ impl AuthorizeEndpointAccessOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuthorizeDataShareOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub allow_publicly_accessible_consumers: bool,
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub data_share_associations:
+        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl std::fmt::Debug for AuthorizeDataShareOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthorizeDataShareOutput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field(
+            "allow_publicly_accessible_consumers",
+            &self.allow_publicly_accessible_consumers,
+        );
+        formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.finish()
+    }
+}
+/// See [`AuthorizeDataShareOutput`](crate::output::AuthorizeDataShareOutput)
+pub mod authorize_data_share_output {
+    /// A builder for [`AuthorizeDataShareOutput`](crate::output::AuthorizeDataShareOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
+        pub(crate) data_share_associations:
+            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
+            self.allow_publicly_accessible_consumers = Some(input);
+            self
+        }
+        pub fn set_allow_publicly_accessible_consumers(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_publicly_accessible_consumers = input;
+            self
+        }
+        pub fn data_share_associations(
+            mut self,
+            input: impl Into<crate::model::DataShareAssociation>,
+        ) -> Self {
+            let mut v = self.data_share_associations.unwrap_or_default();
+            v.push(input.into());
+            self.data_share_associations = Some(v);
+            self
+        }
+        pub fn set_data_share_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        ) -> Self {
+            self.data_share_associations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthorizeDataShareOutput`](crate::output::AuthorizeDataShareOutput)
+        pub fn build(self) -> crate::output::AuthorizeDataShareOutput {
+            crate::output::AuthorizeDataShareOutput {
+                data_share_arn: self.data_share_arn,
+                producer_arn: self.producer_arn,
+                allow_publicly_accessible_consumers: self
+                    .allow_publicly_accessible_consumers
+                    .unwrap_or_default(),
+                data_share_associations: self.data_share_associations,
+            }
+        }
+    }
+}
+impl AuthorizeDataShareOutput {
+    /// Creates a new builder-style object to manufacture [`AuthorizeDataShareOutput`](crate::output::AuthorizeDataShareOutput)
+    pub fn builder() -> crate::output::authorize_data_share_output::Builder {
+        crate::output::authorize_data_share_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AuthorizeClusterSecurityGroupIngressOutput {
     /// <p>Describes a security group.</p>
     pub cluster_security_group: std::option::Option<crate::model::ClusterSecurityGroup>,
@@ -8022,6 +8932,114 @@ impl AuthorizeClusterSecurityGroupIngressOutput {
     /// Creates a new builder-style object to manufacture [`AuthorizeClusterSecurityGroupIngressOutput`](crate::output::AuthorizeClusterSecurityGroupIngressOutput)
     pub fn builder() -> crate::output::authorize_cluster_security_group_ingress_output::Builder {
         crate::output::authorize_cluster_security_group_ingress_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AssociateDataShareConsumerOutput {
+    /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+    pub data_share_arn: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+    pub producer_arn: std::option::Option<std::string::String>,
+    /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+    pub allow_publicly_accessible_consumers: bool,
+    /// <p>A value that specifies when the datashare has an association between a producer and data consumers.</p>
+    pub data_share_associations:
+        std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+}
+impl std::fmt::Debug for AssociateDataShareConsumerOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AssociateDataShareConsumerOutput");
+        formatter.field("data_share_arn", &self.data_share_arn);
+        formatter.field("producer_arn", &self.producer_arn);
+        formatter.field(
+            "allow_publicly_accessible_consumers",
+            &self.allow_publicly_accessible_consumers,
+        );
+        formatter.field("data_share_associations", &self.data_share_associations);
+        formatter.finish()
+    }
+}
+/// See [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput)
+pub mod associate_data_share_consumer_output {
+    /// A builder for [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) data_share_arn: std::option::Option<std::string::String>,
+        pub(crate) producer_arn: std::option::Option<std::string::String>,
+        pub(crate) allow_publicly_accessible_consumers: std::option::Option<bool>,
+        pub(crate) data_share_associations:
+            std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+    }
+    impl Builder {
+        /// <p>An Amazon Resource Name (ARN) that references the datashare that is owned by a specific namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code> format.</p>
+        pub fn data_share_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_share_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_share_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_share_arn = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the producer.</p>
+        pub fn producer_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.producer_arn = Some(input.into());
+            self
+        }
+        pub fn set_producer_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.producer_arn = input;
+            self
+        }
+        /// <p>A value that specifies whether the datashare can be shared to a publicly accessible  cluster.</p>
+        pub fn allow_publicly_accessible_consumers(mut self, input: bool) -> Self {
+            self.allow_publicly_accessible_consumers = Some(input);
+            self
+        }
+        pub fn set_allow_publicly_accessible_consumers(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_publicly_accessible_consumers = input;
+            self
+        }
+        pub fn data_share_associations(
+            mut self,
+            input: impl Into<crate::model::DataShareAssociation>,
+        ) -> Self {
+            let mut v = self.data_share_associations.unwrap_or_default();
+            v.push(input.into());
+            self.data_share_associations = Some(v);
+            self
+        }
+        pub fn set_data_share_associations(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::DataShareAssociation>>,
+        ) -> Self {
+            self.data_share_associations = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput)
+        pub fn build(self) -> crate::output::AssociateDataShareConsumerOutput {
+            crate::output::AssociateDataShareConsumerOutput {
+                data_share_arn: self.data_share_arn,
+                producer_arn: self.producer_arn,
+                allow_publicly_accessible_consumers: self
+                    .allow_publicly_accessible_consumers
+                    .unwrap_or_default(),
+                data_share_associations: self.data_share_associations,
+            }
+        }
+    }
+}
+impl AssociateDataShareConsumerOutput {
+    /// Creates a new builder-style object to manufacture [`AssociateDataShareConsumerOutput`](crate::output::AssociateDataShareConsumerOutput)
+    pub fn builder() -> crate::output::associate_data_share_consumer_output::Builder {
+        crate::output::associate_data_share_consumer_output::Builder::default()
     }
 }
 

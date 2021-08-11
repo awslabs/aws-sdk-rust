@@ -1917,6 +1917,7 @@ pub struct CreateDatabaseError {
 #[derive(std::fmt::Debug)]
 pub enum CreateDatabaseErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     GlueEncryptionException(crate::error::GlueEncryptionException),
     InternalServiceException(crate::error::InternalServiceException),
     InvalidInputException(crate::error::InvalidInputException),
@@ -1929,6 +1930,7 @@ impl std::fmt::Display for CreateDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateDatabaseErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateDatabaseErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateDatabaseErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
             CreateDatabaseErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             CreateDatabaseErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
@@ -1988,6 +1990,12 @@ impl CreateDatabaseError {
             CreateDatabaseErrorKind::AlreadyExistsException(_)
         )
     }
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDatabaseErrorKind::ConcurrentModificationException(_)
+        )
+    }
     pub fn is_glue_encryption_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -2023,6 +2031,7 @@ impl std::error::Error for CreateDatabaseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateDatabaseErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateDatabaseErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateDatabaseErrorKind::GlueEncryptionException(_inner) => Some(_inner),
             CreateDatabaseErrorKind::InternalServiceException(_inner) => Some(_inner),
             CreateDatabaseErrorKind::InvalidInputException(_inner) => Some(_inner),
@@ -3188,6 +3197,7 @@ pub struct CreateTableError {
 #[derive(std::fmt::Debug)]
 pub enum CreateTableErrorKind {
     AlreadyExistsException(crate::error::AlreadyExistsException),
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     EntityNotFoundException(crate::error::EntityNotFoundException),
     GlueEncryptionException(crate::error::GlueEncryptionException),
     InternalServiceException(crate::error::InternalServiceException),
@@ -3201,6 +3211,7 @@ impl std::fmt::Display for CreateTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateTableErrorKind::AlreadyExistsException(_inner) => _inner.fmt(f),
+            CreateTableErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
             CreateTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
@@ -3258,6 +3269,12 @@ impl CreateTableError {
     pub fn is_already_exists_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::AlreadyExistsException(_))
     }
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateTableErrorKind::ConcurrentModificationException(_)
+        )
+    }
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, CreateTableErrorKind::EntityNotFoundException(_))
     }
@@ -3290,6 +3307,7 @@ impl std::error::Error for CreateTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateTableErrorKind::AlreadyExistsException(_inner) => Some(_inner),
+            CreateTableErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             CreateTableErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             CreateTableErrorKind::GlueEncryptionException(_inner) => Some(_inner),
             CreateTableErrorKind::InternalServiceException(_inner) => Some(_inner),
@@ -4277,6 +4295,7 @@ pub struct DeleteDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteDatabaseErrorKind {
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     EntityNotFoundException(crate::error::EntityNotFoundException),
     InternalServiceException(crate::error::InternalServiceException),
     InvalidInputException(crate::error::InvalidInputException),
@@ -4287,6 +4306,7 @@ pub enum DeleteDatabaseErrorKind {
 impl std::fmt::Display for DeleteDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteDatabaseErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             DeleteDatabaseErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             DeleteDatabaseErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             DeleteDatabaseErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
@@ -4339,6 +4359,12 @@ impl DeleteDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDatabaseErrorKind::ConcurrentModificationException(_)
+        )
+    }
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4367,6 +4393,7 @@ impl DeleteDatabaseError {
 impl std::error::Error for DeleteDatabaseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteDatabaseErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteDatabaseErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             DeleteDatabaseErrorKind::InternalServiceException(_inner) => Some(_inner),
             DeleteDatabaseErrorKind::InvalidInputException(_inner) => Some(_inner),
@@ -5470,6 +5497,7 @@ pub struct DeleteTableError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteTableErrorKind {
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     EntityNotFoundException(crate::error::EntityNotFoundException),
     InternalServiceException(crate::error::InternalServiceException),
     InvalidInputException(crate::error::InvalidInputException),
@@ -5480,6 +5508,7 @@ pub enum DeleteTableErrorKind {
 impl std::fmt::Display for DeleteTableError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteTableErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
             DeleteTableErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
@@ -5532,6 +5561,12 @@ impl DeleteTableError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteTableErrorKind::ConcurrentModificationException(_)
+        )
+    }
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteTableErrorKind::EntityNotFoundException(_))
     }
@@ -5554,6 +5589,7 @@ impl DeleteTableError {
 impl std::error::Error for DeleteTableError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteTableErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             DeleteTableErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             DeleteTableErrorKind::InternalServiceException(_inner) => Some(_inner),
             DeleteTableErrorKind::InvalidInputException(_inner) => Some(_inner),
@@ -16026,6 +16062,7 @@ pub struct UpdateDatabaseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum UpdateDatabaseErrorKind {
+    ConcurrentModificationException(crate::error::ConcurrentModificationException),
     EntityNotFoundException(crate::error::EntityNotFoundException),
     GlueEncryptionException(crate::error::GlueEncryptionException),
     InternalServiceException(crate::error::InternalServiceException),
@@ -16037,6 +16074,7 @@ pub enum UpdateDatabaseErrorKind {
 impl std::fmt::Display for UpdateDatabaseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            UpdateDatabaseErrorKind::ConcurrentModificationException(_inner) => _inner.fmt(f),
             UpdateDatabaseErrorKind::EntityNotFoundException(_inner) => _inner.fmt(f),
             UpdateDatabaseErrorKind::GlueEncryptionException(_inner) => _inner.fmt(f),
             UpdateDatabaseErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
@@ -16090,6 +16128,12 @@ impl UpdateDatabaseError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_concurrent_modification_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDatabaseErrorKind::ConcurrentModificationException(_)
+        )
+    }
     pub fn is_entity_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -16124,6 +16168,7 @@ impl UpdateDatabaseError {
 impl std::error::Error for UpdateDatabaseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            UpdateDatabaseErrorKind::ConcurrentModificationException(_inner) => Some(_inner),
             UpdateDatabaseErrorKind::EntityNotFoundException(_inner) => Some(_inner),
             UpdateDatabaseErrorKind::GlueEncryptionException(_inner) => Some(_inner),
             UpdateDatabaseErrorKind::InternalServiceException(_inner) => Some(_inner),

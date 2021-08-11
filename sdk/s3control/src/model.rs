@@ -227,7 +227,7 @@ pub struct StorageLensConfiguration {
     pub data_export: std::option::Option<crate::model::StorageLensDataExport>,
     /// <p>A container for whether the S3 Storage Lens configuration is enabled.</p>
     pub is_enabled: bool,
-    /// <p>A container for the AWS organization for this S3 Storage Lens configuration.</p>
+    /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
     pub aws_org: std::option::Option<crate::model::StorageLensAwsOrg>,
     /// <p>The Amazon Resource Name (ARN) of the S3 Storage Lens configuration. This property is
     /// read-only and follows the following format:
@@ -330,7 +330,7 @@ pub mod storage_lens_configuration {
             self.is_enabled = input;
             self
         }
-        /// <p>A container for the AWS organization for this S3 Storage Lens configuration.</p>
+        /// <p>A container for the Amazon Web Services organization for this S3 Storage Lens configuration.</p>
         pub fn aws_org(mut self, input: crate::model::StorageLensAwsOrg) -> Self {
             self.aws_org = Some(input);
             self
@@ -380,11 +380,11 @@ impl StorageLensConfiguration {
     }
 }
 
-/// <p>The AWS organization for your S3 Storage Lens.</p>
+/// <p>The Amazon Web Services organization for your S3 Storage Lens.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StorageLensAwsOrg {
-    /// <p>A container for the Amazon Resource Name (ARN) of the AWS organization.
+    /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization.
     /// This property is read-only and follows the following format:
     /// <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
     /// </code>
@@ -407,7 +407,7 @@ pub mod storage_lens_aws_org {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A container for the Amazon Resource Name (ARN) of the AWS organization.
+        /// <p>A container for the Amazon Resource Name (ARN) of the Amazon Web Services organization.
         /// This property is read-only and follows the following format:
         /// <code> arn:aws:organizations:<i>us-east-1</i>:<i>example-account-id</i>:organization/<i>o-ex2l495dck</i>
         /// </code>
@@ -1419,7 +1419,7 @@ pub struct PublicAccessBlockConfiguration {
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account.
     /// Setting this element to <code>TRUE</code> restricts access to buckets with public policies
-    /// to only AWS service principals and authorized users within this account.</p>
+    /// to only Amazon Web Service principals and authorized users within this account.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public
     /// and cross-account access within any public bucket policy, including non-public delegation to
     /// specific accounts, is blocked.</p>
@@ -1500,7 +1500,7 @@ pub mod public_access_block_configuration {
         }
         /// <p>Specifies whether Amazon S3 should restrict public bucket policies for buckets in this account.
         /// Setting this element to <code>TRUE</code> restricts access to buckets with public policies
-        /// to only AWS service principals and authorized users within this account.</p>
+        /// to only Amazon Web Service principals and authorized users within this account.</p>
         /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that public
         /// and cross-account access within any public bucket policy, including non-public delegation to
         /// specific accounts, is blocked.</p>
@@ -2723,7 +2723,7 @@ impl ObjectLambdaTransformationConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum ObjectLambdaContentTransformation {
-    /// <p>A container for an AWS Lambda function.</p>
+    /// <p>A container for an Lambda function.</p>
     AwsLambda(crate::model::AwsLambdaTransformation),
 }
 impl ObjectLambdaContentTransformation {
@@ -2740,11 +2740,11 @@ impl ObjectLambdaContentTransformation {
     }
 }
 
-/// <p>AWS Lambda function used to transform objects through an Object Lambda Access Point.</p>
+/// <p>Lambda function used to transform objects through an Object Lambda Access Point.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsLambdaTransformation {
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
     pub function_arn: std::option::Option<std::string::String>,
     /// <p>Additional JSON that provides supplemental data to the Lambda function used to transform objects.</p>
     pub function_payload: std::option::Option<std::string::String>,
@@ -2767,7 +2767,7 @@ pub mod aws_lambda_transformation {
         pub(crate) function_payload: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_arn = Some(input.into());
             self
@@ -3009,7 +3009,7 @@ pub struct RegionalBucket {
     pub public_access_block_enabled: bool,
     /// <p>The creation date of the regional bucket</p>
     pub creation_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The AWS Outposts ID of the regional bucket.</p>
+    /// <p>The Outposts ID of the regional bucket.</p>
     pub outpost_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegionalBucket {
@@ -3078,7 +3078,7 @@ pub mod regional_bucket {
             self.creation_date = input;
             self
         }
-        /// <p>The AWS Outposts ID of the regional bucket.</p>
+        /// <p>The Outposts ID of the regional bucket.</p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.outpost_id = Some(input.into());
             self
@@ -3417,7 +3417,7 @@ impl AsRef<str> for OperationName {
     }
 }
 
-/// <p>An access point with an attached AWS Lambda function used to access transformed data from an Amazon S3 bucket.</p>
+/// <p>An access point with an attached Lambda function used to access transformed data from an Amazon S3 bucket.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectLambdaAccessPoint {
@@ -3502,13 +3502,15 @@ pub struct AccessPoint {
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
     /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p>
     /// <note>
-    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS services.</p>
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p>The name of the bucket associated with this access point.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The ARN for the access point.</p>
     pub access_point_arn: std::option::Option<std::string::String>,
+    /// <p>The name or alias of the access point.</p>
+    pub alias: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessPoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3518,6 +3520,7 @@ impl std::fmt::Debug for AccessPoint {
         formatter.field("vpc_configuration", &self.vpc_configuration);
         formatter.field("bucket", &self.bucket);
         formatter.field("access_point_arn", &self.access_point_arn);
+        formatter.field("alias", &self.alias);
         formatter.finish()
     }
 }
@@ -3532,6 +3535,7 @@ pub mod access_point {
         pub(crate) vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
         pub(crate) bucket: std::option::Option<std::string::String>,
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of this access point.</p>
@@ -3562,7 +3566,7 @@ pub mod access_point {
         }
         /// <p>The virtual private cloud (VPC) configuration for this access point, if one exists.</p>
         /// <note>
-        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS services.</p>
+        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
         /// </note>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
@@ -3596,6 +3600,15 @@ pub mod access_point {
             self.access_point_arn = input;
             self
         }
+        /// <p>The name or alias of the access point.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccessPoint`](crate::model::AccessPoint)
         pub fn build(self) -> crate::model::AccessPoint {
             crate::model::AccessPoint {
@@ -3604,6 +3617,7 @@ pub mod access_point {
                 vpc_configuration: self.vpc_configuration,
                 bucket: self.bucket,
                 access_point_arn: self.access_point_arn,
+                alias: self.alias,
             }
         }
     }
@@ -3795,7 +3809,7 @@ pub struct JobDescriptor {
     pub creation_time: std::option::Option<smithy_types::Instant>,
     /// <p>A timestamp indicating when this job terminated. A job's termination date is the date and time when it succeeded, failed, or was canceled.</p>
     pub termination_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
+    /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
     /// assigned to run the tasks for this job.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The timestamp when this job was suspended, if it has been suspended.</p>
@@ -4001,7 +4015,7 @@ pub mod job_descriptor {
             self.termination_date = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role
+        /// <p>The Amazon Resource Name (ARN) for the Identity and Access Management (IAM) role
         /// assigned to run the tasks for this job.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -4347,7 +4361,7 @@ impl JobFailure {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobOperation {
-    /// <p>Directs the specified job to invoke an AWS Lambda function on every object in the manifest.</p>
+    /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
     pub lambda_invoke: std::option::Option<crate::model::LambdaInvokeOperation>,
     /// <p>Directs the specified job to run a PUT Copy object call on every object in the manifest.</p>
     pub s3_put_object_copy: std::option::Option<crate::model::S3CopyObjectOperation>,
@@ -4411,7 +4425,7 @@ pub mod job_operation {
             std::option::Option<crate::model::S3SetObjectRetentionOperation>,
     }
     impl Builder {
-        /// <p>Directs the specified job to invoke an AWS Lambda function on every object in the manifest.</p>
+        /// <p>Directs the specified job to invoke an Lambda function on every object in the manifest.</p>
         pub fn lambda_invoke(mut self, input: crate::model::LambdaInvokeOperation) -> Self {
             self.lambda_invoke = Some(input);
             self
@@ -5756,7 +5770,7 @@ pub struct S3CopyObjectOperation {
     /// the Batch Operations job.</p>
     pub object_lock_retain_until_date: std::option::Option<smithy_types::Instant>,
     /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
-    /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+    /// server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code>
     /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
     /// <p>Specifying this header with an <i>object</i> action doesn’t affect
     /// <i>bucket-level</i> settings for S3 Bucket Key.</p>
@@ -6029,7 +6043,7 @@ pub mod s3_copy_object_operation {
             self
         }
         /// <p>Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
-        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+        /// server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header to <code>true</code>
         /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.</p>
         /// <p>Specifying this header with an <i>object</i> action doesn’t affect
         /// <i>bucket-level</i> settings for S3 Bucket Key.</p>
@@ -6513,7 +6527,7 @@ impl AsRef<str> for S3MetadataDirective {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaInvokeOperation {
-    /// <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every object in the manifest.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
     pub function_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LambdaInvokeOperation {
@@ -6532,7 +6546,7 @@ pub mod lambda_invoke_operation {
         pub(crate) function_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) for the AWS Lambda function that the specified job will invoke on every object in the manifest.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Lambda function that the specified job will invoke on every object in the manifest.</p>
         pub fn function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.function_arn = Some(input.into());
             self

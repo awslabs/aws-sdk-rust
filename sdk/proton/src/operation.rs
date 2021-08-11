@@ -2,8 +2,8 @@
 /// <p>In a management account, an environment account connection request is accepted. When the environment account connection request is
 /// accepted, AWS Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment
 /// account.</p>
-/// <p>For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a>
-/// in the <i>AWS Proton Administration guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+/// connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AcceptEnvironmentAccountConnection {
     _private: (),
@@ -32,7 +32,7 @@ impl smithy_http::response::ParseStrictResponse for AcceptEnvironmentAccountConn
 }
 
 /// <p>Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action, if the deployment is
-/// <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the <i>AWS Proton Administration guide</i>.</p>
+/// <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-update.html">Update an environment</a> in the <i>AWS Proton Administrator guide</i>.</p>
 /// <p>The following list includes potential cancellation scenarios.</p>
 /// <ul>
 /// <li>
@@ -74,7 +74,7 @@ impl smithy_http::response::ParseStrictResponse for CancelEnvironmentDeployment 
 }
 
 /// <p>Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a> action, if the deployment is
-/// <code>IN_PROGRESS</code>. For more information, see <i>Update a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">AWS Proton Administration guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">AWS Proton User guide</a>.</p>
+/// <code>IN_PROGRESS</code>. For more information, see <i>Update a service instance</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-instance-update.html">AWS Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-instance-update.html">AWS Proton User guide</a>.</p>
 /// <p>The following list includes potential cancellation scenarios.</p>
 /// <ul>
 /// <li>
@@ -116,7 +116,7 @@ impl smithy_http::response::ParseStrictResponse for CancelServiceInstanceDeploym
 }
 
 /// <p>Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a> action, if the deployment is
-/// <code>IN_PROGRESS</code>. For more information, see <i>Update a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">AWS Proton Administration guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">AWS Proton User guide</a>.</p>
+/// <code>IN_PROGRESS</code>. For more information, see <i>Update a service pipeline</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-svc-pipeline-update.html">AWS Proton Administrator guide</a> or the <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-svc-pipeline-update.html">AWS Proton User guide</a>.</p>
 /// <p>The following list includes potential cancellation scenarios.</p>
 /// <ul>
 /// <li>
@@ -157,8 +157,8 @@ impl smithy_http::response::ParseStrictResponse for CancelServicePipelineDeploym
     }
 }
 
-/// <p>Deploy a new environment. An AWS Proton environment is created from an environment template that defines infrastructure and resources that
-/// can be shared across services. For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>AWS Proton Administration
+/// <p>Deploy a new environment. An AWS Proton environment is created from an environment template that defines infrastructure and resources
+/// that can be shared across services. For more information, see the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-environments.html">Environments</a> in the <i>AWS Proton Administrator
 /// Guide.</i>
 /// </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -189,10 +189,10 @@ impl smithy_http::response::ParseStrictResponse for CreateEnvironment {
 }
 
 /// <p>Create an environment account connection in an environment account so that environment infrastructure resources can be provisioned in
-/// the environment account from the management account.</p>
+/// the environment account from a management account.</p>
 /// <p>An environment account connection is a secure bi-directional connection between a <i>management account</i> and an
-/// <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the <i>AWS Proton
-/// Administration guide</i>.</p>
+/// <i>environment account</i> that maintains authorization and permissions. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a> in the
+/// <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateEnvironmentAccountConnection {
     _private: (),
@@ -220,7 +220,7 @@ impl smithy_http::response::ParseStrictResponse for CreateEnvironmentAccountConn
     }
 }
 
-/// <p>Create an environment template for AWS Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-templates.html">Environment Templates</a> in the <i>AWS Proton Administration
+/// <p>Create an environment template for AWS Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-templates.html">Environment Templates</a> in the <i>AWS Proton Administrator
 /// Guide</i>.</p>
 /// <p>You can create an environment template in one of the two following ways:</p>
 /// <ul>
@@ -232,8 +232,8 @@ impl smithy_http::response::ParseStrictResponse for CreateEnvironmentAccountConn
 /// <p>Register and publish a <i>customer managed</i> environment template that connects AWS Proton to your existing
 /// provisioned infrastructure that you manage. AWS Proton <i>doesn't</i> manage your existing provisioned
 /// infrastructure. To create an environment template for customer provisioned and managed infrastructure, include the
-/// <code>provisioning</code> parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/env-template-v1.html">Register and publish an environment template</a>
-/// in the <i>AWS Proton Administration Guide</i>.</p>
+/// <code>provisioning</code> parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/template-create.html">Register and publish an environment template</a>
+/// in the <i>AWS Proton Administrator Guide</i>.</p>
 /// </li>
 /// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -293,9 +293,9 @@ impl smithy_http::response::ParseStrictResponse for CreateEnvironmentTemplateVer
     }
 }
 
-/// <p>Create an AWS Proton service. An AWS Proton service is an instantiation of a service template and often includes several service instances and
-/// pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a> in the
-/// <i>AWS Proton Administration Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a> in the <i>AWS Proton User Guide</i>.</p>
+/// <p>Create an AWS Proton service. An AWS Proton service is an instantiation of a service template and often includes several service instances
+/// and pipeline. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-services.html">Services</a> in
+/// the <i>AWS Proton Administrator Guide</i> and <a href="https://docs.aws.amazon.com/proton/latest/userguide/ug-service.html">Services</a> in the <i>AWS Proton User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateService {
     _private: (),
@@ -323,8 +323,8 @@ impl smithy_http::response::ParseStrictResponse for CreateService {
 
 /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CICD
 /// service pipeline. Developers, in turn, select the service template from AWS Proton. If the selected service template includes a service
-/// pipeline definition, they provide a link to their source code repository. AWS Proton then deploys and manages the infrastructure defined by the
-/// selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service Templates</a> in the <i>AWS Proton Administration
+/// pipeline definition, they provide a link to their source code repository. AWS Proton then deploys and manages the infrastructure defined by
+/// the selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/managing-svc-templates.html">Service Templates</a> in the <i>AWS Proton Administrator
 /// Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateServiceTemplate {
@@ -415,8 +415,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteEnvironment {
 /// <p>After you delete an environment account connection that’s in use by an AWS Proton environment, AWS Proton <i>can’t</i>
 /// manage the environment infrastructure resources until a new environment account connection is accepted for the environment account and
 /// associated environment. You're responsible for cleaning up provisioned resources that remain without an environment connection.</p>
-/// <p>For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a>
-/// in the <i>AWS Proton Administration guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+/// connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteEnvironmentAccountConnection {
     _private: (),
@@ -649,8 +649,8 @@ impl smithy_http::response::ParseStrictResponse for GetEnvironment {
 }
 
 /// <p>In an environment account, view the detail data for an environment account connection.</p>
-/// <p>For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a>
-/// in the <i>AWS Proton Administration guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+/// connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetEnvironmentAccountConnection {
     _private: (),
@@ -846,8 +846,8 @@ impl smithy_http::response::ParseStrictResponse for GetServiceTemplateVersion {
 }
 
 /// <p>View a list of environment account connections.</p>
-/// <p>For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a>
-/// in the <i>AWS Proton Administration guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+/// connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListEnvironmentAccountConnections {
     _private: (),
@@ -1069,7 +1069,7 @@ impl smithy_http::response::ParseStrictResponse for ListServiceTemplateVersions 
     }
 }
 
-/// <p>List tags for a resource. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+/// <p>List tags for a resource. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -1101,8 +1101,8 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
 /// <p>After you reject an environment account connection request, you <i>won’t</i> be able to accept or use the rejected
 /// environment account connection.</p>
 /// <p>You <i>can’t</i> reject an environment account connection that is connected to an environment.</p>
-/// <p>For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a>
-/// in the <i>AWS Proton Administration guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+/// connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RejectEnvironmentAccountConnection {
     _private: (),
@@ -1130,7 +1130,7 @@ impl smithy_http::response::ParseStrictResponse for RejectEnvironmentAccountConn
     }
 }
 
-/// <p>Tag a resource. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+/// <p>Tag a resource. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TagResource {
     _private: (),
@@ -1156,7 +1156,7 @@ impl smithy_http::response::ParseStrictResponse for TagResource {
     }
 }
 
-/// <p>Remove a tag from a resource. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administration Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
+/// <p>Remove a tag from a resource. For more information, see <i>AWS Proton resources and tagging</i> in the <a href="https://docs.aws.amazon.com/proton/latest/adminguide/resources.html">AWS Proton Administrator Guide</a> or <a href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">AWS Proton User Guide</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UntagResource {
     _private: (),
@@ -1214,7 +1214,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAccountSettings {
 /// <p>If the environment is associated with an environment account connection, <i>don't</i> update or include the
 /// <code>protonServiceRoleArn</code> parameter to update or connect to an environment account connection. </p>
 /// <p>You can only update to a new environment account connection if it was created in the same environment account that the current
-/// environment account connection was created in and associated with the current environment.</p>
+/// environment account connection was created in and is associated with the current environment.</p>
 /// <p>If the environment <i>isn't</i> associated with an environment account connection, <i>don't</i> update or
 /// include the <code>environmentAccountConnectionId</code> parameter to update or connect to an environment account connection.</p>
 /// <p>You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code> parameter and value. You
@@ -1284,8 +1284,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateEnvironment {
 }
 
 /// <p>In an environment account, update an environment account connection to use a new IAM role.</p>
-/// <p>For more information, see <a href="proton/latest/adminguide/ag-env-account-connections.html">Environment account connections</a>
-/// in the <i>AWS Proton Administration guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-env-account-connections.html">Environment account
+/// connections</a> in the <i>AWS Proton Administrator guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateEnvironmentAccountConnection {
     _private: (),

@@ -3154,6 +3154,153 @@ impl std::error::Error for CreateChannelModeratorError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateMediaCapturePipelineError {
+    pub kind: CreateMediaCapturePipelineErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateMediaCapturePipelineErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottledClientException(crate::error::ThrottledClientException),
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateMediaCapturePipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateMediaCapturePipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateMediaCapturePipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            CreateMediaCapturePipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateMediaCapturePipelineError {
+    fn code(&self) -> Option<&str> {
+        CreateMediaCapturePipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateMediaCapturePipelineError {
+    pub fn new(kind: CreateMediaCapturePipelineErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateMediaCapturePipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateMediaCapturePipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for CreateMediaCapturePipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateMediaCapturePipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateMediaCapturePipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            CreateMediaCapturePipelineErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            CreateMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            CreateMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
+                Some(_inner)
+            }
+            CreateMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateMeetingError {
     pub kind: CreateMeetingErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -6579,6 +6726,149 @@ impl std::error::Error for DeleteEventsConfigurationError {
             DeleteEventsConfigurationErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             DeleteEventsConfigurationErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
             DeleteEventsConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteMediaCapturePipelineError {
+    pub kind: DeleteMediaCapturePipelineErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteMediaCapturePipelineErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottledClientException(crate::error::ThrottledClientException),
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteMediaCapturePipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteMediaCapturePipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            DeleteMediaCapturePipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteMediaCapturePipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteMediaCapturePipelineError {
+    fn code(&self) -> Option<&str> {
+        DeleteMediaCapturePipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteMediaCapturePipelineError {
+    pub fn new(kind: DeleteMediaCapturePipelineErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteMediaCapturePipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteMediaCapturePipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteMediaCapturePipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteMediaCapturePipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            DeleteMediaCapturePipelineErrorKind::NotFoundException(_inner) => Some(_inner),
+            DeleteMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            DeleteMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => {
+                Some(_inner)
+            }
+            DeleteMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            DeleteMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => {
+                Some(_inner)
+            }
+            DeleteMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -11848,6 +12138,141 @@ impl std::error::Error for GetGlobalSettingsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct GetMediaCapturePipelineError {
+    pub kind: GetMediaCapturePipelineErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetMediaCapturePipelineErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottledClientException(crate::error::ThrottledClientException),
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetMediaCapturePipelineError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetMediaCapturePipelineErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            GetMediaCapturePipelineErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetMediaCapturePipelineError {
+    fn code(&self) -> Option<&str> {
+        GetMediaCapturePipelineError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetMediaCapturePipelineError {
+    pub fn new(kind: GetMediaCapturePipelineErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetMediaCapturePipelineErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetMediaCapturePipelineErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::ThrottledClientException(_)
+        )
+    }
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for GetMediaCapturePipelineError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetMediaCapturePipelineErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::ForbiddenException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::NotFoundException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            GetMediaCapturePipelineErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct GetMeetingError {
     pub kind: GetMeetingErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -16797,6 +17222,136 @@ impl std::error::Error for ListChannelsModeratedByAppInstanceUserError {
             ListChannelsModeratedByAppInstanceUserErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListMediaCapturePipelinesError {
+    pub kind: ListMediaCapturePipelinesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListMediaCapturePipelinesErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottledClientException(crate::error::ThrottledClientException),
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListMediaCapturePipelinesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListMediaCapturePipelinesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ListMediaCapturePipelinesErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListMediaCapturePipelinesError {
+    fn code(&self) -> Option<&str> {
+        ListMediaCapturePipelinesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListMediaCapturePipelinesError {
+    pub fn new(kind: ListMediaCapturePipelinesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListMediaCapturePipelinesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListMediaCapturePipelinesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaCapturePipelinesErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaCapturePipelinesErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_)
+        )
+    }
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_)
+        )
+    }
+}
+impl std::error::Error for ListMediaCapturePipelinesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListMediaCapturePipelinesErrorKind::BadRequestException(_inner) => Some(_inner),
+            ListMediaCapturePipelinesErrorKind::ForbiddenException(_inner) => Some(_inner),
+            ListMediaCapturePipelinesErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            ListMediaCapturePipelinesErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            ListMediaCapturePipelinesErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            ListMediaCapturePipelinesErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            ListMediaCapturePipelinesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -21860,6 +22415,317 @@ impl std::error::Error for SendChannelMessageError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct StartMeetingTranscriptionError {
+    pub kind: StartMeetingTranscriptionErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StartMeetingTranscriptionErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    NotFoundException(crate::error::NotFoundException),
+    ResourceLimitExceededException(crate::error::ResourceLimitExceededException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottledClientException(crate::error::ThrottledClientException),
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StartMeetingTranscriptionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StartMeetingTranscriptionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StartMeetingTranscriptionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StartMeetingTranscriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartMeetingTranscriptionErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            StartMeetingTranscriptionErrorKind::UnauthorizedClientException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartMeetingTranscriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for StartMeetingTranscriptionError {
+    fn code(&self) -> Option<&str> {
+        StartMeetingTranscriptionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StartMeetingTranscriptionError {
+    pub fn new(kind: StartMeetingTranscriptionErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StartMeetingTranscriptionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StartMeetingTranscriptionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_resource_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::ThrottledClientException(_)
+        )
+    }
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::UnauthorizedClientException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartMeetingTranscriptionErrorKind::UnprocessableEntityException(_)
+        )
+    }
+}
+impl std::error::Error for StartMeetingTranscriptionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StartMeetingTranscriptionErrorKind::BadRequestException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::NotFoundException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::ResourceLimitExceededException(_inner) => {
+                Some(_inner)
+            }
+            StartMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            StartMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
+                Some(_inner)
+            }
+            StartMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct StopMeetingTranscriptionError {
+    pub kind: StopMeetingTranscriptionErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum StopMeetingTranscriptionErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ForbiddenException(crate::error::ForbiddenException),
+    NotFoundException(crate::error::NotFoundException),
+    ServiceFailureException(crate::error::ServiceFailureException),
+    ServiceUnavailableException(crate::error::ServiceUnavailableException),
+    ThrottledClientException(crate::error::ThrottledClientException),
+    UnauthorizedClientException(crate::error::UnauthorizedClientException),
+    UnprocessableEntityException(crate::error::UnprocessableEntityException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for StopMeetingTranscriptionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            StopMeetingTranscriptionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::ForbiddenException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::ThrottledClientException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::UnauthorizedClientException(_inner) => _inner.fmt(f),
+            StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => {
+                _inner.fmt(f)
+            }
+            StopMeetingTranscriptionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for StopMeetingTranscriptionError {
+    fn code(&self) -> Option<&str> {
+        StopMeetingTranscriptionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl StopMeetingTranscriptionError {
+    pub fn new(kind: StopMeetingTranscriptionErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: StopMeetingTranscriptionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: StopMeetingTranscriptionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_forbidden_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::ForbiddenException(_)
+        )
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::NotFoundException(_)
+        )
+    }
+    pub fn is_service_failure_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::ServiceFailureException(_)
+        )
+    }
+    pub fn is_service_unavailable_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_)
+        )
+    }
+    pub fn is_throttled_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::ThrottledClientException(_)
+        )
+    }
+    pub fn is_unauthorized_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::UnauthorizedClientException(_)
+        )
+    }
+    pub fn is_unprocessable_entity_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_)
+        )
+    }
+}
+impl std::error::Error for StopMeetingTranscriptionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            StopMeetingTranscriptionErrorKind::BadRequestException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::ForbiddenException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::NotFoundException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::ServiceFailureException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::ThrottledClientException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::UnauthorizedClientException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::UnprocessableEntityException(_inner) => Some(_inner),
+            StopMeetingTranscriptionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct TagAttendeeError {
     pub kind: TagAttendeeErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -26071,78 +26937,6 @@ impl ResourceLimitExceededException {
     }
 }
 
-/// <p>You don't have permissions to perform the requested operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct AccessDeniedException {
-    pub code: std::option::Option<crate::model::ErrorCode>,
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("AccessDeniedException");
-        formatter.field("code", &self.code);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl AccessDeniedException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for AccessDeniedException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for AccessDeniedException {}
-/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
-pub mod access_denied_exception {
-    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) code: std::option::Option<crate::model::ErrorCode>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn code(mut self, input: crate::model::ErrorCode) -> Self {
-            self.code = Some(input);
-            self
-        }
-        pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
-            self.code = input;
-            self
-        }
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
-        pub fn build(self) -> crate::error::AccessDeniedException {
-            crate::error::AccessDeniedException {
-                code: self.code,
-                message: self.message,
-            }
-        }
-    }
-}
-impl AccessDeniedException {
-    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
-    pub fn builder() -> crate::error::access_denied_exception::Builder {
-        crate::error::access_denied_exception::Builder::default()
-    }
-}
-
 /// <p>The request was well-formed but was unable to be followed due to semantic errors.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -26166,8 +26960,8 @@ impl UnprocessableEntityException {
 impl std::fmt::Display for UnprocessableEntityException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnprocessableEntityException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -26212,5 +27006,77 @@ impl UnprocessableEntityException {
     /// Creates a new builder-style object to manufacture [`UnprocessableEntityException`](crate::error::UnprocessableEntityException)
     pub fn builder() -> crate::error::unprocessable_entity_exception::Builder {
         crate::error::unprocessable_entity_exception::Builder::default()
+    }
+}
+
+/// <p>You don't have permissions to perform the requested operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessDeniedException {
+    pub code: std::option::Option<crate::model::ErrorCode>,
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessDeniedException");
+        formatter.field("code", &self.code);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AccessDeniedException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AccessDeniedException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AccessDeniedException")?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AccessDeniedException {}
+/// See [`AccessDeniedException`](crate::error::AccessDeniedException)
+pub mod access_denied_exception {
+    /// A builder for [`AccessDeniedException`](crate::error::AccessDeniedException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) code: std::option::Option<crate::model::ErrorCode>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn code(mut self, input: crate::model::ErrorCode) -> Self {
+            self.code = Some(input);
+            self
+        }
+        pub fn set_code(mut self, input: std::option::Option<crate::model::ErrorCode>) -> Self {
+            self.code = input;
+            self
+        }
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessDeniedException`](crate::error::AccessDeniedException)
+        pub fn build(self) -> crate::error::AccessDeniedException {
+            crate::error::AccessDeniedException {
+                code: self.code,
+                message: self.message,
+            }
+        }
+    }
+}
+impl AccessDeniedException {
+    /// Creates a new builder-style object to manufacture [`AccessDeniedException`](crate::error::AccessDeniedException)
+    pub fn builder() -> crate::error::access_denied_exception::Builder {
+        crate::error::access_denied_exception::Builder::default()
     }
 }

@@ -14,7 +14,6 @@ use crate::pin_mut;
 use crate::response::ParseHttpResponse;
 use crate::result::{SdkError, SdkSuccess};
 use bytes::{Buf, Bytes};
-use http::Response;
 use http_body::Body;
 use std::error::Error;
 use std::future::Future;
@@ -82,36 +81,42 @@ pub trait MapRequest {
 ///
 /// Success and failure will be split and mapped into `SdkSuccess` and `SdkError`.
 /// Generic Parameters:
-/// - `B`: The Response Body
 /// - `O`: The Http response handler that returns `Result<T, E>`
 /// - `T`/`E`: `Result<T, E>` returned by `handler`.
 pub async fn load_response<T, E, O>(
-    mut response: http::Response<SdkBody>,
+    mut response: operation::Response,
     handler: &O,
 ) -> Result<SdkSuccess<T>, SdkError<E>>
 where
-    O: ParseHttpResponse<SdkBody, Output = Result<T, E>>,
+    O: ParseHttpResponse<Output = Result<T, E>>,
 {
     if let Some(parsed_response) = handler.parse_unloaded(&mut response) {
         trace!(response = ?response);
         return sdk_result(parsed_response, response);
     }
 
-    let (parts, body) = response.into_parts();
+    let (http_response, properties) = response.into_parts();
+    let (parts, body) = http_response.into_parts();
     let body = match read_body(body).await {
         Ok(body) => body,
         Err(err) => {
             return Err(SdkError::ResponseError {
-                raw: Response::from_parts(parts, SdkBody::taken()),
+                raw: operation::Response::from_parts(
+                    http::Response::from_parts(parts, SdkBody::taken()),
+                    properties,
+                ),
                 err,
             });
         }
     };
 
-    let response = Response::from_parts(parts, Bytes::from(body));
-    trace!(response = ?response);
-    let parsed = handler.parse_loaded(&response);
-    sdk_result(parsed, response.map(SdkBody::from))
+    let http_response = http::Response::from_parts(parts, Bytes::from(body));
+    trace!(http_response = ?http_response);
+    let parsed = handler.parse_loaded(&http_response);
+    sdk_result(
+        parsed,
+        operation::Response::from_parts(http_response.map(SdkBody::from), properties),
+    )
 }
 
 async fn read_body<B: http_body::Body>(body: B) -> Result<Vec<u8>, B::Error> {
@@ -127,10 +132,10 @@ async fn read_body<B: http_body::Body>(body: B) -> Result<Vec<u8>, B::Error> {
     Ok(output)
 }
 
-/// Convert a `Result<T, E>` into an `SdkResult` that includes the raw HTTP response
+/// Convert a `Result<T, E>` into an `SdkResult` that includes the operation response
 fn sdk_result<T, E>(
     parsed: Result<T, E>,
-    raw: http::Response<SdkBody>,
+    raw: operation::Response,
 ) -> Result<SdkSuccess<T>, SdkError<E>> {
     match parsed {
         Ok(parsed) => Ok(SdkSuccess { raw, parsed }),

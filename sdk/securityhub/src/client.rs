@@ -450,7 +450,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>A list of findings to import. To successfully import a finding, it must follow the
-        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">AWS Security Finding Format</a>. Maximum of 100 findings per request.</p>
+        /// <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-findings-format.html">Amazon Web Services Security Finding Format</a>. Maximum of 100 findings per request.</p>
         pub fn findings(mut self, inp: impl Into<crate::model::AwsSecurityFinding>) -> Self {
             self.inner = self.inner.findings(inp);
             self
@@ -1346,9 +1346,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ARN of a resource that represents your subscription to a supported standard. To get
-        /// the subscription ARNs of the standards you have enabled, use the <code>
-        /// <a>GetEnabledStandards</a>
-        /// </code> operation.</p>
+        /// the subscription ARNs of the standards you have enabled, use the <code>GetEnabledStandards</code> operation.</p>
         pub fn standards_subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.standards_subscription_arn(input);
             self
@@ -1458,7 +1456,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account identifier of the Security Hub administrator account.</p>
+        /// <p>The Amazon Web Services account identifier of the Security Hub administrator account.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input);
             self
@@ -1683,7 +1681,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The AWS account identifier of the account to designate as the Security Hub administrator
+        /// <p>The Amazon Web Services account identifier of the account to designate as the Security Hub administrator
         /// account.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.admin_account_id(input);
@@ -2188,7 +2186,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The list of account IDs of the AWS accounts to invite to Security Hub as members. </p>
+        /// <p>The list of account IDs of the Amazon Web Services accounts to invite to Security Hub as members. </p>
         pub fn account_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_ids(inp);
             self

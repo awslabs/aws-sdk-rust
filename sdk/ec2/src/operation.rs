@@ -224,14 +224,14 @@ impl smithy_http::response::ParseStrictResponse for AdvertiseByoipCidr {
     }
 }
 
-/// <p>Allocates an Elastic IP address to your account. After you allocate the Elastic IP address you can associate  
+/// <p>Allocates an Elastic IP address to your Amazon Web Services account. After you allocate the Elastic IP address you can associate  
 /// it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address
-/// pool and can be allocated to a different account.</p>
+/// pool and can be allocated to a different Amazon Web Services account.</p>
 /// <p>You can allocate an Elastic IP address from an address pool owned by Amazon Web Services or from an address pool created
 /// from a public IPv4 address range that you have brought to Amazon Web Services for use with your Amazon Web Services resources using bring your own
 /// IP addresses (BYOIP). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">Bring Your Own IP Addresses (BYOIP)</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>[EC2-VPC] If you release an Elastic IP address, you might be able to recover it. You cannot recover an
-/// Elastic IP address that you released after it is allocated to another account. You cannot recover an Elastic IP
+/// Elastic IP address that you released after it is allocated to another Amazon Web Services account. You cannot recover an Elastic IP
 /// address for EC2-Classic. To attempt to recover an Elastic IP address that you released, specify it in this operation.</p>
 /// <p>An Elastic IP address is for use either in the EC2-Classic platform or in a VPC. By default, you can allocate
 /// 5 Elastic IP addresses for EC2-Classic per Region and 5 Elastic IP addresses for EC2-VPC per Region.</p>
@@ -330,7 +330,10 @@ impl smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToClientV
 /// You can assign as many IPv6 addresses to a network interface as you can assign private
 /// IPv4 addresses, and the limit varies per instance type. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per Network Interface Per Instance Type</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>You must specify either the IPv6 addresses or the IPv6 address count in the request.</p>
+/// <p>You must specify either the IPv6 addresses or the IPv6 address count in the request. </p>
+/// <p>You can optionally use Prefix Delegation on the network interface. You must specify
+/// either the IPV6 Prefix Delegation prefixes, or the IPv6 Prefix Delegation count. For
+/// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssignIpv6Addresses {
     _private: (),
@@ -370,6 +373,9 @@ impl smithy_http::response::ParseStrictResponse for AssignIpv6Addresses {
 /// interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code> in the instance
 /// metadata to confirm that the remapping is complete.</p>
 /// <p>You must specify either the IP addresses or the IP address count in the request.</p>
+/// <p>You can optionally use Prefix Delegation on the network interface. You must specify
+/// either the IPv4 Prefix Delegation prefixes, or the IPv4 Prefix Delegation count. For
+/// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-prefix-delegation">Prefix Delegation</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssignPrivateIpAddresses {
     _private: (),
@@ -480,7 +486,7 @@ impl smithy_http::response::ParseStrictResponse for AssociateClientVpnTargetNetw
 
 /// <p>Associates a set of DHCP options (that you've previously created) with the specified VPC, or associates no DHCP options with the VPC.</p>
 /// <p>After you associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. You don't need to restart or relaunch the instances. They automatically pick up the changes within a few hours, depending on how frequently the instance renews its DHCP lease. You can explicitly renew the lease using the operating system on the instance.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a>
 /// in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateDhcpOptions {
@@ -509,19 +515,19 @@ impl smithy_http::response::ParseStrictResponse for AssociateDhcpOptions {
     }
 }
 
-/// <p>Associates an AWS Identity and Access Management (IAM) role with an AWS Certificate Manager (ACM) certificate.
+/// <p>Associates an Identity and Access Management (IAM) role with an Certificate Manager (ACM) certificate.
 /// This enables the certificate to be used by the ACM for Nitro Enclaves application inside an enclave. For more
-/// information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">AWS Certificate
-/// Manager for Nitro Enclaves</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Web Services Nitro Enclaves
+/// User Guide</i>.</p>
 /// <p>When the IAM role is associated with the ACM certificate, the certificate, certificate chain, and encrypted
 /// private key are placed in an Amazon S3 bucket that only the associated IAM role can access. The private key of the certificate
-/// is encrypted with an AWS-managed KMS customer master (CMK) that has an attached attestation-based CMK policy.</p>
+/// is encrypted with an Amazon Web Services managed key that has an attached attestation-based key policy.</p>
 /// <p>To enable the IAM role to access the Amazon S3 object, you must grant it permission to call <code>s3:GetObject</code>
-/// on the Amazon S3 bucket returned by the command. To enable the IAM role to access the AWS KMS CMK, you must
-/// grant it permission to call <code>kms:Decrypt</code> on the AWS KMS CMK returned by the command. For more
-/// information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+/// on the Amazon S3 bucket returned by the command. To enable the IAM role to access the KMS key,
+/// you must grant it permission to call <code>kms:Decrypt</code> on the KMS key returned by the command.
+/// For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
 /// Grant the role permission to access the certificate and encryption key</a> in the
-/// <i>AWS Nitro Enclaves User Guide</i>.</p>
+/// <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateEnclaveCertificateIamRole {
     _private: (),
@@ -578,12 +584,43 @@ impl smithy_http::response::ParseStrictResponse for AssociateIamInstanceProfile 
     }
 }
 
+/// <p>Associates one or more targets with an event window. Only one type of target (instance IDs,
+/// Dedicated Host IDs, or tags) can be specified with an event window.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
+/// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct AssociateInstanceEventWindow {
+    _private: (),
+}
+impl AssociateInstanceEventWindow {
+    /// Creates a new builder-style object to manufacture [`AssociateInstanceEventWindowInput`](crate::input::AssociateInstanceEventWindowInput)
+    pub fn builder() -> crate::input::associate_instance_event_window_input::Builder {
+        crate::input::associate_instance_event_window_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for AssociateInstanceEventWindow {
+    type Output = std::result::Result<
+        crate::output::AssociateInstanceEventWindowOutput,
+        crate::error::AssociateInstanceEventWindowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_associate_instance_event_window_error(response)
+        } else {
+            crate::operation_deser::parse_associate_instance_event_window_response(response)
+        }
+    }
+}
+
 /// <p>Associates a subnet in your VPC or an internet gateway or virtual private gateway
 /// attached to your VPC with a route table in your VPC. This association causes traffic
 /// from the subnet or gateway to be routed according to the routes in the route table. The
 /// action returns an association ID, which you need in order to disassociate the route
 /// table later. A route table can be associated with multiple subnets.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateRouteTable {
@@ -740,7 +777,7 @@ impl smithy_http::response::ParseStrictResponse for AssociateTrunkInterface {
 /// <p>You must specify one of the following in the request: an IPv4 CIDR block, an IPv6
 /// pool, or an Amazon-provided IPv6 CIDR block.</p>
 /// <p>For more information about associating CIDR blocks with your VPC and applicable
-/// restrictions, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and Subnet Sizing</a> in the
+/// restrictions, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html#VPC_Sizing">VPC and subnet sizing</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateVpcCidrBlock {
@@ -865,14 +902,14 @@ impl smithy_http::response::ParseStrictResponse for AttachNetworkInterface {
 /// <p>Encrypted EBS volumes must be attached to instances that support Amazon EBS encryption. For
 /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>After you attach an EBS volume, you must make it available. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Making an EBS volume available for use</a>.</p>
-/// <p>If a volume has an AWS Marketplace product code:</p>
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-using-volumes.html">Make an EBS volume available for use</a>.</p>
+/// <p>If a volume has an Amazon Web Services Marketplace product code:</p>
 /// <ul>
 /// <li>
 /// <p>The volume can be attached only to a stopped instance.</p>
 /// </li>
 /// <li>
-/// <p>AWS Marketplace product codes are copied from the volume to the instance.</p>
+/// <p>Amazon Web Services Marketplace product codes are copied from the volume to the instance.</p>
 /// </li>
 /// <li>
 /// <p>You must be subscribed to the product.</p>
@@ -883,7 +920,7 @@ impl smithy_http::response::ParseStrictResponse for AttachNetworkInterface {
 /// instance.</p>
 /// </li>
 /// </ul>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attaching Amazon EBS volumes</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-attaching-volume.html">Attach an Amazon EBS volume to an instance</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AttachVolume {
@@ -970,15 +1007,15 @@ impl smithy_http::response::ParseStrictResponse for AuthorizeClientVpnIngress {
     }
 }
 
-/// <p>[VPC only] Adds the specified egress rules to a security group for use with a VPC.</p>
-/// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
-/// address ranges, or to the instances associated with the specified destination security groups.</p>
+/// <p>[VPC only] Adds the specified outbound (egress) rules to a security group for use with a VPC.</p>
+/// <p>An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR address
+/// ranges, or to the instances that are associated with the specified destination security groups.</p>
 /// <p>You specify a protocol for each rule (for example, TCP).
 /// For the TCP and UDP protocols, you must also specify the destination port or port range.
 /// For the ICMP protocol, you must also specify the ICMP type and code.
 /// You can use -1 for the type or code to mean all types or all codes.</p>
 /// <p>Rule changes are propagated to affected instances as quickly as possible. However, a small delay might occur.</p>
-/// <p>For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.</p>
+/// <p>For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupEgress {
     _private: (),
@@ -1006,16 +1043,17 @@ impl smithy_http::response::ParseStrictResponse for AuthorizeSecurityGroupEgress
     }
 }
 
-/// <p>Adds the specified ingress rules to a security group.</p>
+/// <p>Adds the specified inbound (ingress) rules to a security group.</p>
 /// <p>An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6 CIDR
-/// address ranges, or from the instances associated with the specified destination security groups.</p>
+/// address range, or from the instances that are associated with the specified destination security
+/// groups.</p>
 /// <p>You specify a protocol for each rule (for example, TCP).
 /// For TCP and UDP, you must also specify the destination port or port range.
 /// For ICMP/ICMPv6, you must also specify the ICMP/ICMPv6 type and code.
 /// You can use -1 to mean all types or all codes.</p>
 /// <p>Rule changes are propagated to instances within the security group as quickly as possible.
 /// However, a small delay might occur.</p>
-/// <p>For more information about VPC security group limits, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC Limits</a>.</p>
+/// <p>For more information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon VPC quotas</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AuthorizeSecurityGroupIngress {
     _private: (),
@@ -1427,9 +1465,9 @@ impl smithy_http::response::ParseStrictResponse for CopyImage {
 /// <p>You can use the snapshot to create EBS volumes or Amazon Machine Images (AMIs).</p>
 /// <p>When copying snapshots to a Region, copies of encrypted EBS snapshots remain encrypted.
 /// Copies of unencrypted snapshots remain unencrypted, unless you enable encryption for the
-/// snapshot copy operation. By default, encrypted snapshot copies use the default AWS Key Management Service (AWS KMS)
-/// customer master key (CMK); however, you can specify a different CMK. To copy an encrypted
-/// snapshot that has been shared from another account, you must have permissions for the CMK
+/// snapshot copy operation. By default, encrypted snapshot copies use the default Key Management Service (KMS)
+/// KMS key; however, you can specify a different KMS key. To copy an encrypted
+/// snapshot that has been shared from another account, you must have permissions for the KMS key
 /// used to encrypt the snapshot.</p>
 /// <p>Snapshots copied to an Outpost are encrypted by default using the default
 /// encryption key for the Region, or a different key that you specify in the request using
@@ -1438,7 +1476,7 @@ impl smithy_http::response::ParseStrictResponse for CopyImage {
 /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>Snapshots created by copying another snapshot have an arbitrary volume ID that should not
 /// be used for any purpose.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copying an Amazon EBS snapshot</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy an Amazon EBS snapshot</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CopySnapshot {
@@ -1507,8 +1545,7 @@ impl smithy_http::response::ParseStrictResponse for CreateCapacityReservation {
     }
 }
 
-/// <p>Creates a carrier gateway.   For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier gateways</a> in the <i>AWS Wavelength Developer
-/// Guide</i>.</p>
+/// <p>Creates a carrier gateway.   For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateCarrierGateway {
     _private: (),
@@ -1660,8 +1697,8 @@ impl smithy_http::response::ParseStrictResponse for CreateCustomerGateway {
 
 /// <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the
 /// specified Availability Zone in your default VPC. You can have only one default subnet
-/// per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a Default
-/// Subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Creating a default
+/// subnet</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDefaultSubnet {
     _private: (),
@@ -1692,7 +1729,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDefaultSubnet {
 /// <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
 /// in each Availability Zone. For more information about the components of a default VPC,
 /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPC and
-/// Default Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot
+/// default subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>. You cannot
 /// specify the components of the default VPC yourself.</p>
 /// <p>If you deleted your previous default VPC, you can create a default VPC. You cannot have
 /// more than one default VPC per Region.</p>
@@ -1778,7 +1815,7 @@ impl smithy_http::response::ParseStrictResponse for CreateDefaultVpc {
 /// server that we provide (AmazonProvidedDNS). If you create a set of options, and if your
 /// VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
 /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
-/// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+/// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDhcpOptions {
@@ -1871,7 +1908,7 @@ impl smithy_http::response::ParseStrictResponse for CreateFleet {
 /// subnet, or VPC. </p>
 /// <p>Flow log data for a monitored network interface is recorded as flow log records, which are log events
 /// consisting of fields that describe the traffic flow. For more information, see
-/// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log Records</a>
+/// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow log records</a>
 /// in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 /// <p>When publishing to CloudWatch Logs, flow log records are published to a log group, and each network
 /// interface has a unique log stream in the log group. When publishing to Amazon S3, flow log records for all
@@ -1964,6 +2001,56 @@ impl smithy_http::response::ParseStrictResponse for CreateImage {
             crate::operation_deser::parse_create_image_error(response)
         } else {
             crate::operation_deser::parse_create_image_response(response)
+        }
+    }
+}
+
+/// <p>Creates an event window in which scheduled events for the associated Amazon EC2 instances can
+/// run.</p>
+/// <p>You can define either a set of time ranges or a cron expression when creating the event
+/// window, but not both. All event window times are in UTC.</p>
+/// <p>You can create up to 200 event windows per Amazon Web Services Region.</p>
+/// <p>When you create the event window, targets (instance IDs, Dedicated Host IDs, or tags)
+/// are not yet associated with it. To ensure that the event window can be used, you must
+/// associate one or more targets with it by using the <a>AssociateInstanceEventWindow</a> API.</p>
+/// <important>
+/// <p>Event windows are applicable only for scheduled events that stop, reboot, or
+/// terminate instances.</p>
+/// <p>Event windows are <i>not</i> applicable for:</p>
+/// <ul>
+/// <li>
+/// <p>Expedited scheduled events and network maintenance events. </p>
+/// </li>
+/// <li>
+/// <p>Unscheduled maintenance such as AutoRecovery and unplanned reboots.</p>
+/// </li>
+/// </ul>
+/// </important>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
+/// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateInstanceEventWindow {
+    _private: (),
+}
+impl CreateInstanceEventWindow {
+    /// Creates a new builder-style object to manufacture [`CreateInstanceEventWindowInput`](crate::input::CreateInstanceEventWindowInput)
+    pub fn builder() -> crate::input::create_instance_event_window_input::Builder {
+        crate::input::create_instance_event_window_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateInstanceEventWindow {
+    type Output = std::result::Result<
+        crate::output::CreateInstanceEventWindowOutput,
+        crate::error::CreateInstanceEventWindowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_instance_event_window_error(response)
+        } else {
+            crate::operation_deser::parse_create_instance_event_window_response(response)
         }
     }
 }
@@ -2228,7 +2315,7 @@ impl smithy_http::response::ParseStrictResponse for CreateManagedPrefixList {
 /// networks through a transit gateway or virtual private gateway. Common use cases include
 /// running large workloads behind a small pool of allowlisted IPv4 addresses, preserving
 /// private IPv4 addresses, and communicating between overlapping networks.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT Gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html">NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNatGateway {
     _private: (),
@@ -2384,7 +2471,7 @@ impl smithy_http::response::ParseStrictResponse for CreateNetworkInterface {
 
 /// <p>Grants an Amazon Web Services-authorized account permission to attach the specified network interface to
 /// an instance in their account.</p>
-/// <p>You can grant permission to a single account only, and only one account at a time.</p>
+/// <p>You can grant permission to a single Amazon Web Services account only, and only one account at a time.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateNetworkInterfacePermission {
     _private: (),
@@ -2452,8 +2539,7 @@ impl smithy_http::response::ParseStrictResponse for CreatePlacementGroup {
 /// <p>Creates a root volume replacement task for an Amazon EC2 instance. The root volume
 /// can either be restored to its initial launch state, or it can be restored using a
 /// specific snapshot.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/">Replace a root volume</a>
-/// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateReplaceRootVolumeTask {
     _private: (),
@@ -2576,7 +2662,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRestoreImageTask {
 /// <p>Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the second route
 /// in the list covers a smaller number of IP addresses and is therefore more specific,
 /// so we use that route to determine where to target the traffic.</p>
-/// <p>For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the
+/// <p>For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRoute {
@@ -2604,7 +2690,7 @@ impl smithy_http::response::ParseStrictResponse for CreateRoute {
 }
 
 /// <p>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateRouteTable {
@@ -2682,22 +2768,22 @@ impl smithy_http::response::ParseStrictResponse for CreateSecurityGroup {
 /// create a snapshot of a volume in a Region, the snapshot must be stored in the same
 /// Region as the volume. If you create a snapshot of a volume on an Outpost, the snapshot
 /// can be stored on the same Outpost as the volume, or in the Region for that Outpost.</p>
-/// <p>When a snapshot is created, any AWS Marketplace product codes that are associated with the
+/// <p>When a snapshot is created, any Amazon Web Services Marketplace product codes that are associated with the
 /// source volume are propagated to the snapshot.</p>
 /// <p>You can take a snapshot of an attached volume that is in use. However, snapshots only
-/// capture data that has been written to your EBS volume at the time the snapshot command is
+/// capture data that has been written to your Amazon EBS volume at the time the snapshot command is
 /// issued; this might exclude any data that has been cached by any applications or the operating
 /// system. If you can pause any file systems on the volume long enough to take a snapshot, your
 /// snapshot should be complete. However, if you cannot pause all file writes to the volume, you
 /// should unmount the volume from within the instance, issue the snapshot command, and then
 /// remount the volume to ensure a consistent and complete snapshot. You may remount and use your
 /// volume while the snapshot status is <code>pending</code>.</p>
-/// <p>To create a snapshot for EBS volumes that serve as root devices, you should stop the
+/// <p>To create a snapshot for Amazon EBS volumes that serve as root devices, you should stop the
 /// instance before taking the snapshot.</p>
 /// <p>Snapshots that are taken from encrypted volumes are automatically encrypted. Volumes that
 /// are created from encrypted snapshots are also automatically encrypted. Your encrypted volumes
 /// and any associated snapshots always remain protected.</p>
-/// <p>You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
+/// <p>You can tag your snapshots during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2
 /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2762,7 +2848,7 @@ impl smithy_http::response::ParseStrictResponse for CreateSnapshots {
 }
 
 /// <p>Creates a data feed for Spot Instances, enabling you to view Spot Instance usage logs.
-/// You can create one data feed per account. For more information, see
+/// You can create one data feed per Amazon Web Services account. For more information, see
 /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a>
 /// in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2832,7 +2918,7 @@ impl smithy_http::response::ParseStrictResponse for CreateStoreImageTask {
 /// <p>If you've associated an IPv6 CIDR block with your VPC, you can create a subnet with an
 /// IPv6 CIDR block that uses a /64 prefix length. </p>
 /// <important>
-/// <p>AWS reserves both the first four and the last IPv4 address in each subnet's CIDR
+/// <p>Amazon Web Services reserves both the first four and the last IPv4 address in each subnet's CIDR
 /// block. They're not available for use.</p>
 /// </important>
 /// <p>If you add more than one subnet to a VPC, they're set up in a star topology with a
@@ -2840,7 +2926,7 @@ impl smithy_http::response::ParseStrictResponse for CreateStoreImageTask {
 /// <p>When you stop an instance in a subnet, it retains its private IPv4 address. It's
 /// therefore possible to have a subnet with no running instances (they're all stopped), but
 /// no remaining IP addresses available.</p>
-/// <p>For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and Subnets</a> in the
+/// <p>For more information about subnets, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateSubnet {
@@ -2863,6 +2949,34 @@ impl smithy_http::response::ParseStrictResponse for CreateSubnet {
             crate::operation_deser::parse_create_subnet_error(response)
         } else {
             crate::operation_deser::parse_create_subnet_response(response)
+        }
+    }
+}
+
+/// <p>Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateSubnetCidrReservation {
+    _private: (),
+}
+impl CreateSubnetCidrReservation {
+    /// Creates a new builder-style object to manufacture [`CreateSubnetCidrReservationInput`](crate::input::CreateSubnetCidrReservationInput)
+    pub fn builder() -> crate::input::create_subnet_cidr_reservation_input::Builder {
+        crate::input::create_subnet_cidr_reservation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateSubnetCidrReservation {
+    type Output = std::result::Result<
+        crate::output::CreateSubnetCidrReservationOutput,
+        crate::error::CreateSubnetCidrReservationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_subnet_cidr_reservation_error(response)
+        } else {
+            crate::operation_deser::parse_create_subnet_cidr_reservation_response(response)
         }
     }
 }
@@ -3314,14 +3428,14 @@ impl smithy_http::response::ParseStrictResponse for CreateTransitGatewayVpcAttac
 
 /// <p>Creates an EBS volume that can be attached to an instance in the same Availability Zone.</p>
 /// <p>You can create a new empty volume or restore a volume from an EBS snapshot.
-/// Any AWS Marketplace product codes from the snapshot are propagated to the volume.</p>
+/// Any Amazon Web Services Marketplace product codes from the snapshot are propagated to the volume.</p>
 /// <p>You can create encrypted volumes. Encrypted volumes must be attached to instances that
 /// support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also automatically
 /// encrypted. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
+/// <p>You can tag your volumes during creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag your Amazon EC2
 /// resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating an Amazon EBS volume</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Create an Amazon EBS volume</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateVolume {
@@ -3351,11 +3465,13 @@ impl smithy_http::response::ParseStrictResponse for CreateVolume {
 /// <p>Creates a VPC with the specified IPv4 CIDR block. The smallest VPC you can create
 /// uses a /28 netmask (16 IPv4 addresses), and the largest uses a /16 netmask (65,536 IPv4
 /// addresses). For more information about how large to make your VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and
-/// Subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
-/// <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
+/// subnets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// <p>You can optionally request an IPv6 CIDR block for the VPC. You can request an Amazon-provided
+/// IPv6 CIDR block from Amazon's pool of IPv6 addresses, or an IPv6 CIDR block from an IPv6 address
+/// pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>).</p>
 /// <p>By default, each instance you launch in the VPC has the default DHCP options, which
 /// include only a default DNS server that we provide (AmazonProvidedDNS). For more
-/// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 /// <p>You can specify the instance tenancy value for the VPC when you create it. You can't change
 /// this value for the VPC after you create it. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-instance.html">Dedicated Instances</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -3512,10 +3628,11 @@ impl smithy_http::response::ParseStrictResponse for CreateVpcEndpointServiceConf
 
 /// <p>Requests a VPC peering connection between two VPCs: a requester VPC that you own and
 /// an accepter VPC with which to create the connection. The accepter VPC can belong to
-/// another AWS account and can be in a different Region to the requester VPC. The requester
-/// VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
+/// another Amazon Web Services account and can be in a different Region to the requester VPC.
+/// The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p>
 /// <note>
-/// <p>Limitations and rules apply to a VPC peering connection. For more information, see the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a> section in the <i>VPC Peering Guide</i>.</p>
+/// <p>Limitations and rules apply to a VPC peering connection. For more information, see
+/// the <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html#vpc-peering-limitations">limitations</a> section in the <i>VPC Peering Guide</i>.</p>
 /// </note>
 /// <p>The owner of the accepter VPC must accept the peering request to activate the peering
 /// connection. The VPC peering connection request expires after 7 days, after which it
@@ -3928,6 +4045,36 @@ impl smithy_http::response::ParseStrictResponse for DeleteFpgaImage {
             crate::operation_deser::parse_delete_fpga_image_error(response)
         } else {
             crate::operation_deser::parse_delete_fpga_image_response(response)
+        }
+    }
+}
+
+/// <p>Deletes the specified event window.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
+/// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteInstanceEventWindow {
+    _private: (),
+}
+impl DeleteInstanceEventWindow {
+    /// Creates a new builder-style object to manufacture [`DeleteInstanceEventWindowInput`](crate::input::DeleteInstanceEventWindowInput)
+    pub fn builder() -> crate::input::delete_instance_event_window_input::Builder {
+        crate::input::delete_instance_event_window_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteInstanceEventWindow {
+    type Output = std::result::Result<
+        crate::output::DeleteInstanceEventWindowOutput,
+        crate::error::DeleteInstanceEventWindowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_instance_event_window_error(response)
+        } else {
+            crate::operation_deser::parse_delete_instance_event_window_response(response)
         }
     }
 }
@@ -4488,7 +4635,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteSecurityGroup {
 /// to all the information needed to restore the volume.</p>
 /// <p>You cannot delete a snapshot of the root device of an EBS volume used by a registered AMI.
 /// You must first de-register the AMI before you can delete the snapshot.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Deleting an Amazon EBS snapshot</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-snapshot.html">Delete an Amazon EBS snapshot</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteSnapshot {
@@ -4565,6 +4712,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteSubnet {
             crate::operation_deser::parse_delete_subnet_error(response)
         } else {
             crate::operation_deser::parse_delete_subnet_response(response)
+        }
+    }
+}
+
+/// <p>Deletes a subnet CIDR reservation.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteSubnetCidrReservation {
+    _private: (),
+}
+impl DeleteSubnetCidrReservation {
+    /// Creates a new builder-style object to manufacture [`DeleteSubnetCidrReservationInput`](crate::input::DeleteSubnetCidrReservationInput)
+    pub fn builder() -> crate::input::delete_subnet_cidr_reservation_input::Builder {
+        crate::input::delete_subnet_cidr_reservation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteSubnetCidrReservation {
+    type Output = std::result::Result<
+        crate::output::DeleteSubnetCidrReservationOutput,
+        crate::error::DeleteSubnetCidrReservationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_subnet_cidr_reservation_error(response)
+        } else {
+            crate::operation_deser::parse_delete_subnet_cidr_reservation_response(response)
         }
     }
 }
@@ -4975,7 +5150,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteTransitGatewayVpcAttac
 /// <p>Deletes the specified EBS volume. The volume must be in the <code>available</code> state
 /// (not attached to an instance).</p>
 /// <p>The volume can remain in the <code>deleting</code> state for several minutes.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Deleting an Amazon EBS volume</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-deleting-volume.html">Delete an Amazon EBS volume</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteVolume {
@@ -5328,6 +5503,7 @@ impl smithy_http::response::ParseStrictResponse for DeregisterImage {
     }
 }
 
+/// <p>c</p>
 /// <p>Deregisters tag keys to prevent tags that have the specified tag keys from being included
 /// in scheduled event notifications for resources in the Region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -5683,7 +5859,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeByoipCidrs {
 }
 
 /// <p>Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the
-/// Region that you're currently using.</p>
+/// Amazon Web Services Region that you're currently using.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeCapacityReservations {
     _private: (),
@@ -5998,7 +6174,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeCustomerGateways {
 }
 
 /// <p>Describes one or more of your DHCP options sets.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP Options Sets</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP options sets</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDhcpOptions {
@@ -6786,6 +6962,42 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstanceEventNotific
             crate::operation_deser::parse_describe_instance_event_notification_attributes_response(
                 response,
             )
+        }
+    }
+}
+
+/// <p>Describes the specified event windows or all event windows.</p>
+/// <p>If you specify event window IDs, the output includes information for only the specified
+/// event windows. If you specify filters, the output includes information for only those event
+/// windows that meet the filter criteria. If you do not specify event windows IDs or filters,
+/// the output includes information for all event windows, which can affect performance. We
+/// recommend that you use pagination to ensure that the operation returns quickly and
+/// successfully. </p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
+/// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeInstanceEventWindows {
+    _private: (),
+}
+impl DescribeInstanceEventWindows {
+    /// Creates a new builder-style object to manufacture [`DescribeInstanceEventWindowsInput`](crate::input::DescribeInstanceEventWindowsInput)
+    pub fn builder() -> crate::input::describe_instance_event_windows_input::Builder {
+        crate::input::describe_instance_event_windows_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeInstanceEventWindows {
+    type Output = std::result::Result<
+        crate::output::DescribeInstanceEventWindowsOutput,
+        crate::error::DescribeInstanceEventWindowsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_instance_event_windows_error(response)
+        } else {
+            crate::operation_deser::parse_describe_instance_event_windows_response(response)
         }
     }
 }
@@ -7691,8 +7903,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeRegions {
 }
 
 /// <p>Describes a root volume replacement task. For more information, see
-/// <a href="https://docs.aws.amazon.com/">Replace a root volume</a> in the
-/// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-restoring-volume.html#replace-root">Replace a root volume</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeReplaceRootVolumeTasks {
     _private: (),
@@ -7847,7 +8058,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeReservedInstancesOff
 
 /// <p>Describes one or more of your route tables.</p>
 /// <p>Each subnet in your VPC must be associated with a route table. If a subnet is not explicitly associated with any route table, it is implicitly associated with the main route table. This command does not return the subnet ID for implicit associations.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeRouteTables {
@@ -7965,6 +8176,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeSecurityGroupReferen
     }
 }
 
+/// <p>Describes one or more of your security group rules.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeSecurityGroupRules {
+    _private: (),
+}
+impl DescribeSecurityGroupRules {
+    /// Creates a new builder-style object to manufacture [`DescribeSecurityGroupRulesInput`](crate::input::DescribeSecurityGroupRulesInput)
+    pub fn builder() -> crate::input::describe_security_group_rules_input::Builder {
+        crate::input::describe_security_group_rules_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeSecurityGroupRules {
+    type Output = std::result::Result<
+        crate::output::DescribeSecurityGroupRulesOutput,
+        crate::error::DescribeSecurityGroupRulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_security_group_rules_error(response)
+        } else {
+            crate::operation_deser::parse_describe_security_group_rules_response(response)
+        }
+    }
+}
+
 /// <p>Describes the specified security groups or all of your security groups.</p>
 /// <p>A security group is for use with instances either in the EC2-Classic platform  
 /// or in a specific VPC. For more information, see
@@ -8032,40 +8271,40 @@ impl smithy_http::response::ParseStrictResponse for DescribeSnapshotAttribute {
 /// <p>Describes the specified EBS snapshots available to you or all of the EBS snapshots
 /// available to you.</p>
 /// <p>The snapshots available to you include public snapshots, private snapshots that you own,
-/// and private snapshots owned by other AWS accounts for which you have explicit create volume
+/// and private snapshots owned by other Amazon Web Services accounts for which you have explicit create volume
 /// permissions.</p>
 /// <p>The create volume permissions fall into the following categories:</p>
 /// <ul>
 /// <li>
 /// <p>
 /// <i>public</i>: The owner of the snapshot granted create volume
-/// permissions for the snapshot to the <code>all</code> group. All AWS accounts have create
+/// permissions for the snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
 /// volume permissions for these snapshots.</p>
 /// </li>
 /// <li>
 /// <p>
 /// <i>explicit</i>: The owner of the snapshot granted create volume
-/// permissions to a specific AWS account.</p>
+/// permissions to a specific Amazon Web Services account.</p>
 /// </li>
 /// <li>
 /// <p>
-/// <i>implicit</i>: An AWS account has implicit create volume permissions
+/// <i>implicit</i>: An Amazon Web Services account has implicit create volume permissions
 /// for all snapshots it owns.</p>
 /// </li>
 /// </ul>
 /// <p>The list of snapshots returned can be filtered by specifying snapshot IDs, snapshot
-/// owners, or AWS accounts with create volume permissions. If no options are specified, Amazon
-/// EC2 returns all snapshots for which you have create volume permissions.</p>
+/// owners, or Amazon Web Services accounts with create volume permissions. If no options are specified,
+/// Amazon EC2 returns all snapshots for which you have create volume permissions.</p>
 /// <p>If you specify one or more snapshot IDs, only snapshots that have the specified IDs are
 /// returned. If you specify an invalid snapshot ID, an error is returned. If you specify a
 /// snapshot ID for which you do not have access, it is not included in the returned
 /// results.</p>
 /// <p>If you specify one or more snapshot owners using the <code>OwnerIds</code> option, only
 /// snapshots from the specified owners and for which you have access are returned. The results
-/// can include the AWS account IDs of the specified owners, <code>amazon</code> for snapshots
+/// can include the Amazon Web Services account IDs of the specified owners, <code>amazon</code> for snapshots
 /// owned by Amazon, or <code>self</code> for snapshots that you own.</p>
 /// <p>If you specify a list of restorable users, only snapshots with create snapshot permissions
-/// for those users are returned. You can specify AWS account IDs (if you own the snapshots),
+/// for those users are returned. You can specify Amazon Web Services account IDs (if you own the snapshots),
 /// <code>self</code> for snapshots for which you own or have explicit permissions, or
 /// <code>all</code> for public snapshots.</p>
 /// <p>If you are describing a long list of snapshots, we recommend that you paginate the output to make the
@@ -8365,7 +8604,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeStoreImageTasks {
 }
 
 /// <p>Describes one or more of your subnets.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and Subnets</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">Your VPC and subnets</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSubnets {
@@ -8841,8 +9080,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeVolumes {
 /// recent modification request.</p>
 /// <p>You can also use CloudWatch Events to check the status of a modification to an EBS
 /// volume. For information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring volume modifications</a> in the
-/// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeVolumesModifications {
     _private: (),
@@ -8886,7 +9124,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeVolumesModifications
 /// <code>ok</code>. If the check fails, the overall status is <code>impaired</code>. If the
 /// status is <code>insufficient-data</code>, then the checks might still be taking place on your
 /// volume at the time. We recommend that you retry the request. For more information about volume
-/// status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitoring the status of your volumes</a> in the
+/// status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor the status of your volumes</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 /// <p>
 /// <i>Events</i>: Reflect the cause of a volume status and might require you to
@@ -9413,9 +9651,9 @@ impl smithy_http::response::ParseStrictResponse for DetachNetworkInterface {
 /// the instance, or all three. If an EBS volume is the root device of an instance, it can't be
 /// detached while the instance is running. To detach the root volume, stop the instance
 /// first.</p>
-/// <p>When a volume with an AWS Marketplace product code is detached from an instance, the
+/// <p>When a volume with an Amazon Web Services Marketplace product code is detached from an instance, the
 /// product code is no longer associated with the instance.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detaching an Amazon EBS volume</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-detaching-volume.html">Detach an Amazon EBS volume</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DetachVolume {
@@ -9793,11 +10031,11 @@ impl smithy_http::response::ParseStrictResponse for DisassociateClientVpnTargetN
     }
 }
 
-/// <p>Disassociates an IAM role from an AWS Certificate Manager (ACM) certificate. Disassociating an IAM role
+/// <p>Disassociates an IAM role from an Certificate Manager (ACM) certificate. Disassociating an IAM role
 /// from an ACM certificate removes the Amazon S3 object that contains the certificate, certificate chain, and
 /// encrypted private key from the Amazon S3 bucket. It also revokes the IAM role's permission to use the
-/// AWS Key Management Service (KMS) customer master key (CMK) used to encrypt the private key. This effectively revokes the role's
-/// permission to use the certificate. </p>
+/// KMS key used to encrypt the private key. This effectively revokes the role's permission
+/// to use the certificate.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateEnclaveCertificateIamRole {
     _private: (),
@@ -9857,11 +10095,41 @@ impl smithy_http::response::ParseStrictResponse for DisassociateIamInstanceProfi
     }
 }
 
+/// <p>Disassociates one or more targets from an event window.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
+/// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DisassociateInstanceEventWindow {
+    _private: (),
+}
+impl DisassociateInstanceEventWindow {
+    /// Creates a new builder-style object to manufacture [`DisassociateInstanceEventWindowInput`](crate::input::DisassociateInstanceEventWindowInput)
+    pub fn builder() -> crate::input::disassociate_instance_event_window_input::Builder {
+        crate::input::disassociate_instance_event_window_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DisassociateInstanceEventWindow {
+    type Output = std::result::Result<
+        crate::output::DisassociateInstanceEventWindowOutput,
+        crate::error::DisassociateInstanceEventWindowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_disassociate_instance_event_window_error(response)
+        } else {
+            crate::operation_deser::parse_disassociate_instance_event_window_response(response)
+        }
+    }
+}
+
 /// <p>Disassociates a subnet or gateway from a route table.</p>
 /// <p>After you perform this action, the subnet no longer uses the routes in the route table.
 /// Instead, it uses the routes in the VPC's main route table. For more information
 /// about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-/// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateRouteTable {
     _private: (),
@@ -10042,10 +10310,10 @@ impl smithy_http::response::ParseStrictResponse for DisassociateVpcCidrBlock {
 
 /// <p>Enables EBS encryption by default for your account in the current Region.</p>
 /// <p>After you enable encryption by default, the EBS volumes that you create are
-/// always encrypted, either using the default CMK or the CMK that you specified
+/// always encrypted, either using the default KMS key or the KMS key that you specified
 /// when you created each volume. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-/// <p>You can specify the default CMK for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
+/// <p>You can specify the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a>
 /// or <a>ResetEbsDefaultKmsKeyId</a>.</p>
 /// <p>Enabling encryption by default has no effect on the encryption status of your
 /// existing volumes.</p>
@@ -10449,9 +10717,9 @@ impl smithy_http::response::ParseStrictResponse for ExportTransitGatewayRoutes {
     }
 }
 
-/// <p>Returns the IAM roles that are associated with the specified AWS Certificate Manager (ACM) certificate.
-/// It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate, certificate chain,
-/// and encrypted private key bundle are stored, and the ARN of the AWS Key Management Service (KMS) customer master key (CMK)
+/// <p>Returns the IAM roles that are associated with the specified ACM (ACM) certificate.
+/// It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate,
+/// certificate chain, and encrypted private key bundle are stored, and the ARN of the KMS key
 /// that's used to encrypt the private key.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAssociatedEnclaveCertificateIamRoles {
@@ -10513,7 +10781,7 @@ impl smithy_http::response::ParseStrictResponse for GetAssociatedIpv6PoolCidrs {
 }
 
 /// <p>Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage information for the Capacity Reservation owner
-/// and each account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only
+/// and each Amazon Web Services account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only
 /// the Capacity Reservation owner's usage.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCapacityReservationUsage {
@@ -10670,8 +10938,8 @@ impl smithy_http::response::ParseStrictResponse for GetDefaultCreditSpecificatio
     }
 }
 
-/// <p>Describes the default customer master key (CMK) for EBS encryption by default for your account in this Region.
-/// You can change the default CMK for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a> or
+/// <p>Describes the default KMS key for EBS encryption by default for your account in this Region.
+/// You can change the default KMS key for encryption by default using <a>ModifyEbsDefaultKmsKeyId</a> or
 /// <a>ResetEbsDefaultKmsKeyId</a>.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -11027,6 +11295,34 @@ impl smithy_http::response::ParseStrictResponse for GetSerialConsoleAccessStatus
     }
 }
 
+/// <p>Gets information about the subnet CIDR reservations.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetSubnetCidrReservations {
+    _private: (),
+}
+impl GetSubnetCidrReservations {
+    /// Creates a new builder-style object to manufacture [`GetSubnetCidrReservationsInput`](crate::input::GetSubnetCidrReservationsInput)
+    pub fn builder() -> crate::input::get_subnet_cidr_reservations_input::Builder {
+        crate::input::get_subnet_cidr_reservations_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetSubnetCidrReservations {
+    type Output = std::result::Result<
+        crate::output::GetSubnetCidrReservationsOutput,
+        crate::error::GetSubnetCidrReservationsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_subnet_cidr_reservations_error(response)
+        } else {
+            crate::operation_deser::parse_get_subnet_cidr_reservations_response(response)
+        }
+    }
+}
+
 /// <p>Lists the route tables to which the specified resource attachment propagates routes.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetTransitGatewayAttachmentPropagations {
@@ -11279,9 +11575,9 @@ impl smithy_http::response::ParseStrictResponse for ImportInstance {
 }
 
 /// <p>Imports the public key from an RSA key pair that you created with a third-party tool.
-/// Compare this with <a>CreateKeyPair</a>, in which AWS creates the key pair and gives the keys to you
-/// (AWS keeps a copy of the public key). With ImportKeyPair, you create the key pair and give AWS just the public key.
-/// The private key is never transferred between you and AWS.</p>
+/// Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates the key pair and gives the keys to you
+/// (Amazon Web Services keeps a copy of the public key). With ImportKeyPair, you create the key pair and give Amazon Web Services just the public key.
+/// The private key is never transferred between you and Amazon Web Services.</p>
 /// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -11489,11 +11785,11 @@ impl smithy_http::response::ParseStrictResponse for ModifyClientVpnEndpoint {
 }
 
 /// <p>Modifies the default credit option for CPU usage of burstable performance instances.
-/// The default credit option is set at the account level per Region, and is specified
+/// The default credit option is set at the account level per Amazon Web Services Region, and is specified
 /// per instance family. All new burstable performance instances in the account launch using
 /// the default credit option.</p>
 /// <p>
-/// <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an Region
+/// <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which works at an Amazon Web Services Region
 /// level and modifies the credit option for each Availability Zone. All zones in a
 /// Region are updated within five minutes. But if instances are launched during this
 /// operation, they might not get the new credit option until the zone is updated. To verify
@@ -11528,11 +11824,11 @@ impl smithy_http::response::ParseStrictResponse for ModifyDefaultCreditSpecifica
     }
 }
 
-/// <p>Changes the default customer master key (CMK) for EBS encryption by default for your account in this Region.</p>
-/// <p>AWS creates a unique AWS managed CMK in each Region for use with encryption by default. If
-/// you change the default CMK to a symmetric customer managed CMK, it is used instead of the AWS
-/// managed CMK. To reset the default CMK to the AWS managed CMK for EBS, use <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric CMKs.</p>
-/// <p>If you delete or disable the customer managed CMK that you specified for use with
+/// <p>Changes the default KMS key for EBS encryption by default for your account in this Region.</p>
+/// <p>Amazon Web Services creates a unique Amazon Web Services managed KMS key in each Region for use with encryption by default. If
+/// you change the default KMS key to a symmetric customer managed KMS key, it is used instead of the Amazon Web Services
+/// managed KMS key. To reset the default KMS key to the Amazon Web Services managed KMS key for EBS, use <a>ResetEbsDefaultKmsKeyId</a>. Amazon EBS does not support asymmetric KMS keys.</p>
+/// <p>If you delete or disable the customer managed KMS key that you specified for use with
 /// encryption by default, your instances will fail to launch.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
@@ -11934,6 +12230,41 @@ impl smithy_http::response::ParseStrictResponse for ModifyInstanceEventStartTime
     }
 }
 
+/// <p>Modifies the specified event window.</p>
+/// <p>You can define either a set of time ranges or a cron expression when modifying the event
+/// window, but not both.</p>
+/// <p>To modify the targets associated with the event window, use the <a>AssociateInstanceEventWindow</a> and <a>DisassociateInstanceEventWindow</a> API.</p>
+/// <p>If Amazon Web Services has already scheduled an event, modifying an event window won't change the time
+/// of the scheduled event.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/event-windows.html">Define event windows for scheduled
+/// events</a> in the <i>Amazon EC2 User Guide</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifyInstanceEventWindow {
+    _private: (),
+}
+impl ModifyInstanceEventWindow {
+    /// Creates a new builder-style object to manufacture [`ModifyInstanceEventWindowInput`](crate::input::ModifyInstanceEventWindowInput)
+    pub fn builder() -> crate::input::modify_instance_event_window_input::Builder {
+        crate::input::modify_instance_event_window_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ModifyInstanceEventWindow {
+    type Output = std::result::Result<
+        crate::output::ModifyInstanceEventWindowOutput,
+        crate::error::ModifyInstanceEventWindowError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_instance_event_window_error(response)
+        } else {
+            crate::operation_deser::parse_modify_instance_event_window_response(response)
+        }
+    }
+}
+
 /// <p>Modify the instance metadata parameters on a running or stopped instance. When you
 /// modify the parameters on a stopped instance, they are applied when the instance is
 /// started. When you modify the parameters on a running instance, the API responds with a
@@ -12148,13 +12479,41 @@ impl smithy_http::response::ParseStrictResponse for ModifyReservedInstances {
     }
 }
 
+/// <p>Modifies the rules of a security group.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ModifySecurityGroupRules {
+    _private: (),
+}
+impl ModifySecurityGroupRules {
+    /// Creates a new builder-style object to manufacture [`ModifySecurityGroupRulesInput`](crate::input::ModifySecurityGroupRulesInput)
+    pub fn builder() -> crate::input::modify_security_group_rules_input::Builder {
+        crate::input::modify_security_group_rules_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ModifySecurityGroupRules {
+    type Output = std::result::Result<
+        crate::output::ModifySecurityGroupRulesOutput,
+        crate::error::ModifySecurityGroupRulesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_modify_security_group_rules_error(response)
+        } else {
+            crate::operation_deser::parse_modify_security_group_rules_response(response)
+        }
+    }
+}
+
 /// <p>Adds or removes permission settings for the specified snapshot. You may add or remove
-/// specified AWS account IDs from a snapshot's list of create volume permissions, but you cannot
+/// specified Amazon Web Services account IDs from a snapshot's list of create volume permissions, but you cannot
 /// do both in a single operation. If you need to both add and remove account IDs for a snapshot,
 /// you must use multiple operations. You can make up to 500 modifications to a snapshot in a single operation.</p>
-/// <p>Encrypted snapshots and snapshots with AWS Marketplace product codes cannot be made
-/// public. Snapshots encrypted with your default CMK cannot be shared with other accounts.</p>
-/// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing snapshots</a> in the
+/// <p>Encrypted snapshots and snapshots with Amazon Web Services Marketplace product codes cannot be made
+/// public. Snapshots encrypted with your default KMS key cannot be shared with other accounts.</p>
+/// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifySnapshotAttribute {
@@ -12450,24 +12809,18 @@ impl smithy_http::response::ParseStrictResponse for ModifyTransitGatewayVpcAttac
 /// <p>You can modify several parameters of an existing EBS volume, including volume size, volume
 /// type, and IOPS capacity. If your EBS volume is attached to a current-generation EC2 instance
 /// type, you might be able to apply these changes without stopping the instance or detaching the
-/// volume from it. For more information about modifying an EBS volume running Linux, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html">Modifying the size, IOPS, or
-/// type of an EBS volume on Linux</a>. For more information about modifying an EBS volume
-/// running Windows, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html">Modifying the size, IOPS, or type of an EBS volume on Windows</a>.</p>
-/// <p> When you complete a resize operation on your volume, you need to extend the volume's
-/// file-system size to take advantage of the new storage capacity. For information about
-/// extending a Linux file system, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extending a Linux
-/// file system</a>. For information about extending a Windows file system, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extending a
-/// Windows file system</a>. </p>
+/// volume from it. For more information about modifying EBS volumes, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a> (Linux instances)
+/// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a> (Windows instances).</p>
+/// <p>When you complete a resize operation on your volume, you need to extend the volume's
+/// file-system size to take advantage of the new storage capacity. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#recognize-expanded-volume-linux">Extend a Linux file system</a> or
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-expand-volume.html#recognize-expanded-volume-windows">Extend a Windows file system</a>.</p>
 /// <p> You can use CloudWatch Events to check the status of a modification to an EBS volume. For
 /// information about CloudWatch Events, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/">Amazon CloudWatch Events User Guide</a>. You can also track the status of a
 /// modification using <a>DescribeVolumesModifications</a>. For information
-/// about tracking status changes using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-expand-volume.html#monitoring_mods">Monitoring volume
-/// modifications</a>. </p>
+/// about tracking status changes using either method, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-modifications.html">Monitor the progress of volume modifications</a>.</p>
 /// <p>With previous-generation instance types, resizing an EBS volume might require detaching and
-/// reattaching the volume or stopping and restarting the instance. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modify-volume.html">Amazon EBS Elastic
-/// Volumes</a> (Linux) or <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ebs-modify-volume.html">Amazon EBS Elastic Volumes</a> (Windows).</p>
-/// <p>If you reach the maximum volume modification rate per volume limit, you will need to wait
+/// reattaching the volume or stopping and restarting the instance.</p>
+/// <p>If you reach the maximum volume modification rate per volume limit, you must wait
 /// at least six hours before applying further modifications to the affected EBS volume.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVolume {
@@ -12702,15 +13055,15 @@ impl smithy_http::response::ParseStrictResponse for ModifyVpcEndpointServicePerm
 /// addresses when queried from instances in the peer VPC.</p>
 /// </li>
 /// </ul>
-/// <p>If the peered VPCs are in the same AWS account, you can enable DNS resolution for queries
-/// from the local VPC. This ensures that queries from the local VPC resolve to private IP
-/// addresses in the peer VPC. This option is not available if the peered VPCs are in
-/// different AWS accounts or different Regions. For peered VPCs in different AWS accounts,
-/// each AWS account owner must initiate a separate request to modify the peering connection
-/// options. For inter-region peering connections, you must use the Region for the requester
-/// VPC to modify the requester VPC peering options and the Region for the accepter VPC to
-/// modify the accepter VPC peering options. To verify which VPCs are the accepter and the
-/// requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.</p>
+/// <p>If the peered VPCs are in the same Amazon Web Services account, you can enable DNS resolution
+/// for queries from the local VPC. This ensures that queries from the local VPC resolve to private IP
+/// addresses in the peer VPC. This option is not available if the peered VPCs are in different
+/// different Amazon Web Services accounts or different Regions. For peered VPCs in different
+/// Amazon Web Services accounts, each Amazon Web Services account owner must initiate a separate request
+/// to modify the peering connection options. For inter-region peering connections, you must use the
+/// Region for the requester VPC to modify the requester VPC peering options and the Region for the
+/// accepter VPC to modify the accepter VPC peering options. To verify which VPCs are the accepter and
+/// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a> command.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyVpcPeeringConnectionOptions {
     _private: (),
@@ -13503,7 +13856,7 @@ impl smithy_http::response::ParseStrictResponse for RejectVpcPeeringConnection {
 /// <p>After releasing an Elastic IP address, it is released to the IP address pool.
 /// Be sure to update your DNS records and any servers or devices that communicate with the address.
 /// If you attempt to release an Elastic IP address that you already released, you'll get an
-/// <code>AuthFailure</code> error if the address is already allocated to another account.</p>
+/// <code>AuthFailure</code> error if the address is already allocated to another Amazon Web Services account.</p>
 /// <p>[EC2-VPC] After you release an Elastic IP address for use in a VPC, you might be able to recover it.
 /// For more information, see <a>AllocateAddress</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -13664,7 +14017,7 @@ impl smithy_http::response::ParseStrictResponse for ReplaceNetworkAclEntry {
 /// the following: internet gateway, virtual private gateway, NAT instance, NAT gateway, VPC
 /// peering connection, network interface, egress-only internet gateway, or transit
 /// gateway.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route Tables</a> in the
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceRoute {
@@ -13694,7 +14047,7 @@ impl smithy_http::response::ParseStrictResponse for ReplaceRoute {
 /// <p>Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC. After the operation
 /// completes, the subnet or gateway uses the routes in the new route table. For more
 /// information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route
-/// Tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
+/// tables</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 /// <p>You can also use this operation to change which table is the main route table in the VPC. Specify the main route table's association ID and the route table ID of the new main route table.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ReplaceRouteTableAssociation {
@@ -13888,10 +14241,10 @@ impl smithy_http::response::ParseStrictResponse for ResetAddressAttribute {
     }
 }
 
-/// <p>Resets the default customer master key (CMK) for EBS encryption for your account in this Region
-/// to the AWS managed CMK for EBS.</p>
-/// <p>After resetting the default CMK to the AWS managed CMK, you can continue to encrypt by a
-/// customer managed CMK by specifying it when you create the volume. For more information, see
+/// <p>Resets the default KMS key for EBS encryption for your account in this Region
+/// to the Amazon Web Services managed KMS key for EBS.</p>
+/// <p>After resetting the default KMS key to the Amazon Web Services managed KMS key, you can continue to encrypt by a
+/// customer managed KMS key by specifying it when you create the volume. For more information, see
 /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS encryption</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -14046,7 +14399,7 @@ impl smithy_http::response::ParseStrictResponse for ResetNetworkInterfaceAttribu
 }
 
 /// <p>Resets permission settings for the specified snapshot.</p>
-/// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Sharing snapshots</a> in the
+/// <p>For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share a snapshot</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResetSnapshotAttribute {
@@ -14159,21 +14512,20 @@ impl smithy_http::response::ParseStrictResponse for RevokeClientVpnIngress {
     }
 }
 
-/// <p>[VPC only] Removes the specified egress rules from a security group for EC2-VPC.
-/// This action does not apply to security groups for use in EC2-Classic. To remove a rule, the
-/// values that you specify (for example, ports) must match the existing rule's values
-/// exactly.</p>
-/// <note>
+/// <p>[VPC only] Removes the specified outbound (egress) rules from a security group for EC2-VPC.
+/// This action does not apply to security groups for use in EC2-Classic.</p>
+/// <p>You can specify rules using either rule IDs or security group rule properties. If you use
+/// rule properties, the values that you specify (for example, ports) must match the existing rule's
+/// values exactly. Each rule has a protocol, from and to ports, and destination (CIDR range,
+/// security group, or prefix list). For the TCP and UDP protocols, you must also specify the
+/// destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type
+/// and code. If the security group rule has a description, you do not need to specify the description
+/// to revoke the rule.</p>
 /// <p>[Default VPC] If the values you specify do not match the existing rule's values, no error is
-/// returned, and the output describes the security group rules that were not revoked. </p>
-/// <p>AWS recommends that you use <a>DescribeSecurityGroups</a> to verify
-/// that the rule has been removed.</p>
-/// </note>
-/// <p>Each rule consists of the protocol and the IPv4 or IPv6 CIDR range or source security
-/// group. For the TCP and UDP protocols, you must also specify the destination port or range of
-/// ports. For the ICMP protocol, you must also specify the ICMP type and code. If the security group rule
-/// has a description, you do not have to specify the description to revoke the rule.</p>
-/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
+/// returned, and the output describes the security group rules that were not revoked.</p>
+/// <p>Amazon Web Services recommends that you describe the security group to verify that the rules were removed.</p>
+/// <p>Rule changes are propagated to instances within the security group as quickly as possible. However,
+/// a small delay might occur.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeSecurityGroupEgress {
     _private: (),
@@ -14201,16 +14553,17 @@ impl smithy_http::response::ParseStrictResponse for RevokeSecurityGroupEgress {
     }
 }
 
-/// <p>Removes the specified ingress rules from a security group. To remove a rule, the values
-/// that you specify (for example, ports) must match the existing rule's values exactly.</p>
-/// <note>
-/// <p>[EC2-Classic , default VPC] If the values you specify do not match the existing rule's values,
-/// no error is returned, and the output describes the security group rules that were
-/// not revoked. </p>
-/// <p>AWS recommends that you use <a>DescribeSecurityGroups</a> to verify
-/// that the rule has been removed.</p>
-/// </note>
-/// <p>Each rule consists of the protocol and the CIDR range or source security group. For the TCP and UDP protocols, you must also specify the destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code. If the security group rule has a description, you do not have to specify the description to revoke the rule.</p>
+/// <p>Removes the specified inbound (ingress) rules from a security group.</p>
+/// <p>You can specify rules using either rule IDs or security group rule properties. If you use
+/// rule properties, the values that you specify (for example, ports) must match the existing rule's
+/// values exactly. Each rule has a protocol, from and to ports, and source (CIDR range,
+/// security group, or prefix list). For the TCP and UDP protocols, you must also specify the
+/// destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type
+/// and code. If the security group rule has a description, you do not need to specify the description
+/// to revoke the rule.</p>
+/// <p>[EC2-Classic, default VPC] If the values you specify do not match the existing rule's values, no error is
+/// returned, and the output describes the security group rules that were not revoked.</p>
+/// <p>Amazon Web Services recommends that you describe the security group to verify that the rules were removed.</p>
 /// <p>Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RevokeSecurityGroupIngress {
@@ -14746,7 +15099,7 @@ impl smithy_http::response::ParseStrictResponse for TerminateInstances {
     }
 }
 
-/// <p>Unassigns one or more IPv6 addresses from a network interface.</p>
+/// <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network interface.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UnassignIpv6Addresses {
     _private: (),
@@ -14774,7 +15127,7 @@ impl smithy_http::response::ParseStrictResponse for UnassignIpv6Addresses {
     }
 }
 
-/// <p>Unassigns one or more secondary private IP addresses from a network interface.</p>
+/// <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes from a network interface.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UnassignPrivateIpAddresses {
     _private: (),
@@ -14833,10 +15186,8 @@ impl smithy_http::response::ParseStrictResponse for UnmonitorInstances {
 
 /// <p>[VPC only] Updates the description of an egress (outbound) security group rule. You
 /// can replace an existing description, or add a description to a rule that did not have one
-/// previously.</p>
-/// <p>You specify the description as part of the IP permissions structure. You can remove a
-/// description for a security group rule by omitting the description parameter in the
-/// request.</p>
+/// previously. You can remove a description for a security group rule by omitting the
+/// description parameter in the request.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsEgress {
     _private: (),
@@ -14870,11 +15221,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateSecurityGroupRuleDescr
 }
 
 /// <p>Updates the description of an ingress (inbound) security group rule. You can replace an
-/// existing description, or add a description to a rule that did not have one
-/// previously.</p>
-/// <p>You specify the description as part of the IP permissions structure. You can remove a
-/// description for a security group rule by omitting the description parameter in the
-/// request.</p>
+/// existing description, or add a description to a rule that did not have one previously.
+/// You can remove a description for a security group rule by omitting the description
+/// parameter in the request.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateSecurityGroupRuleDescriptionsIngress {
     _private: (),

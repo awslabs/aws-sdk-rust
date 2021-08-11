@@ -72,28 +72,28 @@ impl BatchPutMessageInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -219,28 +219,28 @@ impl CancelPipelineReprocessingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -349,7 +349,7 @@ pub mod create_channel_input {
         }
         /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
         /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You cannot change this storage option after the channel is
+        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
         /// created.</p>
         pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.channel_storage = Some(input);
@@ -429,28 +429,28 @@ impl CreateChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -520,7 +520,7 @@ pub mod create_dataset_input {
         pub(crate) late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
     }
     impl Builder {
-        /// <p>The name of the data set.</p>
+        /// <p>The name of the dataset.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -574,8 +574,9 @@ pub mod create_dataset_input {
         /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
         /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
         /// 90 days. The number of versions of dataset contents retained is determined by the
-        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-        /// Analytics User Guide</i>.</p>
+        /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+        /// <i>IoT Analytics User Guide</i>.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
@@ -590,8 +591,8 @@ pub mod create_dataset_input {
         /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
         /// only the latest version plus the latest succeeded version (if they are different) are kept for
         /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-        /// Analytics User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
+        /// <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -677,28 +678,28 @@ impl CreateDatasetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -820,28 +821,28 @@ impl CreateDatasetContentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -939,10 +940,7 @@ pub mod create_datastore_input {
             self.datastore_name = input;
             self
         }
-        /// <p>Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You cannot change this storage option after the data store is
-        /// created.</p>
+        /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
         pub fn datastore_storage(mut self, input: crate::model::DatastoreStorage) -> Self {
             self.datastore_storage = Some(input);
             self
@@ -980,8 +978,7 @@ pub mod create_datastore_input {
             self.tags = input;
             self
         }
-        /// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-        /// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -998,9 +995,7 @@ pub mod create_datastore_input {
             self.file_format_configuration = input;
             self
         }
-        /// <p>
-        /// Contains information about the partitions in a data store.
-        /// </p>
+        /// <p> Contains information about the partition dimensions in a data store. </p>
         pub fn datastore_partitions(mut self, input: crate::model::DatastorePartitions) -> Self {
             self.datastore_partitions = Some(input);
             self
@@ -1056,28 +1051,28 @@ impl CreateDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1223,28 +1218,28 @@ impl CreatePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1349,28 +1344,28 @@ impl DeleteChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1450,7 +1445,7 @@ pub mod delete_dataset_input {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the data set to delete.</p>
+        /// <p>The name of the dataset to delete.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -1494,28 +1489,28 @@ impl DeleteDatasetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1654,28 +1649,28 @@ impl DeleteDatasetContentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1811,28 +1806,28 @@ impl DeleteDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1961,28 +1956,28 @@ impl DeletePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2073,7 +2068,7 @@ pub mod describe_channel_input {
             self
         }
         /// <p>If true, additional statistical information about the channel is included in the response.
-        /// This feature cannot be used with a channel whose S3 storage is customer-managed.</p>
+        /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
         pub fn include_statistics(mut self, input: bool) -> Self {
             self.include_statistics = Some(input);
             self
@@ -2120,28 +2115,28 @@ impl DescribeChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2232,7 +2227,7 @@ pub mod describe_dataset_input {
         pub(crate) dataset_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the data set whose information is retrieved.</p>
+        /// <p>The name of the dataset whose information is retrieved.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -2278,28 +2273,28 @@ impl DescribeDatasetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2394,7 +2389,7 @@ pub mod describe_datastore_input {
             self
         }
         /// <p>If true, additional statistical information about the data store is included in the
-        /// response. This feature cannot be used with a data store whose S3 storage is
+        /// response. This feature can't be used with a data store whose S3 storage is
         /// customer-managed.</p>
         pub fn include_statistics(mut self, input: bool) -> Self {
             self.include_statistics = Some(input);
@@ -2442,28 +2437,28 @@ impl DescribeDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2587,28 +2582,28 @@ impl DescribeLoggingOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2718,28 +2713,28 @@ impl DescribePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2821,7 +2816,7 @@ pub mod get_dataset_content_input {
         pub(crate) version_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the data set whose contents are retrieved.</p>
+        /// <p>The name of the dataset whose contents are retrieved.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -2830,9 +2825,9 @@ pub mod get_dataset_content_input {
             self.dataset_name = input;
             self
         }
-        /// <p>The version of the data set whose contents are retrieved. You can also use the strings
+        /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
         /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-        /// completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+        /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
         pub fn version_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_id = Some(input.into());
             self
@@ -2879,28 +2874,28 @@ impl GetDatasetContentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3044,28 +3039,28 @@ impl ListChannelsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3143,7 +3138,7 @@ pub mod list_dataset_contents_input {
         pub(crate) scheduled_before: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The name of the data set whose contents information you want to list.</p>
+        /// <p>The name of the dataset whose contents information you want to list.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -3170,7 +3165,7 @@ pub mod list_dataset_contents_input {
             self.max_results = input;
             self
         }
-        /// <p>A filter to limit results to those data set contents whose creation is scheduled on or
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
         /// after the given time. See the field <code>triggers.schedule</code> in the
         /// <code>CreateDataset</code> request. (timestamp)</p>
         pub fn scheduled_on_or_after(mut self, input: smithy_types::Instant) -> Self {
@@ -3184,8 +3179,8 @@ pub mod list_dataset_contents_input {
             self.scheduled_on_or_after = input;
             self
         }
-        /// <p>A filter to limit results to those data set contents whose creation is scheduled before
-        /// the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
+        /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
+        /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
         /// request. (timestamp)</p>
         pub fn scheduled_before(mut self, input: smithy_types::Instant) -> Self {
             self.scheduled_before = Some(input);
@@ -3239,28 +3234,28 @@ impl ListDatasetContentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3428,28 +3423,28 @@ impl ListDatasetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3581,28 +3576,28 @@ impl ListDatastoresInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3732,28 +3727,28 @@ impl ListPipelinesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3873,28 +3868,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3962,7 +3957,7 @@ pub mod put_logging_options_input {
         pub(crate) logging_options: std::option::Option<crate::model::LoggingOptions>,
     }
     impl Builder {
-        /// <p>The new values of the AWS IoT Analytics logging options.</p>
+        /// <p>The new values of the IoT Analytics logging options.</p>
         pub fn logging_options(mut self, input: crate::model::LoggingOptions) -> Self {
             self.logging_options = Some(input);
             self
@@ -4014,28 +4009,28 @@ impl PutLoggingOptionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4097,9 +4092,9 @@ pub mod run_pipeline_activity_input {
         pub(crate) payloads: std::option::Option<std::vec::Vec<smithy_types::Blob>>,
     }
     impl Builder {
-        /// <p>The pipeline activity that is run. This must not be a channel activity or a datastore
+        /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
         /// activity because these activities are used in a pipeline only to load the original message and
-        /// to store the (possibly) transformed message. If a lambda activity is specified, only
+        /// to store the (possibly) transformed message. If a Lambda activity is specified, only
         /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
         /// used.</p>
         pub fn pipeline_activity(mut self, input: crate::model::PipelineActivity) -> Self {
@@ -4167,28 +4162,28 @@ impl RunPipelineActivityInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4329,28 +4324,28 @@ impl SampleChannelDataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4554,28 +4549,28 @@ impl StartPipelineReprocessingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4718,28 +4713,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4866,28 +4861,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4973,7 +4968,7 @@ pub mod update_channel_input {
         }
         /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
         /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You cannot change this storage option after the channel is
+        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
         /// created.</p>
         pub fn channel_storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.channel_storage = Some(input);
@@ -4986,8 +4981,8 @@ pub mod update_channel_input {
             self.channel_storage = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the channel. The retention period cannot be
-        /// updated if the channel's S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the channel. The retention period can't be
+        /// updated if the channel's Amazon S3 storage is customer-managed.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
@@ -5039,28 +5034,28 @@ impl UpdateChannelInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5149,7 +5144,7 @@ pub mod update_dataset_input {
         pub(crate) late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
     }
     impl Builder {
-        /// <p>The name of the data set to update.</p>
+        /// <p>The name of the dataset to update.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -5215,8 +5210,8 @@ pub mod update_dataset_input {
         /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
         /// only the latest version plus the latest succeeded version (if they are different) are kept for
         /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-        /// Analytics User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
+        /// <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -5288,28 +5283,28 @@ impl UpdateDatasetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5406,8 +5401,8 @@ pub mod update_datastore_input {
             self.datastore_name = input;
             self
         }
-        /// <p>How long, in days, message data is kept for the data store. The retention period cannot be
-        /// updated if the data store's S3 storage is customer-managed.</p>
+        /// <p>How long, in days, message data is kept for the data store. The retention period can't be
+        /// updated if the data store's Amazon S3 storage is customer-managed.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
@@ -5419,10 +5414,7 @@ pub mod update_datastore_input {
             self.retention_period = input;
             self
         }
-        /// <p>Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default
-        /// is<code>serviceManagedS3</code>. You cannot change this storage option after the data store
-        /// is created.</p>
+        /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
         pub fn datastore_storage(mut self, input: crate::model::DatastoreStorage) -> Self {
             self.datastore_storage = Some(input);
             self
@@ -5434,8 +5426,7 @@ pub mod update_datastore_input {
             self.datastore_storage = input;
             self
         }
-        /// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-        /// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -5494,28 +5485,28 @@ impl UpdateDatastoreInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5666,28 +5657,28 @@ impl UpdatePipelineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5791,16 +5782,12 @@ impl std::fmt::Debug for UpdatePipelineInput {
 pub struct UpdateDatastoreInput {
     /// <p>The name of the data store to be updated.</p>
     pub datastore_name: std::option::Option<std::string::String>,
-    /// <p>How long, in days, message data is kept for the data store. The retention period cannot be
-    /// updated if the data store's S3 storage is customer-managed.</p>
+    /// <p>How long, in days, message data is kept for the data store. The retention period can't be
+    /// updated if the data store's Amazon S3 storage is customer-managed.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
-    /// <p>Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default
-    /// is<code>serviceManagedS3</code>. You cannot change this storage option after the data store
-    /// is created.</p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
-    /// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-    /// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
@@ -5819,7 +5806,7 @@ impl std::fmt::Debug for UpdateDatastoreInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDatasetInput {
-    /// <p>The name of the data set to update.</p>
+    /// <p>The name of the dataset to update.</p>
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>DatasetAction</code> objects.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
@@ -5835,12 +5822,10 @@ pub struct UpdateDatasetInput {
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
     /// only the latest version plus the latest succeeded version (if they are different) are kept for
     /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-    /// Analytics User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
-    /// <p>A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To
-    /// specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
-    /// filter.</p>
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
 impl std::fmt::Debug for UpdateDatasetInput {
@@ -5864,11 +5849,11 @@ pub struct UpdateChannelInput {
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
     /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You cannot change this storage option after the channel is
+    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
     /// created.</p>
     pub channel_storage: std::option::Option<crate::model::ChannelStorage>,
-    /// <p>How long, in days, message data is kept for the channel. The retention period cannot be
-    /// updated if the channel's S3 storage is customer-managed.</p>
+    /// <p>How long, in days, message data is kept for the channel. The retention period can't be
+    /// updated if the channel's Amazon S3 storage is customer-managed.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
 }
 impl std::fmt::Debug for UpdateChannelInput {
@@ -5971,9 +5956,9 @@ impl std::fmt::Debug for SampleChannelDataInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RunPipelineActivityInput {
-    /// <p>The pipeline activity that is run. This must not be a channel activity or a datastore
+    /// <p>The pipeline activity that is run. This must not be a channel activity or a data store
     /// activity because these activities are used in a pipeline only to load the original message and
-    /// to store the (possibly) transformed message. If a lambda activity is specified, only
+    /// to store the (possibly) transformed message. If a Lambda activity is specified, only
     /// short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be
     /// used.</p>
     pub pipeline_activity: std::option::Option<crate::model::PipelineActivity>,
@@ -5992,7 +5977,7 @@ impl std::fmt::Debug for RunPipelineActivityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLoggingOptionsInput {
-    /// <p>The new values of the AWS IoT Analytics logging options.</p>
+    /// <p>The new values of the IoT Analytics logging options.</p>
     pub logging_options: std::option::Option<crate::model::LoggingOptions>,
 }
 impl std::fmt::Debug for PutLoggingOptionsInput {
@@ -6074,18 +6059,18 @@ impl std::fmt::Debug for ListDatasetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDatasetContentsInput {
-    /// <p>The name of the data set whose contents information you want to list.</p>
+    /// <p>The name of the dataset whose contents information you want to list.</p>
     pub dataset_name: std::option::Option<std::string::String>,
     /// <p>The token for the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to return in this request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>A filter to limit results to those data set contents whose creation is scheduled on or
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled on or
     /// after the given time. See the field <code>triggers.schedule</code> in the
     /// <code>CreateDataset</code> request. (timestamp)</p>
     pub scheduled_on_or_after: std::option::Option<smithy_types::Instant>,
-    /// <p>A filter to limit results to those data set contents whose creation is scheduled before
-    /// the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
+    /// <p>A filter to limit results to those dataset contents whose creation is scheduled before the
+    /// given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code>
     /// request. (timestamp)</p>
     pub scheduled_before: std::option::Option<smithy_types::Instant>,
 }
@@ -6122,11 +6107,11 @@ impl std::fmt::Debug for ListChannelsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDatasetContentInput {
-    /// <p>The name of the data set whose contents are retrieved.</p>
+    /// <p>The name of the dataset whose contents are retrieved.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The version of the data set whose contents are retrieved. You can also use the strings
+    /// <p>The version of the dataset whose contents are retrieved. You can also use the strings
     /// "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully
-    /// completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
+    /// completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</p>
     pub version_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDatasetContentInput {
@@ -6168,7 +6153,7 @@ pub struct DescribeDatastoreInput {
     /// <p>The name of the data store</p>
     pub datastore_name: std::option::Option<std::string::String>,
     /// <p>If true, additional statistical information about the data store is included in the
-    /// response. This feature cannot be used with a data store whose S3 storage is
+    /// response. This feature can't be used with a data store whose S3 storage is
     /// customer-managed.</p>
     pub include_statistics: bool,
 }
@@ -6184,7 +6169,7 @@ impl std::fmt::Debug for DescribeDatastoreInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDatasetInput {
-    /// <p>The name of the data set whose information is retrieved.</p>
+    /// <p>The name of the dataset whose information is retrieved.</p>
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDatasetInput {
@@ -6201,7 +6186,7 @@ pub struct DescribeChannelInput {
     /// <p>The name of the channel whose information is retrieved.</p>
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>If true, additional statistical information about the channel is included in the response.
-    /// This feature cannot be used with a channel whose S3 storage is customer-managed.</p>
+    /// This feature can't be used with a channel whose S3 storage is customer-managed.</p>
     pub include_statistics: bool,
 }
 impl std::fmt::Debug for DescribeChannelInput {
@@ -6263,7 +6248,7 @@ impl std::fmt::Debug for DeleteDatasetContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteDatasetInput {
-    /// <p>The name of the data set to delete.</p>
+    /// <p>The name of the dataset to delete.</p>
     pub dataset_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDatasetInput {
@@ -6295,7 +6280,7 @@ pub struct CreatePipelineInput {
     pub pipeline_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>PipelineActivity</code> objects. Activities perform transformations on
     /// your messages, such as removing, renaming or adding message attributes; filtering messages
-    /// based on attribute values; invoking your Lambda functions on messages for advanced processing;
+    /// based on attribute values; invoking your Lambda unctions on messages for advanced processing;
     /// or performing mathematical transformations to normalize device data.</p>
     /// <p>The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
     /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list must
@@ -6323,24 +6308,18 @@ impl std::fmt::Debug for CreatePipelineInput {
 pub struct CreateDatastoreInput {
     /// <p>The name of the data store.</p>
     pub datastore_name: std::option::Option<std::string::String>,
-    /// <p>Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You cannot change this storage option after the data store is
-    /// created.</p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorage>,
     /// <p>How long, in days, message data is kept for the data store. When
     /// <code>customerManagedS3</code> storage is selected, this parameter is ignored.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Metadata which can be used to manage the data store.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-    /// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
-    /// <p>
-    /// Contains information about the partitions in a data store.
-    /// </p>
+    /// <p> Contains information about the partition dimensions in a data store. </p>
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
 impl std::fmt::Debug for CreateDatastoreInput {
@@ -6377,12 +6356,12 @@ impl std::fmt::Debug for CreateDatasetContentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDatasetInput {
-    /// <p>The name of the data set.</p>
+    /// <p>The name of the dataset.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>A list of actions that create the data set contents.</p>
+    /// <p>A list of actions that create the dataset contents.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
-    /// <p>A list of triggers. A trigger causes data set contents to be populated at a specified time
-    /// interval or when another data set's contents are created. The list of triggers can be empty or
+    /// <p>A list of triggers. A trigger causes dataset contents to be populated at a specified time
+    /// interval or when another dataset's contents are created. The list of triggers can be empty or
     /// contain up to five <code>DataSetTrigger</code> objects.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>When dataset contents are created, they are delivered to destinations specified
@@ -6392,20 +6371,19 @@ pub struct CreateDatasetInput {
     /// <p>Optional. How long, in days, versions of dataset contents are kept for the dataset. If not
     /// specified or set to <code>null</code>, versions of dataset contents are retained for at most
     /// 90 days. The number of versions of dataset contents retained is determined by the
-    /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-    /// Analytics User Guide</i>.</p>
+    /// <code>versioningConfiguration</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
     /// only the latest version plus the latest succeeded version (if they are different) are kept for
     /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-    /// Analytics User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
-    /// <p>Metadata which can be used to manage the data set.</p>
+    /// <p>Metadata which can be used to manage the dataset.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To
-    /// specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
-    /// filter.</p>
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
 impl std::fmt::Debug for CreateDatasetInput {
@@ -6430,7 +6408,7 @@ pub struct CreateChannelInput {
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
     /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You cannot change this storage option after the channel is
+    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
     /// created.</p>
     pub channel_storage: std::option::Option<crate::model::ChannelStorage>,
     /// <p>How long, in days, message data is kept for the channel. When
@@ -6475,7 +6453,7 @@ pub struct BatchPutMessageInput {
     pub channel_name: std::option::Option<std::string::String>,
     /// <p>The list of messages to be sent. Each message has the format: { "messageId": "string",
     /// "payload": "string"}.</p>
-    /// <p>The field names of message payloads (data) that you send to AWS IoT Analytics:</p>
+    /// <p>The field names of message payloads (data) that you send to IoT Analytics:</p>
     /// <ul>
     /// <li>
     /// <p>Must contain only alphanumeric characters and undescores (_). No other special characters are

@@ -111,7 +111,7 @@ pub mod fluent_builders {
         /// session name is visible to, and can be logged by the account that owns the role. The role
         /// session name is also used in the ARN of the assumed role principal. This means that
         /// subsequent cross-account API requests that use the temporary security credentials will
-        /// expose the role session name to the external account in their AWS CloudTrail logs.</p>
+        /// expose the role session name to the external account in their CloudTrail logs.</p>
         /// <p>The regex used to validate this parameter is a string of characters
         /// consisting of upper- and lower-case alphanumeric characters with no spaces. You can
         /// also include underscores or any of the following characters: =,.@-</p>
@@ -130,10 +130,10 @@ pub mod fluent_builders {
         /// managed session policies. The policies must exist in the same account as the role.</p>
         /// <p>This parameter is optional. You can provide up to 10 managed policy ARNs. However, the
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
-        /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-        /// Service Namespaces</a> in the AWS General Reference.</p>
+        /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+        /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -143,7 +143,7 @@ pub mod fluent_builders {
         /// <p>Passing policies to this operation returns new
         /// temporary credentials. The resulting session's permissions are the intersection of the
         /// role's identity-based policy and the session policies. You can use the role's temporary
-        /// credentials in subsequent AWS API calls to access resources in the account that owns
+        /// credentials in subsequent Amazon Web Services API calls to access resources in the account that owns
         /// the role. You cannot use session policies to grant more permissions than those allowed
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
@@ -163,7 +163,7 @@ pub mod fluent_builders {
         /// <p>This parameter is optional. Passing policies to this operation returns new
         /// temporary credentials. The resulting session's permissions are the intersection of the
         /// role's identity-based policy and the session policies. You can use the role's temporary
-        /// credentials in subsequent AWS API calls to access resources in the account that owns
+        /// credentials in subsequent Amazon Web Services API calls to access resources in the account that owns
         /// the role. You cannot use session policies to grant more permissions than those allowed
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
@@ -174,7 +174,7 @@ pub mod fluent_builders {
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -205,7 +205,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the AWS Management Console</a> in the
+        /// that Enables Federated Users to Access the Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -217,14 +217,14 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of session tags that you want to pass. Each session tag consists of a key name
-        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS
+        /// and an associated value. For more information about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging STS
         /// Sessions</a> in the <i>IAM User Guide</i>.</p>
         /// <p>This parameter is optional. You can pass up to 50 session tags. The plaintext session
         /// tag keys can’t exceed 128 characters, and the values can’t exceed 256 characters. For these
         /// and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -242,7 +242,7 @@ pub mod fluent_builders {
         /// <p>Additionally, if you used temporary credentials to perform this operation, the new
         /// session inherits any transitive session tags from the calling session. If you pass a
         /// session tag with the same key as an inherited tag, the operation fails. To view the
-        /// inherited tags for a session, see the AWS CloudTrail logs. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session Tags in CloudTrail</a> in the
+        /// inherited tags for a session, see the CloudTrail logs. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/session-tags.html#id_session-tags_ctlogs">Viewing Session Tags in CloudTrail</a> in the
         /// <i>IAM User Guide</i>.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -282,7 +282,7 @@ pub mod fluent_builders {
         /// send an external ID to the administrator of the trusted account. That way, only someone
         /// with the ID can assume the role, rather than everyone in the account. For more information
         /// about the external ID, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_create_for-user_externalid.html">How to Use an External ID
-        /// When Granting Access to Your AWS Resources to a Third Party</a> in the
+        /// When Granting Access to Your Amazon Web Services Resources to a Third Party</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.
@@ -333,16 +333,16 @@ pub mod fluent_builders {
         /// <code>AssumeRole</code> operation.</p>
         /// <p>You can require users to specify a source identity when they assume a role. You do this
         /// by using the <code>sts:SourceIdentity</code> condition key in a role trust policy. You can
-        /// use source identity information in AWS CloudTrail logs to determine who took actions with a role.
+        /// use source identity information in CloudTrail logs to determine who took actions with a role.
         /// You can use the <code>aws:SourceIdentity</code> condition key to further control access to
-        /// AWS resources based on the value of source identity. For more information about using
+        /// Amazon Web Services resources based on the value of source identity. For more information about using
         /// source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor and control
         /// actions taken with assumed roles</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// <p>The regex used to validate this parameter is a string of characters consisting of upper-
         /// and lower-case alphanumeric characters with no spaces. You can also include underscores or
         /// any of the following characters: =,.@-. You cannot use a value that begins with the text
-        /// <code>aws:</code>. This prefix is reserved for AWS internal
+        /// <code>aws:</code>. This prefix is reserved for Amazon Web Services internal
         /// use.</p>
         pub fn source_identity(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_identity(input);
@@ -427,10 +427,10 @@ pub mod fluent_builders {
         /// managed session policies. The policies must exist in the same account as the role.</p>
         /// <p>This parameter is optional. You can provide up to 10 managed policy ARNs. However, the
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
-        /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-        /// Service Namespaces</a> in the AWS General Reference.</p>
+        /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+        /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -440,7 +440,7 @@ pub mod fluent_builders {
         /// <p>Passing policies to this operation returns new
         /// temporary credentials. The resulting session's permissions are the intersection of the
         /// role's identity-based policy and the session policies. You can use the role's temporary
-        /// credentials in subsequent AWS API calls to access resources in the account that owns
+        /// credentials in subsequent Amazon Web Services API calls to access resources in the account that owns
         /// the role. You cannot use session policies to grant more permissions than those allowed
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
@@ -460,7 +460,7 @@ pub mod fluent_builders {
         /// <p>This parameter is optional. Passing policies to this operation returns new
         /// temporary credentials. The resulting session's permissions are the intersection of the
         /// role's identity-based policy and the session policies. You can use the role's temporary
-        /// credentials in subsequent AWS API calls to access resources in the account that owns
+        /// credentials in subsequent Amazon Web Services API calls to access resources in the account that owns
         /// the role. You cannot use session policies to grant more permissions than those allowed
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
@@ -471,7 +471,7 @@ pub mod fluent_builders {
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -504,7 +504,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the AWS Management Console</a> in the
+        /// that Enables Federated Users to Access the Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -608,10 +608,10 @@ pub mod fluent_builders {
         /// managed session policies. The policies must exist in the same account as the role.</p>
         /// <p>This parameter is optional. You can provide up to 10 managed policy ARNs. However, the
         /// plaintext that you use for both inline and managed session policies can't exceed 2,048
-        /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS
-        /// Service Namespaces</a> in the AWS General Reference.</p>
+        /// characters. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services
+        /// Service Namespaces</a> in the Amazon Web Services General Reference.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -621,7 +621,7 @@ pub mod fluent_builders {
         /// <p>Passing policies to this operation returns new
         /// temporary credentials. The resulting session's permissions are the intersection of the
         /// role's identity-based policy and the session policies. You can use the role's temporary
-        /// credentials in subsequent AWS API calls to access resources in the account that owns
+        /// credentials in subsequent Amazon Web Services API calls to access resources in the account that owns
         /// the role. You cannot use session policies to grant more permissions than those allowed
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
@@ -641,7 +641,7 @@ pub mod fluent_builders {
         /// <p>This parameter is optional. Passing policies to this operation returns new
         /// temporary credentials. The resulting session's permissions are the intersection of the
         /// role's identity-based policy and the session policies. You can use the role's temporary
-        /// credentials in subsequent AWS API calls to access resources in the account that owns
+        /// credentials in subsequent Amazon Web Services API calls to access resources in the account that owns
         /// the role. You cannot use session policies to grant more permissions than those allowed
         /// by the identity-based policy of the role that is being assumed. For more information, see
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
@@ -652,7 +652,7 @@ pub mod fluent_builders {
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -682,7 +682,7 @@ pub mod fluent_builders {
         /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
         /// parameter that specifies the maximum length of the console session. For more
         /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating a URL
-        /// that Enables Federated Users to Access the AWS Management Console</a> in the
+        /// that Enables Federated Users to Access the Management Console</a> in the
         /// <i>IAM User Guide</i>.</p>
         /// </note>
         pub fn duration_seconds(mut self, input: i32) -> Self {
@@ -885,7 +885,7 @@ pub mod fluent_builders {
         /// include the tab (\u0009), linefeed (\u000A), and carriage return (\u000D)
         /// characters.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -909,7 +909,7 @@ pub mod fluent_builders {
         /// The plaintext that you use for both inline and managed session policies can't exceed 2,048
         /// characters. You can provide up to 10 managed policy ARNs. For more information about ARNs,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.</p>
+        /// Resource Names (ARNs) and Amazon Web Services Service Namespaces</a> in the Amazon Web Services General Reference.</p>
         /// <p>This parameter is optional. However, if you do not pass any session policies, then the
         /// resulting federated user session has no permissions.</p>
         /// <p>When you pass session policies, the session permissions are the intersection of the
@@ -924,7 +924,7 @@ pub mod fluent_builders {
         /// the policy. These permissions are granted in addition to the permissions that are granted
         /// by the session policies.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -944,7 +944,7 @@ pub mod fluent_builders {
         }
         /// <p>The duration, in seconds, that the session should last. Acceptable durations for
         /// federation sessions range from 900 seconds (15 minutes) to 129,600 seconds (36 hours), with
-        /// 43,200 seconds (12 hours) as the default. Sessions obtained using AWS account root user
+        /// 43,200 seconds (12 hours) as the default. Sessions obtained using Amazon Web Services account root user
         /// credentials are restricted to a maximum of 3,600 seconds (one hour). If the specified
         /// duration is longer than one hour, the session obtained by using root user credentials
         /// defaults to one hour.</p>
@@ -964,7 +964,7 @@ pub mod fluent_builders {
         /// and additional limits, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length">IAM
         /// and STS Character Limits</a> in the <i>IAM User Guide</i>.</p>
         /// <note>
-        /// <p>An AWS conversion compresses the passed session policies and session tags into a
+        /// <p>An Amazon Web Services conversion compresses the passed session policies and session tags into a
         /// packed binary format that has a separate limit. Your request can fail for this limit
         /// even if your plaintext meets the other requirements. The <code>PackedPolicySize</code>
         /// response element indicates by percentage how close the policies and tags for your
@@ -1025,9 +1025,9 @@ pub mod fluent_builders {
         }
         /// <p>The duration, in seconds, that the credentials should remain valid. Acceptable
         /// durations for IAM user sessions range from 900 seconds (15 minutes) to 129,600 seconds
-        /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for AWS account
+        /// (36 hours), with 43,200 seconds (12 hours) as the default. Sessions for Amazon Web Services account
         /// owners are restricted to a maximum of 3,600 seconds (one hour). If the duration is
-        /// longer than one hour, the session for AWS account owners defaults to one hour.</p>
+        /// longer than one hour, the session for Amazon Web Services account owners defaults to one hour.</p>
         pub fn duration_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.duration_seconds(input);
             self
@@ -1041,7 +1041,7 @@ pub mod fluent_builders {
         /// has a policy that requires MFA authentication. The value is either the serial number for
         /// a hardware device (such as <code>GAHT12345678</code>) or an Amazon Resource Name (ARN)
         /// for a virtual device (such as <code>arn:aws:iam::123456789012:mfa/user</code>). You can
-        /// find the device for an IAM user by going to the AWS Management Console and viewing the user's
+        /// find the device for an IAM user by going to the Management Console and viewing the user's
         /// security credentials. </p>
         /// <p>The regex used to validate this parameter is a string of
         /// characters consisting of upper- and lower-case alphanumeric characters with no spaces.

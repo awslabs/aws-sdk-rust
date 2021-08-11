@@ -2889,8 +2889,8 @@ pub struct TargetGroupAttribute {
     /// <li>
     /// <p>
     /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-    /// application-based cookie. Names that start with the following names are not allowed:
-    /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>. They're reserved
+    /// application-based cookie. Names that start with the following prefixes are not allowed:
+    /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
     /// for use by the load balancer.</p>
     /// </li>
     /// <li>
@@ -3015,8 +3015,8 @@ pub mod target_group_attribute {
         /// <li>
         /// <p>
         /// <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the
-        /// application-based cookie. Names that start with the following names are not allowed:
-        /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>. They're reserved
+        /// application-based cookie. Names that start with the following prefixes are not allowed:
+        /// <code>AWSALB</code>, <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved
         /// for use by the load balancer.</p>
         /// </li>
         /// <li>
@@ -3681,17 +3681,35 @@ pub struct LoadBalancerAttribute {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is
-    /// <code>true</code> or <code>false</code>. The default is <code>true</code>. Elastic Load
-    /// Balancing requires that message header names contain only alphanumeric characters and
-    /// hyphens.</p>
+    /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
+    /// whether the two headers (<code>x-amzn-tls-version</code> and
+    /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
+    /// TLS version and cipher suite, are added to the client request before sending it to the
+    /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
+    /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
+    /// has information about the cipher suite negotiated with the client. Both headers are in
+    /// OpenSSL format. The possible values for the attribute are <code>true</code> and
+    /// <code>false</code>. The default is <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
+    /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
+    /// to connect to the load balancer. The possible values are <code>true</code> and
+    /// <code>false</code>. The default is <code>false</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
+    /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
+    /// Elastic Load Balancing requires that message header names contain only alphanumeric
+    /// characters and hyphens.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-    /// balancer to route requests to targets if it is unable to forward the request to AWS WAF.
-    /// The value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
+    /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
+    /// default is <code>false</code>.</p>
     /// </li>
     /// </ul>
     /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
@@ -3700,8 +3718,8 @@ pub struct LoadBalancerAttribute {
     /// <li>
     /// <p>
     /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-    /// balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
-    /// <code>false</code>.</p>
+    /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
+    /// The default is <code>false</code>.</p>
     /// </li>
     /// </ul>
     pub key: std::option::Option<std::string::String>,
@@ -3780,17 +3798,35 @@ pub mod load_balancer_attribute {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The value is
-        /// <code>true</code> or <code>false</code>. The default is <code>true</code>. Elastic Load
-        /// Balancing requires that message header names contain only alphanumeric characters and
-        /// hyphens.</p>
+        /// <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
+        /// whether the two headers (<code>x-amzn-tls-version</code> and
+        /// <code>x-amzn-tls-cipher-suite</code>), which contain information about the negotiated
+        /// TLS version and cipher suite, are added to the client request before sending it to the
+        /// target. The <code>x-amzn-tls-version</code> header has information about the TLS protocol
+        /// version negotiated with the client, and the <code>x-amzn-tls-cipher-suite</code> header
+        /// has information about the cipher suite negotiated with the client. Both headers are in
+        /// OpenSSL format. The possible values for the attribute are <code>true</code> and
+        /// <code>false</code>. The default is <code>false</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>routing.http.xff_client_port.enabled</code> - Indicates whether the
+        /// <code>X-Forwarded-For</code> header should preserve the source port that the client used
+        /// to connect to the load balancer. The possible values are <code>true</code> and
+        /// <code>false</code>. The default is <code>false</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
+        /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
+        /// Elastic Load Balancing requires that message header names contain only alphanumeric
+        /// characters and hyphens.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-        /// balancer to route requests to targets if it is unable to forward the request to AWS WAF.
-        /// The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
+        /// balancer to route requests to targets if it is unable to forward the request to Amazon Web Services WAF. The possible values are <code>true</code> and <code>false</code>. The
+        /// default is <code>false</code>.</p>
         /// </li>
         /// </ul>
         /// <p>The following attribute is supported by Network Load Balancers and Gateway Load
@@ -3799,8 +3835,8 @@ pub mod load_balancer_attribute {
         /// <li>
         /// <p>
         /// <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-        /// balancing is enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>.</p>
+        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
+        /// The default is <code>false</code>.</p>
         /// </li>
         /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5278,7 +5314,8 @@ impl AsRef<str> for LoadBalancerSchemeEnum {
     }
 }
 
-/// <p>Information about an Elastic Load Balancing resource limit for your AWS account.</p>
+/// <p>Information about an Elastic Load Balancing resource limit for your Amazon Web Services
+/// account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Limit {

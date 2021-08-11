@@ -1219,6 +1219,13 @@ where
                                     crate::json_deser::deser_structure_anomaly_time_range(tokens)?,
                                 );
                             }
+                            "AnomalyReportedTimeRange" => {
+                                builder = builder.set_anomaly_reported_time_range(
+                                    crate::json_deser::deser_structure_anomaly_reported_time_range(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "PredictionTimeRange" => {
                                 builder = builder.set_prediction_time_range(
                                     crate::json_deser::deser_structure_prediction_time_range(
@@ -1328,6 +1335,13 @@ where
                             "AnomalyTimeRange" => {
                                 builder = builder.set_anomaly_time_range(
                                     crate::json_deser::deser_structure_anomaly_time_range(tokens)?,
+                                );
+                            }
+                            "AnomalyReportedTimeRange" => {
+                                builder = builder.set_anomaly_reported_time_range(
+                                    crate::json_deser::deser_structure_anomaly_reported_time_range(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "SourceDetails" => {
@@ -2288,6 +2302,58 @@ where
     }
 }
 
+pub fn deser_structure_anomaly_reported_time_range<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::AnomalyReportedTimeRange>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::AnomalyReportedTimeRange::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "OpenTime" => {
+                                builder = builder.set_open_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            "CloseTime" => {
+                                builder = builder.set_close_time(
+                                    smithy_json::deserialize::token::expect_timestamp_or_null(
+                                        tokens.next(),
+                                        smithy_types::instant::Format::EpochSeconds,
+                                    )?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_prediction_time_range<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PredictionTimeRange>, smithy_json::deserialize::Error>
@@ -2868,6 +2934,13 @@ where
                                     crate::json_deser::deser_structure_anomaly_time_range(tokens)?,
                                 );
                             }
+                            "AnomalyReportedTimeRange" => {
+                                builder = builder.set_anomaly_reported_time_range(
+                                    crate::json_deser::deser_structure_anomaly_reported_time_range(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             "PredictionTimeRange" => {
                                 builder = builder.set_prediction_time_range(
                                     crate::json_deser::deser_structure_prediction_time_range(
@@ -2977,6 +3050,13 @@ where
                             "AnomalyTimeRange" => {
                                 builder = builder.set_anomaly_time_range(
                                     crate::json_deser::deser_structure_anomaly_time_range(tokens)?,
+                                );
+                            }
+                            "AnomalyReportedTimeRange" => {
+                                builder = builder.set_anomaly_reported_time_range(
+                                    crate::json_deser::deser_structure_anomaly_reported_time_range(
+                                        tokens,
+                                    )?,
                                 );
                             }
                             "SourceDetails" => {

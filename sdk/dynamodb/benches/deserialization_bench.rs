@@ -6,7 +6,6 @@
 use aws_sdk_dynamodb::operation::Query;
 use bytes::Bytes;
 use criterion::{criterion_group, criterion_main, Criterion};
-use smithy_http::body::SdkBody;
 use smithy_http::response::ParseHttpResponse;
 
 fn do_bench() {
@@ -23,7 +22,7 @@ fn do_bench() {
         .unwrap();
 
     let parser = Query::new();
-    let output = <Query as ParseHttpResponse<SdkBody>>::parse_loaded(&parser, &response).unwrap();
+    let output = <Query as ParseHttpResponse>::parse_loaded(&parser, &response).unwrap();
     assert_eq!(2, output.count);
 }
 

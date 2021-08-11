@@ -89,9 +89,9 @@ async fn generate_random() {
         .unwrap()
         .make_operation(&conf)
         .expect("valid operation");
-    op.config_mut()
+    op.properties_mut()
         .insert(UNIX_EPOCH + Duration::from_secs(1614952162));
-    op.config_mut().insert(AwsUserAgent::for_tests());
+    op.properties_mut().insert(AwsUserAgent::for_tests());
     let resp = client.call(op).await.expect("request should succeed");
     // primitive checksum
     assert_eq!(
@@ -181,9 +181,9 @@ async fn generate_random_keystore_not_found() {
         .make_operation(&conf)
         .expect("valid operation");
 
-    op.config_mut()
+    op.properties_mut()
         .insert(UNIX_EPOCH + Duration::from_secs(1614955644));
-    op.config_mut().insert(AwsUserAgent::for_tests());
+    op.properties_mut().insert(AwsUserAgent::for_tests());
     let client = Client::new(conn.clone());
     let err = client.call(op).await.expect_err("key store doesn't exist");
     let inner = match err {

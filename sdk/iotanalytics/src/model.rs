@@ -13,17 +13,17 @@ pub struct PipelineActivity {
     pub add_attributes: std::option::Option<crate::model::AddAttributesActivity>,
     /// <p>Removes attributes from a message.</p>
     pub remove_attributes: std::option::Option<crate::model::RemoveAttributesActivity>,
-    /// <p>Creates a new message using only the specified attributes from the original message.
-    /// </p>
+    /// <p>Used to create a new message using only the specified attributes from the original
+    /// message. </p>
     pub select_attributes: std::option::Option<crate::model::SelectAttributesActivity>,
     /// <p>Filters a message based on its attributes.</p>
     pub filter: std::option::Option<crate::model::FilterActivity>,
     /// <p>Computes an arithmetic expression using the message's attributes and adds it to the
     /// message.</p>
     pub math: std::option::Option<crate::model::MathActivity>,
-    /// <p>Adds data from the AWS IoT device registry to your message.</p>
+    /// <p>Adds data from the IoT device registry to your message.</p>
     pub device_registry_enrich: std::option::Option<crate::model::DeviceRegistryEnrichActivity>,
-    /// <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
+    /// <p>Adds information from the IoT Device Shadow service to a message.</p>
     pub device_shadow_enrich: std::option::Option<crate::model::DeviceShadowEnrichActivity>,
 }
 impl std::fmt::Debug for PipelineActivity {
@@ -122,8 +122,8 @@ pub mod pipeline_activity {
             self.remove_attributes = input;
             self
         }
-        /// <p>Creates a new message using only the specified attributes from the original message.
-        /// </p>
+        /// <p>Used to create a new message using only the specified attributes from the original
+        /// message. </p>
         pub fn select_attributes(mut self, input: crate::model::SelectAttributesActivity) -> Self {
             self.select_attributes = Some(input);
             self
@@ -157,7 +157,7 @@ pub mod pipeline_activity {
             self.math = input;
             self
         }
-        /// <p>Adds data from the AWS IoT device registry to your message.</p>
+        /// <p>Adds data from the IoT device registry to your message.</p>
         pub fn device_registry_enrich(
             mut self,
             input: crate::model::DeviceRegistryEnrichActivity,
@@ -172,7 +172,7 @@ pub mod pipeline_activity {
             self.device_registry_enrich = input;
             self
         }
-        /// <p>Adds information from the AWS IoT Device Shadow service to a message.</p>
+        /// <p>Adds information from the IoT Device Shadow service to a message.</p>
         pub fn device_shadow_enrich(
             mut self,
             input: crate::model::DeviceShadowEnrichActivity,
@@ -211,7 +211,7 @@ impl PipelineActivity {
     }
 }
 
-/// <p>An activity that adds information from the AWS IoT Device Shadow service to a
+/// <p>An activity that adds information from the IoT Device Shadow service to a
 /// message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -315,7 +315,7 @@ impl DeviceShadowEnrichActivity {
     }
 }
 
-/// <p>An activity that adds data from the AWS IoT device registry to your message.</p>
+/// <p>An activity that adds data from the IoT device registry to your message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeviceRegistryEnrichActivity {
@@ -586,7 +586,7 @@ impl FilterActivity {
     }
 }
 
-/// <p>Creates a new message using only the specified attributes from the original
+/// <p>Used to create a new message using only the specified attributes from the original
 /// message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1070,8 +1070,7 @@ impl ChannelActivity {
     }
 }
 
-/// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-/// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+/// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
 /// <p>The default file format is JSON. You can specify only one format.</p>
 /// <p>You can't change the file format after you create the data store.</p>
 #[non_exhaustive]
@@ -1195,7 +1194,8 @@ impl ParquetConfiguration {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaDefinition {
     /// <p>Specifies one or more columns that store your data.</p>
-    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested types.</p>
+    /// <p>Each schema can have up to 100 columns. Each column can have up to 100 nested
+    /// types.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
 }
 impl std::fmt::Debug for SchemaDefinition {
@@ -1249,7 +1249,7 @@ pub struct Column {
     /// <p>The name of the column.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
-    /// in the <i>AWS Glue Developer Guide</i>.</p>
+    /// in the <i>Glue Developer Guide</i>.</p>
     pub r#type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Column {
@@ -1280,7 +1280,7 @@ pub mod column {
             self
         }
         /// <p>The type of data. For more information about the supported data types, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-common.html">Common data types</a>
-        /// in the <i>AWS Glue Developer Guide</i>.</p>
+        /// in the <i>Glue Developer Guide</i>.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
@@ -1338,14 +1338,11 @@ impl JsonConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
 pub enum DatastoreStorage {
-    /// <p>Use this to store data store data in an S3 bucket that you manage. When customer managed
-    /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. The choice of
-    /// service-managed or customer-managed S3 storage cannot be changed after creation of the data
-    /// store.</p>
+    /// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
     CustomerManagedS3(crate::model::CustomerManagedDatastoreS3Storage),
-    /// <p>Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot
-    /// change the choice of service-managed or customer-managed S3 storage after the data store is
-    /// created.</p>
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
+    IotSiteWiseMultiLayerStorage(crate::model::DatastoreIotSiteWiseMultiLayerStorage),
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
     ServiceManagedS3(crate::model::ServiceManagedDatastoreS3Storage),
 }
 impl DatastoreStorage {
@@ -1361,6 +1358,18 @@ impl DatastoreStorage {
     pub fn is_customer_managed_s3(&self) -> bool {
         self.as_customer_managed_s3().is_ok()
     }
+    pub fn as_iot_site_wise_multi_layer_storage(
+        &self,
+    ) -> Result<&crate::model::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
+        if let DatastoreStorage::IotSiteWiseMultiLayerStorage(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_iot_site_wise_multi_layer_storage(&self) -> bool {
+        self.as_iot_site_wise_multi_layer_storage().is_ok()
+    }
     pub fn as_service_managed_s3(
         &self,
     ) -> Result<&crate::model::ServiceManagedDatastoreS3Storage, &Self> {
@@ -1375,21 +1384,134 @@ impl DatastoreStorage {
     }
 }
 
-/// <p>Use this to store data store data in an S3 bucket that you manage. When customer-managed
-/// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change
-/// the choice of service-managed or customer-managed S3 storage after the data store is
-/// created.</p>
+/// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DatastoreIotSiteWiseMultiLayerStorage {
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    pub customer_managed_s3_storage:
+        std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
+}
+impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorage");
+        formatter.field(
+            "customer_managed_s3_storage",
+            &self.customer_managed_s3_storage,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage)
+pub mod datastore_iot_site_wise_multi_layer_storage {
+    /// A builder for [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) customer_managed_s3_storage:
+            std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
+    }
+    impl Builder {
+        /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+        pub fn customer_managed_s3_storage(
+            mut self,
+            input: crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage,
+        ) -> Self {
+            self.customer_managed_s3_storage = Some(input);
+            self
+        }
+        pub fn set_customer_managed_s3_storage(
+            mut self,
+            input: std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage>,
+        ) -> Self {
+            self.customer_managed_s3_storage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage)
+        pub fn build(self) -> crate::model::DatastoreIotSiteWiseMultiLayerStorage {
+            crate::model::DatastoreIotSiteWiseMultiLayerStorage {
+                customer_managed_s3_storage: self.customer_managed_s3_storage,
+            }
+        }
+    }
+}
+impl DatastoreIotSiteWiseMultiLayerStorage {
+    /// Creates a new builder-style object to manufacture [`DatastoreIotSiteWiseMultiLayerStorage`](crate::model::DatastoreIotSiteWiseMultiLayerStorage)
+    pub fn builder() -> crate::model::datastore_iot_site_wise_multi_layer_storage::Builder {
+        crate::model::datastore_iot_site_wise_multi_layer_storage::Builder::default()
+    }
+}
+
+/// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. You can't change the choice of Amazon S3 storage after your data store is created.   </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IotSiteWiseCustomerManagedDatastoreS3Storage {
+    /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+    pub key_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3Storage {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IotSiteWiseCustomerManagedDatastoreS3Storage");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key_prefix", &self.key_prefix);
+        formatter.finish()
+    }
+}
+/// See [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage)
+pub mod iot_site_wise_customer_managed_datastore_s3_storage {
+    /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+        pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_prefix = Some(input.into());
+            self
+        }
+        pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage)
+        pub fn build(self) -> crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage {
+            crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage {
+                bucket: self.bucket,
+                key_prefix: self.key_prefix,
+            }
+        }
+    }
+}
+impl IotSiteWiseCustomerManagedDatastoreS3Storage {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3Storage`](crate::model::IotSiteWiseCustomerManagedDatastoreS3Storage)
+    pub fn builder() -> crate::model::iot_site_wise_customer_managed_datastore_s3_storage::Builder {
+        crate::model::iot_site_wise_customer_managed_datastore_s3_storage::Builder::default()
+    }
+}
+
+/// <p>S3-customer-managed; When you choose customer-managed storage, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedDatastoreS3Storage {
-    /// <p>The name of the S3 bucket in which data store data is stored.</p>
+    /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Optional. The prefix used to create the keys of the data store data objects. Each object
-    /// in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-    /// has exactly one key. The prefix must end with a forward slash (/).</p>
+    /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-    /// S3 resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomerManagedDatastoreS3Storage {
@@ -1412,7 +1534,7 @@ pub mod customer_managed_datastore_s3_storage {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the S3 bucket in which data store data is stored.</p>
+        /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -1421,9 +1543,7 @@ pub mod customer_managed_datastore_s3_storage {
             self.bucket = input;
             self
         }
-        /// <p>Optional. The prefix used to create the keys of the data store data objects. Each object
-        /// in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-        /// has exactly one key. The prefix must end with a forward slash (/).</p>
+        /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_prefix = Some(input.into());
             self
@@ -1432,8 +1552,7 @@ pub mod customer_managed_datastore_s3_storage {
             self.key_prefix = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-        /// S3 resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -1459,9 +1578,7 @@ impl CustomerManagedDatastoreS3Storage {
     }
 }
 
-/// <p>Use this to store data store data in an S3 bucket managed by AWS IoT Analytics. You cannot
-/// change the choice of service-managed or customer-managed S3 storage after the data store is
-/// created.</p>
+/// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics. You can't change the choice of Amazon S3 storage after your data store is created.  </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceManagedDatastoreS3Storage {}
@@ -1690,12 +1807,12 @@ impl LateDataRuleConfiguration {
 /// <code>DeltaTime</code> to create dataset contents with data that has arrived in the data
 /// store since the last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6"> Creating
 /// a SQL dataset with a delta window (CLI)</a> in the
-/// <i>AWS IoT Analytics User Guide</i>.</p>
+/// <i>IoT Analytics User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeltaTimeSessionWindowConfiguration {
-    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that AWS IoT Analytics can batch up late
-    /// data notifications that have been generated since the last execution. AWS IoT Analytics sends one batch of
+    /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
+    /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
     /// notifications to Amazon CloudWatch Events at one time.</p>
     /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
     /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
@@ -1717,8 +1834,8 @@ pub mod delta_time_session_window_configuration {
         pub(crate) timeout_in_minutes: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that AWS IoT Analytics can batch up late
-        /// data notifications that have been generated since the last execution. AWS IoT Analytics sends one batch of
+        /// <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can batch up late
+        /// data notifications that have been generated since the last execution. IoT Analytics sends one batch of
         /// notifications to Amazon CloudWatch Events at one time.</p>
         /// <p>For more information about how to write a timestamp expression, see <a href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time Functions and
         /// Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
@@ -1881,7 +1998,7 @@ impl DatasetContentDeliveryRule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentDeliveryDestination {
-    /// <p>Configuration information for delivery of dataset contents to AWS IoT Events.</p>
+    /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
     pub iot_events_destination_configuration:
         std::option::Option<crate::model::IotEventsDestinationConfiguration>,
     /// <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
@@ -1913,7 +2030,7 @@ pub mod dataset_content_delivery_destination {
             std::option::Option<crate::model::S3DestinationConfiguration>,
     }
     impl Builder {
-        /// <p>Configuration information for delivery of dataset contents to AWS IoT Events.</p>
+        /// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
         pub fn iot_events_destination_configuration(
             mut self,
             input: crate::model::IotEventsDestinationConfiguration,
@@ -1959,8 +2076,7 @@ impl DatasetContentDeliveryDestination {
     }
 }
 
-/// <p>Configuration information for delivery of dataset contents to Amazon Simple Storage
-/// Service (Amazon S3).</p>
+/// <p>Configuration information for delivery of dataset contents to Amazon Simple Storage Service (Amazon S3).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3DestinationConfiguration {
@@ -1993,11 +2109,11 @@ pub struct S3DestinationConfiguration {
     /// dataset content overwrites the other. </p>
     /// </note>
     pub key: std::option::Option<std::string::String>,
-    /// <p>Configuration information for coordination with AWS Glue, a fully managed extract,
-    /// transform and load (ETL) service.</p>
+    /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
+    /// and load (ETL) service.</p>
     pub glue_configuration: std::option::Option<crate::model::GlueConfiguration>,
-    /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-    /// S3 and AWS Glue resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
+    /// resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3DestinationConfiguration {
@@ -2065,8 +2181,8 @@ pub mod s3_destination_configuration {
             self.key = input;
             self
         }
-        /// <p>Configuration information for coordination with AWS Glue, a fully managed extract,
-        /// transform and load (ETL) service.</p>
+        /// <p>Configuration information for coordination with Glue, a fully managed extract, transform
+        /// and load (ETL) service.</p>
         pub fn glue_configuration(mut self, input: crate::model::GlueConfiguration) -> Self {
             self.glue_configuration = Some(input);
             self
@@ -2078,8 +2194,8 @@ pub mod s3_destination_configuration {
             self.glue_configuration = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-        /// S3 and AWS Glue resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 and Glue
+        /// resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -2106,17 +2222,17 @@ impl S3DestinationConfiguration {
     }
 }
 
-/// <p>Configuration information for coordination with AWS Glue, a fully managed extract,
-/// transform and load (ETL) service.</p>
+/// <p>Configuration information for coordination with Glue, a fully managed extract, transform
+/// and load (ETL) service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlueConfiguration {
-    /// <p>The name of the table in your AWS Glue Data Catalog that is used to perform the ETL
-    /// operations. An AWS Glue Data Catalog table contains partitioned data and descriptions of data
+    /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
+    /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
     /// sources and targets.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The name of the database in your AWS Glue Data Catalog in which the table is located. An
-    /// AWS Glue Data Catalog database contains metadata tables.</p>
+    /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
+    /// Glue Data Catalog database contains metadata tables.</p>
     pub database_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GlueConfiguration {
@@ -2137,8 +2253,8 @@ pub mod glue_configuration {
         pub(crate) database_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the table in your AWS Glue Data Catalog that is used to perform the ETL
-        /// operations. An AWS Glue Data Catalog table contains partitioned data and descriptions of data
+        /// <p>The name of the table in your Glue Data Catalog that is used to perform the ETL
+        /// operations. An Glue Data Catalog table contains partitioned data and descriptions of data
         /// sources and targets.</p>
         pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_name = Some(input.into());
@@ -2148,8 +2264,8 @@ pub mod glue_configuration {
             self.table_name = input;
             self
         }
-        /// <p>The name of the database in your AWS Glue Data Catalog in which the table is located. An
-        /// AWS Glue Data Catalog database contains metadata tables.</p>
+        /// <p>The name of the database in your Glue Data Catalog in which the table is located. An
+        /// Glue Data Catalog database contains metadata tables.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.database_name = Some(input.into());
             self
@@ -2177,14 +2293,14 @@ impl GlueConfiguration {
     }
 }
 
-/// <p>Configuration information for delivery of dataset contents to AWS IoT Events.</p>
+/// <p>Configuration information for delivery of dataset contents to IoT Events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IotEventsDestinationConfiguration {
-    /// <p>The name of the AWS IoT Events input to which dataset contents are delivered.</p>
+    /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
     pub input_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents
-    /// to an AWS IoT Events input.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
+    /// input.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IotEventsDestinationConfiguration {
@@ -2205,7 +2321,7 @@ pub mod iot_events_destination_configuration {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS IoT Events input to which dataset contents are delivered.</p>
+        /// <p>The name of the IoT Events input to which dataset contents are delivered.</p>
         pub fn input_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.input_name = Some(input.into());
             self
@@ -2214,8 +2330,8 @@ pub mod iot_events_destination_configuration {
             self.input_name = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT Analytics permission to deliver dataset contents
-        /// to an AWS IoT Events input.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to deliver dataset contents to an IoT Events
+        /// input.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -2240,14 +2356,14 @@ impl IotEventsDestinationConfiguration {
     }
 }
 
-/// <p>The <code>DatasetTrigger</code> that specifies when the data set is automatically
+/// <p>The <code>DatasetTrigger</code> that specifies when the dataset is automatically
 /// updated.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetTrigger {
     /// <p>The Schedule when the trigger is initiated.</p>
     pub schedule: std::option::Option<crate::model::Schedule>,
-    /// <p>The data set whose content creation triggers the creation of this data set's
+    /// <p>The dataset whose content creation triggers the creation of this dataset's
     /// contents.</p>
     pub dataset: std::option::Option<crate::model::TriggeringDataset>,
 }
@@ -2278,7 +2394,7 @@ pub mod dataset_trigger {
             self.schedule = input;
             self
         }
-        /// <p>The data set whose content creation triggers the creation of this data set's
+        /// <p>The dataset whose content creation triggers the creation of this dataset's
         /// contents.</p>
         pub fn dataset(mut self, input: crate::model::TriggeringDataset) -> Self {
             self.dataset = Some(input);
@@ -2406,16 +2522,15 @@ impl Schedule {
     }
 }
 
-/// <p>A <code>DatasetAction</code> object that specifies how data set contents are automatically
+/// <p>A <code>DatasetAction</code> object that specifies how dataset contents are automatically
 /// created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetAction {
-    /// <p>The name of the data set action by which data set contents are automatically
-    /// created.</p>
+    /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
     pub action_name: std::option::Option<std::string::String>,
     /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-    /// create data set contents.</p>
+    /// create dataset contents.</p>
     pub query_action: std::option::Option<crate::model::SqlQueryDatasetAction>,
     /// <p>Information that allows the system to run a containerized application to create the
     /// dataset contents. The application must be in a Docker container along with any required
@@ -2442,8 +2557,7 @@ pub mod dataset_action {
         pub(crate) container_action: std::option::Option<crate::model::ContainerDatasetAction>,
     }
     impl Builder {
-        /// <p>The name of the data set action by which data set contents are automatically
-        /// created.</p>
+        /// <p>The name of the dataset action by which dataset contents are automatically created.</p>
         pub fn action_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.action_name = Some(input.into());
             self
@@ -2453,7 +2567,7 @@ pub mod dataset_action {
             self
         }
         /// <p>An <code>SqlQueryDatasetAction</code> object that uses an SQL query to automatically
-        /// create data set contents.</p>
+        /// create dataset contents.</p>
         pub fn query_action(mut self, input: crate::model::SqlQueryDatasetAction) -> Self {
             self.query_action = Some(input);
             self
@@ -3144,20 +3258,18 @@ impl DeltaTime {
     }
 }
 
-/// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code> or
+/// <p>Where channel data is stored. You may choose one of <code>serviceManagedS3</code>,
 /// <code>customerManagedS3</code> storage. If not specified, the default is
-/// <code>serviceManagedS3</code>. This cannot be changed after creation of the channel.</p>
+/// <code>serviceManagedS3</code>. This can't be changed after creation of the channel.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelStorage {
-    /// <p>Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot
-    /// change the choice of service-managed or customer-managed S3 storage after the channel is
-    /// created.</p>
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
+    /// of S3 storage after the data store is created.</p>
     pub service_managed_s3: std::option::Option<crate::model::ServiceManagedChannelS3Storage>,
-    /// <p>Use this to store channel data in an S3 bucket that you manage. If customer managed
-    /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change
-    /// the choice of service-managed or customer-managed S3 storage after the channel is
-    /// created.</p>
+    /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
+    /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
+    /// of S3 storage after the data store is created.</p>
     pub customer_managed_s3: std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
 }
 impl std::fmt::Debug for ChannelStorage {
@@ -3180,9 +3292,8 @@ pub mod channel_storage {
             std::option::Option<crate::model::CustomerManagedChannelS3Storage>,
     }
     impl Builder {
-        /// <p>Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot
-        /// change the choice of service-managed or customer-managed S3 storage after the channel is
-        /// created.</p>
+        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
+        /// of S3 storage after the data store is created.</p>
         pub fn service_managed_s3(
             mut self,
             input: crate::model::ServiceManagedChannelS3Storage,
@@ -3197,10 +3308,9 @@ pub mod channel_storage {
             self.service_managed_s3 = input;
             self
         }
-        /// <p>Use this to store channel data in an S3 bucket that you manage. If customer managed
-        /// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change
-        /// the choice of service-managed or customer-managed S3 storage after the channel is
-        /// created.</p>
+        /// <p>Used to store channel data in an S3 bucket that you manage. If customer managed storage is
+        /// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
+        /// of S3 storage after the data store is created.</p>
         pub fn customer_managed_s3(
             mut self,
             input: crate::model::CustomerManagedChannelS3Storage,
@@ -3231,21 +3341,20 @@ impl ChannelStorage {
     }
 }
 
-/// <p>Use this to store channel data in an S3 bucket that you manage. If customer managed
-/// storage is selected, the <code>retentionPeriod</code> parameter is ignored. You cannot change
-/// the choice of service-managed or customer-managed S3 storage after the channel is
-/// created.</p>
+/// <p>Used to store channel data in an S3 bucket that you manage. If customer-managed storage is
+/// selected, the <code>retentionPeriod</code> parameter is ignored. You can't change the choice
+/// of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedChannelS3Storage {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Optional. The prefix used to create the keys of the channel data objects. Each object in
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
     /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
     /// has exactly one key. The prefix must end with a forward slash (/).</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-    /// S3 resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+    /// resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomerManagedChannelS3Storage {
@@ -3277,7 +3386,7 @@ pub mod customer_managed_channel_s3_storage {
             self.bucket = input;
             self
         }
-        /// <p>Optional. The prefix used to create the keys of the channel data objects. Each object in
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
         /// an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
         /// has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3288,8 +3397,8 @@ pub mod customer_managed_channel_s3_storage {
             self.key_prefix = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-        /// S3 resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+        /// resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -3315,9 +3424,8 @@ impl CustomerManagedChannelS3Storage {
     }
 }
 
-/// <p>Use this to store channel data in an S3 bucket managed by AWS IoT Analytics. You cannot
-/// change the choice of service-managed or customer-managed S3 storage after the channel is
-/// created.</p>
+/// <p>Used to store channel data in an S3 bucket managed by IoT Analytics. You can't change the choice
+/// of S3 storage after the data store is created.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceManagedChannelS3Storage {}
@@ -3415,7 +3523,8 @@ pub struct ChannelMessages {
     /// <p>Specifies one or more keys that identify the Amazon Simple Storage Service (Amazon S3) objects that save your
     /// channel messages.</p>
     /// <p>You must use the full path for the key.</p>
-    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
+    /// <p>Example path: <code>channel/mychannel/__dt=2020-02-29
+    /// 00:00:00/1582940490000_1582940520000_123456789012_mychannel_0_2118.0.json.gz</code>
     /// </p>
     pub s3_paths: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -3467,11 +3576,11 @@ impl ChannelMessages {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoggingOptions {
-    /// <p>The ARN of the role that grants permission to AWS IoT Analytics to perform logging.</p>
+    /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The logging level. Currently, only ERROR is supported.</p>
     pub level: std::option::Option<crate::model::LoggingLevel>,
-    /// <p>If true, logging is enabled for AWS IoT Analytics.</p>
+    /// <p>If true, logging is enabled for IoT Analytics.</p>
     pub enabled: bool,
 }
 impl std::fmt::Debug for LoggingOptions {
@@ -3494,7 +3603,7 @@ pub mod logging_options {
         pub(crate) enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ARN of the role that grants permission to AWS IoT Analytics to perform logging.</p>
+        /// <p>The ARN of the role that grants permission to IoT Analytics to perform logging.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -3512,7 +3621,7 @@ pub mod logging_options {
             self.level = input;
             self
         }
-        /// <p>If true, logging is enabled for AWS IoT Analytics.</p>
+        /// <p>If true, logging is enabled for IoT Analytics.</p>
         pub fn enabled(mut self, input: bool) -> Self {
             self.enabled = Some(input);
             self
@@ -3835,7 +3944,7 @@ impl AsRef<str> for ReprocessingStatus {
 pub struct DatastoreSummary {
     /// <p>The name of the data store.</p>
     pub datastore_name: std::option::Option<std::string::String>,
-    /// <p>Where data store data is stored.</p>
+    /// <p>Where data in a data store is stored.</p>
     pub datastore_storage: std::option::Option<crate::model::DatastoreStorageSummary>,
     /// <p>The status of the data store.</p>
     pub status: std::option::Option<crate::model::DatastoreStatus>,
@@ -3844,15 +3953,12 @@ pub struct DatastoreSummary {
     /// <p>The last time the data store was updated.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the data store.</p>
-    /// <p>AWS IoT Analytics updates this value at most once per minute for one data store.
-    /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
     /// <p>The file format of the data in the data store.</p>
     pub file_format_type: std::option::Option<crate::model::FileFormatType>,
-    /// <p>
-    /// Contains information about the partitions in a data store.
-    /// </p>
+    /// <p> Contains information about the partition dimensions in a data store. </p>
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
 impl std::fmt::Debug for DatastoreSummary {
@@ -3897,7 +4003,7 @@ pub mod datastore_summary {
             self.datastore_name = input;
             self
         }
-        /// <p>Where data store data is stored.</p>
+        /// <p>Where data in a data store is stored.</p>
         pub fn datastore_storage(mut self, input: crate::model::DatastoreStorageSummary) -> Self {
             self.datastore_storage = Some(input);
             self
@@ -3946,8 +4052,7 @@ pub mod datastore_summary {
             self
         }
         /// <p>The last time when a new message arrived in the data store.</p>
-        /// <p>AWS IoT Analytics updates this value at most once per minute for one data store.
-        /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
@@ -3972,9 +4077,7 @@ pub mod datastore_summary {
             self.file_format_type = input;
             self
         }
-        /// <p>
-        /// Contains information about the partitions in a data store.
-        /// </p>
+        /// <p> Contains information about the partition dimensions in a data store. </p>
         pub fn datastore_partitions(mut self, input: crate::model::DatastorePartitions) -> Self {
             self.datastore_partitions = Some(input);
             self
@@ -4008,15 +4111,11 @@ impl DatastoreSummary {
     }
 }
 
-/// <p>
-/// Contains information about partitions in a data store.
-/// </p>
+/// <p> Contains information about the partition dimensions in a data store. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastorePartitions {
-    /// <p>
-    /// A list of partitions in a data store.
-    /// </p>
+    /// <p> A list of partition dimensions in a data store. </p>
     pub partitions: std::option::Option<std::vec::Vec<crate::model::DatastorePartition>>,
 }
 impl std::fmt::Debug for DatastorePartitions {
@@ -4063,19 +4162,14 @@ impl DatastorePartitions {
     }
 }
 
-/// <p>
-/// A single partition in a data store.
-/// </p>
+/// <p> A single dimension to partition a data store. The dimension must be an
+/// <code>AttributePartition</code> or a <code>TimestampPartition</code>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastorePartition {
-    /// <p>
-    /// A partition defined by an <code>attributeName</code>.
-    /// </p>
+    /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
     pub attribute_partition: std::option::Option<crate::model::Partition>,
-    /// <p>
-    /// A partition defined by an <code>attributeName</code> and a timestamp format.
-    /// </p>
+    /// <p> A partition dimension defined by a timestamp attribute. </p>
     pub timestamp_partition: std::option::Option<crate::model::TimestampPartition>,
 }
 impl std::fmt::Debug for DatastorePartition {
@@ -4096,9 +4190,7 @@ pub mod datastore_partition {
         pub(crate) timestamp_partition: std::option::Option<crate::model::TimestampPartition>,
     }
     impl Builder {
-        /// <p>
-        /// A partition defined by an <code>attributeName</code>.
-        /// </p>
+        /// <p> A partition dimension defined by an <code>attributeName</code>. </p>
         pub fn attribute_partition(mut self, input: crate::model::Partition) -> Self {
             self.attribute_partition = Some(input);
             self
@@ -4110,9 +4202,7 @@ pub mod datastore_partition {
             self.attribute_partition = input;
             self
         }
-        /// <p>
-        /// A partition defined by an <code>attributeName</code> and a timestamp format.
-        /// </p>
+        /// <p> A partition dimension defined by a timestamp attribute. </p>
         pub fn timestamp_partition(mut self, input: crate::model::TimestampPartition) -> Self {
             self.timestamp_partition = Some(input);
             self
@@ -4140,19 +4230,14 @@ impl DatastorePartition {
     }
 }
 
-/// <p>
-/// A partition defined by a timestamp.
-/// </p>
+/// <p> A partition dimension defined by a timestamp attribute. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TimestampPartition {
-    /// <p>
-    /// The attribute name of the partition defined by a timestamp.
-    /// </p>
+    /// <p> The attribute name of the partition defined by a timestamp. </p>
     pub attribute_name: std::option::Option<std::string::String>,
-    /// <p>
-    /// The timestamp format of a partition defined by a timestamp.
-    /// </p>
+    /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
+    /// since epoch (January 1, 1970 at midnight UTC time). </p>
     pub timestamp_format: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TimestampPartition {
@@ -4173,9 +4258,7 @@ pub mod timestamp_partition {
         pub(crate) timestamp_format: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The attribute name of the partition defined by a timestamp.
-        /// </p>
+        /// <p> The attribute name of the partition defined by a timestamp. </p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
@@ -4187,9 +4270,8 @@ pub mod timestamp_partition {
             self.attribute_name = input;
             self
         }
-        /// <p>
-        /// The timestamp format of a partition defined by a timestamp.
-        /// </p>
+        /// <p> The timestamp format of a partition defined by a timestamp. The default format is seconds
+        /// since epoch (January 1, 1970 at midnight UTC time). </p>
         pub fn timestamp_format(mut self, input: impl Into<std::string::String>) -> Self {
             self.timestamp_format = Some(input.into());
             self
@@ -4217,15 +4299,11 @@ impl TimestampPartition {
     }
 }
 
-/// <p>
-/// A single partition.
-/// </p>
+/// <p> A partition dimension defined by an attribute. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Partition {
-    /// <p>
-    /// The attribute name of the partition.
-    /// </p>
+    /// <p> The name of the attribute that defines a partition dimension. </p>
     pub attribute_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Partition {
@@ -4244,9 +4322,7 @@ pub mod partition {
         pub(crate) attribute_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The attribute name of the partition.
-        /// </p>
+        /// <p> The name of the attribute that defines a partition dimension. </p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
@@ -4376,22 +4452,29 @@ impl AsRef<str> for DatastoreStatus {
     }
 }
 
-/// <p>Where data store data is stored.</p>
+/// <p>Contains information about your data store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatastoreStorageSummary {
-    /// <p>Used to store data store data in an S3 bucket managed by AWS IoT Analytics.</p>
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub service_managed_s3:
         std::option::Option<crate::model::ServiceManagedDatastoreS3StorageSummary>,
-    /// <p>Used to store data store data in an S3 bucket that you manage.</p>
+    /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
     pub customer_managed_s3:
         std::option::Option<crate::model::CustomerManagedDatastoreS3StorageSummary>,
+    /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+    pub iot_site_wise_multi_layer_storage:
+        std::option::Option<crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary>,
 }
 impl std::fmt::Debug for DatastoreStorageSummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DatastoreStorageSummary");
         formatter.field("service_managed_s3", &self.service_managed_s3);
         formatter.field("customer_managed_s3", &self.customer_managed_s3);
+        formatter.field(
+            "iot_site_wise_multi_layer_storage",
+            &self.iot_site_wise_multi_layer_storage,
+        );
         formatter.finish()
     }
 }
@@ -4405,9 +4488,11 @@ pub mod datastore_storage_summary {
             std::option::Option<crate::model::ServiceManagedDatastoreS3StorageSummary>,
         pub(crate) customer_managed_s3:
             std::option::Option<crate::model::CustomerManagedDatastoreS3StorageSummary>,
+        pub(crate) iot_site_wise_multi_layer_storage:
+            std::option::Option<crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary>,
     }
     impl Builder {
-        /// <p>Used to store data store data in an S3 bucket managed by AWS IoT Analytics.</p>
+        /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
         pub fn service_managed_s3(
             mut self,
             input: crate::model::ServiceManagedDatastoreS3StorageSummary,
@@ -4422,7 +4507,7 @@ pub mod datastore_storage_summary {
             self.service_managed_s3 = input;
             self
         }
-        /// <p>Used to store data store data in an S3 bucket that you manage.</p>
+        /// <p>Used to store data in an Amazon S3 bucket managed by IoT Analytics.</p>
         pub fn customer_managed_s3(
             mut self,
             input: crate::model::CustomerManagedDatastoreS3StorageSummary,
@@ -4437,11 +4522,27 @@ pub mod datastore_storage_summary {
             self.customer_managed_s3 = input;
             self
         }
+        /// <p> Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage. </p>
+        pub fn iot_site_wise_multi_layer_storage(
+            mut self,
+            input: crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary,
+        ) -> Self {
+            self.iot_site_wise_multi_layer_storage = Some(input);
+            self
+        }
+        pub fn set_iot_site_wise_multi_layer_storage(
+            mut self,
+            input: std::option::Option<crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary>,
+        ) -> Self {
+            self.iot_site_wise_multi_layer_storage = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DatastoreStorageSummary`](crate::model::DatastoreStorageSummary)
         pub fn build(self) -> crate::model::DatastoreStorageSummary {
             crate::model::DatastoreStorageSummary {
                 service_managed_s3: self.service_managed_s3,
                 customer_managed_s3: self.customer_managed_s3,
+                iot_site_wise_multi_layer_storage: self.iot_site_wise_multi_layer_storage,
             }
         }
     }
@@ -4453,18 +4554,138 @@ impl DatastoreStorageSummary {
     }
 }
 
-/// <p>Used to store data store data in an S3 bucket that you manage.</p>
+/// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DatastoreIotSiteWiseMultiLayerStorageSummary {
+    /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
+    pub customer_managed_s3_storage:
+        std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
+}
+impl std::fmt::Debug for DatastoreIotSiteWiseMultiLayerStorageSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DatastoreIotSiteWiseMultiLayerStorageSummary");
+        formatter.field(
+            "customer_managed_s3_storage",
+            &self.customer_managed_s3_storage,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary)
+pub mod datastore_iot_site_wise_multi_layer_storage_summary {
+    /// A builder for [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) customer_managed_s3_storage:
+            std::option::Option<crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary>,
+    }
+    impl Builder {
+        /// <p>Used to store data used by IoT SiteWise in an Amazon S3 bucket that you manage.</p>
+        pub fn customer_managed_s3_storage(
+            mut self,
+            input: crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary,
+        ) -> Self {
+            self.customer_managed_s3_storage = Some(input);
+            self
+        }
+        pub fn set_customer_managed_s3_storage(
+            mut self,
+            input: std::option::Option<
+                crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary,
+            >,
+        ) -> Self {
+            self.customer_managed_s3_storage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary)
+        pub fn build(self) -> crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary {
+            crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary {
+                customer_managed_s3_storage: self.customer_managed_s3_storage,
+            }
+        }
+    }
+}
+impl DatastoreIotSiteWiseMultiLayerStorageSummary {
+    /// Creates a new builder-style object to manufacture [`DatastoreIotSiteWiseMultiLayerStorageSummary`](crate::model::DatastoreIotSiteWiseMultiLayerStorageSummary)
+    pub fn builder() -> crate::model::datastore_iot_site_wise_multi_layer_storage_summary::Builder {
+        crate::model::datastore_iot_site_wise_multi_layer_storage_summary::Builder::default()
+    }
+}
+
+/// <p> Contains information about the data store that you manage, which stores data used by IoT SiteWise. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+    /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+    pub bucket: std::option::Option<std::string::String>,
+    /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+    pub key_prefix: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("IotSiteWiseCustomerManagedDatastoreS3StorageSummary");
+        formatter.field("bucket", &self.bucket);
+        formatter.field("key_prefix", &self.key_prefix);
+        formatter.finish()
+    }
+}
+/// See [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary)
+pub mod iot_site_wise_customer_managed_datastore_s3_storage_summary {
+    /// A builder for [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bucket: std::option::Option<std::string::String>,
+        pub(crate) key_prefix: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p> The name of the Amazon S3 bucket where your data is stored. </p>
+        pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
+            self.bucket = Some(input.into());
+            self
+        }
+        pub fn set_bucket(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.bucket = input;
+            self
+        }
+        /// <p> (Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/). </p>
+        pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_prefix = Some(input.into());
+            self
+        }
+        pub fn set_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_prefix = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary)
+        pub fn build(self) -> crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+            crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+                bucket: self.bucket,
+                key_prefix: self.key_prefix,
+            }
+        }
+    }
+}
+impl IotSiteWiseCustomerManagedDatastoreS3StorageSummary {
+    /// Creates a new builder-style object to manufacture [`IotSiteWiseCustomerManagedDatastoreS3StorageSummary`](crate::model::IotSiteWiseCustomerManagedDatastoreS3StorageSummary)
+    pub fn builder(
+    ) -> crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder {
+        crate::model::iot_site_wise_customer_managed_datastore_s3_storage_summary::Builder::default(
+        )
+    }
+}
+
+/// <p>Contains information about the data store that you manage.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CustomerManagedDatastoreS3StorageSummary {
-    /// <p>The name of the S3 bucket in which data store data is stored.</p>
+    /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Optional. The prefix used to create the keys of the data store data objects. Each object
-    /// in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-    /// has exactly one key. The prefix must end with a forward slash (/).</p>
+    /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-    /// S3 resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomerManagedDatastoreS3StorageSummary {
@@ -4487,7 +4708,7 @@ pub mod customer_managed_datastore_s3_storage_summary {
         pub(crate) role_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the S3 bucket in which data store data is stored.</p>
+        /// <p>The name of the Amazon S3 bucket where your data is stored.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -4496,9 +4717,7 @@ pub mod customer_managed_datastore_s3_storage_summary {
             self.bucket = input;
             self
         }
-        /// <p>Optional. The prefix used to create the keys of the data store data objects. Each object
-        /// in an S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket
-        /// has exactly one key. The prefix must end with a forward slash (/).</p>
+        /// <p>(Optional) The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end with a forward slash (/).</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_prefix = Some(input.into());
             self
@@ -4507,8 +4726,7 @@ pub mod customer_managed_datastore_s3_storage_summary {
             self.key_prefix = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-        /// S3 resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3 resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -4534,7 +4752,7 @@ impl CustomerManagedDatastoreS3StorageSummary {
     }
 }
 
-/// <p>Used to store data store data in an S3 bucket managed by AWS IoT Analytics.</p>
+/// <p>Contains information about the data store that is managed by IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceManagedDatastoreS3StorageSummary {}
@@ -4564,21 +4782,21 @@ impl ServiceManagedDatastoreS3StorageSummary {
     }
 }
 
-/// <p>A summary of information about a data set.</p>
+/// <p>A summary of information about a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetSummary {
-    /// <p>The name of the data set.</p>
+    /// <p>The name of the dataset.</p>
     pub dataset_name: std::option::Option<std::string::String>,
-    /// <p>The status of the data set.</p>
+    /// <p>The status of the dataset.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
-    /// <p>The time the data set was created.</p>
+    /// <p>The time the dataset was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The last time the data set was updated.</p>
+    /// <p>The last time the dataset was updated.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
-    /// <p>A list of triggers. A trigger causes data set content to be populated at a specified time
-    /// interval or when another data set is populated. The list of triggers can be empty or contain
-    /// up to five <code>DataSetTrigger</code> objects</p>
+    /// <p>A list of triggers. A trigger causes dataset content to be populated at a specified time
+    /// interval or when another dataset is populated. The list of triggers can be empty or contain up
+    /// to five <code>DataSetTrigger</code> objects</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>A list of <code>DataActionSummary</code> objects.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
@@ -4609,7 +4827,7 @@ pub mod dataset_summary {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::DatasetActionSummary>>,
     }
     impl Builder {
-        /// <p>The name of the data set.</p>
+        /// <p>The name of the dataset.</p>
         pub fn dataset_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dataset_name = Some(input.into());
             self
@@ -4618,7 +4836,7 @@ pub mod dataset_summary {
             self.dataset_name = input;
             self
         }
-        /// <p>The status of the data set.</p>
+        /// <p>The status of the dataset.</p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
             self.status = Some(input);
             self
@@ -4630,7 +4848,7 @@ pub mod dataset_summary {
             self.status = input;
             self
         }
-        /// <p>The time the data set was created.</p>
+        /// <p>The time the dataset was created.</p>
         pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
@@ -4642,7 +4860,7 @@ pub mod dataset_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the data set was updated.</p>
+        /// <p>The last time the dataset was updated.</p>
         pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
@@ -4873,7 +5091,7 @@ impl AsRef<str> for DatasetStatus {
 pub struct DatasetContentSummary {
     /// <p>The version of the dataset contents.</p>
     pub version: std::option::Option<std::string::String>,
-    /// <p>The status of the data set contents.</p>
+    /// <p>The status of the dataset contents.</p>
     pub status: std::option::Option<crate::model::DatasetContentStatus>,
     /// <p>The actual time the creation of the dataset contents was started.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -4915,7 +5133,7 @@ pub mod dataset_content_summary {
             self.version = input;
             self
         }
-        /// <p>The status of the data set contents.</p>
+        /// <p>The status of the dataset contents.</p>
         pub fn status(mut self, input: crate::model::DatasetContentStatus) -> Self {
             self.status = Some(input);
             self
@@ -4982,14 +5200,14 @@ impl DatasetContentSummary {
     }
 }
 
-/// <p>The state of the data set contents and the reason they are in this state.</p>
+/// <p>The state of the dataset contents and the reason they are in this state.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetContentStatus {
-    /// <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or
+    /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
     /// FAILED.</p>
     pub state: std::option::Option<crate::model::DatasetContentState>,
-    /// <p>The reason the data set contents are in this state.</p>
+    /// <p>The reason the dataset contents are in this state.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DatasetContentStatus {
@@ -5010,7 +5228,7 @@ pub mod dataset_content_status {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The state of the data set contents. Can be one of READY, CREATING, SUCCEEDED, or
+        /// <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED, or
         /// FAILED.</p>
         pub fn state(mut self, input: crate::model::DatasetContentState) -> Self {
             self.state = Some(input);
@@ -5023,7 +5241,7 @@ pub mod dataset_content_status {
             self.state = input;
             self
         }
-        /// <p>The reason the data set contents are in this state.</p>
+        /// <p>The reason the dataset contents are in this state.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
@@ -5116,8 +5334,7 @@ pub struct ChannelSummary {
     /// <p>The last time the channel was updated.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the channel.</p>
-    /// <p>AWS IoT Analytics updates this value at most once per minute for one channel.
-    /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
 }
@@ -5205,8 +5422,7 @@ pub mod channel_summary {
             self
         }
         /// <p>The last time when a new message arrived in the channel.</p>
-        /// <p>AWS IoT Analytics updates this value at most once per minute for one channel.
-        /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
@@ -5296,7 +5512,7 @@ impl AsRef<str> for ChannelStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ChannelStorageSummary {
-    /// <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+    /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
     pub service_managed_s3:
         std::option::Option<crate::model::ServiceManagedChannelS3StorageSummary>,
     /// <p>Used to store channel data in an S3 bucket that you manage.</p>
@@ -5323,7 +5539,7 @@ pub mod channel_storage_summary {
             std::option::Option<crate::model::CustomerManagedChannelS3StorageSummary>,
     }
     impl Builder {
-        /// <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+        /// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
         pub fn service_managed_s3(
             mut self,
             input: crate::model::ServiceManagedChannelS3StorageSummary,
@@ -5375,12 +5591,12 @@ impl ChannelStorageSummary {
 pub struct CustomerManagedChannelS3StorageSummary {
     /// <p>The name of the S3 bucket in which channel data is stored.</p>
     pub bucket: std::option::Option<std::string::String>,
-    /// <p>Optional. The prefix used to create the keys of the channel data objects. Each object in
+    /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
     /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
     /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-    /// S3 resources.</p>
+    /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+    /// resources.</p>
     pub role_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CustomerManagedChannelS3StorageSummary {
@@ -5412,7 +5628,7 @@ pub mod customer_managed_channel_s3_storage_summary {
             self.bucket = input;
             self
         }
-        /// <p>Optional. The prefix used to create the keys of the channel data objects. Each object in
+        /// <p>(Optional) The prefix used to create the keys of the channel data objects. Each object in
         /// an S3 bucket has a key that is its unique identifier within the bucket (each object in a
         /// bucket has exactly one key). The prefix must end with a forward slash (/).</p>
         pub fn key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5423,8 +5639,8 @@ pub mod customer_managed_channel_s3_storage_summary {
             self.key_prefix = input;
             self
         }
-        /// <p>The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon
-        /// S3 resources.</p>
+        /// <p>The ARN of the role that grants IoT Analytics permission to interact with your Amazon S3
+        /// resources.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -5450,7 +5666,7 @@ impl CustomerManagedChannelS3StorageSummary {
     }
 }
 
-/// <p>Used to store channel data in an S3 bucket managed by AWS IoT Analytics.</p>
+/// <p>Used to store channel data in an S3 bucket managed by IoT Analytics.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceManagedChannelS3StorageSummary {}
@@ -5480,13 +5696,13 @@ impl ServiceManagedChannelS3StorageSummary {
     }
 }
 
-/// <p>The reference to a data set entry.</p>
+/// <p>The reference to a dataset entry.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetEntry {
-    /// <p>The name of the data set item.</p>
+    /// <p>The name of the dataset item.</p>
     pub entry_name: std::option::Option<std::string::String>,
-    /// <p>The presigned URI of the data set item.</p>
+    /// <p>The presigned URI of the dataset item.</p>
     pub data_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DatasetEntry {
@@ -5507,7 +5723,7 @@ pub mod dataset_entry {
         pub(crate) data_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the data set item.</p>
+        /// <p>The name of the dataset item.</p>
         pub fn entry_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.entry_name = Some(input.into());
             self
@@ -5516,7 +5732,7 @@ pub mod dataset_entry {
             self.entry_name = input;
             self
         }
-        /// <p>The presigned URI of the data set item.</p>
+        /// <p>The presigned URI of the dataset item.</p>
         pub fn data_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_uri = Some(input.into());
             self
@@ -5795,10 +6011,7 @@ impl EstimatedResourceSize {
 pub struct Datastore {
     /// <p>The name of the data store.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-    /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You cannot change this storage option after the data store is
-    /// created.</p>
+    /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
     pub storage: std::option::Option<crate::model::DatastoreStorage>,
     /// <p>The ARN of the data store.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -5826,18 +6039,14 @@ pub struct Datastore {
     /// <p>The last time the data store was updated.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the data store.</p>
-    /// <p>AWS IoT Analytics updates this value at most once per minute for one data store.
-    /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-    /// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+    /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
     /// <p>The default file format is JSON. You can specify only one format.</p>
     /// <p>You can't change the file format after you create the data store.</p>
     pub file_format_configuration: std::option::Option<crate::model::FileFormatConfiguration>,
-    /// <p>
-    /// Contains information about the partitions in a data store.
-    /// </p>
+    /// <p> Contains information about the partition dimensions in a data store. </p>
     pub datastore_partitions: std::option::Option<crate::model::DatastorePartitions>,
 }
 impl std::fmt::Debug for Datastore {
@@ -5884,10 +6093,7 @@ pub mod datastore {
             self.name = input;
             self
         }
-        /// <p>Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
-        /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You cannot change this storage option after the data store is
-        /// created.</p>
+        /// <p>Where data in a data store is stored.. You can choose <code>serviceManagedS3</code> storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code> storage. The default is <code>serviceManagedS3</code>. You can't change the choice of Amazon S3 storage after your data store is created. </p>
         pub fn storage(mut self, input: crate::model::DatastoreStorage) -> Self {
             self.storage = Some(input);
             self
@@ -5972,8 +6178,7 @@ pub mod datastore {
             self
         }
         /// <p>The last time when a new message arrived in the data store.</p>
-        /// <p>AWS IoT Analytics updates this value at most once per minute for one data store.
-        /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for Amazon Simple Storage Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);
@@ -5986,8 +6191,7 @@ pub mod datastore {
             self.last_message_arrival_time = input;
             self
         }
-        /// <p>Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON
-        /// and <a href="https://parquet.apache.org/">Parquet</a>.</p>
+        /// <p>Contains the configuration information of file formats.  IoT Analytics data stores support JSON and <a href="https://parquet.apache.org/">Parquet</a>.</p>
         /// <p>The default file format is JSON. You can specify only one format.</p>
         /// <p>You can't change the file format after you create the data store.</p>
         pub fn file_format_configuration(
@@ -6004,9 +6208,7 @@ pub mod datastore {
             self.file_format_configuration = input;
             self
         }
-        /// <p>
-        /// Contains information about the partitions in a data store.
-        /// </p>
+        /// <p> Contains information about the partition dimensions in a data store. </p>
         pub fn datastore_partitions(mut self, input: crate::model::DatastorePartitions) -> Self {
             self.datastore_partitions = Some(input);
             self
@@ -6042,41 +6244,40 @@ impl Datastore {
     }
 }
 
-/// <p>Information about a data set.</p>
+/// <p>Information about a dataset.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Dataset {
-    /// <p>The name of the data set.</p>
+    /// <p>The name of the dataset.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the data set.</p>
+    /// <p>The ARN of the dataset.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The <code>DatasetAction</code> objects that automatically create the data set
+    /// <p>The <code>DatasetAction</code> objects that automatically create the dataset
     /// contents.</p>
     pub actions: std::option::Option<std::vec::Vec<crate::model::DatasetAction>>,
-    /// <p>The <code>DatasetTrigger</code> objects that specify when the data set is automatically
+    /// <p>The <code>DatasetTrigger</code> objects that specify when the dataset is automatically
     /// updated.</p>
     pub triggers: std::option::Option<std::vec::Vec<crate::model::DatasetTrigger>>,
     /// <p>When dataset contents are created they are delivered to destinations specified
     /// here.</p>
     pub content_delivery_rules:
         std::option::Option<std::vec::Vec<crate::model::DatasetContentDeliveryRule>>,
-    /// <p>The status of the data set.</p>
+    /// <p>The status of the dataset.</p>
     pub status: std::option::Option<crate::model::DatasetStatus>,
-    /// <p>When the data set was created.</p>
+    /// <p>When the dataset was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The last time the data set was updated.</p>
+    /// <p>The last time the dataset was updated.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Optional. How long, in days, message data is kept for the data set.</p>
+    /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
     pub retention_period: std::option::Option<crate::model::RetentionPeriod>,
     /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
     /// only the latest version plus the latest succeeded version (if they are different) are kept for
     /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-    /// Analytics User Guide</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+    /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+    /// <i>IoT Analytics User Guide</i>.</p>
     pub versioning_configuration: std::option::Option<crate::model::VersioningConfiguration>,
-    /// <p>A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To
-    /// specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
-    /// filter.</p>
+    /// <p>A list of data rules that send notifications to CloudWatch, when data arrives late. To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.</p>
     pub late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
 }
 impl std::fmt::Debug for Dataset {
@@ -6117,7 +6318,7 @@ pub mod dataset {
         pub(crate) late_data_rules: std::option::Option<std::vec::Vec<crate::model::LateDataRule>>,
     }
     impl Builder {
-        /// <p>The name of the data set.</p>
+        /// <p>The name of the dataset.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -6126,7 +6327,7 @@ pub mod dataset {
             self.name = input;
             self
         }
-        /// <p>The ARN of the data set.</p>
+        /// <p>The ARN of the dataset.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -6177,7 +6378,7 @@ pub mod dataset {
             self.content_delivery_rules = input;
             self
         }
-        /// <p>The status of the data set.</p>
+        /// <p>The status of the dataset.</p>
         pub fn status(mut self, input: crate::model::DatasetStatus) -> Self {
             self.status = Some(input);
             self
@@ -6189,7 +6390,7 @@ pub mod dataset {
             self.status = input;
             self
         }
-        /// <p>When the data set was created.</p>
+        /// <p>When the dataset was created.</p>
         pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
             self.creation_time = Some(input);
             self
@@ -6201,7 +6402,7 @@ pub mod dataset {
             self.creation_time = input;
             self
         }
-        /// <p>The last time the data set was updated.</p>
+        /// <p>The last time the dataset was updated.</p>
         pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_update_time = Some(input);
             self
@@ -6213,7 +6414,7 @@ pub mod dataset {
             self.last_update_time = input;
             self
         }
-        /// <p>Optional. How long, in days, message data is kept for the data set.</p>
+        /// <p>Optional. How long, in days, message data is kept for the dataset.</p>
         pub fn retention_period(mut self, input: crate::model::RetentionPeriod) -> Self {
             self.retention_period = Some(input);
             self
@@ -6228,8 +6429,9 @@ pub mod dataset {
         /// <p>Optional. How many versions of dataset contents are kept. If not specified or set to null,
         /// only the latest version plus the latest succeeded version (if they are different) are kept for
         /// the time period specified by the <code>retentionPeriod</code> parameter. For more information,
-        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT
-        /// Analytics User Guide</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+        /// Keeping Multiple Versions of IoT Analytics datasets</a> in the
+        /// <i>IoT Analytics User Guide</i>.</p>
         pub fn versioning_configuration(
             mut self,
             input: crate::model::VersioningConfiguration,
@@ -6339,7 +6541,7 @@ pub struct Channel {
     pub name: std::option::Option<std::string::String>,
     /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
     /// <code>customerManagedS3</code> storage. If not specified, the default is
-    /// <code>serviceManagedS3</code>. You cannot change this storage option after the channel is
+    /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
     /// created.</p>
     pub storage: std::option::Option<crate::model::ChannelStorage>,
     /// <p>The ARN of the channel.</p>
@@ -6353,8 +6555,7 @@ pub struct Channel {
     /// <p>When the channel was last updated.</p>
     pub last_update_time: std::option::Option<smithy_types::Instant>,
     /// <p>The last time when a new message arrived in the channel.</p>
-    /// <p>AWS IoT Analytics updates this value at most once per minute for one channel.
-    /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+    /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
     /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
     pub last_message_arrival_time: std::option::Option<smithy_types::Instant>,
 }
@@ -6399,7 +6600,7 @@ pub mod channel {
         }
         /// <p>Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
         /// <code>customerManagedS3</code> storage. If not specified, the default is
-        /// <code>serviceManagedS3</code>. You cannot change this storage option after the channel is
+        /// <code>serviceManagedS3</code>. You can't change this storage option after the channel is
         /// created.</p>
         pub fn storage(mut self, input: crate::model::ChannelStorage) -> Self {
             self.storage = Some(input);
@@ -6470,8 +6671,7 @@ pub mod channel {
             self
         }
         /// <p>The last time when a new message arrived in the channel.</p>
-        /// <p>AWS IoT Analytics updates this value at most once per minute for one channel.
-        /// Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
+        /// <p>IoT Analytics updates this value at most once per minute for one channel. Hence, the <code>lastMessageArrivalTime</code> value is an approximation.</p>
         /// <p>This feature only applies to messages that arrived in the data store after October 23, 2020. </p>
         pub fn last_message_arrival_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_message_arrival_time = Some(input);

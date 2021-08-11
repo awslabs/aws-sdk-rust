@@ -81,7 +81,7 @@ impl AssociateTrackerConsumerInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -89,28 +89,28 @@ impl AssociateTrackerConsumerInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -261,7 +261,7 @@ impl BatchDeleteDevicePositionHistoryInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -269,28 +269,28 @@ impl BatchDeleteDevicePositionHistoryInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -440,7 +440,7 @@ impl BatchDeleteGeofenceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -448,28 +448,28 @@ impl BatchDeleteGeofenceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -624,7 +624,7 @@ impl BatchEvaluateGeofencesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -632,28 +632,28 @@ impl BatchEvaluateGeofencesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -800,7 +800,7 @@ impl BatchGetDevicePositionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -808,28 +808,28 @@ impl BatchGetDevicePositionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -983,7 +983,7 @@ impl BatchPutGeofenceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -991,28 +991,28 @@ impl BatchPutGeofenceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1161,7 +1161,7 @@ impl BatchUpdateDevicePositionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1169,28 +1169,28 @@ impl BatchUpdateDevicePositionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1515,7 +1515,7 @@ impl CalculateRouteInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1523,28 +1523,28 @@ impl CalculateRouteInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1785,7 +1785,7 @@ impl CreateGeofenceCollectionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -1793,28 +1793,28 @@ impl CreateGeofenceCollectionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2001,7 +2001,7 @@ impl CreateMapInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2009,28 +2009,28 @@ impl CreateMapInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -2122,27 +2122,28 @@ pub mod create_place_index_input {
         /// <p>Specifies the data provider of geospatial data.</p>
         /// <note>
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> will return an error.</p>
+        /// <code>HERE</code> returns an error.</p>
         /// </note>
         /// <p>Valid values include:</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>Esri</code>
-        /// </p>
+        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
+        /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Here</code>
-        /// </p>
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+        /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
         /// <important>
-        /// <p>Place index resources using HERE as a data provider can't be used to <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-        /// results for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for
-        /// Amazon Location Service.</p>
+        /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+        /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// for Amazon Location Service.</p>
         /// </important>
         /// </li>
         /// </ul>
-        /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
+        /// on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
@@ -2174,7 +2175,7 @@ pub mod create_place_index_input {
             self.description = input;
             self
         }
-        /// <p>Specifies the data storage option for requesting Places.</p>
+        /// <p>Specifies the data storage option requesting Places.</p>
         pub fn data_source_configuration(
             mut self,
             input: crate::model::DataSourceConfiguration,
@@ -2256,7 +2257,7 @@ impl CreatePlaceIndexInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2264,28 +2265,28 @@ impl CreatePlaceIndexInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2382,9 +2383,20 @@ pub mod create_route_calculator_input {
         /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
         /// entering <code>HERE</code> returns an error.</p>
         /// </note>
-        /// <p>Valid Values: <code>Esri</code> | <code>Here</code>
-        /// </p>
-        /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+        /// <p>Valid values include:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Technologies</a>'s coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+        /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
         pub fn data_source(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source = Some(input.into());
             self
@@ -2481,7 +2493,7 @@ impl CreateRouteCalculatorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2489,28 +2501,28 @@ impl CreateRouteCalculatorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2722,7 +2734,7 @@ impl CreateTrackerInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2730,28 +2742,28 @@ impl CreateTrackerInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2865,7 +2877,7 @@ impl DeleteGeofenceCollectionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -2873,28 +2885,28 @@ impl DeleteGeofenceCollectionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3021,7 +3033,7 @@ impl DeleteMapInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3029,28 +3041,28 @@ impl DeleteMapInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -3174,7 +3186,7 @@ impl DeletePlaceIndexInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3182,28 +3194,28 @@ impl DeletePlaceIndexInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3336,7 +3348,7 @@ impl DeleteRouteCalculatorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3344,28 +3356,28 @@ impl DeleteRouteCalculatorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3493,7 +3505,7 @@ impl DeleteTrackerInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3501,28 +3513,28 @@ impl DeleteTrackerInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3656,7 +3668,7 @@ impl DescribeGeofenceCollectionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3664,28 +3676,28 @@ impl DescribeGeofenceCollectionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3813,7 +3825,7 @@ impl DescribeMapInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3821,28 +3833,28 @@ impl DescribeMapInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3968,7 +3980,7 @@ impl DescribePlaceIndexInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -3976,28 +3988,28 @@ impl DescribePlaceIndexInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4131,7 +4143,7 @@ impl DescribeRouteCalculatorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4139,28 +4151,28 @@ impl DescribeRouteCalculatorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4290,7 +4302,7 @@ impl DescribeTrackerInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4298,28 +4310,28 @@ impl DescribeTrackerInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4469,7 +4481,7 @@ impl DisassociateTrackerConsumerInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4477,28 +4489,28 @@ impl DisassociateTrackerConsumerInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4655,7 +4667,7 @@ impl GetDevicePositionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4663,28 +4675,28 @@ impl GetDevicePositionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4905,7 +4917,7 @@ impl GetDevicePositionHistoryInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -4913,28 +4925,28 @@ impl GetDevicePositionHistoryInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5092,7 +5104,7 @@ impl GetGeofenceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5100,28 +5112,28 @@ impl GetGeofenceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5229,8 +5241,47 @@ pub mod get_map_glyphs_input {
             self.map_name = input;
             self
         }
-        /// <p>A comma-separated list of fonts to load glyphs from in order of preference.. For
-        /// example, <code>Noto Sans, Arial Unicode</code>.</p>
+        /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
+        /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+        /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
+        /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
+        /// <code>Ubuntu Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+        /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+        /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
+        /// Regular</code> | <code>Roboto Condensed Light Italic</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
+        /// <code>Arial Bold</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
+        /// | <code>Arial Bold</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO
+        /// Bold</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn font_stack(mut self, input: impl Into<std::string::String>) -> Self {
             self.font_stack = Some(input.into());
             self
@@ -5293,7 +5344,7 @@ impl GetMapGlyphsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5301,28 +5352,28 @@ impl GetMapGlyphsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5516,7 +5567,7 @@ impl GetMapSpritesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5524,28 +5575,28 @@ impl GetMapSpritesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5691,7 +5742,7 @@ impl GetMapStyleDescriptorInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5699,28 +5750,28 @@ impl GetMapStyleDescriptorInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5881,7 +5932,7 @@ impl GetMapTileInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -5889,28 +5940,28 @@ impl GetMapTileInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6118,7 +6169,7 @@ impl ListDevicePositionsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6126,28 +6177,28 @@ impl ListDevicePositionsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6297,7 +6348,7 @@ impl ListGeofenceCollectionsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6305,28 +6356,28 @@ impl ListGeofenceCollectionsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6454,7 +6505,7 @@ impl ListGeofencesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6462,28 +6513,28 @@ impl ListGeofencesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6630,7 +6681,7 @@ impl ListMapsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6638,28 +6689,28 @@ impl ListMapsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op =
@@ -6785,7 +6836,7 @@ impl ListPlaceIndexesInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6793,28 +6844,28 @@ impl ListPlaceIndexesInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6943,7 +6994,7 @@ impl ListRouteCalculatorsInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -6951,28 +7002,28 @@ impl ListRouteCalculatorsInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7034,6 +7085,12 @@ pub mod list_tags_for_resource_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -7082,7 +7139,7 @@ impl ListTagsForResourceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("metadata.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7090,28 +7147,28 @@ impl ListTagsForResourceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7267,7 +7324,7 @@ impl ListTrackerConsumersInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7275,28 +7332,28 @@ impl ListTrackerConsumersInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7443,7 +7500,7 @@ impl ListTrackersInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7451,28 +7508,28 @@ impl ListTrackersInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7614,7 +7671,7 @@ impl PutGeofenceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7622,28 +7679,28 @@ impl PutGeofenceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7819,7 +7876,7 @@ impl SearchPlaceIndexForPositionInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -7827,28 +7884,28 @@ impl SearchPlaceIndexForPositionInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8047,7 +8104,7 @@ impl SearchPlaceIndexForTextInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8055,28 +8112,28 @@ impl SearchPlaceIndexForTextInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8161,6 +8218,12 @@ pub mod tag_resource_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -8230,7 +8293,7 @@ impl TagResourceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("metadata.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8238,28 +8301,28 @@ impl TagResourceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8338,6 +8401,12 @@ pub mod untag_resource_input {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
+        /// <ul>
+        /// <li>
+        /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -8398,7 +8467,7 @@ impl UntagResourceInput {
             let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("metadata.");
             match endpoint_prefix {
                 Ok(prefix) => {
-                    request.config_mut().insert(prefix);
+                    request.properties_mut().insert(prefix);
                 }
                 Err(err) => {
                     return Err(smithy_http::operation::BuildError::SerializationError(
@@ -8406,28 +8475,28 @@ impl UntagResourceInput {
                     ))
                 }
             }
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8501,6 +8570,1016 @@ impl UntagResourceInput {
     /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
     pub fn builder() -> crate::input::untag_resource_input::Builder {
         crate::input::untag_resource_input::Builder::default()
+    }
+}
+
+/// See [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput)
+pub mod update_geofence_collection_input {
+    /// A builder for [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) collection_name: std::option::Option<std::string::String>,
+        pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the geofence collection to update.</p>
+        pub fn collection_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.collection_name = Some(input.into());
+            self
+        }
+        pub fn set_collection_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.collection_name = input;
+            self
+        }
+        /// <p>Updates the pricing plan for the geofence collection.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+        /// pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pricing_plan = Some(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pricing_plan = input;
+            self
+        }
+        /// <p>Updates the data provider for the geofence collection. </p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
+        /// <code>MobileAssetManagement</code>
+        /// </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
+        /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
+        /// Amazon Location Service product page.</p>
+        /// <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+        /// request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+        /// billing for your geofence collection. Your data won't be shared with the data
+        /// provider, and will remain in your AWS account and Region unless you move it.</p>
+        /// </note>
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pricing_plan_data_source = Some(input.into());
+            self
+        }
+        pub fn set_pricing_plan_data_source(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pricing_plan_data_source = input;
+            self
+        }
+        /// <p>Updates the description for the geofence collection.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateGeofenceCollectionInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateGeofenceCollectionInput {
+                collection_name: self.collection_name,
+                pricing_plan: self.pricing_plan,
+                pricing_plan_data_source: self.pricing_plan_data_source,
+                description: self.description,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateGeofenceCollectionInputOperationOutputAlias =
+    crate::operation::UpdateGeofenceCollection;
+#[doc(hidden)]
+pub type UpdateGeofenceCollectionInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateGeofenceCollectionInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateGeofenceCollection`](crate::operation::UpdateGeofenceCollection)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateGeofenceCollection,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_update_geofence_collection(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("geofencing.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateGeofenceCollection::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateGeofenceCollection",
+                "location",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_49 = &self.collection_name;
+        let input_49 =
+            input_49
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "collection_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let collection_name = smithy_http::label::fmt_string(input_49, false);
+        if collection_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "collection_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/geofencing/v0/collections/{CollectionName}",
+            CollectionName = collection_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateGeofenceCollectionInput`](crate::input::UpdateGeofenceCollectionInput)
+    pub fn builder() -> crate::input::update_geofence_collection_input::Builder {
+        crate::input::update_geofence_collection_input::Builder::default()
+    }
+}
+
+/// See [`UpdateMapInput`](crate::input::UpdateMapInput)
+pub mod update_map_input {
+    /// A builder for [`UpdateMapInput`](crate::input::UpdateMapInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) map_name: std::option::Option<std::string::String>,
+        pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the map resource to update.</p>
+        pub fn map_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.map_name = Some(input.into());
+            self
+        }
+        pub fn set_map_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.map_name = input;
+            self
+        }
+        /// <p>Updates the pricing plan for the map resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pricing_plan = Some(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pricing_plan = input;
+            self
+        }
+        /// <p>Updates the description for the map resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateMapInput`](crate::input::UpdateMapInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::UpdateMapInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateMapInput {
+                map_name: self.map_name,
+                pricing_plan: self.pricing_plan,
+                description: self.description,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateMapInputOperationOutputAlias = crate::operation::UpdateMap;
+#[doc(hidden)]
+pub type UpdateMapInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateMapInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateMap`](crate::operation::UpdateMap)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateMap,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_update_map(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("maps.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op =
+                smithy_http::operation::Operation::new(request, crate::operation::UpdateMap::new())
+                    .with_metadata(smithy_http::operation::Metadata::new(
+                        "UpdateMap",
+                        "location",
+                    ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_50 = &self.map_name;
+        let input_50 =
+            input_50
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "map_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let map_name = smithy_http::label::fmt_string(input_50, false);
+        if map_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "map_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(output, "/maps/v0/maps/{MapName}", MapName = map_name)
+            .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateMapInput`](crate::input::UpdateMapInput)
+    pub fn builder() -> crate::input::update_map_input::Builder {
+        crate::input::update_map_input::Builder::default()
+    }
+}
+
+/// See [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput)
+pub mod update_place_index_input {
+    /// A builder for [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_name: std::option::Option<std::string::String>,
+        pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) data_source_configuration:
+            std::option::Option<crate::model::DataSourceConfiguration>,
+    }
+    impl Builder {
+        /// <p>The name of the place index resource to update.</p>
+        pub fn index_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_name = Some(input.into());
+            self
+        }
+        pub fn set_index_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_name = input;
+            self
+        }
+        /// <p>Updates the pricing plan for the place index resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pricing_plan = Some(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pricing_plan = input;
+            self
+        }
+        /// <p>Updates the description for the place index resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>Updates the data storage option for the place index resource.</p>
+        pub fn data_source_configuration(
+            mut self,
+            input: crate::model::DataSourceConfiguration,
+        ) -> Self {
+            self.data_source_configuration = Some(input);
+            self
+        }
+        pub fn set_data_source_configuration(
+            mut self,
+            input: std::option::Option<crate::model::DataSourceConfiguration>,
+        ) -> Self {
+            self.data_source_configuration = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdatePlaceIndexInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdatePlaceIndexInput {
+                index_name: self.index_name,
+                pricing_plan: self.pricing_plan,
+                description: self.description,
+                data_source_configuration: self.data_source_configuration,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdatePlaceIndexInputOperationOutputAlias = crate::operation::UpdatePlaceIndex;
+#[doc(hidden)]
+pub type UpdatePlaceIndexInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdatePlaceIndexInput {
+    /// Consumes the builder and constructs an Operation<[`UpdatePlaceIndex`](crate::operation::UpdatePlaceIndex)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdatePlaceIndex,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_update_place_index(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("places.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdatePlaceIndex::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdatePlaceIndex",
+                "location",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_51 = &self.index_name;
+        let input_51 =
+            input_51
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "index_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let index_name = smithy_http::label::fmt_string(input_51, false);
+        if index_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "index_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/places/v0/indexes/{IndexName}",
+            IndexName = index_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdatePlaceIndexInput`](crate::input::UpdatePlaceIndexInput)
+    pub fn builder() -> crate::input::update_place_index_input::Builder {
+        crate::input::update_place_index_input::Builder::default()
+    }
+}
+
+/// See [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput)
+pub mod update_route_calculator_input {
+    /// A builder for [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) calculator_name: std::option::Option<std::string::String>,
+        pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the route calculator resource to update.</p>
+        pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.calculator_name = Some(input.into());
+            self
+        }
+        pub fn set_calculator_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.calculator_name = input;
+            self
+        }
+        /// <p>Updates the pricing plan for the route calculator resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
+        /// Service pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pricing_plan = Some(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pricing_plan = input;
+            self
+        }
+        /// <p>Updates the description for the route calculator resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateRouteCalculatorInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateRouteCalculatorInput {
+                calculator_name: self.calculator_name,
+                pricing_plan: self.pricing_plan,
+                description: self.description,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateRouteCalculatorInputOperationOutputAlias = crate::operation::UpdateRouteCalculator;
+#[doc(hidden)]
+pub type UpdateRouteCalculatorInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateRouteCalculatorInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateRouteCalculator`](crate::operation::UpdateRouteCalculator)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateRouteCalculator,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_update_route_calculator(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("routes.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateRouteCalculator::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateRouteCalculator",
+                "location",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_52 = &self.calculator_name;
+        let input_52 =
+            input_52
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "calculator_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let calculator_name = smithy_http::label::fmt_string(input_52, false);
+        if calculator_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "calculator_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/routes/v0/calculators/{CalculatorName}",
+            CalculatorName = calculator_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateRouteCalculatorInput`](crate::input::UpdateRouteCalculatorInput)
+    pub fn builder() -> crate::input::update_route_calculator_input::Builder {
+        crate::input::update_route_calculator_input::Builder::default()
+    }
+}
+
+/// See [`UpdateTrackerInput`](crate::input::UpdateTrackerInput)
+pub mod update_tracker_input {
+    /// A builder for [`UpdateTrackerInput`](crate::input::UpdateTrackerInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) tracker_name: std::option::Option<std::string::String>,
+        pub(crate) pricing_plan: std::option::Option<crate::model::PricingPlan>,
+        pub(crate) pricing_plan_data_source: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the tracker resource to update.</p>
+        pub fn tracker_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.tracker_name = Some(input.into());
+            self
+        }
+        pub fn set_tracker_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.tracker_name = input;
+            self
+        }
+        /// <p>Updates the pricing plan for the tracker resource.</p>
+        /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+        /// pricing</a>.</p>
+        pub fn pricing_plan(mut self, input: crate::model::PricingPlan) -> Self {
+            self.pricing_plan = Some(input);
+            self
+        }
+        pub fn set_pricing_plan(
+            mut self,
+            input: std::option::Option<crate::model::PricingPlan>,
+        ) -> Self {
+            self.pricing_plan = input;
+            self
+        }
+        /// <p>Updates the data provider for the tracker resource. </p>
+        /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
+        /// </p>
+        /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
+        /// page</p>
+        /// <note>
+        /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+        /// request.</p>
+        /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+        /// billing for your tracker resource. Your data won't be shared with the data provider,
+        /// and will remain in your AWS account and Region unless you move it.</p>
+        /// </note>
+        pub fn pricing_plan_data_source(mut self, input: impl Into<std::string::String>) -> Self {
+            self.pricing_plan_data_source = Some(input.into());
+            self
+        }
+        pub fn set_pricing_plan_data_source(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.pricing_plan_data_source = input;
+            self
+        }
+        /// <p>Updates the description for the tracker resource.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateTrackerInput`](crate::input::UpdateTrackerInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<crate::input::UpdateTrackerInput, smithy_http::operation::BuildError>
+        {
+            Ok(crate::input::UpdateTrackerInput {
+                tracker_name: self.tracker_name,
+                pricing_plan: self.pricing_plan,
+                pricing_plan_data_source: self.pricing_plan_data_source,
+                description: self.description,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateTrackerInputOperationOutputAlias = crate::operation::UpdateTracker;
+#[doc(hidden)]
+pub type UpdateTrackerInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateTrackerInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateTracker`](crate::operation::UpdateTracker)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateTracker,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_update_tracker(&self).map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let endpoint_prefix = smithy_http::endpoint::EndpointPrefix::new("tracking.");
+            match endpoint_prefix {
+                Ok(prefix) => {
+                    request.properties_mut().insert(prefix);
+                }
+                Err(err) => {
+                    return Err(smithy_http::operation::BuildError::SerializationError(
+                        err.into(),
+                    ))
+                }
+            }
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateTracker::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateTracker",
+                "location",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_53 = &self.tracker_name;
+        let input_53 =
+            input_53
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "tracker_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let tracker_name = smithy_http::label::fmt_string(input_53, false);
+        if tracker_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "tracker_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/tracking/v0/trackers/{TrackerName}",
+            TrackerName = tracker_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("PATCH").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateTrackerInput`](crate::input::UpdateTrackerInput)
+    pub fn builder() -> crate::input::update_tracker_input::Builder {
+        crate::input::update_tracker_input::Builder::default()
     }
 }
 
@@ -8851,6 +9930,42 @@ impl std::fmt::Debug for DeleteTrackerInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateTrackerInput {
+    /// <p>The name of the tracker resource to update.</p>
+    pub tracker_name: std::option::Option<std::string::String>,
+    /// <p>Updates the pricing plan for the tracker resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+    /// pricing</a>.</p>
+    pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>Updates the data provider for the tracker resource. </p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>| <code>MobileAssetManagement</code>
+    /// </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the Amazon Location Service product
+    /// page</p>
+    /// <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+    /// request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+    /// billing for your tracker resource. Your data won't be shared with the data provider,
+    /// and will remain in your AWS account and Region unless you move it.</p>
+    /// </note>
+    pub pricing_plan_data_source: std::option::Option<std::string::String>,
+    /// <p>Updates the description for the tracker resource.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateTrackerInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateTrackerInput");
+        formatter.field("tracker_name", &self.tracker_name);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeTrackerInput {
     /// <p>The name of the tracker resource.</p>
     pub tracker_name: std::option::Option<std::string::String>,
@@ -9039,9 +10154,20 @@ pub struct CreateRouteCalculatorInput {
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example,
     /// entering <code>HERE</code> returns an error.</p>
     /// </note>
-    /// <p>Valid Values: <code>Esri</code> | <code>Here</code>
-    /// </p>
-    /// <p>For more information about data providers, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers</a>.</p>
+    /// <p>Valid values include:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri details on street networks and traffic coverage</a>.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+    /// Technologies</a>'s coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE truck routing coverage</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data
+    /// providers</a> on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Specifies the pricing plan for your route calculator resource.</p>
     /// <p>For additional details and restrictions on each pricing plan option, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
@@ -9102,6 +10228,28 @@ impl std::fmt::Debug for DeleteRouteCalculatorInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteRouteCalculatorInput");
         formatter.field("calculator_name", &self.calculator_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateRouteCalculatorInput {
+    /// <p>The name of the route calculator resource to update.</p>
+    pub calculator_name: std::option::Option<std::string::String>,
+    /// <p>Updates the pricing plan for the route calculator resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location
+    /// Service pricing</a>.</p>
+    pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>Updates the description for the route calculator resource.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateRouteCalculatorInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateRouteCalculatorInput");
+        formatter.field("calculator_name", &self.calculator_name);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("description", &self.description);
         formatter.finish()
     }
 }
@@ -9271,27 +10419,28 @@ pub struct CreatePlaceIndexInput {
     /// <p>Specifies the data provider of geospatial data.</p>
     /// <note>
     /// <p>This field is case-sensitive. Enter the valid values as shown. For example, entering
-    /// <code>HERE</code> will return an error.</p>
+    /// <code>HERE</code> returns an error.</p>
     /// </note>
     /// <p>Valid values include:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>Esri</code>
-    /// </p>
+    /// <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s coverage in your
+    /// region of interest, see <a href="https://developers.arcgis.com/rest/geocode/api-reference/geocode-coverage.htm">Esri details on geocoding coverage</a>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Here</code>
-    /// </p>
+    /// <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a>'s
+    /// coverage in your region of interest, see <a href="https://developer.here.com/documentation/geocoder/dev_guide/topics/coverage-geocoder.html">HERE details on goecoding coverage</a>.</p>
     /// <important>
-    /// <p>Place index resources using HERE as a data provider can't be used to <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store</a>
-    /// results for locations in Japan. For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for
-    /// Amazon Location Service.</p>
+    /// <p>Place index resources using HERE Technologies as a data provider can't <a href="https://docs.aws.amazon.com/location-places/latest/APIReference/API_DataSourceConfiguration.html">store results</a> for locations in Japan. For more information, see the
+    /// <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+    /// for Amazon Location Service.</p>
     /// </important>
     /// </li>
     /// </ul>
-    /// <p>For additional details on data providers, see the <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon Location Service data providers page</a>.</p>
+    /// <p>For additional information , see <a href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Data providers</a>
+    /// on the <i>Amazon Location Service Developer Guide</i>.</p>
     pub data_source: std::option::Option<std::string::String>,
     /// <p>Specifies the pricing plan for your place index resource.</p>
     /// <p>For additional details and restrictions on each pricing plan option, see the <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing
@@ -9299,7 +10448,7 @@ pub struct CreatePlaceIndexInput {
     pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
     /// <p>The optional description for the place index resource.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specifies the data storage option for requesting Places.</p>
+    /// <p>Specifies the data storage option requesting Places.</p>
     pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
     /// <p>Applies one or more tags to the place index resource. A tag is a key-value pair helps
     /// manage, identify, search, and filter your resources by labelling them.</p>
@@ -9350,6 +10499,30 @@ impl std::fmt::Debug for DeletePlaceIndexInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeletePlaceIndexInput");
         formatter.field("index_name", &self.index_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdatePlaceIndexInput {
+    /// <p>The name of the place index resource to update.</p>
+    pub index_name: std::option::Option<std::string::String>,
+    /// <p>Updates the pricing plan for the place index resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>Updates the description for the place index resource.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>Updates the data storage option for the place index resource.</p>
+    pub data_source_configuration: std::option::Option<crate::model::DataSourceConfiguration>,
+}
+impl std::fmt::Debug for UpdatePlaceIndexInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdatePlaceIndexInput");
+        formatter.field("index_name", &self.index_name);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("description", &self.description);
+        formatter.field("data_source_configuration", &self.data_source_configuration);
         formatter.finish()
     }
 }
@@ -9450,8 +10623,47 @@ impl std::fmt::Debug for GetMapSpritesInput {
 pub struct GetMapGlyphsInput {
     /// <p>The map resource associated with the glyph ﬁle.</p>
     pub map_name: std::option::Option<std::string::String>,
-    /// <p>A comma-separated list of fonts to load glyphs from in order of preference.. For
-    /// example, <code>Noto Sans, Arial Unicode</code>.</p>
+    /// <p>A comma-separated list of fonts to load glyphs from in order of preference. For
+    /// example, <code>Noto Sans Regular, Arial Unicode</code>.</p>
+    /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+    /// <ul>
+    /// <li>
+    /// <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu
+    /// Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> |
+    /// <code>Ubuntu Bold</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu
+    /// Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
+    /// Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif
+    /// Regular</code> | <code>Roboto Condensed Light Italic</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> |
+    /// <code>Arial Bold</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code>
+    /// | <code>Arial Bold</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid fonts for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VectorHereBerlin</code> – <code>Fira GO Regular</code> | <code>Fira GO
+    /// Bold</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub font_stack: std::option::Option<std::string::String>,
     /// <p>A Unicode range of characters to download glyphs for. Each response will contain 256
     /// characters. For example, 0–255 includes all characters from range <code>U+0000</code> to
@@ -9563,6 +10775,27 @@ impl std::fmt::Debug for DeleteMapInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DeleteMapInput");
         formatter.field("map_name", &self.map_name);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateMapInput {
+    /// <p>The name of the map resource to update.</p>
+    pub map_name: std::option::Option<std::string::String>,
+    /// <p>Updates the pricing plan for the map resource.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service pricing</a>.</p>
+    pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>Updates the description for the map resource.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateMapInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateMapInput");
+        formatter.field("map_name", &self.map_name);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("description", &self.description);
         formatter.finish()
     }
 }
@@ -9817,6 +11050,44 @@ impl std::fmt::Debug for DeleteGeofenceCollectionInput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateGeofenceCollectionInput {
+    /// <p>The name of the geofence collection to update.</p>
+    pub collection_name: std::option::Option<std::string::String>,
+    /// <p>Updates the pricing plan for the geofence collection.</p>
+    /// <p>For more information about each pricing plan option restrictions, see <a href="https://aws.amazon.com/location/pricing/">Amazon Location Service
+    /// pricing</a>.</p>
+    pub pricing_plan: std::option::Option<crate::model::PricingPlan>,
+    /// <p>Updates the data provider for the geofence collection. </p>
+    /// <p>A required value for the following pricing plans: <code>MobileAssetTracking</code>|
+    /// <code>MobileAssetManagement</code>
+    /// </p>
+    /// <p>For more information about <a href="https://aws.amazon.com/location/data-providers/">data providers</a> and
+    /// <a href="https://aws.amazon.com/location/pricing/">pricing plans</a>, see the
+    /// Amazon Location Service product page.</p>
+    /// <note>
+    /// <p>This can only be updated when updating the <code>PricingPlan</code> in the same
+    /// request.</p>
+    /// <p>Amazon Location Service uses <code>PricingPlanDataSource</code> to calculate
+    /// billing for your geofence collection. Your data won't be shared with the data
+    /// provider, and will remain in your AWS account and Region unless you move it.</p>
+    /// </note>
+    pub pricing_plan_data_source: std::option::Option<std::string::String>,
+    /// <p>Updates the description for the geofence collection.</p>
+    pub description: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateGeofenceCollectionInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateGeofenceCollectionInput");
+        formatter.field("collection_name", &self.collection_name);
+        formatter.field("pricing_plan", &self.pricing_plan);
+        formatter.field("pricing_plan_data_source", &self.pricing_plan_data_source);
+        formatter.field("description", &self.description);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeGeofenceCollectionInput {
     /// <p>The name of the geofence collection.</p>
     pub collection_name: std::option::Option<std::string::String>,
@@ -9833,8 +11104,14 @@ impl std::fmt::Debug for DescribeGeofenceCollectionInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The list of tag keys to remove from the resource.</p>
+    /// <p>The list of tag keys to remove from the specified resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UntagResourceInput {
@@ -9850,8 +11127,20 @@ impl std::fmt::Debug for UntagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
-    /// <p>The mapping from tag key to tag value for each tag associated with the specified resource.</p>
+    /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -9868,6 +11157,12 @@ impl std::fmt::Debug for TagResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {

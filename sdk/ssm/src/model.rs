@@ -4,22 +4,22 @@
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncSource {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
-    /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+    /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
     /// <code>SingleAccountMultiRegions</code>.</p>
     pub source_type: std::option::Option<std::string::String>,
-    /// <p>Information about the AwsOrganizationsSource resource data sync source. A sync source of
-    /// this type can synchronize data from AWS Organizations.</p>
+    /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync
+    /// source of this type can synchronize data from Organizations.</p>
     pub aws_organizations_source:
         std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
-    /// <p>The <code>SyncSource</code> AWS Regions included in the resource data sync.</p>
+    /// <p>The <code>SyncSource</code> Regions included in the resource data sync.</p>
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
+    /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
     /// Regions come online.</p>
     pub include_future_regions: bool,
-    /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-    /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
+    /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+    /// automatically enables all OpsData sources in the selected Regions for all accounts in
     /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub enable_all_ops_data_sources: bool,
 }
 impl std::fmt::Debug for ResourceDataSyncSource {
@@ -51,7 +51,7 @@ pub mod resource_data_sync_source {
     }
     impl Builder {
         /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
-        /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+        /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
         /// <code>SingleAccountMultiRegions</code>.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_type = Some(input.into());
@@ -61,8 +61,8 @@ pub mod resource_data_sync_source {
             self.source_type = input;
             self
         }
-        /// <p>Information about the AwsOrganizationsSource resource data sync source. A sync source of
-        /// this type can synchronize data from AWS Organizations.</p>
+        /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync
+        /// source of this type can synchronize data from Organizations.</p>
         pub fn aws_organizations_source(
             mut self,
             input: crate::model::ResourceDataSyncAwsOrganizationsSource,
@@ -90,7 +90,7 @@ pub mod resource_data_sync_source {
             self.source_regions = input;
             self
         }
-        /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
+        /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
         /// Regions come online.</p>
         pub fn include_future_regions(mut self, input: bool) -> Self {
             self.include_future_regions = Some(input);
@@ -100,10 +100,10 @@ pub mod resource_data_sync_source {
             self.include_future_regions = input;
             self
         }
-        /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-        /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
+        /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+        /// automatically enables all OpsData sources in the selected Regions for all accounts in
         /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
-        /// <i>AWS Systems Manager User Guide</i>.</p>
+        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
             self.enable_all_ops_data_sources = Some(input);
             self
@@ -131,18 +131,18 @@ impl ResourceDataSyncSource {
     }
 }
 
-/// <p>Information about the AwsOrganizationsSource resource data sync source. A sync source of
-/// this type can synchronize data from AWS Organizations or, if an AWS Organization is not present, from
-/// multiple AWS Regions.</p>
+/// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync
+/// source of this type can synchronize data from Organizations or, if an Amazon Web Services organization isn't
+/// present, from multiple Regions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncAwsOrganizationsSource {
-    /// <p>If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+    /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
     /// <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated
     /// from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated
-    /// from the entire AWS Organization. </p>
+    /// from the entire Amazon Web Services organization.</p>
     pub organization_source_type: std::option::Option<std::string::String>,
-    /// <p>The AWS Organizations organization units included in the sync.</p>
+    /// <p>The Organizations organization units included in the sync.</p>
     pub organizational_units:
         std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncOrganizationalUnit>>,
 }
@@ -165,10 +165,10 @@ pub mod resource_data_sync_aws_organizations_source {
             std::option::Option<std::vec::Vec<crate::model::ResourceDataSyncOrganizationalUnit>>,
     }
     impl Builder {
-        /// <p>If an AWS Organization is present, this is either <code>OrganizationalUnits</code> or
+        /// <p>If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code> or
         /// <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data is aggregated
         /// from a set of organization units. For <code>EntireOrganization</code>, the data is aggregated
-        /// from the entire AWS Organization. </p>
+        /// from the entire Amazon Web Services organization.</p>
         pub fn organization_source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.organization_source_type = Some(input.into());
             self
@@ -214,11 +214,11 @@ impl ResourceDataSyncAwsOrganizationsSource {
     }
 }
 
-/// <p>The AWS Organizations organizational unit data source for the sync.</p>
+/// <p>The Organizations organizational unit data source for the sync.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncOrganizationalUnit {
-    /// <p>The AWS Organization unit ID data source for the sync.</p>
+    /// <p>The Organizations unit ID data source for the sync.</p>
     pub organizational_unit_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResourceDataSyncOrganizationalUnit {
@@ -237,7 +237,7 @@ pub mod resource_data_sync_organizational_unit {
         pub(crate) organizational_unit_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Organization unit ID data source for the sync.</p>
+        /// <p>The Organizations unit ID data source for the sync.</p>
         pub fn organizational_unit_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.organizational_unit_id = Some(input.into());
             self
@@ -567,11 +567,11 @@ pub struct PatchRule {
     /// <p>The cutoff date for auto approval of released patches. Any patches released on or before
     /// this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
     /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
-    /// <code>2020-12-31</code>.</p>
+    /// <code>2021-12-31</code>.</p>
     pub approve_until_date: std::option::Option<std::string::String>,
     /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
-    /// non-security updates available in the specified repository. The default value is 'false'. Applies
-    /// to Linux instances only.</p>
+    /// non-security updates available in the specified repository. The default value is
+    /// <code>false</code>. Applies to Linux instances only.</p>
     pub enable_non_security: std::option::Option<bool>,
 }
 impl std::fmt::Debug for PatchRule {
@@ -637,7 +637,7 @@ pub mod patch_rule {
         /// <p>The cutoff date for auto approval of released patches. Any patches released on or before
         /// this date are installed automatically. Not supported on Debian Server or Ubuntu Server.</p>
         /// <p>Enter dates in the format <code>YYYY-MM-DD</code>. For example,
-        /// <code>2020-12-31</code>.</p>
+        /// <code>2021-12-31</code>.</p>
         pub fn approve_until_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.approve_until_date = Some(input.into());
             self
@@ -650,8 +650,8 @@ pub mod patch_rule {
             self
         }
         /// <p>For instances identified by the approval rule filters, enables a patch baseline to apply
-        /// non-security updates available in the specified repository. The default value is 'false'. Applies
-        /// to Linux instances only.</p>
+        /// non-security updates available in the specified repository. The default value is
+        /// <code>false</code>. Applies to Linux instances only.</p>
         pub fn enable_non_security(mut self, input: bool) -> Self {
             self.enable_non_security = Some(input);
             self
@@ -732,12 +732,14 @@ impl PatchFilterGroup {
 
 /// <p> Defines which patches should be included in a patch baseline.</p>
 /// <p>A patch filter consists of a key and a set of values. The filter key is a patch property.
-/// For example, the available filter keys for WINDOWS are PATCH_SET, PRODUCT, PRODUCT_FAMILY,
-/// CLASSIFICATION, and MSRC_SEVERITY. The filter values define a matching criterion for the patch
-/// property indicated by the key. For example, if the filter key is PRODUCT and the filter values
-/// are ["Office 2013", "Office 2016"], then the filter accepts all patches where product name is
-/// either "Office 2013" or "Office 2016". The filter values can be exact values for the patch
-/// property given as a key, or a wildcard (*), which matches all values.</p>
+/// For example, the available filter keys for <code>WINDOWS</code> are <code>PATCH_SET</code>,
+/// <code>PRODUCT</code>, <code>PRODUCT_FAMILY</code>, <code>CLASSIFICATION</code>, and
+/// <code>MSRC_SEVERITY</code>.</p>
+/// <p>The filter values define a matching criterion for the patch property indicated by the key.
+/// For example, if the filter key is <code>PRODUCT</code> and the filter values are <code>["Office
+/// 2013", "Office 2016"]</code>, then the filter accepts all patches where product name is either
+/// "Office 2013" or "Office 2016". The filter values can be exact values for the patch property
+/// given as a key, or a wildcard (*), which matches all values.</p>
 /// <p>You can view lists of valid values for the patch properties by running the
 /// <code>DescribePatchProperties</code> command. For information about which patch properties can
 /// be used with each major operating system, see <a>DescribePatchProperties</a>.</p>
@@ -1078,6 +1080,7 @@ pub enum OpsItemStatus {
     Cancelling,
     ChangeCalendarOverrideApproved,
     ChangeCalendarOverrideRejected,
+    Closed,
     CompletedWithFailure,
     CompletedWithSuccess,
     Failed,
@@ -1102,6 +1105,7 @@ impl std::convert::From<&str> for OpsItemStatus {
             "Cancelling" => OpsItemStatus::Cancelling,
             "ChangeCalendarOverrideApproved" => OpsItemStatus::ChangeCalendarOverrideApproved,
             "ChangeCalendarOverrideRejected" => OpsItemStatus::ChangeCalendarOverrideRejected,
+            "Closed" => OpsItemStatus::Closed,
             "CompletedWithFailure" => OpsItemStatus::CompletedWithFailure,
             "CompletedWithSuccess" => OpsItemStatus::CompletedWithSuccess,
             "Failed" => OpsItemStatus::Failed,
@@ -1134,6 +1138,7 @@ impl OpsItemStatus {
             OpsItemStatus::Cancelling => "Cancelling",
             OpsItemStatus::ChangeCalendarOverrideApproved => "ChangeCalendarOverrideApproved",
             OpsItemStatus::ChangeCalendarOverrideRejected => "ChangeCalendarOverrideRejected",
+            OpsItemStatus::Closed => "Closed",
             OpsItemStatus::CompletedWithFailure => "CompletedWithFailure",
             OpsItemStatus::CompletedWithSuccess => "CompletedWithSuccess",
             OpsItemStatus::Failed => "Failed",
@@ -1157,6 +1162,7 @@ impl OpsItemStatus {
             "Cancelling",
             "ChangeCalendarOverrideApproved",
             "ChangeCalendarOverrideRejected",
+            "Closed",
             "CompletedWithFailure",
             "CompletedWithSuccess",
             "Failed",
@@ -1232,8 +1238,8 @@ impl RelatedOpsItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemNotification {
-    /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-    /// OpsItem is edited or changed.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+    /// notifications are sent when this OpsItem is edited or changed.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsItemNotification {
@@ -1252,8 +1258,8 @@ pub mod ops_item_notification {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-        /// OpsItem is edited or changed.</p>
+        /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+        /// notifications are sent when this OpsItem is edited or changed.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -1391,12 +1397,13 @@ impl AsRef<str> for OpsItemDataType {
     }
 }
 
-/// <p>Information about an S3 bucket to write instance-level logs to.</p>
+/// <p>Information about an Amazon Simple Storage Service (Amazon S3) bucket to write
+/// instance-level logs to.</p>
 /// <note>
 /// <p>
-/// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+/// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
 /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-/// For information about how Systems Manager handles these options for the supported maintenance
+/// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
 /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
 /// </note>
 #[non_exhaustive]
@@ -1483,13 +1490,13 @@ impl LoggingInfo {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowTaskInvocationParameters {
-    /// <p>The parameters for a RUN_COMMAND task type.</p>
+    /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
     pub run_command: std::option::Option<crate::model::MaintenanceWindowRunCommandParameters>,
-    /// <p>The parameters for an AUTOMATION task type.</p>
+    /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
     pub automation: std::option::Option<crate::model::MaintenanceWindowAutomationParameters>,
-    /// <p>The parameters for a STEP_FUNCTIONS task type.</p>
+    /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
     pub step_functions: std::option::Option<crate::model::MaintenanceWindowStepFunctionsParameters>,
-    /// <p>The parameters for a LAMBDA task type.</p>
+    /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
     pub lambda: std::option::Option<crate::model::MaintenanceWindowLambdaParameters>,
 }
 impl std::fmt::Debug for MaintenanceWindowTaskInvocationParameters {
@@ -1517,7 +1524,7 @@ pub mod maintenance_window_task_invocation_parameters {
         pub(crate) lambda: std::option::Option<crate::model::MaintenanceWindowLambdaParameters>,
     }
     impl Builder {
-        /// <p>The parameters for a RUN_COMMAND task type.</p>
+        /// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
         pub fn run_command(
             mut self,
             input: crate::model::MaintenanceWindowRunCommandParameters,
@@ -1532,7 +1539,7 @@ pub mod maintenance_window_task_invocation_parameters {
             self.run_command = input;
             self
         }
-        /// <p>The parameters for an AUTOMATION task type.</p>
+        /// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
         pub fn automation(
             mut self,
             input: crate::model::MaintenanceWindowAutomationParameters,
@@ -1547,7 +1554,7 @@ pub mod maintenance_window_task_invocation_parameters {
             self.automation = input;
             self
         }
-        /// <p>The parameters for a STEP_FUNCTIONS task type.</p>
+        /// <p>The parameters for a <code>STEP_FUNCTIONS</code> task type.</p>
         pub fn step_functions(
             mut self,
             input: crate::model::MaintenanceWindowStepFunctionsParameters,
@@ -1562,7 +1569,7 @@ pub mod maintenance_window_task_invocation_parameters {
             self.step_functions = input;
             self
         }
-        /// <p>The parameters for a LAMBDA task type.</p>
+        /// <p>The parameters for a <code>LAMBDA</code> task type.</p>
         pub fn lambda(mut self, input: crate::model::MaintenanceWindowLambdaParameters) -> Self {
             self.lambda = Some(input);
             self
@@ -1592,13 +1599,13 @@ impl MaintenanceWindowTaskInvocationParameters {
     }
 }
 
-/// <p>The parameters for a LAMBDA task type.</p>
+/// <p>The parameters for a <code>LAMBDA</code> task type.</p>
 /// <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p>
 /// <note>
 /// <p>
-/// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+/// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
 /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-/// For information about how Systems Manager handles these options for the supported maintenance
+/// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
 /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
 /// <p>
 /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
@@ -1611,14 +1618,14 @@ impl MaintenanceWindowTaskInvocationParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowLambdaParameters {
-    /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then
-    /// process the client information in your Lambda function as you choose through the context
-    /// variable.</p>
+    /// <p>Pass client-specific information to the Lambda function that you are
+    /// invoking. You can then process the client information in your Lambda function as you
+    /// choose through the context variable.</p>
     pub client_context: std::option::Option<std::string::String>,
-    /// <p>(Optional) Specify a Lambda function version or alias name. If you specify a function
-    /// version, the action uses the qualified function ARN to invoke a specific Lambda function. If you
-    /// specify an alias name, the action uses the alias ARN to invoke the Lambda function version to
-    /// which the alias points.</p>
+    /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+    /// function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke
+    /// a specific Lambda function. If you specify an alias name, the operation uses the
+    /// alias ARN to invoke the Lambda function version to which the alias points.</p>
     pub qualifier: std::option::Option<std::string::String>,
     /// <p>JSON to provide to your Lambda function as input.</p>
     pub payload: std::option::Option<smithy_types::Blob>,
@@ -1643,9 +1650,9 @@ pub mod maintenance_window_lambda_parameters {
         pub(crate) payload: std::option::Option<smithy_types::Blob>,
     }
     impl Builder {
-        /// <p>Pass client-specific information to the Lambda function that you are invoking. You can then
-        /// process the client information in your Lambda function as you choose through the context
-        /// variable.</p>
+        /// <p>Pass client-specific information to the Lambda function that you are
+        /// invoking. You can then process the client information in your Lambda function as you
+        /// choose through the context variable.</p>
         pub fn client_context(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_context = Some(input.into());
             self
@@ -1657,10 +1664,10 @@ pub mod maintenance_window_lambda_parameters {
             self.client_context = input;
             self
         }
-        /// <p>(Optional) Specify a Lambda function version or alias name. If you specify a function
-        /// version, the action uses the qualified function ARN to invoke a specific Lambda function. If you
-        /// specify an alias name, the action uses the alias ARN to invoke the Lambda function version to
-        /// which the alias points.</p>
+        /// <p>(Optional) Specify an Lambda function version or alias name. If you specify a
+        /// function version, the operation uses the qualified function Amazon Resource Name (ARN) to invoke
+        /// a specific Lambda function. If you specify an alias name, the operation uses the
+        /// alias ARN to invoke the Lambda function version to which the alias points.</p>
         pub fn qualifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.qualifier = Some(input.into());
             self
@@ -1695,13 +1702,13 @@ impl MaintenanceWindowLambdaParameters {
     }
 }
 
-/// <p>The parameters for a STEP_FUNCTIONS task.</p>
+/// <p>The parameters for a <code>STEP_FUNCTIONS</code> task.</p>
 /// <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p>
 /// <note>
 /// <p>
-/// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+/// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
 /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-/// For information about how Systems Manager handles these options for the supported maintenance
+/// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
 /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
 /// <p>
 /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
@@ -1714,9 +1721,9 @@ impl MaintenanceWindowLambdaParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowStepFunctionsParameters {
-    /// <p>The inputs for the STEP_FUNCTIONS task.</p>
+    /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
     pub input: std::option::Option<std::string::String>,
-    /// <p>The name of the STEP_FUNCTIONS task.</p>
+    /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MaintenanceWindowStepFunctionsParameters {
@@ -1737,7 +1744,7 @@ pub mod maintenance_window_step_functions_parameters {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The inputs for the STEP_FUNCTIONS task.</p>
+        /// <p>The inputs for the <code>STEP_FUNCTIONS</code> task.</p>
         pub fn input(mut self, input: impl Into<std::string::String>) -> Self {
             self.input = Some(input.into());
             self
@@ -1746,7 +1753,7 @@ pub mod maintenance_window_step_functions_parameters {
             self.input = input;
             self
         }
-        /// <p>The name of the STEP_FUNCTIONS task.</p>
+        /// <p>The name of the <code>STEP_FUNCTIONS</code> task.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -1771,26 +1778,27 @@ impl MaintenanceWindowStepFunctionsParameters {
     }
 }
 
-/// <p>The parameters for an AUTOMATION task type.</p>
+/// <p>The parameters for an <code>AUTOMATION</code> task type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowAutomationParameters {
-    /// <p>The version of an Automation document to use during task execution.</p>
+    /// <p>The version of an Automation runbook to use during task execution.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The parameters for the AUTOMATION task.</p>
+    /// <p>The parameters for the <code>AUTOMATION</code> task.</p>
     /// <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p>
     /// <note>
     /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
     /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Systems Manager handles these options for the supported maintenance
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
     /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
     /// <p>
     /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
     /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
     /// about how Systems Manager handles these options for the supported maintenance window task
     /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
-    /// <p>For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.</p>
+    /// <p>For <code>AUTOMATION</code> task types, Amazon Web Services Systems Manager ignores any values specified for these
+    /// parameters.</p>
     /// </note>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
@@ -1816,7 +1824,7 @@ pub mod maintenance_window_automation_parameters {
         >,
     }
     impl Builder {
-        /// <p>The version of an Automation document to use during task execution.</p>
+        /// <p>The version of an Automation runbook to use during task execution.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -1863,21 +1871,21 @@ impl MaintenanceWindowAutomationParameters {
     }
 }
 
-/// <p>The parameters for a RUN_COMMAND task type.</p>
+/// <p>The parameters for a <code>RUN_COMMAND</code> task type.</p>
 /// <p>For information about specifying and updating task parameters, see <a>RegisterTaskWithMaintenanceWindow</a> and <a>UpdateMaintenanceWindowTask</a>.</p>
 /// <note>
 /// <p>
-/// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+/// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
 /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-/// For information about how Systems Manager handles these options for the supported maintenance
+/// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
 /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
 /// <p>
 /// <code>TaskParameters</code> has been deprecated. To specify parameters to pass to a task when it runs,
 /// instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code> structure. For information
 /// about how Systems Manager handles these options for the supported maintenance window task
 /// types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
-/// <p>For Run Command tasks, Systems Manager uses specified values for <code>TaskParameters</code> and
-/// <code>LoggingInfo</code> only if no values are specified for
+/// <p>For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for
+/// <code>TaskParameters</code> and <code>LoggingInfo</code> only if no values are specified for
 /// <code>TaskInvocationParameters</code>. </p>
 /// </note>
 #[non_exhaustive]
@@ -1885,36 +1893,42 @@ impl MaintenanceWindowAutomationParameters {
 pub struct MaintenanceWindowRunCommandParameters {
     /// <p>Information about the commands to run.</p>
     pub comment: std::option::Option<std::string::String>,
-    /// <p>Configuration options for sending command output to CloudWatch Logs.</p>
+    /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
     /// <p>The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes
     /// have been deprecated.</p>
     pub document_hash: std::option::Option<std::string::String>,
     /// <p>SHA-256 or SHA-1. SHA-1 hashes have been deprecated.</p>
     pub document_hash_type: std::option::Option<crate::model::DocumentHashType>,
-    /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
-    /// specific version number. If you run commands by using the AWS CLI, then you must escape the first
-    /// two options by using a backslash. If you specify a version number, then you don't need to use the
-    /// backslash. For example:</p>
-    /// <p>--document-version "\$DEFAULT"</p>
-    /// <p>--document-version "\$LATEST"</p>
-    /// <p>--document-version "3"</p>
+    /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify
+    /// <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands
+    /// by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you
+    /// specify a version number, then you don't need to use the backslash. For example:</p>
+    /// <p>
+    /// <code>--document-version "\$DEFAULT"</code>
+    /// </p>
+    /// <p>
+    /// <code>--document-version "\$LATEST"</code>
+    /// </p>
+    /// <p>
+    /// <code>--document-version "3"</code>
+    /// </p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per-instance
     /// basis.</p>
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
-    /// <p>The name of the S3 bucket.</p>
+    /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 bucket subfolder.</p>
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The parameters for the RUN_COMMAND task execution.</p>
+    /// <p>The parameters for the <code>RUN_COMMAND</code> task execution.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for
-    /// maintenance window Run Command tasks.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
+    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
-    /// <p>If this time is reached and the command has not already started running, it doesn't
+    /// <p>If this time is reached and the command hasn't already started running, it doesn't
     /// run.</p>
     pub timeout_seconds: std::option::Option<i32>,
 }
@@ -1966,7 +1980,7 @@ pub mod maintenance_window_run_command_parameters {
             self.comment = input;
             self
         }
-        /// <p>Configuration options for sending command output to CloudWatch Logs.</p>
+        /// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
         pub fn cloud_watch_output_config(
             mut self,
             input: crate::model::CloudWatchOutputConfig,
@@ -2006,13 +2020,19 @@ pub mod maintenance_window_run_command_parameters {
             self.document_hash_type = input;
             self
         }
-        /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
-        /// specific version number. If you run commands by using the AWS CLI, then you must escape the first
-        /// two options by using a backslash. If you specify a version number, then you don't need to use the
-        /// backslash. For example:</p>
-        /// <p>--document-version "\$DEFAULT"</p>
-        /// <p>--document-version "\$LATEST"</p>
-        /// <p>--document-version "3"</p>
+        /// <p>The Amazon Web Services Systems Manager document (SSM document) version to use in the request. You can specify
+        /// <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific version number. If you run commands
+        /// by using the Amazon Web Services CLI, then you must escape the first two options by using a backslash. If you
+        /// specify a version number, then you don't need to use the backslash. For example:</p>
+        /// <p>
+        /// <code>--document-version "\$DEFAULT"</code>
+        /// </p>
+        /// <p>
+        /// <code>--document-version "\$LATEST"</code>
+        /// </p>
+        /// <p>
+        /// <code>--document-version "3"</code>
+        /// </p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -2037,7 +2057,7 @@ pub mod maintenance_window_run_command_parameters {
             self.notification_config = input;
             self
         }
-        /// <p>The name of the S3 bucket.</p>
+        /// <p>The name of the Amazon Simple Storage Service (Amazon S3) bucket.</p>
         pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_bucket_name = Some(input.into());
             self
@@ -2080,8 +2100,8 @@ pub mod maintenance_window_run_command_parameters {
             self.parameters = input;
             self
         }
-        /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for
-        /// maintenance window Run Command tasks.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
+        /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
@@ -2093,7 +2113,7 @@ pub mod maintenance_window_run_command_parameters {
             self.service_role_arn = input;
             self
         }
-        /// <p>If this time is reached and the command has not already started running, it doesn't
+        /// <p>If this time is reached and the command hasn't already started running, it doesn't
         /// run.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
             self.timeout_seconds = Some(input);
@@ -2132,18 +2152,26 @@ impl MaintenanceWindowRunCommandParameters {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfig {
-    /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes
-    /// notifications about command status changes to this topic.</p>
+    /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run
+    /// Command pushes notifications about command status changes to this topic.</p>
     pub notification_arn: std::option::Option<std::string::String>,
-    /// <p>The different events for which you can receive notifications. These events include the
-    /// following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about
-    /// these events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems
-    /// Manager status changes using Amazon SNS notifications</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <p>The different events for which you can receive notifications. To learn more about these
+    /// events, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring Systems Manager status
+    /// changes using Amazon SNS notifications</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub notification_events: std::option::Option<std::vec::Vec<crate::model::NotificationEvent>>,
-    /// <p>Command: Receive notification when the status of a command changes. Invocation: For commands
-    /// sent to multiple instances, receive notification on a per-instance basis when the status of a
-    /// command changes. </p>
+    /// <p>The type of notification.</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Command</code>: Receive notification when the status of a command changes.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invocation</code>: For commands sent to multiple instances, receive notification on
+    /// a per-instance basis when the status of a command changes. </p>
+    /// </li>
+    /// </ul>
     pub notification_type: std::option::Option<crate::model::NotificationType>,
 }
 impl std::fmt::Debug for NotificationConfig {
@@ -2167,8 +2195,8 @@ pub mod notification_config {
         pub(crate) notification_type: std::option::Option<crate::model::NotificationType>,
     }
     impl Builder {
-        /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run Command pushes
-        /// notifications about command status changes to this topic.</p>
+        /// <p>An Amazon Resource Name (ARN) for an Amazon Simple Notification Service (Amazon SNS) topic. Run
+        /// Command pushes notifications about command status changes to this topic.</p>
         pub fn notification_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_arn = Some(input.into());
             self
@@ -2196,9 +2224,18 @@ pub mod notification_config {
             self.notification_events = input;
             self
         }
-        /// <p>Command: Receive notification when the status of a command changes. Invocation: For commands
-        /// sent to multiple instances, receive notification on a per-instance basis when the status of a
-        /// command changes. </p>
+        /// <p>The type of notification.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Command</code>: Receive notification when the status of a command changes.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Invocation</code>: For commands sent to multiple instances, receive notification on
+        /// a per-instance basis when the status of a command changes. </p>
+        /// </li>
+        /// </ul>
         pub fn notification_type(mut self, input: crate::model::NotificationType) -> Self {
             self.notification_type = Some(input);
             self
@@ -2396,13 +2433,17 @@ impl AsRef<str> for DocumentHashType {
     }
 }
 
-/// <p>Configuration options for sending command output to CloudWatch Logs.</p>
+/// <p>Configuration options for sending command output to Amazon CloudWatch Logs.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CloudWatchOutputConfig {
-    /// <p>The name of the CloudWatch log group where you want to send command output. If you don't
-    /// specify a group name, Systems Manager automatically creates a log group for you. The log group uses the
-    /// following naming format: aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+    /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you
+    /// don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group
+    /// uses the following naming format:</p>
+    /// <p>
+    /// <code>aws/ssm/<i>SystemsManagerDocumentName</i>
+    /// </code>
+    /// </p>
     pub cloud_watch_log_group_name: std::option::Option<std::string::String>,
     /// <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
     pub cloud_watch_output_enabled: bool,
@@ -2431,9 +2472,13 @@ pub mod cloud_watch_output_config {
         pub(crate) cloud_watch_output_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the CloudWatch log group where you want to send command output. If you don't
-        /// specify a group name, Systems Manager automatically creates a log group for you. The log group uses the
-        /// following naming format: aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+        /// <p>The name of the CloudWatch Logs log group where you want to send command output. If you
+        /// don't specify a group name, Amazon Web Services Systems Manager automatically creates a log group for you. The log group
+        /// uses the following naming format:</p>
+        /// <p>
+        /// <code>aws/ssm/<i>SystemsManagerDocumentName</i>
+        /// </code>
+        /// </p>
         pub fn cloud_watch_log_group_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_log_group_name = Some(input.into());
             self
@@ -2522,15 +2567,15 @@ impl MaintenanceWindowTaskParameterValueExpression {
     }
 }
 
-/// <p>An array of search criteria that targets instances using a Key,Value combination that you
+/// <p>An array of search criteria that targets instances using a key-value pair that you
 /// specify.</p>
 /// <note>
 /// <p> One or more targets must be specified for maintenance window Run Command-type tasks.
 /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-/// AWS Lambda, and AWS Step Functions). For more information about running tasks that do not
-/// specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+/// Lambda, and Step Functions). For more information about running tasks
+/// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
 /// maintenance window tasks without targets</a> in the
-/// <i>AWS Systems Manager User Guide</i>.</p>
+/// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// </note>
 /// <p>Supported formats include the following.</p>
 /// <ul>
@@ -2604,8 +2649,8 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i>
 /// </code>
 /// </p>
-/// <p>This example demonstrates how to target only EC2 instances and VPCs in your maintenance
-/// window.</p>
+/// <p>This example demonstrates how to target only Amazon Elastic Compute Cloud (Amazon EC2)
+/// instances and VPCs in your maintenance window.</p>
 /// </li>
 /// <li>
 /// <p>
@@ -2619,12 +2664,12 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// <code>Key=InstanceIds,Values=<i>*</i>
 /// </code>
 /// </p>
-/// <p>This example demonstrates how to target all managed instances in the AWS Region where the
-/// association was created.</p>
+/// <p>This example demonstrates how to target all managed instances in the Region where
+/// the association was created.</p>
 /// </li>
 /// </ul>
 /// <p>For more information about how to send commands that target instances using
-/// <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+/// <code>Key,Value</code> parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting multiple instances</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
@@ -2634,8 +2679,8 @@ pub struct Target {
     /// <p>User-defined criteria that maps to <code>Key</code>. For example, if you specified
     /// <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on
     /// instances that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
-    /// <p>Depending on the type of <code>Target</code>, the maximum number of values for a
-    /// <code>Key</code> might be lower than the global maximum of 50.</p>
+    /// <p>Depending on the type of target, the maximum number of values for a key might be lower than
+    /// the global maximum of 50.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for Target {
@@ -3019,7 +3064,7 @@ impl DocumentDefaultVersionDescription {
     }
 }
 
-/// <p>Describes a Systems Manager document. </p>
+/// <p>Describes a Amazon Web Services Systems Manager document (SSM document). </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentDescription {
@@ -3036,22 +3081,22 @@ pub struct DocumentDescription {
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub hash_type: std::option::Option<crate::model::DocumentHashType>,
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the Systems Manager document. This value can differ for each version of the
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the
     /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The version of the artifact associated with the document.</p>
     pub version_name: std::option::Option<std::string::String>,
-    /// <p>The AWS user account that created the document.</p>
+    /// <p>The Amazon Web Services user account that created the document.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>The date when the document was created.</p>
     pub created_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The status of the Systems Manager document.</p>
+    /// <p>The status of the SSM document.</p>
     pub status: std::option::Option<crate::model::DocumentStatus>,
-    /// <p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
     /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-    /// "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+    /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub status_information: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
     pub document_version: std::option::Option<std::string::String>,
@@ -3059,7 +3104,7 @@ pub struct DocumentDescription {
     pub description: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document.</p>
     pub parameters: std::option::Option<std::vec::Vec<crate::model::DocumentParameter>>,
-    /// <p>The list of OS platforms compatible with this Systems Manager document. </p>
+    /// <p>The list of OS platforms compatible with this SSM document. </p>
     pub platform_types: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
     /// <p>The type of document.</p>
     pub document_type: std::option::Option<crate::model::DocumentType>,
@@ -3072,8 +3117,8 @@ pub struct DocumentDescription {
     /// <p>The document format, either JSON or YAML.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example,
-    /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-    /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+    /// <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+    /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -3204,7 +3249,7 @@ pub mod document_description {
             self.hash_type = input;
             self
         }
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -3213,7 +3258,7 @@ pub mod document_description {
             self.name = input;
             self
         }
-        /// <p>The friendly name of the Systems Manager document. This value can differ for each version of the
+        /// <p>The friendly name of the SSM document. This value can differ for each version of the
         /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
@@ -3232,7 +3277,7 @@ pub mod document_description {
             self.version_name = input;
             self
         }
-        /// <p>The AWS user account that created the document.</p>
+        /// <p>The Amazon Web Services user account that created the document.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -3253,7 +3298,7 @@ pub mod document_description {
             self.created_date = input;
             self
         }
-        /// <p>The status of the Systems Manager document.</p>
+        /// <p>The status of the SSM document.</p>
         pub fn status(mut self, input: crate::model::DocumentStatus) -> Self {
             self.status = Some(input);
             self
@@ -3265,9 +3310,9 @@ pub mod document_description {
             self.status = input;
             self
         }
-        /// <p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+        /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
         /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-        /// "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+        /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
         pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_information = Some(input.into());
             self
@@ -3387,8 +3432,8 @@ pub mod document_description {
             self
         }
         /// <p>The target type which defines the kinds of resources the document can run on. For example,
-        /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-        /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+        /// <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+        /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
@@ -3785,10 +3830,10 @@ impl AttachmentInformation {
     }
 }
 
-/// <p>Metadata that you assign to your AWS resources. Tags enable you to categorize your resources
-/// in different ways, for example, by purpose, owner, or environment. In Systems Manager, you can apply tags
-/// to documents, managed instances, maintenance windows, Parameter Store parameters, and patch
-/// baselines.</p>
+/// <p>Metadata that you assign to your Amazon Web Services resources. Tags enable you to categorize your
+/// resources in different ways, for example, by purpose, owner, or environment. In Amazon Web Services Systems Manager, you
+/// can apply tags to Systems Manager documents (SSM documents), managed instances, maintenance windows,
+/// parameters, patch baselines, OpsItems, and OpsMetadata.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Tag {
@@ -4430,7 +4475,7 @@ impl AsRef<str> for AttachmentsSourceKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociationDescription {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -4447,7 +4492,8 @@ pub struct AssociationDescription {
     /// <p>The document version.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Specify the target for the association. This target is required for associations that use an
-    /// Automation document and target resources by using rate controls.</p>
+    /// Automation runbook and target resources by using rate controls. Automation is a capability of
+    /// Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document. </p>
     pub parameters: std::option::Option<
@@ -4472,20 +4518,20 @@ pub struct AssociationDescription {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-    /// is received.</p>
-    /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-    /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-    /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-    /// at a time.</p>
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-    /// MaxConcurrency associations, the association is allowed to run. During the next association
-    /// interval, the new instance will process its association within the limit specified for
-    /// MaxConcurrency.</p>
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level that is assigned to the association.</p>
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
@@ -4495,21 +4541,22 @@ pub struct AssociationDescription {
     /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
     /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-    /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+    /// <a>PutComplianceItems</a> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is
     /// created and then according to the schedule you specified. Specify this option if you don't want
-    /// an association to run immediately after you create it. This parameter is not supported for rate
+    /// an association to run immediately after you create it. This parameter isn't supported for rate
     /// expressions.</p>
     pub apply_only_at_cron_interval: bool,
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
-    /// documents your associations are gated under. The associations only run when that Change
-    /// Calendar is open. For more information, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems Manager Change Calendar</a>.</p>
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your
+    /// associations are gated under. The associations only run when that change calendar is open. For
+    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
+    /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The combination of AWS Regions and AWS accounts where you want to run the
+    /// <p>The combination of Regions and accounts where you want to run the
     /// association.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
@@ -4592,7 +4639,7 @@ pub mod association_description {
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -4680,7 +4727,8 @@ pub mod association_description {
             self
         }
         /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation document and target resources by using rate controls.</p>
+        /// Automation runbook and target resources by using rate controls. Automation is a capability of
+        /// Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -4807,12 +4855,12 @@ pub mod association_description {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-        /// is received.</p>
-        /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-        /// at a time.</p>
+        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+        /// the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+        /// so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -4825,9 +4873,9 @@ pub mod association_description {
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
         /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-        /// MaxConcurrency associations, the association is allowed to run. During the next association
-        /// interval, the new instance will process its association within the limit specified for
-        /// MaxConcurrency.</p>
+        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+        /// association interval, the new instance will process its association within the limit specified
+        /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -4860,8 +4908,9 @@ pub mod association_description {
         /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
         /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
         /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+        /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+        /// <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.sync_compliance = Some(input);
@@ -4876,7 +4925,7 @@ pub mod association_description {
         }
         /// <p>By default, when you create a new associations, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you create it. This parameter is not supported for rate
+        /// an association to run immediately after you create it. This parameter isn't supported for rate
         /// expressions.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.apply_only_at_cron_interval = Some(input);
@@ -4950,16 +4999,16 @@ impl AssociationDescription {
     }
 }
 
-/// <p>The combination of AWS Regions and accounts targeted by the current Automation
+/// <p>The combination of Regions and accounts targeted by the current Automation
 /// execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetLocation {
-    /// <p>The AWS accounts targeted by the current Automation execution.</p>
+    /// <p>The accounts targeted by the current Automation execution.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The AWS Regions targeted by the current Automation execution.</p>
+    /// <p>The Regions targeted by the current Automation execution.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of AWS accounts and AWS regions allowed to run the Automation
+    /// <p>The maximum number of Regions and accounts allowed to run the Automation
     /// concurrently.</p>
     pub target_location_max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation
@@ -5025,7 +5074,7 @@ pub mod target_location {
             self.regions = input;
             self
         }
-        /// <p>The maximum number of AWS accounts and AWS regions allowed to run the Automation
+        /// <p>The maximum number of Regions and accounts allowed to run the Automation
         /// concurrently.</p>
         pub fn target_location_max_concurrency(
             mut self,
@@ -5196,8 +5245,8 @@ impl AsRef<str> for AssociationComplianceSeverity {
 }
 
 /// <p>An S3 bucket where you want to store the results of this request.</p>
-/// <p>For the minimal permissions required to enable Amazon S3 output for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html">Creating
-/// associations</a> in the <i>Systems Manager User Guide</i>. </p>
+/// <p>For the minimal permissions required to enable Amazon S3 output for an association,
+/// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html">Creating associations</a> in the <i>Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstanceAssociationOutputLocation {
@@ -5251,8 +5300,8 @@ impl InstanceAssociationOutputLocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputLocation {
-    /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-    /// automatically determines the Region of the S3 bucket.</p>
+    /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+    /// Amazon Web Services Systems Manager automatically determines the Region of the S3 bucket.</p>
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
@@ -5279,8 +5328,8 @@ pub mod s3_output_location {
         pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-        /// automatically determines the Region of the S3 bucket.</p>
+        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+        /// Amazon Web Services Systems Manager automatically determines the Region of the S3 bucket.</p>
         pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_region = Some(input.into());
             self
@@ -5624,8 +5673,7 @@ impl AsRef<str> for StopType {
     }
 }
 
-/// <p>Information about an Automation runbook (Automation document) used in a runbook workflow in
-/// Change Manager.</p>
+/// <p>Information about an Automation runbook used in a runbook workflow in Change Manager.</p>
 /// <note>
 /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
 /// approvals for the change request have been received.</p>
@@ -5633,10 +5681,9 @@ impl AsRef<str> for StopType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Runbook {
-    /// <p>The name of the Automation runbook (Automation document) used in a runbook workflow.</p>
+    /// <p>The name of the Automation runbook used in a runbook workflow.</p>
     pub document_name: std::option::Option<std::string::String>,
-    /// <p>The version of the Automation runbook (Automation document) used in a
-    /// runbook workflow.</p>
+    /// <p>The version of the Automation runbook used in a runbook workflow.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The key-value map of execution parameters, which were supplied when calling
     /// <code>StartChangeRequestExecution</code>.</p>
@@ -5646,7 +5693,7 @@ pub struct Runbook {
     /// <p>The name of the parameter used as the target resource for the rate-controlled
     /// runbook workflow. Required if you specify <code>Targets</code>. </p>
     pub target_parameter_name: std::option::Option<std::string::String>,
-    /// <p>A key-value mapping to target resources that the Runbook operation performs tasks on.
+    /// <p>A key-value mapping to target resources that the runbook operation performs tasks on.
     /// Required if you specify <code>TargetParameterName</code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The <code>MaxConcurrency</code> value specified by the user when the operation started,
@@ -5657,7 +5704,7 @@ pub struct Runbook {
     /// indicating the maximum number of errors that can occur during the operation before the updates
     /// are stopped or rolled back.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>Information about the AWS Regions and accounts targeted by the current Runbook
+    /// <p>Information about the Regions and accounts targeted by the current Runbook
     /// operation.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
@@ -5694,7 +5741,7 @@ pub mod runbook {
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     }
     impl Builder {
-        /// <p>The name of the Automation runbook (Automation document) used in a runbook workflow.</p>
+        /// <p>The name of the Automation runbook used in a runbook workflow.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
@@ -5706,8 +5753,7 @@ pub mod runbook {
             self.document_name = input;
             self
         }
-        /// <p>The version of the Automation runbook (Automation document) used in a
-        /// runbook workflow.</p>
+        /// <p>The version of the Automation runbook used in a runbook workflow.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -5882,13 +5928,14 @@ pub struct Command {
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The name of the document requested for execution.</p>
     pub document_name: std::option::Option<std::string::String>,
-    /// <p>The SSM document version.</p>
+    /// <p>The Systems Manager document (SSM document) version.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the
     /// command should do.</p>
     pub comment: std::option::Option<std::string::String>,
-    /// <p>If this time is reached and the command has not already started running, it will not run.
-    /// Calculated based on the ExpiresAfter user input provided as part of the SendCommand API.</p>
+    /// <p>If this time is reached and the command hasn't already started running, it won't run.
+    /// Calculated based on the <code>ExpiresAfter</code> user input provided as part of the
+    /// <code>SendCommand</code> API operation.</p>
     pub expires_after: std::option::Option<smithy_types::Instant>,
     /// <p>The parameter values to be inserted in the document when running the command.</p>
     pub parameters: std::option::Option<
@@ -5903,18 +5950,19 @@ pub struct Command {
     pub requested_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The status of the command.</p>
     pub status: std::option::Option<crate::model::CommandStatus>,
-    /// <p>A detailed status of the command execution. StatusDetails includes more information than
-    /// Status because it includes states resulting from error and concurrency control parameters.
-    /// StatusDetails can show different results than Status. For more information about these statuses,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>AWS Systems Manager User Guide</i>.
-    /// StatusDetails can be one of the following values:</p>
+    /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more
+    /// information than <code>Status</code> because it includes states resulting from error and
+    /// concurrency control parameters. <code>StatusDetails</code> can show different results than
+    /// Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+    /// statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+    /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command has not been sent to any instances.</p>
+    /// <p>Pending: The command hasn't been sent to any instances.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to at least one instance but has not reached a
-    /// final state on all instances.</p>
+    /// <p>In Progress: The command has been sent to at least one instance but hasn't reached a final
+    /// state on all instances.</p>
     /// </li>
     /// <li>
     /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p>
@@ -5932,9 +5980,9 @@ pub struct Command {
     /// is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Incomplete: The command was attempted on all instances and one or more invocations does
-    /// not have a value of Success but not enough invocations failed for the status to be Failed. This
-    /// is a terminal state.</p>
+    /// <p>Incomplete: The command was attempted on all instances and one or more invocations doesn't
+    /// have a value of Success but not enough invocations failed for the status to be Failed. This is
+    /// a terminal state.</p>
     /// </li>
     /// <li>
     /// <p>Canceled: The command was terminated before it was completed. This is a terminal
@@ -5958,13 +6006,15 @@ pub struct Command {
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The maximum number of instances that are allowed to run the command at the same time. You
     /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
-    /// default value is 50. For more information about how to use MaxConcurrency, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-    /// using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// default value is 50. For more information about how to use <code>MaxConcurrency</code>, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+    /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops sending the command to
     /// additional targets. You can specify a number of errors, such as 10, or a percentage or errors,
-    /// such as 10%. The default value is 0. For more information about how to use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-    /// using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// such as 10%. The default value is <code>0</code>. For more information about how to use
+    /// <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run
+    /// Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The number of targets for the command.</p>
     pub target_count: i32,
@@ -5976,12 +6026,14 @@ pub struct Command {
     pub error_count: i32,
     /// <p>The number of targets for which the status is Delivery Timed Out.</p>
     pub delivery_timed_out_count: i32,
-    /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
-    /// about command status changes. </p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
+    /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.
+    /// </p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications about command status changes. </p>
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
-    /// <p>CloudWatch Logs information where you want Systems Manager to send the command output.</p>
+    /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command
+    /// output.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
     /// <p>The <code>TimeoutSeconds</code> value specified for a command.</p>
     pub timeout_seconds: i32,
@@ -6072,7 +6124,7 @@ pub mod command {
             self.document_name = input;
             self
         }
-        /// <p>The SSM document version.</p>
+        /// <p>The Systems Manager document (SSM document) version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -6094,8 +6146,9 @@ pub mod command {
             self.comment = input;
             self
         }
-        /// <p>If this time is reached and the command has not already started running, it will not run.
-        /// Calculated based on the ExpiresAfter user input provided as part of the SendCommand API.</p>
+        /// <p>If this time is reached and the command hasn't already started running, it won't run.
+        /// Calculated based on the <code>ExpiresAfter</code> user input provided as part of the
+        /// <code>SendCommand</code> API operation.</p>
         pub fn expires_after(mut self, input: smithy_types::Instant) -> Self {
             self.expires_after = Some(input);
             self
@@ -6176,18 +6229,19 @@ pub mod command {
             self.status = input;
             self
         }
-        /// <p>A detailed status of the command execution. StatusDetails includes more information than
-        /// Status because it includes states resulting from error and concurrency control parameters.
-        /// StatusDetails can show different results than Status. For more information about these statuses,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>AWS Systems Manager User Guide</i>.
-        /// StatusDetails can be one of the following values:</p>
+        /// <p>A detailed status of the command execution. <code>StatusDetails</code> includes more
+        /// information than <code>Status</code> because it includes states resulting from error and
+        /// concurrency control parameters. <code>StatusDetails</code> can show different results than
+        /// Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+        /// statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+        /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command has not been sent to any instances.</p>
+        /// <p>Pending: The command hasn't been sent to any instances.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to at least one instance but has not reached a
-        /// final state on all instances.</p>
+        /// <p>In Progress: The command has been sent to at least one instance but hasn't reached a final
+        /// state on all instances.</p>
         /// </li>
         /// <li>
         /// <p>Success: The command successfully ran on all invocations. This is a terminal state.</p>
@@ -6205,9 +6259,9 @@ pub mod command {
         /// is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Incomplete: The command was attempted on all instances and one or more invocations does
-        /// not have a value of Success but not enough invocations failed for the status to be Failed. This
-        /// is a terminal state.</p>
+        /// <p>Incomplete: The command was attempted on all instances and one or more invocations doesn't
+        /// have a value of Success but not enough invocations failed for the status to be Failed. This is
+        /// a terminal state.</p>
         /// </li>
         /// <li>
         /// <p>Canceled: The command was terminated before it was completed. This is a terminal
@@ -6271,8 +6325,9 @@ pub mod command {
         }
         /// <p>The maximum number of instances that are allowed to run the command at the same time. You
         /// can specify a number of instances, such as 10, or a percentage of instances, such as 10%. The
-        /// default value is 50. For more information about how to use MaxConcurrency, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-        /// using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// default value is 50. For more information about how to use <code>MaxConcurrency</code>, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running
+        /// commands using Systems Manager Run Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -6286,8 +6341,9 @@ pub mod command {
         }
         /// <p>The maximum number of errors allowed before the system stops sending the command to
         /// additional targets. You can specify a number of errors, such as 10, or a percentage or errors,
-        /// such as 10%. The default value is 0. For more information about how to use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands
-        /// using Systems Manager Run Command</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// such as 10%. The default value is <code>0</code>. For more information about how to use
+        /// <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/run-command.html">Running commands using Systems Manager Run
+        /// Command</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -6334,8 +6390,9 @@ pub mod command {
             self.delivery_timed_out_count = input;
             self
         }
-        /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
-        /// about command status changes. </p>
+        /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
+        /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes.
+        /// </p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
@@ -6356,7 +6413,8 @@ pub mod command {
             self.notification_config = input;
             self
         }
-        /// <p>CloudWatch Logs information where you want Systems Manager to send the command output.</p>
+        /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command
+        /// output.</p>
         pub fn cloud_watch_output_config(
             mut self,
             input: crate::model::CloudWatchOutputConfig,
@@ -6552,17 +6610,18 @@ impl AsRef<str> for SignalType {
 
 /// <p>The service setting data structure.</p>
 /// <p>
-/// <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting
+/// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
 /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-/// AWS service charges money to the account based on feature or service usage, then the AWS service
-/// team might create a default setting of "false". This means the user can't use this feature unless
-/// they change the setting to "true" and intentionally opt in for a paid feature.</p>
-/// <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define
+/// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
+/// service team might create a default setting of "false". This means the user can't use this
+/// feature unless they change the setting to "true" and intentionally opt in for a paid
+/// feature.</p>
+/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
 /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
 /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-/// permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change
-/// the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back
-/// to the original value defined by the AWS service team.</p>
+/// permission for the setting. Use the <a>UpdateServiceSetting</a> API operation to
+/// change the default setting. Or, use the <a>ResetServiceSetting</a> to change the value
+/// back to the original value defined by the Amazon Web Services service team.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceSetting {
@@ -6581,7 +6640,7 @@ pub struct ServiceSetting {
     /// PendingUpdate.</p>
     /// <ul>
     /// <li>
-    /// <p>Default: The current setting uses a default value provisioned by the AWS service
+    /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service
     /// team.</p>
     /// </li>
     /// <li>
@@ -6679,7 +6738,7 @@ pub mod service_setting {
         /// PendingUpdate.</p>
         /// <ul>
         /// <li>
-        /// <p>Default: The current setting uses a default value provisioned by the AWS service
+        /// <p>Default: The current setting uses a default value provisioned by the Amazon Web Services service
         /// team.</p>
         /// </li>
         /// <li>
@@ -7007,18 +7066,19 @@ impl AsRef<str> for ParameterType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryItem {
-    /// <p>The name of the inventory type. Default inventory item type names start with AWS. Custom
-    /// inventory type names will start with Custom. Default inventory item types include the following:
-    /// AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and
-    /// AWS:WindowsUpdate.</p>
+    /// <p>The name of the inventory type. Default inventory item type names start with
+    /// <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item
+    /// types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
+    /// <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
+    /// <code>AWS:WindowsUpdate</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The schema version for the inventory item.</p>
     pub schema_version: std::option::Option<std::string::String>,
     /// <p>The time the inventory information was collected.</p>
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether
-    /// to update inventory information. The PutInventory API does not update the inventory item type
-    /// contents if the MD5 hash has not changed since last update. </p>
+    /// to update inventory information. The PutInventory API doesn't update the inventory item type
+    /// contents if the MD5 hash hasn't changed since last update. </p>
     pub content_hash: std::option::Option<std::string::String>,
     /// <p>The inventory data of the inventory type.</p>
     pub content: std::option::Option<
@@ -7060,10 +7120,11 @@ pub mod inventory_item {
         >,
     }
     impl Builder {
-        /// <p>The name of the inventory type. Default inventory item type names start with AWS. Custom
-        /// inventory type names will start with Custom. Default inventory item types include the following:
-        /// AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and
-        /// AWS:WindowsUpdate.</p>
+        /// <p>The name of the inventory type. Default inventory item type names start with
+        /// <code>AWS</code>. Custom inventory type names will start with Custom. Default inventory item
+        /// types include the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
+        /// <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
+        /// <code>AWS:WindowsUpdate</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -7094,8 +7155,8 @@ pub mod inventory_item {
             self
         }
         /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether
-        /// to update inventory information. The PutInventory API does not update the inventory item type
-        /// contents if the MD5 hash has not changed since last update. </p>
+        /// to update inventory information. The PutInventory API doesn't update the inventory item type
+        /// contents if the MD5 hash hasn't changed since last update. </p>
         pub fn content_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_hash = Some(input.into());
             self
@@ -7594,17 +7655,17 @@ impl AsRef<str> for DocumentPermissionType {
     }
 }
 
-/// <p>Information about a Resource Data Sync configuration, including its current status and last
+/// <p>Information about a resource data sync configuration, including its current status and last
 /// successful sync.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncItem {
-    /// <p>The name of the Resource Data Sync.</p>
+    /// <p>The name of the resource data sync.</p>
     pub sync_name: std::option::Option<std::string::String>,
     /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
     /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
-    /// <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-    /// multiple AWS Regions.</p>
+    /// <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
+    /// multiple Regions.</p>
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Information about the source where the data was synchronized. </p>
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSourceWithState>,
@@ -7657,7 +7718,7 @@ pub mod resource_data_sync_item {
         pub(crate) last_sync_status_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Resource Data Sync.</p>
+        /// <p>The name of the resource data sync.</p>
         pub fn sync_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_name = Some(input.into());
             self
@@ -7668,8 +7729,8 @@ pub mod resource_data_sync_item {
         }
         /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
         /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
-        /// <code>SyncFromSource</code> then the resource data sync synchronizes data from AWS Organizations or from
-        /// multiple AWS Regions.</p>
+        /// <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
+        /// multiple Regions.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_type = Some(input.into());
             self
@@ -7854,7 +7915,7 @@ impl AsRef<str> for LastResourceDataSyncStatus {
     }
 }
 
-/// <p>Information about the target S3 bucket for the Resource Data Sync.</p>
+/// <p>Information about the target S3 bucket for the resource data sync.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncS3Destination {
@@ -7864,10 +7925,10 @@ pub struct ResourceDataSyncS3Destination {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
     pub sync_format: std::option::Option<crate::model::ResourceDataSyncS3Format>,
-    /// <p>The AWS Region with the S3 bucket targeted by the Resource Data Sync.</p>
+    /// <p>The Region with the S3 bucket targeted by the resource data sync.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as
-    /// the destination S3 bucket.</p>
+    /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same
+    /// Region as the destination S3 bucket.</p>
     pub awskms_key_arn: std::option::Option<std::string::String>,
     /// <p>Enables destination data sharing. By default, this field is <code>null</code>.</p>
     pub destination_data_sharing:
@@ -7930,7 +7991,7 @@ pub mod resource_data_sync_s3_destination {
             self.sync_format = input;
             self
         }
-        /// <p>The AWS Region with the S3 bucket targeted by the Resource Data Sync.</p>
+        /// <p>The Region with the S3 bucket targeted by the resource data sync.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -7939,8 +8000,8 @@ pub mod resource_data_sync_s3_destination {
             self.region = input;
             self
         }
-        /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same Region as
-        /// the destination S3 bucket.</p>
+        /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same
+        /// Region as the destination S3 bucket.</p>
         pub fn awskms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.awskms_key_arn = Some(input.into());
             self
@@ -7987,9 +8048,9 @@ impl ResourceDataSyncS3Destination {
     }
 }
 
-/// <p>Synchronize Systems Manager Inventory data from multiple AWS accounts defined in AWS Organizations to
-/// a centralized S3 bucket. Data is synchronized to individual key prefixes in the central bucket.
-/// Each key prefix represents a different AWS account ID.</p>
+/// <p>Synchronize Amazon Web Services Systems Manager Inventory data from multiple accounts defined in Organizations to a
+/// centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the
+/// central bucket. Each key prefix represents a different account ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncDestinationDataSharing {
@@ -8098,27 +8159,27 @@ impl AsRef<str> for ResourceDataSyncS3Format {
 /// <code>OrganizationNotExists</code> (Your organization doesn't exist)</p>
 /// <p>
 /// <code>NoPermissions</code> (The system can't locate the service-linked role. This role is
-/// automatically created when a user creates a resource data sync in Explorer.)</p>
+/// automatically created when a user creates a resource data sync in Amazon Web Services Systems Manager Explorer.)</p>
 /// <p>
 /// <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit in the
 /// resource data sync configuration.)</p>
 /// <p>
 /// <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization in
-/// AWS Organizations.)</p>
+/// Organizations.)</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncSourceWithState {
     /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
-    /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+    /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
     /// <code>singleAccountMultiRegions</code>.</p>
     pub source_type: std::option::Option<std::string::String>,
     /// <p>The field name in <code>SyncSource</code> for the
     /// <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
     pub aws_organizations_source:
         std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
-    /// <p>The <code>SyncSource</code> AWS Regions included in the resource data sync.</p>
+    /// <p>The <code>SyncSource</code> Regions included in the resource data sync.</p>
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
+    /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
     /// Regions come online.</p>
     pub include_future_regions: bool,
     /// <p>The data type name for including resource data sync state. There are four sync
@@ -8133,12 +8194,12 @@ pub struct ResourceDataSyncSourceWithState {
     /// resource data sync configuration.</p>
     /// <p>
     /// <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization in
-    /// AWS Organizations.</p>
+    /// Organizations.</p>
     pub state: std::option::Option<std::string::String>,
-    /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-    /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
+    /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+    /// automatically enables all OpsData sources in the selected Regions for all accounts in
     /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub enable_all_ops_data_sources: bool,
 }
 impl std::fmt::Debug for ResourceDataSyncSourceWithState {
@@ -8172,7 +8233,7 @@ pub mod resource_data_sync_source_with_state {
     }
     impl Builder {
         /// <p>The type of data source for the resource data sync. <code>SourceType</code> is either
-        /// <code>AwsOrganizations</code> (if an organization is present in AWS Organizations) or
+        /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
         /// <code>singleAccountMultiRegions</code>.</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_type = Some(input.into());
@@ -8211,7 +8272,7 @@ pub mod resource_data_sync_source_with_state {
             self.source_regions = input;
             self
         }
-        /// <p>Whether to automatically synchronize and aggregate data from new AWS Regions when those
+        /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
         /// Regions come online.</p>
         pub fn include_future_regions(mut self, input: bool) -> Self {
             self.include_future_regions = Some(input);
@@ -8233,7 +8294,7 @@ pub mod resource_data_sync_source_with_state {
         /// resource data sync configuration.</p>
         /// <p>
         /// <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization in
-        /// AWS Organizations.</p>
+        /// Organizations.</p>
         pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
             self.state = Some(input.into());
             self
@@ -8242,10 +8303,10 @@ pub mod resource_data_sync_source_with_state {
             self.state = input;
             self
         }
-        /// <p>When you create a resource data sync, if you choose one of the AWS Organizations options, then Systems Manager
-        /// automatically enables all OpsData sources in the selected AWS Regions for all AWS accounts in
+        /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
+        /// automatically enables all OpsData sources in the selected Regions for all accounts in
         /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
-        /// <i>AWS Systems Manager User Guide</i>.</p>
+        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
             self.enable_all_ops_data_sources = Some(input);
             self
@@ -8445,12 +8506,12 @@ impl ResourceComplianceSummaryItem {
     }
 }
 
-/// <p>A summary of resources that are not compliant. The summary is organized according to
-/// resource type.</p>
+/// <p>A summary of resources that aren't compliant. The summary is organized according to resource
+/// type.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NonCompliantSummary {
-    /// <p>The total number of compliance items that are not compliant.</p>
+    /// <p>The total number of compliance items that aren't compliant.</p>
     pub non_compliant_count: i32,
     /// <p>A summary of the non-compliance severity by compliance type</p>
     pub severity_summary: std::option::Option<crate::model::SeveritySummary>,
@@ -8473,7 +8534,7 @@ pub mod non_compliant_summary {
         pub(crate) severity_summary: std::option::Option<crate::model::SeveritySummary>,
     }
     impl Builder {
-        /// <p>The total number of compliance items that are not compliant.</p>
+        /// <p>The total number of compliance items that aren't compliant.</p>
         pub fn non_compliant_count(mut self, input: i32) -> Self {
             self.non_compliant_count = Some(input);
             self
@@ -9222,7 +9283,8 @@ impl OpsItemRelatedItemSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemIdentity {
-    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem
+    /// event.</p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsItemIdentity {
@@ -9241,7 +9303,8 @@ pub mod ops_item_identity {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem event.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem
+        /// event.</p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -9781,14 +9844,14 @@ pub struct InventoryFilter {
     /// <p>The name of the filter key.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>Inventory filter values. Example: inventory filter where instance IDs are specified as
-    /// values Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g, i-1a2b3c4d5e6,Type=Equal
-    /// </p>
+    /// values <code>Key=AWS:InstanceInformation.InstanceId,Values= i-a12b3c4d5e6g,
+    /// i-1a2b3c4d5e6,Type=Equal</code>. </p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The type of filter.</p>
     /// <note>
     /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory
-    /// data</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub r#type: std::option::Option<crate::model::InventoryQueryOperatorType>,
 }
@@ -9838,7 +9901,7 @@ pub mod inventory_filter {
         /// <note>
         /// <p>The <code>Exists</code> filter must be used with aggregators. For more information, see
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-aggregate.html">Aggregating inventory
-        /// data</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// data</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// </note>
         pub fn r#type(mut self, input: crate::model::InventoryQueryOperatorType) -> Self {
             self.r#type = Some(input);
@@ -9943,13 +10006,13 @@ impl AsRef<str> for InventoryQueryOperatorType {
 pub struct DocumentVersionInfo {
     /// <p>The document name.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the Systems Manager document. This value can differ for each version of the
+    /// <p>The friendly name of the SSM document. This value can differ for each version of the
     /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
-    /// 6". This value is unique across all versions of a document, and cannot be changed.</p>
+    /// 6". This value is unique across all versions of a document, and can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The date the document was created.</p>
     pub created_date: std::option::Option<smithy_types::Instant>,
@@ -9957,12 +10020,12 @@ pub struct DocumentVersionInfo {
     pub is_default_version: bool,
     /// <p>The document format, either JSON or YAML.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
-    /// <p>The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+    /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
     /// <code>Failed</code>, and <code>Deleting</code>.</p>
     pub status: std::option::Option<crate::model::DocumentStatus>,
-    /// <p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+    /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
     /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-    /// "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+    /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
     pub status_information: std::option::Option<std::string::String>,
     /// <p>The current status of the approval review for the latest version of the document.</p>
     pub review_status: std::option::Option<crate::model::ReviewStatus>,
@@ -10010,7 +10073,7 @@ pub mod document_version_info {
             self.name = input;
             self
         }
-        /// <p>The friendly name of the Systems Manager document. This value can differ for each version of the
+        /// <p>The friendly name of the SSM document. This value can differ for each version of the
         /// document. If you want to update this value, see <a>UpdateDocument</a>.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
@@ -10033,7 +10096,7 @@ pub mod document_version_info {
             self
         }
         /// <p>The version of the artifact associated with the document. For example, "Release 12, Update
-        /// 6". This value is unique across all versions of a document, and cannot be changed.</p>
+        /// 6". This value is unique across all versions of a document, and can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
@@ -10075,7 +10138,7 @@ pub mod document_version_info {
             self.document_format = input;
             self
         }
-        /// <p>The status of the Systems Manager document, such as <code>Creating</code>, <code>Active</code>,
+        /// <p>The status of the SSM document, such as <code>Creating</code>, <code>Active</code>,
         /// <code>Failed</code>, and <code>Deleting</code>.</p>
         pub fn status(mut self, input: crate::model::DocumentStatus) -> Self {
             self.status = Some(input);
@@ -10088,9 +10151,9 @@ pub mod document_version_info {
             self.status = input;
             self
         }
-        /// <p>A message returned by AWS Systems Manager that explains the <code>Status</code> value. For example, a
+        /// <p>A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code> value. For example, a
         /// <code>Failed</code> status might be explained by the <code>StatusInformation</code> message,
-        /// "The specified S3 bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+        /// "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
         pub fn status_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_information = Some(input.into());
             self
@@ -10138,22 +10201,22 @@ impl DocumentVersionInfo {
     }
 }
 
-/// <p>Describes the name of a Systems Manager document.</p>
+/// <p>Describes the name of a SSM document.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DocumentIdentifier {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The date the Systems Manager document was created.</p>
+    /// <p>The date the SSM document was created.</p>
     pub created_date: std::option::Option<smithy_types::Instant>,
-    /// <p>An optional field where you can specify a friendly name for the Systems Manager document. This value
-    /// can differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+    /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
+    /// differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The AWS user account that created the document.</p>
+    /// <p>The Amazon Web Services user account that created the document.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For
     /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
-    /// cannot be changed.</p>
+    /// can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The operating system platform. </p>
     pub platform_types: std::option::Option<std::vec::Vec<crate::model::PlatformType>>,
@@ -10166,8 +10229,8 @@ pub struct DocumentIdentifier {
     /// <p>The document format, either JSON or YAML.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>The target type which defines the kinds of resources the document can run on. For example,
-    /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-    /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+    /// <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+    /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
     pub target_type: std::option::Option<std::string::String>,
     /// <p>The tags, or metadata, that have been applied to the document.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -10224,7 +10287,7 @@ pub mod document_identifier {
         pub(crate) author: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -10233,7 +10296,7 @@ pub mod document_identifier {
             self.name = input;
             self
         }
-        /// <p>The date the Systems Manager document was created.</p>
+        /// <p>The date the SSM document was created.</p>
         pub fn created_date(mut self, input: smithy_types::Instant) -> Self {
             self.created_date = Some(input);
             self
@@ -10245,8 +10308,8 @@ pub mod document_identifier {
             self.created_date = input;
             self
         }
-        /// <p>An optional field where you can specify a friendly name for the Systems Manager document. This value
-        /// can differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.</p>
+        /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
+        /// differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
@@ -10255,7 +10318,7 @@ pub mod document_identifier {
             self.display_name = input;
             self
         }
-        /// <p>The AWS user account that created the document.</p>
+        /// <p>The Amazon Web Services user account that created the document.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -10266,7 +10329,7 @@ pub mod document_identifier {
         }
         /// <p>An optional field specifying the version of the artifact associated with the document. For
         /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// cannot be changed.</p>
+        /// can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
@@ -10337,8 +10400,8 @@ pub mod document_identifier {
             self
         }
         /// <p>The target type which defines the kinds of resources the document can run on. For example,
-        /// /AWS::EC2::Instance. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-        /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+        /// <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+        /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
@@ -10425,38 +10488,56 @@ impl DocumentIdentifier {
 
 /// <p>One or more filters. Use a filter to return a more specific list of documents.</p>
 /// <p>For keys, you can specify one or more tags that have been applied to a document. </p>
-/// <p>You can also use AWS-provided keys, some of which have specific allowed values. These keys
+/// <p>You can also use Amazon Web Services-provided keys, some of which have specific allowed values. These keys
 /// and their associated values are as follows:</p>
 /// <dl>
 /// <dt>DocumentType</dt>
 /// <dd>
 /// <ul>
 /// <li>
-/// <p>ApplicationConfiguration</p>
+/// <p>
+/// <code>ApplicationConfiguration</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>ApplicationConfigurationSchema</p>
+/// <p>
+/// <code>ApplicationConfigurationSchema</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Automation</p>
+/// <p>
+/// <code>Automation</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>ChangeCalendar</p>
+/// <p>
+/// <code>ChangeCalendar</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Command</p>
+/// <p>
+/// <code>Command</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>DeploymentStrategy</p>
+/// <p>
+/// <code>DeploymentStrategy</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Package</p>
+/// <p>
+/// <code>Package</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Policy</p>
+/// <p>
+/// <code>Policy</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Session</p>
+/// <p>
+/// <code>Session</code>
+/// </p>
 /// </li>
 /// </ul>
 /// </dd>
@@ -10466,19 +10547,29 @@ impl DocumentIdentifier {
 /// <code>Key=Owner,Values=Self</code>.</p>
 /// <ul>
 /// <li>
-/// <p>Amazon</p>
+/// <p>
+/// <code>Amazon</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Private</p>
+/// <p>
+/// <code>Private</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Public</p>
+/// <p>
+/// <code>Public</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Self</p>
+/// <p>
+/// <code>Self</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>ThirdParty</p>
+/// <p>
+/// <code>ThirdParty</code>
+/// </p>
 /// </li>
 /// </ul>
 /// </dd>
@@ -10486,30 +10577,34 @@ impl DocumentIdentifier {
 /// <dd>
 /// <ul>
 /// <li>
-/// <p>Linux</p>
+/// <p>
+/// <code>Linux</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Windows</p>
+/// <p>
+/// <code>Windows</code>
+/// </p>
 /// </li>
 /// </ul>
 /// </dd>
 /// </dl>
 /// <p>
-/// <code>Name</code> is another AWS-provided key. If you use <code>Name</code> as a key, you
-/// can use a name prefix to return a list of documents. For example, in the AWS CLI, to return a
-/// list of all documents that begin with <code>Te</code>, run the following command:</p>
+/// <code>Name</code> is another Amazon Web Services-provided key. If you use <code>Name</code> as a key, you
+/// can use a name prefix to return a list of documents. For example, in the Amazon Web Services CLI, to return a list
+/// of all documents that begin with <code>Te</code>, run the following command:</p>
 /// <p>
 /// <code>aws ssm list-documents --filters Key=Name,Values=Te</code>
 /// </p>
-/// <p>You can also use the <code>TargetType</code> AWS-provided key. For a list of valid resource
-/// type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-/// reference</a> in the <i>AWS CloudFormation User Guide</i>.</p>
+/// <p>You can also use the <code>TargetType</code> Amazon Web Services-provided key. For a list of valid
+/// resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+/// property types reference</a> in the <i>CloudFormation User Guide</i>.</p>
 /// <p>If you specify more than two keys, only documents that are identified by all the tags are
 /// returned in the results. If you specify more than two values for a key, documents that are
 /// identified by any of the values are returned in the results.</p>
-/// <p>To specify a custom key and value pair, use the format
+/// <p>To specify a custom key-value pair, use the format
 /// <code>Key=tag:tagName,Values=valueName</code>.</p>
-/// <p>For example, if you created a key called region and are using the AWS CLI to call the
+/// <p>For example, if you created a key called region and are using the Amazon Web Services CLI to call the
 /// <code>list-documents</code> command: </p>
 /// <p>
 /// <code>aws ssm list-documents --filters Key=tag:region,Values=east,west
@@ -11241,14 +11336,14 @@ pub struct CommandFilter {
     /// <li>
     /// <p>
     /// <b>InvokedAfter</b>: Specify a timestamp to limit your results.
-    /// For example, specify <code>2018-07-07T00:00:00Z</code> to see a list of command executions
-    /// occurring July 7, 2018, and later.</p>
+    /// For example, specify <code>2021-07-07T00:00:00Z</code> to see a list of command executions
+    /// occurring July 7, 2021, and later.</p>
     /// </li>
     /// <li>
     /// <p>
     /// <b>InvokedBefore</b>: Specify a timestamp to limit your results.
-    /// For example, specify <code>2018-07-07T00:00:00Z</code> to see a list of command executions from
-    /// before July 7, 2018.</p>
+    /// For example, specify <code>2021-07-07T00:00:00Z</code> to see a list of command executions from
+    /// before July 7, 2021.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -11294,8 +11389,8 @@ pub struct CommandFilter {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>DocumentName</b>: Specify name of the SSM document for which
-    /// you want to see command execution results. For example, specify
+    /// <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document (SSM
+    /// document) for which you want to see command execution results. For example, specify
     /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
     /// perform security patching operations on instances. </p>
     /// </li>
@@ -11354,14 +11449,14 @@ pub mod command_filter {
         /// <li>
         /// <p>
         /// <b>InvokedAfter</b>: Specify a timestamp to limit your results.
-        /// For example, specify <code>2018-07-07T00:00:00Z</code> to see a list of command executions
-        /// occurring July 7, 2018, and later.</p>
+        /// For example, specify <code>2021-07-07T00:00:00Z</code> to see a list of command executions
+        /// occurring July 7, 2021, and later.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <b>InvokedBefore</b>: Specify a timestamp to limit your results.
-        /// For example, specify <code>2018-07-07T00:00:00Z</code> to see a list of command executions from
-        /// before July 7, 2018.</p>
+        /// For example, specify <code>2021-07-07T00:00:00Z</code> to see a list of command executions from
+        /// before July 7, 2021.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -11407,8 +11502,8 @@ pub mod command_filter {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>DocumentName</b>: Specify name of the SSM document for which
-        /// you want to see command execution results. For example, specify
+        /// <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document (SSM
+        /// document) for which you want to see command execution results. For example, specify
         /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document to
         /// perform security patching operations on instances. </p>
         /// </li>
@@ -11531,15 +11626,15 @@ pub struct CommandInvocation {
     pub command_id: std::option::Option<std::string::String>,
     /// <p>The instance ID in which this invocation was requested.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The name of the invocation target. For EC2 instances this is the value for the aws:Name tag.
-    /// For on-premises instances, this is the name of the instance.</p>
+    /// <p>The name of the invocation target. For EC2 instances this is the value for the
+    /// <code>aws:Name</code> tag. For on-premises instances, this is the name of the instance.</p>
     pub instance_name: std::option::Option<std::string::String>,
     /// <p>User-specified information about the command, such as a brief description of what the
     /// command should do.</p>
     pub comment: std::option::Option<std::string::String>,
     /// <p>The document name that was requested for execution.</p>
     pub document_name: std::option::Option<std::string::String>,
-    /// <p>The SSM document version.</p>
+    /// <p>The Systems Manager document (SSM document) version.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The time and date the request was sent to this instance.</p>
     pub requested_date_time: std::option::Option<smithy_types::Instant>,
@@ -11549,14 +11644,14 @@ pub struct CommandInvocation {
     /// the command). StatusDetails includes more information than Status because it includes states
     /// resulting from error and concurrency control parameters. StatusDetails can show different results
     /// than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
-    /// statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+    /// statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
     /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command has not been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the instance.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but has not reached a terminal
+    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
@@ -11564,21 +11659,21 @@ pub struct CommandInvocation {
     /// terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command was not delivered to the instance before the delivery
-    /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit,
-    /// but they do contribute to whether the parent command status is Success or Incomplete. This is a
-    /// terminal state.</p>
+    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// timeout expired. Delivery timeouts don't count against the parent command's
+    /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
+    /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: Command execution started on the instance, but the execution was not
-    /// complete before the execution timeout expired. Execution timeouts count against the MaxErrors
+    /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+    /// complete before the execution timeout expired. Execution timeouts count against the
+    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+    /// the result code wasn't zero. For a command invocation, this indicates that the result code for
+    /// one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code>
     /// limit of the parent command. This is a terminal state.</p>
-    /// </li>
-    /// <li>
-    /// <p>Failed: The command was not successful on the instance. For a plugin, this indicates that
-    /// the result code was not zero. For a command invocation, this indicates that the result code for
-    /// one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the
-    /// parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
     /// <p>Canceled: The command was terminated before it was completed. This is a terminal
@@ -11598,23 +11693,27 @@ pub struct CommandInvocation {
     pub status_details: std::option::Option<std::string::String>,
     /// <p> Gets the trace output sent by the agent. </p>
     pub trace_output: std::option::Option<std::string::String>,
-    /// <p>The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent
-    /// command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined
-    /// for the command, and the S3 bucket was defined for the command.</p>
+    /// <p>The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3), if the S3
+    /// bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is
+    /// populated if there is just one plugin defined for the command, and the S3 bucket was defined for
+    /// the command.</p>
     pub standard_output_url: std::option::Option<std::string::String>,
-    /// <p>The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent
-    /// command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for
-    /// the command, and the S3 bucket was defined for the command.</p>
+    /// <p>The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3), if the S3
+    /// bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is
+    /// populated if there is just one plugin defined for the command, and the S3 bucket was defined for
+    /// the command.</p>
     pub standard_error_url: std::option::Option<std::string::String>,
     /// <p>Plugins processed by the command.</p>
     pub command_plugins: std::option::Option<std::vec::Vec<crate::model::CommandPlugin>>,
-    /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
-    /// about command status changes on a per instance basis.</p>
+    /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
+    /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes
+    /// on a per instance basis.</p>
     pub service_role: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications about command status changes on a per instance
     /// basis.</p>
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
-    /// <p>CloudWatch Logs information where you want Systems Manager to send the command output.</p>
+    /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command
+    /// output.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
 }
 impl std::fmt::Debug for CommandInvocation {
@@ -11682,8 +11781,8 @@ pub mod command_invocation {
             self.instance_id = input;
             self
         }
-        /// <p>The name of the invocation target. For EC2 instances this is the value for the aws:Name tag.
-        /// For on-premises instances, this is the name of the instance.</p>
+        /// <p>The name of the invocation target. For EC2 instances this is the value for the
+        /// <code>aws:Name</code> tag. For on-premises instances, this is the name of the instance.</p>
         pub fn instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_name = Some(input.into());
             self
@@ -11717,7 +11816,7 @@ pub mod command_invocation {
             self.document_name = input;
             self
         }
-        /// <p>The SSM document version.</p>
+        /// <p>The Systems Manager document (SSM document) version.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -11757,14 +11856,14 @@ pub mod command_invocation {
         /// the command). StatusDetails includes more information than Status because it includes states
         /// resulting from error and concurrency control parameters. StatusDetails can show different results
         /// than Status. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
-        /// statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails can be one of the
+        /// statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
         /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command has not been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the instance.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but has not reached a terminal
+        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
@@ -11772,21 +11871,21 @@ pub mod command_invocation {
         /// terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command was not delivered to the instance before the delivery
-        /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit,
-        /// but they do contribute to whether the parent command status is Success or Incomplete. This is a
-        /// terminal state.</p>
+        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts don't count against the parent command's
+        /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
+        /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: Command execution started on the instance, but the execution was not
-        /// complete before the execution timeout expired. Execution timeouts count against the MaxErrors
+        /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+        /// complete before the execution timeout expired. Execution timeouts count against the
+        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
+        /// </li>
+        /// <li>
+        /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+        /// the result code wasn't zero. For a command invocation, this indicates that the result code for
+        /// one or more plugins wasn't zero. Invocation failures count against the <code>MaxErrors</code>
         /// limit of the parent command. This is a terminal state.</p>
-        /// </li>
-        /// <li>
-        /// <p>Failed: The command was not successful on the instance. For a plugin, this indicates that
-        /// the result code was not zero. For a command invocation, this indicates that the result code for
-        /// one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the
-        /// parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
         /// <p>Canceled: The command was terminated before it was completed. This is a terminal
@@ -11823,9 +11922,10 @@ pub mod command_invocation {
             self.trace_output = input;
             self
         }
-        /// <p>The URL to the plugin's StdOut file in Amazon S3, if the S3 bucket was defined for the parent
-        /// command. For an invocation, StandardOutputUrl is populated if there is just one plugin defined
-        /// for the command, and the S3 bucket was defined for the command.</p>
+        /// <p>The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3), if the S3
+        /// bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code> is
+        /// populated if there is just one plugin defined for the command, and the S3 bucket was defined for
+        /// the command.</p>
         pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_output_url = Some(input.into());
             self
@@ -11837,9 +11937,10 @@ pub mod command_invocation {
             self.standard_output_url = input;
             self
         }
-        /// <p>The URL to the plugin's StdErr file in Amazon S3, if the S3 bucket was defined for the parent
-        /// command. For an invocation, StandardErrorUrl is populated if there is just one plugin defined for
-        /// the command, and the S3 bucket was defined for the command.</p>
+        /// <p>The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3), if the S3
+        /// bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code> is
+        /// populated if there is just one plugin defined for the command, and the S3 bucket was defined for
+        /// the command.</p>
         pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_error_url = Some(input.into());
             self
@@ -11864,8 +11965,9 @@ pub mod command_invocation {
             self.command_plugins = input;
             self
         }
-        /// <p>The IAM service role that Run Command uses to act on your behalf when sending notifications
-        /// about command status changes on a per instance basis.</p>
+        /// <p>The Identity and Access Management (IAM) service role that Run Command, a capability
+        /// of Amazon Web Services Systems Manager, uses to act on your behalf when sending notifications about command status changes
+        /// on a per instance basis.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
@@ -11887,7 +11989,8 @@ pub mod command_invocation {
             self.notification_config = input;
             self
         }
-        /// <p>CloudWatch Logs information where you want Systems Manager to send the command output.</p>
+        /// <p>Amazon CloudWatch Logs information where you want Amazon Web Services Systems Manager to send the command
+        /// output.</p>
         pub fn cloud_watch_output_config(
             mut self,
             input: crate::model::CloudWatchOutputConfig,
@@ -11936,23 +12039,25 @@ impl CommandInvocation {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CommandPlugin {
-    /// <p>The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin,
-    /// aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or
-    /// aws:updateSSMAgent. </p>
+    /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
+    /// <code>aws:domainjoin</code>, <code>aws:applications</code>,
+    /// <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>,
+    /// <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The status of this plugin. You can run a document with multiple plugins.</p>
     pub status: std::option::Option<crate::model::CommandPluginStatus>,
-    /// <p>A detailed status of the plugin execution. StatusDetails includes more information than
-    /// Status because it includes states resulting from error and concurrency control parameters.
-    /// StatusDetails can show different results than Status. For more information about these statuses,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>AWS Systems Manager User Guide</i>.
-    /// StatusDetails can be one of the following values:</p>
+    /// <p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more
+    /// information than Status because it includes states resulting from error and concurrency control
+    /// parameters. StatusDetails can show different results than Status. For more information about
+    /// these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+    /// statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+    /// following values:</p>
     /// <ul>
     /// <li>
-    /// <p>Pending: The command has not been sent to the instance.</p>
+    /// <p>Pending: The command hasn't been sent to the instance.</p>
     /// </li>
     /// <li>
-    /// <p>In Progress: The command has been sent to the instance but has not reached a terminal
+    /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
     /// state.</p>
     /// </li>
     /// <li>
@@ -11960,20 +12065,20 @@ pub struct CommandPlugin {
     /// terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Delivery Timed Out: The command was not delivered to the instance before the delivery
-    /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit,
-    /// but they do contribute to whether the parent command status is Success or Incomplete. This is a
-    /// terminal state.</p>
+    /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+    /// timeout expired. Delivery timeouts don't count against the parent command's
+    /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
+    /// Success or Incomplete. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Execution Timed Out: Command execution started on the instance, but the execution was not
-    /// complete before the execution timeout expired. Execution timeouts count against the MaxErrors
-    /// limit of the parent command. This is a terminal state.</p>
+    /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+    /// complete before the execution timeout expired. Execution timeouts count against the
+    /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
-    /// <p>Failed: The command was not successful on the instance. For a plugin, this indicates that
-    /// the result code was not zero. For a command invocation, this indicates that the result code for
-    /// one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the
+    /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+    /// the result code wasn't zero. For a command invocation, this indicates that the result code for
+    /// one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the
     /// parent command. This is a terminal state.</p>
     /// </li>
     /// <li>
@@ -12001,31 +12106,43 @@ pub struct CommandPlugin {
     pub response_finish_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>Output of the plugin execution.</p>
     pub output: std::option::Option<std::string::String>,
-    /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for
-    /// the command was not specified, then this string is empty.</p>
+    /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the
+    /// S3 bucket for the command wasn't specified, then this string is empty.</p>
     pub standard_output_url: std::option::Option<std::string::String>,
-    /// <p>The URL for the complete text written by the plugin to stderr. If execution is not yet
+    /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet
     /// complete, then this string is empty.</p>
     pub standard_error_url: std::option::Option<std::string::String>,
-    /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-    /// automatically determines the S3 bucket region.</p>
+    /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+    /// Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was
     /// requested when issuing the command. For example, in the following response:</p>
-    /// <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript </p>
-    /// <p>doc-example-bucket is the name of the S3 bucket;</p>
-    /// <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-    /// <p>i-02573cafcfEXAMPLE is the instance ID;</p>
-    /// <p>awsrunShellScript is the name of the plugin.</p>
+    /// <p>
+    /// <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+    /// </p>
+    /// <p>
+    /// <code>doc-example-bucket</code> is the name of the S3 bucket;</p>
+    /// <p>
+    /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p>
+    /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+    /// <p>
+    /// <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The S3 directory path inside the bucket where the responses to the command executions should
     /// be stored. This was requested when issuing the command. For example, in the following
     /// response:</p>
-    /// <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript </p>
-    /// <p>doc-example-bucket is the name of the S3 bucket;</p>
-    /// <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-    /// <p>i-02573cafcfEXAMPLE is the instance ID;</p>
-    /// <p>awsrunShellScript is the name of the plugin.</p>
+    /// <p>
+    /// <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+    /// </p>
+    /// <p>
+    /// <code>doc-example-bucket</code> is the name of the S3 bucket;</p>
+    /// <p>
+    /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+    /// <p>
+    /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+    /// <p>
+    /// <code>awsrunShellScript</code> is the name of the plugin.</p>
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CommandPlugin {
@@ -12066,9 +12183,10 @@ pub mod command_plugin {
         pub(crate) output_s3_key_prefix: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the plugin. Must be one of the following: aws:updateAgent, aws:domainjoin,
-        /// aws:applications, aws:runPowerShellScript, aws:psmodule, aws:cloudWatch, aws:runShellScript, or
-        /// aws:updateSSMAgent. </p>
+        /// <p>The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
+        /// <code>aws:domainjoin</code>, <code>aws:applications</code>,
+        /// <code>aws:runPowerShellScript</code>, <code>aws:psmodule</code>, <code>aws:cloudWatch</code>,
+        /// <code>aws:runShellScript</code>, or <code>aws:updateSSMAgent</code>. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -12089,17 +12207,18 @@ pub mod command_plugin {
             self.status = input;
             self
         }
-        /// <p>A detailed status of the plugin execution. StatusDetails includes more information than
-        /// Status because it includes states resulting from error and concurrency control parameters.
-        /// StatusDetails can show different results than Status. For more information about these statuses,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command statuses</a> in the <i>AWS Systems Manager User Guide</i>.
-        /// StatusDetails can be one of the following values:</p>
+        /// <p>A detailed status of the plugin execution. <code>StatusDetails</code> includes more
+        /// information than Status because it includes states resulting from error and concurrency control
+        /// parameters. StatusDetails can show different results than Status. For more information about
+        /// these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding command
+        /// statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. StatusDetails can be one of the
+        /// following values:</p>
         /// <ul>
         /// <li>
-        /// <p>Pending: The command has not been sent to the instance.</p>
+        /// <p>Pending: The command hasn't been sent to the instance.</p>
         /// </li>
         /// <li>
-        /// <p>In Progress: The command has been sent to the instance but has not reached a terminal
+        /// <p>In Progress: The command has been sent to the instance but hasn't reached a terminal
         /// state.</p>
         /// </li>
         /// <li>
@@ -12107,20 +12226,20 @@ pub mod command_plugin {
         /// terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Delivery Timed Out: The command was not delivered to the instance before the delivery
-        /// timeout expired. Delivery timeouts do not count against the parent command's MaxErrors limit,
-        /// but they do contribute to whether the parent command status is Success or Incomplete. This is a
-        /// terminal state.</p>
+        /// <p>Delivery Timed Out: The command wasn't delivered to the instance before the delivery
+        /// timeout expired. Delivery timeouts don't count against the parent command's
+        /// <code>MaxErrors</code> limit, but they do contribute to whether the parent command status is
+        /// Success or Incomplete. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Execution Timed Out: Command execution started on the instance, but the execution was not
-        /// complete before the execution timeout expired. Execution timeouts count against the MaxErrors
-        /// limit of the parent command. This is a terminal state.</p>
+        /// <p>Execution Timed Out: Command execution started on the instance, but the execution wasn't
+        /// complete before the execution timeout expired. Execution timeouts count against the
+        /// <code>MaxErrors</code> limit of the parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
-        /// <p>Failed: The command was not successful on the instance. For a plugin, this indicates that
-        /// the result code was not zero. For a command invocation, this indicates that the result code for
-        /// one or more plugins was not zero. Invocation failures count against the MaxErrors limit of the
+        /// <p>Failed: The command wasn't successful on the instance. For a plugin, this indicates that
+        /// the result code wasn't zero. For a command invocation, this indicates that the result code for
+        /// one or more plugins wasn't zero. Invocation failures count against the MaxErrors limit of the
         /// parent command. This is a terminal state.</p>
         /// </li>
         /// <li>
@@ -12192,8 +12311,8 @@ pub mod command_plugin {
             self.output = input;
             self
         }
-        /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the S3 bucket for
-        /// the command was not specified, then this string is empty.</p>
+        /// <p>The URL for the complete text written by the plugin to stdout in Amazon S3. If the
+        /// S3 bucket for the command wasn't specified, then this string is empty.</p>
         pub fn standard_output_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_output_url = Some(input.into());
             self
@@ -12205,7 +12324,7 @@ pub mod command_plugin {
             self.standard_output_url = input;
             self
         }
-        /// <p>The URL for the complete text written by the plugin to stderr. If execution is not yet
+        /// <p>The URL for the complete text written by the plugin to stderr. If execution isn't yet
         /// complete, then this string is empty.</p>
         pub fn standard_error_url(mut self, input: impl Into<std::string::String>) -> Self {
             self.standard_error_url = Some(input.into());
@@ -12218,8 +12337,8 @@ pub mod command_plugin {
             self.standard_error_url = input;
             self
         }
-        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-        /// automatically determines the S3 bucket region.</p>
+        /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead,
+        /// Amazon Web Services Systems Manager automatically determines the S3 bucket region.</p>
         pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_region = Some(input.into());
             self
@@ -12233,11 +12352,17 @@ pub mod command_plugin {
         }
         /// <p>The S3 bucket where the responses to the command executions should be stored. This was
         /// requested when issuing the command. For example, in the following response:</p>
-        /// <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript </p>
-        /// <p>doc-example-bucket is the name of the S3 bucket;</p>
-        /// <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-        /// <p>i-02573cafcfEXAMPLE is the instance ID;</p>
-        /// <p>awsrunShellScript is the name of the plugin.</p>
+        /// <p>
+        /// <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+        /// </p>
+        /// <p>
+        /// <code>doc-example-bucket</code> is the name of the S3 bucket;</p>
+        /// <p>
+        /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+        /// <p>
+        /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+        /// <p>
+        /// <code>awsrunShellScript</code> is the name of the plugin.</p>
         pub fn output_s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_bucket_name = Some(input.into());
             self
@@ -12252,11 +12377,17 @@ pub mod command_plugin {
         /// <p>The S3 directory path inside the bucket where the responses to the command executions should
         /// be stored. This was requested when issuing the command. For example, in the following
         /// response:</p>
-        /// <p>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript </p>
-        /// <p>doc-example-bucket is the name of the S3 bucket;</p>
-        /// <p>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix is the name of the S3 prefix;</p>
-        /// <p>i-02573cafcfEXAMPLE is the instance ID;</p>
-        /// <p>awsrunShellScript is the name of the plugin.</p>
+        /// <p>
+        /// <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+        /// </p>
+        /// <p>
+        /// <code>doc-example-bucket</code> is the name of the S3 bucket;</p>
+        /// <p>
+        /// <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;</p>
+        /// <p>
+        /// <code>i-02573cafcfEXAMPLE</code> is the instance ID;</p>
+        /// <p>
+        /// <code>awsrunShellScript</code> is the name of the plugin.</p>
         pub fn output_s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_key_prefix = Some(input.into());
             self
@@ -12452,7 +12583,8 @@ pub struct AssociationVersionInfo {
     pub created_date: std::option::Option<smithy_types::Instant>,
     /// <p>The name specified when the association was created.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of a Systems Manager document used when the association version was created.</p>
+    /// <p>The version of an Amazon Web Services Systems Manager document (SSM document) used when the association version was
+    /// created.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>Parameters specified when the association version was created.</p>
     pub parameters: std::option::Option<
@@ -12463,8 +12595,8 @@ pub struct AssociationVersionInfo {
     /// <p>The cron or rate schedule specified for the association when the association version was
     /// created.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p>The location in Amazon S3 specified for the association when the association version was
-    /// created.</p>
+    /// <p>The location in Amazon S3 specified for the association when the association version
+    /// was created.</p>
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>The name specified for the association version when the association version was
     /// created.</p>
@@ -12474,20 +12606,20 @@ pub struct AssociationVersionInfo {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-    /// is received.</p>
-    /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-    /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-    /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-    /// at a time.</p>
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-    /// MaxConcurrency associations, the association is allowed to run. During the next association
-    /// interval, the new instance will process its association within the limit specified for
-    /// MaxConcurrency.</p>
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level that is assigned to the association.</p>
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
@@ -12497,22 +12629,23 @@ pub struct AssociationVersionInfo {
     /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
     /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-    /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+    /// <a>PutComplianceItems</a> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is
     /// created and then according to the schedule you specified. Specify this option if you don't want
-    /// an association to run immediately after you create it. This parameter is not supported for rate
+    /// an association to run immediately after you create it. This parameter isn't supported for rate
     /// expressions.</p>
     pub apply_only_at_cron_interval: bool,
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
-    /// documents your associations are gated under. The associations for this version only run when
-    /// that Change Calendar is open.  For more information, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems Manager Change Calendar</a>.</p>
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your
+    /// associations are gated under. The associations for this version only run when that Change
+    /// Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
+    /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The combination of AWS Regions and AWS accounts where you wanted to run the association when
-    /// this association version was created.</p>
+    /// <p>The combination of Regions and accounts where you wanted to run the association
+    /// when this association version was created.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
 impl std::fmt::Debug for AssociationVersionInfo {
@@ -12616,7 +12749,8 @@ pub mod association_version_info {
             self.name = input;
             self
         }
-        /// <p>The version of a Systems Manager document used when the association version was created.</p>
+        /// <p>The version of an Amazon Web Services Systems Manager document (SSM document) used when the association version was
+        /// created.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -12673,8 +12807,8 @@ pub mod association_version_info {
             self.schedule_expression = input;
             self
         }
-        /// <p>The location in Amazon S3 specified for the association when the association version was
-        /// created.</p>
+        /// <p>The location in Amazon S3 specified for the association when the association version
+        /// was created.</p>
         pub fn output_location(
             mut self,
             input: crate::model::InstanceAssociationOutputLocation,
@@ -12707,12 +12841,12 @@ pub mod association_version_info {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-        /// is received.</p>
-        /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-        /// at a time.</p>
+        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+        /// the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+        /// so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -12725,9 +12859,9 @@ pub mod association_version_info {
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
         /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-        /// MaxConcurrency associations, the association is allowed to run. During the next association
-        /// interval, the new instance will process its association within the limit specified for
-        /// MaxConcurrency.</p>
+        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+        /// association interval, the new instance will process its association within the limit specified
+        /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -12760,8 +12894,9 @@ pub mod association_version_info {
         /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
         /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
         /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+        /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+        /// <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.sync_compliance = Some(input);
@@ -12776,7 +12911,7 @@ pub mod association_version_info {
         }
         /// <p>By default, when you create a new associations, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you create it. This parameter is not supported for rate
+        /// an association to run immediately after you create it. This parameter isn't supported for rate
         /// expressions.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.apply_only_at_cron_interval = Some(input);
@@ -12843,11 +12978,11 @@ impl AssociationVersionInfo {
     }
 }
 
-/// <p>Describes an association of a Systems Manager document and an instance.</p>
+/// <p>Describes an association of a Amazon Web Services Systems Manager document (SSM document) and an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Association {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -12904,7 +13039,7 @@ pub mod association {
         pub(crate) association_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -13194,7 +13329,7 @@ impl AsRef<str> for AssociationFilterKey {
     }
 }
 
-/// <p>An Systems Manager parameter in Parameter Store.</p>
+/// <p>An Amazon Web Services Systems Manager parameter in Parameter Store.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Parameter {
@@ -13212,8 +13347,8 @@ pub struct Parameter {
     /// <p>parameter_name:version</p>
     /// <p>parameter_name:label</p>
     pub selector: std::option::Option<std::string::String>,
-    /// <p>Applies to parameters that reference information in other AWS services. SourceResult is the
-    /// raw result or response from the source.</p>
+    /// <p>Applies to parameters that reference information in other Amazon Web Services services.
+    /// <code>SourceResult</code> is the raw result or response from the source.</p>
     pub source_result: std::option::Option<std::string::String>,
     /// <p>Date the parameter was last changed or updated and the parameter version was created.</p>
     pub last_modified_date: std::option::Option<smithy_types::Instant>,
@@ -13304,8 +13439,8 @@ pub mod parameter {
             self.selector = input;
             self
         }
-        /// <p>Applies to parameters that reference information in other AWS services. SourceResult is the
-        /// raw result or response from the source.</p>
+        /// <p>Applies to parameters that reference information in other Amazon Web Services services.
+        /// <code>SourceResult</code> is the raw result or response from the source.</p>
         pub fn source_result(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_result = Some(input.into());
             self
@@ -13376,17 +13511,16 @@ impl Parameter {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ParameterStringFilter {
     /// <p>The name of the filter.</p>
-    /// <note>
-    /// <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However,
-    /// not all of the pattern values listed for <code>Key</code> can be used with both actions.</p>
+    /// <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API operations.
+    /// However, not all of the pattern values listed for <code>Key</code> can be used with both
+    /// operations.</p>
     /// <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
     /// of <code>Label</code>.</p>
     /// <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
-    /// are not valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
+    /// aren't valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
     /// <code>Tier</code>.</p>
-    /// <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
-    /// Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-    /// </note>
+    /// <p>For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub key: std::option::Option<std::string::String>,
     /// <p>For all filters used with <a>DescribeParameters</a>, valid options include
     /// <code>Equals</code> and <code>BeginsWith</code>. The <code>Name</code> filter additionally
@@ -13421,17 +13555,16 @@ pub mod parameter_string_filter {
     }
     impl Builder {
         /// <p>The name of the filter.</p>
-        /// <note>
-        /// <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API actions. However,
-        /// not all of the pattern values listed for <code>Key</code> can be used with both actions.</p>
+        /// <p>The <code>ParameterStringFilter</code> object is used by the <a>DescribeParameters</a> and <a>GetParametersByPath</a> API operations.
+        /// However, not all of the pattern values listed for <code>Key</code> can be used with both
+        /// operations.</p>
         /// <p>For <code>DescribeActions</code>, all of the listed patterns are valid, with the exception
         /// of <code>Label</code>.</p>
         /// <p>For <code>GetParametersByPath</code>, the following patterns listed for <code>Key</code>
-        /// are not valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
+        /// aren't valid: <code>tag</code>, <code>Name</code>, <code>Path</code>, and
         /// <code>Tier</code>.</p>
-        /// <p>For examples of CLI commands demonstrating valid parameter filter constructions, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for
-        /// Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-        /// </note>
+        /// <p>For examples of Amazon Web Services CLI commands demonstrating valid parameter filter constructions, see
+        /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-search.html">Searching for Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
@@ -13498,7 +13631,7 @@ pub struct ParameterHistory {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
     pub last_modified_date: std::option::Option<smithy_types::Instant>,
-    /// <p>Amazon Resource Name (ARN) of the AWS user who last changed the parameter.</p>
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>Information about the parameter.</p>
     pub description: std::option::Option<std::string::String>,
@@ -13516,7 +13649,7 @@ pub struct ParameterHistory {
     /// <p>Information about the policies assigned to a parameter.</p>
     /// <p>
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
-    /// policies</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// policies</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub policies: std::option::Option<std::vec::Vec<crate::model::ParameterInlinePolicy>>,
     /// <p>The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>. The
     /// default is <code>text</code>.</p>
@@ -13602,7 +13735,7 @@ pub mod parameter_history {
             self.last_modified_date = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the AWS user who last changed the parameter.</p>
+        /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
         pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_user = Some(input.into());
             self
@@ -13732,11 +13865,11 @@ impl ParameterHistory {
 pub struct ParameterInlinePolicy {
     /// <p>The JSON text of the policy.</p>
     pub policy_text: std::option::Option<std::string::String>,
-    /// <p>The type of policy. Parameter Store supports the following policy types: Expiration,
-    /// ExpirationNotification, and NoChangeNotification. </p>
+    /// <p>The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following
+    /// policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
     pub policy_type: std::option::Option<std::string::String>,
-    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy has
-    /// not been enforced or applied yet), Finished (the policy was applied), Failed (the policy was not
+    /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't
+    /// been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't
     /// applied), or InProgress (the policy is being applied now). </p>
     pub policy_status: std::option::Option<std::string::String>,
 }
@@ -13769,8 +13902,8 @@ pub mod parameter_inline_policy {
             self.policy_text = input;
             self
         }
-        /// <p>The type of policy. Parameter Store supports the following policy types: Expiration,
-        /// ExpirationNotification, and NoChangeNotification. </p>
+        /// <p>The type of policy. Parameter Store, a capablility of Amazon Web Services Systems Manager, supports the following
+        /// policy types: Expiration, ExpirationNotification, and NoChangeNotification. </p>
         pub fn policy_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_type = Some(input.into());
             self
@@ -13779,8 +13912,8 @@ pub mod parameter_inline_policy {
             self.policy_type = input;
             self
         }
-        /// <p>The status of the policy. Policies report the following statuses: Pending (the policy has
-        /// not been enforced or applied yet), Finished (the policy was applied), Failed (the policy was not
+        /// <p>The status of the policy. Policies report the following statuses: Pending (the policy hasn't
+        /// been enforced or applied yet), Finished (the policy was applied), Failed (the policy wasn't
         /// applied), or InProgress (the policy is being applied now). </p>
         pub fn policy_status(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_status = Some(input.into());
@@ -13885,13 +14018,13 @@ impl OpsEntity {
     }
 }
 
-/// <p>The OpsItem summaries result item.</p>
+/// <p>The OpsData summary.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsEntityItem {
-    /// <p>The time OpsItem data was captured.</p>
+    /// <p>The time the OpsData was captured.</p>
     pub capture_time: std::option::Option<std::string::String>,
-    /// <p>The detailed data content for an OpsItem summaries result item.</p>
+    /// <p>The details of an OpsData summary.</p>
     pub content: std::option::Option<
         std::vec::Vec<std::collections::HashMap<std::string::String, std::string::String>>,
     >,
@@ -13916,7 +14049,7 @@ pub mod ops_entity_item {
         >,
     }
     impl Builder {
-        /// <p>The time OpsItem data was captured.</p>
+        /// <p>The time the OpsData was captured.</p>
         pub fn capture_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.capture_time = Some(input.into());
             self
@@ -13963,8 +14096,9 @@ impl OpsEntityItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsResultAttribute {
-    /// <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-    /// AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+    /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+    /// <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+    /// <code>AWS:ComplianceSummary</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpsResultAttribute {
@@ -13983,8 +14117,9 @@ pub mod ops_result_attribute {
         pub(crate) type_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Name of the data type. Valid value: AWS:OpsItem, AWS:EC2InstanceInformation,
-        /// AWS:OpsItemTrendline, or AWS:ComplianceSummary.</p>
+        /// <p>Name of the data type. Valid value: <code>AWS:OpsItem</code>,
+        /// <code>AWS:EC2InstanceInformation</code>, <code>AWS:OpsItemTrendline</code>, or
+        /// <code>AWS:ComplianceSummary</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -14008,24 +14143,25 @@ impl OpsResultAttribute {
     }
 }
 
-/// <p>One or more aggregators for viewing counts of OpsItems using different dimensions such as
+/// <p>One or more aggregators for viewing counts of OpsData using different dimensions such as
 /// <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>, to name a
 /// few.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsAggregator {
-    /// <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+    /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData
+    /// summary.</p>
     pub aggregator_type: std::option::Option<std::string::String>,
-    /// <p>The data type name to use for viewing counts of OpsItems.</p>
+    /// <p>The data type name to use for viewing counts of OpsData.</p>
     pub type_name: std::option::Option<std::string::String>,
-    /// <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+    /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
     pub attribute_name: std::option::Option<std::string::String>,
     /// <p>The aggregator value.</p>
     pub values:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The aggregator filters.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsFilter>>,
-    /// <p>A nested aggregator for viewing counts of OpsItems.</p>
+    /// <p>A nested aggregator for viewing counts of OpsData.</p>
     pub aggregators: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
 }
 impl std::fmt::Debug for OpsAggregator {
@@ -14056,7 +14192,8 @@ pub mod ops_aggregator {
         pub(crate) aggregators: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
     }
     impl Builder {
-        /// <p>Either a Range or Count aggregator for limiting an OpsItem summary.</p>
+        /// <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData
+        /// summary.</p>
         pub fn aggregator_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.aggregator_type = Some(input.into());
             self
@@ -14068,7 +14205,7 @@ pub mod ops_aggregator {
             self.aggregator_type = input;
             self
         }
-        /// <p>The data type name to use for viewing counts of OpsItems.</p>
+        /// <p>The data type name to use for viewing counts of OpsData.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -14077,7 +14214,7 @@ pub mod ops_aggregator {
             self.type_name = input;
             self
         }
-        /// <p>The name of an OpsItem attribute on which to limit the count of OpsItems.</p>
+        /// <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
         pub fn attribute_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.attribute_name = Some(input.into());
             self
@@ -14154,7 +14291,7 @@ impl OpsAggregator {
     }
 }
 
-/// <p>A filter for viewing OpsItem summaries.</p>
+/// <p>A filter for viewing OpsData summaries.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsFilter {
@@ -14305,14 +14442,14 @@ impl AsRef<str> for OpsFilterOperatorType {
     }
 }
 
-/// <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
-/// operational issues impacting the performance and health of their AWS resources. For more
-/// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
-/// <i>AWS Systems Manager User Guide</i>. </p>
+/// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
+/// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
+/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItem {
-    /// <p>The ARN of the AWS account that created the OpsItem.</p>
+    /// <p>The ARN of the account that created the OpsItem.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code>
     /// and <code>/aws/issue</code>.</p>
@@ -14321,12 +14458,12 @@ pub struct OpsItem {
     pub created_time: std::option::Option<smithy_types::Instant>,
     /// <p>The OpsItem description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the AWS account that last updated the OpsItem.</p>
+    /// <p>The ARN of the account that last updated the OpsItem.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The Amazon Resource Name (ARN) of an SNS topic where notifications are sent when this
-    /// OpsItem is edited or changed.</p>
+    /// <p>The Amazon Resource Name (ARN) of an Amazon Simple Notification Service (Amazon SNS) topic where
+    /// notifications are sent when this OpsItem is edited or changed.</p>
     pub notifications: std::option::Option<std::vec::Vec<crate::model::OpsItemNotification>>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub priority: std::option::Option<i32>,
@@ -14335,7 +14472,7 @@ pub struct OpsItem {
     /// statuses for the impacted resource.</p>
     pub related_ops_items: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-    /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub status: std::option::Option<crate::model::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -14352,18 +14489,19 @@ pub struct OpsItem {
     /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
     /// of 128 characters. The value has a maximum size of 20 KB.</p>
     /// <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: amazon, aws,
-    /// amzn, ssm, /amazon, /aws, /amzn, /ssm.</p>
+    /// <p>Operational data keys <i>can't</i> begin with the following:
+    /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
+    /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict
     /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-    /// provided by the <a>DescribeOpsItems</a> API action) can view and search on the
-    /// specified data. Operational data that is not searchable is only viewable by users who have access
-    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+    /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
+    /// specified data. Operational data that isn't searchable is only viewable by users who have access
+    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
     /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-    /// Automation runbook with the OpsItem. To view AWS CLI example commands that use these keys, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
@@ -14445,7 +14583,7 @@ pub mod ops_item {
         pub(crate) planned_end_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The ARN of the AWS account that created the OpsItem.</p>
+        /// <p>The ARN of the account that created the OpsItem.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
@@ -14488,7 +14626,7 @@ pub mod ops_item {
             self.description = input;
             self
         }
-        /// <p>The ARN of the AWS account that last updated the OpsItem.</p>
+        /// <p>The ARN of the account that last updated the OpsItem.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_by = Some(input.into());
             self
@@ -14551,7 +14689,7 @@ pub mod ops_item {
             self
         }
         /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn status(mut self, input: crate::model::OpsItemStatus) -> Self {
             self.status = Some(input);
             self
@@ -14808,10 +14946,11 @@ impl AsRef<str> for MaintenanceWindowExecutionStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryItemSchema {
-    /// <p>The name of the inventory type. Default inventory item type names start with AWS. Custom
+    /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom
     /// inventory type names will start with Custom. Default inventory item types include the following:
-    /// AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and
-    /// AWS:WindowsUpdate.</p>
+    /// <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
+    /// <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
+    /// <code>AWS:WindowsUpdate</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
     /// <p>The schema version for the inventory item.</p>
     pub version: std::option::Option<std::string::String>,
@@ -14843,10 +14982,11 @@ pub mod inventory_item_schema {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the inventory type. Default inventory item type names start with AWS. Custom
+        /// <p>The name of the inventory type. Default inventory item type names start with Amazon Web Services. Custom
         /// inventory type names will start with Custom. Default inventory item types include the following:
-        /// AWS:AWSComponent, AWS:Application, AWS:InstanceInformation, AWS:Network, and
-        /// AWS:WindowsUpdate.</p>
+        /// <code>AWS:AWSComponent</code>, <code>AWS:Application</code>,
+        /// <code>AWS:InstanceInformation</code>, <code>AWS:Network</code>, and
+        /// <code>AWS:WindowsUpdate</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -15112,8 +15252,8 @@ pub struct InventoryResultItem {
     /// <p>The time inventory item data was captured.</p>
     pub capture_time: std::option::Option<std::string::String>,
     /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether
-    /// to update inventory information. The PutInventory API does not update the inventory item type
-    /// contents if the MD5 hash has not changed since last update. </p>
+    /// to update inventory information. The PutInventory API doesn't update the inventory item type
+    /// contents if the MD5 hash hasn't changed since last update. </p>
     pub content_hash: std::option::Option<std::string::String>,
     /// <p>Contains all the inventory data of the item type. Results include attribute names and
     /// values. </p>
@@ -15178,8 +15318,8 @@ pub mod inventory_result_item {
             self
         }
         /// <p>MD5 hash of the inventory item type contents. The content hash is used to determine whether
-        /// to update inventory information. The PutInventory API does not update the inventory item type
-        /// contents if the MD5 hash has not changed since last update. </p>
+        /// to update inventory information. The PutInventory API doesn't update the inventory item type
+        /// contents if the MD5 hash hasn't changed since last update. </p>
         pub fn content_hash(mut self, input: impl Into<std::string::String>) -> Self {
             self.content_hash = Some(input.into());
             self
@@ -15229,8 +15369,8 @@ impl InventoryResultItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResultAttribute {
-    /// <p>Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
-    /// AWS:InstanceInformation.</p>
+    /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default
+    /// Value: <code>AWS:InstanceInformation</code>.</p>
     pub type_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ResultAttribute {
@@ -15249,8 +15389,8 @@ pub mod result_attribute {
         pub(crate) type_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Name of the inventory item type. Valid value: AWS:InstanceInformation. Default Value:
-        /// AWS:InstanceInformation.</p>
+        /// <p>Name of the inventory item type. Valid value: <code>AWS:InstanceInformation</code>. Default
+        /// Value: <code>AWS:InstanceInformation</code>.</p>
         pub fn type_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.type_name = Some(input.into());
             self
@@ -15593,7 +15733,7 @@ pub struct BaselineOverride {
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-    /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
     /// missing, this value describes the severity of the compliance violation.</p>
@@ -15601,14 +15741,15 @@ pub struct BaselineOverride {
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-    /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The action for Patch Manager to take on patches included in the RejectedPackages list. A
-    /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-    /// with packages that include it as a dependency.</p>
+    /// <p>The action for Patch Manager to take on patches included in the
+    /// <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another
+    /// package, or blocked entirely along with packages that include it as a dependency.</p>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
     pub approved_patches_enable_non_security: bool,
     /// <p>Information about the patches to use to update the instances, including target operating
     /// systems and source repositories. Applies to Linux instances only.</p>
@@ -15731,9 +15872,9 @@ pub mod baseline_override {
             self.rejected_patches = input;
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the RejectedPackages list. A
-        /// patch can be allowed only if it is a dependency of another package, or blocked entirely along
-        /// with packages that include it as a dependency.</p>
+        /// <p>The action for Patch Manager to take on patches included in the
+        /// <code>RejectedPackages</code> list. A patch can be allowed only if it is a dependency of another
+        /// package, or blocked entirely along with packages that include it as a dependency.</p>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
             self.rejected_patches_action = Some(input);
             self
@@ -15746,7 +15887,8 @@ pub mod baseline_override {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
+        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+        /// only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
@@ -15902,7 +16044,7 @@ impl AsRef<str> for CalendarState {
 pub struct AutomationExecution {
     /// <p>The execution ID.</p>
     pub automation_execution_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Automation document used during the execution.</p>
+    /// <p>The name of the Automation runbook used during the execution.</p>
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The version of the document to use during execution.</p>
     pub document_version: std::option::Option<std::string::String>,
@@ -15913,18 +16055,17 @@ pub struct AutomationExecution {
     /// <p>The execution status of the Automation.</p>
     pub automation_execution_status: std::option::Option<crate::model::AutomationExecutionStatus>,
     /// <p>A list of details about the current state of all steps that comprise an execution. An
-    /// Automation document contains a list of steps that are run in order.</p>
+    /// Automation runbook contains a list of steps that are run in order.</p>
     pub step_executions: std::option::Option<std::vec::Vec<crate::model::StepExecution>>,
     /// <p>A boolean value that indicates if the response contains the full list of the Automation step
-    /// executions. If true, use the DescribeAutomationStepExecutions API action to get the full list of
-    /// step executions.</p>
+    /// executions. If true, use the DescribeAutomationStepExecutions API operation to get the full list
+    /// of step executions.</p>
     pub step_executions_truncated: bool,
-    /// <p>The key-value map of execution parameters, which were supplied when calling
-    /// StartAutomationExecution.</p>
+    /// <p>The key-value map of execution parameters, which were supplied when calling <a>StartAutomationExecution</a>.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The list of execution outputs as defined in the automation document.</p>
+    /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub outputs: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -15952,25 +16093,25 @@ pub struct AutomationExecution {
     >,
     /// <p>A list of resolved targets in the rate control execution.</p>
     pub resolved_targets: std::option::Option<crate::model::ResolvedTargets>,
-    /// <p>The MaxConcurrency value specified by the user when the execution started.</p>
+    /// <p>The <code>MaxConcurrency</code> value specified by the user when the execution
+    /// started.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The MaxErrors value specified by the user when the execution started.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The target of the execution.</p>
     pub target: std::option::Option<std::string::String>,
-    /// <p>The combination of AWS Regions and/or AWS accounts where you want to run the
+    /// <p>The combination of Regions and/or accounts where you want to run the
     /// Automation.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
-    /// <p>An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and
-    /// multi-account Automation execution.</p>
+    /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+    /// multi-Region and multi-account Automation execution.</p>
     pub progress_counters: std::option::Option<crate::model::ProgressCounters>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is
     /// <code>ChangeRequest</code>.</p>
     pub automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
     pub scheduled_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the Automation runbooks (Automation documents) that are run as part of a
-    /// runbook workflow.</p>
+    /// <p>Information about the Automation runbooks that are run as part of a runbook workflow.</p>
     /// <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
     /// approvals for the change request have been received.</p>
@@ -16087,7 +16228,7 @@ pub mod automation_execution {
             self.automation_execution_id = input;
             self
         }
-        /// <p>The name of the Automation document used during the execution.</p>
+        /// <p>The name of the Automation runbook used during the execution.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
@@ -16164,8 +16305,8 @@ pub mod automation_execution {
             self
         }
         /// <p>A boolean value that indicates if the response contains the full list of the Automation step
-        /// executions. If true, use the DescribeAutomationStepExecutions API action to get the full list of
-        /// step executions.</p>
+        /// executions. If true, use the DescribeAutomationStepExecutions API operation to get the full list
+        /// of step executions.</p>
         pub fn step_executions_truncated(mut self, input: bool) -> Self {
             self.step_executions_truncated = Some(input);
             self
@@ -16343,7 +16484,8 @@ pub mod automation_execution {
             self.resolved_targets = input;
             self
         }
-        /// <p>The MaxConcurrency value specified by the user when the execution started.</p>
+        /// <p>The <code>MaxConcurrency</code> value specified by the user when the execution
+        /// started.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -16386,8 +16528,8 @@ pub mod automation_execution {
             self.target_locations = input;
             self
         }
-        /// <p>An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and
-        /// multi-account Automation execution.</p>
+        /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+        /// multi-Region and multi-account Automation execution.</p>
         pub fn progress_counters(mut self, input: crate::model::ProgressCounters) -> Self {
             self.progress_counters = Some(input);
             self
@@ -16562,25 +16704,25 @@ impl AsRef<str> for AutomationSubtype {
     }
 }
 
-/// <p>An aggregate of step execution statuses displayed in the AWS Console for a multi-Region and
-/// multi-account Automation execution.</p>
+/// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
+/// multi-Region and multi-account Automation execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProgressCounters {
-    /// <p>The total number of steps run in all specified AWS Regions and accounts for the current
-    /// Automation execution.</p>
+    /// <p>The total number of steps run in all specified Regions and accounts for the
+    /// current Automation execution.</p>
     pub total_steps: i32,
-    /// <p>The total number of steps that successfully completed in all specified AWS Regions and
+    /// <p>The total number of steps that successfully completed in all specified Regions and
     /// accounts for the current Automation execution.</p>
     pub success_steps: i32,
-    /// <p>The total number of steps that failed to run in all specified AWS Regions and accounts for
-    /// the current Automation execution.</p>
+    /// <p>The total number of steps that failed to run in all specified Regions and
+    /// accounts for the current Automation execution.</p>
     pub failed_steps: i32,
-    /// <p>The total number of steps that the system cancelled in all specified AWS Regions and
+    /// <p>The total number of steps that the system cancelled in all specified Regions and
     /// accounts for the current Automation execution.</p>
     pub cancelled_steps: i32,
-    /// <p>The total number of steps that timed out in all specified AWS Regions and accounts for the
-    /// current Automation execution.</p>
+    /// <p>The total number of steps that timed out in all specified Regions and accounts
+    /// for the current Automation execution.</p>
     pub timed_out_steps: i32,
 }
 impl std::fmt::Debug for ProgressCounters {
@@ -16607,8 +16749,8 @@ pub mod progress_counters {
         pub(crate) timed_out_steps: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The total number of steps run in all specified AWS Regions and accounts for the current
-        /// Automation execution.</p>
+        /// <p>The total number of steps run in all specified Regions and accounts for the
+        /// current Automation execution.</p>
         pub fn total_steps(mut self, input: i32) -> Self {
             self.total_steps = Some(input);
             self
@@ -16617,7 +16759,7 @@ pub mod progress_counters {
             self.total_steps = input;
             self
         }
-        /// <p>The total number of steps that successfully completed in all specified AWS Regions and
+        /// <p>The total number of steps that successfully completed in all specified Regions and
         /// accounts for the current Automation execution.</p>
         pub fn success_steps(mut self, input: i32) -> Self {
             self.success_steps = Some(input);
@@ -16627,8 +16769,8 @@ pub mod progress_counters {
             self.success_steps = input;
             self
         }
-        /// <p>The total number of steps that failed to run in all specified AWS Regions and accounts for
-        /// the current Automation execution.</p>
+        /// <p>The total number of steps that failed to run in all specified Regions and
+        /// accounts for the current Automation execution.</p>
         pub fn failed_steps(mut self, input: i32) -> Self {
             self.failed_steps = Some(input);
             self
@@ -16637,7 +16779,7 @@ pub mod progress_counters {
             self.failed_steps = input;
             self
         }
-        /// <p>The total number of steps that the system cancelled in all specified AWS Regions and
+        /// <p>The total number of steps that the system cancelled in all specified Regions and
         /// accounts for the current Automation execution.</p>
         pub fn cancelled_steps(mut self, input: i32) -> Self {
             self.cancelled_steps = Some(input);
@@ -16647,8 +16789,8 @@ pub mod progress_counters {
             self.cancelled_steps = input;
             self
         }
-        /// <p>The total number of steps that timed out in all specified AWS Regions and accounts for the
-        /// current Automation execution.</p>
+        /// <p>The total number of steps that timed out in all specified Regions and accounts
+        /// for the current Automation execution.</p>
         pub fn timed_out_steps(mut self, input: i32) -> Self {
             self.timed_out_steps = Some(input);
             self
@@ -16752,15 +16894,16 @@ pub struct StepExecution {
     pub action: std::option::Option<std::string::String>,
     /// <p>The timeout seconds of the step.</p>
     pub timeout_seconds: std::option::Option<i64>,
-    /// <p>The action to take if the step fails. The default value is Abort.</p>
+    /// <p>The action to take if the step fails. The default value is <code>Abort</code>.</p>
     pub on_failure: std::option::Option<std::string::String>,
-    /// <p>The maximum number of tries to run the action of the step. The default value is 1.</p>
+    /// <p>The maximum number of tries to run the action of the step. The default value is
+    /// <code>1</code>.</p>
     pub max_attempts: std::option::Option<i32>,
     /// <p>If a step has begun execution, this contains the time the step started. If the step is in
-    /// Pending status, this field is not populated.</p>
+    /// Pending status, this field isn't populated.</p>
     pub execution_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>If a step has finished execution, this contains the time the execution ended. If the step
-    /// has not yet concluded, this field is not populated.</p>
+    /// hasn't yet concluded, this field isn't populated.</p>
     pub execution_end_time: std::option::Option<smithy_types::Instant>,
     /// <p>The execution status for this step.</p>
     pub step_status: std::option::Option<crate::model::AutomationExecutionStatus>,
@@ -16800,7 +16943,7 @@ pub struct StepExecution {
     pub valid_next_steps: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The targets for the step execution.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The combination of AWS Regions and accounts targeted by the current Automation
+    /// <p>The combination of Regions and accounts targeted by the current Automation
     /// execution.</p>
     pub target_location: std::option::Option<crate::model::TargetLocation>,
 }
@@ -16895,7 +17038,7 @@ pub mod step_execution {
             self.timeout_seconds = input;
             self
         }
-        /// <p>The action to take if the step fails. The default value is Abort.</p>
+        /// <p>The action to take if the step fails. The default value is <code>Abort</code>.</p>
         pub fn on_failure(mut self, input: impl Into<std::string::String>) -> Self {
             self.on_failure = Some(input.into());
             self
@@ -16904,7 +17047,8 @@ pub mod step_execution {
             self.on_failure = input;
             self
         }
-        /// <p>The maximum number of tries to run the action of the step. The default value is 1.</p>
+        /// <p>The maximum number of tries to run the action of the step. The default value is
+        /// <code>1</code>.</p>
         pub fn max_attempts(mut self, input: i32) -> Self {
             self.max_attempts = Some(input);
             self
@@ -16914,7 +17058,7 @@ pub mod step_execution {
             self
         }
         /// <p>If a step has begun execution, this contains the time the step started. If the step is in
-        /// Pending status, this field is not populated.</p>
+        /// Pending status, this field isn't populated.</p>
         pub fn execution_start_time(mut self, input: smithy_types::Instant) -> Self {
             self.execution_start_time = Some(input);
             self
@@ -16927,7 +17071,7 @@ pub mod step_execution {
             self
         }
         /// <p>If a step has finished execution, this contains the time the execution ended. If the step
-        /// has not yet concluded, this field is not populated.</p>
+        /// hasn't yet concluded, this field isn't populated.</p>
         pub fn execution_end_time(mut self, input: smithy_types::Instant) -> Self {
             self.execution_end_time = Some(input);
             self
@@ -17120,7 +17264,7 @@ pub mod step_execution {
             self.targets = input;
             self
         }
-        /// <p>The combination of AWS Regions and accounts targeted by the current Automation
+        /// <p>The combination of Regions and accounts targeted by the current Automation
         /// execution.</p>
         pub fn target_location(mut self, input: crate::model::TargetLocation) -> Self {
             self.target_location = Some(input);
@@ -17411,7 +17555,7 @@ pub struct Session {
     /// <p>The name of the Session Manager SSM document used to define the parameters and plugin settings for the
     /// session. For example, <code>SSM-SessionManagerRunShell</code>.</p>
     pub document_name: std::option::Option<std::string::String>,
-    /// <p>The ID of the AWS user account that started the session.</p>
+    /// <p>The ID of the Amazon Web Services user account that started the session.</p>
     pub owner: std::option::Option<std::string::String>,
     /// <p>Reserved for future use.</p>
     pub details: std::option::Option<std::string::String>,
@@ -17511,7 +17655,7 @@ pub mod session {
             self.document_name = input;
             self
         }
-        /// <p>The ID of the AWS user account that started the session.</p>
+        /// <p>The ID of the Amazon Web Services user account that started the session.</p>
         pub fn owner(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner = Some(input.into());
             self
@@ -17720,7 +17864,8 @@ pub struct SessionFilter {
     /// <p>Target: Specify an instance to which session connections have been made.</p>
     /// </li>
     /// <li>
-    /// <p>Owner: Specify an AWS user account to see a list of sessions started by that user.</p>
+    /// <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that
+    /// user.</p>
     /// </li>
     /// <li>
     /// <p>Status: Specify a valid session status to see a list of all sessions with that status.
@@ -17796,7 +17941,8 @@ pub mod session_filter {
         /// <p>Target: Specify an instance to which session connections have been made.</p>
         /// </li>
         /// <li>
-        /// <p>Owner: Specify an AWS user account to see a list of sessions started by that user.</p>
+        /// <p>Owner: Specify an Amazon Web Services user account to see a list of sessions started by that
+        /// user.</p>
         /// </li>
         /// <li>
         /// <p>Status: Specify a valid session status to see a list of all sessions with that status.
@@ -18161,14 +18307,13 @@ pub struct PatchBaselineIdentity {
     pub baseline_id: std::option::Option<std::string::String>,
     /// <p>The name of the patch baseline.</p>
     pub baseline_name: std::option::Option<std::string::String>,
-    /// <p>Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
-    /// </p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is
+    /// <code>WINDOWS</code>. </p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The description of the patch baseline.</p>
     pub baseline_description: std::option::Option<std::string::String>,
-    /// <p>Whether this is the default baseline. Note that Systems Manager supports creating multiple default
-    /// patch baselines. For example, you can create a default patch baseline for each operating
-    /// system.</p>
+    /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch
+    /// baselines. For example, you can create a default patch baseline for each operating system.</p>
     pub default_baseline: bool,
 }
 impl std::fmt::Debug for PatchBaselineIdentity {
@@ -18216,8 +18361,8 @@ pub mod patch_baseline_identity {
             self.baseline_name = input;
             self
         }
-        /// <p>Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
-        /// </p>
+        /// <p>Defines the operating system the patch baseline applies to. The default value is
+        /// <code>WINDOWS</code>. </p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.operating_system = Some(input);
             self
@@ -18241,9 +18386,8 @@ pub mod patch_baseline_identity {
             self.baseline_description = input;
             self
         }
-        /// <p>Whether this is the default baseline. Note that Systems Manager supports creating multiple default
-        /// patch baselines. For example, you can create a default patch baseline for each operating
-        /// system.</p>
+        /// <p>Whether this is the default baseline. Amazon Web Services Systems Manager supports creating multiple default patch
+        /// baselines. For example, you can create a default patch baseline for each operating system.</p>
         pub fn default_baseline(mut self, input: bool) -> Self {
             self.default_baseline = Some(input);
             self
@@ -18271,7 +18415,31 @@ impl PatchBaselineIdentity {
     }
 }
 
-/// <p>Defines a filter used in Patch Manager APIs.</p>
+/// <p>Defines a filter used in Patch Manager APIs. Supported filter keys depend on the API
+/// operation that includes the filter. Patch Manager API operations that use
+/// <code>PatchOrchestratorFilter</code> include the following:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a>DescribeAvailablePatches</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribeInstancePatches</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribePatchBaselines</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribePatchGroups</a>
+/// </p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchOrchestratorFilter {
@@ -18350,7 +18518,7 @@ pub struct ParameterMetadata {
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Date the parameter was last changed or updated.</p>
     pub last_modified_date: std::option::Option<smithy_types::Instant>,
-    /// <p>Amazon Resource Name (ARN) of the AWS user who last changed the parameter.</p>
+    /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
     pub last_modified_user: std::option::Option<std::string::String>,
     /// <p>Description of the parameter actions.</p>
     pub description: std::option::Option<std::string::String>,
@@ -18444,7 +18612,7 @@ pub mod parameter_metadata {
             self.last_modified_date = input;
             self
         }
-        /// <p>Amazon Resource Name (ARN) of the AWS user who last changed the parameter.</p>
+        /// <p>Amazon Resource Name (ARN) of the Amazon Web Services user who last changed the parameter.</p>
         pub fn last_modified_user(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_user = Some(input.into());
             self
@@ -18669,17 +18837,19 @@ impl AsRef<str> for ParametersFilterKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItemSummary {
-    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the
+    /// OpsItem.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was created.</p>
     pub created_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
+    /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the
+    /// OpsItem.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The importance of this OpsItem in relation to other OpsItems in the system.</p>
     pub priority: std::option::Option<i32>,
-    /// <p>The impacted AWS resource.</p>
+    /// <p>The impacted Amazon Web Services resource.</p>
     pub source: std::option::Option<std::string::String>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
     /// <code>Resolved</code>.</p>
@@ -18763,7 +18933,8 @@ pub mod ops_item_summary {
         pub(crate) planned_end_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the
+        /// OpsItem.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
@@ -18784,7 +18955,8 @@ pub mod ops_item_summary {
             self.created_time = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the OpsItem.</p>
+        /// <p>The Amazon Resource Name (ARN) of the IAM entity that created the
+        /// OpsItem.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_by = Some(input.into());
             self
@@ -18817,7 +18989,7 @@ pub mod ops_item_summary {
             self.priority = input;
             self
         }
-        /// <p>The impacted AWS resource.</p>
+        /// <p>The impacted Amazon Web Services resource.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
@@ -19154,6 +19326,7 @@ pub enum OpsItemFilterKey {
     ChangeRequestTemplate,
     CreatedBy,
     CreatedTime,
+    InsightType,
     LastModifiedTime,
     OperationalData,
     OperationalDataKey,
@@ -19188,6 +19361,7 @@ impl std::convert::From<&str> for OpsItemFilterKey {
             "ChangeRequestByTemplate" => OpsItemFilterKey::ChangeRequestTemplate,
             "CreatedBy" => OpsItemFilterKey::CreatedBy,
             "CreatedTime" => OpsItemFilterKey::CreatedTime,
+            "InsightByType" => OpsItemFilterKey::InsightType,
             "LastModifiedTime" => OpsItemFilterKey::LastModifiedTime,
             "OperationalData" => OpsItemFilterKey::OperationalData,
             "OperationalDataKey" => OpsItemFilterKey::OperationalDataKey,
@@ -19230,6 +19404,7 @@ impl OpsItemFilterKey {
             OpsItemFilterKey::ChangeRequestTemplate => "ChangeRequestByTemplate",
             OpsItemFilterKey::CreatedBy => "CreatedBy",
             OpsItemFilterKey::CreatedTime => "CreatedTime",
+            OpsItemFilterKey::InsightType => "InsightByType",
             OpsItemFilterKey::LastModifiedTime => "LastModifiedTime",
             OpsItemFilterKey::OperationalData => "OperationalData",
             OpsItemFilterKey::OperationalDataKey => "OperationalDataKey",
@@ -19261,6 +19436,7 @@ impl OpsItemFilterKey {
             "ChangeRequestByTemplate",
             "CreatedBy",
             "CreatedTime",
+            "InsightByType",
             "LastModifiedTime",
             "OperationalData",
             "OperationalDataKey",
@@ -19292,16 +19468,16 @@ pub struct MaintenanceWindowTask {
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The task ID.</p>
     pub window_task_id: std::option::Option<std::string::String>,
-    /// <p>The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-    /// <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name
-    /// or ARN. For STEP_FUNCTIONS tasks, it's the state machine ARN.</p>
+    /// <p>The resource that the task uses during execution. For <code>RUN_COMMAND</code> and
+    /// <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or
+    /// ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+    /// <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-    /// STEP_FUNCTIONS.</p>
+    /// <p>The type of task.</p>
     pub r#type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
     /// <p>The targets (either instances or tags). Instances are specified using
-    /// Key=instanceids,Values=<instanceid1>,<instanceid2>. Tags are specified using
-    /// Key=<tag name>,Values=<tag value>.</p>
+    /// <code>Key=instanceids,Values=<instanceid1>,<instanceid2></code>. Tags are specified
+    /// using <code>Key=<tag name>,Values=<tag value></code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The parameters that should be passed to the task when it is run.</p>
     /// <note>
@@ -19323,14 +19499,14 @@ pub struct MaintenanceWindowTask {
     /// <p>Information about an S3 bucket to write task-level logs to.</p>
     /// <note>
     /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
     /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Systems Manager handles these options for the supported maintenance
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
     /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
     /// </note>
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
-    /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for
-    /// maintenance window Run Command tasks.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
+    /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets this task can be run for, in parallel.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
@@ -19407,9 +19583,10 @@ pub mod maintenance_window_task {
             self.window_task_id = input;
             self
         }
-        /// <p>The resource that the task uses during execution. For RUN_COMMAND and AUTOMATION task types,
-        /// <code>TaskArn</code> is the Systems Manager document name or ARN. For LAMBDA tasks, it's the function name
-        /// or ARN. For STEP_FUNCTIONS tasks, it's the state machine ARN.</p>
+        /// <p>The resource that the task uses during execution. For <code>RUN_COMMAND</code> and
+        /// <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services Systems Manager (SSM document) name or
+        /// ARN. For <code>LAMBDA</code> tasks, it's the function name or ARN. For
+        /// <code>STEP_FUNCTIONS</code> tasks, it's the state machine ARN.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_arn = Some(input.into());
             self
@@ -19418,8 +19595,7 @@ pub mod maintenance_window_task {
             self.task_arn = input;
             self
         }
-        /// <p>The type of task. The type can be one of the following: RUN_COMMAND, AUTOMATION, LAMBDA, or
-        /// STEP_FUNCTIONS.</p>
+        /// <p>The type of task.</p>
         pub fn r#type(mut self, input: crate::model::MaintenanceWindowTaskType) -> Self {
             self.r#type = Some(input);
             self
@@ -19479,9 +19655,9 @@ pub mod maintenance_window_task {
         /// <p>Information about an S3 bucket to write task-level logs to.</p>
         /// <note>
         /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
         /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Systems Manager handles these options for the supported maintenance
+        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
         /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
@@ -19495,8 +19671,8 @@ pub mod maintenance_window_task {
             self.logging_info = input;
             self
         }
-        /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for
-        /// maintenance window Run Command tasks.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) service role to use to publish Amazon Simple Notification Service
+        /// (Amazon SNS) notifications for maintenance window Run Command tasks.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
@@ -19574,7 +19750,41 @@ impl MaintenanceWindowTask {
     }
 }
 
-/// <p>Filter used in the request. Supported filter keys are Name and Enabled.</p>
+/// <p>Filter used in the request. Supported filter keys depend on the API operation that includes
+/// the filter. API operations that use <code>MaintenanceWindowFilter></code> include the
+/// following:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <a>DescribeMaintenanceWindowExecutions</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribeMaintenanceWindowExecutionTaskInvocations</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribeMaintenanceWindowExecutionTasks</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribeMaintenanceWindows</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribeMaintenanceWindowTargets</a>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <a>DescribeMaintenanceWindowTasks</a>
+/// </p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaintenanceWindowFilter {
@@ -19658,8 +19868,8 @@ pub struct MaintenanceWindowTarget {
     /// <p>
     /// <code>Key=<tag name>,Values=<tag value></code>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>A user-provided value that will be included in any CloudWatch events that are raised while
-    /// running tasks for these targets in this maintenance window.</p>
+    /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are
+    /// raised while running tasks for these targets in this maintenance window.</p>
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The name for the maintenance window target.</p>
     pub name: std::option::Option<std::string::String>,
@@ -19740,8 +19950,8 @@ pub mod maintenance_window_target {
             self.targets = input;
             self
         }
-        /// <p>A user-provided value that will be included in any CloudWatch events that are raised while
-        /// running tasks for these targets in this maintenance window.</p>
+        /// <p>A user-provided value that will be included in any Amazon CloudWatch Events events that are
+        /// raised while running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_information = Some(input.into());
             self
@@ -19947,15 +20157,15 @@ pub struct MaintenanceWindowIdentity {
     pub enabled: bool,
     /// <p>The duration of the maintenance window in hours.</p>
     pub duration: i32,
-    /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-    /// tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
     pub cutoff: i32,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub schedule: std::option::Option<std::string::String>,
     /// <p>The time zone that the scheduled maintenance window executions are based on, in Internet
     /// Assigned Numbers Authority (IANA) format.</p>
     pub schedule_timezone: std::option::Option<std::string::String>,
-    /// <p>The number of days to wait to run a maintenance window after the scheduled CRON expression
+    /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
     /// date and time.</p>
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The date and time, in ISO-8601 Extended format, for when the maintenance window is scheduled
@@ -20051,8 +20261,8 @@ pub mod maintenance_window_identity {
             self.duration = input;
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-        /// tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+        /// new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.cutoff = Some(input);
             self
@@ -20083,7 +20293,7 @@ pub mod maintenance_window_identity {
             self.schedule_timezone = input;
             self
         }
-        /// <p>The number of days to wait to run a maintenance window after the scheduled CRON expression
+        /// <p>The number of days to wait to run a maintenance window after the scheduled cron expression
         /// date and time.</p>
         pub fn schedule_offset(mut self, input: i32) -> Self {
             self.schedule_offset = Some(input);
@@ -20163,14 +20373,14 @@ pub struct MaintenanceWindowExecutionTaskIdentity {
     pub task_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the task execution.</p>
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-    /// <p>The details explaining the status of the task execution. Only available for certain status
+    /// <p>The details explaining the status of the task execution. Not available for all status
     /// values.</p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the task execution started.</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time the task execution finished.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The ARN of the task that ran.</p>
+    /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The type of task that ran.</p>
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
@@ -20241,7 +20451,7 @@ pub mod maintenance_window_execution_task_identity {
             self.status = input;
             self
         }
-        /// <p>The details explaining the status of the task execution. Only available for certain status
+        /// <p>The details explaining the status of the task execution. Not available for all status
         /// values.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
@@ -20272,7 +20482,7 @@ pub mod maintenance_window_execution_task_identity {
             self.end_time = input;
             self
         }
-        /// <p>The ARN of the task that ran.</p>
+        /// <p>The Amazon Resource Name (ARN) of the task that ran.</p>
         pub fn task_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.task_arn = Some(input.into());
             self
@@ -20327,7 +20537,7 @@ pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     /// <p>The ID of the task invocation.</p>
     pub invocation_id: std::option::Option<std::string::String>,
     /// <p>The ID of the action performed in the service that actually handled the task invocation. If
-    /// the task type is RUN_COMMAND, this value is the command ID.</p>
+    /// the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
     pub execution_id: std::option::Option<std::string::String>,
     /// <p>The task type.</p>
     pub task_type: std::option::Option<crate::model::MaintenanceWindowTaskType>,
@@ -20335,7 +20545,7 @@ pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     pub parameters: std::option::Option<std::string::String>,
     /// <p>The status of the task invocation.</p>
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-    /// <p>The details explaining the status of the task invocation. Only available for certain Status
+    /// <p>The details explaining the status of the task invocation. Not available for all status
     /// values. </p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the invocation started.</p>
@@ -20343,7 +20553,8 @@ pub struct MaintenanceWindowExecutionTaskInvocationIdentity {
     /// <p>The time the invocation finished.</p>
     pub end_time: std::option::Option<smithy_types::Instant>,
     /// <p>User-provided value that was specified when the target was registered with the maintenance
-    /// window. This was also included in any CloudWatch events raised during the task invocation.</p>
+    /// window. This was also included in any Amazon CloudWatch Events events raised during the task
+    /// invocation.</p>
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>The ID of the target definition in this maintenance window the invocation was performed
     /// for.</p>
@@ -20424,7 +20635,7 @@ pub mod maintenance_window_execution_task_invocation_identity {
             self
         }
         /// <p>The ID of the action performed in the service that actually handled the task invocation. If
-        /// the task type is RUN_COMMAND, this value is the command ID.</p>
+        /// the task type is <code>RUN_COMMAND</code>, this value is the command ID.</p>
         pub fn execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.execution_id = Some(input.into());
             self
@@ -20466,7 +20677,7 @@ pub mod maintenance_window_execution_task_invocation_identity {
             self.status = input;
             self
         }
-        /// <p>The details explaining the status of the task invocation. Only available for certain Status
+        /// <p>The details explaining the status of the task invocation. Not available for all status
         /// values. </p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
@@ -20498,7 +20709,8 @@ pub mod maintenance_window_execution_task_invocation_identity {
             self
         }
         /// <p>User-provided value that was specified when the target was registered with the maintenance
-        /// window. This was also included in any CloudWatch events raised during the task invocation.</p>
+        /// window. This was also included in any Amazon CloudWatch Events events raised during the task
+        /// invocation.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_information = Some(input.into());
             self
@@ -20560,7 +20772,7 @@ pub struct MaintenanceWindowExecution {
     pub window_execution_id: std::option::Option<std::string::String>,
     /// <p>The status of the execution.</p>
     pub status: std::option::Option<crate::model::MaintenanceWindowExecutionStatus>,
-    /// <p>The details explaining the Status. Only available for certain status values.</p>
+    /// <p>The details explaining the status. Not available for all status values.</p>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>The time the execution started.</p>
     pub start_time: std::option::Option<smithy_types::Instant>,
@@ -20626,7 +20838,7 @@ pub mod maintenance_window_execution {
             self.status = input;
             self
         }
-        /// <p>The details explaining the Status. Only available for certain status values.</p>
+        /// <p>The details explaining the status. Not available for all status values.</p>
         pub fn status_details(mut self, input: impl Into<std::string::String>) -> Self {
             self.status_details = Some(input.into());
             self
@@ -20676,11 +20888,11 @@ impl MaintenanceWindowExecution {
     }
 }
 
-/// <p>Status information returned by the <code>DeleteInventory</code> action.</p>
+/// <p>Status information returned by the <code>DeleteInventory</code> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDeletionStatusItem {
-    /// <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+    /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
     pub deletion_id: std::option::Option<std::string::String>,
     /// <p>The name of the inventory data type.</p>
     pub type_name: std::option::Option<std::string::String>,
@@ -20691,7 +20903,7 @@ pub struct InventoryDeletionStatusItem {
     /// <p>Information about the status.</p>
     pub last_status_message: std::option::Option<std::string::String>,
     /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub deletion_summary: std::option::Option<crate::model::InventoryDeletionSummary>,
     /// <p>The UTC timestamp of when the last status report.</p>
     pub last_status_update_time: std::option::Option<smithy_types::Instant>,
@@ -20724,7 +20936,7 @@ pub mod inventory_deletion_status_item {
         pub(crate) last_status_update_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+        /// <p>The deletion ID returned by the <code>DeleteInventory</code> operation.</p>
         pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deletion_id = Some(input.into());
             self
@@ -20779,7 +20991,7 @@ pub mod inventory_deletion_status_item {
             self
         }
         /// <p>Information about the delete operation. For more information about this summary, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete">Understanding the delete inventory summary</a> in the
-        /// <i>AWS Systems Manager User Guide</i>.</p>
+        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn deletion_summary(mut self, input: crate::model::InventoryDeletionSummary) -> Self {
             self.deletion_summary = Some(input);
             self
@@ -20828,7 +21040,7 @@ impl InventoryDeletionStatusItem {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InventoryDeletionSummary {
-    /// <p>The total number of items to delete. This count does not change during the delete
+    /// <p>The total number of items to delete. This count doesn't change during the delete
     /// operation.</p>
     pub total_count: i32,
     /// <p>Remaining number of items to delete.</p>
@@ -20858,7 +21070,7 @@ pub mod inventory_deletion_summary {
             std::option::Option<std::vec::Vec<crate::model::InventoryDeletionSummaryItem>>,
     }
     impl Builder {
-        /// <p>The total number of items to delete. This count does not change during the delete
+        /// <p>The total number of items to delete. This count doesn't change during the delete
         /// operation.</p>
         pub fn total_count(mut self, input: i32) -> Self {
             self.total_count = Some(input);
@@ -21051,12 +21263,14 @@ pub struct InstancePatchState {
     /// <p>The ID of the patch baseline snapshot used during the patching operation when this
     /// compliance data was collected.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch
-    /// installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM
-    /// document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch
-    /// baseline.</p>
+    /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of
+    /// patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML
+    /// format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches
+    /// specified by the default patch baseline.</p>
     /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the
-    /// SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <code>AWS-RunPatchBaseline</code>
+    /// </a> SSM document in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub install_override_list: std::option::Option<std::string::String>,
     /// <p>Placeholder information. This field will always be empty in the current release of the
     /// service.</p>
@@ -21070,9 +21284,8 @@ pub struct InstancePatchState {
     /// rebooted.</p>
     pub installed_pending_reboot_count: std::option::Option<i32>,
     /// <p>The number of patches installed on an instance that are specified in a
-    /// <code>RejectedPatches</code> list. Patches with a status of
-    /// <i>InstalledRejected</i> were typically installed before they were added to a
-    /// <code>RejectedPatches</code> list.</p>
+    /// <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were
+    /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
     /// <note>
     /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
     /// <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will
@@ -21085,8 +21298,8 @@ pub struct InstancePatchState {
     /// <p>The number of patches from the patch baseline that were attempted to be installed during the
     /// last patching operation, but failed to install.</p>
     pub failed_count: i32,
-    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are
-    /// not reported by name to Systems Manager Inventory.</p>
+    /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that
+    /// aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
     pub unreported_not_applicable_count: std::option::Option<i32>,
     /// <p>The number of patches from the patch baseline that aren't applicable for the instance and
     /// therefore aren't installed on the instance. This number may be truncated if the list of patch
@@ -21097,46 +21310,55 @@ pub struct InstancePatchState {
     pub operation_start_time: std::option::Option<smithy_types::Instant>,
     /// <p>The time the most recent patching operation completed on the instance.</p>
     pub operation_end_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The type of patching operation that was performed: <code>SCAN</code> (assess patch
-    /// compliance state) or <code>INSTALL</code> (install missing patches).</p>
+    /// <p>The type of patching operation that was performed: or </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>SCAN</code> assesses the patch compliance state.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>INSTALL</code> installs missing patches.</p>
+    /// </li>
+    /// </ul>
     pub operation: std::option::Option<crate::model::PatchOperationType>,
     /// <p>The time of the last attempt to patch the instance with <code>NoReboot</code> specified as
     /// the reboot option.</p>
     pub last_no_reboot_install_operation_time: std::option::Option<smithy_types::Instant>,
     /// <p>Indicates the reboot option specified in the patch baseline.</p>
     /// <note>
-    /// <p>Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for
+    /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for
     /// Patch Manager <code>Scan</code> operations.</p>
     /// </note>
     /// <ul>
     /// <li>
     /// <p>
-    /// <b>RebootIfNeeded</b>: Patch Manager tries to reboot the
-    /// instance if it installed any patches, or if any patches are detected with a status of
+    /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed
+    /// any patches, or if any patches are detected with a status of
     /// <code>InstalledPendingReboot</code>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <b>NoReboot</b>: Patch Manager attempts to install missing
-    /// packages without trying to reboot the system. Patches installed with this option are assigned a
-    /// status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a
-    /// reboot is performed.</p>
+    /// <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying
+    /// to reboot the system. Patches installed with this option are assigned a status of
+    /// <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is
+    /// performed.</p>
     /// </li>
     /// </ul>
     pub reboot_option: std::option::Option<crate::model::RebootOption>,
-    /// <p>The number of instances where patches that are specified as "Critical" for compliance
-    /// reporting in the patch baseline are not installed. These patches might be missing, have failed
-    /// installation, were rejected, or were installed but awaiting a required instance reboot. The
-    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+    /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
+    /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
+    /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
     pub critical_non_compliant_count: std::option::Option<i32>,
-    /// <p>The number of instances where patches that are specified as "Security" in a patch advisory
-    /// are not installed. These patches might be missing, have failed installation, were rejected, or
-    /// were installed but awaiting a required instance reboot. The status of these instances is
-    /// <code>NON_COMPLIANT</code>.</p>
+    /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
+    /// advisory aren't installed. These patches might be missing, have failed installation, were
+    /// rejected, or were installed but awaiting a required instance reboot. The status of these
+    /// instances is <code>NON_COMPLIANT</code>.</p>
     pub security_non_compliant_count: std::option::Option<i32>,
-    /// <p>The number of instances with patches installed that are specified as other than "Critical"
-    /// or "Security" but are not compliant with the patch baseline. The status of these instances is
-    /// NON_COMPLIANT.</p>
+    /// <p>The number of instances with patches installed that are specified as other than
+    /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
+    /// status of these instances is <code>NON_COMPLIANT</code>.</p>
     pub other_non_compliant_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for InstancePatchState {
@@ -21251,12 +21473,14 @@ pub mod instance_patch_state {
             self.snapshot_id = input;
             self
         }
-        /// <p>An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch
-        /// installation list, which you maintain in an S3 bucket in YAML format and specify in the SSM
-        /// document <code>AWS-RunPatchBaseline</code>, overrides the patches specified by the default patch
-        /// baseline.</p>
+        /// <p>An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list of
+        /// patches to be installed. This patch installation list, which you maintain in an S3 bucket in YAML
+        /// format and specify in the SSM document <code>AWS-RunPatchBaseline</code>, overrides the patches
+        /// specified by the default patch baseline.</p>
         /// <p>For more information about the <code>InstallOverrideList</code> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the
-        /// SSM document AWS-RunPatchBaseline</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <code>AWS-RunPatchBaseline</code>
+        /// </a> SSM document in the
+        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn install_override_list(mut self, input: impl Into<std::string::String>) -> Self {
             self.install_override_list = Some(input.into());
             self
@@ -21314,9 +21538,8 @@ pub mod instance_patch_state {
             self
         }
         /// <p>The number of patches installed on an instance that are specified in a
-        /// <code>RejectedPatches</code> list. Patches with a status of
-        /// <i>InstalledRejected</i> were typically installed before they were added to a
-        /// <code>RejectedPatches</code> list.</p>
+        /// <code>RejectedPatches</code> list. Patches with a status of <code>InstalledRejected</code> were
+        /// typically installed before they were added to a <code>RejectedPatches</code> list.</p>
         /// <note>
         /// <p>If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for
         /// <code>RejectedPatchesAction</code>, the value of <code>InstalledRejectedCount</code> will
@@ -21350,8 +21573,8 @@ pub mod instance_patch_state {
             self.failed_count = input;
             self
         }
-        /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that are
-        /// not reported by name to Systems Manager Inventory.</p>
+        /// <p>The number of patches beyond the supported limit of <code>NotApplicableCount</code> that
+        /// aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services Systems Manager.</p>
         pub fn unreported_not_applicable_count(mut self, input: i32) -> Self {
             self.unreported_not_applicable_count = Some(input);
             self
@@ -21399,8 +21622,17 @@ pub mod instance_patch_state {
             self.operation_end_time = input;
             self
         }
-        /// <p>The type of patching operation that was performed: <code>SCAN</code> (assess patch
-        /// compliance state) or <code>INSTALL</code> (install missing patches).</p>
+        /// <p>The type of patching operation that was performed: or </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>SCAN</code> assesses the patch compliance state.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>INSTALL</code> installs missing patches.</p>
+        /// </li>
+        /// </ul>
         pub fn operation(mut self, input: crate::model::PatchOperationType) -> Self {
             self.operation = Some(input);
             self
@@ -21430,22 +21662,22 @@ pub mod instance_patch_state {
         }
         /// <p>Indicates the reboot option specified in the patch baseline.</p>
         /// <note>
-        /// <p>Reboot options apply to <code>Install</code> operations only. Reboots are not attempted for
+        /// <p>Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted for
         /// Patch Manager <code>Scan</code> operations.</p>
         /// </note>
         /// <ul>
         /// <li>
         /// <p>
-        /// <b>RebootIfNeeded</b>: Patch Manager tries to reboot the
-        /// instance if it installed any patches, or if any patches are detected with a status of
+        /// <code>RebootIfNeeded</code>: Patch Manager tries to reboot the instance if it installed
+        /// any patches, or if any patches are detected with a status of
         /// <code>InstalledPendingReboot</code>.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <b>NoReboot</b>: Patch Manager attempts to install missing
-        /// packages without trying to reboot the system. Patches installed with this option are assigned a
-        /// status of <code>InstalledPendingReboot</code>. These patches might not be in effect until a
-        /// reboot is performed.</p>
+        /// <code>NoReboot</code>: Patch Manager attempts to install missing packages without trying
+        /// to reboot the system. Patches installed with this option are assigned a status of
+        /// <code>InstalledPendingReboot</code>. These patches might not be in effect until a reboot is
+        /// performed.</p>
         /// </li>
         /// </ul>
         pub fn reboot_option(mut self, input: crate::model::RebootOption) -> Self {
@@ -21459,10 +21691,10 @@ pub mod instance_patch_state {
             self.reboot_option = input;
             self
         }
-        /// <p>The number of instances where patches that are specified as "Critical" for compliance
-        /// reporting in the patch baseline are not installed. These patches might be missing, have failed
-        /// installation, were rejected, or were installed but awaiting a required instance reboot. The
-        /// status of these instances is <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of instances where patches that are specified as <code>Critical</code> for
+        /// compliance reporting in the patch baseline aren't installed. These patches might be missing, have
+        /// failed installation, were rejected, or were installed but awaiting a required instance reboot.
+        /// The status of these instances is <code>NON_COMPLIANT</code>.</p>
         pub fn critical_non_compliant_count(mut self, input: i32) -> Self {
             self.critical_non_compliant_count = Some(input);
             self
@@ -21471,10 +21703,10 @@ pub mod instance_patch_state {
             self.critical_non_compliant_count = input;
             self
         }
-        /// <p>The number of instances where patches that are specified as "Security" in a patch advisory
-        /// are not installed. These patches might be missing, have failed installation, were rejected, or
-        /// were installed but awaiting a required instance reboot. The status of these instances is
-        /// <code>NON_COMPLIANT</code>.</p>
+        /// <p>The number of instances where patches that are specified as <code>Security</code> in a patch
+        /// advisory aren't installed. These patches might be missing, have failed installation, were
+        /// rejected, or were installed but awaiting a required instance reboot. The status of these
+        /// instances is <code>NON_COMPLIANT</code>.</p>
         pub fn security_non_compliant_count(mut self, input: i32) -> Self {
             self.security_non_compliant_count = Some(input);
             self
@@ -21483,9 +21715,9 @@ pub mod instance_patch_state {
             self.security_non_compliant_count = input;
             self
         }
-        /// <p>The number of instances with patches installed that are specified as other than "Critical"
-        /// or "Security" but are not compliant with the patch baseline. The status of these instances is
-        /// NON_COMPLIANT.</p>
+        /// <p>The number of instances with patches installed that are specified as other than
+        /// <code>Critical</code> or <code>Security</code> but aren't compliant with the patch baseline. The
+        /// status of these instances is <code>NON_COMPLIANT</code>.</p>
         pub fn other_non_compliant_count(mut self, input: i32) -> Self {
             self.other_non_compliant_count = Some(input);
             self
@@ -21630,18 +21862,76 @@ impl AsRef<str> for PatchOperationType {
     }
 }
 
-/// <p>Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> used to
-/// scope down the information returned by the API.</p>
+/// <p>Defines a filter used in <a>DescribeInstancePatchStatesForPatchGroup</a> to scope
+/// down the information returned by the API.</p>
+/// <p>
+/// <b>Example</b>: To filter for all instances in a patch group
+/// having more than three patches with a <code>FailedCount</code> status, use the following for the
+/// filter:</p>
+/// <ul>
+/// <li>
+/// <p>Value for <code>Key</code>: <code>FailedCount</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>Value for <code>Type</code>: <code>GreaterThan</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>Value for <code>Values</code>: <code>3</code>
+/// </p>
+/// </li>
+/// </ul>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InstancePatchStateFilter {
-    /// <p>The key for the filter. Supported values are FailedCount, InstalledCount,
-    /// InstalledOtherCount, MissingCount and NotApplicableCount.</p>
+    /// <p>The key for the filter. Supported values include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>InstalledCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InstalledOtherCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InstalledPendingRebootCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>InstalledRejectedCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>MissingCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>FailedCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>UnreportedNotApplicableCount</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>NotApplicableCount</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The value for the filter, must be an integer greater than or equal to 0.</p>
+    /// <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or
-    /// GreaterThan.</p>
+    /// <p>The type of comparison that should be performed for the value.</p>
     pub r#type: std::option::Option<crate::model::InstancePatchStateOperatorType>,
 }
 impl std::fmt::Debug for InstancePatchStateFilter {
@@ -21664,8 +21954,49 @@ pub mod instance_patch_state_filter {
         pub(crate) r#type: std::option::Option<crate::model::InstancePatchStateOperatorType>,
     }
     impl Builder {
-        /// <p>The key for the filter. Supported values are FailedCount, InstalledCount,
-        /// InstalledOtherCount, MissingCount and NotApplicableCount.</p>
+        /// <p>The key for the filter. Supported values include the following:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>InstalledCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstalledOtherCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstalledPendingRebootCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>InstalledRejectedCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>MissingCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>FailedCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UnreportedNotApplicableCount</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>NotApplicableCount</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
@@ -21687,8 +22018,7 @@ pub mod instance_patch_state_filter {
             self.values = input;
             self
         }
-        /// <p>The type of comparison that should be performed for the value: Equal, NotEqual, LessThan or
-        /// GreaterThan.</p>
+        /// <p>The type of comparison that should be performed for the value.</p>
         pub fn r#type(mut self, input: crate::model::InstancePatchStateOperatorType) -> Self {
             self.r#type = Some(input);
             self
@@ -21782,16 +22112,17 @@ pub struct PatchComplianceData {
     pub title: std::option::Option<std::string::String>,
     /// <p>The operating system-specific ID of the patch.</p>
     pub kb_id: std::option::Option<std::string::String>,
-    /// <p>The classification of the patch (for example, SecurityUpdates, Updates,
-    /// CriticalUpdates).</p>
+    /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>,
+    /// and <code>CriticalUpdates</code>.</p>
     pub classification: std::option::Option<std::string::String>,
-    /// <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
+    /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and
+    /// <code>Moderate</code>.</p>
     pub severity: std::option::Option<std::string::String>,
     /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
-    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub state: std::option::Option<crate::model::PatchComplianceDataState>,
-    /// <p>The date/time the patch was installed on the instance. Note that not all operating systems
-    /// provide this level of information.</p>
+    /// <p>The date/time the patch was installed on the instance. Not all operating systems provide
+    /// this level of information.</p>
     pub installed_time: std::option::Option<smithy_types::Instant>,
     /// <p>The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by
     /// the patch.</p>
@@ -21843,8 +22174,8 @@ pub mod patch_compliance_data {
             self.kb_id = input;
             self
         }
-        /// <p>The classification of the patch (for example, SecurityUpdates, Updates,
-        /// CriticalUpdates).</p>
+        /// <p>The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>,
+        /// and <code>CriticalUpdates</code>.</p>
         pub fn classification(mut self, input: impl Into<std::string::String>) -> Self {
             self.classification = Some(input.into());
             self
@@ -21856,7 +22187,8 @@ pub mod patch_compliance_data {
             self.classification = input;
             self
         }
-        /// <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
+        /// <p>The severity of the patchsuch as <code>Critical</code>, <code>Important</code>, and
+        /// <code>Moderate</code>.</p>
         pub fn severity(mut self, input: impl Into<std::string::String>) -> Self {
             self.severity = Some(input.into());
             self
@@ -21866,7 +22198,7 @@ pub mod patch_compliance_data {
             self
         }
         /// <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
-        /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <p>For descriptions of each patch state, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About patch compliance</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn state(mut self, input: crate::model::PatchComplianceDataState) -> Self {
             self.state = Some(input);
             self
@@ -21878,8 +22210,8 @@ pub mod patch_compliance_data {
             self.state = input;
             self
         }
-        /// <p>The date/time the patch was installed on the instance. Note that not all operating systems
-        /// provide this level of information.</p>
+        /// <p>The date/time the patch was installed on the instance. Not all operating systems provide
+        /// this level of information.</p>
         pub fn installed_time(mut self, input: smithy_types::Instant) -> Self {
             self.installed_time = Some(input);
             self
@@ -22011,9 +22343,9 @@ pub struct InstanceInformation {
     /// <p>The version of SSM Agent running on your Linux instance. </p>
     pub agent_version: std::option::Option<std::string::String>,
     /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
-    /// This field does not indicate whether or not the latest version is installed on Windows managed
-    /// instances, because some older versions of Windows Server use the EC2Config service to process SSM
-    /// requests.</p>
+    /// This field doesn't indicate whether or not the latest version is installed on Windows managed
+    /// instances, because some older versions of Windows Server use the EC2Config service to process
+    /// Systems Manager requests.</p>
     pub is_latest_version: std::option::Option<bool>,
     /// <p>The operating system platform type. </p>
     pub platform_type: std::option::Option<crate::model::PlatformType>,
@@ -22021,15 +22353,16 @@ pub struct InstanceInformation {
     pub platform_name: std::option::Option<std::string::String>,
     /// <p>The version of the OS platform running on your instance. </p>
     pub platform_version: std::option::Option<std::string::String>,
-    /// <p>The activation ID created by Systems Manager when the server or VM was registered.</p>
+    /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was
+    /// registered.</p>
     pub activation_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
-    /// managed instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM
-    /// role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+    /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
+    /// managed instance. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
+    /// (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use
+    /// the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
+    /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>The date the server or VM was registered with AWS as a managed instance.</p>
+    /// <p>The date the server or VM was registered with Amazon Web Services as a managed instance.</p>
     pub registration_date: std::option::Option<smithy_types::Instant>,
     /// <p>The type of instance. Instances are either EC2 instances or managed instances. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
@@ -22038,10 +22371,11 @@ pub struct InstanceInformation {
     /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
     /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
     /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
-    /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment
-    /// (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-    /// <code>DescribeInstances</code> action. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+    /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a
+    /// hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
+    /// <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
+    /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+    /// <i>Amazon Web Services CLI Command Reference</i>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The IP address of the managed instance.</p>
     pub ip_address: std::option::Option<std::string::String>,
@@ -22166,9 +22500,9 @@ pub mod instance_information {
             self
         }
         /// <p>Indicates whether the latest version of SSM Agent is running on your Linux Managed Instance.
-        /// This field does not indicate whether or not the latest version is installed on Windows managed
-        /// instances, because some older versions of Windows Server use the EC2Config service to process SSM
-        /// requests.</p>
+        /// This field doesn't indicate whether or not the latest version is installed on Windows managed
+        /// instances, because some older versions of Windows Server use the EC2Config service to process
+        /// Systems Manager requests.</p>
         pub fn is_latest_version(mut self, input: bool) -> Self {
             self.is_latest_version = Some(input);
             self
@@ -22213,7 +22547,8 @@ pub mod instance_information {
             self.platform_version = input;
             self
         }
-        /// <p>The activation ID created by Systems Manager when the server or VM was registered.</p>
+        /// <p>The activation ID created by Amazon Web Services Systems Manager when the server or virtual machine (VM) was
+        /// registered.</p>
         pub fn activation_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.activation_id = Some(input.into());
             self
@@ -22225,11 +22560,11 @@ pub mod instance_information {
             self.activation_id = input;
             self
         }
-        /// <p>The Amazon Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
-        /// managed instance. This call does not return the IAM role for EC2 instances. To retrieve the IAM
-        /// role for an EC2 instance, use the Amazon EC2 <code>DescribeInstances</code> action. For information,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+        /// <p>The Identity and Access Management (IAM) role assigned to the on-premises Systems Manager
+        /// managed instance. This call doesn't return the IAM role for Amazon Elastic Compute Cloud
+        /// (Amazon EC2) instances. To retrieve the IAM role for an EC2 instance, use
+        /// the Amazon EC2 <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in
+        /// the <i>Amazon Web Services CLI Command Reference</i>.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
@@ -22238,7 +22573,7 @@ pub mod instance_information {
             self.iam_role = input;
             self
         }
-        /// <p>The date the server or VM was registered with AWS as a managed instance.</p>
+        /// <p>The date the server or VM was registered with Amazon Web Services as a managed instance.</p>
         pub fn registration_date(mut self, input: smithy_types::Instant) -> Self {
             self.registration_date = Some(input);
             self
@@ -22267,10 +22602,11 @@ pub mod instance_information {
         /// using the <a>CreateActivation</a> command. It is applied to the managed instance by
         /// specifying the Activation Code and Activation ID when you install SSM Agent on the instance, as
         /// explained in <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-linux.html">Install SSM Agent for a
-        /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a hybrid environment
-        /// (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
-        /// <code>DescribeInstances</code> action. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
-        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the <i>AWS CLI Command Reference</i>.</p>
+        /// hybrid environment (Linux)</a> and <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-install-managed-win.html">Install SSM Agent for a
+        /// hybrid environment (Windows)</a>. To retrieve the Name tag of an EC2 instance, use the Amazon EC2
+        /// <code>DescribeInstances</code> operation. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> in the
+        /// <i>Amazon EC2 API Reference</i> or <a href="https://docs.aws.amazon.com/cli/latest/ec2/describe-instances.html">describe-instances</a> in the
+        /// <i>Amazon Web Services CLI Command Reference</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -22583,7 +22919,7 @@ pub struct InstanceInformationStringFilter {
     /// Key"</p>
     /// <important>
     /// <p>
-    /// <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+    /// <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
     /// <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
     /// tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:,
     /// tagKey, abc:keyname.</p>
@@ -22615,7 +22951,7 @@ pub mod instance_information_string_filter {
         /// Key"</p>
         /// <important>
         /// <p>
-        /// <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+        /// <code>Tag key</code> isn't a valid filter. You must specify either <code>tag-key</code> or
         /// <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
         /// tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:,
         /// tagKey, abc:keyname.</p>
@@ -22659,8 +22995,8 @@ impl InstanceInformationStringFilter {
 
 /// <p>Describes a filter for a specific list of instances. You can filter instances information by
 /// using tags. You specify tags by using a key-value mapping.</p>
-/// <p>Use this action instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The
-/// <code>InstanceInformationFilterList</code> method is a legacy method and does not support tags.
+/// <p>Use this operation instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a> method. The
+/// <code>InstanceInformationFilterList</code> method is a legacy method and doesn't support tags.
 /// </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -23081,7 +23417,8 @@ impl InstanceAssociationOutputUrl {
     }
 }
 
-/// <p>A URL for the S3 bucket where you want to store the results of this request.</p>
+/// <p>A URL for the Amazon Web Services Systems Manager (Systems Manager) bucket where you want to store the
+/// results of this request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3OutputUrl {
@@ -23128,10 +23465,11 @@ impl S3OutputUrl {
     }
 }
 
-/// <p>The EffectivePatch structure defines metadata about a patch along with the approval state of
-/// the patch in a particular patch baseline. The approval state includes information about whether
-/// the patch is currently approved, due to be approved by a rule, explicitly approved, or explicitly
-/// rejected and the date the patch was or will be approved.</p>
+/// <p>The <code>EffectivePatch</code> structure defines metadata about a patch along with the
+/// approval state of the patch in a particular patch baseline. The approval state includes
+/// information about whether the patch is currently approved, due to be approved by a rule,
+/// explicitly approved, or explicitly rejected and the date the patch was or will be
+/// approved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EffectivePatch {
@@ -23205,13 +23543,12 @@ impl EffectivePatch {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PatchStatus {
-    /// <p>The approval status of a patch (APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED,
-    /// EXPLICIT_REJECTED).</p>
+    /// <p>The approval status of a patch.</p>
     pub deployment_status: std::option::Option<crate::model::PatchDeploymentStatus>,
     /// <p>The compliance severity level for a patch.</p>
     pub compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>The date the patch was approved (or will be approved if the status is
-    /// PENDING_APPROVAL).</p>
+    /// <code>PENDING_APPROVAL</code>).</p>
     pub approval_date: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for PatchStatus {
@@ -23234,8 +23571,7 @@ pub mod patch_status {
         pub(crate) approval_date: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The approval status of a patch (APPROVED, PENDING_APPROVAL, EXPLICIT_APPROVED,
-        /// EXPLICIT_REJECTED).</p>
+        /// <p>The approval status of a patch.</p>
         pub fn deployment_status(mut self, input: crate::model::PatchDeploymentStatus) -> Self {
             self.deployment_status = Some(input);
             self
@@ -23260,7 +23596,7 @@ pub mod patch_status {
             self
         }
         /// <p>The date the patch was approved (or will be approved if the status is
-        /// PENDING_APPROVAL).</p>
+        /// <code>PENDING_APPROVAL</code>).</p>
         pub fn approval_date(mut self, input: smithy_types::Instant) -> Self {
             self.approval_date = Some(input);
             self
@@ -23356,7 +23692,7 @@ impl AsRef<str> for PatchDeploymentStatus {
 pub struct Patch {
     /// <p>The ID of the patch. Applies to Windows patches only.</p>
     /// <note>
-    /// <p>This ID is not the same as the Microsoft Knowledge Base ID.</p>
+    /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
     /// </note>
     pub id: std::option::Option<std::string::String>,
     /// <p>The date the patch was released.</p>
@@ -23485,7 +23821,7 @@ pub mod patch {
     impl Builder {
         /// <p>The ID of the patch. Applies to Windows patches only.</p>
         /// <note>
-        /// <p>This ID is not the same as the Microsoft Knowledge Base ID.</p>
+        /// <p>This ID isn't the same as the Microsoft Knowledge Base ID.</p>
         /// </note>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -23865,12 +24201,12 @@ impl InstanceAssociation {
     }
 }
 
-/// <p>Information includes the AWS account ID where the current document is shared and the version
-/// shared with that account.</p>
+/// <p>Information includes the account ID where the current document is shared and the
+/// version shared with that account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSharingInfo {
-    /// <p>The AWS account ID where the current document is shared.</p>
+    /// <p>The account ID where the current document is shared.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The version of the current document shared with the account.</p>
     pub shared_document_version: std::option::Option<std::string::String>,
@@ -23893,7 +24229,7 @@ pub mod account_sharing_info {
         pub(crate) shared_document_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID where the current document is shared.</p>
+        /// <p>The account ID where the current document is shared.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -24075,7 +24411,7 @@ impl AsRef<str> for StepExecutionFilterKey {
 pub struct AutomationExecutionMetadata {
     /// <p>The execution ID.</p>
     pub automation_execution_id: std::option::Option<std::string::String>,
-    /// <p>The name of the Automation document used during execution.</p>
+    /// <p>The name of the Automation runbook used during execution.</p>
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The document version used during the execution.</p>
     pub document_version: std::option::Option<std::string::String>,
@@ -24083,30 +24419,30 @@ pub struct AutomationExecutionMetadata {
     pub automation_execution_status: std::option::Option<crate::model::AutomationExecutionStatus>,
     /// <p>The time the execution started.</p>
     pub execution_start_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The time the execution finished. This is not populated if the execution is still in
+    /// <p>The time the execution finished. This isn't populated if the execution is still in
     /// progress.</p>
     pub execution_end_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The IAM role ARN of the user who ran the Automation.</p>
+    /// <p>The IAM role ARN of the user who ran the automation.</p>
     pub executed_by: std::option::Option<std::string::String>,
     /// <p>An S3 bucket where execution information is stored.</p>
     pub log_file: std::option::Option<std::string::String>,
-    /// <p>The list of execution outputs as defined in the Automation document.</p>
+    /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub outputs: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The Automation execution mode.</p>
     pub mode: std::option::Option<crate::model::ExecutionMode>,
-    /// <p>The ExecutionId of the parent Automation.</p>
+    /// <p>The execution ID of the parent automation.</p>
     pub parent_automation_execution_id: std::option::Option<std::string::String>,
     /// <p>The name of the step that is currently running.</p>
     pub current_step_name: std::option::Option<std::string::String>,
     /// <p>The action of the step that is currently running.</p>
     pub current_action: std::option::Option<std::string::String>,
-    /// <p>The list of execution outputs as defined in the Automation document.</p>
+    /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub failure_message: std::option::Option<std::string::String>,
-    /// <p>The list of execution outputs as defined in the Automation document.</p>
+    /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub target_parameter_name: std::option::Option<std::string::String>,
-    /// <p>The targets defined by the user when starting the Automation.</p>
+    /// <p>The targets defined by the user when starting the automation.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The specified key-value mapping of document parameters to target resources.</p>
     pub target_maps: std::option::Option<
@@ -24116,24 +24452,25 @@ pub struct AutomationExecutionMetadata {
     >,
     /// <p>A list of targets that resolved during the execution.</p>
     pub resolved_targets: std::option::Option<crate::model::ResolvedTargets>,
-    /// <p>The MaxConcurrency value specified by the user when starting the Automation.</p>
+    /// <p>The <code>MaxConcurrency</code> value specified by the user when starting the
+    /// automation.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
-    /// <p>The MaxErrors value specified by the user when starting the Automation.</p>
+    /// <p>The <code>MaxErrors</code> value specified by the user when starting the automation.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>The list of execution outputs as defined in the Automation document.</p>
+    /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub target: std::option::Option<std::string::String>,
     /// <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
-    /// CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and accounts. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple AWS Regions and accounts</a> in the
-    /// <i>AWS Systems Manager User Guide</i>. </p>
+    /// CrossAccount. CrossAccount is an Automation that runs in multiple Regions and
+    /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Regions and accounts</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub automation_type: std::option::Option<crate::model::AutomationType>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is
     /// <code>ChangeRequest</code>.</p>
     pub automation_subtype: std::option::Option<crate::model::AutomationSubtype>,
     /// <p>The date and time the Automation operation is scheduled to start.</p>
     pub scheduled_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Information about the Automation runbooks (Automation documents) that are run during a
-    /// runbook workflow in Change Manager.</p>
+    /// <p>Information about the Automation runbooks that are run during a runbook workflow in
+    /// Change Manager.</p>
     /// <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
     /// approvals for the change request have been received.</p>
@@ -24241,7 +24578,7 @@ pub mod automation_execution_metadata {
             self.automation_execution_id = input;
             self
         }
-        /// <p>The name of the Automation document used during execution.</p>
+        /// <p>The name of the Automation runbook used during execution.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
@@ -24292,7 +24629,7 @@ pub mod automation_execution_metadata {
             self.execution_start_time = input;
             self
         }
-        /// <p>The time the execution finished. This is not populated if the execution is still in
+        /// <p>The time the execution finished. This isn't populated if the execution is still in
         /// progress.</p>
         pub fn execution_end_time(mut self, input: smithy_types::Instant) -> Self {
             self.execution_end_time = Some(input);
@@ -24305,7 +24642,7 @@ pub mod automation_execution_metadata {
             self.execution_end_time = input;
             self
         }
-        /// <p>The IAM role ARN of the user who ran the Automation.</p>
+        /// <p>The IAM role ARN of the user who ran the automation.</p>
         pub fn executed_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.executed_by = Some(input.into());
             self
@@ -24351,7 +24688,7 @@ pub mod automation_execution_metadata {
             self.mode = input;
             self
         }
-        /// <p>The ExecutionId of the parent Automation.</p>
+        /// <p>The execution ID of the parent automation.</p>
         pub fn parent_automation_execution_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -24390,7 +24727,7 @@ pub mod automation_execution_metadata {
             self.current_action = input;
             self
         }
-        /// <p>The list of execution outputs as defined in the Automation document.</p>
+        /// <p>The list of execution outputs as defined in the Automation runbook.</p>
         pub fn failure_message(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_message = Some(input.into());
             self
@@ -24402,7 +24739,7 @@ pub mod automation_execution_metadata {
             self.failure_message = input;
             self
         }
-        /// <p>The list of execution outputs as defined in the Automation document.</p>
+        /// <p>The list of execution outputs as defined in the Automation runbook.</p>
         pub fn target_parameter_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_parameter_name = Some(input.into());
             self
@@ -24464,7 +24801,8 @@ pub mod automation_execution_metadata {
             self.resolved_targets = input;
             self
         }
-        /// <p>The MaxConcurrency value specified by the user when starting the Automation.</p>
+        /// <p>The <code>MaxConcurrency</code> value specified by the user when starting the
+        /// automation.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -24476,7 +24814,7 @@ pub mod automation_execution_metadata {
             self.max_concurrency = input;
             self
         }
-        /// <p>The MaxErrors value specified by the user when starting the Automation.</p>
+        /// <p>The <code>MaxErrors</code> value specified by the user when starting the automation.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -24485,7 +24823,7 @@ pub mod automation_execution_metadata {
             self.max_errors = input;
             self
         }
-        /// <p>The list of execution outputs as defined in the Automation document.</p>
+        /// <p>The list of execution outputs as defined in the Automation runbook.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
@@ -24495,9 +24833,9 @@ pub mod automation_execution_metadata {
             self
         }
         /// <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
-        /// CrossAccount. CrossAccount is an Automation that runs in multiple AWS Regions and accounts. For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple AWS Regions and accounts</a> in the
-        /// <i>AWS Systems Manager User Guide</i>. </p>
+        /// CrossAccount. CrossAccount is an Automation that runs in multiple Regions and
+        /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Regions and accounts</a> in the
+        /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn automation_type(mut self, input: crate::model::AutomationType) -> Self {
             self.automation_type = Some(input);
             self
@@ -25017,8 +25355,7 @@ impl AssociationExecutionTarget {
 pub struct OutputSource {
     /// <p>The ID of the output source, for example the URL of an S3 bucket.</p>
     pub output_source_id: std::option::Option<std::string::String>,
-    /// <p>The type of source where the association execution details are stored, for example,
-    /// Amazon S3.</p>
+    /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
     pub output_source_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OutputSource {
@@ -25051,8 +25388,7 @@ pub mod output_source {
             self.output_source_id = input;
             self
         }
-        /// <p>The type of source where the association execution details are stored, for example,
-        /// Amazon S3.</p>
+        /// <p>The type of source where the association execution details are stored, for example, Amazon S3.</p>
         pub fn output_source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_source_type = Some(input.into());
             self
@@ -25547,9 +25883,9 @@ impl AsRef<str> for AssociationExecutionFilterKey {
     }
 }
 
-/// <p>An activation registers one or more on-premises servers or virtual machines (VMs) with AWS
+/// <p>An activation registers one or more on-premises servers or virtual machines (VMs) with Amazon Web Services
 /// so that you can configure those servers or VMs using Run Command. A server or VM that has been
-/// registered with AWS is called a managed instance.</p>
+/// registered with Amazon Web Services Systems Manager is called a managed instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Activation {
@@ -25559,7 +25895,7 @@ pub struct Activation {
     pub description: std::option::Option<std::string::String>,
     /// <p>A name for the managed instance when it is created.</p>
     pub default_instance_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+    /// <p>The Identity and Access Management (IAM) role to assign to the managed
     /// instance.</p>
     pub iam_role: std::option::Option<std::string::String>,
     /// <p>The maximum number of managed instances that can be registered using this activation.</p>
@@ -25642,7 +25978,7 @@ pub mod activation {
             self.default_instance_name = input;
             self
         }
-        /// <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+        /// <p>The Identity and Access Management (IAM) role to assign to the managed
         /// instance.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
@@ -26044,15 +26380,15 @@ impl AsRef<str> for Fault {
     }
 }
 
-/// <p>Describes the association of a Systems Manager SSM document and an instance.</p>
+/// <p>Describes the association of a Amazon Web Services Systems Manager document (SSM document) and an instance.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationBatchRequestEntry {
     /// <p>The name of the SSM document that contains the configuration information for the instance.
-    /// You can specify Command or Automation documents.</p>
-    /// <p>You can specify AWS-predefined documents, documents you created, or a document that is
+    /// You can specify Command or Automation runbooks.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
-    /// <p>For SSM documents that are shared with you from other AWS accounts, you must specify the
+    /// <p>For SSM documents that are shared with you from other accounts, you must specify the
     /// complete SSM document ARN, in the following format:</p>
     /// <p>
     /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -26062,8 +26398,8 @@ pub struct CreateAssociationBatchRequestEntry {
     /// <p>
     /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
     /// </p>
-    /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
-    /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+    /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+    /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
     /// <code>My-Document</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the instance. </p>
@@ -26073,7 +26409,8 @@ pub struct CreateAssociationBatchRequestEntry {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>Specify the target for the association. This target is required for associations that use an
-    /// Automation document and target resources by using rate controls.</p>
+    /// Automation runbook and target resources by using rate controls. Automation is a capability of
+    /// Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The document version.</p>
     pub document_version: std::option::Option<std::string::String>,
@@ -26090,20 +26427,20 @@ pub struct CreateAssociationBatchRequestEntry {
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-    /// is received.</p>
-    /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-    /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-    /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-    /// at a time.</p>
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-    /// MaxConcurrency associations, the association is allowed to run. During the next association
-    /// interval, the new instance will process its association within the limit specified for
-    /// MaxConcurrency.</p>
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
@@ -26113,19 +26450,20 @@ pub struct CreateAssociationBatchRequestEntry {
     /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
     /// successfully, the association is <code>NON-COMPLIANT</code>. </p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-    /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+    /// <a>PutComplianceItems</a> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new associations, the system runs it immediately after it is
     /// created and then according to the schedule you specified. Specify this option if you don't want
-    /// an association to run immediately after you create it. This parameter is not supported for rate
+    /// an association to run immediately after you create it. This parameter isn't supported for rate
     /// expressions.</p>
     pub apply_only_at_cron_interval: bool,
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
-    /// documents your associations are gated under. The associations only run when that Change
-    /// Calendar is open.  For more information, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems Manager Change Calendar</a>.</p>
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents your
+    /// associations are gated under. The associations only run when that Change Calendar is open. For
+    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
+    /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Use this action to create an association in multiple Regions and multiple accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -26188,10 +26526,10 @@ pub mod create_association_batch_request_entry {
     }
     impl Builder {
         /// <p>The name of the SSM document that contains the configuration information for the instance.
-        /// You can specify Command or Automation documents.</p>
-        /// <p>You can specify AWS-predefined documents, documents you created, or a document that is
+        /// You can specify Command or Automation runbooks.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
-        /// <p>For SSM documents that are shared with you from other AWS accounts, you must specify the
+        /// <p>For SSM documents that are shared with you from other accounts, you must specify the
         /// complete SSM document ARN, in the following format:</p>
         /// <p>
         /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -26201,8 +26539,8 @@ pub mod create_association_batch_request_entry {
         /// <p>
         /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
         /// </p>
-        /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
-        /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
         /// <code>My-Document</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -26241,7 +26579,8 @@ pub mod create_association_batch_request_entry {
             self
         }
         /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation document and target resources by using rate controls.</p>
+        /// Automation runbook and target resources by using rate controls. Automation is a capability of
+        /// Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -26325,12 +26664,12 @@ pub mod create_association_batch_request_entry {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-        /// is received.</p>
-        /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-        /// at a time.</p>
+        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+        /// the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+        /// so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -26343,9 +26682,9 @@ pub mod create_association_batch_request_entry {
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
         /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-        /// MaxConcurrency associations, the association is allowed to run. During the next association
-        /// interval, the new instance will process its association within the limit specified for
-        /// MaxConcurrency.</p>
+        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+        /// association interval, the new instance will process its association within the limit specified
+        /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -26378,8 +26717,9 @@ pub mod create_association_batch_request_entry {
         /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
         /// successfully, the association is <code>NON-COMPLIANT</code>. </p>
         /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+        /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+        /// <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.sync_compliance = Some(input);
@@ -26394,7 +26734,7 @@ pub mod create_association_batch_request_entry {
         }
         /// <p>By default, when you create a new associations, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you create it. This parameter is not supported for rate
+        /// an association to run immediately after you create it. This parameter isn't supported for rate
         /// expressions.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.apply_only_at_cron_interval = Some(input);

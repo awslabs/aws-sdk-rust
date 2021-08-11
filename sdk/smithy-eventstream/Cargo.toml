@@ -1,0 +1,18 @@
+[package]
+name = "smithy-eventstream"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "John DiSanti <jdisanti@amazon.com>"]
+edition = "2018"
+
+[features]
+derive-arbitrary = ["arbitrary"]
+default = []
+
+[dependencies]
+arbitrary = { version = "1", optional = true, features = ["derive"] }
+bytes = "1"
+crc32fast = "1"
+smithy-types = { path = "../smithy-types" }
+
+[dev-dependencies]
+bytes-utils = "0.1"

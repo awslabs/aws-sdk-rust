@@ -133,8 +133,7 @@ impl smithy_http::response::ParseStrictResponse for AddTags {
 /// <p>Cancels a pending step or steps in a running cluster. Available only in Amazon EMR
 /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed in
 /// each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not guarantee
-/// that a step will be canceled, even if the request is successfully submitted. You can only
-/// cancel steps that are in a <code>PENDING</code> state.</p>
+/// that a step will be canceled, even if the request is successfully submitted. When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only cancel steps that are in a <code>PENDING</code> state. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelSteps {
     _private: (),
@@ -431,6 +430,34 @@ impl smithy_http::response::ParseStrictResponse for DescribeNotebookExecution {
     }
 }
 
+/// <p>Provides EMR release label details, such as releases available the region where the API request is run, and the available applications for a specific EMR release label. Can also list EMR release versions that support a specified version of Spark.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeReleaseLabel {
+    _private: (),
+}
+impl DescribeReleaseLabel {
+    /// Creates a new builder-style object to manufacture [`DescribeReleaseLabelInput`](crate::input::DescribeReleaseLabelInput)
+    pub fn builder() -> crate::input::describe_release_label_input::Builder {
+        crate::input::describe_release_label_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeReleaseLabel {
+    type Output = std::result::Result<
+        crate::output::DescribeReleaseLabelOutput,
+        crate::error::DescribeReleaseLabelError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_release_label_error(response)
+        } else {
+            crate::operation_deser::parse_describe_release_label_response(response)
+        }
+    }
+}
+
 /// <p>Provides the details of a security configuration by returning the configuration
 /// JSON.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -513,7 +540,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeStudio {
     }
 }
 
-/// <p>Returns the Amazon EMR block public access configuration for your AWS account in the
+/// <p>Returns the Amazon EMR block public access configuration for your account in the
 /// current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
 /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
 /// Guide</i>.</p>
@@ -629,9 +656,9 @@ impl smithy_http::response::ParseStrictResponse for ListBootstrapActions {
     }
 }
 
-/// <p>Provides the status of all clusters visible to this AWS account. Allows you to filter
+/// <p>Provides the status of all clusters visible to this account. Allows you to filter
 /// the list of clusters based on certain criteria; for example, filtering by cluster creation
-/// date and time or by status. This call returns a maximum of 50 clusters per call, but
+/// date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but
 /// returns a marker to track the paging of the cluster list across multiple ListClusters
 /// calls.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -778,6 +805,34 @@ impl smithy_http::response::ParseStrictResponse for ListNotebookExecutions {
     }
 }
 
+/// <p>Retrieves release labels of EMR services in the region where the API is called.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListReleaseLabels {
+    _private: (),
+}
+impl ListReleaseLabels {
+    /// Creates a new builder-style object to manufacture [`ListReleaseLabelsInput`](crate::input::ListReleaseLabelsInput)
+    pub fn builder() -> crate::input::list_release_labels_input::Builder {
+        crate::input::list_release_labels_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListReleaseLabels {
+    type Output = std::result::Result<
+        crate::output::ListReleaseLabelsOutput,
+        crate::error::ListReleaseLabelsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_release_labels_error(response)
+        } else {
+            crate::operation_deser::parse_list_release_labels_response(response)
+        }
+    }
+}
+
 /// <p>Lists all the security configurations visible to this account, providing their creation
 /// dates and times, and their names. This call returns a maximum of 50 clusters per call, but
 /// returns a marker to track the paging of the cluster list across multiple
@@ -810,8 +865,8 @@ impl smithy_http::response::ParseStrictResponse for ListSecurityConfigurations {
 }
 
 /// <p>Provides a list of steps for the cluster in reverse order unless you specify
-/// <code>stepIds</code> with the request of filter by <code>StepStates</code>. You can
-/// specify a maximum of 10 <code>stepIDs</code>.</p>
+/// <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can
+/// specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListSteps {
     _private: (),
@@ -836,7 +891,7 @@ impl smithy_http::response::ParseStrictResponse for ListSteps {
     }
 }
 
-/// <p>Returns a list of all Amazon EMR Studios associated with the AWS account. The list
+/// <p>Returns a list of all Amazon EMR Studios associated with the account. The list
 /// includes details such as ID, Studio Access URL, and creation time for each Studio.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListStudios {
@@ -1014,7 +1069,7 @@ impl smithy_http::response::ParseStrictResponse for PutAutoScalingPolicy {
     }
 }
 
-/// <p>Creates or updates an Amazon EMR block public access configuration for your AWS account
+/// <p>Creates or updates an Amazon EMR block public access configuration for your account
 /// in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
 /// Public Access for Amazon EMR</a> in the <i>Amazon EMR Management
 /// Guide</i>.</p>
@@ -1252,15 +1307,10 @@ impl smithy_http::response::ParseStrictResponse for SetTerminationProtection {
     }
 }
 
-/// <p>Sets the <a>Cluster$VisibleToAllUsers</a> value, which determines whether the
-/// cluster is visible to all IAM users of the AWS account associated with the cluster. Only
-/// the IAM user who created the cluster or the AWS account root user can call this action. The
-/// default value, <code>true</code>, indicates that all IAM users in the AWS account can
-/// perform cluster actions if they have the proper IAM policy permissions. If set to
-/// <code>false</code>, only the IAM user that created the cluster can perform actions. This
-/// action works on running clusters. You can override the default <code>true</code> setting
-/// when you create a cluster by using the <code>VisibleToAllUsers</code> parameter with
-/// <code>RunJobFlow</code>.</p>
+/// <p>Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>, IAM principals in the
+/// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions on the cluster, regardless of IAM permissions policies attached to other IAM principals.</p>
+/// <p>This action works on running clusters. When you create a cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SetVisibleToAllUsers {
     _private: (),

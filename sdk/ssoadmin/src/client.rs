@@ -203,9 +203,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -271,9 +270,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -282,7 +280,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_id(input);
             self
@@ -303,7 +301,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_target_type(input);
             self
         }
-        /// <p>The ARN of the permission set that the admin wants to grant the principal access to.</p>
+        /// <p>The ARN of the permission set that the admin wants to grant the principal access
+        /// to.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_set_arn(input);
             self
@@ -327,7 +326,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_type(input);
             self
         }
-        /// <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input);
             self
@@ -379,7 +378,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>Specifies the AWS SSO identity store attributes to add to your ABAC configuration. When using an external identity provider as an identity source, you can pass attributes through the SAML assertion as an alternative to configuring attributes from the AWS SSO identity store. If a SAML assertion passes any of these attributes, AWS SSO will replace the attribute value with the value from the AWS SSO identity store.</p>
+        /// <p>Specifies the Amazon Web Services SSO identity store attributes to add to your ABAC configuration.
+        /// When using an external identity provider as an identity source, you can pass attributes
+        /// through the SAML assertion. Doing so provides an alternative to configuring attributes from
+        /// the Amazon Web Services SSO identity store. If a SAML assertion passes any of these attributes, Amazon Web Services
+        /// SSO will replace the attribute value with the value from the Amazon Web Services SSO identity
+        /// store.</p>
         pub fn instance_access_control_attribute_configuration(
             mut self,
             input: crate::model::InstanceAccessControlAttributeConfiguration,
@@ -448,9 +452,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -526,9 +529,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -537,7 +539,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_id(input);
             self
@@ -582,7 +584,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal_type(input);
             self
         }
-        /// <p>An identifier for an object in AWS SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in AWS SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">AWS SSO Identity Store API Reference</a>.</p>
+        /// <p>An identifier for an object in Amazon Web Services SSO, such as a user or group. PrincipalIds are GUIDs (For example, f81d4fae-7dec-11d0-a765-00a0c91e6bf6). For more information about PrincipalIds in Amazon Web Services SSO, see the <a href="/singlesignon/latest/IdentityStoreAPIReference/welcome.html">Amazon Web Services SSO Identity Store API Reference</a>.</p>
         pub fn principal_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal_id(input);
             self
@@ -623,9 +625,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -721,9 +722,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -778,9 +778,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -838,9 +837,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -940,9 +938,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -997,9 +994,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1056,9 +1052,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1067,7 +1062,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be detached.</p>
+        /// <p>The ARN of the <a>PermissionSet</a> from which the policy should be
+        /// detached.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_set_arn(input);
             self
@@ -1123,9 +1119,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1178,9 +1173,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1251,9 +1245,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1324,9 +1317,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1335,7 +1327,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The identifier of the AWS account from which to list the assignments.</p>
+        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1408,9 +1400,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1419,7 +1410,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> from which the associated AWS accounts
+        /// <p>The ARN of the <a>PermissionSet</a> from which the associated Amazon Web Services accounts
         /// will be listed.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_set_arn(input);
@@ -1432,7 +1423,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>The permission set provisioning status for an AWS account.</p>
+        /// <p>The permission set provisioning status for an Amazon Web Services account.</p>
         pub fn provisioning_status(mut self, input: crate::model::ProvisioningStatus) -> Self {
             self.inner = self.inner.provisioning_status(input);
             self
@@ -1544,9 +1535,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1555,7 +1545,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be listed.</p>
+        /// <p>The ARN of the <a>PermissionSet</a> whose managed policies will be
+        /// listed.</p>
         pub fn permission_set_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.permission_set_arn(input);
             self
@@ -1617,9 +1608,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1690,9 +1680,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1753,9 +1742,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1764,7 +1752,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_instance_arn(input);
             self
         }
-        /// <p>The identifier of the AWS account from which to list the assignments.</p>
+        /// <p>The identifier of the Amazon Web Services account from which to list the assignments.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account_id(input);
             self
@@ -1835,9 +1823,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1896,9 +1883,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -1919,7 +1905,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_permission_set_arn(input);
             self
         }
-        /// <p>TargetID is an AWS account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
+        /// <p>TargetID is an Amazon Web Services account identifier, typically a 10-12 digit string (For example, 123456789012).</p>
         pub fn target_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.target_id(input);
             self
@@ -1972,9 +1958,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -2039,9 +2024,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -2103,9 +2087,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self
@@ -2229,9 +2212,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ARN of the SSO instance under which the operation will be executed.
-        /// For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
-        /// Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// <p>The ARN of the SSO instance under which the operation will be executed. For more information about ARNs, see <a href="/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+        /// Names (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.instance_arn(input);
             self

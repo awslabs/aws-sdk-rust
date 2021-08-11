@@ -50,7 +50,7 @@ impl AsRef<str> for MacieStatus {
     }
 }
 
-/// <p>The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are:</p>
+/// <p>The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing updates to Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information, see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are:</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -435,7 +435,7 @@ impl AsRef<str> for JobStatus {
     }
 }
 
-/// <p>Provides statistical data and other information about an AWS resource that Amazon Macie monitors and analyzes.</p>
+/// <p>Provides statistical data and other information about an Amazon Web Services resource that Amazon Macie monitors and analyzes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingResource {
@@ -489,7 +489,7 @@ impl MatchingResource {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MatchingBucket {
-    /// <p>The unique identifier for the AWS account that owns the bucket.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The name of the bucket.</p>
     pub bucket_name: std::option::Option<std::string::String>,
@@ -565,7 +565,7 @@ pub mod matching_bucket {
             std::option::Option<crate::model::ObjectLevelStatistics>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that owns the bucket.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -791,7 +791,7 @@ impl ObjectLevelStatistics {
 pub struct ObjectCountByEncryptionType {
     /// <p>The total number of objects that are encrypted with a customer-managed key. The objects use customer-provided server-side encryption (SSE-C).</p>
     pub customer_managed: i64,
-    /// <p>The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p>
+    /// <p>The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
     pub kms_managed: i64,
     /// <p>The total number of objects that are encrypted with an Amazon S3 managed key. The objects use Amazon S3 managed encryption (SSE-S3).</p>
     pub s3_managed: i64,
@@ -833,7 +833,7 @@ pub mod object_count_by_encryption_type {
             self.customer_managed = input;
             self
         }
-        /// <p>The total number of objects that are encrypted with an AWS Key Management Service (AWS KMS) customer master key (CMK). The objects use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p>
+        /// <p>The total number of objects that are encrypted with an Key Management Service (KMS) customer master key (CMK). The objects use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p>
         pub fn kms_managed(mut self, input: i64) -> Self {
             self.kms_managed = Some(input);
             self
@@ -1096,7 +1096,7 @@ impl AsRef<str> for IsDefinedInJob {
     }
 }
 
-/// <p>Specifies criteria for sorting the results of a query for information about AWS resources that Amazon Macie monitors and analyzes.</p>
+/// <p>Specifies criteria for sorting the results of a query for information about Amazon Web Services resources that Amazon Macie monitors and analyzes.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesSortCriteria {
@@ -1351,7 +1351,7 @@ impl SearchResourcesBucketCriteria {
     }
 }
 
-/// <p>Specifies property- and tag-based conditions that define filter criteria for including or excluding AWS resources from the query results.</p>
+/// <p>Specifies property- and tag-based conditions that define filter criteria for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesCriteriaBlock {
@@ -1400,7 +1400,7 @@ impl SearchResourcesCriteriaBlock {
     }
 }
 
-/// <p>Specifies a property- or tag-based filter condition for including or excluding AWS resources from the query results.</p>
+/// <p>Specifies a property- or tag-based filter condition for including or excluding Amazon Web Services resources from the query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesCriteria {
@@ -1471,7 +1471,7 @@ impl SearchResourcesCriteria {
     }
 }
 
-/// <p>Specifies a tag-based filter condition that determines which AWS resources are included or excluded from the query results.</p>
+/// <p>Specifies a tag-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesTagCriterion {
@@ -1658,7 +1658,7 @@ impl AsRef<str> for SearchResourcesComparator {
     }
 }
 
-/// <p>Specifies a property-based filter condition that determines which AWS resources are included or excluded from the query results.</p>
+/// <p>Specifies a property-based filter condition that determines which Amazon Web Services resources are included or excluded from the query results.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SearchResourcesSimpleCriterion {
@@ -1666,7 +1666,7 @@ pub struct SearchResourcesSimpleCriterion {
     pub comparator: std::option::Option<crate::model::SearchResourcesComparator>,
     /// <p>The property to use in the condition.</p>
     pub key: std::option::Option<crate::model::SearchResourcesSimpleCriterionKey>,
-    /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
+    /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the resource.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of an S3 bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of an S3 bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of an S3 bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for SearchResourcesSimpleCriterion {
@@ -1809,13 +1809,13 @@ impl AsRef<str> for SearchResourcesSimpleCriterionKey {
     }
 }
 
-/// <p>Specifies configuration settings that determine which findings are published to AWS Security Hub automatically. For information about how Macie publishes findings to Security Hub, see <a href="https://docs.aws.amazon.com/macie/latest/user/securityhub-integration.html">Amazon Macie integration with Security Hub</a> in the <i>Amazon Macie User Guide</i>.</p>
+/// <p>Specifies configuration settings that determine which findings are published to Security Hub automatically. For information about how Macie publishes findings to Security Hub, see <a href="https://docs.aws.amazon.com/macie/latest/user/securityhub-integration.html">Amazon Macie integration with Security Hub</a> in the <i>Amazon Macie User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SecurityHubConfiguration {
-    /// <p>Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
+    /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
     pub publish_classification_findings: bool,
-    /// <p>Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
+    /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
     pub publish_policy_findings: bool,
 }
 impl std::fmt::Debug for SecurityHubConfiguration {
@@ -1839,7 +1839,7 @@ pub mod security_hub_configuration {
         pub(crate) publish_policy_findings: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Specifies whether to publish sensitive data findings to AWS Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
+        /// <p>Specifies whether to publish sensitive data findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all sensitive data findings that weren't suppressed by a findings filter. The default value is false.</p>
         pub fn publish_classification_findings(mut self, input: bool) -> Self {
             self.publish_classification_findings = Some(input);
             self
@@ -1851,7 +1851,7 @@ pub mod security_hub_configuration {
             self.publish_classification_findings = input;
             self
         }
-        /// <p>Specifies whether to publish policy findings to AWS Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
+        /// <p>Specifies whether to publish policy findings to Security Hub. If you set this value to true, Amazon Macie automatically publishes all new and updated policy findings that weren't suppressed by a findings filter. The default value is true.</p>
         pub fn publish_policy_findings(mut self, input: bool) -> Self {
             self.publish_policy_findings = Some(input);
             self
@@ -1936,7 +1936,7 @@ pub struct S3Destination {
     pub bucket_name: std::option::Option<std::string::String>,
     /// <p>The path prefix to use in the path to the location in the bucket. This prefix specifies where to store classification results in the bucket.</p>
     pub key_prefix: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encryption of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the bucket.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) customer master key (CMK) to use for encryption of the results. This must be the ARN of an existing CMK that's in the same Amazon Web Services Region as the bucket.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3Destination {
@@ -1977,7 +1977,7 @@ pub mod s3_destination {
             self.key_prefix = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer master key (CMK) to use for encryption of the results. This must be the ARN of an existing CMK that's in the same AWS Region as the bucket.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) customer master key (CMK) to use for encryption of the results. This must be the ARN of an existing CMK that's in the same Amazon Web Services Region as the bucket.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -2003,11 +2003,11 @@ impl S3Destination {
     }
 }
 
-/// <p>Provides information about the delegated Amazon Macie administrator account for an AWS organization.</p>
+/// <p>Provides information about the delegated Amazon Macie administrator account for an Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdminAccount {
-    /// <p>The AWS account ID for the account.</p>
+    /// <p>The Amazon Web Services account ID for the account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the account as the delegated administrator of Amazon Macie for the organization.</p>
     pub status: std::option::Option<crate::model::AdminStatus>,
@@ -2030,7 +2030,7 @@ pub mod admin_account {
         pub(crate) status: std::option::Option<crate::model::AdminStatus>,
     }
     impl Builder {
-        /// <p>The AWS account ID for the account.</p>
+        /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -2064,7 +2064,7 @@ impl AdminAccount {
     }
 }
 
-/// <p>The current status of an account as the delegated Amazon Macie administrator account for an AWS organization. Possible values are:</p>
+/// <p>The current status of an account as the delegated Amazon Macie administrator account for an Amazon Web Services organization. Possible values are:</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -2119,9 +2119,9 @@ impl AsRef<str> for AdminStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Member {
-    /// <p>The AWS account ID for the account.</p>
+    /// <p>The Amazon Web Services account ID for the account.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID for the administrator account.</p>
+    /// <p>The Amazon Web Services account ID for the administrator account.</p>
     pub administrator_account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the account.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -2129,7 +2129,7 @@ pub struct Member {
     pub email: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when an Amazon Macie membership invitation was last sent to the account. This value is null if a Macie invitation hasn't been sent to the account.</p>
     pub invited_at: std::option::Option<smithy_types::Instant>,
-    /// <p>(Deprecated) The AWS account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+    /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
     pub master_account_id: std::option::Option<std::string::String>,
     /// <p>The current status of the relationship between the account and the administrator account.</p>
     pub relationship_status: std::option::Option<crate::model::RelationshipStatus>,
@@ -2173,7 +2173,7 @@ pub mod member {
         pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The AWS account ID for the account.</p>
+        /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -2182,7 +2182,7 @@ pub mod member {
             self.account_id = input;
             self
         }
-        /// <p>The AWS account ID for the administrator account.</p>
+        /// <p>The Amazon Web Services account ID for the administrator account.</p>
         pub fn administrator_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.administrator_account_id = Some(input.into());
             self
@@ -2221,7 +2221,7 @@ pub mod member {
             self.invited_at = input;
             self
         }
-        /// <p>(Deprecated) The AWS account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
+        /// <p>(Deprecated) The Amazon Web Services account ID for the administrator account. This property has been replaced by the administratorAccountId property and is retained only for backward compatibility.</p>
         pub fn master_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_account_id = Some(input.into());
             self
@@ -2386,7 +2386,7 @@ impl AsRef<str> for RelationshipStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Invitation {
-    /// <p>The AWS account ID for the account that sent the invitation.</p>
+    /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the invitation. Amazon Macie uses this identifier to validate the inviter account with the invitee account.</p>
     pub invitation_id: std::option::Option<std::string::String>,
@@ -2417,7 +2417,7 @@ pub mod invitation {
         pub(crate) relationship_status: std::option::Option<crate::model::RelationshipStatus>,
     }
     impl Builder {
-        /// <p>The AWS account ID for the account that sent the invitation.</p>
+        /// <p>The Amazon Web Services account ID for the account that sent the invitation.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -2767,7 +2767,7 @@ impl CustomDataIdentifierSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct JobSummary {
-    /// <p>An array of objects, one for each AWS account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
+    /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets for the job to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     pub bucket_definitions:
         std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job was created.</p>
@@ -3345,7 +3345,7 @@ pub struct SimpleCriterionForJob {
     pub comparator: std::option::Option<crate::model::JobComparator>,
     /// <p>The property to use in the condition.</p>
     pub key: std::option::Option<crate::model::SimpleCriterionKeyForJob>,
-    /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the AWS account that owns the bucket.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of a bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of a bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
+    /// <p>An array that lists one or more values to use in the condition. If you specify multiple values, Amazon Macie uses OR logic to join the values. Valid values for each supported property (key) are:</p> <ul><li><p>ACCOUNT_ID - A string that represents the unique identifier for the Amazon Web Services account that owns the bucket.</p></li> <li><p>S3_BUCKET_EFFECTIVE_PERMISSION - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketpublicaccess-effectivepermission">BucketPublicAccess.effectivePermission</a> property of a bucket.</p></li> <li><p>S3_BUCKET_NAME - A string that represents the name of a bucket.</p></li> <li><p>S3_BUCKET_SHARED_ACCESS - A string that represents an enumerated value that Macie defines for the <a href="https://docs.aws.amazon.com/macie/latest/APIReference/datasources-s3.html#datasources-s3-prop-bucketmetadata-sharedaccess">BucketMetadata.sharedAccess</a> property of a bucket.</p></li></ul> <p>Values are case sensitive. Also, Macie doesn't support use of partial values or wildcard characters in these values.</p>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for SimpleCriterionForJob {
@@ -3494,7 +3494,7 @@ impl AsRef<str> for SimpleCriterionKeyForJob {
 pub struct UserPausedDetails {
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the job or job run will expire and be cancelled if you don't resume it first.</p>
     pub job_expires_at: std::option::Option<smithy_types::Instant>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
     pub job_imminent_expiration_health_event_arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when you paused the job.</p>
     pub job_paused_at: std::option::Option<smithy_types::Instant>,
@@ -3535,7 +3535,7 @@ pub mod user_paused_details {
             self.job_expires_at = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Health event that Amazon Macie sent to notify you of the job or job run's pending expiration and cancellation. This value is null if a job has been paused for less than 23 days.</p>
         pub fn job_imminent_expiration_health_event_arn(
             mut self,
             input: impl Into<std::string::String>,
@@ -3730,11 +3730,11 @@ impl AsRef<str> for JobType {
     }
 }
 
-/// <p>Specifies an AWS account that owns S3 buckets for a classification job to analyze, and one or more specific buckets to analyze for that account.</p>
+/// <p>Specifies an Amazon Web Services account that owns S3 buckets for a classification job to analyze, and one or more specific buckets to analyze for that account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3BucketDefinitionForJob {
-    /// <p>The unique identifier for the AWS account that owns the buckets.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>An array that lists the names of the buckets.</p>
     pub buckets: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -3757,7 +3757,7 @@ pub mod s3_bucket_definition_for_job {
         pub(crate) buckets: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that owns the buckets.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that owns the buckets.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -4359,7 +4359,7 @@ impl AsRef<str> for TimeRange {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UsageRecord {
-    /// <p>The unique identifier for the AWS account that the data applies to.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The date and time, in UTC and extended ISO 8601 format, when the free trial started for the account.</p>
     pub free_trial_start_date: std::option::Option<smithy_types::Instant>,
@@ -4386,7 +4386,7 @@ pub mod usage_record {
         pub(crate) usage: std::option::Option<std::vec::Vec<crate::model::UsageByAccount>>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that the data applies to.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that the data applies to.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -4788,7 +4788,7 @@ pub struct UsageStatisticsFilter {
     pub comparator: std::option::Option<crate::model::UsageStatisticsFilterComparator>,
     /// <p>The field to use in the condition.</p>
     pub key: std::option::Option<crate::model::UsageStatisticsFilterKey>,
-    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> <p>Valid values for each supported field are:</p> <ul><li><p>accountId - The unique identifier for an AWS account.</p></li></ul> <ul><li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an account.</p></li></ul> <ul><li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li></ul> <ul><li><p>total - A string that represents the current estimated cost for an account.</p></li></ul>
+    /// <p>An array that lists values to use in the condition, based on the value for the field specified by the key property. If the value for the key property is accountId, this array can specify multiple values. Otherwise, this array can specify only one value.</p> <p>Valid values for each supported field are:</p> <ul><li><p>accountId - The unique identifier for an Amazon Web Services account.</p></li> <li><p>freeTrialStartDate - The date and time, in UTC and extended ISO 8601 format, when the free trial started for an account.</p></li> <li><p>serviceLimit - A Boolean (true or false) value that indicates whether an account has reached its monthly quota.</p></li> <li><p>total - A string that represents the current estimated cost for an account.</p></li></ul>
     pub values: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UsageStatisticsFilter {
@@ -5233,9 +5233,9 @@ impl AsRef<str> for GroupBy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Finding {
-    /// <p>The unique identifier for the AWS account that the finding applies to. This is typically the account that owns the affected resource.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
     pub account_id: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the finding is archived.</p>
+    /// <p>Specifies whether the finding is archived (suppressed).</p>
     pub archived: bool,
     /// <p>The category of the finding. Possible values are: CLASSIFICATION, for a sensitive data finding; and, POLICY, for a policy finding.</p>
     pub category: std::option::Option<crate::model::FindingCategory>,
@@ -5249,11 +5249,11 @@ pub struct Finding {
     pub description: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the finding. This is a random string that Amazon Macie generates and assigns to a finding when it creates the finding.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The AWS partition that Amazon Macie created the finding in.</p>
+    /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
     pub partition: std::option::Option<std::string::String>,
     /// <p>The details of a policy finding. This value is null for a sensitive data finding.</p>
     pub policy_details: std::option::Option<crate::model::PolicyDetails>,
-    /// <p>The AWS Region that Amazon Macie created the finding in.</p>
+    /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The resources that the finding applies to.</p>
     pub resources_affected: std::option::Option<crate::model::ResourcesAffected>,
@@ -5320,7 +5320,7 @@ pub mod finding {
         pub(crate) updated_at: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that the finding applies to. This is typically the account that owns the affected resource.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that the finding applies to. This is typically the account that owns the affected resource.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -5329,7 +5329,7 @@ pub mod finding {
             self.account_id = input;
             self
         }
-        /// <p>Specifies whether the finding is archived.</p>
+        /// <p>Specifies whether the finding is archived (suppressed).</p>
         pub fn archived(mut self, input: bool) -> Self {
             self.archived = Some(input);
             self
@@ -5401,7 +5401,7 @@ pub mod finding {
             self.id = input;
             self
         }
-        /// <p>The AWS partition that Amazon Macie created the finding in.</p>
+        /// <p>The Amazon Web Services partition that Amazon Macie created the finding in.</p>
         pub fn partition(mut self, input: impl Into<std::string::String>) -> Self {
             self.partition = Some(input.into());
             self
@@ -5422,7 +5422,7 @@ pub mod finding {
             self.policy_details = input;
             self
         }
-        /// <p>The AWS Region that Amazon Macie created the finding in.</p>
+        /// <p>The Amazon Web Services Region that Amazon Macie created the finding in.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -5760,9 +5760,9 @@ impl AsRef<str> for SeverityDescription {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourcesAffected {
-    /// <p>An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of metadata about an affected S3 bucket.</p>
+    /// <p>The details of the S3 bucket that the finding applies to.</p>
     pub s3_bucket: std::option::Option<crate::model::S3Bucket>,
-    /// <p>An array of objects, one for each S3 object that the finding applies to. Each object provides a set of metadata about an affected S3 object.</p>
+    /// <p>The details of the S3 object that the finding applies to.</p>
     pub s3_object: std::option::Option<crate::model::S3Object>,
 }
 impl std::fmt::Debug for ResourcesAffected {
@@ -5783,7 +5783,7 @@ pub mod resources_affected {
         pub(crate) s3_object: std::option::Option<crate::model::S3Object>,
     }
     impl Builder {
-        /// <p>An array of objects, one for each S3 bucket that the finding applies to. Each object provides a set of metadata about an affected S3 bucket.</p>
+        /// <p>The details of the S3 bucket that the finding applies to.</p>
         pub fn s3_bucket(mut self, input: crate::model::S3Bucket) -> Self {
             self.s3_bucket = Some(input);
             self
@@ -5792,7 +5792,7 @@ pub mod resources_affected {
             self.s3_bucket = input;
             self
         }
-        /// <p>An array of objects, one for each S3 object that the finding applies to. Each object provides a set of metadata about an affected S3 object.</p>
+        /// <p>The details of the S3 object that the finding applies to.</p>
         pub fn s3_object(mut self, input: crate::model::S3Object) -> Self {
             self.s3_object = Some(input);
             self
@@ -5817,7 +5817,7 @@ impl ResourcesAffected {
     }
 }
 
-/// <p>Provides information about an S3 object that a finding applies to.</p>
+/// <p>Provides information about the S3 object that a finding applies to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Object {
@@ -6172,7 +6172,7 @@ impl AsRef<str> for StorageClass {
 pub struct ServerSideEncryption {
     /// <p>The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.</p>
     pub encryption_type: std::option::Option<crate::model::EncryptionType>,
-    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS) customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used, this value is null.</p>
+    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServerSideEncryption {
@@ -6205,7 +6205,7 @@ pub mod server_side_encryption {
             self.encryption_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS) customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used, this value is null.</p>
+        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used to encrypt data in the bucket or the object. If an KMS CMK isn't used, this value is null.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -6293,7 +6293,7 @@ impl AsRef<str> for EncryptionType {
     }
 }
 
-/// <p>Provides information about an S3 bucket that a finding applies to.</p>
+/// <p>Provides information about the S3 bucket that a finding applies to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Bucket {
@@ -6308,7 +6308,7 @@ pub struct S3Bucket {
     pub default_server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>The name of the bucket.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The display name and AWS account ID for the user who owns the bucket.</p>
+    /// <p>The display name and Amazon Web Services account ID for the user who owns the bucket.</p>
     pub owner: std::option::Option<crate::model::S3BucketOwner>,
     /// <p>The permissions settings that determine whether the bucket is publicly accessible.</p>
     pub public_access: std::option::Option<crate::model::BucketPublicAccess>,
@@ -6410,7 +6410,7 @@ pub mod s3_bucket {
             self.name = input;
             self
         }
-        /// <p>The display name and AWS account ID for the user who owns the bucket.</p>
+        /// <p>The display name and Amazon Web Services account ID for the user who owns the bucket.</p>
         pub fn owner(mut self, input: crate::model::S3BucketOwner) -> Self {
             self.owner = Some(input);
             self
@@ -6920,7 +6920,7 @@ impl AccessControlList {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLevelPermissions {
-    /// <p>The block public access settings for the AWS account that owns the bucket.</p>
+    /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
     pub block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
 }
 impl std::fmt::Debug for AccountLevelPermissions {
@@ -6939,7 +6939,7 @@ pub mod account_level_permissions {
         pub(crate) block_public_access: std::option::Option<crate::model::BlockPublicAccess>,
     }
     impl Builder {
-        /// <p>The block public access settings for the AWS account that owns the bucket.</p>
+        /// <p>The block public access settings for the Amazon Web Services account that owns the bucket.</p>
         pub fn block_public_access(mut self, input: crate::model::BlockPublicAccess) -> Self {
             self.block_public_access = Some(input);
             self
@@ -7027,7 +7027,7 @@ impl AsRef<str> for EffectivePermission {
 pub struct S3BucketOwner {
     /// <p>The display name of the user who owns the bucket.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID for the user who owns the bucket.</p>
+    /// <p>The Amazon Web Services account ID for the user who owns the bucket.</p>
     pub id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for S3BucketOwner {
@@ -7057,7 +7057,7 @@ pub mod s3_bucket_owner {
             self.display_name = input;
             self
         }
-        /// <p>The AWS account ID for the user who owns the bucket.</p>
+        /// <p>The Amazon Web Services account ID for the user who owns the bucket.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -7289,17 +7289,17 @@ impl FindingActor {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentity {
-    /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the identity.</p>
+    /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
     pub assumed_role: std::option::Option<crate::model::AssumedRole>,
-    /// <p>If the action was performed using the credentials for another AWS account, the details of that account.</p>
+    /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
     pub aws_account: std::option::Option<crate::model::AwsAccount>,
-    /// <p>If the action was performed by an AWS account that belongs to an AWS service, the name of the service.</p>
+    /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
     pub aws_service: std::option::Option<crate::model::AwsService>,
-    /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the identity.</p>
+    /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
     pub federated_user: std::option::Option<crate::model::FederatedUser>,
-    /// <p>If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user, the name and other details about the user.</p>
+    /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
     pub iam_user: std::option::Option<crate::model::IamUser>,
-    /// <p>If the action was performed using the credentials for your AWS account, the details of your account.</p>
+    /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
     pub root: std::option::Option<crate::model::UserIdentityRoot>,
     /// <p>The type of entity that performed the action.</p>
     pub r#type: std::option::Option<crate::model::UserIdentityType>,
@@ -7332,7 +7332,7 @@ pub mod user_identity {
         pub(crate) r#type: std::option::Option<crate::model::UserIdentityType>,
     }
     impl Builder {
-        /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the identity.</p>
+        /// <p>If the action was performed with temporary security credentials that were obtained using the AssumeRole operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
         pub fn assumed_role(mut self, input: crate::model::AssumedRole) -> Self {
             self.assumed_role = Some(input);
             self
@@ -7344,7 +7344,7 @@ pub mod user_identity {
             self.assumed_role = input;
             self
         }
-        /// <p>If the action was performed using the credentials for another AWS account, the details of that account.</p>
+        /// <p>If the action was performed using the credentials for another Amazon Web Services account, the details of that account.</p>
         pub fn aws_account(mut self, input: crate::model::AwsAccount) -> Self {
             self.aws_account = Some(input);
             self
@@ -7356,7 +7356,7 @@ pub mod user_identity {
             self.aws_account = input;
             self
         }
-        /// <p>If the action was performed by an AWS account that belongs to an AWS service, the name of the service.</p>
+        /// <p>If the action was performed by an Amazon Web Services account that belongs to an Amazon Web Service, the name of the service.</p>
         pub fn aws_service(mut self, input: crate::model::AwsService) -> Self {
             self.aws_service = Some(input);
             self
@@ -7368,7 +7368,7 @@ pub mod user_identity {
             self.aws_service = input;
             self
         }
-        /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the AWS Security Token Service (AWS STS) API, the identifiers, session context, and other details about the identity.</p>
+        /// <p>If the action was performed with temporary security credentials that were obtained using the GetFederationToken operation of the Security Token Service (STS) API, the identifiers, session context, and other details about the identity.</p>
         pub fn federated_user(mut self, input: crate::model::FederatedUser) -> Self {
             self.federated_user = Some(input);
             self
@@ -7380,7 +7380,7 @@ pub mod user_identity {
             self.federated_user = input;
             self
         }
-        /// <p>If the action was performed using the credentials for an AWS Identity and Access Management (IAM) user, the name and other details about the user.</p>
+        /// <p>If the action was performed using the credentials for an Identity and Access Management (IAM) user, the name and other details about the user.</p>
         pub fn iam_user(mut self, input: crate::model::IamUser) -> Self {
             self.iam_user = Some(input);
             self
@@ -7389,7 +7389,7 @@ pub mod user_identity {
             self.iam_user = input;
             self
         }
-        /// <p>If the action was performed using the credentials for your AWS account, the details of your account.</p>
+        /// <p>If the action was performed using the credentials for your Amazon Web Services account, the details of your account.</p>
         pub fn root(mut self, input: crate::model::UserIdentityRoot) -> Self {
             self.root = Some(input);
             self
@@ -7504,11 +7504,11 @@ impl AsRef<str> for UserIdentityType {
     }
 }
 
-/// <p>Provides information about an AWS account and entity that performed an action on an affected resource. The action was performed using the credentials for your AWS account.</p>
+/// <p>Provides information about an Amazon Web Services account and entity that performed an action on an affected resource. The action was performed using the credentials for your Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UserIdentityRoot {
-    /// <p>The unique identifier for the AWS account.</p>
+    /// <p>The unique identifier for the Amazon Web Services account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user or role that performed the action.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -7535,7 +7535,7 @@ pub mod user_identity_root {
         pub(crate) principal_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account.</p>
+        /// <p>The unique identifier for the Amazon Web Services account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -7579,11 +7579,11 @@ impl UserIdentityRoot {
     }
 }
 
-/// <p>Provides information about an AWS Identity and Access Management (IAM) user who performed an action on an affected resource.</p>
+/// <p>Provides information about an Identity and Access Management (IAM) user who performed an action on an affected resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IamUser {
-    /// <p>The unique identifier for the AWS account that's associated with the IAM user who performed the action.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the principal that performed the action. The last section of the ARN contains the name of the user who performed the action.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -7614,7 +7614,7 @@ pub mod iam_user {
         pub(crate) user_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that's associated with the IAM user who performed the action.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that's associated with the IAM user who performed the action.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -7668,13 +7668,13 @@ impl IamUser {
     }
 }
 
-/// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the GetFederationToken operation of the AWS Security Token Service (AWS STS) API.</p>
+/// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the GetFederationToken operation of the Security Token Service (STS) API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FederatedUser {
-    /// <p>The AWS access key ID that identifies the credentials.</p>
+    /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     pub access_key_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the AWS account that owns the entity that was used to get the credentials.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -7707,7 +7707,7 @@ pub mod federated_user {
         pub(crate) session_context: std::option::Option<crate::model::SessionContext>,
     }
     impl Builder {
-        /// <p>The AWS access key ID that identifies the credentials.</p>
+        /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
@@ -7719,7 +7719,7 @@ pub mod federated_user {
             self.access_key_id = input;
             self
         }
-        /// <p>The unique identifier for the AWS account that owns the entity that was used to get the credentials.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -7848,7 +7848,7 @@ impl SessionContext {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SessionIssuer {
-    /// <p>The unique identifier for the AWS account that owns the entity that was used to get the credentials.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used to get the credentials.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -7883,7 +7883,7 @@ pub mod session_issuer {
         pub(crate) user_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that owns the entity that was used to get the credentials.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -8011,11 +8011,11 @@ impl SessionContextAttributes {
     }
 }
 
-/// <p>Provides information about an AWS service that performed an action on an affected resource.</p>
+/// <p>Provides information about an Amazon Web Service that performed an action on an affected resource.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsService {
-    /// <p>The name of the AWS service that performed the action.</p>
+    /// <p>The name of the Amazon Web Service that performed the action.</p>
     pub invoked_by: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsService {
@@ -8034,7 +8034,7 @@ pub mod aws_service {
         pub(crate) invoked_by: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS service that performed the action.</p>
+        /// <p>The name of the Amazon Web Service that performed the action.</p>
         pub fn invoked_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.invoked_by = Some(input.into());
             self
@@ -8058,11 +8058,11 @@ impl AwsService {
     }
 }
 
-/// <p>Provides information about an AWS account and entity that performed an action on an affected resource. The action was performed using the credentials for an AWS account other than your own account.</p>
+/// <p>Provides information about an Amazon Web Services account and entity that performed an action on an affected resource. The action was performed using the credentials for an Amazon Web Services account other than your own account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsAccount {
-    /// <p>The unique identifier for the AWS account.</p>
+    /// <p>The unique identifier for the Amazon Web Services account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the entity that performed the action.</p>
     pub principal_id: std::option::Option<std::string::String>,
@@ -8085,7 +8085,7 @@ pub mod aws_account {
         pub(crate) principal_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account.</p>
+        /// <p>The unique identifier for the Amazon Web Services account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -8119,13 +8119,13 @@ impl AwsAccount {
     }
 }
 
-/// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the AssumeRole operation of the AWS Security Token Service (AWS STS) API.</p>
+/// <p>Provides information about an identity that performed an action on an affected resource by using temporary security credentials. The credentials were obtained using the AssumeRole operation of the Security Token Service (STS) API.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssumedRole {
-    /// <p>The AWS access key ID that identifies the credentials.</p>
+    /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
     pub access_key_id: std::option::Option<std::string::String>,
-    /// <p>The unique identifier for the AWS account that owns the entity that was used to get the credentials.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the entity that was used to get the credentials.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -8158,7 +8158,7 @@ pub mod assumed_role {
         pub(crate) session_context: std::option::Option<crate::model::SessionContext>,
     }
     impl Builder {
-        /// <p>The AWS access key ID that identifies the credentials.</p>
+        /// <p>The Amazon Web Services access key ID that identifies the credentials.</p>
         pub fn access_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_key_id = Some(input.into());
             self
@@ -8170,7 +8170,7 @@ pub mod assumed_role {
             self.access_key_id = input;
             self
         }
-        /// <p>The unique identifier for the AWS account that owns the entity that was used to get the credentials.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that owns the entity that was used to get the credentials.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -8716,7 +8716,7 @@ impl FindingAction {
 pub struct ApiCallDetails {
     /// <p>The name of the operation that was invoked most recently and produced the finding.</p>
     pub api: std::option::Option<std::string::String>,
-    /// <p>The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.</p>
+    /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
     pub api_service_name: std::option::Option<std::string::String>,
     /// <p>The first date and time, in UTC and extended ISO 8601 format, when any operation was invoked and produced the finding.</p>
     pub first_seen: std::option::Option<smithy_types::Instant>,
@@ -8754,7 +8754,7 @@ pub mod api_call_details {
             self.api = input;
             self
         }
-        /// <p>The URL of the AWS service that provides the operation, for example: s3.amazonaws.com.</p>
+        /// <p>The URL of the Amazon Web Service that provides the operation, for example: s3.amazonaws.com.</p>
         pub fn api_service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.api_service_name = Some(input.into());
             self
@@ -8860,7 +8860,7 @@ pub struct ClassificationDetails {
     pub job_arn: std::option::Option<std::string::String>,
     /// <p>The unique identifier for the classification job that produced the finding.</p>
     pub job_id: std::option::Option<std::string::String>,
-    /// <p>The status and other details for the finding.</p>
+    /// <p>The status and other details of the finding.</p>
     pub result: std::option::Option<crate::model::ClassificationResult>,
 }
 impl std::fmt::Debug for ClassificationDetails {
@@ -8915,7 +8915,7 @@ pub mod classification_details {
             self.job_id = input;
             self
         }
-        /// <p>The status and other details for the finding.</p>
+        /// <p>The status and other details of the finding.</p>
         pub fn result(mut self, input: crate::model::ClassificationResult) -> Self {
             self.result = Some(input);
             self
@@ -9081,7 +9081,7 @@ impl ClassificationResult {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ClassificationResultStatus {
-    /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a malformed file or a file that uses an unsupported format.</p></li></ul>
+    /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
     pub code: std::option::Option<std::string::String>,
     /// <p>A brief description of the status of the finding. Amazon Macie uses this value to notify you of any errors, warnings, or considerations that might impact your analysis of the finding.</p>
     pub reason: std::option::Option<std::string::String>,
@@ -9104,7 +9104,7 @@ pub mod classification_result_status {
         pub(crate) reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the object that the finding applies to. For example, the object is a malformed file or a file that uses an unsupported format.</p></li></ul>
+        /// <p>The status of the finding. Possible values are:</p> <ul><li><p>COMPLETE - Amazon Macie successfully completed its analysis of the S3 object that the finding applies to.</p></li> <li><p>PARTIAL - Macie analyzed only a subset of the data in the S3 object that the finding applies to. For example, the object is an archive file that contains files in an unsupported format.</p></li> <li><p>SKIPPED - Macie wasn't able to analyze the S3 object that the finding applies to. For example, the object is a file in an unsupported format.</p></li></ul>
         pub fn code(mut self, input: impl Into<std::string::String>) -> Self {
             self.code = Some(input.into());
             self
@@ -9142,7 +9142,7 @@ impl ClassificationResultStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SensitiveDataItem {
-    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as driver's license identification numbers.</p>
+    /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as driver's license identification numbers.</p>
     pub category: std::option::Option<crate::model::SensitiveDataItemCategory>,
     /// <p>An array of objects, one for each type of sensitive data that was detected. Each object reports the number of occurrences of a specific type of sensitive data that was detected, and the location of up to 15 of those occurrences.</p>
     pub detections: std::option::Option<std::vec::Vec<crate::model::DefaultDetection>>,
@@ -9169,7 +9169,7 @@ pub mod sensitive_data_item {
         pub(crate) total_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or AWS secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as driver's license identification numbers.</p>
+        /// <p>The category of sensitive data that was detected. For example: CREDENTIALS, for credentials data such as private keys or Amazon Web Services secret keys; FINANCIAL_INFORMATION, for financial data such as credit card numbers; or, PERSONAL_INFORMATION, for personal health information, such as health insurance identification numbers, or personally identifiable information, such as driver's license identification numbers.</p>
         pub fn category(mut self, input: crate::model::SensitiveDataItemCategory) -> Self {
             self.category = Some(input);
             self
@@ -9302,15 +9302,15 @@ impl DefaultDetection {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Occurrences {
-    /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. Each object specifies the cell or field that contains the data. This value is null for all other types of files.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Excel workbook, CSV file, or TSV file. This value is null for all other types of files.</p><p>Each Cell object specifies a cell or field that contains the sensitive data.</p>
     pub cells: std::option::Option<std::vec::Vec<crate::model::Cell>>,
-    /// <p>An array of objects, one for each occurrence of sensitive data in a Microsoft Word document or non-binary text file, such as an HTML, JSON, TXT, or XML file. Each object specifies the line that contains the data, and the position of the data on that line.</p> <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the locations of data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive range of lines that contains the sensitive data, and the position of the data on the specified line or lines.</p> <p>This value is often null for file types that are supported by Cell, Page, or Record objects. Exceptions are the location of sensitive data in: unstructured sections of an otherwise structured file, such as a comment in a file; a malformed file that Amazon Macie analyzes as plain text; and, a CSV or TSV file that has any column names that contain sensitive data.</p>
     pub line_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
     /// <p>Reserved for future use.</p>
     pub offset_ranges: std::option::Option<std::vec::Vec<crate::model::Range>>,
-    /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. Each object specifies the page that contains the data. This value is null for all other types of files.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in an Adobe Portable Document Format file. This value is null for all other types of files.</p><p>Each Page object specifies a page that contains the sensitive data.</p>
     pub pages: std::option::Option<std::vec::Vec<crate::model::Page>>,
-    /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container or Apache Parquet file. Each object specifies the record index and the path to the field in the record that contains the data. This value is null for all other types of files.</p>
+    /// <p>An array of objects, one for each occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file. This value is null for all other types of files.</p> <p>For an Avro object container or Parquet file, each Record object specifies a record index and the path to a field in a record that contains the sensitive data. For a JSON or JSON Lines file, each Record object specifies the path to a field or array that contains the sensitive data. For a JSON Lines file, it also specifies the index of the line that contains the data.</p>
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
 }
 impl std::fmt::Debug for Occurrences {
@@ -9421,13 +9421,13 @@ impl Occurrences {
     }
 }
 
-/// <p>Specifies the location of an occurrence of sensitive data in an Apache Avro object container or Apache Parquet file.</p>
+/// <p>Specifies the location of an occurrence of sensitive data in an Apache Avro object container, Apache Parquet file, JSON file, or JSON Lines file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Record {
-    /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field.</p> <p>If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
+    /// <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object container or Parquet file, this is the path to the field in the record (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the path to the field or array that contains the data. If the data is a value in an array, the path also indicates which value contains the data.</p> <p>If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
     pub json_path: std::option::Option<std::string::String>,
-    /// <p>The record index, starting from 0, for the record that contains the data.</p>
+    /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
     pub record_index: i64,
 }
 impl std::fmt::Debug for Record {
@@ -9448,7 +9448,7 @@ pub mod record {
         pub(crate) record_index: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The path, as a JSONPath expression, to the field in the record that contains the data. If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field.</p> <p>If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
+        /// <p>The path, as a JSONPath expression, to the sensitive data. For an Avro object container or Parquet file, this is the path to the field in the record (recordIndex) that contains the data. For a JSON or JSON Lines file, this is the path to the field or array that contains the data. If the data is a value in an array, the path also indicates which value contains the data.</p> <p>If Amazon Macie detects sensitive data in the name of any element in the path, Macie omits this field. If the name of an element exceeds 20 characters, Macie truncates the name by removing characters from the beginning of the name. If the resulting full path exceeds 250 characters, Macie also truncates the path, starting with the first element in the path, until the path contains 250 or fewer characters.</p>
         pub fn json_path(mut self, input: impl Into<std::string::String>) -> Self {
             self.json_path = Some(input.into());
             self
@@ -9457,7 +9457,7 @@ pub mod record {
             self.json_path = input;
             self
         }
-        /// <p>The record index, starting from 0, for the record that contains the data.</p>
+        /// <p>For an Avro object container or Parquet file, the record index, starting from 0, for the record that contains the sensitive data. For a JSON Lines file, the line index, starting from 0, for the line that contains the sensitive data. This value is always 0 for JSON files.</p>
         pub fn record_index(mut self, input: i64) -> Self {
             self.record_index = Some(input);
             self
@@ -9490,7 +9490,7 @@ pub struct Page {
     pub line_range: std::option::Option<crate::model::Range>,
     /// <p>Reserved for future use.</p>
     pub offset_range: std::option::Option<crate::model::Range>,
-    /// <p>The page number of the page that contains the data.</p>
+    /// <p>The page number of the page that contains the sensitive data.</p>
     pub page_number: i64,
 }
 impl std::fmt::Debug for Page {
@@ -9531,7 +9531,7 @@ pub mod page {
             self.offset_range = input;
             self
         }
-        /// <p>The page number of the page that contains the data.</p>
+        /// <p>The page number of the page that contains the sensitive data.</p>
         pub fn page_number(mut self, input: i64) -> Self {
             self.page_number = Some(input);
             self
@@ -9557,7 +9557,7 @@ impl Page {
     }
 }
 
-/// <p>Provides details about the location of an occurrence of sensitive data in a Microsoft Word document or non-binary text file.</p>
+/// <p>Specifies the location of an occurrence of sensitive data in a non-binary text file, such as an HTML, TXT, or XML file.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Range {
@@ -9565,7 +9565,7 @@ pub struct Range {
     pub end: i64,
     /// <p>The number of lines from the beginning of the file to the beginning of the sensitive data.</p>
     pub start: i64,
-    /// <p>The column number for the column that contains the data, if the file contains structured data.</p>
+    /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
     pub start_column: i64,
 }
 impl std::fmt::Debug for Range {
@@ -9606,7 +9606,7 @@ pub mod range {
             self.start = input;
             self
         }
-        /// <p>The column number for the column that contains the data, if the file contains structured data.</p>
+        /// <p>The number of characters, with spaces and starting from 1, from the beginning of the first line that contains the sensitive data (start) to the beginning of the sensitive data.</p>
         pub fn start_column(mut self, input: i64) -> Self {
             self.start_column = Some(input);
             self
@@ -9636,13 +9636,13 @@ impl Range {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cell {
-    /// <p>The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
+    /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
     pub cell_reference: std::option::Option<std::string::String>,
-    /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for column B, and so on.</p>
+    /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
     pub column: i64,
-    /// <p>The name of the column that contains the data, if available. This value is also null if Amazon Macie detects sensitive data in the name of any column in the file.</p>
+    /// <p>The name of the column that contains the sensitive data, if available.</p>
     pub column_name: std::option::Option<std::string::String>,
-    /// <p>The row number of the row that contains the data.</p>
+    /// <p>The row number of the row that contains the sensitive data.</p>
     pub row: i64,
 }
 impl std::fmt::Debug for Cell {
@@ -9667,7 +9667,7 @@ pub mod cell {
         pub(crate) row: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The location of the cell, as an absolute cell reference, that contains the data. For example, Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
+        /// <p>The location of the cell, as an absolute cell reference, that contains the sensitive data, for example Sheet2!C5 for cell C5 on Sheet2 in a Microsoft Excel workbook. This value is null for CSV and TSV files.</p>
         pub fn cell_reference(mut self, input: impl Into<std::string::String>) -> Self {
             self.cell_reference = Some(input.into());
             self
@@ -9679,7 +9679,7 @@ pub mod cell {
             self.cell_reference = input;
             self
         }
-        /// <p>The column number of the column that contains the data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier. For example, 1 for column A, 2 for column B, and so on.</p>
+        /// <p>The column number of the column that contains the sensitive data. For a Microsoft Excel workbook, this value correlates to the alphabetical character(s) for a column identifier, for example: 1 for column A, 2 for column B, and so on.</p>
         pub fn column(mut self, input: i64) -> Self {
             self.column = Some(input);
             self
@@ -9688,7 +9688,7 @@ pub mod cell {
             self.column = input;
             self
         }
-        /// <p>The name of the column that contains the data, if available. This value is also null if Amazon Macie detects sensitive data in the name of any column in the file.</p>
+        /// <p>The name of the column that contains the sensitive data, if available.</p>
         pub fn column_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.column_name = Some(input.into());
             self
@@ -9697,7 +9697,7 @@ pub mod cell {
             self.column_name = input;
             self
         }
-        /// <p>The row number of the row that contains the data.</p>
+        /// <p>The row number of the row that contains the sensitive data.</p>
         pub fn row(mut self, input: i64) -> Self {
             self.row = Some(input);
             self
@@ -9994,17 +9994,17 @@ impl AsRef<str> for FindingCategory {
     }
 }
 
-/// <p>Provides information about the number of S3 buckets that are or aren't shared with other AWS accounts.</p>
+/// <p>Provides information about the number of S3 buckets that are or aren't shared with other Amazon Web Services accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountBySharedAccessType {
-    /// <p>The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie organization.</p>
+    /// <p>The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
     pub external: i64,
-    /// <p>The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie organization.</p>
+    /// <p>The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p>
     pub internal: i64,
-    /// <p>The total number of buckets that aren't shared with other AWS accounts.</p>
+    /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts.</p>
     pub not_shared: i64,
-    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other AWS accounts.</p>
+    /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts.</p>
     pub unknown: i64,
 }
 impl std::fmt::Debug for BucketCountBySharedAccessType {
@@ -10029,7 +10029,7 @@ pub mod bucket_count_by_shared_access_type {
         pub(crate) unknown: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The total number of buckets that are shared with an AWS account that isn't part of the same Amazon Macie organization.</p>
+        /// <p>The total number of buckets that are shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
         pub fn external(mut self, input: i64) -> Self {
             self.external = Some(input);
             self
@@ -10038,7 +10038,7 @@ pub mod bucket_count_by_shared_access_type {
             self.external = input;
             self
         }
-        /// <p>The total number of buckets that are shared with an AWS account that's part of the same Amazon Macie organization.</p>
+        /// <p>The total number of buckets that are shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p>
         pub fn internal(mut self, input: i64) -> Self {
             self.internal = Some(input);
             self
@@ -10047,7 +10047,7 @@ pub mod bucket_count_by_shared_access_type {
             self.internal = input;
             self
         }
-        /// <p>The total number of buckets that aren't shared with other AWS accounts.</p>
+        /// <p>The total number of buckets that aren't shared with other Amazon Web Services accounts.</p>
         pub fn not_shared(mut self, input: i64) -> Self {
             self.not_shared = Some(input);
             self
@@ -10056,7 +10056,7 @@ pub mod bucket_count_by_shared_access_type {
             self.not_shared = input;
             self
         }
-        /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other AWS accounts.</p>
+        /// <p>The total number of buckets that Amazon Macie wasn't able to evaluate shared access settings for. Macie can't determine whether these buckets are shared with other Amazon Web Services accounts.</p>
         pub fn unknown(mut self, input: i64) -> Self {
             self.unknown = Some(input);
             self
@@ -10179,7 +10179,7 @@ impl BucketCountPolicyAllowsUnencryptedObjectUploads {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketCountByEncryptionType {
-    /// <p>The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS) by default.</p>
+    /// <p>The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS) by default.</p>
     pub kms_managed: i64,
     /// <p>The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets use Amazon S3 managed encryption (SSE-S3) by default.</p>
     pub s3_managed: i64,
@@ -10210,7 +10210,7 @@ pub mod bucket_count_by_encryption_type {
         pub(crate) unknown: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS) by default.</p>
+        /// <p>The total number of buckets that use an Key Management Service (KMS) customer master key (CMK) to encrypt new objects by default. These buckets use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS) by default.</p>
         pub fn kms_managed(mut self, input: i64) -> Self {
             self.kms_managed = Some(input);
             self
@@ -10710,7 +10710,7 @@ impl DailySchedule {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3JobDefinition {
-    /// <p>An array of objects, one for each AWS account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
+    /// <p>An array of objects, one for each Amazon Web Services account that owns specific S3 buckets to analyze. Each object specifies the account ID for an account and one or more buckets to analyze for that account. A job's definition can contain a bucketDefinitions array or a bucketCriteria object, not both.</p>
     pub bucket_definitions:
         std::option::Option<std::vec::Vec<crate::model::S3BucketDefinitionForJob>>,
     /// <p>The property- and tag-based conditions that determine which S3 objects to include or exclude from the analysis. Each time the job runs, the job uses these criteria to determine which objects to analyze.</p>
@@ -11329,7 +11329,7 @@ impl AsRef<str> for ScopeFilterKey {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketMetadata {
-    /// <p>The unique identifier for the AWS account that owns the bucket.</p>
+    /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are uploaded to the bucket. Possible values are:</p> <ul><li><p>FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.</p></li> <li><p>TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.</p></li> <li><p>UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.</p></li></ul>
     pub allows_unencrypted_object_uploads:
@@ -11355,13 +11355,13 @@ pub struct BucketMetadata {
         std::option::Option<crate::model::ObjectCountByEncryptionType>,
     /// <p>Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to the bucket, and provides information about those settings.</p>
     pub public_access: std::option::Option<crate::model::BucketPublicAccess>,
-    /// <p>The AWS Region that hosts the bucket.</p>
+    /// <p>The Amazon Web Services Region that hosts the bucket.</p>
     pub region: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS accounts and, if so, which accounts.</p>
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
     pub replication_details: std::option::Option<crate::model::ReplicationDetails>,
     /// <p>Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption that's used.</p>
     pub server_side_encryption: std::option::Option<crate::model::BucketServerSideEncryption>,
-    /// <p>Specifies whether the bucket is shared with another AWS account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li></ul>
+    /// <p>Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li></ul>
     pub shared_access: std::option::Option<crate::model::SharedAccess>,
     /// <p>The total storage size, in bytes, of the bucket.</p> <p>If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object in the bucket.</p>
     pub size_in_bytes: i64,
@@ -11455,7 +11455,7 @@ pub mod bucket_metadata {
         pub(crate) versioning: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The unique identifier for the AWS account that owns the bucket.</p>
+        /// <p>The unique identifier for the Amazon Web Services account that owns the bucket.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -11587,7 +11587,7 @@ pub mod bucket_metadata {
             self.public_access = input;
             self
         }
-        /// <p>The AWS Region that hosts the bucket.</p>
+        /// <p>The Amazon Web Services Region that hosts the bucket.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -11596,7 +11596,7 @@ pub mod bucket_metadata {
             self.region = input;
             self
         }
-        /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other AWS accounts and, if so, which accounts.</p>
+        /// <p>Specifies whether the bucket is configured to replicate one or more objects to buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
         pub fn replication_details(mut self, input: crate::model::ReplicationDetails) -> Self {
             self.replication_details = Some(input);
             self
@@ -11623,7 +11623,7 @@ pub mod bucket_metadata {
             self.server_side_encryption = input;
             self
         }
-        /// <p>Specifies whether the bucket is shared with another AWS account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other AWS accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li></ul>
+        /// <p>Specifies whether the bucket is shared with another Amazon Web Services account. Possible values are:</p> <ul><li><p>EXTERNAL - The bucket is shared with an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p></li> <li><p>INTERNAL - The bucket is shared with an Amazon Web Services account that's part of the same Amazon Macie organization.</p></li> <li><p>NOT_SHARED - The bucket isn't shared with other Amazon Web Services accounts.</p></li> <li><p>UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.</p></li></ul>
         pub fn shared_access(mut self, input: crate::model::SharedAccess) -> Self {
             self.shared_access = Some(input);
             self
@@ -11803,9 +11803,9 @@ impl AsRef<str> for SharedAccess {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BucketServerSideEncryption {
-    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS) customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
+    /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
     pub kms_master_key_id: std::option::Option<std::string::String>,
-    /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key and use Amazon S3 managed encryption (SSE-S3).</p></li> <li><p>aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
+    /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key and use Amazon S3 managed encryption (SSE-S3).</p></li> <li><p>aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl std::fmt::Debug for BucketServerSideEncryption {
@@ -11826,7 +11826,7 @@ pub mod bucket_server_side_encryption {
         pub(crate) r#type: std::option::Option<crate::model::Type>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS) customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
+        /// <p>The Amazon Resource Name (ARN) or unique identifier (key ID) for the Key Management Service (KMS) customer master key (CMK) that's used by default to encrypt objects that are added to the bucket. This value is null if the bucket uses an Amazon S3 managed key to encrypt new objects or the bucket doesn't encrypt new objects by default.</p>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
             self
@@ -11838,7 +11838,7 @@ pub mod bucket_server_side_encryption {
             self.kms_master_key_id = input;
             self
         }
-        /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key and use Amazon S3 managed encryption (SSE-S3).</p></li> <li><p>aws:kms - New objects are encrypted with an AWS KMS CMK, specified by the kmsMasterKeyId property, and use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS encryption (SSE-KMS).</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
+        /// <p>The type of server-side encryption that's used by default when storing new objects in the bucket. Possible values are:</p> <ul><li><p>AES256 - New objects are encrypted with an Amazon S3 managed key and use Amazon S3 managed encryption (SSE-S3).</p></li> <li><p>aws:kms - New objects are encrypted with an KMS CMK, specified by the kmsMasterKeyId property, and use Amazon Web Services managed KMS encryption (AWS-KMS) or customer managed KMS encryption (SSE-KMS).</p></li> <li><p>NONE - New objects aren't encrypted by default. Default encryption is disabled for the bucket.</p></li></ul>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
@@ -11916,15 +11916,15 @@ impl AsRef<str> for Type {
     }
 }
 
-/// <p>Provides information about settings that define whether one or more objects in an S3 bucket are replicated to S3 buckets for other AWS accounts and, if so, which accounts.</p>
+/// <p>Provides information about settings that define whether one or more objects in an S3 bucket are replicated to S3 buckets for other Amazon Web Services accounts and, if so, which accounts.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationDetails {
     /// <p>Specifies whether the bucket is configured to replicate one or more objects to any destination.</p>
     pub replicated: bool,
-    /// <p>Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of the same Amazon Macie organization.</p>
+    /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
     pub replicated_externally: bool,
-    /// <p>An array of AWS account IDs, one for each AWS account that the bucket is configured to replicate one or more objects to.</p>
+    /// <p>An array of Amazon Web Services account IDs, one for each Amazon Web Services account that the bucket is configured to replicate one or more objects to.</p>
     pub replication_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ReplicationDetails {
@@ -11956,7 +11956,7 @@ pub mod replication_details {
             self.replicated = input;
             self
         }
-        /// <p>Specifies whether the bucket is configured to replicate one or more objects to an AWS account that isn't part of the same Amazon Macie organization.</p>
+        /// <p>Specifies whether the bucket is configured to replicate one or more objects to an Amazon Web Services account that isn't part of the same Amazon Macie organization.</p>
         pub fn replicated_externally(mut self, input: bool) -> Self {
             self.replicated_externally = Some(input);
             self
@@ -12202,7 +12202,7 @@ impl BucketCriteriaAdditionalProperties {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnprocessedAccount {
-    /// <p>The AWS account ID for the account that the request applies to.</p>
+    /// <p>The Amazon Web Services account ID for the account that the request applies to.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The source of the issue or delay in processing the request.</p>
     pub error_code: std::option::Option<crate::model::ErrorCode>,
@@ -12229,7 +12229,7 @@ pub mod unprocessed_account {
         pub(crate) error_message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID for the account that the request applies to.</p>
+        /// <p>The Amazon Web Services account ID for the account that the request applies to.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -12330,11 +12330,11 @@ impl AsRef<str> for ErrorCode {
     }
 }
 
-/// <p>Specifies details for an account to associate with an Amazon Macie administrator account.</p>
+/// <p>Specifies the details of an account to associate with an Amazon Macie administrator account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountDetail {
-    /// <p>The AWS account ID for the account.</p>
+    /// <p>The Amazon Web Services account ID for the account.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The email address for the account.</p>
     pub email: std::option::Option<std::string::String>,
@@ -12357,7 +12357,7 @@ pub mod account_detail {
         pub(crate) email: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID for the account.</p>
+        /// <p>The Amazon Web Services account ID for the account.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self

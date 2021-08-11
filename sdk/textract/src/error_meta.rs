@@ -79,6 +79,43 @@ impl From<smithy_http::result::SdkError<crate::error::AnalyzeDocumentError>> for
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::AnalyzeExpenseError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::AnalyzeExpenseError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::AnalyzeExpenseErrorKind::AccessDeniedException(inner) => {
+                    Error::AccessDeniedException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::BadDocumentException(inner) => {
+                    Error::BadDocumentException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::DocumentTooLargeException(inner) => {
+                    Error::DocumentTooLargeException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::InternalServerError(inner) => {
+                    Error::InternalServerError(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::InvalidS3ObjectException(inner) => {
+                    Error::InvalidS3ObjectException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::ProvisionedThroughputExceededException(
+                    inner,
+                ) => Error::ProvisionedThroughputExceededException(inner),
+                crate::error::AnalyzeExpenseErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::UnsupportedDocumentException(inner) => {
+                    Error::UnsupportedDocumentException(inner)
+                }
+                crate::error::AnalyzeExpenseErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DetectDocumentTextError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DetectDocumentTextError>) -> Self {
         match err {
@@ -105,6 +142,7 @@ impl From<smithy_http::result::SdkError<crate::error::GetDocumentAnalysisError>>
                 crate::error::GetDocumentAnalysisErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::GetDocumentAnalysisErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+                crate::error::GetDocumentAnalysisErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
                 crate::error::GetDocumentAnalysisErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),
@@ -124,6 +162,7 @@ impl From<smithy_http::result::SdkError<crate::error::GetDocumentTextDetectionEr
                 crate::error::GetDocumentTextDetectionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::InvalidJobIdException(inner) => Error::InvalidJobIdException(inner),
+                crate::error::GetDocumentTextDetectionErrorKind::InvalidKmsKeyException(inner) => Error::InvalidKmsKeyException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::InvalidS3ObjectException(inner) => Error::InvalidS3ObjectException(inner),
                 crate::error::GetDocumentTextDetectionErrorKind::ProvisionedThroughputExceededException(inner) => Error::ProvisionedThroughputExceededException(inner),

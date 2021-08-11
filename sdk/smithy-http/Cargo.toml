@@ -7,11 +7,14 @@ license = "Apache-2.0"
 
 [features]
 bytestream-util = ["tokio/fs", "tokio-util/io"]
-default = ["bytestream-util"]
+event-stream = ["smithy-eventstream"]
+default = ["bytestream-util", "event-stream"]
 
 [dependencies]
 smithy-types = { path = "../smithy-types" }
+smithy-eventstream = { path = "../smithy-eventstream", optional = true }
 bytes = "1"
+bytes-utils = "0.1"
 http-body = "0.4.0"
 http = "0.2.3"
 thiserror = "1"
@@ -23,12 +26,14 @@ tracing = "0.1"
 hyper = "0.14.5"
 
 # ByteStream internals
-bytes-utils = "0.1.1"
 futures-core = "0.3.14"
 tokio = { version = "1.6", optional = true }
 tokio-util = { version = "0.6", optional = true}
 
 [dev-dependencies]
+async-stream = "0.3"
+futures-util = "0.3"
+hyper = { version = "0.14.5", features = ["stream"] }
 proptest = "1"
 tokio = {version = "1.6", features = ["macros", "rt", "fs", "io-util"]}
 tokio-stream = "0.1.5"

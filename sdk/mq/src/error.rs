@@ -2265,13 +2265,13 @@ impl std::error::Error for UpdateUserError {
     }
 }
 
-/// Returns information about an error.
+/// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotFoundException {
-    /// The attribute which caused the error.
+    /// <p>The attribute which caused the error.</p>
     pub error_attribute: std::option::Option<std::string::String>,
-    /// The explanation of the error.
+    /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotFoundException {
@@ -2307,7 +2307,7 @@ pub mod not_found_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The attribute which caused the error.
+        /// <p>The attribute which caused the error.</p>
         pub fn error_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_attribute = Some(input.into());
             self
@@ -2319,7 +2319,7 @@ pub mod not_found_exception {
             self.error_attribute = input;
             self
         }
-        /// The explanation of the error.
+        /// <p>The explanation of the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -2344,13 +2344,13 @@ impl NotFoundException {
     }
 }
 
-/// Returns information about an error.
+/// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InternalServerErrorException {
-    /// The attribute which caused the error.
+    /// <p>The attribute which caused the error.</p>
     pub error_attribute: std::option::Option<std::string::String>,
-    /// The explanation of the error.
+    /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InternalServerErrorException {
@@ -2386,7 +2386,7 @@ pub mod internal_server_error_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The attribute which caused the error.
+        /// <p>The attribute which caused the error.</p>
         pub fn error_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_attribute = Some(input.into());
             self
@@ -2398,7 +2398,7 @@ pub mod internal_server_error_exception {
             self.error_attribute = input;
             self
         }
-        /// The explanation of the error.
+        /// <p>The explanation of the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -2423,13 +2423,13 @@ impl InternalServerErrorException {
     }
 }
 
-/// Returns information about an error.
+/// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ForbiddenException {
-    /// The attribute which caused the error.
+    /// <p>The attribute which caused the error.</p>
     pub error_attribute: std::option::Option<std::string::String>,
-    /// The explanation of the error.
+    /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ForbiddenException {
@@ -2465,7 +2465,7 @@ pub mod forbidden_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The attribute which caused the error.
+        /// <p>The attribute which caused the error.</p>
         pub fn error_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_attribute = Some(input.into());
             self
@@ -2477,7 +2477,7 @@ pub mod forbidden_exception {
             self.error_attribute = input;
             self
         }
-        /// The explanation of the error.
+        /// <p>The explanation of the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -2502,13 +2502,13 @@ impl ForbiddenException {
     }
 }
 
-/// Returns information about an error.
+/// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
-    /// The attribute which caused the error.
+    /// <p>The attribute which caused the error.</p>
     pub error_attribute: std::option::Option<std::string::String>,
-    /// The explanation of the error.
+    /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ConflictException {
@@ -2544,7 +2544,7 @@ pub mod conflict_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The attribute which caused the error.
+        /// <p>The attribute which caused the error.</p>
         pub fn error_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_attribute = Some(input.into());
             self
@@ -2556,7 +2556,7 @@ pub mod conflict_exception {
             self.error_attribute = input;
             self
         }
-        /// The explanation of the error.
+        /// <p>The explanation of the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -2581,13 +2581,13 @@ impl ConflictException {
     }
 }
 
-/// Returns information about an error.
+/// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BadRequestException {
-    /// The attribute which caused the error.
+    /// <p>The attribute which caused the error.</p>
     pub error_attribute: std::option::Option<std::string::String>,
-    /// The explanation of the error.
+    /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BadRequestException {
@@ -2623,7 +2623,7 @@ pub mod bad_request_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The attribute which caused the error.
+        /// <p>The attribute which caused the error.</p>
         pub fn error_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_attribute = Some(input.into());
             self
@@ -2635,7 +2635,7 @@ pub mod bad_request_exception {
             self.error_attribute = input;
             self
         }
-        /// The explanation of the error.
+        /// <p>The explanation of the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self
@@ -2660,13 +2660,13 @@ impl BadRequestException {
     }
 }
 
-/// Returns information about an error.
+/// <p>Returns information about an error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnauthorizedException {
-    /// The attribute which caused the error.
+    /// <p>The attribute which caused the error.</p>
     pub error_attribute: std::option::Option<std::string::String>,
-    /// The explanation of the error.
+    /// <p>The explanation of the error.</p>
     pub message: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnauthorizedException {
@@ -2702,7 +2702,7 @@ pub mod unauthorized_exception {
         pub(crate) message: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// The attribute which caused the error.
+        /// <p>The attribute which caused the error.</p>
         pub fn error_attribute(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_attribute = Some(input.into());
             self
@@ -2714,7 +2714,7 @@ pub mod unauthorized_exception {
             self.error_attribute = input;
             self
         }
-        /// The explanation of the error.
+        /// <p>The explanation of the error.</p>
         pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
             self.message = Some(input.into());
             self

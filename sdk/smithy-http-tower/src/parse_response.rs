@@ -4,7 +4,6 @@
  */
 
 use crate::SendOperationError;
-use smithy_http::body::SdkBody;
 use smithy_http::middleware::load_response;
 use smithy_http::operation;
 use smithy_http::operation::Operation;
@@ -46,7 +45,7 @@ impl<O, R> ParseResponseLayer<O, R> {
 
 impl<S, O, R> Layer<S> for ParseResponseLayer<O, R>
 where
-    S: Service<operation::Request>,
+    S: Service<operation::Request, Response = operation::Response>,
 {
     type Service = ParseResponseService<S, O, R>;
 
@@ -67,13 +66,12 @@ type BoxedResultFuture<T, E> = Pin<Box<dyn Future<Output = Result<T, E>> + Send>
 /// `O`: The type of the response parser whose output type is `Result<T, E>`
 /// `T`: The happy path return of the response parser
 /// `E`: The error path return of the response parser
-/// `B`: The HTTP Body type returned by the inner service
 /// `R`: The type of the retry policy
 impl<S, O, T, E, R> tower::Service<operation::Operation<O, R>> for ParseResponseService<S, O, R>
 where
-    S: Service<operation::Request, Response = http::Response<SdkBody>, Error = SendOperationError>,
+    S: Service<operation::Request, Response = operation::Response, Error = SendOperationError>,
     S::Future: Send + 'static,
-    O: ParseHttpResponse<SdkBody, Output = Result<T, E>> + Send + Sync + 'static,
+    O: ParseHttpResponse<Output = Result<T, E>> + Send + Sync + 'static,
     E: Error,
 {
     type Response = smithy_http::result::SdkSuccess<T>;
@@ -107,7 +105,7 @@ where
                 Err(e) => Err(e.into()),
                 Ok(resp) => {
                     // load_response contains reading the body as far as is required & parsing the response
-                    let response_span = debug_span!("load_response",);
+                    let response_span = debug_span!("load_response");
                     load_response(resp, &handler)
                         .instrument(response_span)
                         .await

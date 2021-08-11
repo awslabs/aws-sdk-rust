@@ -10010,7 +10010,7 @@ pub struct H265Settings {
     pub par_numerator: i32,
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     pub quality_tuning_level: std::option::Option<crate::model::H265QualityTuningLevel>,
-    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
     pub qvbr_settings: std::option::Option<crate::model::H265QvbrSettings>,
     /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     pub rate_control_mode: std::option::Option<crate::model::H265RateControlMode>,
@@ -10461,7 +10461,7 @@ pub mod h265_settings {
             self.quality_tuning_level = input;
             self
         }
-        /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+        /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
         pub fn qvbr_settings(mut self, input: crate::model::H265QvbrSettings) -> Self {
             self.qvbr_settings = Some(input);
             self
@@ -11323,13 +11323,13 @@ impl AsRef<str> for H265RateControlMode {
     }
 }
 
-/// Settings for quality-defined variable bitrate encoding with the H.265 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+/// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H265QvbrSettings {
     /// Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video part of this output to the value that you choose. That is, the total size of the video element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
     pub max_average_bitrate: i32,
-    /// Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within h265Settings. Specify the general target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+    /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub qvbr_quality_level: i32,
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: f64,
@@ -11366,7 +11366,7 @@ pub mod h265_qvbr_settings {
             self.max_average_bitrate = input;
             self
         }
-        /// Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within h265Settings. Specify the general target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+        /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
         pub fn qvbr_quality_level(mut self, input: i32) -> Self {
             self.qvbr_quality_level = Some(input);
             self
@@ -12235,7 +12235,7 @@ pub struct H264Settings {
     pub par_numerator: i32,
     /// Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
     pub quality_tuning_level: std::option::Option<crate::model::H264QualityTuningLevel>,
-    /// Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
     pub qvbr_settings: std::option::Option<crate::model::H264QvbrSettings>,
     /// Use this setting to specify whether this output has a variable bitrate (VBR), constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
     pub rate_control_mode: std::option::Option<crate::model::H264RateControlMode>,
@@ -12683,7 +12683,7 @@ pub mod h264_settings {
             self.quality_tuning_level = input;
             self
         }
-        /// Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+        /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
         pub fn qvbr_settings(mut self, input: crate::model::H264QvbrSettings) -> Self {
             self.qvbr_settings = Some(input);
             self
@@ -13419,13 +13419,13 @@ impl AsRef<str> for H264RateControlMode {
     }
 }
 
-/// Settings for quality-defined variable bitrate encoding with the H.264 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+/// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct H264QvbrSettings {
     /// Use this setting only when Rate control mode is QVBR and Quality tuning level is Multi-pass HQ. For Max average bitrate values suited to the complexity of your input video, the service limits the average bitrate of the video part of this output to the value that you choose. That is, the total size of the video element is less than or equal to the value you set multiplied by the number of seconds of encoded output.
     pub max_average_bitrate: i32,
-    /// Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within h264Settings. Specify the general target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+    /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub qvbr_quality_level: i32,
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: f64,
@@ -13462,7 +13462,7 @@ pub mod h264_qvbr_settings {
             self.max_average_bitrate = input;
             self
         }
-        /// Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within h264Settings. Specify the general target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+        /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
         pub fn qvbr_quality_level(mut self, input: i32) -> Self {
             self.qvbr_quality_level = Some(input);
             self
@@ -15225,7 +15225,7 @@ pub struct Av1Settings {
     pub max_bitrate: i32,
     /// Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
     pub number_b_frames_between_reference_frames: i32,
-    /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+    /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
     pub qvbr_settings: std::option::Option<crate::model::Av1QvbrSettings>,
     /// 'With AV1 outputs, for rate control mode, MediaConvert supports only quality-defined variable bitrate (QVBR). You can''t use CBR or VBR.'
     pub rate_control_mode: std::option::Option<crate::model::Av1RateControlMode>,
@@ -15375,7 +15375,7 @@ pub mod av1_settings {
             self.number_b_frames_between_reference_frames = input;
             self
         }
-        /// Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+        /// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
         pub fn qvbr_settings(mut self, input: crate::model::Av1QvbrSettings) -> Self {
             self.qvbr_settings = Some(input);
             self
@@ -15550,11 +15550,11 @@ impl AsRef<str> for Av1RateControlMode {
     }
 }
 
-/// Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control mode to QVBR. Not valid when you set Rate control mode to a value other than QVBR, or when you don't define Rate control mode.
+/// Settings for quality-defined variable bitrate encoding with the H.265 codec. Use these settings only when you set QVBR for Rate control mode (RateControlMode).
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Av1QvbrSettings {
-    /// Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within av1Settings. Specify the general target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+    /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
     pub qvbr_quality_level: i32,
     /// Optional. Specify a value here to set the QVBR quality to a level that is between whole numbers. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33. MediaConvert rounds your QVBR quality level to the nearest third of a whole number. For example, if you set qvbrQualityLevel to 7 and you set qvbrQualityLevelFineTune to .25, your actual QVBR quality level is 7.33.
     pub qvbr_quality_level_fine_tune: f64,
@@ -15580,7 +15580,7 @@ pub mod av1_qvbr_settings {
         pub(crate) qvbr_quality_level_fine_tune: std::option::Option<f64>,
     }
     impl Builder {
-        /// Required when you use QVBR rate control mode. That is, when you specify qvbrSettings within av1Settings. Specify the general target quality level for this output, from 1 to 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
+        /// Use this setting only when you set Rate control mode (RateControlMode) to QVBR. Specify the target quality level for this output. MediaConvert determines the right number of bits to use for each part of the video to maintain the video quality that you specify. When you keep the default value, AUTO, MediaConvert picks a quality level for you, based on characteristics of your input video. If you prefer to specify a quality level, specify a number from 1 through 10. Use higher numbers for greater quality. Level 10 results in nearly lossless compression. The quality level for most broadcast-quality transcodes is between 6 and 9. Optionally, to specify a value between whole numbers, also provide a value for the setting qvbrQualityLevelFineTune. For example, if you want your QVBR quality level to be 7.33, set qvbrQualityLevel to 7 and set qvbrQualityLevelFineTune to .33.
         pub fn qvbr_quality_level(mut self, input: i32) -> Self {
             self.qvbr_quality_level = Some(input);
             self
@@ -21033,6 +21033,8 @@ pub struct CaptionDestinationSettings {
     pub imsc_destination_settings: std::option::Option<crate::model::ImscDestinationSettings>,
     /// Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to SCC.
     pub scc_destination_settings: std::option::Option<crate::model::SccDestinationSettings>,
+    /// SRT Destination Settings
+    pub srt_destination_settings: std::option::Option<crate::model::SrtDestinationSettings>,
     /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to TELETEXT.
     pub teletext_destination_settings:
         std::option::Option<crate::model::TeletextDestinationSettings>,
@@ -21059,6 +21061,7 @@ impl std::fmt::Debug for CaptionDestinationSettings {
         );
         formatter.field("imsc_destination_settings", &self.imsc_destination_settings);
         formatter.field("scc_destination_settings", &self.scc_destination_settings);
+        formatter.field("srt_destination_settings", &self.srt_destination_settings);
         formatter.field(
             "teletext_destination_settings",
             &self.teletext_destination_settings,
@@ -21088,6 +21091,8 @@ pub mod caption_destination_settings {
             std::option::Option<crate::model::ImscDestinationSettings>,
         pub(crate) scc_destination_settings:
             std::option::Option<crate::model::SccDestinationSettings>,
+        pub(crate) srt_destination_settings:
+            std::option::Option<crate::model::SrtDestinationSettings>,
         pub(crate) teletext_destination_settings:
             std::option::Option<crate::model::TeletextDestinationSettings>,
         pub(crate) ttml_destination_settings:
@@ -21183,6 +21188,21 @@ pub mod caption_destination_settings {
             self.scc_destination_settings = input;
             self
         }
+        /// SRT Destination Settings
+        pub fn srt_destination_settings(
+            mut self,
+            input: crate::model::SrtDestinationSettings,
+        ) -> Self {
+            self.srt_destination_settings = Some(input);
+            self
+        }
+        pub fn set_srt_destination_settings(
+            mut self,
+            input: std::option::Option<crate::model::SrtDestinationSettings>,
+        ) -> Self {
+            self.srt_destination_settings = input;
+            self
+        }
         /// Settings related to teletext captions. Set up teletext captions in the same output as your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/teletext-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to TELETEXT.
         pub fn teletext_destination_settings(
             mut self,
@@ -21237,6 +21257,7 @@ pub mod caption_destination_settings {
                 embedded_destination_settings: self.embedded_destination_settings,
                 imsc_destination_settings: self.imsc_destination_settings,
                 scc_destination_settings: self.scc_destination_settings,
+                srt_destination_settings: self.srt_destination_settings,
                 teletext_destination_settings: self.teletext_destination_settings,
                 ttml_destination_settings: self.ttml_destination_settings,
                 webvtt_destination_settings: self.webvtt_destination_settings,
@@ -21588,6 +21609,107 @@ impl AsRef<str> for TeletextPageType {
     }
 }
 
+/// SRT Destination Settings
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SrtDestinationSettings {
+    /// Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and position information from the captions source in the input. Keep the default value, Disabled (DISABLED), for simplified output captions.
+    pub style_passthrough: std::option::Option<crate::model::SrtStylePassthrough>,
+}
+impl std::fmt::Debug for SrtDestinationSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SrtDestinationSettings");
+        formatter.field("style_passthrough", &self.style_passthrough);
+        formatter.finish()
+    }
+}
+/// See [`SrtDestinationSettings`](crate::model::SrtDestinationSettings)
+pub mod srt_destination_settings {
+    /// A builder for [`SrtDestinationSettings`](crate::model::SrtDestinationSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) style_passthrough: std::option::Option<crate::model::SrtStylePassthrough>,
+    }
+    impl Builder {
+        /// Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and position information from the captions source in the input. Keep the default value, Disabled (DISABLED), for simplified output captions.
+        pub fn style_passthrough(mut self, input: crate::model::SrtStylePassthrough) -> Self {
+            self.style_passthrough = Some(input);
+            self
+        }
+        pub fn set_style_passthrough(
+            mut self,
+            input: std::option::Option<crate::model::SrtStylePassthrough>,
+        ) -> Self {
+            self.style_passthrough = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SrtDestinationSettings`](crate::model::SrtDestinationSettings)
+        pub fn build(self) -> crate::model::SrtDestinationSettings {
+            crate::model::SrtDestinationSettings {
+                style_passthrough: self.style_passthrough,
+            }
+        }
+    }
+}
+impl SrtDestinationSettings {
+    /// Creates a new builder-style object to manufacture [`SrtDestinationSettings`](crate::model::SrtDestinationSettings)
+    pub fn builder() -> crate::model::srt_destination_settings::Builder {
+        crate::model::srt_destination_settings::Builder::default()
+    }
+}
+
+/// Choose Enabled (ENABLED) to have MediaConvert use the font style, color, and position information from the captions source in the input. Keep the default value, Disabled (DISABLED), for simplified output captions.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SrtStylePassthrough {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SrtStylePassthrough {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => SrtStylePassthrough::Disabled,
+            "ENABLED" => SrtStylePassthrough::Enabled,
+            other => SrtStylePassthrough::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SrtStylePassthrough {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SrtStylePassthrough::from(s))
+    }
+}
+impl SrtStylePassthrough {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SrtStylePassthrough::Disabled => "DISABLED",
+            SrtStylePassthrough::Enabled => "ENABLED",
+            SrtStylePassthrough::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for SrtStylePassthrough {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Settings related to SCC captions. SCC is a sidecar format that holds captions in a file that is separate from the video container. Set up sidecar captions in the same output group, but different output from your video. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/scc-srt-output-captions.html. When you work directly in your JSON job specification, include this object and any required children when you set destinationType to SCC.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -21899,7 +22021,7 @@ pub struct DvbSubDestinationSettings {
     pub dds_x_coordinate: i32,
     /// Use this setting, along with DDS x-coordinate (ddsXCoordinate), to specify the upper left corner of the display definition segment (DDS) display window. With this setting, specify the distance, in pixels, between the top of the frame and the top of the DDS display window. Keep the default value, 0, to have MediaConvert automatically choose this offset. Related setting: When you use this setting, you must set DDS handling (ddsHandling) to a value other than None (NONE). MediaConvert uses these values to determine whether to write page position data to the DDS or to the page composition segment (PCS). All burn-in and DVB-Sub font settings must match.
     pub dds_y_coordinate: i32,
-    /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+    /// Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
     pub font_color: std::option::Option<crate::model::DvbSubtitleFontColor>,
     /// Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent.
     /// All burn-in and DVB-Sub font settings must match.
@@ -22061,7 +22183,7 @@ pub mod dvb_sub_destination_settings {
             self.dds_y_coordinate = input;
             self
         }
-        /// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+        /// Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
         pub fn font_color(mut self, input: crate::model::DvbSubtitleFontColor) -> Self {
             self.font_color = Some(input);
             self
@@ -22546,7 +22668,7 @@ impl AsRef<str> for FontScript {
     }
 }
 
-/// Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
+/// Specifies the color of the DVB-SUB captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -29089,6 +29211,8 @@ pub struct JobTemplateSettings {
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: std::option::Option<crate::model::EsamSettings>,
+    /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+    pub extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
     /// Use Inputs (inputs) to define the source file used in the transcode job. There can only be one input in a job template.  Using the API, you can include multiple inputs when referencing a job template.
     pub inputs: std::option::Option<std::vec::Vec<crate::model::InputTemplate>>,
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
@@ -29113,6 +29237,7 @@ impl std::fmt::Debug for JobTemplateSettings {
         formatter.field("ad_avail_offset", &self.ad_avail_offset);
         formatter.field("avail_blanking", &self.avail_blanking);
         formatter.field("esam", &self.esam);
+        formatter.field("extended_data_services", &self.extended_data_services);
         formatter.field("inputs", &self.inputs);
         formatter.field("kantar_watermark", &self.kantar_watermark);
         formatter.field("motion_image_inserter", &self.motion_image_inserter);
@@ -29136,6 +29261,7 @@ pub mod job_template_settings {
         pub(crate) ad_avail_offset: std::option::Option<i32>,
         pub(crate) avail_blanking: std::option::Option<crate::model::AvailBlanking>,
         pub(crate) esam: std::option::Option<crate::model::EsamSettings>,
+        pub(crate) extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
         pub(crate) inputs: std::option::Option<std::vec::Vec<crate::model::InputTemplate>>,
         pub(crate) kantar_watermark: std::option::Option<crate::model::KantarWatermarkSettings>,
         pub(crate) motion_image_inserter: std::option::Option<crate::model::MotionImageInserter>,
@@ -29176,6 +29302,18 @@ pub mod job_template_settings {
         }
         pub fn set_esam(mut self, input: std::option::Option<crate::model::EsamSettings>) -> Self {
             self.esam = input;
+            self
+        }
+        /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+        pub fn extended_data_services(mut self, input: crate::model::ExtendedDataServices) -> Self {
+            self.extended_data_services = Some(input);
+            self
+        }
+        pub fn set_extended_data_services(
+            mut self,
+            input: std::option::Option<crate::model::ExtendedDataServices>,
+        ) -> Self {
+            self.extended_data_services = input;
             self
         }
         pub fn inputs(mut self, input: impl Into<crate::model::InputTemplate>) -> Self {
@@ -29288,6 +29426,7 @@ pub mod job_template_settings {
                 ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
                 avail_blanking: self.avail_blanking,
                 esam: self.esam,
+                extended_data_services: self.extended_data_services,
                 inputs: self.inputs,
                 kantar_watermark: self.kantar_watermark,
                 motion_image_inserter: self.motion_image_inserter,
@@ -31491,6 +31630,9 @@ pub struct HlsGroupSettings {
     pub segments_per_subdirectory: i32,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub stream_inf_resolution: std::option::Option<crate::model::HlsStreamInfResolution>,
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    pub target_duration_compatibility_mode:
+        std::option::Option<crate::model::HlsTargetDurationCompatibilityMode>,
     /// Indicates ID3 frame that has the timecode.
     pub timed_metadata_id3_frame: std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
     /// Timed Metadata interval in seconds.
@@ -31525,6 +31667,10 @@ impl std::fmt::Debug for HlsGroupSettings {
         formatter.field("segment_length", &self.segment_length);
         formatter.field("segments_per_subdirectory", &self.segments_per_subdirectory);
         formatter.field("stream_inf_resolution", &self.stream_inf_resolution);
+        formatter.field(
+            "target_duration_compatibility_mode",
+            &self.target_duration_compatibility_mode,
+        );
         formatter.field("timed_metadata_id3_frame", &self.timed_metadata_id3_frame);
         formatter.field("timed_metadata_id3_period", &self.timed_metadata_id3_period);
         formatter.field(
@@ -31569,6 +31715,8 @@ pub mod hls_group_settings {
         pub(crate) segment_length: std::option::Option<i32>,
         pub(crate) segments_per_subdirectory: std::option::Option<i32>,
         pub(crate) stream_inf_resolution: std::option::Option<crate::model::HlsStreamInfResolution>,
+        pub(crate) target_duration_compatibility_mode:
+            std::option::Option<crate::model::HlsTargetDurationCompatibilityMode>,
         pub(crate) timed_metadata_id3_frame:
             std::option::Option<crate::model::HlsTimedMetadataId3Frame>,
         pub(crate) timed_metadata_id3_period: std::option::Option<i32>,
@@ -31863,6 +32011,21 @@ pub mod hls_group_settings {
             self.stream_inf_resolution = input;
             self
         }
+        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+        pub fn target_duration_compatibility_mode(
+            mut self,
+            input: crate::model::HlsTargetDurationCompatibilityMode,
+        ) -> Self {
+            self.target_duration_compatibility_mode = Some(input);
+            self
+        }
+        pub fn set_target_duration_compatibility_mode(
+            mut self,
+            input: std::option::Option<crate::model::HlsTargetDurationCompatibilityMode>,
+        ) -> Self {
+            self.target_duration_compatibility_mode = input;
+            self
+        }
         /// Indicates ID3 frame that has the timecode.
         pub fn timed_metadata_id3_frame(
             mut self,
@@ -31923,6 +32086,7 @@ pub mod hls_group_settings {
                 segment_length: self.segment_length.unwrap_or_default(),
                 segments_per_subdirectory: self.segments_per_subdirectory.unwrap_or_default(),
                 stream_inf_resolution: self.stream_inf_resolution,
+                target_duration_compatibility_mode: self.target_duration_compatibility_mode,
                 timed_metadata_id3_frame: self.timed_metadata_id3_frame,
                 timed_metadata_id3_period: self.timed_metadata_id3_period.unwrap_or_default(),
                 timestamp_delta_milliseconds: self.timestamp_delta_milliseconds.unwrap_or_default(),
@@ -31986,6 +32150,57 @@ impl HlsTimedMetadataId3Frame {
     }
 }
 impl AsRef<str> for HlsTimedMetadataId3Frame {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HlsTargetDurationCompatibilityMode {
+    Legacy,
+    SpecCompliant,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HlsTargetDurationCompatibilityMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "LEGACY" => HlsTargetDurationCompatibilityMode::Legacy,
+            "SPEC_COMPLIANT" => HlsTargetDurationCompatibilityMode::SpecCompliant,
+            other => HlsTargetDurationCompatibilityMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HlsTargetDurationCompatibilityMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsTargetDurationCompatibilityMode::from(s))
+    }
+}
+impl HlsTargetDurationCompatibilityMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsTargetDurationCompatibilityMode::Legacy => "LEGACY",
+            HlsTargetDurationCompatibilityMode::SpecCompliant => "SPEC_COMPLIANT",
+            HlsTargetDurationCompatibilityMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["LEGACY", "SPEC_COMPLIANT"]
+    }
+}
+impl AsRef<str> for HlsTargetDurationCompatibilityMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -34280,6 +34495,9 @@ pub struct CmafGroupSettings {
     pub segment_length: i32,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub stream_inf_resolution: std::option::Option<crate::model::CmafStreamInfResolution>,
+    /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+    pub target_duration_compatibility_mode:
+        std::option::Option<crate::model::CmafTargetDurationCompatibilityMode>,
     /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
     pub write_dash_manifest: std::option::Option<crate::model::CmafWriteDashManifest>,
     /// When set to ENABLED, an Apple HLS manifest will be generated for this output.
@@ -34312,6 +34530,10 @@ impl std::fmt::Debug for CmafGroupSettings {
         formatter.field("segment_control", &self.segment_control);
         formatter.field("segment_length", &self.segment_length);
         formatter.field("stream_inf_resolution", &self.stream_inf_resolution);
+        formatter.field(
+            "target_duration_compatibility_mode",
+            &self.target_duration_compatibility_mode,
+        );
         formatter.field("write_dash_manifest", &self.write_dash_manifest);
         formatter.field("write_hls_manifest", &self.write_hls_manifest);
         formatter.field(
@@ -34350,6 +34572,8 @@ pub mod cmaf_group_settings {
         pub(crate) segment_length: std::option::Option<i32>,
         pub(crate) stream_inf_resolution:
             std::option::Option<crate::model::CmafStreamInfResolution>,
+        pub(crate) target_duration_compatibility_mode:
+            std::option::Option<crate::model::CmafTargetDurationCompatibilityMode>,
         pub(crate) write_dash_manifest: std::option::Option<crate::model::CmafWriteDashManifest>,
         pub(crate) write_hls_manifest: std::option::Option<crate::model::CmafWriteHlsManifest>,
         pub(crate) write_segment_timeline_in_representation:
@@ -34573,6 +34797,21 @@ pub mod cmaf_group_settings {
             self.stream_inf_resolution = input;
             self
         }
+        /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+        pub fn target_duration_compatibility_mode(
+            mut self,
+            input: crate::model::CmafTargetDurationCompatibilityMode,
+        ) -> Self {
+            self.target_duration_compatibility_mode = Some(input);
+            self
+        }
+        pub fn set_target_duration_compatibility_mode(
+            mut self,
+            input: std::option::Option<crate::model::CmafTargetDurationCompatibilityMode>,
+        ) -> Self {
+            self.target_duration_compatibility_mode = input;
+            self
+        }
         /// When set to ENABLED, a DASH MPD manifest will be generated for this output.
         pub fn write_dash_manifest(mut self, input: crate::model::CmafWriteDashManifest) -> Self {
             self.write_dash_manifest = Some(input);
@@ -34633,6 +34872,7 @@ pub mod cmaf_group_settings {
                 segment_control: self.segment_control,
                 segment_length: self.segment_length.unwrap_or_default(),
                 stream_inf_resolution: self.stream_inf_resolution,
+                target_duration_compatibility_mode: self.target_duration_compatibility_mode,
                 write_dash_manifest: self.write_dash_manifest,
                 write_hls_manifest: self.write_hls_manifest,
                 write_segment_timeline_in_representation: self
@@ -34796,6 +35036,57 @@ impl CmafWriteDashManifest {
     }
 }
 impl AsRef<str> for CmafWriteDashManifest {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CmafTargetDurationCompatibilityMode {
+    Legacy,
+    SpecCompliant,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CmafTargetDurationCompatibilityMode {
+    fn from(s: &str) -> Self {
+        match s {
+            "LEGACY" => CmafTargetDurationCompatibilityMode::Legacy,
+            "SPEC_COMPLIANT" => CmafTargetDurationCompatibilityMode::SpecCompliant,
+            other => CmafTargetDurationCompatibilityMode::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CmafTargetDurationCompatibilityMode {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmafTargetDurationCompatibilityMode::from(s))
+    }
+}
+impl CmafTargetDurationCompatibilityMode {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmafTargetDurationCompatibilityMode::Legacy => "LEGACY",
+            CmafTargetDurationCompatibilityMode::SpecCompliant => "SPEC_COMPLIANT",
+            CmafTargetDurationCompatibilityMode::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["LEGACY", "SPEC_COMPLIANT"]
+    }
+}
+impl AsRef<str> for CmafTargetDurationCompatibilityMode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -39726,6 +40017,175 @@ impl AudioSelectorGroup {
     }
 }
 
+/// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ExtendedDataServices {
+    /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    pub copy_protection_action: std::option::Option<crate::model::CopyProtectionAction>,
+    /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+    pub vchip_action: std::option::Option<crate::model::VchipAction>,
+}
+impl std::fmt::Debug for ExtendedDataServices {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ExtendedDataServices");
+        formatter.field("copy_protection_action", &self.copy_protection_action);
+        formatter.field("vchip_action", &self.vchip_action);
+        formatter.finish()
+    }
+}
+/// See [`ExtendedDataServices`](crate::model::ExtendedDataServices)
+pub mod extended_data_services {
+    /// A builder for [`ExtendedDataServices`](crate::model::ExtendedDataServices)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) copy_protection_action: std::option::Option<crate::model::CopyProtectionAction>,
+        pub(crate) vchip_action: std::option::Option<crate::model::VchipAction>,
+    }
+    impl Builder {
+        /// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+        pub fn copy_protection_action(mut self, input: crate::model::CopyProtectionAction) -> Self {
+            self.copy_protection_action = Some(input);
+            self
+        }
+        pub fn set_copy_protection_action(
+            mut self,
+            input: std::option::Option<crate::model::CopyProtectionAction>,
+        ) -> Self {
+            self.copy_protection_action = input;
+            self
+        }
+        /// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+        pub fn vchip_action(mut self, input: crate::model::VchipAction) -> Self {
+            self.vchip_action = Some(input);
+            self
+        }
+        pub fn set_vchip_action(
+            mut self,
+            input: std::option::Option<crate::model::VchipAction>,
+        ) -> Self {
+            self.vchip_action = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ExtendedDataServices`](crate::model::ExtendedDataServices)
+        pub fn build(self) -> crate::model::ExtendedDataServices {
+            crate::model::ExtendedDataServices {
+                copy_protection_action: self.copy_protection_action,
+                vchip_action: self.vchip_action,
+            }
+        }
+    }
+}
+impl ExtendedDataServices {
+    /// Creates a new builder-style object to manufacture [`ExtendedDataServices`](crate::model::ExtendedDataServices)
+    pub fn builder() -> crate::model::extended_data_services::Builder {
+        crate::model::extended_data_services::Builder::default()
+    }
+}
+
+/// The action to take on content advisory XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VchipAction {
+    Passthrough,
+    Strip,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VchipAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "PASSTHROUGH" => VchipAction::Passthrough,
+            "STRIP" => VchipAction::Strip,
+            other => VchipAction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VchipAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VchipAction::from(s))
+    }
+}
+impl VchipAction {
+    pub fn as_str(&self) -> &str {
+        match self {
+            VchipAction::Passthrough => "PASSTHROUGH",
+            VchipAction::Strip => "STRIP",
+            VchipAction::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PASSTHROUGH", "STRIP"]
+    }
+}
+impl AsRef<str> for VchipAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// The action to take on copy and redistribution control XDS packets.  If you select PASSTHROUGH, packets will not be changed. If you select STRIP, any packets will be removed in output captions.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CopyProtectionAction {
+    Passthrough,
+    Strip,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CopyProtectionAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "PASSTHROUGH" => CopyProtectionAction::Passthrough,
+            "STRIP" => CopyProtectionAction::Strip,
+            other => CopyProtectionAction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CopyProtectionAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CopyProtectionAction::from(s))
+    }
+}
+impl CopyProtectionAction {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CopyProtectionAction::Passthrough => "PASSTHROUGH",
+            CopyProtectionAction::Strip => "STRIP",
+            CopyProtectionAction::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["PASSTHROUGH", "STRIP"]
+    }
+}
+impl AsRef<str> for CopyProtectionAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -41079,6 +41539,8 @@ pub struct JobSettings {
     pub avail_blanking: std::option::Option<crate::model::AvailBlanking>,
     /// Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
     pub esam: std::option::Option<crate::model::EsamSettings>,
+    /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+    pub extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
     /// Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job. These inputs will be concantenated together to create the output.
     pub inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
     /// Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
@@ -41103,6 +41565,7 @@ impl std::fmt::Debug for JobSettings {
         formatter.field("ad_avail_offset", &self.ad_avail_offset);
         formatter.field("avail_blanking", &self.avail_blanking);
         formatter.field("esam", &self.esam);
+        formatter.field("extended_data_services", &self.extended_data_services);
         formatter.field("inputs", &self.inputs);
         formatter.field("kantar_watermark", &self.kantar_watermark);
         formatter.field("motion_image_inserter", &self.motion_image_inserter);
@@ -41126,6 +41589,7 @@ pub mod job_settings {
         pub(crate) ad_avail_offset: std::option::Option<i32>,
         pub(crate) avail_blanking: std::option::Option<crate::model::AvailBlanking>,
         pub(crate) esam: std::option::Option<crate::model::EsamSettings>,
+        pub(crate) extended_data_services: std::option::Option<crate::model::ExtendedDataServices>,
         pub(crate) inputs: std::option::Option<std::vec::Vec<crate::model::Input>>,
         pub(crate) kantar_watermark: std::option::Option<crate::model::KantarWatermarkSettings>,
         pub(crate) motion_image_inserter: std::option::Option<crate::model::MotionImageInserter>,
@@ -41166,6 +41630,18 @@ pub mod job_settings {
         }
         pub fn set_esam(mut self, input: std::option::Option<crate::model::EsamSettings>) -> Self {
             self.esam = input;
+            self
+        }
+        /// Hexadecimal value as per EIA-608 Line 21 Data Services, section 9.5.1.5 05h Content Advisory.
+        pub fn extended_data_services(mut self, input: crate::model::ExtendedDataServices) -> Self {
+            self.extended_data_services = Some(input);
+            self
+        }
+        pub fn set_extended_data_services(
+            mut self,
+            input: std::option::Option<crate::model::ExtendedDataServices>,
+        ) -> Self {
+            self.extended_data_services = input;
             self
         }
         pub fn inputs(mut self, input: impl Into<crate::model::Input>) -> Self {
@@ -41278,6 +41754,7 @@ pub mod job_settings {
                 ad_avail_offset: self.ad_avail_offset.unwrap_or_default(),
                 avail_blanking: self.avail_blanking,
                 esam: self.esam,
+                extended_data_services: self.extended_data_services,
                 inputs: self.inputs,
                 kantar_watermark: self.kantar_watermark,
                 motion_image_inserter: self.motion_image_inserter,

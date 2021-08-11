@@ -205,6 +205,16 @@ impl From<smithy_http::result::SdkError<crate::error::GetPlaybackConfigurationEr
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListAlertsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListAlertsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListAlertsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ListChannelsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ListChannelsError>) -> Self {
         match err {

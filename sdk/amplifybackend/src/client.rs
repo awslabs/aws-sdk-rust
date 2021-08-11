@@ -1758,7 +1758,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_job_id(input);
             self
         }
-        /// <p>Filters the list of response objects to only include those with the specified operation name.</p>
+        /// <p>Filters the list of response objects to include only those with the specified operation name.</p>
         pub fn operation(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.operation(input);
             self

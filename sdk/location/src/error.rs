@@ -12,6 +12,7 @@ pub enum AssociateTrackerConsumerErrorKind {
     ConflictException(crate::error::ConflictException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     ThrottlingException(crate::error::ThrottlingException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -24,6 +25,9 @@ impl std::fmt::Display for AssociateTrackerConsumerError {
             AssociateTrackerConsumerErrorKind::ConflictException(_inner) => _inner.fmt(f),
             AssociateTrackerConsumerErrorKind::InternalServerException(_inner) => _inner.fmt(f),
             AssociateTrackerConsumerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            AssociateTrackerConsumerErrorKind::ServiceQuotaExceededException(_inner) => {
+                _inner.fmt(f)
+            }
             AssociateTrackerConsumerErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
             AssociateTrackerConsumerErrorKind::ValidationException(_inner) => _inner.fmt(f),
             AssociateTrackerConsumerErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -106,6 +110,12 @@ impl AssociateTrackerConsumerError {
             AssociateTrackerConsumerErrorKind::ResourceNotFoundException(_)
         )
     }
+    pub fn is_service_quota_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateTrackerConsumerErrorKind::ServiceQuotaExceededException(_)
+        )
+    }
     pub fn is_throttling_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -126,6 +136,9 @@ impl std::error::Error for AssociateTrackerConsumerError {
             AssociateTrackerConsumerErrorKind::ConflictException(_inner) => Some(_inner),
             AssociateTrackerConsumerErrorKind::InternalServerException(_inner) => Some(_inner),
             AssociateTrackerConsumerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            AssociateTrackerConsumerErrorKind::ServiceQuotaExceededException(_inner) => {
+                Some(_inner)
+            }
             AssociateTrackerConsumerErrorKind::ThrottlingException(_inner) => Some(_inner),
             AssociateTrackerConsumerErrorKind::ValidationException(_inner) => Some(_inner),
             AssociateTrackerConsumerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5396,6 +5409,605 @@ impl std::error::Error for UntagResourceError {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateGeofenceCollectionError {
+    pub kind: UpdateGeofenceCollectionErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateGeofenceCollectionErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateGeofenceCollectionError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateGeofenceCollectionErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateGeofenceCollectionErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateGeofenceCollectionErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateGeofenceCollectionErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateGeofenceCollectionErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateGeofenceCollectionErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateGeofenceCollectionError {
+    fn code(&self) -> Option<&str> {
+        UpdateGeofenceCollectionError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateGeofenceCollectionErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateGeofenceCollectionErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdateGeofenceCollectionError {
+    pub fn new(kind: UpdateGeofenceCollectionErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateGeofenceCollectionErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateGeofenceCollectionErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGeofenceCollectionErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGeofenceCollectionErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGeofenceCollectionErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGeofenceCollectionErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGeofenceCollectionErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateGeofenceCollectionError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateGeofenceCollectionErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateGeofenceCollectionErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateGeofenceCollectionErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateGeofenceCollectionErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateGeofenceCollectionErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateGeofenceCollectionErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateMapError {
+    pub kind: UpdateMapErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateMapErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateMapError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateMapErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateMapErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateMapErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateMapErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateMapErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateMapErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateMapError {
+    fn code(&self) -> Option<&str> {
+        UpdateMapError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateMapErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateMapErrorKind::ThrottlingException(inner) => Some(inner.retryable_error_kind()),
+            _ => None,
+        }
+    }
+}
+impl UpdateMapError {
+    pub fn new(kind: UpdateMapErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateMapErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateMapErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMapErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMapErrorKind::InternalServerException(_))
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMapErrorKind::ResourceNotFoundException(_))
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMapErrorKind::ThrottlingException(_))
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateMapErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateMapError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateMapErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateMapErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateMapErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateMapErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateMapErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateMapErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdatePlaceIndexError {
+    pub kind: UpdatePlaceIndexErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdatePlaceIndexErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdatePlaceIndexError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdatePlaceIndexErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdatePlaceIndexErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdatePlaceIndexErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdatePlaceIndexErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdatePlaceIndexErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdatePlaceIndexErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdatePlaceIndexError {
+    fn code(&self) -> Option<&str> {
+        UpdatePlaceIndexError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdatePlaceIndexErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdatePlaceIndexErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdatePlaceIndexError {
+    pub fn new(kind: UpdatePlaceIndexErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdatePlaceIndexErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdatePlaceIndexErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePlaceIndexErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePlaceIndexErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePlaceIndexErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePlaceIndexErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdatePlaceIndexErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdatePlaceIndexError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdatePlaceIndexErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdatePlaceIndexErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdatePlaceIndexErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdatePlaceIndexErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdatePlaceIndexErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdatePlaceIndexErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateRouteCalculatorError {
+    pub kind: UpdateRouteCalculatorErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateRouteCalculatorErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateRouteCalculatorError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateRouteCalculatorErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateRouteCalculatorErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateRouteCalculatorErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateRouteCalculatorErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateRouteCalculatorErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateRouteCalculatorErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateRouteCalculatorError {
+    fn code(&self) -> Option<&str> {
+        UpdateRouteCalculatorError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateRouteCalculatorErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateRouteCalculatorErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdateRouteCalculatorError {
+    pub fn new(kind: UpdateRouteCalculatorErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateRouteCalculatorErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateRouteCalculatorErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRouteCalculatorErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRouteCalculatorErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRouteCalculatorErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRouteCalculatorErrorKind::ThrottlingException(_)
+        )
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRouteCalculatorErrorKind::ValidationException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateRouteCalculatorError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateRouteCalculatorErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateRouteCalculatorErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateRouteCalculatorErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateRouteCalculatorErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateRouteCalculatorErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateRouteCalculatorErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateTrackerError {
+    pub kind: UpdateTrackerErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateTrackerErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    ValidationException(crate::error::ValidationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateTrackerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateTrackerErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
+            UpdateTrackerErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            UpdateTrackerErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateTrackerErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateTrackerErrorKind::ValidationException(_inner) => _inner.fmt(f),
+            UpdateTrackerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateTrackerError {
+    fn code(&self) -> Option<&str> {
+        UpdateTrackerError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        match &self.kind {
+            UpdateTrackerErrorKind::InternalServerException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            UpdateTrackerErrorKind::ThrottlingException(inner) => {
+                Some(inner.retryable_error_kind())
+            }
+            _ => None,
+        }
+    }
+}
+impl UpdateTrackerError {
+    pub fn new(kind: UpdateTrackerErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateTrackerErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateTrackerErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTrackerErrorKind::AccessDeniedException(_))
+    }
+    pub fn is_internal_server_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrackerErrorKind::InternalServerException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateTrackerErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTrackerErrorKind::ThrottlingException(_))
+    }
+    pub fn is_validation_exception(&self) -> bool {
+        matches!(&self.kind, UpdateTrackerErrorKind::ValidationException(_))
+    }
+}
+impl std::error::Error for UpdateTrackerError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateTrackerErrorKind::AccessDeniedException(_inner) => Some(_inner),
+            UpdateTrackerErrorKind::InternalServerException(_inner) => Some(_inner),
+            UpdateTrackerErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateTrackerErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateTrackerErrorKind::ValidationException(_inner) => Some(_inner),
+            UpdateTrackerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p>The input failed to meet the constraints specified by the AWS service. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5495,7 +6107,7 @@ impl ValidationException {
     }
 }
 
-/// <p>The request was denied due to request throttling.</p>
+/// <p>The request was denied because of request throttling.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ThrottlingException {
@@ -5681,7 +6293,7 @@ impl InternalServerException {
     }
 }
 
-/// <p>The request was denied due to insufficient access or permission. Check with an
+/// <p>The request was denied because of insufficient access or permissions. Check with an
 /// administrator to verify your permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5742,7 +6354,70 @@ impl AccessDeniedException {
     }
 }
 
-/// <p>The request was unsuccessful due to a conflict.</p>
+/// <p>The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+/// set for Amazon Location Service.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ServiceQuotaExceededException {
+    /// <p>A message with the reason for the service quota exceeded exception error.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ServiceQuotaExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl ServiceQuotaExceededException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for ServiceQuotaExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "ServiceQuotaExceededException")?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for ServiceQuotaExceededException {}
+/// See [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+pub mod service_quota_exceeded_exception {
+    /// A builder for [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A message with the reason for the service quota exceeded exception error.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+        pub fn build(self) -> crate::error::ServiceQuotaExceededException {
+            crate::error::ServiceQuotaExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl ServiceQuotaExceededException {
+    /// Creates a new builder-style object to manufacture [`ServiceQuotaExceededException`](crate::error::ServiceQuotaExceededException)
+    pub fn builder() -> crate::error::service_quota_exceeded_exception::Builder {
+        crate::error::service_quota_exceeded_exception::Builder::default()
+    }
+}
+
+/// <p>The request was unsuccessful because of a conflict.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ConflictException {
@@ -5763,8 +6438,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
+        if let Some(inner_7) = &self.message {
+            write!(f, ": {}", inner_7)?;
         }
         Ok(())
     }

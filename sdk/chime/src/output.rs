@@ -1115,6 +1115,64 @@ impl TagAttendeeOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StopMeetingTranscriptionOutput {}
+impl std::fmt::Debug for StopMeetingTranscriptionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StopMeetingTranscriptionOutput");
+        formatter.finish()
+    }
+}
+/// See [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
+pub mod stop_meeting_transcription_output {
+    /// A builder for [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
+        pub fn build(self) -> crate::output::StopMeetingTranscriptionOutput {
+            crate::output::StopMeetingTranscriptionOutput {}
+        }
+    }
+}
+impl StopMeetingTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionOutput`](crate::output::StopMeetingTranscriptionOutput)
+    pub fn builder() -> crate::output::stop_meeting_transcription_output::Builder {
+        crate::output::stop_meeting_transcription_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartMeetingTranscriptionOutput {}
+impl std::fmt::Debug for StartMeetingTranscriptionOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartMeetingTranscriptionOutput");
+        formatter.finish()
+    }
+}
+/// See [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
+pub mod start_meeting_transcription_output {
+    /// A builder for [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
+        pub fn build(self) -> crate::output::StartMeetingTranscriptionOutput {
+            crate::output::StartMeetingTranscriptionOutput {}
+        }
+    }
+}
+impl StartMeetingTranscriptionOutput {
+    /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionOutput`](crate::output::StartMeetingTranscriptionOutput)
+    pub fn builder() -> crate::output::start_meeting_transcription_output::Builder {
+        crate::output::start_meeting_transcription_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SendChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
@@ -3088,6 +3146,75 @@ impl ListMeetingsOutput {
     /// Creates a new builder-style object to manufacture [`ListMeetingsOutput`](crate::output::ListMeetingsOutput)
     pub fn builder() -> crate::output::list_meetings_output::Builder {
         crate::output::list_meetings_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListMediaCapturePipelinesOutput {
+    /// <p>The media capture pipeline objects in the list.</p>
+    pub media_capture_pipelines:
+        std::option::Option<std::vec::Vec<crate::model::MediaCapturePipeline>>,
+    /// <p>The token used to retrieve the next page of results. </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListMediaCapturePipelinesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListMediaCapturePipelinesOutput");
+        formatter.field("media_capture_pipelines", &self.media_capture_pipelines);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput)
+pub mod list_media_capture_pipelines_output {
+    /// A builder for [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_capture_pipelines:
+            std::option::Option<std::vec::Vec<crate::model::MediaCapturePipeline>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn media_capture_pipelines(
+            mut self,
+            input: impl Into<crate::model::MediaCapturePipeline>,
+        ) -> Self {
+            let mut v = self.media_capture_pipelines.unwrap_or_default();
+            v.push(input.into());
+            self.media_capture_pipelines = Some(v);
+            self
+        }
+        pub fn set_media_capture_pipelines(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MediaCapturePipeline>>,
+        ) -> Self {
+            self.media_capture_pipelines = input;
+            self
+        }
+        /// <p>The token used to retrieve the next page of results. </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput)
+        pub fn build(self) -> crate::output::ListMediaCapturePipelinesOutput {
+            crate::output::ListMediaCapturePipelinesOutput {
+                media_capture_pipelines: self.media_capture_pipelines,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListMediaCapturePipelinesOutput {
+    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesOutput`](crate::output::ListMediaCapturePipelinesOutput)
+    pub fn builder() -> crate::output::list_media_capture_pipelines_output::Builder {
+        crate::output::list_media_capture_pipelines_output::Builder::default()
     }
 }
 
@@ -5276,6 +5403,55 @@ impl GetMeetingOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetMediaCapturePipelineOutput {
+    /// <p>The media capture pipeline object.</p>
+    pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+}
+impl std::fmt::Debug for GetMediaCapturePipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetMediaCapturePipelineOutput");
+        formatter.field("media_capture_pipeline", &self.media_capture_pipeline);
+        formatter.finish()
+    }
+}
+/// See [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput)
+pub mod get_media_capture_pipeline_output {
+    /// A builder for [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+    }
+    impl Builder {
+        /// <p>The media capture pipeline object.</p>
+        pub fn media_capture_pipeline(mut self, input: crate::model::MediaCapturePipeline) -> Self {
+            self.media_capture_pipeline = Some(input);
+            self
+        }
+        pub fn set_media_capture_pipeline(
+            mut self,
+            input: std::option::Option<crate::model::MediaCapturePipeline>,
+        ) -> Self {
+            self.media_capture_pipeline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput)
+        pub fn build(self) -> crate::output::GetMediaCapturePipelineOutput {
+            crate::output::GetMediaCapturePipelineOutput {
+                media_capture_pipeline: self.media_capture_pipeline,
+            }
+        }
+    }
+}
+impl GetMediaCapturePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineOutput`](crate::output::GetMediaCapturePipelineOutput)
+    pub fn builder() -> crate::output::get_media_capture_pipeline_output::Builder {
+        crate::output::get_media_capture_pipeline_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetGlobalSettingsOutput {
     /// <p>The Amazon Chime Business Calling settings.</p>
     pub business_calling: std::option::Option<crate::model::BusinessCallingSettings>,
@@ -6827,6 +7003,35 @@ impl DeleteMeetingOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteMediaCapturePipelineOutput {}
+impl std::fmt::Debug for DeleteMediaCapturePipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteMediaCapturePipelineOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput)
+pub mod delete_media_capture_pipeline_output {
+    /// A builder for [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput)
+        pub fn build(self) -> crate::output::DeleteMediaCapturePipelineOutput {
+            crate::output::DeleteMediaCapturePipelineOutput {}
+        }
+    }
+}
+impl DeleteMediaCapturePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineOutput`](crate::output::DeleteMediaCapturePipelineOutput)
+    pub fn builder() -> crate::output::delete_media_capture_pipeline_output::Builder {
+        crate::output::delete_media_capture_pipeline_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteEventsConfigurationOutput {}
 impl std::fmt::Debug for DeleteEventsConfigurationOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7840,6 +8045,55 @@ impl CreateMeetingOutput {
     /// Creates a new builder-style object to manufacture [`CreateMeetingOutput`](crate::output::CreateMeetingOutput)
     pub fn builder() -> crate::output::create_meeting_output::Builder {
         crate::output::create_meeting_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateMediaCapturePipelineOutput {
+    /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+    pub media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+}
+impl std::fmt::Debug for CreateMediaCapturePipelineOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateMediaCapturePipelineOutput");
+        formatter.field("media_capture_pipeline", &self.media_capture_pipeline);
+        formatter.finish()
+    }
+}
+/// See [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput)
+pub mod create_media_capture_pipeline_output {
+    /// A builder for [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) media_capture_pipeline: std::option::Option<crate::model::MediaCapturePipeline>,
+    }
+    impl Builder {
+        /// <p>A media capture pipeline object, the ID, source type, source ARN, sink type, and  sink ARN of a media capture pipeline object.</p>
+        pub fn media_capture_pipeline(mut self, input: crate::model::MediaCapturePipeline) -> Self {
+            self.media_capture_pipeline = Some(input);
+            self
+        }
+        pub fn set_media_capture_pipeline(
+            mut self,
+            input: std::option::Option<crate::model::MediaCapturePipeline>,
+        ) -> Self {
+            self.media_capture_pipeline = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput)
+        pub fn build(self) -> crate::output::CreateMediaCapturePipelineOutput {
+            crate::output::CreateMediaCapturePipelineOutput {
+                media_capture_pipeline: self.media_capture_pipeline,
+            }
+        }
+    }
+}
+impl CreateMediaCapturePipelineOutput {
+    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineOutput`](crate::output::CreateMediaCapturePipelineOutput)
+    pub fn builder() -> crate::output::create_media_capture_pipeline_output::Builder {
+        crate::output::create_media_capture_pipeline_output::Builder::default()
     }
 }
 

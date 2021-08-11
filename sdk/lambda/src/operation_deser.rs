@@ -1788,6 +1788,20 @@ pub fn parse_delete_function_event_invoke_config_error(
                                                     }
             tmp
         })},
+        "ResourceConflictException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "ResourceNotFoundException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -6274,6 +6288,28 @@ pub fn parse_put_function_event_invoke_config_error(
                     },
                 ),
         },
+        "ResourceConflictException" => crate::error::PutFunctionEventInvokeConfigError {
+            meta: generic,
+            kind: crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_resource_conflict_exceptionjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ResourceNotFoundException" => crate::error::PutFunctionEventInvokeConfigError {
             meta: generic,
             kind: crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
@@ -7911,6 +7947,20 @@ pub fn parse_update_function_event_invoke_config_error(
                     #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ResourceConflictException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::resource_conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_resource_conflict_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
                     output.build()
                 }
             ;

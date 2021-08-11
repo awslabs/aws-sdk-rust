@@ -394,7 +394,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>
-        /// The API request to batch create delegations in AWS Audit Manager.
+        /// The API request to batch create delegations in Audit Manager.
         /// </p>
         pub fn create_delegation_requests(
             mut self,
@@ -719,7 +719,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// The wrapper that contains the AWS accounts and AWS services in scope for the assessment.
+        /// The wrapper that contains the accounts and services in scope for the assessment.
         /// </p>
         pub fn scope(mut self, input: crate::model::Scope) -> Self {
             self.inner = self.inner.scope(input);
@@ -2750,7 +2750,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>
-        /// The AWS KMS key details.
+        /// The KMS key details.
         /// </p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(input);
@@ -2761,7 +2761,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// The delegated administrator account for AWS Audit Manager.
+        /// The delegated administrator account for Audit Manager.
         /// </p>
         pub fn delegated_admin_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.delegated_admin_account(input);
@@ -3552,7 +3552,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>
-        /// The Amazon Simple Notification Service (Amazon SNS) topic to which AWS Audit Manager sends notifications.
+        /// The Amazon Simple Notification Service (Amazon SNS) topic to which Audit Manager sends notifications.
         /// </p>
         pub fn sns_topic(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.sns_topic(input);
@@ -3594,7 +3594,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>
-        /// The AWS KMS key details.
+        /// The KMS key details.
         /// </p>
         pub fn kms_key(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key(input);

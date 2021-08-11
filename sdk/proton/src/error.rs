@@ -6845,7 +6845,7 @@ impl AccessDeniedException {
 }
 
 /// <p>A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/adminguide/ag-limits.html">AWS Proton
-/// Quotas</a> in the <i>AWS Proton Administration Guide</i>.</p>
+/// Quotas</a> in the <i>AWS Proton Administrator Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceQuotaExceededException {

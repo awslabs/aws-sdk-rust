@@ -249,6 +249,96 @@ impl std::error::Error for AddPartnerError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct AssociateDataShareConsumerError {
+    pub kind: AssociateDataShareConsumerErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AssociateDataShareConsumerErrorKind {
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AssociateDataShareConsumerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AssociateDataShareConsumerErrorKind::InvalidDataShareFault(_inner) => _inner.fmt(f),
+            AssociateDataShareConsumerErrorKind::InvalidNamespaceFault(_inner) => _inner.fmt(f),
+            AssociateDataShareConsumerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for AssociateDataShareConsumerError {
+    fn code(&self) -> Option<&str> {
+        AssociateDataShareConsumerError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AssociateDataShareConsumerError {
+    pub fn new(kind: AssociateDataShareConsumerErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AssociateDataShareConsumerErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AssociateDataShareConsumerErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_data_share_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDataShareConsumerErrorKind::InvalidDataShareFault(_)
+        )
+    }
+    pub fn is_invalid_namespace_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AssociateDataShareConsumerErrorKind::InvalidNamespaceFault(_)
+        )
+    }
+}
+impl std::error::Error for AssociateDataShareConsumerError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AssociateDataShareConsumerErrorKind::InvalidDataShareFault(_inner) => Some(_inner),
+            AssociateDataShareConsumerErrorKind::InvalidNamespaceFault(_inner) => Some(_inner),
+            AssociateDataShareConsumerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct AuthorizeClusterSecurityGroupIngressError {
     pub kind: AuthorizeClusterSecurityGroupIngressErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -374,6 +464,87 @@ impl std::error::Error for AuthorizeClusterSecurityGroupIngressError {
             AuthorizeClusterSecurityGroupIngressErrorKind::Unhandled(_inner) => {
                 Some(_inner.as_ref())
             }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct AuthorizeDataShareError {
+    pub kind: AuthorizeDataShareErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum AuthorizeDataShareErrorKind {
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for AuthorizeDataShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            AuthorizeDataShareErrorKind::InvalidDataShareFault(_inner) => _inner.fmt(f),
+            AuthorizeDataShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for AuthorizeDataShareError {
+    fn code(&self) -> Option<&str> {
+        AuthorizeDataShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl AuthorizeDataShareError {
+    pub fn new(kind: AuthorizeDataShareErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: AuthorizeDataShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: AuthorizeDataShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_data_share_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            AuthorizeDataShareErrorKind::InvalidDataShareFault(_)
+        )
+    }
+}
+impl std::error::Error for AuthorizeDataShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            AuthorizeDataShareErrorKind::InvalidDataShareFault(_inner) => Some(_inner),
+            AuthorizeDataShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -1080,6 +1251,119 @@ impl std::error::Error for CopyClusterSnapshotError {
             CopyClusterSnapshotErrorKind::InvalidClusterSnapshotStateFault(_inner) => Some(_inner),
             CopyClusterSnapshotErrorKind::InvalidRetentionPeriodFault(_inner) => Some(_inner),
             CopyClusterSnapshotErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateAuthenticationProfileError {
+    pub kind: CreateAuthenticationProfileErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateAuthenticationProfileErrorKind {
+    AuthenticationProfileAlreadyExistsFault(crate::error::AuthenticationProfileAlreadyExistsFault),
+    AuthenticationProfileQuotaExceededFault(crate::error::AuthenticationProfileQuotaExceededFault),
+    InvalidAuthenticationProfileRequestFault(
+        crate::error::InvalidAuthenticationProfileRequestFault,
+    ),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateAuthenticationProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => _inner.fmt(f),
+            CreateAuthenticationProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateAuthenticationProfileError {
+    fn code(&self) -> Option<&str> {
+        CreateAuthenticationProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateAuthenticationProfileError {
+    pub fn new(kind: CreateAuthenticationProfileErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateAuthenticationProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateAuthenticationProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_authentication_profile_already_exists_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault(_)
+        )
+    }
+    pub fn is_authentication_profile_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(_)
+        )
+    }
+}
+impl std::error::Error for CreateAuthenticationProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateAuthenticationProfileErrorKind::AuthenticationProfileAlreadyExistsFault(
+                _inner,
+            ) => Some(_inner),
+            CreateAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(
+                _inner,
+            ) => Some(_inner),
+            CreateAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => Some(_inner),
+            CreateAuthenticationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3118,6 +3402,187 @@ impl std::error::Error for CreateUsageLimitError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeauthorizeDataShareError {
+    pub kind: DeauthorizeDataShareErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeauthorizeDataShareErrorKind {
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeauthorizeDataShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeauthorizeDataShareErrorKind::InvalidDataShareFault(_inner) => _inner.fmt(f),
+            DeauthorizeDataShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeauthorizeDataShareError {
+    fn code(&self) -> Option<&str> {
+        DeauthorizeDataShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeauthorizeDataShareError {
+    pub fn new(kind: DeauthorizeDataShareErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeauthorizeDataShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeauthorizeDataShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_data_share_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeauthorizeDataShareErrorKind::InvalidDataShareFault(_)
+        )
+    }
+}
+impl std::error::Error for DeauthorizeDataShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeauthorizeDataShareErrorKind::InvalidDataShareFault(_inner) => Some(_inner),
+            DeauthorizeDataShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DeleteAuthenticationProfileError {
+    pub kind: DeleteAuthenticationProfileErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteAuthenticationProfileErrorKind {
+    AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
+    InvalidAuthenticationProfileRequestFault(
+        crate::error::InvalidAuthenticationProfileRequestFault,
+    ),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteAuthenticationProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => _inner.fmt(f),
+            DeleteAuthenticationProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteAuthenticationProfileError {
+    fn code(&self) -> Option<&str> {
+        DeleteAuthenticationProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteAuthenticationProfileError {
+    pub fn new(kind: DeleteAuthenticationProfileErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteAuthenticationProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteAuthenticationProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_authentication_profile_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(_)
+        )
+    }
+}
+impl std::error::Error for DeleteAuthenticationProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DeleteAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => Some(_inner),
+            DeleteAuthenticationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteClusterError {
     pub kind: DeleteClusterErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4661,6 +5126,106 @@ impl std::error::Error for DescribeAccountAttributesError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeAuthenticationProfilesError {
+    pub kind: DescribeAuthenticationProfilesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeAuthenticationProfilesErrorKind {
+    AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
+    InvalidAuthenticationProfileRequestFault(
+        crate::error::InvalidAuthenticationProfileRequestFault,
+    ),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeAuthenticationProfilesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeAuthenticationProfilesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeAuthenticationProfilesError {
+    fn code(&self) -> Option<&str> {
+        DescribeAuthenticationProfilesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeAuthenticationProfilesError {
+    pub fn new(kind: DescribeAuthenticationProfilesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeAuthenticationProfilesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeAuthenticationProfilesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_authentication_profile_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault(_)
+        )
+    }
+    pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeAuthenticationProfilesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeAuthenticationProfilesErrorKind::AuthenticationProfileNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            DescribeAuthenticationProfilesErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => Some(_inner),
+            DescribeAuthenticationProfilesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeClusterDbRevisionsError {
     pub kind: DescribeClusterDbRevisionsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -5462,6 +6027,249 @@ impl std::error::Error for DescribeClusterVersionsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DescribeClusterVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDataSharesError {
+    pub kind: DescribeDataSharesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDataSharesErrorKind {
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeDataSharesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDataSharesErrorKind::InvalidDataShareFault(_inner) => _inner.fmt(f),
+            DescribeDataSharesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeDataSharesError {
+    fn code(&self) -> Option<&str> {
+        DescribeDataSharesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDataSharesError {
+    pub fn new(kind: DescribeDataSharesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDataSharesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDataSharesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_data_share_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDataSharesErrorKind::InvalidDataShareFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeDataSharesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDataSharesErrorKind::InvalidDataShareFault(_inner) => Some(_inner),
+            DescribeDataSharesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDataSharesForConsumerError {
+    pub kind: DescribeDataSharesForConsumerErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDataSharesForConsumerErrorKind {
+    InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeDataSharesForConsumerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault(_inner) => _inner.fmt(f),
+            DescribeDataSharesForConsumerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeDataSharesForConsumerError {
+    fn code(&self) -> Option<&str> {
+        DescribeDataSharesForConsumerError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDataSharesForConsumerError {
+    pub fn new(kind: DescribeDataSharesForConsumerErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDataSharesForConsumerErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDataSharesForConsumerErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_namespace_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeDataSharesForConsumerError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDataSharesForConsumerErrorKind::InvalidNamespaceFault(_inner) => Some(_inner),
+            DescribeDataSharesForConsumerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeDataSharesForProducerError {
+    pub kind: DescribeDataSharesForProducerErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeDataSharesForProducerErrorKind {
+    InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeDataSharesForProducerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault(_inner) => _inner.fmt(f),
+            DescribeDataSharesForProducerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeDataSharesForProducerError {
+    fn code(&self) -> Option<&str> {
+        DescribeDataSharesForProducerError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeDataSharesForProducerError {
+    pub fn new(kind: DescribeDataSharesForProducerErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeDataSharesForProducerErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeDataSharesForProducerErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_namespace_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault(_)
+        )
+    }
+}
+impl std::error::Error for DescribeDataSharesForProducerError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeDataSharesForProducerErrorKind::InvalidNamespaceFault(_inner) => Some(_inner),
+            DescribeDataSharesForProducerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -7598,6 +8406,96 @@ impl std::error::Error for DisableSnapshotCopyError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DisassociateDataShareConsumerError {
+    pub kind: DisassociateDataShareConsumerErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DisassociateDataShareConsumerErrorKind {
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    InvalidNamespaceFault(crate::error::InvalidNamespaceFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DisassociateDataShareConsumerError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DisassociateDataShareConsumerErrorKind::InvalidDataShareFault(_inner) => _inner.fmt(f),
+            DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault(_inner) => _inner.fmt(f),
+            DisassociateDataShareConsumerErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DisassociateDataShareConsumerError {
+    fn code(&self) -> Option<&str> {
+        DisassociateDataShareConsumerError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DisassociateDataShareConsumerError {
+    pub fn new(kind: DisassociateDataShareConsumerErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DisassociateDataShareConsumerErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DisassociateDataShareConsumerErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_data_share_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDataShareConsumerErrorKind::InvalidDataShareFault(_)
+        )
+    }
+    pub fn is_invalid_namespace_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault(_)
+        )
+    }
+}
+impl std::error::Error for DisassociateDataShareConsumerError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DisassociateDataShareConsumerErrorKind::InvalidDataShareFault(_inner) => Some(_inner),
+            DisassociateDataShareConsumerErrorKind::InvalidNamespaceFault(_inner) => Some(_inner),
+            DisassociateDataShareConsumerErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct EnableLoggingError {
     pub kind: EnableLoggingErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -8226,6 +9124,119 @@ impl std::error::Error for ModifyAquaConfigurationError {
             ModifyAquaConfigurationErrorKind::InvalidClusterStateFault(_inner) => Some(_inner),
             ModifyAquaConfigurationErrorKind::UnsupportedOperationFault(_inner) => Some(_inner),
             ModifyAquaConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ModifyAuthenticationProfileError {
+    pub kind: ModifyAuthenticationProfileErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ModifyAuthenticationProfileErrorKind {
+    AuthenticationProfileNotFoundFault(crate::error::AuthenticationProfileNotFoundFault),
+    AuthenticationProfileQuotaExceededFault(crate::error::AuthenticationProfileQuotaExceededFault),
+    InvalidAuthenticationProfileRequestFault(
+        crate::error::InvalidAuthenticationProfileRequestFault,
+    ),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ModifyAuthenticationProfileError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_inner) => {
+                _inner.fmt(f)
+            }
+            ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(
+                _inner,
+            ) => _inner.fmt(f),
+            ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => _inner.fmt(f),
+            ModifyAuthenticationProfileErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ModifyAuthenticationProfileError {
+    fn code(&self) -> Option<&str> {
+        ModifyAuthenticationProfileError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ModifyAuthenticationProfileError {
+    pub fn new(kind: ModifyAuthenticationProfileErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ModifyAuthenticationProfileErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ModifyAuthenticationProfileErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_authentication_profile_not_found_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_)
+        )
+    }
+    pub fn is_authentication_profile_quota_exceeded_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(_)
+        )
+    }
+    pub fn is_invalid_authentication_profile_request_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(_)
+        )
+    }
+}
+impl std::error::Error for ModifyAuthenticationProfileError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ModifyAuthenticationProfileErrorKind::AuthenticationProfileNotFoundFault(_inner) => {
+                Some(_inner)
+            }
+            ModifyAuthenticationProfileErrorKind::AuthenticationProfileQuotaExceededFault(
+                _inner,
+            ) => Some(_inner),
+            ModifyAuthenticationProfileErrorKind::InvalidAuthenticationProfileRequestFault(
+                _inner,
+            ) => Some(_inner),
+            ModifyAuthenticationProfileErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -10248,6 +11259,87 @@ impl std::error::Error for RebootClusterError {
             RebootClusterErrorKind::ClusterNotFoundFault(_inner) => Some(_inner),
             RebootClusterErrorKind::InvalidClusterStateFault(_inner) => Some(_inner),
             RebootClusterErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct RejectDataShareError {
+    pub kind: RejectDataShareErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum RejectDataShareErrorKind {
+    InvalidDataShareFault(crate::error::InvalidDataShareFault),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for RejectDataShareError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            RejectDataShareErrorKind::InvalidDataShareFault(_inner) => _inner.fmt(f),
+            RejectDataShareErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for RejectDataShareError {
+    fn code(&self) -> Option<&str> {
+        RejectDataShareError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl RejectDataShareError {
+    pub fn new(kind: RejectDataShareErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: RejectDataShareErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: RejectDataShareErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_data_share_fault(&self) -> bool {
+        matches!(
+            &self.kind,
+            RejectDataShareErrorKind::InvalidDataShareFault(_)
+        )
+    }
+}
+impl std::error::Error for RejectDataShareError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            RejectDataShareErrorKind::InvalidDataShareFault(_inner) => Some(_inner),
+            RejectDataShareErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -13131,7 +14223,7 @@ impl NumberOfNodesPerClusterLimitExceededFault {
     }
 }
 
-/// <p>The encryption key has exceeded its grant limit in AWS KMS.</p>
+/// <p>The encryption key has exceeded its grant limit in Amazon Web Services KMS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LimitExceededFault {
@@ -14102,6 +15194,66 @@ impl InvalidClusterParameterGroupStateFault {
     }
 }
 
+/// <p>There is an error with the datashare.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidDataShareFault {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidDataShareFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidDataShareFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidDataShareFault {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidDataShareFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidDataShareFault")?;
+        if let Some(inner_41) = &self.message {
+            write!(f, ": {}", inner_41)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidDataShareFault {}
+/// See [`InvalidDataShareFault`](crate::error::InvalidDataShareFault)
+pub mod invalid_data_share_fault {
+    /// A builder for [`InvalidDataShareFault`](crate::error::InvalidDataShareFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidDataShareFault`](crate::error::InvalidDataShareFault)
+        pub fn build(self) -> crate::error::InvalidDataShareFault {
+            crate::error::InvalidDataShareFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidDataShareFault {
+    /// Creates a new builder-style object to manufacture [`InvalidDataShareFault`](crate::error::InvalidDataShareFault)
+    pub fn builder() -> crate::error::invalid_data_share_fault::Builder {
+        crate::error::invalid_data_share_fault::Builder::default()
+    }
+}
+
 /// <p>Request would exceed the user's compute node quota.
 /// For information about increasing your quota, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/amazon-redshift-limits.html">Limits in Amazon Redshift</a>
 /// in the <i>Amazon Redshift Cluster Management Guide</i>.
@@ -14126,8 +15278,8 @@ impl ReservedNodeQuotaExceededFault {
 impl std::fmt::Display for ReservedNodeQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNodeQuotaExceededFault")?;
-        if let Some(inner_41) = &self.message {
-            write!(f, ": {}", inner_41)?;
+        if let Some(inner_42) = &self.message {
+            write!(f, ": {}", inner_42)?;
         }
         Ok(())
     }
@@ -14186,8 +15338,8 @@ impl ReservedNodeOfferingNotFoundFault {
 impl std::fmt::Display for ReservedNodeOfferingNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNodeOfferingNotFoundFault")?;
-        if let Some(inner_42) = &self.message {
-            write!(f, ": {}", inner_42)?;
+        if let Some(inner_43) = &self.message {
+            write!(f, ": {}", inner_43)?;
         }
         Ok(())
     }
@@ -14246,8 +15398,8 @@ impl ReservedNodeAlreadyExistsFault {
 impl std::fmt::Display for ReservedNodeAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNodeAlreadyExistsFault")?;
-        if let Some(inner_43) = &self.message {
-            write!(f, ": {}", inner_43)?;
+        if let Some(inner_44) = &self.message {
+            write!(f, ": {}", inner_44)?;
         }
         Ok(())
     }
@@ -14306,8 +15458,8 @@ impl UsageLimitNotFoundFault {
 impl std::fmt::Display for UsageLimitNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UsageLimitNotFoundFault")?;
-        if let Some(inner_44) = &self.message {
-            write!(f, ": {}", inner_44)?;
+        if let Some(inner_45) = &self.message {
+            write!(f, ": {}", inner_45)?;
         }
         Ok(())
     }
@@ -14366,8 +15518,8 @@ impl InvalidUsageLimitFault {
 impl std::fmt::Display for InvalidUsageLimitFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidUsageLimitFault")?;
-        if let Some(inner_45) = &self.message {
-            write!(f, ": {}", inner_45)?;
+        if let Some(inner_46) = &self.message {
+            write!(f, ": {}", inner_46)?;
         }
         Ok(())
     }
@@ -14426,8 +15578,8 @@ impl SnapshotScheduleUpdateInProgressFault {
 impl std::fmt::Display for SnapshotScheduleUpdateInProgressFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotScheduleUpdateInProgressFault")?;
-        if let Some(inner_46) = &self.message {
-            write!(f, ": {}", inner_46)?;
+        if let Some(inner_47) = &self.message {
+            write!(f, ": {}", inner_47)?;
         }
         Ok(())
     }
@@ -14486,8 +15638,8 @@ impl InvalidScheduleFault {
 impl std::fmt::Display for InvalidScheduleFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidScheduleFault")?;
-        if let Some(inner_47) = &self.message {
-            write!(f, ": {}", inner_47)?;
+        if let Some(inner_48) = &self.message {
+            write!(f, ": {}", inner_48)?;
         }
         Ok(())
     }
@@ -14547,8 +15699,8 @@ impl SnapshotCopyDisabledFault {
 impl std::fmt::Display for SnapshotCopyDisabledFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyDisabledFault")?;
-        if let Some(inner_48) = &self.message {
-            write!(f, ": {}", inner_48)?;
+        if let Some(inner_49) = &self.message {
+            write!(f, ": {}", inner_49)?;
         }
         Ok(())
     }
@@ -14608,8 +15760,8 @@ impl InvalidRetentionPeriodFault {
 impl std::fmt::Display for InvalidRetentionPeriodFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidRetentionPeriodFault")?;
-        if let Some(inner_49) = &self.message {
-            write!(f, ": {}", inner_49)?;
+        if let Some(inner_50) = &self.message {
+            write!(f, ": {}", inner_50)?;
         }
         Ok(())
     }
@@ -14668,8 +15820,8 @@ impl ScheduledActionTypeUnsupportedFault {
 impl std::fmt::Display for ScheduledActionTypeUnsupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionTypeUnsupportedFault")?;
-        if let Some(inner_50) = &self.message {
-            write!(f, ": {}", inner_50)?;
+        if let Some(inner_51) = &self.message {
+            write!(f, ": {}", inner_51)?;
         }
         Ok(())
     }
@@ -14728,8 +15880,8 @@ impl ScheduledActionNotFoundFault {
 impl std::fmt::Display for ScheduledActionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionNotFoundFault")?;
-        if let Some(inner_51) = &self.message {
-            write!(f, ": {}", inner_51)?;
+        if let Some(inner_52) = &self.message {
+            write!(f, ": {}", inner_52)?;
         }
         Ok(())
     }
@@ -14788,8 +15940,8 @@ impl InvalidScheduledActionFault {
 impl std::fmt::Display for InvalidScheduledActionFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidScheduledActionFault")?;
-        if let Some(inner_52) = &self.message {
-            write!(f, ": {}", inner_52)?;
+        if let Some(inner_53) = &self.message {
+            write!(f, ": {}", inner_53)?;
         }
         Ok(())
     }
@@ -14850,8 +16002,8 @@ impl SubscriptionSeverityNotFoundFault {
 impl std::fmt::Display for SubscriptionSeverityNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionSeverityNotFoundFault")?;
-        if let Some(inner_53) = &self.message {
-            write!(f, ": {}", inner_53)?;
+        if let Some(inner_54) = &self.message {
+            write!(f, ": {}", inner_54)?;
         }
         Ok(())
     }
@@ -14911,8 +16063,8 @@ impl SubscriptionNotFoundFault {
 impl std::fmt::Display for SubscriptionNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionNotFoundFault")?;
-        if let Some(inner_54) = &self.message {
-            write!(f, ": {}", inner_54)?;
+        if let Some(inner_55) = &self.message {
+            write!(f, ": {}", inner_55)?;
         }
         Ok(())
     }
@@ -14971,8 +16123,8 @@ impl SubscriptionEventIdNotFoundFault {
 impl std::fmt::Display for SubscriptionEventIdNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionEventIdNotFoundFault")?;
-        if let Some(inner_55) = &self.message {
-            write!(f, ": {}", inner_55)?;
+        if let Some(inner_56) = &self.message {
+            write!(f, ": {}", inner_56)?;
         }
         Ok(())
     }
@@ -15033,8 +16185,8 @@ impl SubscriptionCategoryNotFoundFault {
 impl std::fmt::Display for SubscriptionCategoryNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionCategoryNotFoundFault")?;
-        if let Some(inner_56) = &self.message {
-            write!(f, ": {}", inner_56)?;
+        if let Some(inner_57) = &self.message {
+            write!(f, ": {}", inner_57)?;
         }
         Ok(())
     }
@@ -15093,8 +16245,8 @@ impl SourceNotFoundFault {
 impl std::fmt::Display for SourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SourceNotFoundFault")?;
-        if let Some(inner_57) = &self.message {
-            write!(f, ": {}", inner_57)?;
+        if let Some(inner_58) = &self.message {
+            write!(f, ": {}", inner_58)?;
         }
         Ok(())
     }
@@ -15154,8 +16306,8 @@ impl SnsTopicArnNotFoundFault {
 impl std::fmt::Display for SnsTopicArnNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsTopicArnNotFoundFault [SNSTopicArnNotFoundFault]")?;
-        if let Some(inner_58) = &self.message {
-            write!(f, ": {}", inner_58)?;
+        if let Some(inner_59) = &self.message {
+            write!(f, ": {}", inner_59)?;
         }
         Ok(())
     }
@@ -15214,8 +16366,8 @@ impl SnsNoAuthorizationFault {
 impl std::fmt::Display for SnsNoAuthorizationFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsNoAuthorizationFault [SNSNoAuthorizationFault]")?;
-        if let Some(inner_59) = &self.message {
-            write!(f, ": {}", inner_59)?;
+        if let Some(inner_60) = &self.message {
+            write!(f, ": {}", inner_60)?;
         }
         Ok(())
     }
@@ -15275,8 +16427,8 @@ impl SnsInvalidTopicFault {
 impl std::fmt::Display for SnsInvalidTopicFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnsInvalidTopicFault [SNSInvalidTopicFault]")?;
-        if let Some(inner_60) = &self.message {
-            write!(f, ": {}", inner_60)?;
+        if let Some(inner_61) = &self.message {
+            write!(f, ": {}", inner_61)?;
         }
         Ok(())
     }
@@ -15336,8 +16488,8 @@ impl InvalidSubscriptionStateFault {
 impl std::fmt::Display for InvalidSubscriptionStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSubscriptionStateFault")?;
-        if let Some(inner_61) = &self.message {
-            write!(f, ": {}", inner_61)?;
+        if let Some(inner_62) = &self.message {
+            write!(f, ": {}", inner_62)?;
         }
         Ok(())
     }
@@ -15396,8 +16548,8 @@ impl SubnetAlreadyInUse {
 impl std::fmt::Display for SubnetAlreadyInUse {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubnetAlreadyInUse")?;
-        if let Some(inner_62) = &self.message {
-            write!(f, ": {}", inner_62)?;
+        if let Some(inner_63) = &self.message {
+            write!(f, ": {}", inner_63)?;
         }
         Ok(())
     }
@@ -15460,8 +16612,8 @@ impl ClusterSubnetQuotaExceededFault {
 impl std::fmt::Display for ClusterSubnetQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetQuotaExceededFault")?;
-        if let Some(inner_63) = &self.message {
-            write!(f, ": {}", inner_63)?;
+        if let Some(inner_64) = &self.message {
+            write!(f, ": {}", inner_64)?;
         }
         Ok(())
     }
@@ -15520,8 +16672,8 @@ impl InvalidClusterSnapshotScheduleStateFault {
 impl std::fmt::Display for InvalidClusterSnapshotScheduleStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterSnapshotScheduleStateFault")?;
-        if let Some(inner_64) = &self.message {
-            write!(f, ": {}", inner_64)?;
+        if let Some(inner_65) = &self.message {
+            write!(f, ": {}", inner_65)?;
         }
         Ok(())
     }
@@ -15580,8 +16732,8 @@ impl ClusterOnLatestRevisionFault {
 impl std::fmt::Display for ClusterOnLatestRevisionFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterOnLatestRevisionFault")?;
-        if let Some(inner_65) = &self.message {
-            write!(f, ": {}", inner_65)?;
+        if let Some(inner_66) = &self.message {
+            write!(f, ": {}", inner_66)?;
         }
         Ok(())
     }
@@ -15641,8 +16793,8 @@ impl TableLimitExceededFault {
 impl std::fmt::Display for TableLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TableLimitExceededFault")?;
-        if let Some(inner_66) = &self.message {
-            write!(f, ": {}", inner_66)?;
+        if let Some(inner_67) = &self.message {
+            write!(f, ": {}", inner_67)?;
         }
         Ok(())
     }
@@ -15680,6 +16832,188 @@ impl TableLimitExceededFault {
     }
 }
 
+/// <p>The authentication profile request is not valid. The profile name can't be null or empty.
+/// The authentication profile API operation must be available in the Amazon Web Services Region.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidAuthenticationProfileRequestFault {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidAuthenticationProfileRequestFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidAuthenticationProfileRequestFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidAuthenticationProfileRequestFault {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidAuthenticationProfileRequestFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidAuthenticationProfileRequestFault")?;
+        if let Some(inner_68) = &self.message {
+            write!(f, ": {}", inner_68)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidAuthenticationProfileRequestFault {}
+/// See [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault)
+pub mod invalid_authentication_profile_request_fault {
+    /// A builder for [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault)
+        pub fn build(self) -> crate::error::InvalidAuthenticationProfileRequestFault {
+            crate::error::InvalidAuthenticationProfileRequestFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidAuthenticationProfileRequestFault {
+    /// Creates a new builder-style object to manufacture [`InvalidAuthenticationProfileRequestFault`](crate::error::InvalidAuthenticationProfileRequestFault)
+    pub fn builder() -> crate::error::invalid_authentication_profile_request_fault::Builder {
+        crate::error::invalid_authentication_profile_request_fault::Builder::default()
+    }
+}
+
+/// <p>The size or number of authentication profiles has exceeded the quota.
+/// The maximum length of the JSON string and maximum number of authentication profiles is determined by a quota for your account.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuthenticationProfileQuotaExceededFault {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AuthenticationProfileQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthenticationProfileQuotaExceededFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AuthenticationProfileQuotaExceededFault {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AuthenticationProfileQuotaExceededFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AuthenticationProfileQuotaExceededFault")?;
+        if let Some(inner_69) = &self.message {
+            write!(f, ": {}", inner_69)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AuthenticationProfileQuotaExceededFault {}
+/// See [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault)
+pub mod authentication_profile_quota_exceeded_fault {
+    /// A builder for [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault)
+        pub fn build(self) -> crate::error::AuthenticationProfileQuotaExceededFault {
+            crate::error::AuthenticationProfileQuotaExceededFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AuthenticationProfileQuotaExceededFault {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfileQuotaExceededFault`](crate::error::AuthenticationProfileQuotaExceededFault)
+    pub fn builder() -> crate::error::authentication_profile_quota_exceeded_fault::Builder {
+        crate::error::authentication_profile_quota_exceeded_fault::Builder::default()
+    }
+}
+
+/// <p>The authentication profile can't be found.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuthenticationProfileNotFoundFault {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AuthenticationProfileNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthenticationProfileNotFoundFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AuthenticationProfileNotFoundFault {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AuthenticationProfileNotFoundFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AuthenticationProfileNotFoundFault")?;
+        if let Some(inner_70) = &self.message {
+            write!(f, ": {}", inner_70)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AuthenticationProfileNotFoundFault {}
+/// See [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault)
+pub mod authentication_profile_not_found_fault {
+    /// A builder for [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault)
+        pub fn build(self) -> crate::error::AuthenticationProfileNotFoundFault {
+            crate::error::AuthenticationProfileNotFoundFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AuthenticationProfileNotFoundFault {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfileNotFoundFault`](crate::error::AuthenticationProfileNotFoundFault)
+    pub fn builder() -> crate::error::authentication_profile_not_found_fault::Builder {
+        crate::error::authentication_profile_not_found_fault::Builder::default()
+    }
+}
+
 /// <p>The specified reserved compute node not found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -15701,8 +17035,8 @@ impl ReservedNodeNotFoundFault {
 impl std::fmt::Display for ReservedNodeNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNodeNotFoundFault")?;
-        if let Some(inner_67) = &self.message {
-            write!(f, ": {}", inner_67)?;
+        if let Some(inner_71) = &self.message {
+            write!(f, ": {}", inner_71)?;
         }
         Ok(())
     }
@@ -15761,8 +17095,8 @@ impl ReservedNodeAlreadyMigratedFault {
 impl std::fmt::Display for ReservedNodeAlreadyMigratedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ReservedNodeAlreadyMigratedFault")?;
-        if let Some(inner_68) = &self.message {
-            write!(f, ": {}", inner_68)?;
+        if let Some(inner_72) = &self.message {
+            write!(f, ": {}", inner_72)?;
         }
         Ok(())
     }
@@ -15821,8 +17155,8 @@ impl InvalidReservedNodeStateFault {
 impl std::fmt::Display for InvalidReservedNodeStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidReservedNodeStateFault")?;
-        if let Some(inner_69) = &self.message {
-            write!(f, ": {}", inner_69)?;
+        if let Some(inner_73) = &self.message {
+            write!(f, ": {}", inner_73)?;
         }
         Ok(())
     }
@@ -15882,8 +17216,8 @@ impl DependentServiceUnavailableFault {
 impl std::fmt::Display for DependentServiceUnavailableFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "DependentServiceUnavailableFault")?;
-        if let Some(inner_70) = &self.message {
-            write!(f, ": {}", inner_70)?;
+        if let Some(inner_74) = &self.message {
+            write!(f, ": {}", inner_74)?;
         }
         Ok(())
     }
@@ -15942,8 +17276,8 @@ impl UnknownSnapshotCopyRegionFault {
 impl std::fmt::Display for UnknownSnapshotCopyRegionFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UnknownSnapshotCopyRegionFault")?;
-        if let Some(inner_71) = &self.message {
-            write!(f, ": {}", inner_71)?;
+        if let Some(inner_75) = &self.message {
+            write!(f, ": {}", inner_75)?;
         }
         Ok(())
     }
@@ -16003,8 +17337,8 @@ impl SnapshotCopyGrantNotFoundFault {
 impl std::fmt::Display for SnapshotCopyGrantNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyGrantNotFoundFault")?;
-        if let Some(inner_72) = &self.message {
-            write!(f, ": {}", inner_72)?;
+        if let Some(inner_76) = &self.message {
+            write!(f, ": {}", inner_76)?;
         }
         Ok(())
     }
@@ -16063,8 +17397,8 @@ impl SnapshotCopyAlreadyEnabledFault {
 impl std::fmt::Display for SnapshotCopyAlreadyEnabledFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyAlreadyEnabledFault")?;
-        if let Some(inner_73) = &self.message {
-            write!(f, ": {}", inner_73)?;
+        if let Some(inner_77) = &self.message {
+            write!(f, ": {}", inner_77)?;
         }
         Ok(())
     }
@@ -16123,8 +17457,8 @@ impl IncompatibleOrderableOptions {
 impl std::fmt::Display for IncompatibleOrderableOptions {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "IncompatibleOrderableOptions")?;
-        if let Some(inner_74) = &self.message {
-            write!(f, ": {}", inner_74)?;
+        if let Some(inner_78) = &self.message {
+            write!(f, ": {}", inner_78)?;
         }
         Ok(())
     }
@@ -16184,8 +17518,8 @@ impl CopyToRegionDisabledFault {
 impl std::fmt::Display for CopyToRegionDisabledFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "CopyToRegionDisabledFault")?;
-        if let Some(inner_75) = &self.message {
-            write!(f, ": {}", inner_75)?;
+        if let Some(inner_79) = &self.message {
+            write!(f, ": {}", inner_79)?;
         }
         Ok(())
     }
@@ -16245,8 +17579,8 @@ impl InvalidS3KeyPrefixFault {
 impl std::fmt::Display for InvalidS3KeyPrefixFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3KeyPrefixFault")?;
-        if let Some(inner_76) = &self.message {
-            write!(f, ": {}", inner_76)?;
+        if let Some(inner_80) = &self.message {
+            write!(f, ": {}", inner_80)?;
         }
         Ok(())
     }
@@ -16308,8 +17642,8 @@ impl InvalidS3BucketNameFault {
 impl std::fmt::Display for InvalidS3BucketNameFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidS3BucketNameFault")?;
-        if let Some(inner_77) = &self.message {
-            write!(f, ": {}", inner_77)?;
+        if let Some(inner_81) = &self.message {
+            write!(f, ": {}", inner_81)?;
         }
         Ok(())
     }
@@ -16369,8 +17703,8 @@ impl InsufficientS3BucketPolicyFault {
 impl std::fmt::Display for InsufficientS3BucketPolicyFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InsufficientS3BucketPolicyFault")?;
-        if let Some(inner_78) = &self.message {
-            write!(f, ": {}", inner_78)?;
+        if let Some(inner_82) = &self.message {
+            write!(f, ": {}", inner_82)?;
         }
         Ok(())
     }
@@ -16429,8 +17763,8 @@ impl BucketNotFoundFault {
 impl std::fmt::Display for BucketNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BucketNotFoundFault")?;
-        if let Some(inner_79) = &self.message {
-            write!(f, ": {}", inner_79)?;
+        if let Some(inner_83) = &self.message {
+            write!(f, ": {}", inner_83)?;
         }
         Ok(())
     }
@@ -16468,6 +17802,66 @@ impl BucketNotFoundFault {
     }
 }
 
+/// <p>The namespace isn't valid because the namespace doesn't exist. Provide a valid namespace.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidNamespaceFault {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidNamespaceFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidNamespaceFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidNamespaceFault {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidNamespaceFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidNamespaceFault")?;
+        if let Some(inner_84) = &self.message {
+            write!(f, ": {}", inner_84)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidNamespaceFault {}
+/// See [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault)
+pub mod invalid_namespace_fault {
+    /// A builder for [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault)
+        pub fn build(self) -> crate::error::InvalidNamespaceFault {
+            crate::error::InvalidNamespaceFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidNamespaceFault {
+    /// Creates a new builder-style object to manufacture [`InvalidNamespaceFault`](crate::error::InvalidNamespaceFault)
+    pub fn builder() -> crate::error::invalid_namespace_fault::Builder {
+        crate::error::invalid_namespace_fault::Builder::default()
+    }
+}
+
 /// <p>The cluster already has cross-region snapshot copy disabled.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -16489,8 +17883,8 @@ impl SnapshotCopyAlreadyDisabledFault {
 impl std::fmt::Display for SnapshotCopyAlreadyDisabledFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyAlreadyDisabledFault")?;
-        if let Some(inner_80) = &self.message {
-            write!(f, ": {}", inner_80)?;
+        if let Some(inner_85) = &self.message {
+            write!(f, ": {}", inner_85)?;
         }
         Ok(())
     }
@@ -16549,8 +17943,8 @@ impl ResourceNotFoundFault {
 impl std::fmt::Display for ResourceNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceNotFoundFault")?;
-        if let Some(inner_81) = &self.message {
-            write!(f, ": {}", inner_81)?;
+        if let Some(inner_86) = &self.message {
+            write!(f, ": {}", inner_86)?;
         }
         Ok(())
     }
@@ -16609,8 +18003,8 @@ impl TableRestoreNotFoundFault {
 impl std::fmt::Display for TableRestoreNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "TableRestoreNotFoundFault")?;
-        if let Some(inner_82) = &self.message {
-            write!(f, ": {}", inner_82)?;
+        if let Some(inner_87) = &self.message {
+            write!(f, ": {}", inner_87)?;
         }
         Ok(())
     }
@@ -16669,8 +18063,8 @@ impl ResizeNotFoundFault {
 impl std::fmt::Display for ResizeNotFoundFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResizeNotFoundFault")?;
-        if let Some(inner_83) = &self.message {
-            write!(f, ": {}", inner_83)?;
+        if let Some(inner_88) = &self.message {
+            write!(f, ": {}", inner_88)?;
         }
         Ok(())
     }
@@ -16730,8 +18124,8 @@ impl InvalidSnapshotCopyGrantStateFault {
 impl std::fmt::Display for InvalidSnapshotCopyGrantStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidSnapshotCopyGrantStateFault")?;
-        if let Some(inner_84) = &self.message {
-            write!(f, ": {}", inner_84)?;
+        if let Some(inner_89) = &self.message {
+            write!(f, ": {}", inner_89)?;
         }
         Ok(())
     }
@@ -16791,8 +18185,8 @@ impl InvalidHsmConfigurationStateFault {
 impl std::fmt::Display for InvalidHsmConfigurationStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHsmConfigurationStateFault")?;
-        if let Some(inner_85) = &self.message {
-            write!(f, ": {}", inner_85)?;
+        if let Some(inner_90) = &self.message {
+            write!(f, ": {}", inner_90)?;
         }
         Ok(())
     }
@@ -16852,8 +18246,8 @@ impl InvalidHsmClientCertificateStateFault {
 impl std::fmt::Display for InvalidHsmClientCertificateStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidHsmClientCertificateStateFault")?;
-        if let Some(inner_86) = &self.message {
-            write!(f, ": {}", inner_86)?;
+        if let Some(inner_91) = &self.message {
+            write!(f, ": {}", inner_91)?;
         }
         Ok(())
     }
@@ -16912,8 +18306,8 @@ impl InvalidClusterSubnetStateFault {
 impl std::fmt::Display for InvalidClusterSubnetStateFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "InvalidClusterSubnetStateFault")?;
-        if let Some(inner_87) = &self.message {
-            write!(f, ": {}", inner_87)?;
+        if let Some(inner_92) = &self.message {
+            write!(f, ": {}", inner_92)?;
         }
         Ok(())
     }
@@ -16973,8 +18367,8 @@ impl ClusterSnapshotQuotaExceededFault {
 impl std::fmt::Display for ClusterSnapshotQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSnapshotQuotaExceededFault")?;
-        if let Some(inner_88) = &self.message {
-            write!(f, ": {}", inner_88)?;
+        if let Some(inner_93) = &self.message {
+            write!(f, ": {}", inner_93)?;
         }
         Ok(())
     }
@@ -17034,8 +18428,8 @@ impl ClusterSnapshotAlreadyExistsFault {
 impl std::fmt::Display for ClusterSnapshotAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSnapshotAlreadyExistsFault")?;
-        if let Some(inner_89) = &self.message {
-            write!(f, ": {}", inner_89)?;
+        if let Some(inner_94) = &self.message {
+            write!(f, ": {}", inner_94)?;
         }
         Ok(())
     }
@@ -17094,8 +18488,8 @@ impl UsageLimitAlreadyExistsFault {
 impl std::fmt::Display for UsageLimitAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "UsageLimitAlreadyExistsFault")?;
-        if let Some(inner_90) = &self.message {
-            write!(f, ": {}", inner_90)?;
+        if let Some(inner_95) = &self.message {
+            write!(f, ": {}", inner_95)?;
         }
         Ok(())
     }
@@ -17154,8 +18548,8 @@ impl SnapshotScheduleQuotaExceededFault {
 impl std::fmt::Display for SnapshotScheduleQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotScheduleQuotaExceededFault")?;
-        if let Some(inner_91) = &self.message {
-            write!(f, ": {}", inner_91)?;
+        if let Some(inner_96) = &self.message {
+            write!(f, ": {}", inner_96)?;
         }
         Ok(())
     }
@@ -17214,8 +18608,8 @@ impl SnapshotScheduleAlreadyExistsFault {
 impl std::fmt::Display for SnapshotScheduleAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotScheduleAlreadyExistsFault")?;
-        if let Some(inner_92) = &self.message {
-            write!(f, ": {}", inner_92)?;
+        if let Some(inner_97) = &self.message {
+            write!(f, ": {}", inner_97)?;
         }
         Ok(())
     }
@@ -17274,8 +18668,8 @@ impl ScheduleDefinitionTypeUnsupportedFault {
 impl std::fmt::Display for ScheduleDefinitionTypeUnsupportedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduleDefinitionTypeUnsupportedFault")?;
-        if let Some(inner_93) = &self.message {
-            write!(f, ": {}", inner_93)?;
+        if let Some(inner_98) = &self.message {
+            write!(f, ": {}", inner_98)?;
         }
         Ok(())
     }
@@ -17313,7 +18707,7 @@ impl ScheduleDefinitionTypeUnsupportedFault {
     }
 }
 
-/// <p>The AWS account has exceeded the maximum number of snapshot copy grants in this
+/// <p>The Amazon Web Services account has exceeded the maximum number of snapshot copy grants in this
 /// region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17335,8 +18729,8 @@ impl SnapshotCopyGrantQuotaExceededFault {
 impl std::fmt::Display for SnapshotCopyGrantQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyGrantQuotaExceededFault")?;
-        if let Some(inner_94) = &self.message {
-            write!(f, ": {}", inner_94)?;
+        if let Some(inner_99) = &self.message {
+            write!(f, ": {}", inner_99)?;
         }
         Ok(())
     }
@@ -17396,8 +18790,8 @@ impl SnapshotCopyGrantAlreadyExistsFault {
 impl std::fmt::Display for SnapshotCopyGrantAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SnapshotCopyGrantAlreadyExistsFault")?;
-        if let Some(inner_95) = &self.message {
-            write!(f, ": {}", inner_95)?;
+        if let Some(inner_100) = &self.message {
+            write!(f, ": {}", inner_100)?;
         }
         Ok(())
     }
@@ -17456,8 +18850,8 @@ impl ScheduledActionQuotaExceededFault {
 impl std::fmt::Display for ScheduledActionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionQuotaExceededFault")?;
-        if let Some(inner_96) = &self.message {
-            write!(f, ": {}", inner_96)?;
+        if let Some(inner_101) = &self.message {
+            write!(f, ": {}", inner_101)?;
         }
         Ok(())
     }
@@ -17516,8 +18910,8 @@ impl ScheduledActionAlreadyExistsFault {
 impl std::fmt::Display for ScheduledActionAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ScheduledActionAlreadyExistsFault")?;
-        if let Some(inner_97) = &self.message {
-            write!(f, ": {}", inner_97)?;
+        if let Some(inner_102) = &self.message {
+            write!(f, ": {}", inner_102)?;
         }
         Ok(())
     }
@@ -17579,8 +18973,8 @@ impl HsmConfigurationQuotaExceededFault {
 impl std::fmt::Display for HsmConfigurationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmConfigurationQuotaExceededFault")?;
-        if let Some(inner_98) = &self.message {
-            write!(f, ": {}", inner_98)?;
+        if let Some(inner_103) = &self.message {
+            write!(f, ": {}", inner_103)?;
         }
         Ok(())
     }
@@ -17640,8 +19034,8 @@ impl HsmConfigurationAlreadyExistsFault {
 impl std::fmt::Display for HsmConfigurationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmConfigurationAlreadyExistsFault")?;
-        if let Some(inner_99) = &self.message {
-            write!(f, ": {}", inner_99)?;
+        if let Some(inner_104) = &self.message {
+            write!(f, ": {}", inner_104)?;
         }
         Ok(())
     }
@@ -17703,8 +19097,8 @@ impl HsmClientCertificateQuotaExceededFault {
 impl std::fmt::Display for HsmClientCertificateQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmClientCertificateQuotaExceededFault")?;
-        if let Some(inner_100) = &self.message {
-            write!(f, ": {}", inner_100)?;
+        if let Some(inner_105) = &self.message {
+            write!(f, ": {}", inner_105)?;
         }
         Ok(())
     }
@@ -17764,8 +19158,8 @@ impl HsmClientCertificateAlreadyExistsFault {
 impl std::fmt::Display for HsmClientCertificateAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "HsmClientCertificateAlreadyExistsFault")?;
-        if let Some(inner_101) = &self.message {
-            write!(f, ": {}", inner_101)?;
+        if let Some(inner_106) = &self.message {
+            write!(f, ": {}", inner_106)?;
         }
         Ok(())
     }
@@ -17825,8 +19219,8 @@ impl SubscriptionAlreadyExistFault {
 impl std::fmt::Display for SubscriptionAlreadyExistFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "SubscriptionAlreadyExistFault")?;
-        if let Some(inner_102) = &self.message {
-            write!(f, ": {}", inner_102)?;
+        if let Some(inner_107) = &self.message {
+            write!(f, ": {}", inner_107)?;
         }
         Ok(())
     }
@@ -17889,8 +19283,8 @@ impl EventSubscriptionQuotaExceededFault {
 impl std::fmt::Display for EventSubscriptionQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EventSubscriptionQuotaExceededFault")?;
-        if let Some(inner_103) = &self.message {
-            write!(f, ": {}", inner_103)?;
+        if let Some(inner_108) = &self.message {
+            write!(f, ": {}", inner_108)?;
         }
         Ok(())
     }
@@ -17949,8 +19343,8 @@ impl EndpointsPerClusterLimitExceededFault {
 impl std::fmt::Display for EndpointsPerClusterLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointsPerClusterLimitExceededFault")?;
-        if let Some(inner_104) = &self.message {
-            write!(f, ": {}", inner_104)?;
+        if let Some(inner_109) = &self.message {
+            write!(f, ": {}", inner_109)?;
         }
         Ok(())
     }
@@ -18009,8 +19403,8 @@ impl EndpointsPerAuthorizationLimitExceededFault {
 impl std::fmt::Display for EndpointsPerAuthorizationLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointsPerAuthorizationLimitExceededFault")?;
-        if let Some(inner_105) = &self.message {
-            write!(f, ": {}", inner_105)?;
+        if let Some(inner_110) = &self.message {
+            write!(f, ": {}", inner_110)?;
         }
         Ok(())
     }
@@ -18069,8 +19463,8 @@ impl EndpointAlreadyExistsFault {
 impl std::fmt::Display for EndpointAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAlreadyExistsFault")?;
-        if let Some(inner_106) = &self.message {
-            write!(f, ": {}", inner_106)?;
+        if let Some(inner_111) = &self.message {
+            write!(f, ": {}", inner_111)?;
         }
         Ok(())
     }
@@ -18129,8 +19523,8 @@ impl AccessToClusterDeniedFault {
 impl std::fmt::Display for AccessToClusterDeniedFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AccessToClusterDeniedFault")?;
-        if let Some(inner_107) = &self.message {
-            write!(f, ": {}", inner_107)?;
+        if let Some(inner_112) = &self.message {
+            write!(f, ": {}", inner_112)?;
         }
         Ok(())
     }
@@ -18193,8 +19587,8 @@ impl ClusterSubnetGroupQuotaExceededFault {
 impl std::fmt::Display for ClusterSubnetGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetGroupQuotaExceededFault")?;
-        if let Some(inner_108) = &self.message {
-            write!(f, ": {}", inner_108)?;
+        if let Some(inner_113) = &self.message {
+            write!(f, ": {}", inner_113)?;
         }
         Ok(())
     }
@@ -18254,8 +19648,8 @@ impl ClusterSubnetGroupAlreadyExistsFault {
 impl std::fmt::Display for ClusterSubnetGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSubnetGroupAlreadyExistsFault")?;
-        if let Some(inner_109) = &self.message {
-            write!(f, ": {}", inner_109)?;
+        if let Some(inner_114) = &self.message {
+            write!(f, ": {}", inner_114)?;
         }
         Ok(())
     }
@@ -18318,8 +19712,8 @@ impl ClusterSecurityGroupQuotaExceededFault {
 impl std::fmt::Display for ClusterSecurityGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSecurityGroupQuotaExceededFault")?;
-        if let Some(inner_110) = &self.message {
-            write!(f, ": {}", inner_110)?;
+        if let Some(inner_115) = &self.message {
+            write!(f, ": {}", inner_115)?;
         }
         Ok(())
     }
@@ -18378,8 +19772,8 @@ impl ClusterSecurityGroupAlreadyExistsFault {
 impl std::fmt::Display for ClusterSecurityGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterSecurityGroupAlreadyExistsFault")?;
-        if let Some(inner_111) = &self.message {
-            write!(f, ": {}", inner_111)?;
+        if let Some(inner_116) = &self.message {
+            write!(f, ": {}", inner_116)?;
         }
         Ok(())
     }
@@ -18442,8 +19836,8 @@ impl ClusterParameterGroupQuotaExceededFault {
 impl std::fmt::Display for ClusterParameterGroupQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterParameterGroupQuotaExceededFault")?;
-        if let Some(inner_112) = &self.message {
-            write!(f, ": {}", inner_112)?;
+        if let Some(inner_117) = &self.message {
+            write!(f, ": {}", inner_117)?;
         }
         Ok(())
     }
@@ -18502,8 +19896,8 @@ impl ClusterParameterGroupAlreadyExistsFault {
 impl std::fmt::Display for ClusterParameterGroupAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ClusterParameterGroupAlreadyExistsFault")?;
-        if let Some(inner_113) = &self.message {
-            write!(f, ": {}", inner_113)?;
+        if let Some(inner_118) = &self.message {
+            write!(f, ": {}", inner_118)?;
         }
         Ok(())
     }
@@ -18541,6 +19935,66 @@ impl ClusterParameterGroupAlreadyExistsFault {
     }
 }
 
+/// <p>The authentication profile already exists.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AuthenticationProfileAlreadyExistsFault {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AuthenticationProfileAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AuthenticationProfileAlreadyExistsFault");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl AuthenticationProfileAlreadyExistsFault {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for AuthenticationProfileAlreadyExistsFault {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "AuthenticationProfileAlreadyExistsFault")?;
+        if let Some(inner_119) = &self.message {
+            write!(f, ": {}", inner_119)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for AuthenticationProfileAlreadyExistsFault {}
+/// See [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault)
+pub mod authentication_profile_already_exists_fault {
+    /// A builder for [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault)
+        pub fn build(self) -> crate::error::AuthenticationProfileAlreadyExistsFault {
+            crate::error::AuthenticationProfileAlreadyExistsFault {
+                message: self.message,
+            }
+        }
+    }
+}
+impl AuthenticationProfileAlreadyExistsFault {
+    /// Creates a new builder-style object to manufacture [`AuthenticationProfileAlreadyExistsFault`](crate::error::AuthenticationProfileAlreadyExistsFault)
+    pub fn builder() -> crate::error::authentication_profile_already_exists_fault::Builder {
+        crate::error::authentication_profile_already_exists_fault::Builder::default()
+    }
+}
+
 /// <p>The maximum number for snapshot identifiers has been reached. The limit is 100.
 /// </p>
 #[non_exhaustive]
@@ -18563,8 +20017,8 @@ impl BatchModifyClusterSnapshotsLimitExceededFault {
 impl std::fmt::Display for BatchModifyClusterSnapshotsLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchModifyClusterSnapshotsLimitExceededFault")?;
-        if let Some(inner_114) = &self.message {
-            write!(f, ": {}", inner_114)?;
+        if let Some(inner_120) = &self.message {
+            write!(f, ": {}", inner_120)?;
         }
         Ok(())
     }
@@ -18624,8 +20078,8 @@ impl BatchDeleteRequestSizeExceededFault {
 impl std::fmt::Display for BatchDeleteRequestSizeExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BatchDeleteRequestSizeExceededFault")?;
-        if let Some(inner_115) = &self.message {
-            write!(f, ": {}", inner_115)?;
+        if let Some(inner_121) = &self.message {
+            write!(f, ": {}", inner_121)?;
         }
         Ok(())
     }
@@ -18684,8 +20138,8 @@ impl AuthorizationQuotaExceededFault {
 impl std::fmt::Display for AuthorizationQuotaExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationQuotaExceededFault")?;
-        if let Some(inner_116) = &self.message {
-            write!(f, ": {}", inner_116)?;
+        if let Some(inner_122) = &self.message {
+            write!(f, ": {}", inner_122)?;
         }
         Ok(())
     }
@@ -18745,8 +20199,8 @@ impl AuthorizationAlreadyExistsFault {
 impl std::fmt::Display for AuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "AuthorizationAlreadyExistsFault")?;
-        if let Some(inner_117) = &self.message {
-            write!(f, ": {}", inner_117)?;
+        if let Some(inner_123) = &self.message {
+            write!(f, ": {}", inner_123)?;
         }
         Ok(())
     }
@@ -18805,8 +20259,8 @@ impl EndpointAuthorizationsPerClusterLimitExceededFault {
 impl std::fmt::Display for EndpointAuthorizationsPerClusterLimitExceededFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAuthorizationsPerClusterLimitExceededFault")?;
-        if let Some(inner_118) = &self.message {
-            write!(f, ": {}", inner_118)?;
+        if let Some(inner_124) = &self.message {
+            write!(f, ": {}", inner_124)?;
         }
         Ok(())
     }
@@ -18866,8 +20320,8 @@ impl EndpointAuthorizationAlreadyExistsFault {
 impl std::fmt::Display for EndpointAuthorizationAlreadyExistsFault {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "EndpointAuthorizationAlreadyExistsFault")?;
-        if let Some(inner_119) = &self.message {
-            write!(f, ": {}", inner_119)?;
+        if let Some(inner_125) = &self.message {
+            write!(f, ": {}", inner_125)?;
         }
         Ok(())
     }

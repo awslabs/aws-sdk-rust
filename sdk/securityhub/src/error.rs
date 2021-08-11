@@ -5935,7 +5935,7 @@ impl InternalException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current AWS
+/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
 /// account or throttling limits. The error code describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

@@ -1484,6 +1484,7 @@ pub struct DeleteFunctionEventInvokeConfigError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteFunctionEventInvokeConfigErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ServiceException(crate::error::ServiceException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -1494,6 +1495,9 @@ impl std::fmt::Display for DeleteFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException(_inner) => {
                 _inner.fmt(f)
             }
             DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
@@ -1557,6 +1561,12 @@ impl DeleteFunctionEventInvokeConfigError {
             DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1580,6 +1590,9 @@ impl std::error::Error for DeleteFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException(_inner) => {
                 Some(_inner)
             }
             DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
@@ -5379,6 +5392,7 @@ pub struct PutFunctionEventInvokeConfigError {
 #[derive(std::fmt::Debug)]
 pub enum PutFunctionEventInvokeConfigErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ServiceException(crate::error::ServiceException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -5389,6 +5403,9 @@ impl std::fmt::Display for PutFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutFunctionEventInvokeConfigErrorKind::ResourceConflictException(_inner) => {
                 _inner.fmt(f)
             }
             PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
@@ -5452,6 +5469,12 @@ impl PutFunctionEventInvokeConfigError {
             PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutFunctionEventInvokeConfigErrorKind::ResourceConflictException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5475,6 +5498,9 @@ impl std::error::Error for PutFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            PutFunctionEventInvokeConfigErrorKind::ResourceConflictException(_inner) => {
                 Some(_inner)
             }
             PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
@@ -6797,6 +6823,7 @@ pub struct UpdateFunctionEventInvokeConfigError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateFunctionEventInvokeConfigErrorKind {
     InvalidParameterValueException(crate::error::InvalidParameterValueException),
+    ResourceConflictException(crate::error::ResourceConflictException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ServiceException(crate::error::ServiceException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -6807,6 +6834,9 @@ impl std::fmt::Display for UpdateFunctionEventInvokeConfigError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException(_inner) => {
                 _inner.fmt(f)
             }
             UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
@@ -6870,6 +6900,12 @@ impl UpdateFunctionEventInvokeConfigError {
             UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_)
         )
     }
+    pub fn is_resource_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException(_)
+        )
+    }
     pub fn is_resource_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -6893,6 +6929,9 @@ impl std::error::Error for UpdateFunctionEventInvokeConfigError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(_inner) => {
+                Some(_inner)
+            }
+            UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException(_inner) => {
                 Some(_inner)
             }
             UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException(_inner) => {
@@ -7011,7 +7050,7 @@ impl TooManyRequestsException {
     }
 }
 
-/// <p>The AWS Lambda service encountered an internal error.</p>
+/// <p>The Lambda service encountered an internal error.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
@@ -7155,82 +7194,6 @@ impl ResourceNotFoundException {
     }
 }
 
-/// <p>One of the parameters in the request is invalid.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InvalidParameterValueException {
-    /// <p>The exception type.</p>
-    pub r#type: std::option::Option<std::string::String>,
-    /// <p>The exception message.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InvalidParameterValueException");
-        formatter.field("r#type", &self.r#type);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InvalidParameterValueException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InvalidParameterValueException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InvalidParameterValueException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InvalidParameterValueException {}
-/// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
-pub mod invalid_parameter_value_exception {
-    /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) r#type: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The exception type.</p>
-        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
-            self.r#type = Some(input.into());
-            self
-        }
-        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// <p>The exception message.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
-        pub fn build(self) -> crate::error::InvalidParameterValueException {
-            crate::error::InvalidParameterValueException {
-                r#type: self.r#type,
-                message: self.message,
-            }
-        }
-    }
-}
-impl InvalidParameterValueException {
-    /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
-    pub fn builder() -> crate::error::invalid_parameter_value_exception::Builder {
-        crate::error::invalid_parameter_value_exception::Builder::default()
-    }
-}
-
 /// <p>The resource already exists, or another operation is in progress.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -7256,8 +7219,8 @@ impl ResourceConflictException {
 impl std::fmt::Display for ResourceConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ResourceConflictException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -7304,6 +7267,82 @@ impl ResourceConflictException {
     /// Creates a new builder-style object to manufacture [`ResourceConflictException`](crate::error::ResourceConflictException)
     pub fn builder() -> crate::error::resource_conflict_exception::Builder {
         crate::error::resource_conflict_exception::Builder::default()
+    }
+}
+
+/// <p>One of the parameters in the request is invalid.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvalidParameterValueException {
+    /// <p>The exception type.</p>
+    pub r#type: std::option::Option<std::string::String>,
+    /// <p>The exception message.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InvalidParameterValueException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvalidParameterValueException");
+        formatter.field("r#type", &self.r#type);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InvalidParameterValueException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InvalidParameterValueException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InvalidParameterValueException")?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InvalidParameterValueException {}
+/// See [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+pub mod invalid_parameter_value_exception {
+    /// A builder for [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The exception type.</p>
+        pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.r#type = Some(input.into());
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The exception message.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+        pub fn build(self) -> crate::error::InvalidParameterValueException {
+            crate::error::InvalidParameterValueException {
+                r#type: self.r#type,
+                message: self.message,
+            }
+        }
+    }
+}
+impl InvalidParameterValueException {
+    /// Creates a new builder-style object to manufacture [`InvalidParameterValueException`](crate::error::InvalidParameterValueException)
+    pub fn builder() -> crate::error::invalid_parameter_value_exception::Builder {
+        crate::error::invalid_parameter_value_exception::Builder::default()
     }
 }
 
@@ -7971,7 +8010,7 @@ impl UnsupportedMediaTypeException {
     }
 }
 
-/// <p>AWS Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
+/// <p>Lambda was not able to set up VPC access for the Lambda function because one or more configured subnets
 /// has no available IP addresses.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8489,7 +8528,7 @@ impl KmsAccessDeniedException {
     }
 }
 
-/// <p>AWS Lambda could not unzip the deployment package.</p>
+/// <p>Lambda could not unzip the deployment package.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidZipFileException {
@@ -8708,7 +8747,7 @@ impl InvalidSecurityGroupIdException {
     }
 }
 
-/// <p>AWS Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
+/// <p>Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
 /// function configuration, because the limit for network interfaces has been reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -9073,7 +9112,7 @@ impl EfsioException {
     }
 }
 
-/// <p>AWS Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
+/// <p>Lambda received an unexpected EC2 client exception while setting up for the Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ec2UnexpectedException {
@@ -9160,7 +9199,7 @@ impl Ec2UnexpectedException {
     }
 }
 
-/// <p>AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
+/// <p>Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role provided
 /// for the Lambda function.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

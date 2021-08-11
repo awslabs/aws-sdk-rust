@@ -533,7 +533,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ingestion_mode(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management service role that has permissions to add data to your
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
         /// output Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
@@ -596,7 +596,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The ARN of the IAM role that has permissions to access the KMS key. Supplying an IAM
+        /// <p>The ARN of the Identity and Access Management (IAM) role that has permissions to access the Key Management Service (KMS) key. Supplying an IAM
         /// role is only valid when also specifying a KMS key.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
@@ -606,7 +606,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_role_arn(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of a KMS key used to encrypt the datasets.</p>
+        /// <p>The Amazon Resource Name (ARN) of a Key Management Service (KMS) key used to encrypt the datasets.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input);
             self

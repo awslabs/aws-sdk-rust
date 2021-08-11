@@ -90,28 +90,28 @@ impl AnalyzeDocumentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -168,6 +168,159 @@ impl AnalyzeDocumentInput {
     /// Creates a new builder-style object to manufacture [`AnalyzeDocumentInput`](crate::input::AnalyzeDocumentInput)
     pub fn builder() -> crate::input::analyze_document_input::Builder {
         crate::input::analyze_document_input::Builder::default()
+    }
+}
+
+/// See [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput)
+pub mod analyze_expense_input {
+    /// A builder for [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) document: std::option::Option<crate::model::Document>,
+    }
+    impl Builder {
+        /// <p>The input document, either as bytes or as an S3 object.</p>
+        /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code>
+        /// property. For example, you would use the <code>Bytes</code> property to pass a document
+        /// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
+        /// property must be base64 encoded. Your code might not need to encode document file bytes if
+        /// you're using an AWS SDK to call Amazon Textract API operations. </p>
+        /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the
+        /// <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64
+        /// encoded.</p>
+        /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS
+        /// Region that you use for Amazon Textract operations.</p>
+        /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using
+        /// the Bytes property isn't supported. You must first upload the document to an Amazon S3
+        /// bucket, and then call the operation using the S3Object property.</p>
+        /// <p>For Amazon Textract to process an S3 object, the user must have permission
+        /// to access the S3 object. </p>
+        pub fn document(mut self, input: crate::model::Document) -> Self {
+            self.document = Some(input);
+            self
+        }
+        pub fn set_document(mut self, input: std::option::Option<crate::model::Document>) -> Self {
+            self.document = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::AnalyzeExpenseInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::AnalyzeExpenseInput {
+                document: self.document,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type AnalyzeExpenseInputOperationOutputAlias = crate::operation::AnalyzeExpense;
+#[doc(hidden)]
+pub type AnalyzeExpenseInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl AnalyzeExpenseInput {
+    /// Consumes the builder and constructs an Operation<[`AnalyzeExpense`](crate::operation::AnalyzeExpense)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::AnalyzeExpense,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_analyze_expense(&self).map_err(
+                |err| smithy_http::operation::BuildError::SerializationError(err.into()),
+            )?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::AnalyzeExpense::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "AnalyzeExpense",
+                "textract",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "Textract.AnalyzeExpense",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`AnalyzeExpenseInput`](crate::input::AnalyzeExpenseInput)
+    pub fn builder() -> crate::input::analyze_expense_input::Builder {
+        crate::input::analyze_expense_input::Builder::default()
     }
 }
 
@@ -233,28 +386,28 @@ impl DetectDocumentTextInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -398,28 +551,28 @@ impl GetDocumentAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -564,28 +717,28 @@ impl GetDocumentTextDetectionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -798,28 +951,28 @@ impl StartDocumentAnalysisInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1019,28 +1172,28 @@ impl StartDocumentTextDetectionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1253,6 +1406,35 @@ pub struct DetectDocumentTextInput {
 impl std::fmt::Debug for DetectDocumentTextInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("DetectDocumentTextInput");
+        formatter.field("document", &self.document);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AnalyzeExpenseInput {
+    /// <p>The input document, either as bytes or as an S3 object.</p>
+    /// <p>You pass image bytes to an Amazon Textract API operation by using the <code>Bytes</code>
+    /// property. For example, you would use the <code>Bytes</code> property to pass a document
+    /// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
+    /// property must be base64 encoded. Your code might not need to encode document file bytes if
+    /// you're using an AWS SDK to call Amazon Textract API operations. </p>
+    /// <p>You pass images stored in an S3 bucket to an Amazon Textract API operation by using the
+    /// <code>S3Object</code> property. Documents stored in an S3 bucket don't need to be base64
+    /// encoded.</p>
+    /// <p>The AWS Region for the S3 bucket that contains the S3 object must match the AWS
+    /// Region that you use for Amazon Textract operations.</p>
+    /// <p>If you use the AWS CLI to call Amazon Textract operations, passing image bytes using
+    /// the Bytes property isn't supported. You must first upload the document to an Amazon S3
+    /// bucket, and then call the operation using the S3Object property.</p>
+    /// <p>For Amazon Textract to process an S3 object, the user must have permission
+    /// to access the S3 object. </p>
+    pub document: std::option::Option<crate::model::Document>,
+}
+impl std::fmt::Debug for AnalyzeExpenseInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AnalyzeExpenseInput");
         formatter.field("document", &self.document);
         formatter.finish()
     }

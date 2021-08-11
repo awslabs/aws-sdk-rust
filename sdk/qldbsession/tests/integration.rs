@@ -61,9 +61,9 @@ async fn signv4_use_correct_service_name() {
         .make_operation(&conf)
         .expect("valid operation");
     // Fix the request time and user agent so the headers are stable
-    op.config_mut()
+    op.properties_mut()
         .insert(UNIX_EPOCH + Duration::from_secs(1614952162));
-    op.config_mut().insert(AwsUserAgent::for_tests());
+    op.properties_mut().insert(AwsUserAgent::for_tests());
 
     let _ = client.call(op).await.expect("request should succeed");
 

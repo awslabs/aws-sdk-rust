@@ -13,9 +13,11 @@ pub mod add_tags_to_resource_input {
     impl Builder {
         /// <p>Specifies the type of resource you are tagging.</p>
         /// <note>
-        /// <p>The ManagedInstance type for this API action is for on-premises managed instances. You must
-        /// specify the name of the managed instance in the following format: mi-ID_number. For example,
-        /// mi-1a2b3c4d5e6f.</p>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
+        /// instances. You must specify the name of the managed instance in the following format:
+        /// <code>mi-<i>ID_number</i>
+        /// </code>. For example,
+        /// <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
             self.resource_type = Some(input);
@@ -30,20 +32,31 @@ pub mod add_tags_to_resource_input {
         }
         /// <p>The resource ID you want to tag.</p>
         /// <p>Use the ID of the resource. Here are some examples:</p>
-        /// <p>ManagedInstance: mi-012345abcde</p>
-        /// <p>MaintenanceWindow: mw-012345abcde</p>
-        /// <p>PatchBaseline: pb-012345abcde</p>
-        /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource
-        /// Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that
-        /// come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with
-        /// an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
-        /// has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
+        /// <p>
+        /// <code>MaintenanceWindow</code>: <code>mw-012345abcde</code>
+        /// </p>
+        /// <p>
+        /// <code>PatchBaseline</code>: <code>pb-012345abcde</code>
+        /// </p>
+        /// <p>
+        /// <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the
+        /// Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from
+        /// the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an
+        /// OpsMetadata object with an ARN of
+        /// <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a
+        /// <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
         /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
-        /// <p>For the Document and Parameter values, use the name of the resource.</p>
+        /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the
+        /// resource.</p>
+        /// <p>
+        /// <code>ManagedInstance</code>: <code>mi-012345abcde</code>
+        /// </p>
         /// <note>
-        /// <p>The ManagedInstance type for this API action is only for on-premises managed instances. You
-        /// must specify the name of the managed instance in the following format: mi-ID_number. For
-        /// example, mi-1a2b3c4d5e6f.</p>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+        /// managed instances. You must specify the name of the managed instance in the following format:
+        /// <code>mi-<i>ID_number</i>
+        /// </code>. For example,
+        /// <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_id = Some(input.into());
@@ -108,28 +121,28 @@ impl AddTagsToResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -226,8 +239,8 @@ pub mod associate_ops_item_related_item_input {
         /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
         /// following types:</p>
         /// <p>
-        /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident
-        /// Manager is a capability of AWS Systems Manager.</p>
+        /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a
+        /// capability of Amazon Web Services Systems Manager.</p>
         /// <p>
         /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
         pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -241,7 +254,7 @@ pub mod associate_ops_item_related_item_input {
             self.resource_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
         /// OpsItem.</p>
         pub fn resource_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_uri = Some(input.into());
@@ -296,28 +309,28 @@ impl AssociateOpsItemRelatedItemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -448,28 +461,28 @@ impl CancelCommandInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -594,28 +607,28 @@ impl CancelMaintenanceWindowExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -691,7 +704,7 @@ pub mod create_activation_input {
     impl Builder {
         /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p>
         /// <important>
-        /// <p>Do not enter personally identifiable information in this field.</p>
+        /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -701,10 +714,10 @@ pub mod create_activation_input {
             self.description = input;
             self
         }
-        /// <p>The name of the registered, managed instance as it will appear in the Systems Manager console or when
-        /// you use the AWS command line tools to list Systems Manager resources.</p>
+        /// <p>The name of the registered, managed instance as it will appear in the Amazon Web Services Systems Manager console or
+        /// when you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
         /// <important>
-        /// <p>Do not enter personally identifiable information in this field.</p>
+        /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn default_instance_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_instance_name = Some(input.into());
@@ -717,10 +730,11 @@ pub mod create_activation_input {
             self.default_instance_name = input;
             self
         }
-        /// <p>The Amazon Identity and Access Management (IAM) role that you want to assign to the managed
-        /// instance. This IAM role must provide AssumeRole permissions for the Systems Manager service principal
-        /// <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a
-        /// hybrid environment</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <p>The Identity and Access Management (IAM) role that you want to assign to the managed
+        /// instance. This IAMrole must provide AssumeRole permissions for the Amazon Web Services Systems Manager
+        /// service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
+        /// IAM service role for a hybrid environment</a> in the
+        /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.iam_role = Some(input.into());
             self
@@ -729,8 +743,8 @@ pub mod create_activation_input {
             self.iam_role = input;
             self
         }
-        /// <p>Specify the maximum number of managed instances you want to register. The default value is 1
-        /// instance.</p>
+        /// <p>Specify the maximum number of managed instances you want to register. The default value is
+        /// <code>1</code>.</p>
         pub fn registration_limit(mut self, input: i32) -> Self {
             self.registration_limit = Some(input);
             self
@@ -810,28 +824,28 @@ impl CreateActivationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -920,12 +934,12 @@ pub mod create_association_input {
             std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     }
     impl Builder {
-        /// <p>The name of the SSM document that contains the configuration information for the instance.
-        /// You can specify Command or Automation documents.</p>
-        /// <p>You can specify AWS-predefined documents, documents you created, or a document that is
+        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
+        /// information for the instance.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
-        /// <p>For SSM documents that are shared with you from other AWS accounts, you must specify the
-        /// complete SSM document ARN, in the following format:</p>
+        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other accounts, you
+        /// must specify the complete SSM document ARN, in the following format:</p>
         /// <p>
         /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
         /// </code>
@@ -934,8 +948,8 @@ pub mod create_association_input {
         /// <p>
         /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
         /// </p>
-        /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
-        /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
         /// <code>My-Document</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -963,12 +977,12 @@ pub mod create_association_input {
         /// <p>
         /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
         /// use the <code>Targets</code> parameter. Requests that include the
-        /// parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will
-        /// fail. In addition, if you use the parameter <code>InstanceId</code>, you
-        /// cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
-        /// <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-        /// <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code>
-        /// parameter.</p>
+        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+        /// 2.0 or later will fail. In addition, if you use the parameter
+        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+        /// must use the <code>Targets</code> parameter.</p>
         /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
@@ -1022,7 +1036,8 @@ pub mod create_association_input {
             self.schedule_expression = input;
             self
         }
-        /// <p>An S3 bucket where you want to store the output details of the request.</p>
+        /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output
+        /// details of the request.</p>
         pub fn output_location(
             mut self,
             input: crate::model::InstanceAssociationOutputLocation,
@@ -1050,7 +1065,8 @@ pub mod create_association_input {
             self
         }
         /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation document and target resources by using rate controls.</p>
+        /// Automation runbook and target resources by using rate controls. Automation is a capability of
+        /// Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1070,12 +1086,12 @@ pub mod create_association_input {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-        /// is received.</p>
-        /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-        /// at a time.</p>
+        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+        /// the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+        /// so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -1088,9 +1104,9 @@ pub mod create_association_input {
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
         /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-        /// MaxConcurrency associations, the association is allowed to run. During the next association
-        /// interval, the new instance will process its association within the limit specified for
-        /// MaxConcurrency.</p>
+        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+        /// association interval, the new instance will process its association within the limit specified
+        /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -1123,8 +1139,8 @@ pub mod create_association_input {
         /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
         /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
         /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.sync_compliance = Some(input);
@@ -1139,7 +1155,7 @@ pub mod create_association_input {
         }
         /// <p>By default, when you create a new association, the system runs it immediately after it is
         /// created and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you create it. This parameter is not supported for rate
+        /// an association to run immediately after you create it. This parameter isn't supported for rate
         /// expressions.</p>
         pub fn apply_only_at_cron_interval(mut self, input: bool) -> Self {
             self.apply_only_at_cron_interval = Some(input);
@@ -1230,28 +1246,28 @@ impl CreateAssociationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1379,28 +1395,28 @@ impl CreateAssociationBatchInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1481,18 +1497,18 @@ pub mod create_document_input {
         /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the
         /// contents for your new document in an external JSON or YAML file and referencing the file in a
         /// command.</p>
-        /// <p>For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <ul>
         /// <li>
         /// <p>
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document
-        /// (AWS API)</a>
+        /// (Amazon Web Services API)</a>
         /// </p>
         /// </li>
         /// <li>
         /// <p>
         /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document
-        /// (AWS CLI)</a>
+        /// (Amazon Web Services CLI)</a>
         /// </p>
         /// </li>
         /// <li>
@@ -1536,9 +1552,9 @@ pub mod create_document_input {
             self.attachments = input;
             self
         }
-        /// <p>A name for the Systems Manager document.</p>
+        /// <p>A name for the SSM document.</p>
         /// <important>
-        /// <p>You can't use the following strings as document name prefixes. These are reserved by AWS
+        /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services
         /// for use as document name prefixes:</p>
         /// <ul>
         /// <li>
@@ -1566,9 +1582,9 @@ pub mod create_document_input {
             self.name = input;
             self
         }
-        /// <p>An optional field where you can specify a friendly name for the Systems Manager document. This value
-        /// can differ for each version of the document. You can update this value at a later time using the
-        /// <a>UpdateDocument</a> action.</p>
+        /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
+        /// differ for each version of the document. You can update this value at a later time using the
+        /// <a>UpdateDocument</a> operation.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
             self
@@ -1579,7 +1595,7 @@ pub mod create_document_input {
         }
         /// <p>An optional field specifying the version of the artifact you are creating with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// cannot be changed.</p>
+        /// can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
@@ -1614,10 +1630,11 @@ pub mod create_document_input {
             self
         }
         /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
-        /// to run a document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you
-        /// specify a value of '/' the document can run on all types of resources. If you don't specify a
-        /// value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-        /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+        /// to run a document on EC2 instances, specify the following value:
+        /// <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types
+        /// of resources. If you don't specify a value, the document can't run on any resources. For a list
+        /// of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+        /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
         pub fn target_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_type = Some(input.into());
             self
@@ -1687,28 +1704,28 @@ impl CreateDocumentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1808,8 +1825,8 @@ pub mod create_maintenance_window_input {
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become active. StartDate allows you to delay activation of the maintenance window until the
-        /// specified future date.</p>
+        /// become active. <code>StartDate</code> allows you to delay activation of the maintenance window
+        /// until the specified future date.</p>
         pub fn start_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.start_date = Some(input.into());
             self
@@ -1819,8 +1836,8 @@ pub mod create_maintenance_window_input {
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become inactive. EndDate allows you to set a date and time in the future when the maintenance
-        /// window will no longer run.</p>
+        /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
+        /// maintenance window will no longer run.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date = Some(input.into());
             self
@@ -1853,7 +1870,7 @@ pub mod create_maintenance_window_input {
             self.schedule_timezone = input;
             self
         }
-        /// <p>The number of days to wait after the date and time specified by a CRON expression before
+        /// <p>The number of days to wait after the date and time specified by a cron expression before
         /// running the maintenance window.</p>
         /// <p>For example, the following cron expression schedules a maintenance window to run on the
         /// third Tuesday of every month at 11:30 PM.</p>
@@ -1879,8 +1896,8 @@ pub mod create_maintenance_window_input {
             self.duration = input;
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-        /// tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+        /// new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.cutoff = Some(input);
             self
@@ -1889,7 +1906,7 @@ pub mod create_maintenance_window_input {
             self.cutoff = input;
             self
         }
-        /// <p>Enables a maintenance window task to run on managed instances, even if you have not
+        /// <p>Enables a maintenance window task to run on managed instances, even if you haven't
         /// registered those instances as targets. If enabled, then you must specify the unregistered
         /// instances (by instance ID) when you register a task with the maintenance window.</p>
         /// <p>If you don't enable this option, then you must specify previously-registered targets when
@@ -1979,28 +1996,28 @@ impl CreateMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2168,7 +2185,8 @@ pub mod create_ops_item_input {
         }
         /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p>
         /// <note>
-        /// <p>The source name can't contain the following strings: aws, amazon, and amzn. </p>
+        /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>,
+        /// and <code>amzn</code>. </p>
         /// </note>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
@@ -2321,28 +2339,28 @@ impl CreateOpsItemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2498,28 +2516,28 @@ impl CreateOpsMetadataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2601,8 +2619,8 @@ pub mod create_patch_baseline_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Defines the operating system the patch baseline applies to. The Default value is
-        /// WINDOWS.</p>
+        /// <p>Defines the operating system the patch baseline applies to. The default value is
+        /// <code>WINDOWS</code>.</p>
         pub fn operating_system(mut self, input: crate::model::OperatingSystem) -> Self {
             self.operating_system = Some(input);
             self
@@ -2662,7 +2680,7 @@ pub mod create_patch_baseline_input {
         }
         /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
         /// missing, this value describes the severity of the compliance violation. The default value is
-        /// UNSPECIFIED.</p>
+        /// <code>UNSPECIFIED</code>.</p>
         pub fn approved_patches_compliance_level(
             mut self,
             input: crate::model::PatchComplianceLevel,
@@ -2678,7 +2696,8 @@ pub mod create_patch_baseline_input {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
+        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+        /// only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
@@ -2703,23 +2722,27 @@ pub mod create_patch_baseline_input {
             self.rejected_patches = input;
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the RejectedPackages
-        /// list.</p>
+        /// <p>The action for Patch Manager to take on patches included in the
+        /// <code>RejectedPackages</code> list.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches
-        /// list is installed only if it is a dependency of another package. It is considered compliant
-        /// with the patch baseline, and its status is reported as <i>InstalledOther</i>.
-        /// This is the default action if no option is specified.</p>
+        /// <b>
+        /// <code>ALLOW_AS_DEPENDENCY</code>
+        /// </b>: A package in the
+        /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
+        /// It is considered compliant with the patch baseline, and its status is reported as
+        /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <b>BLOCK</b>: Packages in the RejectedPatches list, and packages
-        /// that include them as dependencies, are not installed under any circumstances. If a package was
-        /// installed before it was added to the Rejected patches list, it is considered non-compliant with
-        /// the patch baseline, and its status is reported as
-        /// <i>InstalledRejected</i>.</p>
+        /// <b>
+        /// <code>BLOCK</code>
+        /// </b>: Packages in the
+        /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
+        /// installed under any circumstances. If a package was installed before it was added to the
+        /// Rejected patches list, it is considered non-compliant with the patch baseline, and its status
+        /// is reported as <code>InstalledRejected</code>.</p>
         /// </li>
         /// </ul>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
@@ -2832,28 +2855,28 @@ impl CreatePatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2953,9 +2976,9 @@ pub mod create_resource_data_sync_input {
         /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
         /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
         /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
-        /// from a single account and multiple Regions, or multiple AWS accounts and Regions, as listed in
-        /// AWS Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for
-        /// <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+        /// from a single account and multiple Regions, or multiple accounts and Regions, as
+        /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
+        /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_type = Some(input.into());
             self
@@ -3020,28 +3043,28 @@ impl CreateResourceDataSyncInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3161,28 +3184,28 @@ impl DeleteActivationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3253,7 +3276,7 @@ pub mod delete_association_input {
         pub(crate) association_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -3325,28 +3348,28 @@ impl DeleteAssociationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3453,7 +3476,7 @@ pub mod delete_document_input {
         /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can
         /// delete the document. For example, you must specify a <code>Force</code> flag to delete a document
         /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-        /// <code>Force</code> flag in an AWS Identity and Access Management (IAM) policy.</p>
+        /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
         pub fn force(mut self, input: bool) -> Self {
             self.force = Some(input);
             self
@@ -3504,28 +3527,28 @@ impl DeleteDocumentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3613,7 +3636,7 @@ pub mod delete_inventory_input {
         /// custom inventory type. Choose one of the following options:</p>
         /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the
         /// specified version, and any earlier versions. To enable this schema again, you must call the
-        /// <code>PutInventory</code> action for a version greater than the disabled version.</p>
+        /// <code>PutInventory</code> operation for a version greater than the disabled version.</p>
         /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You
         /// can recreate the schema later, if you want.</p>
         pub fn schema_delete_option(
@@ -3696,28 +3719,28 @@ impl DeleteInventoryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3836,28 +3859,28 @@ impl DeleteMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3978,28 +4001,28 @@ impl DeleteOpsMetadataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4114,28 +4137,28 @@ impl DeleteParameterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4254,28 +4277,28 @@ impl DeleteParametersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4393,28 +4416,28 @@ impl DeletePatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4543,28 +4566,28 @@ impl DeleteResourceDataSyncInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4684,28 +4707,28 @@ impl DeregisterManagedInstanceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4835,28 +4858,28 @@ impl DeregisterPatchBaselineForPatchGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -4949,7 +4972,7 @@ pub mod deregister_target_from_maintenance_window_input {
             self
         }
         /// <p>The system checks if the target is being referenced by a task. If the target is being
-        /// referenced, the system returns an error and does not deregister the target from the maintenance
+        /// referenced, the system returns an error and doesn't deregister the target from the maintenance
         /// window.</p>
         pub fn safe(mut self, input: bool) -> Self {
             self.safe = Some(input);
@@ -5002,28 +5025,28 @@ impl DeregisterTargetFromMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5160,28 +5183,28 @@ impl DeregisterTaskFromMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5330,28 +5353,28 @@ impl DescribeActivationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5423,7 +5446,7 @@ pub mod describe_association_input {
         pub(crate) association_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -5511,28 +5534,28 @@ impl DescribeAssociationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5697,28 +5720,28 @@ impl DescribeAssociationExecutionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -5899,28 +5922,28 @@ impl DescribeAssociationExecutionTargetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6072,28 +6095,28 @@ impl DescribeAutomationExecutionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6269,28 +6292,28 @@ impl DescribeAutomationStepExecutionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6437,28 +6460,28 @@ impl DescribeAvailablePatchesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6529,7 +6552,7 @@ pub mod describe_document_input {
         pub(crate) version_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -6553,7 +6576,7 @@ pub mod describe_document_input {
         }
         /// <p>An optional field specifying the version of the artifact associated with the document. For
         /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// cannot be changed.</p>
+        /// can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
@@ -6603,28 +6626,28 @@ impl DescribeDocumentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6783,28 +6806,28 @@ impl DescribeDocumentPermissionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -6951,28 +6974,28 @@ impl DescribeEffectiveInstanceAssociationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7116,28 +7139,28 @@ impl DescribeEffectivePatchesForPatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7283,28 +7306,28 @@ impl DescribeInstanceAssociationsStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7477,28 +7500,28 @@ impl DescribeInstanceInformationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7656,28 +7679,28 @@ impl DescribeInstancePatchesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -7824,28 +7847,28 @@ impl DescribeInstancePatchStatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8006,28 +8029,28 @@ impl DescribeInstancePatchStatesForPatchGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8100,7 +8123,7 @@ pub mod describe_inventory_deletions_input {
     }
     impl Builder {
         /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
-        /// <code>DeleteInventory</code> action.</p>
+        /// <code>DeleteInventory</code> operation.</p>
         pub fn deletion_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.deletion_id = Some(input.into());
             self
@@ -8172,28 +8195,28 @@ impl DescribeInventoryDeletionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8356,28 +8379,28 @@ impl DescribeMaintenanceWindowExecutionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8552,28 +8575,28 @@ impl DescribeMaintenanceWindowExecutionTaskInvocationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8737,28 +8760,28 @@ impl DescribeMaintenanceWindowExecutionTasksInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -8907,28 +8930,28 @@ impl DescribeMaintenanceWindowsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9025,7 +9048,8 @@ pub mod describe_maintenance_window_schedule_input {
             self.targets = input;
             self
         }
-        /// <p>The type of resource you want to retrieve information about. For example, "INSTANCE".</p>
+        /// <p>The type of resource you want to retrieve information about. For example,
+        /// <code>INSTANCE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -9119,28 +9143,28 @@ impl DescribeMaintenanceWindowScheduleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9225,7 +9249,8 @@ pub mod describe_maintenance_windows_for_target_input {
             self.targets = input;
             self
         }
-        /// <p>The type of resource you want to retrieve information about. For example, "INSTANCE".</p>
+        /// <p>The type of resource you want to retrieve information about. For example,
+        /// <code>INSTANCE</code>.</p>
         pub fn resource_type(mut self, input: crate::model::MaintenanceWindowResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -9305,28 +9330,28 @@ impl DescribeMaintenanceWindowsForTargetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9488,28 +9513,28 @@ impl DescribeMaintenanceWindowTargetsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9669,28 +9694,28 @@ impl DescribeMaintenanceWindowTasksInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -9836,28 +9861,28 @@ impl DescribeOpsItemsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10022,28 +10047,28 @@ impl DescribeParametersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10189,28 +10214,28 @@ impl DescribePatchBaselinesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10356,28 +10381,28 @@ impl DescribePatchGroupsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10496,28 +10521,28 @@ impl DescribePatchGroupStateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10614,8 +10639,8 @@ pub mod describe_patch_properties_input {
             self.property = input;
             self
         }
-        /// <p>Indicates whether to list patches for the Windows operating system or for Microsoft
-        /// applications. Not applicable for the Linux or macOS operating systems.</p>
+        /// <p>Indicates whether to list patches for the Windows operating system or for applications
+        /// released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
         pub fn patch_set(mut self, input: crate::model::PatchSet) -> Self {
             self.patch_set = Some(input);
             self
@@ -10689,28 +10714,28 @@ impl DescribePatchPropertiesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -10866,28 +10891,28 @@ impl DescribeSessionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11023,28 +11048,28 @@ impl DisassociateOpsItemRelatedItemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11114,7 +11139,7 @@ pub mod get_automation_execution_input {
     }
     impl Builder {
         /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
-        /// returned by StartAutomationExecution when the execution of an Automation document is
+        /// returned by StartAutomationExecution when the execution of an Automation runbook is
         /// initiated.</p>
         pub fn automation_execution_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.automation_execution_id = Some(input.into());
@@ -11167,28 +11192,28 @@ impl GetAutomationExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11271,8 +11296,8 @@ pub mod get_calendar_state_input {
             self.calendar_names = input;
             self
         }
-        /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add
-        /// <code>AtTime</code>, the current time is assumed.</p>
+        /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
+        /// value or <code>AtTime</code>, the current time is used.</p>
         pub fn at_time(mut self, input: impl Into<std::string::String>) -> Self {
             self.at_time = Some(input.into());
             self
@@ -11322,28 +11347,28 @@ impl GetCalendarStateInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11425,7 +11450,7 @@ pub mod get_command_invocation_input {
         }
         /// <p>(Required) The ID of the managed instance targeted by the command. A managed instance can be
         /// an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for
-        /// AWS Systems Manager.</p>
+        /// Amazon Web Services Systems Manager.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
@@ -11437,8 +11462,8 @@ pub mod get_command_invocation_input {
         /// <p>The name of the plugin for which you want detailed results. If the document contains only
         /// one plugin, you can omit the name and details for that plugin. If the document contains more than
         /// one plugin, you must specify the name of the plugin for which you want to view details.</p>
-        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For
-        /// example, <code>aws:RunShellScript</code> is a plugin.</p>
+        /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM
+        /// documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
         /// <p>To find the <code>PluginName</code>, check the document content and find the name of the
         /// plugin. Alternatively, use <a>ListCommandInvocations</a> with the
         /// <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the
@@ -11494,28 +11519,28 @@ impl GetCommandInvocationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11633,28 +11658,28 @@ impl GetConnectionStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11776,28 +11801,28 @@ impl GetDefaultPatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -11877,7 +11902,7 @@ pub mod get_deployable_patch_snapshot_for_instance_input {
             self.instance_id = input;
             self
         }
-        /// <p>The user-defined snapshot ID.</p>
+        /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
         pub fn snapshot_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.snapshot_id = Some(input.into());
             self
@@ -11941,28 +11966,28 @@ impl GetDeployablePatchSnapshotForInstanceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12034,7 +12059,7 @@ pub mod get_document_input {
         pub(crate) document_format: std::option::Option<crate::model::DocumentFormat>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -12120,28 +12145,28 @@ impl GetDocumentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12317,28 +12342,28 @@ impl GetInventoryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12502,28 +12527,28 @@ impl GetInventorySchemaInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12641,28 +12666,28 @@ impl GetMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12785,28 +12810,28 @@ impl GetMaintenanceWindowExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -12943,28 +12968,28 @@ impl GetMaintenanceWindowExecutionTaskInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13113,28 +13138,28 @@ impl GetMaintenanceWindowExecutionTaskInvocationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13268,28 +13293,28 @@ impl GetMaintenanceWindowTaskInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13405,28 +13430,28 @@ impl GetOpsItemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13566,28 +13591,28 @@ impl GetOpsMetadataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13774,28 +13799,28 @@ impl GetOpsSummaryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -13874,8 +13899,8 @@ pub mod get_parameter_input {
             self.name = input;
             self
         }
-        /// <p>Return decrypted values for secure string parameters. This flag is ignored for String and
-        /// StringList parameter types.</p>
+        /// <p>Return decrypted values for secure string parameters. This flag is ignored for
+        /// <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn with_decryption(mut self, input: bool) -> Self {
             self.with_decryption = Some(input);
             self
@@ -13923,28 +13948,28 @@ impl GetParameterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14022,8 +14047,8 @@ pub mod get_parameter_history_input {
             self.name = input;
             self
         }
-        /// <p>Return decrypted values for secure string parameters. This flag is ignored for String and
-        /// StringList parameter types.</p>
+        /// <p>Return decrypted values for secure string parameters. This flag is ignored for
+        /// <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn with_decryption(mut self, input: bool) -> Self {
             self.with_decryption = Some(input);
             self
@@ -14095,28 +14120,28 @@ impl GetParameterHistoryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14200,7 +14225,7 @@ pub mod get_parameters_input {
             self
         }
         /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
-        /// This flag is ignored for String and StringList parameter types.</p>
+        /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
         pub fn with_decryption(mut self, input: bool) -> Self {
             self.with_decryption = Some(input);
             self
@@ -14248,28 +14273,28 @@ impl GetParametersInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14346,8 +14371,8 @@ pub mod get_parameters_by_path_input {
     impl Builder {
         /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is
         /// the parameter name except the last part of the parameter. For the API call to succeeed, the last
-        /// part of the parameter name cannot be in the path. A parameter name hierarchy can have a maximum
-        /// of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
+        /// part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of
+        /// 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
         /// </code>
         /// </p>
         pub fn path(mut self, input: impl Into<std::string::String>) -> Self {
@@ -14362,9 +14387,9 @@ pub mod get_parameters_by_path_input {
         /// <important>
         /// <p>If a user has access to a path, then the user can access all levels of that path. For
         /// example, if a user has permission to access path <code>/a</code>, then the user can also access
-        /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter
-        /// <code>/a/b</code>, they can still call the GetParametersByPath API action recursively for
-        /// <code>/a</code> and view <code>/a/b</code>.</p>
+        /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for
+        /// parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation
+        /// recursively for <code>/a</code> and view <code>/a/b</code>.</p>
         /// </important>
         pub fn recursive(mut self, input: bool) -> Self {
             self.recursive = Some(input);
@@ -14463,28 +14488,28 @@ impl GetParametersByPathInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14602,28 +14627,28 @@ impl GetPatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14757,28 +14782,28 @@ impl GetPatchBaselineForPatchGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -14928,28 +14953,28 @@ impl GetServiceSettingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15094,28 +15119,28 @@ impl LabelParameterVersionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15264,28 +15289,28 @@ impl ListAssociationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15430,28 +15455,28 @@ impl ListAssociationVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15577,7 +15602,7 @@ pub mod list_command_invocations_input {
             self
         }
         /// <p>(Optional) If set this returns the response of the command executions and any command
-        /// output. The default value is 'false'. </p>
+        /// output. The default value is <code>false</code>. </p>
         pub fn details(mut self, input: bool) -> Self {
             self.details = Some(input);
             self
@@ -15631,28 +15656,28 @@ impl ListCommandInvocationsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -15737,7 +15762,7 @@ pub mod list_commands_input {
         /// <p>(Optional) Lists commands issued against this instance ID.</p>
         /// <note>
         /// <p>You can't specify an instance ID in the same command that you specify <code>Status</code> =
-        /// <code>Pending</code>. This is because the command has not reached the instance yet.</p>
+        /// <code>Pending</code>. This is because the command hasn't reached the instance yet.</p>
         /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
@@ -15822,28 +15847,28 @@ impl ListCommandsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16016,28 +16041,28 @@ impl ListComplianceItemsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16185,28 +16210,28 @@ impl ListComplianceSummariesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16379,28 +16404,28 @@ impl ListDocumentMetadataHistoryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16564,28 +16589,28 @@ impl ListDocumentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16727,28 +16752,28 @@ impl ListDocumentVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -16916,28 +16941,28 @@ impl ListInventoryEntriesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17082,28 +17107,28 @@ impl ListOpsItemEventsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17265,28 +17290,28 @@ impl ListOpsItemRelatedItemsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17430,28 +17455,28 @@ impl ListOpsMetadataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17599,28 +17624,28 @@ impl ListResourceComplianceSummariesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17692,9 +17717,8 @@ pub mod list_resource_data_sync_input {
     }
     impl Builder {
         /// <p>View a list of resource data syncs according to the sync type. Specify
-        /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3
-        /// bucket. Specify <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from
-        /// multiple AWS Regions.</p>
+        /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
+        /// or from multiple Regions.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_type = Some(input.into());
             self
@@ -17764,28 +17788,28 @@ impl ListResourceDataSyncInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -17917,28 +17941,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18059,7 +18083,7 @@ pub mod modify_document_permission_input {
             self.account_ids_to_remove = input;
             self
         }
-        /// <p>(Optional) The version of the document to share. If it's not specified, the system choose
+        /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
         /// the <code>Default</code> version to share.</p>
         pub fn shared_document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.shared_document_version = Some(input.into());
@@ -18117,28 +18141,28 @@ impl ModifyDocumentPermissionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18359,28 +18383,28 @@ impl PutComplianceItemsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18511,28 +18535,28 @@ impl PutInventoryInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -18619,10 +18643,11 @@ pub mod put_parameter_input {
         /// <p>Parameter names are case sensitive.</p>
         /// </li>
         /// <li>
-        /// <p>A parameter name must be unique within an AWS Region</p>
+        /// <p>A parameter name must be unique within an Region</p>
         /// </li>
         /// <li>
-        /// <p>A parameter name can't be prefixed with "aws" or "ssm" (case-insensitive).</p>
+        /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+        /// (case-insensitive).</p>
         /// </li>
         /// <li>
         /// <p>Parameter names can include only the following symbols and letters:
@@ -18639,10 +18664,10 @@ pub mod put_parameter_input {
         /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p>
         /// </li>
         /// </ul>
-        /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <note>
         /// <p>The maximum length constraint listed below includes capacity for additional system
-        /// attributes that are not part of the name. The maximum length for a parameter name, including the
+        /// attributes that aren't part of the name. The maximum length for a parameter name, including the
         /// full length of the parameter ARN, is 1011 characters. For example, the length of the following
         /// parameter name is 65 characters, not 20 characters:</p>
         /// <p>
@@ -18660,7 +18685,7 @@ pub mod put_parameter_input {
         /// <p>Information about the parameter that you want to add to the system. Optional but
         /// recommended.</p>
         /// <important>
-        /// <p>Do not enter personally identifiable information in this field.</p>
+        /// <p>Don't enter personally identifiable information in this field.</p>
         /// </important>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
@@ -18688,14 +18713,13 @@ pub mod put_parameter_input {
         /// <p>The type of parameter that you want to add to the system.</p>
         /// <note>
         /// <p>
-        /// <code>SecureString</code> is not currently supported for AWS CloudFormation
-        /// templates.</p>
+        /// <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
         /// </note>
         /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't
         /// use other punctuation or special character to escape items in the list. If you have a parameter
         /// value that requires a comma, then use the <code>String</code> data type.</p>
         /// <important>
-        /// <p>Specifying a parameter type is not required when updating a parameter. You must specify a
+        /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a
         /// parameter type when creating a parameter.</p>
         /// </important>
         pub fn r#type(mut self, input: crate::model::ParameterType) -> Self {
@@ -18706,21 +18730,20 @@ pub mod put_parameter_input {
             self.r#type = input;
             self
         }
-        /// <p>The KMS Key ID that you want to use to encrypt a parameter. Either the default AWS Key
-        /// Management Service (AWS KMS) key automatically assigned to your AWS account or a custom key.
-        /// Required for parameters that use the <code>SecureString</code> data type.</p>
-        /// <p>If you don't specify a key ID, the system uses the default key associated with your AWS
+        /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
+        /// parameter. Either the default KMS key automatically assigned to your account
+        /// or a custom key. Required for parameters that use the <code>SecureString</code>
+        /// data type.</p>
+        /// <p>If you don't specify a key ID, the system uses the default key associated with your
         /// account.</p>
         /// <ul>
         /// <li>
-        /// <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
-        /// type, and do <i>not</i> specify the <code>Key ID</code> when you
-        /// create the parameter. The system automatically populates <code>Key ID</code> with
-        /// your default KMS key.</p>
+        /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
+        /// <code>Key ID</code> with your default KMS key.</p>
         /// </li>
         /// <li>
-        /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with
-        /// the <code>Key ID</code> parameter.</p>
+        /// <p>To use a custom KMS key, choose the <code>SecureString</code>
+        /// data type with the <code>Key ID</code> parameter.</p>
         /// </li>
         /// </ul>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -18731,7 +18754,7 @@ pub mod put_parameter_input {
             self.key_id = input;
             self
         }
-        /// <p>Overwrite an existing parameter. The default value is 'false'.</p>
+        /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
         pub fn overwrite(mut self, input: bool) -> Self {
             self.overwrite = Some(input);
             self
@@ -18769,12 +18792,12 @@ pub mod put_parameter_input {
         /// <p>The parameter tier to assign to a parameter.</p>
         /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
         /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
-        /// You can create a maximum of 10,000 standard parameters for each Region in an AWS account.
+        /// You can create a maximum of 10,000 standard parameters for each Region in an account.
         /// Standard parameters are offered at no additional cost. </p>
         /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
-        /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an AWS
+        /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
         /// account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
-        /// advanced parameter tiers</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
         /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
         /// parameter would result in data loss because the system would truncate the size of the parameter
@@ -18787,7 +18810,7 @@ pub mod put_parameter_input {
         /// </p>
         /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in.
         /// Whenever you specify a tier in the request, Parameter Store creates or updates the parameter
-        /// according to that request. However, if you do not specify a tier in a request, Parameter Store
+        /// according to that request. However, if you don't specify a tier in a request, Parameter Store
         /// assigns the tier based on the current Parameter Store default tier configuration.</p>
         /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you
         /// use the advanced-parameter tier, you can specify one of the following as the default:</p>
@@ -18818,12 +18841,12 @@ pub mod put_parameter_input {
         /// <p>The parameter uses a parameter policy.</p>
         /// </li>
         /// <li>
-        /// <p>More than 10,000 parameters already exist in your AWS account in the current
+        /// <p>More than 10,000 parameters already exist in your account in the current
         /// Region.</p>
         /// </li>
         /// </ul>
         /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-        /// default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn tier(mut self, input: crate::model::ParameterTier) -> Self {
             self.tier = Some(input);
             self
@@ -18832,18 +18855,18 @@ pub mod put_parameter_input {
             self.tier = input;
             self
         }
-        /// <p>One or more policies to apply to a parameter. This action takes a JSON array. Parameter
-        /// Store supports the following policy types:</p>
+        /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
+        /// Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
         /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy,
         /// you specify the expiration date. You can update the expiration date and time by updating the
-        /// policy. Updating the <i>parameter</i> does not affect the expiration date and time.
+        /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
         /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
         /// <p>ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that
         /// notifies you about the expiration. By using this policy, you can receive notification before or
         /// after the expiration time is reached, in units of days or hours.</p>
-        /// <p>NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been
-        /// modified for a specified period of time. This policy type is useful when, for example, a secret
-        /// needs to be changed within a period of time, but it has not been changed.</p>
+        /// <p>NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't
+        /// been modified for a specified period of time. This policy type is useful when, for example, a
+        /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
         /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
         /// information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
         /// policies</a>. </p>
@@ -18856,7 +18879,7 @@ pub mod put_parameter_input {
             self
         }
         /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text
-        /// and Amazon Machine Image IDs.</p>
+        /// and Amazon Machine Image (AMI) IDs.</p>
         /// <p>
         /// <b>The following data type values are supported.</b>
         /// </p>
@@ -18873,11 +18896,10 @@ pub mod put_parameter_input {
         /// </li>
         /// </ul>
         /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
-        /// Systems Manager validates the parameter value is in the required format, such as
-        /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your AWS account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-        /// parameter support for Amazon Machine Image IDs</a> in the
-        /// <i>AWS Systems Manager User Guide</i>.</p>
+        /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
+        /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
+        /// account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
+        /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type = Some(input.into());
             self
@@ -18934,28 +18956,28 @@ impl PutParameterInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19072,28 +19094,28 @@ impl RegisterDefaultPatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19163,7 +19185,7 @@ pub mod register_patch_baseline_for_patch_group_input {
         pub(crate) patch_group: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the patch baseline to register the patch group with.</p>
+        /// <p>The ID of the patch baseline to register with the patch group.</p>
         pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.baseline_id = Some(input.into());
             self
@@ -19172,7 +19194,7 @@ pub mod register_patch_baseline_for_patch_group_input {
             self.baseline_id = input;
             self
         }
-        /// <p>The name of the patch group that should be registered with the patch baseline.</p>
+        /// <p>The name of the patch group to be registered with the patch baseline.</p>
         pub fn patch_group(mut self, input: impl Into<std::string::String>) -> Self {
             self.patch_group = Some(input.into());
             self
@@ -19226,28 +19248,28 @@ impl RegisterPatchBaselineForPatchGroupInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19356,8 +19378,8 @@ pub mod register_target_with_maintenance_window_input {
             self.targets = input;
             self
         }
-        /// <p>User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
+        /// running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_information = Some(input.into());
             self
@@ -19450,28 +19472,28 @@ impl RegisterTargetWithMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19590,11 +19612,11 @@ pub mod register_task_with_maintenance_window_input {
             self.task_arn = input;
             self
         }
-        /// <p>The ARN of the IAM service role for Systems Manager to assume when running a
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
         /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
         /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
         /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
-        /// <p>For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+        /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -19683,8 +19705,8 @@ pub mod register_task_with_maintenance_window_input {
         }
         /// <p>The maximum number of targets this task can be run for in parallel.</p>
         /// <note>
-        /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value does not
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
         /// affect the running of your task.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19700,8 +19722,8 @@ pub mod register_task_with_maintenance_window_input {
         }
         /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
         /// <note>
-        /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
-        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value does not
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+        /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
         /// affect the running of your task.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -19712,12 +19734,13 @@ pub mod register_task_with_maintenance_window_input {
             self.max_errors = input;
             self
         }
-        /// <p>A structure containing information about an S3 bucket to write instance-level logs to. </p>
+        /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
+        /// to write instance-level logs to. </p>
         /// <note>
         /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
         /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Systems Manager handles these options for the supported maintenance
+        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
         /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
@@ -19818,28 +19841,28 @@ impl RegisterTaskWithMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -19912,9 +19935,11 @@ pub mod remove_tags_from_resource_input {
     impl Builder {
         /// <p>The type of resource from which you want to remove a tag.</p>
         /// <note>
-        /// <p>The ManagedInstance type for this API action is only for on-premises managed instances.
-        /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
-        /// mi-1a2b3c4d5e6f.</p>
+        /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+        /// managed instances. Specify the name of the managed instance in the following format:
+        /// <code>mi-<i>ID_number</i>
+        /// </code>. For example,
+        /// <code>mi-1a2b3c4d5e6f</code>.</p>
         /// </note>
         pub fn resource_type(mut self, input: crate::model::ResourceTypeForTagging) -> Self {
             self.resource_type = Some(input);
@@ -19939,7 +19964,7 @@ pub mod remove_tags_from_resource_input {
         /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
         /// <p>For the Document and Parameter values, use the name of the resource.</p>
         /// <note>
-        /// <p>The ManagedInstance type for this API action is only for on-premises managed instances.
+        /// <p>The ManagedInstance type for this API operation is only for on-premises managed instances.
         /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
         /// mi-1a2b3c4d5e6f.</p>
         /// </note>
@@ -20006,28 +20031,28 @@ impl RemoveTagsFromResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20096,7 +20121,8 @@ pub mod reset_service_setting_input {
         pub(crate) setting_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
+        /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of
+        /// the following.</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -20177,28 +20203,28 @@ impl ResetServiceSettingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20314,28 +20340,28 @@ impl ResumeSessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20494,28 +20520,28 @@ impl SendAutomationSignalInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -20629,10 +20655,10 @@ pub mod send_command_input {
             self.targets = input;
             self
         }
-        /// <p>The name of the Systems Manager document to run. This can be a public document or a custom document.
-        /// To run a shared document belonging to another account, specify the document ARN. For more
-        /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-        /// in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
+        /// custom document. To run a shared document belonging to another account, specify the document ARN.
+        /// For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
@@ -20645,9 +20671,9 @@ pub mod send_command_input {
             self
         }
         /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
-        /// specific version number. If you run commands by using the AWS CLI, then you must escape the first
-        /// two options by using a backslash. If you specify a version number, then you don't need to use the
-        /// backslash. For example:</p>
+        /// specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then
+        /// you must escape the first two options by using a backslash. If you specify a version number, then
+        /// you don't need to use the backslash. For example:</p>
         /// <p>--document-version "\$DEFAULT"</p>
         /// <p>--document-version "\$LATEST"</p>
         /// <p>--document-version "3"</p>
@@ -20692,8 +20718,7 @@ pub mod send_command_input {
             self.document_hash_type = input;
             self
         }
-        /// <p>If this time is reached and the command has not already started running, it will not
-        /// run.</p>
+        /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
         pub fn timeout_seconds(mut self, input: i32) -> Self {
             self.timeout_seconds = Some(input);
             self
@@ -20769,9 +20794,9 @@ pub mod send_command_input {
             self
         }
         /// <p>(Optional) The maximum number of instances that are allowed to run the command at the same
-        /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is 50.
-        /// For more information about how to use MaxConcurrency, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-        /// concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is
+        /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+        /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -20784,10 +20809,10 @@ pub mod send_command_input {
             self
         }
         /// <p>The maximum number of errors allowed without the command failing. When the command fails one
-        /// more time beyond the value of MaxErrors, the systems stops sending the command to additional
-        /// targets. You can specify a number like 10 or a percentage like 10%. The default value is 0. For
-        /// more information about how to use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-        /// error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to
+        /// additional targets. You can specify a number like 10 or a percentage like 10%. The default value
+        /// is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+        /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -20796,8 +20821,8 @@ pub mod send_command_input {
             self.max_errors = input;
             self
         }
-        /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-        /// Command commands.</p>
+        /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
+        /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
             self
@@ -20821,7 +20846,8 @@ pub mod send_command_input {
             self.notification_config = input;
             self
         }
-        /// <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs. </p>
+        /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a
+        /// capability of Amazon Web Services Systems Manager.</p>
         pub fn cloud_watch_output_config(
             mut self,
             input: crate::model::CloudWatchOutputConfig,
@@ -20890,28 +20916,28 @@ impl SendCommandInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21030,28 +21056,28 @@ impl StartAssociationsOnceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21138,10 +21164,10 @@ pub mod start_automation_execution_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document to run. This can be a public document or a custom document.
-        /// To run a shared document belonging to another account, specify the document ARN. For more
+        /// <p>The name of the SSM document to run. This can be a public document or a custom document. To
+        /// run a shared document belonging to another account, specify the document ARN. For more
         /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-        /// in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn document_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_name = Some(input.into());
             self
@@ -21153,7 +21179,7 @@ pub mod start_automation_execution_input {
             self.document_name = input;
             self
         }
-        /// <p>The version of the Automation document to use for this execution.</p>
+        /// <p>The version of the Automation runbook to use for this execution.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -21256,7 +21282,7 @@ pub mod start_automation_execution_input {
             self
         }
         /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
-        /// number, such as 10, or a percentage, such as 10%. The default value is 10.</p>
+        /// number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -21365,28 +21391,28 @@ impl StartAutomationExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21651,28 +21677,28 @@ impl StartChangeRequestExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21827,28 +21853,28 @@ impl StartSessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -21979,28 +22005,28 @@ impl StopAutomationExecutionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22117,28 +22143,28 @@ impl TerminateSessionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22209,7 +22235,7 @@ pub mod unlabel_parameter_version_input {
         pub(crate) labels: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The parameter name of which you want to delete one or more labels.</p>
+        /// <p>The name of the parameter from which you want to delete one or more labels.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -22219,7 +22245,7 @@ pub mod unlabel_parameter_version_input {
             self
         }
         /// <p>The specific version of the parameter which you want to delete one or more labels from. If
-        /// it is not present, the call will fail.</p>
+        /// it isn't present, the call will fail.</p>
         pub fn parameter_version(mut self, input: i64) -> Self {
             self.parameter_version = Some(input);
             self
@@ -22284,28 +22310,28 @@ impl UnlabelParameterVersionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22465,12 +22491,12 @@ pub mod update_association_input {
             self.output_location = input;
             self
         }
-        /// <p>The name of the SSM document that contains the configuration information for the instance.
-        /// You can specify Command or Automation documents.</p>
-        /// <p>You can specify AWS-predefined documents, documents you created, or a document that is
+        /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
+        /// information for the instance.</p>
+        /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
-        /// <p>For SSM documents that are shared with you from other AWS accounts, you must specify the
-        /// complete SSM document ARN, in the following format:</p>
+        /// <p>For Systems Manager document (SSM document) that are shared with you from other accounts, you
+        /// must specify the complete SSM document ARN, in the following format:</p>
         /// <p>
         /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
         /// </code>
@@ -22479,8 +22505,8 @@ pub mod update_association_input {
         /// <p>
         /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
         /// </p>
-        /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
-        /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+        /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+        /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
         /// <code>My-Document</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -22530,7 +22556,8 @@ pub mod update_association_input {
             self
         }
         /// <p>Specify the target for the association. This target is required for associations that use an
-        /// Automation document and target resources by using rate controls.</p>
+        /// Automation runbook and target resources by using rate controls. Automation is a capability of
+        /// Amazon Web Services Systems Manager.</p>
         pub fn automation_target_parameter_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -22550,12 +22577,12 @@ pub mod update_association_input {
         /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
         /// the system stops sending requests when the fourth error is received. If you specify 0, then the
         /// system stops sending requests after the first error is returned. If you run an association on 50
-        /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-        /// is received.</p>
-        /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-        /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-        /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-        /// at a time.</p>
+        /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+        /// the sixth error is received.</p>
+        /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+        /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+        /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+        /// so that executions proceed one at a time.</p>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_errors = Some(input.into());
             self
@@ -22568,9 +22595,9 @@ pub mod update_association_input {
         /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
         /// value is 100%, which means all targets run the association at the same time.</p>
         /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-        /// MaxConcurrency associations, the association is allowed to run. During the next association
-        /// interval, the new instance will process its association within the limit specified for
-        /// MaxConcurrency.</p>
+        /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+        /// association interval, the new instance will process its association within the limit specified
+        /// for <code>MaxConcurrency</code>.</p>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
             self.max_concurrency = Some(input.into());
             self
@@ -22603,8 +22630,9 @@ pub mod update_association_input {
         /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
         /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
         /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-        /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-        /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+        /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+        /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+        /// <a>PutComplianceItems</a> API operation.</p>
         /// <p>By default, all associations use <code>AUTO</code> mode.</p>
         pub fn sync_compliance(mut self, input: crate::model::AssociationSyncCompliance) -> Self {
             self.sync_compliance = Some(input);
@@ -22619,7 +22647,7 @@ pub mod update_association_input {
         }
         /// <p>By default, when you update an association, the system runs it immediately after it is
         /// updated and then according to the schedule you specified. Specify this option if you don't want
-        /// an association to run immediately after you update it. This parameter is not supported for rate
+        /// an association to run immediately after you update it. This parameter isn't supported for rate
         /// expressions.</p>
         /// <p>Also, if you specified this option when you created the association, you can reset it. To do
         /// so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the
@@ -22715,28 +22743,28 @@ impl UpdateAssociationInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22807,7 +22835,7 @@ pub mod update_association_status_input {
         pub(crate) association_status: std::option::Option<crate::model::AssociationStatus>,
     }
     impl Builder {
-        /// <p>The name of the Systems Manager document.</p>
+        /// <p>The name of the SSM document.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -22880,28 +22908,28 @@ impl UpdateAssociationStatusInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -22999,7 +23027,7 @@ pub mod update_document_input {
             self.attachments = input;
             self
         }
-        /// <p>The name of the Systems Manager document that you want to update.</p>
+        /// <p>The name of the SSM document that you want to update.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -23008,8 +23036,8 @@ pub mod update_document_input {
             self.name = input;
             self
         }
-        /// <p>The friendly name of the Systems Manager document that you want to update. This value can differ for
-        /// each version of the document. If you do not specify a value for this parameter in your request,
+        /// <p>The friendly name of the SSM document that you want to update. This value can differ for
+        /// each version of the document. If you don't specify a value for this parameter in your request,
         /// the existing value is applied to the new document version.</p>
         pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.display_name = Some(input.into());
@@ -23021,7 +23049,7 @@ pub mod update_document_input {
         }
         /// <p>An optional field specifying the version of the artifact you are updating with the document.
         /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-        /// cannot be changed.</p>
+        /// can't be changed.</p>
         pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.version_name = Some(input.into());
             self
@@ -23112,28 +23140,28 @@ impl UpdateDocumentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23267,28 +23295,28 @@ impl UpdateDocumentDefaultVersionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23434,28 +23462,28 @@ impl UpdateDocumentMetadataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23576,8 +23604,8 @@ pub mod update_maintenance_window_input {
             self
         }
         /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-        /// become inactive. EndDate allows you to set a date and time in the future when the maintenance
-        /// window will no longer run.</p>
+        /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
+        /// maintenance window will no longer run.</p>
         pub fn end_date(mut self, input: impl Into<std::string::String>) -> Self {
             self.end_date = Some(input.into());
             self
@@ -23610,7 +23638,7 @@ pub mod update_maintenance_window_input {
             self.schedule_timezone = input;
             self
         }
-        /// <p>The number of days to wait after the date and time specified by a CRON expression before
+        /// <p>The number of days to wait after the date and time specified by a cron expression before
         /// running the maintenance window.</p>
         /// <p>For example, the following cron expression schedules a maintenance window to run the third
         /// Tuesday of every month at 11:30 PM.</p>
@@ -23636,8 +23664,8 @@ pub mod update_maintenance_window_input {
             self.duration = input;
             self
         }
-        /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-        /// tasks for execution.</p>
+        /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+        /// new tasks for execution.</p>
         pub fn cutoff(mut self, input: i32) -> Self {
             self.cutoff = Some(input);
             self
@@ -23665,8 +23693,8 @@ pub mod update_maintenance_window_input {
             self.enabled = input;
             self
         }
-        /// <p>If True, then all fields that are required by the CreateMaintenanceWindow action are also
-        /// required for this API request. Optional fields that are not specified are set to null. </p>
+        /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
+        /// fields that aren't specified are set to null. </p>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
@@ -23728,28 +23756,28 @@ impl UpdateMaintenanceWindowInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -23858,8 +23886,8 @@ pub mod update_maintenance_window_target_input {
             self.targets = input;
             self
         }
-        /// <p>User-provided value that will be included in any CloudWatch events raised while running
-        /// tasks for these targets in this maintenance window.</p>
+        /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
+        /// running tasks for these targets in this maintenance window.</p>
         pub fn owner_information(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_information = Some(input.into());
             self
@@ -23889,9 +23917,8 @@ pub mod update_maintenance_window_target_input {
             self.description = input;
             self
         }
-        /// <p>If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action
-        /// are also required for this API request. Optional fields that are not specified are set to
-        /// null.</p>
+        /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
+        /// request. Optional fields that aren't specified are set to null.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
@@ -23948,28 +23975,28 @@ impl UpdateMaintenanceWindowTargetInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24100,11 +24127,11 @@ pub mod update_maintenance_window_task_input {
             self.task_arn = input;
             self
         }
-        /// <p>The ARN of the IAM service role for Systems Manager to assume when running a
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
         /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
         /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
         /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
-        /// <p>For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+        /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -24157,7 +24184,7 @@ pub mod update_maintenance_window_task_input {
         /// <important>
         /// <p>When you update a maintenance window task that has options specified in
         /// <code>TaskInvocationParameters</code>, you must provide again all the
-        /// <code>TaskInvocationParameters</code> values that you want to retain. The values you do not
+        /// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
         /// specify again are removed. For example, suppose that when you registered a Run Command task, you
         /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
         /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
@@ -24191,9 +24218,9 @@ pub mod update_maintenance_window_task_input {
         /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
         /// is the number of targets that are allowed to run this task in parallel.</p>
         /// <note>
-        /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
         /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value does not affect the running of your task and can be
+        /// in the response to this command. This value doesn't affect the running of your task and can be
         /// ignored.</p>
         /// </note>
         pub fn max_concurrency(mut self, input: impl Into<std::string::String>) -> Self {
@@ -24210,9 +24237,9 @@ pub mod update_maintenance_window_task_input {
         /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
         /// number of errors that are allowed before the task stops being scheduled.</p>
         /// <note>
-        /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
+        /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
         /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-        /// in the response to this command. This value does not affect the running of your task and can be
+        /// in the response to this command. This value doesn't affect the running of your task and can be
         /// ignored.</p>
         /// </note>
         pub fn max_errors(mut self, input: impl Into<std::string::String>) -> Self {
@@ -24226,9 +24253,9 @@ pub mod update_maintenance_window_task_input {
         /// <p>The new logging location in Amazon S3 to specify.</p>
         /// <note>
         /// <p>
-        /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+        /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
         /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-        /// For information about how Systems Manager handles these options for the supported maintenance
+        /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
         /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
         /// </note>
         pub fn logging_info(mut self, input: crate::model::LoggingInfo) -> Self {
@@ -24260,9 +24287,8 @@ pub mod update_maintenance_window_task_input {
             self.description = input;
             self
         }
-        /// <p>If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action
-        /// are also required for this API request. Optional fields that are not specified are set to
-        /// null.</p>
+        /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
+        /// Optional fields that aren't specified are set to null.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
@@ -24326,28 +24352,28 @@ impl UpdateMaintenanceWindowTaskInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24478,28 +24504,28 @@ impl UpdateManagedInstanceRoleInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24668,7 +24694,7 @@ pub mod update_ops_item_input {
             self
         }
         /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn status(mut self, input: crate::model::OpsItemStatus) -> Self {
             self.status = Some(input);
             self
@@ -24819,28 +24845,28 @@ impl UpdateOpsItemInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -24999,28 +25025,28 @@ impl UpdateOpsMetadataInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25172,7 +25198,8 @@ pub mod update_patch_baseline_input {
             self
         }
         /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-        /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
+        /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+        /// only.</p>
         pub fn approved_patches_enable_non_security(mut self, input: bool) -> Self {
             self.approved_patches_enable_non_security = Some(input);
             self
@@ -25197,23 +25224,27 @@ pub mod update_patch_baseline_input {
             self.rejected_patches = input;
             self
         }
-        /// <p>The action for Patch Manager to take on patches included in the RejectedPackages
-        /// list.</p>
+        /// <p>The action for Patch Manager to take on patches included in the
+        /// <code>RejectedPackages</code> list.</p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches
-        /// list is installed only if it is a dependency of another package. It is considered compliant
-        /// with the patch baseline, and its status is reported as <i>InstalledOther</i>.
-        /// This is the default action if no option is specified.</p>
+        /// <b>
+        /// <code>ALLOW_AS_DEPENDENCY</code>
+        /// </b>: A package in the
+        /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
+        /// It is considered compliant with the patch baseline, and its status is reported as
+        /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <b>BLOCK</b>: Packages in the RejectedPatches list, and packages
-        /// that include them as dependencies, are not installed under any circumstances. If a package was
-        /// installed before it was added to the Rejected patches list, it is considered non-compliant with
-        /// the patch baseline, and its status is reported as
-        /// <i>InstalledRejected</i>.</p>
+        /// <b>
+        /// <code>BLOCK</code>
+        /// </b>: Packages in the
+        /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
+        /// installed under any circumstances. If a package was installed before it was added to the
+        /// <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
+        /// and its status is reported as <code>InstalledRejected</code>.</p>
         /// </li>
         /// </ul>
         pub fn rejected_patches_action(mut self, input: crate::model::PatchAction) -> Self {
@@ -25249,8 +25280,9 @@ pub mod update_patch_baseline_input {
             self.sources = input;
             self
         }
-        /// <p>If True, then all fields that are required by the CreatePatchBaseline action are also
-        /// required for this API request. Optional fields that are not specified are set to null.</p>
+        /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
+        /// operation are also required for this API request. Optional fields that aren't specified are set
+        /// to null.</p>
         pub fn replace(mut self, input: bool) -> Self {
             self.replace = Some(input);
             self
@@ -25310,28 +25342,28 @@ impl UpdatePatchBaselineInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25475,28 +25507,28 @@ impl UpdateResourceDataSyncInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25627,11 +25659,11 @@ pub mod update_service_setting_input {
         /// <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or
         /// false.</p>
         /// <p>For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting
-        /// value can be CloudWatch.</p>
+        /// value can be <code>CloudWatch</code>.</p>
         /// <p>For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting
-        /// value can be the name of a CloudWatch Logs log group.</p>
-        /// <p>For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting
-        /// value can be Enable or Disable.</p>
+        /// value can be the name of an Amazon CloudWatch Logs log group.</p>
+        /// <p>For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
+        /// setting value can be <code>Enable</code> or <code>Disable</code>.</p>
         pub fn setting_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.setting_value = Some(input.into());
             self
@@ -25684,28 +25716,28 @@ impl UpdateServiceSettingInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -25765,7 +25797,7 @@ impl UpdateServiceSettingInput {
     }
 }
 
-/// <p>The request body of the UpdateServiceSetting API action.</p>
+/// <p>The request body of the UpdateServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateServiceSettingInput {
@@ -25823,11 +25855,11 @@ pub struct UpdateServiceSettingInput {
     /// <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or
     /// false.</p>
     /// <p>For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting
-    /// value can be CloudWatch.</p>
+    /// value can be <code>CloudWatch</code>.</p>
     /// <p>For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting
-    /// value can be the name of a CloudWatch Logs log group.</p>
-    /// <p>For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting
-    /// value can be Enable or Disable.</p>
+    /// value can be the name of an Amazon CloudWatch Logs log group.</p>
+    /// <p>For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the
+    /// setting value can be <code>Enable</code> or <code>Disable</code>.</p>
     pub setting_value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateServiceSettingInput {
@@ -25874,35 +25906,40 @@ pub struct UpdatePatchBaselineInput {
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-    /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Assigns a new compliance severity level to an existing patch baseline.</p>
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-    /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The action for Patch Manager to take on patches included in the RejectedPackages
-    /// list.</p>
+    /// <p>The action for Patch Manager to take on patches included in the
+    /// <code>RejectedPackages</code> list.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches
-    /// list is installed only if it is a dependency of another package. It is considered compliant
-    /// with the patch baseline, and its status is reported as <i>InstalledOther</i>.
-    /// This is the default action if no option is specified.</p>
+    /// <b>
+    /// <code>ALLOW_AS_DEPENDENCY</code>
+    /// </b>: A package in the
+    /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
+    /// It is considered compliant with the patch baseline, and its status is reported as
+    /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <b>BLOCK</b>: Packages in the RejectedPatches list, and packages
-    /// that include them as dependencies, are not installed under any circumstances. If a package was
-    /// installed before it was added to the Rejected patches list, it is considered non-compliant with
-    /// the patch baseline, and its status is reported as
-    /// <i>InstalledRejected</i>.</p>
+    /// <b>
+    /// <code>BLOCK</code>
+    /// </b>: Packages in the
+    /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
+    /// installed under any circumstances. If a package was installed before it was added to the
+    /// <code>Rejected</code> patches list, it is considered non-compliant with the patch baseline,
+    /// and its status is reported as <code>InstalledRejected</code>.</p>
     /// </li>
     /// </ul>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
@@ -25911,8 +25948,9 @@ pub struct UpdatePatchBaselineInput {
     /// <p>Information about the patches to use to update the instances, including target operating
     /// systems and source repositories. Applies to Linux instances only.</p>
     pub sources: std::option::Option<std::vec::Vec<crate::model::PatchSource>>,
-    /// <p>If True, then all fields that are required by the CreatePatchBaseline action are also
-    /// required for this API request. Optional fields that are not specified are set to null.</p>
+    /// <p>If True, then all fields that are required by the <a>CreatePatchBaseline</a>
+    /// operation are also required for this API request. Optional fields that aren't specified are set
+    /// to null.</p>
     pub replace: std::option::Option<bool>,
 }
 impl std::fmt::Debug for UpdatePatchBaselineInput {
@@ -25975,18 +26013,19 @@ pub struct UpdateOpsItemInput {
     /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
     /// of 128 characters. The value has a maximum size of 20 KB.</p>
     /// <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: amazon, aws,
-    /// amzn, ssm, /amazon, /aws, /amzn, /ssm.</p>
+    /// <p>Operational data keys <i>can't</i> begin with the following:
+    /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
+    /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict
     /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-    /// provided by the <a>DescribeOpsItems</a> API action) can view and search on the
-    /// specified data. Operational data that is not searchable is only viewable by users who have access
-    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+    /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
+    /// specified data. Operational data that isn't searchable is only viewable by users who have access
+    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
     /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-    /// Automation runbook with the OpsItem. To view AWS CLI example commands that use these keys, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
@@ -26002,7 +26041,7 @@ pub struct UpdateOpsItemInput {
     /// statuses for the impacted resource.</p>
     pub related_ops_items: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
     /// <p>The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-    /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems.html#OpsCenter-working-with-OpsItems-editing-details">Editing OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub status: std::option::Option<crate::model::OpsItemStatus>,
     /// <p>The ID of the OpsItem.</p>
     pub ops_item_id: std::option::Option<std::string::String>,
@@ -26074,25 +26113,25 @@ pub struct UpdateMaintenanceWindowTaskInput {
     pub window_id: std::option::Option<std::string::String>,
     /// <p>The task ID to modify.</p>
     pub window_task_id: std::option::Option<std::string::String>,
-    /// <p>The targets (either instances or tags) to modify. Instances are specified using
-    /// Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using
-    /// Key=tag_name,Values=tag_value. </p>
+    /// <p>The targets (either instances or tags) to modify. Instances are specified using the format
+    /// <code>Key=instanceids,Values=instanceID_1,instanceID_2</code>. Tags are specified using the
+    /// format <code> Key=tag_name,Values=tag_value</code>. </p>
     /// <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
     /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-    /// AWS Lambda, and AWS Step Functions). For more information about running tasks that do not
-    /// specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// Lambda, and Step Functions). For more information about running tasks
+    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
     /// maintenance window tasks without targets</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The task ARN to modify.</p>
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM service role for Systems Manager to assume when running a
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
     /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
     /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
     /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
-    /// <p>For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+    /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -26130,7 +26169,7 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// <important>
     /// <p>When you update a maintenance window task that has options specified in
     /// <code>TaskInvocationParameters</code>, you must provide again all the
-    /// <code>TaskInvocationParameters</code> values that you want to retain. The values you do not
+    /// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
     /// specify again are removed. For example, suppose that when you registered a Run Command task, you
     /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
     /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
@@ -26145,27 +26184,27 @@ pub struct UpdateMaintenanceWindowTaskInput {
     /// <p>The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code>
     /// is the number of targets that are allowed to run this task in parallel.</p>
     /// <note>
-    /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
     /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-    /// in the response to this command. This value does not affect the running of your task and can be
+    /// in the response to this command. This value doesn't affect the running of your task and can be
     /// ignored.</p>
     /// </note>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum
     /// number of errors that are allowed before the task stops being scheduled.</p>
     /// <note>
-    /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
     /// option. Instead, the system inserts a placeholder value of <code>1</code>, which may be reported
-    /// in the response to this command. This value does not affect the running of your task and can be
+    /// in the response to this command. This value doesn't affect the running of your task and can be
     /// ignored.</p>
     /// </note>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The new logging location in Amazon S3 to specify.</p>
     /// <note>
     /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
     /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Systems Manager handles these options for the supported maintenance
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
     /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
     /// </note>
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
@@ -26173,9 +26212,8 @@ pub struct UpdateMaintenanceWindowTaskInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>The new task description to specify.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action
-    /// are also required for this API request. Optional fields that are not specified are set to
-    /// null.</p>
+    /// <p>If True, then all fields that are required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are also required for this API request.
+    /// Optional fields that aren't specified are set to null.</p>
     pub replace: std::option::Option<bool>,
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTaskInput {
@@ -26211,16 +26249,15 @@ pub struct UpdateMaintenanceWindowTargetInput {
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The targets to add or replace.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>User-provided value that will be included in any CloudWatch events raised while running
-    /// tasks for these targets in this maintenance window.</p>
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
+    /// running tasks for these targets in this maintenance window.</p>
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>A name for the update.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description for the update.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action
-    /// are also required for this API request. Optional fields that are not specified are set to
-    /// null.</p>
+    /// <p>If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a> operation are also required for this API
+    /// request. Optional fields that aren't specified are set to null.</p>
     pub replace: std::option::Option<bool>,
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowTargetInput {
@@ -26252,8 +26289,8 @@ pub struct UpdateMaintenanceWindowInput {
     /// Zone Database</a> on the IANA website.</p>
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-    /// become inactive. EndDate allows you to set a date and time in the future when the maintenance
-    /// window will no longer run.</p>
+    /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
+    /// maintenance window will no longer run.</p>
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub schedule: std::option::Option<std::string::String>,
@@ -26262,7 +26299,7 @@ pub struct UpdateMaintenanceWindowInput {
     /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
     /// Zone Database</a> on the IANA website.</p>
     pub schedule_timezone: std::option::Option<std::string::String>,
-    /// <p>The number of days to wait after the date and time specified by a CRON expression before
+    /// <p>The number of days to wait after the date and time specified by a cron expression before
     /// running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run the third
     /// Tuesday of every month at 11:30 PM.</p>
@@ -26274,16 +26311,16 @@ pub struct UpdateMaintenanceWindowInput {
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
     pub duration: std::option::Option<i32>,
-    /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-    /// tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
     pub cutoff: std::option::Option<i32>,
     /// <p>Whether targets must be registered with the maintenance window before tasks can be defined
     /// for those targets.</p>
     pub allow_unassociated_targets: std::option::Option<bool>,
     /// <p>Whether the maintenance window is enabled.</p>
     pub enabled: std::option::Option<bool>,
-    /// <p>If True, then all fields that are required by the CreateMaintenanceWindow action are also
-    /// required for this API request. Optional fields that are not specified are set to null. </p>
+    /// <p>If <code>True</code>, then all fields that are required by the <a>CreateMaintenanceWindow</a> operation are also required for this API request. Optional
+    /// fields that aren't specified are set to null. </p>
     pub replace: std::option::Option<bool>,
 }
 impl std::fmt::Debug for UpdateMaintenanceWindowInput {
@@ -26351,17 +26388,17 @@ impl std::fmt::Debug for UpdateDocumentDefaultVersionInput {
 pub struct UpdateDocumentInput {
     /// <p>A valid JSON or YAML string.</p>
     pub content: std::option::Option<std::string::String>,
-    /// <p>A list of key and value pairs that describe attachments to a version of a document.</p>
+    /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentsSource>>,
-    /// <p>The name of the Systems Manager document that you want to update.</p>
+    /// <p>The name of the SSM document that you want to update.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The friendly name of the Systems Manager document that you want to update. This value can differ for
-    /// each version of the document. If you do not specify a value for this parameter in your request,
+    /// <p>The friendly name of the SSM document that you want to update. This value can differ for
+    /// each version of the document. If you don't specify a value for this parameter in your request,
     /// the existing value is applied to the new document version.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are updating with the document.
     /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-    /// cannot be changed.</p>
+    /// can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The version of the document that you want to update. Currently, Systems Manager supports updating only
     /// the latest version of the document. You can specify the version number of the latest version or
@@ -26391,7 +26428,7 @@ impl std::fmt::Debug for UpdateDocumentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAssociationStatusInput {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -26414,7 +26451,8 @@ pub struct UpdateAssociationInput {
     /// <p>The ID of the association you want to update. </p>
     pub association_id: std::option::Option<std::string::String>,
     /// <p>The parameters you want to update for the association. If you create a parameter using
-    /// Parameter Store, you can reference the parameter using {{ssm:parameter-name}}</p>
+    /// Parameter Store, a capability of Amazon Web Services Systems Manager, you can reference the parameter using
+    /// <code>{{ssm:parameter-name}}</code>.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -26424,12 +26462,12 @@ pub struct UpdateAssociationInput {
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>An S3 bucket where you want to store the results of this request.</p>
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
-    /// <p>The name of the SSM document that contains the configuration information for the instance.
-    /// You can specify Command or Automation documents.</p>
-    /// <p>You can specify AWS-predefined documents, documents you created, or a document that is
+    /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
+    /// information for the instance.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
-    /// <p>For SSM documents that are shared with you from other AWS accounts, you must specify the
-    /// complete SSM document ARN, in the following format:</p>
+    /// <p>For Systems Manager document (SSM document) that are shared with you from other accounts, you
+    /// must specify the complete SSM document ARN, in the following format:</p>
     /// <p>
     /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
     /// </code>
@@ -26438,8 +26476,8 @@ pub struct UpdateAssociationInput {
     /// <p>
     /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
     /// </p>
-    /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
-    /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+    /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+    /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
     /// <code>My-Document</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The targets of the association.</p>
@@ -26451,27 +26489,28 @@ pub struct UpdateAssociationInput {
     /// specify <code>$LATEST</code>, or omit this parameter.</p>
     pub association_version: std::option::Option<std::string::String>,
     /// <p>Specify the target for the association. This target is required for associations that use an
-    /// Automation document and target resources by using rate controls.</p>
+    /// Automation runbook and target resources by using rate controls. Automation is a capability of
+    /// Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the
     /// association on additional targets. You can specify either an absolute number of errors, for
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-    /// is received.</p>
-    /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-    /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-    /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-    /// at a time.</p>
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-    /// MaxConcurrency associations, the association is allowed to run. During the next association
-    /// interval, the new instance will process its association within the limit specified for
-    /// MaxConcurrency.</p>
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
@@ -26481,25 +26520,26 @@ pub struct UpdateAssociationInput {
     /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
     /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-    /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager, a capability of Amazon Web Services Systems Manager. It is managed by your direct call to the
+    /// <a>PutComplianceItems</a> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you update an association, the system runs it immediately after it is
     /// updated and then according to the schedule you specified. Specify this option if you don't want
-    /// an association to run immediately after you update it. This parameter is not supported for rate
+    /// an association to run immediately after you update it. This parameter isn't supported for rate
     /// expressions.</p>
     /// <p>Also, if you specified this option when you created the association, you can reset it. To do
     /// so, specify the <code>no-apply-only-at-cron-interval</code> parameter when you update the
     /// association from the command line. This parameter forces the association to run immediately after
     /// updating it and according to the interval specified.</p>
     pub apply_only_at_cron_interval: bool,
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
-    /// documents you want to gate your associations under. The associations only run when that Change
-    /// Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems Manager Change
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
+    /// gate your associations under. The associations only run when that change calendar is open. For
+    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
     /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A location is a combination of AWS Regions and AWS accounts where you want to run the
+    /// <p>A location is a combination of Regions and accounts where you want to run the
     /// association. Use this action to update an association in multiple Regions and multiple
     /// accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -26537,10 +26577,10 @@ impl std::fmt::Debug for UpdateAssociationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnlabelParameterVersionInput {
-    /// <p>The parameter name of which you want to delete one or more labels.</p>
+    /// <p>The name of the parameter from which you want to delete one or more labels.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The specific version of the parameter which you want to delete one or more labels from. If
-    /// it is not present, the call will fail.</p>
+    /// it isn't present, the call will fail.</p>
     pub parameter_version: std::option::Option<i64>,
     /// <p>One or more labels to delete from the specified parameter version.</p>
     pub labels: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -26634,8 +26674,7 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>The user-provided idempotency token. The token must be unique, is case insensitive, enforces
     /// the UUID format, and can't be reused.</p>
     pub client_token: std::option::Option<std::string::String>,
-    /// <p>Information about the Automation runbooks (Automation documents) that are run during the
-    /// runbook workflow.</p>
+    /// <p>Information about the Automation runbooks that are run during the runbook workflow.</p>
     /// <note>
     /// <p>The Automation runbooks specified for the runbook workflow can't run until all required
     /// approvals for the change request have been received.</p>
@@ -26644,7 +26683,7 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
     /// a change request. Tags enable you to categorize a resource in different ways, such as by
     /// purpose, owner, or environment. For example, you might want to tag a change request to identify
-    /// an environment or target AWS Region. In this case, you could specify the following key-value
+    /// an environment or target Region. In this case, you could specify the following key-value
     /// pairs:</p>
     /// <ul>
     /// <li>
@@ -26687,15 +26726,15 @@ impl std::fmt::Debug for StartChangeRequestExecutionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartAutomationExecutionInput {
-    /// <p>The name of the Systems Manager document to run. This can be a public document or a custom document.
-    /// To run a shared document belonging to another account, specify the document ARN. For more
+    /// <p>The name of the SSM document to run. This can be a public document or a custom document. To
+    /// run a shared document belonging to another account, specify the document ARN. For more
     /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-    /// in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub document_name: std::option::Option<std::string::String>,
-    /// <p>The version of the Automation document to use for this execution.</p>
+    /// <p>The version of the Automation runbook to use for this execution.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>A key-value map of execution parameters, which match the declared parameters in the
-    /// Automation document.</p>
+    /// Automation runbook.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
@@ -26711,14 +26750,14 @@ pub struct StartAutomationExecutionInput {
     /// <p>A key-value mapping to target resources. Required if you specify TargetParameterName.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A key-value mapping of document parameters to target resources. Both Targets and TargetMaps
-    /// cannot be specified together.</p>
+    /// can't be specified together.</p>
     pub target_maps: std::option::Option<
         std::vec::Vec<
             std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
         >,
     >,
     /// <p>The maximum number of targets allowed to run this task in parallel. You can specify a
-    /// number, such as 10, or a percentage, such as 10%. The default value is 10.</p>
+    /// number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops running the automation on
     /// additional targets. You can specify either an absolute number of errors, for example 10, or a
@@ -26732,15 +26771,15 @@ pub struct StartAutomationExecutionInput {
     /// be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one
     /// at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>A location is a combination of AWS Regions and/or AWS accounts where you want to run the
-    /// Automation. Use this action to start an Automation in multiple Regions and multiple accounts. For
-    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple AWS Regions and accounts</a> in the
-    /// <i>AWS Systems Manager User Guide</i>. </p>
+    /// <p>A location is a combination of Regions and/or accounts where you want to run the
+    /// automation. Use this operation to start an automation in multiple Regions and multiple
+    /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Regions and accounts</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
     /// an automation. Tags enable you to categorize a resource in different ways, such as by purpose,
     /// owner, or environment. For example, you might want to tag an automation to identify an
-    /// environment or operating system. In this case, you could specify the following key name/value
+    /// environment or operating system. In this case, you could specify the following key-value
     /// pairs:</p>
     /// <ul>
     /// <li>
@@ -26756,7 +26795,7 @@ pub struct StartAutomationExecutionInput {
     /// </ul>
     /// <note>
     /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-    /// action.</p>
+    /// operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -26805,7 +26844,7 @@ pub struct SendCommandInput {
     /// command to tens, hundreds, or thousands of instances at once.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate
     /// controls to send commands to a fleet</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of search criteria that targets instances using a <code>Key,Value</code>
     /// combination that you specify. Specifying targets is most useful when you want to send a command
@@ -26815,17 +26854,17 @@ pub struct SendCommandInput {
     /// <p>To send a command to a smaller number of instances, you can use the <code>InstanceIds</code>
     /// option instead.</p>
     /// <p>For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending commands to a
-    /// fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The name of the Systems Manager document to run. This can be a public document or a custom document.
-    /// To run a shared document belonging to another account, specify the document ARN. For more
-    /// information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
-    /// in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <p>The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a
+    /// custom document. To run a shared document belonging to another account, specify the document ARN.
+    /// For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a>
+    /// in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub document_name: std::option::Option<std::string::String>,
     /// <p>The SSM document version to use in the request. You can specify $DEFAULT, $LATEST, or a
-    /// specific version number. If you run commands by using the AWS CLI, then you must escape the first
-    /// two options by using a backslash. If you specify a version number, then you don't need to use the
-    /// backslash. For example:</p>
+    /// specific version number. If you run commands by using the Command Line Interface (Amazon Web Services CLI), then
+    /// you must escape the first two options by using a backslash. If you specify a version number, then
+    /// you don't need to use the backslash. For example:</p>
     /// <p>--document-version "\$DEFAULT"</p>
     /// <p>--document-version "\$LATEST"</p>
     /// <p>--document-version "3"</p>
@@ -26840,8 +26879,7 @@ pub struct SendCommandInput {
     /// <p>Sha1 hashes have been deprecated.</p>
     /// </note>
     pub document_hash_type: std::option::Option<crate::model::DocumentHashType>,
-    /// <p>If this time is reached and the command has not already started running, it will not
-    /// run.</p>
+    /// <p>If this time is reached and the command hasn't already started running, it won't run.</p>
     pub timeout_seconds: std::option::Option<i32>,
     /// <p>User-specified information about the command, such as a brief description of what the
     /// command should do.</p>
@@ -26858,22 +26896,23 @@ pub struct SendCommandInput {
     /// <p>The directory structure within the S3 bucket where the responses should be stored.</p>
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of instances that are allowed to run the command at the same
-    /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is 50.
-    /// For more information about how to use MaxConcurrency, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
-    /// concurrency controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// time. You can specify a number such as 10 or a percentage such as 10%. The default value is
+    /// <code>50</code>. For more information about how to use <code>MaxConcurrency</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
+    /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed without the command failing. When the command fails one
-    /// more time beyond the value of MaxErrors, the systems stops sending the command to additional
-    /// targets. You can specify a number like 10 or a percentage like 10%. The default value is 0. For
-    /// more information about how to use MaxErrors, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
-    /// error controls</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// more time beyond the value of <code>MaxErrors</code>, the systems stops sending the command to
+    /// additional targets. You can specify a number like 10 or a percentage like 10%. The default value
+    /// is <code>0</code>. For more information about how to use <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+    /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM service role to use to publish Amazon Simple Notification Service (Amazon SNS) notifications for Run
-    /// Command commands.</p>
+    /// <p>The ARN of the Identity and Access Management (IAM) service role to use to publish
+    /// Amazon Simple Notification Service (Amazon SNS) notifications for Run Command commands.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Configurations for sending notifications.</p>
     pub notification_config: std::option::Option<crate::model::NotificationConfig>,
-    /// <p>Enables Systems Manager to send Run Command output to Amazon CloudWatch Logs. </p>
+    /// <p>Enables Amazon Web Services Systems Manager to send Run Command output to Amazon CloudWatch Logs. Run Command is a
+    /// capability of Amazon Web Services Systems Manager.</p>
     pub cloud_watch_output_config: std::option::Option<crate::model::CloudWatchOutputConfig>,
 }
 impl std::fmt::Debug for SendCommandInput {
@@ -26953,11 +26992,12 @@ impl std::fmt::Debug for ResumeSessionInput {
     }
 }
 
-/// <p>The request body of the ResetServiceSetting API action.</p>
+/// <p>The request body of the ResetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResetServiceSettingInput {
-    /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of the following.</p>
+    /// <p>The Amazon Resource Name (ARN) of the service setting to reset. The setting ID can be one of
+    /// the following.</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -27005,9 +27045,11 @@ impl std::fmt::Debug for ResetServiceSettingInput {
 pub struct RemoveTagsFromResourceInput {
     /// <p>The type of resource from which you want to remove a tag.</p>
     /// <note>
-    /// <p>The ManagedInstance type for this API action is only for on-premises managed instances.
-    /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
-    /// mi-1a2b3c4d5e6f.</p>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+    /// managed instances. Specify the name of the managed instance in the following format:
+    /// <code>mi-<i>ID_number</i>
+    /// </code>. For example,
+    /// <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
     /// <p>The ID of the resource from which you want to remove tags. For example:</p>
@@ -27022,7 +27064,7 @@ pub struct RemoveTagsFromResourceInput {
     /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
     /// <p>For the Document and Parameter values, use the name of the resource.</p>
     /// <note>
-    /// <p>The ManagedInstance type for this API action is only for on-premises managed instances.
+    /// <p>The ManagedInstance type for this API operation is only for on-premises managed instances.
     /// Specify the name of the managed instance in the following format: mi-ID_number. For example,
     /// mi-1a2b3c4d5e6f.</p>
     /// </note>
@@ -27049,10 +27091,10 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     /// <note>
     /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
     /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-    /// AWS Lambda, and AWS Step Functions). For more information about running tasks that do not
-    /// specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+    /// Lambda, and Step Functions). For more information about running tasks
+    /// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
     /// maintenance window tasks without targets</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// </note>
     /// <p>Specify instances using the following format: </p>
     /// <p>
@@ -27065,11 +27107,11 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>The ARN of the task to run.</p>
     pub task_arn: std::option::Option<std::string::String>,
-    /// <p>The ARN of the IAM service role for Systems Manager to assume when running a
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role for Amazon Web Services Systems Manager to assume when running a
     /// maintenance window task. If you do not specify a service role ARN, Systems Manager uses your account's
     /// service-linked role.  If no service-linked role for Systems Manager exists in your account, it is created when you run
     /// <code>RegisterTaskWithMaintenanceWindow</code>.</p>
-    /// <p>For more information, see the following topics in the in the <i>AWS Systems Manager User Guide</i>:</p>
+    /// <p>For more information, see the following topics in the in the <i>Amazon Web Services Systems Manager User Guide</i>:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -27111,24 +27153,25 @@ pub struct RegisterTaskWithMaintenanceWindowInput {
     pub priority: std::option::Option<i32>,
     /// <p>The maximum number of targets this task can be run for in parallel.</p>
     /// <note>
-    /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
-    /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value does not
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
     /// affect the running of your task.</p>
     /// </note>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before this task stops being scheduled.</p>
     /// <note>
-    /// <p>For maintenance window tasks without a target specified, you cannot supply a value for this
-    /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value does not
+    /// <p>For maintenance window tasks without a target specified, you can't supply a value for this
+    /// option. Instead, the system inserts a placeholder value of <code>1</code>. This value doesn't
     /// affect the running of your task.</p>
     /// </note>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>A structure containing information about an S3 bucket to write instance-level logs to. </p>
+    /// <p>A structure containing information about an Amazon Simple Storage Service (Amazon S3) bucket
+    /// to write instance-level logs to. </p>
     /// <note>
     /// <p>
-    /// <code>LoggingInfo</code> has been deprecated. To specify an S3 bucket to contain logs, instead use the
+    /// <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the
     /// <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure.
-    /// For information about how Systems Manager handles these options for the supported maintenance
+    /// For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance
     /// window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.</p>
     /// </note>
     pub logging_info: std::option::Option<crate::model::LoggingInfo>,
@@ -27220,10 +27263,10 @@ pub struct RegisterTargetWithMaintenanceWindowInput {
     /// </note>
     /// <p>For more information about these examples formats, including the best use case for each one,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/mw-cli-tutorial-targets-examples.html">Examples: Register
-    /// targets with a maintenance window</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// targets with a maintenance window</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>User-provided value that will be included in any CloudWatch events raised while running
-    /// tasks for these targets in this maintenance window.</p>
+    /// <p>User-provided value that will be included in any Amazon CloudWatch Events events raised while
+    /// running tasks for these targets in this maintenance window.</p>
     pub owner_information: std::option::Option<std::string::String>,
     /// <p>An optional name for the target.</p>
     pub name: std::option::Option<std::string::String>,
@@ -27249,9 +27292,9 @@ impl std::fmt::Debug for RegisterTargetWithMaintenanceWindowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RegisterPatchBaselineForPatchGroupInput {
-    /// <p>The ID of the patch baseline to register the patch group with.</p>
+    /// <p>The ID of the patch baseline to register with the patch group.</p>
     pub baseline_id: std::option::Option<std::string::String>,
-    /// <p>The name of the patch group that should be registered with the patch baseline.</p>
+    /// <p>The name of the patch group to be registered with the patch baseline.</p>
     pub patch_group: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegisterPatchBaselineForPatchGroupInput {
@@ -27291,10 +27334,11 @@ pub struct PutParameterInput {
     /// <p>Parameter names are case sensitive.</p>
     /// </li>
     /// <li>
-    /// <p>A parameter name must be unique within an AWS Region</p>
+    /// <p>A parameter name must be unique within an Region</p>
     /// </li>
     /// <li>
-    /// <p>A parameter name can't be prefixed with "aws" or "ssm" (case-insensitive).</p>
+    /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
+    /// (case-insensitive).</p>
     /// </li>
     /// <li>
     /// <p>Parameter names can include only the following symbols and letters:
@@ -27311,10 +27355,10 @@ pub struct PutParameterInput {
     /// <p>Parameter hierarchies are limited to a maximum depth of fifteen levels.</p>
     /// </li>
     /// </ul>
-    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <p>For additional information about valid values for parameter names, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-su-create.html">Creating Systems Manager parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <note>
     /// <p>The maximum length constraint listed below includes capacity for additional system
-    /// attributes that are not part of the name. The maximum length for a parameter name, including the
+    /// attributes that aren't part of the name. The maximum length for a parameter name, including the
     /// full length of the parameter ARN, is 1011 characters. For example, the length of the following
     /// parameter name is 65 characters, not 20 characters:</p>
     /// <p>
@@ -27325,7 +27369,7 @@ pub struct PutParameterInput {
     /// <p>Information about the parameter that you want to add to the system. Optional but
     /// recommended.</p>
     /// <important>
-    /// <p>Do not enter personally identifiable information in this field.</p>
+    /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub description: std::option::Option<std::string::String>,
     /// <p>The parameter value that you want to add to the system. Standard parameters have a value
@@ -27339,36 +27383,34 @@ pub struct PutParameterInput {
     /// <p>The type of parameter that you want to add to the system.</p>
     /// <note>
     /// <p>
-    /// <code>SecureString</code> is not currently supported for AWS CloudFormation
-    /// templates.</p>
+    /// <code>SecureString</code> isn't currently supported for CloudFormation templates.</p>
     /// </note>
     /// <p>Items in a <code>StringList</code> must be separated by a comma (,). You can't
     /// use other punctuation or special character to escape items in the list. If you have a parameter
     /// value that requires a comma, then use the <code>String</code> data type.</p>
     /// <important>
-    /// <p>Specifying a parameter type is not required when updating a parameter. You must specify a
+    /// <p>Specifying a parameter type isn't required when updating a parameter. You must specify a
     /// parameter type when creating a parameter.</p>
     /// </important>
     pub r#type: std::option::Option<crate::model::ParameterType>,
-    /// <p>The KMS Key ID that you want to use to encrypt a parameter. Either the default AWS Key
-    /// Management Service (AWS KMS) key automatically assigned to your AWS account or a custom key.
-    /// Required for parameters that use the <code>SecureString</code> data type.</p>
-    /// <p>If you don't specify a key ID, the system uses the default key associated with your AWS
+    /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
+    /// parameter. Either the default KMS key automatically assigned to your account
+    /// or a custom key. Required for parameters that use the <code>SecureString</code>
+    /// data type.</p>
+    /// <p>If you don't specify a key ID, the system uses the default key associated with your
     /// account.</p>
     /// <ul>
     /// <li>
-    /// <p>To use your default AWS KMS key, choose the <code>SecureString</code> data
-    /// type, and do <i>not</i> specify the <code>Key ID</code> when you
-    /// create the parameter. The system automatically populates <code>Key ID</code> with
-    /// your default KMS key.</p>
+    /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
+    /// <code>Key ID</code> with your default KMS key.</p>
     /// </li>
     /// <li>
-    /// <p>To use a custom KMS key, choose the <code>SecureString</code> data type with
-    /// the <code>Key ID</code> parameter.</p>
+    /// <p>To use a custom KMS key, choose the <code>SecureString</code>
+    /// data type with the <code>Key ID</code> parameter.</p>
     /// </li>
     /// </ul>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>Overwrite an existing parameter. The default value is 'false'.</p>
+    /// <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
     pub overwrite: std::option::Option<bool>,
     /// <p>A regular expression used to validate the parameter value. For example, for String types
     /// with values restricted to numbers, you can specify the following: AllowedPattern=^\d+$ </p>
@@ -27377,7 +27419,7 @@ pub struct PutParameterInput {
     /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
     /// Systems Manager parameter to identify the type of resource to which it applies, the environment, or the
     /// type of configuration data referenced by the parameter. In this case, you could specify the
-    /// following key name/value pairs:</p>
+    /// following key-value pairs:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -27397,18 +27439,18 @@ pub struct PutParameterInput {
     /// </ul>
     /// <note>
     /// <p>To add tags to an existing Systems Manager parameter, use the <a>AddTagsToResource</a>
-    /// action.</p>
+    /// operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The parameter tier to assign to a parameter.</p>
     /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
     /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
-    /// You can create a maximum of 10,000 standard parameters for each Region in an AWS account.
+    /// You can create a maximum of 10,000 standard parameters for each Region in an account.
     /// Standard parameters are offered at no additional cost. </p>
     /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
-    /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an AWS
+    /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
     /// account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
-    /// advanced parameter tiers</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
     /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
     /// parameter would result in data loss because the system would truncate the size of the parameter
@@ -27421,7 +27463,7 @@ pub struct PutParameterInput {
     /// </p>
     /// <p>In <code>PutParameter</code> requests, you can specify the tier to create the parameter in.
     /// Whenever you specify a tier in the request, Parameter Store creates or updates the parameter
-    /// according to that request. However, if you do not specify a tier in a request, Parameter Store
+    /// according to that request. However, if you don't specify a tier in a request, Parameter Store
     /// assigns the tier based on the current Parameter Store default tier configuration.</p>
     /// <p>The default tier when you begin using Parameter Store is the standard-parameter tier. If you
     /// use the advanced-parameter tier, you can specify one of the following as the default:</p>
@@ -27452,31 +27494,31 @@ pub struct PutParameterInput {
     /// <p>The parameter uses a parameter policy.</p>
     /// </li>
     /// <li>
-    /// <p>More than 10,000 parameters already exist in your AWS account in the current
+    /// <p>More than 10,000 parameters already exist in your account in the current
     /// Region.</p>
     /// </li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
-    /// default parameter tier</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// default parameter tier</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub tier: std::option::Option<crate::model::ParameterTier>,
-    /// <p>One or more policies to apply to a parameter. This action takes a JSON array. Parameter
-    /// Store supports the following policy types:</p>
+    /// <p>One or more policies to apply to a parameter. This operation takes a JSON array. Parameter
+    /// Store, a capability of Amazon Web Services Systems Manager supports the following policy types:</p>
     /// <p>Expiration: This policy deletes the parameter after it expires. When you create the policy,
     /// you specify the expiration date. You can update the expiration date and time by updating the
-    /// policy. Updating the <i>parameter</i> does not affect the expiration date and time.
+    /// policy. Updating the <i>parameter</i> doesn't affect the expiration date and time.
     /// When the expiration time is reached, Parameter Store deletes the parameter.</p>
     /// <p>ExpirationNotification: This policy triggers an event in Amazon CloudWatch Events that
     /// notifies you about the expiration. By using this policy, you can receive notification before or
     /// after the expiration time is reached, in units of days or hours.</p>
-    /// <p>NoChangeNotification: This policy triggers a CloudWatch event if a parameter has not been
-    /// modified for a specified period of time. This policy type is useful when, for example, a secret
-    /// needs to be changed within a period of time, but it has not been changed.</p>
+    /// <p>NoChangeNotification: This policy triggers a CloudWatch Events event if a parameter hasn't
+    /// been modified for a specified period of time. This policy type is useful when, for example, a
+    /// secret needs to be changed within a period of time, but it hasn't been changed.</p>
     /// <p>All existing policies are preserved until you send new policies or an empty policy. For more
     /// information about parameter policies, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning parameter
     /// policies</a>. </p>
     pub policies: std::option::Option<std::string::String>,
     /// <p>The data type for a <code>String</code> parameter. Supported data types include plain text
-    /// and Amazon Machine Image IDs.</p>
+    /// and Amazon Machine Image (AMI) IDs.</p>
     /// <p>
     /// <b>The following data type values are supported.</b>
     /// </p>
@@ -27493,11 +27535,10 @@ pub struct PutParameterInput {
     /// </li>
     /// </ul>
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
-    /// Systems Manager validates the parameter value is in the required format, such as
-    /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your AWS account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
-    /// parameter support for Amazon Machine Image IDs</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
+    /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
+    /// account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
+    /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub data_type: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutParameterInput {
@@ -27592,15 +27633,15 @@ pub struct ModifyDocumentPermissionInput {
     /// <p>The permission type for the document. The permission type can be
     /// <i>Share</i>.</p>
     pub permission_type: std::option::Option<crate::model::DocumentPermissionType>,
-    /// <p>The AWS user accounts that should have access to the document. The account IDs can either be
-    /// a group of account IDs or <i>All</i>.</p>
+    /// <p>The Amazon Web Services user accounts that should have access to the document. The account IDs can
+    /// either be a group of account IDs or <i>All</i>.</p>
     pub account_ids_to_add: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The AWS user accounts that should no longer have access to the document. The AWS user
-    /// account can either be a group of account IDs or <i>All</i>. This action has a
+    /// <p>The Amazon Web Services user accounts that should no longer have access to the document. The Amazon Web Services
+    /// user account can either be a group of account IDs or <i>All</i>. This action has a
     /// higher priority than <i>AccountIdsToAdd</i>. If you specify an account ID to add
     /// and the same ID to remove, the system removes access to the document.</p>
     pub account_ids_to_remove: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>(Optional) The version of the document to share. If it's not specified, the system choose
+    /// <p>(Optional) The version of the document to share. If it isn't specified, the system choose
     /// the <code>Default</code> version to share.</p>
     pub shared_document_version: std::option::Option<std::string::String>,
 }
@@ -27637,9 +27678,8 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceDataSyncInput {
     /// <p>View a list of resource data syncs according to the sync type. Specify
-    /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3
-    /// bucket. Specify <code>SyncFromSource</code> to view resource data syncs from AWS Organizations or from
-    /// multiple AWS Regions.</p>
+    /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
+    /// or from multiple Regions.</p>
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -27807,8 +27847,8 @@ pub struct ListDocumentsInput {
     /// to return documents you own use <code>Key=Owner,Values=Self</code>. To specify a custom key-value
     /// pair, use the format <code>Key=tag:tagName,Values=valueName</code>.</p>
     /// <note>
-    /// <p>This API action only supports filtering documents by using a single tag key and one or more
-    /// tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
+    /// <p>This API operation only supports filtering documents by using a single tag key and one or
+    /// more tag values. For example: <code>Key=tag:tagName,Values=valueName1,valueName2</code>
     /// </p>
     /// </note>
     pub filters: std::option::Option<std::vec::Vec<crate::model::DocumentKeyValuesFilter>>,
@@ -27920,7 +27960,7 @@ pub struct ListCommandsInput {
     /// <p>(Optional) Lists commands issued against this instance ID.</p>
     /// <note>
     /// <p>You can't specify an instance ID in the same command that you specify <code>Status</code> =
-    /// <code>Pending</code>. This is because the command has not reached the instance yet.</p>
+    /// <code>Pending</code>. This is because the command hasn't reached the instance yet.</p>
     /// </note>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of items to return for this call. The call also returns a
@@ -27962,7 +28002,7 @@ pub struct ListCommandInvocationsInput {
     /// results.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::CommandFilter>>,
     /// <p>(Optional) If set this returns the response of the command executions and any command
-    /// output. The default value is 'false'. </p>
+    /// output. The default value is <code>false</code>. </p>
     pub details: bool,
 }
 impl std::fmt::Debug for ListCommandInvocationsInput {
@@ -28007,7 +28047,7 @@ pub struct ListAssociationsInput {
     /// <p>Filtering associations using the <code>InstanceID</code> attribute only returns legacy
     /// associations created using the <code>InstanceID</code> attribute. Associations targeting the
     /// instance that are part of the Target Attributes <code>ResourceGroup</code> or <code>Tags</code>
-    /// are not returned.</p>
+    /// aren't returned.</p>
     /// </note>
     pub association_filter_list:
         std::option::Option<std::vec::Vec<crate::model::AssociationFilter>>,
@@ -28049,7 +28089,7 @@ impl std::fmt::Debug for LabelParameterVersionInput {
     }
 }
 
-/// <p>The request body of the GetServiceSetting API action.</p>
+/// <p>The request body of the GetServiceSetting API operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetServiceSettingInput {
@@ -28132,8 +28172,8 @@ impl std::fmt::Debug for GetPatchBaselineInput {
 pub struct GetParametersByPathInput {
     /// <p>The hierarchy for the parameter. Hierarchies start with a forward slash (/). The hierachy is
     /// the parameter name except the last part of the parameter. For the API call to succeeed, the last
-    /// part of the parameter name cannot be in the path. A parameter name hierarchy can have a maximum
-    /// of 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
+    /// part of the parameter name can't be in the path. A parameter name hierarchy can have a maximum of
+    /// 15 levels. Here is an example of a hierarchy: <code>/Finance/Prod/IAD/WinServ2016/license33
     /// </code>
     /// </p>
     pub path: std::option::Option<std::string::String>,
@@ -28141,9 +28181,9 @@ pub struct GetParametersByPathInput {
     /// <important>
     /// <p>If a user has access to a path, then the user can access all levels of that path. For
     /// example, if a user has permission to access path <code>/a</code>, then the user can also access
-    /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for parameter
-    /// <code>/a/b</code>, they can still call the GetParametersByPath API action recursively for
-    /// <code>/a</code> and view <code>/a/b</code>.</p>
+    /// <code>/a/b</code>. Even if a user has explicitly been denied access in IAM for
+    /// parameter <code>/a/b</code>, they can still call the GetParametersByPath API operation
+    /// recursively for <code>/a</code> and view <code>/a/b</code>.</p>
     /// </important>
     pub recursive: std::option::Option<bool>,
     /// <p>Filters to limit the request results.</p>
@@ -28183,7 +28223,7 @@ pub struct GetParametersInput {
     /// <p>Names of the parameters for which you want to query information.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
-    /// This flag is ignored for String and StringList parameter types.</p>
+    /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
     pub with_decryption: std::option::Option<bool>,
 }
 impl std::fmt::Debug for GetParametersInput {
@@ -28200,8 +28240,8 @@ impl std::fmt::Debug for GetParametersInput {
 pub struct GetParameterHistoryInput {
     /// <p>The name of the parameter for which you want to review history.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Return decrypted values for secure string parameters. This flag is ignored for String and
-    /// StringList parameter types.</p>
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for
+    /// <code>String</code> and <code>StringList</code> parameter types.</p>
     pub with_decryption: std::option::Option<bool>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -28226,8 +28266,8 @@ impl std::fmt::Debug for GetParameterHistoryInput {
 pub struct GetParameterInput {
     /// <p>The name of the parameter you want to query.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>Return decrypted values for secure string parameters. This flag is ignored for String and
-    /// StringList parameter types.</p>
+    /// <p>Return decrypted values for secure string parameters. This flag is ignored for
+    /// <code>String</code> and <code>StringList</code> parameter types.</p>
     pub with_decryption: std::option::Option<bool>,
 }
 impl std::fmt::Debug for GetParameterInput {
@@ -28244,11 +28284,11 @@ impl std::fmt::Debug for GetParameterInput {
 pub struct GetOpsSummaryInput {
     /// <p>Specify the name of a resource data sync to get.</p>
     pub sync_name: std::option::Option<std::string::String>,
-    /// <p>Optional filters used to scope down the returned OpsItems. </p>
+    /// <p>Optional filters used to scope down the returned OpsData. </p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::OpsFilter>>,
-    /// <p>Optional aggregators that return counts of OpsItems based on one or more expressions.</p>
+    /// <p>Optional aggregators that return counts of OpsData based on one or more expressions.</p>
     pub aggregators: std::option::Option<std::vec::Vec<crate::model::OpsAggregator>>,
-    /// <p>The OpsItem data type to return.</p>
+    /// <p>The OpsData data type to return.</p>
     pub result_attributes: std::option::Option<std::vec::Vec<crate::model::OpsResultAttribute>>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -28452,7 +28492,7 @@ impl std::fmt::Debug for GetInventoryInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDocumentInput {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For
     /// example, "Release 12, Update 6". This value is unique across all versions of a document and can't
@@ -28480,7 +28520,7 @@ impl std::fmt::Debug for GetDocumentInput {
 pub struct GetDeployablePatchSnapshotForInstanceInput {
     /// <p>The ID of the instance for which the appropriate patch snapshot should be retrieved.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>The user-defined snapshot ID.</p>
+    /// <p>The snapshot ID provided by the user when running <code>AWS-RunPatchBaseline</code>.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
     /// <p>Defines the basic information about a patch baseline override.</p>
     pub baseline_override: std::option::Option<crate::model::BaselineOverride>,
@@ -28530,13 +28570,13 @@ pub struct GetCommandInvocationInput {
     pub command_id: std::option::Option<std::string::String>,
     /// <p>(Required) The ID of the managed instance targeted by the command. A managed instance can be
     /// an Amazon Elastic Compute Cloud (Amazon EC2) instance or an instance in your hybrid environment that is configured for
-    /// AWS Systems Manager.</p>
+    /// Amazon Web Services Systems Manager.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The name of the plugin for which you want detailed results. If the document contains only
     /// one plugin, you can omit the name and details for that plugin. If the document contains more than
     /// one plugin, you must specify the name of the plugin for which you want to view details.</p>
-    /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents. For
-    /// example, <code>aws:RunShellScript</code> is a plugin.</p>
+    /// <p>Plugin names are also referred to as <i>step names</i> in Systems Manager documents (SSM
+    /// documents). For example, <code>aws:RunShellScript</code> is a plugin.</p>
     /// <p>To find the <code>PluginName</code>, check the document content and find the name of the
     /// plugin. Alternatively, use <a>ListCommandInvocations</a> with the
     /// <code>CommandId</code> and <code>Details</code> parameters. The <code>PluginName</code> is the
@@ -28557,11 +28597,11 @@ impl std::fmt::Debug for GetCommandInvocationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCalendarStateInput {
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents that represent the calendar
-    /// entries for which you want to get the state.</p>
+    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager documents (SSM documents) that
+    /// represent the calendar entries for which you want to get the state.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you do not add
-    /// <code>AtTime</code>, the current time is assumed.</p>
+    /// <p>(Optional) The specific time for which you want to get calendar state information, in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't specify a
+    /// value or <code>AtTime</code>, the current time is used.</p>
     pub at_time: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCalendarStateInput {
@@ -28577,7 +28617,7 @@ impl std::fmt::Debug for GetCalendarStateInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAutomationExecutionInput {
     /// <p>The unique identifier for an existing automation execution to examine. The execution ID is
-    /// returned by StartAutomationExecution when the execution of an Automation document is
+    /// returned by StartAutomationExecution when the execution of an Automation runbook is
     /// initiated.</p>
     pub automation_execution_id: std::option::Option<std::string::String>,
 }
@@ -28640,8 +28680,8 @@ pub struct DescribePatchPropertiesInput {
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The patch property for which you want to view patch details. </p>
     pub property: std::option::Option<crate::model::PatchProperty>,
-    /// <p>Indicates whether to list patches for the Windows operating system or for Microsoft
-    /// applications. Not applicable for the Linux or macOS operating systems.</p>
+    /// <p>Indicates whether to list patches for the Windows operating system or for applications
+    /// released by Microsoft. Not applicable for the Linux or macOS operating systems.</p>
     pub patch_set: std::option::Option<crate::model::PatchSet>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -28681,30 +28721,25 @@ impl std::fmt::Debug for DescribePatchGroupStateInput {
 pub struct DescribePatchGroupsInput {
     /// <p>The maximum number of patch groups to return (per page).</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>One or more filters. Use a filter to return a more specific list of results.</p>
-    /// <p>For <code>DescribePatchGroups</code>,valid filter keys include the following:</p>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribePatchGroups</code> include the following:</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>NAME_PREFIX</code>: The name of the patch group. Wildcards (*) are accepted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>OPERATING_SYSTEM</code>: The supported operating system type to return results for.
-    /// For valid operating system values, see <a>GetDefaultPatchBaselineRequest$OperatingSystem</a> in <a>CreatePatchBaseline</a>.</p>
-    /// <p>Examples:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>--filters Key=NAME_PREFIX,Values=MyPatchGroup*</code>
+    /// <b>
+    /// <code>NAME_PREFIX</code>
+    /// </b>
     /// </p>
+    /// <p>Sample values: <code>AWS-</code> | <code>My-</code>.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>--filters Key=OPERATING_SYSTEM,Values=AMAZON_LINUX_2</code>
+    /// <b>
+    /// <code>OPERATING_SYSTEM</code>
+    /// </b>
     /// </p>
-    /// </li>
-    /// </ul>
+    /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
+    /// </p>
     /// </li>
     /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
@@ -28725,9 +28760,37 @@ impl std::fmt::Debug for DescribePatchGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribePatchBaselinesInput {
-    /// <p>Each element in the array is a structure containing: </p>
-    /// <p>Key: (string, "NAME_PREFIX" or "OWNER")</p>
-    /// <p>Value: (array of strings, exactly 1 entry, between 1 and 255 characters)</p>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribePatchBaselines</code> include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NAME_PREFIX</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AWS-</code> | <code>My-</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>OWNER</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AWS</code> | <code>Self</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>OPERATING_SYSTEM</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patch baselines to return (per page).</p>
     pub max_results: std::option::Option<i32>,
@@ -28800,11 +28863,11 @@ pub struct DescribeOpsItemsInput {
     /// <p>Operations: Equals</p>
     /// </li>
     /// <li>
-    /// <p>Key: Title</p>
-    /// <p>Operations: Contains</p>
+    /// <p>Key: Title*</p>
+    /// <p>Operations: Equals,Contains</p>
     /// </li>
     /// <li>
-    /// <p>Key: OperationalData*</p>
+    /// <p>Key: OperationalData**</p>
     /// <p>Operations: Equals</p>
     /// </li>
     /// <li>
@@ -28828,7 +28891,10 @@ pub struct DescribeOpsItemsInput {
     /// <p>Operations: Equals</p>
     /// </li>
     /// </ul>
-    /// <p>*If you filter the response by using the OperationalData operator, specify a key-value pair
+    /// <p>*The Equals operator for Title matches the first 100 characters. If you specify more than
+    /// 100 characters, they system returns an error that the filter value exceeds the length
+    /// limit.</p>
+    /// <p>**If you filter the response by using the OperationalData operator, specify a key-value pair
     /// by using the following JSON format: {"key":"key_name","value":"a_value"}</p>
     pub ops_item_filters: std::option::Option<std::vec::Vec<crate::model::OpsItemFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
@@ -28853,7 +28919,8 @@ pub struct DescribeMaintenanceWindowTasksInput {
     /// <p>The ID of the maintenance window whose tasks should be retrieved.</p>
     pub window_id: std::option::Option<std::string::String>,
     /// <p>Optional filters used to narrow down the scope of the returned tasks. The supported filter
-    /// keys are WindowTaskId, TaskArn, Priority, and TaskType.</p>
+    /// keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>, and
+    /// <code>TaskType</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -28879,7 +28946,8 @@ pub struct DescribeMaintenanceWindowTargetsInput {
     /// <p>The ID of the maintenance window whose targets should be retrieved.</p>
     pub window_id: std::option::Option<std::string::String>,
     /// <p>Optional filters that can be used to narrow down the scope of the returned window targets.
-    /// The supported filter keys are Type, WindowTargetId and OwnerInformation.</p>
+    /// The supported filter keys are <code>Type</code>, <code>WindowTargetId</code>, and
+    /// <code>OwnerInformation</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -28902,9 +28970,10 @@ impl std::fmt::Debug for DescribeMaintenanceWindowTargetsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsForTargetInput {
-    /// <p>The instance ID or key/value pair to retrieve information about.</p>
+    /// <p>The instance ID or key-value pair to retrieve information about.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The type of resource you want to retrieve information about. For example, "INSTANCE".</p>
+    /// <p>The type of resource you want to retrieve information about. For example,
+    /// <code>INSTANCE</code>.</p>
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -28929,9 +28998,10 @@ impl std::fmt::Debug for DescribeMaintenanceWindowsForTargetInput {
 pub struct DescribeMaintenanceWindowScheduleInput {
     /// <p>The ID of the maintenance window to retrieve information about.</p>
     pub window_id: std::option::Option<std::string::String>,
-    /// <p>The instance ID or key/value pair to retrieve information about.</p>
+    /// <p>The instance ID or key-value pair to retrieve information about.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The type of resource you want to retrieve information about. For example, "INSTANCE".</p>
+    /// <p>The type of resource you want to retrieve information about. For example,
+    /// <code>INSTANCE</code>.</p>
     pub resource_type: std::option::Option<crate::model::MaintenanceWindowResourceType>,
     /// <p>Filters used to limit the range of results. For example, you can limit maintenance window
     /// executions to only those scheduled before or after a certain date and time.</p>
@@ -28960,7 +29030,8 @@ impl std::fmt::Debug for DescribeMaintenanceWindowScheduleInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeMaintenanceWindowsInput {
     /// <p>Optional filters used to narrow down the scope of the returned maintenance windows.
-    /// Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
+    /// Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example,
+    /// <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -28984,9 +29055,10 @@ impl std::fmt::Debug for DescribeMaintenanceWindowsInput {
 pub struct DescribeMaintenanceWindowExecutionTasksInput {
     /// <p>The ID of the maintenance window execution whose task executions should be retrieved.</p>
     pub window_execution_id: std::option::Option<std::string::String>,
-    /// <p>Optional filters used to scope down the returned tasks. The supported filter key is STATUS
-    /// with the corresponding values PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT, CANCELLING, and
-    /// CANCELLED. </p>
+    /// <p>Optional filters used to scope down the returned tasks. The supported filter key is
+    /// <code>STATUS</code> with the corresponding values <code>PENDING</code>,
+    /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
+    /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -29014,8 +29086,9 @@ pub struct DescribeMaintenanceWindowExecutionTaskInvocationsInput {
     /// <p>The ID of the specific task in the maintenance window task that should be retrieved.</p>
     pub task_id: std::option::Option<std::string::String>,
     /// <p>Optional filters used to scope down the returned task invocations. The supported filter key
-    /// is STATUS with the corresponding values PENDING, IN_PROGRESS, SUCCESS, FAILED, TIMED_OUT,
-    /// CANCELLING, and CANCELLED.</p>
+    /// is <code>STATUS</code> with the corresponding values <code>PENDING</code>,
+    /// <code>IN_PROGRESS</code>, <code>SUCCESS</code>, <code>FAILED</code>, <code>TIMED_OUT</code>,
+    /// <code>CANCELLING</code>, and <code>CANCELLED</code>.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -29043,10 +29116,17 @@ pub struct DescribeMaintenanceWindowExecutionsInput {
     /// <p>The ID of the maintenance window whose executions should be retrieved.</p>
     pub window_id: std::option::Option<std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
-    /// <p>Key (string, between 1 and 128 characters)</p>
-    /// <p>Values (array of strings, each string is between 1 and 256 characters)</p>
-    /// <p>The supported Keys are ExecutedBefore and ExecutedAfter with the value being a date/time
-    /// string such as 2016-11-04T05:00:00Z.</p>
+    /// <ul>
+    /// <li>
+    /// <p>Key. A string between 1 and 128 characters. Supported keys include
+    /// <code>ExecutedBefore</code> and <code>ExecutedAfter</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Values. An array of strings, each between 1 and 256 characters. Supported values are
+    /// date/time strings in a valid ISO 8601 date/time format, such as
+    /// <code>2021-11-04T05:00:00Z</code>.</p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::MaintenanceWindowFilter>>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -29070,7 +29150,7 @@ impl std::fmt::Debug for DescribeMaintenanceWindowExecutionsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInventoryDeletionsInput {
     /// <p>Specify the delete inventory ID for which you want information. This ID was returned by the
-    /// <code>DeleteInventory</code> action.</p>
+    /// <code>DeleteInventory</code> operation.</p>
     pub deletion_id: std::option::Option<std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -29095,9 +29175,17 @@ pub struct DescribeInstancePatchStatesForPatchGroupInput {
     /// retrieved.</p>
     pub patch_group: std::option::Option<std::string::String>,
     /// <p>Each entry in the array is a structure containing:</p>
+    /// <ul>
+    /// <li>
     /// <p>Key (string between 1 and 200 characters)</p>
-    /// <p> Values (array containing a single string)</p>
-    /// <p> Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+    /// </li>
+    /// <li>
+    /// <p>Values (array containing a single string)</p>
+    /// </li>
+    /// <li>
+    /// <p>Type (string "Equal", "NotEqual", "LessThan", "GreaterThan")</p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::InstancePatchStateFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
@@ -29119,7 +29207,7 @@ impl std::fmt::Debug for DescribeInstancePatchStatesForPatchGroupInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeInstancePatchStatesInput {
-    /// <p>The ID of the instance whose patch state information should be retrieved.</p>
+    /// <p>The ID of the instance for which patch state information should be retrieved.</p>
     pub instance_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
@@ -29142,9 +29230,47 @@ impl std::fmt::Debug for DescribeInstancePatchStatesInput {
 pub struct DescribeInstancePatchesInput {
     /// <p>The ID of the instance whose patch state information should be retrieved.</p>
     pub instance_id: std::option::Option<std::string::String>,
-    /// <p>An array of structures. Each entry in the array is a structure containing a Key, Value
-    /// combination. Valid values for Key are <code>Classification</code> | <code>KBId</code> |
-    /// <code>Severity</code> | <code>State</code>.</p>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>Supported keys for <code>DescribeInstancePatches</code>include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Classification</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Security</code> | <code>SecurityUpdates</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>KBId</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>KB4480056</code> | <code>java-1.7.0-openjdk.x86_64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>Severity</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Important</code> | <code>Medium</code> | <code>Low</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>State</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Installed</code> | <code>InstalledOther</code> |
+    /// <code>InstalledPendingReboot</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The token for the next set of items to return. (You received this token from a previous
     /// call.)</p>
@@ -29294,14 +29420,14 @@ impl std::fmt::Debug for DescribeDocumentPermissionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentInput {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The document version for which you want information. Can be a specific version or the
     /// default version.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact associated with the document. For
     /// example, "Release 12, Update 6". This value is unique across all versions of a document, and
-    /// cannot be changed.</p>
+    /// can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDocumentInput {
@@ -29317,7 +29443,189 @@ impl std::fmt::Debug for DescribeDocumentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAvailablePatchesInput {
-    /// <p>Filters used to scope down the returned patches.</p>
+    /// <p>Each element in the array is a structure containing a key-value pair.</p>
+    /// <p>
+    /// <b>Windows Server</b>
+    /// </p>
+    /// <p>Supported keys for Windows Server instance patches include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PATCH_SET</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>OS</code> | <code>APPLICATION</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PRODUCT</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> |
+    /// <code>MicrosoftDefenderAntivirus</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PRODUCT_FAMILY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Windows</code> | <code>Office</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>MSRC_SEVERITY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CLASSIFICATION</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> |
+    /// <code>DefinitionUpdates</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PATCH_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>KB123456</code> | <code>KB4516046</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <p>
+    /// <b>Linux</b>
+    /// </p>
+    /// <important>
+    /// <p>When specifying filters for Linux patches, you must specify a key-pair for
+    /// <code>PRODUCT</code>. For example, using the Command Line Interface (CLI), the
+    /// following command fails:</p>
+    /// <p>
+    /// <code>aws ssm describe-available-patches --filters
+    /// Key=CVE_ID,Values=CVE-2018-3615</code>
+    /// </p>
+    /// <p>However, the following command succeeds:</p>
+    /// <p>
+    /// <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03
+    /// Key=CVE_ID,Values=CVE-2018-3615</code>
+    /// </p>
+    /// </important>
+    /// <p>Supported keys for Linux instance patches include the following:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>PRODUCT</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>NAME</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>SEVERITY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code> |
+    /// <code>Low</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>EPOCH</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>0</code> | <code>1</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>VERSION</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>78.6.1</code> | <code>4.10.16</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>RELEASE</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ARCH</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>i686</code> | <code>x86_64</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>REPOSITORY</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>Core</code> | <code>Updates</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>ADVISORY_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>CVE_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <b>
+    /// <code>BUGZILLA_ID</code>
+    /// </b>
+    /// </p>
+    /// <p>Sample values: <code>1463241</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::PatchOrchestratorFilter>>,
     /// <p>The maximum number of patches to return (per page).</p>
     pub max_results: std::option::Option<i32>,
@@ -29447,7 +29755,7 @@ impl std::fmt::Debug for DescribeAssociationExecutionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeAssociationInput {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -29516,7 +29824,7 @@ pub struct DeregisterTargetFromMaintenanceWindowInput {
     /// <p>The ID of the target definition to remove.</p>
     pub window_target_id: std::option::Option<std::string::String>,
     /// <p>The system checks if the target is being referenced by a task. If the target is being
-    /// referenced, the system returns an error and does not deregister the target from the maintenance
+    /// referenced, the system returns an error and doesn't deregister the target from the maintenance
     /// window.</p>
     pub safe: std::option::Option<bool>,
 }
@@ -29660,7 +29968,7 @@ pub struct DeleteInventoryInput {
     /// custom inventory type. Choose one of the following options:</p>
     /// <p>DisableSchema: If you choose this option, the system ignores all inventory data for the
     /// specified version, and any earlier versions. To enable this schema again, you must call the
-    /// <code>PutInventory</code> action for a version greater than the disabled version.</p>
+    /// <code>PutInventory</code> operation for a version greater than the disabled version.</p>
     /// <p>DeleteSchema: This option deletes the specified custom type from the Inventory service. You
     /// can recreate the schema later, if you want.</p>
     pub schema_delete_option: std::option::Option<crate::model::InventorySchemaDeleteOption>,
@@ -29697,7 +30005,7 @@ pub struct DeleteDocumentInput {
     /// <p>Some SSM document types require that you specify a <code>Force</code> flag before you can
     /// delete the document. For example, you must specify a <code>Force</code> flag to delete a document
     /// of type <code>ApplicationConfigurationSchema</code>. You can restrict access to the
-    /// <code>Force</code> flag in an AWS Identity and Access Management (IAM) policy.</p>
+    /// <code>Force</code> flag in an Identity and Access Management (IAM) policy.</p>
     pub force: bool,
 }
 impl std::fmt::Debug for DeleteDocumentInput {
@@ -29714,7 +30022,7 @@ impl std::fmt::Debug for DeleteDocumentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAssociationInput {
-    /// <p>The name of the Systems Manager document.</p>
+    /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The ID of the instance.</p>
     pub instance_id: std::option::Option<std::string::String>,
@@ -29756,9 +30064,9 @@ pub struct CreateResourceDataSyncInput {
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
     /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
     /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
-    /// from a single account and multiple Regions, or multiple AWS accounts and Regions, as listed in
-    /// AWS Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value for
-    /// <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
+    /// from a single account and multiple Regions, or multiple accounts and Regions, as
+    /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
+    /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Specify information about the data sources to synchronize. This parameter is required if the
     /// <code>SyncType</code> value is SyncFromSource.</p>
@@ -29778,8 +30086,8 @@ impl std::fmt::Debug for CreateResourceDataSyncInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreatePatchBaselineInput {
-    /// <p>Defines the operating system the patch baseline applies to. The Default value is
-    /// WINDOWS.</p>
+    /// <p>Defines the operating system the patch baseline applies to. The default value is
+    /// <code>WINDOWS</code>.</p>
     pub operating_system: std::option::Option<crate::model::OperatingSystem>,
     /// <p>The name of the patch baseline.</p>
     pub name: std::option::Option<std::string::String>,
@@ -29790,37 +30098,42 @@ pub struct CreatePatchBaselineInput {
     /// <p>A list of explicitly approved patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-    /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub approved_patches: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Defines the compliance level for approved patches. When an approved patch is reported as
     /// missing, this value describes the severity of the compliance violation. The default value is
-    /// UNSPECIFIED.</p>
+    /// <code>UNSPECIFIED</code>.</p>
     pub approved_patches_compliance_level: std::option::Option<crate::model::PatchComplianceLevel>,
     /// <p>Indicates whether the list of approved patches includes non-security updates that should be
-    /// applied to the instances. The default value is 'false'. Applies to Linux instances only.</p>
+    /// applied to the instances. The default value is <code>false</code>. Applies to Linux instances
+    /// only.</p>
     pub approved_patches_enable_non_security: std::option::Option<bool>,
     /// <p>A list of explicitly rejected patches for the baseline.</p>
     /// <p>For information about accepted formats for lists of approved patches and rejected patches,
     /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html">About
-    /// package name formats for approved and rejected patch lists</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// package name formats for approved and rejected patch lists</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub rejected_patches: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The action for Patch Manager to take on patches included in the RejectedPackages
-    /// list.</p>
+    /// <p>The action for Patch Manager to take on patches included in the
+    /// <code>RejectedPackages</code> list.</p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <b>ALLOW_AS_DEPENDENCY</b>: A package in the Rejected patches
-    /// list is installed only if it is a dependency of another package. It is considered compliant
-    /// with the patch baseline, and its status is reported as <i>InstalledOther</i>.
-    /// This is the default action if no option is specified.</p>
+    /// <b>
+    /// <code>ALLOW_AS_DEPENDENCY</code>
+    /// </b>: A package in the
+    /// <code>Rejected</code> patches list is installed only if it is a dependency of another package.
+    /// It is considered compliant with the patch baseline, and its status is reported as
+    /// <code>InstalledOther</code>. This is the default action if no option is specified.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <b>BLOCK</b>: Packages in the RejectedPatches list, and packages
-    /// that include them as dependencies, are not installed under any circumstances. If a package was
-    /// installed before it was added to the Rejected patches list, it is considered non-compliant with
-    /// the patch baseline, and its status is reported as
-    /// <i>InstalledRejected</i>.</p>
+    /// <b>
+    /// <code>BLOCK</code>
+    /// </b>: Packages in the
+    /// <code>RejectedPatches</code> list, and packages that include them as dependencies, aren't
+    /// installed under any circumstances. If a package was installed before it was added to the
+    /// Rejected patches list, it is considered non-compliant with the patch baseline, and its status
+    /// is reported as <code>InstalledRejected</code>.</p>
     /// </li>
     /// </ul>
     pub rejected_patches_action: std::option::Option<crate::model::PatchAction>,
@@ -29834,7 +30147,7 @@ pub struct CreatePatchBaselineInput {
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
     /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
     /// patch baseline to identify the severity level of patches it specifies and the operating system
-    /// family it applies to. In this case, you could specify the following key name/value pairs:</p>
+    /// family it applies to. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -29849,7 +30162,7 @@ pub struct CreatePatchBaselineInput {
     /// </ul>
     /// <note>
     /// <p>To add tags to an existing patch baseline, use the <a>AddTagsToResource</a>
-    /// action.</p>
+    /// operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -29891,7 +30204,7 @@ pub struct CreateOpsMetadataInput {
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
     /// an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by
     /// purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to
-    /// identify an environment or target AWS Region. In this case, you could specify the following
+    /// identify an environment or target Region. In this case, you could specify the following
     /// key-value pairs:</p>
     /// <ul>
     /// <li>
@@ -29930,18 +30243,19 @@ pub struct CreateOpsItemInput {
     /// other relevant data. You enter operational data as key-value pairs. The key has a maximum length
     /// of 128 characters. The value has a maximum size of 20 KB.</p>
     /// <important>
-    /// <p>Operational data keys <i>can't</i> begin with the following: amazon, aws,
-    /// amzn, ssm, /amazon, /aws, /amzn, /ssm.</p>
+    /// <p>Operational data keys <i>can't</i> begin with the following:
+    /// <code>amazon</code>, <code>aws</code>, <code>amzn</code>, <code>ssm</code>,
+    /// <code>/amazon</code>, <code>/aws</code>, <code>/amzn</code>, <code>/ssm</code>.</p>
     /// </important>
     /// <p>You can choose to make the data searchable by other users in the account or you can restrict
     /// search access. Searchable data means that all users with access to the OpsItem Overview page (as
-    /// provided by the <a>DescribeOpsItems</a> API action) can view and search on the
-    /// specified data. Operational data that is not searchable is only viewable by users who have access
-    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API action).</p>
+    /// provided by the <a>DescribeOpsItems</a> API operation) can view and search on the
+    /// specified data. Operational data that isn't searchable is only viewable by users who have access
+    /// to the OpsItem (as provided by the <a>GetOpsItem</a> API operation).</p>
     /// <p>Use the <code>/aws/resources</code> key in OperationalData to specify a related resource in
     /// the request. Use the <code>/aws/automations</code> key in OperationalData to associate an
-    /// Automation runbook with the OpsItem. To view AWS CLI example commands that use these keys, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands that use these keys, see
+    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-creating-OpsItems.html#OpsCenter-manually-create-OpsItems">Creating OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub operational_data: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::OpsItemDataValue>,
     >,
@@ -29956,21 +30270,24 @@ pub struct CreateOpsItemInput {
     pub related_ops_items: std::option::Option<std::vec::Vec<crate::model::RelatedOpsItem>>,
     /// <p>The origin of the OpsItem, such as Amazon EC2 or Systems Manager.</p>
     /// <note>
-    /// <p>The source name can't contain the following strings: aws, amazon, and amzn. </p>
+    /// <p>The source name can't contain the following strings: <code>aws</code>, <code>amazon</code>,
+    /// and <code>amzn</code>. </p>
     /// </note>
     pub source: std::option::Option<std::string::String>,
     /// <p>A short heading that describes the nature of the OpsItem and the impacted resource.</p>
     pub title: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. You can restrict access to OpsItems by
-    /// using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// using an inline IAM policy that specifies tags. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html#OpsCenter-getting-started-user-permissions">Getting started with OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <p>Tags use a key-value pair. For example:</p>
     /// <p>
     /// <code>Key=Department,Value=Finance</code>
     /// </p>
-    /// <note>
-    /// <p>To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
-    /// action.</p>
-    /// </note>
+    /// <important>
+    /// <p>To add tags to a new OpsItem, a user must have IAM permissions for both the
+    /// <code>ssm:CreateOpsItems</code> operation and the <code>ssm:AddTagsToResource</code> operation.
+    /// To add tags to an existing OpsItem, use the <a>AddTagsToResource</a>
+    /// operation.</p>
+    /// </important>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>Specify a category to assign to an OpsItem. </p>
     pub category: std::option::Option<std::string::String>,
@@ -30020,12 +30337,12 @@ pub struct CreateMaintenanceWindowInput {
     /// help you organize your maintenance windows. </p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-    /// become active. StartDate allows you to delay activation of the maintenance window until the
-    /// specified future date.</p>
+    /// become active. <code>StartDate</code> allows you to delay activation of the maintenance window
+    /// until the specified future date.</p>
     pub start_date: std::option::Option<std::string::String>,
     /// <p>The date and time, in ISO-8601 Extended format, for when you want the maintenance window to
-    /// become inactive. EndDate allows you to set a date and time in the future when the maintenance
-    /// window will no longer run.</p>
+    /// become inactive. <code>EndDate</code> allows you to set a date and time in the future when the
+    /// maintenance window will no longer run.</p>
     pub end_date: std::option::Option<std::string::String>,
     /// <p>The schedule of the maintenance window in the form of a cron or rate expression.</p>
     pub schedule: std::option::Option<std::string::String>,
@@ -30034,7 +30351,7 @@ pub struct CreateMaintenanceWindowInput {
     /// "Asia/Seoul". For more information, see the <a href="https://www.iana.org/time-zones">Time
     /// Zone Database</a> on the IANA website.</p>
     pub schedule_timezone: std::option::Option<std::string::String>,
-    /// <p>The number of days to wait after the date and time specified by a CRON expression before
+    /// <p>The number of days to wait after the date and time specified by a cron expression before
     /// running the maintenance window.</p>
     /// <p>For example, the following cron expression schedules a maintenance window to run on the
     /// third Tuesday of every month at 11:30 PM.</p>
@@ -30046,10 +30363,10 @@ pub struct CreateMaintenanceWindowInput {
     pub schedule_offset: std::option::Option<i32>,
     /// <p>The duration of the maintenance window in hours.</p>
     pub duration: i32,
-    /// <p>The number of hours before the end of the maintenance window that Systems Manager stops scheduling new
-    /// tasks for execution.</p>
+    /// <p>The number of hours before the end of the maintenance window that Amazon Web Services Systems Manager stops scheduling
+    /// new tasks for execution.</p>
     pub cutoff: i32,
-    /// <p>Enables a maintenance window task to run on managed instances, even if you have not
+    /// <p>Enables a maintenance window task to run on managed instances, even if you haven't
     /// registered those instances as targets. If enabled, then you must specify the unregistered
     /// instances (by instance ID) when you register a task with the maintenance window.</p>
     /// <p>If you don't enable this option, then you must specify previously-registered targets when
@@ -30060,8 +30377,7 @@ pub struct CreateMaintenanceWindowInput {
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
     /// different ways, such as by purpose, owner, or environment. For example, you might want to tag a
     /// maintenance window to identify the type of tasks it will run, the types of targets, and the
-    /// environment it will run in. In this case, you could specify the following key name/value
-    /// pairs:</p>
+    /// environment it will run in. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -30081,7 +30397,7 @@ pub struct CreateMaintenanceWindowInput {
     /// </ul>
     /// <note>
     /// <p>To add tags to an existing maintenance window, use the <a>AddTagsToResource</a>
-    /// action.</p>
+    /// operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -30113,18 +30429,18 @@ pub struct CreateDocumentInput {
     /// <p>The content for the new SSM document in JSON or YAML format. We recommend storing the
     /// contents for your new document in an external JSON or YAML file and referencing the file in a
     /// command.</p>
-    /// <p>For examples, see the following topics in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <p>For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <ul>
     /// <li>
     /// <p>
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document
-    /// (AWS API)</a>
+    /// (Amazon Web Services API)</a>
     /// </p>
     /// </li>
     /// <li>
     /// <p>
     /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document
-    /// (AWS CLI)</a>
+    /// (Amazon Web Services CLI)</a>
     /// </p>
     /// </li>
     /// <li>
@@ -30135,19 +30451,19 @@ pub struct CreateDocumentInput {
     /// </li>
     /// </ul>
     pub content: std::option::Option<std::string::String>,
-    /// <p>A list of SSM documents required by a document. This parameter is used exclusively by AWS
+    /// <p>A list of SSM documents required by a document. This parameter is used exclusively by
     /// AppConfig. When a user creates an AppConfig configuration in an SSM document, the user must also
     /// specify a required document for validation purposes. In this case, an
     /// <code>ApplicationConfiguration</code> document requires an
     /// <code>ApplicationConfigurationSchema</code> document for validation purposes. For more
-    /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/appconfig.html">AWS AppConfig</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What is AppConfig?</a> in the
+    /// <i>AppConfig User Guide</i>.</p>
     pub requires: std::option::Option<std::vec::Vec<crate::model::DocumentRequires>>,
-    /// <p>A list of key and value pairs that describe attachments to a version of a document.</p>
+    /// <p>A list of key-value pairs that describe attachments to a version of a document.</p>
     pub attachments: std::option::Option<std::vec::Vec<crate::model::AttachmentsSource>>,
-    /// <p>A name for the Systems Manager document.</p>
+    /// <p>A name for the SSM document.</p>
     /// <important>
-    /// <p>You can't use the following strings as document name prefixes. These are reserved by AWS
+    /// <p>You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services
     /// for use as document name prefixes:</p>
     /// <ul>
     /// <li>
@@ -30168,13 +30484,13 @@ pub struct CreateDocumentInput {
     /// </ul>
     /// </important>
     pub name: std::option::Option<std::string::String>,
-    /// <p>An optional field where you can specify a friendly name for the Systems Manager document. This value
-    /// can differ for each version of the document. You can update this value at a later time using the
-    /// <a>UpdateDocument</a> action.</p>
+    /// <p>An optional field where you can specify a friendly name for the SSM document. This value can
+    /// differ for each version of the document. You can update this value at a later time using the
+    /// <a>UpdateDocument</a> operation.</p>
     pub display_name: std::option::Option<std::string::String>,
     /// <p>An optional field specifying the version of the artifact you are creating with the document.
     /// For example, "Release 12, Update 6". This value is unique across all versions of a document, and
-    /// cannot be changed.</p>
+    /// can't be changed.</p>
     pub version_name: std::option::Option<std::string::String>,
     /// <p>The type of document to create.</p>
     pub document_type: std::option::Option<crate::model::DocumentType>,
@@ -30182,15 +30498,16 @@ pub struct CreateDocumentInput {
     /// JSON is the default format.</p>
     pub document_format: std::option::Option<crate::model::DocumentFormat>,
     /// <p>Specify a target type to define the kinds of resources the document can run on. For example,
-    /// to run a document on EC2 instances, specify the following value: /AWS::EC2::Instance. If you
-    /// specify a value of '/' the document can run on all types of resources. If you don't specify a
-    /// value, the document can't run on any resources. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS resource and property types
-    /// reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+    /// to run a document on EC2 instances, specify the following value:
+    /// <code>/AWS::EC2::Instance</code>. If you specify a value of '/' the document can run on all types
+    /// of resources. If you don't specify a value, the document can't run on any resources. For a list
+    /// of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon Web Services resource and
+    /// property types reference</a> in the <i>CloudFormation User Guide</i>. </p>
     pub target_type: std::option::Option<std::string::String>,
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
     /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
     /// SSM document to identify the types of targets or the environment where it will run. In this case,
-    /// you could specify the following key name/value pairs:</p>
+    /// you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -30205,7 +30522,7 @@ pub struct CreateDocumentInput {
     /// </ul>
     /// <note>
     /// <p>To add tags to an existing SSM document, use the <a>AddTagsToResource</a>
-    /// action.</p>
+    /// operation.</p>
     /// </note>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -30244,12 +30561,12 @@ impl std::fmt::Debug for CreateAssociationBatchInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAssociationInput {
-    /// <p>The name of the SSM document that contains the configuration information for the instance.
-    /// You can specify Command or Automation documents.</p>
-    /// <p>You can specify AWS-predefined documents, documents you created, or a document that is
+    /// <p>The name of the SSM Command document or Automation runbook that contains the configuration
+    /// information for the instance.</p>
+    /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
-    /// <p>For SSM documents that are shared with you from other AWS accounts, you must specify the
-    /// complete SSM document ARN, in the following format:</p>
+    /// <p>For Systems Manager documents (SSM documents) that are shared with you from other accounts, you
+    /// must specify the complete SSM document ARN, in the following format:</p>
     /// <p>
     /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
     /// </code>
@@ -30258,8 +30575,8 @@ pub struct CreateAssociationInput {
     /// <p>
     /// <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>
     /// </p>
-    /// <p>For AWS-predefined documents and SSM documents you created in your account, you only need to
-    /// specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
+    /// <p>For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need
+    /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
     /// <code>My-Document</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>The document version you want to associate with the target(s). Can be a specific version or
@@ -30270,51 +30587,53 @@ pub struct CreateAssociationInput {
     /// <p>
     /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
     /// use the <code>Targets</code> parameter. Requests that include the
-    /// parameter <code>InstanceID</code> with SSM documents that use schema version 2.0 or later will
-    /// fail. In addition, if you use the parameter <code>InstanceId</code>, you
-    /// cannot use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
-    /// <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or
-    /// <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code>
-    /// parameter.</p>
+    /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+    /// 2.0 or later will fail. In addition, if you use the parameter
+    /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+    /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+    /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+    /// must use the <code>Targets</code> parameter.</p>
     /// </note>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The parameters for the runtime configuration of the document.</p>
     pub parameters: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
-    /// <p>The targets for the association. You can target instances by using tags, AWS Resource
-    /// Groups, all instances in an AWS account, or individual instance IDs. For more information about
+    /// <p>The targets for the association. You can target instances by using tags, Amazon Web Services resource
+    /// groups, all instances in an account, or individual instance IDs. For more information about
     /// choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
-    /// <i>AWS Systems Manager User Guide</i>.</p>
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     /// <p>A cron expression when the association will be applied to the target(s).</p>
     pub schedule_expression: std::option::Option<std::string::String>,
-    /// <p>An S3 bucket where you want to store the output details of the request.</p>
+    /// <p>An Amazon Simple Storage Service (Amazon S3) bucket where you want to store the output
+    /// details of the request.</p>
     pub output_location: std::option::Option<crate::model::InstanceAssociationOutputLocation>,
     /// <p>Specify a descriptive name for the association.</p>
     pub association_name: std::option::Option<std::string::String>,
     /// <p>Specify the target for the association. This target is required for associations that use an
-    /// Automation document and target resources by using rate controls.</p>
+    /// Automation runbook and target resources by using rate controls. Automation is a capability of
+    /// Amazon Web Services Systems Manager.</p>
     pub automation_target_parameter_name: std::option::Option<std::string::String>,
     /// <p>The number of errors that are allowed before the system stops sending requests to run the
     /// association on additional targets. You can specify either an absolute number of errors, for
     /// example 10, or a percentage of the target set, for example 10%. If you specify 3, for example,
     /// the system stops sending requests when the fourth error is received. If you specify 0, then the
     /// system stops sending requests after the first error is returned. If you run an association on 50
-    /// instances and set MaxError to 10%, then the system stops sending the request when the sixth error
-    /// is received.</p>
-    /// <p>Executions that are already running an association when MaxErrors is reached are allowed to
-    /// complete, but some of these executions may fail as well. If you need to ensure that there won't
-    /// be more than max-errors failed executions, set MaxConcurrency to 1 so that executions proceed one
-    /// at a time.</p>
+    /// instances and set <code>MaxError</code> to 10%, then the system stops sending the request when
+    /// the sixth error is received.</p>
+    /// <p>Executions that are already running an association when <code>MaxErrors</code> is reached
+    /// are allowed to complete, but some of these executions may fail as well. If you need to ensure
+    /// that there won't be more than max-errors failed executions, set <code>MaxConcurrency</code> to 1
+    /// so that executions proceed one at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The maximum number of targets allowed to run the association at the same time. You can
     /// specify a number, for example 10, or a percentage of the target set, for example 10%. The default
     /// value is 100%, which means all targets run the association at the same time.</p>
     /// <p>If a new instance starts and attempts to run an association while Systems Manager is running
-    /// MaxConcurrency associations, the association is allowed to run. During the next association
-    /// interval, the new instance will process its association within the limit specified for
-    /// MaxConcurrency.</p>
+    /// <code>MaxConcurrency</code> associations, the association is allowed to run. During the next
+    /// association interval, the new instance will process its association within the limit specified
+    /// for <code>MaxConcurrency</code>.</p>
     pub max_concurrency: std::option::Option<std::string::String>,
     /// <p>The severity level to assign to the association.</p>
     pub compliance_severity: std::option::Option<crate::model::AssociationComplianceSeverity>,
@@ -30324,21 +30643,21 @@ pub struct CreateAssociationInput {
     /// then the association is <code>COMPLIANT</code>. If the association execution doesn't run
     /// successfully, the association is <code>NON-COMPLIANT</code>.</p>
     /// <p>In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a parameter
-    /// for the <a>PutComplianceItems</a> API action. In this case, compliance data is not
-    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API action.</p>
+    /// for the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't
+    /// managed by State Manager. It is managed by your direct call to the <a>PutComplianceItems</a> API operation.</p>
     /// <p>By default, all associations use <code>AUTO</code> mode.</p>
     pub sync_compliance: std::option::Option<crate::model::AssociationSyncCompliance>,
     /// <p>By default, when you create a new association, the system runs it immediately after it is
     /// created and then according to the schedule you specified. Specify this option if you don't want
-    /// an association to run immediately after you create it. This parameter is not supported for rate
+    /// an association to run immediately after you create it. This parameter isn't supported for rate
     /// expressions.</p>
     pub apply_only_at_cron_interval: bool,
-    /// <p>The names or Amazon Resource Names (ARNs) of the Systems Manager Change Calendar type
-    /// documents you want to gate your associations under. The associations only run when that Change
-    /// Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">AWS Systems Manager Change
+    /// <p>The names or Amazon Resource Names (ARNs) of the Change Calendar type documents you want to
+    /// gate your associations under. The associations only run when that change calendar is open. For
+    /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
     /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A location is a combination of AWS Regions and AWS accounts where you want to run the
+    /// <p>A location is a combination of Regions and accounts where you want to run the
     /// association. Use this action to create an association in multiple Regions and multiple
     /// accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -30377,22 +30696,23 @@ impl std::fmt::Debug for CreateAssociationInput {
 pub struct CreateActivationInput {
     /// <p>A user-defined description of the resource that you want to register with Systems Manager. </p>
     /// <important>
-    /// <p>Do not enter personally identifiable information in this field.</p>
+    /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The name of the registered, managed instance as it will appear in the Systems Manager console or when
-    /// you use the AWS command line tools to list Systems Manager resources.</p>
+    /// <p>The name of the registered, managed instance as it will appear in the Amazon Web Services Systems Manager console or
+    /// when you use the Amazon Web Services command line tools to list Systems Manager resources.</p>
     /// <important>
-    /// <p>Do not enter personally identifiable information in this field.</p>
+    /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub default_instance_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Identity and Access Management (IAM) role that you want to assign to the managed
-    /// instance. This IAM role must provide AssumeRole permissions for the Systems Manager service principal
-    /// <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an IAM service role for a
-    /// hybrid environment</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+    /// <p>The Identity and Access Management (IAM) role that you want to assign to the managed
+    /// instance. This IAMrole must provide AssumeRole permissions for the Amazon Web Services Systems Manager
+    /// service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
+    /// IAM service role for a hybrid environment</a> in the
+    /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub iam_role: std::option::Option<std::string::String>,
-    /// <p>Specify the maximum number of managed instances you want to register. The default value is 1
-    /// instance.</p>
+    /// <p>Specify the maximum number of managed instances you want to register. The default value is
+    /// <code>1</code>.</p>
     pub registration_limit: std::option::Option<i32>,
     /// <p>The date by which this activation request should expire, in timestamp format, such as
     /// "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
@@ -30401,8 +30721,7 @@ pub struct CreateActivationInput {
     /// <p>Optional metadata that you assign to a resource. Tags enable you to categorize a resource in
     /// different ways, such as by purpose, owner, or environment. For example, you might want to tag an
     /// activation to identify which servers or virtual machines (VMs) in your on-premises environment
-    /// you intend to activate. In this case, you could specify the following key name/value
-    /// pairs:</p>
+    /// you intend to activate. In this case, you could specify the following key-value pairs:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -30416,13 +30735,13 @@ pub struct CreateActivationInput {
     /// </li>
     /// </ul>
     /// <important>
-    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation
-    /// ID and code. When you specify the activation ID and code, tags assigned to the activation are
+    /// <p>When you install SSM Agent on your on-premises servers and VMs, you specify an activation ID
+    /// and code. When you specify the activation ID and code, tags assigned to the activation are
     /// automatically applied to the on-premises servers or VMs.</p>
     /// </important>
     /// <p>You can't add tags to or delete tags from an existing activation. You can tag your
     /// on-premises servers and VMs after they connect to Systems Manager for the first time and are assigned a
-    /// managed instance ID. This means they are listed in the AWS Systems Manager console with an ID that is
+    /// managed instance ID. This means they are listed in the Amazon Web Services Systems Manager console with an ID that is
     /// prefixed with "mi-". For information about how to add tags to your managed instances, see <a>AddTagsToResource</a>. For information about how to remove tags from your managed
     /// instances, see <a>RemoveTagsFromResource</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -30484,12 +30803,12 @@ pub struct AssociateOpsItemRelatedItemInput {
     /// <p>The type of resource that you want to associate with an OpsItem. OpsCenter supports the
     /// following types:</p>
     /// <p>
-    /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident
-    /// Manager is a capability of AWS Systems Manager.</p>
+    /// <code>AWS::SSMIncidents::IncidentRecord</code>: an Incident Manager incident. Incident Manager is a
+    /// capability of Amazon Web Services Systems Manager.</p>
     /// <p>
     /// <code>AWS::SSM::Document</code>: a Systems Manager (SSM) document.</p>
     pub resource_type: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS resource that you want to associate with the
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services resource that you want to associate with the
     /// OpsItem.</p>
     pub resource_uri: std::option::Option<std::string::String>,
 }
@@ -30509,32 +30828,45 @@ impl std::fmt::Debug for AssociateOpsItemRelatedItemInput {
 pub struct AddTagsToResourceInput {
     /// <p>Specifies the type of resource you are tagging.</p>
     /// <note>
-    /// <p>The ManagedInstance type for this API action is for on-premises managed instances. You must
-    /// specify the name of the managed instance in the following format: mi-ID_number. For example,
-    /// mi-1a2b3c4d5e6f.</p>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is for on-premises managed
+    /// instances. You must specify the name of the managed instance in the following format:
+    /// <code>mi-<i>ID_number</i>
+    /// </code>. For example,
+    /// <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub resource_type: std::option::Option<crate::model::ResourceTypeForTagging>,
     /// <p>The resource ID you want to tag.</p>
     /// <p>Use the ID of the resource. Here are some examples:</p>
-    /// <p>ManagedInstance: mi-012345abcde</p>
-    /// <p>MaintenanceWindow: mw-012345abcde</p>
-    /// <p>PatchBaseline: pb-012345abcde</p>
-    /// <p>OpsMetadata object: <code>ResourceID</code> for tagging is created from the Amazon Resource
-    /// Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from the strings that
-    /// come after the word <code>opsmetadata</code> in the ARN. For example, an OpsMetadata object with
-    /// an ARN of <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code>
-    /// has a <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
+    /// <p>
+    /// <code>MaintenanceWindow</code>: <code>mw-012345abcde</code>
+    /// </p>
+    /// <p>
+    /// <code>PatchBaseline</code>: <code>pb-012345abcde</code>
+    /// </p>
+    /// <p>
+    /// <code>OpsMetadata</code> object: <code>ResourceID</code> for tagging is created from the
+    /// Amazon Resource Name (ARN) for the object. Specifically, <code>ResourceID</code> is created from
+    /// the strings that come after the word <code>opsmetadata</code> in the ARN. For example, an
+    /// OpsMetadata object with an ARN of
+    /// <code>arn:aws:ssm:us-east-2:1234567890:opsmetadata/aws/ssm/MyGroup/appmanager</code> has a
+    /// <code>ResourceID</code> of either <code>aws/ssm/MyGroup/appmanager</code> or
     /// <code>/aws/ssm/MyGroup/appmanager</code>.</p>
-    /// <p>For the Document and Parameter values, use the name of the resource.</p>
+    /// <p>For the <code>Document</code> and <code>Parameter</code> values, use the name of the
+    /// resource.</p>
+    /// <p>
+    /// <code>ManagedInstance</code>: <code>mi-012345abcde</code>
+    /// </p>
     /// <note>
-    /// <p>The ManagedInstance type for this API action is only for on-premises managed instances. You
-    /// must specify the name of the managed instance in the following format: mi-ID_number. For
-    /// example, mi-1a2b3c4d5e6f.</p>
+    /// <p>The <code>ManagedInstance</code> type for this API operation is only for on-premises
+    /// managed instances. You must specify the name of the managed instance in the following format:
+    /// <code>mi-<i>ID_number</i>
+    /// </code>. For example,
+    /// <code>mi-1a2b3c4d5e6f</code>.</p>
     /// </note>
     pub resource_id: std::option::Option<std::string::String>,
     /// <p>One or more tags. The value parameter is required.</p>
     /// <important>
-    /// <p>Do not enter personally identifiable information in this field.</p>
+    /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }

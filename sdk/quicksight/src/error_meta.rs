@@ -1692,6 +1692,51 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeUserError>> for Er
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::GenerateEmbedUrlForAnonymousUserError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GenerateEmbedUrlForAnonymousUserError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::SessionLifetimeInMinutesInvalidException(inner) => Error::SessionLifetimeInMinutesInvalidException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+                crate::error::GenerateEmbedUrlForAnonymousUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GenerateEmbedUrlForRegisteredUserError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GenerateEmbedUrlForRegisteredUserError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::InternalFailureException(inner) => Error::InternalFailureException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::QuickSightUserNotFoundException(inner) => Error::QuickSightUserNotFoundException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::SessionLifetimeInMinutesInvalidException(inner) => Error::SessionLifetimeInMinutesInvalidException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedPricingPlanException(inner) => Error::UnsupportedPricingPlanException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::UnsupportedUserEditionException(inner) => Error::UnsupportedUserEditionException(inner),
+                crate::error::GenerateEmbedUrlForRegisteredUserErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::GetDashboardEmbedUrlError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::GetDashboardEmbedUrlError>) -> Self {
         match err {

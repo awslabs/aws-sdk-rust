@@ -846,8 +846,7 @@ where
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CalculateRouteSummary {
     /// <p>Specifies a geographical box surrounding a route. Used to zoom into a route when
-    /// displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>
-    /// </p>
+    /// displaying it in a map. For example, <code>[min x, min y, max x, max y]</code>.</p>
     /// <p>The first 2 <code>bbox</code> parameters describe the lower southwest corner: </p>
     /// <ul>
     /// <li>
@@ -1045,7 +1044,7 @@ where
 }
 
 /// <p>Contains the calculated route's details for each path between a pair of positions. The
-/// number of legs returned corresponds to one less than the total number of positions in
+/// number of legs returned corresponds to one fewer than the total number of positions in
 /// the request. </p>
 /// <p>For example, a route with a departure position and destination position returns one
 /// leg with the positions <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html#snap-to-nearby-road">snapped to a nearby road</a>:</p>
@@ -1058,7 +1057,7 @@ where
 /// </li>
 /// </ul>
 /// <p>A route with a waypoint between the departure and destination position returns two
-/// legs with the positions snapped to a nearby road.:</p>
+/// legs with the positions snapped to a nearby road:</p>
 /// <ul>
 /// <li>
 /// <p>Leg 1: The <code>StartPosition</code> is the departure position . The
@@ -2843,6 +2842,23 @@ impl ListPlaceIndexesResponseEntry {
 }
 
 /// <p>Specifies the data storage option chosen for requesting Places.</p>
+/// <important>
+/// <p>When using Amazon Location Places:</p>
+/// <ul>
+/// <li>
+/// <p>If using HERE Technologies as a data provider, you can't store results for
+/// locations in Japan by setting <code>IntendedUse</code> to <code>Storage</code>.
+/// parameter.</p>
+/// </li>
+/// <li>
+/// <p>Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code>
+/// pricing plan, you can't store results from your place index resources by setting <code>IntendedUse</code> to <code>Storage</code>. This
+/// returns a validation exception error.</p>
+/// </li>
+/// </ul>
+/// <p>For more information, see the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for
+/// Amazon Location Service.</p>
+/// </important>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataSourceConfiguration {
@@ -2856,11 +2872,6 @@ pub struct DataSourceConfiguration {
     /// <li>
     /// <p>
     /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
-    /// <important>
-    /// <p>Place index resources using HERE as a data provider can't be configured to
-    /// store results for locations in Japan when choosing <code>Storage</code> for the
-    /// <code>IntendedUse</code> parameter.</p>
-    /// </important>
     /// </li>
     /// </ul>
     /// <p>Default value:  <code>SingleUse</code>
@@ -2893,11 +2904,6 @@ pub mod data_source_configuration {
         /// <li>
         /// <p>
         /// <code>Storage</code> specifies that the result can be cached or stored in a database.</p>
-        /// <important>
-        /// <p>Place index resources using HERE as a data provider can't be configured to
-        /// store results for locations in Japan when choosing <code>Storage</code> for the
-        /// <code>IntendedUse</code> parameter.</p>
-        /// </important>
         /// </li>
         /// </ul>
         /// <p>Default value:  <code>SingleUse</code>
@@ -3094,16 +3100,65 @@ impl ListMapsResponseEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MapConfiguration {
-    /// <p>Specifies the map style selected from an available data provider.</p>
-    /// <p>Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>,
-    /// <code>VectorEsriTopographic</code>, <code>VectorEsriNavigation</code>,
-    /// <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
-    /// <code>VectorHereBerlin</code>.</p>
+    /// <p>Specifies the map style selected from an available data provider. For additional
+    /// information on each map style and to preview each map style, see <a href="location/latest/developerguide/esri.html#esri-map-styles">Esri map
+    /// styles</a> and <a href="location/latest/developerguide/HERE.html#HERE-map-styles">HERE map
+    /// styles</a>.</p>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A
+    /// vector basemap with a dark gray, neutral background with minimal colors, labels,
+    /// and features that's designed to draw attention to your thematic content. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap
+    /// that provides one meter or better satellite and aerial imagery in many parts of
+    /// the world and lower resolution satellite imagery worldwide. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style,
+    /// which provides a detailed vector basemap with a light gray, neutral background
+    /// style with minimal colors, labels, and features that's designed to draw
+    /// attention to your thematic content. </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriTopographic</code> – The Esri Light map style, which provides
+    /// a detailed vector basemap with a classic Esri map style.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriStreets</code> – The Esri World Streets map style, which
+    /// provides a detailed vector basemap for the world symbolized with a classic Esri
+    /// street map style. The vector tile layer is similar in content and style to the
+    /// World Street Map raster map.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
+    /// provides a detailed basemap for the world symbolized with a custom navigation
+    /// map style that's designed for use during the day in mobile devices.</p>
+    /// </li>
+    /// </ul>
+    /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+    /// Technologies</a> styles: </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast
+    /// detailed base map of the world that blends 3D and 2D rendering.</p>
     /// <note>
     /// <p>When using HERE as your data provider, and selecting the Style
-    /// <code>VectorHereBerlin</code>, you may not use HERE Maps for Asset Management.
-    /// See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+    /// <code>VectorHereBerlin</code>, you may not use HERE Technologies maps
+    /// for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+    /// for Amazon Location Service.</p>
     /// </note>
+    /// </li>
+    /// </ul>
     pub style: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for MapConfiguration {
@@ -3122,16 +3177,65 @@ pub mod map_configuration {
         pub(crate) style: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the map style selected from an available data provider.</p>
-        /// <p>Valid styles: <code>RasterEsriImagery</code>, <code>VectorEsriStreets</code>,
-        /// <code>VectorEsriTopographic</code>, <code>VectorEsriNavigation</code>,
-        /// <code>VectorEsriDarkGrayCanvas</code>, <code>VectorEsriLightGrayCanvas</code>,
-        /// <code>VectorHereBerlin</code>.</p>
+        /// <p>Specifies the map style selected from an available data provider. For additional
+        /// information on each map style and to preview each map style, see <a href="location/latest/developerguide/esri.html#esri-map-styles">Esri map
+        /// styles</a> and <a href="location/latest/developerguide/HERE.html#HERE-map-styles">HERE map
+        /// styles</a>.</p>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriDarkGrayCanvas</code> – The Esri Dark Gray Canvas map style. A
+        /// vector basemap with a dark gray, neutral background with minimal colors, labels,
+        /// and features that's designed to draw attention to your thematic content. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>RasterEsriImagery</code> – The Esri Imagery map style. A raster basemap
+        /// that provides one meter or better satellite and aerial imagery in many parts of
+        /// the world and lower resolution satellite imagery worldwide. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriLightGrayCanvas</code> – The Esri Light Gray Canvas map style,
+        /// which provides a detailed vector basemap with a light gray, neutral background
+        /// style with minimal colors, labels, and features that's designed to draw
+        /// attention to your thematic content. </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriTopographic</code> – The Esri Light map style, which provides
+        /// a detailed vector basemap with a classic Esri map style.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriStreets</code> – The Esri World Streets map style, which
+        /// provides a detailed vector basemap for the world symbolized with a classic Esri
+        /// street map style. The vector tile layer is similar in content and style to the
+        /// World Street Map raster map.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
+        /// provides a detailed basemap for the world symbolized with a custom navigation
+        /// map style that's designed for use during the day in mobile devices.</p>
+        /// </li>
+        /// </ul>
+        /// <p>Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        /// Technologies</a> styles: </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>VectorHereBerlin</code> – The HERE Berlin map style is a high contrast
+        /// detailed base map of the world that blends 3D and 2D rendering.</p>
         /// <note>
         /// <p>When using HERE as your data provider, and selecting the Style
-        /// <code>VectorHereBerlin</code>, you may not use HERE Maps for Asset Management.
-        /// See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a> for Amazon Location Service.</p>
+        /// <code>VectorHereBerlin</code>, you may not use HERE Technologies maps
+        /// for Asset Management. See the <a href="https://aws.amazon.com/service-terms/">AWS Service Terms</a>
+        /// for Amazon Location Service.</p>
         /// </note>
+        /// </li>
+        /// </ul>
         pub fn style(mut self, input: impl Into<std::string::String>) -> Self {
             self.style = Some(input.into());
             self

@@ -158,9 +158,10 @@ pub fn parse_complete_snapshot_response(
 
 #[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_snapshot_block(
-    response: &mut http::Response<smithy_http::body::SdkBody>,
+    op_response: &mut smithy_http::operation::Response,
 ) -> std::result::Result<crate::output::GetSnapshotBlockOutput, crate::error::GetSnapshotBlockError>
 {
+    let response = op_response.http_mut();
     Ok({
         #[allow(unused_mut)]
         let mut output = crate::output::get_snapshot_block_output::Builder::default();

@@ -16112,7 +16112,7 @@ impl NoSuchEntityException {
     }
 }
 
-/// <p>The request was rejected because it attempted to create resources beyond the current AWS
+/// <p>The request was rejected because it attempted to create resources beyond the current Amazon Web Services
 /// account limits. The error message describes the limit exceeded.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -17154,7 +17154,7 @@ impl InvalidAuthenticationCodeException {
     }
 }
 
-/// <p>The request failed because AWS service role policies can only be attached to the
+/// <p>The request failed because Amazon Web Services service role policies can only be attached to the
 /// service-linked role for that service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

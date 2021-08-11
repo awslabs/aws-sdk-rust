@@ -4,16 +4,46 @@
 /// and patch baselines. Tags enable you to categorize your resources in different ways, for example,
 /// by purpose, owner, or environment. Each tag consists of a key and an optional value, both of
 /// which you define. For example, you could define a set of tags for your account's managed
-/// instances that helps you track each instance's owner and stack level. For example: Key=Owner and
-/// Value=DbAdmin, SysAdmin, or Dev. Or Key=Stack and Value=Production, Pre-Production, or
-/// Test.</p>
-/// <p>Each resource can have a maximum of 50 tags. </p>
+/// instances that helps you track each instance's owner and stack level. For example:</p>
+/// <ul>
+/// <li>
+/// <p>
+/// <code>Key=Owner,Value=DbAdmin</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>Key=Owner,Value=SysAdmin</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>Key=Owner,Value=Dev</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>Key=Stack,Value=Production</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>Key=Stack,Value=Pre-Production</code>
+/// </p>
+/// </li>
+/// <li>
+/// <p>
+/// <code>Key=Stack,Value=Test</code>
+/// </p>
+/// </li>
+/// </ul>
+/// <p>Each resource can have a maximum of 50 tags.</p>
 /// <p>We recommend that you devise a set of tag keys that meets your needs for each resource type.
 /// Using a consistent set of tag keys makes it easier for you to manage your resources. You can
 /// search and filter the resources based on the tags you add. Tags don't have any semantic meaning
 /// to and are interpreted strictly as a string of characters. </p>
-/// <p>For more information about using tags with EC2 instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2 resources</a> in the
-/// <i>Amazon EC2 User Guide</i>.</p>
+/// <p>For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2) instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging your Amazon EC2
+/// resources</a> in the <i>Amazon EC2 User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AddTagsToResource {
     _private: (),
@@ -41,9 +71,9 @@ impl smithy_http::response::ParseStrictResponse for AddTagsToResource {
     }
 }
 
-/// <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can
-/// associate an Incident Manager incident or analysis with an OpsItem. Incident Manager is a
-/// capability of AWS Systems Manager.</p>
+/// <p>Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate
+/// an Incident Manager incident or analysis with an OpsItem. Incident Manager is a capability of
+/// Amazon Web Services Systems Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AssociateOpsItemRelatedItem {
     _private: (),
@@ -99,8 +129,8 @@ impl smithy_http::response::ParseStrictResponse for CancelCommand {
 }
 
 /// <p>Stops a maintenance window execution that is already in progress and cancels any tasks in
-/// the window that have not already starting running. (Tasks already in progress will continue to
-/// completion.)</p>
+/// the window that haven't already starting running. Tasks already in progress will continue to
+/// completion.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CancelMaintenanceWindowExecution {
     _private: (),
@@ -129,14 +159,14 @@ impl smithy_http::response::ParseStrictResponse for CancelMaintenanceWindowExecu
 }
 
 /// <p>Generates an activation code and activation ID you can use to register your on-premises
-/// server or virtual machine (VM) with Systems Manager. Registering these machines with Systems Manager makes it
+/// server or virtual machine (VM) with Amazon Web Services Systems Manager. Registering these machines with Systems Manager makes it
 /// possible to manage them using Systems Manager capabilities. You use the activation code and ID when
 /// installing SSM Agent on machines in your hybrid environment. For more information about
 /// requirements for managing on-premises instances and VMs using Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-managedinstances.html">Setting up
-/// AWS Systems Manager for hybrid environments</a> in the <i>AWS Systems Manager User Guide</i>. </p>
+/// Amazon Web Services Systems Manager for hybrid environments</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 /// <note>
-/// <p>On-premises servers or VMs that are registered with Systems Manager and EC2 instances that you manage
-/// with Systems Manager are all called <i>managed instances</i>.</p>
+/// <p>On-premises servers or VMs that are registered with Systems Manager and Amazon Elastic Compute Cloud (Amazon EC2) instances
+/// that you manage with Systems Manager are all called <i>managed instances</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateActivation {
@@ -168,13 +198,13 @@ impl smithy_http::response::ParseStrictResponse for CreateActivation {
 /// <p>A State Manager association defines the state that you want to maintain on your instances.
 /// For example, an association can specify that anti-virus software must be installed and running on
 /// your instances, or that certain ports must be closed. For static targets, the association
-/// specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an AWS
-/// Resource Group or an AWS Autoscaling Group, State Manager applies the configuration when new
-/// instances are added to the group. The association also specifies actions to take when applying
-/// the configuration. For example, an association for anti-virus software might run once a day. If
-/// the software is not installed, then State Manager installs it. If the software is installed, but
-/// the service is not running, then the association might instruct State Manager to start the
-/// service. </p>
+/// specifies a schedule for when the configuration is reapplied. For dynamic targets, such as an
+/// Amazon Web Services resource group or an Amazon Web Services autoscaling group, State Manager, a capability of Amazon Web Services Systems Manager
+/// applies the configuration when new instances are added to the group. The association also
+/// specifies actions to take when applying the configuration. For example, an association for
+/// anti-virus software might run once a day. If the software isn't installed, then State Manager
+/// installs it. If the software is installed, but the service isn't running, then the association
+/// might instruct State Manager to start the service. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateAssociation {
     _private: (),
@@ -202,10 +232,11 @@ impl smithy_http::response::ParseStrictResponse for CreateAssociation {
     }
 }
 
-/// <p>Associates the specified Systems Manager document with the specified instances or targets.</p>
+/// <p>Associates the specified Amazon Web Services Systems Manager document (SSM document) with the specified instances or
+/// targets.</p>
 /// <p>When you associate a document with one or more instances using instance IDs or tags,
-/// SSM Agent running on the instance processes the document and configures the instance as
-/// specified.</p>
+/// Amazon Web Services Systems Manager Agent (SSM Agent) running on the instance processes the document and configures the
+/// instance as specified.</p>
 /// <p>If you associate a document with an instance that already has an associated document, the
 /// system returns the AssociationAlreadyExists exception.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -235,10 +266,10 @@ impl smithy_http::response::ParseStrictResponse for CreateAssociationBatch {
     }
 }
 
-/// <p>Creates a Systems Manager (SSM) document. An SSM document defines the actions that Systems Manager performs on
-/// your managed instances. For more information about SSM documents, including information about
-/// supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">AWS Systems Manager Documents</a> in the
-/// <i>AWS Systems Manager User Guide</i>.</p>
+/// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs
+/// on your managed instances. For more information about SSM documents, including information about
+/// supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateDocument {
     _private: (),
@@ -300,13 +331,12 @@ impl smithy_http::response::ParseStrictResponse for CreateMaintenanceWindow {
     }
 }
 
-/// <p>Creates a new OpsItem. You must have permission in AWS Identity and Access Management (IAM)
-/// to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-/// OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-/// <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
-/// operational issues impacting the performance and health of their AWS resources. For more
-/// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
-/// <i>AWS Systems Manager User Guide</i>. </p>
+/// <p>Creates a new OpsItem. You must have permission in Identity and Access Management (IAM) to create a new OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
+/// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
+/// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
+/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">Amazon Web Services Systems Manager OpsCenter</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOpsItem {
     _private: (),
@@ -332,7 +362,7 @@ impl smithy_http::response::ParseStrictResponse for CreateOpsItem {
     }
 }
 
-/// <p>If you create a new application in Application Manager, Systems Manager calls this API action to specify
+/// <p>If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify
 /// information about the new application, including the application type.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateOpsMetadata {
@@ -363,8 +393,8 @@ impl smithy_http::response::ParseStrictResponse for CreateOpsMetadata {
 
 /// <p>Creates a patch baseline.</p>
 /// <note>
-/// <p>For information about valid key and value pairs in <code>PatchFilters</code> for each
-/// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+/// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported
+/// operating system type, see <a>PatchFilter</a>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreatePatchBaseline {
@@ -393,25 +423,26 @@ impl smithy_http::response::ParseStrictResponse for CreatePatchBaseline {
     }
 }
 
-/// <p>A resource data sync helps you view data from multiple sources in a single location. Systems
-/// Manager offers two types of resource data sync: <code>SyncToDestination</code> and
+/// <p>A resource data sync helps you view data from multiple sources in a single location.
+/// Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code> and
 /// <code>SyncFromSource</code>.</p>
 /// <p>You can configure Systems Manager Inventory to use the <code>SyncToDestination</code> type to
-/// synchronize Inventory data from multiple AWS Regions to a single S3 bucket. For more information,
-/// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring Resource Data
-/// Sync for Inventory</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+/// synchronize Inventory data from multiple Regions to a single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring resource data
+/// sync for Inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// <p>You can configure Systems Manager Explorer to use the <code>SyncFromSource</code> type to synchronize
-/// operational work items (OpsItems) and operational data (OpsData) from multiple AWS Regions to a
-/// single S3 bucket. This type can synchronize OpsItems and OpsData from multiple AWS accounts and
-/// Regions or <code>EntireOrganization</code> by using AWS Organizations. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up Systems Manager Explorer to display data from multiple accounts and Regions</a> in the
-/// <i>AWS Systems Manager User Guide</i>.</p>
+/// operational work items (OpsItems) and operational data (OpsData) from multiple Regions to a
+/// single Amazon S3 bucket. This type can synchronize OpsItems and OpsData from multiple
+/// accounts and Regions or <code>EntireOrganization</code> by using Organizations. For more
+/// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting up Systems Manager
+/// Explorer to display data from multiple accounts and Regions</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// <p>A resource data sync is an asynchronous operation that returns immediately. After a
 /// successful initial sync is completed, the system continuously syncs data. To check the status of
 /// a sync, use the <a>ListResourceDataSync</a>.</p>
 /// <note>
-/// <p>By default, data is not encrypted in Amazon S3. We strongly recommend that you enable encryption
-/// in Amazon S3 to ensure secure data storage. We also recommend that you secure access to the Amazon S3
-/// bucket by creating a restrictive bucket policy. </p>
+/// <p>By default, data isn't encrypted in Amazon S3. We strongly recommend that you
+/// enable encryption in Amazon S3 to ensure secure data storage. We also recommend that you
+/// secure access to the Amazon S3 bucket by creating a restrictive bucket policy. </p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateResourceDataSync {
@@ -440,9 +471,9 @@ impl smithy_http::response::ParseStrictResponse for CreateResourceDataSync {
     }
 }
 
-/// <p>Deletes an activation. You are not required to delete an activation. If you delete an
+/// <p>Deletes an activation. You aren't required to delete an activation. If you delete an
 /// activation, you can no longer use it to register additional managed instances. Deleting an
-/// activation does not de-register managed instances. You must manually de-register managed
+/// activation doesn't de-register managed instances. You must manually de-register managed
 /// instances.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteActivation {
@@ -471,8 +502,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteActivation {
     }
 }
 
-/// <p>Disassociates the specified Systems Manager document from the specified instance.</p>
-/// <p>When you disassociate a document from an instance, it does not change the configuration of
+/// <p>Disassociates the specified Amazon Web Services Systems Manager document (SSM document) from the specified
+/// instance.</p>
+/// <p>When you disassociate a document from an instance, it doesn't change the configuration of
 /// the instance. To change the configuration state of an instance after you disassociate a document,
 /// you must create a new document with the desired configuration and associate it with the
 /// instance.</p>
@@ -503,7 +535,8 @@ impl smithy_http::response::ParseStrictResponse for DeleteAssociation {
     }
 }
 
-/// <p>Deletes the Systems Manager document and all instance associations to the document.</p>
+/// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all instance associations to the
+/// document.</p>
 /// <p>Before you delete the document, we recommend that you use <a>DeleteAssociation</a> to disassociate all instances that are associated with the document.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteDocument {
@@ -699,9 +732,9 @@ impl smithy_http::response::ParseStrictResponse for DeletePatchBaseline {
     }
 }
 
-/// <p>Deletes a Resource Data Sync configuration. After the configuration is deleted, changes to
+/// <p>Deletes a resource data sync configuration. After the configuration is deleted, changes to
 /// data on managed instances are no longer synced to or from the target. Deleting a sync
-/// configuration does not delete data.</p>
+/// configuration doesn't delete data.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteResourceDataSync {
     _private: (),
@@ -848,8 +881,9 @@ impl smithy_http::response::ParseStrictResponse for DeregisterTaskFromMaintenanc
 }
 
 /// <p>Describes details about the activation, such as the date and time the activation was
-/// created, its expiration date, the IAM role assigned to the instances in the activation, and the
-/// number of instances registered by using this activation.</p>
+/// created, its expiration date, the Identity and Access Management (IAM) role assigned to
+/// the instances in the activation, and the number of instances registered by using this
+/// activation.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeActivations {
     _private: (),
@@ -879,9 +913,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeActivations {
 
 /// <p>Describes the association for the specified target or instance. If you created the
 /// association by using the <code>Targets</code> parameter, then you must retrieve the association
-/// by using the association ID. If you created the association by specifying an instance ID and a
-/// Systems Manager document, then you retrieve the association by specifying the document name and the
-/// instance ID. </p>
+/// by using the association ID. If you created the association by specifying an instance ID and an
+/// Amazon Web Services Systems Manager document (SSM document), then you retrieve the association by specifying the document
+/// name and the instance ID. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociation {
     _private: (),
@@ -909,7 +943,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAssociation {
     }
 }
 
-/// <p>Use this API action to view all executions for a specific association ID. </p>
+/// <p>Views all executions for a specific association ID. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociationExecutions {
     _private: (),
@@ -937,8 +971,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAssociationExecution
     }
 }
 
-/// <p>Use this API action to view information about a specific execution of a specific
-/// association.</p>
+/// <p>Views information about a specific execution of a specific association.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAssociationExecutionTargets {
     _private: (),
@@ -1051,7 +1084,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAvailablePatches {
     }
 }
 
-/// <p>Describes the specified Systems Manager document.</p>
+/// <p>Describes the specified Amazon Web Services Systems Manager document (SSM document).</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDocument {
     _private: (),
@@ -1079,9 +1112,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeDocument {
     }
 }
 
-/// <p>Describes the permissions for a Systems Manager document. If you created the document, you are the
-/// owner. If a document is shared, it can either be shared privately (by specifying a user's AWS
-/// account ID) or publicly (<i>All</i>). </p>
+/// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the
+/// document, you are the owner. If a document is shared, it can either be shared privately (by
+/// specifying a user's account ID) or publicly (<i>All</i>). </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeDocumentPermission {
     _private: (),
@@ -1140,7 +1173,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeEffectiveInstanceAss
 }
 
 /// <p>Retrieves the current effective patches (the patch and the approval state) for the specified
-/// patch baseline. Note that this API applies only to Windows patch baselines.</p>
+/// patch baseline. Applies to patch baselines for Windows only.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeEffectivePatchesForPatchBaseline {
     _private: (),
@@ -1203,12 +1236,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeInstanceAssociations
 /// <p>Describes one or more of your instances, including information about the operating system
 /// platform, the version of SSM Agent installed on the instance, instance status, and so on.</p>
 /// <p>If you specify one or more instance IDs, it returns information for those instances. If you
-/// do not specify instance IDs, it returns information for all your instances. If you specify an
-/// instance ID that is not valid or an instance that you do not own, you receive an error.</p>
+/// don't specify instance IDs, it returns information for all your instances. If you specify an
+/// instance ID that isn't valid or an instance that you don't own, you receive an error.</p>
 /// <note>
-/// <p>The IamRole field for this API action is the Amazon Identity and Access Management (IAM)
-/// role assigned to on-premises instances. This call does not return the IAM role for EC2
-/// instances.</p>
+/// <p>The <code>IamRole</code> field for this API operation is the Identity and Access Management
+/// (IAM) role assigned to on-premises instances. This call doesn't return the
+/// IAM role for EC2 instances.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeInstanceInformation {
@@ -1450,7 +1483,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowExe
     }
 }
 
-/// <p>Retrieves the maintenance windows in an AWS account.</p>
+/// <p>Retrieves the maintenance windows in an account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindows {
     _private: (),
@@ -1565,10 +1598,10 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowTar
 
 /// <p>Lists the tasks in a maintenance window.</p>
 /// <note>
-/// <p>For maintenance window tasks without a specified target, you cannot supply values for
+/// <p>For maintenance window tasks without a specified target, you can't supply values for
 /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a
 /// placeholder value of <code>1</code>, which may be reported in the response to this command.
-/// These values do not affect the running of your task and can be ignored.</p>
+/// These values don't affect the running of your task and can be ignored.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeMaintenanceWindowTasks {
@@ -1597,13 +1630,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeMaintenanceWindowTas
     }
 }
 
-/// <p>Query a set of OpsItems. You must have permission in AWS Identity and Access Management
-/// (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-/// OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-/// <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
-/// operational issues impacting the performance and health of their AWS resources. For more
-/// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
-/// <i>AWS Systems Manager User Guide</i>. </p>
+/// <p>Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
+/// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
+/// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
+/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeOpsItems {
     _private: (),
@@ -1632,14 +1664,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeOpsItems {
 }
 
 /// <p>Get information about a parameter.</p>
-/// <note>
 /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
 /// in the request, the response includes information up to the limit specified. The number of items
 /// returned, however, can be between zero and the value of <code>MaxResults</code>. If the service
 /// reaches an internal limit while processing the results, it stops the operation and returns the
 /// matching values up to that point and a <code>NextToken</code>. You can specify the
 /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
-/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeParameters {
     _private: (),
@@ -1667,7 +1697,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeParameters {
     }
 }
 
-/// <p>Lists the patch baselines in your AWS account.</p>
+/// <p>Lists the patch baselines in your account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchBaselines {
     _private: (),
@@ -1723,7 +1753,7 @@ impl smithy_http::response::ParseStrictResponse for DescribePatchGroups {
     }
 }
 
-/// <p>Returns high-level aggregated patch compliance state for a patch group.</p>
+/// <p>Returns high-level aggregated patch compliance state information for a patch group.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribePatchGroupState {
     _private: (),
@@ -1753,49 +1783,66 @@ impl smithy_http::response::ParseStrictResponse for DescribePatchGroupState {
 
 /// <p>Lists the properties of available patches organized by product, product family,
 /// classification, severity, and other properties of available patches. You can use the reported
-/// properties in the filters you specify in requests for actions such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p>
+/// properties in the filters you specify in requests for operations such as <a>CreatePatchBaseline</a>, <a>UpdatePatchBaseline</a>, <a>DescribeAvailablePatches</a>, and <a>DescribePatchBaselines</a>.</p>
 /// <p>The following section lists the properties that can be used in filters for each major
 /// operating system type:</p>
 /// <dl>
 /// <dt>AMAZON_LINUX</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+/// <code>SEVERITY</code>
+/// </p>
 /// </dd>
 /// <dt>AMAZON_LINUX_2</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+/// <code>SEVERITY</code>
+/// </p>
 /// </dd>
 /// <dt>CENTOS</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+/// <code>SEVERITY</code>
+/// </p>
 /// </dd>
 /// <dt>DEBIAN</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, PRIORITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code>
+/// </p>
 /// </dd>
 /// <dt>MACOS</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code>
+/// </p>
 /// </dd>
 /// <dt>ORACLE_LINUX</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+/// <code>SEVERITY</code>
+/// </p>
 /// </dd>
 /// <dt>REDHAT_ENTERPRISE_LINUX</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+/// <code>SEVERITY</code>
+/// </p>
 /// </dd>
 /// <dt>SUSE</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, CLASSIFICATION, SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>CLASSIFICATION</code> |
+/// <code>SEVERITY</code>
+/// </p>
 /// </dd>
 /// <dt>UBUNTU</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, PRIORITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRIORITY</code>
+/// </p>
 /// </dd>
 /// <dt>WINDOWS</dt>
 /// <dd>
-/// <p>Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY</p>
+/// <p>Valid properties: <code>PRODUCT</code> | <code>PRODUCT_FAMILY</code> |
+/// <code>CLASSIFICATION</code> | <code>MSRC_SEVERITY</code>
+/// </p>
 /// </dd>
 /// </dl>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -1855,8 +1902,8 @@ impl smithy_http::response::ParseStrictResponse for DescribeSessions {
 }
 
 /// <p>Deletes the association between an OpsItem and a related resource. For example, this API
-/// action can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability
-/// of AWS Systems Manager.</p>
+/// operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of
+/// Amazon Web Services Systems Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateOpsItemRelatedItem {
     _private: (),
@@ -1912,16 +1959,15 @@ impl smithy_http::response::ParseStrictResponse for GetAutomationExecution {
     }
 }
 
-/// <p>Gets the state of the AWS Systems Manager Change Calendar at an optional, specified time. If you
-/// specify a time, <code>GetCalendarState</code> returns the state of the calendar at a specific
-/// time, and returns the next time that the Change Calendar state will transition. If you do not
-/// specify a time, <code>GetCalendarState</code> assumes the current time. Change Calendar entries
-/// have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p>
+/// <p>Gets the state of a Amazon Web Services Systems Manager change calendar at the current time or a specified time. If
+/// you specify a time, <code>GetCalendarState</code> returns the state of the calendar at that
+/// specific time, and returns the next time that the change calendar state will transition. If you
+/// don't specify a time, <code>GetCalendarState</code> uses the current time. Change Calendar
+/// entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p>
 /// <p>If you specify more than one calendar in a request, the command returns the status of
 /// <code>OPEN</code> only if all calendars in the request are open. If one or more calendars in the
 /// request are closed, the status returned is <code>CLOSED</code>.</p>
-/// <p>For more information about Systems Manager Change Calendar, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS Systems Manager Change
-/// Calendar</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+/// <p>For more information about Change Calendar, a capability of Amazon Web Services Systems Manager, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">Amazon Web Services Systems Manager Change Calendar</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCalendarState {
     _private: (),
@@ -2010,10 +2056,9 @@ impl smithy_http::response::ParseStrictResponse for GetConnectionStatus {
     }
 }
 
-/// <p>Retrieves the default patch baseline. Note that Systems Manager supports creating multiple default
-/// patch baselines. For example, you can create a default patch baseline for each operating
-/// system.</p>
-/// <p>If you do not specify an operating system value, the default patch baseline for Windows is
+/// <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager supports creating multiple default patch
+/// baselines. For example, you can create a default patch baseline for each operating system.</p>
+/// <p>If you don't specify an operating system value, the default patch baseline for Windows is
 /// returned.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDefaultPatchBaseline {
@@ -2043,7 +2088,14 @@ impl smithy_http::response::ParseStrictResponse for GetDefaultPatchBaseline {
 }
 
 /// <p>Retrieves the current snapshot for the patch baseline the instance uses. This API is
-/// primarily used by the AWS-RunPatchBaseline Systems Manager document. </p>
+/// primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p>
+/// <note>
+/// <p>If you run the command locally, such as with the Command Line Interface (CLI), the system attempts to use your local AWS credentials and the operation fails. To avoid
+/// this, you can run the command in the Amazon Web Services Systems Manager console. Use Run Command, a capability of
+/// Amazon Web Services Systems Manager, with an SSM document that enables you to target an instance with a script or command.
+/// For example, run the command using the <code>AWS-RunShellScript</code> document or the
+/// <code>AWS-RunPowerShellScript</code> document.</p>
+/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDeployablePatchSnapshotForInstance {
     _private: (),
@@ -2073,7 +2125,7 @@ impl smithy_http::response::ParseStrictResponse for GetDeployablePatchSnapshotFo
     }
 }
 
-/// <p>Gets the contents of the specified Systems Manager document.</p>
+/// <p>Gets the contents of the specified Amazon Web Services Systems Manager document (SSM document).</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetDocument {
     _private: (),
@@ -2274,10 +2326,10 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowExecutio
 
 /// <p>Lists the tasks in a maintenance window.</p>
 /// <note>
-/// <p>For maintenance window tasks without a specified target, you cannot supply values for
+/// <p>For maintenance window tasks without a specified target, you can't supply values for
 /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system inserts a
 /// placeholder value of <code>1</code>, which may be reported in the response to this command.
-/// These values do not affect the running of your task and can be ignored.</p>
+/// These values don't affect the running of your task and can be ignored.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetMaintenanceWindowTask {
@@ -2306,14 +2358,13 @@ impl smithy_http::response::ParseStrictResponse for GetMaintenanceWindowTask {
     }
 }
 
-/// <p>Get information about an OpsItem by using the ID. You must have permission in AWS Identity
-/// and Access Management (IAM) to view information about an OpsItem. For more information, see
-/// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-/// OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-/// <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
-/// operational issues impacting the performance and health of their AWS resources. For more
-/// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
-/// <i>AWS Systems Manager User Guide</i>. </p>
+/// <p>Get information about an OpsItem by using the ID. You must have permission in Identity and Access Management (IAM) to view information about an OpsItem. For more information,
+/// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
+/// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
+/// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
+/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsItem {
     _private: (),
@@ -2365,7 +2416,10 @@ impl smithy_http::response::ParseStrictResponse for GetOpsMetadata {
     }
 }
 
-/// <p>View a summary of OpsItems based on specified filters and aggregators.</p>
+/// <p>View a summary of operations metadata (OpsData) based on specified filters and aggregators.
+/// OpsData can include information about Amazon Web Services Systems Manager OpsCenter operational workitems (OpsItems) as
+/// well as information about any Amazon Web Services resource or service configured to report OpsData to Amazon Web Services Systems Manager
+/// Explorer. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetOpsSummary {
     _private: (),
@@ -2391,8 +2445,8 @@ impl smithy_http::response::ParseStrictResponse for GetOpsSummary {
     }
 }
 
-/// <p>Get information about a parameter by using the parameter name. Don't confuse this API action
-/// with the <a>GetParameters</a> API action.</p>
+/// <p>Get information about a parameter by using the parameter name. Don't confuse this API
+/// operation with the <a>GetParameters</a> API operation.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParameter {
     _private: (),
@@ -2446,7 +2500,7 @@ impl smithy_http::response::ParseStrictResponse for GetParameterHistory {
     }
 }
 
-/// <p>Get details of a parameter. Don't confuse this API action with the <a>GetParameter</a> API action.</p>
+/// <p>Get details of a parameter. Don't confuse this API operation with the <a>GetParameter</a> API operation.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParameters {
     _private: (),
@@ -2473,14 +2527,12 @@ impl smithy_http::response::ParseStrictResponse for GetParameters {
 }
 
 /// <p>Retrieve information about one or more parameters in a specific hierarchy. </p>
-/// <note>
 /// <p>Request results are returned on a best-effort basis. If you specify <code>MaxResults</code>
 /// in the request, the response includes information up to the limit specified. The number of items
 /// returned, however, can be between zero and the value of <code>MaxResults</code>. If the service
 /// reaches an internal limit while processing the results, it stops the operation and returns the
 /// matching values up to that point and a <code>NextToken</code>. You can specify the
 /// <code>NextToken</code> in a subsequent call to get the next set of results.</p>
-/// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetParametersByPath {
     _private: (),
@@ -2565,17 +2617,18 @@ impl smithy_http::response::ParseStrictResponse for GetPatchBaselineForPatchGrou
 }
 
 /// <p>
-/// <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting
+/// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
 /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-/// AWS service charges money to the account based on feature or service usage, then the AWS service
-/// team might create a default setting of "false". This means the user can't use this feature unless
-/// they change the setting to "true" and intentionally opt in for a paid feature.</p>
-/// <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define
+/// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
+/// service team might create a default setting of <code>false</code>. This means the user can't use
+/// this feature unless they change the setting to <code>true</code> and intentionally opt in for a
+/// paid feature.</p>
+/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
 /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
 /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-/// permission for the setting. Use the <a>UpdateServiceSetting</a> API action to change
-/// the default setting. Or use the <a>ResetServiceSetting</a> to change the value back to
-/// the original value defined by the AWS service team.</p>
+/// permission for the setting. Use the <a>UpdateServiceSetting</a> API operation to
+/// change the default setting. Or use the <a>ResetServiceSetting</a> to change the value
+/// back to the original value defined by the Amazon Web Services service team.</p>
 /// <p>Query the current service setting for the account. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetServiceSetting {
@@ -2605,9 +2658,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceSetting {
 }
 
 /// <p>A parameter label is a user-defined alias to help you manage different versions of a
-/// parameter. When you modify a parameter, Systems Manager automatically saves a new version and increments
-/// the version number by one. A label can help you remember the purpose of a parameter when there
-/// are multiple versions. </p>
+/// parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and
+/// increments the version number by one. A label can help you remember the purpose of a parameter
+/// when there are multiple versions. </p>
 /// <p>Parameter labels have the following requirements and restrictions.</p>
 /// <ul>
 /// <li>
@@ -2636,9 +2689,9 @@ impl smithy_http::response::ParseStrictResponse for GetServiceSetting {
 /// underscores (_).</p>
 /// </li>
 /// <li>
-/// <p>Labels can't begin with a number, "aws," or "ssm" (not case sensitive). If a label fails
-/// to meet these requirements, then the label is not associated with a parameter and the system
-/// displays it in the list of InvalidLabels.</p>
+/// <p>Labels can't begin with a number, "<code>aws</code>" or "<code>ssm</code>" (not case
+/// sensitive). If a label fails to meet these requirements, then the label isn't associated with a
+/// parameter and the system displays it in the list of InvalidLabels.</p>
 /// </li>
 /// </ul>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2668,9 +2721,9 @@ impl smithy_http::response::ParseStrictResponse for LabelParameterVersion {
     }
 }
 
-/// <p>Returns all State Manager associations in the current AWS account and Region. You can limit
-/// the results to a specific State Manager association document or instance by specifying a
-/// filter.</p>
+/// <p>Returns all State Manager associations in the current account and Region. You
+/// can limit the results to a specific State Manager association document or instance by specifying
+/// a filter. State Manager is a capability of Amazon Web Services Systems Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListAssociations {
     _private: (),
@@ -2728,8 +2781,9 @@ impl smithy_http::response::ParseStrictResponse for ListAssociationVersions {
 
 /// <p>An invocation is copy of a command sent to a specific instance. A command can apply to one
 /// or more instances. A command invocation applies to one instance. For example, if a user runs
-/// SendCommand against three instances, then a command invocation is created for each requested
-/// instance ID. ListCommandInvocations provide status about command execution.</p>
+/// <code>SendCommand</code> against three instances, then a command invocation is created for each
+/// requested instance ID. <code>ListCommandInvocations</code> provide status about command
+/// execution.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListCommandInvocations {
     _private: (),
@@ -2757,7 +2811,7 @@ impl smithy_http::response::ParseStrictResponse for ListCommandInvocations {
     }
 }
 
-/// <p>Lists the commands requested by users of the AWS account.</p>
+/// <p>Lists the commands requested by users of the account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListCommands {
     _private: (),
@@ -2783,7 +2837,7 @@ impl smithy_http::response::ParseStrictResponse for ListCommands {
     }
 }
 
-/// <p>For a specified resource ID, this API action returns a list of compliance statuses for
+/// <p>For a specified resource ID, this API operation returns a list of compliance statuses for
 /// different resource types. Currently, you can only specify one resource ID per call. List results
 /// depend on the criteria specified in the filter.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2871,8 +2925,8 @@ impl smithy_http::response::ParseStrictResponse for ListDocumentMetadataHistory 
     }
 }
 
-/// <p>Returns all Systems Manager (SSM) documents in the current AWS account and Region. You can limit the
-/// results of this request by using a filter.</p>
+/// <p>Returns all Systems Manager (SSM) documents in the current account and Region. You can
+/// limit the results of this request by using a filter.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListDocuments {
     _private: (),
@@ -2954,8 +3008,8 @@ impl smithy_http::response::ParseStrictResponse for ListInventoryEntries {
     }
 }
 
-/// <p>Returns a list of all OpsItem events in the current AWS account and Region. You can limit
-/// the results to events associated with specific OpsItems by specifying a filter.</p>
+/// <p>Returns a list of all OpsItem events in the current Region and account. You can
+/// limit the results to events associated with specific OpsItems by specifying a filter.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsItemEvents {
     _private: (),
@@ -3011,7 +3065,7 @@ impl smithy_http::response::ParseStrictResponse for ListOpsItemRelatedItems {
     }
 }
 
-/// <p>Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or
+/// <p>Amazon Web Services Systems Manager calls this API operation when displaying all Application Manager OpsMetadata objects or
 /// blobs.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListOpsMetadata {
@@ -3107,6 +3161,7 @@ impl smithy_http::response::ParseStrictResponse for ListResourceDataSync {
 }
 
 /// <p>Returns a list of the tags assigned to the specified resource.</p>
+/// <p>For information about the ID format for each supported resource type, see <a>AddTagsToResource</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListTagsForResource {
     _private: (),
@@ -3134,9 +3189,10 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
-/// <p>Shares a Systems Manager document publicly or privately. If you share a document privately, you must
-/// specify the AWS user account IDs for those people who can use the document. If you share a
-/// document publicly, you must specify <i>All</i> as the account ID.</p>
+/// <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document
+/// privately, you must specify the Amazon Web Services user account IDs for those people who can use the
+/// document. If you share a document publicly, you must specify <i>All</i> as the
+/// account ID.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ModifyDocumentPermission {
     _private: (),
@@ -3165,9 +3221,9 @@ impl smithy_http::response::ParseStrictResponse for ModifyDocumentPermission {
 }
 
 /// <p>Registers a compliance type and other compliance details on a designated resource. This
-/// action lets you register custom compliance details with a resource. This call overwrites existing
-/// compliance information on the resource, so you must provide a full list of compliance items each
-/// time that you send the request.</p>
+/// operation lets you register custom compliance details with a resource. This call overwrites
+/// existing compliance information on the resource, so you must provide a full list of compliance
+/// items each time that you send the request.</p>
 /// <p>ComplianceType can be one of the following:</p>
 /// <ul>
 /// <li>
@@ -3195,7 +3251,7 @@ impl smithy_http::response::ParseStrictResponse for ModifyDocumentPermission {
 /// <p>Severity: A patch severity. For example, <code>critical</code>.</p>
 /// </li>
 /// <li>
-/// <p>DocumentName: A SSM document name. For example, AWS-RunPatchBaseline.</p>
+/// <p>DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.</p>
 /// </li>
 /// <li>
 /// <p>DocumentVersion: An SSM document version number. For example, 4.</p>
@@ -3301,8 +3357,8 @@ impl smithy_http::response::ParseStrictResponse for PutParameter {
 }
 
 /// <p>Defines the default patch baseline for the relevant operating system.</p>
-/// <p>To reset the AWS predefined patch baseline as the default, specify the full patch baseline
-/// ARN as the baseline ID value. For example, for CentOS, specify
+/// <p>To reset the Amazon Web Services-predefined patch baseline as the default, specify the full patch baseline
+/// Amazon Resource Name (ARN) as the baseline ID value. For example, for CentOS, specify
 /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0574b43a65ea646ed</code> instead of
 /// <code>pb-0574b43a65ea646ed</code>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -3445,18 +3501,19 @@ impl smithy_http::response::ParseStrictResponse for RemoveTagsFromResource {
 }
 
 /// <p>
-/// <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting
+/// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
 /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-/// AWS service charges money to the account based on feature or service usage, then the AWS service
-/// team might create a default setting of "false". This means the user can't use this feature unless
-/// they change the setting to "true" and intentionally opt in for a paid feature.</p>
-/// <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define
+/// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
+/// service team might create a default setting of "false". This means the user can't use this
+/// feature unless they change the setting to "true" and intentionally opt in for a paid
+/// feature.</p>
+/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
 /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
 /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-/// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
-/// current value. Use the <a>UpdateServiceSetting</a> API action to change the default
+/// permission for the setting. Use the <a>GetServiceSetting</a> API operation to view the
+/// current value. Use the <a>UpdateServiceSetting</a> API operation to change the default
 /// setting. </p>
-/// <p>Reset the service setting for the account to the default value as provisioned by the AWS
+/// <p>Reset the service setting for the account to the default value as provisioned by the Amazon Web Services
 /// service team. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResetServiceSetting {
@@ -3489,7 +3546,7 @@ impl smithy_http::response::ParseStrictResponse for ResetServiceSetting {
 /// resumed for disconnected sessions, but not terminated sessions.</p>
 /// <note>
 /// <p>This command is primarily for use by client machines to automatically reconnect during
-/// intermittent network issues. It is not intended for any other use.</p>
+/// intermittent network issues. It isn't intended for any other use.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ResumeSession {
@@ -3571,8 +3628,8 @@ impl smithy_http::response::ParseStrictResponse for SendCommand {
     }
 }
 
-/// <p>Use this API action to run an association immediately and only one time. This action can be
-/// helpful when troubleshooting associations.</p>
+/// <p>Runs an association immediately and only one time. This operation can be helpful when
+/// troubleshooting associations.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartAssociationsOnce {
     _private: (),
@@ -3600,7 +3657,7 @@ impl smithy_http::response::ParseStrictResponse for StartAssociationsOnce {
     }
 }
 
-/// <p>Initiates execution of an Automation document.</p>
+/// <p>Initiates execution of an Automation runbook.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartAutomationExecution {
     _private: (),
@@ -3628,7 +3685,7 @@ impl smithy_http::response::ParseStrictResponse for StartAutomationExecution {
     }
 }
 
-/// <p>Creates a change request for Change Manager. The runbooks (Automation documents) specified in the
+/// <p>Creates a change request for Change Manager. The Automation runbooks specified in the
 /// change request run only after all required approvals for the change request have been
 /// received.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -3662,10 +3719,10 @@ impl smithy_http::response::ParseStrictResponse for StartChangeRequestExecution 
 /// URL and token that can be used to open a WebSocket connection for sending input and receiving
 /// outputs.</p>
 /// <note>
-/// <p>AWS CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager
+/// <p>Amazon Web Services CLI usage: <code>start-session</code> is an interactive command that requires the Session Manager
 /// plugin to be installed on the client machine making the call. For information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html">Install
-/// the Session Manager plugin for the AWS CLI</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-/// <p>AWS Tools for PowerShell usage: Start-SSMSession is not currently supported by AWS Tools
+/// the Session Manager plugin for the Amazon Web Services CLI</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Amazon Web Services Tools for PowerShell usage: Start-SSMSession isn't currently supported by Amazon Web Services Tools
 /// for PowerShell on Windows local machines.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -3722,7 +3779,7 @@ impl smithy_http::response::ParseStrictResponse for StopAutomationExecution {
 }
 
 /// <p>Permanently ends a session and closes the data connection between the Session Manager client and
-/// SSM Agent on the instance. A terminated session cannot be resumed.</p>
+/// SSM Agent on the instance. A terminated session isn't be resumed.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct TerminateSession {
     _private: (),
@@ -3779,12 +3836,12 @@ impl smithy_http::response::ParseStrictResponse for UnlabelParameterVersion {
 }
 
 /// <p>Updates an association. You can update the association name and version, the document
-/// version, schedule, parameters, and Amazon S3 output. </p>
-/// <p>In order to call this API action, your IAM user account, group, or role must be configured
-/// with permission to call the <a>DescribeAssociation</a> API action. If you don't have
-/// permission to call DescribeAssociation, then you receive the following error: <code>An error
-/// occurred (AccessDeniedException) when calling the UpdateAssociation operation: User:
-/// <user_arn> is not authorized to perform: ssm:DescribeAssociation on resource:
+/// version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. </p>
+/// <p>In order to call this API operation, your Identity and Access Management (IAM) user
+/// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a> API operation. If you don't have permission to call
+/// <code>DescribeAssociation</code>, then you receive the following error: <code>An error occurred
+/// (AccessDeniedException) when calling the UpdateAssociation operation: User: <user_arn>
+/// isn't authorized to perform: ssm:DescribeAssociation on resource:
 /// <resource_arn></code>
 /// </p>
 /// <important>
@@ -3818,7 +3875,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateAssociation {
     }
 }
 
-/// <p>Updates the status of the Systems Manager document associated with the specified instance.</p>
+/// <p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified
+/// instance.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAssociationStatus {
     _private: (),
@@ -3988,7 +4046,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindow {
 /// </li>
 /// </ul>
 /// <note>
-/// <p>If a parameter is null, then the corresponding field is not modified.</p>
+/// <p>If a parameter is null, then the corresponding field isn't modified.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateMaintenanceWindowTarget {
@@ -4021,41 +4079,52 @@ impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindowTarge
 /// can change the following values:</p>
 /// <ul>
 /// <li>
-/// <p>TaskARN. For example, you can change a RUN_COMMAND task from AWS-RunPowerShellScript to
-/// AWS-RunShellScript.</p>
+/// <p>
+/// <code>TaskARN</code>. For example, you can change a <code>RUN_COMMAND</code> task from
+/// <code>AWS-RunPowerShellScript</code> to <code>AWS-RunShellScript</code>.</p>
 /// </li>
 /// <li>
-/// <p>ServiceRoleArn</p>
+/// <p>
+/// <code>ServiceRoleArn</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>TaskInvocationParameters</p>
+/// <p>
+/// <code>TaskInvocationParameters</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>Priority</p>
+/// <p>
+/// <code>Priority</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>MaxConcurrency</p>
+/// <p>
+/// <code>MaxConcurrency</code>
+/// </p>
 /// </li>
 /// <li>
-/// <p>MaxErrors</p>
+/// <p>
+/// <code>MaxErrors</code>
+/// </p>
 /// </li>
 /// </ul>
 /// <note>
 /// <p>One or more targets must be specified for maintenance window Run Command-type tasks.
 /// Depending on the task, targets are optional for other maintenance window task types (Automation,
-/// AWS Lambda, and AWS Step Functions). For more information about running tasks that do not
-/// specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
+/// Lambda, and Step Functions). For more information about running tasks
+/// that don't specify targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html">Registering
 /// maintenance window tasks without targets</a> in the
-/// <i>AWS Systems Manager User Guide</i>.</p>
+/// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
 /// </note>
 /// <p>If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the
-/// corresponding field is not modified. If you set <code>Replace</code> to true, then all fields
-/// required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this
-/// request. Optional fields that aren't specified are set to null.</p>
+/// corresponding field isn't modified. If you set <code>Replace</code> to true, then all fields
+/// required by the <a>RegisterTaskWithMaintenanceWindow</a> operation are required for
+/// this request. Optional fields that aren't specified are set to null.</p>
 /// <important>
 /// <p>When you update a maintenance window task that has options specified in
 /// <code>TaskInvocationParameters</code>, you must provide again all the
-/// <code>TaskInvocationParameters</code> values that you want to retain. The values you do not
+/// <code>TaskInvocationParameters</code> values that you want to retain. The values you don't
 /// specify again are removed. For example, suppose that when you registered a Run Command task, you
 /// specified <code>TaskInvocationParameters</code> values for <code>Comment</code>,
 /// <code>NotificationConfig</code>, and <code>OutputS3BucketName</code>. If you update the
@@ -4089,9 +4158,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateMaintenanceWindowTask 
     }
 }
 
-/// <p>Changes the Amazon Identity and Access Management (IAM) role that is assigned to the
-/// on-premises instance or virtual machines (VM). IAM roles are first assigned to these hybrid
-/// instances during the activation process. For more information, see <a>CreateActivation</a>.</p>
+/// <p>Changes the Identity and Access Management (IAM) role that is assigned to the
+/// on-premises instance or virtual machines (VM). IAM roles are first assigned to
+/// these hybrid instances during the activation process. For more information, see <a>CreateActivation</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateManagedInstanceRole {
     _private: (),
@@ -4119,13 +4188,12 @@ impl smithy_http::response::ParseStrictResponse for UpdateManagedInstanceRole {
     }
 }
 
-/// <p>Edit or change an OpsItem. You must have permission in AWS Identity and Access Management
-/// (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
-/// OpsCenter</a> in the <i>AWS Systems Manager User Guide</i>.</p>
-/// <p>Operations engineers and IT professionals use OpsCenter to view, investigate, and remediate
-/// operational issues impacting the performance and health of their AWS resources. For more
-/// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">AWS Systems Manager OpsCenter</a> in the
-/// <i>AWS Systems Manager User Guide</i>. </p>
+/// <p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-getting-started.html">Getting started with
+/// OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
+/// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
+/// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
+/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
+/// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOpsItem {
     _private: (),
@@ -4151,7 +4219,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateOpsItem {
     }
 }
 
-/// <p>Systems Manager calls this API action when you edit OpsMetadata in Application Manager.</p>
+/// <p>Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata in Application Manager.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateOpsMetadata {
     _private: (),
@@ -4182,8 +4250,8 @@ impl smithy_http::response::ParseStrictResponse for UpdateOpsMetadata {
 /// <p>Modifies an existing patch baseline. Fields not specified in the request are left
 /// unchanged.</p>
 /// <note>
-/// <p>For information about valid key and value pairs in <code>PatchFilters</code> for each
-/// supported operating system type, see <a href="http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html">PatchFilter</a>.</p>
+/// <p>For information about valid key-value pairs in <code>PatchFilters</code> for each supported
+/// operating system type, see <a>PatchFilter</a>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdatePatchBaseline {
@@ -4214,12 +4282,13 @@ impl smithy_http::response::ParseStrictResponse for UpdatePatchBaseline {
 
 /// <p>Update a resource data sync. After you create a resource data sync for a Region, you can't
 /// change the account options for that sync. For example, if you create a sync in the us-east-2
-/// (Ohio) Region and you choose the Include only the current account option, you can't edit that
-/// sync later and choose the Include all accounts from my AWS Organizations configuration option. Instead,
-/// you must delete the first resource data sync, and create a new one.</p>
+/// (Ohio) Region and you choose the <code>Include only the current account</code> option, you can't
+/// edit that sync later and choose the <code>Include all accounts from my Organizations
+/// configuration</code> option. Instead, you must delete the first resource data sync, and create a
+/// new one.</p>
 /// <note>
-/// <p>This API action only supports a resource data sync that was created with a SyncFromSource
-/// <code>SyncType</code>.</p>
+/// <p>This API operation only supports a resource data sync that was created with a
+/// SyncFromSource <code>SyncType</code>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateResourceDataSync {
@@ -4249,17 +4318,18 @@ impl smithy_http::response::ParseStrictResponse for UpdateResourceDataSync {
 }
 
 /// <p>
-/// <code>ServiceSetting</code> is an account-level setting for an AWS service. This setting
+/// <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting
 /// defines how a user interacts with or uses a service or a feature of a service. For example, if an
-/// AWS service charges money to the account based on feature or service usage, then the AWS service
-/// team might create a default setting of "false". This means the user can't use this feature unless
-/// they change the setting to "true" and intentionally opt in for a paid feature.</p>
-/// <p>Services map a <code>SettingId</code> object to a setting value. AWS services teams define
+/// Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services
+/// service team might create a default setting of "false". This means the user can't use this
+/// feature unless they change the setting to "true" and intentionally opt in for a paid
+/// feature.</p>
+/// <p>Services map a <code>SettingId</code> object to a setting value. Amazon Web Services services teams define
 /// the default value for a <code>SettingId</code>. You can't create a new <code>SettingId</code>,
 /// but you can overwrite the default value if you have the <code>ssm:UpdateServiceSetting</code>
-/// permission for the setting. Use the <a>GetServiceSetting</a> API action to view the
+/// permission for the setting. Use the <a>GetServiceSetting</a> API operation to view the
 /// current value. Or, use the <a>ResetServiceSetting</a> to change the value back to the
-/// original value defined by the AWS service team.</p>
+/// original value defined by the Amazon Web Services service team.</p>
 /// <p>Update the service setting for the account. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateServiceSetting {

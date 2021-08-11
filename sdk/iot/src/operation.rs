@@ -126,7 +126,8 @@ impl smithy_http::response::ParseStrictResponse for AssociateTargetsWithJob {
     }
 }
 
-/// <p>Attaches a policy to the specified target.</p>
+/// <p>Attaches the specified policy to the specified principal (certificate or other
+/// credential).</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct AttachPolicy {
     _private: (),

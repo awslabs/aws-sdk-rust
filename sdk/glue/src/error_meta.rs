@@ -466,6 +466,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDatabaseError>> for 
                 crate::error::CreateDatabaseErrorKind::AlreadyExistsException(inner) => {
                     Error::AlreadyExistsException(inner)
                 }
+                crate::error::CreateDatabaseErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
                 crate::error::CreateDatabaseErrorKind::GlueEncryptionException(inner) => {
                     Error::GlueEncryptionException(inner)
                 }
@@ -731,6 +734,9 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTableError>> for Err
                 crate::error::CreateTableErrorKind::AlreadyExistsException(inner) => {
                     Error::AlreadyExistsException(inner)
                 }
+                crate::error::CreateTableErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
                 crate::error::CreateTableErrorKind::EntityNotFoundException(inner) => {
                     Error::EntityNotFoundException(inner)
                 }
@@ -936,6 +942,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDatabaseError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteDatabaseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteDatabaseErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
                 crate::error::DeleteDatabaseErrorKind::EntityNotFoundException(inner) => {
                     Error::EntityNotFoundException(inner)
                 }
@@ -1198,6 +1207,9 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTableError>> for Err
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteTableError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteTableErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
                 crate::error::DeleteTableErrorKind::EntityNotFoundException(inner) => {
                     Error::EntityNotFoundException(inner)
                 }
@@ -3389,6 +3401,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDatabaseError>> for 
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateDatabaseError>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateDatabaseErrorKind::ConcurrentModificationException(inner) => {
+                    Error::ConcurrentModificationException(inner)
+                }
                 crate::error::UpdateDatabaseErrorKind::EntityNotFoundException(inner) => {
                     Error::EntityNotFoundException(inner)
                 }

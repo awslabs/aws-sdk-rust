@@ -60,7 +60,7 @@ impl TagResourceOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutProtocolsListOutput {
-    /// <p>The details of the AWS Firewall Manager protocols list.</p>
+    /// <p>The details of the Firewall Manager protocols list.</p>
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The Amazon Resource Name (ARN) of the protocols list.</p>
     pub protocols_list_arn: std::option::Option<std::string::String>,
@@ -83,7 +83,7 @@ pub mod put_protocols_list_output {
         pub(crate) protocols_list_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The details of the AWS Firewall Manager protocols list.</p>
+        /// <p>The details of the Firewall Manager protocols list.</p>
         pub fn protocols_list(mut self, input: crate::model::ProtocolsListData) -> Self {
             self.protocols_list = Some(input);
             self
@@ -126,7 +126,7 @@ impl PutProtocolsListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPolicyOutput {
-    /// <p>The details of the AWS Firewall Manager policy.</p>
+    /// <p>The details of the Firewall Manager policy.</p>
     pub policy: std::option::Option<crate::model::Policy>,
     /// <p>The Amazon Resource Name (ARN) of the policy.</p>
     pub policy_arn: std::option::Option<std::string::String>,
@@ -149,7 +149,7 @@ pub mod put_policy_output {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The details of the AWS Firewall Manager policy.</p>
+        /// <p>The details of the Firewall Manager policy.</p>
         pub fn policy(mut self, input: crate::model::Policy) -> Self {
             self.policy = Some(input);
             self
@@ -215,7 +215,7 @@ impl PutNotificationChannelOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutAppsListOutput {
-    /// <p>The details of the AWS Firewall Manager applications list.</p>
+    /// <p>The details of the Firewall Manager applications list.</p>
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     pub apps_list_arn: std::option::Option<std::string::String>,
@@ -238,7 +238,7 @@ pub mod put_apps_list_output {
         pub(crate) apps_list_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The details of the AWS Firewall Manager applications list.</p>
+        /// <p>The details of the Firewall Manager applications list.</p>
         pub fn apps_list(mut self, input: crate::model::AppsListData) -> Self {
             self.apps_list = Some(input);
             self
@@ -334,7 +334,7 @@ pub struct ListProtocolsListsOutput {
     /// <p>An array of <code>ProtocolsListDataSummary</code> objects.</p>
     pub protocols_lists: std::option::Option<std::vec::Vec<crate::model::ProtocolsListDataSummary>>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListProtocolsListsOutput {
@@ -373,7 +373,7 @@ pub mod list_protocols_lists_output {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+        /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -630,7 +630,7 @@ pub struct ListAppsListsOutput {
     /// <p>An array of <code>AppsListDataSummary</code> objects.</p>
     pub apps_lists: std::option::Option<std::vec::Vec<crate::model::AppsListDataSummary>>,
     /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-    /// AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+    /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListAppsListsOutput {
@@ -666,7 +666,7 @@ pub mod list_apps_lists_output {
             self
         }
         /// <p>If you specify a value for <code>MaxResults</code> in your list request, and you have more objects than the maximum,
-        /// AWS Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
+        /// Firewall Manager returns this token in the response. You can use this token in subsequent requests to retrieve the next batch of objects.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -743,7 +743,7 @@ impl GetViolationDetailsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtocolsListOutput {
-    /// <p>Information about the specified AWS Firewall Manager protocols list.</p>
+    /// <p>Information about the specified Firewall Manager protocols list.</p>
     pub protocols_list: std::option::Option<crate::model::ProtocolsListData>,
     /// <p>The Amazon Resource Name (ARN) of the specified protocols list.</p>
     pub protocols_list_arn: std::option::Option<std::string::String>,
@@ -766,7 +766,7 @@ pub mod get_protocols_list_output {
         pub(crate) protocols_list_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the specified AWS Firewall Manager protocols list.</p>
+        /// <p>Information about the specified Firewall Manager protocols list.</p>
         pub fn protocols_list(mut self, input: crate::model::ProtocolsListData) -> Self {
             self.protocols_list = Some(input);
             self
@@ -809,7 +809,7 @@ impl GetProtocolsListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetProtectionStatusOutput {
-    /// <p>The ID of the AWS Firewall administrator account for this policy.</p>
+    /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
     pub admin_account_id: std::option::Option<std::string::String>,
     /// <p>The service type that is protected by the policy. Currently, this is always
     /// <code>SHIELD_ADVANCED</code>.</p>
@@ -838,7 +838,7 @@ pub struct GetProtectionStatusOutput {
     /// the response includes a <code>NextToken</code> value. To list more objects, submit another
     /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
     /// <code>NextToken</code> value in the next request.</p>
-    /// <p>AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
+    /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
     /// make subsequent request calls automatically on your behalf. However, this feature is not
     /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
     /// <code>NextToken</code> using your own processes. </p>
@@ -866,7 +866,7 @@ pub mod get_protection_status_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the AWS Firewall administrator account for this policy.</p>
+        /// <p>The ID of the Firewall Manager administrator account for this policy.</p>
         pub fn admin_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account_id = Some(input.into());
             self
@@ -922,7 +922,7 @@ pub mod get_protection_status_output {
         /// the response includes a <code>NextToken</code> value. To list more objects, submit another
         /// <code>GetProtectionStatus</code> request, and specify the <code>NextToken</code> value from the response in the
         /// <code>NextToken</code> value in the next request.</p>
-        /// <p>AWS SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
+        /// <p>Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code> in a response and
         /// make subsequent request calls automatically on your behalf. However, this feature is not
         /// supported by <code>GetProtectionStatus</code>. You must submit subsequent requests with
         /// <code>NextToken</code> using your own processes. </p>
@@ -955,7 +955,7 @@ impl GetProtectionStatusOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPolicyOutput {
-    /// <p>Information about the specified AWS Firewall Manager policy.</p>
+    /// <p>Information about the specified Firewall Manager policy.</p>
     pub policy: std::option::Option<crate::model::Policy>,
     /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
     pub policy_arn: std::option::Option<std::string::String>,
@@ -978,7 +978,7 @@ pub mod get_policy_output {
         pub(crate) policy_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the specified AWS Firewall Manager policy.</p>
+        /// <p>Information about the specified Firewall Manager policy.</p>
         pub fn policy(mut self, input: crate::model::Policy) -> Self {
             self.policy = Some(input);
             self
@@ -1015,9 +1015,9 @@ impl GetPolicyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetNotificationChannelOutput {
-    /// <p>The SNS topic that records AWS Firewall Manager activity. </p>
+    /// <p>The SNS topic that records Firewall Manager activity. </p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
-    /// <p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>
+    /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
     pub sns_role_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetNotificationChannelOutput {
@@ -1038,7 +1038,7 @@ pub mod get_notification_channel_output {
         pub(crate) sns_role_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The SNS topic that records AWS Firewall Manager activity. </p>
+        /// <p>The SNS topic that records Firewall Manager activity. </p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
@@ -1050,7 +1050,7 @@ pub mod get_notification_channel_output {
             self.sns_topic_arn = input;
             self
         }
-        /// <p>The IAM role that is used by AWS Firewall Manager to record activity to SNS.</p>
+        /// <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
         pub fn sns_role_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_role_name = Some(input.into());
             self
@@ -1136,7 +1136,7 @@ impl GetComplianceDetailOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAppsListOutput {
-    /// <p>Information about the specified AWS Firewall Manager applications list.</p>
+    /// <p>Information about the specified Firewall Manager applications list.</p>
     pub apps_list: std::option::Option<crate::model::AppsListData>,
     /// <p>The Amazon Resource Name (ARN) of the applications list.</p>
     pub apps_list_arn: std::option::Option<std::string::String>,
@@ -1159,7 +1159,7 @@ pub mod get_apps_list_output {
         pub(crate) apps_list_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Information about the specified AWS Firewall Manager applications list.</p>
+        /// <p>Information about the specified Firewall Manager applications list.</p>
         pub fn apps_list(mut self, input: crate::model::AppsListData) -> Self {
             self.apps_list = Some(input);
             self
@@ -1202,9 +1202,9 @@ impl GetAppsListOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAdminAccountOutput {
-    /// <p>The AWS account that is set as the AWS Firewall Manager administrator.</p>
+    /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
     pub admin_account: std::option::Option<std::string::String>,
-    /// <p>The status of the AWS account that you set as the AWS Firewall Manager
+    /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
     /// administrator.</p>
     pub role_status: std::option::Option<crate::model::AccountRoleStatus>,
 }
@@ -1226,7 +1226,7 @@ pub mod get_admin_account_output {
         pub(crate) role_status: std::option::Option<crate::model::AccountRoleStatus>,
     }
     impl Builder {
-        /// <p>The AWS account that is set as the AWS Firewall Manager administrator.</p>
+        /// <p>The Amazon Web Services account that is set as the Firewall Manager administrator.</p>
         pub fn admin_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.admin_account = Some(input.into());
             self
@@ -1238,7 +1238,7 @@ pub mod get_admin_account_output {
             self.admin_account = input;
             self
         }
-        /// <p>The status of the AWS account that you set as the AWS Firewall Manager
+        /// <p>The status of the Amazon Web Services account that you set as the Firewall Manager
         /// administrator.</p>
         pub fn role_status(mut self, input: crate::model::AccountRoleStatus) -> Self {
             self.role_status = Some(input);

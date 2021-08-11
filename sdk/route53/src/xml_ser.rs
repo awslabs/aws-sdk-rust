@@ -817,6 +817,13 @@ pub fn serialize_structure_health_check_config(
             .finish();
         inner_writer.data(var_89.as_str());
     }
+    if let Some(var_90) = &input.routing_control_arn {
+        let mut inner_writer = scope
+            .start_el("RoutingControlArn")
+            .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
+            .finish();
+        inner_writer.data(var_90.as_ref());
+    }
     scope.finish();
 }
 
@@ -826,12 +833,12 @@ pub fn serialize_structure_hosted_zone_config(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_90) = &input.comment {
+    if let Some(var_91) = &input.comment {
         let mut inner_writer = scope
             .start_el("Comment")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_90.as_ref());
+        inner_writer.data(var_91.as_ref());
     }
     if input.private_zone {
         let mut inner_writer = scope
@@ -849,19 +856,19 @@ pub fn serialize_structure_alarm_identifier(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_91) = &input.region {
+    if let Some(var_92) = &input.region {
         let mut inner_writer = scope
             .start_el("Region")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_91.as_str());
+        inner_writer.data(var_92.as_str());
     }
-    if let Some(var_92) = &input.name {
+    if let Some(var_93) = &input.name {
         let mut inner_writer = scope
             .start_el("Name")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_92.as_ref());
+        inner_writer.data(var_93.as_ref());
     }
     scope.finish();
 }
@@ -872,18 +879,18 @@ pub fn serialize_structure_change(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_93) = &input.action {
+    if let Some(var_94) = &input.action {
         let mut inner_writer = scope
             .start_el("Action")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_93.as_str());
+        inner_writer.data(var_94.as_str());
     }
-    if let Some(var_94) = &input.resource_record_set {
+    if let Some(var_95) = &input.resource_record_set {
         let inner_writer = scope
             .start_el("ResourceRecordSet")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_resource_record_set(&var_94, inner_writer)
+        crate::xml_ser::serialize_structure_resource_record_set(&var_95, inner_writer)
     }
     scope.finish();
 }
@@ -894,101 +901,101 @@ pub fn serialize_structure_resource_record_set(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_95) = &input.name {
+    if let Some(var_96) = &input.name {
         let mut inner_writer = scope
             .start_el("Name")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_95.as_ref());
+        inner_writer.data(var_96.as_ref());
     }
-    if let Some(var_96) = &input.r#type {
+    if let Some(var_97) = &input.r#type {
         let mut inner_writer = scope
             .start_el("Type")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_96.as_str());
+        inner_writer.data(var_97.as_str());
     }
-    if let Some(var_97) = &input.set_identifier {
+    if let Some(var_98) = &input.set_identifier {
         let mut inner_writer = scope
             .start_el("SetIdentifier")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_97.as_ref());
+        inner_writer.data(var_98.as_ref());
     }
-    if let Some(var_98) = &input.weight {
+    if let Some(var_99) = &input.weight {
         let mut inner_writer = scope
             .start_el("Weight")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_98).encode());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_99).encode());
     }
-    if let Some(var_99) = &input.region {
+    if let Some(var_100) = &input.region {
         let mut inner_writer = scope
             .start_el("Region")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_99.as_str());
+        inner_writer.data(var_100.as_str());
     }
-    if let Some(var_100) = &input.geo_location {
+    if let Some(var_101) = &input.geo_location {
         let inner_writer = scope
             .start_el("GeoLocation")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_geo_location(&var_100, inner_writer)
+        crate::xml_ser::serialize_structure_geo_location(&var_101, inner_writer)
     }
-    if let Some(var_101) = &input.failover {
+    if let Some(var_102) = &input.failover {
         let mut inner_writer = scope
             .start_el("Failover")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_101.as_str());
+        inner_writer.data(var_102.as_str());
     }
-    if let Some(var_102) = &input.multi_value_answer {
+    if let Some(var_103) = &input.multi_value_answer {
         let mut inner_writer = scope
             .start_el("MultiValueAnswer")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_102).encode());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_103).encode());
     }
-    if let Some(var_103) = &input.ttl {
+    if let Some(var_104) = &input.ttl {
         let mut inner_writer = scope
             .start_el("TTL")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(smithy_types::primitive::Encoder::from(*var_103).encode());
+        inner_writer.data(smithy_types::primitive::Encoder::from(*var_104).encode());
     }
-    if let Some(var_104) = &input.resource_records {
+    if let Some(var_105) = &input.resource_records {
         let mut inner_writer = scope
             .start_el("ResourceRecords")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        for list_item_105 in var_104 {
+        for list_item_106 in var_105 {
             {
                 let inner_writer = inner_writer
                     .start_el("ResourceRecord")
                     .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-                crate::xml_ser::serialize_structure_resource_record(&list_item_105, inner_writer)
+                crate::xml_ser::serialize_structure_resource_record(&list_item_106, inner_writer)
             }
         }
     }
-    if let Some(var_106) = &input.alias_target {
+    if let Some(var_107) = &input.alias_target {
         let inner_writer = scope
             .start_el("AliasTarget")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None);
-        crate::xml_ser::serialize_structure_alias_target(&var_106, inner_writer)
+        crate::xml_ser::serialize_structure_alias_target(&var_107, inner_writer)
     }
-    if let Some(var_107) = &input.health_check_id {
+    if let Some(var_108) = &input.health_check_id {
         let mut inner_writer = scope
             .start_el("HealthCheckId")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_107.as_ref());
+        inner_writer.data(var_108.as_ref());
     }
-    if let Some(var_108) = &input.traffic_policy_instance_id {
+    if let Some(var_109) = &input.traffic_policy_instance_id {
         let mut inner_writer = scope
             .start_el("TrafficPolicyInstanceId")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_108.as_ref());
+        inner_writer.data(var_109.as_ref());
     }
     scope.finish();
 }
@@ -999,26 +1006,26 @@ pub fn serialize_structure_geo_location(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_109) = &input.continent_code {
+    if let Some(var_110) = &input.continent_code {
         let mut inner_writer = scope
             .start_el("ContinentCode")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_109.as_ref());
+        inner_writer.data(var_110.as_ref());
     }
-    if let Some(var_110) = &input.country_code {
+    if let Some(var_111) = &input.country_code {
         let mut inner_writer = scope
             .start_el("CountryCode")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_110.as_ref());
+        inner_writer.data(var_111.as_ref());
     }
-    if let Some(var_111) = &input.subdivision_code {
+    if let Some(var_112) = &input.subdivision_code {
         let mut inner_writer = scope
             .start_el("SubdivisionCode")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_111.as_ref());
+        inner_writer.data(var_112.as_ref());
     }
     scope.finish();
 }
@@ -1029,12 +1036,12 @@ pub fn serialize_structure_resource_record(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_112) = &input.value {
+    if let Some(var_113) = &input.value {
         let mut inner_writer = scope
             .start_el("Value")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_112.as_ref());
+        inner_writer.data(var_113.as_ref());
     }
     scope.finish();
 }
@@ -1045,19 +1052,19 @@ pub fn serialize_structure_alias_target(
 ) {
     #[allow(unused_mut)]
     let mut scope = writer.finish();
-    if let Some(var_113) = &input.hosted_zone_id {
+    if let Some(var_114) = &input.hosted_zone_id {
         let mut inner_writer = scope
             .start_el("HostedZoneId")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_113.as_ref());
+        inner_writer.data(var_114.as_ref());
     }
-    if let Some(var_114) = &input.dns_name {
+    if let Some(var_115) = &input.dns_name {
         let mut inner_writer = scope
             .start_el("DNSName")
             .write_ns("https://route53.amazonaws.com/doc/2013-04-01/", None)
             .finish();
-        inner_writer.data(var_114.as_ref());
+        inner_writer.data(var_115.as_ref());
     }
     {
         let mut inner_writer = scope

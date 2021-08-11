@@ -6,7 +6,7 @@ pub fn serialize_structure_create_broker_input(
     if let Some(var_1) = &input.authentication_strategy {
         object.key("authenticationStrategy").string(var_1.as_str());
     }
-    if input.auto_minor_version_upgrade {
+    {
         object
             .key("autoMinorVersionUpgrade")
             .boolean(input.auto_minor_version_upgrade);
@@ -54,7 +54,7 @@ pub fn serialize_structure_create_broker_input(
         crate::json_ser::serialize_structure_weekly_start_time(&mut object_17, var_16);
         object_17.finish();
     }
-    if input.publicly_accessible {
+    {
         object
             .key("publiclyAccessible")
             .boolean(input.publicly_accessible);
@@ -198,14 +198,19 @@ pub fn serialize_structure_update_broker_input(
         crate::json_ser::serialize_structure_logs(&mut object_57, var_56);
         object_57.finish();
     }
-    if let Some(var_58) = &input.security_groups {
-        let mut array_59 = object.key("securityGroups").start_array();
-        for item_60 in var_58 {
+    if let Some(var_58) = &input.maintenance_window_start_time {
+        let mut object_59 = object.key("maintenanceWindowStartTime").start_object();
+        crate::json_ser::serialize_structure_weekly_start_time(&mut object_59, var_58);
+        object_59.finish();
+    }
+    if let Some(var_60) = &input.security_groups {
+        let mut array_61 = object.key("securityGroups").start_array();
+        for item_62 in var_60 {
             {
-                array_59.value().string(item_60);
+                array_61.value().string(item_62);
             }
         }
-        array_59.finish();
+        array_61.finish();
     }
 }
 
@@ -213,11 +218,11 @@ pub fn serialize_structure_update_configuration_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateConfigurationInput,
 ) {
-    if let Some(var_61) = &input.data {
-        object.key("data").string(var_61);
+    if let Some(var_63) = &input.data {
+        object.key("data").string(var_63);
     }
-    if let Some(var_62) = &input.description {
-        object.key("description").string(var_62);
+    if let Some(var_64) = &input.description {
+        object.key("description").string(var_64);
     }
 }
 
@@ -228,17 +233,17 @@ pub fn serialize_structure_update_user_input(
     if input.console_access {
         object.key("consoleAccess").boolean(input.console_access);
     }
-    if let Some(var_63) = &input.groups {
-        let mut array_64 = object.key("groups").start_array();
-        for item_65 in var_63 {
+    if let Some(var_65) = &input.groups {
+        let mut array_66 = object.key("groups").start_array();
+        for item_67 in var_65 {
             {
-                array_64.value().string(item_65);
+                array_66.value().string(item_67);
             }
         }
-        array_64.finish();
+        array_66.finish();
     }
-    if let Some(var_66) = &input.password {
-        object.key("password").string(var_66);
+    if let Some(var_68) = &input.password {
+        object.key("password").string(var_68);
     }
 }
 
@@ -246,8 +251,8 @@ pub fn serialize_structure_configuration_id(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::ConfigurationId,
 ) {
-    if let Some(var_67) = &input.id {
-        object.key("id").string(var_67);
+    if let Some(var_69) = &input.id {
+        object.key("id").string(var_69);
     }
     if input.revision != 0 {
         object.key("revision").number(
@@ -261,8 +266,8 @@ pub fn serialize_structure_encryption_options(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::EncryptionOptions,
 ) {
-    if let Some(var_68) = &input.kms_key_id {
-        object.key("kmsKeyId").string(var_68);
+    if let Some(var_70) = &input.kms_key_id {
+        object.key("kmsKeyId").string(var_70);
     }
     {
         object
@@ -275,43 +280,43 @@ pub fn serialize_structure_ldap_server_metadata_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::LdapServerMetadataInput,
 ) {
-    if let Some(var_69) = &input.hosts {
-        let mut array_70 = object.key("hosts").start_array();
-        for item_71 in var_69 {
+    if let Some(var_71) = &input.hosts {
+        let mut array_72 = object.key("hosts").start_array();
+        for item_73 in var_71 {
             {
-                array_70.value().string(item_71);
+                array_72.value().string(item_73);
             }
         }
-        array_70.finish();
+        array_72.finish();
     }
-    if let Some(var_72) = &input.role_base {
-        object.key("roleBase").string(var_72);
+    if let Some(var_74) = &input.role_base {
+        object.key("roleBase").string(var_74);
     }
-    if let Some(var_73) = &input.role_name {
-        object.key("roleName").string(var_73);
+    if let Some(var_75) = &input.role_name {
+        object.key("roleName").string(var_75);
     }
-    if let Some(var_74) = &input.role_search_matching {
-        object.key("roleSearchMatching").string(var_74);
+    if let Some(var_76) = &input.role_search_matching {
+        object.key("roleSearchMatching").string(var_76);
     }
     if input.role_search_subtree {
         object
             .key("roleSearchSubtree")
             .boolean(input.role_search_subtree);
     }
-    if let Some(var_75) = &input.service_account_password {
-        object.key("serviceAccountPassword").string(var_75);
+    if let Some(var_77) = &input.service_account_password {
+        object.key("serviceAccountPassword").string(var_77);
     }
-    if let Some(var_76) = &input.service_account_username {
-        object.key("serviceAccountUsername").string(var_76);
+    if let Some(var_78) = &input.service_account_username {
+        object.key("serviceAccountUsername").string(var_78);
     }
-    if let Some(var_77) = &input.user_base {
-        object.key("userBase").string(var_77);
+    if let Some(var_79) = &input.user_base {
+        object.key("userBase").string(var_79);
     }
-    if let Some(var_78) = &input.user_role_name {
-        object.key("userRoleName").string(var_78);
+    if let Some(var_80) = &input.user_role_name {
+        object.key("userRoleName").string(var_80);
     }
-    if let Some(var_79) = &input.user_search_matching {
-        object.key("userSearchMatching").string(var_79);
+    if let Some(var_81) = &input.user_search_matching {
+        object.key("userSearchMatching").string(var_81);
     }
     if input.user_search_subtree {
         object
@@ -336,14 +341,14 @@ pub fn serialize_structure_weekly_start_time(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::WeeklyStartTime,
 ) {
-    if let Some(var_80) = &input.day_of_week {
-        object.key("dayOfWeek").string(var_80.as_str());
+    if let Some(var_82) = &input.day_of_week {
+        object.key("dayOfWeek").string(var_82.as_str());
     }
-    if let Some(var_81) = &input.time_of_day {
-        object.key("timeOfDay").string(var_81);
+    if let Some(var_83) = &input.time_of_day {
+        object.key("timeOfDay").string(var_83);
     }
-    if let Some(var_82) = &input.time_zone {
-        object.key("timeZone").string(var_82);
+    if let Some(var_84) = &input.time_zone {
+        object.key("timeZone").string(var_84);
     }
 }
 
@@ -354,19 +359,19 @@ pub fn serialize_structure_user(
     if input.console_access {
         object.key("consoleAccess").boolean(input.console_access);
     }
-    if let Some(var_83) = &input.groups {
-        let mut array_84 = object.key("groups").start_array();
-        for item_85 in var_83 {
+    if let Some(var_85) = &input.groups {
+        let mut array_86 = object.key("groups").start_array();
+        for item_87 in var_85 {
             {
-                array_84.value().string(item_85);
+                array_86.value().string(item_87);
             }
         }
-        array_84.finish();
+        array_86.finish();
     }
-    if let Some(var_86) = &input.password {
-        object.key("password").string(var_86);
+    if let Some(var_88) = &input.password {
+        object.key("password").string(var_88);
     }
-    if let Some(var_87) = &input.username {
-        object.key("username").string(var_87);
+    if let Some(var_89) = &input.username {
+        object.key("username").string(var_89);
     }
 }

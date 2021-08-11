@@ -8902,7 +8902,7 @@ pub struct DbSnapshot {
     pub db_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the DB instance identifier of the DB instance this DB snapshot was created from.</p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).</p>
+    /// <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC). Changes for the copy when the snapshot is copied.</p>
     pub snapshot_create_time: std::option::Option<smithy_types::Instant>,
     /// <p>Specifies the name of the database engine.</p>
     pub engine: std::option::Option<std::string::String>,
@@ -8935,7 +8935,7 @@ pub struct DbSnapshot {
     pub percent_progress: i32,
     /// <p>The Amazon Web Services Region that the DB snapshot was created in or copied from.</p>
     pub source_region: std::option::Option<std::string::String>,
-    /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of cross-customer or cross-region copy.</p>
+    /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has a value in the case of a cross-account or cross-Region copy.</p>
     pub source_db_snapshot_identifier: std::option::Option<std::string::String>,
     /// <p>Specifies the storage type associated with DB snapshot.</p>
     pub storage_type: std::option::Option<std::string::String>,
@@ -8970,6 +8970,8 @@ pub struct DbSnapshot {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
     /// </p>
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
+    pub original_snapshot_create_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for DbSnapshot {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9009,6 +9011,10 @@ impl std::fmt::Debug for DbSnapshot {
         formatter.field("processor_features", &self.processor_features);
         formatter.field("dbi_resource_id", &self.dbi_resource_id);
         formatter.field("tag_list", &self.tag_list);
+        formatter.field(
+            "original_snapshot_create_time",
+            &self.original_snapshot_create_time,
+        );
         formatter.finish()
     }
 }
@@ -9048,6 +9054,7 @@ pub mod db_snapshot {
             std::option::Option<std::vec::Vec<crate::model::ProcessorFeature>>,
         pub(crate) dbi_resource_id: std::option::Option<std::string::String>,
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) original_snapshot_create_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>Specifies the identifier for the DB snapshot.</p>
@@ -9074,7 +9081,7 @@ pub mod db_snapshot {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC).</p>
+        /// <p>Specifies when the snapshot was taken in Coordinated Universal Time (UTC). Changes for the copy when the snapshot is copied.</p>
         pub fn snapshot_create_time(mut self, input: smithy_types::Instant) -> Self {
             self.snapshot_create_time = Some(input);
             self
@@ -9246,7 +9253,7 @@ pub mod db_snapshot {
             self.source_region = input;
             self
         }
-        /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of cross-customer or cross-region copy.</p>
+        /// <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has a value in the case of a cross-account or cross-Region copy.</p>
         pub fn source_db_snapshot_identifier(
             mut self,
             input: impl Into<std::string::String>,
@@ -9384,6 +9391,18 @@ pub mod db_snapshot {
             self.tag_list = input;
             self
         }
+        /// <p>Specifies the time of the CreateDBSnapshot operation in Coordinated Universal Time (UTC). Doesn't change when the snapshot is copied.</p>
+        pub fn original_snapshot_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.original_snapshot_create_time = Some(input);
+            self
+        }
+        pub fn set_original_snapshot_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.original_snapshot_create_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DbSnapshot`](crate::model::DbSnapshot)
         pub fn build(self) -> crate::model::DbSnapshot {
             crate::model::DbSnapshot {
@@ -9418,6 +9437,7 @@ pub mod db_snapshot {
                 processor_features: self.processor_features,
                 dbi_resource_id: self.dbi_resource_id,
                 tag_list: self.tag_list,
+                original_snapshot_create_time: self.original_snapshot_create_time,
             }
         }
     }

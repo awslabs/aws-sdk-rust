@@ -3399,12 +3399,18 @@ pub struct TrainingResult {
     pub data_validation_metrics: std::option::Option<crate::model::DataValidationMetrics>,
     /// <p>The training metric details.</p>
     pub training_metrics: std::option::Option<crate::model::TrainingMetrics>,
+    /// <p>The variable importance metrics.</p>
+    pub variable_importance_metrics: std::option::Option<crate::model::VariableImportanceMetrics>,
 }
 impl std::fmt::Debug for TrainingResult {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("TrainingResult");
         formatter.field("data_validation_metrics", &self.data_validation_metrics);
         formatter.field("training_metrics", &self.training_metrics);
+        formatter.field(
+            "variable_importance_metrics",
+            &self.variable_importance_metrics,
+        );
         formatter.finish()
     }
 }
@@ -3417,6 +3423,8 @@ pub mod training_result {
         pub(crate) data_validation_metrics:
             std::option::Option<crate::model::DataValidationMetrics>,
         pub(crate) training_metrics: std::option::Option<crate::model::TrainingMetrics>,
+        pub(crate) variable_importance_metrics:
+            std::option::Option<crate::model::VariableImportanceMetrics>,
     }
     impl Builder {
         /// <p>The validation metrics.</p>
@@ -3446,11 +3454,27 @@ pub mod training_result {
             self.training_metrics = input;
             self
         }
+        /// <p>The variable importance metrics.</p>
+        pub fn variable_importance_metrics(
+            mut self,
+            input: crate::model::VariableImportanceMetrics,
+        ) -> Self {
+            self.variable_importance_metrics = Some(input);
+            self
+        }
+        pub fn set_variable_importance_metrics(
+            mut self,
+            input: std::option::Option<crate::model::VariableImportanceMetrics>,
+        ) -> Self {
+            self.variable_importance_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TrainingResult`](crate::model::TrainingResult)
         pub fn build(self) -> crate::model::TrainingResult {
             crate::model::TrainingResult {
                 data_validation_metrics: self.data_validation_metrics,
                 training_metrics: self.training_metrics,
+                variable_importance_metrics: self.variable_importance_metrics,
             }
         }
     }
@@ -3459,6 +3483,138 @@ impl TrainingResult {
     /// Creates a new builder-style object to manufacture [`TrainingResult`](crate::model::TrainingResult)
     pub fn builder() -> crate::model::training_result::Builder {
         crate::model::training_result::Builder::default()
+    }
+}
+
+/// <p>The variable importance metrics details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct VariableImportanceMetrics {
+    /// <p>List of variable metrics.</p>
+    pub logit_metrics: std::option::Option<std::vec::Vec<crate::model::LogitMetric>>,
+}
+impl std::fmt::Debug for VariableImportanceMetrics {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("VariableImportanceMetrics");
+        formatter.field("logit_metrics", &self.logit_metrics);
+        formatter.finish()
+    }
+}
+/// See [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics)
+pub mod variable_importance_metrics {
+    /// A builder for [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) logit_metrics: std::option::Option<std::vec::Vec<crate::model::LogitMetric>>,
+    }
+    impl Builder {
+        pub fn logit_metrics(mut self, input: impl Into<crate::model::LogitMetric>) -> Self {
+            let mut v = self.logit_metrics.unwrap_or_default();
+            v.push(input.into());
+            self.logit_metrics = Some(v);
+            self
+        }
+        pub fn set_logit_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LogitMetric>>,
+        ) -> Self {
+            self.logit_metrics = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics)
+        pub fn build(self) -> crate::model::VariableImportanceMetrics {
+            crate::model::VariableImportanceMetrics {
+                logit_metrics: self.logit_metrics,
+            }
+        }
+    }
+}
+impl VariableImportanceMetrics {
+    /// Creates a new builder-style object to manufacture [`VariableImportanceMetrics`](crate::model::VariableImportanceMetrics)
+    pub fn builder() -> crate::model::variable_importance_metrics::Builder {
+        crate::model::variable_importance_metrics::Builder::default()
+    }
+}
+
+/// <p>The logit metric details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LogitMetric {
+    /// <p>The name of the variable.</p>
+    pub variable_name: std::option::Option<std::string::String>,
+    /// <p>The type of variable.</p>
+    pub variable_type: std::option::Option<std::string::String>,
+    /// <p>The relative importance of the variable.</p>
+    pub variable_importance: std::option::Option<f32>,
+}
+impl std::fmt::Debug for LogitMetric {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LogitMetric");
+        formatter.field("variable_name", &self.variable_name);
+        formatter.field("variable_type", &self.variable_type);
+        formatter.field("variable_importance", &self.variable_importance);
+        formatter.finish()
+    }
+}
+/// See [`LogitMetric`](crate::model::LogitMetric)
+pub mod logit_metric {
+    /// A builder for [`LogitMetric`](crate::model::LogitMetric)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) variable_name: std::option::Option<std::string::String>,
+        pub(crate) variable_type: std::option::Option<std::string::String>,
+        pub(crate) variable_importance: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>The name of the variable.</p>
+        pub fn variable_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.variable_name = Some(input.into());
+            self
+        }
+        pub fn set_variable_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.variable_name = input;
+            self
+        }
+        /// <p>The type of variable.</p>
+        pub fn variable_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.variable_type = Some(input.into());
+            self
+        }
+        pub fn set_variable_type(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.variable_type = input;
+            self
+        }
+        /// <p>The relative importance of the variable.</p>
+        pub fn variable_importance(mut self, input: f32) -> Self {
+            self.variable_importance = Some(input);
+            self
+        }
+        pub fn set_variable_importance(mut self, input: std::option::Option<f32>) -> Self {
+            self.variable_importance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LogitMetric`](crate::model::LogitMetric)
+        pub fn build(self) -> crate::model::LogitMetric {
+            crate::model::LogitMetric {
+                variable_name: self.variable_name,
+                variable_type: self.variable_type,
+                variable_importance: self.variable_importance,
+            }
+        }
+    }
+}
+impl LogitMetric {
+    /// Creates a new builder-style object to manufacture [`LogitMetric`](crate::model::LogitMetric)
+    pub fn builder() -> crate::model::logit_metric::Builder {
+        crate::model::logit_metric::Builder::default()
     }
 }
 

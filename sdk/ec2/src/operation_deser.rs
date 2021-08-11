@@ -533,6 +533,40 @@ pub fn parse_associate_iam_instance_profile_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_instance_event_window_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateInstanceEventWindowOutput,
+    crate::error::AssociateInstanceEventWindowError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::AssociateInstanceEventWindowError::unhandled)?;
+    Err(crate::error::AssociateInstanceEventWindowError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_associate_instance_event_window_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::AssociateInstanceEventWindowOutput,
+    crate::error::AssociateInstanceEventWindowError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::associate_instance_event_window_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_associate_instance_event_window(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AssociateInstanceEventWindowError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_associate_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -927,6 +961,11 @@ pub fn parse_authorize_security_group_egress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::authorize_security_group_egress_output::Builder::default();
         let _ = response;
+        output = crate::xml_deser::deser_operation_authorize_security_group_egress(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AuthorizeSecurityGroupEgressError::unhandled)?;
         output.build()
     })
 }
@@ -956,6 +995,11 @@ pub fn parse_authorize_security_group_ingress_response(
         #[allow(unused_mut)]
         let mut output = crate::output::authorize_security_group_ingress_output::Builder::default();
         let _ = response;
+        output = crate::xml_deser::deser_operation_authorize_security_group_ingress(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::AuthorizeSecurityGroupIngressError::unhandled)?;
         output.build()
     })
 }
@@ -1694,6 +1738,40 @@ pub fn parse_create_image_response(
         let _ = response;
         output = crate::xml_deser::deser_operation_create_image(response.body().as_ref(), output)
             .map_err(crate::error::CreateImageError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_instance_event_window_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInstanceEventWindowOutput,
+    crate::error::CreateInstanceEventWindowError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateInstanceEventWindowError::unhandled)?;
+    Err(crate::error::CreateInstanceEventWindowError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_instance_event_window_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateInstanceEventWindowOutput,
+    crate::error::CreateInstanceEventWindowError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_instance_event_window_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_create_instance_event_window(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateInstanceEventWindowError::unhandled)?;
         output.build()
     })
 }
@@ -2476,6 +2554,40 @@ pub fn parse_create_subnet_response(
         let _ = response;
         output = crate::xml_deser::deser_operation_create_subnet(response.body().as_ref(), output)
             .map_err(crate::error::CreateSubnetError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_subnet_cidr_reservation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateSubnetCidrReservationOutput,
+    crate::error::CreateSubnetCidrReservationError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
+    Err(crate::error::CreateSubnetCidrReservationError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_subnet_cidr_reservation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::CreateSubnetCidrReservationOutput,
+    crate::error::CreateSubnetCidrReservationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_subnet_cidr_reservation_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_create_subnet_cidr_reservation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
         output.build()
     })
 }
@@ -3452,6 +3564,40 @@ pub fn parse_delete_fpga_image_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_instance_event_window_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteInstanceEventWindowOutput,
+    crate::error::DeleteInstanceEventWindowError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteInstanceEventWindowError::unhandled)?;
+    Err(crate::error::DeleteInstanceEventWindowError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_instance_event_window_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteInstanceEventWindowOutput,
+    crate::error::DeleteInstanceEventWindowError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_instance_event_window_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_delete_instance_event_window(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteInstanceEventWindowError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_internet_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -4065,6 +4211,40 @@ pub fn parse_delete_subnet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_subnet_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_subnet_cidr_reservation_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteSubnetCidrReservationOutput,
+    crate::error::DeleteSubnetCidrReservationError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DeleteSubnetCidrReservationError::unhandled)?;
+    Err(crate::error::DeleteSubnetCidrReservationError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_subnet_cidr_reservation_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DeleteSubnetCidrReservationOutput,
+    crate::error::DeleteSubnetCidrReservationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_subnet_cidr_reservation_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_delete_subnet_cidr_reservation(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DeleteSubnetCidrReservationError::unhandled)?;
         output.build()
     })
 }
@@ -6303,6 +6483,40 @@ pub fn parse_describe_instance_event_notification_attributes_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_instance_event_windows_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInstanceEventWindowsOutput,
+    crate::error::DescribeInstanceEventWindowsError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
+    Err(crate::error::DescribeInstanceEventWindowsError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_instance_event_windows_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeInstanceEventWindowsOutput,
+    crate::error::DescribeInstanceEventWindowsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_instance_event_windows_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_instance_event_windows(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError>
@@ -7526,6 +7740,40 @@ pub fn parse_describe_security_group_references_response(
             output,
         )
         .map_err(crate::error::DescribeSecurityGroupReferencesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_security_group_rules_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSecurityGroupRulesOutput,
+    crate::error::DescribeSecurityGroupRulesError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeSecurityGroupRulesError::unhandled)?;
+    Err(crate::error::DescribeSecurityGroupRulesError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_security_group_rules_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeSecurityGroupRulesOutput,
+    crate::error::DescribeSecurityGroupRulesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_security_group_rules_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_describe_security_group_rules(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeSecurityGroupRulesError::unhandled)?;
         output.build()
     })
 }
@@ -9406,6 +9654,41 @@ pub fn parse_disassociate_iam_instance_profile_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_instance_event_window_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateInstanceEventWindowOutput,
+    crate::error::DisassociateInstanceEventWindowError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
+    Err(crate::error::DisassociateInstanceEventWindowError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_disassociate_instance_event_window_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DisassociateInstanceEventWindowOutput,
+    crate::error::DisassociateInstanceEventWindowError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::disassociate_instance_event_window_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_disassociate_instance_event_window(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_disassociate_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -10588,6 +10871,40 @@ pub fn parse_get_serial_console_access_status_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_subnet_cidr_reservations_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSubnetCidrReservationsOutput,
+    crate::error::GetSubnetCidrReservationsError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetSubnetCidrReservationsError::unhandled)?;
+    Err(crate::error::GetSubnetCidrReservationsError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_subnet_cidr_reservations_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetSubnetCidrReservationsOutput,
+    crate::error::GetSubnetCidrReservationsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_subnet_cidr_reservations_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_get_subnet_cidr_reservations(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetSubnetCidrReservationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_transit_gateway_attachment_propagations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -11386,6 +11703,40 @@ pub fn parse_modify_instance_event_start_time_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_instance_event_window_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyInstanceEventWindowOutput,
+    crate::error::ModifyInstanceEventWindowError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::ModifyInstanceEventWindowError::unhandled)?;
+    Err(crate::error::ModifyInstanceEventWindowError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_instance_event_window_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifyInstanceEventWindowOutput,
+    crate::error::ModifyInstanceEventWindowError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_instance_event_window_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_modify_instance_event_window(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifyInstanceEventWindowError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_modify_instance_metadata_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -11573,6 +11924,40 @@ pub fn parse_modify_reserved_instances_response(
             output,
         )
         .map_err(crate::error::ModifyReservedInstancesError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_security_group_rules_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifySecurityGroupRulesOutput,
+    crate::error::ModifySecurityGroupRulesError,
+> {
+    let generic = crate::xml_deser::parse_generic_error(&response)
+        .map_err(crate::error::ModifySecurityGroupRulesError::unhandled)?;
+    Err(crate::error::ModifySecurityGroupRulesError::generic(
+        generic,
+    ))
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_modify_security_group_rules_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ModifySecurityGroupRulesOutput,
+    crate::error::ModifySecurityGroupRulesError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::modify_security_group_rules_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_modify_security_group_rules(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ModifySecurityGroupRulesError::unhandled)?;
         output.build()
     })
 }

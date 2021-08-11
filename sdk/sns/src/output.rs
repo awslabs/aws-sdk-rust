@@ -1072,7 +1072,7 @@ pub struct GetTopicAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Owner</code> – The AWS account ID of the topic's owner.</p>
+    /// <code>Owner</code> – The account ID of the topic's owner.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -1108,9 +1108,9 @@ pub struct GetTopicAttributesOutput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>KmsMasterKeyId</code> - The ID of an AWS-managed customer master key
+    /// <code>KmsMasterKeyId</code> - The ID of an Amazon Web Services managed customer master key
     /// (CMK) for Amazon SNS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-server-side-encryption.html#sse-key-terms">Key
-    /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>AWS Key Management Service API
+    /// Terms</a>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API
     /// Reference</i>.</p>
     /// </li>
     /// </ul>
@@ -1123,7 +1123,7 @@ pub struct GetTopicAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ContentBasedDeduplication</code> –  Enables content-based deduplication for
+    /// <code>ContentBasedDeduplication</code> – Enables content-based deduplication for
     /// FIFO topics.</p>
     /// <ul>
     /// <li>
@@ -1229,7 +1229,7 @@ pub struct GetSubscriptionAttributesOutput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Owner</code> – The AWS account ID of the subscription's
+    /// <code>Owner</code> – The account ID of the subscription's
     /// owner.</p>
     /// </li>
     /// <li>

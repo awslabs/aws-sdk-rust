@@ -547,7 +547,7 @@ impl ListEnabledProductsForImportOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InviteMembersOutput {
-    /// <p>The list of AWS accounts that could not be processed. For each account, the list
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
     /// includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
@@ -600,7 +600,7 @@ impl InviteMembersOutput {
 pub struct GetMembersOutput {
     /// <p>The list of details about the Security Hub member accounts.</p>
     pub members: std::option::Option<std::vec::Vec<crate::model::Member>>,
-    /// <p>The list of AWS accounts that could not be processed. For each account, the list
+    /// <p>The list of Amazon Web Services accounts that could not be processed. For each account, the list
     /// includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
@@ -1753,7 +1753,7 @@ impl DescribeActionTargetsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteMembersOutput {
-    /// <p>The list of AWS accounts that were not deleted. For each account, the list includes the
+    /// <p>The list of Amazon Web Services accounts that were not deleted. For each account, the list includes the
     /// account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
@@ -1804,7 +1804,7 @@ impl DeleteMembersOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteInvitationsOutput {
-    /// <p>The list of AWS accounts for which the invitations were not deleted. For each account,
+    /// <p>The list of Amazon Web Services accounts for which the invitations were not deleted. For each account,
     /// the list includes the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
@@ -1950,7 +1950,7 @@ impl DeleteActionTargetOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeclineInvitationsOutput {
-    /// <p>The list of AWS accounts that were not processed. For each account, the list includes
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
     /// the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }
@@ -2001,7 +2001,7 @@ impl DeclineInvitationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMembersOutput {
-    /// <p>The list of AWS accounts that were not processed. For each account, the list includes
+    /// <p>The list of Amazon Web Services accounts that were not processed. For each account, the list includes
     /// the account ID and the email address.</p>
     pub unprocessed_accounts: std::option::Option<std::vec::Vec<crate::model::Result>>,
 }

@@ -742,6 +742,34 @@ impl smithy_http::response::ParseStrictResponse for CreateChannelModerator {
     }
 }
 
+/// <p>Creates a media capture pipeline.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateMediaCapturePipeline {
+    _private: (),
+}
+impl CreateMediaCapturePipeline {
+    /// Creates a new builder-style object to manufacture [`CreateMediaCapturePipelineInput`](crate::input::CreateMediaCapturePipelineInput)
+    pub fn builder() -> crate::input::create_media_capture_pipeline_input::Builder {
+        crate::input::create_media_capture_pipeline_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateMediaCapturePipeline {
+    type Output = std::result::Result<
+        crate::output::CreateMediaCapturePipelineOutput,
+        crate::error::CreateMediaCapturePipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 201 {
+            crate::operation_deser::parse_create_media_capture_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_create_media_capture_pipeline_response(response)
+        }
+    }
+}
+
 /// <p>
 /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see
 /// <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a>
@@ -1497,6 +1525,34 @@ impl smithy_http::response::ParseStrictResponse for DeleteEventsConfiguration {
             crate::operation_deser::parse_delete_events_configuration_error(response)
         } else {
             crate::operation_deser::parse_delete_events_configuration_response(response)
+        }
+    }
+}
+
+/// <p>Deletes the media capture pipeline.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteMediaCapturePipeline {
+    _private: (),
+}
+impl DeleteMediaCapturePipeline {
+    /// Creates a new builder-style object to manufacture [`DeleteMediaCapturePipelineInput`](crate::input::DeleteMediaCapturePipelineInput)
+    pub fn builder() -> crate::input::delete_media_capture_pipeline_input::Builder {
+        crate::input::delete_media_capture_pipeline_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteMediaCapturePipeline {
+    type Output = std::result::Result<
+        crate::output::DeleteMediaCapturePipelineOutput,
+        crate::error::DeleteMediaCapturePipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 204 {
+            crate::operation_deser::parse_delete_media_capture_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_delete_media_capture_pipeline_response(response)
         }
     }
 }
@@ -2626,6 +2682,34 @@ impl smithy_http::response::ParseStrictResponse for GetGlobalSettings {
     }
 }
 
+/// <p>Gets an existing media capture pipeline.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetMediaCapturePipeline {
+    _private: (),
+}
+impl GetMediaCapturePipeline {
+    /// Creates a new builder-style object to manufacture [`GetMediaCapturePipelineInput`](crate::input::GetMediaCapturePipelineInput)
+    pub fn builder() -> crate::input::get_media_capture_pipeline_input::Builder {
+        crate::input::get_media_capture_pipeline_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetMediaCapturePipeline {
+    type Output = std::result::Result<
+        crate::output::GetMediaCapturePipelineOutput,
+        crate::error::GetMediaCapturePipelineError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_media_capture_pipeline_error(response)
+        } else {
+            crate::operation_deser::parse_get_media_capture_pipeline_response(response)
+        }
+    }
+}
+
 /// <p>
 /// Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see
 /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
@@ -3737,6 +3821,34 @@ impl smithy_http::response::ParseStrictResponse for ListChannelsModeratedByAppIn
     }
 }
 
+/// <p>Returns a list of media capture pipelines.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListMediaCapturePipelines {
+    _private: (),
+}
+impl ListMediaCapturePipelines {
+    /// Creates a new builder-style object to manufacture [`ListMediaCapturePipelinesInput`](crate::input::ListMediaCapturePipelinesInput)
+    pub fn builder() -> crate::input::list_media_capture_pipelines_input::Builder {
+        crate::input::list_media_capture_pipelines_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListMediaCapturePipelines {
+    type Output = std::result::Result<
+        crate::output::ListMediaCapturePipelinesOutput,
+        crate::error::ListMediaCapturePipelinesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_media_capture_pipelines_error(response)
+        } else {
+            crate::operation_deser::parse_list_media_capture_pipelines_response(response)
+        }
+    }
+}
+
 /// <p>
 /// Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see
 /// <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a>
@@ -4796,6 +4908,62 @@ impl smithy_http::response::ParseStrictResponse for SendChannelMessage {
             crate::operation_deser::parse_send_channel_message_error(response)
         } else {
             crate::operation_deser::parse_send_channel_message_response(response)
+        }
+    }
+}
+
+/// <p>Start transcription for the specified <code>meetingId</code>. </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartMeetingTranscription {
+    _private: (),
+}
+impl StartMeetingTranscription {
+    /// Creates a new builder-style object to manufacture [`StartMeetingTranscriptionInput`](crate::input::StartMeetingTranscriptionInput)
+    pub fn builder() -> crate::input::start_meeting_transcription_input::Builder {
+        crate::input::start_meeting_transcription_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for StartMeetingTranscription {
+    type Output = std::result::Result<
+        crate::output::StartMeetingTranscriptionOutput,
+        crate::error::StartMeetingTranscriptionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_meeting_transcription_error(response)
+        } else {
+            crate::operation_deser::parse_start_meeting_transcription_response(response)
+        }
+    }
+}
+
+/// <p>Stops transcription for the specified <code>meetingId</code>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StopMeetingTranscription {
+    _private: (),
+}
+impl StopMeetingTranscription {
+    /// Creates a new builder-style object to manufacture [`StopMeetingTranscriptionInput`](crate::input::StopMeetingTranscriptionInput)
+    pub fn builder() -> crate::input::stop_meeting_transcription_input::Builder {
+        crate::input::stop_meeting_transcription_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for StopMeetingTranscription {
+    type Output = std::result::Result<
+        crate::output::StopMeetingTranscriptionOutput,
+        crate::error::StopMeetingTranscriptionError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_stop_meeting_transcription_error(response)
+        } else {
+            crate::operation_deser::parse_stop_meeting_transcription_response(response)
         }
     }
 }

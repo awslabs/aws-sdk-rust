@@ -115,6 +115,9 @@ where
     pub fn create_channel_moderator(&self) -> fluent_builders::CreateChannelModerator<C> {
         fluent_builders::CreateChannelModerator::new(self.handle.clone())
     }
+    pub fn create_media_capture_pipeline(&self) -> fluent_builders::CreateMediaCapturePipeline<C> {
+        fluent_builders::CreateMediaCapturePipeline::new(self.handle.clone())
+    }
     pub fn create_meeting(&self) -> fluent_builders::CreateMeeting<C> {
         fluent_builders::CreateMeeting::new(self.handle.clone())
     }
@@ -193,6 +196,9 @@ where
     }
     pub fn delete_events_configuration(&self) -> fluent_builders::DeleteEventsConfiguration<C> {
         fluent_builders::DeleteEventsConfiguration::new(self.handle.clone())
+    }
+    pub fn delete_media_capture_pipeline(&self) -> fluent_builders::DeleteMediaCapturePipeline<C> {
+        fluent_builders::DeleteMediaCapturePipeline::new(self.handle.clone())
     }
     pub fn delete_meeting(&self) -> fluent_builders::DeleteMeeting<C> {
         fluent_builders::DeleteMeeting::new(self.handle.clone())
@@ -331,6 +337,9 @@ where
     pub fn get_global_settings(&self) -> fluent_builders::GetGlobalSettings<C> {
         fluent_builders::GetGlobalSettings::new(self.handle.clone())
     }
+    pub fn get_media_capture_pipeline(&self) -> fluent_builders::GetMediaCapturePipeline<C> {
+        fluent_builders::GetMediaCapturePipeline::new(self.handle.clone())
+    }
     pub fn get_meeting(&self) -> fluent_builders::GetMeeting<C> {
         fluent_builders::GetMeeting::new(self.handle.clone())
     }
@@ -461,6 +470,9 @@ where
         &self,
     ) -> fluent_builders::ListChannelsModeratedByAppInstanceUser<C> {
         fluent_builders::ListChannelsModeratedByAppInstanceUser::new(self.handle.clone())
+    }
+    pub fn list_media_capture_pipelines(&self) -> fluent_builders::ListMediaCapturePipelines<C> {
+        fluent_builders::ListMediaCapturePipelines::new(self.handle.clone())
     }
     pub fn list_meetings(&self) -> fluent_builders::ListMeetings<C> {
         fluent_builders::ListMeetings::new(self.handle.clone())
@@ -593,6 +605,12 @@ where
     }
     pub fn send_channel_message(&self) -> fluent_builders::SendChannelMessage<C> {
         fluent_builders::SendChannelMessage::new(self.handle.clone())
+    }
+    pub fn start_meeting_transcription(&self) -> fluent_builders::StartMeetingTranscription<C> {
+        fluent_builders::StartMeetingTranscription::new(self.handle.clone())
+    }
+    pub fn stop_meeting_transcription(&self) -> fluent_builders::StopMeetingTranscription<C> {
+        fluent_builders::StopMeetingTranscription::new(self.handle.clone())
     }
     pub fn tag_attendee(&self) -> fluent_builders::TagAttendee<C> {
         fluent_builders::TagAttendee::new(self.handle.clone())
@@ -2085,6 +2103,93 @@ pub mod fluent_builders {
         }
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateMediaCapturePipeline<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_media_capture_pipeline_input::Builder,
+    }
+    impl<C> CreateMediaCapturePipeline<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateMediaCapturePipelineOutput,
+            smithy_http::result::SdkError<crate::error::CreateMediaCapturePipelineError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Source type from which the media artifacts will be captured. A Chime SDK Meeting
+        /// is the only supported source.</p>
+        pub fn source_type(mut self, input: crate::model::MediaPipelineSourceType) -> Self {
+            self.inner = self.inner.source_type(input);
+            self
+        }
+        pub fn set_source_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineSourceType>,
+        ) -> Self {
+            self.inner = self.inner.set_source_type(input);
+            self
+        }
+        /// <p>ARN of the source from which the media artifacts are captured.</p>
+        pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.source_arn(input);
+            self
+        }
+        pub fn set_source_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_source_arn(input);
+            self
+        }
+        /// <p>Destination type to which the media artifacts are saved. You must use an S3 bucket. </p>
+        pub fn sink_type(mut self, input: crate::model::MediaPipelineSinkType) -> Self {
+            self.inner = self.inner.sink_type(input);
+            self
+        }
+        pub fn set_sink_type(
+            mut self,
+            input: std::option::Option<crate::model::MediaPipelineSinkType>,
+        ) -> Self {
+            self.inner = self.inner.set_sink_type(input);
+            self
+        }
+        /// <p>The ARN of the sink type.</p>
+        pub fn sink_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.sink_arn(input);
+            self
+        }
+        pub fn set_sink_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_sink_arn(input);
+            self
+        }
+        /// <p>The token assigned to the client making the pipeline request.</p>
+        pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.client_request_token(input);
+            self
+        }
+        pub fn set_client_request_token(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_client_request_token(input);
             self
         }
     }
@@ -3818,6 +3923,50 @@ pub mod fluent_builders {
         }
         pub fn set_bot_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_bot_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteMediaCapturePipeline<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_media_capture_pipeline_input::Builder,
+    }
+    impl<C> DeleteMediaCapturePipeline<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteMediaCapturePipelineOutput,
+            smithy_http::result::SdkError<crate::error::DeleteMediaCapturePipelineError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the media capture pipeline being deleted. </p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_pipeline_id(input);
+            self
+        }
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_media_pipeline_id(input);
             self
         }
     }
@@ -5658,6 +5807,50 @@ pub mod fluent_builders {
                 .make_operation(&self.handle.conf)
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetMediaCapturePipeline<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_media_capture_pipeline_input::Builder,
+    }
+    impl<C> GetMediaCapturePipeline<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMediaCapturePipelineOutput,
+            smithy_http::result::SdkError<crate::error::GetMediaCapturePipelineError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The ID of the pipeline that you want to get.</p>
+        pub fn media_pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.media_pipeline_id(input);
+            self
+        }
+        pub fn set_media_pipeline_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_media_pipeline_id(input);
+            self
         }
     }
     #[derive(std::fmt::Debug)]
@@ -7647,6 +7840,56 @@ pub mod fluent_builders {
         }
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListMediaCapturePipelines<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_media_capture_pipelines_input::Builder,
+    }
+    impl<C> ListMediaCapturePipelines<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListMediaCapturePipelinesOutput,
+            smithy_http::result::SdkError<crate::error::ListMediaCapturePipelinesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The token used to retrieve the next page of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return in a single call. Valid Range: 1 - 99.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -9853,6 +10096,103 @@ pub mod fluent_builders {
         }
         pub fn set_chime_bearer(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_chime_bearer(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct StartMeetingTranscription<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::start_meeting_transcription_input::Builder,
+    }
+    impl<C> StartMeetingTranscription<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartMeetingTranscriptionOutput,
+            smithy_http::result::SdkError<crate::error::StartMeetingTranscriptionError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the meeting being transcribed.</p>
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input);
+            self
+        }
+        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_meeting_id(input);
+            self
+        }
+        /// <p>The configuration for the current transcription operation. Must contain <code>EngineTranscribeSettings</code> or <code>EngineTranscribeMedicalSettings</code>.</p>
+        pub fn transcription_configuration(
+            mut self,
+            input: crate::model::TranscriptionConfiguration,
+        ) -> Self {
+            self.inner = self.inner.transcription_configuration(input);
+            self
+        }
+        pub fn set_transcription_configuration(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptionConfiguration>,
+        ) -> Self {
+            self.inner = self.inner.set_transcription_configuration(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct StopMeetingTranscription<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::stop_meeting_transcription_input::Builder,
+    }
+    impl<C> StopMeetingTranscription<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StopMeetingTranscriptionOutput,
+            smithy_http::result::SdkError<crate::error::StopMeetingTranscriptionError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique ID of the meeting for which you stop transcription.</p>
+        pub fn meeting_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.meeting_id(input);
+            self
+        }
+        pub fn set_meeting_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_meeting_id(input);
             self
         }
     }

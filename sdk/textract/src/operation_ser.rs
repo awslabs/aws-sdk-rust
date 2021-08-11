@@ -9,6 +9,16 @@ pub fn serialize_operation_analyze_document(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_analyze_expense(
+    input: &crate::input::AnalyzeExpenseInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_analyze_expense_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_detect_document_text(
     input: &crate::input::DetectDocumentTextInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

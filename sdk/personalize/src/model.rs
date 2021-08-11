@@ -4151,7 +4151,7 @@ pub struct EventTracker {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event tracker.</p>
     pub event_tracker_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon AWS account that owns the event tracker.</p>
+    /// <p>The Amazon Web Services account that owns the event tracker.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The ID of the event tracker. Include this ID in requests to the
     /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p>
@@ -4225,7 +4225,7 @@ pub mod event_tracker {
             self.event_tracker_arn = input;
             self
         }
-        /// <p>The Amazon AWS account that owns the event tracker.</p>
+        /// <p>The Amazon Web Services account that owns the event tracker.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -4339,7 +4339,7 @@ pub struct DatasetImportJob {
     pub dataset_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 bucket that contains the training data to import.</p>
     pub data_source: std::option::Option<crate::model::DataSource>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that has permissions to read from the Amazon S3 data
+    /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
     /// source.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the dataset import job.</p>
@@ -4431,7 +4431,7 @@ pub mod dataset_import_job {
             self.data_source = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that has permissions to read from the Amazon S3 data
+        /// <p>The ARN of the IAM role that has permissions to read from the Amazon S3 data
         /// source.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -4578,7 +4578,7 @@ impl DataSource {
 /// dataset and add it to a dataset group by calling <a>CreateDataset</a>. The dataset
 /// group is used to create and train a solution by calling <a>CreateSolution</a>. A
 /// dataset group can contain only one of each type of dataset.</p>
-/// <p>You can specify an AWS Key Management Service (KMS) key to encrypt the datasets in the group.</p>
+/// <p>You can specify an Key Management Service (KMS) key to encrypt the datasets in the group.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DatasetGroup {
@@ -4599,7 +4599,7 @@ pub struct DatasetGroup {
     pub status: std::option::Option<std::string::String>,
     /// <p>The ARN of the IAM role that has permissions to create the dataset group.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the datasets.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
     /// <p>The creation date and time (in Unix time) of the dataset group.</p>
     pub creation_date_time: std::option::Option<smithy_types::Instant>,
@@ -4686,7 +4686,7 @@ pub mod dataset_group {
             self.role_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the datasets.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the datasets.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -4774,7 +4774,7 @@ pub struct DatasetExportJob {
     /// for both types. The default value is <code>PUT</code>.
     /// </p>
     pub ingestion_mode: std::option::Option<crate::model::IngestionMode>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management service role that has permissions to add data to your
+    /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
     /// output Amazon S3 bucket.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The status of the dataset export job.</p>
@@ -4876,7 +4876,7 @@ pub mod dataset_export_job {
             self.ingestion_mode = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management service role that has permissions to add data to your
+        /// <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions to add data to your
         /// output Amazon S3 bucket.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
@@ -5032,7 +5032,7 @@ impl DatasetExportJobOutput {
 pub struct S3DataConfig {
     /// <p>The file path of the Amazon S3 bucket.</p>
     pub path: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Key Management Service (KMS) key that Amazon Personalize uses to
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to
     /// encrypt or decrypt the input and output files of a batch inference job.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
@@ -5063,7 +5063,7 @@ pub mod s3_data_config {
             self.path = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Key Management Service (KMS) key that Amazon Personalize uses to
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key that Amazon Personalize uses to
         /// encrypt or decrypt the input and output files of a batch inference job.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());

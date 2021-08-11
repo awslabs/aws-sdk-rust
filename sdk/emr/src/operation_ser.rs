@@ -139,6 +139,16 @@ pub fn serialize_operation_describe_notebook_execution(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_describe_release_label(
+    input: &crate::input::DescribeReleaseLabelInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_describe_release_label_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_describe_security_configuration(
     input: &crate::input::DescribeSecurityConfigurationInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -251,6 +261,16 @@ pub fn serialize_operation_list_notebook_executions(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_list_notebook_executions_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_list_release_labels(
+    input: &crate::input::ListReleaseLabelsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_list_release_labels_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

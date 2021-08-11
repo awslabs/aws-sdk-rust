@@ -16,7 +16,7 @@ use thiserror::Error;
 
 /// AWS User Agent
 ///
-/// Ths struct should be inserted into the [`PropertyBag`](smithy_http::operation::Request::config)
+/// Ths struct should be inserted into the [`PropertyBag`](smithy_http::operation::Request::properties)
 /// during operation construction. [`UserAgentStage`](UserAgentStage) reads `AwsUserAgent`
 /// from the property bag and sets the `User-Agent` and `x-amz-user-agent` headers.
 pub struct AwsUserAgent {
@@ -298,7 +298,7 @@ mod test {
             .apply(req)
             .expect_err("adding UA should fail without a UA set");
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
-        req.config_mut()
+        req.properties_mut()
             .insert(AwsUserAgent::new_from_environment(ApiMetadata {
                 service_id: "dynamodb".into(),
                 version: "0.123",

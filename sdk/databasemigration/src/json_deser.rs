@@ -6056,6 +6056,13 @@ where
                                     )?,
                                 );
                             }
+                            "NoHexPrefix" => {
+                                builder = builder.set_no_hex_prefix(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -6238,6 +6245,13 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "NoHexPrefix" => {
+                                builder = builder.set_no_hex_prefix(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
@@ -6785,6 +6799,30 @@ where
                                     )?,
                                 );
                             }
+                            "HeartbeatEnable" => {
+                                builder = builder.set_heartbeat_enable(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "HeartbeatSchema" => {
+                                builder = builder.set_heartbeat_schema(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "HeartbeatFrequency" => {
+                                builder = builder.set_heartbeat_frequency(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             "Password" => {
                                 builder = builder.set_password(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -6826,6 +6864,19 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "PluginName" => {
+                                builder = builder.set_plugin_name(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::PluginNameValue::from(u.as_ref())
+                                        })
+                                    })
                                     .transpose()?,
                                 );
                             }
@@ -7288,6 +7339,14 @@ where
                                         .transpose()?,
                                     );
                             }
+                            "StandbyDelayTime" => {
+                                builder = builder.set_standby_delay_time(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
                             "Username" => {
                                 builder = builder.set_username(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -7295,6 +7354,27 @@ where
                                     )?
                                     .map(|s| s.to_unescaped().map(|u| u.into_owned()))
                                     .transpose()?,
+                                );
+                            }
+                            "UseBFile" => {
+                                builder = builder.set_use_b_file(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "UseDirectPathFullLoad" => {
+                                builder = builder.set_use_direct_path_full_load(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
+                                );
+                            }
+                            "UseLogminerReader" => {
+                                builder = builder.set_use_logminer_reader(
+                                    smithy_json::deserialize::token::expect_bool_or_null(
+                                        tokens.next(),
+                                    )?,
                                 );
                             }
                             "SecretsManagerAccessRoleArn" => {
@@ -8430,6 +8510,15 @@ where
                                         tokens.next(),
                                     )?
                                     .map(|v| v.to_i32()),
+                                );
+                            }
+                            "DefaultValue" => {
+                                builder = builder.set_default_value(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

@@ -253,7 +253,8 @@ impl Plan {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Stage {
-    /// <p>The time to wait until beginning the next stage.</p>
+    /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
+    /// target is specified.</p>
     pub duration_in_minutes: std::option::Option<i32>,
     /// <p>The contacts or contact methods that the escalation plan or engagement plan is
     /// engaging.</p>
@@ -277,7 +278,8 @@ pub mod stage {
         pub(crate) targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
     }
     impl Builder {
-        /// <p>The time to wait until beginning the next stage.</p>
+        /// <p>The time to wait until beginning the next stage. The duration can only be set to 0 if a
+        /// target is specified.</p>
         pub fn duration_in_minutes(mut self, input: i32) -> Self {
             self.duration_in_minutes = Some(input);
             self
@@ -1461,6 +1463,56 @@ impl ChannelType {
     }
 }
 impl AsRef<str> for ChannelType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AcceptCodeValidation {
+    Enforce,
+    Ignore,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AcceptCodeValidation {
+    fn from(s: &str) -> Self {
+        match s {
+            "ENFORCE" => AcceptCodeValidation::Enforce,
+            "IGNORE" => AcceptCodeValidation::Ignore,
+            other => AcceptCodeValidation::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AcceptCodeValidation {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AcceptCodeValidation::from(s))
+    }
+}
+impl AcceptCodeValidation {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AcceptCodeValidation::Enforce => "ENFORCE",
+            AcceptCodeValidation::Ignore => "IGNORE",
+            AcceptCodeValidation::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ENFORCE", "IGNORE"]
+    }
+}
+impl AsRef<str> for AcceptCodeValidation {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

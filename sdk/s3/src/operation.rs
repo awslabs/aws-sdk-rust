@@ -2208,20 +2208,19 @@ mod get_bucket_location_request_test {
                 "us-west-2",
             )))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .status(200)
                         .body(smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::GetBucketLocation::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::GetBucketLocation as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::GetBucketLocation as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.unwrap();
         assert_eq!(
             parsed.location_constraint, expected_output.location_constraint,
@@ -2945,14 +2944,14 @@ impl GetObject {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetObject {
+impl smithy_http::response::ParseHttpResponse for GetObject {
     type Output = std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError>;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_get_object(response))
@@ -3184,17 +3183,17 @@ impl GetObjectTorrent {
         Self { _private: () }
     }
 }
-impl smithy_http::response::ParseHttpResponse<smithy_http::body::SdkBody> for GetObjectTorrent {
+impl smithy_http::response::ParseHttpResponse for GetObjectTorrent {
     type Output = std::result::Result<
         crate::output::GetObjectTorrentOutput,
         crate::error::GetObjectTorrentError,
     >;
     fn parse_unloaded(
         &self,
-        response: &mut http::Response<smithy_http::body::SdkBody>,
+        response: &mut smithy_http::operation::Response,
     ) -> Option<Self::Output> {
         // This is an error, defer to the non-streaming parser
-        if !response.status().is_success() && response.status().as_u16() != 200 {
+        if !response.http().status().is_success() && response.http().status().as_u16() != 200 {
             return None;
         }
         Some(crate::operation_deser::parse_get_object_torrent(response))
@@ -3311,7 +3310,7 @@ mod head_bucket_request_test {
     #[tokio::test]
     async fn head_object_empty_body_response() {
         let expected_output = crate::error::NotFound::builder().build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-type", "application/xml")
             .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
             .header("server", "AmazonS3")
@@ -3323,16 +3322,15 @@ mod head_bucket_request_test {
             .status(404)
             .body(smithy_http::body::SdkBody::from(""))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::HeadBucket::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::HeadBucket as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::HeadBucket as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::HeadBucketErrorKind::NotFound(actual_error) = parsed.kind {
             assert_eq!(expected_output, actual_error);
@@ -3482,7 +3480,7 @@ mod head_object_request_test {
     #[tokio::test]
     async fn head_object_empty_body_response() {
         let expected_output = crate::error::NotFound::builder().build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
             .header("content-type", "application/xml")
             .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
             .header("server", "AmazonS3")
@@ -3494,16 +3492,15 @@ mod head_object_request_test {
             .status(404)
             .body(smithy_http::body::SdkBody::from(""))
             .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::HeadObject::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::HeadObject as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::HeadObject as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.expect_err("should be error response");
         if let crate::error::HeadObjectErrorKind::NotFound(actual_error) = parsed.kind {
             assert_eq!(expected_output, actual_error);
@@ -3959,20 +3956,19 @@ mod list_objects_request_test {
                     .build(),
             ]))
             .build();
-        let mut http_response = http::response::Builder::new()
+        let http_response = http::response::Builder::new()
         .status(200)
                         .body(smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
                         .unwrap();
+        let mut op_response = smithy_http::operation::Response::new(http_response);
         use smithy_http::response::ParseHttpResponse;
         let parser = crate::operation::ListObjects::new();
-        let parsed = parser.parse_unloaded(&mut http_response);
+        let parsed = parser.parse_unloaded(&mut op_response);
         let parsed = parsed.unwrap_or_else(|| {
-            let http_response =
-                http_response.map(|body| bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
-            <crate::operation::ListObjects as smithy_http::response::ParseHttpResponse<
-                smithy_http::body::SdkBody,
-            >>::parse_loaded(&parser, &http_response)
-        });
+                        let (http_response, _) = op_response.into_parts();
+                        let http_response = http_response.map(|body|bytes::Bytes::copy_from_slice(body.bytes().unwrap()));
+                        <crate::operation::ListObjects as smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
+                    });
         let parsed = parsed.unwrap();
         assert_eq!(
             parsed.is_truncated, expected_output.is_truncated,

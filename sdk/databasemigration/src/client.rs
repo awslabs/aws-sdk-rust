@@ -273,8 +273,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifies the AWS DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
-        /// <p>For AWS DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
+        /// <p>Identifies the DMS resource to which tags should be added. The value for this parameter is an Amazon Resource Name (ARN).</p>
+        /// <p>For DMS, you can tag a replication instance, an endpoint, or a replication task.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -327,7 +327,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS DMS resource that the pending maintenance
+        /// <p>The Amazon Resource Name (ARN) of the DMS resource that the pending maintenance
         /// action applies to.</p>
         pub fn replication_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replication_instance_arn(input);
@@ -532,7 +532,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_port(input);
             self
         }
-        /// <p>The name of the endpoint database.</p>
+        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input);
             self
@@ -548,7 +548,7 @@ pub mod fluent_builders {
         /// name-value pair associated by an equal sign (=). Multiple attributes are separated by a
         /// semicolon (;) with no additional white space. For information on the attributes available
         /// for connecting your source or target endpoint, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Endpoints.html">Working with
-        /// AWS DMS Endpoints</a> in the <i>AWS Database Migration Service User
+        /// DMS Endpoints</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn extra_connection_attributes(
@@ -565,11 +565,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_extra_connection_attributes(input);
             self
         }
-        /// <p>An AWS KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
+        /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// AWS DMS uses your default encryption key.</p>
-        /// <p>AWS KMS creates the default encryption key for your AWS account. Your AWS account has a
-        /// different default encryption key for each AWS Region.</p>
+        /// DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your account. Your account has a
+        /// different default encryption key for each Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
             self
@@ -616,7 +616,7 @@ pub mod fluent_builders {
             self
         }
         /// <p> The Amazon Resource Name (ARN) for the service access role that you want to use to
-        /// create the endpoint. </p>
+        /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_access_role_arn(input);
             self
@@ -641,8 +641,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>AWS Database Migration Service User
+        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
+        /// Data to DynamoDB</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn dynamo_db_settings(mut self, input: crate::model::DynamoDbSettings) -> Self {
@@ -658,8 +658,8 @@ pub mod fluent_builders {
         }
         /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
         /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn s3_settings(mut self, input: crate::model::S3Settings) -> Self {
             self.inner = self.inner.s3_settings(input);
@@ -678,24 +678,18 @@ pub mod fluent_builders {
         /// <li>
         /// <p>
         /// <code>ServiceAccessRoleArn</code> - The IAM role that has permission to access the
-        /// Amazon S3 bucket.</p>
+        /// Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.</p>
         /// </li>
         /// <li>
         /// <p>
         /// <code>BucketName</code> - The name of the S3 bucket to use.</p>
         /// </li>
-        /// <li>
-        /// <p>
-        /// <code>CompressionType</code> - An optional parameter to use GZIP to compress the
-        /// target files. To use GZIP, set this value to <code>NONE</code> (the default). To keep
-        /// the files uncompressed, don't use this value.</p>
-        /// </li>
         /// </ul>
         /// <p>Shorthand syntax for these settings is as follows:
-        /// <code>ServiceAccessRoleArn=string,BucketName=string,CompressionType=string</code>
+        /// <code>ServiceAccessRoleArn=string,BucketName=string</code>
         /// </p>
         /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn":
-        /// "string", "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+        /// "string", "BucketName": "string", } </code>
         /// </p>
         pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
             self.inner = self.inner.dms_transfer_settings(input);
@@ -709,8 +703,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Using MongoDB as a Target for AWS Database Migration Service</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
+        /// when using MongoDB as a source for Database Migration Service</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn mongo_db_settings(mut self, input: crate::model::MongoDbSettings) -> Self {
             self.inner = self.inner.mongo_db_settings(input);
@@ -724,9 +719,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using Amazon Kinesis Data Streams
-        /// as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User
-        /// Guide.</i>
+        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
+        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn kinesis_settings(mut self, input: crate::model::KinesisSettings) -> Self {
             self.inner = self.inner.kinesis_settings(input);
@@ -740,8 +734,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a Target for
-        /// AWS Database Migration Service</a> in the <i>AWS Database Migration Service User
+        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
+        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn kafka_settings(mut self, input: crate::model::KafkaSettings) -> Self {
@@ -756,8 +750,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-        /// the <i>AWS Database Migration Service User Guide</i>.</p>
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// the <i>Database Migration Service User Guide</i>.</p>
         pub fn elasticsearch_settings(
             mut self,
             input: crate::model::ElasticsearchSettings,
@@ -774,8 +768,8 @@ pub mod fluent_builders {
         }
         /// <p>Settings in JSON format for the target Amazon Neptune endpoint.
         /// For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying Endpoint Settings for Amazon Neptune as a Target</a>
-        /// in the <i>AWS Database Migration Service User Guide.</i>
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
+        /// in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn neptune_settings(mut self, input: crate::model::NeptuneSettings) -> Self {
             self.inner = self.inner.neptune_settings(input);
@@ -801,10 +795,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html">Extra connection
-        /// attributes when using PostgreSQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html">
-        /// Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
+        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn postgre_sql_settings(mut self, input: crate::model::PostgreSqlSettings) -> Self {
             self.inner = self.inner.postgre_sql_settings(input);
@@ -818,9 +812,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html">Extra connection attributes
-        /// when using MySQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html">Extra connection attributes when using a MySQL-compatible database as a target for AWS DMS</a> in
-        /// the <i>AWS Database Migration Service User Guide.</i>
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection attributes
+        /// when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra connection attributes when using a MySQL-compatible database as a target for DMS</a> in
+        /// the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn my_sql_settings(mut self, input: crate::model::MySqlSettings) -> Self {
             self.inner = self.inner.my_sql_settings(input);
@@ -834,11 +828,11 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html">Extra connection attributes
-        /// when using Oracle as a source for AWS DMS</a> and
-        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html">
-        /// Extra connection attributes when using Oracle as a target for AWS DMS</a>
-        /// in the <i>AWS Database Migration Service User Guide.</i>
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection attributes
+        /// when using Oracle as a source for DMS</a> and
+        /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
+        /// Extra connection attributes when using Oracle as a target for DMS</a>
+        /// in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn oracle_settings(mut self, input: crate::model::OracleSettings) -> Self {
             self.inner = self.inner.oracle_settings(input);
@@ -852,10 +846,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html">Extra connection attributes
-        /// when using SAP ASE as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html">Extra connection attributes
-        /// when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database
-        /// Migration Service User Guide.</i>
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
+        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
+        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
+        /// User Guide.</i>
         /// </p>
         pub fn sybase_settings(mut self, input: crate::model::SybaseSettings) -> Self {
             self.inner = self.inner.sybase_settings(input);
@@ -869,10 +863,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html">Extra connection
-        /// attributes when using SQL Server as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html">
-        /// Extra connection attributes when using SQL Server as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
+        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn microsoft_sql_server_settings(
             mut self,
@@ -889,9 +883,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html">Extra connection attributes
-        /// when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database
-        /// Migration Service User Guide.</i>
+        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
+        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
+        /// User Guide.</i>
         /// </p>
         pub fn ibm_db2_settings(mut self, input: crate::model::IbmDb2Settings) -> Self {
             self.inner = self.inner.ibm_db2_settings(input);
@@ -911,7 +905,7 @@ pub mod fluent_builders {
         /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
         /// value might result in the <code>EndpointArn</code> value
         /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier
+        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
         /// value for the end of <code>EndpointArn</code>.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input);
@@ -968,7 +962,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS DMS event notification subscription. This name must be less than 255 characters.</p>
+        /// <p>The name of the DMS event notification subscription. This name must be less than 255 characters.</p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_name(input);
             self
@@ -993,7 +987,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
-        /// <p> The type of AWS DMS resource that generates the events. For example, if you want to be
+        /// <p> The type of DMS resource that generates the events. For example, if you want to be
         /// notified of events generated by a replication instance, you set this parameter to
         /// <code>replication-instance</code>. If this value isn't specified, all events are
         /// returned. </p>
@@ -1009,7 +1003,7 @@ pub mod fluent_builders {
         }
         /// <p>A list of event categories for a source type that you want to subscribe to. For more
         /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and
-        /// Notifications</a> in the <i>AWS Database Migration Service User
+        /// Notifications</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn event_categories(mut self, inp: impl Into<std::string::String>) -> Self {
@@ -1023,7 +1017,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_categories(input);
             self
         }
-        /// <p>A list of identifiers for which AWS DMS provides notification events.</p>
+        /// <p>A list of identifiers for which DMS provides notification events.</p>
         /// <p>If you don't specify a value, notifications are provided for all sources.</p>
         /// <p>If you specify multiple values, they must be of the same type. For example, if you
         /// specify a database instance ID, then all of the other values must be database instance
@@ -1137,7 +1131,7 @@ pub mod fluent_builders {
         /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
         /// <p>For more information on the settings and capacities for the available replication instance classes, see
         /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right AWS DMS replication instance for your migration</a>.
+        /// Selecting the right DMS replication instance for your migration</a>.
         /// </p>
         pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replication_instance_class(input);
@@ -1164,7 +1158,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Availability Zone where the replication instance will be created. The default
-        /// value is a random, system-chosen Availability Zone in the endpoint's AWS Region, for
+        /// value is a random, system-chosen Availability Zone in the endpoint's Region, for
         /// example: <code>us-east-1d</code>
         /// </p>
         pub fn availability_zone(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1197,8 +1191,8 @@ pub mod fluent_builders {
         /// Coordinated Time (UTC).</p>
         /// <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
         /// </p>
-        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per AWS
-        /// Region, occurring on a random day of the week.</p>
+        /// <p>Default: A 30-minute window selected at random from an 8-hour block of time per Region,
+        /// occurring on a random day of the week.</p>
         /// <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p>
         /// <p>Constraints: Minimum 30-minute window.</p>
         pub fn preferred_maintenance_window(
@@ -1265,12 +1259,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>An AWS KMS key identifier that is used to encrypt the data on the replication
+        /// <p>An KMS key identifier that is used to encrypt the data on the replication
         /// instance.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
-        /// AWS DMS uses your default encryption key.</p>
-        /// <p>AWS KMS creates the default encryption key for your AWS account. Your AWS account has a
-        /// different default encryption key for each AWS Region.</p>
+        /// DMS uses your default encryption key.</p>
+        /// <p>KMS creates the default encryption key for your account. Your account has a
+        /// different default encryption key for each Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_id(input);
             self
@@ -1315,7 +1309,7 @@ pub mod fluent_builders {
         /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
         /// value might result in the <code>EndpointArn</code> value
         /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier
+        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
         /// value for the end of <code>EndpointArn</code>.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input);
@@ -1528,7 +1522,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The table mappings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-        /// Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User
+        /// Mapping to Specify Task Settings</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1543,8 +1537,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Overall settings for the task, in JSON format. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Specifying Task
-        /// Settings for AWS Database Migration Service Tasks</a> in the <i>AWS Database
-        /// Migration User Guide.</i>
+        /// Settings for Database Migration Service Tasks</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn replication_task_settings(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replication_task_settings(input);
@@ -1585,7 +1578,7 @@ pub mod fluent_builders {
         /// replication slot should already be created and associated with the source endpoint. You
         /// can verify this by setting the <code>slotName</code> extra connection attribute to the
         /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for AWS DMS</a>.</p>
+        /// for DMS</a>.</p>
         /// </note>
         pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cdc_start_position(input);
@@ -1627,7 +1620,7 @@ pub mod fluent_builders {
         }
         /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
         /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_data(input);
@@ -1644,7 +1637,7 @@ pub mod fluent_builders {
         /// and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
         /// value might result in the <code>EndpointArn</code> value
         /// <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't
-        /// specify a <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier
+        /// specify a <code>ResourceIdentifier</code> value, DMS generates a default identifier
         /// value for the end of <code>EndpointArn</code>.</p>
         pub fn resource_identifier(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_identifier(input);
@@ -2539,7 +2532,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> The type of AWS DMS resource that generates events. </p>
+        /// <p> The type of DMS resource that generates events. </p>
         /// <p>Valid values: replication-instance | replication-task</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_type(input);
@@ -2605,7 +2598,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_identifier(input);
             self
         }
-        /// <p>The type of AWS DMS resource that generates events.</p>
+        /// <p>The type of DMS resource that generates events.</p>
         /// <p>Valid values: replication-instance | replication-task</p>
         pub fn source_type(mut self, input: crate::model::SourceType) -> Self {
             self.inner = self.inner.source_type(input);
@@ -2725,7 +2718,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS DMS event subscription to be described.</p>
+        /// <p>The name of the DMS event subscription to be described.</p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_name(input);
             self
@@ -3657,7 +3650,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_certificate_pem(input);
             self
         }
-        /// <p>The location of an imported Oracle Wallet certificate for use with SSL.</p>
+        /// <p>The location of an imported Oracle Wallet certificate for use with SSL. Provide the name of a <code>.sso</code> file
+        /// using the <code>fileb://</code> prefix. You can't provide the certificate inline.
+        /// </p>
         pub fn certificate_wallet(mut self, input: smithy_types::Blob) -> Self {
             self.inner = self.inner.certificate_wallet(input);
             self
@@ -3713,7 +3708,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the AWS DMS
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the DMS
         /// resource.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
@@ -3842,7 +3837,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_port(input);
             self
         }
-        /// <p>The name of the endpoint database.</p>
+        /// <p>The name of the endpoint database. For a MySQL source or target endpoint, do not specify DatabaseName.</p>
         pub fn database_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.database_name(input);
             self
@@ -3894,8 +3889,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ssl_mode(input);
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the service access role you want to use to modify
-        /// the endpoint. </p>
+        /// <p> The Amazon Resource Name (ARN) for the IAM role you want to use to modify
+        /// the endpoint. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_access_role_arn(input);
             self
@@ -3920,8 +3915,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using Object Mapping to Migrate
-        /// Data to DynamoDB</a> in the <i>AWS Database Migration Service User
+        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html#CHAP_Target.DynamoDB.ObjectMapping">Using Object Mapping to Migrate
+        /// Data to DynamoDB</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn dynamo_db_settings(mut self, input: crate::model::DynamoDbSettings) -> Self {
@@ -3937,8 +3932,8 @@ pub mod fluent_builders {
         }
         /// <p>Settings in JSON format for the target Amazon S3 endpoint. For more information about
         /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
-        /// Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// Connection Attributes When Using Amazon S3 as a Target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn s3_settings(mut self, input: crate::model::S3Settings) -> Self {
             self.inner = self.inner.s3_settings(input);
@@ -3955,23 +3950,18 @@ pub mod fluent_builders {
         /// <p>Attributes include the following:</p>
         /// <ul>
         /// <li>
-        /// <p>serviceAccessRoleArn - The AWS Identity and Access Management (IAM) role that has
-        /// permission to access the Amazon S3 bucket.</p>
+        /// <p>serviceAccessRoleArn - The Identity and Access Management (IAM) role that has
+        /// permission to access the Amazon S3 bucket. The role must allow the <code>iam:PassRole</code> action.</p>
         /// </li>
         /// <li>
         /// <p>BucketName - The name of the S3 bucket to use.</p>
         /// </li>
-        /// <li>
-        /// <p>compressionType - An optional parameter to use GZIP to compress the target files.
-        /// Either set this parameter to NONE (the default) or don't use it to leave the
-        /// files uncompressed.</p>
-        /// </li>
         /// </ul>
         /// <p>Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string,CompressionType=string</code>
+        /// ,BucketName=string</code>
         /// </p>
         /// <p>JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string", "CompressionType": "none"|"gzip" } </code>
+        /// "BucketName": "string"} </code>
         /// </p>
         pub fn dms_transfer_settings(mut self, input: crate::model::DmsTransferSettings) -> Self {
             self.inner = self.inner.dms_transfer_settings(input);
@@ -3985,9 +3975,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source MongoDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html"> Using MongoDB as a Target for AWS
-        /// Database Migration Service</a> in the <i>AWS Database Migration Service User
-        /// Guide.</i>
+        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html#CHAP_Source.MongoDB.Configuration">Endpoint configuration settings
+        /// when using MongoDB as a source for Database Migration Service</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn mongo_db_settings(mut self, input: crate::model::MongoDbSettings) -> Self {
             self.inner = self.inner.mongo_db_settings(input);
@@ -4001,9 +3991,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target endpoint for Amazon Kinesis Data Streams. For
-        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html">Using Amazon Kinesis Data Streams
-        /// as a Target for AWS Database Migration Service</a> in the <i>AWS Database Migration Service User
-        /// Guide.</i>
+        /// more information about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping">Using object mapping to
+        /// migrate data to a Kinesis data stream</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn kinesis_settings(mut self, input: crate::model::KinesisSettings) -> Self {
             self.inner = self.inner.kinesis_settings(input);
@@ -4017,9 +4006,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Apache Kafka endpoint. For more information about
-        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html">Using Apache Kafka as a Target for AWS
-        /// Database Migration Service</a> in the <i>AWS Database Migration Service User
-        /// Guide.</i>
+        /// the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kafka.html#CHAP_Target.Kafka.ObjectMapping">Using object mapping
+        /// to migrate data to a Kafka topic</a> in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn kafka_settings(mut self, input: crate::model::KafkaSettings) -> Self {
             self.inner = self.inner.kafka_settings(input);
@@ -4033,8 +4021,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Elasticsearch endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
-        /// the <i>AWS Database Migration Service User Guide.</i>
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra Connection Attributes When Using Elasticsearch as a Target for DMS</a> in
+        /// the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn elasticsearch_settings(
             mut self,
@@ -4051,8 +4039,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the target Amazon Neptune endpoint. For more information
-        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying Endpoint Settings for Amazon Neptune as a Target</a>
-        /// in the <i>AWS Database Migration Service User Guide.</i>
+        /// about the available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.EndpointSettings">Specifying graph-mapping rules using Gremlin and R2RML for Amazon Neptune as a target</a>
+        /// in the <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn neptune_settings(mut self, input: crate::model::NeptuneSettings) -> Self {
             self.inner = self.inner.neptune_settings(input);
@@ -4078,10 +4066,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target PostgreSQL endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
-        /// attributes when using PostgreSQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.ConnectionAttrib">
-        /// Extra connection attributes when using PostgreSQL as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra connection
+        /// attributes when using PostgreSQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.PostgreSQL.html#CHAP_Target.PostgreSQL.ConnectionAttrib">
+        /// Extra connection attributes when using PostgreSQL as a target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn postgre_sql_settings(mut self, input: crate::model::PostgreSqlSettings) -> Self {
             self.inner = self.inner.postgre_sql_settings(input);
@@ -4095,10 +4083,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target MySQL endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.ConnectionAttrib">Extra connection
-        /// attributes when using MySQL as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.ConnectionAttrib">Extra
-        /// connection attributes when using a MySQL-compatible database as a target for AWS
-        /// DMS</a> in the <i>AWS Database Migration Service User
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MySQL.html#CHAP_Source.MySQL.ConnectionAttrib">Extra connection
+        /// attributes when using MySQL as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.MySQL.html#CHAP_Target.MySQL.ConnectionAttrib">Extra
+        /// connection attributes when using a MySQL-compatible database as a target for DMS</a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn my_sql_settings(mut self, input: crate::model::MySqlSettings) -> Self {
@@ -4113,10 +4100,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target Oracle endpoint. For information about
-        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.ConnectionAttrib">Extra connection
-        /// attributes when using Oracle as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.ConnectionAttrib">
-        /// Extra connection attributes when using Oracle as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.ConnectionAttrib">Extra connection
+        /// attributes when using Oracle as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Oracle.html#CHAP_Target.Oracle.ConnectionAttrib">
+        /// Extra connection attributes when using Oracle as a target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn oracle_settings(mut self, input: crate::model::OracleSettings) -> Self {
             self.inner = self.inner.oracle_settings(input);
@@ -4130,10 +4117,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target SAP ASE endpoint. For information
-        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
-        /// when using SAP ASE as a target for AWS DMS</a> in the <i>AWS Database
-        /// Migration Service User Guide.</i>
+        /// about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SAP.html#CHAP_Source.SAP.ConnectionAttrib">Extra connection attributes
+        /// when using SAP ASE as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SAP.html#CHAP_Target.SAP.ConnectionAttrib">Extra connection attributes
+        /// when using SAP ASE as a target for DMS</a> in the <i>Database Migration Service
+        /// User Guide.</i>
         /// </p>
         pub fn sybase_settings(mut self, input: crate::model::SybaseSettings) -> Self {
             self.inner = self.inner.sybase_settings(input);
@@ -4147,10 +4134,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source and target Microsoft SQL Server endpoint. For
-        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
-        /// attributes when using SQL Server as a source for AWS DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.ConnectionAttrib">
-        /// Extra connection attributes when using SQL Server as a target for AWS DMS</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// information about other available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.SQLServer.html#CHAP_Source.SQLServer.ConnectionAttrib">Extra connection
+        /// attributes when using SQL Server as a source for DMS</a> and <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.SQLServer.html#CHAP_Target.SQLServer.ConnectionAttrib">
+        /// Extra connection attributes when using SQL Server as a target for DMS</a> in the
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn microsoft_sql_server_settings(
             mut self,
@@ -4167,9 +4154,9 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source IBM Db2 LUW endpoint. For information about other
-        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
-        /// when using Db2 LUW as a source for AWS DMS</a> in the <i>AWS Database
-        /// Migration Service User Guide.</i>
+        /// available settings, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DB2.html#CHAP_Source.DB2.ConnectionAttrib">Extra connection attributes
+        /// when using Db2 LUW as a source for DMS</a> in the <i>Database Migration Service
+        /// User Guide.</i>
         /// </p>
         pub fn ibm_db2_settings(mut self, input: crate::model::IbmDb2Settings) -> Self {
             self.inner = self.inner.ibm_db2_settings(input);
@@ -4183,8 +4170,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Settings in JSON format for the source DocumentDB endpoint. For more information about the
-        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for AWS
-        /// Database Migration Service</a> in the <i>AWS Database Migration Service User
+        /// available settings, see the configuration properties section in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.DocumentDB.html"> Using DocumentDB as a Target for Database Migration Service
+        /// </a> in the <i>Database Migration Service User
         /// Guide.</i>
         /// </p>
         pub fn doc_db_settings(mut self, input: crate::model::DocDbSettings) -> Self {
@@ -4196,6 +4183,35 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::DocDbSettings>,
         ) -> Self {
             self.inner = self.inner.set_doc_db_settings(input);
+            self
+        }
+        /// <p>If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
+        /// existing endpoint settings with the exact settings that you specify in this call. If this
+        /// attribute is N, the current call to <code>ModifyEndpoint</code> does two things: </p>
+        /// <ul>
+        /// <li>
+        /// <p>It replaces any endpoint settings that already exist with new values, for settings with the
+        /// same names.</p>
+        /// </li>
+        /// <li>
+        /// <p>It creates new endpoint settings that you specify in the call, for settings with different
+        /// names. </p>
+        /// </li>
+        /// </ul>
+        /// <p>For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}'
+        /// ...</code>, the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If
+        /// you then call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the
+        /// same endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. </p>
+        /// <p>However, suppose that you follow this with a call to <code>modify-endpoint ...
+        /// --endpoint-settings '{"b":2}' --exact-settings ...</code> for that same endpoint again.
+        /// Then the endpoint has the following settings: <code>'{"b":2}'</code>. All existing settings
+        /// are replaced with the exact settings that you specify. </p>
+        pub fn exact_settings(mut self, input: bool) -> Self {
+            self.inner = self.inner.exact_settings(input);
+            self
+        }
+        pub fn set_exact_settings(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_exact_settings(input);
             self
         }
     }
@@ -4230,7 +4246,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS DMS event notification subscription to be modified.</p>
+        /// <p>The name of the DMS event notification subscription to be modified.</p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_name(input);
             self
@@ -4255,7 +4271,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sns_topic_arn(input);
             self
         }
-        /// <p> The type of AWS DMS resource that generates the events you want to subscribe to. </p>
+        /// <p> The type of DMS resource that generates the events you want to subscribe to. </p>
         /// <p>Valid values: replication-instance | replication-task</p>
         pub fn source_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_type(input);
@@ -4356,7 +4372,7 @@ pub mod fluent_builders {
         /// replication instance class. For example to specify the instance class dms.c4.large, set this parameter to <code>"dms.c4.large"</code>.</p>
         /// <p>For more information on the settings and capacities for the available replication instance classes, see
         /// <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.html#CHAP_ReplicationInstance.InDepth">
-        /// Selecting the right AWS DMS replication instance for your migration</a>.
+        /// Selecting the right DMS replication instance for your migration</a>.
         /// </p>
         pub fn replication_instance_class(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replication_instance_class(input);
@@ -4456,7 +4472,7 @@ pub mod fluent_builders {
         /// <p>A newer minor version is available. </p>
         /// </li>
         /// <li>
-        /// <p>AWS DMS has enabled automatic patching for the given engine version. </p>
+        /// <p>DMS has enabled automatic patching for the given engine version. </p>
         /// </li>
         /// </ul>
         pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
@@ -4641,9 +4657,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_migration_type(input);
             self
         }
-        /// <p>When using the AWS CLI or boto3, provide the path of the JSON file that contains the
+        /// <p>When using the CLI or boto3, provide the path of the JSON file that contains the
         /// table mappings. Precede the path with <code>file://</code>.  For example,
-        /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API,
+        /// <code>--table-mappings file://mappingfile.json</code>. When working with the DMS  API,
         /// provide the JSON as the parameter value.
         /// </p>
         pub fn table_mappings(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4697,7 +4713,7 @@ pub mod fluent_builders {
         /// replication slot should already be created and associated with the source endpoint. You
         /// can verify this by setting the <code>slotName</code> extra connection attribute to the
         /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for AWS DMS</a>.</p>
+        /// for DMS</a>.</p>
         /// </note>
         pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cdc_start_position(input);
@@ -4727,7 +4743,7 @@ pub mod fluent_builders {
         }
         /// <p>Supplemental information that the task requires to migrate the data for certain source and target endpoints.
         /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for Task Settings</a> in the
-        /// <i>AWS Database Migration Service User Guide.</i>
+        /// <i>Database Migration Service User Guide.</i>
         /// </p>
         pub fn task_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.task_data(input);
@@ -5008,7 +5024,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>An AWS DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
+        /// <p>An DMS resource from which you want to remove tag(s). The value for this parameter is an Amazon Resource Name (ARN).</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -5116,7 +5132,7 @@ pub mod fluent_builders {
         /// replication slot should already be created and associated with the source endpoint. You
         /// can verify this by setting the <code>slotName</code> extra connection attribute to the
         /// name of this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra Connection Attributes When Using PostgreSQL as a Source
-        /// for AWS DMS</a>.</p>
+        /// for DMS</a>.</p>
         /// </note>
         pub fn cdc_start_position(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.cdc_start_position(input);
@@ -5233,7 +5249,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_task_arn(input);
             self
         }
-        /// <p>ARN of a service role needed to start the assessment run.</p>
+        /// <p>ARN of the service role needed to start the assessment run. The role must allow the <code>iam:PassRole</code> action.</p>
         pub fn service_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_access_role_arn(input);
             self
@@ -5245,7 +5261,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_access_role_arn(input);
             self
         }
-        /// <p>Amazon S3 bucket where you want AWS DMS to store the results of this assessment
+        /// <p>Amazon S3 bucket where you want DMS to store the results of this assessment
         /// run.</p>
         pub fn result_location_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.result_location_bucket(input);
@@ -5258,7 +5274,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_result_location_bucket(input);
             self
         }
-        /// <p>Folder within an Amazon S3 bucket where you want AWS DMS to store the results of this assessment
+        /// <p>Folder within an Amazon S3 bucket where you want DMS to store the results of this assessment
         /// run.</p>
         pub fn result_location_folder(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.result_location_folder(input);
@@ -5272,7 +5288,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>Encryption mode that you can specify to encrypt the results of this assessment run. If
-        /// you don't specify this request parameter, AWS DMS stores the assessment run results
+        /// you don't specify this request parameter, DMS stores the assessment run results
         /// without encryption. You can specify one of the options following:</p>
         /// <ul>
         /// <li>
@@ -5282,7 +5298,7 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>"SSE_KMS"</code> – AWS Key Management Service (AWS KMS) encryption.
+        /// <code>"SSE_KMS"</code> – Key Management Service (KMS) encryption.
         /// This encryption can use either a custom KMS encryption key that you specify or the
         /// default KMS encryption key that DMS provides.</p>
         /// </li>
@@ -5324,13 +5340,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// include. These names come from the default list of individual assessments that AWS DMS
+        /// include. These names come from the default list of individual assessments that DMS
         /// supports for the associated migration task. This task is specified by
         /// <code>ReplicationTaskArn</code>.</p>
         /// <note>
         /// <p>You can't set a value for <code>IncludeOnly</code> if you also set a value for
         /// <code>Exclude</code> in the API operation. </p>
-        /// <p>To identify the names of the default individual assessments that AWS DMS
+        /// <p>To identify the names of the default individual assessments that DMS
         /// supports for the associated migration task, run the
         /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
         /// <code>ReplicationTaskArn</code> request parameter.</p>
@@ -5347,13 +5363,13 @@ pub mod fluent_builders {
             self
         }
         /// <p>Space-separated list of names for specific individual assessments that you want to
-        /// exclude. These names come from the default list of individual assessments that AWS DMS
+        /// exclude. These names come from the default list of individual assessments that DMS
         /// supports for the associated migration task. This task is specified by
         /// <code>ReplicationTaskArn</code>.</p>
         /// <note>
         /// <p>You can't set a value for <code>Exclude</code> if you also set a value for
         /// <code>IncludeOnly</code> in the API operation.</p>
-        /// <p>To identify the names of the default individual assessments that AWS DMS
+        /// <p>To identify the names of the default individual assessments that DMS
         /// supports for the associated migration task, run the
         /// <code>DescribeApplicableIndividualAssessments</code> operation using its own
         /// <code>ReplicationTaskArn</code> request parameter.</p>

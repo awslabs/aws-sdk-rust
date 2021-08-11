@@ -334,6 +334,7 @@ pub struct CreateBatchPredictionJobError {
 pub enum CreateBatchPredictionJobErrorKind {
     AccessDeniedException(crate::error::AccessDeniedException),
     InternalServerException(crate::error::InternalServerException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ValidationException(crate::error::ValidationException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
@@ -343,6 +344,7 @@ impl std::fmt::Display for CreateBatchPredictionJobError {
         match &self.kind {
             CreateBatchPredictionJobErrorKind::AccessDeniedException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::InternalServerException(_inner) => _inner.fmt(f),
+            CreateBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::ValidationException(_inner) => _inner.fmt(f),
             CreateBatchPredictionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
@@ -404,6 +406,12 @@ impl CreateBatchPredictionJobError {
             CreateBatchPredictionJobErrorKind::InternalServerException(_)
         )
     }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBatchPredictionJobErrorKind::ResourceNotFoundException(_)
+        )
+    }
     pub fn is_validation_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -416,6 +424,7 @@ impl std::error::Error for CreateBatchPredictionJobError {
         match &self.kind {
             CreateBatchPredictionJobErrorKind::AccessDeniedException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::InternalServerException(_inner) => Some(_inner),
+            CreateBatchPredictionJobErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::ValidationException(_inner) => Some(_inner),
             CreateBatchPredictionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }

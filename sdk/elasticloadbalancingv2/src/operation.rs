@@ -395,7 +395,8 @@ impl smithy_http::response::ParseStrictResponse for DeregisterTargets {
     }
 }
 
-/// <p>Describes the current Elastic Load Balancing resource limits for your AWS account.</p>
+/// <p>Describes the current Elastic Load Balancing resource limits for your Amazon Web Services
+/// account.</p>
 /// <p>For more information, see the following:</p>
 /// <ul>
 /// <li>

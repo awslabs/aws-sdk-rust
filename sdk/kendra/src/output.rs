@@ -412,6 +412,35 @@ impl QueryOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutPrincipalMappingOutput {}
+impl std::fmt::Debug for PutPrincipalMappingOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutPrincipalMappingOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutPrincipalMappingOutput`](crate::output::PutPrincipalMappingOutput)
+pub mod put_principal_mapping_output {
+    /// A builder for [`PutPrincipalMappingOutput`](crate::output::PutPrincipalMappingOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutPrincipalMappingOutput`](crate::output::PutPrincipalMappingOutput)
+        pub fn build(self) -> crate::output::PutPrincipalMappingOutput {
+            crate::output::PutPrincipalMappingOutput {}
+        }
+    }
+}
+impl PutPrincipalMappingOutput {
+    /// Creates a new builder-style object to manufacture [`PutPrincipalMappingOutput`](crate::output::PutPrincipalMappingOutput)
+    pub fn builder() -> crate::output::put_principal_mapping_output::Builder {
+        crate::output::put_principal_mapping_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListThesauriOutput {
     /// <p>If the response is truncated, Amazon Kendra returns this
     /// token that you can use in the subsequent request to
@@ -684,6 +713,77 @@ impl ListIndicesOutput {
     /// Creates a new builder-style object to manufacture [`ListIndicesOutput`](crate::output::ListIndicesOutput)
     pub fn builder() -> crate::output::list_indices_output::Builder {
         crate::output::list_indices_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListGroupsOlderThanOrderingIdOutput {
+    /// <p>
+    /// Summary information for list of groups that are mapped to users before a
+    /// given ordering or timestamp identifier.
+    /// </p>
+    pub groups_summaries: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+    /// <p>
+    /// The next items in the list of groups that go beyond the maximum.
+    /// </p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for ListGroupsOlderThanOrderingIdOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListGroupsOlderThanOrderingIdOutput");
+        formatter.field("groups_summaries", &self.groups_summaries);
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`ListGroupsOlderThanOrderingIdOutput`](crate::output::ListGroupsOlderThanOrderingIdOutput)
+pub mod list_groups_older_than_ordering_id_output {
+    /// A builder for [`ListGroupsOlderThanOrderingIdOutput`](crate::output::ListGroupsOlderThanOrderingIdOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) groups_summaries: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn groups_summaries(mut self, input: impl Into<crate::model::GroupSummary>) -> Self {
+            let mut v = self.groups_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.groups_summaries = Some(v);
+            self
+        }
+        pub fn set_groups_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupSummary>>,
+        ) -> Self {
+            self.groups_summaries = input;
+            self
+        }
+        /// <p>
+        /// The next items in the list of groups that go beyond the maximum.
+        /// </p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListGroupsOlderThanOrderingIdOutput`](crate::output::ListGroupsOlderThanOrderingIdOutput)
+        pub fn build(self) -> crate::output::ListGroupsOlderThanOrderingIdOutput {
+            crate::output::ListGroupsOlderThanOrderingIdOutput {
+                groups_summaries: self.groups_summaries,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl ListGroupsOlderThanOrderingIdOutput {
+    /// Creates a new builder-style object to manufacture [`ListGroupsOlderThanOrderingIdOutput`](crate::output::ListGroupsOlderThanOrderingIdOutput)
+    pub fn builder() -> crate::output::list_groups_older_than_ordering_id_output::Builder {
+        crate::output::list_groups_older_than_ordering_id_output::Builder::default()
     }
 }
 
@@ -1684,6 +1784,142 @@ impl DescribeQuerySuggestionsBlockListOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribePrincipalMappingOutput {
+    /// <p>Shows the identifier of the index to see information on the
+    /// processing of <code>PUT</code> and <code>DELETE</code> actions
+    /// for mapping users to their groups.</p>
+    pub index_id: std::option::Option<std::string::String>,
+    /// <p>Shows the identifier of the data source to see information on
+    /// the processing of <code>PUT</code> and <code>DELETE</code> actions
+    /// for mapping users to their groups.</p>
+    pub data_source_id: std::option::Option<std::string::String>,
+    /// <p>Shows the identifier of the group to see information on the
+    /// processing of <code>PUT</code> and <code>DELETE</code> actions
+    /// for mapping users to their groups.</p>
+    pub group_id: std::option::Option<std::string::String>,
+    /// <p>Shows the following information on the processing of <code>PUT</code> and
+    /// <code>DELETE</code> actions for mapping users to their groups:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Status – the status can be either
+    /// <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+    /// <code>DELETED</code>, or <code>FAILED</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>Last updated – the last date-time an action was updated.</p>
+    /// </li>
+    /// <li>
+    /// <p>Received – the last date-time an action was received or submitted.</p>
+    /// </li>
+    /// <li>
+    /// <p>Ordering ID – the latest action that should process and apply
+    /// after other actions.</p>
+    /// </li>
+    /// <li>
+    /// <p>Failure reason – the reason an action could not be processed.</p>
+    /// </li>
+    /// </ul>
+    pub group_ordering_id_summaries:
+        std::option::Option<std::vec::Vec<crate::model::GroupOrderingIdSummary>>,
+}
+impl std::fmt::Debug for DescribePrincipalMappingOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribePrincipalMappingOutput");
+        formatter.field("index_id", &self.index_id);
+        formatter.field("data_source_id", &self.data_source_id);
+        formatter.field("group_id", &self.group_id);
+        formatter.field(
+            "group_ordering_id_summaries",
+            &self.group_ordering_id_summaries,
+        );
+        formatter.finish()
+    }
+}
+/// See [`DescribePrincipalMappingOutput`](crate::output::DescribePrincipalMappingOutput)
+pub mod describe_principal_mapping_output {
+    /// A builder for [`DescribePrincipalMappingOutput`](crate::output::DescribePrincipalMappingOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) index_id: std::option::Option<std::string::String>,
+        pub(crate) data_source_id: std::option::Option<std::string::String>,
+        pub(crate) group_id: std::option::Option<std::string::String>,
+        pub(crate) group_ordering_id_summaries:
+            std::option::Option<std::vec::Vec<crate::model::GroupOrderingIdSummary>>,
+    }
+    impl Builder {
+        /// <p>Shows the identifier of the index to see information on the
+        /// processing of <code>PUT</code> and <code>DELETE</code> actions
+        /// for mapping users to their groups.</p>
+        pub fn index_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.index_id = Some(input.into());
+            self
+        }
+        pub fn set_index_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.index_id = input;
+            self
+        }
+        /// <p>Shows the identifier of the data source to see information on
+        /// the processing of <code>PUT</code> and <code>DELETE</code> actions
+        /// for mapping users to their groups.</p>
+        pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_source_id = Some(input.into());
+            self
+        }
+        pub fn set_data_source_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_source_id = input;
+            self
+        }
+        /// <p>Shows the identifier of the group to see information on the
+        /// processing of <code>PUT</code> and <code>DELETE</code> actions
+        /// for mapping users to their groups.</p>
+        pub fn group_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.group_id = Some(input.into());
+            self
+        }
+        pub fn set_group_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.group_id = input;
+            self
+        }
+        pub fn group_ordering_id_summaries(
+            mut self,
+            input: impl Into<crate::model::GroupOrderingIdSummary>,
+        ) -> Self {
+            let mut v = self.group_ordering_id_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.group_ordering_id_summaries = Some(v);
+            self
+        }
+        pub fn set_group_ordering_id_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::GroupOrderingIdSummary>>,
+        ) -> Self {
+            self.group_ordering_id_summaries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribePrincipalMappingOutput`](crate::output::DescribePrincipalMappingOutput)
+        pub fn build(self) -> crate::output::DescribePrincipalMappingOutput {
+            crate::output::DescribePrincipalMappingOutput {
+                index_id: self.index_id,
+                data_source_id: self.data_source_id,
+                group_id: self.group_id,
+                group_ordering_id_summaries: self.group_ordering_id_summaries,
+            }
+        }
+    }
+}
+impl DescribePrincipalMappingOutput {
+    /// Creates a new builder-style object to manufacture [`DescribePrincipalMappingOutput`](crate::output::DescribePrincipalMappingOutput)
+    pub fn builder() -> crate::output::describe_principal_mapping_output::Builder {
+        crate::output::describe_principal_mapping_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeIndexOutput {
     /// <p>The name of the index.</p>
     pub name: std::option::Option<std::string::String>,
@@ -1695,7 +1931,7 @@ pub struct DescribeIndexOutput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role that gives Amazon Kendra
     /// permission to write to your Amazon Cloudwatch logs.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>The identifier of the AWS KMS customer master key (CMK) used to
+    /// <p>The identifier of the KMScustomer master key (CMK) used to
     /// encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
     pub server_side_encryption_configuration:
         std::option::Option<crate::model::ServerSideEncryptionConfiguration>,
@@ -1828,7 +2064,7 @@ pub mod describe_index_output {
             self.role_arn = input;
             self
         }
-        /// <p>The identifier of the AWS KMS customer master key (CMK) used to
+        /// <p>The identifier of the KMScustomer master key (CMK) used to
         /// encrypt your data. Amazon Kendra doesn't support asymmetric CMKs.</p>
         pub fn server_side_encryption_configuration(
             mut self,
@@ -2488,6 +2724,35 @@ impl DeleteQuerySuggestionsBlockListOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeletePrincipalMappingOutput {}
+impl std::fmt::Debug for DeletePrincipalMappingOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeletePrincipalMappingOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput)
+pub mod delete_principal_mapping_output {
+    /// A builder for [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput)
+        pub fn build(self) -> crate::output::DeletePrincipalMappingOutput {
+            crate::output::DeletePrincipalMappingOutput {}
+        }
+    }
+}
+impl DeletePrincipalMappingOutput {
+    /// Creates a new builder-style object to manufacture [`DeletePrincipalMappingOutput`](crate::output::DeletePrincipalMappingOutput)
+    pub fn builder() -> crate::output::delete_principal_mapping_output::Builder {
+        crate::output::delete_principal_mapping_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteIndexOutput {}
 impl std::fmt::Debug for DeleteIndexOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2834,7 +3099,7 @@ pub struct BatchPutDocumentOutput {
     /// message that indicates why the document couldn't be added to the
     /// index.</p>
     /// <p>If there was an error adding a document to an index the error is
-    /// reported in your AWS CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
+    /// reported in your Amazon Web Services CloudWatch log. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/cloudwatch-logs.html">Monitoring
     /// Amazon Kendra with Amazon CloudWatch Logs</a>
     /// </p>
     pub failed_documents:

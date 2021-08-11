@@ -122,6 +122,12 @@ where
     pub fn get_intent_versions(&self) -> fluent_builders::GetIntentVersions<C> {
         fluent_builders::GetIntentVersions::new(self.handle.clone())
     }
+    pub fn get_migration(&self) -> fluent_builders::GetMigration<C> {
+        fluent_builders::GetMigration::new(self.handle.clone())
+    }
+    pub fn get_migrations(&self) -> fluent_builders::GetMigrations<C> {
+        fluent_builders::GetMigrations::new(self.handle.clone())
+    }
     pub fn get_slot_type(&self) -> fluent_builders::GetSlotType<C> {
         fluent_builders::GetSlotType::new(self.handle.clone())
     }
@@ -151,6 +157,9 @@ where
     }
     pub fn start_import(&self) -> fluent_builders::StartImport<C> {
         fluent_builders::StartImport::new(self.handle.clone())
+    }
+    pub fn start_migration(&self) -> fluent_builders::StartMigration<C> {
+        fluent_builders::StartMigration::new(self.handle.clone())
     }
     pub fn tag_resource(&self) -> fluent_builders::TagResource<C> {
         fluent_builders::TagResource::new(self.handle.clone())
@@ -1732,6 +1741,153 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetMigration<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_migration_input::Builder,
+    }
+    impl<C> GetMigration<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMigrationOutput,
+            smithy_http::result::SdkError<crate::error::GetMigrationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The unique identifier of the migration to view. The
+        /// <code>migrationID</code> is returned by the  operation.</p>
+        pub fn migration_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.migration_id(input);
+            self
+        }
+        pub fn set_migration_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_migration_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetMigrations<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_migrations_input::Builder,
+    }
+    impl<C> GetMigrations<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetMigrationsOutput,
+            smithy_http::result::SdkError<crate::error::GetMigrationsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The field to sort the list of migrations by. You can sort by the
+        /// Amazon Lex V1 bot name or the date and time that the migration was
+        /// started.</p>
+        pub fn sort_by_attribute(mut self, input: crate::model::MigrationSortAttribute) -> Self {
+            self.inner = self.inner.sort_by_attribute(input);
+            self
+        }
+        pub fn set_sort_by_attribute(
+            mut self,
+            input: std::option::Option<crate::model::MigrationSortAttribute>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by_attribute(input);
+            self
+        }
+        /// <p>The order so sort the list.</p>
+        pub fn sort_by_order(mut self, input: crate::model::SortOrder) -> Self {
+            self.inner = self.inner.sort_by_order(input);
+            self
+        }
+        pub fn set_sort_by_order(
+            mut self,
+            input: std::option::Option<crate::model::SortOrder>,
+        ) -> Self {
+            self.inner = self.inner.set_sort_by_order(input);
+            self
+        }
+        /// <p>Filters the list to contain only bots whose name contains the
+        /// specified string. The string is matched anywhere in bot name.</p>
+        pub fn v1_bot_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v1_bot_name_contains(input);
+            self
+        }
+        pub fn set_v1_bot_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_v1_bot_name_contains(input);
+            self
+        }
+        /// <p>Filters the list to contain only migrations in the specified state.</p>
+        pub fn migration_status_equals(mut self, input: crate::model::MigrationStatus) -> Self {
+            self.inner = self.inner.migration_status_equals(input);
+            self
+        }
+        pub fn set_migration_status_equals(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_migration_status_equals(input);
+            self
+        }
+        /// <p>The maximum number of migrations to return in the response. The
+        /// default is 10.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>A pagination token that fetches the next page of migrations. If the
+        /// response to this operation is truncated, Amazon Lex returns a pagination token
+        /// in the response. To fetch the next page of migrations, specify the
+        /// pagination token in the request.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetSlotType<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::get_slot_type_input::Builder,
@@ -3120,6 +3276,115 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         ) -> Self {
             self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct StartMigration<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::start_migration_input::Builder,
+    }
+    impl<C> StartMigration<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartMigrationOutput,
+            smithy_http::result::SdkError<crate::error::StartMigrationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.</p>
+        pub fn v1_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v1_bot_name(input);
+            self
+        }
+        pub fn set_v1_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_v1_bot_name(input);
+            self
+        }
+        /// <p>The version of the bot to migrate to Amazon Lex V2. You can migrate the
+        /// <code>$LATEST</code> version as well as any numbered version.</p>
+        pub fn v1_bot_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v1_bot_version(input);
+            self
+        }
+        pub fn set_v1_bot_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_v1_bot_version(input);
+            self
+        }
+        /// <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p>
+        /// <ul>
+        /// <li>
+        /// <p>If the Amazon Lex V2 bot doesn't exist, you must use the
+        /// <code>CREATE_NEW</code> migration strategy.</p>
+        /// </li>
+        /// <li>
+        /// <p>If the Amazon Lex V2 bot exists, you must use the
+        /// <code>UPDATE_EXISTING</code> migration strategy to change the
+        /// contents of the Amazon Lex V2 bot.</p>
+        /// </li>
+        /// </ul>
+        pub fn v2_bot_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v2_bot_name(input);
+            self
+        }
+        pub fn set_v2_bot_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_v2_bot_name(input);
+            self
+        }
+        /// <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
+        pub fn v2_bot_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.v2_bot_role(input);
+            self
+        }
+        pub fn set_v2_bot_role(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_v2_bot_role(input);
+            self
+        }
+        /// <p>The strategy used to conduct the migration.</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>CREATE_NEW</code> - Creates a new Amazon Lex V2 bot and migrates
+        /// the Amazon Lex V1 bot to the new bot.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>UPDATE_EXISTING</code> - Overwrites the existing Amazon Lex V2 bot
+        /// metadata and the locale being migrated. It doesn't change any other
+        /// locales in the Amazon Lex V2 bot. If the locale doesn't exist, a new locale
+        /// is created in the Amazon Lex V2 bot.</p>
+        /// </li>
+        /// </ul>
+        pub fn migration_strategy(mut self, input: crate::model::MigrationStrategy) -> Self {
+            self.inner = self.inner.migration_strategy(input);
+            self
+        }
+        pub fn set_migration_strategy(
+            mut self,
+            input: std::option::Option<crate::model::MigrationStrategy>,
+        ) -> Self {
+            self.inner = self.inner.set_migration_strategy(input);
             self
         }
     }

@@ -2108,6 +2108,13 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "lambdaAuthorizerConfig" => {
+                                builder = builder.set_lambda_authorizer_config(
+                                    crate::json_deser::deser_structure_lambda_authorizer_config(
+                                        tokens,
+                                    )?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -3229,6 +3236,68 @@ where
     }
 }
 
+pub fn deser_structure_lambda_authorizer_config<'a, I>(
+    tokens: &mut std::iter::Peekable<I>,
+) -> Result<Option<crate::model::LambdaAuthorizerConfig>, smithy_json::deserialize::Error>
+where
+    I: Iterator<
+        Item = Result<smithy_json::deserialize::Token<'a>, smithy_json::deserialize::Error>,
+    >,
+{
+    match tokens.next().transpose()? {
+        Some(smithy_json::deserialize::Token::ValueNull { .. }) => Ok(None),
+        Some(smithy_json::deserialize::Token::StartObject { .. }) => {
+            #[allow(unused_mut)]
+            let mut builder = crate::model::LambdaAuthorizerConfig::builder();
+            loop {
+                match tokens.next().transpose()? {
+                    Some(smithy_json::deserialize::Token::EndObject { .. }) => break,
+                    Some(smithy_json::deserialize::Token::ObjectKey { key, .. }) => {
+                        match key.to_unescaped()?.as_ref() {
+                            "authorizerResultTtlInSeconds" => {
+                                builder = builder.set_authorizer_result_ttl_in_seconds(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i32()),
+                                );
+                            }
+                            "authorizerUri" => {
+                                builder = builder.set_authorizer_uri(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            "identityValidationExpression" => {
+                                builder = builder.set_identity_validation_expression(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
+                            _ => smithy_json::deserialize::token::skip_value(tokens)?,
+                        }
+                    }
+                    _ => {
+                        return Err(smithy_json::deserialize::Error::custom(
+                            "expected object key or end object",
+                        ))
+                    }
+                }
+            }
+            Ok(Some(builder.build()))
+        }
+        _ => Err(smithy_json::deserialize::Error::custom(
+            "expected start object or null",
+        )),
+    }
+}
+
 pub fn deser_structure_pipeline_config<'a, I>(
     tokens: &mut std::iter::Peekable<I>,
 ) -> Result<Option<crate::model::PipelineConfig>, smithy_json::deserialize::Error>
@@ -3601,6 +3670,13 @@ where
                             "userPoolConfig" => {
                                 builder = builder.set_user_pool_config(
                                     crate::json_deser::deser_structure_cognito_user_pool_config(
+                                        tokens,
+                                    )?,
+                                );
+                            }
+                            "lambdaAuthorizerConfig" => {
+                                builder = builder.set_lambda_authorizer_config(
+                                    crate::json_deser::deser_structure_lambda_authorizer_config(
                                         tokens,
                                     )?,
                                 );

@@ -307,6 +307,9 @@ pub struct Trigger {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub predicate: std::option::Option<crate::model::Predicate>,
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+    /// before EventBridge event trigger fires.</p>
+    pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl std::fmt::Debug for Trigger {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -320,6 +323,7 @@ impl std::fmt::Debug for Trigger {
         formatter.field("schedule", &self.schedule);
         formatter.field("actions", &self.actions);
         formatter.field("predicate", &self.predicate);
+        formatter.field("event_batching_condition", &self.event_batching_condition);
         formatter.finish()
     }
 }
@@ -338,6 +342,8 @@ pub mod trigger {
         pub(crate) schedule: std::option::Option<std::string::String>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
         pub(crate) predicate: std::option::Option<crate::model::Predicate>,
+        pub(crate) event_batching_condition:
+            std::option::Option<crate::model::EventBatchingCondition>,
     }
     impl Builder {
         /// <p>The name of the trigger.</p>
@@ -434,6 +440,22 @@ pub mod trigger {
             self.predicate = input;
             self
         }
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+        /// before EventBridge event trigger fires.</p>
+        pub fn event_batching_condition(
+            mut self,
+            input: crate::model::EventBatchingCondition,
+        ) -> Self {
+            self.event_batching_condition = Some(input);
+            self
+        }
+        pub fn set_event_batching_condition(
+            mut self,
+            input: std::option::Option<crate::model::EventBatchingCondition>,
+        ) -> Self {
+            self.event_batching_condition = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Trigger`](crate::model::Trigger)
         pub fn build(self) -> crate::model::Trigger {
             crate::model::Trigger {
@@ -446,6 +468,7 @@ pub mod trigger {
                 schedule: self.schedule,
                 actions: self.actions,
                 predicate: self.predicate,
+                event_batching_condition: self.event_batching_condition,
             }
         }
     }
@@ -454,6 +477,68 @@ impl Trigger {
     /// Creates a new builder-style object to manufacture [`Trigger`](crate::model::Trigger)
     pub fn builder() -> crate::model::trigger::Builder {
         crate::model::trigger::Builder::default()
+    }
+}
+
+/// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+/// before EventBridge event trigger fires.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EventBatchingCondition {
+    /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
+    pub batch_size: i32,
+    /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
+    pub batch_window: std::option::Option<i32>,
+}
+impl std::fmt::Debug for EventBatchingCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EventBatchingCondition");
+        formatter.field("batch_size", &self.batch_size);
+        formatter.field("batch_window", &self.batch_window);
+        formatter.finish()
+    }
+}
+/// See [`EventBatchingCondition`](crate::model::EventBatchingCondition)
+pub mod event_batching_condition {
+    /// A builder for [`EventBatchingCondition`](crate::model::EventBatchingCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_size: std::option::Option<i32>,
+        pub(crate) batch_window: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Number of events that must be received from Amazon EventBridge before EventBridge event trigger fires.</p>
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.batch_size = Some(input);
+            self
+        }
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_size = input;
+            self
+        }
+        /// <p>Window of time in seconds after which EventBridge event trigger fires. Window starts when first event is received.</p>
+        pub fn batch_window(mut self, input: i32) -> Self {
+            self.batch_window = Some(input);
+            self
+        }
+        pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`EventBatchingCondition`](crate::model::EventBatchingCondition)
+        pub fn build(self) -> crate::model::EventBatchingCondition {
+            crate::model::EventBatchingCondition {
+                batch_size: self.batch_size.unwrap_or_default(),
+                batch_window: self.batch_window,
+            }
+        }
+    }
+}
+impl EventBatchingCondition {
+    /// Creates a new builder-style object to manufacture [`EventBatchingCondition`](crate::model::EventBatchingCondition)
+    pub fn builder() -> crate::model::event_batching_condition::Builder {
+        crate::model::event_batching_condition::Builder::default()
     }
 }
 
@@ -1148,6 +1233,7 @@ impl AsRef<str> for TriggerState {
 )]
 pub enum TriggerType {
     Conditional,
+    Event,
     OnDemand,
     Scheduled,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -1157,6 +1243,7 @@ impl std::convert::From<&str> for TriggerType {
     fn from(s: &str) -> Self {
         match s {
             "CONDITIONAL" => TriggerType::Conditional,
+            "EVENT" => TriggerType::Event,
             "ON_DEMAND" => TriggerType::OnDemand,
             "SCHEDULED" => TriggerType::Scheduled,
             other => TriggerType::Unknown(other.to_owned()),
@@ -1174,13 +1261,14 @@ impl TriggerType {
     pub fn as_str(&self) -> &str {
         match self {
             TriggerType::Conditional => "CONDITIONAL",
+            TriggerType::Event => "EVENT",
             TriggerType::OnDemand => "ON_DEMAND",
             TriggerType::Scheduled => "SCHEDULED",
             TriggerType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["CONDITIONAL", "ON_DEMAND", "SCHEDULED"]
+        &["CONDITIONAL", "EVENT", "ON_DEMAND", "SCHEDULED"]
     }
 }
 impl AsRef<str> for TriggerType {
@@ -1207,6 +1295,9 @@ pub struct TriggerUpdate {
     pub actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
     /// <p>The predicate of this trigger, which defines when it will fire.</p>
     pub predicate: std::option::Option<crate::model::Predicate>,
+    /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+    /// before EventBridge event trigger fires.</p>
+    pub event_batching_condition: std::option::Option<crate::model::EventBatchingCondition>,
 }
 impl std::fmt::Debug for TriggerUpdate {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1216,6 +1307,7 @@ impl std::fmt::Debug for TriggerUpdate {
         formatter.field("schedule", &self.schedule);
         formatter.field("actions", &self.actions);
         formatter.field("predicate", &self.predicate);
+        formatter.field("event_batching_condition", &self.event_batching_condition);
         formatter.finish()
     }
 }
@@ -1230,6 +1322,8 @@ pub mod trigger_update {
         pub(crate) schedule: std::option::Option<std::string::String>,
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
         pub(crate) predicate: std::option::Option<crate::model::Predicate>,
+        pub(crate) event_batching_condition:
+            std::option::Option<crate::model::EventBatchingCondition>,
     }
     impl Builder {
         /// <p>Reserved for future use.</p>
@@ -1287,6 +1381,22 @@ pub mod trigger_update {
             self.predicate = input;
             self
         }
+        /// <p>Batch condition that must be met (specified number of events received or batch time window expired)
+        /// before EventBridge event trigger fires.</p>
+        pub fn event_batching_condition(
+            mut self,
+            input: crate::model::EventBatchingCondition,
+        ) -> Self {
+            self.event_batching_condition = Some(input);
+            self
+        }
+        pub fn set_event_batching_condition(
+            mut self,
+            input: std::option::Option<crate::model::EventBatchingCondition>,
+        ) -> Self {
+            self.event_batching_condition = input;
+            self
+        }
         /// Consumes the builder and constructs a [`TriggerUpdate`](crate::model::TriggerUpdate)
         pub fn build(self) -> crate::model::TriggerUpdate {
             crate::model::TriggerUpdate {
@@ -1295,6 +1405,7 @@ pub mod trigger_update {
                 schedule: self.schedule,
                 actions: self.actions,
                 predicate: self.predicate,
+                event_batching_condition: self.event_batching_condition,
             }
         }
     }
@@ -5105,7 +5216,7 @@ pub struct ConnectionInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
+    /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -5195,7 +5306,7 @@ pub mod connection_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
+        /// <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from Amazon Web Services Marketplace to read from and write to data stores that are not natively supported by Glue.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -9706,6 +9817,9 @@ pub struct WorkflowRun {
     /// <p>The graph representing all the Glue components that belong to the workflow as nodes and directed
     /// connections between them as edges.</p>
     pub graph: std::option::Option<crate::model::WorkflowGraph>,
+    /// <p>The batch condition that started the workflow run.</p>
+    pub starting_event_batch_condition:
+        std::option::Option<crate::model::StartingEventBatchCondition>,
 }
 impl std::fmt::Debug for WorkflowRun {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9720,6 +9834,10 @@ impl std::fmt::Debug for WorkflowRun {
         formatter.field("error_message", &self.error_message);
         formatter.field("statistics", &self.statistics);
         formatter.field("graph", &self.graph);
+        formatter.field(
+            "starting_event_batch_condition",
+            &self.starting_event_batch_condition,
+        );
         formatter.finish()
     }
 }
@@ -9741,6 +9859,8 @@ pub mod workflow_run {
         pub(crate) error_message: std::option::Option<std::string::String>,
         pub(crate) statistics: std::option::Option<crate::model::WorkflowRunStatistics>,
         pub(crate) graph: std::option::Option<crate::model::WorkflowGraph>,
+        pub(crate) starting_event_batch_condition:
+            std::option::Option<crate::model::StartingEventBatchCondition>,
     }
     impl Builder {
         /// <p>Name of the workflow that was run.</p>
@@ -9865,6 +9985,21 @@ pub mod workflow_run {
             self.graph = input;
             self
         }
+        /// <p>The batch condition that started the workflow run.</p>
+        pub fn starting_event_batch_condition(
+            mut self,
+            input: crate::model::StartingEventBatchCondition,
+        ) -> Self {
+            self.starting_event_batch_condition = Some(input);
+            self
+        }
+        pub fn set_starting_event_batch_condition(
+            mut self,
+            input: std::option::Option<crate::model::StartingEventBatchCondition>,
+        ) -> Self {
+            self.starting_event_batch_condition = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WorkflowRun`](crate::model::WorkflowRun)
         pub fn build(self) -> crate::model::WorkflowRun {
             crate::model::WorkflowRun {
@@ -9878,6 +10013,7 @@ pub mod workflow_run {
                 error_message: self.error_message,
                 statistics: self.statistics,
                 graph: self.graph,
+                starting_event_batch_condition: self.starting_event_batch_condition,
             }
         }
     }
@@ -9886,6 +10022,69 @@ impl WorkflowRun {
     /// Creates a new builder-style object to manufacture [`WorkflowRun`](crate::model::WorkflowRun)
     pub fn builder() -> crate::model::workflow_run::Builder {
         crate::model::workflow_run::Builder::default()
+    }
+}
+
+/// <p>The batch condition that started the workflow run. Either the number of events in the batch size arrived,
+/// in which case the BatchSize member is non-zero, or the batch window expired, in which case the BatchWindow
+/// member is non-zero.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartingEventBatchCondition {
+    /// <p>Number of events in the batch.</p>
+    pub batch_size: std::option::Option<i32>,
+    /// <p>Duration of the batch window in seconds.</p>
+    pub batch_window: std::option::Option<i32>,
+}
+impl std::fmt::Debug for StartingEventBatchCondition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartingEventBatchCondition");
+        formatter.field("batch_size", &self.batch_size);
+        formatter.field("batch_window", &self.batch_window);
+        formatter.finish()
+    }
+}
+/// See [`StartingEventBatchCondition`](crate::model::StartingEventBatchCondition)
+pub mod starting_event_batch_condition {
+    /// A builder for [`StartingEventBatchCondition`](crate::model::StartingEventBatchCondition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) batch_size: std::option::Option<i32>,
+        pub(crate) batch_window: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Number of events in the batch.</p>
+        pub fn batch_size(mut self, input: i32) -> Self {
+            self.batch_size = Some(input);
+            self
+        }
+        pub fn set_batch_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_size = input;
+            self
+        }
+        /// <p>Duration of the batch window in seconds.</p>
+        pub fn batch_window(mut self, input: i32) -> Self {
+            self.batch_window = Some(input);
+            self
+        }
+        pub fn set_batch_window(mut self, input: std::option::Option<i32>) -> Self {
+            self.batch_window = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartingEventBatchCondition`](crate::model::StartingEventBatchCondition)
+        pub fn build(self) -> crate::model::StartingEventBatchCondition {
+            crate::model::StartingEventBatchCondition {
+                batch_size: self.batch_size,
+                batch_window: self.batch_window,
+            }
+        }
+    }
+}
+impl StartingEventBatchCondition {
+    /// Creates a new builder-style object to manufacture [`StartingEventBatchCondition`](crate::model::StartingEventBatchCondition)
+    pub fn builder() -> crate::model::starting_event_batch_condition::Builder {
+        crate::model::starting_event_batch_condition::Builder::default()
     }
 }
 
@@ -9959,8 +10158,8 @@ impl WorkflowGraph {
     }
 }
 
-/// <p>An edge represents a directed connection between two Glue components that are part of the workflow the
-/// edge belongs to.</p>
+/// <p>An edge represents a directed connection between two components
+/// on a workflow graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Edge {
@@ -10024,7 +10223,7 @@ impl Edge {
     }
 }
 
-/// <p>A node represents an Glue component such as a trigger, or job, etc., that is part of a workflow.</p>
+/// <p>A node represents an Glue component (trigger, crawler, or job) on a workflow graph.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Node {
@@ -11188,16 +11387,19 @@ impl AsRef<str> for WorkflowRunStatus {
     }
 }
 
-/// <p>A workflow represents a flow in which Glue components should be run to complete a logical
-/// task.</p>
+/// <p>A workflow is a collection of multiple dependent Glue
+/// jobs and crawlers that are run to complete a complex ETL task. A
+/// workflow manages the execution and monitoring of all its jobs and crawlers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Workflow {
-    /// <p>The name of the workflow representing the flow.</p>
+    /// <p>The name of the workflow.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>A description of the workflow.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>A collection of properties to be used as part of each execution of the workflow.</p>
+    /// <p>A collection of properties to be used as part of each execution of the workflow.
+    /// The run properties are made available to each job in the workflow. A job can modify
+    /// the properties for the next jobs in the flow.</p>
     pub default_run_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The date and time when the workflow was created.</p>
@@ -11244,7 +11446,7 @@ pub mod workflow {
         pub(crate) max_concurrent_runs: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the workflow representing the flow.</p>
+        /// <p>The name of the workflow.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self

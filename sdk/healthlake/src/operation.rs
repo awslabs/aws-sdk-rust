@@ -113,7 +113,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeFHIRExportJob {
     }
 }
 
-/// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job.</p>
+/// <p>Displays the properties of a FHIR import job, including the ID, ARN, name, and the status of the job. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeFHIRImportJob {
     _private: (),
@@ -170,6 +170,96 @@ impl smithy_http::response::ParseStrictResponse for ListFHIRDatastores {
     }
 }
 
+/// <p>
+/// Lists all FHIR export jobs associated with an account and their statuses.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListFHIRExportJobs {
+    _private: (),
+}
+impl ListFHIRExportJobs {
+    /// Creates a new builder-style object to manufacture [`ListFhirExportJobsInput`](crate::input::ListFhirExportJobsInput)
+    pub fn builder() -> crate::input::list_fhir_export_jobs_input::Builder {
+        crate::input::list_fhir_export_jobs_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListFHIRExportJobs {
+    type Output = std::result::Result<
+        crate::output::ListFhirExportJobsOutput,
+        crate::error::ListFHIRExportJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_fhir_export_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_fhir_export_jobs_response(response)
+        }
+    }
+}
+
+/// <p>
+/// Lists all FHIR import jobs associated with an account and their statuses.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListFHIRImportJobs {
+    _private: (),
+}
+impl ListFHIRImportJobs {
+    /// Creates a new builder-style object to manufacture [`ListFhirImportJobsInput`](crate::input::ListFhirImportJobsInput)
+    pub fn builder() -> crate::input::list_fhir_import_jobs_input::Builder {
+        crate::input::list_fhir_import_jobs_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListFHIRImportJobs {
+    type Output = std::result::Result<
+        crate::output::ListFhirImportJobsOutput,
+        crate::error::ListFHIRImportJobsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_fhir_import_jobs_error(response)
+        } else {
+            crate::operation_deser::parse_list_fhir_import_jobs_response(response)
+        }
+    }
+}
+
+/// <p>
+/// Returns a list of all existing tags associated with a Data Store.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListTagsForResource {
+    _private: (),
+}
+impl ListTagsForResource {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceInput`](crate::input::ListTagsForResourceInput)
+    pub fn builder() -> crate::input::list_tags_for_resource_input::Builder {
+        crate::input::list_tags_for_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
+    type Output = std::result::Result<
+        crate::output::ListTagsForResourceOutput,
+        crate::error::ListTagsForResourceError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_tags_for_resource_error(response)
+        } else {
+            crate::operation_deser::parse_list_tags_for_resource_response(response)
+        }
+    }
+}
+
 /// <p>Begins a FHIR export job.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StartFHIRExportJob {
@@ -222,6 +312,62 @@ impl smithy_http::response::ParseStrictResponse for StartFHIRImportJob {
             crate::operation_deser::parse_start_fhir_import_job_error(response)
         } else {
             crate::operation_deser::parse_start_fhir_import_job_response(response)
+        }
+    }
+}
+
+/// <p>
+/// Adds a user specifed key and value tag to a Data Store.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct TagResource {
+    _private: (),
+}
+impl TagResource {
+    /// Creates a new builder-style object to manufacture [`TagResourceInput`](crate::input::TagResourceInput)
+    pub fn builder() -> crate::input::tag_resource_input::Builder {
+        crate::input::tag_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for TagResource {
+    type Output =
+        std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_tag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_tag_resource_response(response)
+        }
+    }
+}
+
+/// <p>
+/// Removes tags from a Data Store.
+/// </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UntagResource {
+    _private: (),
+}
+impl UntagResource {
+    /// Creates a new builder-style object to manufacture [`UntagResourceInput`](crate::input::UntagResourceInput)
+    pub fn builder() -> crate::input::untag_resource_input::Builder {
+        crate::input::untag_resource_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UntagResource {
+    type Output =
+        std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_untag_resource_error(response)
+        } else {
+            crate::operation_deser::parse_untag_resource_response(response)
         }
     }
 }

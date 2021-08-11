@@ -896,9 +896,12 @@ pub struct GraphqlApi {
     /// <p>A flag representing whether X-Ray tracing is enabled for this
     /// <code>GraphqlApi</code>.</p>
     pub xray_enabled: bool,
-    /// <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+    /// <p>The ARN of the WAF ACL associated with this
     /// <code>GraphqlApi</code>, if one exists.</p>
     pub waf_web_acl_arn: std::option::Option<std::string::String>,
+    /// <p></p>
+    /// <p>Configuration for AWS Lambda function authorization.</p>
+    pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl std::fmt::Debug for GraphqlApi {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -918,6 +921,7 @@ impl std::fmt::Debug for GraphqlApi {
         );
         formatter.field("xray_enabled", &self.xray_enabled);
         formatter.field("waf_web_acl_arn", &self.waf_web_acl_arn);
+        formatter.field("lambda_authorizer_config", &self.lambda_authorizer_config);
         formatter.finish()
     }
 }
@@ -944,6 +948,8 @@ pub mod graphql_api {
             std::option::Option<std::vec::Vec<crate::model::AdditionalAuthenticationProvider>>,
         pub(crate) xray_enabled: std::option::Option<bool>,
         pub(crate) waf_web_acl_arn: std::option::Option<std::string::String>,
+        pub(crate) lambda_authorizer_config:
+            std::option::Option<crate::model::LambdaAuthorizerConfig>,
     }
     impl Builder {
         /// <p>The API name.</p>
@@ -1087,7 +1093,7 @@ pub mod graphql_api {
             self.xray_enabled = input;
             self
         }
-        /// <p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this
+        /// <p>The ARN of the WAF ACL associated with this
         /// <code>GraphqlApi</code>, if one exists.</p>
         pub fn waf_web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.waf_web_acl_arn = Some(input.into());
@@ -1098,6 +1104,22 @@ pub mod graphql_api {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.waf_web_acl_arn = input;
+            self
+        }
+        /// <p></p>
+        /// <p>Configuration for AWS Lambda function authorization.</p>
+        pub fn lambda_authorizer_config(
+            mut self,
+            input: crate::model::LambdaAuthorizerConfig,
+        ) -> Self {
+            self.lambda_authorizer_config = Some(input);
+            self
+        }
+        pub fn set_lambda_authorizer_config(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
+        ) -> Self {
+            self.lambda_authorizer_config = input;
             self
         }
         /// Consumes the builder and constructs a [`GraphqlApi`](crate::model::GraphqlApi)
@@ -1115,6 +1137,7 @@ pub mod graphql_api {
                 additional_authentication_providers: self.additional_authentication_providers,
                 xray_enabled: self.xray_enabled.unwrap_or_default(),
                 waf_web_acl_arn: self.waf_web_acl_arn,
+                lambda_authorizer_config: self.lambda_authorizer_config,
             }
         }
     }
@@ -1126,16 +1149,137 @@ impl GraphqlApi {
     }
 }
 
+/// <p>A <code>LambdaAuthorizerConfig</code> holds configuration on how to authorize AppSync API access when using
+/// the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API may have only one Lambda authorizer configured
+/// at a time.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LambdaAuthorizerConfig {
+    /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds).
+    /// The Lambda function can override this by returning a
+    /// <code>ttlOverride</code> key in its response. A value of 0 disables caching of
+    /// responses.</p>
+    pub authorizer_result_ttl_in_seconds: i32,
+    /// <p>The ARN of the lambda function to be called for authorization. This may be a standard
+    /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p>
+    /// <p>
+    /// <i>Note</i>: This Lambda function must have the following resource-based
+    /// policy assigned to it. When configuring Lambda authorizers in the Console, this is done for
+    /// you. To do so with the AWS CLI, run the following:</p>
+    /// <p>
+    /// <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+    /// </p>
+    pub authorizer_uri: std::option::Option<std::string::String>,
+    /// <p>A regular expression for validation of tokens before the Lambda Function is called.</p>
+    pub identity_validation_expression: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LambdaAuthorizerConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LambdaAuthorizerConfig");
+        formatter.field(
+            "authorizer_result_ttl_in_seconds",
+            &self.authorizer_result_ttl_in_seconds,
+        );
+        formatter.field("authorizer_uri", &self.authorizer_uri);
+        formatter.field(
+            "identity_validation_expression",
+            &self.identity_validation_expression,
+        );
+        formatter.finish()
+    }
+}
+/// See [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+pub mod lambda_authorizer_config {
+    /// A builder for [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) authorizer_result_ttl_in_seconds: std::option::Option<i32>,
+        pub(crate) authorizer_uri: std::option::Option<std::string::String>,
+        pub(crate) identity_validation_expression: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The number of seconds a response should be cached for. The default is 5 minutes (300 seconds).
+        /// The Lambda function can override this by returning a
+        /// <code>ttlOverride</code> key in its response. A value of 0 disables caching of
+        /// responses.</p>
+        pub fn authorizer_result_ttl_in_seconds(mut self, input: i32) -> Self {
+            self.authorizer_result_ttl_in_seconds = Some(input);
+            self
+        }
+        pub fn set_authorizer_result_ttl_in_seconds(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.authorizer_result_ttl_in_seconds = input;
+            self
+        }
+        /// <p>The ARN of the lambda function to be called for authorization. This may be a standard
+        /// Lambda ARN, a version ARN (<code>.../v3</code>) or alias ARN. </p>
+        /// <p>
+        /// <i>Note</i>: This Lambda function must have the following resource-based
+        /// policy assigned to it. When configuring Lambda authorizers in the Console, this is done for
+        /// you. To do so with the AWS CLI, run the following:</p>
+        /// <p>
+        /// <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function" --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+        /// </p>
+        pub fn authorizer_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.authorizer_uri = Some(input.into());
+            self
+        }
+        pub fn set_authorizer_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.authorizer_uri = input;
+            self
+        }
+        /// <p>A regular expression for validation of tokens before the Lambda Function is called.</p>
+        pub fn identity_validation_expression(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.identity_validation_expression = Some(input.into());
+            self
+        }
+        pub fn set_identity_validation_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.identity_validation_expression = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+        pub fn build(self) -> crate::model::LambdaAuthorizerConfig {
+            crate::model::LambdaAuthorizerConfig {
+                authorizer_result_ttl_in_seconds: self
+                    .authorizer_result_ttl_in_seconds
+                    .unwrap_or_default(),
+                authorizer_uri: self.authorizer_uri,
+                identity_validation_expression: self.identity_validation_expression,
+            }
+        }
+    }
+}
+impl LambdaAuthorizerConfig {
+    /// Creates a new builder-style object to manufacture [`LambdaAuthorizerConfig`](crate::model::LambdaAuthorizerConfig)
+    pub fn builder() -> crate::model::lambda_authorizer_config::Builder {
+        crate::model::lambda_authorizer_config::Builder::default()
+    }
+}
+
 /// <p>Describes an additional authentication provider.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AdditionalAuthenticationProvider {
-    /// <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.</p>
+    /// <p>The authentication type: API key, Identity and Access Management, OIDC, or Amazon Cognito user pools.</p>
     pub authentication_type: std::option::Option<crate::model::AuthenticationType>,
     /// <p>The OpenID Connect configuration.</p>
     pub open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
     /// <p>The Amazon Cognito user pool configuration.</p>
     pub user_pool_config: std::option::Option<crate::model::CognitoUserPoolConfig>,
+    /// <p>Configuration for AWS Lambda function authorization.</p>
+    pub lambda_authorizer_config: std::option::Option<crate::model::LambdaAuthorizerConfig>,
 }
 impl std::fmt::Debug for AdditionalAuthenticationProvider {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1143,6 +1287,7 @@ impl std::fmt::Debug for AdditionalAuthenticationProvider {
         formatter.field("authentication_type", &self.authentication_type);
         formatter.field("open_id_connect_config", &self.open_id_connect_config);
         formatter.field("user_pool_config", &self.user_pool_config);
+        formatter.field("lambda_authorizer_config", &self.lambda_authorizer_config);
         formatter.finish()
     }
 }
@@ -1155,9 +1300,11 @@ pub mod additional_authentication_provider {
         pub(crate) authentication_type: std::option::Option<crate::model::AuthenticationType>,
         pub(crate) open_id_connect_config: std::option::Option<crate::model::OpenIdConnectConfig>,
         pub(crate) user_pool_config: std::option::Option<crate::model::CognitoUserPoolConfig>,
+        pub(crate) lambda_authorizer_config:
+            std::option::Option<crate::model::LambdaAuthorizerConfig>,
     }
     impl Builder {
-        /// <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, or Amazon Cognito user pools.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.authentication_type = Some(input);
             self
@@ -1193,12 +1340,28 @@ pub mod additional_authentication_provider {
             self.user_pool_config = input;
             self
         }
+        /// <p>Configuration for AWS Lambda function authorization.</p>
+        pub fn lambda_authorizer_config(
+            mut self,
+            input: crate::model::LambdaAuthorizerConfig,
+        ) -> Self {
+            self.lambda_authorizer_config = Some(input);
+            self
+        }
+        pub fn set_lambda_authorizer_config(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
+        ) -> Self {
+            self.lambda_authorizer_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AdditionalAuthenticationProvider`](crate::model::AdditionalAuthenticationProvider)
         pub fn build(self) -> crate::model::AdditionalAuthenticationProvider {
             crate::model::AdditionalAuthenticationProvider {
                 authentication_type: self.authentication_type,
                 open_id_connect_config: self.open_id_connect_config,
                 user_pool_config: self.user_pool_config,
+                lambda_authorizer_config: self.lambda_authorizer_config,
             }
         }
     }
@@ -1216,7 +1379,7 @@ impl AdditionalAuthenticationProvider {
 pub struct CognitoUserPoolConfig {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region in which the user pool was created.</p>
+    /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>A regular expression for validating the incoming Amazon Cognito user pool app client
     /// ID.</p>
@@ -1251,7 +1414,7 @@ pub mod cognito_user_pool_config {
             self.user_pool_id = input;
             self
         }
-        /// <p>The AWS Region in which the user pool was created.</p>
+        /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -1299,7 +1462,7 @@ pub struct OpenIdConnectConfig {
     pub issuer: std::option::Option<std::string::String>,
     /// <p>The client identifier of the Relying party at the OpenID identity provider. This
     /// identifier is typically obtained when the Relying party is registered with the OpenID
-    /// identity provider. You can specify a regular expression so the AWS AppSync can validate
+    /// identity provider. You can specify a regular expression so the AppSync can validate
     /// against multiple client identifiers at a time.</p>
     pub client_id: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds a token is valid after being issued to a user.</p>
@@ -1341,7 +1504,7 @@ pub mod open_id_connect_config {
         }
         /// <p>The client identifier of the Relying party at the OpenID identity provider. This
         /// identifier is typically obtained when the Relying party is registered with the OpenID
-        /// identity provider. You can specify a regular expression so the AWS AppSync can validate
+        /// identity provider. You can specify a regular expression so the AppSync can validate
         /// against multiple client identifiers at a time.</p>
         pub fn client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.client_id = Some(input.into());
@@ -1401,6 +1564,7 @@ pub enum AuthenticationType {
     AmazonCognitoUserPools,
     ApiKey,
     AwsIam,
+    AwsLambda,
     OpenidConnect,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1411,6 +1575,7 @@ impl std::convert::From<&str> for AuthenticationType {
             "AMAZON_COGNITO_USER_POOLS" => AuthenticationType::AmazonCognitoUserPools,
             "API_KEY" => AuthenticationType::ApiKey,
             "AWS_IAM" => AuthenticationType::AwsIam,
+            "AWS_LAMBDA" => AuthenticationType::AwsLambda,
             "OPENID_CONNECT" => AuthenticationType::OpenidConnect,
             other => AuthenticationType::Unknown(other.to_owned()),
         }
@@ -1429,6 +1594,7 @@ impl AuthenticationType {
             AuthenticationType::AmazonCognitoUserPools => "AMAZON_COGNITO_USER_POOLS",
             AuthenticationType::ApiKey => "API_KEY",
             AuthenticationType::AwsIam => "AWS_IAM",
+            AuthenticationType::AwsLambda => "AWS_LAMBDA",
             AuthenticationType::OpenidConnect => "OPENID_CONNECT",
             AuthenticationType::Unknown(s) => s.as_ref(),
         }
@@ -1438,6 +1604,7 @@ impl AuthenticationType {
             "AMAZON_COGNITO_USER_POOLS",
             "API_KEY",
             "AWS_IAM",
+            "AWS_LAMBDA",
             "OPENID_CONNECT",
         ]
     }
@@ -1454,7 +1621,7 @@ impl AsRef<str> for AuthenticationType {
 pub struct UserPoolConfig {
     /// <p>The user pool ID.</p>
     pub user_pool_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region in which the user pool was created.</p>
+    /// <p>The Amazon Web Services Region in which the user pool was created.</p>
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>The action that you want your GraphQL API to take when a request that uses Amazon
     /// Cognito user pool authentication doesn't match the Amazon Cognito user pool
@@ -1495,7 +1662,7 @@ pub mod user_pool_config {
             self.user_pool_id = input;
             self
         }
-        /// <p>The AWS Region in which the user pool was created.</p>
+        /// <p>The Amazon Web Services Region in which the user pool was created.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -1643,7 +1810,7 @@ pub struct LogConfig {
     /// </li>
     /// </ul>
     pub field_log_level: std::option::Option<crate::model::FieldLogLevel>,
-    /// <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch logs in
+    /// <p>The service role that AppSync will assume to publish to Amazon CloudWatch logs in
     /// your account. </p>
     pub cloud_watch_logs_role_arn: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to exclude sections that contain information such as headers, context, and
@@ -1720,7 +1887,7 @@ pub mod log_config {
             self.field_log_level = input;
             self
         }
-        /// <p>The service role that AWS AppSync will assume to publish to Amazon CloudWatch logs in
+        /// <p>The service role that AppSync will assume to publish to Amazon CloudWatch logs in
         /// your account. </p>
         pub fn cloud_watch_logs_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_watch_logs_role_arn = Some(input.into());
@@ -2020,7 +2187,7 @@ pub struct DataSource {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+    /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda
     /// function.</p>
     /// </li>
     /// <li>
@@ -2042,12 +2209,12 @@ pub struct DataSource {
     /// </li>
     /// </ul>
     pub r#type: std::option::Option<crate::model::DataSourceType>,
-    /// <p>The AWS IAM service role ARN for the data source. The system assumes this role when
+    /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when
     /// accessing the data source.</p>
     pub service_role_arn: std::option::Option<std::string::String>,
     /// <p>Amazon DynamoDB settings.</p>
     pub dynamodb_config: std::option::Option<crate::model::DynamodbDataSourceConfig>,
-    /// <p>AWS Lambda settings.</p>
+    /// <p>Amazon Web Services Lambda settings.</p>
     pub lambda_config: std::option::Option<crate::model::LambdaDataSourceConfig>,
     /// <p>Amazon Elasticsearch Service settings.</p>
     pub elasticsearch_config: std::option::Option<crate::model::ElasticsearchDataSourceConfig>,
@@ -2140,7 +2307,7 @@ pub mod data_source {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>AWS_LAMBDA</b>: The data source is an AWS Lambda
+        /// <b>AWS_LAMBDA</b>: The data source is an Amazon Web Services Lambda
         /// function.</p>
         /// </li>
         /// <li>
@@ -2172,7 +2339,7 @@ pub mod data_source {
             self.r#type = input;
             self
         }
-        /// <p>The AWS IAM service role ARN for the data source. The system assumes this role when
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when
         /// accessing the data source.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role_arn = Some(input.into());
@@ -2197,7 +2364,7 @@ pub mod data_source {
             self.dynamodb_config = input;
             self
         }
-        /// <p>AWS Lambda settings.</p>
+        /// <p>Amazon Web Services Lambda settings.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaDataSourceConfig) -> Self {
             self.lambda_config = Some(input);
             self
@@ -2372,7 +2539,7 @@ impl RelationalDatabaseDataSourceConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RdsHttpEndpointConfig {
-    /// <p>AWS Region for RDS HTTP endpoint.</p>
+    /// <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>Amazon RDS cluster ARN.</p>
     pub db_cluster_identifier: std::option::Option<std::string::String>,
@@ -2380,7 +2547,7 @@ pub struct RdsHttpEndpointConfig {
     pub database_name: std::option::Option<std::string::String>,
     /// <p>Logical schema name.</p>
     pub schema: std::option::Option<std::string::String>,
-    /// <p>AWS secret store ARN for database credentials.</p>
+    /// <p>Amazon Web Services secret store ARN for database credentials.</p>
     pub aws_secret_store_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RdsHttpEndpointConfig {
@@ -2407,7 +2574,7 @@ pub mod rds_http_endpoint_config {
         pub(crate) aws_secret_store_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>AWS Region for RDS HTTP endpoint.</p>
+        /// <p>Amazon Web Services Region for RDS HTTP endpoint.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -2449,7 +2616,7 @@ pub mod rds_http_endpoint_config {
             self.schema = input;
             self
         }
-        /// <p>AWS secret store ARN for database credentials.</p>
+        /// <p>Amazon Web Services secret store ARN for database credentials.</p>
         pub fn aws_secret_store_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_secret_store_arn = Some(input.into());
             self
@@ -2532,8 +2699,7 @@ impl AsRef<str> for RelationalDatabaseSourceType {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HttpDataSourceConfig {
     /// <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
-    /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AWS
-    /// AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS
+    /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS
     /// endpoints.</p>
     pub endpoint: std::option::Option<std::string::String>,
     /// <p>The authorization config in case the HTTP endpoint requires authorization.</p>
@@ -2558,8 +2724,7 @@ pub mod http_data_source_config {
     }
     impl Builder {
         /// <p>The HTTP URL endpoint. You can either specify the domain name or IP, and port
-        /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AWS
-        /// AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS
+        /// combination, and the URL scheme must be HTTP or HTTPS. If the port is not specified, AppSync uses the default port 80 for the HTTP endpoint and port 443 for HTTPS
         /// endpoints.</p>
         pub fn endpoint(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint = Some(input.into());
@@ -2610,7 +2775,7 @@ pub struct AuthorizationConfig {
     /// </li>
     /// </ul>
     pub authorization_type: std::option::Option<crate::model::AuthorizationType>,
-    /// <p>The AWS IAM settings.</p>
+    /// <p>The Identity and Access Management settings.</p>
     pub aws_iam_config: std::option::Option<crate::model::AwsIamConfig>,
 }
 impl std::fmt::Debug for AuthorizationConfig {
@@ -2650,7 +2815,7 @@ pub mod authorization_config {
             self.authorization_type = input;
             self
         }
-        /// <p>The AWS IAM settings.</p>
+        /// <p>The Identity and Access Management settings.</p>
         pub fn aws_iam_config(mut self, input: crate::model::AwsIamConfig) -> Self {
             self.aws_iam_config = Some(input);
             self
@@ -2678,13 +2843,13 @@ impl AuthorizationConfig {
     }
 }
 
-/// <p>The AWS IAM configuration.</p>
+/// <p>The Identity and Access Management configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AwsIamConfig {
-    /// <p>The signing region for AWS IAM authorization.</p>
+    /// <p>The signing region for Identity and Access Management authorization.</p>
     pub signing_region: std::option::Option<std::string::String>,
-    /// <p>The signing service name for AWS IAM authorization.</p>
+    /// <p>The signing service name for Identity and Access Management authorization.</p>
     pub signing_service_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AwsIamConfig {
@@ -2705,7 +2870,7 @@ pub mod aws_iam_config {
         pub(crate) signing_service_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The signing region for AWS IAM authorization.</p>
+        /// <p>The signing region for Identity and Access Management authorization.</p>
         pub fn signing_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_region = Some(input.into());
             self
@@ -2717,7 +2882,7 @@ pub mod aws_iam_config {
             self.signing_region = input;
             self
         }
-        /// <p>The signing service name for AWS IAM authorization.</p>
+        /// <p>The signing service name for Identity and Access Management authorization.</p>
         pub fn signing_service_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.signing_service_name = Some(input.into());
             self
@@ -2798,7 +2963,7 @@ impl AsRef<str> for AuthorizationType {
 pub struct ElasticsearchDataSourceConfig {
     /// <p>The endpoint.</p>
     pub endpoint: std::option::Option<std::string::String>,
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ElasticsearchDataSourceConfig {
@@ -2828,7 +2993,7 @@ pub mod elasticsearch_data_source_config {
             self.endpoint = input;
             self
         }
-        /// <p>The AWS Region.</p>
+        /// <p>The Amazon Web Services Region.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -2853,7 +3018,7 @@ impl ElasticsearchDataSourceConfig {
     }
 }
 
-/// <p>Describes an AWS Lambda data source configuration.</p>
+/// <p>Describes an Amazon Web Services Lambda data source configuration.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaDataSourceConfig {
@@ -2909,7 +3074,7 @@ impl LambdaDataSourceConfig {
 pub struct DynamodbDataSourceConfig {
     /// <p>The table name.</p>
     pub table_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region.</p>
+    /// <p>The Amazon Web Services Region.</p>
     pub aws_region: std::option::Option<std::string::String>,
     /// <p>Set to TRUE to use Amazon Cognito credentials with this data source.</p>
     pub use_caller_credentials: bool,
@@ -2951,7 +3116,7 @@ pub mod dynamodb_data_source_config {
             self.table_name = input;
             self
         }
-        /// <p>The AWS Region.</p>
+        /// <p>The Amazon Web Services Region.</p>
         pub fn aws_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_region = Some(input.into());
             self
@@ -3157,7 +3322,7 @@ impl AsRef<str> for DataSourceType {
 }
 
 /// <p>Describes an API key.</p>
-/// <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity
+/// <p>Customers invoke AppSync GraphQL API operations with API keys as an identity
 /// mechanism. There are two key versions:</p>
 /// <p>
 /// <b>da1</b>: This version was introduced at launch in November

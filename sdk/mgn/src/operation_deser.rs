@@ -147,6 +147,20 @@ pub fn parse_create_replication_configuration_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::CreateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::CreateReplicationConfigurationTemplateErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReplicationConfigurationTemplateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "UninitializedAccountException" => crate::error::CreateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::CreateReplicationConfigurationTemplateErrorKind::UninitializedAccountException({
             #[allow(unused_mut)]let mut tmp =
                  {
@@ -2320,6 +2334,27 @@ pub fn parse_update_replication_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateReplicationConfigurationError {
+            meta: generic,
+            kind: crate::error::UpdateReplicationConfigurationErrorKind::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateReplicationConfigurationError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         "ConflictException" => crate::error::UpdateReplicationConfigurationError {
             meta: generic,
             kind: crate::error::UpdateReplicationConfigurationErrorKind::ConflictException({
@@ -2447,6 +2482,20 @@ pub fn parse_update_replication_configuration_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "AccessDeniedException" => crate::error::UpdateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::UpdateReplicationConfigurationTemplateErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReplicationConfigurationTemplateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
         "ResourceNotFoundException" => crate::error::UpdateReplicationConfigurationTemplateError { meta: generic, kind: crate::error::UpdateReplicationConfigurationTemplateErrorKind::ResourceNotFoundException({
             #[allow(unused_mut)]let mut tmp =
                  {

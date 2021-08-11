@@ -14,7 +14,7 @@ pub struct SshPublicKey {
     /// <p>The SSH public key.</p>
     pub ssh_public_key_body: std::option::Option<std::string::String>,
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
-    /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means that the key
+    /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
     /// cannot be used.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -90,7 +90,7 @@ pub mod ssh_public_key {
             self
         }
         /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
-        /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means that the key
+        /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
         /// cannot be used.</p>
         pub fn status(mut self, input: crate::model::StatusType) -> Self {
             self.status = Some(input);
@@ -315,7 +315,7 @@ pub struct Tag {
     /// cost centers in your company. Typically, many resources have tags with the same key name but
     /// with different values.</p>
     /// <note>
-    /// <p>AWS always interprets the tag <code>Value</code> as a single string. If you need to
+    /// <p>Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to
     /// store an array, you can store comma-separated values in the string. However, you must
     /// interpret the value in your code.</p>
     /// </note>
@@ -356,7 +356,7 @@ pub mod tag {
         /// cost centers in your company. Typically, many resources have tags with the same key name but
         /// with different values.</p>
         /// <note>
-        /// <p>AWS always interprets the tag <code>Value</code> as a single string. If you need to
+        /// <p>Amazon Web Services always interprets the tag <code>Value</code> as a single string. If you need to
         /// store an array, you can store comma-separated values in the string. However, you must
         /// interpret the value in your code.</p>
         /// </note>
@@ -547,7 +547,7 @@ pub struct Role {
     /// <p>A description of the role that you provide.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the
-    /// AWS CLI, or API to assume the role can specify the duration using the optional
+    /// CLI, or API to assume the role can specify the duration using the optional
     /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI
     /// parameter.</p>
     pub max_session_duration: std::option::Option<i32>,
@@ -685,7 +685,7 @@ pub mod role {
             self
         }
         /// <p>The maximum session duration (in seconds) for the specified role. Anyone who uses the
-        /// AWS CLI, or API to assume the role can specify the duration using the optional
+        /// CLI, or API to assume the role can specify the duration using the optional
         /// <code>DurationSeconds</code> API parameter or <code>duration-seconds</code> CLI
         /// parameter.</p>
         pub fn max_session_duration(mut self, input: i32) -> Self {
@@ -784,7 +784,7 @@ pub struct RoleLastUsed {
     /// <p>This field is null if the role has not been used within the IAM tracking period. For
     /// more information about the tracking period, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period">Regions where data is tracked</a> in the <i>IAM User Guide</i>. </p>
     pub last_used_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The name of the AWS Region in which the role was last used.</p>
+    /// <p>The name of the Region in which the role was last used.</p>
     pub region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RoleLastUsed {
@@ -820,7 +820,7 @@ pub mod role_last_used {
             self.last_used_date = input;
             self
         }
-        /// <p>The name of the AWS Region in which the role was last used.</p>
+        /// <p>The name of the Region in which the role was last used.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -1015,10 +1015,10 @@ pub struct EvaluationResult {
     /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
     /// policies within the same account and specifies all resources (<code>*</code>), then the
     /// parameter is not returned.</p>
-    /// <p>When you make a cross-account request, AWS evaluates the request in the trusting
+    /// <p>When you make a cross-account request, Amazon Web Services evaluates the request in the trusting
     /// account and the trusted account. The request is allowed only if both evaluations return
     /// <code>true</code>. For more information about how policies are evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating policies within a single account</a>.</p>
-    /// <p>If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In
+    /// <p>If an Organizations SCP included in the evaluation denies access, the simulation ends. In
     /// this case, policy evaluation does not proceed any further and this parameter is not
     /// returned.</p>
     pub eval_decision_details: std::option::Option<
@@ -2082,7 +2082,7 @@ pub struct ServiceSpecificCredential {
     /// <p>The name of the service associated with the service-specific credential.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The generated user name for the service-specific credential. This value is generated by
-    /// combining the IAM user's name combined with the ID number of the AWS account, as in
+    /// combining the IAM user's name combined with the ID number of the Amazon Web Services account, as in
     /// <code>jane-at-123456789012</code>, for example. This value cannot be configured by the
     /// user.</p>
     pub service_user_name: std::option::Option<std::string::String>,
@@ -2150,7 +2150,7 @@ pub mod service_specific_credential {
             self
         }
         /// <p>The generated user name for the service-specific credential. This value is generated by
-        /// combining the IAM user's name combined with the ID number of the AWS account, as in
+        /// combining the IAM user's name combined with the ID number of the Amazon Web Services account, as in
         /// <code>jane-at-123456789012</code>, for example. This value cannot be configured by the
         /// user.</p>
         pub fn service_user_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2412,8 +2412,8 @@ pub struct User {
     /// format</a>, when the user was created.</p>
     pub create_date: std::option::Option<smithy_types::Instant>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-    /// format</a>, when the user's password was last used to sign in to an AWS website. For
-    /// a list of AWS websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+    /// format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For
+    /// a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
     /// reports</a> topic in the <i>IAM User Guide</i>. If a password is
     /// used more than once in a five-minute span, only the first use is returned in this field. If
     /// the field is null (no value), then it indicates that they never signed in with a password.
@@ -2526,8 +2526,8 @@ pub mod user {
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-        /// format</a>, when the user's password was last used to sign in to an AWS website. For
-        /// a list of AWS websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
+        /// format</a>, when the user's password was last used to sign in to an Amazon Web Services website. For
+        /// a list of Amazon Web Services websites that capture a user's last sign-in time, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential
         /// reports</a> topic in the <i>IAM User Guide</i>. If a password is
         /// used more than once in a five-minute span, only the first use is returned in this field. If
         /// the field is null (no value), then it indicates that they never signed in with a password.
@@ -2672,7 +2672,7 @@ pub struct SshPublicKeyMetadata {
     /// <p>The unique identifier for the SSH public key.</p>
     pub ssh_public_key_id: std::option::Option<std::string::String>,
     /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
-    /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means that the key
+    /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
     /// cannot be used.</p>
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
@@ -2723,7 +2723,7 @@ pub mod ssh_public_key_metadata {
             self
         }
         /// <p>The status of the SSH public key. <code>Active</code> means that the key can be used for
-        /// authentication with an AWS CodeCommit repository. <code>Inactive</code> means that the key
+        /// authentication with an CodeCommit repository. <code>Inactive</code> means that the key
         /// cannot be used.</p>
         pub fn status(mut self, input: crate::model::StatusType) -> Self {
             self.status = Some(input);
@@ -3101,12 +3101,12 @@ impl PolicyVersion {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListPoliciesGrantingServiceAccessEntry {
     /// <p>The namespace of the service that was accessed.</p>
-    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
     /// <i>Service Authorization Reference</i>. Choose the name of the service to
     /// view details for that service. In the first paragraph, find the service prefix. For
     /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-    /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub service_namespace: std::option::Option<std::string::String>,
     /// <p>The <code>PoliciesGrantingServiceAccess</code> object that contains details about the
     /// policy.</p>
@@ -3132,12 +3132,12 @@ pub mod list_policies_granting_service_access_entry {
     }
     impl Builder {
         /// <p>The namespace of the service that was accessed.</p>
-        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
         /// <i>Service Authorization Reference</i>. Choose the name of the service to
         /// view details for that service. In the first paragraph, find the service prefix. For
         /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_namespace = Some(input.into());
             self
@@ -3193,9 +3193,9 @@ pub struct PolicyGrantingServiceAccess {
     /// policies and inline policies</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub policy_type: std::option::Option<crate::model::PolicyType>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub policy_arn: std::option::Option<std::string::String>,
     /// <p>The type of entity (user or role) that used the policy to access the service to which
     /// the inline policy is attached.</p>
@@ -3256,9 +3256,9 @@ pub mod policy_granting_service_access {
             self.policy_type = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
@@ -3431,9 +3431,9 @@ pub struct Policy {
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
@@ -3528,9 +3528,9 @@ pub mod policy {
             self.policy_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -3785,9 +3785,9 @@ impl AsRef<str> for PolicyScopeType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpenIdConnectProviderListEntry {
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OpenIdConnectProviderListEntry {
@@ -3806,9 +3806,9 @@ pub mod open_id_connect_provider_list_entry {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -4510,9 +4510,9 @@ impl AsRef<str> for EntityType {
 pub struct AttachedPolicy {
     /// <p>The friendly name of the attached policy.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub policy_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AttachedPolicy {
@@ -4542,9 +4542,9 @@ pub mod attached_policy {
             self.policy_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn policy_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy_arn = Some(input.into());
             self
@@ -4569,7 +4569,7 @@ impl AttachedPolicy {
     }
 }
 
-/// <p>Contains information about an AWS access key, without its secret key.</p>
+/// <p>Contains information about an Amazon Web Services access key, without its secret key.</p>
 /// <p>This data type is used as a response element in the <a>ListAccessKeys</a>
 /// operation.</p>
 #[non_exhaustive]
@@ -4975,7 +4975,7 @@ impl ErrorDetails {
 }
 
 /// <p>An object that contains details about when the IAM entities (users or roles) were last
-/// used in an attempt to access the specified AWS service.</p>
+/// used in an attempt to access the specified Amazon Web Services service.</p>
 /// <p>This data type is a response element in the <a>GetServiceLastAccessedDetailsWithEntities</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4984,7 +4984,7 @@ pub struct EntityDetails {
     /// role).</p>
     pub entity_info: std::option::Option<crate::model::EntityInfo>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-    /// format</a>, when the authenticated entity last attempted to access AWS. AWS does
+    /// format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does
     /// not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
@@ -5022,7 +5022,7 @@ pub mod entity_details {
             self
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
-        /// format</a>, when the authenticated entity last attempted to access AWS. AWS does
+        /// format</a>, when the authenticated entity last attempted to access Amazon Web Services. Amazon Web Services does
         /// not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
@@ -5058,9 +5058,9 @@ impl EntityDetails {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EntityInfo {
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the entity (user or role).</p>
     pub name: std::option::Option<std::string::String>,
@@ -5096,9 +5096,9 @@ pub mod entity_info {
         pub(crate) path: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -5228,25 +5228,25 @@ pub struct ServiceLastAccessed {
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when an authenticated entity most recently attempted to access the
-    /// service. AWS does not report unauthenticated requests.</p>
+    /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_authenticated: std::option::Option<smithy_types::Instant>,
     /// <p>The namespace of the service in which access was attempted.</p>
-    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
     /// <i>Service Authorization Reference</i>. Choose the name of the service to
     /// view details for that service. In the first paragraph, find the service prefix. For
     /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-    /// Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub service_namespace: std::option::Option<std::string::String>,
     /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the
-    /// service. AWS does not report unauthenticated requests.</p>
+    /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_authenticated_entity: std::option::Option<std::string::String>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access
-    /// the service. AWS does not report unauthenticated requests.</p>
+    /// the service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_authenticated_region: std::option::Option<std::string::String>,
@@ -5309,7 +5309,7 @@ pub mod service_last_accessed {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when an authenticated entity most recently attempted to access the
-        /// service. AWS does not report unauthenticated requests.</p>
+        /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn last_authenticated(mut self, input: smithy_types::Instant) -> Self {
@@ -5324,12 +5324,12 @@ pub mod service_last_accessed {
             self
         }
         /// <p>The namespace of the service in which access was attempted.</p>
-        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
         /// <i>Service Authorization Reference</i>. Choose the name of the service to
         /// view details for that service. In the first paragraph, find the service prefix. For
         /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// Service Namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// Service Namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_namespace = Some(input.into());
             self
@@ -5342,7 +5342,7 @@ pub mod service_last_accessed {
             self
         }
         /// <p>The ARN of the authenticated entity (user or role) that last attempted to access the
-        /// service. AWS does not report unauthenticated requests.</p>
+        /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn last_authenticated_entity(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5357,7 +5357,7 @@ pub mod service_last_accessed {
             self
         }
         /// <p>The Region from which the authenticated entity (user or role) last attempted to access
-        /// the service. AWS does not report unauthenticated requests.</p>
+        /// the service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn last_authenticated_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5427,18 +5427,18 @@ pub struct TrackedActionLastAccessed {
     /// <p>The name of the tracked action to which access was attempted. Tracked actions are
     /// actions that report activity to IAM.</p>
     pub action_name: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub last_accessed_entity: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when an authenticated entity most recently attempted to access the
-    /// tracked service. AWS does not report unauthenticated requests.</p>
+    /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_accessed_time: std::option::Option<smithy_types::Instant>,
     /// <p>The Region from which the authenticated entity (user or role) last attempted to access
-    /// the tracked action. AWS does not report unauthenticated requests.</p>
+    /// the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no IAM entities attempted to access the service within the
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_accessed_region: std::option::Option<std::string::String>,
@@ -5475,9 +5475,9 @@ pub mod tracked_action_last_accessed {
             self.action_name = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn last_accessed_entity(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_accessed_entity = Some(input.into());
             self
@@ -5491,7 +5491,7 @@ pub mod tracked_action_last_accessed {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when an authenticated entity most recently attempted to access the
-        /// tracked service. AWS does not report unauthenticated requests.</p>
+        /// tracked service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn last_accessed_time(mut self, input: smithy_types::Instant) -> Self {
@@ -5506,7 +5506,7 @@ pub mod tracked_action_last_accessed {
             self
         }
         /// <p>The Region from which the authenticated entity (user or role) last attempted to access
-        /// the tracked action. AWS does not report unauthenticated requests.</p>
+        /// the tracked action. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no IAM entities attempted to access the service within the
         /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn last_accessed_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -5701,9 +5701,9 @@ impl ServerCertificate {
     }
 }
 
-/// <p>An object that contains details about when a principal in the reported AWS Organizations entity
-/// last attempted to access an AWS service. A principal can be an IAM user, an IAM role,
-/// or the AWS account root user within the reported Organizations entity.</p>
+/// <p>An object that contains details about when a principal in the reported Organizations entity
+/// last attempted to access an Amazon Web Services service. A principal can be an IAM user, an IAM role,
+/// or the Amazon Web Services account root user within the reported Organizations entity.</p>
 /// <p>This data type is a response element in the <a>GetOrganizationsAccessReport</a> operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5711,26 +5711,26 @@ pub struct AccessDetail {
     /// <p>The name of the service in which access was attempted.</p>
     pub service_name: std::option::Option<std::string::String>,
     /// <p>The namespace of the service in which access was attempted.</p>
-    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+    /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
     /// <i>Service Authorization Reference</i>. Choose the name of the service to
     /// view details for that service. In the first paragraph, find the service prefix. For
     /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
-    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-    /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
+    /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+    /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
     pub service_namespace: std::option::Option<std::string::String>,
     /// <p>The Region where the last service access attempt occurred.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
     /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an
-    /// authenticated principal last attempted to access the service. AWS does not report
+    /// authenticated principal last attempted to access the service. Amazon Web Services does not report
     /// unauthenticated requests.</p>
     /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the
     /// reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub entity_path: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when an authenticated principal most recently attempted to access the
-    /// service. AWS does not report unauthenticated requests.</p>
+    /// service. Amazon Web Services does not report unauthenticated requests.</p>
     /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
     /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
     pub last_authenticated_time: std::option::Option<smithy_types::Instant>,
@@ -5777,12 +5777,12 @@ pub mod access_detail {
             self
         }
         /// <p>The namespace of the service in which access was attempted.</p>
-        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for AWS services</a> in the
+        /// <p>To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions, resources, and condition keys for Amazon Web Services services</a> in the
         /// <i>Service Authorization Reference</i>. Choose the name of the service to
         /// view details for that service. In the first paragraph, find the service prefix. For
         /// example, <code>(service prefix: a4b)</code>. For more information about service namespaces,
-        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
-        /// service namespaces</a> in the <i>AWS General Reference</i>.</p>
+        /// see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon Web Services
+        /// service namespaces</a> in the <i>Amazon Web Services General Reference</i>.</p>
         pub fn service_namespace(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_namespace = Some(input.into());
             self
@@ -5806,7 +5806,7 @@ pub mod access_detail {
             self
         }
         /// <p>The path of the Organizations entity (root, organizational unit, or account) from which an
-        /// authenticated principal last attempted to access the service. AWS does not report
+        /// authenticated principal last attempted to access the service. Amazon Web Services does not report
         /// unauthenticated requests.</p>
         /// <p>This field is null if no principals (IAM users, IAM roles, or root users) in the
         /// reported Organizations entity attempted to access the service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
@@ -5820,7 +5820,7 @@ pub mod access_detail {
         }
         /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
         /// format</a>, when an authenticated principal most recently attempted to access the
-        /// service. AWS does not report unauthenticated requests.</p>
+        /// service. Amazon Web Services does not report unauthenticated requests.</p>
         /// <p>This field is null if no principals in the reported Organizations entity attempted to access the
         /// service within the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">reporting period</a>.</p>
         pub fn last_authenticated_time(mut self, input: smithy_types::Instant) -> Self {
@@ -5930,8 +5930,7 @@ impl AsRef<str> for SortKeyType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LoginProfile {
-    /// <p>The name of the user, which can be used for signing in to the AWS Management
-    /// Console.</p>
+    /// <p>The name of the user, which can be used for signing in to the Management Console.</p>
     pub user_name: std::option::Option<std::string::String>,
     /// <p>The date when the password for the user was created.</p>
     pub create_date: std::option::Option<smithy_types::Instant>,
@@ -5958,8 +5957,7 @@ pub mod login_profile {
         pub(crate) password_reset_required: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the user, which can be used for signing in to the AWS Management
-        /// Console.</p>
+        /// <p>The name of the user, which can be used for signing in to the Management Console.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.user_name = Some(input.into());
             self
@@ -6425,9 +6423,9 @@ pub struct ManagedPolicyDetail {
     /// <p>For more information about IDs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
     /// <i>IAM User Guide</i>.</p>
     pub policy_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The path to the policy.</p>
     /// <p>For more information about paths, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
@@ -6524,9 +6522,9 @@ pub mod managed_policy_detail {
             self.policy_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -6689,9 +6687,9 @@ pub struct RoleDetail {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
     /// identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub role_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the role was created.</p>
@@ -6795,9 +6793,9 @@ pub mod role_detail {
             self.role_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -7031,9 +7029,9 @@ pub struct GroupDetail {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
     /// identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub group_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the group was created.</p>
@@ -7103,9 +7101,9 @@ pub mod group_detail {
             self.group_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -7192,9 +7190,9 @@ pub struct UserDetail {
     /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
     /// identifiers</a> in the <i>IAM User Guide</i>.</p>
     pub user_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+    /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
     /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-    /// the <i>AWS General Reference</i>. </p>
+    /// the <i>Amazon Web Services General Reference</i>. </p>
     pub arn: std::option::Option<std::string::String>,
     /// <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
     /// format</a>, when the user was created.</p>
@@ -7279,9 +7277,9 @@ pub mod user_detail {
             self.user_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+        /// <p>The Amazon Resource Name (ARN). ARNs are unique identifiers for Amazon Web Services resources.</p>
         /// <p>For more information about ARNs, go to <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in
-        /// the <i>AWS General Reference</i>. </p>
+        /// the <i>Amazon Web Services General Reference</i>. </p>
         pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.arn = Some(input.into());
             self
@@ -7399,7 +7397,7 @@ impl UserDetail {
     }
 }
 
-/// <p>Contains information about the last time an AWS access key was used since IAM began
+/// <p>Contains information about the last time an Amazon Web Services access key was used since IAM began
 /// tracking this information on April 22, 2015.</p>
 /// <p>This data type is used as a response element in the <a>GetAccessKeyLastUsed</a> operation.</p>
 #[non_exhaustive]
@@ -7421,7 +7419,7 @@ pub struct AccessKeyLastUsed {
     /// </li>
     /// </ul>
     pub last_used_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The name of the AWS service with which this access key was most recently used. The value
+    /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
     /// of this field is "N/A" in the following situations:</p>
     /// <ul>
     /// <li>
@@ -7436,7 +7434,7 @@ pub struct AccessKeyLastUsed {
     /// </li>
     /// </ul>
     pub service_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region where this access key was most recently used. The value for this field is
+    /// <p>The Region where this access key was most recently used. The value for this field is
     /// "N/A" in the following situations:</p>
     /// <ul>
     /// <li>
@@ -7450,7 +7448,7 @@ pub struct AccessKeyLastUsed {
     /// <p>There is no sign-in data associated with the user.</p>
     /// </li>
     /// </ul>
-    /// <p>For more information about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
+    /// <p>For more information about Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
     /// General Reference.</p>
     pub region: std::option::Option<std::string::String>,
 }
@@ -7500,7 +7498,7 @@ pub mod access_key_last_used {
             self.last_used_date = input;
             self
         }
-        /// <p>The name of the AWS service with which this access key was most recently used. The value
+        /// <p>The name of the Amazon Web Services service with which this access key was most recently used. The value
         /// of this field is "N/A" in the following situations:</p>
         /// <ul>
         /// <li>
@@ -7522,7 +7520,7 @@ pub mod access_key_last_used {
             self.service_name = input;
             self
         }
-        /// <p>The AWS Region where this access key was most recently used. The value for this field is
+        /// <p>The Region where this access key was most recently used. The value for this field is
         /// "N/A" in the following situations:</p>
         /// <ul>
         /// <li>
@@ -7536,7 +7534,7 @@ pub mod access_key_last_used {
         /// <p>There is no sign-in data associated with the user.</p>
         /// </li>
         /// </ul>
-        /// <p>For more information about AWS Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
+        /// <p>For more information about Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and endpoints</a> in the Amazon Web Services
         /// General Reference.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
@@ -7616,7 +7614,7 @@ impl AsRef<str> for ReportStateType {
     }
 }
 
-/// <p>Contains information about an AWS access key.</p>
+/// <p>Contains information about an Amazon Web Services access key.</p>
 /// <p> This data type is used as a response element in the <a>CreateAccessKey</a>
 /// and <a>ListAccessKeys</a> operations. </p>
 /// <note>

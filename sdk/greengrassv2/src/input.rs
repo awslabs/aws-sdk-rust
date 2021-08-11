@@ -30,7 +30,7 @@ pub mod batch_associate_client_device_with_core_device_input {
             self.entries = input;
             self
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -86,28 +86,28 @@ impl BatchAssociateClientDeviceWithCoreDeviceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -209,7 +209,7 @@ pub mod batch_disassociate_client_device_from_core_device_input {
             self.entries = input;
             self
         }
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -265,28 +265,28 @@ impl BatchDisassociateClientDeviceFromCoreDeviceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -416,28 +416,28 @@ impl CancelDeploymentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -519,6 +519,7 @@ pub mod create_component_version_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The recipe to use to create the component. The recipe defines the component's metadata,
@@ -564,6 +565,19 @@ pub mod create_component_version_input {
             self.tags = input;
             self
         }
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+        /// idempotent requests for up to 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateComponentVersionInput`](crate::input::CreateComponentVersionInput)
         pub fn build(
             self,
@@ -575,6 +589,7 @@ pub mod create_component_version_input {
                 inline_recipe: self.inline_recipe,
                 lambda_function: self.lambda_function,
                 tags: self.tags,
+                client_token: self.client_token,
             })
         }
     }
@@ -587,7 +602,7 @@ impl CreateComponentVersionInput {
     /// Consumes the builder and constructs an Operation<[`CreateComponentVersion`](crate::operation::CreateComponentVersion)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         smithy_http::operation::Operation<
@@ -597,6 +612,9 @@ impl CreateComponentVersionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            if self.client_token.is_none() {
+                self.client_token = Some(_config.make_token.make_idempotency_token());
+            }
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_create_component_version(&self)
                 .map_err(|err| {
@@ -606,28 +624,28 @@ impl CreateComponentVersionInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -699,9 +717,10 @@ pub mod create_deployment_input {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        pub(crate) client_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
@@ -711,10 +730,6 @@ pub mod create_deployment_input {
             self
         }
         /// <p>The name of the deployment.</p>
-        /// <p>You can create deployments without names. If you create a deployment without a name, the
-        /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-        /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-        /// deployment target.</p>
         pub fn deployment_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.deployment_name = Some(input.into());
             self
@@ -796,6 +811,19 @@ pub mod create_deployment_input {
             self.tags = input;
             self
         }
+        /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+        /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+        /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+        /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+        /// idempotent requests for up to 8 hours.</p>
+        pub fn client_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.client_token = Some(input.into());
+            self
+        }
+        pub fn set_client_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.client_token = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDeploymentInput`](crate::input::CreateDeploymentInput)
         pub fn build(
             self,
@@ -810,6 +838,7 @@ pub mod create_deployment_input {
                 iot_job_configuration: self.iot_job_configuration,
                 deployment_policies: self.deployment_policies,
                 tags: self.tags,
+                client_token: self.client_token,
             })
         }
     }
@@ -822,7 +851,7 @@ impl CreateDeploymentInput {
     /// Consumes the builder and constructs an Operation<[`CreateDeployment`](crate::operation::CreateDeployment)>
     #[allow(clippy::let_and_return)]
     pub fn make_operation(
-        &self,
+        mut self,
         _config: &crate::config::Config,
     ) -> std::result::Result<
         smithy_http::operation::Operation<
@@ -832,6 +861,9 @@ impl CreateDeploymentInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            if self.client_token.is_none() {
+                self.client_token = Some(_config.make_token.make_idempotency_token());
+            }
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_create_deployment(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
@@ -840,28 +872,28 @@ impl CreateDeploymentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -966,28 +998,28 @@ impl DeleteComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1063,7 +1095,7 @@ pub mod delete_core_device_input {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -1112,28 +1144,28 @@ impl DeleteCoreDeviceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1257,28 +1289,28 @@ impl DescribeComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1416,28 +1448,28 @@ impl GetComponentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1589,28 +1621,28 @@ impl GetComponentVersionArtifactInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1706,7 +1738,7 @@ pub mod get_core_device_input {
         pub(crate) core_device_thing_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -1753,28 +1785,28 @@ impl GetCoreDeviceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -1902,28 +1934,28 @@ impl GetDeploymentInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2006,7 +2038,7 @@ pub mod list_client_devices_associated_with_core_device_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -2079,28 +2111,28 @@ impl ListClientDevicesAssociatedWithCoreDeviceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2268,28 +2300,28 @@ impl ListComponentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2434,28 +2466,28 @@ impl ListComponentVersionsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2552,7 +2584,7 @@ pub mod list_core_devices_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT thing group by which to filter. If you specify this parameter, the
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
         /// list includes only core devices that are members of this thing group.</p>
         pub fn thing_group_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.thing_group_arn = Some(input.into());
@@ -2570,11 +2602,11 @@ pub mod list_core_devices_input {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+        /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+        /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
         /// on the core device.</p>
         /// </li>
         /// </ul>
@@ -2647,28 +2679,28 @@ impl ListCoreDevicesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2751,7 +2783,7 @@ pub mod list_deployments_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+        /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
         pub fn target_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_arn = Some(input.into());
             self
@@ -2843,28 +2875,28 @@ impl ListDeploymentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -2946,7 +2978,7 @@ pub mod list_effective_deployments_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -3016,28 +3048,28 @@ impl ListEffectiveDeploymentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3133,7 +3165,7 @@ pub mod list_installed_components_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+        /// <p>The name of the core device. This is also the name of the IoT thing.</p>
         pub fn core_device_thing_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.core_device_thing_name = Some(input.into());
             self
@@ -3203,28 +3235,28 @@ impl ListInstalledComponentsInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3364,28 +3396,28 @@ impl ListTagsForResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3535,28 +3567,28 @@ impl ResolveComponentCandidatesInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3688,28 +3720,28 @@ impl TagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3845,28 +3877,28 @@ impl UntagResourceInput {
             #[allow(unused_mut)]
             let mut request =
                 smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
-            request
-                .config_mut()
-                .insert(aws_http::user_agent::AwsUserAgent::new_from_environment(
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
-                ));
+                ),
+            );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
-            request.config_mut().insert(signing_config);
+            request.properties_mut().insert(signing_config);
             request
-                .config_mut()
+                .properties_mut()
                 .insert(aws_types::SigningService::from_static(
                     _config.signing_service(),
                 ));
             aws_endpoint::set_endpoint_resolver(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.endpoint_resolver.clone(),
             );
             if let Some(region) = &_config.region {
-                request.config_mut().insert(region.clone());
+                request.properties_mut().insert(region.clone());
             }
             aws_auth::provider::set_provider(
-                &mut request.config_mut(),
+                &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
             let op = smithy_http::operation::Operation::new(
@@ -3967,7 +3999,7 @@ pub struct TagResourceInput {
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -4014,7 +4046,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInstalledComponentsInput {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: std::option::Option<i32>,
@@ -4034,7 +4066,7 @@ impl std::fmt::Debug for ListInstalledComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListEffectiveDeploymentsInput {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: std::option::Option<i32>,
@@ -4054,7 +4086,7 @@ impl std::fmt::Debug for ListEffectiveDeploymentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDeploymentsInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The filter for the list of deployments. Choose one of the following options:</p>
     /// <ul>
@@ -4090,7 +4122,7 @@ impl std::fmt::Debug for ListDeploymentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCoreDevicesInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the AWS IoT thing group by which to filter. If you specify this parameter, the
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the IoT thing group by which to filter. If you specify this parameter, the
     /// list includes only core devices that are members of this thing group.</p>
     pub thing_group_arn: std::option::Option<std::string::String>,
     /// <p>The core device status by which to filter. If you specify this parameter, the list
@@ -4098,11 +4130,11 @@ pub struct ListCoreDevicesInput {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>HEALTHY</code> – The AWS IoT Greengrass Core software and all components run on the core device without issue.</p>
+    /// <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on the core device without issue.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>UNHEALTHY</code> – The AWS IoT Greengrass Core software or a component is in a failed state
+    /// <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a failed state
     /// on the core device.</p>
     /// </li>
     /// </ul>
@@ -4168,7 +4200,7 @@ impl std::fmt::Debug for ListComponentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListClientDevicesAssociatedWithCoreDeviceInput {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
     /// <p>The maximum number of results to be returned per paginated request.</p>
     pub max_results: std::option::Option<i32>,
@@ -4202,7 +4234,7 @@ impl std::fmt::Debug for GetDeploymentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCoreDeviceInput {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCoreDeviceInput {
@@ -4269,7 +4301,7 @@ impl std::fmt::Debug for DescribeComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteCoreDeviceInput {
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteCoreDeviceInput {
@@ -4297,13 +4329,9 @@ impl std::fmt::Debug for DeleteComponentInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateDeploymentInput {
-    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target AWS IoT thing or thing group.</p>
+    /// <p>The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a> of the target IoT thing or thing group.</p>
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>The name of the deployment.</p>
-    /// <p>You can create deployments without names. If you create a deployment without a name, the
-    /// AWS IoT Greengrass V2 console shows the deployment name as <code><targetType>:<targetName></code>,
-    /// where <code>targetType</code> and <code>targetName</code> are the type and name of the
-    /// deployment target.</p>
     pub deployment_name: std::option::Option<std::string::String>,
     /// <p>The components to deploy. This is a dictionary, where each key is the name of a component,
     /// and each key's value is the version and configuration to deploy for that component.</p>
@@ -4321,9 +4349,15 @@ pub struct CreateDeploymentInput {
     pub deployment_policies: std::option::Option<crate::model::DeploymentPolicies>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+    /// idempotent requests for up to 8 hours.</p>
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDeploymentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4334,6 +4368,7 @@ impl std::fmt::Debug for CreateDeploymentInput {
         formatter.field("iot_job_configuration", &self.iot_job_configuration);
         formatter.field("deployment_policies", &self.deployment_policies);
         formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -4350,9 +4385,15 @@ pub struct CreateComponentVersionInput {
     pub lambda_function: std::option::Option<crate::model::LambdaFunctionRecipeSource>,
     /// <p>A list of key-value pairs that contain metadata for the resource. For more
     /// information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag your
-    /// resources</a> in the <i>AWS IoT Greengrass V2 Developer Guide</i>.</p>
+    /// resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    /// <p>A unique, case-sensitive identifier that you can provide to ensure that the request is idempotent.
+    /// Idempotency means that the request is successfully processed only once, even if you send the request multiple times.
+    /// When a request succeeds, and you specify the same client token for subsequent successful requests, the IoT Greengrass V2 service
+    /// returns the successful response that it caches from the previous request. IoT Greengrass V2 caches successful responses for
+    /// idempotent requests for up to 8 hours.</p>
+    pub client_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateComponentVersionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4360,6 +4401,7 @@ impl std::fmt::Debug for CreateComponentVersionInput {
         formatter.field("inline_recipe", &self.inline_recipe);
         formatter.field("lambda_function", &self.lambda_function);
         formatter.field("tags", &self.tags);
+        formatter.field("client_token", &self.client_token);
         formatter.finish()
     }
 }
@@ -4385,7 +4427,7 @@ pub struct BatchDisassociateClientDeviceFromCoreDeviceInput {
     pub entries: std::option::Option<
         std::vec::Vec<crate::model::DisassociateClientDeviceFromCoreDeviceEntry>,
     >,
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchDisassociateClientDeviceFromCoreDeviceInput {
@@ -4403,7 +4445,7 @@ pub struct BatchAssociateClientDeviceWithCoreDeviceInput {
     /// <p>The list of client devices to associate.</p>
     pub entries:
         std::option::Option<std::vec::Vec<crate::model::AssociateClientDeviceWithCoreDeviceEntry>>,
-    /// <p>The name of the core device. This is also the name of the AWS IoT thing.</p>
+    /// <p>The name of the core device. This is also the name of the IoT thing.</p>
     pub core_device_thing_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchAssociateClientDeviceWithCoreDeviceInput {

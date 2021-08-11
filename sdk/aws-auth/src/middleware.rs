@@ -73,8 +73,8 @@ impl AsyncMapRequest for CredentialsStage {
     fn apply(&self, mut request: Request) -> BoxFuture<Result<Request, Self::Error>> {
         Box::pin(async move {
             let provider = {
-                let config = request.config();
-                let credential_provider = config
+                let properties = request.properties();
+                let credential_provider = properties
                     .get::<CredentialsProvider>()
                     .ok_or(CredentialsStageError::MissingCredentialsProvider)?;
                 // we need to enable releasing the config lock so that we don't hold the config
@@ -83,7 +83,7 @@ impl AsyncMapRequest for CredentialsStage {
             };
             let cred_future = { provider.provide_credentials() };
             let credentials = cred_future.await?;
-            request.config_mut().insert(credentials);
+            request.properties_mut().insert(credentials);
             Ok(request)
         })
     }
@@ -112,7 +112,7 @@ mod tests {
     async fn async_map_request_apply_populates_credentials() {
         let mut req = operation::Request::new(http::Request::new(SdkBody::from("some body")));
         set_provider(
-            &mut req.config_mut(),
+            &mut req.properties_mut(),
             Arc::new(Credentials::from_keys("test", "test", None)),
         );
         let req = CredentialsStage::new()
@@ -120,7 +120,7 @@ mod tests {
             .await
             .expect("credential provider is in the bag; should succeed");
         assert!(
-            req.config().get::<Credentials>().is_some(),
+            req.properties().get::<Credentials>().is_some(),
             "it should set credentials on the request config"
         );
     }

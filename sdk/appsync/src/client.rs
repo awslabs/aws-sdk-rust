@@ -471,7 +471,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_type(input);
             self
         }
-        /// <p>The AWS IAM service role ARN for the data source. The system assumes this role when
+        /// <p>The Identity and Access Management service role ARN for the data source. The system assumes this role when
         /// accessing the data source.</p>
         pub fn service_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role_arn(input);
@@ -496,7 +496,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dynamodb_config(input);
             self
         }
-        /// <p>AWS Lambda settings.</p>
+        /// <p>Amazon Web Services Lambda settings.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaDataSourceConfig) -> Self {
             self.inner = self.inner.lambda_config(input);
             self
@@ -727,7 +727,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_log_config(input);
             self
         }
-        /// <p>The authentication type: API key, AWS IAM, OIDC, or Amazon Cognito user pools.</p>
+        /// <p>The authentication type: API key, Identity and Access Management, OIDC, or Amazon Cognito user pools.</p>
         pub fn authentication_type(mut self, input: crate::model::AuthenticationType) -> Self {
             self.inner = self.inner.authentication_type(input);
             self
@@ -807,6 +807,21 @@ pub mod fluent_builders {
         }
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_xray_enabled(input);
+            self
+        }
+        /// <p>Configuration for AWS Lambda function authorization.</p>
+        pub fn lambda_authorizer_config(
+            mut self,
+            input: crate::model::LambdaAuthorizerConfig,
+        ) -> Self {
+            self.inner = self.inner.lambda_authorizer_config(input);
+            self
+        }
+        pub fn set_lambda_authorizer_config(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_lambda_authorizer_config(input);
             self
         }
     }
@@ -2783,7 +2798,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dynamodb_config(input);
             self
         }
-        /// <p>The new AWS Lambda configuration.</p>
+        /// <p>The new Amazon Web Services Lambda configuration.</p>
         pub fn lambda_config(mut self, input: crate::model::LambdaDataSourceConfig) -> Self {
             self.inner = self.inner.lambda_config(input);
             self
@@ -3095,6 +3110,21 @@ pub mod fluent_builders {
         }
         pub fn set_xray_enabled(mut self, input: std::option::Option<bool>) -> Self {
             self.inner = self.inner.set_xray_enabled(input);
+            self
+        }
+        /// <p>Configuration for AWS Lambda function authorization.</p>
+        pub fn lambda_authorizer_config(
+            mut self,
+            input: crate::model::LambdaAuthorizerConfig,
+        ) -> Self {
+            self.inner = self.inner.lambda_authorizer_config(input);
+            self
+        }
+        pub fn set_lambda_authorizer_config(
+            mut self,
+            input: std::option::Option<crate::model::LambdaAuthorizerConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_lambda_authorizer_config(input);
             self
         }
     }

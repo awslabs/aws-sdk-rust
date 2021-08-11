@@ -899,8 +899,7 @@ impl GetStorageLensConfigurationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicAccessBlockOutput {
-    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this AWS
-    /// account.</p>
+    /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this account.</p>
     pub public_access_block_configuration:
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
 }
@@ -924,8 +923,7 @@ pub mod get_public_access_block_output {
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     }
     impl Builder {
-        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this AWS
-        /// account.</p>
+        /// <p>The <code>PublicAccessBlock</code> configuration currently in effect for this account.</p>
         pub fn public_access_block_configuration(
             mut self,
             input: crate::model::PublicAccessBlockConfiguration,
@@ -1579,7 +1577,7 @@ pub struct GetAccessPointOutput {
     pub network_origin: std::option::Option<crate::model::NetworkOrigin>,
     /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
     /// <note>
-    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS services.</p>
+    /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
     /// </note>
     pub vpc_configuration: std::option::Option<crate::model::VpcConfiguration>,
     /// <p>The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon S3 account.
@@ -1590,6 +1588,13 @@ pub struct GetAccessPointOutput {
         std::option::Option<crate::model::PublicAccessBlockConfiguration>,
     /// <p>The date and time when the specified access point was created.</p>
     pub creation_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The name or alias of the access point.</p>
+    pub alias: std::option::Option<std::string::String>,
+    /// <p>The ARN of the access point.</p>
+    pub access_point_arn: std::option::Option<std::string::String>,
+    /// <p>The VPC endpoint for the access point.</p>
+    pub endpoints:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
 impl std::fmt::Debug for GetAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1603,6 +1608,9 @@ impl std::fmt::Debug for GetAccessPointOutput {
             &self.public_access_block_configuration,
         );
         formatter.field("creation_date", &self.creation_date);
+        formatter.field("alias", &self.alias);
+        formatter.field("access_point_arn", &self.access_point_arn);
+        formatter.field("endpoints", &self.endpoints);
         formatter.finish()
     }
 }
@@ -1619,6 +1627,11 @@ pub mod get_access_point_output {
         pub(crate) public_access_block_configuration:
             std::option::Option<crate::model::PublicAccessBlockConfiguration>,
         pub(crate) creation_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) alias: std::option::Option<std::string::String>,
+        pub(crate) access_point_arn: std::option::Option<std::string::String>,
+        pub(crate) endpoints: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
     }
     impl Builder {
         /// <p>The name of the specified access point.</p>
@@ -1659,7 +1672,7 @@ pub mod get_access_point_output {
         }
         /// <p>Contains the virtual private cloud (VPC) configuration for the specified access point.</p>
         /// <note>
-        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other AWS services.</p>
+        /// <p>This element is empty if this access point is an Amazon S3 on Outposts access point that is used by other Amazon Web Services.</p>
         /// </note>
         pub fn vpc_configuration(mut self, input: crate::model::VpcConfiguration) -> Self {
             self.vpc_configuration = Some(input);
@@ -1702,6 +1715,46 @@ pub mod get_access_point_output {
             self.creation_date = input;
             self
         }
+        /// <p>The name or alias of the access point.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
+        /// <p>The ARN of the access point.</p>
+        pub fn access_point_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.access_point_arn = Some(input.into());
+            self
+        }
+        pub fn set_access_point_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.access_point_arn = input;
+            self
+        }
+        pub fn endpoints(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.endpoints.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.endpoints = Some(hash_map);
+            self
+        }
+        pub fn set_endpoints(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.endpoints = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccessPointOutput`](crate::output::GetAccessPointOutput)
         pub fn build(self) -> crate::output::GetAccessPointOutput {
             crate::output::GetAccessPointOutput {
@@ -1711,6 +1764,9 @@ pub mod get_access_point_output {
                 vpc_configuration: self.vpc_configuration,
                 public_access_block_configuration: self.public_access_block_configuration,
                 creation_date: self.creation_date,
+                alias: self.alias,
+                access_point_arn: self.access_point_arn,
+                endpoints: self.endpoints,
             }
         }
     }
@@ -2170,7 +2226,7 @@ pub struct CreateBucketOutput {
     pub location: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-    /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+    /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
     pub bucket_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateBucketOutput {
@@ -2202,7 +2258,7 @@ pub mod create_bucket_output {
         }
         /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
         /// <p>For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the x-amz-outpost-id as well.</p>
-        /// <p>For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
+        /// <p>For using this parameter with S3 on Outposts with the Amazon Web Services SDK and CLI, you must  specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:<Region>:<account-id>:outpost/<outpost-id>/bucket/<my-bucket-name></code>. For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL encoded.  </p>
         pub fn bucket_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket_arn = Some(input.into());
             self
@@ -2290,11 +2346,14 @@ pub struct CreateAccessPointOutput {
     /// <p>This is only supported by Amazon S3 on Outposts.</p>
     /// </note>
     pub access_point_arn: std::option::Option<std::string::String>,
+    /// <p>The name or alias of the access point.</p>
+    pub alias: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAccessPointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("CreateAccessPointOutput");
         formatter.field("access_point_arn", &self.access_point_arn);
+        formatter.field("alias", &self.alias);
         formatter.finish()
     }
 }
@@ -2305,6 +2364,7 @@ pub mod create_access_point_output {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) access_point_arn: std::option::Option<std::string::String>,
+        pub(crate) alias: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The ARN of the access point.</p>
@@ -2322,10 +2382,20 @@ pub mod create_access_point_output {
             self.access_point_arn = input;
             self
         }
+        /// <p>The name or alias of the access point.</p>
+        pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.alias = Some(input.into());
+            self
+        }
+        pub fn set_alias(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.alias = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAccessPointOutput`](crate::output::CreateAccessPointOutput)
         pub fn build(self) -> crate::output::CreateAccessPointOutput {
             crate::output::CreateAccessPointOutput {
                 access_point_arn: self.access_point_arn,
+                alias: self.alias,
             }
         }
     }

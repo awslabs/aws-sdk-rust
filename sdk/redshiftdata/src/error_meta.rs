@@ -3,6 +3,7 @@
 #[derive(std::fmt::Debug)]
 pub enum Error {
     ActiveStatementsExceededException(crate::error::ActiveStatementsExceededException),
+    BatchExecuteStatementException(crate::error::BatchExecuteStatementException),
     ExecuteStatementException(crate::error::ExecuteStatementException),
     InternalServerException(crate::error::InternalServerException),
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
@@ -13,11 +14,33 @@ impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match self {
             Error::ActiveStatementsExceededException(inner) => inner.fmt(f),
+            Error::BatchExecuteStatementException(inner) => inner.fmt(f),
             Error::ExecuteStatementException(inner) => inner.fmt(f),
             Error::InternalServerException(inner) => inner.fmt(f),
             Error::ResourceNotFoundException(inner) => inner.fmt(f),
             Error::ValidationException(inner) => inner.fmt(f),
             Error::Unhandled(inner) => inner.fmt(f),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::BatchExecuteStatementError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::BatchExecuteStatementErrorKind::ActiveStatementsExceededException(
+                    inner,
+                ) => Error::ActiveStatementsExceededException(inner),
+                crate::error::BatchExecuteStatementErrorKind::BatchExecuteStatementException(
+                    inner,
+                ) => Error::BatchExecuteStatementException(inner),
+                crate::error::BatchExecuteStatementErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
+                }
+                crate::error::BatchExecuteStatementErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
         }
     }
 }
@@ -30,6 +53,9 @@ impl From<smithy_http::result::SdkError<crate::error::CancelStatementError>> for
                 }
                 crate::error::CancelStatementErrorKind::ResourceNotFoundException(inner) => {
                     Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CancelStatementErrorKind::ValidationException(inner) => {
+                    Error::ValidationException(inner)
                 }
                 crate::error::CancelStatementErrorKind::Unhandled(inner) => Error::Unhandled(inner),
             },

@@ -228,6 +228,16 @@ pub fn serialize_operation_create_channel_moderator(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_create_media_capture_pipeline(
+    input: &crate::input::CreateMediaCapturePipelineInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_media_capture_pipeline_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_create_meeting(
     input: &crate::input::CreateMeetingInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -567,6 +577,16 @@ pub fn serialize_operation_send_channel_message(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_send_channel_message_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_start_meeting_transcription(
+    input: &crate::input::StartMeetingTranscriptionInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_start_meeting_transcription_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

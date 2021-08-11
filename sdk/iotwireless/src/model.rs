@@ -163,7 +163,7 @@ impl SidewalkUpdateAccount {
     }
 }
 
-/// <p>The log option for wireless gateways. Can be used to set log level for a specific type of wireless gateway.</p>
+/// <p>The log options for wireless gateways and can be used to set log levels for a specific type of wireless gateway.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessGatewayLogOption {
@@ -249,7 +249,8 @@ impl WirelessGatewayLogOption {
     }
 }
 
-/// <p>The log option for a wireless gateway event. Can be used to set log level for a specific wireless gateway event. For a LoRaWAN gateway, the possible events for a log message are: CUPS_Request, Certificate.</p>
+/// <p>The log options for a wireless gateway event and can be used to set log levels for a specific wireless gateway event.</p>
+/// <p>For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code> and <code>Certificate</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessGatewayEventLogOption {
@@ -466,7 +467,7 @@ impl AsRef<str> for WirelessGatewayType {
     }
 }
 
-/// <p>The log option for wireless devices. Can be used to set log level for a specific type of wireless device.</p>
+/// <p>The log options for wireless devices and can be used to set log levels for a specific type of wireless device.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessDeviceLogOption {
@@ -552,7 +553,10 @@ impl WirelessDeviceLogOption {
     }
 }
 
-/// <p>The log option for a wireless device event. Can be used to set log level for a specific wireless device event. For a LoRaWAN device, the possible events for a log messsage are: Join, Rejoin, Downlink_Data, Uplink_Data. For a Sidewalk device, the possible events for a log message are: Registration, Downlink_Data, Uplink_Data.</p>
+/// <p>The log options for a wireless device event and can be used to set log levels for a specific wireless device event.</p>
+/// <p>For a LoRaWAN device, possible events for a log messsage are: <code>Join</code>, <code>Rejoin</code>,
+/// <code>Downlink_Data</code>, and <code>Uplink_Data</code>. For a Sidewalk device, possible events for a log message are
+/// <code>Registration</code>, <code>Downlink_Data</code>, and <code>Uplink_Data</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WirelessDeviceEventLogOption {
@@ -916,7 +920,7 @@ impl WirelessMetadata {
 pub struct SidewalkSendDataToDevice {
     /// <p>The sequence number.</p>
     pub seq: std::option::Option<i32>,
-    /// <p>Sidewalk device message type.</p>
+    /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
     pub message_type: std::option::Option<crate::model::MessageType>,
 }
 impl std::fmt::Debug for SidewalkSendDataToDevice {
@@ -946,7 +950,7 @@ pub mod sidewalk_send_data_to_device {
             self.seq = input;
             self
         }
-        /// <p>Sidewalk device message type.</p>
+        /// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
             self.message_type = Some(input);
             self
@@ -974,7 +978,7 @@ impl SidewalkSendDataToDevice {
     }
 }
 
-/// <p>Sidewalk device message type.</p>
+/// <p>Sidewalk device message type. Default value is <code>CUSTOM_COMMAND_ID_NOTIFY</code>.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -3235,6 +3239,8 @@ impl LoRaWanGatewayMetadata {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SidewalkDevice {
+    /// <p>The Sidewalk Amazon ID.</p>
+    pub amazon_id: std::option::Option<std::string::String>,
     /// <p>The sidewalk device identification.</p>
     pub sidewalk_id: std::option::Option<std::string::String>,
     /// <p>The Sidewalk manufacturing series number.</p>
@@ -3245,6 +3251,7 @@ pub struct SidewalkDevice {
 impl std::fmt::Debug for SidewalkDevice {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("SidewalkDevice");
+        formatter.field("amazon_id", &self.amazon_id);
         formatter.field("sidewalk_id", &self.sidewalk_id);
         formatter.field("sidewalk_manufacturing_sn", &self.sidewalk_manufacturing_sn);
         formatter.field("device_certificates", &self.device_certificates);
@@ -3257,12 +3264,22 @@ pub mod sidewalk_device {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) amazon_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_id: std::option::Option<std::string::String>,
         pub(crate) sidewalk_manufacturing_sn: std::option::Option<std::string::String>,
         pub(crate) device_certificates:
             std::option::Option<std::vec::Vec<crate::model::CertificateList>>,
     }
     impl Builder {
+        /// <p>The Sidewalk Amazon ID.</p>
+        pub fn amazon_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.amazon_id = Some(input.into());
+            self
+        }
+        pub fn set_amazon_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.amazon_id = input;
+            self
+        }
         /// <p>The sidewalk device identification.</p>
         pub fn sidewalk_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sidewalk_id = Some(input.into());
@@ -3303,6 +3320,7 @@ pub mod sidewalk_device {
         /// Consumes the builder and constructs a [`SidewalkDevice`](crate::model::SidewalkDevice)
         pub fn build(self) -> crate::model::SidewalkDevice {
             crate::model::SidewalkDevice {
+                amazon_id: self.amazon_id,
                 sidewalk_id: self.sidewalk_id,
                 sidewalk_manufacturing_sn: self.sidewalk_manufacturing_sn,
                 device_certificates: self.device_certificates,
@@ -3892,6 +3910,7 @@ impl OtaaV11 {
 )]
 pub enum WirelessDeviceIdType {
     DevEui,
+    SidewalkManufacturingSn,
     ThingName,
     WirelessDeviceId,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -3901,6 +3920,7 @@ impl std::convert::From<&str> for WirelessDeviceIdType {
     fn from(s: &str) -> Self {
         match s {
             "DevEui" => WirelessDeviceIdType::DevEui,
+            "SidewalkManufacturingSn" => WirelessDeviceIdType::SidewalkManufacturingSn,
             "ThingName" => WirelessDeviceIdType::ThingName,
             "WirelessDeviceId" => WirelessDeviceIdType::WirelessDeviceId,
             other => WirelessDeviceIdType::Unknown(other.to_owned()),
@@ -3918,13 +3938,19 @@ impl WirelessDeviceIdType {
     pub fn as_str(&self) -> &str {
         match self {
             WirelessDeviceIdType::DevEui => "DevEui",
+            WirelessDeviceIdType::SidewalkManufacturingSn => "SidewalkManufacturingSn",
             WirelessDeviceIdType::ThingName => "ThingName",
             WirelessDeviceIdType::WirelessDeviceId => "WirelessDeviceId",
             WirelessDeviceIdType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["DevEui", "ThingName", "WirelessDeviceId"]
+        &[
+            "DevEui",
+            "SidewalkManufacturingSn",
+            "ThingName",
+            "WirelessDeviceId",
+        ]
     }
 }
 impl AsRef<str> for WirelessDeviceIdType {

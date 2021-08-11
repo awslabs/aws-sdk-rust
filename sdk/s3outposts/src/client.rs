@@ -81,7 +81,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the AWS Outpost. </p>
+        /// <p>The ID of the AWS Outposts. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input);
             self
@@ -90,7 +90,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_outpost_id(input);
             self
         }
-        /// <p>The ID of the subnet in the selected VPC.</p>
+        /// <p>The ID of the subnet in the selected VPC. The endpoint subnet
+        /// must belong to the Outpost that has the Amazon S3 on Outposts provisioned.</p>
         pub fn subnet_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subnet_id(input);
             self
@@ -109,6 +110,33 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_security_group_id(input);
+            self
+        }
+        /// <p>The type of access for the on-premise network connectivity for the
+        /// Outpost endpoint. To access the endpoint from an on-premises network, you must
+        /// specify the access type and provide the customer owned IPv4 pool.</p>
+        pub fn access_type(mut self, input: crate::model::EndpointAccessType) -> Self {
+            self.inner = self.inner.access_type(input);
+            self
+        }
+        pub fn set_access_type(
+            mut self,
+            input: std::option::Option<crate::model::EndpointAccessType>,
+        ) -> Self {
+            self.inner = self.inner.set_access_type(input);
+            self
+        }
+        /// <p>The ID of the customer-owned IPv4 pool for the endpoint.
+        /// IP addresses will be allocated from this pool for the endpoint.</p>
+        pub fn customer_owned_ipv4_pool(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.customer_owned_ipv4_pool(input);
+            self
+        }
+        pub fn set_customer_owned_ipv4_pool(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_customer_owned_ipv4_pool(input);
             self
         }
     }
@@ -143,7 +171,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The ID of the end point.</p>
+        /// <p>The ID of the endpoint.</p>
         pub fn endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.endpoint_id(input);
             self
@@ -152,7 +180,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_endpoint_id(input);
             self
         }
-        /// <p>The ID of the AWS Outpost. </p>
+        /// <p>The ID of the AWS Outposts. </p>
         pub fn outpost_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.outpost_id(input);
             self

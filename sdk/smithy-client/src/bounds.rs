@@ -62,7 +62,7 @@ where
 pub trait SmithyMiddlewareService:
     Service<
     smithy_http::operation::Request,
-    Response = http::Response<SdkBody>,
+    Response = smithy_http::operation::Response,
     Error = smithy_http_tower::SendOperationError,
     Future = <Self as SmithyMiddlewareService>::Future,
 >
@@ -77,7 +77,7 @@ impl<T> SmithyMiddlewareService for T
 where
     T: Service<
         smithy_http::operation::Request,
-        Response = http::Response<SdkBody>,
+        Response = smithy_http::operation::Response,
         Error = smithy_http_tower::SendOperationError,
     >,
     T::Future: Send + 'static,
@@ -119,7 +119,7 @@ pub trait SmithyRetryPolicy<O, T, E, Retry>:
     /// Forwarding type to `O` for bound inference.
     ///
     /// See module-level docs for details.
-    type O: ParseHttpResponse<SdkBody, Output = Result<T, Self::E>> + Send + Sync + Clone + 'static;
+    type O: ParseHttpResponse<Output = Result<T, Self::E>> + Send + Sync + Clone + 'static;
     /// Forwarding type to `E` for bound inference.
     ///
     /// See module-level docs for details.
@@ -134,7 +134,7 @@ pub trait SmithyRetryPolicy<O, T, E, Retry>:
 impl<R, O, T, E, Retry> SmithyRetryPolicy<O, T, E, Retry> for R
 where
     R: tower::retry::Policy<Operation<O, Retry>, SdkSuccess<T>, SdkError<E>> + Clone,
-    O: ParseHttpResponse<SdkBody, Output = Result<T, E>> + Send + Sync + Clone + 'static,
+    O: ParseHttpResponse<Output = Result<T, E>> + Send + Sync + Clone + 'static,
     E: Error + ProvideErrorKind,
     Retry: ClassifyResponse<SdkSuccess<T>, SdkError<E>>,
 {

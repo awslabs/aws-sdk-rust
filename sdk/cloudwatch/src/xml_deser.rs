@@ -4071,6 +4071,19 @@ pub fn deser_structure_metric_data_query(
                 builder = builder.set_period(var_179);
             }
             ,
+            s if s.matches("AccountId") /* AccountId com.amazonaws.cloudwatch#MetricDataQuery$AccountId */ =>  {
+                let var_180 =
+                    Some(
+                        Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            .into()
+                        )
+                        ?
+                    )
+                ;
+                builder = builder.set_account_id(var_180);
+            }
+            ,
             _ => {}
         }
     }
@@ -4104,7 +4117,7 @@ pub fn deser_structure_insight_rule_contributor_datapoint(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Timestamp") /* Timestamp com.amazonaws.cloudwatch#InsightRuleContributorDatapoint$Timestamp */ =>  {
-                let var_180 =
+                let var_181 =
                     Some(
                         smithy_types::Instant::from_str(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4114,11 +4127,11 @@ pub fn deser_structure_insight_rule_contributor_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_timestamp(var_180);
+                builder = builder.set_timestamp(var_181);
             }
             ,
             s if s.matches("ApproximateValue") /* ApproximateValue com.amazonaws.cloudwatch#InsightRuleContributorDatapoint$ApproximateValue */ =>  {
-                let var_181 =
+                let var_182 =
                     Some(
                          {
                             <f64 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4129,7 +4142,7 @@ pub fn deser_structure_insight_rule_contributor_datapoint(
                         ?
                     )
                 ;
-                builder = builder.set_approximate_value(var_181);
+                builder = builder.set_approximate_value(var_182);
             }
             ,
             _ => {}
@@ -4185,17 +4198,17 @@ pub fn deser_structure_metric_stat(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("Metric") /* Metric com.amazonaws.cloudwatch#MetricStat$Metric */ =>  {
-                let var_182 =
+                let var_183 =
                     Some(
                         crate::xml_deser::deser_structure_metric(&mut tag)
                         ?
                     )
                 ;
-                builder = builder.set_metric(var_182);
+                builder = builder.set_metric(var_183);
             }
             ,
             s if s.matches("Period") /* Period com.amazonaws.cloudwatch#MetricStat$Period */ =>  {
-                let var_183 =
+                let var_184 =
                     Some(
                          {
                             <i32 as smithy_types::primitive::Parse>::parse_smithy_primitive(
@@ -4206,11 +4219,11 @@ pub fn deser_structure_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_period(var_183);
+                builder = builder.set_period(var_184);
             }
             ,
             s if s.matches("Stat") /* Stat com.amazonaws.cloudwatch#MetricStat$Stat */ =>  {
-                let var_184 =
+                let var_185 =
                     Some(
                         Result::<std::string::String, smithy_xml::decode::XmlError>::Ok(
                             smithy_xml::decode::try_data(&mut tag)?.as_ref()
@@ -4219,11 +4232,11 @@ pub fn deser_structure_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_stat(var_184);
+                builder = builder.set_stat(var_185);
             }
             ,
             s if s.matches("Unit") /* Unit com.amazonaws.cloudwatch#MetricStat$Unit */ =>  {
-                let var_185 =
+                let var_186 =
                     Some(
                         Result::<crate::model::StandardUnit, smithy_xml::decode::XmlError>::Ok(
                             crate::model::StandardUnit::from(
@@ -4233,7 +4246,7 @@ pub fn deser_structure_metric_stat(
                         ?
                     )
                 ;
-                builder = builder.set_unit(var_185);
+                builder = builder.set_unit(var_186);
             }
             ,
             _ => {}
@@ -4250,20 +4263,6 @@ pub fn deser_structure_range(
     while let Some(mut tag) = decoder.next_tag() {
         match tag.start_el() {
             s if s.matches("StartTime") /* StartTime com.amazonaws.cloudwatch#Range$StartTime */ =>  {
-                let var_186 =
-                    Some(
-                        smithy_types::Instant::from_str(
-                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
-                            , smithy_types::instant::Format::DateTime
-                        )
-                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
-                        ?
-                    )
-                ;
-                builder = builder.set_start_time(var_186);
-            }
-            ,
-            s if s.matches("EndTime") /* EndTime com.amazonaws.cloudwatch#Range$EndTime */ =>  {
                 let var_187 =
                     Some(
                         smithy_types::Instant::from_str(
@@ -4274,7 +4273,21 @@ pub fn deser_structure_range(
                         ?
                     )
                 ;
-                builder = builder.set_end_time(var_187);
+                builder = builder.set_start_time(var_187);
+            }
+            ,
+            s if s.matches("EndTime") /* EndTime com.amazonaws.cloudwatch#Range$EndTime */ =>  {
+                let var_188 =
+                    Some(
+                        smithy_types::Instant::from_str(
+                            smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                            , smithy_types::instant::Format::DateTime
+                        )
+                        .map_err(|_|smithy_xml::decode::XmlError::custom("expected (timestamp: `com.amazonaws.cloudwatch#Timestamp`)"))
+                        ?
+                    )
+                ;
+                builder = builder.set_end_time(var_188);
             }
             ,
             _ => {}

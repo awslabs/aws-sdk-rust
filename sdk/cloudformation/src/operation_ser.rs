@@ -495,67 +495,72 @@ pub fn serialize_operation_create_stack_set(
         scope_173.string(var_174);
     }
     #[allow(unused_mut)]
-    let mut scope_175 = writer.prefix("Parameters");
-    if let Some(var_176) = &input.parameters {
-        let mut list_178 = scope_175.start_list(false, None);
-        for item_177 in var_176 {
+    let mut scope_175 = writer.prefix("StackId");
+    if let Some(var_176) = &input.stack_id {
+        scope_175.string(var_176);
+    }
+    #[allow(unused_mut)]
+    let mut scope_177 = writer.prefix("Parameters");
+    if let Some(var_178) = &input.parameters {
+        let mut list_180 = scope_177.start_list(false, None);
+        for item_179 in var_178 {
             #[allow(unused_mut)]
-            let mut entry_179 = list_178.entry();
-            crate::query_ser::serialize_structure_parameter(entry_179, item_177);
+            let mut entry_181 = list_180.entry();
+            crate::query_ser::serialize_structure_parameter(entry_181, item_179);
         }
-        list_178.finish();
+        list_180.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_180 = writer.prefix("Capabilities");
-    if let Some(var_181) = &input.capabilities {
-        let mut list_183 = scope_180.start_list(false, None);
-        for item_182 in var_181 {
+    let mut scope_182 = writer.prefix("Capabilities");
+    if let Some(var_183) = &input.capabilities {
+        let mut list_185 = scope_182.start_list(false, None);
+        for item_184 in var_183 {
             #[allow(unused_mut)]
-            let mut entry_184 = list_183.entry();
-            entry_184.string(item_182.as_str());
+            let mut entry_186 = list_185.entry();
+            entry_186.string(item_184.as_str());
         }
-        list_183.finish();
+        list_185.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_185 = writer.prefix("Tags");
-    if let Some(var_186) = &input.tags {
-        let mut list_188 = scope_185.start_list(false, None);
-        for item_187 in var_186 {
+    let mut scope_187 = writer.prefix("Tags");
+    if let Some(var_188) = &input.tags {
+        let mut list_190 = scope_187.start_list(false, None);
+        for item_189 in var_188 {
             #[allow(unused_mut)]
-            let mut entry_189 = list_188.entry();
-            crate::query_ser::serialize_structure_tag(entry_189, item_187);
+            let mut entry_191 = list_190.entry();
+            crate::query_ser::serialize_structure_tag(entry_191, item_189);
         }
-        list_188.finish();
+        list_190.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_190 = writer.prefix("AdministrationRoleARN");
-    if let Some(var_191) = &input.administration_role_arn {
-        scope_190.string(var_191);
-    }
-    #[allow(unused_mut)]
-    let mut scope_192 = writer.prefix("ExecutionRoleName");
-    if let Some(var_193) = &input.execution_role_name {
+    let mut scope_192 = writer.prefix("AdministrationRoleARN");
+    if let Some(var_193) = &input.administration_role_arn {
         scope_192.string(var_193);
     }
     #[allow(unused_mut)]
-    let mut scope_194 = writer.prefix("PermissionModel");
-    if let Some(var_195) = &input.permission_model {
-        scope_194.string(var_195.as_str());
+    let mut scope_194 = writer.prefix("ExecutionRoleName");
+    if let Some(var_195) = &input.execution_role_name {
+        scope_194.string(var_195);
     }
     #[allow(unused_mut)]
-    let mut scope_196 = writer.prefix("AutoDeployment");
-    if let Some(var_197) = &input.auto_deployment {
-        crate::query_ser::serialize_structure_auto_deployment(scope_196, var_197);
+    let mut scope_196 = writer.prefix("PermissionModel");
+    if let Some(var_197) = &input.permission_model {
+        scope_196.string(var_197.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_198 = writer.prefix("CallAs");
-    if let Some(var_199) = &input.call_as {
-        scope_198.string(var_199.as_str());
+    let mut scope_198 = writer.prefix("AutoDeployment");
+    if let Some(var_199) = &input.auto_deployment {
+        crate::query_ser::serialize_structure_auto_deployment(scope_198, var_199);
     }
     #[allow(unused_mut)]
-    let mut scope_200 = writer.prefix("ClientRequestToken");
-    if let Some(var_201) = &input.client_request_token {
-        scope_200.string(var_201);
+    let mut scope_200 = writer.prefix("CallAs");
+    if let Some(var_201) = &input.call_as {
+        scope_200.string(var_201.as_str());
+    }
+    #[allow(unused_mut)]
+    let mut scope_202 = writer.prefix("ClientRequestToken");
+    if let Some(var_203) = &input.client_request_token {
+        scope_202.string(var_203);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -568,19 +573,19 @@ pub fn serialize_operation_deactivate_type(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeactivateType", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_202 = writer.prefix("TypeName");
-    if let Some(var_203) = &input.type_name {
-        scope_202.string(var_203);
+    let mut scope_204 = writer.prefix("TypeName");
+    if let Some(var_205) = &input.type_name {
+        scope_204.string(var_205);
     }
     #[allow(unused_mut)]
-    let mut scope_204 = writer.prefix("Type");
-    if let Some(var_205) = &input.r#type {
-        scope_204.string(var_205.as_str());
+    let mut scope_206 = writer.prefix("Type");
+    if let Some(var_207) = &input.r#type {
+        scope_206.string(var_207.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_206 = writer.prefix("Arn");
-    if let Some(var_207) = &input.arn {
-        scope_206.string(var_207);
+    let mut scope_208 = writer.prefix("Arn");
+    if let Some(var_209) = &input.arn {
+        scope_208.string(var_209);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -593,14 +598,14 @@ pub fn serialize_operation_delete_change_set(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeleteChangeSet", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_208 = writer.prefix("ChangeSetName");
-    if let Some(var_209) = &input.change_set_name {
-        scope_208.string(var_209);
+    let mut scope_210 = writer.prefix("ChangeSetName");
+    if let Some(var_211) = &input.change_set_name {
+        scope_210.string(var_211);
     }
     #[allow(unused_mut)]
-    let mut scope_210 = writer.prefix("StackName");
-    if let Some(var_211) = &input.stack_name {
-        scope_210.string(var_211);
+    let mut scope_212 = writer.prefix("StackName");
+    if let Some(var_213) = &input.stack_name {
+        scope_212.string(var_213);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -613,30 +618,30 @@ pub fn serialize_operation_delete_stack(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeleteStack", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_212 = writer.prefix("StackName");
-    if let Some(var_213) = &input.stack_name {
-        scope_212.string(var_213);
+    let mut scope_214 = writer.prefix("StackName");
+    if let Some(var_215) = &input.stack_name {
+        scope_214.string(var_215);
     }
     #[allow(unused_mut)]
-    let mut scope_214 = writer.prefix("RetainResources");
-    if let Some(var_215) = &input.retain_resources {
-        let mut list_217 = scope_214.start_list(false, None);
-        for item_216 in var_215 {
+    let mut scope_216 = writer.prefix("RetainResources");
+    if let Some(var_217) = &input.retain_resources {
+        let mut list_219 = scope_216.start_list(false, None);
+        for item_218 in var_217 {
             #[allow(unused_mut)]
-            let mut entry_218 = list_217.entry();
-            entry_218.string(item_216);
+            let mut entry_220 = list_219.entry();
+            entry_220.string(item_218);
         }
-        list_217.finish();
+        list_219.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_219 = writer.prefix("RoleARN");
-    if let Some(var_220) = &input.role_arn {
-        scope_219.string(var_220);
-    }
-    #[allow(unused_mut)]
-    let mut scope_221 = writer.prefix("ClientRequestToken");
-    if let Some(var_222) = &input.client_request_token {
+    let mut scope_221 = writer.prefix("RoleARN");
+    if let Some(var_222) = &input.role_arn {
         scope_221.string(var_222);
+    }
+    #[allow(unused_mut)]
+    let mut scope_223 = writer.prefix("ClientRequestToken");
+    if let Some(var_224) = &input.client_request_token {
+        scope_223.string(var_224);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -649,56 +654,56 @@ pub fn serialize_operation_delete_stack_instances(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeleteStackInstances", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_223 = writer.prefix("StackSetName");
-    if let Some(var_224) = &input.stack_set_name {
-        scope_223.string(var_224);
+    let mut scope_225 = writer.prefix("StackSetName");
+    if let Some(var_226) = &input.stack_set_name {
+        scope_225.string(var_226);
     }
     #[allow(unused_mut)]
-    let mut scope_225 = writer.prefix("Accounts");
-    if let Some(var_226) = &input.accounts {
-        let mut list_228 = scope_225.start_list(false, None);
-        for item_227 in var_226 {
+    let mut scope_227 = writer.prefix("Accounts");
+    if let Some(var_228) = &input.accounts {
+        let mut list_230 = scope_227.start_list(false, None);
+        for item_229 in var_228 {
             #[allow(unused_mut)]
-            let mut entry_229 = list_228.entry();
-            entry_229.string(item_227);
+            let mut entry_231 = list_230.entry();
+            entry_231.string(item_229);
         }
-        list_228.finish();
+        list_230.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_230 = writer.prefix("DeploymentTargets");
-    if let Some(var_231) = &input.deployment_targets {
-        crate::query_ser::serialize_structure_deployment_targets(scope_230, var_231);
+    let mut scope_232 = writer.prefix("DeploymentTargets");
+    if let Some(var_233) = &input.deployment_targets {
+        crate::query_ser::serialize_structure_deployment_targets(scope_232, var_233);
     }
     #[allow(unused_mut)]
-    let mut scope_232 = writer.prefix("Regions");
-    if let Some(var_233) = &input.regions {
-        let mut list_235 = scope_232.start_list(false, None);
-        for item_234 in var_233 {
+    let mut scope_234 = writer.prefix("Regions");
+    if let Some(var_235) = &input.regions {
+        let mut list_237 = scope_234.start_list(false, None);
+        for item_236 in var_235 {
             #[allow(unused_mut)]
-            let mut entry_236 = list_235.entry();
-            entry_236.string(item_234);
+            let mut entry_238 = list_237.entry();
+            entry_238.string(item_236);
         }
-        list_235.finish();
+        list_237.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_237 = writer.prefix("OperationPreferences");
-    if let Some(var_238) = &input.operation_preferences {
-        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_237, var_238);
+    let mut scope_239 = writer.prefix("OperationPreferences");
+    if let Some(var_240) = &input.operation_preferences {
+        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_239, var_240);
     }
     #[allow(unused_mut)]
-    let mut scope_239 = writer.prefix("RetainStacks");
+    let mut scope_241 = writer.prefix("RetainStacks");
     {
-        scope_239.boolean(input.retain_stacks);
+        scope_241.boolean(input.retain_stacks);
     }
     #[allow(unused_mut)]
-    let mut scope_240 = writer.prefix("OperationId");
-    if let Some(var_241) = &input.operation_id {
-        scope_240.string(var_241);
+    let mut scope_242 = writer.prefix("OperationId");
+    if let Some(var_243) = &input.operation_id {
+        scope_242.string(var_243);
     }
     #[allow(unused_mut)]
-    let mut scope_242 = writer.prefix("CallAs");
-    if let Some(var_243) = &input.call_as {
-        scope_242.string(var_243.as_str());
+    let mut scope_244 = writer.prefix("CallAs");
+    if let Some(var_245) = &input.call_as {
+        scope_244.string(var_245.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -711,14 +716,14 @@ pub fn serialize_operation_delete_stack_set(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeleteStackSet", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_244 = writer.prefix("StackSetName");
-    if let Some(var_245) = &input.stack_set_name {
-        scope_244.string(var_245);
+    let mut scope_246 = writer.prefix("StackSetName");
+    if let Some(var_247) = &input.stack_set_name {
+        scope_246.string(var_247);
     }
     #[allow(unused_mut)]
-    let mut scope_246 = writer.prefix("CallAs");
-    if let Some(var_247) = &input.call_as {
-        scope_246.string(var_247.as_str());
+    let mut scope_248 = writer.prefix("CallAs");
+    if let Some(var_249) = &input.call_as {
+        scope_248.string(var_249.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -731,24 +736,24 @@ pub fn serialize_operation_deregister_type(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DeregisterType", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_248 = writer.prefix("Arn");
-    if let Some(var_249) = &input.arn {
-        scope_248.string(var_249);
+    let mut scope_250 = writer.prefix("Arn");
+    if let Some(var_251) = &input.arn {
+        scope_250.string(var_251);
     }
     #[allow(unused_mut)]
-    let mut scope_250 = writer.prefix("Type");
-    if let Some(var_251) = &input.r#type {
-        scope_250.string(var_251.as_str());
+    let mut scope_252 = writer.prefix("Type");
+    if let Some(var_253) = &input.r#type {
+        scope_252.string(var_253.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_252 = writer.prefix("TypeName");
-    if let Some(var_253) = &input.type_name {
-        scope_252.string(var_253);
-    }
-    #[allow(unused_mut)]
-    let mut scope_254 = writer.prefix("VersionId");
-    if let Some(var_255) = &input.version_id {
+    let mut scope_254 = writer.prefix("TypeName");
+    if let Some(var_255) = &input.type_name {
         scope_254.string(var_255);
+    }
+    #[allow(unused_mut)]
+    let mut scope_256 = writer.prefix("VersionId");
+    if let Some(var_257) = &input.version_id {
+        scope_256.string(var_257);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -762,9 +767,9 @@ pub fn serialize_operation_describe_account_limits(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeAccountLimits", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_256 = writer.prefix("NextToken");
-    if let Some(var_257) = &input.next_token {
-        scope_256.string(var_257);
+    let mut scope_258 = writer.prefix("NextToken");
+    if let Some(var_259) = &input.next_token {
+        scope_258.string(var_259);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -777,19 +782,19 @@ pub fn serialize_operation_describe_change_set(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeChangeSet", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_258 = writer.prefix("ChangeSetName");
-    if let Some(var_259) = &input.change_set_name {
-        scope_258.string(var_259);
-    }
-    #[allow(unused_mut)]
-    let mut scope_260 = writer.prefix("StackName");
-    if let Some(var_261) = &input.stack_name {
+    let mut scope_260 = writer.prefix("ChangeSetName");
+    if let Some(var_261) = &input.change_set_name {
         scope_260.string(var_261);
     }
     #[allow(unused_mut)]
-    let mut scope_262 = writer.prefix("NextToken");
-    if let Some(var_263) = &input.next_token {
+    let mut scope_262 = writer.prefix("StackName");
+    if let Some(var_263) = &input.stack_name {
         scope_262.string(var_263);
+    }
+    #[allow(unused_mut)]
+    let mut scope_264 = writer.prefix("NextToken");
+    if let Some(var_265) = &input.next_token {
+        scope_264.string(var_265);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -802,9 +807,9 @@ pub fn serialize_operation_describe_publisher(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribePublisher", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_264 = writer.prefix("PublisherId");
-    if let Some(var_265) = &input.publisher_id {
-        scope_264.string(var_265);
+    let mut scope_266 = writer.prefix("PublisherId");
+    if let Some(var_267) = &input.publisher_id {
+        scope_266.string(var_267);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -818,9 +823,9 @@ pub fn serialize_operation_describe_stack_drift_detection_status(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeStackDriftDetectionStatus", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_266 = writer.prefix("StackDriftDetectionId");
-    if let Some(var_267) = &input.stack_drift_detection_id {
-        scope_266.string(var_267);
+    let mut scope_268 = writer.prefix("StackDriftDetectionId");
+    if let Some(var_269) = &input.stack_drift_detection_id {
+        scope_268.string(var_269);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -833,14 +838,14 @@ pub fn serialize_operation_describe_stack_events(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeStackEvents", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_268 = writer.prefix("StackName");
-    if let Some(var_269) = &input.stack_name {
-        scope_268.string(var_269);
+    let mut scope_270 = writer.prefix("StackName");
+    if let Some(var_271) = &input.stack_name {
+        scope_270.string(var_271);
     }
     #[allow(unused_mut)]
-    let mut scope_270 = writer.prefix("NextToken");
-    if let Some(var_271) = &input.next_token {
-        scope_270.string(var_271);
+    let mut scope_272 = writer.prefix("NextToken");
+    if let Some(var_273) = &input.next_token {
+        scope_272.string(var_273);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -854,24 +859,24 @@ pub fn serialize_operation_describe_stack_instance(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeStackInstance", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_272 = writer.prefix("StackSetName");
-    if let Some(var_273) = &input.stack_set_name {
-        scope_272.string(var_273);
-    }
-    #[allow(unused_mut)]
-    let mut scope_274 = writer.prefix("StackInstanceAccount");
-    if let Some(var_275) = &input.stack_instance_account {
+    let mut scope_274 = writer.prefix("StackSetName");
+    if let Some(var_275) = &input.stack_set_name {
         scope_274.string(var_275);
     }
     #[allow(unused_mut)]
-    let mut scope_276 = writer.prefix("StackInstanceRegion");
-    if let Some(var_277) = &input.stack_instance_region {
+    let mut scope_276 = writer.prefix("StackInstanceAccount");
+    if let Some(var_277) = &input.stack_instance_account {
         scope_276.string(var_277);
     }
     #[allow(unused_mut)]
-    let mut scope_278 = writer.prefix("CallAs");
-    if let Some(var_279) = &input.call_as {
-        scope_278.string(var_279.as_str());
+    let mut scope_278 = writer.prefix("StackInstanceRegion");
+    if let Some(var_279) = &input.stack_instance_region {
+        scope_278.string(var_279);
+    }
+    #[allow(unused_mut)]
+    let mut scope_280 = writer.prefix("CallAs");
+    if let Some(var_281) = &input.call_as {
+        scope_280.string(var_281.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -885,14 +890,14 @@ pub fn serialize_operation_describe_stack_resource(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeStackResource", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_280 = writer.prefix("StackName");
-    if let Some(var_281) = &input.stack_name {
-        scope_280.string(var_281);
+    let mut scope_282 = writer.prefix("StackName");
+    if let Some(var_283) = &input.stack_name {
+        scope_282.string(var_283);
     }
     #[allow(unused_mut)]
-    let mut scope_282 = writer.prefix("LogicalResourceId");
-    if let Some(var_283) = &input.logical_resource_id {
-        scope_282.string(var_283);
+    let mut scope_284 = writer.prefix("LogicalResourceId");
+    if let Some(var_285) = &input.logical_resource_id {
+        scope_284.string(var_285);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -906,32 +911,32 @@ pub fn serialize_operation_describe_stack_resource_drifts(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeStackResourceDrifts", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_284 = writer.prefix("StackName");
-    if let Some(var_285) = &input.stack_name {
-        scope_284.string(var_285);
+    let mut scope_286 = writer.prefix("StackName");
+    if let Some(var_287) = &input.stack_name {
+        scope_286.string(var_287);
     }
     #[allow(unused_mut)]
-    let mut scope_286 = writer.prefix("StackResourceDriftStatusFilters");
-    if let Some(var_287) = &input.stack_resource_drift_status_filters {
-        let mut list_289 = scope_286.start_list(false, None);
-        for item_288 in var_287 {
+    let mut scope_288 = writer.prefix("StackResourceDriftStatusFilters");
+    if let Some(var_289) = &input.stack_resource_drift_status_filters {
+        let mut list_291 = scope_288.start_list(false, None);
+        for item_290 in var_289 {
             #[allow(unused_mut)]
-            let mut entry_290 = list_289.entry();
-            entry_290.string(item_288.as_str());
+            let mut entry_292 = list_291.entry();
+            entry_292.string(item_290.as_str());
         }
-        list_289.finish();
+        list_291.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_291 = writer.prefix("NextToken");
-    if let Some(var_292) = &input.next_token {
-        scope_291.string(var_292);
+    let mut scope_293 = writer.prefix("NextToken");
+    if let Some(var_294) = &input.next_token {
+        scope_293.string(var_294);
     }
     #[allow(unused_mut)]
-    let mut scope_293 = writer.prefix("MaxResults");
-    if let Some(var_294) = &input.max_results {
-        scope_293.number(
+    let mut scope_295 = writer.prefix("MaxResults");
+    if let Some(var_296) = &input.max_results {
+        scope_295.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_294).into()),
+            smithy_types::Number::NegInt((*var_296).into()),
         );
     }
     writer.finish();
@@ -946,19 +951,19 @@ pub fn serialize_operation_describe_stack_resources(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeStackResources", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_295 = writer.prefix("StackName");
-    if let Some(var_296) = &input.stack_name {
-        scope_295.string(var_296);
-    }
-    #[allow(unused_mut)]
-    let mut scope_297 = writer.prefix("LogicalResourceId");
-    if let Some(var_298) = &input.logical_resource_id {
+    let mut scope_297 = writer.prefix("StackName");
+    if let Some(var_298) = &input.stack_name {
         scope_297.string(var_298);
     }
     #[allow(unused_mut)]
-    let mut scope_299 = writer.prefix("PhysicalResourceId");
-    if let Some(var_300) = &input.physical_resource_id {
+    let mut scope_299 = writer.prefix("LogicalResourceId");
+    if let Some(var_300) = &input.logical_resource_id {
         scope_299.string(var_300);
+    }
+    #[allow(unused_mut)]
+    let mut scope_301 = writer.prefix("PhysicalResourceId");
+    if let Some(var_302) = &input.physical_resource_id {
+        scope_301.string(var_302);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -971,14 +976,14 @@ pub fn serialize_operation_describe_stacks(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeStacks", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_301 = writer.prefix("StackName");
-    if let Some(var_302) = &input.stack_name {
-        scope_301.string(var_302);
+    let mut scope_303 = writer.prefix("StackName");
+    if let Some(var_304) = &input.stack_name {
+        scope_303.string(var_304);
     }
     #[allow(unused_mut)]
-    let mut scope_303 = writer.prefix("NextToken");
-    if let Some(var_304) = &input.next_token {
-        scope_303.string(var_304);
+    let mut scope_305 = writer.prefix("NextToken");
+    if let Some(var_306) = &input.next_token {
+        scope_305.string(var_306);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -991,14 +996,14 @@ pub fn serialize_operation_describe_stack_set(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeStackSet", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_305 = writer.prefix("StackSetName");
-    if let Some(var_306) = &input.stack_set_name {
-        scope_305.string(var_306);
+    let mut scope_307 = writer.prefix("StackSetName");
+    if let Some(var_308) = &input.stack_set_name {
+        scope_307.string(var_308);
     }
     #[allow(unused_mut)]
-    let mut scope_307 = writer.prefix("CallAs");
-    if let Some(var_308) = &input.call_as {
-        scope_307.string(var_308.as_str());
+    let mut scope_309 = writer.prefix("CallAs");
+    if let Some(var_310) = &input.call_as {
+        scope_309.string(var_310.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1012,19 +1017,19 @@ pub fn serialize_operation_describe_stack_set_operation(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeStackSetOperation", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_309 = writer.prefix("StackSetName");
-    if let Some(var_310) = &input.stack_set_name {
-        scope_309.string(var_310);
-    }
-    #[allow(unused_mut)]
-    let mut scope_311 = writer.prefix("OperationId");
-    if let Some(var_312) = &input.operation_id {
+    let mut scope_311 = writer.prefix("StackSetName");
+    if let Some(var_312) = &input.stack_set_name {
         scope_311.string(var_312);
     }
     #[allow(unused_mut)]
-    let mut scope_313 = writer.prefix("CallAs");
-    if let Some(var_314) = &input.call_as {
-        scope_313.string(var_314.as_str());
+    let mut scope_313 = writer.prefix("OperationId");
+    if let Some(var_314) = &input.operation_id {
+        scope_313.string(var_314);
+    }
+    #[allow(unused_mut)]
+    let mut scope_315 = writer.prefix("CallAs");
+    if let Some(var_316) = &input.call_as {
+        scope_315.string(var_316.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1037,34 +1042,34 @@ pub fn serialize_operation_describe_type(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DescribeType", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_315 = writer.prefix("Type");
-    if let Some(var_316) = &input.r#type {
-        scope_315.string(var_316.as_str());
+    let mut scope_317 = writer.prefix("Type");
+    if let Some(var_318) = &input.r#type {
+        scope_317.string(var_318.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_317 = writer.prefix("TypeName");
-    if let Some(var_318) = &input.type_name {
-        scope_317.string(var_318);
-    }
-    #[allow(unused_mut)]
-    let mut scope_319 = writer.prefix("Arn");
-    if let Some(var_320) = &input.arn {
+    let mut scope_319 = writer.prefix("TypeName");
+    if let Some(var_320) = &input.type_name {
         scope_319.string(var_320);
     }
     #[allow(unused_mut)]
-    let mut scope_321 = writer.prefix("VersionId");
-    if let Some(var_322) = &input.version_id {
+    let mut scope_321 = writer.prefix("Arn");
+    if let Some(var_322) = &input.arn {
         scope_321.string(var_322);
     }
     #[allow(unused_mut)]
-    let mut scope_323 = writer.prefix("PublisherId");
-    if let Some(var_324) = &input.publisher_id {
+    let mut scope_323 = writer.prefix("VersionId");
+    if let Some(var_324) = &input.version_id {
         scope_323.string(var_324);
     }
     #[allow(unused_mut)]
-    let mut scope_325 = writer.prefix("PublicVersionNumber");
-    if let Some(var_326) = &input.public_version_number {
+    let mut scope_325 = writer.prefix("PublisherId");
+    if let Some(var_326) = &input.publisher_id {
         scope_325.string(var_326);
+    }
+    #[allow(unused_mut)]
+    let mut scope_327 = writer.prefix("PublicVersionNumber");
+    if let Some(var_328) = &input.public_version_number {
+        scope_327.string(var_328);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1078,9 +1083,9 @@ pub fn serialize_operation_describe_type_registration(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DescribeTypeRegistration", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_327 = writer.prefix("RegistrationToken");
-    if let Some(var_328) = &input.registration_token {
-        scope_327.string(var_328);
+    let mut scope_329 = writer.prefix("RegistrationToken");
+    if let Some(var_330) = &input.registration_token {
+        scope_329.string(var_330);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1093,20 +1098,20 @@ pub fn serialize_operation_detect_stack_drift(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DetectStackDrift", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_329 = writer.prefix("StackName");
-    if let Some(var_330) = &input.stack_name {
-        scope_329.string(var_330);
+    let mut scope_331 = writer.prefix("StackName");
+    if let Some(var_332) = &input.stack_name {
+        scope_331.string(var_332);
     }
     #[allow(unused_mut)]
-    let mut scope_331 = writer.prefix("LogicalResourceIds");
-    if let Some(var_332) = &input.logical_resource_ids {
-        let mut list_334 = scope_331.start_list(false, None);
-        for item_333 in var_332 {
+    let mut scope_333 = writer.prefix("LogicalResourceIds");
+    if let Some(var_334) = &input.logical_resource_ids {
+        let mut list_336 = scope_333.start_list(false, None);
+        for item_335 in var_334 {
             #[allow(unused_mut)]
-            let mut entry_335 = list_334.entry();
-            entry_335.string(item_333);
+            let mut entry_337 = list_336.entry();
+            entry_337.string(item_335);
         }
-        list_334.finish();
+        list_336.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1120,14 +1125,14 @@ pub fn serialize_operation_detect_stack_resource_drift(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "DetectStackResourceDrift", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_336 = writer.prefix("StackName");
-    if let Some(var_337) = &input.stack_name {
-        scope_336.string(var_337);
+    let mut scope_338 = writer.prefix("StackName");
+    if let Some(var_339) = &input.stack_name {
+        scope_338.string(var_339);
     }
     #[allow(unused_mut)]
-    let mut scope_338 = writer.prefix("LogicalResourceId");
-    if let Some(var_339) = &input.logical_resource_id {
-        scope_338.string(var_339);
+    let mut scope_340 = writer.prefix("LogicalResourceId");
+    if let Some(var_341) = &input.logical_resource_id {
+        scope_340.string(var_341);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1140,24 +1145,24 @@ pub fn serialize_operation_detect_stack_set_drift(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "DetectStackSetDrift", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_340 = writer.prefix("StackSetName");
-    if let Some(var_341) = &input.stack_set_name {
-        scope_340.string(var_341);
+    let mut scope_342 = writer.prefix("StackSetName");
+    if let Some(var_343) = &input.stack_set_name {
+        scope_342.string(var_343);
     }
     #[allow(unused_mut)]
-    let mut scope_342 = writer.prefix("OperationPreferences");
-    if let Some(var_343) = &input.operation_preferences {
-        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_342, var_343);
+    let mut scope_344 = writer.prefix("OperationPreferences");
+    if let Some(var_345) = &input.operation_preferences {
+        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_344, var_345);
     }
     #[allow(unused_mut)]
-    let mut scope_344 = writer.prefix("OperationId");
-    if let Some(var_345) = &input.operation_id {
-        scope_344.string(var_345);
+    let mut scope_346 = writer.prefix("OperationId");
+    if let Some(var_347) = &input.operation_id {
+        scope_346.string(var_347);
     }
     #[allow(unused_mut)]
-    let mut scope_346 = writer.prefix("CallAs");
-    if let Some(var_347) = &input.call_as {
-        scope_346.string(var_347.as_str());
+    let mut scope_348 = writer.prefix("CallAs");
+    if let Some(var_349) = &input.call_as {
+        scope_348.string(var_349.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1170,25 +1175,25 @@ pub fn serialize_operation_estimate_template_cost(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "EstimateTemplateCost", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_348 = writer.prefix("TemplateBody");
-    if let Some(var_349) = &input.template_body {
-        scope_348.string(var_349);
-    }
-    #[allow(unused_mut)]
-    let mut scope_350 = writer.prefix("TemplateURL");
-    if let Some(var_351) = &input.template_url {
+    let mut scope_350 = writer.prefix("TemplateBody");
+    if let Some(var_351) = &input.template_body {
         scope_350.string(var_351);
     }
     #[allow(unused_mut)]
-    let mut scope_352 = writer.prefix("Parameters");
-    if let Some(var_353) = &input.parameters {
-        let mut list_355 = scope_352.start_list(false, None);
-        for item_354 in var_353 {
+    let mut scope_352 = writer.prefix("TemplateURL");
+    if let Some(var_353) = &input.template_url {
+        scope_352.string(var_353);
+    }
+    #[allow(unused_mut)]
+    let mut scope_354 = writer.prefix("Parameters");
+    if let Some(var_355) = &input.parameters {
+        let mut list_357 = scope_354.start_list(false, None);
+        for item_356 in var_355 {
             #[allow(unused_mut)]
-            let mut entry_356 = list_355.entry();
-            crate::query_ser::serialize_structure_parameter(entry_356, item_354);
+            let mut entry_358 = list_357.entry();
+            crate::query_ser::serialize_structure_parameter(entry_358, item_356);
         }
-        list_355.finish();
+        list_357.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1201,19 +1206,19 @@ pub fn serialize_operation_execute_change_set(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ExecuteChangeSet", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_357 = writer.prefix("ChangeSetName");
-    if let Some(var_358) = &input.change_set_name {
-        scope_357.string(var_358);
-    }
-    #[allow(unused_mut)]
-    let mut scope_359 = writer.prefix("StackName");
-    if let Some(var_360) = &input.stack_name {
+    let mut scope_359 = writer.prefix("ChangeSetName");
+    if let Some(var_360) = &input.change_set_name {
         scope_359.string(var_360);
     }
     #[allow(unused_mut)]
-    let mut scope_361 = writer.prefix("ClientRequestToken");
-    if let Some(var_362) = &input.client_request_token {
+    let mut scope_361 = writer.prefix("StackName");
+    if let Some(var_362) = &input.stack_name {
         scope_361.string(var_362);
+    }
+    #[allow(unused_mut)]
+    let mut scope_363 = writer.prefix("ClientRequestToken");
+    if let Some(var_364) = &input.client_request_token {
+        scope_363.string(var_364);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1226,9 +1231,9 @@ pub fn serialize_operation_get_stack_policy(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "GetStackPolicy", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_363 = writer.prefix("StackName");
-    if let Some(var_364) = &input.stack_name {
-        scope_363.string(var_364);
+    let mut scope_365 = writer.prefix("StackName");
+    if let Some(var_366) = &input.stack_name {
+        scope_365.string(var_366);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1241,19 +1246,19 @@ pub fn serialize_operation_get_template(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "GetTemplate", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_365 = writer.prefix("StackName");
-    if let Some(var_366) = &input.stack_name {
-        scope_365.string(var_366);
-    }
-    #[allow(unused_mut)]
-    let mut scope_367 = writer.prefix("ChangeSetName");
-    if let Some(var_368) = &input.change_set_name {
+    let mut scope_367 = writer.prefix("StackName");
+    if let Some(var_368) = &input.stack_name {
         scope_367.string(var_368);
     }
     #[allow(unused_mut)]
-    let mut scope_369 = writer.prefix("TemplateStage");
-    if let Some(var_370) = &input.template_stage {
-        scope_369.string(var_370.as_str());
+    let mut scope_369 = writer.prefix("ChangeSetName");
+    if let Some(var_370) = &input.change_set_name {
+        scope_369.string(var_370);
+    }
+    #[allow(unused_mut)]
+    let mut scope_371 = writer.prefix("TemplateStage");
+    if let Some(var_372) = &input.template_stage {
+        scope_371.string(var_372.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1266,29 +1271,71 @@ pub fn serialize_operation_get_template_summary(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "GetTemplateSummary", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_371 = writer.prefix("TemplateBody");
-    if let Some(var_372) = &input.template_body {
-        scope_371.string(var_372);
-    }
-    #[allow(unused_mut)]
-    let mut scope_373 = writer.prefix("TemplateURL");
-    if let Some(var_374) = &input.template_url {
+    let mut scope_373 = writer.prefix("TemplateBody");
+    if let Some(var_374) = &input.template_body {
         scope_373.string(var_374);
     }
     #[allow(unused_mut)]
-    let mut scope_375 = writer.prefix("StackName");
-    if let Some(var_376) = &input.stack_name {
+    let mut scope_375 = writer.prefix("TemplateURL");
+    if let Some(var_376) = &input.template_url {
         scope_375.string(var_376);
     }
     #[allow(unused_mut)]
-    let mut scope_377 = writer.prefix("StackSetName");
-    if let Some(var_378) = &input.stack_set_name {
+    let mut scope_377 = writer.prefix("StackName");
+    if let Some(var_378) = &input.stack_name {
         scope_377.string(var_378);
     }
     #[allow(unused_mut)]
-    let mut scope_379 = writer.prefix("CallAs");
-    if let Some(var_380) = &input.call_as {
-        scope_379.string(var_380.as_str());
+    let mut scope_379 = writer.prefix("StackSetName");
+    if let Some(var_380) = &input.stack_set_name {
+        scope_379.string(var_380);
+    }
+    #[allow(unused_mut)]
+    let mut scope_381 = writer.prefix("CallAs");
+    if let Some(var_382) = &input.call_as {
+        scope_381.string(var_382.as_str());
+    }
+    writer.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_import_stacks_to_stack_set(
+    input: &crate::input::ImportStacksToStackSetInput,
+) -> Result<smithy_http::body::SdkBody, std::convert::Infallible> {
+    let mut out = String::new();
+    #[allow(unused_mut)]
+    let mut writer =
+        smithy_query::QueryWriter::new(&mut out, "ImportStacksToStackSet", "2010-05-15");
+    #[allow(unused_mut)]
+    let mut scope_383 = writer.prefix("StackSetName");
+    if let Some(var_384) = &input.stack_set_name {
+        scope_383.string(var_384);
+    }
+    #[allow(unused_mut)]
+    let mut scope_385 = writer.prefix("StackIds");
+    if let Some(var_386) = &input.stack_ids {
+        let mut list_388 = scope_385.start_list(false, None);
+        for item_387 in var_386 {
+            #[allow(unused_mut)]
+            let mut entry_389 = list_388.entry();
+            entry_389.string(item_387);
+        }
+        list_388.finish();
+    }
+    #[allow(unused_mut)]
+    let mut scope_390 = writer.prefix("OperationPreferences");
+    if let Some(var_391) = &input.operation_preferences {
+        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_390, var_391);
+    }
+    #[allow(unused_mut)]
+    let mut scope_392 = writer.prefix("OperationId");
+    if let Some(var_393) = &input.operation_id {
+        scope_392.string(var_393);
+    }
+    #[allow(unused_mut)]
+    let mut scope_394 = writer.prefix("CallAs");
+    if let Some(var_395) = &input.call_as {
+        scope_394.string(var_395.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1301,14 +1348,14 @@ pub fn serialize_operation_list_change_sets(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListChangeSets", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_381 = writer.prefix("StackName");
-    if let Some(var_382) = &input.stack_name {
-        scope_381.string(var_382);
+    let mut scope_396 = writer.prefix("StackName");
+    if let Some(var_397) = &input.stack_name {
+        scope_396.string(var_397);
     }
     #[allow(unused_mut)]
-    let mut scope_383 = writer.prefix("NextToken");
-    if let Some(var_384) = &input.next_token {
-        scope_383.string(var_384);
+    let mut scope_398 = writer.prefix("NextToken");
+    if let Some(var_399) = &input.next_token {
+        scope_398.string(var_399);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1321,9 +1368,9 @@ pub fn serialize_operation_list_exports(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListExports", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_385 = writer.prefix("NextToken");
-    if let Some(var_386) = &input.next_token {
-        scope_385.string(var_386);
+    let mut scope_400 = writer.prefix("NextToken");
+    if let Some(var_401) = &input.next_token {
+        scope_400.string(var_401);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1336,14 +1383,14 @@ pub fn serialize_operation_list_imports(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListImports", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_387 = writer.prefix("ExportName");
-    if let Some(var_388) = &input.export_name {
-        scope_387.string(var_388);
+    let mut scope_402 = writer.prefix("ExportName");
+    if let Some(var_403) = &input.export_name {
+        scope_402.string(var_403);
     }
     #[allow(unused_mut)]
-    let mut scope_389 = writer.prefix("NextToken");
-    if let Some(var_390) = &input.next_token {
-        scope_389.string(var_390);
+    let mut scope_404 = writer.prefix("NextToken");
+    if let Some(var_405) = &input.next_token {
+        scope_404.string(var_405);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1356,48 +1403,48 @@ pub fn serialize_operation_list_stack_instances(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListStackInstances", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_391 = writer.prefix("StackSetName");
-    if let Some(var_392) = &input.stack_set_name {
-        scope_391.string(var_392);
+    let mut scope_406 = writer.prefix("StackSetName");
+    if let Some(var_407) = &input.stack_set_name {
+        scope_406.string(var_407);
     }
     #[allow(unused_mut)]
-    let mut scope_393 = writer.prefix("NextToken");
-    if let Some(var_394) = &input.next_token {
-        scope_393.string(var_394);
+    let mut scope_408 = writer.prefix("NextToken");
+    if let Some(var_409) = &input.next_token {
+        scope_408.string(var_409);
     }
     #[allow(unused_mut)]
-    let mut scope_395 = writer.prefix("MaxResults");
-    if let Some(var_396) = &input.max_results {
-        scope_395.number(
+    let mut scope_410 = writer.prefix("MaxResults");
+    if let Some(var_411) = &input.max_results {
+        scope_410.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_396).into()),
+            smithy_types::Number::NegInt((*var_411).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_397 = writer.prefix("Filters");
-    if let Some(var_398) = &input.filters {
-        let mut list_400 = scope_397.start_list(false, None);
-        for item_399 in var_398 {
+    let mut scope_412 = writer.prefix("Filters");
+    if let Some(var_413) = &input.filters {
+        let mut list_415 = scope_412.start_list(false, None);
+        for item_414 in var_413 {
             #[allow(unused_mut)]
-            let mut entry_401 = list_400.entry();
-            crate::query_ser::serialize_structure_stack_instance_filter(entry_401, item_399);
+            let mut entry_416 = list_415.entry();
+            crate::query_ser::serialize_structure_stack_instance_filter(entry_416, item_414);
         }
-        list_400.finish();
+        list_415.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_402 = writer.prefix("StackInstanceAccount");
-    if let Some(var_403) = &input.stack_instance_account {
-        scope_402.string(var_403);
+    let mut scope_417 = writer.prefix("StackInstanceAccount");
+    if let Some(var_418) = &input.stack_instance_account {
+        scope_417.string(var_418);
     }
     #[allow(unused_mut)]
-    let mut scope_404 = writer.prefix("StackInstanceRegion");
-    if let Some(var_405) = &input.stack_instance_region {
-        scope_404.string(var_405);
+    let mut scope_419 = writer.prefix("StackInstanceRegion");
+    if let Some(var_420) = &input.stack_instance_region {
+        scope_419.string(var_420);
     }
     #[allow(unused_mut)]
-    let mut scope_406 = writer.prefix("CallAs");
-    if let Some(var_407) = &input.call_as {
-        scope_406.string(var_407.as_str());
+    let mut scope_421 = writer.prefix("CallAs");
+    if let Some(var_422) = &input.call_as {
+        scope_421.string(var_422.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1410,14 +1457,14 @@ pub fn serialize_operation_list_stack_resources(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListStackResources", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_408 = writer.prefix("StackName");
-    if let Some(var_409) = &input.stack_name {
-        scope_408.string(var_409);
+    let mut scope_423 = writer.prefix("StackName");
+    if let Some(var_424) = &input.stack_name {
+        scope_423.string(var_424);
     }
     #[allow(unused_mut)]
-    let mut scope_410 = writer.prefix("NextToken");
-    if let Some(var_411) = &input.next_token {
-        scope_410.string(var_411);
+    let mut scope_425 = writer.prefix("NextToken");
+    if let Some(var_426) = &input.next_token {
+        scope_425.string(var_426);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1430,20 +1477,20 @@ pub fn serialize_operation_list_stacks(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListStacks", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_412 = writer.prefix("NextToken");
-    if let Some(var_413) = &input.next_token {
-        scope_412.string(var_413);
+    let mut scope_427 = writer.prefix("NextToken");
+    if let Some(var_428) = &input.next_token {
+        scope_427.string(var_428);
     }
     #[allow(unused_mut)]
-    let mut scope_414 = writer.prefix("StackStatusFilter");
-    if let Some(var_415) = &input.stack_status_filter {
-        let mut list_417 = scope_414.start_list(false, None);
-        for item_416 in var_415 {
+    let mut scope_429 = writer.prefix("StackStatusFilter");
+    if let Some(var_430) = &input.stack_status_filter {
+        let mut list_432 = scope_429.start_list(false, None);
+        for item_431 in var_430 {
             #[allow(unused_mut)]
-            let mut entry_418 = list_417.entry();
-            entry_418.string(item_416.as_str());
+            let mut entry_433 = list_432.entry();
+            entry_433.string(item_431.as_str());
         }
-        list_417.finish();
+        list_432.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1457,32 +1504,32 @@ pub fn serialize_operation_list_stack_set_operation_results(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "ListStackSetOperationResults", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_419 = writer.prefix("StackSetName");
-    if let Some(var_420) = &input.stack_set_name {
-        scope_419.string(var_420);
+    let mut scope_434 = writer.prefix("StackSetName");
+    if let Some(var_435) = &input.stack_set_name {
+        scope_434.string(var_435);
     }
     #[allow(unused_mut)]
-    let mut scope_421 = writer.prefix("OperationId");
-    if let Some(var_422) = &input.operation_id {
-        scope_421.string(var_422);
+    let mut scope_436 = writer.prefix("OperationId");
+    if let Some(var_437) = &input.operation_id {
+        scope_436.string(var_437);
     }
     #[allow(unused_mut)]
-    let mut scope_423 = writer.prefix("NextToken");
-    if let Some(var_424) = &input.next_token {
-        scope_423.string(var_424);
+    let mut scope_438 = writer.prefix("NextToken");
+    if let Some(var_439) = &input.next_token {
+        scope_438.string(var_439);
     }
     #[allow(unused_mut)]
-    let mut scope_425 = writer.prefix("MaxResults");
-    if let Some(var_426) = &input.max_results {
-        scope_425.number(
+    let mut scope_440 = writer.prefix("MaxResults");
+    if let Some(var_441) = &input.max_results {
+        scope_440.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_426).into()),
+            smithy_types::Number::NegInt((*var_441).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_427 = writer.prefix("CallAs");
-    if let Some(var_428) = &input.call_as {
-        scope_427.string(var_428.as_str());
+    let mut scope_442 = writer.prefix("CallAs");
+    if let Some(var_443) = &input.call_as {
+        scope_442.string(var_443.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1496,27 +1543,27 @@ pub fn serialize_operation_list_stack_set_operations(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "ListStackSetOperations", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_429 = writer.prefix("StackSetName");
-    if let Some(var_430) = &input.stack_set_name {
-        scope_429.string(var_430);
+    let mut scope_444 = writer.prefix("StackSetName");
+    if let Some(var_445) = &input.stack_set_name {
+        scope_444.string(var_445);
     }
     #[allow(unused_mut)]
-    let mut scope_431 = writer.prefix("NextToken");
-    if let Some(var_432) = &input.next_token {
-        scope_431.string(var_432);
+    let mut scope_446 = writer.prefix("NextToken");
+    if let Some(var_447) = &input.next_token {
+        scope_446.string(var_447);
     }
     #[allow(unused_mut)]
-    let mut scope_433 = writer.prefix("MaxResults");
-    if let Some(var_434) = &input.max_results {
-        scope_433.number(
+    let mut scope_448 = writer.prefix("MaxResults");
+    if let Some(var_449) = &input.max_results {
+        scope_448.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_434).into()),
+            smithy_types::Number::NegInt((*var_449).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_435 = writer.prefix("CallAs");
-    if let Some(var_436) = &input.call_as {
-        scope_435.string(var_436.as_str());
+    let mut scope_450 = writer.prefix("CallAs");
+    if let Some(var_451) = &input.call_as {
+        scope_450.string(var_451.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1529,27 +1576,27 @@ pub fn serialize_operation_list_stack_sets(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListStackSets", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_437 = writer.prefix("NextToken");
-    if let Some(var_438) = &input.next_token {
-        scope_437.string(var_438);
+    let mut scope_452 = writer.prefix("NextToken");
+    if let Some(var_453) = &input.next_token {
+        scope_452.string(var_453);
     }
     #[allow(unused_mut)]
-    let mut scope_439 = writer.prefix("MaxResults");
-    if let Some(var_440) = &input.max_results {
-        scope_439.number(
+    let mut scope_454 = writer.prefix("MaxResults");
+    if let Some(var_455) = &input.max_results {
+        scope_454.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_440).into()),
+            smithy_types::Number::NegInt((*var_455).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_441 = writer.prefix("Status");
-    if let Some(var_442) = &input.status {
-        scope_441.string(var_442.as_str());
+    let mut scope_456 = writer.prefix("Status");
+    if let Some(var_457) = &input.status {
+        scope_456.string(var_457.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_443 = writer.prefix("CallAs");
-    if let Some(var_444) = &input.call_as {
-        scope_443.string(var_444.as_str());
+    let mut scope_458 = writer.prefix("CallAs");
+    if let Some(var_459) = &input.call_as {
+        scope_458.string(var_459.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1563,37 +1610,37 @@ pub fn serialize_operation_list_type_registrations(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "ListTypeRegistrations", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_445 = writer.prefix("Type");
-    if let Some(var_446) = &input.r#type {
-        scope_445.string(var_446.as_str());
+    let mut scope_460 = writer.prefix("Type");
+    if let Some(var_461) = &input.r#type {
+        scope_460.string(var_461.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_447 = writer.prefix("TypeName");
-    if let Some(var_448) = &input.type_name {
-        scope_447.string(var_448);
+    let mut scope_462 = writer.prefix("TypeName");
+    if let Some(var_463) = &input.type_name {
+        scope_462.string(var_463);
     }
     #[allow(unused_mut)]
-    let mut scope_449 = writer.prefix("TypeArn");
-    if let Some(var_450) = &input.type_arn {
-        scope_449.string(var_450);
+    let mut scope_464 = writer.prefix("TypeArn");
+    if let Some(var_465) = &input.type_arn {
+        scope_464.string(var_465);
     }
     #[allow(unused_mut)]
-    let mut scope_451 = writer.prefix("RegistrationStatusFilter");
-    if let Some(var_452) = &input.registration_status_filter {
-        scope_451.string(var_452.as_str());
+    let mut scope_466 = writer.prefix("RegistrationStatusFilter");
+    if let Some(var_467) = &input.registration_status_filter {
+        scope_466.string(var_467.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_453 = writer.prefix("MaxResults");
-    if let Some(var_454) = &input.max_results {
-        scope_453.number(
+    let mut scope_468 = writer.prefix("MaxResults");
+    if let Some(var_469) = &input.max_results {
+        scope_468.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_454).into()),
+            smithy_types::Number::NegInt((*var_469).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_455 = writer.prefix("NextToken");
-    if let Some(var_456) = &input.next_token {
-        scope_455.string(var_456);
+    let mut scope_470 = writer.prefix("NextToken");
+    if let Some(var_471) = &input.next_token {
+        scope_470.string(var_471);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1606,42 +1653,42 @@ pub fn serialize_operation_list_types(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListTypes", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_457 = writer.prefix("Visibility");
-    if let Some(var_458) = &input.visibility {
-        scope_457.string(var_458.as_str());
+    let mut scope_472 = writer.prefix("Visibility");
+    if let Some(var_473) = &input.visibility {
+        scope_472.string(var_473.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_459 = writer.prefix("ProvisioningType");
-    if let Some(var_460) = &input.provisioning_type {
-        scope_459.string(var_460.as_str());
+    let mut scope_474 = writer.prefix("ProvisioningType");
+    if let Some(var_475) = &input.provisioning_type {
+        scope_474.string(var_475.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_461 = writer.prefix("DeprecatedStatus");
-    if let Some(var_462) = &input.deprecated_status {
-        scope_461.string(var_462.as_str());
+    let mut scope_476 = writer.prefix("DeprecatedStatus");
+    if let Some(var_477) = &input.deprecated_status {
+        scope_476.string(var_477.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_463 = writer.prefix("Type");
-    if let Some(var_464) = &input.r#type {
-        scope_463.string(var_464.as_str());
+    let mut scope_478 = writer.prefix("Type");
+    if let Some(var_479) = &input.r#type {
+        scope_478.string(var_479.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_465 = writer.prefix("Filters");
-    if let Some(var_466) = &input.filters {
-        crate::query_ser::serialize_structure_type_filters(scope_465, var_466);
+    let mut scope_480 = writer.prefix("Filters");
+    if let Some(var_481) = &input.filters {
+        crate::query_ser::serialize_structure_type_filters(scope_480, var_481);
     }
     #[allow(unused_mut)]
-    let mut scope_467 = writer.prefix("MaxResults");
-    if let Some(var_468) = &input.max_results {
-        scope_467.number(
+    let mut scope_482 = writer.prefix("MaxResults");
+    if let Some(var_483) = &input.max_results {
+        scope_482.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_468).into()),
+            smithy_types::Number::NegInt((*var_483).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_469 = writer.prefix("NextToken");
-    if let Some(var_470) = &input.next_token {
-        scope_469.string(var_470);
+    let mut scope_484 = writer.prefix("NextToken");
+    if let Some(var_485) = &input.next_token {
+        scope_484.string(var_485);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1654,42 +1701,42 @@ pub fn serialize_operation_list_type_versions(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ListTypeVersions", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_471 = writer.prefix("Type");
-    if let Some(var_472) = &input.r#type {
-        scope_471.string(var_472.as_str());
+    let mut scope_486 = writer.prefix("Type");
+    if let Some(var_487) = &input.r#type {
+        scope_486.string(var_487.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_473 = writer.prefix("TypeName");
-    if let Some(var_474) = &input.type_name {
-        scope_473.string(var_474);
+    let mut scope_488 = writer.prefix("TypeName");
+    if let Some(var_489) = &input.type_name {
+        scope_488.string(var_489);
     }
     #[allow(unused_mut)]
-    let mut scope_475 = writer.prefix("Arn");
-    if let Some(var_476) = &input.arn {
-        scope_475.string(var_476);
+    let mut scope_490 = writer.prefix("Arn");
+    if let Some(var_491) = &input.arn {
+        scope_490.string(var_491);
     }
     #[allow(unused_mut)]
-    let mut scope_477 = writer.prefix("MaxResults");
-    if let Some(var_478) = &input.max_results {
-        scope_477.number(
+    let mut scope_492 = writer.prefix("MaxResults");
+    if let Some(var_493) = &input.max_results {
+        scope_492.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_478).into()),
+            smithy_types::Number::NegInt((*var_493).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_479 = writer.prefix("NextToken");
-    if let Some(var_480) = &input.next_token {
-        scope_479.string(var_480);
+    let mut scope_494 = writer.prefix("NextToken");
+    if let Some(var_495) = &input.next_token {
+        scope_494.string(var_495);
     }
     #[allow(unused_mut)]
-    let mut scope_481 = writer.prefix("DeprecatedStatus");
-    if let Some(var_482) = &input.deprecated_status {
-        scope_481.string(var_482.as_str());
+    let mut scope_496 = writer.prefix("DeprecatedStatus");
+    if let Some(var_497) = &input.deprecated_status {
+        scope_496.string(var_497.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_483 = writer.prefix("PublisherId");
-    if let Some(var_484) = &input.publisher_id {
-        scope_483.string(var_484);
+    let mut scope_498 = writer.prefix("PublisherId");
+    if let Some(var_499) = &input.publisher_id {
+        scope_498.string(var_499);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1702,24 +1749,24 @@ pub fn serialize_operation_publish_type(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "PublishType", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_485 = writer.prefix("Type");
-    if let Some(var_486) = &input.r#type {
-        scope_485.string(var_486.as_str());
+    let mut scope_500 = writer.prefix("Type");
+    if let Some(var_501) = &input.r#type {
+        scope_500.string(var_501.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_487 = writer.prefix("Arn");
-    if let Some(var_488) = &input.arn {
-        scope_487.string(var_488);
+    let mut scope_502 = writer.prefix("Arn");
+    if let Some(var_503) = &input.arn {
+        scope_502.string(var_503);
     }
     #[allow(unused_mut)]
-    let mut scope_489 = writer.prefix("TypeName");
-    if let Some(var_490) = &input.type_name {
-        scope_489.string(var_490);
+    let mut scope_504 = writer.prefix("TypeName");
+    if let Some(var_505) = &input.type_name {
+        scope_504.string(var_505);
     }
     #[allow(unused_mut)]
-    let mut scope_491 = writer.prefix("PublicVersionNumber");
-    if let Some(var_492) = &input.public_version_number {
-        scope_491.string(var_492);
+    let mut scope_506 = writer.prefix("PublicVersionNumber");
+    if let Some(var_507) = &input.public_version_number {
+        scope_506.string(var_507);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1733,39 +1780,39 @@ pub fn serialize_operation_record_handler_progress(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "RecordHandlerProgress", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_493 = writer.prefix("BearerToken");
-    if let Some(var_494) = &input.bearer_token {
-        scope_493.string(var_494);
+    let mut scope_508 = writer.prefix("BearerToken");
+    if let Some(var_509) = &input.bearer_token {
+        scope_508.string(var_509);
     }
     #[allow(unused_mut)]
-    let mut scope_495 = writer.prefix("OperationStatus");
-    if let Some(var_496) = &input.operation_status {
-        scope_495.string(var_496.as_str());
+    let mut scope_510 = writer.prefix("OperationStatus");
+    if let Some(var_511) = &input.operation_status {
+        scope_510.string(var_511.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_497 = writer.prefix("CurrentOperationStatus");
-    if let Some(var_498) = &input.current_operation_status {
-        scope_497.string(var_498.as_str());
+    let mut scope_512 = writer.prefix("CurrentOperationStatus");
+    if let Some(var_513) = &input.current_operation_status {
+        scope_512.string(var_513.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_499 = writer.prefix("StatusMessage");
-    if let Some(var_500) = &input.status_message {
-        scope_499.string(var_500);
+    let mut scope_514 = writer.prefix("StatusMessage");
+    if let Some(var_515) = &input.status_message {
+        scope_514.string(var_515);
     }
     #[allow(unused_mut)]
-    let mut scope_501 = writer.prefix("ErrorCode");
-    if let Some(var_502) = &input.error_code {
-        scope_501.string(var_502.as_str());
+    let mut scope_516 = writer.prefix("ErrorCode");
+    if let Some(var_517) = &input.error_code {
+        scope_516.string(var_517.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_503 = writer.prefix("ResourceModel");
-    if let Some(var_504) = &input.resource_model {
-        scope_503.string(var_504);
+    let mut scope_518 = writer.prefix("ResourceModel");
+    if let Some(var_519) = &input.resource_model {
+        scope_518.string(var_519);
     }
     #[allow(unused_mut)]
-    let mut scope_505 = writer.prefix("ClientRequestToken");
-    if let Some(var_506) = &input.client_request_token {
-        scope_505.string(var_506);
+    let mut scope_520 = writer.prefix("ClientRequestToken");
+    if let Some(var_521) = &input.client_request_token {
+        scope_520.string(var_521);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1778,14 +1825,14 @@ pub fn serialize_operation_register_publisher(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "RegisterPublisher", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_507 = writer.prefix("AcceptTermsAndConditions");
-    if let Some(var_508) = &input.accept_terms_and_conditions {
-        scope_507.boolean(*var_508);
+    let mut scope_522 = writer.prefix("AcceptTermsAndConditions");
+    if let Some(var_523) = &input.accept_terms_and_conditions {
+        scope_522.boolean(*var_523);
     }
     #[allow(unused_mut)]
-    let mut scope_509 = writer.prefix("ConnectionArn");
-    if let Some(var_510) = &input.connection_arn {
-        scope_509.string(var_510);
+    let mut scope_524 = writer.prefix("ConnectionArn");
+    if let Some(var_525) = &input.connection_arn {
+        scope_524.string(var_525);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1798,34 +1845,34 @@ pub fn serialize_operation_register_type(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "RegisterType", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_511 = writer.prefix("Type");
-    if let Some(var_512) = &input.r#type {
-        scope_511.string(var_512.as_str());
+    let mut scope_526 = writer.prefix("Type");
+    if let Some(var_527) = &input.r#type {
+        scope_526.string(var_527.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_513 = writer.prefix("TypeName");
-    if let Some(var_514) = &input.type_name {
-        scope_513.string(var_514);
+    let mut scope_528 = writer.prefix("TypeName");
+    if let Some(var_529) = &input.type_name {
+        scope_528.string(var_529);
     }
     #[allow(unused_mut)]
-    let mut scope_515 = writer.prefix("SchemaHandlerPackage");
-    if let Some(var_516) = &input.schema_handler_package {
-        scope_515.string(var_516);
+    let mut scope_530 = writer.prefix("SchemaHandlerPackage");
+    if let Some(var_531) = &input.schema_handler_package {
+        scope_530.string(var_531);
     }
     #[allow(unused_mut)]
-    let mut scope_517 = writer.prefix("LoggingConfig");
-    if let Some(var_518) = &input.logging_config {
-        crate::query_ser::serialize_structure_logging_config(scope_517, var_518);
+    let mut scope_532 = writer.prefix("LoggingConfig");
+    if let Some(var_533) = &input.logging_config {
+        crate::query_ser::serialize_structure_logging_config(scope_532, var_533);
     }
     #[allow(unused_mut)]
-    let mut scope_519 = writer.prefix("ExecutionRoleArn");
-    if let Some(var_520) = &input.execution_role_arn {
-        scope_519.string(var_520);
+    let mut scope_534 = writer.prefix("ExecutionRoleArn");
+    if let Some(var_535) = &input.execution_role_arn {
+        scope_534.string(var_535);
     }
     #[allow(unused_mut)]
-    let mut scope_521 = writer.prefix("ClientRequestToken");
-    if let Some(var_522) = &input.client_request_token {
-        scope_521.string(var_522);
+    let mut scope_536 = writer.prefix("ClientRequestToken");
+    if let Some(var_537) = &input.client_request_token {
+        scope_536.string(var_537);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1838,19 +1885,19 @@ pub fn serialize_operation_set_stack_policy(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SetStackPolicy", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_523 = writer.prefix("StackName");
-    if let Some(var_524) = &input.stack_name {
-        scope_523.string(var_524);
+    let mut scope_538 = writer.prefix("StackName");
+    if let Some(var_539) = &input.stack_name {
+        scope_538.string(var_539);
     }
     #[allow(unused_mut)]
-    let mut scope_525 = writer.prefix("StackPolicyBody");
-    if let Some(var_526) = &input.stack_policy_body {
-        scope_525.string(var_526);
+    let mut scope_540 = writer.prefix("StackPolicyBody");
+    if let Some(var_541) = &input.stack_policy_body {
+        scope_540.string(var_541);
     }
     #[allow(unused_mut)]
-    let mut scope_527 = writer.prefix("StackPolicyURL");
-    if let Some(var_528) = &input.stack_policy_url {
-        scope_527.string(var_528);
+    let mut scope_542 = writer.prefix("StackPolicyURL");
+    if let Some(var_543) = &input.stack_policy_url {
+        scope_542.string(var_543);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1863,29 +1910,29 @@ pub fn serialize_operation_set_type_configuration(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SetTypeConfiguration", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_529 = writer.prefix("TypeArn");
-    if let Some(var_530) = &input.type_arn {
-        scope_529.string(var_530);
+    let mut scope_544 = writer.prefix("TypeArn");
+    if let Some(var_545) = &input.type_arn {
+        scope_544.string(var_545);
     }
     #[allow(unused_mut)]
-    let mut scope_531 = writer.prefix("Configuration");
-    if let Some(var_532) = &input.configuration {
-        scope_531.string(var_532);
+    let mut scope_546 = writer.prefix("Configuration");
+    if let Some(var_547) = &input.configuration {
+        scope_546.string(var_547);
     }
     #[allow(unused_mut)]
-    let mut scope_533 = writer.prefix("ConfigurationAlias");
-    if let Some(var_534) = &input.configuration_alias {
-        scope_533.string(var_534);
+    let mut scope_548 = writer.prefix("ConfigurationAlias");
+    if let Some(var_549) = &input.configuration_alias {
+        scope_548.string(var_549);
     }
     #[allow(unused_mut)]
-    let mut scope_535 = writer.prefix("TypeName");
-    if let Some(var_536) = &input.type_name {
-        scope_535.string(var_536);
+    let mut scope_550 = writer.prefix("TypeName");
+    if let Some(var_551) = &input.type_name {
+        scope_550.string(var_551);
     }
     #[allow(unused_mut)]
-    let mut scope_537 = writer.prefix("Type");
-    if let Some(var_538) = &input.r#type {
-        scope_537.string(var_538.as_str());
+    let mut scope_552 = writer.prefix("Type");
+    if let Some(var_553) = &input.r#type {
+        scope_552.string(var_553.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1899,24 +1946,24 @@ pub fn serialize_operation_set_type_default_version(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "SetTypeDefaultVersion", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_539 = writer.prefix("Arn");
-    if let Some(var_540) = &input.arn {
-        scope_539.string(var_540);
+    let mut scope_554 = writer.prefix("Arn");
+    if let Some(var_555) = &input.arn {
+        scope_554.string(var_555);
     }
     #[allow(unused_mut)]
-    let mut scope_541 = writer.prefix("Type");
-    if let Some(var_542) = &input.r#type {
-        scope_541.string(var_542.as_str());
+    let mut scope_556 = writer.prefix("Type");
+    if let Some(var_557) = &input.r#type {
+        scope_556.string(var_557.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_543 = writer.prefix("TypeName");
-    if let Some(var_544) = &input.type_name {
-        scope_543.string(var_544);
+    let mut scope_558 = writer.prefix("TypeName");
+    if let Some(var_559) = &input.type_name {
+        scope_558.string(var_559);
     }
     #[allow(unused_mut)]
-    let mut scope_545 = writer.prefix("VersionId");
-    if let Some(var_546) = &input.version_id {
-        scope_545.string(var_546);
+    let mut scope_560 = writer.prefix("VersionId");
+    if let Some(var_561) = &input.version_id {
+        scope_560.string(var_561);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1929,24 +1976,24 @@ pub fn serialize_operation_signal_resource(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SignalResource", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_547 = writer.prefix("StackName");
-    if let Some(var_548) = &input.stack_name {
-        scope_547.string(var_548);
+    let mut scope_562 = writer.prefix("StackName");
+    if let Some(var_563) = &input.stack_name {
+        scope_562.string(var_563);
     }
     #[allow(unused_mut)]
-    let mut scope_549 = writer.prefix("LogicalResourceId");
-    if let Some(var_550) = &input.logical_resource_id {
-        scope_549.string(var_550);
+    let mut scope_564 = writer.prefix("LogicalResourceId");
+    if let Some(var_565) = &input.logical_resource_id {
+        scope_564.string(var_565);
     }
     #[allow(unused_mut)]
-    let mut scope_551 = writer.prefix("UniqueId");
-    if let Some(var_552) = &input.unique_id {
-        scope_551.string(var_552);
+    let mut scope_566 = writer.prefix("UniqueId");
+    if let Some(var_567) = &input.unique_id {
+        scope_566.string(var_567);
     }
     #[allow(unused_mut)]
-    let mut scope_553 = writer.prefix("Status");
-    if let Some(var_554) = &input.status {
-        scope_553.string(var_554.as_str());
+    let mut scope_568 = writer.prefix("Status");
+    if let Some(var_569) = &input.status {
+        scope_568.string(var_569.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1960,19 +2007,19 @@ pub fn serialize_operation_stop_stack_set_operation(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "StopStackSetOperation", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_555 = writer.prefix("StackSetName");
-    if let Some(var_556) = &input.stack_set_name {
-        scope_555.string(var_556);
+    let mut scope_570 = writer.prefix("StackSetName");
+    if let Some(var_571) = &input.stack_set_name {
+        scope_570.string(var_571);
     }
     #[allow(unused_mut)]
-    let mut scope_557 = writer.prefix("OperationId");
-    if let Some(var_558) = &input.operation_id {
-        scope_557.string(var_558);
+    let mut scope_572 = writer.prefix("OperationId");
+    if let Some(var_573) = &input.operation_id {
+        scope_572.string(var_573);
     }
     #[allow(unused_mut)]
-    let mut scope_559 = writer.prefix("CallAs");
-    if let Some(var_560) = &input.call_as {
-        scope_559.string(var_560.as_str());
+    let mut scope_574 = writer.prefix("CallAs");
+    if let Some(var_575) = &input.call_as {
+        scope_574.string(var_575.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1985,29 +2032,29 @@ pub fn serialize_operation_test_type(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "TestType", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_561 = writer.prefix("Arn");
-    if let Some(var_562) = &input.arn {
-        scope_561.string(var_562);
+    let mut scope_576 = writer.prefix("Arn");
+    if let Some(var_577) = &input.arn {
+        scope_576.string(var_577);
     }
     #[allow(unused_mut)]
-    let mut scope_563 = writer.prefix("Type");
-    if let Some(var_564) = &input.r#type {
-        scope_563.string(var_564.as_str());
+    let mut scope_578 = writer.prefix("Type");
+    if let Some(var_579) = &input.r#type {
+        scope_578.string(var_579.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_565 = writer.prefix("TypeName");
-    if let Some(var_566) = &input.type_name {
-        scope_565.string(var_566);
+    let mut scope_580 = writer.prefix("TypeName");
+    if let Some(var_581) = &input.type_name {
+        scope_580.string(var_581);
     }
     #[allow(unused_mut)]
-    let mut scope_567 = writer.prefix("VersionId");
-    if let Some(var_568) = &input.version_id {
-        scope_567.string(var_568);
+    let mut scope_582 = writer.prefix("VersionId");
+    if let Some(var_583) = &input.version_id {
+        scope_582.string(var_583);
     }
     #[allow(unused_mut)]
-    let mut scope_569 = writer.prefix("LogDeliveryBucket");
-    if let Some(var_570) = &input.log_delivery_bucket {
-        scope_569.string(var_570);
+    let mut scope_584 = writer.prefix("LogDeliveryBucket");
+    if let Some(var_585) = &input.log_delivery_bucket {
+        scope_584.string(var_585);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2020,114 +2067,114 @@ pub fn serialize_operation_update_stack(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "UpdateStack", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_571 = writer.prefix("StackName");
-    if let Some(var_572) = &input.stack_name {
-        scope_571.string(var_572);
+    let mut scope_586 = writer.prefix("StackName");
+    if let Some(var_587) = &input.stack_name {
+        scope_586.string(var_587);
     }
     #[allow(unused_mut)]
-    let mut scope_573 = writer.prefix("TemplateBody");
-    if let Some(var_574) = &input.template_body {
-        scope_573.string(var_574);
+    let mut scope_588 = writer.prefix("TemplateBody");
+    if let Some(var_589) = &input.template_body {
+        scope_588.string(var_589);
     }
     #[allow(unused_mut)]
-    let mut scope_575 = writer.prefix("TemplateURL");
-    if let Some(var_576) = &input.template_url {
-        scope_575.string(var_576);
+    let mut scope_590 = writer.prefix("TemplateURL");
+    if let Some(var_591) = &input.template_url {
+        scope_590.string(var_591);
     }
     #[allow(unused_mut)]
-    let mut scope_577 = writer.prefix("UsePreviousTemplate");
-    if let Some(var_578) = &input.use_previous_template {
-        scope_577.boolean(*var_578);
+    let mut scope_592 = writer.prefix("UsePreviousTemplate");
+    if let Some(var_593) = &input.use_previous_template {
+        scope_592.boolean(*var_593);
     }
     #[allow(unused_mut)]
-    let mut scope_579 = writer.prefix("StackPolicyDuringUpdateBody");
-    if let Some(var_580) = &input.stack_policy_during_update_body {
-        scope_579.string(var_580);
+    let mut scope_594 = writer.prefix("StackPolicyDuringUpdateBody");
+    if let Some(var_595) = &input.stack_policy_during_update_body {
+        scope_594.string(var_595);
     }
     #[allow(unused_mut)]
-    let mut scope_581 = writer.prefix("StackPolicyDuringUpdateURL");
-    if let Some(var_582) = &input.stack_policy_during_update_url {
-        scope_581.string(var_582);
+    let mut scope_596 = writer.prefix("StackPolicyDuringUpdateURL");
+    if let Some(var_597) = &input.stack_policy_during_update_url {
+        scope_596.string(var_597);
     }
     #[allow(unused_mut)]
-    let mut scope_583 = writer.prefix("Parameters");
-    if let Some(var_584) = &input.parameters {
-        let mut list_586 = scope_583.start_list(false, None);
-        for item_585 in var_584 {
+    let mut scope_598 = writer.prefix("Parameters");
+    if let Some(var_599) = &input.parameters {
+        let mut list_601 = scope_598.start_list(false, None);
+        for item_600 in var_599 {
             #[allow(unused_mut)]
-            let mut entry_587 = list_586.entry();
-            crate::query_ser::serialize_structure_parameter(entry_587, item_585);
+            let mut entry_602 = list_601.entry();
+            crate::query_ser::serialize_structure_parameter(entry_602, item_600);
         }
-        list_586.finish();
+        list_601.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_588 = writer.prefix("Capabilities");
-    if let Some(var_589) = &input.capabilities {
-        let mut list_591 = scope_588.start_list(false, None);
-        for item_590 in var_589 {
+    let mut scope_603 = writer.prefix("Capabilities");
+    if let Some(var_604) = &input.capabilities {
+        let mut list_606 = scope_603.start_list(false, None);
+        for item_605 in var_604 {
             #[allow(unused_mut)]
-            let mut entry_592 = list_591.entry();
-            entry_592.string(item_590.as_str());
+            let mut entry_607 = list_606.entry();
+            entry_607.string(item_605.as_str());
         }
-        list_591.finish();
+        list_606.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_593 = writer.prefix("ResourceTypes");
-    if let Some(var_594) = &input.resource_types {
-        let mut list_596 = scope_593.start_list(false, None);
-        for item_595 in var_594 {
+    let mut scope_608 = writer.prefix("ResourceTypes");
+    if let Some(var_609) = &input.resource_types {
+        let mut list_611 = scope_608.start_list(false, None);
+        for item_610 in var_609 {
             #[allow(unused_mut)]
-            let mut entry_597 = list_596.entry();
-            entry_597.string(item_595);
+            let mut entry_612 = list_611.entry();
+            entry_612.string(item_610);
         }
-        list_596.finish();
+        list_611.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_598 = writer.prefix("RoleARN");
-    if let Some(var_599) = &input.role_arn {
-        scope_598.string(var_599);
+    let mut scope_613 = writer.prefix("RoleARN");
+    if let Some(var_614) = &input.role_arn {
+        scope_613.string(var_614);
     }
     #[allow(unused_mut)]
-    let mut scope_600 = writer.prefix("RollbackConfiguration");
-    if let Some(var_601) = &input.rollback_configuration {
-        crate::query_ser::serialize_structure_rollback_configuration(scope_600, var_601);
+    let mut scope_615 = writer.prefix("RollbackConfiguration");
+    if let Some(var_616) = &input.rollback_configuration {
+        crate::query_ser::serialize_structure_rollback_configuration(scope_615, var_616);
     }
     #[allow(unused_mut)]
-    let mut scope_602 = writer.prefix("StackPolicyBody");
-    if let Some(var_603) = &input.stack_policy_body {
-        scope_602.string(var_603);
+    let mut scope_617 = writer.prefix("StackPolicyBody");
+    if let Some(var_618) = &input.stack_policy_body {
+        scope_617.string(var_618);
     }
     #[allow(unused_mut)]
-    let mut scope_604 = writer.prefix("StackPolicyURL");
-    if let Some(var_605) = &input.stack_policy_url {
-        scope_604.string(var_605);
+    let mut scope_619 = writer.prefix("StackPolicyURL");
+    if let Some(var_620) = &input.stack_policy_url {
+        scope_619.string(var_620);
     }
     #[allow(unused_mut)]
-    let mut scope_606 = writer.prefix("NotificationARNs");
-    if let Some(var_607) = &input.notification_ar_ns {
-        let mut list_609 = scope_606.start_list(false, None);
-        for item_608 in var_607 {
+    let mut scope_621 = writer.prefix("NotificationARNs");
+    if let Some(var_622) = &input.notification_ar_ns {
+        let mut list_624 = scope_621.start_list(false, None);
+        for item_623 in var_622 {
             #[allow(unused_mut)]
-            let mut entry_610 = list_609.entry();
-            entry_610.string(item_608);
+            let mut entry_625 = list_624.entry();
+            entry_625.string(item_623);
         }
-        list_609.finish();
+        list_624.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_611 = writer.prefix("Tags");
-    if let Some(var_612) = &input.tags {
-        let mut list_614 = scope_611.start_list(false, None);
-        for item_613 in var_612 {
+    let mut scope_626 = writer.prefix("Tags");
+    if let Some(var_627) = &input.tags {
+        let mut list_629 = scope_626.start_list(false, None);
+        for item_628 in var_627 {
             #[allow(unused_mut)]
-            let mut entry_615 = list_614.entry();
-            crate::query_ser::serialize_structure_tag(entry_615, item_613);
+            let mut entry_630 = list_629.entry();
+            crate::query_ser::serialize_structure_tag(entry_630, item_628);
         }
-        list_614.finish();
+        list_629.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_616 = writer.prefix("ClientRequestToken");
-    if let Some(var_617) = &input.client_request_token {
-        scope_616.string(var_617);
+    let mut scope_631 = writer.prefix("ClientRequestToken");
+    if let Some(var_632) = &input.client_request_token {
+        scope_631.string(var_632);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2140,62 +2187,62 @@ pub fn serialize_operation_update_stack_instances(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "UpdateStackInstances", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_618 = writer.prefix("StackSetName");
-    if let Some(var_619) = &input.stack_set_name {
-        scope_618.string(var_619);
+    let mut scope_633 = writer.prefix("StackSetName");
+    if let Some(var_634) = &input.stack_set_name {
+        scope_633.string(var_634);
     }
     #[allow(unused_mut)]
-    let mut scope_620 = writer.prefix("Accounts");
-    if let Some(var_621) = &input.accounts {
-        let mut list_623 = scope_620.start_list(false, None);
-        for item_622 in var_621 {
+    let mut scope_635 = writer.prefix("Accounts");
+    if let Some(var_636) = &input.accounts {
+        let mut list_638 = scope_635.start_list(false, None);
+        for item_637 in var_636 {
             #[allow(unused_mut)]
-            let mut entry_624 = list_623.entry();
-            entry_624.string(item_622);
+            let mut entry_639 = list_638.entry();
+            entry_639.string(item_637);
         }
-        list_623.finish();
+        list_638.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_625 = writer.prefix("DeploymentTargets");
-    if let Some(var_626) = &input.deployment_targets {
-        crate::query_ser::serialize_structure_deployment_targets(scope_625, var_626);
+    let mut scope_640 = writer.prefix("DeploymentTargets");
+    if let Some(var_641) = &input.deployment_targets {
+        crate::query_ser::serialize_structure_deployment_targets(scope_640, var_641);
     }
     #[allow(unused_mut)]
-    let mut scope_627 = writer.prefix("Regions");
-    if let Some(var_628) = &input.regions {
-        let mut list_630 = scope_627.start_list(false, None);
-        for item_629 in var_628 {
+    let mut scope_642 = writer.prefix("Regions");
+    if let Some(var_643) = &input.regions {
+        let mut list_645 = scope_642.start_list(false, None);
+        for item_644 in var_643 {
             #[allow(unused_mut)]
-            let mut entry_631 = list_630.entry();
-            entry_631.string(item_629);
+            let mut entry_646 = list_645.entry();
+            entry_646.string(item_644);
         }
-        list_630.finish();
+        list_645.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_632 = writer.prefix("ParameterOverrides");
-    if let Some(var_633) = &input.parameter_overrides {
-        let mut list_635 = scope_632.start_list(false, None);
-        for item_634 in var_633 {
+    let mut scope_647 = writer.prefix("ParameterOverrides");
+    if let Some(var_648) = &input.parameter_overrides {
+        let mut list_650 = scope_647.start_list(false, None);
+        for item_649 in var_648 {
             #[allow(unused_mut)]
-            let mut entry_636 = list_635.entry();
-            crate::query_ser::serialize_structure_parameter(entry_636, item_634);
+            let mut entry_651 = list_650.entry();
+            crate::query_ser::serialize_structure_parameter(entry_651, item_649);
         }
-        list_635.finish();
+        list_650.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_637 = writer.prefix("OperationPreferences");
-    if let Some(var_638) = &input.operation_preferences {
-        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_637, var_638);
+    let mut scope_652 = writer.prefix("OperationPreferences");
+    if let Some(var_653) = &input.operation_preferences {
+        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_652, var_653);
     }
     #[allow(unused_mut)]
-    let mut scope_639 = writer.prefix("OperationId");
-    if let Some(var_640) = &input.operation_id {
-        scope_639.string(var_640);
+    let mut scope_654 = writer.prefix("OperationId");
+    if let Some(var_655) = &input.operation_id {
+        scope_654.string(var_655);
     }
     #[allow(unused_mut)]
-    let mut scope_641 = writer.prefix("CallAs");
-    if let Some(var_642) = &input.call_as {
-        scope_641.string(var_642.as_str());
+    let mut scope_656 = writer.prefix("CallAs");
+    if let Some(var_657) = &input.call_as {
+        scope_656.string(var_657.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2208,124 +2255,124 @@ pub fn serialize_operation_update_stack_set(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "UpdateStackSet", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_643 = writer.prefix("StackSetName");
-    if let Some(var_644) = &input.stack_set_name {
-        scope_643.string(var_644);
+    let mut scope_658 = writer.prefix("StackSetName");
+    if let Some(var_659) = &input.stack_set_name {
+        scope_658.string(var_659);
     }
     #[allow(unused_mut)]
-    let mut scope_645 = writer.prefix("Description");
-    if let Some(var_646) = &input.description {
-        scope_645.string(var_646);
+    let mut scope_660 = writer.prefix("Description");
+    if let Some(var_661) = &input.description {
+        scope_660.string(var_661);
     }
     #[allow(unused_mut)]
-    let mut scope_647 = writer.prefix("TemplateBody");
-    if let Some(var_648) = &input.template_body {
-        scope_647.string(var_648);
+    let mut scope_662 = writer.prefix("TemplateBody");
+    if let Some(var_663) = &input.template_body {
+        scope_662.string(var_663);
     }
     #[allow(unused_mut)]
-    let mut scope_649 = writer.prefix("TemplateURL");
-    if let Some(var_650) = &input.template_url {
-        scope_649.string(var_650);
+    let mut scope_664 = writer.prefix("TemplateURL");
+    if let Some(var_665) = &input.template_url {
+        scope_664.string(var_665);
     }
     #[allow(unused_mut)]
-    let mut scope_651 = writer.prefix("UsePreviousTemplate");
-    if let Some(var_652) = &input.use_previous_template {
-        scope_651.boolean(*var_652);
+    let mut scope_666 = writer.prefix("UsePreviousTemplate");
+    if let Some(var_667) = &input.use_previous_template {
+        scope_666.boolean(*var_667);
     }
     #[allow(unused_mut)]
-    let mut scope_653 = writer.prefix("Parameters");
-    if let Some(var_654) = &input.parameters {
-        let mut list_656 = scope_653.start_list(false, None);
-        for item_655 in var_654 {
+    let mut scope_668 = writer.prefix("Parameters");
+    if let Some(var_669) = &input.parameters {
+        let mut list_671 = scope_668.start_list(false, None);
+        for item_670 in var_669 {
             #[allow(unused_mut)]
-            let mut entry_657 = list_656.entry();
-            crate::query_ser::serialize_structure_parameter(entry_657, item_655);
+            let mut entry_672 = list_671.entry();
+            crate::query_ser::serialize_structure_parameter(entry_672, item_670);
         }
-        list_656.finish();
+        list_671.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_658 = writer.prefix("Capabilities");
-    if let Some(var_659) = &input.capabilities {
-        let mut list_661 = scope_658.start_list(false, None);
-        for item_660 in var_659 {
+    let mut scope_673 = writer.prefix("Capabilities");
+    if let Some(var_674) = &input.capabilities {
+        let mut list_676 = scope_673.start_list(false, None);
+        for item_675 in var_674 {
             #[allow(unused_mut)]
-            let mut entry_662 = list_661.entry();
-            entry_662.string(item_660.as_str());
+            let mut entry_677 = list_676.entry();
+            entry_677.string(item_675.as_str());
         }
-        list_661.finish();
+        list_676.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_663 = writer.prefix("Tags");
-    if let Some(var_664) = &input.tags {
-        let mut list_666 = scope_663.start_list(false, None);
-        for item_665 in var_664 {
+    let mut scope_678 = writer.prefix("Tags");
+    if let Some(var_679) = &input.tags {
+        let mut list_681 = scope_678.start_list(false, None);
+        for item_680 in var_679 {
             #[allow(unused_mut)]
-            let mut entry_667 = list_666.entry();
-            crate::query_ser::serialize_structure_tag(entry_667, item_665);
+            let mut entry_682 = list_681.entry();
+            crate::query_ser::serialize_structure_tag(entry_682, item_680);
         }
-        list_666.finish();
+        list_681.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_668 = writer.prefix("OperationPreferences");
-    if let Some(var_669) = &input.operation_preferences {
-        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_668, var_669);
+    let mut scope_683 = writer.prefix("OperationPreferences");
+    if let Some(var_684) = &input.operation_preferences {
+        crate::query_ser::serialize_structure_stack_set_operation_preferences(scope_683, var_684);
     }
     #[allow(unused_mut)]
-    let mut scope_670 = writer.prefix("AdministrationRoleARN");
-    if let Some(var_671) = &input.administration_role_arn {
-        scope_670.string(var_671);
+    let mut scope_685 = writer.prefix("AdministrationRoleARN");
+    if let Some(var_686) = &input.administration_role_arn {
+        scope_685.string(var_686);
     }
     #[allow(unused_mut)]
-    let mut scope_672 = writer.prefix("ExecutionRoleName");
-    if let Some(var_673) = &input.execution_role_name {
-        scope_672.string(var_673);
+    let mut scope_687 = writer.prefix("ExecutionRoleName");
+    if let Some(var_688) = &input.execution_role_name {
+        scope_687.string(var_688);
     }
     #[allow(unused_mut)]
-    let mut scope_674 = writer.prefix("DeploymentTargets");
-    if let Some(var_675) = &input.deployment_targets {
-        crate::query_ser::serialize_structure_deployment_targets(scope_674, var_675);
+    let mut scope_689 = writer.prefix("DeploymentTargets");
+    if let Some(var_690) = &input.deployment_targets {
+        crate::query_ser::serialize_structure_deployment_targets(scope_689, var_690);
     }
     #[allow(unused_mut)]
-    let mut scope_676 = writer.prefix("PermissionModel");
-    if let Some(var_677) = &input.permission_model {
-        scope_676.string(var_677.as_str());
+    let mut scope_691 = writer.prefix("PermissionModel");
+    if let Some(var_692) = &input.permission_model {
+        scope_691.string(var_692.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_678 = writer.prefix("AutoDeployment");
-    if let Some(var_679) = &input.auto_deployment {
-        crate::query_ser::serialize_structure_auto_deployment(scope_678, var_679);
+    let mut scope_693 = writer.prefix("AutoDeployment");
+    if let Some(var_694) = &input.auto_deployment {
+        crate::query_ser::serialize_structure_auto_deployment(scope_693, var_694);
     }
     #[allow(unused_mut)]
-    let mut scope_680 = writer.prefix("OperationId");
-    if let Some(var_681) = &input.operation_id {
-        scope_680.string(var_681);
+    let mut scope_695 = writer.prefix("OperationId");
+    if let Some(var_696) = &input.operation_id {
+        scope_695.string(var_696);
     }
     #[allow(unused_mut)]
-    let mut scope_682 = writer.prefix("Accounts");
-    if let Some(var_683) = &input.accounts {
-        let mut list_685 = scope_682.start_list(false, None);
-        for item_684 in var_683 {
+    let mut scope_697 = writer.prefix("Accounts");
+    if let Some(var_698) = &input.accounts {
+        let mut list_700 = scope_697.start_list(false, None);
+        for item_699 in var_698 {
             #[allow(unused_mut)]
-            let mut entry_686 = list_685.entry();
-            entry_686.string(item_684);
+            let mut entry_701 = list_700.entry();
+            entry_701.string(item_699);
         }
-        list_685.finish();
+        list_700.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_687 = writer.prefix("Regions");
-    if let Some(var_688) = &input.regions {
-        let mut list_690 = scope_687.start_list(false, None);
-        for item_689 in var_688 {
+    let mut scope_702 = writer.prefix("Regions");
+    if let Some(var_703) = &input.regions {
+        let mut list_705 = scope_702.start_list(false, None);
+        for item_704 in var_703 {
             #[allow(unused_mut)]
-            let mut entry_691 = list_690.entry();
-            entry_691.string(item_689);
+            let mut entry_706 = list_705.entry();
+            entry_706.string(item_704);
         }
-        list_690.finish();
+        list_705.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_692 = writer.prefix("CallAs");
-    if let Some(var_693) = &input.call_as {
-        scope_692.string(var_693.as_str());
+    let mut scope_707 = writer.prefix("CallAs");
+    if let Some(var_708) = &input.call_as {
+        scope_707.string(var_708.as_str());
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2339,14 +2386,14 @@ pub fn serialize_operation_update_termination_protection(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "UpdateTerminationProtection", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_694 = writer.prefix("EnableTerminationProtection");
-    if let Some(var_695) = &input.enable_termination_protection {
-        scope_694.boolean(*var_695);
+    let mut scope_709 = writer.prefix("EnableTerminationProtection");
+    if let Some(var_710) = &input.enable_termination_protection {
+        scope_709.boolean(*var_710);
     }
     #[allow(unused_mut)]
-    let mut scope_696 = writer.prefix("StackName");
-    if let Some(var_697) = &input.stack_name {
-        scope_696.string(var_697);
+    let mut scope_711 = writer.prefix("StackName");
+    if let Some(var_712) = &input.stack_name {
+        scope_711.string(var_712);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2359,14 +2406,14 @@ pub fn serialize_operation_validate_template(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "ValidateTemplate", "2010-05-15");
     #[allow(unused_mut)]
-    let mut scope_698 = writer.prefix("TemplateBody");
-    if let Some(var_699) = &input.template_body {
-        scope_698.string(var_699);
+    let mut scope_713 = writer.prefix("TemplateBody");
+    if let Some(var_714) = &input.template_body {
+        scope_713.string(var_714);
     }
     #[allow(unused_mut)]
-    let mut scope_700 = writer.prefix("TemplateURL");
-    if let Some(var_701) = &input.template_url {
-        scope_700.string(var_701);
+    let mut scope_715 = writer.prefix("TemplateURL");
+    if let Some(var_716) = &input.template_url {
+        scope_715.string(var_716);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))

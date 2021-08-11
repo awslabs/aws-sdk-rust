@@ -310,7 +310,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>An account ID, or <code>*</code> to grant permission to all AWS accounts.</p>
+        /// <p>An account ID, or <code>*</code> to grant layer usage permission to all
+        /// accounts in an organization, or all Amazon Web Services accounts (if <code>organizationId</code> is not specified).
+        /// For the last case, make sure that you really do want all Amazon Web Services accounts to have usage permission to this layer.
+        /// </p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal(input);
             self
@@ -424,7 +427,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>The AWS service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
+        /// <p>The Amazon Web Services service or account that invokes the function. If you specify a service, use <code>SourceArn</code> or
         /// <code>SourceAccount</code> to limit who can invoke the function through that service.</p>
         pub fn principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.principal(input);
@@ -434,7 +437,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_principal(input);
             self
         }
-        /// <p>For AWS services, the ARN of the AWS resource that invokes the function. For example, an Amazon S3 bucket or
+        /// <p>For Amazon Web Services services, the ARN of the Amazon Web Services resource that invokes the function. For example, an Amazon S3 bucket or
         /// Amazon SNS topic.</p>
         pub fn source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_arn(input);
@@ -809,7 +812,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_batching_window_in_seconds(input);
             self
         }
-        /// <p>(Streams) The number of batches to process from each shard concurrently.</p>
+        /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
             self.inner = self.inner.parallelization_factor(input);
             self
@@ -844,7 +847,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_starting_position_timestamp(input);
             self
         }
-        /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+        /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.inner = self.inner.destination_config(input);
             self
@@ -856,7 +859,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_config(input);
             self
         }
-        /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1).</p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_record_age_in_seconds(input);
             self
@@ -868,7 +871,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_record_age_in_seconds(input);
             self
         }
-        /// <p>(Streams) If the function returns an error, split the batch in two and retry.</p>
+        /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
             self.inner = self.inner.bisect_batch_on_function_error(input);
             self
@@ -880,7 +883,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bisect_batch_on_function_error(input);
             self
         }
-        /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_retry_attempts(input);
             self
@@ -889,7 +892,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_retry_attempts(input);
             self
         }
-        /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.tumbling_window_in_seconds(input);
             self
@@ -924,7 +927,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queues(input);
             self
         }
-        /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
+        /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
         pub fn source_access_configurations(
             mut self,
             inp: impl Into<crate::model::SourceAccessConfiguration>,
@@ -954,7 +957,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_self_managed_event_source(input);
             self
         }
-        /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             inp: impl Into<crate::model::FunctionResponseType>,
@@ -1080,7 +1083,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-        /// maximum allowed value is 900 seconds.</p>
+        /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
@@ -1089,8 +1092,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>The amount of memory available to the function at runtime. Increasing the function's memory also increases its CPU
-        /// allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+        /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
+        /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
             self.inner = self.inner.memory_size(input);
             self
@@ -1108,7 +1111,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_publish(input);
             self
         }
-        /// <p>For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
+        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
         /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -1159,8 +1162,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-        /// variables. If it's not provided, AWS Lambda uses a default service key.</p>
+        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
+        /// variables. If it's not provided, Lambda uses a default service key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input);
             self
@@ -1169,8 +1172,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
-        /// X-Ray.</p>
+        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfig) -> Self {
             self.inner = self.inner.tracing_config(input);
             self
@@ -1229,8 +1232,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_file_system_configs(input);
             self
         }
-        /// <p>
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+        /// <p>Container image <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-images.html#configuration-images-settings">configuration
         /// values</a> that override the values in the container image Dockerfile.</p>
         pub fn image_config(mut self, input: crate::model::ImageConfig) -> Self {
             self.inner = self.inner.image_config(input);
@@ -3078,7 +3080,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of event source mappings to return.</p>
+        /// <p>The maximum number of event source mappings to return. Note that ListEventSourceMappings returns
+        /// a maximum of 100 items in each response, even if you set the number higher.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
@@ -3200,7 +3203,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>For Lambda@Edge functions, the AWS Region of the master function. For example, <code>us-east-1</code> filters
+        /// <p>For Lambda@Edge functions, the Region of the master function. For example, <code>us-east-1</code> filters
         /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
         /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
         pub fn master_region(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3634,7 +3637,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_marker(input);
             self
         }
-        /// <p>The maximum number of versions to return.</p>
+        /// <p>The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response,
+        /// even if you set the number higher.</p>
         pub fn max_items(mut self, input: i32) -> Self {
             self.inner = self.inner.max_items(input);
             self
@@ -4783,7 +4787,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_batching_window_in_seconds(input);
             self
         }
-        /// <p>(Streams) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
+        /// <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.</p>
         pub fn destination_config(mut self, input: crate::model::DestinationConfig) -> Self {
             self.inner = self.inner.destination_config(input);
             self
@@ -4795,7 +4799,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_destination_config(input);
             self
         }
-        /// <p>(Streams) Discard records older than the specified age. The default value is infinite (-1).</p>
+        /// <p>(Streams only) Discard records older than the specified age. The default value is infinite (-1).</p>
         pub fn maximum_record_age_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_record_age_in_seconds(input);
             self
@@ -4807,7 +4811,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_record_age_in_seconds(input);
             self
         }
-        /// <p>(Streams) If the function returns an error, split the batch in two and retry.</p>
+        /// <p>(Streams only) If the function returns an error, split the batch in two and retry.</p>
         pub fn bisect_batch_on_function_error(mut self, input: bool) -> Self {
             self.inner = self.inner.bisect_batch_on_function_error(input);
             self
@@ -4819,7 +4823,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_bisect_batch_on_function_error(input);
             self
         }
-        /// <p>(Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
+        /// <p>(Streams only) Discard records after the specified number of retries. The default value is infinite (-1). When set to infinite (-1), failed records will be retried until the record expires.</p>
         pub fn maximum_retry_attempts(mut self, input: i32) -> Self {
             self.inner = self.inner.maximum_retry_attempts(input);
             self
@@ -4828,7 +4832,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_maximum_retry_attempts(input);
             self
         }
-        /// <p>(Streams) The number of batches to process from each shard concurrently.</p>
+        /// <p>(Streams only) The number of batches to process from each shard concurrently.</p>
         pub fn parallelization_factor(mut self, input: i32) -> Self {
             self.inner = self.inner.parallelization_factor(input);
             self
@@ -4837,7 +4841,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_parallelization_factor(input);
             self
         }
-        /// <p>An array of the authentication protocol, or the VPC components to secure your event source.</p>
+        /// <p>An array of authentication protocols or VPC components required to secure your event source.</p>
         pub fn source_access_configurations(
             mut self,
             inp: impl Into<crate::model::SourceAccessConfiguration>,
@@ -4852,7 +4856,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_access_configurations(input);
             self
         }
-        /// <p>(Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
+        /// <p>(Streams only) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.</p>
         pub fn tumbling_window_in_seconds(mut self, input: i32) -> Self {
             self.inner = self.inner.tumbling_window_in_seconds(input);
             self
@@ -4861,7 +4865,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tumbling_window_in_seconds(input);
             self
         }
-        /// <p>(Streams) A list of current response type enums applied to the event source mapping.</p>
+        /// <p>(Streams only) A list of current response type enums applied to the event source mapping.</p>
         pub fn function_response_types(
             mut self,
             inp: impl Into<crate::model::FunctionResponseType>,
@@ -4939,7 +4943,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_function_name(input);
             self
         }
-        /// <p>The base64-encoded contents of the deployment package. AWS SDK and AWS CLI clients handle the encoding for
+        /// <p>The base64-encoded contents of the deployment package. Amazon Web Services SDK and Amazon Web Services CLI clients handle the encoding for
         /// you.</p>
         pub fn zip_file(mut self, input: smithy_types::Blob) -> Self {
             self.inner = self.inner.zip_file(input);
@@ -4949,7 +4953,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_zip_file(input);
             self
         }
-        /// <p>An Amazon S3 bucket in the same AWS Region as your function. The bucket can be in a different AWS account.</p>
+        /// <p>An Amazon S3 bucket in the same Amazon Web Services Region as your function. The bucket can be in a different Amazon Web Services account.</p>
         pub fn s3_bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.s3_bucket(input);
             self
@@ -5111,7 +5115,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The amount of time that Lambda allows a function to run before stopping it. The default is 3 seconds. The
-        /// maximum allowed value is 900 seconds.</p>
+        /// maximum allowed value is 900 seconds. For additional information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-context.html">Lambda execution environment</a>.</p>
         pub fn timeout(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout(input);
             self
@@ -5120,8 +5124,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_timeout(input);
             self
         }
-        /// <p>The amount of memory available to the function at runtime. Increasing the function's memory also increases its CPU
-        /// allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
+        /// <p>The amount of  <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-memory.html">memory available to the function</a> at runtime.
+        /// Increasing the function memory also increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.</p>
         pub fn memory_size(mut self, input: i32) -> Self {
             self.inner = self.inner.memory_size(input);
             self
@@ -5130,7 +5134,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_memory_size(input);
             self
         }
-        /// <p>For network connectivity to AWS resources in a VPC, specify a list of security groups and subnets in the VPC.
+        /// <p>For network connectivity to Amazon Web Services resources in a VPC, specify a list of security groups and subnets in the VPC.
         /// When you connect a function to a VPC, it can only access resources and the internet through that VPC. For more
         /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-vpc.html">VPC Settings</a>.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
@@ -5178,8 +5182,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_config(input);
             self
         }
-        /// <p>The ARN of the AWS Key Management Service (AWS KMS) key that's used to encrypt your function's environment
-        /// variables. If it's not provided, AWS Lambda uses a default service key.</p>
+        /// <p>The ARN of the Amazon Web Services Key Management Service (KMS) key that's used to encrypt your function's environment
+        /// variables. If it's not provided, Lambda uses a default service key.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.kms_key_arn(input);
             self
@@ -5188,8 +5192,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_arn(input);
             self
         }
-        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with AWS
-        /// X-Ray.</p>
+        /// <p>Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming requests with
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.</p>
         pub fn tracing_config(mut self, input: crate::model::TracingConfig) -> Self {
             self.inner = self.inner.tracing_config(input);
             self
