@@ -29,10 +29,10 @@ The SDK currently requires a minimum of Rust 1.52.1, and is not guaranteed to bu
 ### Using packages
 
 To access an Amazon or AWS service using the AWS SDK for Rust you must specify the service’s crate in your **Cargo.toml** file. 
-For example, to access Amazon Simple Storage Service (Amazon S3) APIs using the v1.0 version of the Rust SDK, you must include the following entry in the `dependencies `section:
+For example, to access Amazon Simple Storage Service (Amazon S3) APIs using the vN.n version of the Rust SDK, you must include the following entry in the `dependencies `section:
 
 ```
-s3 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "v1.0", package = "aws-sdk-s3" }
+aws-sdk-s3 = { git = "https://github.com/awslabs/aws-sdk-rust", tag = "vN.n", package = "aws-sdk-s3" }
 ```
 
 ## Using the SDK 
@@ -78,36 +78,38 @@ The following example creates a client for Amazon S3:
  let client = s3::Client::from_env();
 ```
 
+The code examples typically construct a client from a command-line argument, the environement, or a specific AWS Region.
+
 ## API reference
 
 You can find the API reference for the AWS SDK for Rust at [https://awslabs.github.io/aws-sdk-rust/](https://awslabs.github.io/aws-sdk-rust/).
 
 ## Code examples 
 
-The AWS SDK for Rust examples can help you write your own Rust applications that use Amazon Web Services. The examples assume you have already set up and configured the SDK (that is, you have imported all required packages and set your credentials and region).
+The AWS SDK for Rust examples can help you write your own Rust applications that use Amazon Web Services. To use the examples, you must have already set up and configured the SDK, as described in the **Getting Started** section at the beginning of this document.
 
-You can find the source code for these examples and others in the [sdk/examples](sdk/examples) section of this repository. To propose a new code example, create an  issue and describe what you want the cod example to do. 
+You can find the source code for these examples and others in the [sdk/examples](sdk/examples) section of this repository. To propose a new code example, create an  issue and describe what you want the code example to do. 
 The **sdk/examples** section contains code examples for the following services:
 
-[AWS Batch](sdk/examples/batch)
-[AWS CloudFormation](sdk/examples/cloudformation)
-[Amazon DynamoDB](sdk/examples/dynamodb)
-[Amazon EC2](sdk/examples/ec2)
-[Amazon Kinesis](sdk/examples/kinesis)
-[AWS KMS](sdk/examples/kms)
-[AWS Lambda](sdk/examples/lambda)
-[AWS Elemental MediaLive](sdk/examples/medialive)
-[AWS Elemental MediaPackage](sdk/examples/mediapackage)
-[Amazon Polly](sdk/examples/polly)
-[Amazon QLDB](sdk/examples/qldb)
-[Amazon RDS](sdk/examples/rds)
-[Amazon RDS Data](sdk/examples/rdsdata)
-[Amazon Route 53](sdk/examples/route53)
-[Amazon S3](sdk/examples/s3)
-[Amazon SageMaker](sdk/examples/sagemaker)
-[AWS Secrets Manager](sdk/examples/secretsmanager)
-[Amazon SES](sdk/examples/ses)
-[Amazon SNS](sdk/examples/sns)
-[Amazon SQS](sdk/examples/sqs)
-[AWS Systems Manager](sdk/examples/ssm)
-[AWS STS](sdk/examples/sts)
+- [AWS Batch](sdk/examples/batch)
+- [AWS CloudFormation](sdk/examples/cloudformation)
+- [Amazon DynamoDB](sdk/examples/dynamodb)
+- [Amazon EC2](sdk/examples/ec2)
+- [Amazon Kinesis](sdk/examples/kinesis)
+- [AWS KMS](sdk/examples/kms)
+- [AWS Lambda](sdk/examples/lambda)
+- [AWS Elemental MediaLive](sdk/examples/medialive)
+- [AWS Elemental MediaPackage](sdk/examples/mediapackage)
+- [Amazon Polly](sdk/examples/polly)
+- [Amazon QLDB](sdk/examples/qldb)
+- [Amazon RDS](sdk/examples/rds)
+- [Amazon RDS Data](sdk/examples/rdsdata)
+- [Amazon Route 53](sdk/examples/route53)
+- [Amazon S3](sdk/examples/s3)
+- [Amazon SageMaker](sdk/examples/sagemaker)
+- [AWS Secrets Manager](sdk/examples/secretsmanager)
+- [Amazon SES](sdk/examples/ses)
+- [Amazon SNS](sdk/examples/sns)
+- [Amazon SQS](sdk/examples/sqs)
+- [AWS Systems Manager](sdk/examples/ssm)
+- [AWS STS](sdk/examples/sts)
