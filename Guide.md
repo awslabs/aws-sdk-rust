@@ -78,7 +78,7 @@ The following example creates a client for Amazon S3:
  let client = s3::Client::from_env();
 ```
 
-The code examples typically construct a client from a command-line argument, the environement, or a specific AWS Region.
+The code examples typically construct a client from a command-line argument, the environment, or a specific AWS Region.
 
 ## API reference
 
