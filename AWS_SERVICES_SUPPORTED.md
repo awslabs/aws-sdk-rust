@@ -70,6 +70,8 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Budgets
 - [x] Amazon Ce
 - [x] Amazon Chime
+- [x] Amazon Chime Identity
+- [x] Amazon Chime Messaging
 - [x] Amazon Cloud9
 - [x] Amazon Cloud Directory
 - [x] Amazon Cloud Front
@@ -221,6 +223,7 @@ These services have not yet been manually tested by the SDK team and may not hav
 - [x] Amazon Signer
 - [x] Amazon SMS
 - [x] Amazon Sms-Voice
+- [x] Amazon Snow Device Management
 - [x] Amazon SSO
 - [x] Amazon Sso-Admin
 - [x] Amazon Sso-Oidc
