@@ -6,7 +6,7 @@
 #![allow(clippy::blacklisted_name)]
 //! <fullname>Amazon QuickSight API Reference</fullname>
 //! <p>Amazon QuickSight is a fully managed, serverless business intelligence service for the
-//! Cloud that makes it easy to extend data and insights to every user in your
+//! Amazon Web Services Cloud that makes it easy to extend data and insights to every user in your
 //! organization. This API reference contains documentation for a programming interface that
 //! you can use to manage Amazon QuickSight. </p>
 

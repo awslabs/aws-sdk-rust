@@ -1345,6 +1345,7 @@ pub mod create_domain_name_input {
         pub(crate) security_policy: std::option::Option<crate::model::SecurityPolicy>,
         pub(crate) mutual_tls_authentication:
             std::option::Option<crate::model::MutualTlsAuthenticationInput>,
+        pub(crate) ownership_verification_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>[Required] The name of the <a>DomainName</a> resource.</p>
@@ -1501,6 +1502,21 @@ pub mod create_domain_name_input {
             self.mutual_tls_authentication = input;
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+        pub fn ownership_verification_certificate_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_ownership_verification_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDomainNameInput`](crate::input::CreateDomainNameInput)
         pub fn build(
             self,
@@ -1521,6 +1537,7 @@ pub mod create_domain_name_input {
                 tags: self.tags,
                 security_policy: self.security_policy,
                 mutual_tls_authentication: self.mutual_tls_authentication,
+                ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             })
         }
     }
@@ -26195,6 +26212,8 @@ pub struct CreateDomainNameInput {
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
     /// <p>If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your custom domain name.</p>
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthenticationInput>,
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDomainNameInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -26211,6 +26230,10 @@ impl std::fmt::Debug for CreateDomainNameInput {
         formatter.field("tags", &self.tags);
         formatter.field("security_policy", &self.security_policy);
         formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
+        formatter.field(
+            "ownership_verification_certificate_arn",
+            &self.ownership_verification_certificate_arn,
+        );
         formatter.finish()
     }
 }

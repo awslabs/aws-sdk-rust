@@ -276,6 +276,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_connection_type(input);
             self
         }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.inner = self.inner.dry_run(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_dry_run(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateEnvironmentMembership<C = aws_hyper::DynConnector> {
@@ -908,6 +917,38 @@ pub mod fluent_builders {
         }
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary
+        /// credentials for an Cloud9 environment by using one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLE</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment
+        /// owner.</p>  
+        /// </note>
+        pub fn managed_credentials_action(
+            mut self,
+            input: crate::model::ManagedCredentialsAction,
+        ) -> Self {
+            self.inner = self.inner.managed_credentials_action(input);
+            self
+        }
+        pub fn set_managed_credentials_action(
+            mut self,
+            input: std::option::Option<crate::model::ManagedCredentialsAction>,
+        ) -> Self {
+            self.inner = self.inner.set_managed_credentials_action(input);
             self
         }
     }

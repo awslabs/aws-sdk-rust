@@ -1108,7 +1108,7 @@ pub struct Grantee {
     pub display_name: std::option::Option<std::string::String>,
     /// <p>Email address of the grantee.</p>
     /// <note>
-    /// <p>Using email addresses to specify a grantee is only supported in the following AWS Regions: </p>
+    /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
     /// <ul>
     /// <li>
     /// <p>US East (N. Virginia)</p>
@@ -1135,7 +1135,7 @@ pub struct Grantee {
     /// <p>South America (São Paulo)</p>
     /// </li>
     /// </ul>
-    /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS General Reference.</p>
+    /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
     /// </note>
     pub email_address: std::option::Option<std::string::String>,
     /// <p>The canonical user ID of the grantee.</p>
@@ -1180,7 +1180,7 @@ pub mod grantee {
         }
         /// <p>Email address of the grantee.</p>
         /// <note>
-        /// <p>Using email addresses to specify a grantee is only supported in the following AWS Regions: </p>
+        /// <p>Using email addresses to specify a grantee is only supported in the following Amazon Web Services Regions: </p>
         /// <ul>
         /// <li>
         /// <p>US East (N. Virginia)</p>
@@ -1207,7 +1207,7 @@ pub mod grantee {
         /// <p>South America (São Paulo)</p>
         /// </li>
         /// </ul>
-        /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS General Reference.</p>
+        /// <p>For a list of all the Amazon S3 supported Regions and endpoints, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the Amazon Web Services General Reference.</p>
         /// </note>
         pub fn email_address(mut self, input: impl Into<std::string::String>) -> Self {
             self.email_address = Some(input.into());
@@ -1400,9 +1400,9 @@ pub struct Encryption {
     /// AES256, aws:kms).</p>
     pub encryption_type: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-    /// the symmetric customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only
+    /// the symmetric customer managed Amazon Web Services KMS CMK to use for encryption of job results. Amazon S3 only
     /// supports symmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>If the encryption type is <code>aws:kms</code>, this optional value can be used to
     /// specify the encryption context for the restore results.</p>
@@ -1442,9 +1442,9 @@ pub mod encryption {
             self
         }
         /// <p>If the encryption type is <code>aws:kms</code>, this optional value specifies the ID of
-        /// the symmetric customer managed AWS KMS CMK to use for encryption of job results. Amazon S3 only
+        /// the symmetric customer managed Amazon Web Services KMS CMK to use for encryption of job results. Amazon S3 only
         /// supports symmetric CMKs. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -2664,7 +2664,7 @@ pub struct PublicAccessBlockConfiguration {
     /// <p>Enabling this setting doesn't affect existing bucket policies.</p>
     pub block_public_policy: bool,
     /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
-    /// this element to <code>TRUE</code> restricts access to this bucket to only AWS service
+    /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
     /// principals and authorized users within this account if the bucket has a public
     /// policy.</p>
     /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
@@ -2744,7 +2744,7 @@ pub mod public_access_block_configuration {
             self
         }
         /// <p>Specifies whether Amazon S3 should restrict public bucket policies for this bucket. Setting
-        /// this element to <code>TRUE</code> restricts access to this bucket to only AWS service
+        /// this element to <code>TRUE</code> restricts access to this bucket to only Amazon Web Service
         /// principals and authorized users within this account if the bucket has a public
         /// policy.</p>
         /// <p>Enabling this setting doesn't affect previously stored bucket policies, except that
@@ -4298,7 +4298,7 @@ impl AsRef<str> for Payer {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationConfiguration {
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
     /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
     /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub role: std::option::Option<std::string::String>,
@@ -4324,7 +4324,7 @@ pub mod replication_configuration {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::ReplicationRule>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role that
         /// Amazon S3 assumes when replicating objects. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-how-setup.html">How to Set Up
         /// Replication</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -4396,7 +4396,7 @@ pub struct ReplicationRule {
     /// <p>A container that describes additional filters for identifying the source objects that
     /// you want to replicate. You can choose to enable or disable the replication of these
     /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-    /// with server-side encryption using a customer master key (CMK) stored in AWS Key Management
+    /// with server-side encryption using a customer master key (CMK) stored in Amazon Web Services Key Management
     /// Service (SSE-KMS).</p>
     pub source_selection_criteria: std::option::Option<crate::model::SourceSelectionCriteria>,
     /// <p></p>
@@ -4525,7 +4525,7 @@ pub mod replication_rule {
         /// <p>A container that describes additional filters for identifying the source objects that
         /// you want to replicate. You can choose to enable or disable the replication of these
         /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-        /// with server-side encryption using a customer master key (CMK) stored in AWS Key Management
+        /// with server-side encryption using a customer master key (CMK) stored in Amazon Web Services Key Management
         /// Service (SSE-KMS).</p>
         pub fn source_selection_criteria(
             mut self,
@@ -4743,7 +4743,7 @@ pub struct Destination {
     /// <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to store the results.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
-    /// change replica ownership to the AWS account that owns the destination bucket by specifying
+    /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
     /// the <code>AccessControlTranslation</code> property, this is the account ID of the
     /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
     /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -4755,9 +4755,9 @@ pub struct Destination {
     /// replication</a> action in the <i>Amazon S3 API Reference</i>.</p>
     pub storage_class: std::option::Option<crate::model::StorageClass>,
     /// <p>Specify this only in a cross-account scenario (where source and destination bucket
-    /// owners are not the same), and you want to change replica ownership to the AWS account that
+    /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
     /// owns the destination bucket. If this is not specified in the replication configuration, the
-    /// replicas are owned by same AWS account that owns the source object.</p>
+    /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
     pub access_control_translation: std::option::Option<crate::model::AccessControlTranslation>,
     /// <p>A container that provides information about encryption. If
     /// <code>SourceSelectionCriteria</code> is specified, you must specify this element.</p>
@@ -4813,7 +4813,7 @@ pub mod destination {
             self
         }
         /// <p>Destination bucket owner account ID. In a cross-account scenario, if you direct Amazon S3 to
-        /// change replica ownership to the AWS account that owns the destination bucket by specifying
+        /// change replica ownership to the Amazon Web Services account that owns the destination bucket by specifying
         /// the <code>AccessControlTranslation</code> property, this is the account ID of the
         /// destination bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-change-owner.html">Replication Additional
         /// Configuration: Changing the Replica Owner</a> in the <i>Amazon S3 User Guide</i>.</p>
@@ -4842,9 +4842,9 @@ pub mod destination {
             self
         }
         /// <p>Specify this only in a cross-account scenario (where source and destination bucket
-        /// owners are not the same), and you want to change replica ownership to the AWS account that
+        /// owners are not the same), and you want to change replica ownership to the Amazon Web Services account that
         /// owns the destination bucket. If this is not specified in the replication configuration, the
-        /// replicas are owned by same AWS account that owns the source object.</p>
+        /// replicas are owned by same Amazon Web Services account that owns the source object.</p>
         pub fn access_control_translation(
             mut self,
             input: crate::model::AccessControlTranslation,
@@ -4996,7 +4996,7 @@ impl Metrics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationTimeValue {
     /// <p> Contains an integer specifying time in minutes. </p>
-    /// <p> Valid values: 15 minutes. </p>
+    /// <p> Valid value: 15</p>
     pub minutes: i32,
 }
 impl std::fmt::Debug for ReplicationTimeValue {
@@ -5016,7 +5016,7 @@ pub mod replication_time_value {
     }
     impl Builder {
         /// <p> Contains an integer specifying time in minutes. </p>
-        /// <p> Valid values: 15 minutes. </p>
+        /// <p> Valid value: 15</p>
         pub fn minutes(mut self, input: i32) -> Self {
             self.minutes = Some(input);
             self
@@ -5216,11 +5216,11 @@ impl AsRef<str> for ReplicationTimeStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
-    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key
-    /// stored in AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses
+    /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
+    /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
     /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
     /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     pub replica_kms_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EncryptionConfiguration {
@@ -5239,11 +5239,11 @@ pub mod encryption_configuration {
         pub(crate) replica_kms_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key
-        /// stored in AWS Key Management Service (KMS) for the destination bucket. Amazon S3 uses
+        /// <p>Specifies the ID (Key ARN or Alias ARN) of the customer managed Amazon Web Services KMS key
+        /// stored in Amazon Web Services Key Management Service (KMS) for the destination bucket. Amazon S3 uses
         /// this key to encrypt replica objects. Amazon S3 only supports symmetric, customer managed KMS keys.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         pub fn replica_kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.replica_kms_key_id = Some(input.into());
             self
@@ -5472,12 +5472,12 @@ impl AsRef<str> for ExistingObjectReplicationStatus {
 /// <p>A container that describes additional filters for identifying the source objects that
 /// you want to replicate. You can choose to enable or disable the replication of these
 /// objects. Currently, Amazon S3 supports only the filter that you can specify for objects created
-/// with server-side encryption using a customer master key (CMK) stored in AWS Key Management
+/// with server-side encryption using a customer master key (CMK) stored in Amazon Web Services Key Management
 /// Service (SSE-KMS).</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SourceSelectionCriteria {
-    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with AWS
+    /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
     /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
     /// this element is required. </p>
     pub sse_kms_encrypted_objects: std::option::Option<crate::model::SseKmsEncryptedObjects>,
@@ -5511,7 +5511,7 @@ pub mod source_selection_criteria {
         pub(crate) replica_modifications: std::option::Option<crate::model::ReplicaModifications>,
     }
     impl Builder {
-        /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with AWS
+        /// <p> A container for filter information for the selection of Amazon S3 objects encrypted with Amazon Web Services
         /// KMS. If you include <code>SourceSelectionCriteria</code> in the replication configuration,
         /// this element is required. </p>
         pub fn sse_kms_encrypted_objects(
@@ -5672,13 +5672,13 @@ impl AsRef<str> for ReplicaModificationsStatus {
     }
 }
 
-/// <p>A container for filter information for the selection of S3 objects encrypted with AWS
+/// <p>A container for filter information for the selection of S3 objects encrypted with Amazon Web Services
 /// KMS.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SseKmsEncryptedObjects {
     /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
-    /// AWS KMS key stored in AWS Key Management Service.</p>
+    /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
     pub status: std::option::Option<crate::model::SseKmsEncryptedObjectsStatus>,
 }
 impl std::fmt::Debug for SseKmsEncryptedObjects {
@@ -5698,7 +5698,7 @@ pub mod sse_kms_encrypted_objects {
     }
     impl Builder {
         /// <p>Specifies whether Amazon S3 replicates objects created with server-side encryption using an
-        /// AWS KMS key stored in AWS Key Management Service.</p>
+        /// Amazon Web Services KMS key stored in Amazon Web Services Key Management Service.</p>
         pub fn status(mut self, input: crate::model::SseKmsEncryptedObjectsStatus) -> Self {
             self.status = Some(input);
             self
@@ -5855,7 +5855,7 @@ pub enum ReplicationRuleFilter {
     Tag(crate::model::Tag),
 }
 impl ReplicationRuleFilter {
-    pub fn as_and(&self) -> Result<&crate::model::ReplicationRuleAndOperator, &Self> {
+    pub fn as_and(&self) -> std::result::Result<&crate::model::ReplicationRuleAndOperator, &Self> {
         if let ReplicationRuleFilter::And(val) = &self {
             Ok(&val)
         } else {
@@ -5865,7 +5865,7 @@ impl ReplicationRuleFilter {
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ReplicationRuleFilter::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -5875,7 +5875,7 @@ impl ReplicationRuleFilter {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
+    pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let ReplicationRuleFilter::Tag(val) = &self {
             Ok(&val)
         } else {
@@ -6142,7 +6142,7 @@ pub struct NotificationConfiguration {
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
     /// to publish messages.</p>
     pub queue_configurations: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
-    /// <p>Describes the AWS Lambda functions to invoke and the events for which to invoke
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
     /// them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
@@ -6238,17 +6238,17 @@ impl NotificationConfiguration {
     }
 }
 
-/// <p>A container for specifying the configuration for AWS Lambda notifications.</p>
+/// <p>A container for specifying the configuration for Lambda notifications.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LambdaFunctionConfiguration {
     /// <p>An optional unique identifier for configurations in a notification configuration. If you
     /// don't provide one, Amazon S3 will assign an ID.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the
+    /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
     /// specified event type occurs.</p>
     pub lambda_function_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon S3 bucket event for which to invoke the AWS Lambda function. For more information,
+    /// <p>The Amazon S3 bucket event for which to invoke the Lambda function. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Supported
     /// Event Types</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub events: std::option::Option<std::vec::Vec<crate::model::Event>>,
@@ -6289,7 +6289,7 @@ pub mod lambda_function_configuration {
             self.id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Lambda function that Amazon S3 invokes when the
+        /// <p>The Amazon Resource Name (ARN) of the Lambda function that Amazon S3 invokes when the
         /// specified event type occurs.</p>
         pub fn lambda_function_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.lambda_function_arn = Some(input.into());
@@ -6912,7 +6912,7 @@ pub enum MetricsFilter {
     Tag(crate::model::Tag),
 }
 impl MetricsFilter {
-    pub fn as_and(&self) -> Result<&crate::model::MetricsAndOperator, &Self> {
+    pub fn as_and(&self) -> std::result::Result<&crate::model::MetricsAndOperator, &Self> {
         if let MetricsFilter::And(val) = &self {
             Ok(&val)
         } else {
@@ -6922,7 +6922,7 @@ impl MetricsFilter {
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let MetricsFilter::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -6932,7 +6932,7 @@ impl MetricsFilter {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
+    pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let MetricsFilter::Tag(val) = &self {
             Ok(&val)
         } else {
@@ -7976,7 +7976,7 @@ pub enum LifecycleRuleFilter {
     Tag(crate::model::Tag),
 }
 impl LifecycleRuleFilter {
-    pub fn as_and(&self) -> Result<&crate::model::LifecycleRuleAndOperator, &Self> {
+    pub fn as_and(&self) -> std::result::Result<&crate::model::LifecycleRuleAndOperator, &Self> {
         if let LifecycleRuleFilter::And(val) = &self {
             Ok(&val)
         } else {
@@ -7986,7 +7986,7 @@ impl LifecycleRuleFilter {
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let LifecycleRuleFilter::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -7996,7 +7996,7 @@ impl LifecycleRuleFilter {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
+    pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let LifecycleRuleFilter::Tag(val) = &self {
             Ok(&val)
         } else {
@@ -8874,7 +8874,7 @@ impl InventoryEncryption {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ssekms {
-    /// <p>Specifies the ID of the AWS Key Management Service (AWS KMS) symmetric customer managed
+    /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed
     /// customer master key (CMK) to use for encrypting inventory reports.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
@@ -8894,7 +8894,7 @@ pub mod ssekms {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the ID of the AWS Key Management Service (AWS KMS) symmetric customer managed
+        /// <p>Specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric customer managed
         /// customer master key (CMK) to use for encrypting inventory reports.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
@@ -9584,7 +9584,7 @@ impl ServerSideEncryptionRule {
 pub struct ServerSideEncryptionByDefault {
     /// <p>Server-side encryption algorithm to use for the default encryption.</p>
     pub sse_algorithm: std::option::Option<crate::model::ServerSideEncryption>,
-    /// <p>AWS Key Management Service (KMS) customer AWS KMS key ID to use for the default
+    /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
     /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
     /// <code>aws:kms</code>.</p>
     /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
@@ -9607,7 +9607,7 @@ pub struct ServerSideEncryptionByDefault {
     /// <important>
     /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-    /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
     /// </important>
     pub kms_master_key_id: std::option::Option<std::string::String>,
 }
@@ -9641,7 +9641,7 @@ pub mod server_side_encryption_by_default {
             self.sse_algorithm = input;
             self
         }
-        /// <p>AWS Key Management Service (KMS) customer AWS KMS key ID to use for the default
+        /// <p>Amazon Web Services Key Management Service (KMS) customer Amazon Web Services KMS key ID to use for the default
         /// encryption. This parameter is allowed if and only if <code>SSEAlgorithm</code> is set to
         /// <code>aws:kms</code>.</p>
         /// <p>You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However, if you
@@ -9664,7 +9664,7 @@ pub mod server_side_encryption_by_default {
         /// <important>
         /// <p>Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
-        /// asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// asymmetric keys</a> in the <i>Amazon Web Services Key Management Service Developer Guide</i>.</p>
         /// </important>
         pub fn kms_master_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_master_key_id = Some(input.into());
@@ -10366,7 +10366,7 @@ pub enum AnalyticsFilter {
     Tag(crate::model::Tag),
 }
 impl AnalyticsFilter {
-    pub fn as_and(&self) -> Result<&crate::model::AnalyticsAndOperator, &Self> {
+    pub fn as_and(&self) -> std::result::Result<&crate::model::AnalyticsAndOperator, &Self> {
         if let AnalyticsFilter::And(val) = &self {
             Ok(&val)
         } else {
@@ -10376,7 +10376,7 @@ impl AnalyticsFilter {
     pub fn is_and(&self) -> bool {
         self.as_and().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AnalyticsFilter::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -10386,7 +10386,7 @@ impl AnalyticsFilter {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_tag(&self) -> Result<&crate::model::Tag, &Self> {
+    pub fn as_tag(&self) -> std::result::Result<&crate::model::Tag, &Self> {
         if let AnalyticsFilter::Tag(val) = &self {
             Ok(&val)
         } else {
@@ -10634,7 +10634,7 @@ impl AsRef<str> for BucketAccelerateStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Initiator {
-    /// <p>If the principal is an AWS account, it provides the Canonical User ID. If the principal
+    /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
     /// is an IAM User, it provides a user ARN value.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>Name of the Principal.</p>
@@ -10658,7 +10658,7 @@ pub mod initiator {
         pub(crate) display_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If the principal is an AWS account, it provides the Canonical User ID. If the principal
+        /// <p>If the principal is an Amazon Web Services account, it provides the Canonical User ID. If the principal
         /// is an IAM User, it provides a user ARN value.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
@@ -11213,12 +11213,12 @@ pub struct Object {
     /// <ul>
     /// <li>
     /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-    /// AWS Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
+    /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
     /// an MD5 digest of their object data.</p>
     /// </li>
     /// <li>
     /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-    /// AWS Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
+    /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
     /// not an MD5 digest of their object data.</p>
     /// </li>
     /// <li>
@@ -11289,12 +11289,12 @@ pub mod object {
         /// <ul>
         /// <li>
         /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-        /// AWS Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
+        /// Amazon Web Services Management Console, and are encrypted by SSE-S3 or plaintext, have ETags that are
         /// an MD5 digest of their object data.</p>
         /// </li>
         /// <li>
         /// <p>Objects created by the PUT Object, POST Object, or Copy operation, or through the
-        /// AWS Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
+        /// Amazon Web Services Management Console, and are encrypted by SSE-C or SSE-KMS, have ETags that are
         /// not an MD5 digest of their object data.</p>
         /// </li>
         /// <li>
@@ -11561,7 +11561,7 @@ impl MultipartUpload {
 }
 
 /// <p> In terms of implementation, a Bucket is a resource. An Amazon S3 bucket name is globally
-/// unique, and the namespace is shared by all AWS accounts. </p>
+/// unique, and the namespace is shared by all Amazon Web Services accounts. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Bucket {
@@ -11961,8 +11961,8 @@ pub struct Error {
     /// </li>
     /// <li>
     /// <p>
-    /// <i>Description:</i> There is a problem with your AWS account
-    /// that prevents the action from completing successfully. Contact AWS Support
+    /// <i>Description:</i> There is a problem with your Amazon Web Services account
+    /// that prevents the action from completing successfully. Contact Amazon Web Services Support
     /// for further assistance.</p>
     /// </li>
     /// <li>
@@ -11984,7 +11984,7 @@ pub struct Error {
     /// <li>
     /// <p>
     /// <i>Description:</i> All access to this Amazon S3 resource has been
-    /// disabled. Contact AWS Support for further assistance.</p>
+    /// disabled. Contact Amazon Web Services Support for further assistance.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -12090,7 +12090,7 @@ pub struct Error {
     /// <li>
     /// <p>
     /// <i>Description:</i> The bucket you tried to create already
-    /// exists, and you own it. Amazon S3 returns this error in all AWS Regions except in
+    /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
     /// the North Virginia Region. For legacy compatibility, if you re-create an
     /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
     /// 200 OK and resets the bucket access control lists (ACLs).</p>
@@ -12345,7 +12345,7 @@ pub struct Error {
     /// </li>
     /// <li>
     /// <p>
-    /// <i>Description:</i> The AWS access key ID you provided does
+    /// <i>Description:</i> The Amazon Web Services access key ID you provided does
     /// not exist in our records.</p>
     /// </li>
     /// <li>
@@ -12577,7 +12577,7 @@ pub struct Error {
     /// <li>
     /// <p>
     /// <i>Description:</i> All access to this object has been
-    /// disabled. Please contact AWS Support for further assistance.</p>
+    /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -12640,7 +12640,7 @@ pub struct Error {
     /// </li>
     /// <li>
     /// <p>
-    /// <i>Description:</i> Please use AWS4-HMAC-SHA256.</p>
+    /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -12787,7 +12787,7 @@ pub struct Error {
     /// <li>
     /// <p>
     /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-    /// supported on this bucket. Contact AWS Support for more information.</p>
+    /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -12808,7 +12808,7 @@ pub struct Error {
     /// <li>
     /// <p>
     /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
-    /// enabled on this bucket. Contact AWS Support for more information.</p>
+    /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -13397,7 +13397,8 @@ pub struct Error {
     /// <p>
     /// <i>Description:</i> Your account is not signed up for the Amazon S3
     /// service. You must sign up before you can use Amazon S3. You can sign up at the
-    /// following URL: https://aws.amazon.com/s3</p>
+    /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
+    /// </p>
     /// </li>
     /// <li>
     /// <p>
@@ -13607,7 +13608,7 @@ pub struct Error {
     /// <li>
     /// <p>
     /// <i>Description:</i> The request signature we calculated does
-    /// not match the signature you provided. Check your AWS secret access key and
+    /// not match the signature you provided. Check your Amazon Web Services secret access key and
     /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
     /// for details.</p>
@@ -13872,8 +13873,8 @@ pub mod error {
         /// </li>
         /// <li>
         /// <p>
-        /// <i>Description:</i> There is a problem with your AWS account
-        /// that prevents the action from completing successfully. Contact AWS Support
+        /// <i>Description:</i> There is a problem with your Amazon Web Services account
+        /// that prevents the action from completing successfully. Contact Amazon Web Services Support
         /// for further assistance.</p>
         /// </li>
         /// <li>
@@ -13895,7 +13896,7 @@ pub mod error {
         /// <li>
         /// <p>
         /// <i>Description:</i> All access to this Amazon S3 resource has been
-        /// disabled. Contact AWS Support for further assistance.</p>
+        /// disabled. Contact Amazon Web Services Support for further assistance.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -14001,7 +14002,7 @@ pub mod error {
         /// <li>
         /// <p>
         /// <i>Description:</i> The bucket you tried to create already
-        /// exists, and you own it. Amazon S3 returns this error in all AWS Regions except in
+        /// exists, and you own it. Amazon S3 returns this error in all Amazon Web Services Regions except in
         /// the North Virginia Region. For legacy compatibility, if you re-create an
         /// existing bucket that you already own in the North Virginia Region, Amazon S3 returns
         /// 200 OK and resets the bucket access control lists (ACLs).</p>
@@ -14256,7 +14257,7 @@ pub mod error {
         /// </li>
         /// <li>
         /// <p>
-        /// <i>Description:</i> The AWS access key ID you provided does
+        /// <i>Description:</i> The Amazon Web Services access key ID you provided does
         /// not exist in our records.</p>
         /// </li>
         /// <li>
@@ -14488,7 +14489,7 @@ pub mod error {
         /// <li>
         /// <p>
         /// <i>Description:</i> All access to this object has been
-        /// disabled. Please contact AWS Support for further assistance.</p>
+        /// disabled. Please contact Amazon Web Services Support for further assistance.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -14551,7 +14552,7 @@ pub mod error {
         /// </li>
         /// <li>
         /// <p>
-        /// <i>Description:</i> Please use AWS4-HMAC-SHA256.</p>
+        /// <i>Description:</i> Please use <code>AWS4-HMAC-SHA256</code>.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -14698,7 +14699,7 @@ pub mod error {
         /// <li>
         /// <p>
         /// <i>Description:</i> Amazon S3 Transfer Acceleration is not
-        /// supported on this bucket. Contact AWS Support for more information.</p>
+        /// supported on this bucket. Contact Amazon Web Services Support for more information.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -14719,7 +14720,7 @@ pub mod error {
         /// <li>
         /// <p>
         /// <i>Description:</i> Amazon S3 Transfer Acceleration cannot be
-        /// enabled on this bucket. Contact AWS Support for more information.</p>
+        /// enabled on this bucket. Contact Amazon Web Services Support for more information.</p>
         /// </li>
         /// <li>
         /// <p>
@@ -15308,7 +15309,8 @@ pub mod error {
         /// <p>
         /// <i>Description:</i> Your account is not signed up for the Amazon S3
         /// service. You must sign up before you can use Amazon S3. You can sign up at the
-        /// following URL: https://aws.amazon.com/s3</p>
+        /// following URL: <a href="http://aws.amazon.com/s3">Amazon S3</a>
+        /// </p>
         /// </li>
         /// <li>
         /// <p>
@@ -15518,7 +15520,7 @@ pub mod error {
         /// <li>
         /// <p>
         /// <i>Description:</i> The request signature we calculated does
-        /// not match the signature you provided. Check your AWS secret access key and
+        /// not match the signature you provided. Check your Amazon Web Services secret access key and
         /// signing method. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RESTAuthentication.html">REST Authentication</a> and
         /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/SOAPAuthentication.html">SOAP Authentication</a>
         /// for details.</p>
@@ -16037,9 +16039,7 @@ impl CreateBucketConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CopyObjectResult {
-    /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an
-    /// object, not its metadata. The source and destination ETag is identical for a successfully
-    /// copied non-multipart object.</p>
+    /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Creation date of the object.</p>
     pub last_modified: std::option::Option<smithy_types::Instant>,
@@ -16062,9 +16062,7 @@ pub mod copy_object_result {
         pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an
-        /// object, not its metadata. The source and destination ETag is identical for a successfully
-        /// copied non-multipart object.</p>
+        /// <p>Returns the ETag of the new object. The ETag reflects only changes to the contents of an object, not its metadata.</p>
         pub fn e_tag(mut self, input: impl Into<std::string::String>) -> Self {
             self.e_tag = Some(input.into());
             self

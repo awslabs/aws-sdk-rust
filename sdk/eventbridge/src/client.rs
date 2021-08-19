@@ -417,7 +417,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_archive_name(input);
             self
         }
-        /// <p>The ARN of the event source associated with the archive.</p>
+        /// <p>The ARN of the event bus that sends events to the archive.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_source_arn(input);
             self
@@ -648,7 +648,7 @@ pub mod fluent_builders {
         /// <code>
         /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
         /// </code>.
-        /// The AWS account that wants to use this partner event source must create a partner event bus
+        /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
         /// with a name that matches the name of the partner event source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
@@ -658,7 +658,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The AWS account ID that is permitted to create a matching partner event bus for this
+        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
         /// partner event source.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account(input);
@@ -955,7 +955,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The AWS account ID of the AWS customer that the event source was created for.</p>
+        /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.account(input);
             self
@@ -1018,7 +1018,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_bus_name(input);
             self
         }
-        /// <p>If this is a managed rule, created by an AWS service on your behalf, you must specify
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
         /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
         /// rules that are not managed rules. You can check whether a rule is a managed rule by using
         /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
@@ -2009,7 +2009,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_state(input);
             self
         }
-        /// <p>The ARN of the event source associated with the replay.</p>
+        /// <p>The ARN of the archive from which the events are replayed.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_source_arn(input);
             self
@@ -2434,8 +2434,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_bus_name(input);
             self
         }
-        /// <p>The action that you are enabling the other account to perform. Currently, this must be
-        /// <code>events:PutEvents</code>.</p>
+        /// <p>The action that you are enabling the other account to perform.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.action(input);
             self
@@ -2444,7 +2443,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_action(input);
             self
         }
-        /// <p>The 12-digit AWS account ID that you are permitting to put events to your default event
+        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
         /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
         /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
         /// may match undesirable events. To create more secure rules, make sure that the event pattern
@@ -2461,7 +2460,7 @@ pub mod fluent_builders {
         }
         /// <p>An identifier string for the external account that you are granting permissions to. If you
         /// later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a>RemovePermission</a>.</p>
+        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.statement_id(input);
             self
@@ -2471,10 +2470,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain AWS organization. For more information about
-        /// AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-        /// Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>
-        /// <p>If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the
+        /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
+        /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
+        /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
         /// value for <code>Principal</code>, you grant permission to all the accounts in the named
         /// organization.</p>
         /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
@@ -2586,6 +2585,10 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted
+        /// permission to your account through an organization instead of directly by the account ID, you
+        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+        /// structure, instead of here in this parameter.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.role_arn(input);
             self
@@ -2815,7 +2818,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ids(input);
             self
         }
-        /// <p>If this is a managed rule, created by an AWS service on your behalf, you must specify
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
         /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
         /// rules that are not managed rules. You can check whether a rule is a managed rule by using
         /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
@@ -3028,7 +3031,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS Events</a>, and the following
+        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
         /// fields are mandatory:</p>
         /// <ul>
         /// <li>

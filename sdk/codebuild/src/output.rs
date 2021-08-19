@@ -2,7 +2,7 @@
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookOutput {
-    /// <p> Information about a repository's webhook that is associated with a project in AWS CodeBuild.
+    /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
     /// </p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
@@ -22,7 +22,7 @@ pub mod update_webhook_output {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
     }
     impl Builder {
-        /// <p> Information about a repository's webhook that is associated with a project in AWS CodeBuild.
+        /// <p> Information about a repository's webhook that is associated with a project in CodeBuild.
         /// </p>
         pub fn webhook(mut self, input: crate::model::Webhook) -> Self {
             self.webhook = Some(input);
@@ -97,6 +97,106 @@ impl UpdateReportGroupOutput {
     /// Creates a new builder-style object to manufacture [`UpdateReportGroupOutput`](crate::output::UpdateReportGroupOutput)
     pub fn builder() -> crate::output::update_report_group_output::Builder {
         crate::output::update_report_group_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateProjectVisibilityOutput {
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>Contains the project identifier used with the public build APIs. </p>
+    pub public_project_alias: std::option::Option<std::string::String>,
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    /// <dl>
+    /// <dt>PUBLIC_READ</dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>PRIVATE</dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
+}
+impl std::fmt::Debug for UpdateProjectVisibilityOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateProjectVisibilityOutput");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.field("public_project_alias", &self.public_project_alias);
+        formatter.field("project_visibility", &self.project_visibility);
+        formatter.finish()
+    }
+}
+/// See [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput)
+pub mod update_project_visibility_output {
+    /// A builder for [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) public_project_alias: std::option::Option<std::string::String>,
+        pub(crate) project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>Contains the project identifier used with the public build APIs. </p>
+        pub fn public_project_alias(mut self, input: impl Into<std::string::String>) -> Self {
+            self.public_project_alias = Some(input.into());
+            self
+        }
+        pub fn set_public_project_alias(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.public_project_alias = input;
+            self
+        }
+        /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+        /// <dl>
+        /// <dt>PUBLIC_READ</dt>
+        /// <dd>
+        /// <p>The project builds are visible to the public.</p>
+        /// </dd>
+        /// <dt>PRIVATE</dt>
+        /// <dd>
+        /// <p>The project builds are not visible to the public.</p>
+        /// </dd>
+        /// </dl>
+        pub fn project_visibility(mut self, input: crate::model::ProjectVisibilityType) -> Self {
+            self.project_visibility = Some(input);
+            self
+        }
+        pub fn set_project_visibility(
+            mut self,
+            input: std::option::Option<crate::model::ProjectVisibilityType>,
+        ) -> Self {
+            self.project_visibility = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput)
+        pub fn build(self) -> crate::output::UpdateProjectVisibilityOutput {
+            crate::output::UpdateProjectVisibilityOutput {
+                project_arn: self.project_arn,
+                public_project_alias: self.public_project_alias,
+                project_visibility: self.project_visibility,
+            }
+        }
+    }
+}
+impl UpdateProjectVisibilityOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateProjectVisibilityOutput`](crate::output::UpdateProjectVisibilityOutput)
+    pub fn builder() -> crate::output::update_project_visibility_output::Builder {
+        crate::output::update_project_visibility_output::Builder::default()
     }
 }
 
@@ -546,7 +646,7 @@ pub struct ListSharedReportGroupsOutput {
     /// all of the items in the list, keep calling this operation with each subsequent next
     /// token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of ARNs for the report groups shared with the current AWS account or user.
+    /// <p> The list of ARNs for the report groups shared with the current Amazon Web Services account or user.
     /// </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -621,7 +721,7 @@ pub struct ListSharedProjectsOutput {
     /// all of the items in the list, keep calling this operation with each subsequent next
     /// token that is returned, until no more next tokens are returned. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p> The list of ARNs for the build projects shared with the current AWS account or user.
+    /// <p> The list of ARNs for the build projects shared with the current Amazon Web Services account or user.
     /// </p>
     pub projects: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -776,7 +876,7 @@ pub struct ListReportsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>
-    /// The list of returned ARNs for the reports in the current AWS account.
+    /// The list of returned ARNs for the reports in the current Amazon Web Services account.
     /// </p>
     pub reports: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -854,7 +954,7 @@ pub struct ListReportGroupsOutput {
     /// </p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>
-    /// The list of ARNs for the report groups in the current AWS account.
+    /// The list of ARNs for the report groups in the current Amazon Web Services account.
     /// </p>
     pub report_groups: std::option::Option<std::vec::Vec<std::string::String>>,
 }
@@ -995,7 +1095,7 @@ impl ListProjectsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListCuratedEnvironmentImagesOutput {
     /// <p>Information about supported platforms for Docker images that are managed by
-    /// AWS CodeBuild.</p>
+    /// CodeBuild.</p>
     pub platforms: std::option::Option<std::vec::Vec<crate::model::EnvironmentPlatform>>,
 }
 impl std::fmt::Debug for ListCuratedEnvironmentImagesOutput {
@@ -1927,7 +2027,7 @@ impl DeleteBuildBatchOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookOutput {
     /// <p>Information about a webhook that connects repository events to a build project in
-    /// AWS CodeBuild.</p>
+    /// CodeBuild.</p>
     pub webhook: std::option::Option<crate::model::Webhook>,
 }
 impl std::fmt::Debug for CreateWebhookOutput {
@@ -1947,7 +2047,7 @@ pub mod create_webhook_output {
     }
     impl Builder {
         /// <p>Information about a webhook that connects repository events to a build project in
-        /// AWS CodeBuild.</p>
+        /// CodeBuild.</p>
         pub fn webhook(mut self, input: crate::model::Webhook) -> Self {
             self.webhook = Some(input);
             self

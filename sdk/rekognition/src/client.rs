@@ -442,7 +442,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_version_name(input);
             self
         }
-        /// <p>The Amazon S3 location to store the results of training.</p>
+        /// <p>The Amazon S3 bucket location to store the results of training.
+        /// The S3 bucket can be in any AWS account as long as the caller has
+        /// <code>s3:PutObject</code> permissions on the S3 bucket.</p>
         pub fn output_config(mut self, input: crate::model::OutputConfig) -> Self {
             self.inner = self.inner.output_config(input);
             self
@@ -500,10 +502,25 @@ pub mod fluent_builders {
         }
         /// <p>The identifier for your AWS Key Management Service (AWS KMS) customer master key (CMK).
         /// You can supply the Amazon Resource Name (ARN) of your CMK, the ID of your CMK,
-        /// or an alias for your CMK.
-        /// The key is used to encrypt training and test images copied into the service for model training. Your
-        /// source images are unaffected. The key is also used to encrypt training results and manifest files written
-        /// to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// an alias for your CMK, or an alias ARN.
+        /// The key is used to encrypt training and test images copied into the service for model training.
+        /// Your source images are unaffected. The key is also used to encrypt training results
+        /// and manifest files written to the output Amazon S3 bucket (<code>OutputConfig</code>).</p>
+        /// <p>If you choose to use your own CMK, you need the following permissions on the CMK.</p>
+        /// <ul>
+        /// <li>
+        /// <p>kms:CreateGrant</p>
+        /// </li>
+        /// <li>
+        /// <p>kms:DescribeKey</p>
+        /// </li>
+        /// <li>
+        /// <p>kms:GenerateDataKey</p>
+        /// </li>
+        /// <li>
+        /// <p>kms:Decrypt</p>
+        /// </li>
+        /// </ul>
         /// <p>If you don't specify a value for <code>KmsKeyId</code>, images copied into the service are encrypted
         /// using a key that AWS owns and manages.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1629,7 +1646,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in
+        /// <p>The identifier for the inappropriate, unwanted, or offensive content moderation job. Use <code>JobId</code> to identify the job in
         /// a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.job_id(input);
@@ -1652,7 +1669,7 @@ pub mod fluent_builders {
         }
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
         /// returns a pagination token in the response. You can use this pagination token
-        /// to retrieve the next set of unsafe content labels.</p>
+        /// to retrieve the next set of content moderation labels.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -2713,7 +2730,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-        /// celebrity recognition analysis to.</p>
+        /// celebrity recognition analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -2767,7 +2784,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The video in which you want to detect unsafe content. The video must be stored
+        /// <p>The video in which you want to detect inappropriate, unwanted, or offensive content. The video must be stored
         /// in an Amazon S3 bucket.</p>
         pub fn video(mut self, input: crate::model::Video) -> Self {
             self.inner = self.inner.video(input);
@@ -2805,7 +2822,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon SNS topic ARN that you want Amazon Rekognition Video to publish the completion status of the
-        /// unsafe content analysis to.</p>
+        /// content analysis to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -2884,7 +2901,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-        /// face detection operation.</p>
+        /// face detection operation. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -2999,7 +3016,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_collection_id(input);
             self
         }
-        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. </p>
+        /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the search. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -3092,7 +3109,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the label detection
-        /// operation to. </p>
+        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -3171,7 +3188,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon SNS topic ARN you want Amazon Rekognition Video to publish the completion status of the people detection
-        /// operation to.</p>
+        /// operation to. The Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -3307,7 +3324,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to publish the completion status of the
-        /// segment detection operation.</p>
+        /// segment detection operation. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self
@@ -3451,7 +3468,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
-        /// <a>api-video</a>.</p>
+        /// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+        /// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
         pub fn notification_channel(mut self, input: crate::model::NotificationChannel) -> Self {
             self.inner = self.inner.notification_channel(input);
             self

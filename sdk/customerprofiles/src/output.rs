@@ -59,7 +59,10 @@ pub struct UpdateDomainOutput {
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
     /// ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
@@ -146,7 +149,10 @@ pub mod update_domain_output {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
@@ -1931,7 +1937,10 @@ pub struct GetDomainOutput {
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
     /// <p>Usage-specific statistics about the domain.</p>
     pub stats: std::option::Option<crate::model::DomainStats>,
-    /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
@@ -2029,7 +2038,10 @@ pub mod get_domain_output {
             self.stats = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self
@@ -2440,7 +2452,10 @@ pub struct CreateDomainOutput {
     /// <p>The URL of the SQS dead letter queue, which is used for reporting errors associated with
     /// ingesting data from third party applications.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingResponse>,
     /// <p>The timestamp of when the domain was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
@@ -2527,7 +2542,10 @@ pub mod create_domain_output {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingResponse) -> Self {
             self.matching = Some(input);
             self

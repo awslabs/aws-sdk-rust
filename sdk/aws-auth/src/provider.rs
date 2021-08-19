@@ -32,21 +32,52 @@ use std::time::Duration;
 #[derive(Debug)]
 #[non_exhaustive]
 pub enum CredentialsError {
+    /// No credentials were available for this provider
     CredentialsNotLoaded,
+
+    /// Loading credentials from this provider exceeded the maximum allowed duration
     ProviderTimedOut(Duration),
+
+    /// The provider was given an invalid configuration
+    ///
+    /// For example:
+    /// - syntax error in ~/.aws/config
+    /// - assume role profile that forms an infinite loop
+    InvalidConfiguration(Box<dyn Error + Send + Sync + 'static>),
+
+    /// The provider experienced an error during credential resolution
+    ///
+    /// This may include errors like a 503 from STS or a file system error when attempting to
+    /// read a configuration file.
+    ProviderError(Box<dyn Error + Send + Sync + 'static>),
+
+    /// An unexpected error occured during credential resolution
+    ///
+    /// If the error is something that can occur during expected usage of a provider, `ProviderError`
+    /// should be returned instead. Unhandled is reserved for exceptional cases, for example:
+    /// - Returned data not UTF-8
+    /// - A provider returns data that is missing required fields
     Unhandled(Box<dyn Error + Send + Sync + 'static>),
 }
 
 impl Display for CredentialsError {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         match self {
-            CredentialsError::CredentialsNotLoaded => write!(f, "CredentialsNotLoaded"),
+            CredentialsError::CredentialsNotLoaded => {
+                write!(f, "The provider could not provide credentials or required configuration was not set")
+            }
             CredentialsError::ProviderTimedOut(d) => write!(
                 f,
                 "Credentials provider timed out after {} seconds",
                 d.as_secs()
             ),
-            CredentialsError::Unhandled(err) => write!(f, "{}", err),
+            CredentialsError::Unhandled(err) => write!(f, "Unexpected credentials error: {}", err),
+            CredentialsError::InvalidConfiguration(err) => {
+                write!(f, "The credentials provider was not properly: {}", err)
+            }
+            CredentialsError::ProviderError(err) => {
+                write!(f, "An error occured while loading credentials: {}", err)
+            }
         }
     }
 }
@@ -61,7 +92,7 @@ impl Error for CredentialsError {
 }
 
 pub type CredentialsResult = Result<Credentials, CredentialsError>;
-type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
+pub type BoxFuture<'a, T> = Pin<Box<dyn Future<Output = T> + Send + 'a>>;
 
 /// An asynchronous credentials provider
 ///

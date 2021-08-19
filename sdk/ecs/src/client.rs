@@ -446,7 +446,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The capacity provider strategy to set as the default for the cluster. When a default
-        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity
+        /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
         /// provider strategy or launch type specified, the default capacity provider strategy for
         /// the cluster is used.</p>
         /// <p>If a default capacity provider strategy is not defined for a cluster during creation,
@@ -656,6 +656,7 @@ pub mod fluent_builders {
         /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
         /// <code>launchType</code> is specified, the
         /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+        /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
             inp: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -732,7 +733,7 @@ pub mod fluent_builders {
         }
         /// <p>An array of placement constraint objects to use for tasks in your service. You can
         /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-        /// task definition and those specified at runtime). </p>
+        /// task definition and those specified at runtime).</p>
         pub fn placement_constraints(
             mut self,
             inp: impl Into<crate::model::PlacementConstraint>,
@@ -748,7 +749,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-        /// maximum of five strategy rules per service.</p>
+        /// maximum of 5 strategy rules per service.</p>
         pub fn placement_strategy(
             mut self,
             inp: impl Into<crate::model::PlacementStrategy>,
@@ -1558,7 +1559,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The container instance ID or full ARN of the container instance to deregister.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.container_instance(input);
             self
@@ -1778,6 +1779,8 @@ pub mod fluent_builders {
         /// <p>If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
         /// or tasks within the cluster are included.</p>
         /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
+        /// included.</p>
+        /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
         /// included.</p>
         /// <p>If <code>STATISTICS</code> is specified, the task and service count is included,
         /// separated by launch type.</p>
@@ -2175,7 +2178,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The container instance ID or full ARN of the container instance.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.container_instance(input);
             self
@@ -4099,6 +4102,7 @@ pub mod fluent_builders {
         /// <code>launchType</code> is specified, the
         /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
         /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+        /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
         pub fn capacity_provider_strategy(
             mut self,
             inp: impl Into<crate::model::CapacityProviderStrategyItem>,
@@ -4156,7 +4160,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, family:my-family-name).</p>
+        /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.group(input);
             self
@@ -4196,7 +4200,7 @@ pub mod fluent_builders {
         /// <p>The network configuration for the task. This parameter is required for task
         /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
         /// network interface, and it is not supported for other network modes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.inner = self.inner.network_configuration(input);
@@ -4215,10 +4219,8 @@ pub mod fluent_builders {
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container or
         /// add new environment variables to it with an <code>environment</code> override.</p>
-        /// <note>
         /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
         /// formatting characters of the override structure.</p>
-        /// </note>
         pub fn overrides(mut self, input: crate::model::TaskOverride) -> Self {
             self.inner = self.inner.overrides(input);
             self
@@ -4247,7 +4249,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_constraints(input);
             self
         }
-        /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
+        /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
         /// strategy rules per task.</p>
         pub fn placement_strategy(
             mut self,
@@ -4263,11 +4265,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_placement_strategy(input);
             self
         }
-        /// <p>The platform version the task should run. A platform version is only specified for
-        /// tasks using the Fargate launch type. If one is not specified, the
-        /// <code>LATEST</code> platform version is used by default. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version the task should use. A platform version is only specified for
+        /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
+        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.platform_version(input);
             self
@@ -4297,7 +4298,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_propagate_tags(input);
             self
         }
-        /// <p>The reference ID to use for the task.</p>
+        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
+        /// 1024 characters.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.reference_id(input);
             self

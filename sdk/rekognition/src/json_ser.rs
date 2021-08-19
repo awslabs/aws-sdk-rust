@@ -1331,16 +1331,21 @@ pub fn serialize_structure_start_technical_cue_detection_filter(
             smithy_types::Number::Float((*var_280).into()),
         );
     }
+    if let Some(var_281) = &input.black_frame {
+        let mut object_282 = object.key("BlackFrame").start_object();
+        crate::json_ser::serialize_structure_black_frame(&mut object_282, var_281);
+        object_282.finish();
+    }
 }
 
 pub fn serialize_structure_start_shot_detection_filter(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::StartShotDetectionFilter,
 ) {
-    if let Some(var_281) = &input.min_segment_confidence {
+    if let Some(var_283) = &input.min_segment_confidence {
         object.key("MinSegmentConfidence").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_281).into()),
+            smithy_types::Number::Float((*var_283).into()),
         );
     }
 }
@@ -1349,10 +1354,10 @@ pub fn serialize_structure_ground_truth_manifest(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::GroundTruthManifest,
 ) {
-    if let Some(var_282) = &input.s3_object {
-        let mut object_283 = object.key("S3Object").start_object();
-        crate::json_ser::serialize_structure_s3_object(&mut object_283, var_282);
-        object_283.finish();
+    if let Some(var_284) = &input.s3_object {
+        let mut object_285 = object.key("S3Object").start_object();
+        crate::json_ser::serialize_structure_s3_object(&mut object_285, var_284);
+        object_285.finish();
     }
 }
 
@@ -1360,28 +1365,46 @@ pub fn serialize_structure_bounding_box(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::BoundingBox,
 ) {
-    if let Some(var_284) = &input.width {
+    if let Some(var_286) = &input.width {
         object.key("Width").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_284).into()),
-        );
-    }
-    if let Some(var_285) = &input.height {
-        object.key("Height").number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_285).into()),
-        );
-    }
-    if let Some(var_286) = &input.left {
-        object.key("Left").number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::Float((*var_286).into()),
         );
     }
-    if let Some(var_287) = &input.top {
-        object.key("Top").number(
+    if let Some(var_287) = &input.height {
+        object.key("Height").number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::Float((*var_287).into()),
+        );
+    }
+    if let Some(var_288) = &input.left {
+        object.key("Left").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((*var_288).into()),
+        );
+    }
+    if let Some(var_289) = &input.top {
+        object.key("Top").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((*var_289).into()),
+        );
+    }
+}
+
+pub fn serialize_structure_black_frame(
+    object: &mut smithy_json::serialize::JsonObjectWriter,
+    input: &crate::model::BlackFrame,
+) {
+    if let Some(var_290) = &input.max_pixel_threshold {
+        object.key("MaxPixelThreshold").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((*var_290).into()),
+        );
+    }
+    if let Some(var_291) = &input.min_coverage_percentage {
+        object.key("MinCoveragePercentage").number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::Float((*var_291).into()),
         );
     }
 }

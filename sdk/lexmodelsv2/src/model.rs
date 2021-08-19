@@ -369,9 +369,9 @@ pub struct MultipleValuesSetting {
     /// <code>true</code>, the slot may return more than one value in a
     /// response. When <code>false</code>, the slot returns only a single
     /// value.</p>
-    /// <p>Multi-value slots are only available in the en-US locale. If you
-    /// set this value to <code>true</code> in any other locale, Amazon Lex throws a
-    /// <code>ValidationException</code>.</p>      
+    /// <p>Multi-value slots are only available in the en-US locale. If you set
+    /// this value to <code>true</code> in any other locale, Amazon Lex throws a
+    /// <code>ValidationException</code>.</p>
     /// <p>If the <code>allowMutlipleValues</code> is not set, the default
     /// value is <code>false</code>.</p>
     pub allow_multiple_values: bool,
@@ -396,9 +396,9 @@ pub mod multiple_values_setting {
         /// <code>true</code>, the slot may return more than one value in a
         /// response. When <code>false</code>, the slot returns only a single
         /// value.</p>
-        /// <p>Multi-value slots are only available in the en-US locale. If you
-        /// set this value to <code>true</code> in any other locale, Amazon Lex throws a
-        /// <code>ValidationException</code>.</p>      
+        /// <p>Multi-value slots are only available in the en-US locale. If you set
+        /// this value to <code>true</code> in any other locale, Amazon Lex throws a
+        /// <code>ValidationException</code>.</p>
         /// <p>If the <code>allowMutlipleValues</code> is not set, the default
         /// value is <code>false</code>.</p>
         pub fn allow_multiple_values(mut self, input: bool) -> Self {
@@ -698,6 +698,12 @@ pub struct WaitAndContinueSpecification {
     /// that the bot is still waiting for input from the user.</p>
     pub still_waiting_response:
         std::option::Option<crate::model::StillWaitingResponseSpecification>,
+    /// <p>Specifies whether the bot will wait for a user to respond. When this
+    /// field is false, wait and continue responses for a slot aren't used and
+    /// the bot expects an appropriate response within the configured timeout.
+    /// If the <code>active</code> field isn't specified, the default is
+    /// true.</p>
+    pub active: std::option::Option<bool>,
 }
 impl std::fmt::Debug for WaitAndContinueSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -705,6 +711,7 @@ impl std::fmt::Debug for WaitAndContinueSpecification {
         formatter.field("waiting_response", &self.waiting_response);
         formatter.field("continue_response", &self.continue_response);
         formatter.field("still_waiting_response", &self.still_waiting_response);
+        formatter.field("active", &self.active);
         formatter.finish()
     }
 }
@@ -718,6 +725,7 @@ pub mod wait_and_continue_specification {
         pub(crate) continue_response: std::option::Option<crate::model::ResponseSpecification>,
         pub(crate) still_waiting_response:
             std::option::Option<crate::model::StillWaitingResponseSpecification>,
+        pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The response that Amazon Lex sends to indicate that the bot is waiting
@@ -762,12 +770,26 @@ pub mod wait_and_continue_specification {
             self.still_waiting_response = input;
             self
         }
+        /// <p>Specifies whether the bot will wait for a user to respond. When this
+        /// field is false, wait and continue responses for a slot aren't used and
+        /// the bot expects an appropriate response within the configured timeout.
+        /// If the <code>active</code> field isn't specified, the default is
+        /// true.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
         /// Consumes the builder and constructs a [`WaitAndContinueSpecification`](crate::model::WaitAndContinueSpecification)
         pub fn build(self) -> crate::model::WaitAndContinueSpecification {
             crate::model::WaitAndContinueSpecification {
                 waiting_response: self.waiting_response,
                 continue_response: self.continue_response,
                 still_waiting_response: self.still_waiting_response,
+                active: self.active,
             }
         }
     }
@@ -1961,11 +1983,17 @@ pub struct IntentClosingSetting {
     /// <p>The response that Amazon Lex sends to the user when the intent is
     /// complete.</p>
     pub closing_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies whether an intent's closing response is used. When this
+    /// field is false, the closing response isn't sent to the user and no
+    /// closing input from the user is used. If the <code>active</code> field
+    /// isn't specified, the default is true.</p>
+    pub active: std::option::Option<bool>,
 }
 impl std::fmt::Debug for IntentClosingSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntentClosingSetting");
         formatter.field("closing_response", &self.closing_response);
+        formatter.field("active", &self.active);
         formatter.finish()
     }
 }
@@ -1976,6 +2004,7 @@ pub mod intent_closing_setting {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) closing_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The response that Amazon Lex sends to the user when the intent is
@@ -1991,10 +2020,23 @@ pub mod intent_closing_setting {
             self.closing_response = input;
             self
         }
+        /// <p>Specifies whether an intent's closing response is used. When this
+        /// field is false, the closing response isn't sent to the user and no
+        /// closing input from the user is used. If the <code>active</code> field
+        /// isn't specified, the default is true.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IntentClosingSetting`](crate::model::IntentClosingSetting)
         pub fn build(self) -> crate::model::IntentClosingSetting {
             crate::model::IntentClosingSetting {
                 closing_response: self.closing_response,
+                active: self.active,
             }
         }
     }
@@ -2024,12 +2066,19 @@ pub struct IntentConfirmationSetting {
     /// <code>promptSpecification</code>, Amazon Lex responds with this response
     /// to acknowledge that the intent was canceled. </p>
     pub declination_response: std::option::Option<crate::model::ResponseSpecification>,
+    /// <p>Specifies whether the intent's confirmation is sent to the user.
+    /// When this field is false, confirmation and declination responses aren't
+    /// sent and processing continues as if the responses aren't present. If
+    /// the <code>active</code> field isn't specified, the default is
+    /// true.</p>
+    pub active: std::option::Option<bool>,
 }
 impl std::fmt::Debug for IntentConfirmationSetting {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("IntentConfirmationSetting");
         formatter.field("prompt_specification", &self.prompt_specification);
         formatter.field("declination_response", &self.declination_response);
+        formatter.field("active", &self.active);
         formatter.finish()
     }
 }
@@ -2041,6 +2090,7 @@ pub mod intent_confirmation_setting {
     pub struct Builder {
         pub(crate) prompt_specification: std::option::Option<crate::model::PromptSpecification>,
         pub(crate) declination_response: std::option::Option<crate::model::ResponseSpecification>,
+        pub(crate) active: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>Prompts the user to confirm the intent. This question should have a
@@ -2076,11 +2126,25 @@ pub mod intent_confirmation_setting {
             self.declination_response = input;
             self
         }
+        /// <p>Specifies whether the intent's confirmation is sent to the user.
+        /// When this field is false, confirmation and declination responses aren't
+        /// sent and processing continues as if the responses aren't present. If
+        /// the <code>active</code> field isn't specified, the default is
+        /// true.</p>
+        pub fn active(mut self, input: bool) -> Self {
+            self.active = Some(input);
+            self
+        }
+        pub fn set_active(mut self, input: std::option::Option<bool>) -> Self {
+            self.active = input;
+            self
+        }
         /// Consumes the builder and constructs a [`IntentConfirmationSetting`](crate::model::IntentConfirmationSetting)
         pub fn build(self) -> crate::model::IntentConfirmationSetting {
             crate::model::IntentConfirmationSetting {
                 prompt_specification: self.prompt_specification,
                 declination_response: self.declination_response,
+                active: self.active,
             }
         }
     }
@@ -2516,7 +2580,7 @@ impl BotLocaleExportSpecification {
     }
 }
 
-/// <p>Provided the identity of a the bot that was exported.</p>
+/// <p>Provides the identity of a the bot that was exported.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BotExportSpecification {

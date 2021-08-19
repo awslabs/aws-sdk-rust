@@ -1367,6 +1367,7 @@ pub enum Runtime {
     Python36,
     Python37,
     Python38,
+    Python39,
     Ruby25,
     Ruby27,
     /// Unknown contains new variants that have been added since this code was generated.
@@ -1397,6 +1398,7 @@ impl std::convert::From<&str> for Runtime {
             "python3.6" => Runtime::Python36,
             "python3.7" => Runtime::Python37,
             "python3.8" => Runtime::Python38,
+            "python3.9" => Runtime::Python39,
             "ruby2.5" => Runtime::Ruby25,
             "ruby2.7" => Runtime::Ruby27,
             other => Runtime::Unknown(other.to_owned()),
@@ -1435,6 +1437,7 @@ impl Runtime {
             Runtime::Python36 => "python3.6",
             Runtime::Python37 => "python3.7",
             Runtime::Python38 => "python3.8",
+            Runtime::Python39 => "python3.9",
             Runtime::Ruby25 => "ruby2.5",
             Runtime::Ruby27 => "ruby2.7",
             Runtime::Unknown(s) => s.as_ref(),
@@ -1464,6 +1467,7 @@ impl Runtime {
             "python3.6",
             "python3.7",
             "python3.8",
+            "python3.9",
             "ruby2.5",
             "ruby2.7",
         ]

@@ -938,9 +938,11 @@ pub mod batch_create_channel_membership_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-        /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+        /// by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
@@ -3233,8 +3235,9 @@ pub mod create_channel_input {
             self.name = input;
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves
-        /// and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
+        /// moderators, and channel members can add themselves and other members to unrestricted
+        /// channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
             self.mode = Some(input);
             self
@@ -3243,8 +3246,9 @@ pub mod create_channel_input {
             self.mode = input;
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel.
-        /// Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
+        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
+        /// by anyone in the <code>AppInstance</code>.</p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.privacy = Some(input);
             self
@@ -3695,9 +3699,11 @@ pub mod create_channel_membership_input {
             self.member_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-        /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+        /// by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
             self
@@ -20761,8 +20767,9 @@ pub mod list_channel_memberships_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-        /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.r#type = Some(input);
@@ -20784,7 +20791,8 @@ pub mod list_channel_memberships_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are
+        /// returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -21237,7 +21245,8 @@ pub mod list_channel_messages_input {
             self.channel_arn = input;
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time
+        /// created.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.sort_order = Some(input);
             self
@@ -21530,7 +21539,8 @@ pub mod list_channel_moderators_input {
             self.max_results = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are
+        /// returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -21755,9 +21765,9 @@ pub mod list_channels_input {
             self.app_instance_arn = input;
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an
-        /// <code>AppInstanceAdmin</code> can retrieve private channels.
-        /// </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
+        /// can retrieve private channels. </p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.privacy = Some(input);
             self
@@ -21999,7 +22009,8 @@ pub mod list_channels_moderated_by_app_instance_user_input {
             self.max_results = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by
+        /// the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -35535,7 +35546,8 @@ pub struct ListChannelsModeratedByAppInstanceUserInput {
     pub app_instance_user_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of channels in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by
+    /// the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -35556,9 +35568,9 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserInput {
 pub struct ListChannelsInput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub app_instance_arn: std::option::Option<std::string::String>,
-    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an
-    /// <code>AppInstanceAdmin</code> can retrieve private channels.
-    /// </p>
+    /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+    /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
+    /// can retrieve private channels. </p>
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The maximum number of channels that you want to return.</p>
     pub max_results: std::option::Option<i32>,
@@ -35586,7 +35598,8 @@ pub struct ListChannelModeratorsInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The maximum number of moderators that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are
+    /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -35607,7 +35620,8 @@ impl std::fmt::Debug for ListChannelModeratorsInput {
 pub struct ListChannelMessagesInput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+    /// <p>The order in which you want messages sorted. Default is Descending, based on time
+    /// created.</p>
     pub sort_order: std::option::Option<crate::model::SortOrder>,
     /// <p>The initial or starting time stamp for your requested messages.</p>
     pub not_before: std::option::Option<smithy_types::Instant>,
@@ -35662,13 +35676,15 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserInput {
 pub struct ListChannelMembershipsInput {
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-    /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
     /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The maximum number of channel memberships that you want returned.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are
+    /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -37464,9 +37480,11 @@ pub struct CreateChannelMembershipInput {
     pub channel_arn: std::option::Option<std::string::String>,
     /// <p>The ARN of the member you want to add to the channel.</p>
     pub member_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-    /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+    /// by moderators.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The <code>AppInstanceUserArn</code> of the user that makes the API call.</p>
     pub chime_bearer: std::option::Option<std::string::String>,
@@ -37509,11 +37527,13 @@ pub struct CreateChannelInput {
     pub app_instance_arn: std::option::Option<std::string::String>,
     /// <p>The name of the channel.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves
-    /// and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+    /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
+    /// moderators, and channel members can add themselves and other members to unrestricted
+    /// channels. Only administrators and moderators can add members to restricted channels.</p>
     pub mode: std::option::Option<crate::model::ChannelMode>,
-    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel.
-    /// Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+    /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
+    /// channels aren't discoverable by users outside the channel. Public channels are discoverable
+    /// by anyone in the <code>AppInstance</code>.</p>
     pub privacy: std::option::Option<crate::model::ChannelPrivacy>,
     /// <p>The metadata of the creation request. Limited to 1KB and UTF-8.</p>
     pub metadata: std::option::Option<std::string::String>,
@@ -37771,9 +37791,11 @@ impl std::fmt::Debug for BatchCreateRoomMembershipInput {
 pub struct BatchCreateChannelMembershipInput {
     /// <p>The ARN of the channel to which you're adding users.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-    /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
-    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+    /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+    /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+    /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+    /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+    /// by moderators.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
     /// <p>The ARNs of the members you want to add to the channel.</p>
     pub member_arns: std::option::Option<std::vec::Vec<std::string::String>>,

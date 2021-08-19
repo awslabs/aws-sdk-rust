@@ -7,10 +7,11 @@
 //! - Reading environment variables
 //! - Reading from the file system
 
+use crate::os_shim_internal::fs::Fake;
 use std::collections::HashMap;
 use std::env::VarError;
 use std::ffi::OsString;
-use std::path::Path;
+use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
 /// File system abstraction
@@ -32,7 +33,14 @@ use std::sync::Arc;
 ///     map
 /// });
 /// ```
+#[derive(Clone)]
 pub struct Fs(fs::Inner);
+
+impl Default for Fs {
+    fn default() -> Self {
+        Fs::real()
+    }
+}
 
 impl Fs {
     pub fn real() -> Self {
@@ -40,32 +48,69 @@ impl Fs {
     }
 
     pub fn from_raw_map(fs: HashMap<OsString, Vec<u8>>) -> Self {
-        Fs(fs::Inner::Fake { fs })
+        Fs(fs::Inner::Fake(Arc::new(Fake::MapFs(fs))))
     }
 
     pub fn from_map(data: HashMap<String, Vec<u8>>) -> Self {
         let fs = data.into_iter().map(|(k, v)| (k.into(), v)).collect();
-        Fs(fs::Inner::Fake { fs })
+        Self::from_raw_map(fs)
     }
 
-    pub fn exists(&self, path: impl AsRef<Path>) -> bool {
-        use fs::Inner;
-        let path = path.as_ref();
-        match &self.0 {
-            Inner::Real => path.exists(),
-            Inner::Fake { fs, .. } => fs.contains_key(path.as_os_str()),
-        }
+    /// Create a test filesystem rooted in real files
+    ///
+    /// Creates a test filesystem from the contents of `test_directory` rooted into `namespaced_to`.
+    ///
+    /// Example:
+    /// Given:
+    /// ```bash
+    /// $ ls
+    /// ./my-test-dir/aws-config
+    /// ./my-test-dir/aws-config/config
+    /// $ cat ./my-test-dir/aws-config/config
+    /// test-config
+    /// ```
+    /// ```rust,no_run
+    /// # async fn docs() {
+    /// use aws_types::os_shim_internal::{Env, Fs};
+    /// let env = Env::from_slice(&[("HOME", "/Users/me")]);
+    /// let fs = Fs::from_test_dir("my-test-dir/aws-config", "/Users/me/.aws/config");
+    /// assert_eq!(fs.read_to_end("/Users/me/.aws/config").await.unwrap(), b"test-config");
+    /// # }
+    pub fn from_test_dir(
+        test_directory: impl Into<PathBuf>,
+        namespaced_to: impl Into<PathBuf>,
+    ) -> Self {
+        Self(fs::Inner::Fake(Arc::new(Fake::NamespacedFs {
+            real_path: test_directory.into(),
+            namespaced_to: namespaced_to.into(),
+        })))
     }
 
-    pub fn read_to_end(&self, path: impl AsRef<Path>) -> std::io::Result<Vec<u8>> {
+    /// Read the entire contents of a file
+    ///
+    /// **Note**: This function is currently `async` primarily for forward compatibility. Currently,
+    /// this function does not use Tokio (or any other runtime) to perform IO, the IO is performed
+    /// directly within the function.
+    pub async fn read_to_end(&self, path: impl AsRef<Path>) -> std::io::Result<Vec<u8>> {
         use fs::Inner;
         let path = path.as_ref();
         match &self.0 {
             Inner::Real => std::fs::read(path),
-            Inner::Fake { fs } => fs
-                .get(path.as_os_str())
-                .cloned()
-                .ok_or_else(|| std::io::ErrorKind::NotFound.into()),
+            Inner::Fake(fake) => match fake.as_ref() {
+                Fake::MapFs(fs) => fs
+                    .get(path.as_os_str())
+                    .cloned()
+                    .ok_or_else(|| std::io::ErrorKind::NotFound.into()),
+                Fake::NamespacedFs {
+                    real_path,
+                    namespaced_to,
+                } => {
+                    let actual_path = path
+                        .strip_prefix(namespaced_to)
+                        .map_err(|_| std::io::Error::from(std::io::ErrorKind::NotFound))?;
+                    std::fs::read(real_path.join(actual_path))
+                }
+            },
         }
     }
 }
@@ -73,10 +118,21 @@ impl Fs {
 mod fs {
     use std::collections::HashMap;
     use std::ffi::OsString;
+    use std::path::PathBuf;
+    use std::sync::Arc;
 
+    #[derive(Clone)]
     pub enum Inner {
         Real,
-        Fake { fs: HashMap<OsString, Vec<u8>> },
+        Fake(Arc<Fake>),
+    }
+
+    pub enum Fake {
+        MapFs(HashMap<OsString, Vec<u8>>),
+        NamespacedFs {
+            real_path: PathBuf,
+            namespaced_to: PathBuf,
+        },
     }
 }
 
@@ -91,6 +147,12 @@ mod fs {
 /// - Real process environments are pointer-sized
 #[derive(Clone)]
 pub struct Env(env::Inner);
+
+impl Default for Env {
+    fn default() -> Self {
+        Self::real()
+    }
+}
 
 impl Env {
     pub fn get(&self, k: &str) -> Result<String, VarError> {
@@ -113,12 +175,11 @@ impl Env {
     /// assert_eq!(mock_env.get("HOME").unwrap(), "/home/myname");
     /// ```
     pub fn from_slice<'a>(vars: &[(&'a str, &'a str)]) -> Self {
-        use env::Inner;
-        Self(Inner::Fake(Arc::new(
-            vars.iter()
-                .map(|(k, v)| (k.to_string(), v.to_string()))
-                .collect(),
-        )))
+        let map: HashMap<_, _> = vars
+            .iter()
+            .map(|(k, v)| (k.to_string(), v.to_string()))
+            .collect();
+        Self::from(map)
     }
 
     /// Create a process environment that uses the real process environment
@@ -143,5 +204,38 @@ mod env {
     pub enum Inner {
         Real,
         Fake(Arc<HashMap<String, String>>),
+    }
+}
+
+#[cfg(test)]
+mod test {
+    use crate::os_shim_internal::{Env, Fs};
+    use futures_util::FutureExt;
+    use std::env::VarError;
+
+    #[test]
+    fn env_works() {
+        let env = Env::from_slice(&[("FOO", "BAR")]);
+        assert_eq!(env.get("FOO").unwrap(), "BAR");
+        assert_eq!(
+            env.get("OTHER").expect_err("no present"),
+            VarError::NotPresent
+        )
+    }
+
+    #[test]
+    fn fs_works() {
+        let fs = Fs::from_test_dir("test-data", "/users/test-data");
+        let _ = fs
+            .read_to_end("/users/test-data/file-location-tests.json")
+            .now_or_never()
+            .expect("future should not poll")
+            .expect("file exists");
+
+        let _ = fs
+            .read_to_end("doesntexist")
+            .now_or_never()
+            .expect("future should not poll")
+            .expect_err("file doesnt exists");
     }
 }

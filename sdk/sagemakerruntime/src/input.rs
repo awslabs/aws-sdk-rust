@@ -410,6 +410,409 @@ impl InvokeEndpointInput {
     }
 }
 
+/// See [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput)
+pub mod invoke_endpoint_async_input {
+    /// A builder for [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) endpoint_name: std::option::Option<std::string::String>,
+        pub(crate) content_type: std::option::Option<std::string::String>,
+        pub(crate) accept: std::option::Option<std::string::String>,
+        pub(crate) custom_attributes: std::option::Option<std::string::String>,
+        pub(crate) inference_id: std::option::Option<std::string::String>,
+        pub(crate) input_location: std::option::Option<std::string::String>,
+        pub(crate) request_ttl_seconds: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the endpoint that you specified when you created the endpoint using
+        /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
+        /// <code>CreateEndpoint</code>
+        /// </a> API.</p>
+        pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.endpoint_name = Some(input.into());
+            self
+        }
+        pub fn set_endpoint_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.endpoint_name = input;
+            self
+        }
+        /// <p>The MIME type of the input data in the request body.</p>
+        pub fn content_type(mut self, input: impl Into<std::string::String>) -> Self {
+            self.content_type = Some(input.into());
+            self
+        }
+        pub fn set_content_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.content_type = input;
+            self
+        }
+        /// <p>The desired MIME type of the inference in the response.</p>
+        pub fn accept(mut self, input: impl Into<std::string::String>) -> Self {
+            self.accept = Some(input.into());
+            self
+        }
+        pub fn set_accept(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.accept = input;
+            self
+        }
+        /// <p>Provides additional information about a request for an inference submitted to
+        /// a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
+        /// forwarded verbatim. You could use this value, for example, to provide an ID that you
+        /// can use to track a request or to provide other metadata that a service endpoint was
+        /// programmed to process. The value must consist of no more than 1024
+        /// visible US-ASCII characters as specified in
+        /// <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6.
+        /// Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+        /// <p>The code in your model is responsible for setting or updating any custom attributes
+        /// in the response. If your code does not set this value in the response, an empty
+        /// value is returned. For example, if a custom attribute represents the trace ID,
+        /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
+        /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
+        pub fn custom_attributes(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_attributes = Some(input.into());
+            self
+        }
+        pub fn set_custom_attributes(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_attributes = input;
+            self
+        }
+        /// <p>The identifier for the inference request. Amazon SageMaker will generate an identifier for you
+        /// if none is specified. </p>
+        pub fn inference_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inference_id = Some(input.into());
+            self
+        }
+        pub fn set_inference_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inference_id = input;
+            self
+        }
+        /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
+        pub fn input_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.input_location = Some(input.into());
+            self
+        }
+        pub fn set_input_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.input_location = input;
+            self
+        }
+        /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+        pub fn request_ttl_seconds(mut self, input: i32) -> Self {
+            self.request_ttl_seconds = Some(input);
+            self
+        }
+        pub fn set_request_ttl_seconds(mut self, input: std::option::Option<i32>) -> Self {
+            self.request_ttl_seconds = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::InvokeEndpointAsyncInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::InvokeEndpointAsyncInput {
+                endpoint_name: self.endpoint_name,
+                content_type: self.content_type,
+                accept: self.accept,
+                custom_attributes: self.custom_attributes,
+                inference_id: self.inference_id,
+                input_location: self.input_location,
+                request_ttl_seconds: self.request_ttl_seconds,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type InvokeEndpointAsyncInputOperationOutputAlias = crate::operation::InvokeEndpointAsync;
+#[doc(hidden)]
+pub type InvokeEndpointAsyncInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl InvokeEndpointAsyncInput {
+    /// Consumes the builder and constructs an Operation<[`InvokeEndpointAsync`](crate::operation::InvokeEndpointAsync)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::InvokeEndpointAsync,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = smithy_http::body::SdkBody::from("");
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::InvokeEndpointAsync::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "InvokeEndpointAsync",
+                "sagemakerruntime",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        let input_16 = &self.endpoint_name;
+        let input_16 =
+            input_16
+                .as_ref()
+                .ok_or(smithy_http::operation::BuildError::MissingField {
+                    field: "endpoint_name",
+                    details: "cannot be empty or unset",
+                })?;
+        let endpoint_name = smithy_http::label::fmt_string(input_16, false);
+        if endpoint_name.is_empty() {
+            return Err(smithy_http::operation::BuildError::MissingField {
+                field: "endpoint_name",
+                details: "cannot be empty or unset",
+            });
+        }
+        write!(
+            output,
+            "/endpoints/{EndpointName}/async-invocations",
+            EndpointName = endpoint_name
+        )
+        .expect("formatting should succeed");
+        Ok(())
+    }
+    fn add_headers(
+        &self,
+        mut builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        if let Some(inner_17) = &self.content_type {
+            let formatted_18 = AsRef::<str>::as_ref(inner_17);
+            if !formatted_18.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_18;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "content_type",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("X-Amzn-SageMaker-Content-Type", header_value);
+            }
+        }
+        if let Some(inner_19) = &self.accept {
+            let formatted_20 = AsRef::<str>::as_ref(inner_19);
+            if !formatted_20.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_20;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "accept",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("X-Amzn-SageMaker-Accept", header_value);
+            }
+        }
+        if let Some(inner_21) = &self.custom_attributes {
+            let formatted_22 = AsRef::<str>::as_ref(inner_21);
+            if !formatted_22.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_22;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "custom_attributes",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &"*** Sensitive Data Redacted ***", err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("X-Amzn-SageMaker-Custom-Attributes", header_value);
+            }
+        }
+        if let Some(inner_23) = &self.inference_id {
+            let formatted_24 = AsRef::<str>::as_ref(inner_23);
+            if !formatted_24.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_24;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "inference_id",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("X-Amzn-SageMaker-Inference-Id", header_value);
+            }
+        }
+        if let Some(inner_25) = &self.input_location {
+            let formatted_26 = AsRef::<str>::as_ref(inner_25);
+            if !formatted_26.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_26;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "input_location",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("X-Amzn-SageMaker-InputLocation", header_value);
+            }
+        }
+        if let Some(inner_27) = &self.request_ttl_seconds {
+            let mut encoder = smithy_types::primitive::Encoder::from(*inner_27);
+            let formatted_28 = encoder.encode();
+            if !formatted_28.is_empty() {
+                use std::convert::TryFrom;
+                let header_value = formatted_28;
+                let header_value =
+                    http::header::HeaderValue::try_from(&*header_value).map_err(|err| {
+                        smithy_http::operation::BuildError::InvalidField {
+                            field: "request_ttl_seconds",
+                            details: format!(
+                                "`{}` cannot be used as a header value: {}",
+                                &header_value, err
+                            ),
+                        }
+                    })?;
+                builder = builder.header("X-Amzn-SageMaker-RequestTTLSeconds", header_value);
+            }
+        }
+        Ok(builder)
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        let builder = self.add_headers(builder)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder =
+            smithy_http::header::set_header_if_absent(builder, "content-type", "application/json");
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput)
+    pub fn builder() -> crate::input::invoke_endpoint_async_input::Builder {
+        crate::input::invoke_endpoint_async_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InvokeEndpointAsyncInput {
+    /// <p>The name of the endpoint that you specified when you created the endpoint using
+    /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">
+    /// <code>CreateEndpoint</code>
+    /// </a> API.</p>
+    pub endpoint_name: std::option::Option<std::string::String>,
+    /// <p>The MIME type of the input data in the request body.</p>
+    pub content_type: std::option::Option<std::string::String>,
+    /// <p>The desired MIME type of the inference in the response.</p>
+    pub accept: std::option::Option<std::string::String>,
+    /// <p>Provides additional information about a request for an inference submitted to
+    /// a model hosted at an Amazon SageMaker endpoint. The information is an opaque value that is
+    /// forwarded verbatim. You could use this value, for example, to provide an ID that you
+    /// can use to track a request or to provide other metadata that a service endpoint was
+    /// programmed to process. The value must consist of no more than 1024
+    /// visible US-ASCII characters as specified in
+    /// <a href="https://datatracker.ietf.org/doc/html/rfc7230#section-3.2.6">Section 3.3.6.
+    /// Field Value Components</a> of the Hypertext Transfer Protocol (HTTP/1.1). </p>
+    /// <p>The code in your model is responsible for setting or updating any custom attributes
+    /// in the response. If your code does not set this value in the response, an empty
+    /// value is returned. For example, if a custom attribute represents the trace ID,
+    /// your model can prepend the custom attribute with <code>Trace ID</code>: in your post-processing function. </p>
+    /// <p>This feature is currently supported in the AWS SDKs but not in the Amazon SageMaker Python SDK. </p>
+    pub custom_attributes: std::option::Option<std::string::String>,
+    /// <p>The identifier for the inference request. Amazon SageMaker will generate an identifier for you
+    /// if none is specified. </p>
+    pub inference_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 URI where the inference request payload is stored.</p>
+    pub input_location: std::option::Option<std::string::String>,
+    /// <p>Maximum age in seconds a request can be in the queue before it is marked as expired.</p>
+    pub request_ttl_seconds: std::option::Option<i32>,
+}
+impl std::fmt::Debug for InvokeEndpointAsyncInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InvokeEndpointAsyncInput");
+        formatter.field("endpoint_name", &self.endpoint_name);
+        formatter.field("content_type", &self.content_type);
+        formatter.field("accept", &self.accept);
+        formatter.field("custom_attributes", &"*** Sensitive Data Redacted ***");
+        formatter.field("inference_id", &self.inference_id);
+        formatter.field("input_location", &self.input_location);
+        formatter.field("request_ttl_seconds", &self.request_ttl_seconds);
+        formatter.finish()
+    }
+}
+
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvokeEndpointInput {

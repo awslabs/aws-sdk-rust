@@ -3112,7 +3112,7 @@ pub struct UpdateDomainNameOutput {
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
     pub domain_name_status_message: std::option::Option<std::string::String>,
@@ -3123,6 +3123,8 @@ pub struct UpdateDomainNameOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateDomainNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3149,6 +3151,10 @@ impl std::fmt::Debug for UpdateDomainNameOutput {
         formatter.field("security_policy", &self.security_policy);
         formatter.field("tags", &self.tags);
         formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
+        formatter.field(
+            "ownership_verification_certificate_arn",
+            &self.ownership_verification_certificate_arn,
+        );
         formatter.finish()
     }
 }
@@ -3177,6 +3183,7 @@ pub mod update_domain_name_output {
         >,
         pub(crate) mutual_tls_authentication:
             std::option::Option<crate::model::MutualTlsAuthentication>,
+        pub(crate) ownership_verification_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
@@ -3314,7 +3321,7 @@ pub mod update_domain_name_output {
             self.endpoint_configuration = input;
             self
         }
-        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
             self.domain_name_status = Some(input);
             self
@@ -3384,6 +3391,21 @@ pub mod update_domain_name_output {
             self.mutual_tls_authentication = input;
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+        pub fn ownership_verification_certificate_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_ownership_verification_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainNameOutput`](crate::output::UpdateDomainNameOutput)
         pub fn build(self) -> crate::output::UpdateDomainNameOutput {
             crate::output::UpdateDomainNameOutput {
@@ -3403,6 +3425,7 @@ pub mod update_domain_name_output {
                 security_policy: self.security_policy,
                 tags: self.tags,
                 mutual_tls_authentication: self.mutual_tls_authentication,
+                ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             }
         }
     }
@@ -11856,7 +11879,7 @@ pub struct GetDomainNameOutput {
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
     pub domain_name_status_message: std::option::Option<std::string::String>,
@@ -11867,6 +11890,8 @@ pub struct GetDomainNameOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDomainNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -11893,6 +11918,10 @@ impl std::fmt::Debug for GetDomainNameOutput {
         formatter.field("security_policy", &self.security_policy);
         formatter.field("tags", &self.tags);
         formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
+        formatter.field(
+            "ownership_verification_certificate_arn",
+            &self.ownership_verification_certificate_arn,
+        );
         formatter.finish()
     }
 }
@@ -11921,6 +11950,7 @@ pub mod get_domain_name_output {
         >,
         pub(crate) mutual_tls_authentication:
             std::option::Option<crate::model::MutualTlsAuthentication>,
+        pub(crate) ownership_verification_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
@@ -12058,7 +12088,7 @@ pub mod get_domain_name_output {
             self.endpoint_configuration = input;
             self
         }
-        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
             self.domain_name_status = Some(input);
             self
@@ -12128,6 +12158,21 @@ pub mod get_domain_name_output {
             self.mutual_tls_authentication = input;
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+        pub fn ownership_verification_certificate_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_ownership_verification_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainNameOutput`](crate::output::GetDomainNameOutput)
         pub fn build(self) -> crate::output::GetDomainNameOutput {
             crate::output::GetDomainNameOutput {
@@ -12147,6 +12192,7 @@ pub mod get_domain_name_output {
                 security_policy: self.security_policy,
                 tags: self.tags,
                 mutual_tls_authentication: self.mutual_tls_authentication,
+                ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             }
         }
     }
@@ -16076,7 +16122,7 @@ pub struct CreateDomainNameOutput {
     pub distribution_hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint types of the domain name.</p>
     pub endpoint_configuration: std::option::Option<crate::model::EndpointConfiguration>,
-    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+    /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the <a>DomainName</a> migration.</p>
     pub domain_name_status_message: std::option::Option<std::string::String>,
@@ -16087,6 +16133,8 @@ pub struct CreateDomainNameOutput {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The mutual TLS authentication configuration for a custom domain name. If specified, API Gateway performs two-way authentication between the client and the server. Clients must present a trusted certificate to access your API.</p>
     pub mutual_tls_authentication: std::option::Option<crate::model::MutualTlsAuthentication>,
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+    pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateDomainNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -16113,6 +16161,10 @@ impl std::fmt::Debug for CreateDomainNameOutput {
         formatter.field("security_policy", &self.security_policy);
         formatter.field("tags", &self.tags);
         formatter.field("mutual_tls_authentication", &self.mutual_tls_authentication);
+        formatter.field(
+            "ownership_verification_certificate_arn",
+            &self.ownership_verification_certificate_arn,
+        );
         formatter.finish()
     }
 }
@@ -16141,6 +16193,7 @@ pub mod create_domain_name_output {
         >,
         pub(crate) mutual_tls_authentication:
             std::option::Option<crate::model::MutualTlsAuthentication>,
+        pub(crate) ownership_verification_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The custom domain name as an API host name, for example, <code>my-api.example.com</code>.</p>
@@ -16278,7 +16331,7 @@ pub mod create_domain_name_output {
             self.endpoint_configuration = input;
             self
         }
-        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code> and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
+        /// <p>The status of the <a>DomainName</a> migration. The valid values are <code>AVAILABLE</code>, <code>UPDATING</code>, <code>PENDING_CERTIFICATE_REIMPORT</code>, and <code>PENDING_OWNERSHIP_VERIFICATION</code>. If the status is <code>UPDATING</code>, the domain cannot be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>, the domain can be updated.</p>
         pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
             self.domain_name_status = Some(input);
             self
@@ -16348,6 +16401,21 @@ pub mod create_domain_name_output {
             self.mutual_tls_authentication = input;
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+        pub fn ownership_verification_certificate_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_ownership_verification_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDomainNameOutput`](crate::output::CreateDomainNameOutput)
         pub fn build(self) -> crate::output::CreateDomainNameOutput {
             crate::output::CreateDomainNameOutput {
@@ -16367,6 +16435,7 @@ pub mod create_domain_name_output {
                 security_policy: self.security_policy,
                 tags: self.tags,
                 mutual_tls_authentication: self.mutual_tls_authentication,
+                ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             }
         }
     }

@@ -215,12 +215,12 @@ impl Workteam {
     }
 }
 
-/// <p>Configures SNS notifications of available or expiring work items for work
+/// <p>Configures Amazon SNS notifications of available or expiring work items for work
 /// teams.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationConfiguration {
-    /// <p>The ARN for the SNS topic to which notifications should be published.</p>
+    /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
     pub notification_topic_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NotificationConfiguration {
@@ -239,7 +239,7 @@ pub mod notification_configuration {
         pub(crate) notification_topic_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN for the SNS topic to which notifications should be published.</p>
+        /// <p>The ARN for the Amazon SNS topic to which notifications should be published.</p>
         pub fn notification_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.notification_topic_arn = Some(input.into());
             self
@@ -2066,7 +2066,7 @@ pub enum TrialComponentParameterValue {
     StringValue(std::string::String),
 }
 impl TrialComponentParameterValue {
-    pub fn as_number_value(&self) -> Result<&f64, &Self> {
+    pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
         if let TrialComponentParameterValue::NumberValue(val) = &self {
             Ok(&val)
         } else {
@@ -2076,7 +2076,7 @@ impl TrialComponentParameterValue {
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TrialComponentParameterValue::StringValue(val) = &self {
             Ok(&val)
         } else {
@@ -2911,6 +2911,12 @@ pub enum InstanceType {
     MlC5D4Xlarge,
     MlC5D9Xlarge,
     MlC5DXlarge,
+    MlG4Dn12Xlarge,
+    MlG4Dn16Xlarge,
+    MlG4Dn2Xlarge,
+    MlG4Dn4Xlarge,
+    MlG4Dn8Xlarge,
+    MlG4DnXlarge,
     MlM410Xlarge,
     MlM416Xlarge,
     MlM42Xlarge,
@@ -2921,12 +2927,29 @@ pub enum InstanceType {
     MlM52Xlarge,
     MlM54Xlarge,
     MlM5Xlarge,
+    MlM5D12Xlarge,
+    MlM5D16Xlarge,
+    MlM5D24Xlarge,
+    MlM5D2Xlarge,
+    MlM5D4Xlarge,
+    MlM5D8Xlarge,
+    MlM5DLarge,
+    MlM5DXlarge,
     MlP216Xlarge,
     MlP28Xlarge,
     MlP2Xlarge,
     MlP316Xlarge,
     MlP32Xlarge,
     MlP38Xlarge,
+    MlP3Dn24Xlarge,
+    MlR512Xlarge,
+    MlR516Xlarge,
+    MlR524Xlarge,
+    MlR52Xlarge,
+    MlR54Xlarge,
+    MlR58Xlarge,
+    MlR5Large,
+    MlR5Xlarge,
     MlT22Xlarge,
     MlT2Large,
     MlT2Medium,
@@ -2955,6 +2978,12 @@ impl std::convert::From<&str> for InstanceType {
             "ml.c5d.4xlarge" => InstanceType::MlC5D4Xlarge,
             "ml.c5d.9xlarge" => InstanceType::MlC5D9Xlarge,
             "ml.c5d.xlarge" => InstanceType::MlC5DXlarge,
+            "ml.g4dn.12xlarge" => InstanceType::MlG4Dn12Xlarge,
+            "ml.g4dn.16xlarge" => InstanceType::MlG4Dn16Xlarge,
+            "ml.g4dn.2xlarge" => InstanceType::MlG4Dn2Xlarge,
+            "ml.g4dn.4xlarge" => InstanceType::MlG4Dn4Xlarge,
+            "ml.g4dn.8xlarge" => InstanceType::MlG4Dn8Xlarge,
+            "ml.g4dn.xlarge" => InstanceType::MlG4DnXlarge,
             "ml.m4.10xlarge" => InstanceType::MlM410Xlarge,
             "ml.m4.16xlarge" => InstanceType::MlM416Xlarge,
             "ml.m4.2xlarge" => InstanceType::MlM42Xlarge,
@@ -2965,12 +2994,29 @@ impl std::convert::From<&str> for InstanceType {
             "ml.m5.2xlarge" => InstanceType::MlM52Xlarge,
             "ml.m5.4xlarge" => InstanceType::MlM54Xlarge,
             "ml.m5.xlarge" => InstanceType::MlM5Xlarge,
+            "ml.m5d.12xlarge" => InstanceType::MlM5D12Xlarge,
+            "ml.m5d.16xlarge" => InstanceType::MlM5D16Xlarge,
+            "ml.m5d.24xlarge" => InstanceType::MlM5D24Xlarge,
+            "ml.m5d.2xlarge" => InstanceType::MlM5D2Xlarge,
+            "ml.m5d.4xlarge" => InstanceType::MlM5D4Xlarge,
+            "ml.m5d.8xlarge" => InstanceType::MlM5D8Xlarge,
+            "ml.m5d.large" => InstanceType::MlM5DLarge,
+            "ml.m5d.xlarge" => InstanceType::MlM5DXlarge,
             "ml.p2.16xlarge" => InstanceType::MlP216Xlarge,
             "ml.p2.8xlarge" => InstanceType::MlP28Xlarge,
             "ml.p2.xlarge" => InstanceType::MlP2Xlarge,
             "ml.p3.16xlarge" => InstanceType::MlP316Xlarge,
             "ml.p3.2xlarge" => InstanceType::MlP32Xlarge,
             "ml.p3.8xlarge" => InstanceType::MlP38Xlarge,
+            "ml.p3dn.24xlarge" => InstanceType::MlP3Dn24Xlarge,
+            "ml.r5.12xlarge" => InstanceType::MlR512Xlarge,
+            "ml.r5.16xlarge" => InstanceType::MlR516Xlarge,
+            "ml.r5.24xlarge" => InstanceType::MlR524Xlarge,
+            "ml.r5.2xlarge" => InstanceType::MlR52Xlarge,
+            "ml.r5.4xlarge" => InstanceType::MlR54Xlarge,
+            "ml.r5.8xlarge" => InstanceType::MlR58Xlarge,
+            "ml.r5.large" => InstanceType::MlR5Large,
+            "ml.r5.xlarge" => InstanceType::MlR5Xlarge,
             "ml.t2.2xlarge" => InstanceType::MlT22Xlarge,
             "ml.t2.large" => InstanceType::MlT2Large,
             "ml.t2.medium" => InstanceType::MlT2Medium,
@@ -3007,6 +3053,12 @@ impl InstanceType {
             InstanceType::MlC5D4Xlarge => "ml.c5d.4xlarge",
             InstanceType::MlC5D9Xlarge => "ml.c5d.9xlarge",
             InstanceType::MlC5DXlarge => "ml.c5d.xlarge",
+            InstanceType::MlG4Dn12Xlarge => "ml.g4dn.12xlarge",
+            InstanceType::MlG4Dn16Xlarge => "ml.g4dn.16xlarge",
+            InstanceType::MlG4Dn2Xlarge => "ml.g4dn.2xlarge",
+            InstanceType::MlG4Dn4Xlarge => "ml.g4dn.4xlarge",
+            InstanceType::MlG4Dn8Xlarge => "ml.g4dn.8xlarge",
+            InstanceType::MlG4DnXlarge => "ml.g4dn.xlarge",
             InstanceType::MlM410Xlarge => "ml.m4.10xlarge",
             InstanceType::MlM416Xlarge => "ml.m4.16xlarge",
             InstanceType::MlM42Xlarge => "ml.m4.2xlarge",
@@ -3017,12 +3069,29 @@ impl InstanceType {
             InstanceType::MlM52Xlarge => "ml.m5.2xlarge",
             InstanceType::MlM54Xlarge => "ml.m5.4xlarge",
             InstanceType::MlM5Xlarge => "ml.m5.xlarge",
+            InstanceType::MlM5D12Xlarge => "ml.m5d.12xlarge",
+            InstanceType::MlM5D16Xlarge => "ml.m5d.16xlarge",
+            InstanceType::MlM5D24Xlarge => "ml.m5d.24xlarge",
+            InstanceType::MlM5D2Xlarge => "ml.m5d.2xlarge",
+            InstanceType::MlM5D4Xlarge => "ml.m5d.4xlarge",
+            InstanceType::MlM5D8Xlarge => "ml.m5d.8xlarge",
+            InstanceType::MlM5DLarge => "ml.m5d.large",
+            InstanceType::MlM5DXlarge => "ml.m5d.xlarge",
             InstanceType::MlP216Xlarge => "ml.p2.16xlarge",
             InstanceType::MlP28Xlarge => "ml.p2.8xlarge",
             InstanceType::MlP2Xlarge => "ml.p2.xlarge",
             InstanceType::MlP316Xlarge => "ml.p3.16xlarge",
             InstanceType::MlP32Xlarge => "ml.p3.2xlarge",
             InstanceType::MlP38Xlarge => "ml.p3.8xlarge",
+            InstanceType::MlP3Dn24Xlarge => "ml.p3dn.24xlarge",
+            InstanceType::MlR512Xlarge => "ml.r5.12xlarge",
+            InstanceType::MlR516Xlarge => "ml.r5.16xlarge",
+            InstanceType::MlR524Xlarge => "ml.r5.24xlarge",
+            InstanceType::MlR52Xlarge => "ml.r5.2xlarge",
+            InstanceType::MlR54Xlarge => "ml.r5.4xlarge",
+            InstanceType::MlR58Xlarge => "ml.r5.8xlarge",
+            InstanceType::MlR5Large => "ml.r5.large",
+            InstanceType::MlR5Xlarge => "ml.r5.xlarge",
             InstanceType::MlT22Xlarge => "ml.t2.2xlarge",
             InstanceType::MlT2Large => "ml.t2.large",
             InstanceType::MlT2Medium => "ml.t2.medium",
@@ -3050,6 +3119,12 @@ impl InstanceType {
             "ml.c5d.4xlarge",
             "ml.c5d.9xlarge",
             "ml.c5d.xlarge",
+            "ml.g4dn.12xlarge",
+            "ml.g4dn.16xlarge",
+            "ml.g4dn.2xlarge",
+            "ml.g4dn.4xlarge",
+            "ml.g4dn.8xlarge",
+            "ml.g4dn.xlarge",
             "ml.m4.10xlarge",
             "ml.m4.16xlarge",
             "ml.m4.2xlarge",
@@ -3060,12 +3135,29 @@ impl InstanceType {
             "ml.m5.2xlarge",
             "ml.m5.4xlarge",
             "ml.m5.xlarge",
+            "ml.m5d.12xlarge",
+            "ml.m5d.16xlarge",
+            "ml.m5d.24xlarge",
+            "ml.m5d.2xlarge",
+            "ml.m5d.4xlarge",
+            "ml.m5d.8xlarge",
+            "ml.m5d.large",
+            "ml.m5d.xlarge",
             "ml.p2.16xlarge",
             "ml.p2.8xlarge",
             "ml.p2.xlarge",
             "ml.p3.16xlarge",
             "ml.p3.2xlarge",
             "ml.p3.8xlarge",
+            "ml.p3dn.24xlarge",
+            "ml.r5.12xlarge",
+            "ml.r5.16xlarge",
+            "ml.r5.24xlarge",
+            "ml.r5.2xlarge",
+            "ml.r5.4xlarge",
+            "ml.r5.8xlarge",
+            "ml.r5.large",
+            "ml.r5.xlarge",
             "ml.t2.2xlarge",
             "ml.t2.large",
             "ml.t2.medium",
@@ -35403,8 +35495,8 @@ impl AsRef<str> for CodeRepositorySortBy {
     }
 }
 
-/// <p>An Autopilot job returns recommendations, or candidates. Each candidate has futher details
-/// about the steps involved and the status.</p>
+/// <p>Information about a candidate produced by an AutoML training job, including its status,
+/// steps, and other properties.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlCandidate {
@@ -35430,7 +35522,7 @@ pub struct AutoMlCandidate {
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The failure reason.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The AutoML candidate's properties.</p>
+    /// <p>The properties of an AutoML candidate job.</p>
     pub candidate_properties: std::option::Option<crate::model::CandidateProperties>,
 }
 impl std::fmt::Debug for AutoMlCandidate {
@@ -35603,7 +35695,7 @@ pub mod auto_ml_candidate {
             self.failure_reason = input;
             self
         }
-        /// <p>The AutoML candidate's properties.</p>
+        /// <p>The properties of an AutoML candidate job.</p>
         pub fn candidate_properties(mut self, input: crate::model::CandidateProperties) -> Self {
             self.candidate_properties = Some(input);
             self
@@ -35646,6 +35738,8 @@ impl AutoMlCandidate {
 pub struct CandidateProperties {
     /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
     pub candidate_artifact_locations: std::option::Option<crate::model::CandidateArtifactLocations>,
+    /// <p>Information about the candidate metrics for an AutoML job.</p>
+    pub candidate_metrics: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
 }
 impl std::fmt::Debug for CandidateProperties {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35654,6 +35748,7 @@ impl std::fmt::Debug for CandidateProperties {
             "candidate_artifact_locations",
             &self.candidate_artifact_locations,
         );
+        formatter.field("candidate_metrics", &self.candidate_metrics);
         formatter.finish()
     }
 }
@@ -35665,6 +35760,7 @@ pub mod candidate_properties {
     pub struct Builder {
         pub(crate) candidate_artifact_locations:
             std::option::Option<crate::model::CandidateArtifactLocations>,
+        pub(crate) candidate_metrics: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
     }
     impl Builder {
         /// <p>The Amazon S3 prefix to the artifacts generated for an AutoML candidate.</p>
@@ -35682,10 +35778,24 @@ pub mod candidate_properties {
             self.candidate_artifact_locations = input;
             self
         }
+        pub fn candidate_metrics(mut self, input: impl Into<crate::model::MetricDatum>) -> Self {
+            let mut v = self.candidate_metrics.unwrap_or_default();
+            v.push(input.into());
+            self.candidate_metrics = Some(v);
+            self
+        }
+        pub fn set_candidate_metrics(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::MetricDatum>>,
+        ) -> Self {
+            self.candidate_metrics = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CandidateProperties`](crate::model::CandidateProperties)
         pub fn build(self) -> crate::model::CandidateProperties {
             crate::model::CandidateProperties {
                 candidate_artifact_locations: self.candidate_artifact_locations,
+                candidate_metrics: self.candidate_metrics,
             }
         }
     }
@@ -35694,6 +35804,199 @@ impl CandidateProperties {
     /// Creates a new builder-style object to manufacture [`CandidateProperties`](crate::model::CandidateProperties)
     pub fn builder() -> crate::model::candidate_properties::Builder {
         crate::model::candidate_properties::Builder::default()
+    }
+}
+
+/// <p>Information about the metric for a candidate produced by an AutoML job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct MetricDatum {
+    /// <p>The name of the metric.</p>
+    pub metric_name: std::option::Option<crate::model::AutoMlMetricEnum>,
+    /// <p>The value of the metric.</p>
+    pub value: f32,
+    /// <p>The dataset split from which the AutoML job produced the metric.</p>
+    pub set: std::option::Option<crate::model::MetricSetSource>,
+}
+impl std::fmt::Debug for MetricDatum {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("MetricDatum");
+        formatter.field("metric_name", &self.metric_name);
+        formatter.field("value", &self.value);
+        formatter.field("set", &self.set);
+        formatter.finish()
+    }
+}
+/// See [`MetricDatum`](crate::model::MetricDatum)
+pub mod metric_datum {
+    /// A builder for [`MetricDatum`](crate::model::MetricDatum)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) metric_name: std::option::Option<crate::model::AutoMlMetricEnum>,
+        pub(crate) value: std::option::Option<f32>,
+        pub(crate) set: std::option::Option<crate::model::MetricSetSource>,
+    }
+    impl Builder {
+        /// <p>The name of the metric.</p>
+        pub fn metric_name(mut self, input: crate::model::AutoMlMetricEnum) -> Self {
+            self.metric_name = Some(input);
+            self
+        }
+        pub fn set_metric_name(
+            mut self,
+            input: std::option::Option<crate::model::AutoMlMetricEnum>,
+        ) -> Self {
+            self.metric_name = input;
+            self
+        }
+        /// <p>The value of the metric.</p>
+        pub fn value(mut self, input: f32) -> Self {
+            self.value = Some(input);
+            self
+        }
+        pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
+            self.value = input;
+            self
+        }
+        /// <p>The dataset split from which the AutoML job produced the metric.</p>
+        pub fn set(mut self, input: crate::model::MetricSetSource) -> Self {
+            self.set = Some(input);
+            self
+        }
+        pub fn set_set(
+            mut self,
+            input: std::option::Option<crate::model::MetricSetSource>,
+        ) -> Self {
+            self.set = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`MetricDatum`](crate::model::MetricDatum)
+        pub fn build(self) -> crate::model::MetricDatum {
+            crate::model::MetricDatum {
+                metric_name: self.metric_name,
+                value: self.value.unwrap_or_default(),
+                set: self.set,
+            }
+        }
+    }
+}
+impl MetricDatum {
+    /// Creates a new builder-style object to manufacture [`MetricDatum`](crate::model::MetricDatum)
+    pub fn builder() -> crate::model::metric_datum::Builder {
+        crate::model::metric_datum::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MetricSetSource {
+    Test,
+    Train,
+    Validation,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MetricSetSource {
+    fn from(s: &str) -> Self {
+        match s {
+            "Test" => MetricSetSource::Test,
+            "Train" => MetricSetSource::Train,
+            "Validation" => MetricSetSource::Validation,
+            other => MetricSetSource::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MetricSetSource {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MetricSetSource::from(s))
+    }
+}
+impl MetricSetSource {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MetricSetSource::Test => "Test",
+            MetricSetSource::Train => "Train",
+            MetricSetSource::Validation => "Validation",
+            MetricSetSource::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["Test", "Train", "Validation"]
+    }
+}
+impl AsRef<str> for MetricSetSource {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AutoMlMetricEnum {
+    Auc,
+    Accuracy,
+    F1,
+    F1Macro,
+    Mse,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AutoMlMetricEnum {
+    fn from(s: &str) -> Self {
+        match s {
+            "AUC" => AutoMlMetricEnum::Auc,
+            "Accuracy" => AutoMlMetricEnum::Accuracy,
+            "F1" => AutoMlMetricEnum::F1,
+            "F1macro" => AutoMlMetricEnum::F1Macro,
+            "MSE" => AutoMlMetricEnum::Mse,
+            other => AutoMlMetricEnum::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AutoMlMetricEnum {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AutoMlMetricEnum::from(s))
+    }
+}
+impl AutoMlMetricEnum {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AutoMlMetricEnum::Auc => "AUC",
+            AutoMlMetricEnum::Accuracy => "Accuracy",
+            AutoMlMetricEnum::F1 => "F1",
+            AutoMlMetricEnum::F1Macro => "F1macro",
+            AutoMlMetricEnum::Mse => "MSE",
+            AutoMlMetricEnum::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AUC", "Accuracy", "F1", "F1macro", "MSE"]
+    }
+}
+impl AsRef<str> for AutoMlMetricEnum {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -35754,7 +36057,8 @@ impl CandidateArtifactLocations {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlContainerDefinition {
-    /// <p>The ECR path of the container. For more information, see .</p>
+    /// <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For more
+    /// information, see .</p>
     pub image: std::option::Option<std::string::String>,
     /// <p>The location of the model artifacts. For more information, see .</p>
     pub model_data_url: std::option::Option<std::string::String>,
@@ -35784,7 +36088,8 @@ pub mod auto_ml_container_definition {
         >,
     }
     impl Builder {
-        /// <p>The ECR path of the container. For more information, see .</p>
+        /// <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For more
+        /// information, see .</p>
         pub fn image(mut self, input: impl Into<std::string::String>) -> Self {
             self.image = Some(input.into());
             self
@@ -36134,65 +36439,6 @@ impl FinalAutoMlJobObjectiveMetric {
     std::fmt::Debug,
     std::hash::Hash,
 )]
-pub enum AutoMlMetricEnum {
-    Auc,
-    Accuracy,
-    F1,
-    F1Macro,
-    Mse,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for AutoMlMetricEnum {
-    fn from(s: &str) -> Self {
-        match s {
-            "AUC" => AutoMlMetricEnum::Auc,
-            "Accuracy" => AutoMlMetricEnum::Accuracy,
-            "F1" => AutoMlMetricEnum::F1,
-            "F1macro" => AutoMlMetricEnum::F1Macro,
-            "MSE" => AutoMlMetricEnum::Mse,
-            other => AutoMlMetricEnum::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for AutoMlMetricEnum {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AutoMlMetricEnum::from(s))
-    }
-}
-impl AutoMlMetricEnum {
-    pub fn as_str(&self) -> &str {
-        match self {
-            AutoMlMetricEnum::Auc => "AUC",
-            AutoMlMetricEnum::Accuracy => "Accuracy",
-            AutoMlMetricEnum::F1 => "F1",
-            AutoMlMetricEnum::F1Macro => "F1macro",
-            AutoMlMetricEnum::Mse => "MSE",
-            AutoMlMetricEnum::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["AUC", "Accuracy", "F1", "F1macro", "MSE"]
-    }
-}
-impl AsRef<str> for AutoMlMetricEnum {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
 pub enum AutoMlJobObjectiveType {
     Maximize,
     Minimize,
@@ -36340,7 +36586,7 @@ impl AsRef<str> for AutoMlSortOrder {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AutoMlJobSummary {
-    /// <p>The name of the AutoML you are requesting.</p>
+    /// <p>The name of the AutoML job you are requesting.</p>
     pub auto_ml_job_name: std::option::Option<std::string::String>,
     /// <p>The ARN of the AutoML job.</p>
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
@@ -36397,7 +36643,7 @@ pub mod auto_ml_job_summary {
             std::option::Option<std::vec::Vec<crate::model::AutoMlPartialFailureReason>>,
     }
     impl Builder {
-        /// <p>The name of the AutoML you are requesting.</p>
+        /// <p>The name of the AutoML job you are requesting.</p>
         pub fn auto_ml_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_ml_job_name = Some(input.into());
             self
@@ -45182,7 +45428,7 @@ pub struct AnnotationConsolidationConfig {
     /// <ul>
     /// <li>
     /// <p>
-    /// <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+    /// <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
     /// </p>
     /// </li>
     /// <li>
@@ -46674,7 +46920,7 @@ pub mod annotation_consolidation_config {
         /// <ul>
         /// <li>
         /// <p>
-        /// <code>rn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
+        /// <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-TextMultiClass</code>
         /// </p>
         /// </li>
         /// <li>
@@ -47899,7 +48145,13 @@ impl AnnotationConsolidationConfig {
     }
 }
 
-/// <p>Provided configuration information for the worker UI for a labeling job. </p>
+/// <p>Provided configuration information for the worker UI for a labeling job. Provide
+/// either <code>HumanTaskUiArn</code> or <code>UiTemplateS3Uri</code>.</p>
+/// <p>For named entity recognition, 3D point cloud and video frame labeling jobs, use
+/// <code>HumanTaskUiArn</code>.</p>
+/// <p>For all other Ground Truth built-in task types and custom task types, use
+/// <code>UiTemplateS3Uri</code> to specify the location of a worker task template in
+/// Amazon S3.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UiConfig {
@@ -47910,11 +48162,20 @@ pub struct UiConfig {
     pub ui_template_s3_uri: std::option::Option<std::string::String>,
     /// <p>The ARN of the worker task template used to render the worker UI and tools for
     /// labeling job tasks.</p>
-    /// <p>Use this parameter when you are creating a labeling job for 3D point cloud and video
-    /// fram labeling jobs. Use your labeling job task type to select one of the following ARNs
-    /// and use it with this parameter when you create a labeling job. Replace
-    /// <code>aws-region</code> with the Amazon Web Services region you are creating your labeling job
-    /// in.</p>
+    /// <p>Use this parameter when you are creating a labeling job for named entity recognition,
+    /// 3D point cloud and video frame labeling jobs. Use your labeling job task type to select
+    /// one of the following ARNs and use it with this parameter when you create a labeling job.
+    /// Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job
+    /// in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you
+    /// create a labeling job in US West (N. California).</p>
+    /// <p>
+    /// <b>Named Entity Recognition</b>
+    /// </p>
+    /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling
+    /// jobs:</p>
+    /// <p>
+    /// <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+    /// </p>
     /// <p>
     /// <b>3D Point Cloud HumanTaskUiArns</b>
     /// </p>
@@ -48003,11 +48264,20 @@ pub mod ui_config {
         }
         /// <p>The ARN of the worker task template used to render the worker UI and tools for
         /// labeling job tasks.</p>
-        /// <p>Use this parameter when you are creating a labeling job for 3D point cloud and video
-        /// fram labeling jobs. Use your labeling job task type to select one of the following ARNs
-        /// and use it with this parameter when you create a labeling job. Replace
-        /// <code>aws-region</code> with the Amazon Web Services region you are creating your labeling job
-        /// in.</p>
+        /// <p>Use this parameter when you are creating a labeling job for named entity recognition,
+        /// 3D point cloud and video frame labeling jobs. Use your labeling job task type to select
+        /// one of the following ARNs and use it with this parameter when you create a labeling job.
+        /// Replace <code>aws-region</code> with the Amazon Web Services Region you are creating your labeling job
+        /// in. For example, replace <code>aws-region</code> with <code>us-west-1</code> if you
+        /// create a labeling job in US West (N. California).</p>
+        /// <p>
+        /// <b>Named Entity Recognition</b>
+        /// </p>
+        /// <p>Use the following <code>HumanTaskUiArn</code> for named entity recognition labeling
+        /// jobs:</p>
+        /// <p>
+        /// <code>arn:aws:sagemaker:aws-region:394669845002:human-task-ui/NamedEntityRecognition</code>
+        /// </p>
         /// <p>
         /// <b>3D Point Cloud HumanTaskUiArns</b>
         /// </p>
@@ -51592,6 +51862,289 @@ impl AsRef<str> for AwsManagedHumanLoopRequestSource {
     }
 }
 
+/// <p>Specifies configuration for how an endpoint performs asynchronous inference.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncInferenceConfig {
+    /// <p>Configures the behavior of the client used by Amazon SageMaker to interact
+    /// with the model container during asynchronous inference.</p>
+    pub client_config: std::option::Option<crate::model::AsyncInferenceClientConfig>,
+    /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
+    pub output_config: std::option::Option<crate::model::AsyncInferenceOutputConfig>,
+}
+impl std::fmt::Debug for AsyncInferenceConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncInferenceConfig");
+        formatter.field("client_config", &self.client_config);
+        formatter.field("output_config", &self.output_config);
+        formatter.finish()
+    }
+}
+/// See [`AsyncInferenceConfig`](crate::model::AsyncInferenceConfig)
+pub mod async_inference_config {
+    /// A builder for [`AsyncInferenceConfig`](crate::model::AsyncInferenceConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_config: std::option::Option<crate::model::AsyncInferenceClientConfig>,
+        pub(crate) output_config: std::option::Option<crate::model::AsyncInferenceOutputConfig>,
+    }
+    impl Builder {
+        /// <p>Configures the behavior of the client used by Amazon SageMaker to interact
+        /// with the model container during asynchronous inference.</p>
+        pub fn client_config(mut self, input: crate::model::AsyncInferenceClientConfig) -> Self {
+            self.client_config = Some(input);
+            self
+        }
+        pub fn set_client_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceClientConfig>,
+        ) -> Self {
+            self.client_config = input;
+            self
+        }
+        /// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
+        pub fn output_config(mut self, input: crate::model::AsyncInferenceOutputConfig) -> Self {
+            self.output_config = Some(input);
+            self
+        }
+        pub fn set_output_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceOutputConfig>,
+        ) -> Self {
+            self.output_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncInferenceConfig`](crate::model::AsyncInferenceConfig)
+        pub fn build(self) -> crate::model::AsyncInferenceConfig {
+            crate::model::AsyncInferenceConfig {
+                client_config: self.client_config,
+                output_config: self.output_config,
+            }
+        }
+    }
+}
+impl AsyncInferenceConfig {
+    /// Creates a new builder-style object to manufacture [`AsyncInferenceConfig`](crate::model::AsyncInferenceConfig)
+    pub fn builder() -> crate::model::async_inference_config::Builder {
+        crate::model::async_inference_config::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for asynchronous inference invocation outputs.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncInferenceOutputConfig {
+    /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
+    /// Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+    /// <p></p>
+    pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon S3 location to upload inference responses to.</p>
+    pub s3_output_path: std::option::Option<std::string::String>,
+    /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
+    pub notification_config: std::option::Option<crate::model::AsyncInferenceNotificationConfig>,
+}
+impl std::fmt::Debug for AsyncInferenceOutputConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncInferenceOutputConfig");
+        formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("s3_output_path", &self.s3_output_path);
+        formatter.field("notification_config", &self.notification_config);
+        formatter.finish()
+    }
+}
+/// See [`AsyncInferenceOutputConfig`](crate::model::AsyncInferenceOutputConfig)
+pub mod async_inference_output_config {
+    /// A builder for [`AsyncInferenceOutputConfig`](crate::model::AsyncInferenceOutputConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) s3_output_path: std::option::Option<std::string::String>,
+        pub(crate) notification_config:
+            std::option::Option<crate::model::AsyncInferenceNotificationConfig>,
+    }
+    impl Builder {
+        /// <p>The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
+        /// Amazon SageMaker uses to encrypt the asynchronous inference output in Amazon S3.</p>
+        /// <p></p>
+        pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_key_id = Some(input.into());
+            self
+        }
+        pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.kms_key_id = input;
+            self
+        }
+        /// <p>The Amazon S3 location to upload inference responses to.</p>
+        pub fn s3_output_path(mut self, input: impl Into<std::string::String>) -> Self {
+            self.s3_output_path = Some(input.into());
+            self
+        }
+        pub fn set_s3_output_path(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.s3_output_path = input;
+            self
+        }
+        /// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
+        pub fn notification_config(
+            mut self,
+            input: crate::model::AsyncInferenceNotificationConfig,
+        ) -> Self {
+            self.notification_config = Some(input);
+            self
+        }
+        pub fn set_notification_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceNotificationConfig>,
+        ) -> Self {
+            self.notification_config = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncInferenceOutputConfig`](crate::model::AsyncInferenceOutputConfig)
+        pub fn build(self) -> crate::model::AsyncInferenceOutputConfig {
+            crate::model::AsyncInferenceOutputConfig {
+                kms_key_id: self.kms_key_id,
+                s3_output_path: self.s3_output_path,
+                notification_config: self.notification_config,
+            }
+        }
+    }
+}
+impl AsyncInferenceOutputConfig {
+    /// Creates a new builder-style object to manufacture [`AsyncInferenceOutputConfig`](crate::model::AsyncInferenceOutputConfig)
+    pub fn builder() -> crate::model::async_inference_output_config::Builder {
+        crate::model::async_inference_output_config::Builder::default()
+    }
+}
+
+/// <p>Specifies the configuration for notifications of inference results for asynchronous inference.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncInferenceNotificationConfig {
+    /// <p>Amazon SNS topic to post a notification to when inference completes successfully.
+    /// If no topic is provided, no notification is sent on success.</p>
+    pub success_topic: std::option::Option<std::string::String>,
+    /// <p>Amazon SNS topic to post a notification to when inference fails.
+    /// If no topic is provided, no notification is sent on failure.</p>
+    pub error_topic: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AsyncInferenceNotificationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncInferenceNotificationConfig");
+        formatter.field("success_topic", &self.success_topic);
+        formatter.field("error_topic", &self.error_topic);
+        formatter.finish()
+    }
+}
+/// See [`AsyncInferenceNotificationConfig`](crate::model::AsyncInferenceNotificationConfig)
+pub mod async_inference_notification_config {
+    /// A builder for [`AsyncInferenceNotificationConfig`](crate::model::AsyncInferenceNotificationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) success_topic: std::option::Option<std::string::String>,
+        pub(crate) error_topic: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Amazon SNS topic to post a notification to when inference completes successfully.
+        /// If no topic is provided, no notification is sent on success.</p>
+        pub fn success_topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.success_topic = Some(input.into());
+            self
+        }
+        pub fn set_success_topic(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.success_topic = input;
+            self
+        }
+        /// <p>Amazon SNS topic to post a notification to when inference fails.
+        /// If no topic is provided, no notification is sent on failure.</p>
+        pub fn error_topic(mut self, input: impl Into<std::string::String>) -> Self {
+            self.error_topic = Some(input.into());
+            self
+        }
+        pub fn set_error_topic(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.error_topic = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncInferenceNotificationConfig`](crate::model::AsyncInferenceNotificationConfig)
+        pub fn build(self) -> crate::model::AsyncInferenceNotificationConfig {
+            crate::model::AsyncInferenceNotificationConfig {
+                success_topic: self.success_topic,
+                error_topic: self.error_topic,
+            }
+        }
+    }
+}
+impl AsyncInferenceNotificationConfig {
+    /// Creates a new builder-style object to manufacture [`AsyncInferenceNotificationConfig`](crate::model::AsyncInferenceNotificationConfig)
+    pub fn builder() -> crate::model::async_inference_notification_config::Builder {
+        crate::model::async_inference_notification_config::Builder::default()
+    }
+}
+
+/// <p>Configures the behavior of the client used by Amazon SageMaker to interact with the
+/// model container during asynchronous inference.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AsyncInferenceClientConfig {
+    /// <p>The maximum number of concurrent requests sent by the SageMaker client to the
+    /// model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.</p>
+    pub max_concurrent_invocations_per_instance: std::option::Option<i32>,
+}
+impl std::fmt::Debug for AsyncInferenceClientConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AsyncInferenceClientConfig");
+        formatter.field(
+            "max_concurrent_invocations_per_instance",
+            &self.max_concurrent_invocations_per_instance,
+        );
+        formatter.finish()
+    }
+}
+/// See [`AsyncInferenceClientConfig`](crate::model::AsyncInferenceClientConfig)
+pub mod async_inference_client_config {
+    /// A builder for [`AsyncInferenceClientConfig`](crate::model::AsyncInferenceClientConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_concurrent_invocations_per_instance: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The maximum number of concurrent requests sent by the SageMaker client to the
+        /// model container. If no value is provided, Amazon SageMaker will choose an optimal value for you.</p>
+        pub fn max_concurrent_invocations_per_instance(mut self, input: i32) -> Self {
+            self.max_concurrent_invocations_per_instance = Some(input);
+            self
+        }
+        pub fn set_max_concurrent_invocations_per_instance(
+            mut self,
+            input: std::option::Option<i32>,
+        ) -> Self {
+            self.max_concurrent_invocations_per_instance = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AsyncInferenceClientConfig`](crate::model::AsyncInferenceClientConfig)
+        pub fn build(self) -> crate::model::AsyncInferenceClientConfig {
+            crate::model::AsyncInferenceClientConfig {
+                max_concurrent_invocations_per_instance: self
+                    .max_concurrent_invocations_per_instance,
+            }
+        }
+    }
+}
+impl AsyncInferenceClientConfig {
+    /// Creates a new builder-style object to manufacture [`AsyncInferenceClientConfig`](crate::model::AsyncInferenceClientConfig)
+    pub fn builder() -> crate::model::async_inference_client_config::Builder {
+        crate::model::async_inference_client_config::Builder::default()
+    }
+}
+
 /// <p></p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -54780,8 +55333,8 @@ pub struct ModelDeployConfig {
     /// endpoint name is not generated automatically.</p>
     /// <note>
     /// <p>Specify the <code>EndpointName</code> if and only if you set
-    /// <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error
-    /// is thrown.</p>
+    /// <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is
+    /// thrown.</p>
     /// </note>
     pub endpoint_name: std::option::Option<std::string::String>,
 }
@@ -54825,8 +55378,8 @@ pub mod model_deploy_config {
         /// endpoint name is not generated automatically.</p>
         /// <note>
         /// <p>Specify the <code>EndpointName</code> if and only if you set
-        /// <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error
-        /// is thrown.</p>
+        /// <code>AutoGenerateEndpointName</code> to <code>False</code>; otherwise a 400 error is
+        /// thrown.</p>
         /// </note>
         pub fn endpoint_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.endpoint_name = Some(input.into());
@@ -54952,7 +55505,8 @@ impl ResolvedAttributes {
 pub struct AutoMlJobCompletionCriteria {
     /// <p>The maximum number of times a training job is allowed to run.</p>
     pub max_candidates: std::option::Option<i32>,
-    /// <p>The maximum time, in seconds, a training job is allowed to run as part of an AutoML job.</p>
+    /// <p>The maximum time, in seconds, a training job is allowed to run as part of an AutoML
+    /// job.</p>
     pub max_runtime_per_training_job_in_seconds: std::option::Option<i32>,
     /// <p>The maximum runtime, in seconds, an AutoML job has to complete.</p>
     pub max_auto_ml_job_runtime_in_seconds: std::option::Option<i32>,
@@ -54992,7 +55546,8 @@ pub mod auto_ml_job_completion_criteria {
             self.max_candidates = input;
             self
         }
-        /// <p>The maximum time, in seconds, a training job is allowed to run as part of an AutoML job.</p>
+        /// <p>The maximum time, in seconds, a training job is allowed to run as part of an AutoML
+        /// job.</p>
         pub fn max_runtime_per_training_job_in_seconds(mut self, input: i32) -> Self {
             self.max_runtime_per_training_job_in_seconds = Some(input);
             self
@@ -55105,8 +55660,8 @@ pub struct AutoMlJobObjective {
     /// <code>MSE</code>: The mean squared error (MSE) is the average of the squared
     /// differences between the predicted and actual values. It is used for regression. MSE
     /// values are always positive: the better a model is at predicting the actual values,
-    /// the smaller the MSE value. When the data contains outliers, they tend to dominate the
-    /// MSE, which might cause subpar prediction performance.</p>
+    /// the smaller the MSE value is. When the data contains outliers, they tend to dominate
+    /// the MSE, which might cause subpar prediction performance.</p>
     /// </li>
     /// <li>
     /// <p>
@@ -55204,8 +55759,8 @@ pub mod auto_ml_job_objective {
         /// <code>MSE</code>: The mean squared error (MSE) is the average of the squared
         /// differences between the predicted and actual values. It is used for regression. MSE
         /// values are always positive: the better a model is at predicting the actual values,
-        /// the smaller the MSE value. When the data contains outliers, they tend to dominate the
-        /// MSE, which might cause subpar prediction performance.</p>
+        /// the smaller the MSE value is. When the data contains outliers, they tend to dominate
+        /// the MSE, which might cause subpar prediction performance.</p>
         /// </li>
         /// <li>
         /// <p>

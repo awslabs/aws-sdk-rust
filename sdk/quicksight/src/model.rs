@@ -2304,7 +2304,7 @@ pub enum DataSourceParameters {
 impl DataSourceParameters {
     pub fn as_amazon_elasticsearch_parameters(
         &self,
-    ) -> Result<&crate::model::AmazonElasticsearchParameters, &Self> {
+    ) -> std::result::Result<&crate::model::AmazonElasticsearchParameters, &Self> {
         if let DataSourceParameters::AmazonElasticsearchParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2314,7 +2314,9 @@ impl DataSourceParameters {
     pub fn is_amazon_elasticsearch_parameters(&self) -> bool {
         self.as_amazon_elasticsearch_parameters().is_ok()
     }
-    pub fn as_athena_parameters(&self) -> Result<&crate::model::AthenaParameters, &Self> {
+    pub fn as_athena_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::AthenaParameters, &Self> {
         if let DataSourceParameters::AthenaParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2324,7 +2326,9 @@ impl DataSourceParameters {
     pub fn is_athena_parameters(&self) -> bool {
         self.as_athena_parameters().is_ok()
     }
-    pub fn as_aurora_parameters(&self) -> Result<&crate::model::AuroraParameters, &Self> {
+    pub fn as_aurora_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::AuroraParameters, &Self> {
         if let DataSourceParameters::AuroraParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2336,7 +2340,7 @@ impl DataSourceParameters {
     }
     pub fn as_aurora_postgre_sql_parameters(
         &self,
-    ) -> Result<&crate::model::AuroraPostgreSqlParameters, &Self> {
+    ) -> std::result::Result<&crate::model::AuroraPostgreSqlParameters, &Self> {
         if let DataSourceParameters::AuroraPostgreSqlParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2348,7 +2352,7 @@ impl DataSourceParameters {
     }
     pub fn as_aws_iot_analytics_parameters(
         &self,
-    ) -> Result<&crate::model::AwsIotAnalyticsParameters, &Self> {
+    ) -> std::result::Result<&crate::model::AwsIotAnalyticsParameters, &Self> {
         if let DataSourceParameters::AwsIotAnalyticsParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2358,7 +2362,7 @@ impl DataSourceParameters {
     pub fn is_aws_iot_analytics_parameters(&self) -> bool {
         self.as_aws_iot_analytics_parameters().is_ok()
     }
-    pub fn as_jira_parameters(&self) -> Result<&crate::model::JiraParameters, &Self> {
+    pub fn as_jira_parameters(&self) -> std::result::Result<&crate::model::JiraParameters, &Self> {
         if let DataSourceParameters::JiraParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2368,7 +2372,9 @@ impl DataSourceParameters {
     pub fn is_jira_parameters(&self) -> bool {
         self.as_jira_parameters().is_ok()
     }
-    pub fn as_maria_db_parameters(&self) -> Result<&crate::model::MariaDbParameters, &Self> {
+    pub fn as_maria_db_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::MariaDbParameters, &Self> {
         if let DataSourceParameters::MariaDbParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2378,7 +2384,9 @@ impl DataSourceParameters {
     pub fn is_maria_db_parameters(&self) -> bool {
         self.as_maria_db_parameters().is_ok()
     }
-    pub fn as_my_sql_parameters(&self) -> Result<&crate::model::MySqlParameters, &Self> {
+    pub fn as_my_sql_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::MySqlParameters, &Self> {
         if let DataSourceParameters::MySqlParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2388,7 +2396,9 @@ impl DataSourceParameters {
     pub fn is_my_sql_parameters(&self) -> bool {
         self.as_my_sql_parameters().is_ok()
     }
-    pub fn as_oracle_parameters(&self) -> Result<&crate::model::OracleParameters, &Self> {
+    pub fn as_oracle_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::OracleParameters, &Self> {
         if let DataSourceParameters::OracleParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2398,7 +2408,9 @@ impl DataSourceParameters {
     pub fn is_oracle_parameters(&self) -> bool {
         self.as_oracle_parameters().is_ok()
     }
-    pub fn as_postgre_sql_parameters(&self) -> Result<&crate::model::PostgreSqlParameters, &Self> {
+    pub fn as_postgre_sql_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::PostgreSqlParameters, &Self> {
         if let DataSourceParameters::PostgreSqlParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2408,7 +2420,9 @@ impl DataSourceParameters {
     pub fn is_postgre_sql_parameters(&self) -> bool {
         self.as_postgre_sql_parameters().is_ok()
     }
-    pub fn as_presto_parameters(&self) -> Result<&crate::model::PrestoParameters, &Self> {
+    pub fn as_presto_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::PrestoParameters, &Self> {
         if let DataSourceParameters::PrestoParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2418,7 +2432,7 @@ impl DataSourceParameters {
     pub fn is_presto_parameters(&self) -> bool {
         self.as_presto_parameters().is_ok()
     }
-    pub fn as_rds_parameters(&self) -> Result<&crate::model::RdsParameters, &Self> {
+    pub fn as_rds_parameters(&self) -> std::result::Result<&crate::model::RdsParameters, &Self> {
         if let DataSourceParameters::RdsParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2428,7 +2442,9 @@ impl DataSourceParameters {
     pub fn is_rds_parameters(&self) -> bool {
         self.as_rds_parameters().is_ok()
     }
-    pub fn as_redshift_parameters(&self) -> Result<&crate::model::RedshiftParameters, &Self> {
+    pub fn as_redshift_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::RedshiftParameters, &Self> {
         if let DataSourceParameters::RedshiftParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2438,7 +2454,7 @@ impl DataSourceParameters {
     pub fn is_redshift_parameters(&self) -> bool {
         self.as_redshift_parameters().is_ok()
     }
-    pub fn as_s3_parameters(&self) -> Result<&crate::model::S3Parameters, &Self> {
+    pub fn as_s3_parameters(&self) -> std::result::Result<&crate::model::S3Parameters, &Self> {
         if let DataSourceParameters::S3Parameters(val) = &self {
             Ok(&val)
         } else {
@@ -2448,7 +2464,9 @@ impl DataSourceParameters {
     pub fn is_s3_parameters(&self) -> bool {
         self.as_s3_parameters().is_ok()
     }
-    pub fn as_service_now_parameters(&self) -> Result<&crate::model::ServiceNowParameters, &Self> {
+    pub fn as_service_now_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::ServiceNowParameters, &Self> {
         if let DataSourceParameters::ServiceNowParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2458,7 +2476,9 @@ impl DataSourceParameters {
     pub fn is_service_now_parameters(&self) -> bool {
         self.as_service_now_parameters().is_ok()
     }
-    pub fn as_snowflake_parameters(&self) -> Result<&crate::model::SnowflakeParameters, &Self> {
+    pub fn as_snowflake_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::SnowflakeParameters, &Self> {
         if let DataSourceParameters::SnowflakeParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2468,7 +2488,9 @@ impl DataSourceParameters {
     pub fn is_snowflake_parameters(&self) -> bool {
         self.as_snowflake_parameters().is_ok()
     }
-    pub fn as_spark_parameters(&self) -> Result<&crate::model::SparkParameters, &Self> {
+    pub fn as_spark_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::SparkParameters, &Self> {
         if let DataSourceParameters::SparkParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2478,7 +2500,9 @@ impl DataSourceParameters {
     pub fn is_spark_parameters(&self) -> bool {
         self.as_spark_parameters().is_ok()
     }
-    pub fn as_sql_server_parameters(&self) -> Result<&crate::model::SqlServerParameters, &Self> {
+    pub fn as_sql_server_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::SqlServerParameters, &Self> {
         if let DataSourceParameters::SqlServerParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2488,7 +2512,9 @@ impl DataSourceParameters {
     pub fn is_sql_server_parameters(&self) -> bool {
         self.as_sql_server_parameters().is_ok()
     }
-    pub fn as_teradata_parameters(&self) -> Result<&crate::model::TeradataParameters, &Self> {
+    pub fn as_teradata_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::TeradataParameters, &Self> {
         if let DataSourceParameters::TeradataParameters(val) = &self {
             Ok(&val)
         } else {
@@ -2498,7 +2524,9 @@ impl DataSourceParameters {
     pub fn is_teradata_parameters(&self) -> bool {
         self.as_teradata_parameters().is_ok()
     }
-    pub fn as_twitter_parameters(&self) -> Result<&crate::model::TwitterParameters, &Self> {
+    pub fn as_twitter_parameters(
+        &self,
+    ) -> std::result::Result<&crate::model::TwitterParameters, &Self> {
         if let DataSourceParameters::TwitterParameters(val) = &self {
             Ok(&val)
         } else {
@@ -5112,7 +5140,7 @@ pub enum TransformOperation {
 impl TransformOperation {
     pub fn as_cast_column_type_operation(
         &self,
-    ) -> Result<&crate::model::CastColumnTypeOperation, &Self> {
+    ) -> std::result::Result<&crate::model::CastColumnTypeOperation, &Self> {
         if let TransformOperation::CastColumnTypeOperation(val) = &self {
             Ok(&val)
         } else {
@@ -5124,7 +5152,7 @@ impl TransformOperation {
     }
     pub fn as_create_columns_operation(
         &self,
-    ) -> Result<&crate::model::CreateColumnsOperation, &Self> {
+    ) -> std::result::Result<&crate::model::CreateColumnsOperation, &Self> {
         if let TransformOperation::CreateColumnsOperation(val) = &self {
             Ok(&val)
         } else {
@@ -5134,7 +5162,9 @@ impl TransformOperation {
     pub fn is_create_columns_operation(&self) -> bool {
         self.as_create_columns_operation().is_ok()
     }
-    pub fn as_filter_operation(&self) -> Result<&crate::model::FilterOperation, &Self> {
+    pub fn as_filter_operation(
+        &self,
+    ) -> std::result::Result<&crate::model::FilterOperation, &Self> {
         if let TransformOperation::FilterOperation(val) = &self {
             Ok(&val)
         } else {
@@ -5144,7 +5174,9 @@ impl TransformOperation {
     pub fn is_filter_operation(&self) -> bool {
         self.as_filter_operation().is_ok()
     }
-    pub fn as_project_operation(&self) -> Result<&crate::model::ProjectOperation, &Self> {
+    pub fn as_project_operation(
+        &self,
+    ) -> std::result::Result<&crate::model::ProjectOperation, &Self> {
         if let TransformOperation::ProjectOperation(val) = &self {
             Ok(&val)
         } else {
@@ -5156,7 +5188,7 @@ impl TransformOperation {
     }
     pub fn as_rename_column_operation(
         &self,
-    ) -> Result<&crate::model::RenameColumnOperation, &Self> {
+    ) -> std::result::Result<&crate::model::RenameColumnOperation, &Self> {
         if let TransformOperation::RenameColumnOperation(val) = &self {
             Ok(&val)
         } else {
@@ -5166,7 +5198,9 @@ impl TransformOperation {
     pub fn is_rename_column_operation(&self) -> bool {
         self.as_rename_column_operation().is_ok()
     }
-    pub fn as_tag_column_operation(&self) -> Result<&crate::model::TagColumnOperation, &Self> {
+    pub fn as_tag_column_operation(
+        &self,
+    ) -> std::result::Result<&crate::model::TagColumnOperation, &Self> {
         if let TransformOperation::TagColumnOperation(val) = &self {
             Ok(&val)
         } else {
@@ -5879,7 +5913,7 @@ pub enum PhysicalTable {
     S3Source(crate::model::S3Source),
 }
 impl PhysicalTable {
-    pub fn as_custom_sql(&self) -> Result<&crate::model::CustomSql, &Self> {
+    pub fn as_custom_sql(&self) -> std::result::Result<&crate::model::CustomSql, &Self> {
         if let PhysicalTable::CustomSql(val) = &self {
             Ok(&val)
         } else {
@@ -5889,7 +5923,9 @@ impl PhysicalTable {
     pub fn is_custom_sql(&self) -> bool {
         self.as_custom_sql().is_ok()
     }
-    pub fn as_relational_table(&self) -> Result<&crate::model::RelationalTable, &Self> {
+    pub fn as_relational_table(
+        &self,
+    ) -> std::result::Result<&crate::model::RelationalTable, &Self> {
         if let PhysicalTable::RelationalTable(val) = &self {
             Ok(&val)
         } else {
@@ -5899,7 +5935,7 @@ impl PhysicalTable {
     pub fn is_relational_table(&self) -> bool {
         self.as_relational_table().is_ok()
     }
-    pub fn as_s3_source(&self) -> Result<&crate::model::S3Source, &Self> {
+    pub fn as_s3_source(&self) -> std::result::Result<&crate::model::S3Source, &Self> {
         if let PhysicalTable::S3Source(val) = &self {
             Ok(&val)
         } else {
@@ -7504,7 +7540,7 @@ impl AnalysisSourceTemplate {
     }
 }
 
-/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account; or a QuickSight namespace in a specific Region;.</p>
+/// <p>The Amazon QuickSight customizations associated with your Amazon Web Services account; or a QuickSight namespace in a specific Amazon Web Services Region;.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountCustomization {
@@ -8619,7 +8655,7 @@ pub struct ThemeSummary {
     pub arn: std::option::Option<std::string::String>,
     /// <p>the display name for the theme.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the theme. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>The latest version number for the theme. </p>
     pub latest_version_number: std::option::Option<i64>,
@@ -8672,7 +8708,7 @@ pub mod theme_summary {
             self.name = input;
             self
         }
-        /// <p>The ID of the theme. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the theme. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
             self
@@ -8902,7 +8938,7 @@ impl TemplateVersionSummary {
 pub struct TemplateSummary {
     /// <p>A summary of a template.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the template. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the template. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
     pub name: std::option::Option<std::string::String>,
@@ -8948,7 +8984,7 @@ pub mod template_summary {
             self.arn = input;
             self
         }
-        /// <p>The ID of the template. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the template. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self
@@ -9027,7 +9063,7 @@ pub struct NamespaceInfoV2 {
     pub name: std::option::Option<std::string::String>,
     /// <p>The namespace ARN.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The namespace Region;.</p>
+    /// <p>The namespace Amazon Web Services Region;.</p>
     pub capacity_region: std::option::Option<std::string::String>,
     /// <p>The creation status of a namespace that is not yet completely created.</p>
     pub creation_status: std::option::Option<crate::model::NamespaceStatus>,
@@ -9080,7 +9116,7 @@ pub mod namespace_info_v2 {
             self.arn = input;
             self
         }
-        /// <p>The namespace Region;.</p>
+        /// <p>The namespace Amazon Web Services Region;.</p>
         pub fn capacity_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.capacity_region = Some(input.into());
             self
@@ -10426,7 +10462,7 @@ impl MemberIdArnPair {
 pub struct DataSource {
     /// <p>The Amazon Resource Name (ARN) of the data source.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Region; for each
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each
     /// Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
@@ -10516,7 +10552,7 @@ pub mod data_source {
             self.arn = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each
         /// Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
@@ -12234,7 +12270,7 @@ pub struct Template {
     pub name: std::option::Option<std::string::String>,
     /// <p>A structure describing the versions of the template.</p>
     pub version: std::option::Option<crate::model::TemplateVersion>,
-    /// <p>The ID for the template. This is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the template. This is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>Time when this was last updated.</p>
     pub last_updated_time: std::option::Option<smithy_types::Instant>,
@@ -12297,7 +12333,7 @@ pub mod template {
             self.version = input;
             self
         }
-        /// <p>The ID for the template. This is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the template. This is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
             self

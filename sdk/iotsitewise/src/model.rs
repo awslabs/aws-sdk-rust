@@ -1620,12 +1620,12 @@ pub struct TumblingWindow {
     /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 p.m. (UTC),
-    /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 p.m. (UTC),
-    /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+    /// <p>If you create the metric after 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -1635,21 +1635,21 @@ pub struct TumblingWindow {
     /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 p.m. (UTC),
-    /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 p.m. (UTC),
-    /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+    /// <p>If you create the metric after 6:00 PM (UTC),
+    /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
     /// <li>
     /// <p>The 24-hour clock.</p>
     /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
-    /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 p.m. (UTC),
-    /// you get the first aggregation result at 2:03 p.m. (UTC).
-    /// You get the second aggregation result at 2:08 p.m. (UTC). </p>
+    /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
+    /// you get the first aggregation result at 2:03 PM (UTC).
+    /// You get the second aggregation result at 2:08 PM (UTC). </p>
     /// </li>
     /// <li>
     /// <p>The offset time zone.</p>
@@ -1657,12 +1657,12 @@ pub struct TumblingWindow {
     /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
     /// <ul>
     /// <li>
-    /// <p>If you create the metric before or at 6:00 p.m. (PST),
-    /// you get the first aggregation result at 6 p.m. (PST) on the day when you create the metric.</p>
+    /// <p>If you create the metric before or at 6:00 PM (PST),
+    /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
     /// </li>
     /// <li>
-    /// <p>If you create the metric after 6:00 p.m. (PST),
-    /// you get the first aggregation result at 6 p.m. (PST) the next day.</p>
+    /// <p>If you create the metric after 6:00 PM (PST),
+    /// you get the first aggregation result at 6 PM (PST) the next day.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -1710,12 +1710,12 @@ pub mod tumbling_window {
         /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 p.m. (UTC),
-        /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6:00 PM (UTC),
+        /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 p.m. (UTC),
-        /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+        /// <p>If you create the metric after 6:00 PM (UTC),
+        /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -1725,21 +1725,21 @@ pub mod tumbling_window {
         /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 p.m. (UTC),
-        /// you get the first aggregation result at 6 p.m. (UTC) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6:00 PM (UTC),
+        /// you get the first aggregation result at 6 PM (UTC) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 p.m. (UTC),
-        /// you get the first aggregation result at 6 p.m. (UTC) the next day.</p>
+        /// <p>If you create the metric after 6:00 PM (UTC),
+        /// you get the first aggregation result at 6 PM (UTC) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>
         /// <li>
         /// <p>The 24-hour clock.</p>
         /// <p>For example, if you specify <code>00:03:00</code> for <code>offset</code>
-        /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 p.m. (UTC),
-        /// you get the first aggregation result at 2:03 p.m. (UTC).
-        /// You get the second aggregation result at 2:08 p.m. (UTC). </p>
+        /// and <code>5m</code> for <code>interval</code>, and you create the metric at 2 PM (UTC),
+        /// you get the first aggregation result at 2:03 PM (UTC).
+        /// You get the second aggregation result at 2:08 PM (UTC). </p>
         /// </li>
         /// <li>
         /// <p>The offset time zone.</p>
@@ -1747,12 +1747,12 @@ pub mod tumbling_window {
         /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:</p>
         /// <ul>
         /// <li>
-        /// <p>If you create the metric before or at 6:00 p.m. (PST),
-        /// you get the first aggregation result at 6 p.m. (PST) on the day when you create the metric.</p>
+        /// <p>If you create the metric before or at 6:00 PM (PST),
+        /// you get the first aggregation result at 6 PM (PST) on the day when you create the metric.</p>
         /// </li>
         /// <li>
-        /// <p>If you create the metric after 6:00 p.m. (PST),
-        /// you get the first aggregation result at 6 p.m. (PST) the next day.</p>
+        /// <p>If you create the metric after 6:00 PM (PST),
+        /// you get the first aggregation result at 6 PM (PST) the next day.</p>
         /// </li>
         /// </ul>
         /// </li>

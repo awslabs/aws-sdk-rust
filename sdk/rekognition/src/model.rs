@@ -399,7 +399,8 @@ impl DetectionFilter {
 }
 
 /// <p>The Amazon Simple Notification Service topic to which Amazon Rekognition publishes the completion status of a video analysis operation. For more information, see
-/// <a>api-video</a>.</p>
+/// <a>api-video</a>. Note that the Amazon SNS topic must have a topic name that begins with <i>AmazonRekognition</i> if you are using the AmazonRekognitionServiceRole permissions policy to access the topic.
+/// For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/api-video-roles.html#api-video-roles-all-topics">Giving access to multiple Amazon SNS topics</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct NotificationChannel {
@@ -784,11 +785,17 @@ pub struct StartTechnicalCueDetectionFilter {
     /// <p>If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code> returns
     /// segments with confidence values greater than or equal to 50 percent.</p>
     pub min_segment_confidence: std::option::Option<f32>,
+    /// <p>
+    /// A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame.
+    /// Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.
+    /// </p>
+    pub black_frame: std::option::Option<crate::model::BlackFrame>,
 }
 impl std::fmt::Debug for StartTechnicalCueDetectionFilter {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("StartTechnicalCueDetectionFilter");
         formatter.field("min_segment_confidence", &self.min_segment_confidence);
+        formatter.field("black_frame", &self.black_frame);
         formatter.finish()
     }
 }
@@ -799,6 +806,7 @@ pub mod start_technical_cue_detection_filter {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) min_segment_confidence: std::option::Option<f32>,
+        pub(crate) black_frame: std::option::Option<crate::model::BlackFrame>,
     }
     impl Builder {
         /// <p>Specifies the minimum confidence that Amazon Rekognition Video must have in order to return a detected segment. Confidence
@@ -815,10 +823,26 @@ pub mod start_technical_cue_detection_filter {
             self.min_segment_confidence = input;
             self
         }
+        /// <p>
+        /// A filter that allows you to control the black frame detection by specifying the black levels and pixel coverage of black pixels in a frame.
+        /// Videos can come from multiple sources, formats, and time periods, with different standards and varying noise levels for black frames that need to be accounted for.
+        /// </p>
+        pub fn black_frame(mut self, input: crate::model::BlackFrame) -> Self {
+            self.black_frame = Some(input);
+            self
+        }
+        pub fn set_black_frame(
+            mut self,
+            input: std::option::Option<crate::model::BlackFrame>,
+        ) -> Self {
+            self.black_frame = input;
+            self
+        }
         /// Consumes the builder and constructs a [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter)
         pub fn build(self) -> crate::model::StartTechnicalCueDetectionFilter {
             crate::model::StartTechnicalCueDetectionFilter {
                 min_segment_confidence: self.min_segment_confidence,
+                black_frame: self.black_frame,
             }
         }
     }
@@ -827,6 +851,96 @@ impl StartTechnicalCueDetectionFilter {
     /// Creates a new builder-style object to manufacture [`StartTechnicalCueDetectionFilter`](crate::model::StartTechnicalCueDetectionFilter)
     pub fn builder() -> crate::model::start_technical_cue_detection_filter::Builder {
         crate::model::start_technical_cue_detection_filter::Builder::default()
+    }
+}
+
+/// <p>
+/// A filter that allows you to control the black frame detection by specifying the black levels
+/// and pixel coverage of black pixels in a frame. As videos can come from multiple sources, formats,
+/// and time periods, they may contain different standards and varying noise levels for black frames that need to be accounted for.
+/// For more information, see <a>StartSegmentDetection</a>.
+/// </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct BlackFrame {
+    /// <p>
+    /// A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video,
+    /// luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel
+    /// value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range.
+    /// </p>
+    /// <p>For example, for a full range video with BlackPixelThreshold = 0.1,  max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+    /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video.
+    /// You can lower this threshold to be more strict on black levels.</p>
+    pub max_pixel_threshold: std::option::Option<f32>,
+    /// <p>
+    /// The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered
+    /// a black frame. Luminance is calculated using the BT.709 matrix.
+    /// </p>
+    /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code>
+    /// set. You can reduce this value to allow more noise on the black frame.</p>
+    pub min_coverage_percentage: std::option::Option<f32>,
+}
+impl std::fmt::Debug for BlackFrame {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("BlackFrame");
+        formatter.field("max_pixel_threshold", &self.max_pixel_threshold);
+        formatter.field("min_coverage_percentage", &self.min_coverage_percentage);
+        formatter.finish()
+    }
+}
+/// See [`BlackFrame`](crate::model::BlackFrame)
+pub mod black_frame {
+    /// A builder for [`BlackFrame`](crate::model::BlackFrame)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) max_pixel_threshold: std::option::Option<f32>,
+        pub(crate) min_coverage_percentage: std::option::Option<f32>,
+    }
+    impl Builder {
+        /// <p>
+        /// A threshold used to determine the maximum luminance value for a pixel to be considered black. In a full color range video,
+        /// luminance values range from 0-255. A pixel value of 0 is pure black, and the most strict filter. The maximum black pixel
+        /// value is computed as follows: max_black_pixel_value = minimum_luminance + MaxPixelThreshold *luminance_range.
+        /// </p>
+        /// <p>For example, for a full range video with BlackPixelThreshold = 0.1,  max_black_pixel_value is 0 + 0.1 * (255-0) = 25.5.</p>
+        /// <p>The default value of MaxPixelThreshold is 0.2, which maps to a max_black_pixel_value of 51 for a full range video.
+        /// You can lower this threshold to be more strict on black levels.</p>
+        pub fn max_pixel_threshold(mut self, input: f32) -> Self {
+            self.max_pixel_threshold = Some(input);
+            self
+        }
+        pub fn set_max_pixel_threshold(mut self, input: std::option::Option<f32>) -> Self {
+            self.max_pixel_threshold = input;
+            self
+        }
+        /// <p>
+        /// The minimum percentage of pixels in a frame that need to have a luminance below the max_black_pixel_value for a frame to be considered
+        /// a black frame. Luminance is calculated using the BT.709 matrix.
+        /// </p>
+        /// <p>The default value is 99, which means at least 99% of all pixels in the frame are black pixels as per the <code>MaxPixelThreshold</code>
+        /// set. You can reduce this value to allow more noise on the black frame.</p>
+        pub fn min_coverage_percentage(mut self, input: f32) -> Self {
+            self.min_coverage_percentage = Some(input);
+            self
+        }
+        pub fn set_min_coverage_percentage(mut self, input: std::option::Option<f32>) -> Self {
+            self.min_coverage_percentage = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`BlackFrame`](crate::model::BlackFrame)
+        pub fn build(self) -> crate::model::BlackFrame {
+            crate::model::BlackFrame {
+                max_pixel_threshold: self.max_pixel_threshold,
+                min_coverage_percentage: self.min_coverage_percentage,
+            }
+        }
+    }
+}
+impl BlackFrame {
+    /// Creates a new builder-style object to manufacture [`BlackFrame`](crate::model::BlackFrame)
+    pub fn builder() -> crate::model::black_frame::Builder {
+        crate::model::black_frame::Builder::default()
     }
 }
 
@@ -3760,6 +3874,10 @@ pub struct VideoMetadata {
     pub frame_height: std::option::Option<i64>,
     /// <p>Horizontal pixel dimension of the video.</p>
     pub frame_width: std::option::Option<i64>,
+    /// <p>
+    /// A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255).
+    /// </p>
+    pub color_range: std::option::Option<crate::model::VideoColorRange>,
 }
 impl std::fmt::Debug for VideoMetadata {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3770,6 +3888,7 @@ impl std::fmt::Debug for VideoMetadata {
         formatter.field("frame_rate", &self.frame_rate);
         formatter.field("frame_height", &self.frame_height);
         formatter.field("frame_width", &self.frame_width);
+        formatter.field("color_range", &self.color_range);
         formatter.finish()
     }
 }
@@ -3785,6 +3904,7 @@ pub mod video_metadata {
         pub(crate) frame_rate: std::option::Option<f32>,
         pub(crate) frame_height: std::option::Option<i64>,
         pub(crate) frame_width: std::option::Option<i64>,
+        pub(crate) color_range: std::option::Option<crate::model::VideoColorRange>,
     }
     impl Builder {
         /// <p>Type of compression used in the analyzed video. </p>
@@ -3841,6 +3961,20 @@ pub mod video_metadata {
             self.frame_width = input;
             self
         }
+        /// <p>
+        /// A description of the range of luminance values in a video, either LIMITED (16 to 235) or FULL (0 to 255).
+        /// </p>
+        pub fn color_range(mut self, input: crate::model::VideoColorRange) -> Self {
+            self.color_range = Some(input);
+            self
+        }
+        pub fn set_color_range(
+            mut self,
+            input: std::option::Option<crate::model::VideoColorRange>,
+        ) -> Self {
+            self.color_range = input;
+            self
+        }
         /// Consumes the builder and constructs a [`VideoMetadata`](crate::model::VideoMetadata)
         pub fn build(self) -> crate::model::VideoMetadata {
             crate::model::VideoMetadata {
@@ -3850,6 +3984,7 @@ pub mod video_metadata {
                 frame_rate: self.frame_rate,
                 frame_height: self.frame_height,
                 frame_width: self.frame_width,
+                color_range: self.color_range,
             }
         }
     }
@@ -3858,6 +3993,56 @@ impl VideoMetadata {
     /// Creates a new builder-style object to manufacture [`VideoMetadata`](crate::model::VideoMetadata)
     pub fn builder() -> crate::model::video_metadata::Builder {
         crate::model::video_metadata::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum VideoColorRange {
+    Full,
+    Limited,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for VideoColorRange {
+    fn from(s: &str) -> Self {
+        match s {
+            "FULL" => VideoColorRange::Full,
+            "LIMITED" => VideoColorRange::Limited,
+            other => VideoColorRange::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for VideoColorRange {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(VideoColorRange::from(s))
+    }
+}
+impl VideoColorRange {
+    pub fn as_str(&self) -> &str {
+        match self {
+            VideoColorRange::Full => "FULL",
+            VideoColorRange::Limited => "LIMITED",
+            VideoColorRange::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["FULL", "LIMITED"]
+    }
+}
+impl AsRef<str> for VideoColorRange {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -4011,6 +4196,18 @@ pub struct SegmentDetection {
     pub technical_cue_segment: std::option::Option<crate::model::TechnicalCueSegment>,
     /// <p>If the segment is a shot detection, contains information about the shot detection.</p>
     pub shot_segment: std::option::Option<crate::model::ShotSegment>,
+    /// <p>
+    /// The frame number of the start of a video segment, using a frame index that starts with 0.
+    /// </p>
+    pub start_frame_number: std::option::Option<i64>,
+    /// <p>
+    /// The frame number at the end of a video segment, using a frame index that starts with 0.
+    /// </p>
+    pub end_frame_number: std::option::Option<i64>,
+    /// <p>
+    /// The duration of a video segment, expressed in frames.
+    /// </p>
+    pub duration_frames: std::option::Option<i64>,
 }
 impl std::fmt::Debug for SegmentDetection {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -4024,6 +4221,9 @@ impl std::fmt::Debug for SegmentDetection {
         formatter.field("duration_smpte", &self.duration_smpte);
         formatter.field("technical_cue_segment", &self.technical_cue_segment);
         formatter.field("shot_segment", &self.shot_segment);
+        formatter.field("start_frame_number", &self.start_frame_number);
+        formatter.field("end_frame_number", &self.end_frame_number);
+        formatter.field("duration_frames", &self.duration_frames);
         formatter.finish()
     }
 }
@@ -4042,6 +4242,9 @@ pub mod segment_detection {
         pub(crate) duration_smpte: std::option::Option<std::string::String>,
         pub(crate) technical_cue_segment: std::option::Option<crate::model::TechnicalCueSegment>,
         pub(crate) shot_segment: std::option::Option<crate::model::ShotSegment>,
+        pub(crate) start_frame_number: std::option::Option<i64>,
+        pub(crate) end_frame_number: std::option::Option<i64>,
+        pub(crate) duration_frames: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The type of the  segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.</p>
@@ -4147,6 +4350,39 @@ pub mod segment_detection {
             self.shot_segment = input;
             self
         }
+        /// <p>
+        /// The frame number of the start of a video segment, using a frame index that starts with 0.
+        /// </p>
+        pub fn start_frame_number(mut self, input: i64) -> Self {
+            self.start_frame_number = Some(input);
+            self
+        }
+        pub fn set_start_frame_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.start_frame_number = input;
+            self
+        }
+        /// <p>
+        /// The frame number at the end of a video segment, using a frame index that starts with 0.
+        /// </p>
+        pub fn end_frame_number(mut self, input: i64) -> Self {
+            self.end_frame_number = Some(input);
+            self
+        }
+        pub fn set_end_frame_number(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_frame_number = input;
+            self
+        }
+        /// <p>
+        /// The duration of a video segment, expressed in frames.
+        /// </p>
+        pub fn duration_frames(mut self, input: i64) -> Self {
+            self.duration_frames = Some(input);
+            self
+        }
+        pub fn set_duration_frames(mut self, input: std::option::Option<i64>) -> Self {
+            self.duration_frames = input;
+            self
+        }
         /// Consumes the builder and constructs a [`SegmentDetection`](crate::model::SegmentDetection)
         pub fn build(self) -> crate::model::SegmentDetection {
             crate::model::SegmentDetection {
@@ -4159,6 +4395,9 @@ pub mod segment_detection {
                 duration_smpte: self.duration_smpte,
                 technical_cue_segment: self.technical_cue_segment,
                 shot_segment: self.shot_segment,
+                start_frame_number: self.start_frame_number,
+                end_frame_number: self.end_frame_number,
+                duration_frames: self.duration_frames,
             }
         }
     }
@@ -4309,7 +4548,11 @@ impl TechnicalCueSegment {
 pub enum TechnicalCueType {
     BlackFrames,
     ColorBars,
+    Content,
     EndCredits,
+    OpeningCredits,
+    Slate,
+    StudioLogo,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
 }
@@ -4318,7 +4561,11 @@ impl std::convert::From<&str> for TechnicalCueType {
         match s {
             "BlackFrames" => TechnicalCueType::BlackFrames,
             "ColorBars" => TechnicalCueType::ColorBars,
+            "Content" => TechnicalCueType::Content,
             "EndCredits" => TechnicalCueType::EndCredits,
+            "OpeningCredits" => TechnicalCueType::OpeningCredits,
+            "Slate" => TechnicalCueType::Slate,
+            "StudioLogo" => TechnicalCueType::StudioLogo,
             other => TechnicalCueType::Unknown(other.to_owned()),
         }
     }
@@ -4335,12 +4582,24 @@ impl TechnicalCueType {
         match self {
             TechnicalCueType::BlackFrames => "BlackFrames",
             TechnicalCueType::ColorBars => "ColorBars",
+            TechnicalCueType::Content => "Content",
             TechnicalCueType::EndCredits => "EndCredits",
+            TechnicalCueType::OpeningCredits => "OpeningCredits",
+            TechnicalCueType::Slate => "Slate",
+            TechnicalCueType::StudioLogo => "StudioLogo",
             TechnicalCueType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["BlackFrames", "ColorBars", "EndCredits"]
+        &[
+            "BlackFrames",
+            "ColorBars",
+            "Content",
+            "EndCredits",
+            "OpeningCredits",
+            "Slate",
+            "StudioLogo",
+        ]
     }
 }
 impl AsRef<str> for TechnicalCueType {
@@ -5152,13 +5411,13 @@ impl FaceDetection {
     }
 }
 
-/// <p>Information about an unsafe content label detection in a stored video.</p>
+/// <p>Information about an inappropriate, unwanted, or offensive content label detection in a stored video.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContentModerationDetection {
-    /// <p>Time, in milliseconds from the beginning of the video, that the unsafe content label was detected.</p>
+    /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
     pub timestamp: i64,
-    /// <p>The unsafe content label detected by in the stored video.</p>
+    /// <p>The content moderation label detected by in the stored video.</p>
     pub moderation_label: std::option::Option<crate::model::ModerationLabel>,
 }
 impl std::fmt::Debug for ContentModerationDetection {
@@ -5179,7 +5438,7 @@ pub mod content_moderation_detection {
         pub(crate) moderation_label: std::option::Option<crate::model::ModerationLabel>,
     }
     impl Builder {
-        /// <p>Time, in milliseconds from the beginning of the video, that the unsafe content label was detected.</p>
+        /// <p>Time, in milliseconds from the beginning of the video, that the content moderation label was detected.</p>
         pub fn timestamp(mut self, input: i64) -> Self {
             self.timestamp = Some(input);
             self
@@ -5188,7 +5447,7 @@ pub mod content_moderation_detection {
             self.timestamp = input;
             self
         }
-        /// <p>The unsafe content label detected by in the stored video.</p>
+        /// <p>The content moderation label detected by in the stored video.</p>
         pub fn moderation_label(mut self, input: crate::model::ModerationLabel) -> Self {
             self.moderation_label = Some(input);
             self
@@ -5216,9 +5475,9 @@ impl ContentModerationDetection {
     }
 }
 
-/// <p>Provides information about a single type of unsafe content found in an image or video. Each type of
+/// <p>Provides information about a single type of inappropriate, unwanted, or offensive content found in an image or video. Each type of
 /// moderated content has a label within a hierarchical taxonomy. For more information, see
-/// Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
+/// Content moderation in the Amazon Rekognition Developer Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModerationLabel {

@@ -455,7 +455,7 @@ pub enum TypedAttributeValue {
     StringValue(std::string::String),
 }
 impl TypedAttributeValue {
-    pub fn as_binary_value(&self) -> Result<&smithy_types::Blob, &Self> {
+    pub fn as_binary_value(&self) -> std::result::Result<&smithy_types::Blob, &Self> {
         if let TypedAttributeValue::BinaryValue(val) = &self {
             Ok(&val)
         } else {
@@ -465,7 +465,7 @@ impl TypedAttributeValue {
     pub fn is_binary_value(&self) -> bool {
         self.as_binary_value().is_ok()
     }
-    pub fn as_boolean_value(&self) -> Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let TypedAttributeValue::BooleanValue(val) = &self {
             Ok(&val)
         } else {
@@ -475,7 +475,7 @@ impl TypedAttributeValue {
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    pub fn as_datetime_value(&self) -> Result<&smithy_types::Instant, &Self> {
+    pub fn as_datetime_value(&self) -> std::result::Result<&smithy_types::Instant, &Self> {
         if let TypedAttributeValue::DatetimeValue(val) = &self {
             Ok(&val)
         } else {
@@ -485,7 +485,7 @@ impl TypedAttributeValue {
     pub fn is_datetime_value(&self) -> bool {
         self.as_datetime_value().is_ok()
     }
-    pub fn as_number_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_number_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TypedAttributeValue::NumberValue(val) = &self {
             Ok(&val)
         } else {
@@ -495,7 +495,7 @@ impl TypedAttributeValue {
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let TypedAttributeValue::StringValue(val) = &self {
             Ok(&val)
         } else {
@@ -808,7 +808,7 @@ pub struct ObjectReference {
     /// <ul>
     /// <li>
     /// <p>
-    /// <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier</p>
+    /// <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p>
     /// </li>
     /// <li>
     /// <p>
@@ -841,7 +841,7 @@ pub mod object_reference {
         /// <ul>
         /// <li>
         /// <p>
-        /// <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier</p>
+        /// <i>$ObjectIdentifier</i> - An object identifier is an opaque string provided by Amazon Cloud Directory. When creating objects, the system will provide you with the identifier of the created object. An object’s identifier is immutable and no two objects will ever share the same object identifier. To identify an object with ObjectIdentifier, the ObjectIdentifier must be wrapped in double quotes. </p>
         /// </li>
         /// <li>
         /// <p>
@@ -1724,9 +1724,10 @@ impl Tag {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SchemaFacet {
-    /// <p>The ARN of the schema that contains the facet with no minor component. See <a>arns</a> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions.</p>
+    /// <p>The ARN of the schema that contains the facet with no minor component. See <a>arns</a> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions.
+    /// If this value is set, FacetName must also be set.</p>
     pub schema_arn: std::option::Option<std::string::String>,
-    /// <p>The name of the facet.</p>
+    /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
     pub facet_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SchemaFacet {
@@ -1747,7 +1748,8 @@ pub mod schema_facet {
         pub(crate) facet_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the schema that contains the facet with no minor component. See <a>arns</a> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions.</p>
+        /// <p>The ARN of the schema that contains the facet with no minor component. See <a>arns</a> and <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place Schema Upgrade</a> for a description of when to provide minor versions.
+        /// If this value is set, FacetName must also be set.</p>
         pub fn schema_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.schema_arn = Some(input.into());
             self
@@ -1756,7 +1758,7 @@ pub mod schema_facet {
             self.schema_arn = input;
             self
         }
-        /// <p>The name of the facet.</p>
+        /// <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
         pub fn facet_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.facet_name = Some(input.into());
             self
@@ -5771,6 +5773,7 @@ pub struct BatchReadSuccessfulResponse {
         std::option::Option<crate::model::BatchListIncomingTypedLinksResponse>,
     /// <p>The list of attributes to retrieve from the typed link.</p>
     pub get_link_attributes: std::option::Option<crate::model::BatchGetLinkAttributesResponse>,
+    /// <p>The list of parent objects to retrieve.</p>
     pub list_object_parents: std::option::Option<crate::model::BatchListObjectParentsResponse>,
 }
 impl std::fmt::Debug for BatchReadSuccessfulResponse {
@@ -6027,6 +6030,7 @@ pub mod batch_read_successful_response {
             self.get_link_attributes = input;
             self
         }
+        /// <p>The list of parent objects to retrieve.</p>
         pub fn list_object_parents(
             mut self,
             input: crate::model::BatchListObjectParentsResponse,
@@ -6069,11 +6073,14 @@ impl BatchReadSuccessfulResponse {
     }
 }
 
+/// <p>Represents the output of a <a>ListObjectParents</a> response operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectParentsResponse {
+    /// <p>Returns a list of parent reference and LinkName Tuples.</p>
     pub parent_links:
         std::option::Option<std::vec::Vec<crate::model::ObjectIdentifierAndLinkNameTuple>>,
+    /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for BatchListObjectParentsResponse {
@@ -6113,6 +6120,7 @@ pub mod batch_list_object_parents_response {
             self.parent_links = input;
             self
         }
+        /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -7018,6 +7026,8 @@ pub struct BatchReadOperation {
     pub get_object_information: std::option::Option<crate::model::BatchGetObjectInformation>,
     /// <p>Retrieves attributes within a facet that are associated with an object.</p>
     pub get_object_attributes: std::option::Option<crate::model::BatchGetObjectAttributes>,
+    /// <p>Lists parent objects that are associated with a given object in pagination
+    /// fashion.</p>
     pub list_object_parents: std::option::Option<crate::model::BatchListObjectParents>,
     /// <p>Returns policies attached to an object in pagination fashion.</p>
     pub list_object_policies: std::option::Option<crate::model::BatchListObjectPolicies>,
@@ -7185,6 +7195,8 @@ pub mod batch_read_operation {
             self.get_object_attributes = input;
             self
         }
+        /// <p>Lists parent objects that are associated with a given object in pagination
+        /// fashion.</p>
         pub fn list_object_parents(mut self, input: crate::model::BatchListObjectParents) -> Self {
             self.list_object_parents = Some(input);
             self
@@ -7984,12 +7996,17 @@ impl BatchListObjectPolicies {
     }
 }
 
+/// <p>Lists parent objects that are associated with a given object in pagination
+/// fashion.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchListObjectParents {
     /// <p>The reference that identifies an object.</p>
     pub object_reference: std::option::Option<crate::model::ObjectReference>,
+    /// <p>The pagination token.</p>
     pub next_token: std::option::Option<std::string::String>,
+    /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+    /// number.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for BatchListObjectParents {
@@ -8024,6 +8041,7 @@ pub mod batch_list_object_parents {
             self.object_reference = input;
             self
         }
+        /// <p>The pagination token.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -8032,6 +8050,8 @@ pub mod batch_list_object_parents {
             self.next_token = input;
             self
         }
+        /// <p>The maximum number of items to be retrieved in a single call. This is an approximate
+        /// number.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self

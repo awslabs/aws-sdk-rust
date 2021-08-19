@@ -11,13 +11,13 @@ pub struct ResourceDataSyncSource {
     /// source of this type can synchronize data from Organizations.</p>
     pub aws_organizations_source:
         std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
-    /// <p>The <code>SyncSource</code> Regions included in the resource data sync.</p>
+    /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
+    /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those
     /// Regions come online.</p>
     pub include_future_regions: bool,
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
-    /// automatically enables all OpsData sources in the selected Regions for all accounts in
+    /// automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in
     /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub enable_all_ops_data_sources: bool,
@@ -90,7 +90,7 @@ pub mod resource_data_sync_source {
             self.source_regions = input;
             self
         }
-        /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
+        /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those
         /// Regions come online.</p>
         pub fn include_future_regions(mut self, input: bool) -> Self {
             self.include_future_regions = Some(input);
@@ -101,7 +101,7 @@ pub mod resource_data_sync_source {
             self
         }
         /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
-        /// automatically enables all OpsData sources in the selected Regions for all accounts in
+        /// automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in
         /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
@@ -133,7 +133,7 @@ impl ResourceDataSyncSource {
 
 /// <p>Information about the <code>AwsOrganizationsSource</code> resource data sync source. A sync
 /// source of this type can synchronize data from Organizations or, if an Amazon Web Services organization isn't
-/// present, from multiple Regions.</p>
+/// present, from multiple Amazon Web Services Regions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncAwsOrganizationsSource {
@@ -1413,7 +1413,7 @@ pub struct LoggingInfo {
     pub s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>(Optional) The S3 bucket subfolder. </p>
     pub s3_key_prefix: std::option::Option<std::string::String>,
-    /// <p>The Region where the S3 bucket is located.</p>
+    /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
     pub s3_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for LoggingInfo {
@@ -1460,7 +1460,7 @@ pub mod logging_info {
             self.s3_key_prefix = input;
             self
         }
-        /// <p>The Region where the S3 bucket is located.</p>
+        /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
         pub fn s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.s3_region = Some(input.into());
             self
@@ -2664,7 +2664,7 @@ impl MaintenanceWindowTaskParameterValueExpression {
 /// <code>Key=InstanceIds,Values=<i>*</i>
 /// </code>
 /// </p>
-/// <p>This example demonstrates how to target all managed instances in the Region where
+/// <p>This example demonstrates how to target all managed instances in the Amazon Web Services Region where
 /// the association was created.</p>
 /// </li>
 /// </ul>
@@ -4477,7 +4477,7 @@ impl AsRef<str> for AttachmentsSourceKey {
 pub struct AssociationDescription {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the instance.</p>
+    /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association version.</p>
     pub association_version: std::option::Option<std::string::String>,
@@ -4556,7 +4556,7 @@ pub struct AssociationDescription {
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
     /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The combination of Regions and accounts where you want to run the
+    /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
     /// association.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
@@ -4648,7 +4648,7 @@ pub mod association_description {
             self.name = input;
             self
         }
-        /// <p>The ID of the instance.</p>
+        /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
@@ -4999,16 +4999,16 @@ impl AssociationDescription {
     }
 }
 
-/// <p>The combination of Regions and accounts targeted by the current Automation
+/// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation
 /// execution.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TargetLocation {
-    /// <p>The accounts targeted by the current Automation execution.</p>
+    /// <p>The Amazon Web Services accounts targeted by the current Automation execution.</p>
     pub accounts: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The Regions targeted by the current Automation execution.</p>
+    /// <p>The Amazon Web Services Regions targeted by the current Automation execution.</p>
     pub regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The maximum number of Regions and accounts allowed to run the Automation
+    /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation
     /// concurrently.</p>
     pub target_location_max_concurrency: std::option::Option<std::string::String>,
     /// <p>The maximum number of errors allowed before the system stops queueing additional Automation
@@ -5074,7 +5074,7 @@ pub mod target_location {
             self.regions = input;
             self
         }
-        /// <p>The maximum number of Regions and accounts allowed to run the Automation
+        /// <p>The maximum number of Amazon Web Services Regions and Amazon Web Services accounts allowed to run the Automation
         /// concurrently.</p>
         pub fn target_location_max_concurrency(
             mut self,
@@ -5704,7 +5704,7 @@ pub struct Runbook {
     /// indicating the maximum number of errors that can occur during the operation before the updates
     /// are stopped or rolled back.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>Information about the Regions and accounts targeted by the current Runbook
+    /// <p>Information about the Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Runbook
     /// operation.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
@@ -5996,7 +5996,7 @@ pub struct Command {
     /// </ul>
     pub status_details: std::option::Option<std::string::String>,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-    /// automatically determines the Region of the S3 bucket.</p>
+    /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The S3 bucket where the responses to the command executions should be stored. This was
     /// requested when issuing the command.</p>
@@ -6285,7 +6285,7 @@ pub mod command {
             self
         }
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-        /// automatically determines the Region of the S3 bucket.</p>
+        /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
         pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_region = Some(input.into());
             self
@@ -7665,7 +7665,7 @@ pub struct ResourceDataSyncItem {
     /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
     /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
     /// <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
-    /// multiple Regions.</p>
+    /// multiple Amazon Web Services Regions.</p>
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>Information about the source where the data was synchronized. </p>
     pub sync_source: std::option::Option<crate::model::ResourceDataSyncSourceWithState>,
@@ -7730,7 +7730,7 @@ pub mod resource_data_sync_item {
         /// <p>The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
         /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code> is
         /// <code>SyncFromSource</code> then the resource data sync synchronizes data from Organizations or from
-        /// multiple Regions.</p>
+        /// multiple Amazon Web Services Regions.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_type = Some(input.into());
             self
@@ -7925,7 +7925,7 @@ pub struct ResourceDataSyncS3Destination {
     pub prefix: std::option::Option<std::string::String>,
     /// <p>A supported sync format. The following format is currently supported: JsonSerDe</p>
     pub sync_format: std::option::Option<crate::model::ResourceDataSyncS3Format>,
-    /// <p>The Region with the S3 bucket targeted by the resource data sync.</p>
+    /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The ARN of an encryption key for a destination in Amazon S3. Must belong to the same
     /// Region as the destination S3 bucket.</p>
@@ -7991,7 +7991,7 @@ pub mod resource_data_sync_s3_destination {
             self.sync_format = input;
             self
         }
-        /// <p>The Region with the S3 bucket targeted by the resource data sync.</p>
+        /// <p>The Amazon Web Services Region with the S3 bucket targeted by the resource data sync.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -8048,9 +8048,9 @@ impl ResourceDataSyncS3Destination {
     }
 }
 
-/// <p>Synchronize Amazon Web Services Systems Manager Inventory data from multiple accounts defined in Organizations to a
+/// <p>Synchronize Amazon Web Services Systems Manager Inventory data from multiple Amazon Web Services accounts defined in Organizations to a
 /// centralized Amazon S3 bucket. Data is synchronized to individual key prefixes in the
-/// central bucket. Each key prefix represents a different account ID.</p>
+/// central bucket. Each key prefix represents a different Amazon Web Services account ID.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceDataSyncDestinationDataSharing {
@@ -8177,9 +8177,9 @@ pub struct ResourceDataSyncSourceWithState {
     /// <code>ResourceDataSyncAwsOrganizationsSource</code> type.</p>
     pub aws_organizations_source:
         std::option::Option<crate::model::ResourceDataSyncAwsOrganizationsSource>,
-    /// <p>The <code>SyncSource</code> Regions included in the resource data sync.</p>
+    /// <p>The <code>SyncSource</code> Amazon Web Services Regions included in the resource data sync.</p>
     pub source_regions: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
+    /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those
     /// Regions come online.</p>
     pub include_future_regions: bool,
     /// <p>The data type name for including resource data sync state. There are four sync
@@ -8197,7 +8197,7 @@ pub struct ResourceDataSyncSourceWithState {
     /// Organizations.</p>
     pub state: std::option::Option<std::string::String>,
     /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
-    /// automatically enables all OpsData sources in the selected Regions for all accounts in
+    /// automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in
     /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub enable_all_ops_data_sources: bool,
@@ -8272,7 +8272,7 @@ pub mod resource_data_sync_source_with_state {
             self.source_regions = input;
             self
         }
-        /// <p>Whether to automatically synchronize and aggregate data from new Regions when those
+        /// <p>Whether to automatically synchronize and aggregate data from new Amazon Web Services Regions when those
         /// Regions come online.</p>
         pub fn include_future_regions(mut self, input: bool) -> Self {
             self.include_future_regions = Some(input);
@@ -8304,7 +8304,7 @@ pub mod resource_data_sync_source_with_state {
             self
         }
         /// <p>When you create a resource data sync, if you choose one of the Organizations options, then Systems Manager
-        /// automatically enables all OpsData sources in the selected Regions for all accounts in
+        /// automatically enables all OpsData sources in the selected Amazon Web Services Regions for all Amazon Web Services accounts in
         /// your organization (or in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About multiple account and Region resource data syncs</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn enable_all_ops_data_sources(mut self, input: bool) -> Self {
@@ -12644,7 +12644,7 @@ pub struct AssociationVersionInfo {
     /// Calendar is open. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
     /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The combination of Regions and accounts where you wanted to run the association
+    /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts where you wanted to run the association
     /// when this association version was created.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
 }
@@ -12984,7 +12984,7 @@ impl AssociationVersionInfo {
 pub struct Association {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the instance.</p>
+    /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The ID created by the system when you create an association. An association is a binding
     /// between a document and a set of targets with a schedule.</p>
@@ -13048,7 +13048,7 @@ pub mod association {
             self.name = input;
             self
         }
-        /// <p>The ID of the instance.</p>
+        /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
@@ -14443,13 +14443,22 @@ impl AsRef<str> for OpsFilterOperatorType {
 }
 
 /// <p>Operations engineers and IT professionals use Amazon Web Services Systems Manager OpsCenter to view, investigate, and
-/// remediate operational issues impacting the performance and health of their Amazon Web Services resources. For
-/// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the
-/// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
+/// remediate operational work items (OpsItems) impacting the performance and health of their Amazon Web Services
+/// resources. OpsCenter is integrated with Amazon EventBridge and Amazon CloudWatch. This
+/// means you can configure these services to automatically create an OpsItem in OpsCenter when a
+/// CloudWatch alarm enters the ALARM state or when EventBridge processes an event from
+/// any Amazon Web Services service that publishes events. Configuring Amazon CloudWatch alarms and EventBridge events to automatically create OpsItems allows you to quickly diagnose and remediate
+/// issues with Amazon Web Services resources from a single console.</p>
+/// <p>To help you diagnose issues, each OpsItem includes contextually relevant information such as
+/// the name and ID of the Amazon Web Services resource that generated the OpsItem, alarm or event details, alarm
+/// history, and an alarm timeline graph. For the Amazon Web Services resource, OpsCenter aggregates information
+/// from Config, CloudTrail logs, and EventBridge, so you don't have
+/// to navigate across multiple console pages during your investigation. For more information, see
+/// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter.html">OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OpsItem {
-    /// <p>The ARN of the account that created the OpsItem.</p>
+    /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The type of OpsItem. Currently, the only valid values are <code>/aws/changerequest</code>
     /// and <code>/aws/issue</code>.</p>
@@ -14458,7 +14467,7 @@ pub struct OpsItem {
     pub created_time: std::option::Option<smithy_types::Instant>,
     /// <p>The OpsItem description.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The ARN of the account that last updated the OpsItem.</p>
+    /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
     pub last_modified_by: std::option::Option<std::string::String>,
     /// <p>The date and time the OpsItem was last updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
@@ -14583,7 +14592,7 @@ pub mod ops_item {
         pub(crate) planned_end_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
-        /// <p>The ARN of the account that created the OpsItem.</p>
+        /// <p>The ARN of the Amazon Web Services account that created the OpsItem.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.created_by = Some(input.into());
             self
@@ -14626,7 +14635,7 @@ pub mod ops_item {
             self.description = input;
             self
         }
-        /// <p>The ARN of the account that last updated the OpsItem.</p>
+        /// <p>The ARN of the Amazon Web Services account that last updated the OpsItem.</p>
         pub fn last_modified_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.last_modified_by = Some(input.into());
             self
@@ -16100,7 +16109,7 @@ pub struct AutomationExecution {
     pub max_errors: std::option::Option<std::string::String>,
     /// <p>The target of the execution.</p>
     pub target: std::option::Option<std::string::String>,
-    /// <p>The combination of Regions and/or accounts where you want to run the
+    /// <p>The combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the
     /// Automation.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>An aggregate of step execution statuses displayed in the Amazon Web Services Systems Manager console for a
@@ -16709,19 +16718,19 @@ impl AsRef<str> for AutomationSubtype {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProgressCounters {
-    /// <p>The total number of steps run in all specified Regions and accounts for the
+    /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the
     /// current Automation execution.</p>
     pub total_steps: i32,
-    /// <p>The total number of steps that successfully completed in all specified Regions and
-    /// accounts for the current Automation execution.</p>
+    /// <p>The total number of steps that successfully completed in all specified Amazon Web Services Regions and
+    /// Amazon Web Services accounts for the current Automation execution.</p>
     pub success_steps: i32,
-    /// <p>The total number of steps that failed to run in all specified Regions and
-    /// accounts for the current Automation execution.</p>
+    /// <p>The total number of steps that failed to run in all specified Amazon Web Services Regions and
+    /// Amazon Web Services accounts for the current Automation execution.</p>
     pub failed_steps: i32,
-    /// <p>The total number of steps that the system cancelled in all specified Regions and
-    /// accounts for the current Automation execution.</p>
+    /// <p>The total number of steps that the system cancelled in all specified Amazon Web Services Regions and
+    /// Amazon Web Services accounts for the current Automation execution.</p>
     pub cancelled_steps: i32,
-    /// <p>The total number of steps that timed out in all specified Regions and accounts
+    /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts
     /// for the current Automation execution.</p>
     pub timed_out_steps: i32,
 }
@@ -16749,7 +16758,7 @@ pub mod progress_counters {
         pub(crate) timed_out_steps: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The total number of steps run in all specified Regions and accounts for the
+        /// <p>The total number of steps run in all specified Amazon Web Services Regions and Amazon Web Services accounts for the
         /// current Automation execution.</p>
         pub fn total_steps(mut self, input: i32) -> Self {
             self.total_steps = Some(input);
@@ -16759,8 +16768,8 @@ pub mod progress_counters {
             self.total_steps = input;
             self
         }
-        /// <p>The total number of steps that successfully completed in all specified Regions and
-        /// accounts for the current Automation execution.</p>
+        /// <p>The total number of steps that successfully completed in all specified Amazon Web Services Regions and
+        /// Amazon Web Services accounts for the current Automation execution.</p>
         pub fn success_steps(mut self, input: i32) -> Self {
             self.success_steps = Some(input);
             self
@@ -16769,8 +16778,8 @@ pub mod progress_counters {
             self.success_steps = input;
             self
         }
-        /// <p>The total number of steps that failed to run in all specified Regions and
-        /// accounts for the current Automation execution.</p>
+        /// <p>The total number of steps that failed to run in all specified Amazon Web Services Regions and
+        /// Amazon Web Services accounts for the current Automation execution.</p>
         pub fn failed_steps(mut self, input: i32) -> Self {
             self.failed_steps = Some(input);
             self
@@ -16779,8 +16788,8 @@ pub mod progress_counters {
             self.failed_steps = input;
             self
         }
-        /// <p>The total number of steps that the system cancelled in all specified Regions and
-        /// accounts for the current Automation execution.</p>
+        /// <p>The total number of steps that the system cancelled in all specified Amazon Web Services Regions and
+        /// Amazon Web Services accounts for the current Automation execution.</p>
         pub fn cancelled_steps(mut self, input: i32) -> Self {
             self.cancelled_steps = Some(input);
             self
@@ -16789,7 +16798,7 @@ pub mod progress_counters {
             self.cancelled_steps = input;
             self
         }
-        /// <p>The total number of steps that timed out in all specified Regions and accounts
+        /// <p>The total number of steps that timed out in all specified Amazon Web Services Regions and Amazon Web Services accounts
         /// for the current Automation execution.</p>
         pub fn timed_out_steps(mut self, input: i32) -> Self {
             self.timed_out_steps = Some(input);
@@ -16943,7 +16952,7 @@ pub struct StepExecution {
     pub valid_next_steps: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The targets for the step execution.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
-    /// <p>The combination of Regions and accounts targeted by the current Automation
+    /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation
     /// execution.</p>
     pub target_location: std::option::Option<crate::model::TargetLocation>,
 }
@@ -17264,7 +17273,7 @@ pub mod step_execution {
             self.targets = input;
             self
         }
-        /// <p>The combination of Regions and accounts targeted by the current Automation
+        /// <p>The combination of Amazon Web Services Regions and Amazon Web Services accounts targeted by the current Automation
         /// execution.</p>
         pub fn target_location(mut self, input: crate::model::TargetLocation) -> Self {
             self.target_location = Some(input);
@@ -24201,12 +24210,12 @@ impl InstanceAssociation {
     }
 }
 
-/// <p>Information includes the account ID where the current document is shared and the
+/// <p>Information includes the Amazon Web Services account ID where the current document is shared and the
 /// version shared with that account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountSharingInfo {
-    /// <p>The account ID where the current document is shared.</p>
+    /// <p>The Amazon Web Services account ID where the current document is shared.</p>
     pub account_id: std::option::Option<std::string::String>,
     /// <p>The version of the current document shared with the account.</p>
     pub shared_document_version: std::option::Option<std::string::String>,
@@ -24229,7 +24238,7 @@ pub mod account_sharing_info {
         pub(crate) shared_document_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The account ID where the current document is shared.</p>
+        /// <p>The Amazon Web Services account ID where the current document is shared.</p>
         pub fn account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_id = Some(input.into());
             self
@@ -24460,8 +24469,8 @@ pub struct AutomationExecutionMetadata {
     /// <p>The list of execution outputs as defined in the Automation runbook.</p>
     pub target: std::option::Option<std::string::String>,
     /// <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
-    /// CrossAccount. CrossAccount is an Automation that runs in multiple Regions and
-    /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Regions and accounts</a> in the
+    /// CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and
+    /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub automation_type: std::option::Option<crate::model::AutomationType>,
     /// <p>The subtype of the Automation operation. Currently, the only supported value is
@@ -24833,8 +24842,8 @@ pub mod automation_execution_metadata {
             self
         }
         /// <p>Use this filter with <a>DescribeAutomationExecutions</a>. Specify either Local or
-        /// CrossAccount. CrossAccount is an Automation that runs in multiple Regions and
-        /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Regions and accounts</a> in the
+        /// CrossAccount. CrossAccount is an Automation that runs in multiple Amazon Web Services Regions and
+        /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and accounts</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
         pub fn automation_type(mut self, input: crate::model::AutomationType) -> Self {
             self.automation_type = Some(input);
@@ -26388,7 +26397,7 @@ pub struct CreateAssociationBatchRequestEntry {
     /// You can specify Command or Automation runbooks.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
-    /// <p>For SSM documents that are shared with you from other accounts, you must specify the
+    /// <p>For SSM documents that are shared with you from other Amazon Web Services accounts, you must specify the
     /// complete SSM document ARN, in the following format:</p>
     /// <p>
     /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -26402,7 +26411,18 @@ pub struct CreateAssociationBatchRequestEntry {
     /// to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or
     /// <code>My-Document</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the instance. </p>
+    /// <p>The instance ID.</p>
+    /// <note>
+    /// <p>
+    /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+    /// use the <code>Targets</code> parameter. Requests that include the
+    /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+    /// 2.0 or later will fail. In addition, if you use the parameter
+    /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+    /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+    /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+    /// must use the <code>Targets</code> parameter.</p>
+    /// </note>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>A description of the parameters for a document. </p>
     pub parameters: std::option::Option<
@@ -26529,7 +26549,7 @@ pub mod create_association_batch_request_entry {
         /// You can specify Command or Automation runbooks.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
-        /// <p>For SSM documents that are shared with you from other accounts, you must specify the
+        /// <p>For SSM documents that are shared with you from other Amazon Web Services accounts, you must specify the
         /// complete SSM document ARN, in the following format:</p>
         /// <p>
         /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -26550,7 +26570,18 @@ pub mod create_association_batch_request_entry {
             self.name = input;
             self
         }
-        /// <p>The ID of the instance. </p>
+        /// <p>The instance ID.</p>
+        /// <note>
+        /// <p>
+        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// use the <code>Targets</code> parameter. Requests that include the
+        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+        /// 2.0 or later will fail. In addition, if you use the parameter
+        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+        /// must use the <code>Targets</code> parameter.</p>
+        /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self

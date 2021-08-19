@@ -41,4 +41,25 @@ impl From<smithy_http::result::SdkError<crate::error::InvokeEndpointError>> for 
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::InvokeEndpointAsyncError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::InvokeEndpointAsyncErrorKind::InternalFailure(inner) => {
+                    Error::InternalFailure(inner)
+                }
+                crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable(inner) => {
+                    Error::ServiceUnavailable(inner)
+                }
+                crate::error::InvokeEndpointAsyncErrorKind::ValidationError(inner) => {
+                    Error::ValidationError(inner)
+                }
+                crate::error::InvokeEndpointAsyncErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl std::error::Error for Error {}

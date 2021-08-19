@@ -10106,7 +10106,7 @@ impl IncompatibleSchemaException {
     }
 }
 
-/// <p>Access denied. Check your permissions.</p>
+/// <p>Access denied or directory not found. Either you don't have permissions for this directory or the directory does not exist. Try calling <a>ListDirectories</a> and check your permissions.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccessDeniedException {

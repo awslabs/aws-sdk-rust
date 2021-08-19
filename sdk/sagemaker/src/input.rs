@@ -1644,8 +1644,8 @@ pub mod create_auto_ml_job_input {
             self.input_data_config = input;
             self
         }
-        /// <p>Provides information about encryption and the Amazon S3 output path needed to store
-        /// artifacts from an AutoML job. Format(s) supported: CSV.</p>
+        /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
+        /// from an AutoML job. Format(s) supported: CSV.</p>
         pub fn output_data_config(mut self, input: crate::model::AutoMlOutputDataConfig) -> Self {
             self.output_data_config = Some(input);
             self
@@ -1672,8 +1672,8 @@ pub mod create_auto_ml_job_input {
             self.problem_type = input;
             self
         }
-        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
+        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
+        /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
         /// minimize or maximize it.</p>
         pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMlJobObjective) -> Self {
             self.auto_ml_job_objective = Some(input);
@@ -3692,6 +3692,7 @@ pub mod create_endpoint_config_input {
         pub(crate) data_capture_config: std::option::Option<crate::model::DataCaptureConfig>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
+        pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
     }
     impl Builder {
         /// <p>The name of the endpoint configuration. You specify this name in a <a>CreateEndpoint</a> request. </p>
@@ -3796,6 +3797,22 @@ pub mod create_endpoint_config_input {
             self.kms_key_id = input;
             self
         }
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
+        /// This is a required field in order for your Endpoint to be invoked using
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+        /// <code>InvokeEndpointAsync</code>
+        /// </a>.</p>
+        pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
+            self.async_inference_config = Some(input);
+            self
+        }
+        pub fn set_async_inference_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceConfig>,
+        ) -> Self {
+            self.async_inference_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEndpointConfigInput`](crate::input::CreateEndpointConfigInput)
         pub fn build(
             self,
@@ -3809,6 +3826,7 @@ pub mod create_endpoint_config_input {
                 data_capture_config: self.data_capture_config,
                 tags: self.tags,
                 kms_key_id: self.kms_key_id,
+                async_inference_config: self.async_inference_config,
             })
         }
     }
@@ -5611,6 +5629,13 @@ pub mod create_labeling_job_input {
         /// <p>For 3D point cloud and video frame task types, you can add label category attributes
         /// and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
         /// Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
+        /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must
+        /// provide worker instructions in the label category configuration file using the
+        /// <code>"instructions"</code> parameter: <code>"instructions":
+        /// {"shortInstruction":"<h1>Add header</h1><p>Add Instructions</p>",
+        /// "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details
+        /// and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a
+        /// Named Entity Recognition Labeling Job (API) </a>.</p>
         /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
         /// tasks</a>, your label category configuration file must be a JSON file in the
         /// following format. Identify the labels you want to use by replacing <code>label_1</code>,
@@ -7678,6 +7703,7 @@ pub mod create_notebook_instance_input {
         pub(crate) additional_code_repositories:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) root_access: std::option::Option<crate::model::RootAccess>,
+        pub(crate) platform_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the new notebook instance.</p>
@@ -7881,6 +7907,18 @@ pub mod create_notebook_instance_input {
             self.root_access = input;
             self
         }
+        /// <p>The platform identifier of the notebook instance runtime environment.</p>
+        pub fn platform_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_identifier = Some(input.into());
+            self
+        }
+        pub fn set_platform_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_identifier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateNotebookInstanceInput`](crate::input::CreateNotebookInstanceInput)
         pub fn build(
             self,
@@ -7903,6 +7941,7 @@ pub mod create_notebook_instance_input {
                 default_code_repository: self.default_code_repository,
                 additional_code_repositories: self.additional_code_repositories,
                 root_access: self.root_access,
+                platform_identifier: self.platform_identifier,
             })
         }
     }
@@ -49968,6 +50007,8 @@ pub struct CreateNotebookInstanceInput {
     /// users.</p>
     /// </note>
     pub root_access: std::option::Option<crate::model::RootAccess>,
+    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    pub platform_identifier: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateNotebookInstanceInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -49989,6 +50030,7 @@ impl std::fmt::Debug for CreateNotebookInstanceInput {
             &self.additional_code_repositories,
         );
         formatter.field("root_access", &self.root_access);
+        formatter.field("platform_identifier", &self.platform_identifier);
         formatter.finish()
     }
 }
@@ -50447,6 +50489,13 @@ pub struct CreateLabelingJobInput {
     /// <p>For 3D point cloud and video frame task types, you can add label category attributes
     /// and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
     /// Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
+    /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must
+    /// provide worker instructions in the label category configuration file using the
+    /// <code>"instructions"</code> parameter: <code>"instructions":
+    /// {"shortInstruction":"<h1>Add header</h1><p>Add Instructions</p>",
+    /// "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details
+    /// and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a
+    /// Named Entity Recognition Labeling Job (API) </a>.</p>
     /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
     /// tasks</a>, your label category configuration file must be a JSON file in the
     /// following format. Identify the labels you want to use by replacing <code>label_1</code>,
@@ -50902,6 +50951,12 @@ pub struct CreateEndpointConfigInput {
     /// Instance Store Volumes</a>.</p>
     /// </note>
     pub kms_key_id: std::option::Option<std::string::String>,
+    /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
+    /// This is a required field in order for your Endpoint to be invoked using
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+    /// <code>InvokeEndpointAsync</code>
+    /// </a>.</p>
+    pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
 impl std::fmt::Debug for CreateEndpointConfigInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50911,6 +50966,7 @@ impl std::fmt::Debug for CreateEndpointConfigInput {
         formatter.field("data_capture_config", &self.data_capture_config);
         formatter.field("tags", &self.tags);
         formatter.field("kms_key_id", &self.kms_key_id);
+        formatter.field("async_inference_config", &self.async_inference_config);
         formatter.finish()
     }
 }
@@ -51254,16 +51310,16 @@ pub struct CreateAutoMlJobInput {
     /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum
     /// of 500 rows.</p>
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
-    /// <p>Provides information about encryption and the Amazon S3 output path needed to store
-    /// artifacts from an AutoML job. Format(s) supported: CSV.</p>
+    /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
+    /// from an AutoML job. Format(s) supported: CSV.</p>
     pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
     /// <p>Defines the type of supervised learning available for the candidates. Options include:
     /// <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and
     /// <code>Regression</code>. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
     /// Amazon SageMaker Autopilot problem types and algorithm support</a>.</p>
     pub problem_type: std::option::Option<crate::model::ProblemType>,
-    /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job.
-    /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
+    /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
+    /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
     /// minimize or maximize it.</p>
     pub auto_ml_job_objective: std::option::Option<crate::model::AutoMlJobObjective>,
     /// <p>Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for

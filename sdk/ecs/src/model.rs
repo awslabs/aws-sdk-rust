@@ -1302,6 +1302,7 @@ impl AsRef<str> for AssignPublicIp {
 /// <code>FARGATE_SPOT</code> capacity providers. The Fargate capacity providers are
 /// available to all accounts and only need to be associated with a cluster to be used in a
 /// capacity provider strategy.</p>
+/// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CapacityProviderStrategyItem {
@@ -1478,7 +1479,7 @@ impl AsRef<str> for LaunchType {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Service {
-    /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+    /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
     pub service_arn: std::option::Option<std::string::String>,
     /// <p>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are allowed. Service names must be unique within
     /// a cluster, but you can have similarly named services in multiple clusters within a
@@ -1711,7 +1712,7 @@ pub mod service {
         pub(crate) enable_execute_command: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
+        /// <p>The ARN that identifies the service. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the Amazon Web Services account ID of the service owner, the <code>service</code> namespace, and then the service name. For example, <code>arn:aws:ecs:region:012345678910:service/my-service</code>.</p>
         pub fn service_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_arn = Some(input.into());
             self
@@ -2554,9 +2555,9 @@ pub struct PlacementConstraint {
     /// <code>memberOf</code> to restrict the selection to a group of valid
     /// candidates.</p>
     pub r#type: std::option::Option<crate::model::PlacementConstraintType>,
-    /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
-    /// expression if the constraint type is <code>distinctInstance</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
+    /// <p>A cluster query language expression to apply to the constraint. The expression can
+    /// have a maximum length of 2000 characters. You can't specify an expression if the
+    /// constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
     /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub expression: std::option::Option<std::string::String>,
 }
@@ -2593,9 +2594,9 @@ pub mod placement_constraint {
             self.r#type = input;
             self
         }
-        /// <p>A cluster query language expression to apply to the constraint. You cannot specify an
-        /// expression if the constraint type is <code>distinctInstance</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the
+        /// <p>A cluster query language expression to apply to the constraint. The expression can
+        /// have a maximum length of 2000 characters. You can't specify an expression if the
+        /// constraint type is <code>distinctInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster query language</a> in the
         /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.expression = Some(input.into());
@@ -3492,7 +3493,7 @@ impl Failure {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ContainerInstance {
-    /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
     pub container_instance_arn: std::option::Option<std::string::String>,
     /// <p>The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2
     /// instance ID. For external instances, this value is the Amazon Web Services Systems Manager managed instance ID.</p>
@@ -3652,7 +3653,7 @@ pub mod container_instance {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) of the container instance. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_instance_arn = Some(input.into());
             self
@@ -4577,7 +4578,7 @@ impl AsRef<str> for ContainerInstanceStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Cluster {
-    /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
+    /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
     pub cluster_arn: std::option::Option<std::string::String>,
     /// <p>A user-generated string that you use to identify your cluster.</p>
     pub cluster_name: std::option::Option<std::string::String>,
@@ -4771,7 +4772,7 @@ pub mod cluster {
         pub(crate) attachments_status: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
+        /// <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster, the Amazon Web Services account ID of the cluster owner, the <code>cluster</code> namespace, and then the cluster name. For example, <code>arn:aws:ecs:region:012345678910:cluster/test</code>.</p>
         pub fn cluster_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.cluster_arn = Some(input.into());
             self
@@ -13087,9 +13088,14 @@ pub struct HealthCheck {
     /// <p>A string array representing the command that the container runs to determine if it is
     /// healthy. The string array must start with <code>CMD</code> to execute the command
     /// arguments directly, or <code>CMD-SHELL</code> to run the command with the container's
-    /// default shell. For example:</p>
+    /// default shell. </p>
+    /// <p> When you use the Amazon Web Services Management Console JSON panel, the Command Line Interface, or the APIs, you should enclose the list of commands in brackets, as shown below.</p>
     /// <p>
     /// <code>[ "CMD-SHELL", "curl -f http://localhost/ || exit 1" ]</code>
+    /// </p>
+    /// <p>You do not need to include the brackets when you use the Amazon Web Services Management Consoleas shown below.</p>
+    /// <p>
+    /// <code> "CMD-SHELL", "curl -f http://localhost/ || exit 1" </code>
     /// </p>
     /// <p>An exit code of 0 indicates success, and non-zero exit code indicates failure. For
     /// more information, see <code>HealthCheck</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a>

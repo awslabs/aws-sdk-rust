@@ -503,7 +503,7 @@ pub mod create_archive_input {
             self.archive_name = input;
             self
         }
-        /// <p>The ARN of the event source associated with the archive.</p>
+        /// <p>The ARN of the event bus that sends events to the archive.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
             self
@@ -1042,7 +1042,7 @@ pub mod create_partner_event_source_input {
         /// <code>
         /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
         /// </code>.
-        /// The AWS account that wants to use this partner event source must create a partner event bus
+        /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
         /// with a name that matches the name of the partner event source.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
@@ -1052,7 +1052,7 @@ pub mod create_partner_event_source_input {
             self.name = input;
             self
         }
-        /// <p>The AWS account ID that is permitted to create a matching partner event bus for this
+        /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
         /// partner event source.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
@@ -2024,7 +2024,7 @@ pub mod delete_partner_event_source_input {
             self.name = input;
             self
         }
-        /// <p>The AWS account ID of the AWS customer that the event source was created for.</p>
+        /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
@@ -2189,7 +2189,7 @@ pub mod delete_rule_input {
             self.event_bus_name = input;
             self
         }
-        /// <p>If this is a managed rule, created by an AWS service on your behalf, you must specify
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
         /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
         /// rules that are not managed rules. You can check whether a rule is a managed rule by using
         /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
@@ -4973,7 +4973,7 @@ pub mod list_replays_input {
             self.state = input;
             self
         }
-        /// <p>The ARN of the event source associated with the replay.</p>
+        /// <p>The ARN of the archive from which the events are replayed.</p>
         pub fn event_source_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_source_arn = Some(input.into());
             self
@@ -6102,8 +6102,7 @@ pub mod put_permission_input {
             self.event_bus_name = input;
             self
         }
-        /// <p>The action that you are enabling the other account to perform. Currently, this must be
-        /// <code>events:PutEvents</code>.</p>
+        /// <p>The action that you are enabling the other account to perform.</p>
         pub fn action(mut self, input: impl Into<std::string::String>) -> Self {
             self.action = Some(input.into());
             self
@@ -6112,7 +6111,7 @@ pub mod put_permission_input {
             self.action = input;
             self
         }
-        /// <p>The 12-digit AWS account ID that you are permitting to put events to your default event
+        /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
         /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
         /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
         /// may match undesirable events. To create more secure rules, make sure that the event pattern
@@ -6129,7 +6128,7 @@ pub mod put_permission_input {
         }
         /// <p>An identifier string for the external account that you are granting permissions to. If you
         /// later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a>RemovePermission</a>.</p>
+        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
         pub fn statement_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.statement_id = Some(input.into());
             self
@@ -6139,10 +6138,10 @@ pub mod put_permission_input {
             self
         }
         /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-        /// condition, such as being a member of a certain AWS organization. For more information about
-        /// AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-        /// Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>
-        /// <p>If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the
+        /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
+        /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
+        /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+        /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
         /// value for <code>Principal</code>, you grant permission to all the accounts in the named
         /// organization.</p>
         /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
@@ -6362,6 +6361,10 @@ pub mod put_rule_input {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted
+        /// permission to your account through an organization instead of directly by the account ID, you
+        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+        /// structure, instead of here in this parameter.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -6893,7 +6896,7 @@ pub mod remove_targets_input {
             self.ids = input;
             self
         }
-        /// <p>If this is a managed rule, created by an AWS service on your behalf, you must specify
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
         /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
         /// rules that are not managed rules. You can check whether a rule is a managed rule by using
         /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
@@ -7411,7 +7414,7 @@ pub mod test_event_pattern_input {
             self
         }
         /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS Events</a>, and the following
+        /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
         /// fields are mandatory:</p>
         /// <ul>
         /// <li>
@@ -8398,7 +8401,7 @@ pub struct TestEventPatternInput {
     /// Patterns</a> in the <i>Amazon EventBridge User Guide</i>.</p>
     pub event_pattern: std::option::Option<std::string::String>,
     /// <p>The event, in JSON format, to test against the event pattern. The JSON must follow the
-    /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">AWS Events</a>, and the following
+    /// format specified in <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/aws-events.html">Amazon Web Services Events</a>, and the following
     /// fields are mandatory:</p>
     /// <ul>
     /// <li>
@@ -8507,7 +8510,7 @@ pub struct RemoveTargetsInput {
     pub event_bus_name: std::option::Option<std::string::String>,
     /// <p>The IDs of the targets to remove from the rule.</p>
     pub ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>If this is a managed rule, created by an AWS service on your behalf, you must specify
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
     /// <code>Force</code> as <code>True</code> to remove targets. This parameter is ignored for
     /// rules that are not managed rules. You can check whether a rule is a managed rule by using
     /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
@@ -8583,6 +8586,10 @@ pub struct PutRuleInput {
     /// <p>A description of the rule.</p>
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted
+    /// permission to your account through an organization instead of directly by the account ID, you
+    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+    /// structure, instead of here in this parameter.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>The list of key-value pairs to associate with the rule.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8611,10 +8618,9 @@ pub struct PutPermissionInput {
     /// <p>The name of the event bus associated with the rule. If you omit this, the default event
     /// bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
-    /// <p>The action that you are enabling the other account to perform. Currently, this must be
-    /// <code>events:PutEvents</code>.</p>
+    /// <p>The action that you are enabling the other account to perform.</p>
     pub action: std::option::Option<std::string::String>,
-    /// <p>The 12-digit AWS account ID that you are permitting to put events to your default event
+    /// <p>The 12-digit Amazon Web Services account ID that you are permitting to put events to your default event
     /// bus. Specify "*" to permit any account to put events to your default event bus.</p>
     /// <p>If you specify "*" without specifying <code>Condition</code>, avoid creating rules that
     /// may match undesirable events. To create more secure rules, make sure that the event pattern
@@ -8624,13 +8630,13 @@ pub struct PutPermissionInput {
     pub principal: std::option::Option<std::string::String>,
     /// <p>An identifier string for the external account that you are granting permissions to. If you
     /// later want to revoke the permission for this external account, specify this
-    /// <code>StatementId</code> when you run <a>RemovePermission</a>.</p>
+    /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.</p>
     pub statement_id: std::option::Option<std::string::String>,
     /// <p>This parameter enables you to limit the permission to accounts that fulfill a certain
-    /// condition, such as being a member of a certain AWS organization. For more information about
-    /// AWS Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is AWS
-    /// Organizations</a> in the <i>AWS Organizations User Guide</i>.</p>
-    /// <p>If you specify <code>Condition</code> with an AWS organization ID, and specify "*" as the
+    /// condition, such as being a member of a certain Amazon Web Services organization. For more information about
+    /// Amazon Web Services Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">What Is Amazon Web Services
+    /// Organizations</a> in the <i>Amazon Web Services Organizations User Guide</i>.</p>
+    /// <p>If you specify <code>Condition</code> with an Amazon Web Services organization ID, and specify "*" as the
     /// value for <code>Principal</code>, you grant permission to all the accounts in the named
     /// organization.</p>
     /// <p>The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
@@ -8778,7 +8784,7 @@ pub struct ListReplaysInput {
     pub name_prefix: std::option::Option<std::string::String>,
     /// <p>The state of the replay.</p>
     pub state: std::option::Option<crate::model::ReplayState>,
-    /// <p>The ARN of the event source associated with the replay.</p>
+    /// <p>The ARN of the archive from which the events are replayed.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>The token returned by a previous call to retrieve the next set of results.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -9126,7 +9132,7 @@ pub struct DeleteRuleInput {
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
     /// event bus is used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
-    /// <p>If this is a managed rule, created by an AWS service on your behalf, you must specify
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, you must specify
     /// <code>Force</code> as <code>True</code> to delete the rule. This parameter is ignored for
     /// rules that are not managed rules. You can check whether a rule is a managed rule by using
     /// <code>DescribeRule</code> or <code>ListRules</code> and checking the <code>ManagedBy</code>
@@ -9148,7 +9154,7 @@ impl std::fmt::Debug for DeleteRuleInput {
 pub struct DeletePartnerEventSourceInput {
     /// <p>The name of the event source to delete.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the AWS customer that the event source was created for.</p>
+    /// <p>The Amazon Web Services account ID of the Amazon Web Services customer that the event source was created for.</p>
     pub account: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeletePartnerEventSourceInput {
@@ -9251,10 +9257,10 @@ pub struct CreatePartnerEventSourceInput {
     /// <code>
     /// <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i>
     /// </code>.
-    /// The AWS account that wants to use this partner event source must create a partner event bus
+    /// The Amazon Web Services account that wants to use this partner event source must create a partner event bus
     /// with a name that matches the name of the partner event source.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID that is permitted to create a matching partner event bus for this
+    /// <p>The Amazon Web Services account ID that is permitted to create a matching partner event bus for this
     /// partner event source.</p>
     pub account: std::option::Option<std::string::String>,
 }
@@ -9322,7 +9328,7 @@ impl std::fmt::Debug for CreateConnectionInput {
 pub struct CreateArchiveInput {
     /// <p>The name for the archive to create.</p>
     pub archive_name: std::option::Option<std::string::String>,
-    /// <p>The ARN of the event source associated with the archive.</p>
+    /// <p>The ARN of the event bus that sends events to the archive.</p>
     pub event_source_arn: std::option::Option<std::string::String>,
     /// <p>A description for the archive.</p>
     pub description: std::option::Option<std::string::String>,

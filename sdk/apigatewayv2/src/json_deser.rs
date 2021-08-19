@@ -6064,6 +6064,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "ownershipVerificationCertificateArn" => {
+                                builder = builder.set_ownership_verification_certificate_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }

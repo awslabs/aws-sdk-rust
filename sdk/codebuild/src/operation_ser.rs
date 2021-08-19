@@ -411,6 +411,16 @@ pub fn serialize_operation_update_project(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_update_project_visibility(
+    input: &crate::input::UpdateProjectVisibilityInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_project_visibility_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_update_report_group(
     input: &crate::input::UpdateReportGroupInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

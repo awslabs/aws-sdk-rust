@@ -9,7 +9,7 @@ pub mod create_anomaly_monitor_input {
         pub(crate) anomaly_monitor: std::option::Option<crate::model::AnomalyMonitor>,
     }
     impl Builder {
-        /// <p> The cost anomaly detection monitor object that you want to create.</p>
+        /// <p>The cost anomaly detection monitor object that you want to create.</p>
         pub fn anomaly_monitor(mut self, input: crate::model::AnomalyMonitor) -> Self {
             self.anomaly_monitor = Some(input);
             self
@@ -151,9 +151,7 @@ pub mod create_anomaly_subscription_input {
         pub(crate) anomaly_subscription: std::option::Option<crate::model::AnomalySubscription>,
     }
     impl Builder {
-        /// <p>
-        /// The cost anomaly subscription object that you want to create.
-        /// </p>
+        /// <p>The cost anomaly subscription object that you want to create. </p>
         pub fn anomaly_subscription(mut self, input: crate::model::AnomalySubscription) -> Self {
             self.anomaly_subscription = Some(input);
             self
@@ -297,6 +295,8 @@ pub mod create_cost_category_definition_input {
         pub(crate) rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
         pub(crate) default_value: std::option::Option<std::string::String>,
+        pub(crate) split_charge_rules:
+            std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
     }
     impl Builder {
         /// <p>The unique name of the Cost Category.</p>
@@ -333,7 +333,8 @@ pub mod create_cost_category_definition_input {
             self.rules = input;
             self
         }
-        /// <p>The default value for the cost category.</p>
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_value = Some(input.into());
             self
@@ -343,6 +344,22 @@ pub mod create_cost_category_definition_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.default_value = input;
+            self
+        }
+        pub fn split_charge_rules(
+            mut self,
+            input: impl Into<crate::model::CostCategorySplitChargeRule>,
+        ) -> Self {
+            let mut v = self.split_charge_rules.unwrap_or_default();
+            v.push(input.into());
+            self.split_charge_rules = Some(v);
+            self
+        }
+        pub fn set_split_charge_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
+        ) -> Self {
+            self.split_charge_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`CreateCostCategoryDefinitionInput`](crate::input::CreateCostCategoryDefinitionInput)
@@ -357,6 +374,7 @@ pub mod create_cost_category_definition_input {
                 rule_version: self.rule_version,
                 rules: self.rules,
                 default_value: self.default_value,
+                split_charge_rules: self.split_charge_rules,
             })
         }
     }
@@ -480,7 +498,7 @@ pub mod delete_anomaly_monitor_input {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier of the cost anomaly monitor that you want to delete. </p>
+        /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitor_arn = Some(input.into());
             self
@@ -619,7 +637,7 @@ pub mod delete_anomaly_subscription_input {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier of the cost anomaly subscription that you want to delete. </p>
+        /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subscription_arn = Some(input.into());
             self
@@ -1121,9 +1139,8 @@ pub mod get_anomalies_input {
             self.total_impact = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1135,9 +1152,7 @@ pub mod get_anomalies_input {
             self.next_page_token = input;
             self
         }
-        /// <p>
-        /// The number of entries a paginated response contains.
-        /// </p>
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1294,9 +1309,8 @@ pub mod get_anomaly_monitors_input {
             self.monitor_arn_list = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1308,9 +1322,7 @@ pub mod get_anomaly_monitors_input {
             self.next_page_token = input;
             self
         }
-        /// <p>
-        /// The number of entries a paginated response contains.
-        /// </p>
+        /// <p>The number of entries that a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1467,9 +1479,7 @@ pub mod get_anomaly_subscriptions_input {
             self.subscription_arn_list = input;
             self
         }
-        /// <p>
-        /// Cost anomaly monitor ARNs.
-        /// </p>
+        /// <p>Cost anomaly monitor ARNs. </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitor_arn = Some(input.into());
             self
@@ -1478,9 +1488,8 @@ pub mod get_anomaly_subscriptions_input {
             self.monitor_arn = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1492,9 +1501,7 @@ pub mod get_anomaly_subscriptions_input {
             self.next_page_token = input;
             self
         }
-        /// <p>
-        /// The number of entries a paginated response contains.
-        /// </p>
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -1642,8 +1649,11 @@ pub mod get_cost_and_usage_input {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Sets the start and end dates for retrieving AWS costs. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
+        /// is inclusive, but the end date is exclusive. For example, if <code>start</code> is
+        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+        /// usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.time_period = Some(input);
             self
@@ -1655,7 +1665,7 @@ pub mod get_cost_and_usage_input {
             self.time_period = input;
             self
         }
-        /// <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
         /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
             self.granularity = Some(input);
@@ -1668,7 +1678,7 @@ pub mod get_cost_and_usage_input {
             self.granularity = input;
             self
         }
-        /// <p>Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
         /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
         /// to define any combination of dimension filters. For more information, see
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
@@ -1706,7 +1716,7 @@ pub mod get_cost_and_usage_input {
             self.group_by = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1871,7 +1881,7 @@ pub mod get_cost_and_usage_with_resources_input {
             self.time_period = input;
             self
         }
-        /// <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
         /// <code>Granularity</code> isn't set, the response object doesn't include the
         /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
@@ -1926,7 +1936,7 @@ pub mod get_cost_and_usage_with_resources_input {
             self.group_by = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -2094,8 +2104,7 @@ pub mod get_cost_categories_input {
             self.search_string = input;
             self
         }
-        /// <p>The time period of the request.
-        /// </p>
+        /// <p>The time period of the request. </p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.time_period = Some(input);
             self
@@ -2124,31 +2133,33 @@ pub mod get_cost_categories_input {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -2163,13 +2174,14 @@ pub mod get_cost_categories_input {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
@@ -2203,7 +2215,7 @@ pub mod get_cost_categories_input {
             self.max_results = input;
             self
         }
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -2698,8 +2710,11 @@ pub mod get_dimension_values_input {
             self.search_string = input;
             self
         }
-        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>The start date and end date for retrieving the dimension values. The start date is
+        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is
+        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+        /// usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.time_period = Some(input);
             self
@@ -2742,11 +2757,11 @@ pub mod get_dimension_values_input {
         /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
         /// </li>
         /// <li>
-        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p>
+        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
         /// </li>
         /// <li>
         /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the AWS ID of the member account.</p>
+        /// field contains the Amazon Web Services ID of the member account.</p>
         /// </li>
         /// <li>
         /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
@@ -2762,7 +2777,7 @@ pub mod get_dimension_values_input {
         /// Instances and Standard Reserved Instances.</p>
         /// </li>
         /// <li>
-        /// <p>SERVICE - The AWS service such as Amazon DynamoDB.</p>
+        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
         /// </li>
         /// <li>
         /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
@@ -2773,7 +2788,7 @@ pub mod get_dimension_values_input {
         /// operation includes a unit attribute.</p>
         /// </li>
         /// <li>
-        /// <p>REGION - The AWS Region.</p>
+        /// <p>REGION - The Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
@@ -2799,13 +2814,13 @@ pub mod get_dimension_values_input {
         /// </li>
         /// <li>
         /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the AWS ID of the member account.</p>
+        /// field contains the Amazon Web Services ID of the member account.</p>
         /// </li>
         /// <li>
         /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
         /// </li>
         /// <li>
-        /// <p>REGION - The AWS Region.</p>
+        /// <p>REGION - The Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
@@ -2826,14 +2841,14 @@ pub mod get_dimension_values_input {
         /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
         /// </li>
         /// <li>
-        /// <p>REGION - The AWS Region.</p>
+        /// <p>REGION - The Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
         /// </li>
         /// <li>
         /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the AWS ID of the member account.</p>
+        /// field contains the Amazon Web Services ID of the member account.</p>
         /// </li>
         /// <li>
         /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
@@ -2852,31 +2867,33 @@ pub mod get_dimension_values_input {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -2891,13 +2908,14 @@ pub mod get_dimension_values_input {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
@@ -2930,7 +2948,7 @@ pub mod get_dimension_values_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -3113,7 +3131,7 @@ pub mod get_reservation_coverage_input {
             self.group_by = input;
             self
         }
-        /// <p>The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
+        /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
         /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
         /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -3195,7 +3213,7 @@ pub mod get_reservation_coverage_input {
             self.metrics = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -3273,7 +3291,7 @@ pub mod get_reservation_coverage_input {
             self.sort_by = input;
             self
         }
-        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -3451,31 +3469,33 @@ pub mod get_reservation_purchase_recommendation_input {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -3490,13 +3510,14 @@ pub mod get_reservation_purchase_recommendation_input {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
@@ -3518,7 +3539,7 @@ pub mod get_reservation_purchase_recommendation_input {
             self.account_scope = input;
             self
         }
-        /// <p>The number of previous days that you want AWS to consider when it calculates your recommendations.</p>
+        /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
         pub fn lookback_period_in_days(
             mut self,
             input: crate::model::LookbackPeriodInDays,
@@ -3931,7 +3952,7 @@ pub mod get_reservation_utilization_input {
             self.sort_by = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -3943,7 +3964,7 @@ pub mod get_reservation_utilization_input {
             self.next_page_token = input;
             self
         }
-        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -4099,31 +4120,33 @@ pub mod get_rightsizing_recommendation_input {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -4138,13 +4161,14 @@ pub mod get_rightsizing_recommendation_input {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
@@ -5466,31 +5490,33 @@ pub mod get_tags_input {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -5505,13 +5531,14 @@ pub mod get_tags_input {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.filter = Some(input);
@@ -5544,7 +5571,7 @@ pub mod get_tags_input {
             self.max_results = input;
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -6172,9 +6199,7 @@ pub mod provide_anomaly_feedback_input {
         pub(crate) feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
     }
     impl Builder {
-        /// <p>
-        /// A cost anomaly ID.
-        /// </p>
+        /// <p>A cost anomaly ID. </p>
         pub fn anomaly_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.anomaly_id = Some(input.into());
             self
@@ -6327,7 +6352,7 @@ pub mod update_anomaly_monitor_input {
         pub(crate) monitor_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+        /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitor_arn = Some(input.into());
             self
@@ -6336,9 +6361,7 @@ pub mod update_anomaly_monitor_input {
             self.monitor_arn = input;
             self
         }
-        /// <p>
-        /// The new name for the cost anomaly monitor.
-        /// </p>
+        /// <p>The new name for the cost anomaly monitor. </p>
         pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitor_name = Some(input.into());
             self
@@ -6483,7 +6506,7 @@ pub mod update_anomaly_subscription_input {
         pub(crate) subscription_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> A cost anomaly subscription Amazon Resource Name (ARN). </p>
+        /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subscription_arn = Some(input.into());
             self
@@ -6495,9 +6518,7 @@ pub mod update_anomaly_subscription_input {
             self.subscription_arn = input;
             self
         }
-        /// <p>
-        /// The update to the threshold value for receiving notifications.
-        /// </p>
+        /// <p>The update to the threshold value for receiving notifications. </p>
         pub fn threshold(mut self, input: f64) -> Self {
             self.threshold = Some(input);
             self
@@ -6506,9 +6527,7 @@ pub mod update_anomaly_subscription_input {
             self.threshold = input;
             self
         }
-        /// <p>
-        /// The update to the frequency value at which subscribers will receive notifications.
-        /// </p>
+        /// <p>The update to the frequency value that subscribers receive notifications. </p>
         pub fn frequency(mut self, input: crate::model::AnomalySubscriptionFrequency) -> Self {
             self.frequency = Some(input);
             self
@@ -6546,9 +6565,7 @@ pub mod update_anomaly_subscription_input {
             self.subscribers = input;
             self
         }
-        /// <p>
-        /// The subscription's new name.
-        /// </p>
+        /// <p>The new name of the subscription. </p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.subscription_name = Some(input.into());
             self
@@ -6697,6 +6714,8 @@ pub mod update_cost_category_definition_input {
         pub(crate) rule_version: std::option::Option<crate::model::CostCategoryRuleVersion>,
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
         pub(crate) default_value: std::option::Option<std::string::String>,
+        pub(crate) split_charge_rules:
+            std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
     }
     impl Builder {
         /// <p>The unique identifier for your Cost Category.</p>
@@ -6736,7 +6755,8 @@ pub mod update_cost_category_definition_input {
             self.rules = input;
             self
         }
-        /// <p>The default value for the cost category.</p>
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.default_value = Some(input.into());
             self
@@ -6746,6 +6766,22 @@ pub mod update_cost_category_definition_input {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.default_value = input;
+            self
+        }
+        pub fn split_charge_rules(
+            mut self,
+            input: impl Into<crate::model::CostCategorySplitChargeRule>,
+        ) -> Self {
+            let mut v = self.split_charge_rules.unwrap_or_default();
+            v.push(input.into());
+            self.split_charge_rules = Some(v);
+            self
+        }
+        pub fn set_split_charge_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
+        ) -> Self {
+            self.split_charge_rules = input;
             self
         }
         /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionInput`](crate::input::UpdateCostCategoryDefinitionInput)
@@ -6760,6 +6796,7 @@ pub mod update_cost_category_definition_input {
                 rule_version: self.rule_version,
                 rules: self.rules,
                 default_value: self.default_value,
+                split_charge_rules: self.split_charge_rules,
             })
         }
     }
@@ -6884,8 +6921,14 @@ pub struct UpdateCostCategoryDefinitionInput {
     /// <p>The <code>Expression</code> object used to categorize costs. For more information, see
     /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule </a>. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
-    /// <p>The default value for the cost category.</p>
+    /// <p>The
+    /// default value for the cost category.</p>
     pub default_value: std::option::Option<std::string::String>,
+    /// <p>
+    /// The split charge rules used to allocate your charges between your Cost Category values.
+    /// </p>
+    pub split_charge_rules:
+        std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
 }
 impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6894,6 +6937,7 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
         formatter.field("rule_version", &self.rule_version);
         formatter.field("rules", &self.rules);
         formatter.field("default_value", &self.default_value);
+        formatter.field("split_charge_rules", &self.split_charge_rules);
         formatter.finish()
     }
 }
@@ -6901,27 +6945,17 @@ impl std::fmt::Debug for UpdateCostCategoryDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalySubscriptionInput {
-    /// <p> A cost anomaly subscription Amazon Resource Name (ARN). </p>
+    /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
     pub subscription_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The update to the threshold value for receiving notifications.
-    /// </p>
+    /// <p>The update to the threshold value for receiving notifications. </p>
     pub threshold: std::option::Option<f64>,
-    /// <p>
-    /// The update to the frequency value at which subscribers will receive notifications.
-    /// </p>
+    /// <p>The update to the frequency value that subscribers receive notifications. </p>
     pub frequency: std::option::Option<crate::model::AnomalySubscriptionFrequency>,
-    /// <p>
-    /// A list of cost anomaly monitor ARNs.
-    /// </p>
+    /// <p>A list of cost anomaly monitor ARNs. </p>
     pub monitor_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The update to the subscriber list.
-    /// </p>
+    /// <p>The update to the subscriber list. </p>
     pub subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
-    /// <p>
-    /// The subscription's new name.
-    /// </p>
+    /// <p>The new name of the subscription. </p>
     pub subscription_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAnomalySubscriptionInput {
@@ -6940,11 +6974,9 @@ impl std::fmt::Debug for UpdateAnomalySubscriptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyMonitorInput {
-    /// <p> Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+    /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
     pub monitor_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The new name for the cost anomaly monitor.
-    /// </p>
+    /// <p>The new name for the cost anomaly monitor. </p>
     pub monitor_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAnomalyMonitorInput {
@@ -6959,9 +6991,7 @@ impl std::fmt::Debug for UpdateAnomalyMonitorInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvideAnomalyFeedbackInput {
-    /// <p>
-    /// A cost anomaly ID.
-    /// </p>
+    /// <p>A cost anomaly ID. </p>
     pub anomaly_id: std::option::Option<std::string::String>,
     /// <p>Describes whether the cost anomaly was a planned activity or you considered it an anomaly. </p>
     pub feedback: std::option::Option<crate::model::AnomalyFeedbackType>,
@@ -7170,31 +7200,33 @@ pub struct GetTagsInput {
     /// <li>
     /// <p>Simple dimension values - You can set the dimension name and values for the
     /// filters that you plan to use. For example, you can filter for
-    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-    /// <code>Expression</code> example looks like:</p>
+    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+    /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+    /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+    /// example is as follows:</p>
     /// <p>
-    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-    /// “us-west-1” ] } }</code>
+    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+    /// } }</code>
     /// </p>
-    /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-    /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-    /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-    /// multiple lines. </p>
+    /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+    /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+    /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+    /// lines. </p>
     /// </li>
     /// <li>
     /// <p>Compound dimension values with logical operations - You can use multiple
     /// <code>Expression</code> types and the logical operators
     /// <code>AND/OR/NOT</code> to create a list of one or more
-    /// <code>Expression</code> objects. This allows you to filter on more advanced
-    /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+    /// <code>Expression</code> objects. By doing this, you can filter on more
+    /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
     /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-    /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-    /// this:</p>
+    /// DataTransfer)</code>. The <code>Expression</code> for that is as
+    /// follows:</p>
     /// <p>
-    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-    /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-    /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": ["DataTransfer"] }}} ] } </code>
+    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+    /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+    /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+    /// ["DataTransfer"] }}} ] } </code>
     /// </p>
     /// <note>
     /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -7209,13 +7241,14 @@ pub struct GetTagsInput {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-    /// supported. OR is not supported between different dimensions, or dimensions and tags.
-    /// NOT operators aren't supported.
-    /// Dimensions
-    /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+    /// and tags. NOT operators aren't supported. Dimensions are also limited to
+    /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
     /// <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+    /// supported. AND and OR aren't supported. Dimensions are limited to
+    /// <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value by which you want to sort the data.</p>
@@ -7263,7 +7296,7 @@ pub struct GetTagsInput {
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetTags</code>, MaxResults has an upper limit of 1000.</p>
     pub max_results: i32,
-    /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetTagsInput {
@@ -7624,31 +7657,33 @@ pub struct GetRightsizingRecommendationInput {
     /// <li>
     /// <p>Simple dimension values - You can set the dimension name and values for the
     /// filters that you plan to use. For example, you can filter for
-    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-    /// <code>Expression</code> example looks like:</p>
+    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+    /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+    /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+    /// example is as follows:</p>
     /// <p>
-    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-    /// “us-west-1” ] } }</code>
+    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+    /// } }</code>
     /// </p>
-    /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-    /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-    /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-    /// multiple lines. </p>
+    /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+    /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+    /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+    /// lines. </p>
     /// </li>
     /// <li>
     /// <p>Compound dimension values with logical operations - You can use multiple
     /// <code>Expression</code> types and the logical operators
     /// <code>AND/OR/NOT</code> to create a list of one or more
-    /// <code>Expression</code> objects. This allows you to filter on more advanced
-    /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+    /// <code>Expression</code> objects. By doing this, you can filter on more
+    /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
     /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-    /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-    /// this:</p>
+    /// DataTransfer)</code>. The <code>Expression</code> for that is as
+    /// follows:</p>
     /// <p>
-    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-    /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-    /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": ["DataTransfer"] }}} ] } </code>
+    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+    /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+    /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+    /// ["DataTransfer"] }}} ] } </code>
     /// </p>
     /// <note>
     /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -7663,13 +7698,14 @@ pub struct GetRightsizingRecommendationInput {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-    /// supported. OR is not supported between different dimensions, or dimensions and tags.
-    /// NOT operators aren't supported.
-    /// Dimensions
-    /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+    /// and tags. NOT operators aren't supported. Dimensions are also limited to
+    /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
     /// <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+    /// supported. AND and OR aren't supported. Dimensions are limited to
+    /// <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p> Enables you to customize recommendations across two attributes. You can choose to view
@@ -7844,9 +7880,9 @@ pub struct GetReservationUtilizationInput {
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
-    /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetReservationUtilizationInput {
@@ -7875,31 +7911,33 @@ pub struct GetReservationPurchaseRecommendationInput {
     /// <li>
     /// <p>Simple dimension values - You can set the dimension name and values for the
     /// filters that you plan to use. For example, you can filter for
-    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-    /// <code>Expression</code> example looks like:</p>
+    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+    /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+    /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+    /// example is as follows:</p>
     /// <p>
-    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-    /// “us-west-1” ] } }</code>
+    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+    /// } }</code>
     /// </p>
-    /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-    /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-    /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-    /// multiple lines. </p>
+    /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+    /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+    /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+    /// lines. </p>
     /// </li>
     /// <li>
     /// <p>Compound dimension values with logical operations - You can use multiple
     /// <code>Expression</code> types and the logical operators
     /// <code>AND/OR/NOT</code> to create a list of one or more
-    /// <code>Expression</code> objects. This allows you to filter on more advanced
-    /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+    /// <code>Expression</code> objects. By doing this, you can filter on more
+    /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
     /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-    /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-    /// this:</p>
+    /// DataTransfer)</code>. The <code>Expression</code> for that is as
+    /// follows:</p>
     /// <p>
-    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-    /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-    /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": ["DataTransfer"] }}} ] } </code>
+    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+    /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+    /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+    /// ["DataTransfer"] }}} ] } </code>
     /// </p>
     /// <note>
     /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -7914,18 +7952,19 @@ pub struct GetReservationPurchaseRecommendationInput {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-    /// supported. OR is not supported between different dimensions, or dimensions and tags.
-    /// NOT operators aren't supported.
-    /// Dimensions
-    /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+    /// and tags. NOT operators aren't supported. Dimensions are also limited to
+    /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
     /// <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+    /// supported. AND and OR aren't supported. Dimensions are limited to
+    /// <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The account scope that you want your recommendations for. Amazon Web Services calculates recommendations including the management account and member accounts if the value is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations are calculated for individual member accounts only.</p>
     pub account_scope: std::option::Option<crate::model::AccountScope>,
-    /// <p>The number of previous days that you want AWS to consider when it calculates your recommendations.</p>
+    /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
     pub lookback_period_in_days: std::option::Option<crate::model::LookbackPeriodInDays>,
     /// <p>The reservation term that you want recommendations for.</p>
     pub term_in_years: std::option::Option<crate::model::TermInYears>,
@@ -7997,7 +8036,7 @@ pub struct GetReservationCoverageInput {
     /// </li>
     /// </ul>
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-    /// <p>The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
+    /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
     /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
     /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
     /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -8052,7 +8091,7 @@ pub struct GetReservationCoverageInput {
     /// <p>The measurement that you want your reservation coverage reported in.</p>
     /// <p>Valid values are <code>Hour</code>, <code>Unit</code>, and <code>Cost</code>. You can use multiple values in a request.</p>
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The value by which you want to sort the data.</p>
     /// <p>The following values are supported for <code>Key</code>:</p>
@@ -8110,7 +8149,7 @@ pub struct GetReservationCoverageInput {
     /// </ul>
     /// <p>Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.</p>
     pub sort_by: std::option::Option<crate::model::SortDefinition>,
-    /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+    /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetReservationCoverageInput {
@@ -8133,8 +8172,11 @@ impl std::fmt::Debug for GetReservationCoverageInput {
 pub struct GetDimensionValuesInput {
     /// <p>The value that you want to search the filter values for.</p>
     pub search_string: std::option::Option<std::string::String>,
-    /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-    /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    /// <p>The start date and end date for retrieving the dimension values. The start date is
+    /// inclusive, but the end date is exclusive. For example, if <code>start</code> is
+    /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+    /// usage data is retrieved from <code>2017-01-01</code> up to and including
+    /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The name of the dimension. Each <code>Dimension</code> is available for a different <code>Context</code>.
     /// For more information, see <code>Context</code>.
@@ -8157,11 +8199,11 @@ pub struct GetDimensionValuesInput {
     /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
     /// </li>
     /// <li>
-    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
     /// </li>
     /// <li>
     /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the AWS ID of the member account.</p>
+    /// field contains the Amazon Web Services ID of the member account.</p>
     /// </li>
     /// <li>
     /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
@@ -8177,7 +8219,7 @@ pub struct GetDimensionValuesInput {
     /// Instances and Standard Reserved Instances.</p>
     /// </li>
     /// <li>
-    /// <p>SERVICE - The AWS service such as Amazon DynamoDB.</p>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
     /// </li>
     /// <li>
     /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
@@ -8188,7 +8230,7 @@ pub struct GetDimensionValuesInput {
     /// operation includes a unit attribute.</p>
     /// </li>
     /// <li>
-    /// <p>REGION - The AWS Region.</p>
+    /// <p>REGION - The Amazon Web Services Region.</p>
     /// </li>
     /// <li>
     /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
@@ -8214,13 +8256,13 @@ pub struct GetDimensionValuesInput {
     /// </li>
     /// <li>
     /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the AWS ID of the member account.</p>
+    /// field contains the Amazon Web Services ID of the member account.</p>
     /// </li>
     /// <li>
     /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
     /// </li>
     /// <li>
-    /// <p>REGION - The AWS Region.</p>
+    /// <p>REGION - The Amazon Web Services Region.</p>
     /// </li>
     /// <li>
     /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
@@ -8241,14 +8283,14 @@ pub struct GetDimensionValuesInput {
     /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
     /// </li>
     /// <li>
-    /// <p>REGION - The AWS Region.</p>
+    /// <p>REGION - The Amazon Web Services Region.</p>
     /// </li>
     /// <li>
     /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
     /// </li>
     /// <li>
     /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the AWS ID of the member account.</p>
+    /// field contains the Amazon Web Services ID of the member account.</p>
     /// </li>
     /// <li>
     /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
@@ -8260,31 +8302,33 @@ pub struct GetDimensionValuesInput {
     /// <li>
     /// <p>Simple dimension values - You can set the dimension name and values for the
     /// filters that you plan to use. For example, you can filter for
-    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-    /// <code>Expression</code> example looks like:</p>
+    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+    /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+    /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+    /// example is as follows:</p>
     /// <p>
-    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-    /// “us-west-1” ] } }</code>
+    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+    /// } }</code>
     /// </p>
-    /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-    /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-    /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-    /// multiple lines. </p>
+    /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+    /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+    /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+    /// lines. </p>
     /// </li>
     /// <li>
     /// <p>Compound dimension values with logical operations - You can use multiple
     /// <code>Expression</code> types and the logical operators
     /// <code>AND/OR/NOT</code> to create a list of one or more
-    /// <code>Expression</code> objects. This allows you to filter on more advanced
-    /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+    /// <code>Expression</code> objects. By doing this, you can filter on more
+    /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
     /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-    /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-    /// this:</p>
+    /// DataTransfer)</code>. The <code>Expression</code> for that is as
+    /// follows:</p>
     /// <p>
-    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-    /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-    /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": ["DataTransfer"] }}} ] } </code>
+    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+    /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+    /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+    /// ["DataTransfer"] }}} ] } </code>
     /// </p>
     /// <note>
     /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -8299,13 +8343,14 @@ pub struct GetDimensionValuesInput {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-    /// supported. OR is not supported between different dimensions, or dimensions and tags.
-    /// NOT operators aren't supported.
-    /// Dimensions
-    /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+    /// and tags. NOT operators aren't supported. Dimensions are also limited to
+    /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
     /// <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+    /// supported. AND and OR aren't supported. Dimensions are limited to
+    /// <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value by which you want to sort the data.</p>
@@ -8353,7 +8398,7 @@ pub struct GetDimensionValuesInput {
     /// <p>This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.</p>
     pub max_results: i32,
-    /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDimensionValuesInput {
@@ -8543,8 +8588,7 @@ pub struct GetCostCategoriesInput {
     /// <p>The value that you want to search the filter values for.</p>
     /// <p>If you do not specify a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category names that match the <code>SearchString</code> pattern. If you do specifiy a <code>CostCategoryName</code>, <code>SearchString</code> will be used to filter Cost Category values that match the <code>SearchString</code> pattern.</p>
     pub search_string: std::option::Option<std::string::String>,
-    /// <p>The time period of the request.
-    /// </p>
+    /// <p>The time period of the request. </p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The unique name of the Cost Category.</p>
     pub cost_category_name: std::option::Option<std::string::String>,
@@ -8553,31 +8597,33 @@ pub struct GetCostCategoriesInput {
     /// <li>
     /// <p>Simple dimension values - You can set the dimension name and values for the
     /// filters that you plan to use. For example, you can filter for
-    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-    /// <code>Expression</code> example looks like:</p>
+    /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+    /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+    /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+    /// example is as follows:</p>
     /// <p>
-    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-    /// “us-west-1” ] } }</code>
+    /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+    /// } }</code>
     /// </p>
-    /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-    /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-    /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-    /// multiple lines. </p>
+    /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+    /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+    /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+    /// lines. </p>
     /// </li>
     /// <li>
     /// <p>Compound dimension values with logical operations - You can use multiple
     /// <code>Expression</code> types and the logical operators
     /// <code>AND/OR/NOT</code> to create a list of one or more
-    /// <code>Expression</code> objects. This allows you to filter on more advanced
-    /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+    /// <code>Expression</code> objects. By doing this, you can filter on more
+    /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
     /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-    /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-    /// this:</p>
+    /// DataTransfer)</code>. The <code>Expression</code> for that is as
+    /// follows:</p>
     /// <p>
-    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-    /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-    /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": ["DataTransfer"] }}} ] } </code>
+    /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+    /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+    /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+    /// ["DataTransfer"] }}} ] } </code>
     /// </p>
     /// <note>
     /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -8592,13 +8638,14 @@ pub struct GetCostCategoriesInput {
     /// </li>
     /// </ul>
     /// <note>
-    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-    /// supported. OR is not supported between different dimensions, or dimensions and tags.
-    /// NOT operators aren't supported.
-    /// Dimensions
-    /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+    /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+    /// and tags. NOT operators aren't supported. Dimensions are also limited to
+    /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
     /// <code>RIGHTSIZING_TYPE</code>.</p>
-    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+    /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+    /// supported. AND and OR aren't supported. Dimensions are limited to
+    /// <code>LINKED_ACCOUNT</code>.</p>
     /// </note>
     pub filter: std::option::Option<crate::model::Expression>,
     /// <p>The value by which you want to sort the data.</p>
@@ -8647,7 +8694,7 @@ pub struct GetCostCategoriesInput {
     /// <p>The maximum number of objects that to be returned for this request.  If <code>MaxResults</code> is not specified with <code>SortBy</code>, the request will return 1000 results as the default value for this parameter.</p>
     /// <p>For <code>GetCostCategories</code>, MaxResults has an upper limit of 1000.</p>
     pub max_results: i32,
-    /// <p>If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCostCategoriesInput {
@@ -8670,7 +8717,7 @@ pub struct GetCostAndUsageWithResourcesInput {
     /// <p>Sets the start and end dates for retrieving Amazon Web Services costs. The range must be within the last 14 days (the start date cannot be earlier than 14 days ago). The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
     /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
-    /// <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
+    /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
     /// <code>Granularity</code> isn't set, the response object doesn't include the
     /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
     pub granularity: std::option::Option<crate::model::Granularity>,
@@ -8702,7 +8749,7 @@ pub struct GetCostAndUsageWithResourcesInput {
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>, <code>TAG</code>, <code>COST_CATEGORY</code>.</p>
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-    /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCostAndUsageWithResourcesInput {
@@ -8721,13 +8768,16 @@ impl std::fmt::Debug for GetCostAndUsageWithResourcesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageInput {
-    /// <p>Sets the start and end dates for retrieving AWS costs. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-    /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+    /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
+    /// is inclusive, but the end date is exclusive. For example, if <code>start</code> is
+    /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+    /// usage data is retrieved from <code>2017-01-01</code> up to and including
+    /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
-    /// <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
+    /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
     /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
     pub granularity: std::option::Option<crate::model::Granularity>,
-    /// <p>Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
+    /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
     /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
     /// to define any combination of dimension filters. For more information, see
     /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
@@ -8738,23 +8788,24 @@ pub struct GetCostAndUsageInput {
     /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
     /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p>
     /// <note>
-    /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
-    /// taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2,
-    /// the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units
-    /// (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-    /// <code>UsageTypeGroups</code>. </p>
+    /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+    /// numbers without taking into account the units. For example, if you aggregate
+    /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
+    /// Amazon EC2 compute hours and data transfer are measured in different units (for example,
+    /// hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+    /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
     /// </note>
     /// <p>
     /// <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
     pub metrics: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>You can group AWS costs using up to two different groups, either dimensions, tag keys,
+    /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
     /// cost categories, or any two group by types.</p>
-    /// <p>When you group by tag key, you get all tag values, including empty strings.</p>
-    /// <p>Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
-    /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+    /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
+    /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
     /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
+    /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
     pub group_by: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-    /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetCostAndUsageInput {
@@ -8773,21 +8824,14 @@ impl std::fmt::Debug for GetCostAndUsageInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalySubscriptionsInput {
-    /// <p>
-    /// A list of cost anomaly subscription ARNs.
-    /// </p>
+    /// <p>A list of cost anomaly subscription ARNs. </p>
     pub subscription_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// Cost anomaly monitor ARNs.
-    /// </p>
+    /// <p>Cost anomaly monitor ARNs. </p>
     pub monitor_arn: std::option::Option<std::string::String>,
-    /// <p>
-    /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The number of entries a paginated response contains.
-    /// </p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetAnomalySubscriptionsInput {
@@ -8804,17 +8848,12 @@ impl std::fmt::Debug for GetAnomalySubscriptionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyMonitorsInput {
-    /// <p>
-    /// A list of cost anomaly monitor ARNs.
-    /// </p>
+    /// <p>A list of cost anomaly monitor ARNs. </p>
     pub monitor_arn_list: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>
-    /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The number of entries a paginated response contains.
-    /// </p>
+    /// <p>The number of entries that a paginated response contains. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetAnomalyMonitorsInput {
@@ -8842,13 +8881,10 @@ pub struct GetAnomaliesInput {
     /// can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with an estimated
     /// dollar impact greater than 200. </p>
     pub total_impact: std::option::Option<crate::model::TotalImpactFilter>,
-    /// <p>
-    /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
-    /// <p>
-    /// The number of entries a paginated response contains.
-    /// </p>
+    /// <p>The number of entries a paginated response contains. </p>
     pub max_results: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetAnomaliesInput {
@@ -8904,7 +8940,7 @@ impl std::fmt::Debug for DeleteCostCategoryDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalySubscriptionInput {
-    /// <p> The unique identifier of the cost anomaly subscription that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAnomalySubscriptionInput {
@@ -8918,7 +8954,7 @@ impl std::fmt::Debug for DeleteAnomalySubscriptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAnomalyMonitorInput {
-    /// <p> The unique identifier of the cost anomaly monitor that you want to delete. </p>
+    /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteAnomalyMonitorInput {
@@ -8939,8 +8975,14 @@ pub struct CreateCostCategoryDefinitionInput {
     /// <p>The Cost Category rules used to categorize costs. For more information, see
     /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.</p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::CostCategoryRule>>,
-    /// <p>The default value for the cost category.</p>
+    /// <p>The
+    /// default value for the cost category.</p>
     pub default_value: std::option::Option<std::string::String>,
+    /// <p>
+    /// The split charge rules used to allocate your charges between your Cost Category values.
+    /// </p>
+    pub split_charge_rules:
+        std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
 }
 impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -8949,6 +8991,7 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
         formatter.field("rule_version", &self.rule_version);
         formatter.field("rules", &self.rules);
         formatter.field("default_value", &self.default_value);
+        formatter.field("split_charge_rules", &self.split_charge_rules);
         formatter.finish()
     }
 }
@@ -8956,9 +8999,7 @@ impl std::fmt::Debug for CreateCostCategoryDefinitionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalySubscriptionInput {
-    /// <p>
-    /// The cost anomaly subscription object that you want to create.
-    /// </p>
+    /// <p>The cost anomaly subscription object that you want to create. </p>
     pub anomaly_subscription: std::option::Option<crate::model::AnomalySubscription>,
 }
 impl std::fmt::Debug for CreateAnomalySubscriptionInput {
@@ -8972,7 +9013,7 @@ impl std::fmt::Debug for CreateAnomalySubscriptionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyMonitorInput {
-    /// <p> The cost anomaly detection monitor object that you want to create.</p>
+    /// <p>The cost anomaly detection monitor object that you want to create.</p>
     pub anomaly_monitor: std::option::Option<crate::model::AnomalyMonitor>,
 }
 impl std::fmt::Debug for CreateAnomalyMonitorInput {

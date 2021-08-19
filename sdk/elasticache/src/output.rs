@@ -349,7 +349,7 @@ impl RebootCacheClusterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RebalanceSlotsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -376,7 +376,7 @@ pub mod rebalance_slots_in_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -862,7 +862,7 @@ impl ModifyReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ModifyGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -889,7 +889,7 @@ pub mod modify_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -1292,7 +1292,7 @@ impl IncreaseReplicaCountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IncreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -1319,7 +1319,7 @@ pub mod increase_node_groups_in_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -1360,7 +1360,7 @@ impl IncreaseNodeGroupsInGlobalReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FailoverGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -1387,7 +1387,7 @@ pub mod failover_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -1427,7 +1427,7 @@ impl FailoverGlobalReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisassociateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -1454,7 +1454,7 @@ pub mod disassociate_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -3056,7 +3056,7 @@ impl DeleteReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -3083,7 +3083,7 @@ pub mod delete_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -3308,7 +3308,7 @@ impl DecreaseReplicaCountOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DecreaseNodeGroupsInGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -3335,7 +3335,7 @@ pub mod decrease_node_groups_in_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>
@@ -3769,7 +3769,7 @@ impl CreateReplicationGroupOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalReplicationGroupOutput {
-    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+    /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
     /// cluster automatically replicates updates to the secondary cluster.</p>
     /// <ul>
     /// <li>
@@ -3796,7 +3796,7 @@ pub mod create_global_replication_group_output {
             std::option::Option<crate::model::GlobalReplicationGroup>,
     }
     impl Builder {
-        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+        /// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
         /// cluster automatically replicates updates to the secondary cluster.</p>
         /// <ul>
         /// <li>

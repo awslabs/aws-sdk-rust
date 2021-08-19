@@ -3604,8 +3604,8 @@ pub mod delete_vpc_association_authorization_input {
         pub(crate) vpc: std::option::Option<crate::model::Vpc>,
     }
     impl Builder {
-        /// <p>When removing authorization to associate a VPC that was created by one account with a hosted zone
-        /// that was created with a different account, the ID of the hosted zone.</p>
+        /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone
+        /// that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hosted_zone_id = Some(input.into());
             self
@@ -3617,8 +3617,8 @@ pub mod delete_vpc_association_authorization_input {
             self.hosted_zone_id = input;
             self
         }
-        /// <p>When removing authorization to associate a VPC that was created by one account with a hosted zone
-        /// that was created with a different account, a complex type that includes the ID and region of the VPC.</p>
+        /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone
+        /// that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
         pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.vpc = Some(input);
             self
@@ -7515,7 +7515,7 @@ pub mod list_hosted_zones_by_name_input {
     impl Builder {
         /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to
         /// specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of
-        /// the hosted zones that were created by the current account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+        /// the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
         /// <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
         pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.dns_name = Some(input.into());
@@ -7882,7 +7882,7 @@ pub mod list_query_logging_configs_input {
         /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in
         /// <code>HostedZoneId</code>. </p>
         /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations
-        /// that are associated with the current account.</p>
+        /// that are associated with the current Amazon Web Services account.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.hosted_zone_id = Some(input.into());
             self
@@ -7894,7 +7894,7 @@ pub mod list_query_logging_configs_input {
             self.hosted_zone_id = input;
             self
         }
-        /// <p>(Optional) If the current account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
         /// to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
@@ -7908,7 +7908,7 @@ pub mod list_query_logging_configs_input {
             self
         }
         /// <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request.
-        /// If the current account has more than <code>MaxResults</code> configurations, use the value of
+        /// If the current Amazon Web Services account has more than <code>MaxResults</code> configurations, use the value of
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
         /// in the response to get the next page of results.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
@@ -11975,7 +11975,7 @@ impl std::fmt::Debug for ListTrafficPolicyInstancesByHostedZoneInput {
     }
 }
 
-/// <p>A request to get information about the traffic policy instances that you created by using the current account.</p>
+/// <p>A request to get information about the traffic policy instances that you created by using the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPolicyInstancesInput {
@@ -12022,7 +12022,7 @@ impl std::fmt::Debug for ListTrafficPolicyInstancesInput {
 }
 
 /// <p>A complex type that contains the information about the request to list the traffic policies that are associated
-/// with the current account.</p>
+/// with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPoliciesInput {
@@ -12099,7 +12099,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
     }
 }
 
-/// <p>A request to get a list of the reusable delegation sets that are associated with the current account.</p>
+/// <p>A request to get a list of the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReusableDelegationSetsInput {
@@ -12202,16 +12202,16 @@ pub struct ListQueryLoggingConfigsInput {
     /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in
     /// <code>HostedZoneId</code>. </p>
     /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations
-    /// that are associated with the current account.</p>
+    /// that are associated with the current Amazon Web Services account.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
-    /// <p>(Optional) If the current account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
+    /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
     /// to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
     /// for <code>NextToken</code> in the request.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request.
-    /// If the current account has more than <code>MaxResults</code> configurations, use the value of
+    /// If the current Amazon Web Services account has more than <code>MaxResults</code> configurations, use the value of
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
     /// in the response to get the next page of results.</p>
     /// <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
@@ -12227,7 +12227,7 @@ impl std::fmt::Debug for ListQueryLoggingConfigsInput {
     }
 }
 
-/// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which account created the hosted zones.</p>
+/// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account created the hosted zones.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByVpcInput {
@@ -12256,14 +12256,14 @@ impl std::fmt::Debug for ListHostedZonesByVpcInput {
     }
 }
 
-/// <p>Retrieves a list of the public and private hosted zones that are associated with the current account in ASCII order by domain
+/// <p>Retrieves a list of the public and private hosted zones that are associated with the current Amazon Web Services account in ASCII order by domain
 /// name. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesByNameInput {
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to
     /// specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of
-    /// the hosted zones that were created by the current account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+    /// the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
     /// <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
     pub dns_name: std::option::Option<std::string::String>,
     /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, do not include the <code>hostedzoneid</code> parameter.</p>
@@ -12287,7 +12287,7 @@ impl std::fmt::Debug for ListHostedZonesByNameInput {
     }
 }
 
-/// <p>A request to retrieve a list of the public and private hosted zones that are associated with the current account.</p>
+/// <p>A request to retrieve a list of the public and private hosted zones that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHostedZonesInput {
@@ -12315,7 +12315,7 @@ impl std::fmt::Debug for ListHostedZonesInput {
     }
 }
 
-/// <p>A request to retrieve a list of the health checks that are associated with the current account.</p>
+/// <p>A request to retrieve a list of the health checks that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHealthChecksInput {
@@ -12373,7 +12373,7 @@ impl std::fmt::Debug for ListGeoLocationsInput {
     }
 }
 
-/// <p>Request to get the number of traffic policy instances that are associated with the current account.</p>
+/// <p>Request to get the number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInstanceCountInput {}
@@ -12495,7 +12495,7 @@ impl std::fmt::Debug for GetHostedZoneLimitInput {
     }
 }
 
-/// <p>A request to retrieve a count of all the hosted zones that are associated with the current account.</p>
+/// <p>A request to retrieve a count of all the hosted zones that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneCountInput {}
@@ -12561,7 +12561,7 @@ impl std::fmt::Debug for GetHealthCheckLastFailureReasonInput {
     }
 }
 
-/// <p>A request for the number of health checks that are associated with the current account.</p>
+/// <p>A request for the number of health checks that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckCountInput {}
@@ -12777,15 +12777,15 @@ impl std::fmt::Debug for DisableHostedZoneDnssecInput {
 }
 
 /// <p>A complex type that contains information about the request to remove authorization to associate a VPC
-/// that was created by one account with a hosted zone that was created with a different account. </p>
+/// that was created by one Amazon Web Services account with a hosted zone that was created with a different Amazon Web Services account. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteVpcAssociationAuthorizationInput {
-    /// <p>When removing authorization to associate a VPC that was created by one account with a hosted zone
-    /// that was created with a different account, the ID of the hosted zone.</p>
+    /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone
+    /// that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
     pub hosted_zone_id: std::option::Option<std::string::String>,
-    /// <p>When removing authorization to associate a VPC that was created by one account with a hosted zone
-    /// that was created with a different account, a complex type that includes the ID and region of the VPC.</p>
+    /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone
+    /// that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
     pub vpc: std::option::Option<crate::model::Vpc>,
 }
 impl std::fmt::Debug for DeleteVpcAssociationAuthorizationInput {

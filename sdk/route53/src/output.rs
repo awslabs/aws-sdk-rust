@@ -995,7 +995,7 @@ impl ListTrafficPolicyInstancesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListTrafficPoliciesOutput {
-    /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current account.</p>
+    /// <p>A list that contains one <code>TrafficPolicySummary</code> element for each traffic policy that was created by the current Amazon Web Services account.</p>
     pub traffic_policy_summaries:
         std::option::Option<std::vec::Vec<crate::model::TrafficPolicySummary>>,
     /// <p>A flag that indicates whether there are more traffic policies to be listed. If the response was truncated, you can get the next group of
@@ -1202,12 +1202,12 @@ impl ListTagsForResourceOutput {
     }
 }
 
-/// <p>A complex type that contains information about the reusable delegation sets that are associated with the current account.</p>
+/// <p>A complex type that contains information about the reusable delegation sets that are associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListReusableDelegationSetsOutput {
     /// <p>A complex type that contains one <code>DelegationSet</code> element for each reusable delegation set that was created
-    /// by the current account.</p>
+    /// by the current Amazon Web Services account.</p>
     pub delegation_sets: std::option::Option<std::vec::Vec<crate::model::DelegationSet>>,
     /// <p>For the second and subsequent calls to <code>ListReusableDelegationSets</code>, <code>Marker</code> is the value that you specified
     /// for the <code>marker</code> parameter in the request that produced the current response.</p>
@@ -1473,9 +1473,9 @@ impl ListResourceRecordSetsOutput {
 pub struct ListQueryLoggingConfigsOutput {
     /// <p>An array that contains one
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_QueryLoggingConfig.html">QueryLoggingConfig</a> element
-    /// for each configuration for DNS query logging that is associated with the current account.</p>
+    /// for each configuration for DNS query logging that is associated with the current Amazon Web Services account.</p>
     pub query_logging_configs: std::option::Option<std::vec::Vec<crate::model::QueryLoggingConfig>>,
-    /// <p>If a response includes the last of the query logging configurations that are associated with the current account,
+    /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account,
     /// <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
@@ -1518,7 +1518,7 @@ pub mod list_query_logging_configs_output {
             self.query_logging_configs = input;
             self
         }
-        /// <p>If a response includes the last of the query logging configurations that are associated with the current account,
+        /// <p>If a response includes the last of the query logging configurations that are associated with the current Amazon Web Services account,
         /// <code>NextToken</code> doesn't appear in the response.</p>
         /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html">ListQueryLoggingConfigs</a>
@@ -1920,7 +1920,7 @@ impl ListHostedZonesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListHealthChecksOutput {
     /// <p>A complex type that contains one <code>HealthCheck</code> element for each health check that is associated with the current
-    /// account.</p>
+    /// Amazon Web Services account.</p>
     pub health_checks: std::option::Option<std::vec::Vec<crate::model::HealthCheck>>,
     /// <p>For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code> is the value that you specified for the
     /// <code>marker</code> parameter in the previous request.</p>
@@ -2186,7 +2186,7 @@ impl ListGeoLocationsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTrafficPolicyInstanceCountOutput {
-    /// <p>The number of traffic policy instances that are associated with the current account.</p>
+    /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
     pub traffic_policy_instance_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for GetTrafficPolicyInstanceCountOutput {
@@ -2208,7 +2208,7 @@ pub mod get_traffic_policy_instance_count_output {
         pub(crate) traffic_policy_instance_count: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The number of traffic policy instances that are associated with the current account.</p>
+        /// <p>The number of traffic policy instances that are associated with the current Amazon Web Services account.</p>
         pub fn traffic_policy_instance_count(mut self, input: i32) -> Self {
             self.traffic_policy_instance_count = Some(input);
             self
@@ -2580,7 +2580,7 @@ impl GetHostedZoneLimitOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHostedZoneCountOutput {
-    /// <p>The total number of public and private hosted zones that are associated with the current account.</p>
+    /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
     pub hosted_zone_count: std::option::Option<i64>,
 }
 impl std::fmt::Debug for GetHostedZoneCountOutput {
@@ -2599,7 +2599,7 @@ pub mod get_hosted_zone_count_output {
         pub(crate) hosted_zone_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The total number of public and private hosted zones that are associated with the current account.</p>
+        /// <p>The total number of public and private hosted zones that are associated with the current Amazon Web Services account.</p>
         pub fn hosted_zone_count(mut self, input: i64) -> Self {
             self.hosted_zone_count = Some(input);
             self
@@ -2826,7 +2826,7 @@ impl GetHealthCheckLastFailureReasonOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckCountOutput {
-    /// <p>The number of health checks associated with the current account.</p>
+    /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
     pub health_check_count: std::option::Option<i64>,
 }
 impl std::fmt::Debug for GetHealthCheckCountOutput {
@@ -2845,7 +2845,7 @@ pub mod get_health_check_count_output {
         pub(crate) health_check_count: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The number of health checks associated with the current account.</p>
+        /// <p>The number of health checks associated with the current Amazon Web Services account.</p>
         pub fn health_check_count(mut self, input: i64) -> Self {
             self.health_check_count = Some(input);
             self
@@ -2874,7 +2874,7 @@ impl GetHealthCheckCountOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetHealthCheckOutput {
     /// <p>A complex type that contains information about one health check that is associated with
-    /// the current account.</p>
+    /// the current Amazon Web Services account.</p>
     pub health_check: std::option::Option<crate::model::HealthCheck>,
 }
 impl std::fmt::Debug for GetHealthCheckOutput {
@@ -2894,7 +2894,7 @@ pub mod get_health_check_output {
     }
     impl Builder {
         /// <p>A complex type that contains information about one health check that is associated with
-        /// the current account.</p>
+        /// the current Amazon Web Services account.</p>
         pub fn health_check(mut self, input: crate::model::HealthCheck) -> Self {
             self.health_check = Some(input);
             self

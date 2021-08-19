@@ -1,0 +1,208 @@
+{
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://sts.us-east-1.amazonaws.com/",
+            "headers": {
+              "user-agent": [
+                "aws-sdk-rust/0.1.0 os/macos lang/rust/1.55.0-nightly"
+              ],
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.1.0 api/sts/0.0.15-alpha os/macos lang/rust/1.55.0-nightly"
+              ],
+              "host": [
+                "sts.us-east-1.amazonaws.com"
+              ],
+              "content-length": [
+                "1023"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleArn=arn%3Aaws%3Aiam%3A%3A134095065856%3Arole%2Fs3-reader&RoleSessionName=web-identity-token-profile-1629230104118&WebIdentityToken=eyJhbGciOiJSUzI1NiIsImtpZCI6IjQxOTg5NTBhMWU0Y2U3YjIxZDRhYTBjNTRkM2EzNmFhZGI0ZWRiOTcifQ.eyJhdWQiOlsibXktY2x1c3Rlci5zazEudXMtd2VzdC0yLmVrcy5hbWF6b25hd3MuY29tIl0sImV4cCI6MTYyOTMxNTkyMiwiaWF0IjoxNjI5MjI5NTIyLCJpc3MiOiJodHRwczovL3MzLXVzLXdlc3QtMi5hbWF6b25hd3MuY29tL29pZGMtdGVzdC1jZG1oZmpneHphdXh5eWZtcXBpemNxdXlmamlycmRvbyIsImt1YmVybmV0ZXMuaW8iOnsiYm91bmRPYmplY3RSZWYiOnsiYXBpVmVyc2lvbiI6InYxIiwia2luZCI6IlBvZCIsIm5hbWUiOiJteS1wb2QteHZmZyIsInVpZCI6IjBkMjY3OGUyLWQ5M2UtNGE1Mi1hOTMxLTAwMTRiM2VlZTAwYiJ9LCJzZXJ2aWNlQWNjb3VudFVJRCI6IjY2YzE4YjVmLTAwZDgtNDI5Yi1hOGUwLWU4NWMzMjM4NGIyYSJ9LCJuYmYiOjE2MjkyMjk1MjIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.eAlxZBmTcw_VgMCznEKAg-hmJa_lJJd-pn1VY04sztezWvt1bmPCsD9K2B7aw1sJvu08zLq52PBrZmqHA6KIFChgZOCvVwf3K7l6QTkEEMRIkb_P2a16o9_2LQRhDgNWy2p2DxzcWgzZvRNyy87hsRzonBBY5Z3U56uTAZrgha0%0A"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-length": [
+                  "2300"
+                ],
+                "x-amzn-requestid": [
+                  "bcbd8b6a-8a55-4610-b2d7-455d198bc197"
+                ],
+                "vary": [
+                  "accept-encoding"
+                ],
+                "content-type": [
+                  "text/xml"
+                ],
+                "date": [
+                  "Tue, 17 Aug 2021 19:55:04 GMT"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<AssumeRoleWithWebIdentityResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleWithWebIdentityResult>\n    <Audience>my-cluster.sk1.us-west-2.eks.amazonaws.com</Audience>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROARABCDEFGHIJKLMNOP:web-identity-token-profile-1629230104118</AssumedRoleId>\n      <Arn>arn:aws:sts::123456789012:assumed-role/s3-reader/web-identity-token-profile-1629230104118</Arn>\n    </AssumedRoleUser>\n    <Provider>arn:aws:iam::123456789012:oidc-provider/s3-us-west-2.amazonaws.com/oidc-test-cdmhfjgxzauxyyfmqpizcquyfjirrdoo</Provider>\n    <Credentials>\n      <AccessKeyId>ASIARABCDEFGHIJKLMNOP</AccessKeyId>\n      <SecretAccessKey>TESTSECRET</SecretAccessKey>\n      <SessionToken>TESTSESSIONTOKEN</SessionToken>\n      <Expiration>2021-08-17T20:55:04Z</Expiration>\n    </Credentials>\n    <SubjectFromWebIdentityToken>system:serviceaccount:default:default</SubjectFromWebIdentityToken>\n  </AssumeRoleWithWebIdentityResult>\n  <ResponseMetadata>\n    <RequestId>bcbd8b6a-8a55-4610-b2d7-455d198bc197</RequestId>\n  </ResponseMetadata>\n</AssumeRoleWithWebIdentityResponse>\n"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://sts.us-east-1.amazonaws.com/",
+            "headers": {
+              "host": [
+                "sts.us-east-1.amazonaws.com"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.1.0 api/sts/0.0.15-alpha os/macos lang/rust/1.55.0-nightly"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.1.0 os/macos lang/rust/1.55.0-nightly"
+              ],
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "authorization": [
+                "AWS4-HMAC-SHA256 Credential=ASIARABCDEFGHIJKLMNOP/20210817/us-east-1/sts/aws4_request, SignedHeaders=content-length;content-type;host;x-amz-date;x-amz-security-token;x-amz-user-agent, Signature=76912544a9c89063e854be6de0874d48f6d0b845ab34471c11c51300460d0c40"
+              ],
+              "x-amz-security-token": [
+                "IQoJb3JpZ2luX2VjEFQaCXVzLWVhc3QtMSJHMEUCIBULwfcnV0uXBLgeQdjsmpMFsBMSulmXDoBTUZlI2FCUAiEA8sIiChNM6iwFH1lWHP1sJ4DTBB56Kww75rgxjyzP+1kq8QQIfRABGgwxMzQwOTUwNjU4NTYiDC7wp9wVlaO+bkVT0yrOBNn2tXCJLQcYot38/PxMmLxr00t6VkcgtAC5uBuZLTNOxv90Lt1WFQKJPFYc0uPySuFMIFgAaPqJZOoiNw0PqsifgGXytnEQvC3cXRJdzUfULLcg3hMh+xmZIz3Uz+j8GDbVZEBxCaSBQ9cwk/R3YM6BW1scLpGvLdv/fqHiUnBOW14/XsAQXXvKh/jjCLRfSjU//qtZ6z3qi2l0Nv2OfV4+MYx7MeGGaRrMic9ZIZnXh5Xk6xLLPGUZYMyVEFMYkaUBqja81f0Y1ENbfUNiKMgiRn4qvIUl7bivSqcJP/6yPcKzr3AvIbkpXo7miAL9TZ1wE+IP84zX9OXvGLj4Ri6f/gerzBtiyhTJu7am2WFp+VuI3SOixrOiawxZbGHQKekvz6GSzyCAE50QHnvjlrEjGLct0EoDX5RWWFlhndaNNxYzED+olvL3zTRdDhorA+64p7L5B/NzIJboKYPOoBzOoS15GBGAd82KrtKetZDLlwEj5cUpv468c/FpZhKxV/oQ93PXIWK0Z7Hl2GTifUepfYcfduvEd11GfECr4yGNA4nVNCTAg2TUBxJv0fZFcNPI+XAbuSIgjliUDWEj8ma81fDIMT0bISUR5QStZZcA8pFKyDagpc7CJxkbC3RGq/cvjWxjd/A2j6b4N27NG0GKaRzGQq2i+56OOGD7qHCO3vVFiVSOKYyoKE8UAEM9WfpPXpmDY+sgyYUOLVSjEfg4SinfI3mV7AgsmbBhyDgxDLbALe3XC03QdGn8ctJ5rcGM71lQVS6nYXhSIYGxMJio8IgGOpUBDcfdTwPwQ333opNF9SBnuuvzMPyp4xf8K0+KNDIPBGKrEQyzJOuhd8N0fvXquzGcsUvQ7hUYVp544kvBZKqQSqDMGFbzc28M7YxFh+36mNr+H9PDAccCdW4k6DxZ0xWmXnoOWg5GeWSKeslaEYWJijCbX3kgS+j1FNSc4yL3pNPTIn2kELHVNI4Xu2JnrfklII07TIE="
+              ],
+              "x-amz-date": [
+                "20210817T195504Z"
+              ],
+              "content-length": [
+                "145"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=AssumeRole&Version=2011-06-15&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789%3Arole%2FRoleA&RoleSessionName=assume-role-from-profile-1629230104880"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 200,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-length": [
+                  "431"
+                ],
+                "content-type": [
+                  "text/xml"
+                ],
+                "x-amzn-requestid": [
+                  "a91154b8-3427-402d-8053-7c0ad696bbfd"
+                ],
+                "date": [
+                  "Tue, 17 Aug 2021 19:55:04 GMT"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<AssumeRoleResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <AssumeRoleResult>\n    <AssumedRoleUser>\n      <AssumedRoleId>AROARABCDEFGHIJKLMNOP:assume-role-provider-session</AssumedRoleId>\n      <Arn>arn:aws:sts::123456789012:assumed-role/integration-test/assume-role-provider-session</Arn>\n    </AssumedRoleUser>\n    <Credentials>\n      <AccessKeyId>ASIARTESTID</AccessKeyId>\n      <SecretAccessKey>TESTSECRETKEY</SecretAccessKey>\n      <SessionToken>TESTSESSIONTOKEN</SessionToken>\n      <Expiration>2021-08-05T19:58:02Z</Expiration>\n    </Credentials>\n  </AssumeRoleResult>\n  <ResponseMetadata>\n    <RequestId>c2e971c2-702d-4124-9b1f-1670febbea18</RequestId>\n  </ResponseMetadata>\n</AssumeRoleResponse>\n"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 1,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ],
+  "docs": "assume role web identity chained into standard assume role",
+  "version": "V0"
+}

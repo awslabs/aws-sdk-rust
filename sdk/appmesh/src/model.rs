@@ -1139,7 +1139,9 @@ pub enum VirtualServiceProvider {
     VirtualRouter(crate::model::VirtualRouterServiceProvider),
 }
 impl VirtualServiceProvider {
-    pub fn as_virtual_node(&self) -> Result<&crate::model::VirtualNodeServiceProvider, &Self> {
+    pub fn as_virtual_node(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualNodeServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualNode(val) = &self {
             Ok(&val)
         } else {
@@ -1149,7 +1151,9 @@ impl VirtualServiceProvider {
     pub fn is_virtual_node(&self) -> bool {
         self.as_virtual_node().is_ok()
     }
-    pub fn as_virtual_router(&self) -> Result<&crate::model::VirtualRouterServiceProvider, &Self> {
+    pub fn as_virtual_router(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualRouterServiceProvider, &Self> {
         if let VirtualServiceProvider::VirtualRouter(val) = &self {
             Ok(&val)
         } else {
@@ -3087,7 +3091,7 @@ pub enum GrpcRouteMetadataMatchMethod {
     Suffix(std::string::String),
 }
 impl GrpcRouteMetadataMatchMethod {
-    pub fn as_exact(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Exact(val) = &self {
             Ok(&val)
         } else {
@@ -3097,7 +3101,7 @@ impl GrpcRouteMetadataMatchMethod {
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -3107,7 +3111,7 @@ impl GrpcRouteMetadataMatchMethod {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_range(&self) -> Result<&crate::model::MatchRange, &Self> {
+    pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let GrpcRouteMetadataMatchMethod::Range(val) = &self {
             Ok(&val)
         } else {
@@ -3117,7 +3121,7 @@ impl GrpcRouteMetadataMatchMethod {
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    pub fn as_regex(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Regex(val) = &self {
             Ok(&val)
         } else {
@@ -3127,7 +3131,7 @@ impl GrpcRouteMetadataMatchMethod {
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    pub fn as_suffix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcRouteMetadataMatchMethod::Suffix(val) = &self {
             Ok(&val)
         } else {
@@ -3899,7 +3903,7 @@ pub enum HeaderMatchMethod {
     Suffix(std::string::String),
 }
 impl HeaderMatchMethod {
-    pub fn as_exact(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Exact(val) = &self {
             Ok(&val)
         } else {
@@ -3909,7 +3913,7 @@ impl HeaderMatchMethod {
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -3919,7 +3923,7 @@ impl HeaderMatchMethod {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_range(&self) -> Result<&crate::model::MatchRange, &Self> {
+    pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let HeaderMatchMethod::Range(val) = &self {
             Ok(&val)
         } else {
@@ -3929,7 +3933,7 @@ impl HeaderMatchMethod {
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    pub fn as_regex(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Regex(val) = &self {
             Ok(&val)
         } else {
@@ -3939,7 +3943,7 @@ impl HeaderMatchMethod {
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    pub fn as_suffix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let HeaderMatchMethod::Suffix(val) = &self {
             Ok(&val)
         } else {
@@ -4961,7 +4965,7 @@ pub enum AccessLog {
 }
 impl AccessLog {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_file(&self) -> Result<&crate::model::FileAccessLog, &Self> {
+    pub fn as_file(&self) -> std::result::Result<&crate::model::FileAccessLog, &Self> {
         if let AccessLog::File(val) = &self {
             Ok(&val)
         } else {
@@ -5416,7 +5420,9 @@ pub enum TlsValidationContextTrust {
     Sds(crate::model::TlsValidationContextSdsTrust),
 }
 impl TlsValidationContextTrust {
-    pub fn as_acm(&self) -> Result<&crate::model::TlsValidationContextAcmTrust, &Self> {
+    pub fn as_acm(
+        &self,
+    ) -> std::result::Result<&crate::model::TlsValidationContextAcmTrust, &Self> {
         if let TlsValidationContextTrust::Acm(val) = &self {
             Ok(&val)
         } else {
@@ -5426,7 +5432,9 @@ impl TlsValidationContextTrust {
     pub fn is_acm(&self) -> bool {
         self.as_acm().is_ok()
     }
-    pub fn as_file(&self) -> Result<&crate::model::TlsValidationContextFileTrust, &Self> {
+    pub fn as_file(
+        &self,
+    ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
         if let TlsValidationContextTrust::File(val) = &self {
             Ok(&val)
         } else {
@@ -5436,7 +5444,9 @@ impl TlsValidationContextTrust {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    pub fn as_sds(&self) -> Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
+    pub fn as_sds(
+        &self,
+    ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
         if let TlsValidationContextTrust::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -5620,7 +5630,7 @@ pub enum ClientTlsCertificate {
     Sds(crate::model::ListenerTlsSdsCertificate),
 }
 impl ClientTlsCertificate {
-    pub fn as_file(&self) -> Result<&crate::model::ListenerTlsFileCertificate, &Self> {
+    pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
         if let ClientTlsCertificate::File(val) = &self {
             Ok(&val)
         } else {
@@ -5630,7 +5640,7 @@ impl ClientTlsCertificate {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    pub fn as_sds(&self) -> Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
         if let ClientTlsCertificate::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -5770,7 +5780,9 @@ pub enum Backend {
 }
 impl Backend {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_virtual_service(&self) -> Result<&crate::model::VirtualServiceBackend, &Self> {
+    pub fn as_virtual_service(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualServiceBackend, &Self> {
         if let Backend::VirtualService(val) = &self {
             Ok(&val)
         } else {
@@ -5994,7 +6006,9 @@ pub enum VirtualNodeConnectionPool {
     Tcp(crate::model::VirtualNodeTcpConnectionPool),
 }
 impl VirtualNodeConnectionPool {
-    pub fn as_grpc(&self) -> Result<&crate::model::VirtualNodeGrpcConnectionPool, &Self> {
+    pub fn as_grpc(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualNodeGrpcConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Grpc(val) = &self {
             Ok(&val)
         } else {
@@ -6004,7 +6018,9 @@ impl VirtualNodeConnectionPool {
     pub fn is_grpc(&self) -> bool {
         self.as_grpc().is_ok()
     }
-    pub fn as_http(&self) -> Result<&crate::model::VirtualNodeHttpConnectionPool, &Self> {
+    pub fn as_http(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualNodeHttpConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Http(val) = &self {
             Ok(&val)
         } else {
@@ -6014,7 +6030,9 @@ impl VirtualNodeConnectionPool {
     pub fn is_http(&self) -> bool {
         self.as_http().is_ok()
     }
-    pub fn as_http2(&self) -> Result<&crate::model::VirtualNodeHttp2ConnectionPool, &Self> {
+    pub fn as_http2(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualNodeHttp2ConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Http2(val) = &self {
             Ok(&val)
         } else {
@@ -6024,7 +6042,9 @@ impl VirtualNodeConnectionPool {
     pub fn is_http2(&self) -> bool {
         self.as_http2().is_ok()
     }
-    pub fn as_tcp(&self) -> Result<&crate::model::VirtualNodeTcpConnectionPool, &Self> {
+    pub fn as_tcp(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualNodeTcpConnectionPool, &Self> {
         if let VirtualNodeConnectionPool::Tcp(val) = &self {
             Ok(&val)
         } else {
@@ -6355,7 +6375,7 @@ pub enum ListenerTimeout {
     Tcp(crate::model::TcpTimeout),
 }
 impl ListenerTimeout {
-    pub fn as_grpc(&self) -> Result<&crate::model::GrpcTimeout, &Self> {
+    pub fn as_grpc(&self) -> std::result::Result<&crate::model::GrpcTimeout, &Self> {
         if let ListenerTimeout::Grpc(val) = &self {
             Ok(&val)
         } else {
@@ -6365,7 +6385,7 @@ impl ListenerTimeout {
     pub fn is_grpc(&self) -> bool {
         self.as_grpc().is_ok()
     }
-    pub fn as_http(&self) -> Result<&crate::model::HttpTimeout, &Self> {
+    pub fn as_http(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
         if let ListenerTimeout::Http(val) = &self {
             Ok(&val)
         } else {
@@ -6375,7 +6395,7 @@ impl ListenerTimeout {
     pub fn is_http(&self) -> bool {
         self.as_http().is_ok()
     }
-    pub fn as_http2(&self) -> Result<&crate::model::HttpTimeout, &Self> {
+    pub fn as_http2(&self) -> std::result::Result<&crate::model::HttpTimeout, &Self> {
         if let ListenerTimeout::Http2(val) = &self {
             Ok(&val)
         } else {
@@ -6385,7 +6405,7 @@ impl ListenerTimeout {
     pub fn is_http2(&self) -> bool {
         self.as_http2().is_ok()
     }
-    pub fn as_tcp(&self) -> Result<&crate::model::TcpTimeout, &Self> {
+    pub fn as_tcp(&self) -> std::result::Result<&crate::model::TcpTimeout, &Self> {
         if let ListenerTimeout::Tcp(val) = &self {
             Ok(&val)
         } else {
@@ -6748,7 +6768,9 @@ pub enum ListenerTlsValidationContextTrust {
     Sds(crate::model::TlsValidationContextSdsTrust),
 }
 impl ListenerTlsValidationContextTrust {
-    pub fn as_file(&self) -> Result<&crate::model::TlsValidationContextFileTrust, &Self> {
+    pub fn as_file(
+        &self,
+    ) -> std::result::Result<&crate::model::TlsValidationContextFileTrust, &Self> {
         if let ListenerTlsValidationContextTrust::File(val) = &self {
             Ok(&val)
         } else {
@@ -6758,7 +6780,9 @@ impl ListenerTlsValidationContextTrust {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    pub fn as_sds(&self) -> Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
+    pub fn as_sds(
+        &self,
+    ) -> std::result::Result<&crate::model::TlsValidationContextSdsTrust, &Self> {
         if let ListenerTlsValidationContextTrust::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -6782,7 +6806,7 @@ pub enum ListenerTlsCertificate {
     Sds(crate::model::ListenerTlsSdsCertificate),
 }
 impl ListenerTlsCertificate {
-    pub fn as_acm(&self) -> Result<&crate::model::ListenerTlsAcmCertificate, &Self> {
+    pub fn as_acm(&self) -> std::result::Result<&crate::model::ListenerTlsAcmCertificate, &Self> {
         if let ListenerTlsCertificate::Acm(val) = &self {
             Ok(&val)
         } else {
@@ -6792,7 +6816,7 @@ impl ListenerTlsCertificate {
     pub fn is_acm(&self) -> bool {
         self.as_acm().is_ok()
     }
-    pub fn as_file(&self) -> Result<&crate::model::ListenerTlsFileCertificate, &Self> {
+    pub fn as_file(&self) -> std::result::Result<&crate::model::ListenerTlsFileCertificate, &Self> {
         if let ListenerTlsCertificate::File(val) = &self {
             Ok(&val)
         } else {
@@ -6802,7 +6826,7 @@ impl ListenerTlsCertificate {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    pub fn as_sds(&self) -> Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
+    pub fn as_sds(&self) -> std::result::Result<&crate::model::ListenerTlsSdsCertificate, &Self> {
         if let ListenerTlsCertificate::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -6926,7 +6950,9 @@ pub enum ServiceDiscovery {
     Dns(crate::model::DnsServiceDiscovery),
 }
 impl ServiceDiscovery {
-    pub fn as_aws_cloud_map(&self) -> Result<&crate::model::AwsCloudMapServiceDiscovery, &Self> {
+    pub fn as_aws_cloud_map(
+        &self,
+    ) -> std::result::Result<&crate::model::AwsCloudMapServiceDiscovery, &Self> {
         if let ServiceDiscovery::AwsCloudMap(val) = &self {
             Ok(&val)
         } else {
@@ -6936,7 +6962,7 @@ impl ServiceDiscovery {
     pub fn is_aws_cloud_map(&self) -> bool {
         self.as_aws_cloud_map().is_ok()
     }
-    pub fn as_dns(&self) -> Result<&crate::model::DnsServiceDiscovery, &Self> {
+    pub fn as_dns(&self) -> std::result::Result<&crate::model::DnsServiceDiscovery, &Self> {
         if let ServiceDiscovery::Dns(val) = &self {
             Ok(&val)
         } else {
@@ -7749,7 +7775,9 @@ pub enum VirtualGatewayAccessLog {
 }
 impl VirtualGatewayAccessLog {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_file(&self) -> Result<&crate::model::VirtualGatewayFileAccessLog, &Self> {
+    pub fn as_file(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayFileAccessLog, &Self> {
         if let VirtualGatewayAccessLog::File(val) = &self {
             Ok(&val)
         } else {
@@ -7932,7 +7960,9 @@ pub enum VirtualGatewayConnectionPool {
     Http2(crate::model::VirtualGatewayHttp2ConnectionPool),
 }
 impl VirtualGatewayConnectionPool {
-    pub fn as_grpc(&self) -> Result<&crate::model::VirtualGatewayGrpcConnectionPool, &Self> {
+    pub fn as_grpc(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayGrpcConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Grpc(val) = &self {
             Ok(&val)
         } else {
@@ -7942,7 +7972,9 @@ impl VirtualGatewayConnectionPool {
     pub fn is_grpc(&self) -> bool {
         self.as_grpc().is_ok()
     }
-    pub fn as_http(&self) -> Result<&crate::model::VirtualGatewayHttpConnectionPool, &Self> {
+    pub fn as_http(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayHttpConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Http(val) = &self {
             Ok(&val)
         } else {
@@ -7952,7 +7984,9 @@ impl VirtualGatewayConnectionPool {
     pub fn is_http(&self) -> bool {
         self.as_http().is_ok()
     }
-    pub fn as_http2(&self) -> Result<&crate::model::VirtualGatewayHttp2ConnectionPool, &Self> {
+    pub fn as_http2(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayHttp2ConnectionPool, &Self> {
         if let VirtualGatewayConnectionPool::Http2(val) = &self {
             Ok(&val)
         } else {
@@ -8267,7 +8301,9 @@ pub enum VirtualGatewayListenerTlsCertificate {
     Sds(crate::model::VirtualGatewayListenerTlsSdsCertificate),
 }
 impl VirtualGatewayListenerTlsCertificate {
-    pub fn as_acm(&self) -> Result<&crate::model::VirtualGatewayListenerTlsAcmCertificate, &Self> {
+    pub fn as_acm(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsAcmCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::Acm(val) = &self {
             Ok(&val)
         } else {
@@ -8279,7 +8315,7 @@ impl VirtualGatewayListenerTlsCertificate {
     }
     pub fn as_file(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::File(val) = &self {
             Ok(&val)
         } else {
@@ -8289,7 +8325,9 @@ impl VirtualGatewayListenerTlsCertificate {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    pub fn as_sds(&self) -> Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+    pub fn as_sds(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
         if let VirtualGatewayListenerTlsCertificate::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -8566,7 +8604,8 @@ pub enum VirtualGatewayListenerTlsValidationContextTrust {
 impl VirtualGatewayListenerTlsValidationContextTrust {
     pub fn as_file(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
+    {
         if let VirtualGatewayListenerTlsValidationContextTrust::File(val) = &self {
             Ok(&val)
         } else {
@@ -8578,7 +8617,7 @@ impl VirtualGatewayListenerTlsValidationContextTrust {
     }
     pub fn as_sds(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
         if let VirtualGatewayListenerTlsValidationContextTrust::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -9312,7 +9351,7 @@ pub enum VirtualGatewayTlsValidationContextTrust {
 impl VirtualGatewayTlsValidationContextTrust {
     pub fn as_acm(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextAcmTrust, &Self> {
         if let VirtualGatewayTlsValidationContextTrust::Acm(val) = &self {
             Ok(&val)
         } else {
@@ -9324,7 +9363,8 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
     pub fn as_file(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextFileTrust, &Self>
+    {
         if let VirtualGatewayTlsValidationContextTrust::File(val) = &self {
             Ok(&val)
         } else {
@@ -9336,7 +9376,7 @@ impl VirtualGatewayTlsValidationContextTrust {
     }
     pub fn as_sds(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayTlsValidationContextSdsTrust, &Self> {
         if let VirtualGatewayTlsValidationContextTrust::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -9419,7 +9459,7 @@ pub enum VirtualGatewayClientTlsCertificate {
 impl VirtualGatewayClientTlsCertificate {
     pub fn as_file(
         &self,
-    ) -> Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
+    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsFileCertificate, &Self> {
         if let VirtualGatewayClientTlsCertificate::File(val) = &self {
             Ok(&val)
         } else {
@@ -9429,7 +9469,9 @@ impl VirtualGatewayClientTlsCertificate {
     pub fn is_file(&self) -> bool {
         self.as_file().is_ok()
     }
-    pub fn as_sds(&self) -> Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
+    pub fn as_sds(
+        &self,
+    ) -> std::result::Result<&crate::model::VirtualGatewayListenerTlsSdsCertificate, &Self> {
         if let VirtualGatewayClientTlsCertificate::Sds(val) = &self {
             Ok(&val)
         } else {
@@ -10517,7 +10559,7 @@ pub enum GrpcMetadataMatchMethod {
     Suffix(std::string::String),
 }
 impl GrpcMetadataMatchMethod {
-    pub fn as_exact(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_exact(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Exact(val) = &self {
             Ok(&val)
         } else {
@@ -10527,7 +10569,7 @@ impl GrpcMetadataMatchMethod {
     pub fn is_exact(&self) -> bool {
         self.as_exact().is_ok()
     }
-    pub fn as_prefix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_prefix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Prefix(val) = &self {
             Ok(&val)
         } else {
@@ -10537,7 +10579,7 @@ impl GrpcMetadataMatchMethod {
     pub fn is_prefix(&self) -> bool {
         self.as_prefix().is_ok()
     }
-    pub fn as_range(&self) -> Result<&crate::model::MatchRange, &Self> {
+    pub fn as_range(&self) -> std::result::Result<&crate::model::MatchRange, &Self> {
         if let GrpcMetadataMatchMethod::Range(val) = &self {
             Ok(&val)
         } else {
@@ -10547,7 +10589,7 @@ impl GrpcMetadataMatchMethod {
     pub fn is_range(&self) -> bool {
         self.as_range().is_ok()
     }
-    pub fn as_regex(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_regex(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Regex(val) = &self {
             Ok(&val)
         } else {
@@ -10557,7 +10599,7 @@ impl GrpcMetadataMatchMethod {
     pub fn is_regex(&self) -> bool {
         self.as_regex().is_ok()
     }
-    pub fn as_suffix(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_suffix(&self) -> std::result::Result<&std::string::String, &Self> {
         if let GrpcMetadataMatchMethod::Suffix(val) = &self {
             Ok(&val)
         } else {

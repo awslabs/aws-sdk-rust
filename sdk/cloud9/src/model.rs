@@ -246,6 +246,56 @@ impl AsRef<str> for MemberPermissions {
     }
 }
 
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ManagedCredentialsAction {
+    Disable,
+    Enable,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ManagedCredentialsAction {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLE" => ManagedCredentialsAction::Disable,
+            "ENABLE" => ManagedCredentialsAction::Enable,
+            other => ManagedCredentialsAction::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ManagedCredentialsAction {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ManagedCredentialsAction::from(s))
+    }
+}
+impl ManagedCredentialsAction {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ManagedCredentialsAction::Disable => "DISABLE",
+            ManagedCredentialsAction::Enable => "ENABLE",
+            ManagedCredentialsAction::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLE", "ENABLE"]
+    }
+}
+impl AsRef<str> for ManagedCredentialsAction {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Metadata that is associated with Amazon Web Services resources. In particular, a name-value pair that
 /// can be associated with an Cloud9 development environment. There are two types of tags:
 /// <i>user tags</i> and <i>system tags</i>. A user tag is created

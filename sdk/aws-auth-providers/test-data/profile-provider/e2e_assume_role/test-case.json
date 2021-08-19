@@ -1,0 +1,12 @@
+{
+  "name": "e2e-assume-role",
+  "docs": "end to end successful role assumption",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1628193482
+    }
+  }
+}

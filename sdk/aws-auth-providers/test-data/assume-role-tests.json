@@ -291,7 +291,7 @@
       "selected_profile": "A"
     },
     "output": {
-      "Error": "could not find source profile A referenced from the root profile"
+      "Error": "No profiles were defined"
     }
   },
   {
@@ -389,7 +389,7 @@
       "selected_profile": "A"
     },
     "output": {
-      "Error": "CredentialLoop"
+      "Error": "profile formed an infinite loop"
     }
   },
   {
@@ -410,7 +410,100 @@
       "selected_profile": "A"
     },
     "output": {
-      "Error": "CredentialLoop"
+      "Error": "profile formed an infinite loop"
+    }
+  },
+  {
+    "docs": "web identity role",
+    "input": {
+      "profile": {
+        "A": {
+          "role_arn": "arn:aws:iam::123456789:role/RoleA",
+          "web_identity_token_file": "/var/token.jwt"
+        }
+      },
+      "selected_profile": "A"
+    },
+    "output": {
+      "ProfileChain": [
+        {
+          "WebIdentityToken": {
+            "role_arn": "arn:aws:iam::123456789:role/RoleA",
+            "web_identity_token_file": "/var/token.jwt"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "docs": "web identity role with session name",
+    "input": {
+      "profile": {
+        "A": {
+          "role_arn": "arn:aws:iam::123456789:role/RoleA",
+          "web_identity_token_file": "/var/token.jwt",
+          "role_session_name": "some_session_name"
+        }
+      },
+      "selected_profile": "A"
+    },
+    "output": {
+      "ProfileChain": [
+        {
+          "WebIdentityToken": {
+            "role_arn": "arn:aws:iam::123456789:role/RoleA",
+            "web_identity_token_file": "/var/token.jwt",
+            "role_session_name": "some_session_name"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "docs": "web identity role",
+    "input": {
+      "profile": {
+        "A": {
+          "web_identity_token_file": "/var/token.jwt"
+        }
+      },
+      "selected_profile": "A"
+    },
+    "output": {
+      "Error": "`role_arn` was missing"
+    }
+  },
+  {
+    "docs": "web identity token as source profile",
+    "input": {
+      "profile": {
+        "A": {
+          "role_arn": "arn:aws:iam::123456789:role/RoleA",
+          "source_profile": "B"
+        },
+        "B": {
+          "role_arn": "arn:aws:iam::123456789:role/RoleB",
+          "web_identity_token_file": "/var/token.jwt",
+          "role_session_name": "some_session_name"
+        }
+      },
+      "selected_profile": "A"
+    },
+    "output": {
+      "ProfileChain": [
+        {
+          "WebIdentityToken": {
+            "role_arn": "arn:aws:iam::123456789:role/RoleB",
+            "web_identity_token_file": "/var/token.jwt",
+            "role_session_name": "some_session_name"
+          }
+        },
+        {
+          "AssumeRole": {
+            "role_arn": "arn:aws:iam::123456789:role/RoleA"
+          }
+        }
+      ]
     }
   }
 ]

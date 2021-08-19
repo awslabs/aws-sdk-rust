@@ -2838,7 +2838,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>(Optional) If the current AWS account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
         /// to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
@@ -3274,12 +3274,12 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>OwnerId</code>: The AWS account number of the account that created the configuration</p>
+        /// <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ShareStatus</code>: Whether the configuration is shared with other AWS accounts or shared with the current account by
-        /// another AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+        /// <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by
+        /// another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -3580,7 +3580,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule group.</p>
+        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
         pub fn firewall_rule_group_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.firewall_rule_group_policy(input);
             self
@@ -3633,7 +3633,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An AWS Identity and Access Management policy statement that lists the query logging configurations that you want to share with another AWS account
+        /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
         /// and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section
         /// of the statement:</p>
         /// <ul>
@@ -3715,7 +3715,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_arn(input);
             self
         }
-        /// <p>An AWS Identity and Access Management policy statement that lists the rules that you want to share with another AWS account and the operations that you want the account
+        /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
         /// to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
         /// <ul>
         /// <li>

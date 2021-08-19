@@ -2116,15 +2116,15 @@ impl smithy_http::response::ParseStrictResponse for CreateInternetGateway {
     }
 }
 
-/// <p>Creates a 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
+/// <p>Creates an ED25519 or 2048-bit RSA key pair with the specified name. Amazon EC2 stores the public
 /// key and displays the private key for you to save to a file. The private key is returned
 /// as an unencrypted PEM encoded PKCS#1 private key. If a key with the specified name
 /// already exists, Amazon EC2 returns an error.</p>
-/// <p>You can have up to five thousand key pairs per Region.</p>
-/// <p>The key pair returned to you is available only in the Region in which you create it.
+/// <p>The key pair returned to you is available only in the Amazon Web Services Region in which you create it.
 /// If you prefer, you can create your own key pair using a third-party tool and upload it
 /// to any Region using <a>ImportKeyPair</a>.</p>
-/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a> in the
+/// <p>You can have up to 5,000 key pairs per Amazon Web Services Region.</p>
+/// <p>For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a> in the
 /// <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateKeyPair {
@@ -2722,9 +2722,9 @@ impl smithy_http::response::ParseStrictResponse for CreateRouteTable {
 /// <p>Creates a security group.</p>
 /// <p>A security group acts as a virtual firewall for your instance to control inbound and outbound traffic.
 /// For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security Groups</a> in
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 security groups</a> in
 /// the <i>Amazon Elastic Compute Cloud User Guide</i> and
-/// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the
+/// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security groups for your VPC</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 /// <p>When you create a security group, you specify a friendly name of your choice. You can have a security group for use in EC2-Classic with the same name as a security group for use in a VPC. However, you can't have two security groups for use in EC2-Classic with the same name or two security groups for use in a VPC with the same name.</p>
 /// <p>You have a default security group for use in EC2-Classic and a default security group for use in your VPC. If you don't specify a security group when you launch an instance, the instance is launched into the appropriate default security group. A default security group includes a default rule that grants instances unrestricted network access to each other.</p>
@@ -7213,7 +7213,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeIpv6Pools {
 }
 
 /// <p>Describes the specified key pairs or all of your key pairs.</p>
-/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a>
+/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeKeyPairs {
@@ -8207,9 +8207,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeSecurityGroupRules {
 /// <p>Describes the specified security groups or all of your security groups.</p>
 /// <p>A security group is for use with instances either in the EC2-Classic platform  
 /// or in a specific VPC. For more information, see
-/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 Security Groups</a> in
+/// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html">Amazon EC2 security groups</a> in
 /// the <i>Amazon Elastic Compute Cloud User Guide</i> and
-/// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security Groups for Your VPC</a> in the
+/// <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_SecurityGroups.html">Security groups for your VPC</a> in the
 /// <i>Amazon Virtual Private Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeSecurityGroups {
@@ -11574,11 +11574,11 @@ impl smithy_http::response::ParseStrictResponse for ImportInstance {
     }
 }
 
-/// <p>Imports the public key from an RSA key pair that you created with a third-party tool.
+/// <p>Imports the public key from an RSA or ED25519 key pair that you created with a third-party tool.
 /// Compare this with <a>CreateKeyPair</a>, in which Amazon Web Services creates the key pair and gives the keys to you
 /// (Amazon Web Services keeps a copy of the public key). With ImportKeyPair, you create the key pair and give Amazon Web Services just the public key.
 /// The private key is never transferred between you and Amazon Web Services.</p>
-/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Key Pairs</a>
+/// <p>For more information about key pairs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html">Amazon EC2 key pairs</a>
 /// in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ImportKeyPair {

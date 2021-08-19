@@ -743,7 +743,7 @@ pub mod fluent_builders {
         }
         /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
         /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_id(input);
             self
@@ -753,7 +753,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.identity_name(input);
             self
@@ -1983,7 +1983,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_filters(input);
             self
         }
-        /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (AWS AccountID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+        /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -2962,8 +2962,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_configurations(input);
             self
         }
-        /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>false</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
-        /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+        /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.inner = self.inner.visible_to_all_users(input);
             self

@@ -4,7 +4,9 @@
  */
 
 use aws_auth::Credentials;
-use aws_sigv4_poc::{PayloadChecksumKind, SigningSettings, UriEncoding};
+use aws_sigv4::http_request::{
+    calculate_signing_headers, PayloadChecksumKind, SigningSettings, UriEncoding,
+};
 use aws_types::region::SigningRegion;
 use aws_types::SigningService;
 use http::header::HeaderName;
@@ -13,7 +15,8 @@ use std::error::Error;
 use std::fmt;
 use std::time::SystemTime;
 
-pub use aws_sigv4_poc::SignableBody;
+use crate::middleware::Signature;
+pub use aws_sigv4::http_request::SignableBody;
 
 #[derive(Eq, PartialEq, Clone, Copy)]
 pub enum SigningAlgorithm {
@@ -37,10 +40,12 @@ pub enum HttpSignatureType {
 /// Although these fields MAY be customized on a per request basis, they are generally static
 /// for a given operation
 #[derive(Clone, PartialEq, Eq)]
+#[non_exhaustive]
 pub struct OperationSigningConfig {
     pub algorithm: SigningAlgorithm,
     pub signature_type: HttpSignatureType,
     pub signing_options: SigningOptions,
+    pub signing_requirements: SigningRequirements,
 }
 
 impl OperationSigningConfig {
@@ -55,8 +60,23 @@ impl OperationSigningConfig {
                 double_uri_encode: true,
                 content_sha256_header: false,
             },
+            signing_requirements: SigningRequirements::Required,
         }
     }
+}
+
+#[derive(Clone, Copy, Eq, PartialEq)]
+pub enum SigningRequirements {
+    /// A signature MAY be added if credentials are defined
+    Optional,
+
+    /// A signature MUST be added.
+    ///
+    /// If no credentials are provided, this will return an error without dispatching the operation.
+    Required,
+
+    /// A signature MUST NOT be added.
+    Disabled,
 }
 
 #[derive(Clone, Eq, PartialEq)]
@@ -114,7 +134,7 @@ impl SigV4Signer {
         request_config: &RequestConfig<'_>,
         credentials: &Credentials,
         request: &mut http::Request<SdkBody>,
-    ) -> Result<(), SigningError> {
+    ) -> Result<Signature, SigningError> {
         let mut settings = SigningSettings::default();
         settings.uri_encoding = if operation_config.signing_options.double_uri_encode {
             UriEncoding::Double
@@ -126,13 +146,13 @@ impl SigV4Signer {
         } else {
             PayloadChecksumKind::NoHeader
         };
-        let sigv4_config = aws_sigv4_poc::Config {
+        let sigv4_config = aws_sigv4::http_request::SigningParams {
             access_key: credentials.access_key_id(),
             secret_key: credentials.secret_access_key(),
             security_token: credentials.session_token(),
             region: request_config.region.as_ref(),
-            svc: request_config.service.as_ref(),
-            date: request_config.request_ts,
+            service_name: request_config.service.as_ref(),
+            date_time: request_config.request_ts.into(),
             settings,
         };
 
@@ -150,12 +170,15 @@ impl SigV4Signer {
                     .map(SignableBody::Bytes)
                     .unwrap_or(SignableBody::UnsignedPayload)
             });
-        for (key, value) in aws_sigv4_poc::sign_core(request, signable_body, &sigv4_config)? {
+
+        let (signing_headers, signature) =
+            calculate_signing_headers(request, signable_body, &sigv4_config)?.into_parts();
+        for (key, value) in signing_headers {
             request
                 .headers_mut()
                 .append(HeaderName::from_static(key), value);
         }
 
-        Ok(())
+        Ok(Signature::new(signature))
     }
 }

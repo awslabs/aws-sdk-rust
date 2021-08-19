@@ -233,6 +233,35 @@ impl smithy_http::response::ParseStrictResponse for AssociateSecurityKey {
     }
 }
 
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Creates an agent status for the specified Amazon Connect instance.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateAgentStatus {
+    _private: (),
+}
+impl CreateAgentStatus {
+    /// Creates a new builder-style object to manufacture [`CreateAgentStatusInput`](crate::input::CreateAgentStatusInput)
+    pub fn builder() -> crate::input::create_agent_status_input::Builder {
+        crate::input::create_agent_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateAgentStatus {
+    type Output = std::result::Result<
+        crate::output::CreateAgentStatusOutput,
+        crate::error::CreateAgentStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_agent_status_error(response)
+        } else {
+            crate::operation_deser::parse_create_agent_status_response(response)
+        }
+    }
+}
+
 /// <p>Creates a contact flow for the specified Amazon Connect instance.</p>
 /// <p>You can also create and update contact flows using the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/flow-language.html">Amazon Connect
 /// Flow language</a>.</p>
@@ -259,6 +288,35 @@ impl smithy_http::response::ParseStrictResponse for CreateContactFlow {
             crate::operation_deser::parse_create_contact_flow_error(response)
         } else {
             crate::operation_deser::parse_create_contact_flow_response(response)
+        }
+    }
+}
+
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Creates hours of operation. </p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateHoursOfOperation {
+    _private: (),
+}
+impl CreateHoursOfOperation {
+    /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationInput`](crate::input::CreateHoursOfOperationInput)
+    pub fn builder() -> crate::input::create_hours_of_operation_input::Builder {
+        crate::input::create_hours_of_operation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateHoursOfOperation {
+    type Output = std::result::Result<
+        crate::output::CreateHoursOfOperationOutput,
+        crate::error::CreateHoursOfOperationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_hours_of_operation_error(response)
+        } else {
+            crate::operation_deser::parse_create_hours_of_operation_response(response)
         }
     }
 }
@@ -489,6 +547,35 @@ impl smithy_http::response::ParseStrictResponse for CreateUserHierarchyGroup {
 }
 
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Deletes an hours of operation.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteHoursOfOperation {
+    _private: (),
+}
+impl DeleteHoursOfOperation {
+    /// Creates a new builder-style object to manufacture [`DeleteHoursOfOperationInput`](crate::input::DeleteHoursOfOperationInput)
+    pub fn builder() -> crate::input::delete_hours_of_operation_input::Builder {
+        crate::input::delete_hours_of_operation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteHoursOfOperation {
+    type Output = std::result::Result<
+        crate::output::DeleteHoursOfOperationOutput,
+        crate::error::DeleteHoursOfOperationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_hours_of_operation_error(response)
+        } else {
+            crate::operation_deser::parse_delete_hours_of_operation_response(response)
+        }
+    }
+}
+
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
 /// <p>Deletes the Amazon Connect instance.</p>
 /// <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days.
 /// If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances.
@@ -655,6 +742,35 @@ impl smithy_http::response::ParseStrictResponse for DeleteUserHierarchyGroup {
             crate::operation_deser::parse_delete_user_hierarchy_group_error(response)
         } else {
             crate::operation_deser::parse_delete_user_hierarchy_group_response(response)
+        }
+    }
+}
+
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Describes an agent status.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DescribeAgentStatus {
+    _private: (),
+}
+impl DescribeAgentStatus {
+    /// Creates a new builder-style object to manufacture [`DescribeAgentStatusInput`](crate::input::DescribeAgentStatusInput)
+    pub fn builder() -> crate::input::describe_agent_status_input::Builder {
+        crate::input::describe_agent_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DescribeAgentStatus {
+    type Output = std::result::Result<
+        crate::output::DescribeAgentStatusOutput,
+        crate::error::DescribeAgentStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_describe_agent_status_error(response)
+        } else {
+            crate::operation_deser::parse_describe_agent_status_response(response)
         }
     }
 }
@@ -1329,6 +1445,35 @@ impl smithy_http::response::ParseStrictResponse for GetMetricData {
             crate::operation_deser::parse_get_metric_data_error(response)
         } else {
             crate::operation_deser::parse_get_metric_data_response(response)
+        }
+    }
+}
+
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Lists agent statuses.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListAgentStatuses {
+    _private: (),
+}
+impl ListAgentStatuses {
+    /// Creates a new builder-style object to manufacture [`ListAgentStatusesInput`](crate::input::ListAgentStatusesInput)
+    pub fn builder() -> crate::input::list_agent_statuses_input::Builder {
+        crate::input::list_agent_statuses_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListAgentStatuses {
+    type Output = std::result::Result<
+        crate::output::ListAgentStatusesOutput,
+        crate::error::ListAgentStatusesError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_agent_statuses_error(response)
+        } else {
+            crate::operation_deser::parse_list_agent_statuses_response(response)
         }
     }
 }
@@ -2272,8 +2417,8 @@ impl smithy_http::response::ParseStrictResponse for SuspendContactRecording {
 }
 
 /// <p>Adds the specified tags to the specified resource.</p>
-/// <p>The supported resource types are users, routing profiles, queues, quick connects, and
-/// contact flows.</p>
+/// <p>The supported resource types are users, routing profiles, queues, quick connects,
+/// contact flows, agent status, and hours of operation.</p>
 /// <p>For sample policies that use tags, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/security_iam_id-based-policy-examples.html">Amazon Connect Identity-Based
 /// Policy Examples</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -2323,6 +2468,35 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Updates agent status.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateAgentStatus {
+    _private: (),
+}
+impl UpdateAgentStatus {
+    /// Creates a new builder-style object to manufacture [`UpdateAgentStatusInput`](crate::input::UpdateAgentStatusInput)
+    pub fn builder() -> crate::input::update_agent_status_input::Builder {
+        crate::input::update_agent_status_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateAgentStatus {
+    type Output = std::result::Result<
+        crate::output::UpdateAgentStatusOutput,
+        crate::error::UpdateAgentStatusError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_agent_status_error(response)
+        } else {
+            crate::operation_deser::parse_update_agent_status_response(response)
         }
     }
 }
@@ -2429,6 +2603,35 @@ impl smithy_http::response::ParseStrictResponse for UpdateContactFlowName {
             crate::operation_deser::parse_update_contact_flow_name_error(response)
         } else {
             crate::operation_deser::parse_update_contact_flow_name_response(response)
+        }
+    }
+}
+
+/// <p>This API is in preview release for Amazon Connect and is subject to change.</p>
+/// <p>Updates the hours of operation.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateHoursOfOperation {
+    _private: (),
+}
+impl UpdateHoursOfOperation {
+    /// Creates a new builder-style object to manufacture [`UpdateHoursOfOperationInput`](crate::input::UpdateHoursOfOperationInput)
+    pub fn builder() -> crate::input::update_hours_of_operation_input::Builder {
+        crate::input::update_hours_of_operation_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateHoursOfOperation {
+    type Output = std::result::Result<
+        crate::output::UpdateHoursOfOperationOutput,
+        crate::error::UpdateHoursOfOperationError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_hours_of_operation_error(response)
+        } else {
+            crate::operation_deser::parse_update_hours_of_operation_response(response)
         }
     }
 }

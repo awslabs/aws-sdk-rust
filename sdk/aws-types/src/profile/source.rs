@@ -7,6 +7,7 @@ use crate::os_shim_internal;
 use std::borrow::Cow;
 use std::io::ErrorKind;
 use std::path::{Component, Path, PathBuf};
+use tracing::Instrument;
 
 /// In-memory source of profile data
 pub struct Source {
@@ -51,12 +52,15 @@ impl FileKind {
 }
 
 /// Load a [Source](Source) from a given environment and filesystem.
-pub fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
+pub async fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Source {
     let home = home_dir(&proc_env, Os::real());
-    let config = tracing::info_span!("load_config_file")
-        .in_scope(|| load_config_file(FileKind::Config, &home, &fs, &proc_env));
-    let credentials = tracing::info_span!("load_credentials_file")
-        .in_scope(|| load_config_file(FileKind::Credentials, &home, &fs, &proc_env));
+    let config = load_config_file(FileKind::Config, &home, &fs, &proc_env)
+        .instrument(tracing::info_span!("load_config_file"))
+        .await;
+    let credentials = load_config_file(FileKind::Credentials, &home, &fs, &proc_env)
+        .instrument(tracing::info_span!("load_credentials_file"))
+        .await;
+
     Source {
         config_file: config,
         credentials_file: credentials,
@@ -77,7 +81,7 @@ pub fn load(proc_env: &os_shim_internal::Env, fs: &os_shim_internal::Fs) -> Sour
 /// * `home_directory`: Home directory to use during home directory expansion
 /// * `fs`: Filesystem abstraction
 /// * `environment`: Process environment abstraction
-fn load_config_file(
+async fn load_config_file(
     kind: FileKind,
     home_directory: &Option<String>,
     fs: &os_shim_internal::Fs,
@@ -94,7 +98,7 @@ fn load_config_file(
     }
     // read the data at the specified path
     // if the path does not exist, log a warning but pretend it was actually an empty file
-    let data = match fs.read_to_end(&expanded) {
+    let data = match fs.read_to_end(&expanded).await {
         Ok(data) => data,
         Err(e) => {
             match e.kind() {
@@ -242,11 +246,14 @@ mod tests {
         let tests: SourceTests = serde_json::from_str(&tests)?;
         for (i, test) in tests.tests.into_iter().enumerate() {
             eprintln!("test: {}", i);
-            check(test);
+            check(test)
+                .now_or_never()
+                .expect("these futures should never poll");
         }
         Ok(())
     }
 
+    use futures_util::FutureExt;
     use tracing_test::traced_test;
 
     #[traced_test]
@@ -261,18 +268,18 @@ mod tests {
 
         let fs = Fs::from_map(fs);
 
-        let _src = load(&env, &fs);
+        let _src = load(&env, &fs).now_or_never();
         assert!(logs_contain("config file loaded"));
         assert!(logs_contain("performing home directory substitution"));
     }
 
-    fn check(test_case: TestCase) {
+    async fn check(test_case: TestCase) {
         let fs = Fs::real();
         let env = Env::from(test_case.environment);
         let platform_matches = (cfg!(windows) && test_case.platform == "windows")
             || (!cfg!(windows) && test_case.platform != "windows");
         if platform_matches {
-            let source = load(&env, &fs);
+            let source = load(&env, &fs).await;
             if let Some(expected_profile) = test_case.profile {
                 assert_eq!(source.profile, expected_profile, "{}", &test_case.name);
             }

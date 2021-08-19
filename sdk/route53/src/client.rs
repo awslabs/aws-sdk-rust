@@ -1623,8 +1623,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>When removing authorization to associate a VPC that was created by one account with a hosted zone
-        /// that was created with a different account, the ID of the hosted zone.</p>
+        /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone
+        /// that was created with a different Amazon Web Services account, the ID of the hosted zone.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hosted_zone_id(input);
             self
@@ -1636,8 +1636,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
-        /// <p>When removing authorization to associate a VPC that was created by one account with a hosted zone
-        /// that was created with a different account, a complex type that includes the ID and region of the VPC.</p>
+        /// <p>When removing authorization to associate a VPC that was created by one Amazon Web Services account with a hosted zone
+        /// that was created with a different Amazon Web Services account, a complex type that includes the ID and region of the VPC.</p>
         pub fn vpc(mut self, input: crate::model::Vpc) -> Self {
             self.inner = self.inner.vpc(input);
             self
@@ -2908,7 +2908,7 @@ pub mod fluent_builders {
         }
         /// <p>(Optional) For your first request to <code>ListHostedZonesByName</code>, include the <code>dnsname</code> parameter only if you want to
         /// specify the name of the first hosted zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon Route 53 returns all of
-        /// the hosted zones that were created by the current account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
+        /// the hosted zones that were created by the current Amazon Web Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code> and
         /// <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value of <code>NextDNSName</code> from the previous response.</p>
         pub fn dns_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dns_name(input);
@@ -3056,7 +3056,7 @@ pub mod fluent_builders {
         /// <p>(Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in
         /// <code>HostedZoneId</code>. </p>
         /// <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns all of the configurations
-        /// that are associated with the current account.</p>
+        /// that are associated with the current Amazon Web Services account.</p>
         pub fn hosted_zone_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.hosted_zone_id(input);
             self
@@ -3068,7 +3068,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_hosted_zone_id(input);
             self
         }
-        /// <p>(Optional) If the current account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> query logging configurations, use <code>NextToken</code>
         /// to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListQueryLoggingConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
@@ -3082,7 +3082,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>(Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request.
-        /// If the current account has more than <code>MaxResults</code> configurations, use the value of
+        /// If the current Amazon Web Services account has more than <code>MaxResults</code> configurations, use the value of
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
         /// in the response to get the next page of results.</p>
         /// <p>If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>

@@ -92,6 +92,9 @@ where
     pub fn get_logging_configuration(&self) -> fluent_builders::GetLoggingConfiguration<C> {
         fluent_builders::GetLoggingConfiguration::new(self.handle.clone())
     }
+    pub fn get_managed_rule_set(&self) -> fluent_builders::GetManagedRuleSet<C> {
+        fluent_builders::GetManagedRuleSet::new(self.handle.clone())
+    }
     pub fn get_permission_policy(&self) -> fluent_builders::GetPermissionPolicy<C> {
         fluent_builders::GetPermissionPolicy::new(self.handle.clone())
     }
@@ -120,11 +123,19 @@ where
     ) -> fluent_builders::ListAvailableManagedRuleGroups<C> {
         fluent_builders::ListAvailableManagedRuleGroups::new(self.handle.clone())
     }
+    pub fn list_available_managed_rule_group_versions(
+        &self,
+    ) -> fluent_builders::ListAvailableManagedRuleGroupVersions<C> {
+        fluent_builders::ListAvailableManagedRuleGroupVersions::new(self.handle.clone())
+    }
     pub fn list_ip_sets(&self) -> fluent_builders::ListIPSets<C> {
         fluent_builders::ListIPSets::new(self.handle.clone())
     }
     pub fn list_logging_configurations(&self) -> fluent_builders::ListLoggingConfigurations<C> {
         fluent_builders::ListLoggingConfigurations::new(self.handle.clone())
+    }
+    pub fn list_managed_rule_sets(&self) -> fluent_builders::ListManagedRuleSets<C> {
+        fluent_builders::ListManagedRuleSets::new(self.handle.clone())
     }
     pub fn list_regex_pattern_sets(&self) -> fluent_builders::ListRegexPatternSets<C> {
         fluent_builders::ListRegexPatternSets::new(self.handle.clone())
@@ -144,6 +155,9 @@ where
     pub fn put_logging_configuration(&self) -> fluent_builders::PutLoggingConfiguration<C> {
         fluent_builders::PutLoggingConfiguration::new(self.handle.clone())
     }
+    pub fn put_managed_rule_set_versions(&self) -> fluent_builders::PutManagedRuleSetVersions<C> {
+        fluent_builders::PutManagedRuleSetVersions::new(self.handle.clone())
+    }
     pub fn put_permission_policy(&self) -> fluent_builders::PutPermissionPolicy<C> {
         fluent_builders::PutPermissionPolicy::new(self.handle.clone())
     }
@@ -155,6 +169,11 @@ where
     }
     pub fn update_ip_set(&self) -> fluent_builders::UpdateIPSet<C> {
         fluent_builders::UpdateIPSet::new(self.handle.clone())
+    }
+    pub fn update_managed_rule_set_version_expiry_date(
+        &self,
+    ) -> fluent_builders::UpdateManagedRuleSetVersionExpiryDate<C> {
+        fluent_builders::UpdateManagedRuleSetVersionExpiryDate::new(self.handle.clone())
     }
     pub fn update_regex_pattern_set(&self) -> fluent_builders::UpdateRegexPatternSet<C> {
         fluent_builders::UpdateRegexPatternSet::new(self.handle.clone())
@@ -198,7 +217,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
+        /// resource.</p>
         pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.web_acl_arn(input);
             self
@@ -284,7 +304,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web ACL. </p>
+        /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+        /// ACL. </p>
         pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
             self.inner = self.inner.rules(inp);
             self
@@ -364,7 +385,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specify IPV4 or IPV6. </p>
+        /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
         pub fn ip_address_version(mut self, input: crate::model::IpAddressVersion) -> Self {
             self.inner = self.inner.ip_address_version(input);
             self
@@ -393,8 +414,7 @@ pub mod fluent_builders {
         /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
         /// </li>
         /// </ul>
-        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-        /// Inter-Domain Routing</a>.</p>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn addresses(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.addresses(inp);
             self
@@ -841,7 +861,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn web_acl_lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.web_acl_lock_token(input);
             self
@@ -921,7 +941,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
@@ -1003,7 +1023,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
+        /// policy.</p>
         /// <p>You must be the owner of the rule group to perform this operation.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
@@ -1081,7 +1102,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
@@ -1158,7 +1179,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
@@ -1235,7 +1256,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_id(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
@@ -1310,6 +1331,17 @@ pub mod fluent_builders {
         }
         pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
             self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>The version of the rule group. You can only use a version that is not
+        /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
+        /// </p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_name(input);
+            self
+        }
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_version_name(input);
             self
         }
     }
@@ -1482,6 +1514,75 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetManagedRuleSet<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_managed_rule_set_input::Builder,
+    }
+    impl<C> GetManagedRuleSet<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetManagedRuleSetOutput,
+            smithy_http::result::SdkError<crate::error::GetManagedRuleSetError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetPermissionPolicy<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::get_permission_policy_input::Builder,
@@ -1512,7 +1613,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
+        /// policy.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -1775,7 +1877,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
+        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
+        /// requests.</p>
         pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.web_acl_arn(input);
             self
@@ -1784,7 +1887,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
+        /// you want a sample of requests.</p>
         pub fn rule_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.rule_metric_name(input);
             self
@@ -1814,8 +1918,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_scope(input);
             self
         }
-        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-        /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
+        /// <p>The start date and time and the end date and time of the range for which you want
+        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
+        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
+        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
+        /// any time range in the previous three hours. If you specify a start time that's earlier than
+        /// three hours ago, WAF sets it to three hours ago.</p>
         pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
             self.inner = self.inner.time_window(input);
             self
@@ -1827,8 +1935,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_window(input);
             self
         }
-        /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received
-        /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+        /// <p>The number of requests that you want WAF to return from among the first 5,000
+        /// requests that your Amazon Web Services resource received during the time range. If your resource received
+        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
         /// returns information about all of them. </p>
         pub fn max_items(mut self, input: i64) -> Self {
             self.inner = self.inner.max_items(input);
@@ -2021,6 +2130,96 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct ListAvailableManagedRuleGroupVersions<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_available_managed_rule_group_versions_input::Builder,
+    }
+    impl<C> ListAvailableManagedRuleGroupVersions<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAvailableManagedRuleGroupVersionsOutput,
+            smithy_http::result::SdkError<crate::error::ListAvailableManagedRuleGroupVersionsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+        pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.vendor_name(input);
+            self
+        }
+        pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_vendor_name(input);
+            self
+        }
+        /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input);
+            self
+        }
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_marker(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
+            self
+        }
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct ListIPSets<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::list_ip_sets_input::Builder,
@@ -2110,6 +2309,78 @@ pub mod fluent_builders {
         ) -> std::result::Result<
             crate::output::ListLoggingConfigurationsOutput,
             smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_marker(input);
+            self
+        }
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_marker(input);
+            self
+        }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
+            self
+        }
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListManagedRuleSets<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_managed_rule_sets_input::Builder,
+    }
+    impl<C> ListManagedRuleSets<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListManagedRuleSetsOutput,
+            smithy_http::result::SdkError<crate::error::ListManagedRuleSetsError>,
         >
         where
             C: aws_hyper::SmithyConnector,
@@ -2276,7 +2547,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_web_acl_arn(input);
             self
         }
-        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Used for web ACLs that are scoped for regional applications.
+        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.inner = self.inner.resource_type(input);
             self
@@ -2541,6 +2813,116 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct PutManagedRuleSetVersions<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::put_managed_rule_set_versions_input::Builder,
+    }
+    impl<C> PutManagedRuleSetVersions<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::PutManagedRuleSetVersionsOutput,
+            smithy_http::result::SdkError<crate::error::PutManagedRuleSetVersionsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input);
+            self
+        }
+        pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lock_token(input);
+            self
+        }
+        /// <p>The version of the named managed rule group that you'd like your customers to choose,
+        /// from among your version offerings. </p>
+        pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.recommended_version(input);
+            self
+        }
+        pub fn set_recommended_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_recommended_version(input);
+            self
+        }
+        /// <p>The versions of the named managed rule group that you want to offer to your customers.
+        /// </p>
+        pub fn versions_to_publish(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::VersionToPublish>,
+        ) -> Self {
+            self.inner = self.inner.versions_to_publish(k, v);
+            self
+        }
+        pub fn set_versions_to_publish(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::VersionToPublish>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_versions_to_publish(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct PutPermissionPolicy<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::put_permission_policy_input::Builder,
@@ -2571,7 +2953,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to attach the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
+        /// attach the policy.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -2810,8 +3193,7 @@ pub mod fluent_builders {
         /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
         /// </li>
         /// </ul>
-        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-        /// Inter-Domain Routing</a>.</p>
+        /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
         pub fn addresses(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.addresses(inp);
             self
@@ -2823,13 +3205,117 @@ pub mod fluent_builders {
             self.inner = self.inner.set_addresses(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
         }
         pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_lock_token(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateManagedRuleSetVersionExpiryDate<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_managed_rule_set_version_expiry_date_input::Builder,
+    }
+    impl<C> UpdateManagedRuleSetVersionExpiryDate<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateManagedRuleSetVersionExpiryDateOutput,
+            smithy_http::result::SdkError<crate::error::UpdateManagedRuleSetVersionExpiryDateError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.inner = self.inner.scope(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.inner = self.inner.set_scope(input);
+            self
+        }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.id(input);
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_id(input);
+            self
+        }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.lock_token(input);
+            self
+        }
+        pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_lock_token(input);
+            self
+        }
+        /// <p>The version that you want to remove from your list of offerings for the named managed
+        /// rule group. </p>
+        pub fn version_to_expire(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.version_to_expire(input);
+            self
+        }
+        pub fn set_version_to_expire(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_version_to_expire(input);
+            self
+        }
+        /// <p>The time that you want the version to expire.</p>
+        /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+        pub fn expiry_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.inner = self.inner.expiry_timestamp(input);
+            self
+        }
+        pub fn set_expiry_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.inner = self.inner.set_expiry_timestamp(input);
             self
         }
     }
@@ -2921,7 +3407,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_regular_expression_list(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
@@ -3034,7 +3520,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visibility_config(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self
@@ -3181,7 +3667,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_visibility_config(input);
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.lock_token(input);
             self

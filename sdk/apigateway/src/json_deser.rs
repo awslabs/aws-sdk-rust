@@ -804,6 +804,13 @@ pub fn deser_operation_create_domain_name(
                             crate::json_deser::deser_structure_mutual_tls_authentication(tokens)?,
                         );
                     }
+                    "ownershipVerificationCertificateArn" => {
+                        builder = builder.set_ownership_verification_certificate_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
+                        );
+                    }
                     "regionalCertificateArn" => {
                         builder = builder.set_regional_certificate_arn(
                             smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
@@ -2554,6 +2561,13 @@ pub fn deser_operation_get_domain_name(
                     "mutualTlsAuthentication" => {
                         builder = builder.set_mutual_tls_authentication(
                             crate::json_deser::deser_structure_mutual_tls_authentication(tokens)?,
+                        );
+                    }
+                    "ownershipVerificationCertificateArn" => {
+                        builder = builder.set_ownership_verification_certificate_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "regionalCertificateArn" => {
@@ -5864,6 +5878,13 @@ pub fn deser_operation_update_domain_name(
                     "mutualTlsAuthentication" => {
                         builder = builder.set_mutual_tls_authentication(
                             crate::json_deser::deser_structure_mutual_tls_authentication(tokens)?,
+                        );
+                    }
+                    "ownershipVerificationCertificateArn" => {
+                        builder = builder.set_ownership_verification_certificate_arn(
+                            smithy_json::deserialize::token::expect_string_or_null(tokens.next())?
+                                .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                .transpose()?,
                         );
                     }
                     "regionalCertificateArn" => {
@@ -9921,6 +9942,15 @@ where
                                     crate::json_deser::deser_structure_mutual_tls_authentication(
                                         tokens,
                                     )?,
+                                );
+                            }
+                            "ownershipVerificationCertificateArn" => {
+                                builder = builder.set_ownership_verification_certificate_arn(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

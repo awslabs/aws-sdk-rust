@@ -262,9 +262,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog to create. The catalog name must be unique for the AWS
-        /// account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen
-        /// characters.</p>
+        /// <p>The name of the data catalog to create. The catalog name must be unique for the
+        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
+        /// sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -273,14 +273,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog or
-        /// <code>HIVE</code> for an external hive metastore.</p>
-        /// <note>
-        /// <p>Do not use the <code>GLUE</code> type. This refers to the
-        /// <code>AwsDataCatalog</code> that already exists in your account, of which you
-        /// can have only one. Specifying the <code>GLUE</code> type will result in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </note>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
+        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
+        /// Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.inner = self.inner.r#type(input);
             self
@@ -301,8 +296,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for creating the data catalog. This
-        /// is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for creating the data
+        /// catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
         /// <li>
         /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
@@ -320,9 +315,9 @@ pub mod fluent_builders {
         /// of required parameters, but not both.</p>
         /// <ul>
         /// <li>
-        /// <p>If you have one Lambda function that processes metadata and another
-        /// for reading the actual data, use the following syntax. Both parameters
-        /// are required.</p>
+        /// <p>If you have one Lambda function that processes metadata
+        /// and another for reading the actual data, use the following syntax. Both
+        /// parameters are required.</p>
         /// <p>
         /// <code>metadata-function=<i>lambda_arn</i>,
         /// record-function=<i>lambda_arn</i>
@@ -330,13 +325,41 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// <li>
-        /// <p> If you have a composite Lambda function that processes both metadata
-        /// and data, use the following syntax to specify your Lambda
-        /// function.</p>
+        /// <p> If you have a composite Lambda function that processes
+        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
         /// <p>
         /// <code>function=<i>lambda_arn</i>
         /// </code>
         /// </p>
+        /// </li>
+        /// </ul>
+        /// </li>
+        /// <li>
+        /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+        /// <code>
+        /// <i>catalog_id</i>
+        /// </code> is the account ID of the
+        /// Amazon Web Services account to which the Glue Data Catalog
+        /// belongs.</p>
+        /// <p>
+        /// <code>catalog-id=<i>catalog_id</i>
+        /// </code>
+        /// </p>
+        /// <ul>
+        /// <li>
+        /// <p>The <code>GLUE</code> data catalog type also applies to the default
+        /// <code>AwsDataCatalog</code> that already exists in your account, of
+        /// which you can have only one and cannot modify.</p>
+        /// </li>
+        /// <li>
+        /// <p>Queries that specify a Glue Data Catalog other than the default
+        /// <code>AwsDataCatalog</code> must be run on Athena engine
+        /// version 2.</p>
+        /// </li>
+        /// <li>
+        /// <p>In Regions where Athena engine version 2 is not available,
+        /// creating new Glue data catalogs results in an
+        /// <code>INVALID_INPUT</code> error.</p>
         /// </li>
         /// </ul>
         /// </li>
@@ -443,9 +466,10 @@ pub mod fluent_builders {
         /// received, the same response is returned and another query is not created. If a parameter
         /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
         /// <important>
-        /// <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for
-        /// Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS
-        /// CLI, you must provide this token or the action will fail.</p>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
+        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
+        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
+        /// this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input);
@@ -582,12 +606,13 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where
-        /// query results are stored, the encryption configuration, if any, used for encrypting
-        /// query results, whether the Amazon CloudWatch Metrics are enabled for the workgroup, the
-        /// limit for the amount of bytes scanned (cutoff) per query, if it is specified, and
-        /// whether workgroup's settings (specified with EnforceWorkGroupConfiguration) in the
-        /// WorkGroupConfiguration override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
+        /// where query results are stored, the encryption configuration, if any, used for
+        /// encrypting query results, whether the Amazon CloudWatch Metrics are enabled for the
+        /// workgroup, the limit for the amount of bytes scanned (cutoff) per query, if it is
+        /// specified, and whether workgroup's settings (specified with
+        /// <code>EnforceWorkGroupConfiguration</code>) in the
+        /// <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.inner = self.inner.configuration(input);
             self
@@ -1089,9 +1114,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_query_execution_id(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1254,9 +1279,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_catalog_name(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1306,9 +1331,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the NextToken
-        /// from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1358,9 +1383,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1410,9 +1435,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1482,9 +1507,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_work_group(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1534,9 +1559,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1628,9 +1653,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_expression(input);
             self
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the NextToken
-        /// from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the NextToken from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1742,9 +1767,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>A token generated by the Athena service that specifies where to continue pagination if
-        /// a previous request was truncated. To obtain the next set of pages, pass in the
-        /// <code>NextToken</code> from the response object of the previous page call.</p>
+        /// <p>A token generated by the Athena service that specifies where to continue
+        /// pagination if a previous request was truncated. To obtain the next set of pages, pass in
+        /// the <code>NextToken</code> from the response object of the previous page call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1808,9 +1833,10 @@ pub mod fluent_builders {
         /// received, the same response is returned and another query is not created. If a parameter
         /// has changed, for example, the <code>QueryString</code>, an error is returned.</p>
         /// <important>
-        /// <p>This token is listed as not required because AWS SDKs (for example the AWS SDK for
-        /// Java) auto-generate the token for users. If you are not using the AWS SDK or the AWS
-        /// CLI, you must provide this token or the action will fail.</p>
+        /// <p>This token is listed as not required because Amazon Web Services SDKs (for example
+        /// the Amazon Web Services SDK for Java) auto-generate the token for users. If you are
+        /// not using the Amazon Web Services SDK or the Amazon Web Services CLI, you must provide
+        /// this token or the action will fail.</p>
         /// </important>
         pub fn client_request_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.client_request_token(input);
@@ -1938,8 +1964,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to which tags are
-        /// to be added.</p>
+        /// <p>Specifies the ARN of the Athena resource (workgroup or data catalog) to
+        /// which tags are to be added.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_arn(input);
             self
@@ -1948,8 +1974,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_resource_arn(input);
             self
         }
-        /// <p>A collection of one or more tags, separated by commas, to be added to an Athena
-        /// workgroup or data catalog resource.</p>
+        /// <p>A collection of one or more tags, separated by commas, to be added to an Athena workgroup or data catalog resource.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -2047,9 +2072,9 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the data catalog to update. The catalog name must be unique for the AWS
-        /// account and can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen
-        /// characters.</p>
+        /// <p>The name of the data catalog to update. The catalog name must be unique for the
+        /// Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at
+        /// sign, or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
             self
@@ -2059,13 +2084,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>Specifies the type of data catalog to update. Specify <code>LAMBDA</code> for a
-        /// federated catalog or <code>HIVE</code> for an external hive metastore.</p>
-        /// <note>
-        /// <p>Do not use the <code>GLUE</code> type. This refers to the
-        /// <code>AwsDataCatalog</code> that already exists in your account, of which you
-        /// can have only one. Specifying the <code>GLUE</code> type will result in an
-        /// <code>INVALID_INPUT</code> error.</p>
-        /// </note>
+        /// federated catalog, <code>HIVE</code> for an external hive metastore, or
+        /// <code>GLUE</code> for an Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.inner = self.inner.r#type(input);
             self
@@ -2086,8 +2106,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_description(input);
             self
         }
-        /// <p>Specifies the Lambda function or functions to use for updating the data catalog. This
-        /// is a mapping whose values depend on the catalog type. </p>
+        /// <p>Specifies the Lambda function or functions to use for updating the data
+        /// catalog. This is a mapping whose values depend on the catalog type. </p>
         /// <ul>
         /// <li>
         /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
@@ -2105,9 +2125,9 @@ pub mod fluent_builders {
         /// of required parameters, but not both.</p>
         /// <ul>
         /// <li>
-        /// <p>If you have one Lambda function that processes metadata and another
-        /// for reading the actual data, use the following syntax. Both parameters
-        /// are required.</p>
+        /// <p>If you have one Lambda function that processes metadata
+        /// and another for reading the actual data, use the following syntax. Both
+        /// parameters are required.</p>
         /// <p>
         /// <code>metadata-function=<i>lambda_arn</i>,
         /// record-function=<i>lambda_arn</i>
@@ -2115,9 +2135,8 @@ pub mod fluent_builders {
         /// </p>
         /// </li>
         /// <li>
-        /// <p> If you have a composite Lambda function that processes both metadata
-        /// and data, use the following syntax to specify your Lambda
-        /// function.</p>
+        /// <p> If you have a composite Lambda function that processes
+        /// both metadata and data, use the following syntax to specify your Lambda function.</p>
         /// <p>
         /// <code>function=<i>lambda_arn</i>
         /// </code>

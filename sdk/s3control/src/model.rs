@@ -2728,7 +2728,9 @@ pub enum ObjectLambdaContentTransformation {
 }
 impl ObjectLambdaContentTransformation {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_aws_lambda(&self) -> Result<&crate::model::AwsLambdaTransformation, &Self> {
+    pub fn as_aws_lambda(
+        &self,
+    ) -> std::result::Result<&crate::model::AwsLambdaTransformation, &Self> {
         if let ObjectLambdaContentTransformation::AwsLambda(val) = &self {
             Ok(&val)
         } else {

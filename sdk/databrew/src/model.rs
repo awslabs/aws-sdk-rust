@@ -701,6 +701,7 @@ pub enum OutputFormat {
     Json,
     Orc,
     Parquet,
+    Tableauhyper,
     Xml,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -714,6 +715,7 @@ impl std::convert::From<&str> for OutputFormat {
             "JSON" => OutputFormat::Json,
             "ORC" => OutputFormat::Orc,
             "PARQUET" => OutputFormat::Parquet,
+            "TABLEAUHYPER" => OutputFormat::Tableauhyper,
             "XML" => OutputFormat::Xml,
             other => OutputFormat::Unknown(other.to_owned()),
         }
@@ -735,6 +737,7 @@ impl OutputFormat {
             OutputFormat::Json => "JSON",
             OutputFormat::Orc => "ORC",
             OutputFormat::Parquet => "PARQUET",
+            OutputFormat::Tableauhyper => "TABLEAUHYPER",
             OutputFormat::Xml => "XML",
             OutputFormat::Unknown(s) => s.as_ref(),
         }
@@ -747,6 +750,7 @@ impl OutputFormat {
             "JSON",
             "ORC",
             "PARQUET",
+            "TABLEAUHYPER",
             "XML",
         ]
     }

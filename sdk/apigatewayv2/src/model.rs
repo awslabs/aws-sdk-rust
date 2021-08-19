@@ -847,7 +847,7 @@ pub struct DomainNameConfiguration {
     pub certificate_name: std::option::Option<std::string::String>,
     /// <p>The timestamp when the certificate that was used by edge-optimized endpoint for this domain name was uploaded.</p>
     pub certificate_upload_date: std::option::Option<smithy_types::Instant>,
-    /// <p>The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
+    /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
     pub domain_name_status: std::option::Option<crate::model::DomainNameStatus>,
     /// <p>An optional text message containing detailed information about status of the domain name migration.</p>
     pub domain_name_status_message: std::option::Option<std::string::String>,
@@ -857,6 +857,8 @@ pub struct DomainNameConfiguration {
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The Transport Layer Security (TLS) version of the security policy for this domain name. The valid values are TLS_1_0 and TLS_1_2.</p>
     pub security_policy: std::option::Option<crate::model::SecurityPolicy>,
+    /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
+    pub ownership_verification_certificate_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainNameConfiguration {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -873,6 +875,10 @@ impl std::fmt::Debug for DomainNameConfiguration {
         formatter.field("endpoint_type", &self.endpoint_type);
         formatter.field("hosted_zone_id", &self.hosted_zone_id);
         formatter.field("security_policy", &self.security_policy);
+        formatter.field(
+            "ownership_verification_certificate_arn",
+            &self.ownership_verification_certificate_arn,
+        );
         formatter.finish()
     }
 }
@@ -891,6 +897,7 @@ pub mod domain_name_configuration {
         pub(crate) endpoint_type: std::option::Option<crate::model::EndpointType>,
         pub(crate) hosted_zone_id: std::option::Option<std::string::String>,
         pub(crate) security_policy: std::option::Option<crate::model::SecurityPolicy>,
+        pub(crate) ownership_verification_certificate_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A domain name for the API.</p>
@@ -941,7 +948,7 @@ pub mod domain_name_configuration {
             self.certificate_upload_date = input;
             self
         }
-        /// <p>The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
+        /// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
         pub fn domain_name_status(mut self, input: crate::model::DomainNameStatus) -> Self {
             self.domain_name_status = Some(input);
             self
@@ -1001,6 +1008,21 @@ pub mod domain_name_configuration {
             self.security_policy = input;
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn</p>
+        pub fn ownership_verification_certificate_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_ownership_verification_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ownership_verification_certificate_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DomainNameConfiguration`](crate::model::DomainNameConfiguration)
         pub fn build(self) -> crate::model::DomainNameConfiguration {
             crate::model::DomainNameConfiguration {
@@ -1013,6 +1035,7 @@ pub mod domain_name_configuration {
                 endpoint_type: self.endpoint_type,
                 hosted_zone_id: self.hosted_zone_id,
                 security_policy: self.security_policy,
+                ownership_verification_certificate_arn: self.ownership_verification_certificate_arn,
             }
         }
     }
@@ -1126,7 +1149,7 @@ impl AsRef<str> for EndpointType {
     }
 }
 
-/// <p>The status of the domain name migration. The valid values are AVAILABLE and UPDATING. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
+/// <p>The status of the domain name migration. The valid values are AVAILABLE, UPDATING, PENDING_CERTIFICATE_REIMPORT, and PENDING_OWNERSHIP_VERIFICATION. If the status is UPDATING, the domain cannot be modified further until the existing operation is complete. If it is AVAILABLE, the domain can be updated.</p>
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -1139,6 +1162,8 @@ impl AsRef<str> for EndpointType {
 )]
 pub enum DomainNameStatus {
     Available,
+    PendingCertificateReimport,
+    PendingOwnershipVerification,
     Updating,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -1147,6 +1172,8 @@ impl std::convert::From<&str> for DomainNameStatus {
     fn from(s: &str) -> Self {
         match s {
             "AVAILABLE" => DomainNameStatus::Available,
+            "PENDING_CERTIFICATE_REIMPORT" => DomainNameStatus::PendingCertificateReimport,
+            "PENDING_OWNERSHIP_VERIFICATION" => DomainNameStatus::PendingOwnershipVerification,
             "UPDATING" => DomainNameStatus::Updating,
             other => DomainNameStatus::Unknown(other.to_owned()),
         }
@@ -1163,12 +1190,19 @@ impl DomainNameStatus {
     pub fn as_str(&self) -> &str {
         match self {
             DomainNameStatus::Available => "AVAILABLE",
+            DomainNameStatus::PendingCertificateReimport => "PENDING_CERTIFICATE_REIMPORT",
+            DomainNameStatus::PendingOwnershipVerification => "PENDING_OWNERSHIP_VERIFICATION",
             DomainNameStatus::Updating => "UPDATING",
             DomainNameStatus::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["AVAILABLE", "UPDATING"]
+        &[
+            "AVAILABLE",
+            "PENDING_CERTIFICATE_REIMPORT",
+            "PENDING_OWNERSHIP_VERIFICATION",
+            "UPDATING",
+        ]
     }
 }
 impl AsRef<str> for DomainNameStatus {

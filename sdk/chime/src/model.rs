@@ -4417,7 +4417,7 @@ pub struct EngineTranscribeMedicalSettings {
     pub r#type: std::option::Option<crate::model::TranscribeMedicalType>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe Medical.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub region: std::option::Option<crate::model::TranscribeMedicalRegion>,
 }
 impl std::fmt::Debug for EngineTranscribeMedicalSettings {
@@ -4492,7 +4492,7 @@ pub mod engine_transcribe_medical_settings {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+        /// <p>The AWS Region passed to Amazon Transcribe Medical. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
         pub fn region(mut self, input: crate::model::TranscribeMedicalRegion) -> Self {
             self.region = Some(input);
             self
@@ -4535,6 +4535,7 @@ impl EngineTranscribeMedicalSettings {
 )]
 pub enum TranscribeMedicalRegion {
     ApSoutheast2,
+    Auto,
     CaCentral1,
     EuWest1,
     UsEast1,
@@ -4547,6 +4548,7 @@ impl std::convert::From<&str> for TranscribeMedicalRegion {
     fn from(s: &str) -> Self {
         match s {
             "ap-southeast-2" => TranscribeMedicalRegion::ApSoutheast2,
+            "auto" => TranscribeMedicalRegion::Auto,
             "ca-central-1" => TranscribeMedicalRegion::CaCentral1,
             "eu-west-1" => TranscribeMedicalRegion::EuWest1,
             "us-east-1" => TranscribeMedicalRegion::UsEast1,
@@ -4567,6 +4569,7 @@ impl TranscribeMedicalRegion {
     pub fn as_str(&self) -> &str {
         match self {
             TranscribeMedicalRegion::ApSoutheast2 => "ap-southeast-2",
+            TranscribeMedicalRegion::Auto => "auto",
             TranscribeMedicalRegion::CaCentral1 => "ca-central-1",
             TranscribeMedicalRegion::EuWest1 => "eu-west-1",
             TranscribeMedicalRegion::UsEast1 => "us-east-1",
@@ -4578,6 +4581,7 @@ impl TranscribeMedicalRegion {
     pub fn values() -> &'static [&'static str] {
         &[
             "ap-southeast-2",
+            "auto",
             "ca-central-1",
             "eu-west-1",
             "us-east-1",
@@ -4771,7 +4775,7 @@ pub struct EngineTranscribeSettings {
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
     /// <p>The name of the vocabulary passed to Amazon Transcribe.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+    /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
     pub region: std::option::Option<crate::model::TranscribeRegion>,
 }
 impl std::fmt::Debug for EngineTranscribeSettings {
@@ -4850,7 +4854,7 @@ pub mod engine_transcribe_settings {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the Region closest to the meeting's Region.</p>
+        /// <p>The AWS Region passed to Amazon Transcribe. If you don't specify a Region, Amazon Chime uses the meeting's Region.</p>
         pub fn region(mut self, input: crate::model::TranscribeRegion) -> Self {
             self.region = Some(input);
             self
@@ -4895,6 +4899,7 @@ pub enum TranscribeRegion {
     ApNortheast1,
     ApNortheast2,
     ApSoutheast2,
+    Auto,
     CaCentral1,
     EuCentral1,
     EuWest1,
@@ -4912,6 +4917,7 @@ impl std::convert::From<&str> for TranscribeRegion {
             "ap-northeast-1" => TranscribeRegion::ApNortheast1,
             "ap-northeast-2" => TranscribeRegion::ApNortheast2,
             "ap-southeast-2" => TranscribeRegion::ApSoutheast2,
+            "auto" => TranscribeRegion::Auto,
             "ca-central-1" => TranscribeRegion::CaCentral1,
             "eu-central-1" => TranscribeRegion::EuCentral1,
             "eu-west-1" => TranscribeRegion::EuWest1,
@@ -4937,6 +4943,7 @@ impl TranscribeRegion {
             TranscribeRegion::ApNortheast1 => "ap-northeast-1",
             TranscribeRegion::ApNortheast2 => "ap-northeast-2",
             TranscribeRegion::ApSoutheast2 => "ap-southeast-2",
+            TranscribeRegion::Auto => "auto",
             TranscribeRegion::CaCentral1 => "ca-central-1",
             TranscribeRegion::EuCentral1 => "eu-central-1",
             TranscribeRegion::EuWest1 => "eu-west-1",
@@ -4953,6 +4960,7 @@ impl TranscribeRegion {
             "ap-northeast-1",
             "ap-northeast-2",
             "ap-southeast-2",
+            "auto",
             "ca-central-1",
             "eu-central-1",
             "eu-west-1",
@@ -8173,7 +8181,7 @@ impl AsRef<str> for SortOrder {
 pub struct ChannelMembershipForAppInstanceUserSummary {
     /// <p>Summary of the details of a <code>Channel</code>.</p>
     pub channel_summary: std::option::Option<crate::model::ChannelSummary>,
-    /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
+    /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
     pub app_instance_user_membership_summary:
         std::option::Option<crate::model::AppInstanceUserMembershipSummary>,
 }
@@ -8211,7 +8219,7 @@ pub mod channel_membership_for_app_instance_user_summary {
             self.channel_summary = input;
             self
         }
-        /// <p>Returns the channel membership data for an <code>AppInstance</code>.</p>
+        /// <p>Summary of the membership details of an <code>AppInstanceUser</code>.</p>
         pub fn app_instance_user_membership_summary(
             mut self,
             input: crate::model::AppInstanceUserMembershipSummary,
@@ -10802,11 +10810,12 @@ impl BatchCreateChannelMembershipError {
     }
 }
 
-/// <p>The membership information, including member ARNs, the channel ARN, and membership types.</p>
+/// <p>The membership information, including member ARNs, the channel ARN, and membership
+/// types.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchChannelMemberships {
-    /// <p>The details of a user.</p>
+    /// <p>The identifier of the member who invited another member.</p>
     pub invited_by: std::option::Option<crate::model::Identity>,
     /// <p>The membership types set for the channel users.</p>
     pub r#type: std::option::Option<crate::model::ChannelMembershipType>,
@@ -10837,7 +10846,7 @@ pub mod batch_channel_memberships {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The details of a user.</p>
+        /// <p>The identifier of the member who invited another member.</p>
         pub fn invited_by(mut self, input: crate::model::Identity) -> Self {
             self.invited_by = Some(input);
             self

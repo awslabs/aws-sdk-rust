@@ -139,6 +139,24 @@ pub fn parse_check_capacity_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
+        "WAFExpiredManagedRuleGroupVersionException" => crate::error::CheckCapacityError {
+            meta: generic,
+            kind: crate::error::CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::waf_expired_managed_rule_group_version_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_expired_managed_rule_group_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CheckCapacityError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "WAFInternalErrorException" => {
             crate::error::CheckCapacityError {
                 meta: generic,
@@ -2379,115 +2397,91 @@ pub fn parse_describe_managed_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => {
-            crate::error::DescribeManagedRuleGroupError {
-                meta: generic,
-                kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInternalErrorException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if (&tmp.message).is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "WAFInvalidOperationException" => {
-            crate::error::DescribeManagedRuleGroupError {
-                meta: generic,
-                kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::waf_invalid_operation_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        "WAFInvalidParameterException" => {
-            crate::error::DescribeManagedRuleGroupError {
-                meta: generic,
-                kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::waf_invalid_parameter_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        "WAFInvalidResourceException" => {
-            crate::error::DescribeManagedRuleGroupError {
-                meta: generic,
-                kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::waf_invalid_resource_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_waf_invalid_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        "WAFNonexistentItemException" => {
-            crate::error::DescribeManagedRuleGroupError {
-                meta: generic,
-                kind: crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::waf_nonexistent_item_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_waf_nonexistent_item_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
-                            output.build()
-                        };
-                        if (&tmp.message).is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
-        }
-        _ => crate::error::DescribeManagedRuleGroupError::generic(generic),
+        "WAFExpiredManagedRuleGroupVersionException" => crate::error::DescribeManagedRuleGroupError { meta: generic, kind: crate::error::DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_expired_managed_rule_group_version_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_expired_managed_rule_group_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInternalErrorException" => crate::error::DescribeManagedRuleGroupError { meta: generic, kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidOperationException" => crate::error::DescribeManagedRuleGroupError { meta: generic, kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidParameterException" => crate::error::DescribeManagedRuleGroupError { meta: generic, kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidResourceException" => crate::error::DescribeManagedRuleGroupError { meta: generic, kind: crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_resource_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_resource_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFNonexistentItemException" => crate::error::DescribeManagedRuleGroupError { meta: generic, kind: crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_nonexistent_item_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_nonexistent_item_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeManagedRuleGroupError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeManagedRuleGroupError::generic(generic)
     })
 }
 
@@ -2863,6 +2857,122 @@ pub fn parse_get_logging_configuration_response(
             output,
         )
         .map_err(crate::error::GetLoggingConfigurationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_managed_rule_set_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetManagedRuleSetOutput, crate::error::GetManagedRuleSetError>
+{
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::GetManagedRuleSetError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::GetManagedRuleSetError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => {
+            crate::error::GetManagedRuleSetError {
+                meta: generic,
+                kind: crate::error::GetManagedRuleSetErrorKind::WafInternalErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_internal_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetManagedRuleSetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::GetManagedRuleSetError {
+                meta: generic,
+                kind: crate::error::GetManagedRuleSetErrorKind::WafInvalidOperationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_operation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetManagedRuleSetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::GetManagedRuleSetError {
+                meta: generic,
+                kind: crate::error::GetManagedRuleSetErrorKind::WafInvalidParameterException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetManagedRuleSetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetManagedRuleSetError {
+                meta: generic,
+                kind: crate::error::GetManagedRuleSetErrorKind::WafNonexistentItemException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_nonexistent_item_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_nonexistent_item_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetManagedRuleSetError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::GetManagedRuleSetError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_managed_rule_set_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::GetManagedRuleSetOutput, crate::error::GetManagedRuleSetError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::get_managed_rule_set_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_managed_rule_set(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetManagedRuleSetError::unhandled)?;
         output.build()
     })
 }
@@ -3751,6 +3861,93 @@ pub fn parse_list_available_managed_rule_groups_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_available_managed_rule_group_versions_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAvailableManagedRuleGroupVersionsOutput,
+    crate::error::ListAvailableManagedRuleGroupVersionsError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => crate::error::ListAvailableManagedRuleGroupVersionsError { meta: generic, kind: crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidOperationException" => crate::error::ListAvailableManagedRuleGroupVersionsError { meta: generic, kind: crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidParameterException" => crate::error::ListAvailableManagedRuleGroupVersionsError { meta: generic, kind: crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::ListAvailableManagedRuleGroupVersionsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_available_managed_rule_group_versions_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListAvailableManagedRuleGroupVersionsOutput,
+    crate::error::ListAvailableManagedRuleGroupVersionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::list_available_managed_rule_group_versions_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_available_managed_rule_group_versions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListAvailableManagedRuleGroupVersionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_ip_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListIpSetsOutput, crate::error::ListIPSetsError> {
@@ -3949,6 +4146,106 @@ pub fn parse_list_logging_configurations_response(
             output,
         )
         .map_err(crate::error::ListLoggingConfigurationsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_managed_rule_sets_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListManagedRuleSetsOutput,
+    crate::error::ListManagedRuleSetsError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::ListManagedRuleSetsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListManagedRuleSetsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => {
+            crate::error::ListManagedRuleSetsError {
+                meta: generic,
+                kind: crate::error::ListManagedRuleSetsErrorKind::WafInternalErrorException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_internal_error_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListManagedRuleSetsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::ListManagedRuleSetsError {
+                meta: generic,
+                kind: crate::error::ListManagedRuleSetsErrorKind::WafInvalidOperationException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_operation_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListManagedRuleSetsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::ListManagedRuleSetsError {
+                meta: generic,
+                kind: crate::error::ListManagedRuleSetsErrorKind::WafInvalidParameterException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::waf_invalid_parameter_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListManagedRuleSetsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListManagedRuleSetsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_managed_rule_sets_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListManagedRuleSetsOutput,
+    crate::error::ListManagedRuleSetsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_managed_rule_sets_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_managed_rule_sets(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListManagedRuleSetsError::unhandled)?;
         output.build()
     })
 }
@@ -4715,6 +5012,162 @@ pub fn parse_put_logging_configuration_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_managed_rule_set_versions_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutManagedRuleSetVersionsOutput,
+    crate::error::PutManagedRuleSetVersionsError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::PutManagedRuleSetVersionsError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => {
+            crate::error::PutManagedRuleSetVersionsError {
+                meta: generic,
+                kind: crate::error::PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::waf_internal_error_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "WAFInvalidOperationException" => crate::error::PutManagedRuleSetVersionsError {
+            meta: generic,
+            kind: crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFInvalidParameterException" => crate::error::PutManagedRuleSetVersionsError {
+            meta: generic,
+            kind: crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "WAFNonexistentItemException" => {
+            crate::error::PutManagedRuleSetVersionsError {
+                meta: generic,
+                kind: crate::error::PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::waf_nonexistent_item_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_waf_nonexistent_item_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        "WAFOptimisticLockException" => {
+            crate::error::PutManagedRuleSetVersionsError {
+                meta: generic,
+                kind: crate::error::PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(
+                    {
+                        #[allow(unused_mut)]
+                        let mut tmp = {
+                            #[allow(unused_mut)]
+                            let mut output =
+                                crate::error::waf_optimistic_lock_exception::Builder::default();
+                            let _ = response;
+                            output = crate::json_deser::deser_structure_waf_optimistic_lock_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+                            output.build()
+                        };
+                        if (&tmp.message).is_none() {
+                            tmp.message = _error_message;
+                        }
+                        tmp
+                    },
+                ),
+            }
+        }
+        _ => crate::error::PutManagedRuleSetVersionsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_put_managed_rule_set_versions_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::PutManagedRuleSetVersionsOutput,
+    crate::error::PutManagedRuleSetVersionsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::put_managed_rule_set_versions_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_put_managed_rule_set_versions(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::PutManagedRuleSetVersionsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_put_permission_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5321,6 +5774,121 @@ pub fn parse_update_ip_set_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_managed_rule_set_version_expiry_date_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateManagedRuleSetVersionExpiryDateOutput,
+    crate::error::UpdateManagedRuleSetVersionExpiryDateError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(
+                crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled(generic),
+            )
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "WAFInternalErrorException" => crate::error::UpdateManagedRuleSetVersionExpiryDateError { meta: generic, kind: crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_internal_error_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidOperationException" => crate::error::UpdateManagedRuleSetVersionExpiryDateError { meta: generic, kind: crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFInvalidParameterException" => crate::error::UpdateManagedRuleSetVersionExpiryDateError { meta: generic, kind: crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFNonexistentItemException" => crate::error::UpdateManagedRuleSetVersionExpiryDateError { meta: generic, kind: crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_nonexistent_item_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_nonexistent_item_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "WAFOptimisticLockException" => crate::error::UpdateManagedRuleSetVersionExpiryDateError { meta: generic, kind: crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::waf_optimistic_lock_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_waf_optimistic_lock_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::UpdateManagedRuleSetVersionExpiryDateError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_managed_rule_set_version_expiry_date_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateManagedRuleSetVersionExpiryDateOutput,
+    crate::error::UpdateManagedRuleSetVersionExpiryDateError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::update_managed_rule_set_version_expiry_date_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_update_managed_rule_set_version_expiry_date(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateManagedRuleSetVersionExpiryDateError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_regex_pattern_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
@@ -5741,6 +6309,24 @@ pub fn parse_update_web_acl_error(
                 }),
             }
         }
+        "WAFExpiredManagedRuleGroupVersionException" => crate::error::UpdateWebACLError {
+            meta: generic,
+            kind: crate::error::UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(
+                {
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]let mut output = crate::error::waf_expired_managed_rule_group_version_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_waf_expired_managed_rule_group_version_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            ),
+        },
         "WAFInternalErrorException" => {
             crate::error::UpdateWebACLError {
                 meta: generic,

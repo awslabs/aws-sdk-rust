@@ -167,6 +167,9 @@ where
     pub fn update_project(&self) -> fluent_builders::UpdateProject<C> {
         fluent_builders::UpdateProject::new(self.handle.clone())
     }
+    pub fn update_project_visibility(&self) -> fluent_builders::UpdateProjectVisibility<C> {
+        fluent_builders::UpdateProjectVisibility::new(self.handle.clone())
+    }
     pub fn update_report_group(&self) -> fluent_builders::UpdateReportGroup<C> {
         fluent_builders::UpdateReportGroup::new(self.handle.clone())
     }
@@ -339,7 +342,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The names or ARNs of the build projects. To get information about a project shared
-        /// with your AWS account, its ARN must be specified. You cannot specify a shared project
+        /// with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project
         /// using its name.</p>
         pub fn names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.names(inp);
@@ -522,7 +525,7 @@ pub mod fluent_builders {
         /// version is used. If specified, it must be one of: </p>
         /// <ul>
         /// <li>
-        /// <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
         /// </li>
         /// <li>
         /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
@@ -546,7 +549,7 @@ pub mod fluent_builders {
         /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes
         /// precedence over this <code>sourceVersion</code> (at the project level). </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
         /// </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_version(input);
@@ -626,8 +629,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services
-        /// on behalf of the AWS account.</p>
+        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
+        /// on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(input);
             self
@@ -636,7 +639,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before it times out
+        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out
         /// any build that has not been marked as completed. The default is 60 minutes.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout_in_minutes(input);
@@ -655,7 +658,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes(input);
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
         /// artifacts.</p>
         /// <note>
         /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -676,7 +679,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>A list of tag key and value pairs associated with this build project.</p>
-        /// <p>These tags are available for use by AWS services that support AWS CodeBuild build project
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
         /// tags.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -689,7 +692,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+        /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
@@ -711,7 +714,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_badge_enabled(input);
             self
         }
-        /// <p>Information about logs for the build project. These can be logs in Amazon CloudWatch Logs, logs
+        /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs
         /// uploaded to a specified S3 bucket, or both. </p>
         pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
             self.inner = self.inner.logs_config(input);
@@ -839,7 +842,7 @@ pub mod fluent_builders {
         /// <p>
         /// A list of tag key and value pairs associated with this report group.
         /// </p>
-        /// <p>These tags are available for use by AWS services that support AWS CodeBuild report group
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
         /// tags.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -884,7 +887,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input);
             self
@@ -1236,7 +1239,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input);
             self
@@ -1677,7 +1680,7 @@ pub mod fluent_builders {
         }
         /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or
         /// Bitbucket repository. An OAUTH connection is not supported by the API and must be
-        /// created using the AWS CodeBuild console. </p>
+        /// created using the CodeBuild console. </p>
         pub fn auth_type(mut self, input: crate::model::AuthType) -> Self {
             self.inner = self.inner.auth_type(input);
             self
@@ -1729,7 +1732,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS CodeBuild build project that the cache is reset for.</p>
+        /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input);
             self
@@ -2023,7 +2026,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input);
             self
@@ -2541,7 +2544,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> The criterion to be used to list build projects shared with the current AWS account
+        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account
         /// or user. Valid values include: </p>
         /// <ul>
         /// <li>
@@ -2666,7 +2669,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_order(input);
             self
         }
-        /// <p> The criterion to be used to list report groups shared with the current AWS account or
+        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or
         /// user. Valid values include: </p>
         /// <ul>
         /// <li>
@@ -2780,7 +2783,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
-        /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
         /// </p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.policy(input);
@@ -2845,7 +2848,7 @@ pub mod fluent_builders {
         /// <code>RetryBuild</code> request. The token is included in the
         /// <code>RetryBuild</code> request and is valid for five minutes. If you repeat
         /// the <code>RetryBuild</code> request with the same token, but change a parameter,
-        /// AWS CodeBuild returns a parameter mismatch error.</p>
+        /// CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input);
             self
@@ -2902,7 +2905,7 @@ pub mod fluent_builders {
         /// <code>RetryBuildBatch</code> request. The token is included in the
         /// <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat
         /// the <code>RetryBuildBatch</code> request with the same token, but change a parameter,
-        /// AWS CodeBuild returns a parameter mismatch error.</p>
+        /// CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input);
             self
@@ -2958,7 +2961,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS CodeBuild build project to start running a build.</p>
+        /// <p>The name of the CodeBuild build project to start running a build.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input);
             self
@@ -3002,7 +3005,7 @@ pub mod fluent_builders {
         /// the latest version is used. If specified, the contents depends on the source
         /// provider:</p>
         /// <dl>
-        /// <dt>AWS CodeCommit</dt>
+        /// <dt>CodeCommit</dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
@@ -3031,7 +3034,7 @@ pub mod fluent_builders {
         /// <p>If <code>sourceVersion</code> is specified at the project level, then this
         /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_version(input);
             self
@@ -3137,7 +3140,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_git_clone_depth_override(input);
             self
         }
-        /// <p> Information about the Git submodules configuration for this build of an AWS CodeBuild build
+        /// <p> Information about the Git submodules configuration for this build of an CodeBuild build
         /// project. </p>
         pub fn git_submodules_config_override(
             mut self,
@@ -3158,7 +3161,7 @@ pub mod fluent_builders {
         /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
         /// alternate buildspec file relative to the value of the built-in
         /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same AWS Region as the build project. Specify the buildspec
+        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
         /// file using its ARN (for example,
         /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
         /// provided or is set to an empty string, the source code must contain a buildspec file in
@@ -3190,7 +3193,7 @@ pub mod fluent_builders {
         /// completion. If you use this option with a source provider other than GitHub, GitHub
         /// Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
         /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
-        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>
+        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
         /// <note>
         /// <p> The status of a build triggered by a webhook is always reported to your source
         /// provider. </p>
@@ -3333,7 +3336,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes_override(input);
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build
         /// project. The CMK key encrypts the build output artifacts.</p>
         /// <note>
         /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -3355,7 +3358,7 @@ pub mod fluent_builders {
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
         /// StartBuild request. The token is included in the StartBuild request and is valid for 5
         /// minutes. If you repeat the StartBuild request with the same token, but change a
-        /// parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+        /// parameter, CodeBuild returns a parameter mismatch error. </p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input);
             self
@@ -3395,21 +3398,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registry_credential_override(input);
             self
         }
-        /// <p>The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid
+        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid
         /// values: </p>
         /// <dl>
         /// <dt>CODEBUILD</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust AWS CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
         /// <dt>SERVICE_ROLE</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses your build project's service role. </p>
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
         /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an AWS CodeBuild curated image,
+        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
         /// you must use <code>CODEBUILD</code> credentials. </p>
         pub fn image_pull_credentials_type_override(
             mut self,
@@ -3512,7 +3515,7 @@ pub mod fluent_builders {
         /// the latest version is used. If specified, the contents depends on the source
         /// provider:</p>
         /// <dl>
-        /// <dt>AWS CodeCommit</dt>
+        /// <dt>CodeCommit</dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
@@ -3541,7 +3544,7 @@ pub mod fluent_builders {
         /// <p>If <code>sourceVersion</code> is specified at the project level, then this
         /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_version(input);
             self
@@ -3669,7 +3672,7 @@ pub mod fluent_builders {
         /// <p>If this value is set, it can be either an inline buildspec definition, the path to an
         /// alternate buildspec file relative to the value of the built-in
         /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same AWS Region as the build project. Specify the buildspec
+        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
         /// file using its ARN (for example,
         /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
         /// provided or is set to an empty string, the source code must contain a buildspec file in
@@ -3825,7 +3828,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes_override(input);
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the batch build
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build
         /// project. The CMK key encrypts the build output artifacts.</p>
         /// <note>
         /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -3848,7 +3851,7 @@ pub mod fluent_builders {
         /// <code>StartBuildBatch</code> request. The token is included in the
         /// <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat
         /// the <code>StartBuildBatch</code> request with the same token, but change a parameter,
-        /// AWS CodeBuild returns a parameter mismatch error.</p>
+        /// CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.idempotency_token(input);
             self
@@ -3889,21 +3892,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_registry_credential_override(input);
             self
         }
-        /// <p>The type of credentials AWS CodeBuild uses to pull images in your batch build. There are two valid
+        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid
         /// values: </p>
         /// <dl>
         /// <dt>CODEBUILD</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust AWS CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
         /// <dt>SERVICE_ROLE</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses your build project's service role. </p>
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
         /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an AWS CodeBuild curated image,
+        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
         /// you must use <code>CODEBUILD</code> credentials. </p>
         pub fn image_pull_credentials_type_override(
             mut self,
@@ -4109,7 +4112,7 @@ pub mod fluent_builders {
         /// latest version is used. If specified, it must be one of: </p>
         /// <ul>
         /// <li>
-        /// <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
         /// </li>
         /// <li>
         /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
@@ -4133,7 +4136,7 @@ pub mod fluent_builders {
         /// <p> If <code>sourceVersion</code> is specified at the build level, then that version
         /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
         /// </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.source_version(input);
@@ -4213,8 +4216,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_environment(input);
             self
         }
-        /// <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent
-        /// AWS services on behalf of the AWS account.</p>
+        /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent
+        /// Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.service_role(input);
             self
@@ -4223,7 +4226,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_service_role(input);
             self
         }
-        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before
+        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
         /// timing out any related build that did not get marked as completed.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
             self.inner = self.inner.timeout_in_minutes(input);
@@ -4242,7 +4245,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_queued_timeout_in_minutes(input);
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
         /// artifacts.</p>
         /// <note>
         /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -4263,7 +4266,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>An updated list of tag key and value pairs associated with this build project.</p>
-        /// <p>These tags are available for use by AWS services that support AWS CodeBuild build project
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
         /// tags.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4276,7 +4279,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_tags(input);
             self
         }
-        /// <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+        /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.inner = self.inner.vpc_config(input);
             self
@@ -4298,7 +4301,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_badge_enabled(input);
             self
         }
-        /// <p> Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs,
+        /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs,
         /// logs in an S3 bucket, or both. </p>
         pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
             self.inner = self.inner.logs_config(input);
@@ -4352,6 +4355,82 @@ pub mod fluent_builders {
         }
         pub fn set_concurrent_build_limit(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_concurrent_build_limit(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateProjectVisibility<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_project_visibility_input::Builder,
+    }
+    impl<C> UpdateProjectVisibility<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateProjectVisibilityOutput,
+            smithy_http::result::SdkError<crate::error::UpdateProjectVisibilityError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.project_arn(input);
+            self
+        }
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_project_arn(input);
+            self
+        }
+        /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+        /// <dl>
+        /// <dt>PUBLIC_READ</dt>
+        /// <dd>
+        /// <p>The project builds are visible to the public.</p>
+        /// </dd>
+        /// <dt>PRIVATE</dt>
+        /// <dd>
+        /// <p>The project builds are not visible to the public.</p>
+        /// </dd>
+        /// </dl>
+        pub fn project_visibility(mut self, input: crate::model::ProjectVisibilityType) -> Self {
+            self.inner = self.inner.project_visibility(input);
+            self
+        }
+        pub fn set_project_visibility(
+            mut self,
+            input: std::option::Option<crate::model::ProjectVisibilityType>,
+        ) -> Self {
+            self.inner = self.inner.set_project_visibility(input);
+            self
+        }
+        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
+        /// the project's builds.</p>
+        pub fn resource_access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.resource_access_role(input);
+            self
+        }
+        pub fn set_resource_access_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_resource_access_role(input);
             self
         }
     }
@@ -4426,7 +4505,7 @@ pub mod fluent_builders {
         /// <p>
         /// An updated list of tag key and value pairs associated with this report group.
         /// </p>
-        /// <p>These tags are available for use by AWS services that support AWS CodeBuild report group
+        /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
         /// tags.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
@@ -4471,7 +4550,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.project_name(input);
             self

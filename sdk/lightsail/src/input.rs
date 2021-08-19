@@ -1408,7 +1408,7 @@ pub mod create_bucket_input {
         }
         /// <p>A Boolean value that indicates whether to enable versioning of objects in the
         /// bucket.</p>
-        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the
+        /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
         /// <i>Amazon Lightsail Developer Guide</i>.</p>
         pub fn enable_object_versioning(mut self, input: bool) -> Self {
             self.enable_object_versioning = Some(input);
@@ -30829,7 +30829,7 @@ pub struct CreateBucketInput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>A Boolean value that indicates whether to enable versioning of objects in the
     /// bucket.</p>
-    /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending bucket object versioning in Amazon Lightsail</a> in the
+    /// <p>For more information about versioning, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-managing-bucket-object-versioning">Enabling and suspending object versioning in a bucket in Amazon Lightsail</a> in the
     /// <i>Amazon Lightsail Developer Guide</i>.</p>
     pub enable_object_versioning: std::option::Option<bool>,
 }

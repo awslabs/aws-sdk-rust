@@ -500,7 +500,7 @@ impl StartFaceDetectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartContentModerationOutput {
-    /// <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in
+    /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in
     /// a subsequent call to <code>GetContentModeration</code>.</p>
     pub job_id: std::option::Option<std::string::String>,
 }
@@ -520,7 +520,7 @@ pub mod start_content_moderation_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in
+        /// <p>The identifier for the content analysis job. Use <code>JobId</code> to identify the job in
         /// a subsequent call to <code>GetContentModeration</code>.</p>
         pub fn job_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_id = Some(input.into());
@@ -2161,20 +2161,20 @@ impl GetFaceDetectionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetContentModerationOutput {
-    /// <p>The current status of the unsafe content analysis job.</p>
+    /// <p>The current status of the content moderation analysis job.</p>
     pub job_status: std::option::Option<crate::model::VideoJobStatus>,
     /// <p>If the job fails, <code>StatusMessage</code> provides a descriptive error message.</p>
     pub status_message: std::option::Option<std::string::String>,
     /// <p>Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
     /// is returned in every page of paginated responses from <code>GetContentModeration</code>. </p>
     pub video_metadata: std::option::Option<crate::model::VideoMetadata>,
-    /// <p>The detected unsafe content labels and the time(s) they were detected.</p>
+    /// <p>The detected inappropriate, unwanted, or offensive content moderation labels and the time(s) they were detected.</p>
     pub moderation_labels:
         std::option::Option<std::vec::Vec<crate::model::ContentModerationDetection>>,
     /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-    /// request to retrieve the next set of unsafe content labels. </p>
+    /// request to retrieve the next set of content moderation labels. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+    /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
     pub moderation_model_version: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetContentModerationOutput {
@@ -2204,7 +2204,7 @@ pub mod get_content_moderation_output {
         pub(crate) moderation_model_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The current status of the unsafe content analysis job.</p>
+        /// <p>The current status of the content moderation analysis job.</p>
         pub fn job_status(mut self, input: crate::model::VideoJobStatus) -> Self {
             self.job_status = Some(input);
             self
@@ -2258,7 +2258,7 @@ pub mod get_content_moderation_output {
             self
         }
         /// <p>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent
-        /// request to retrieve the next set of unsafe content labels. </p>
+        /// request to retrieve the next set of content moderation labels. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -2267,7 +2267,7 @@ pub mod get_content_moderation_output {
             self.next_token = input;
             self
         }
-        /// <p>Version number of the moderation detection model that was used to detect unsafe content.</p>
+        /// <p>Version number of the moderation detection model that was used to detect inappropriate, unwanted, or offensive content.</p>
         pub fn moderation_model_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.moderation_model_version = Some(input.into());
             self

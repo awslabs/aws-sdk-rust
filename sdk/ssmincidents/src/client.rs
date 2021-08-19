@@ -388,7 +388,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_event_type(input);
             self
         }
-        /// <p>A short description of the event.</p>
+        /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.event_data(input);
             self
@@ -1741,9 +1741,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_chat_channel(input);
             self
         }
-        /// <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an
-        /// incident. You can also make updates to the incident through the chat channel using the
-        /// SNS topics. </p>
+        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
         /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
         /// the incident.</p>
         pub fn notification_targets(
@@ -2022,10 +2020,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_incident_template_dedupe_string(input);
             self
         }
-        /// <p>The SNS targets that
-        /// AWS
-        /// Chatbot uses to notify the chat channels and perform actions on the
-        /// incident record.</p>
+        /// <p>The SNS targets that are notified when updates are made to an incident.</p>
         pub fn incident_template_notification_targets(
             mut self,
             inp: impl Into<crate::model::NotificationTargetItem>,
@@ -2044,6 +2039,7 @@ pub mod fluent_builders {
         /// AWS
         /// Chatbot chat channel used for collaboration during an
         /// incident.</p>
+        /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.inner = self.inner.chat_channel(input);
             self

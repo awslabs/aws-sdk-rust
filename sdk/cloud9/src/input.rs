@@ -16,6 +16,7 @@ pub mod create_environment_ec2_input {
         pub(crate) owner_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) connection_type: std::option::Option<crate::model::ConnectionType>,
+        pub(crate) dry_run: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The name of the environment to create.</p>
@@ -181,6 +182,15 @@ pub mod create_environment_ec2_input {
             self.connection_type = input;
             self
         }
+        /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+        pub fn dry_run(mut self, input: bool) -> Self {
+            self.dry_run = Some(input);
+            self
+        }
+        pub fn set_dry_run(mut self, input: std::option::Option<bool>) -> Self {
+            self.dry_run = input;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEnvironmentEc2Input`](crate::input::CreateEnvironmentEc2Input)
         pub fn build(
             self,
@@ -199,6 +209,7 @@ pub mod create_environment_ec2_input {
                 owner_arn: self.owner_arn,
                 tags: self.tags,
                 connection_type: self.connection_type,
+                dry_run: self.dry_run,
             })
         }
     }
@@ -1881,6 +1892,8 @@ pub mod update_environment_input {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) managed_credentials_action:
+            std::option::Option<crate::model::ManagedCredentialsAction>,
     }
     impl Builder {
         /// <p>The ID of the environment to change settings.</p>
@@ -1913,6 +1926,38 @@ pub mod update_environment_input {
             self.description = input;
             self
         }
+        /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary
+        /// credentials for an Cloud9 environment by using one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ENABLE</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>DISABLE</code>
+        /// </p>
+        /// </li>
+        /// </ul>
+        /// <note>
+        /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment
+        /// owner.</p>  
+        /// </note>
+        pub fn managed_credentials_action(
+            mut self,
+            input: crate::model::ManagedCredentialsAction,
+        ) -> Self {
+            self.managed_credentials_action = Some(input);
+            self
+        }
+        pub fn set_managed_credentials_action(
+            mut self,
+            input: std::option::Option<crate::model::ManagedCredentialsAction>,
+        ) -> Self {
+            self.managed_credentials_action = input;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEnvironmentInput`](crate::input::UpdateEnvironmentInput)
         pub fn build(
             self,
@@ -1924,6 +1969,7 @@ pub mod update_environment_input {
                 environment_id: self.environment_id,
                 name: self.name,
                 description: self.description,
+                managed_credentials_action: self.managed_credentials_action,
             })
         }
     }
@@ -2260,6 +2306,25 @@ pub struct UpdateEnvironmentInput {
     pub name: std::option::Option<std::string::String>,
     /// <p>Any new or replacement description for the environment.</p>
     pub description: std::option::Option<std::string::String>,
+    /// <p>Allows the environment owner to turn on or turn off the Amazon Web Services managed temporary
+    /// credentials for an Cloud9 environment by using one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ENABLE</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>DISABLE</code>
+    /// </p>
+    /// </li>
+    /// </ul>
+    /// <note>
+    /// <p>Only the environment owner can change the status of managed temporary credentials. An <code>AccessDeniedException</code> is thrown if an attempt to turn on or turn off managed temporary credentials is made by an account that's not the environment
+    /// owner.</p>  
+    /// </note>
+    pub managed_credentials_action: std::option::Option<crate::model::ManagedCredentialsAction>,
 }
 impl std::fmt::Debug for UpdateEnvironmentInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2267,6 +2332,10 @@ impl std::fmt::Debug for UpdateEnvironmentInput {
         formatter.field("environment_id", &self.environment_id);
         formatter.field("name", &self.name);
         formatter.field("description", &"*** Sensitive Data Redacted ***");
+        formatter.field(
+            "managed_credentials_action",
+            &self.managed_credentials_action,
+        );
         formatter.finish()
     }
 }
@@ -2567,6 +2636,8 @@ pub struct CreateEnvironmentEc2Input {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2 instances with
     /// Amazon EC2 Systems Manager</a> in the <i>Cloud9 User Guide</i>.</p>
     pub connection_type: std::option::Option<crate::model::ConnectionType>,
+    /// <p>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+    pub dry_run: std::option::Option<bool>,
 }
 impl std::fmt::Debug for CreateEnvironmentEc2Input {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -2584,6 +2655,7 @@ impl std::fmt::Debug for CreateEnvironmentEc2Input {
         formatter.field("owner_arn", &self.owner_arn);
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("connection_type", &self.connection_type);
+        formatter.field("dry_run", &self.dry_run);
         formatter.finish()
     }
 }

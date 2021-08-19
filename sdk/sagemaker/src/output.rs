@@ -10009,6 +10009,8 @@ pub struct DescribeNotebookInstanceOutput {
     /// users.</p>
     /// </note>
     pub root_access: std::option::Option<crate::model::RootAccess>,
+    /// <p>The platform identifier of the notebook instance runtime environment.</p>
+    pub platform_identifier: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeNotebookInstanceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10039,6 +10041,7 @@ impl std::fmt::Debug for DescribeNotebookInstanceOutput {
             &self.additional_code_repositories,
         );
         formatter.field("root_access", &self.root_access);
+        formatter.field("platform_identifier", &self.platform_identifier);
         formatter.finish()
     }
 }
@@ -10072,6 +10075,7 @@ pub mod describe_notebook_instance_output {
         pub(crate) additional_code_repositories:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) root_access: std::option::Option<crate::model::RootAccess>,
+        pub(crate) platform_identifier: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the notebook instance.</p>
@@ -10339,6 +10343,18 @@ pub mod describe_notebook_instance_output {
             self.root_access = input;
             self
         }
+        /// <p>The platform identifier of the notebook instance runtime environment.</p>
+        pub fn platform_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.platform_identifier = Some(input.into());
+            self
+        }
+        pub fn set_platform_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.platform_identifier = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeNotebookInstanceOutput`](crate::output::DescribeNotebookInstanceOutput)
         pub fn build(self) -> crate::output::DescribeNotebookInstanceOutput {
             crate::output::DescribeNotebookInstanceOutput {
@@ -10363,6 +10379,7 @@ pub mod describe_notebook_instance_output {
                 default_code_repository: self.default_code_repository,
                 additional_code_repositories: self.additional_code_repositories,
                 root_access: self.root_access,
+                platform_identifier: self.platform_identifier,
             }
         }
     }
@@ -14195,6 +14212,11 @@ pub struct DescribeEndpointConfigOutput {
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>A timestamp that shows when the endpoint configuration was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>Returns the description of an endpoint configuration created using the
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+    /// <code>CreateEndpointConfig</code>
+    /// </a> API.</p>
+    pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
 impl std::fmt::Debug for DescribeEndpointConfigOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14205,6 +14227,7 @@ impl std::fmt::Debug for DescribeEndpointConfigOutput {
         formatter.field("data_capture_config", &self.data_capture_config);
         formatter.field("kms_key_id", &self.kms_key_id);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("async_inference_config", &self.async_inference_config);
         formatter.finish()
     }
 }
@@ -14221,6 +14244,7 @@ pub mod describe_endpoint_config_output {
         pub(crate) data_capture_config: std::option::Option<crate::model::DataCaptureConfig>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
     }
     impl Builder {
         /// <p>Name of the Amazon SageMaker endpoint configuration.</p>
@@ -14297,6 +14321,21 @@ pub mod describe_endpoint_config_output {
             self.creation_time = input;
             self
         }
+        /// <p>Returns the description of an endpoint configuration created using the
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+        /// <code>CreateEndpointConfig</code>
+        /// </a> API.</p>
+        pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
+            self.async_inference_config = Some(input);
+            self
+        }
+        pub fn set_async_inference_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceConfig>,
+        ) -> Self {
+            self.async_inference_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeEndpointConfigOutput`](crate::output::DescribeEndpointConfigOutput)
         pub fn build(self) -> crate::output::DescribeEndpointConfigOutput {
             crate::output::DescribeEndpointConfigOutput {
@@ -14306,6 +14345,7 @@ pub mod describe_endpoint_config_output {
                 data_capture_config: self.data_capture_config,
                 kms_key_id: self.kms_key_id,
                 creation_time: self.creation_time,
+                async_inference_config: self.async_inference_config,
             }
         }
     }
@@ -14391,6 +14431,11 @@ pub struct DescribeEndpointOutput {
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
     /// <p>The most recent deployment configuration for the endpoint.</p>
     pub last_deployment_config: std::option::Option<crate::model::DeploymentConfig>,
+    /// <p>Returns the description of an endpoint configuration created
+    /// using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+    /// <code>CreateEndpointConfig</code>
+    /// </a> API.</p>
+    pub async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
 }
 impl std::fmt::Debug for DescribeEndpointOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -14405,6 +14450,7 @@ impl std::fmt::Debug for DescribeEndpointOutput {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("last_deployment_config", &self.last_deployment_config);
+        formatter.field("async_inference_config", &self.async_inference_config);
         formatter.finish()
     }
 }
@@ -14425,6 +14471,7 @@ pub mod describe_endpoint_output {
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
         pub(crate) last_modified_time: std::option::Option<smithy_types::Instant>,
         pub(crate) last_deployment_config: std::option::Option<crate::model::DeploymentConfig>,
+        pub(crate) async_inference_config: std::option::Option<crate::model::AsyncInferenceConfig>,
     }
     impl Builder {
         /// <p>Name of the endpoint.</p>
@@ -14600,6 +14647,21 @@ pub mod describe_endpoint_output {
             self.last_deployment_config = input;
             self
         }
+        /// <p>Returns the description of an endpoint configuration created
+        /// using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
+        /// <code>CreateEndpointConfig</code>
+        /// </a> API.</p>
+        pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
+            self.async_inference_config = Some(input);
+            self
+        }
+        pub fn set_async_inference_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceConfig>,
+        ) -> Self {
+            self.async_inference_config = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeEndpointOutput`](crate::output::DescribeEndpointOutput)
         pub fn build(self) -> crate::output::DescribeEndpointOutput {
             crate::output::DescribeEndpointOutput {
@@ -14613,6 +14675,7 @@ pub mod describe_endpoint_output {
                 creation_time: self.creation_time,
                 last_modified_time: self.last_modified_time,
                 last_deployment_config: self.last_deployment_config,
+                async_inference_config: self.async_inference_config,
             }
         }
     }
@@ -16535,8 +16598,9 @@ pub struct DescribeAutoMlJobOutput {
     pub input_data_config: std::option::Option<std::vec::Vec<crate::model::AutoMlChannel>>,
     /// <p>Returns the job's output data config.</p>
     pub output_data_config: std::option::Option<crate::model::AutoMlOutputDataConfig>,
-    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to
-    /// the input data location and write permission to the output data location in Amazon S3.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+    /// has read permission to the input data location and write permission to the output data
+    /// location in Amazon S3.</p>
     pub role_arn: std::option::Option<std::string::String>,
     /// <p>Returns the job's objective.</p>
     pub auto_ml_job_objective: std::option::Option<crate::model::AutoMlJobObjective>,
@@ -16567,7 +16631,7 @@ pub struct DescribeAutoMlJobOutput {
     /// <p>Returns information on the job's artifacts found in
     /// <code>AutoMLJobArtifacts</code>.</p>
     pub auto_ml_job_artifacts: std::option::Option<crate::model::AutoMlJobArtifacts>,
-    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+    /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
     /// <code>CompletionCriteria</code>. If you do not provide these values, they are
     /// auto-inferred. If you do provide them, the values used are the ones you provide.</p>
     pub resolved_attributes: std::option::Option<crate::model::ResolvedAttributes>,
@@ -16691,8 +16755,9 @@ pub mod describe_auto_ml_job_output {
             self.output_data_config = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that has read permission to
-        /// the input data location and write permission to the output data location in Amazon S3.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Identity and Access Management (IAM) role that
+        /// has read permission to the input data location and write permission to the output data
+        /// location in Amazon S3.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -16863,7 +16928,7 @@ pub mod describe_auto_ml_job_output {
             self.auto_ml_job_artifacts = input;
             self
         }
-        /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code> and
+        /// <p>This contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and
         /// <code>CompletionCriteria</code>. If you do not provide these values, they are
         /// auto-inferred. If you do provide them, the values used are the ones you provide.</p>
         pub fn resolved_attributes(mut self, input: crate::model::ResolvedAttributes) -> Self {
@@ -21097,7 +21162,7 @@ impl CreateCodeRepositoryOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAutoMlJobOutput {
-    /// <p>The unique ARN that is assigned to the AutoML job when it is created.</p>
+    /// <p>The unique ARN assigned to the AutoML job when it is created.</p>
     pub auto_ml_job_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAutoMlJobOutput {
@@ -21116,7 +21181,7 @@ pub mod create_auto_ml_job_output {
         pub(crate) auto_ml_job_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The unique ARN that is assigned to the AutoML job when it is created.</p>
+        /// <p>The unique ARN assigned to the AutoML job when it is created.</p>
         pub fn auto_ml_job_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.auto_ml_job_arn = Some(input.into());
             self

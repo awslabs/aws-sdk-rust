@@ -102,6 +102,8 @@ pub struct ReplicationGroup {
     /// <p>Returns the destination, format and type of the logs. </p>
     pub log_delivery_configurations:
         std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
+    /// <p>The date and time when the cluster was created.</p>
+    pub replication_group_create_time: std::option::Option<smithy_types::Instant>,
 }
 impl std::fmt::Debug for ReplicationGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -148,6 +150,10 @@ impl std::fmt::Debug for ReplicationGroup {
             "log_delivery_configurations",
             &self.log_delivery_configurations,
         );
+        formatter.field(
+            "replication_group_create_time",
+            &self.replication_group_create_time,
+        );
         formatter.finish()
     }
 }
@@ -185,6 +191,7 @@ pub mod replication_group {
         pub(crate) user_group_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) log_delivery_configurations:
             std::option::Option<std::vec::Vec<crate::model::LogDeliveryConfiguration>>,
+        pub(crate) replication_group_create_time: std::option::Option<smithy_types::Instant>,
     }
     impl Builder {
         /// <p>The identifier for the replication group.</p>
@@ -510,6 +517,18 @@ pub mod replication_group {
             self.log_delivery_configurations = input;
             self
         }
+        /// <p>The date and time when the cluster was created.</p>
+        pub fn replication_group_create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.replication_group_create_time = Some(input);
+            self
+        }
+        pub fn set_replication_group_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.replication_group_create_time = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ReplicationGroup`](crate::model::ReplicationGroup)
         pub fn build(self) -> crate::model::ReplicationGroup {
             crate::model::ReplicationGroup {
@@ -537,6 +556,7 @@ pub mod replication_group {
                 arn: self.arn,
                 user_group_ids: self.user_group_ids,
                 log_delivery_configurations: self.log_delivery_configurations,
+                replication_group_create_time: self.replication_group_create_time,
             }
         }
     }
@@ -2192,7 +2212,7 @@ impl CustomerNodeEndpoint {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheSecurityGroup {
-    /// <p>The AWS account ID of the cache security group owner.</p>
+    /// <p>The Amazon account ID of the cache security group owner.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The name of the cache security group.</p>
     pub cache_security_group_name: std::option::Option<std::string::String>,
@@ -2228,7 +2248,7 @@ pub mod cache_security_group {
         pub(crate) arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS account ID of the cache security group owner.</p>
+        /// <p>The Amazon account ID of the cache security group owner.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -2310,7 +2330,7 @@ pub struct Ec2SecurityGroup {
     pub status: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EC2 security group.</p>
     pub ec2_security_group_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+    /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Ec2SecurityGroup {
@@ -2357,7 +2377,7 @@ pub mod ec2_security_group {
             self.ec2_security_group_name = input;
             self
         }
-        /// <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+        /// <p>The Amazon account ID of the Amazon EC2 security group owner.</p>
         pub fn ec2_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -3866,7 +3886,7 @@ impl SecurityGroupMembership {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CacheNode {
-    /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's AWS account.</p>
+    /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
     pub cache_node_id: std::option::Option<std::string::String>,
     /// <p>The current state of this cache node, one of the following values: <code>available</code>, <code>creating</code>, <code>rebooting</code>, or <code>deleting</code>.</p>
     pub cache_node_status: std::option::Option<std::string::String>,
@@ -3917,7 +3937,7 @@ pub mod cache_node {
         pub(crate) customer_outpost_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's AWS account.</p>
+        /// <p>The cache node identifier. A node ID is a numeric identifier (0001, 0002, etc.). The combination of cluster ID and node ID uniquely identifies every cache node used in a customer's Amazon account.</p>
         pub fn cache_node_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cache_node_id = Some(input.into());
             self
@@ -4401,7 +4421,7 @@ impl PendingModifiedValues {
     }
 }
 
-/// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different AWS region. The secondary cluster accepts only reads. The primary
+/// <p>Consists of a primary cluster that accepts writes and an associated secondary cluster that resides in a different Amazon region. The secondary cluster accepts only reads. The primary
 /// cluster automatically replicates updates to the secondary cluster.</p>
 /// <ul>
 /// <li>
@@ -4761,13 +4781,13 @@ impl GlobalNodeGroup {
     }
 }
 
-/// <p>A member of a Global datastore. It contains the Replication Group Id, the AWS region and the role of the replication group. </p>
+/// <p>A member of a Global datastore. It contains the Replication Group Id, the Amazon region and the role of the replication group. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GlobalReplicationGroupMember {
     /// <p>The replication group id of the Global datastore member.</p>
     pub replication_group_id: std::option::Option<std::string::String>,
-    /// <p>The AWS region of the Global datastore member.</p>
+    /// <p>The Amazon region of the Global datastore member.</p>
     pub replication_group_region: std::option::Option<std::string::String>,
     /// <p>Indicates the role of the replication group, primary or secondary.</p>
     pub role: std::option::Option<std::string::String>,
@@ -4812,7 +4832,7 @@ pub mod global_replication_group_member {
             self.replication_group_id = input;
             self
         }
-        /// <p>The AWS region of the Global datastore member.</p>
+        /// <p>The Amazon region of the Global datastore member.</p>
         pub fn replication_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_group_region = Some(input.into());
             self
@@ -6471,7 +6491,7 @@ impl ConfigureShard {
 pub struct RegionalConfiguration {
     /// <p>The name of the secondary cluster</p>
     pub replication_group_id: std::option::Option<std::string::String>,
-    /// <p>The AWS region where the cluster is stored</p>
+    /// <p>The Amazon region where the cluster is stored</p>
     pub replication_group_region: std::option::Option<std::string::String>,
     /// <p>A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration of a node group in the resharded cluster. </p>
     pub resharding_configuration:
@@ -6510,7 +6530,7 @@ pub mod regional_configuration {
             self.replication_group_id = input;
             self
         }
-        /// <p>The AWS region where the cluster is stored</p>
+        /// <p>The Amazon region where the cluster is stored</p>
         pub fn replication_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_group_region = Some(input.into());
             self

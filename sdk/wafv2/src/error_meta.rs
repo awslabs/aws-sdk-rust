@@ -4,6 +4,9 @@
 pub enum Error {
     WafAssociatedItemException(crate::error::WafAssociatedItemException),
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
+    WafExpiredManagedRuleGroupVersionException(
+        crate::error::WafExpiredManagedRuleGroupVersionException,
+    ),
     WafInternalErrorException(crate::error::WafInternalErrorException),
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
@@ -24,6 +27,7 @@ impl std::fmt::Display for Error {
         match self {
             Error::WafAssociatedItemException(inner) => inner.fmt(f),
             Error::WafDuplicateItemException(inner) => inner.fmt(f),
+            Error::WafExpiredManagedRuleGroupVersionException(inner) => inner.fmt(f),
             Error::WafInternalErrorException(inner) => inner.fmt(f),
             Error::WafInvalidOperationException(inner) => inner.fmt(f),
             Error::WafInvalidParameterException(inner) => inner.fmt(f),
@@ -69,30 +73,17 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateWebACLError>> for
 impl From<smithy_http::result::SdkError<crate::error::CheckCapacityError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CheckCapacityError>) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::CheckCapacityErrorKind::WafInternalErrorException(inner) => {
-                    Error::WafInternalErrorException(inner)
-                }
-                crate::error::CheckCapacityErrorKind::WafInvalidParameterException(inner) => {
-                    Error::WafInvalidParameterException(inner)
-                }
-                crate::error::CheckCapacityErrorKind::WafInvalidResourceException(inner) => {
-                    Error::WafInvalidResourceException(inner)
-                }
-                crate::error::CheckCapacityErrorKind::WafLimitsExceededException(inner) => {
-                    Error::WafLimitsExceededException(inner)
-                }
-                crate::error::CheckCapacityErrorKind::WafNonexistentItemException(inner) => {
-                    Error::WafNonexistentItemException(inner)
-                }
-                crate::error::CheckCapacityErrorKind::WafSubscriptionNotFoundException(inner) => {
-                    Error::WafSubscriptionNotFoundException(inner)
-                }
-                crate::error::CheckCapacityErrorKind::WafUnavailableEntityException(inner) => {
-                    Error::WafUnavailableEntityException(inner)
-                }
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(inner) => Error::WafExpiredManagedRuleGroupVersionException(inner),
+                crate::error::CheckCapacityErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+                crate::error::CheckCapacityErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+                crate::error::CheckCapacityErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
+                crate::error::CheckCapacityErrorKind::WafLimitsExceededException(inner) => Error::WafLimitsExceededException(inner),
+                crate::error::CheckCapacityErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+                crate::error::CheckCapacityErrorKind::WafSubscriptionNotFoundException(inner) => Error::WafSubscriptionNotFoundException(inner),
+                crate::error::CheckCapacityErrorKind::WafUnavailableEntityException(inner) => Error::WafUnavailableEntityException(inner),
                 crate::error::CheckCapacityErrorKind::Unhandled(inner) => Error::Unhandled(inner),
-            },
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -432,26 +423,15 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeManagedRuleGroupEr
         err: smithy_http::result::SdkError<crate::error::DescribeManagedRuleGroupError>,
     ) -> Self {
         match err {
-            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInternalErrorException(
-                    inner,
-                ) => Error::WafInternalErrorException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(
-                    inner,
-                ) => Error::WafInvalidOperationException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(
-                    inner,
-                ) => Error::WafInvalidParameterException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(
-                    inner,
-                ) => Error::WafInvalidResourceException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(
-                    inner,
-                ) => Error::WafNonexistentItemException(inner),
-                crate::error::DescribeManagedRuleGroupErrorKind::Unhandled(inner) => {
-                    Error::Unhandled(inner)
-                }
-            },
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(inner) => Error::WafExpiredManagedRuleGroupVersionException(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::WafInvalidResourceException(inner) => Error::WafInvalidResourceException(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+                crate::error::DescribeManagedRuleGroupErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
             _ => Error::Unhandled(err.into()),
         }
     }
@@ -521,6 +501,30 @@ impl From<smithy_http::result::SdkError<crate::error::GetLoggingConfigurationErr
                     inner,
                 ) => Error::WafNonexistentItemException(inner),
                 crate::error::GetLoggingConfigurationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetManagedRuleSetError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetManagedRuleSetError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetManagedRuleSetErrorKind::WafInternalErrorException(inner) => {
+                    Error::WafInternalErrorException(inner)
+                }
+                crate::error::GetManagedRuleSetErrorKind::WafInvalidOperationException(inner) => {
+                    Error::WafInvalidOperationException(inner)
+                }
+                crate::error::GetManagedRuleSetErrorKind::WafInvalidParameterException(inner) => {
+                    Error::WafInvalidParameterException(inner)
+                }
+                crate::error::GetManagedRuleSetErrorKind::WafNonexistentItemException(inner) => {
+                    Error::WafNonexistentItemException(inner)
+                }
+                crate::error::GetManagedRuleSetErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -700,6 +704,25 @@ impl From<smithy_http::result::SdkError<crate::error::ListAvailableManagedRuleGr
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::ListAvailableManagedRuleGroupVersionsError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::ListAvailableManagedRuleGroupVersionsError,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+                crate::error::ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::ListIPSetsError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::ListIPSetsError>) -> Self {
         match err {
@@ -735,6 +758,27 @@ impl From<smithy_http::result::SdkError<crate::error::ListLoggingConfigurationsE
                     inner,
                 ) => Error::WafInvalidParameterException(inner),
                 crate::error::ListLoggingConfigurationsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListManagedRuleSetsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListManagedRuleSetsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListManagedRuleSetsErrorKind::WafInternalErrorException(inner) => {
+                    Error::WafInternalErrorException(inner)
+                }
+                crate::error::ListManagedRuleSetsErrorKind::WafInvalidOperationException(inner) => {
+                    Error::WafInvalidOperationException(inner)
+                }
+                crate::error::ListManagedRuleSetsErrorKind::WafInvalidParameterException(inner) => {
+                    Error::WafInvalidParameterException(inner)
+                }
+                crate::error::ListManagedRuleSetsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -860,6 +904,35 @@ impl From<smithy_http::result::SdkError<crate::error::PutLoggingConfigurationErr
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::PutManagedRuleSetVersionsError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::PutManagedRuleSetVersionsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(
+                    inner,
+                ) => Error::WafInternalErrorException(inner),
+                crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(
+                    inner,
+                ) => Error::WafInvalidOperationException(inner),
+                crate::error::PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(
+                    inner,
+                ) => Error::WafInvalidParameterException(inner),
+                crate::error::PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(
+                    inner,
+                ) => Error::WafNonexistentItemException(inner),
+                crate::error::PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(
+                    inner,
+                ) => Error::WafOptimisticLockException(inner),
+                crate::error::PutManagedRuleSetVersionsErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::PutPermissionPolicyError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::PutPermissionPolicyError>) -> Self {
         match err {
@@ -974,6 +1047,27 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateIPSetError>> for Err
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::UpdateManagedRuleSetVersionExpiryDateError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<
+            crate::error::UpdateManagedRuleSetVersionExpiryDateError,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(inner) => Error::WafInternalErrorException(inner),
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(inner) => Error::WafInvalidOperationException(inner),
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(inner) => Error::WafInvalidParameterException(inner),
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(inner) => Error::WafNonexistentItemException(inner),
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(inner) => Error::WafOptimisticLockException(inner),
+                crate::error::UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::UpdateRegexPatternSetError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateRegexPatternSetError>) -> Self {
         match err {
@@ -1051,6 +1145,9 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateWebACLError>> for Er
                 crate::error::UpdateWebACLErrorKind::WafDuplicateItemException(inner) => {
                     Error::WafDuplicateItemException(inner)
                 }
+                crate::error::UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(
+                    inner,
+                ) => Error::WafExpiredManagedRuleGroupVersionException(inner),
                 crate::error::UpdateWebACLErrorKind::WafInternalErrorException(inner) => {
                     Error::WafInternalErrorException(inner)
                 }

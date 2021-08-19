@@ -44,20 +44,23 @@ pub fn serialize_structure_create_environment_ec2_input(
     if let Some(var_13) = &input.connection_type {
         object.key("connectionType").string(var_13.as_str());
     }
+    if let Some(var_14) = &input.dry_run {
+        object.key("dryRun").boolean(*var_14);
+    }
 }
 
 pub fn serialize_structure_create_environment_membership_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::CreateEnvironmentMembershipInput,
 ) {
-    if let Some(var_14) = &input.environment_id {
-        object.key("environmentId").string(var_14);
+    if let Some(var_15) = &input.environment_id {
+        object.key("environmentId").string(var_15);
     }
-    if let Some(var_15) = &input.user_arn {
-        object.key("userArn").string(var_15);
+    if let Some(var_16) = &input.user_arn {
+        object.key("userArn").string(var_16);
     }
-    if let Some(var_16) = &input.permissions {
-        object.key("permissions").string(var_16.as_str());
+    if let Some(var_17) = &input.permissions {
+        object.key("permissions").string(var_17.as_str());
     }
 }
 
@@ -65,8 +68,8 @@ pub fn serialize_structure_delete_environment_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteEnvironmentInput,
 ) {
-    if let Some(var_17) = &input.environment_id {
-        object.key("environmentId").string(var_17);
+    if let Some(var_18) = &input.environment_id {
+        object.key("environmentId").string(var_18);
     }
 }
 
@@ -74,11 +77,11 @@ pub fn serialize_structure_delete_environment_membership_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DeleteEnvironmentMembershipInput,
 ) {
-    if let Some(var_18) = &input.environment_id {
-        object.key("environmentId").string(var_18);
+    if let Some(var_19) = &input.environment_id {
+        object.key("environmentId").string(var_19);
     }
-    if let Some(var_19) = &input.user_arn {
-        object.key("userArn").string(var_19);
+    if let Some(var_20) = &input.user_arn {
+        object.key("userArn").string(var_20);
     }
 }
 
@@ -86,28 +89,28 @@ pub fn serialize_structure_describe_environment_memberships_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEnvironmentMembershipsInput,
 ) {
-    if let Some(var_20) = &input.user_arn {
-        object.key("userArn").string(var_20);
+    if let Some(var_21) = &input.user_arn {
+        object.key("userArn").string(var_21);
     }
-    if let Some(var_21) = &input.environment_id {
-        object.key("environmentId").string(var_21);
+    if let Some(var_22) = &input.environment_id {
+        object.key("environmentId").string(var_22);
     }
-    if let Some(var_22) = &input.permissions {
-        let mut array_23 = object.key("permissions").start_array();
-        for item_24 in var_22 {
+    if let Some(var_23) = &input.permissions {
+        let mut array_24 = object.key("permissions").start_array();
+        for item_25 in var_23 {
             {
-                array_23.value().string(item_24.as_str());
+                array_24.value().string(item_25.as_str());
             }
         }
-        array_23.finish();
+        array_24.finish();
     }
-    if let Some(var_25) = &input.next_token {
-        object.key("nextToken").string(var_25);
+    if let Some(var_26) = &input.next_token {
+        object.key("nextToken").string(var_26);
     }
-    if let Some(var_26) = &input.max_results {
+    if let Some(var_27) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_26).into()),
+            smithy_types::Number::NegInt((*var_27).into()),
         );
     }
 }
@@ -116,14 +119,14 @@ pub fn serialize_structure_describe_environments_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEnvironmentsInput,
 ) {
-    if let Some(var_27) = &input.environment_ids {
-        let mut array_28 = object.key("environmentIds").start_array();
-        for item_29 in var_27 {
+    if let Some(var_28) = &input.environment_ids {
+        let mut array_29 = object.key("environmentIds").start_array();
+        for item_30 in var_28 {
             {
-                array_28.value().string(item_29);
+                array_29.value().string(item_30);
             }
         }
-        array_28.finish();
+        array_29.finish();
     }
 }
 
@@ -131,8 +134,8 @@ pub fn serialize_structure_describe_environment_status_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::DescribeEnvironmentStatusInput,
 ) {
-    if let Some(var_30) = &input.environment_id {
-        object.key("environmentId").string(var_30);
+    if let Some(var_31) = &input.environment_id {
+        object.key("environmentId").string(var_31);
     }
 }
 
@@ -140,13 +143,13 @@ pub fn serialize_structure_list_environments_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListEnvironmentsInput,
 ) {
-    if let Some(var_31) = &input.next_token {
-        object.key("nextToken").string(var_31);
+    if let Some(var_32) = &input.next_token {
+        object.key("nextToken").string(var_32);
     }
-    if let Some(var_32) = &input.max_results {
+    if let Some(var_33) = &input.max_results {
         object.key("maxResults").number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_32).into()),
+            smithy_types::Number::NegInt((*var_33).into()),
         );
     }
 }
@@ -155,8 +158,8 @@ pub fn serialize_structure_list_tags_for_resource_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::ListTagsForResourceInput,
 ) {
-    if let Some(var_33) = &input.resource_arn {
-        object.key("ResourceARN").string(var_33);
+    if let Some(var_34) = &input.resource_arn {
+        object.key("ResourceARN").string(var_34);
     }
 }
 
@@ -164,19 +167,19 @@ pub fn serialize_structure_tag_resource_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::TagResourceInput,
 ) {
-    if let Some(var_34) = &input.resource_arn {
-        object.key("ResourceARN").string(var_34);
+    if let Some(var_35) = &input.resource_arn {
+        object.key("ResourceARN").string(var_35);
     }
-    if let Some(var_35) = &input.tags {
-        let mut array_36 = object.key("Tags").start_array();
-        for item_37 in var_35 {
+    if let Some(var_36) = &input.tags {
+        let mut array_37 = object.key("Tags").start_array();
+        for item_38 in var_36 {
             {
-                let mut object_38 = array_36.value().start_object();
-                crate::json_ser::serialize_structure_tag(&mut object_38, item_37);
-                object_38.finish();
+                let mut object_39 = array_37.value().start_object();
+                crate::json_ser::serialize_structure_tag(&mut object_39, item_38);
+                object_39.finish();
             }
         }
-        array_36.finish();
+        array_37.finish();
     }
 }
 
@@ -184,17 +187,17 @@ pub fn serialize_structure_untag_resource_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UntagResourceInput,
 ) {
-    if let Some(var_39) = &input.resource_arn {
-        object.key("ResourceARN").string(var_39);
+    if let Some(var_40) = &input.resource_arn {
+        object.key("ResourceARN").string(var_40);
     }
-    if let Some(var_40) = &input.tag_keys {
-        let mut array_41 = object.key("TagKeys").start_array();
-        for item_42 in var_40 {
+    if let Some(var_41) = &input.tag_keys {
+        let mut array_42 = object.key("TagKeys").start_array();
+        for item_43 in var_41 {
             {
-                array_41.value().string(item_42);
+                array_42.value().string(item_43);
             }
         }
-        array_41.finish();
+        array_42.finish();
     }
 }
 
@@ -202,14 +205,19 @@ pub fn serialize_structure_update_environment_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnvironmentInput,
 ) {
-    if let Some(var_43) = &input.environment_id {
-        object.key("environmentId").string(var_43);
+    if let Some(var_44) = &input.environment_id {
+        object.key("environmentId").string(var_44);
     }
-    if let Some(var_44) = &input.name {
-        object.key("name").string(var_44);
+    if let Some(var_45) = &input.name {
+        object.key("name").string(var_45);
     }
-    if let Some(var_45) = &input.description {
-        object.key("description").string(var_45);
+    if let Some(var_46) = &input.description {
+        object.key("description").string(var_46);
+    }
+    if let Some(var_47) = &input.managed_credentials_action {
+        object
+            .key("managedCredentialsAction")
+            .string(var_47.as_str());
     }
 }
 
@@ -217,14 +225,14 @@ pub fn serialize_structure_update_environment_membership_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::input::UpdateEnvironmentMembershipInput,
 ) {
-    if let Some(var_46) = &input.environment_id {
-        object.key("environmentId").string(var_46);
+    if let Some(var_48) = &input.environment_id {
+        object.key("environmentId").string(var_48);
     }
-    if let Some(var_47) = &input.user_arn {
-        object.key("userArn").string(var_47);
+    if let Some(var_49) = &input.user_arn {
+        object.key("userArn").string(var_49);
     }
-    if let Some(var_48) = &input.permissions {
-        object.key("permissions").string(var_48.as_str());
+    if let Some(var_50) = &input.permissions {
+        object.key("permissions").string(var_50.as_str());
     }
 }
 
@@ -232,10 +240,10 @@ pub fn serialize_structure_tag(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::Tag,
 ) {
-    if let Some(var_49) = &input.key {
-        object.key("Key").string(var_49);
+    if let Some(var_51) = &input.key {
+        object.key("Key").string(var_51);
     }
-    if let Some(var_50) = &input.value {
-        object.key("Value").string(var_50);
+    if let Some(var_52) = &input.value {
+        object.key("Value").string(var_52);
     }
 }

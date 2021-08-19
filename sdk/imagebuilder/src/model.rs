@@ -834,7 +834,7 @@ pub struct AmiDistributionConfiguration {
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The KMS key identifier used to encrypt the distributed image.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
-    /// <p> Launch permissions can be used to configure which accounts can use the AMI to launch
+    /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch
     /// instances.</p>
     pub launch_permission: std::option::Option<crate::model::LaunchPermissionConfiguration>,
 }
@@ -926,7 +926,7 @@ pub mod ami_distribution_configuration {
             self.kms_key_id = input;
             self
         }
-        /// <p> Launch permissions can be used to configure which accounts can use the AMI to launch
+        /// <p> Launch permissions can be used to configure which Amazon Web Services accounts can use the AMI to launch
         /// instances.</p>
         pub fn launch_permission(
             mut self,
@@ -970,7 +970,7 @@ impl AmiDistributionConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LaunchPermissionConfiguration {
-    /// <p>The account ID.</p>
+    /// <p>The Amazon Web Services account ID.</p>
     pub user_ids: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the group.</p>
     pub user_groups: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -2491,7 +2491,7 @@ impl Container {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Ami {
-    /// <p>The Region of the Amazon EC2 AMI.</p>
+    /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
     pub region: std::option::Option<std::string::String>,
     /// <p>The AMI ID of the Amazon EC2 AMI.</p>
     pub image: std::option::Option<std::string::String>,
@@ -2530,7 +2530,7 @@ pub mod ami {
         pub(crate) account_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Region of the Amazon EC2 AMI.</p>
+        /// <p>The Amazon Web Services Region of the Amazon EC2 AMI.</p>
         pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
             self.region = Some(input.into());
             self
@@ -3174,7 +3174,7 @@ impl AsRef<str> for ContainerType {
     }
 }
 
-/// <p>The defining characteristics of a specific version of an TOE component.</p>
+/// <p>The defining characteristics of a specific version of an Amazon Web Services TOE component.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ComponentVersion {

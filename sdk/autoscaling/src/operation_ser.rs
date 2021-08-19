@@ -1964,9 +1964,14 @@ pub fn serialize_operation_start_instance_refresh(
         scope_517.string(var_518.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_519 = writer.prefix("Preferences");
-    if let Some(var_520) = &input.preferences {
-        crate::query_ser::serialize_structure_refresh_preferences(scope_519, var_520);
+    let mut scope_519 = writer.prefix("DesiredConfiguration");
+    if let Some(var_520) = &input.desired_configuration {
+        crate::query_ser::serialize_structure_desired_configuration(scope_519, var_520);
+    }
+    #[allow(unused_mut)]
+    let mut scope_521 = writer.prefix("Preferences");
+    if let Some(var_522) = &input.preferences {
+        crate::query_ser::serialize_structure_refresh_preferences(scope_521, var_522);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -1979,20 +1984,20 @@ pub fn serialize_operation_suspend_processes(
     #[allow(unused_mut)]
     let mut writer = smithy_query::QueryWriter::new(&mut out, "SuspendProcesses", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_521 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_522) = &input.auto_scaling_group_name {
-        scope_521.string(var_522);
+    let mut scope_523 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_524) = &input.auto_scaling_group_name {
+        scope_523.string(var_524);
     }
     #[allow(unused_mut)]
-    let mut scope_523 = writer.prefix("ScalingProcesses");
-    if let Some(var_524) = &input.scaling_processes {
-        let mut list_526 = scope_523.start_list(false, None);
-        for item_525 in var_524 {
+    let mut scope_525 = writer.prefix("ScalingProcesses");
+    if let Some(var_526) = &input.scaling_processes {
+        let mut list_528 = scope_525.start_list(false, None);
+        for item_527 in var_526 {
             #[allow(unused_mut)]
-            let mut entry_527 = list_526.entry();
-            entry_527.string(item_525);
+            let mut entry_529 = list_528.entry();
+            entry_529.string(item_527);
         }
-        list_526.finish();
+        list_528.finish();
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2009,14 +2014,14 @@ pub fn serialize_operation_terminate_instance_in_auto_scaling_group(
         "2011-01-01",
     );
     #[allow(unused_mut)]
-    let mut scope_528 = writer.prefix("InstanceId");
-    if let Some(var_529) = &input.instance_id {
-        scope_528.string(var_529);
+    let mut scope_530 = writer.prefix("InstanceId");
+    if let Some(var_531) = &input.instance_id {
+        scope_530.string(var_531);
     }
     #[allow(unused_mut)]
-    let mut scope_530 = writer.prefix("ShouldDecrementDesiredCapacity");
-    if let Some(var_531) = &input.should_decrement_desired_capacity {
-        scope_530.boolean(*var_531);
+    let mut scope_532 = writer.prefix("ShouldDecrementDesiredCapacity");
+    if let Some(var_533) = &input.should_decrement_desired_capacity {
+        scope_532.boolean(*var_533);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))
@@ -2030,129 +2035,129 @@ pub fn serialize_operation_update_auto_scaling_group(
     let mut writer =
         smithy_query::QueryWriter::new(&mut out, "UpdateAutoScalingGroup", "2011-01-01");
     #[allow(unused_mut)]
-    let mut scope_532 = writer.prefix("AutoScalingGroupName");
-    if let Some(var_533) = &input.auto_scaling_group_name {
-        scope_532.string(var_533);
-    }
-    #[allow(unused_mut)]
-    let mut scope_534 = writer.prefix("LaunchConfigurationName");
-    if let Some(var_535) = &input.launch_configuration_name {
+    let mut scope_534 = writer.prefix("AutoScalingGroupName");
+    if let Some(var_535) = &input.auto_scaling_group_name {
         scope_534.string(var_535);
     }
     #[allow(unused_mut)]
-    let mut scope_536 = writer.prefix("LaunchTemplate");
-    if let Some(var_537) = &input.launch_template {
-        crate::query_ser::serialize_structure_launch_template_specification(scope_536, var_537);
+    let mut scope_536 = writer.prefix("LaunchConfigurationName");
+    if let Some(var_537) = &input.launch_configuration_name {
+        scope_536.string(var_537);
     }
     #[allow(unused_mut)]
-    let mut scope_538 = writer.prefix("MixedInstancesPolicy");
-    if let Some(var_539) = &input.mixed_instances_policy {
-        crate::query_ser::serialize_structure_mixed_instances_policy(scope_538, var_539);
+    let mut scope_538 = writer.prefix("LaunchTemplate");
+    if let Some(var_539) = &input.launch_template {
+        crate::query_ser::serialize_structure_launch_template_specification(scope_538, var_539);
     }
     #[allow(unused_mut)]
-    let mut scope_540 = writer.prefix("MinSize");
-    if let Some(var_541) = &input.min_size {
-        scope_540.number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_541).into()),
-        );
+    let mut scope_540 = writer.prefix("MixedInstancesPolicy");
+    if let Some(var_541) = &input.mixed_instances_policy {
+        crate::query_ser::serialize_structure_mixed_instances_policy(scope_540, var_541);
     }
     #[allow(unused_mut)]
-    let mut scope_542 = writer.prefix("MaxSize");
-    if let Some(var_543) = &input.max_size {
+    let mut scope_542 = writer.prefix("MinSize");
+    if let Some(var_543) = &input.min_size {
         scope_542.number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::NegInt((*var_543).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_544 = writer.prefix("DesiredCapacity");
-    if let Some(var_545) = &input.desired_capacity {
+    let mut scope_544 = writer.prefix("MaxSize");
+    if let Some(var_545) = &input.max_size {
         scope_544.number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::NegInt((*var_545).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_546 = writer.prefix("DefaultCooldown");
-    if let Some(var_547) = &input.default_cooldown {
+    let mut scope_546 = writer.prefix("DesiredCapacity");
+    if let Some(var_547) = &input.desired_capacity {
         scope_546.number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::NegInt((*var_547).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_548 = writer.prefix("AvailabilityZones");
-    if let Some(var_549) = &input.availability_zones {
-        let mut list_551 = scope_548.start_list(false, None);
-        for item_550 in var_549 {
-            #[allow(unused_mut)]
-            let mut entry_552 = list_551.entry();
-            entry_552.string(item_550);
-        }
-        list_551.finish();
-    }
-    #[allow(unused_mut)]
-    let mut scope_553 = writer.prefix("HealthCheckType");
-    if let Some(var_554) = &input.health_check_type {
-        scope_553.string(var_554);
-    }
-    #[allow(unused_mut)]
-    let mut scope_555 = writer.prefix("HealthCheckGracePeriod");
-    if let Some(var_556) = &input.health_check_grace_period {
-        scope_555.number(
+    let mut scope_548 = writer.prefix("DefaultCooldown");
+    if let Some(var_549) = &input.default_cooldown {
+        scope_548.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_556).into()),
+            smithy_types::Number::NegInt((*var_549).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_557 = writer.prefix("PlacementGroup");
-    if let Some(var_558) = &input.placement_group {
-        scope_557.string(var_558);
+    let mut scope_550 = writer.prefix("AvailabilityZones");
+    if let Some(var_551) = &input.availability_zones {
+        let mut list_553 = scope_550.start_list(false, None);
+        for item_552 in var_551 {
+            #[allow(unused_mut)]
+            let mut entry_554 = list_553.entry();
+            entry_554.string(item_552);
+        }
+        list_553.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_559 = writer.prefix("VPCZoneIdentifier");
-    if let Some(var_560) = &input.vpc_zone_identifier {
+    let mut scope_555 = writer.prefix("HealthCheckType");
+    if let Some(var_556) = &input.health_check_type {
+        scope_555.string(var_556);
+    }
+    #[allow(unused_mut)]
+    let mut scope_557 = writer.prefix("HealthCheckGracePeriod");
+    if let Some(var_558) = &input.health_check_grace_period {
+        scope_557.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_558).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_559 = writer.prefix("PlacementGroup");
+    if let Some(var_560) = &input.placement_group {
         scope_559.string(var_560);
     }
     #[allow(unused_mut)]
-    let mut scope_561 = writer.prefix("TerminationPolicies");
-    if let Some(var_562) = &input.termination_policies {
-        let mut list_564 = scope_561.start_list(false, None);
-        for item_563 in var_562 {
+    let mut scope_561 = writer.prefix("VPCZoneIdentifier");
+    if let Some(var_562) = &input.vpc_zone_identifier {
+        scope_561.string(var_562);
+    }
+    #[allow(unused_mut)]
+    let mut scope_563 = writer.prefix("TerminationPolicies");
+    if let Some(var_564) = &input.termination_policies {
+        let mut list_566 = scope_563.start_list(false, None);
+        for item_565 in var_564 {
             #[allow(unused_mut)]
-            let mut entry_565 = list_564.entry();
-            entry_565.string(item_563);
+            let mut entry_567 = list_566.entry();
+            entry_567.string(item_565);
         }
-        list_564.finish();
+        list_566.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_566 = writer.prefix("NewInstancesProtectedFromScaleIn");
-    if let Some(var_567) = &input.new_instances_protected_from_scale_in {
-        scope_566.boolean(*var_567);
+    let mut scope_568 = writer.prefix("NewInstancesProtectedFromScaleIn");
+    if let Some(var_569) = &input.new_instances_protected_from_scale_in {
+        scope_568.boolean(*var_569);
     }
     #[allow(unused_mut)]
-    let mut scope_568 = writer.prefix("ServiceLinkedRoleARN");
-    if let Some(var_569) = &input.service_linked_role_arn {
-        scope_568.string(var_569);
+    let mut scope_570 = writer.prefix("ServiceLinkedRoleARN");
+    if let Some(var_571) = &input.service_linked_role_arn {
+        scope_570.string(var_571);
     }
     #[allow(unused_mut)]
-    let mut scope_570 = writer.prefix("MaxInstanceLifetime");
-    if let Some(var_571) = &input.max_instance_lifetime {
-        scope_570.number(
+    let mut scope_572 = writer.prefix("MaxInstanceLifetime");
+    if let Some(var_573) = &input.max_instance_lifetime {
+        scope_572.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_571).into()),
+            smithy_types::Number::NegInt((*var_573).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_572 = writer.prefix("CapacityRebalance");
-    if let Some(var_573) = &input.capacity_rebalance {
-        scope_572.boolean(*var_573);
+    let mut scope_574 = writer.prefix("CapacityRebalance");
+    if let Some(var_575) = &input.capacity_rebalance {
+        scope_574.boolean(*var_575);
     }
     #[allow(unused_mut)]
-    let mut scope_574 = writer.prefix("Context");
-    if let Some(var_575) = &input.context {
-        scope_574.string(var_575);
+    let mut scope_576 = writer.prefix("Context");
+    if let Some(var_577) = &input.context {
+        scope_576.string(var_577);
     }
     writer.finish();
     Ok(smithy_http::body::SdkBody::from(out))

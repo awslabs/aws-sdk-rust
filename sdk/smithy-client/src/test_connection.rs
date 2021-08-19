@@ -15,7 +15,87 @@ use std::future::Ready;
 use std::ops::Deref;
 use std::sync::{Arc, Mutex};
 use std::task::{Context, Poll};
+use tokio::sync::oneshot;
 use tower::BoxError;
+
+/// Test Connection to capture a single request
+#[derive(Debug, Clone)]
+pub struct CaptureRequestHandler(Arc<Mutex<Inner>>);
+
+#[derive(Debug)]
+struct Inner {
+    response: Option<http::Response<SdkBody>>,
+    sender: Option<oneshot::Sender<http::Request<SdkBody>>>,
+}
+
+/// Receiver for [`CaptureRequestHandler`](CaptureRequestHandler)
+#[derive(Debug)]
+pub struct CaptureRequestReceiver {
+    receiver: oneshot::Receiver<http::Request<SdkBody>>,
+}
+
+impl CaptureRequestReceiver {
+    pub fn expect_request(mut self) -> http::Request<SdkBody> {
+        self.receiver.try_recv().expect("no request was received")
+    }
+}
+
+impl tower::Service<http::Request<SdkBody>> for CaptureRequestHandler {
+    type Response = http::Response<SdkBody>;
+    type Error = BoxError;
+    type Future = Ready<Result<Self::Response, Self::Error>>;
+
+    fn poll_ready(&mut self, _cx: &mut Context<'_>) -> Poll<Result<(), Self::Error>> {
+        Poll::Ready(Ok(()))
+    }
+
+    fn call(&mut self, req: Request<SdkBody>) -> Self::Future {
+        let mut inner = self.0.lock().unwrap();
+        inner
+            .sender
+            .take()
+            .expect("already sent")
+            .send(req)
+            .expect("channel not ready");
+        std::future::ready(Ok(inner
+            .response
+            .take()
+            .expect("could not handle second request")))
+    }
+}
+
+/// Test connection used to capture a single request
+///
+/// If response is `None`, it will reply with a 200 response with an empty body
+///
+/// Example:
+/// ```rust,compile_fail
+/// let (server, request) = capture_request(None);
+/// let client = aws_sdk_sts::Client::from_conf_conn(conf, server);
+/// let _ = client.assume_role_with_saml().send().await;
+/// // web identity should be unsigned
+/// assert_eq!(
+///     request.expect_request().headers().get("AUTHORIZATION"),
+///     None
+/// );
+/// ```
+pub fn capture_request(
+    response: Option<http::Response<SdkBody>>,
+) -> (CaptureRequestHandler, CaptureRequestReceiver) {
+    let (tx, rx) = oneshot::channel();
+    (
+        CaptureRequestHandler(Arc::new(Mutex::new(Inner {
+            response: Some(response.unwrap_or_else(|| {
+                http::Response::builder()
+                    .status(200)
+                    .body(SdkBody::empty())
+                    .expect("unreachable")
+            })),
+            sender: Some(tx),
+        }))),
+        CaptureRequestReceiver { receiver: rx },
+    )
+}
 
 type ConnectVec<B> = Vec<(http::Request<SdkBody>, http::Response<B>)>;
 
@@ -155,8 +235,10 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::test_connection::TestConnection;
-    use crate::Client;
+    use crate::test_connection::{capture_request, TestConnection};
+    use crate::{BoxError, Client};
+    use hyper::service::Service;
+    use smithy_http::body::SdkBody;
 
     fn is_send_sync<T: Send + Sync>(_: T) {}
 
@@ -165,5 +247,23 @@ mod tests {
         let test_conn = TestConnection::<String>::new(vec![]);
         let client: Client<_, _, _> = test_conn.into();
         is_send_sync(client);
+    }
+
+    fn is_valid_smithy_connector<T>(_: T)
+    where
+        T: Service<http::Request<SdkBody>, Response = http::Response<SdkBody>>
+            + Send
+            + Sync
+            + Clone
+            + 'static,
+        T::Error: Into<BoxError> + Send + Sync + 'static,
+        T::Future: Send + 'static,
+    {
+    }
+
+    #[test]
+    fn oneshot_client() {
+        let (tx, _rx) = capture_request(None);
+        is_valid_smithy_connector(tx);
     }
 }

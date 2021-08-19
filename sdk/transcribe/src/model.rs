@@ -209,6 +209,1124 @@ impl AsRef<str> for VocabularyState {
     }
 }
 
+/// <p>An object that contains the rules and additional information about a call analytics category.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CategoryProperties {
+    /// <p>The name of the call analytics category.</p>
+    pub category_name: std::option::Option<std::string::String>,
+    /// <p>The rules used to create a call analytics category.</p>
+    pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+    /// <p>A timestamp that shows when the call analytics category was created.</p>
+    pub create_time: std::option::Option<smithy_types::Instant>,
+    /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
+    pub last_update_time: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for CategoryProperties {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CategoryProperties");
+        formatter.field("category_name", &self.category_name);
+        formatter.field("rules", &self.rules);
+        formatter.field("create_time", &self.create_time);
+        formatter.field("last_update_time", &self.last_update_time);
+        formatter.finish()
+    }
+}
+/// See [`CategoryProperties`](crate::model::CategoryProperties)
+pub mod category_properties {
+    /// A builder for [`CategoryProperties`](crate::model::CategoryProperties)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category_name: std::option::Option<std::string::String>,
+        pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        pub(crate) create_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_update_time: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the call analytics category.</p>
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.category_name = Some(input.into());
+            self
+        }
+        pub fn set_category_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.category_name = input;
+            self
+        }
+        pub fn rules(mut self, input: impl Into<crate::model::Rule>) -> Self {
+            let mut v = self.rules.unwrap_or_default();
+            v.push(input.into());
+            self.rules = Some(v);
+            self
+        }
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.rules = input;
+            self
+        }
+        /// <p>A timestamp that shows when the call analytics category was created.</p>
+        pub fn create_time(mut self, input: smithy_types::Instant) -> Self {
+            self.create_time = Some(input);
+            self
+        }
+        pub fn set_create_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.create_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the call analytics category was most recently updated.</p>
+        pub fn last_update_time(mut self, input: smithy_types::Instant) -> Self {
+            self.last_update_time = Some(input);
+            self
+        }
+        pub fn set_last_update_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_update_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CategoryProperties`](crate::model::CategoryProperties)
+        pub fn build(self) -> crate::model::CategoryProperties {
+            crate::model::CategoryProperties {
+                category_name: self.category_name,
+                rules: self.rules,
+                create_time: self.create_time,
+                last_update_time: self.last_update_time,
+            }
+        }
+    }
+}
+impl CategoryProperties {
+    /// Creates a new builder-style object to manufacture [`CategoryProperties`](crate::model::CategoryProperties)
+    pub fn builder() -> crate::model::category_properties::Builder {
+        crate::model::category_properties::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum Rule {
+    /// <p>A condition for a time period when either the customer or agent was interrupting the
+    /// other person. </p>
+    InterruptionFilter(crate::model::InterruptionFilter),
+    /// <p>A condition for a time period when neither the customer nor the agent was talking.</p>
+    NonTalkTimeFilter(crate::model::NonTalkTimeFilter),
+    /// <p>A condition that is applied to a particular customer sentiment.</p>
+    SentimentFilter(crate::model::SentimentFilter),
+    /// <p>A condition that catches particular words or phrases based on a exact match. For example,
+    /// if you set the phrase "I want to speak to the manager", only that exact phrase will be returned.</p>
+    TranscriptFilter(crate::model::TranscriptFilter),
+}
+impl Rule {
+    pub fn as_interruption_filter(
+        &self,
+    ) -> std::result::Result<&crate::model::InterruptionFilter, &Self> {
+        if let Rule::InterruptionFilter(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_interruption_filter(&self) -> bool {
+        self.as_interruption_filter().is_ok()
+    }
+    pub fn as_non_talk_time_filter(
+        &self,
+    ) -> std::result::Result<&crate::model::NonTalkTimeFilter, &Self> {
+        if let Rule::NonTalkTimeFilter(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_non_talk_time_filter(&self) -> bool {
+        self.as_non_talk_time_filter().is_ok()
+    }
+    pub fn as_sentiment_filter(
+        &self,
+    ) -> std::result::Result<&crate::model::SentimentFilter, &Self> {
+        if let Rule::SentimentFilter(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_sentiment_filter(&self) -> bool {
+        self.as_sentiment_filter().is_ok()
+    }
+    pub fn as_transcript_filter(
+        &self,
+    ) -> std::result::Result<&crate::model::TranscriptFilter, &Self> {
+        if let Rule::TranscriptFilter(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_transcript_filter(&self) -> bool {
+        self.as_transcript_filter().is_ok()
+    }
+}
+
+/// <p>An object that enables you to specify a particular customer or agent sentiment. If at least
+/// 50 percent of the conversation turns (the back-and-forth between two speakers) in a specified
+/// time period match the specified sentiment, Amazon Transcribe will consider the sentiment a match.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct SentimentFilter {
+    /// <p>An array that enables you to specify sentiments for the customer or agent. You can
+    /// specify one or more values.</p>
+    pub sentiments: std::option::Option<std::vec::Vec<crate::model::SentimentValue>>,
+    /// <p>The time range, measured in seconds, of the sentiment.</p>
+    pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+    /// <p>The time range, set in percentages, that correspond to proportion of the call.</p>
+    pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+    /// <p>A value that determines whether the sentiment belongs to the customer or the agent.</p>
+    pub participant_role: std::option::Option<crate::model::ParticipantRole>,
+    /// <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the request. </p>
+    pub negate: std::option::Option<bool>,
+}
+impl std::fmt::Debug for SentimentFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SentimentFilter");
+        formatter.field("sentiments", &self.sentiments);
+        formatter.field("absolute_time_range", &self.absolute_time_range);
+        formatter.field("relative_time_range", &self.relative_time_range);
+        formatter.field("participant_role", &self.participant_role);
+        formatter.field("negate", &self.negate);
+        formatter.finish()
+    }
+}
+/// See [`SentimentFilter`](crate::model::SentimentFilter)
+pub mod sentiment_filter {
+    /// A builder for [`SentimentFilter`](crate::model::SentimentFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) sentiments: std::option::Option<std::vec::Vec<crate::model::SentimentValue>>,
+        pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+        pub(crate) relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+        pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
+        pub(crate) negate: std::option::Option<bool>,
+    }
+    impl Builder {
+        pub fn sentiments(mut self, input: impl Into<crate::model::SentimentValue>) -> Self {
+            let mut v = self.sentiments.unwrap_or_default();
+            v.push(input.into());
+            self.sentiments = Some(v);
+            self
+        }
+        pub fn set_sentiments(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::SentimentValue>>,
+        ) -> Self {
+            self.sentiments = input;
+            self
+        }
+        /// <p>The time range, measured in seconds, of the sentiment.</p>
+        pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
+            self.absolute_time_range = Some(input);
+            self
+        }
+        pub fn set_absolute_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AbsoluteTimeRange>,
+        ) -> Self {
+            self.absolute_time_range = input;
+            self
+        }
+        /// <p>The time range, set in percentages, that correspond to proportion of the call.</p>
+        pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
+            self.relative_time_range = Some(input);
+            self
+        }
+        pub fn set_relative_time_range(
+            mut self,
+            input: std::option::Option<crate::model::RelativeTimeRange>,
+        ) -> Self {
+            self.relative_time_range = input;
+            self
+        }
+        /// <p>A value that determines whether the sentiment belongs to the customer or the agent.</p>
+        pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantRole>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// <p>Set to <code>TRUE</code> to look for sentiments that weren't specified in the request. </p>
+        pub fn negate(mut self, input: bool) -> Self {
+            self.negate = Some(input);
+            self
+        }
+        pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+            self.negate = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SentimentFilter`](crate::model::SentimentFilter)
+        pub fn build(self) -> crate::model::SentimentFilter {
+            crate::model::SentimentFilter {
+                sentiments: self.sentiments,
+                absolute_time_range: self.absolute_time_range,
+                relative_time_range: self.relative_time_range,
+                participant_role: self.participant_role,
+                negate: self.negate,
+            }
+        }
+    }
+}
+impl SentimentFilter {
+    /// Creates a new builder-style object to manufacture [`SentimentFilter`](crate::model::SentimentFilter)
+    pub fn builder() -> crate::model::sentiment_filter::Builder {
+        crate::model::sentiment_filter::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ParticipantRole {
+    Agent,
+    Customer,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ParticipantRole {
+    fn from(s: &str) -> Self {
+        match s {
+            "AGENT" => ParticipantRole::Agent,
+            "CUSTOMER" => ParticipantRole::Customer,
+            other => ParticipantRole::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ParticipantRole {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ParticipantRole::from(s))
+    }
+}
+impl ParticipantRole {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ParticipantRole::Agent => "AGENT",
+            ParticipantRole::Customer => "CUSTOMER",
+            ParticipantRole::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["AGENT", "CUSTOMER"]
+    }
+}
+impl AsRef<str> for ParticipantRole {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An object that allows percentages to specify the proportion of the call where you would like
+/// to apply a filter. For example, you can specify the first half of the call. You can also specify the
+/// period of time between halfway through to three-quarters of the way through the call. Because
+/// the length of conversation can vary between calls, you can apply relative time ranges across all
+/// calls. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RelativeTimeRange {
+    /// <p>A value that indicates the percentage of the beginning of the time range. To set a relative
+    /// time range, you must specify a start percentage and an end percentage. For example, if
+    /// you specify the following values:</p>       
+    /// <ul>
+    /// <li>
+    /// <p>StartPercentage - 10</p>
+    /// </li>
+    /// <li>
+    /// <p>EndPercentage - 50</p>
+    /// </li>
+    /// </ul>
+    /// <p>This looks at the time range starting from 10% of the way into the call to 50% of the way
+    /// through the call. For a call that lasts 100,000 milliseconds, this example range would
+    /// apply from the 10,000 millisecond mark to the 50,000 millisecond mark. </p>
+    pub start_percentage: std::option::Option<i32>,
+    /// <p>A value that indicates the percentage of the end of the time range. To set a relative time
+    /// range, you must specify a start percentage and an end percentage. For example, if you
+    /// specify the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>StartPercentage - 10</p>
+    /// </li>
+    /// <li>
+    /// <p>EndPercentage - 50</p>
+    /// </li>
+    /// </ul>
+    /// <p>This looks at the time range starting from 10% of the way into the call to 50% of the way
+    /// through the call. For a call that lasts 100,000 milliseconds, this example range would
+    /// apply from the 10,000 millisecond mark to the 50,000 millisecond mark.</p>
+    pub end_percentage: std::option::Option<i32>,
+    /// <p>A range that takes the portion of the call up to the time in milliseconds set by the value
+    /// that you've specified. For example, if you specify <code>120000</code>, the time range is set for the
+    /// first 120,000 milliseconds of the call.</p>
+    pub first: std::option::Option<i32>,
+    /// <p>A range that takes the portion of the call from the time in milliseconds set by the value
+    /// that you've specified to the end of the call. For example, if you specify <code>120000</code>, the time
+    /// range is set for the last 120,000 milliseconds of the call.</p>
+    pub last: std::option::Option<i32>,
+}
+impl std::fmt::Debug for RelativeTimeRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RelativeTimeRange");
+        formatter.field("start_percentage", &self.start_percentage);
+        formatter.field("end_percentage", &self.end_percentage);
+        formatter.field("first", &self.first);
+        formatter.field("last", &self.last);
+        formatter.finish()
+    }
+}
+/// See [`RelativeTimeRange`](crate::model::RelativeTimeRange)
+pub mod relative_time_range {
+    /// A builder for [`RelativeTimeRange`](crate::model::RelativeTimeRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_percentage: std::option::Option<i32>,
+        pub(crate) end_percentage: std::option::Option<i32>,
+        pub(crate) first: std::option::Option<i32>,
+        pub(crate) last: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>A value that indicates the percentage of the beginning of the time range. To set a relative
+        /// time range, you must specify a start percentage and an end percentage. For example, if
+        /// you specify the following values:</p>       
+        /// <ul>
+        /// <li>
+        /// <p>StartPercentage - 10</p>
+        /// </li>
+        /// <li>
+        /// <p>EndPercentage - 50</p>
+        /// </li>
+        /// </ul>
+        /// <p>This looks at the time range starting from 10% of the way into the call to 50% of the way
+        /// through the call. For a call that lasts 100,000 milliseconds, this example range would
+        /// apply from the 10,000 millisecond mark to the 50,000 millisecond mark. </p>
+        pub fn start_percentage(mut self, input: i32) -> Self {
+            self.start_percentage = Some(input);
+            self
+        }
+        pub fn set_start_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.start_percentage = input;
+            self
+        }
+        /// <p>A value that indicates the percentage of the end of the time range. To set a relative time
+        /// range, you must specify a start percentage and an end percentage. For example, if you
+        /// specify the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>StartPercentage - 10</p>
+        /// </li>
+        /// <li>
+        /// <p>EndPercentage - 50</p>
+        /// </li>
+        /// </ul>
+        /// <p>This looks at the time range starting from 10% of the way into the call to 50% of the way
+        /// through the call. For a call that lasts 100,000 milliseconds, this example range would
+        /// apply from the 10,000 millisecond mark to the 50,000 millisecond mark.</p>
+        pub fn end_percentage(mut self, input: i32) -> Self {
+            self.end_percentage = Some(input);
+            self
+        }
+        pub fn set_end_percentage(mut self, input: std::option::Option<i32>) -> Self {
+            self.end_percentage = input;
+            self
+        }
+        /// <p>A range that takes the portion of the call up to the time in milliseconds set by the value
+        /// that you've specified. For example, if you specify <code>120000</code>, the time range is set for the
+        /// first 120,000 milliseconds of the call.</p>
+        pub fn first(mut self, input: i32) -> Self {
+            self.first = Some(input);
+            self
+        }
+        pub fn set_first(mut self, input: std::option::Option<i32>) -> Self {
+            self.first = input;
+            self
+        }
+        /// <p>A range that takes the portion of the call from the time in milliseconds set by the value
+        /// that you've specified to the end of the call. For example, if you specify <code>120000</code>, the time
+        /// range is set for the last 120,000 milliseconds of the call.</p>
+        pub fn last(mut self, input: i32) -> Self {
+            self.last = Some(input);
+            self
+        }
+        pub fn set_last(mut self, input: std::option::Option<i32>) -> Self {
+            self.last = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RelativeTimeRange`](crate::model::RelativeTimeRange)
+        pub fn build(self) -> crate::model::RelativeTimeRange {
+            crate::model::RelativeTimeRange {
+                start_percentage: self.start_percentage,
+                end_percentage: self.end_percentage,
+                first: self.first,
+                last: self.last,
+            }
+        }
+    }
+}
+impl RelativeTimeRange {
+    /// Creates a new builder-style object to manufacture [`RelativeTimeRange`](crate::model::RelativeTimeRange)
+    pub fn builder() -> crate::model::relative_time_range::Builder {
+        crate::model::relative_time_range::Builder::default()
+    }
+}
+
+/// <p>A time range, set in seconds, between two points in the call.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AbsoluteTimeRange {
+    /// <p>A value that indicates the beginning of the time range in seconds. To set absolute time
+    /// range, you must specify a start time and an end time. For example, if you specify the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>StartTime - 10000</p>
+    /// </li>
+    /// <li>
+    /// <p>Endtime - 50000</p>
+    /// </li>
+    /// </ul>
+    /// <p>The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.</p>
+    pub start_time: std::option::Option<i64>,
+    /// <p>A value that indicates the end of the time range in milliseconds. To set absolute time
+    /// range, you must specify a start time and an end time. For example, if you specify the
+    /// following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>StartTime - 10000</p>
+    /// </li>
+    /// <li>
+    /// <p>Endtime - 50000</p>
+    /// </li>
+    /// </ul>
+    /// <p>The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+    pub end_time: std::option::Option<i64>,
+    /// <p>A time range from the beginning of the call to the value that you've specified. For
+    /// example, if you specify 100000, the time range is set to the first 100,000 milliseconds of
+    /// the call.</p>
+    pub first: std::option::Option<i64>,
+    /// <p>A time range from the value that you've specified to the end of the call. For example, if
+    /// you specify 100000, the time range is set to the last 100,000 milliseconds of the call.</p>
+    pub last: std::option::Option<i64>,
+}
+impl std::fmt::Debug for AbsoluteTimeRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AbsoluteTimeRange");
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.field("first", &self.first);
+        formatter.field("last", &self.last);
+        formatter.finish()
+    }
+}
+/// See [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange)
+pub mod absolute_time_range {
+    /// A builder for [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start_time: std::option::Option<i64>,
+        pub(crate) end_time: std::option::Option<i64>,
+        pub(crate) first: std::option::Option<i64>,
+        pub(crate) last: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>A value that indicates the beginning of the time range in seconds. To set absolute time
+        /// range, you must specify a start time and an end time. For example, if you specify the
+        /// following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>StartTime - 10000</p>
+        /// </li>
+        /// <li>
+        /// <p>Endtime - 50000</p>
+        /// </li>
+        /// </ul>
+        /// <p>The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call.</p>
+        pub fn start_time(mut self, input: i64) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>A value that indicates the end of the time range in milliseconds. To set absolute time
+        /// range, you must specify a start time and an end time. For example, if you specify the
+        /// following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>StartTime - 10000</p>
+        /// </li>
+        /// <li>
+        /// <p>Endtime - 50000</p>
+        /// </li>
+        /// </ul>
+        /// <p>The time range is set between 10,000 milliseconds and 50,000 milliseconds into the call. </p>
+        pub fn end_time(mut self, input: i64) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        pub fn set_end_time(mut self, input: std::option::Option<i64>) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// <p>A time range from the beginning of the call to the value that you've specified. For
+        /// example, if you specify 100000, the time range is set to the first 100,000 milliseconds of
+        /// the call.</p>
+        pub fn first(mut self, input: i64) -> Self {
+            self.first = Some(input);
+            self
+        }
+        pub fn set_first(mut self, input: std::option::Option<i64>) -> Self {
+            self.first = input;
+            self
+        }
+        /// <p>A time range from the value that you've specified to the end of the call. For example, if
+        /// you specify 100000, the time range is set to the last 100,000 milliseconds of the call.</p>
+        pub fn last(mut self, input: i64) -> Self {
+            self.last = Some(input);
+            self
+        }
+        pub fn set_last(mut self, input: std::option::Option<i64>) -> Self {
+            self.last = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange)
+        pub fn build(self) -> crate::model::AbsoluteTimeRange {
+            crate::model::AbsoluteTimeRange {
+                start_time: self.start_time,
+                end_time: self.end_time,
+                first: self.first,
+                last: self.last,
+            }
+        }
+    }
+}
+impl AbsoluteTimeRange {
+    /// Creates a new builder-style object to manufacture [`AbsoluteTimeRange`](crate::model::AbsoluteTimeRange)
+    pub fn builder() -> crate::model::absolute_time_range::Builder {
+        crate::model::absolute_time_range::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SentimentValue {
+    Mixed,
+    Negative,
+    Neutral,
+    Positive,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SentimentValue {
+    fn from(s: &str) -> Self {
+        match s {
+            "MIXED" => SentimentValue::Mixed,
+            "NEGATIVE" => SentimentValue::Negative,
+            "NEUTRAL" => SentimentValue::Neutral,
+            "POSITIVE" => SentimentValue::Positive,
+            other => SentimentValue::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SentimentValue {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SentimentValue::from(s))
+    }
+}
+impl SentimentValue {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SentimentValue::Mixed => "MIXED",
+            SentimentValue::Negative => "NEGATIVE",
+            SentimentValue::Neutral => "NEUTRAL",
+            SentimentValue::Positive => "POSITIVE",
+            SentimentValue::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["MIXED", "NEGATIVE", "NEUTRAL", "POSITIVE"]
+    }
+}
+impl AsRef<str> for SentimentValue {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Matches the output of the transcription to either the specific phrases that you specify, or the
+/// intent of the phrases that you specify.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TranscriptFilter {
+    /// <p>Matches the phrase to the transcription output in a word for word
+    /// fashion. For example, if you specify the phrase "I want to speak to the manager." Amazon Transcribe
+    /// attempts to match that specific phrase to the transcription.</p>
+    pub transcript_filter_type: std::option::Option<crate::model::TranscriptFilterType>,
+    /// <p>A time range, set in seconds, between two points in the call.</p>
+    pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+    /// <p>An object that allows percentages to specify the proportion of the call where you
+    /// would like to apply a filter. For example, you can specify the first half of the call. You
+    /// can also specify the period of time between halfway through to three-quarters of the way
+    /// through the call. Because the length of conversation can vary between calls, you can
+    /// apply relative time ranges across all calls.</p>
+    pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+    /// <p>Determines whether the customer or the agent is speaking the phrases that you've
+    /// specified.</p>
+    pub participant_role: std::option::Option<crate::model::ParticipantRole>,
+    /// <p>If <code>TRUE</code>, the rule that you specify is applied to everything except for the phrases that you
+    /// specify.</p>
+    pub negate: std::option::Option<bool>,
+    /// <p>The phrases that you're specifying for the transcript filter to match.</p>
+    pub targets: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for TranscriptFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TranscriptFilter");
+        formatter.field("transcript_filter_type", &self.transcript_filter_type);
+        formatter.field("absolute_time_range", &self.absolute_time_range);
+        formatter.field("relative_time_range", &self.relative_time_range);
+        formatter.field("participant_role", &self.participant_role);
+        formatter.field("negate", &self.negate);
+        formatter.field("targets", &self.targets);
+        formatter.finish()
+    }
+}
+/// See [`TranscriptFilter`](crate::model::TranscriptFilter)
+pub mod transcript_filter {
+    /// A builder for [`TranscriptFilter`](crate::model::TranscriptFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) transcript_filter_type: std::option::Option<crate::model::TranscriptFilterType>,
+        pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+        pub(crate) relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+        pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
+        pub(crate) negate: std::option::Option<bool>,
+        pub(crate) targets: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>Matches the phrase to the transcription output in a word for word
+        /// fashion. For example, if you specify the phrase "I want to speak to the manager." Amazon Transcribe
+        /// attempts to match that specific phrase to the transcription.</p>
+        pub fn transcript_filter_type(mut self, input: crate::model::TranscriptFilterType) -> Self {
+            self.transcript_filter_type = Some(input);
+            self
+        }
+        pub fn set_transcript_filter_type(
+            mut self,
+            input: std::option::Option<crate::model::TranscriptFilterType>,
+        ) -> Self {
+            self.transcript_filter_type = input;
+            self
+        }
+        /// <p>A time range, set in seconds, between two points in the call.</p>
+        pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
+            self.absolute_time_range = Some(input);
+            self
+        }
+        pub fn set_absolute_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AbsoluteTimeRange>,
+        ) -> Self {
+            self.absolute_time_range = input;
+            self
+        }
+        /// <p>An object that allows percentages to specify the proportion of the call where you
+        /// would like to apply a filter. For example, you can specify the first half of the call. You
+        /// can also specify the period of time between halfway through to three-quarters of the way
+        /// through the call. Because the length of conversation can vary between calls, you can
+        /// apply relative time ranges across all calls.</p>
+        pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
+            self.relative_time_range = Some(input);
+            self
+        }
+        pub fn set_relative_time_range(
+            mut self,
+            input: std::option::Option<crate::model::RelativeTimeRange>,
+        ) -> Self {
+            self.relative_time_range = input;
+            self
+        }
+        /// <p>Determines whether the customer or the agent is speaking the phrases that you've
+        /// specified.</p>
+        pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantRole>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// <p>If <code>TRUE</code>, the rule that you specify is applied to everything except for the phrases that you
+        /// specify.</p>
+        pub fn negate(mut self, input: bool) -> Self {
+            self.negate = Some(input);
+            self
+        }
+        pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+            self.negate = input;
+            self
+        }
+        pub fn targets(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.targets.unwrap_or_default();
+            v.push(input.into());
+            self.targets = Some(v);
+            self
+        }
+        pub fn set_targets(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.targets = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TranscriptFilter`](crate::model::TranscriptFilter)
+        pub fn build(self) -> crate::model::TranscriptFilter {
+            crate::model::TranscriptFilter {
+                transcript_filter_type: self.transcript_filter_type,
+                absolute_time_range: self.absolute_time_range,
+                relative_time_range: self.relative_time_range,
+                participant_role: self.participant_role,
+                negate: self.negate,
+                targets: self.targets,
+            }
+        }
+    }
+}
+impl TranscriptFilter {
+    /// Creates a new builder-style object to manufacture [`TranscriptFilter`](crate::model::TranscriptFilter)
+    pub fn builder() -> crate::model::transcript_filter::Builder {
+        crate::model::transcript_filter::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum TranscriptFilterType {
+    Exact,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for TranscriptFilterType {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXACT" => TranscriptFilterType::Exact,
+            other => TranscriptFilterType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for TranscriptFilterType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(TranscriptFilterType::from(s))
+    }
+}
+impl TranscriptFilterType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            TranscriptFilterType::Exact => "EXACT",
+            TranscriptFilterType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXACT"]
+    }
+}
+impl AsRef<str> for TranscriptFilterType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>An object that enables you to configure your category to be applied to call analytics jobs where
+/// either the customer or agent was interrupted.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InterruptionFilter {
+    /// <p>The duration of the interruption.</p>
+    pub threshold: std::option::Option<i64>,
+    /// <p>Indicates whether the caller or customer was interrupting.</p>
+    pub participant_role: std::option::Option<crate::model::ParticipantRole>,
+    /// <p>An object you can use to specify a time range (in milliseconds) for when you'd want to find
+    /// the interruption. For example, you could search for an interruption between the 30,000
+    /// millisecond mark and the 45,000 millisecond mark. You could also specify the time
+    /// period as the first 15,000 milliseconds or the last 15,000 milliseconds. </p>
+    pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+    /// <p>An object that allows percentages to specify the proportion of the call where there
+    /// was a interruption. For example, you can specify the first half of the call. You can also
+    /// specify the period of time between halfway through to three-quarters of the way through
+    /// the call. Because the length of conversation can vary between calls, you can apply
+    /// relative time ranges across all calls.</p>
+    pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+    /// <p>Set to <code>TRUE</code> to look for a time period where there was no interruption.</p>
+    pub negate: std::option::Option<bool>,
+}
+impl std::fmt::Debug for InterruptionFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InterruptionFilter");
+        formatter.field("threshold", &self.threshold);
+        formatter.field("participant_role", &self.participant_role);
+        formatter.field("absolute_time_range", &self.absolute_time_range);
+        formatter.field("relative_time_range", &self.relative_time_range);
+        formatter.field("negate", &self.negate);
+        formatter.finish()
+    }
+}
+/// See [`InterruptionFilter`](crate::model::InterruptionFilter)
+pub mod interruption_filter {
+    /// A builder for [`InterruptionFilter`](crate::model::InterruptionFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) threshold: std::option::Option<i64>,
+        pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
+        pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+        pub(crate) relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+        pub(crate) negate: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The duration of the interruption.</p>
+        pub fn threshold(mut self, input: i64) -> Self {
+            self.threshold = Some(input);
+            self
+        }
+        pub fn set_threshold(mut self, input: std::option::Option<i64>) -> Self {
+            self.threshold = input;
+            self
+        }
+        /// <p>Indicates whether the caller or customer was interrupting.</p>
+        pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantRole>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// <p>An object you can use to specify a time range (in milliseconds) for when you'd want to find
+        /// the interruption. For example, you could search for an interruption between the 30,000
+        /// millisecond mark and the 45,000 millisecond mark. You could also specify the time
+        /// period as the first 15,000 milliseconds or the last 15,000 milliseconds. </p>
+        pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
+            self.absolute_time_range = Some(input);
+            self
+        }
+        pub fn set_absolute_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AbsoluteTimeRange>,
+        ) -> Self {
+            self.absolute_time_range = input;
+            self
+        }
+        /// <p>An object that allows percentages to specify the proportion of the call where there
+        /// was a interruption. For example, you can specify the first half of the call. You can also
+        /// specify the period of time between halfway through to three-quarters of the way through
+        /// the call. Because the length of conversation can vary between calls, you can apply
+        /// relative time ranges across all calls.</p>
+        pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
+            self.relative_time_range = Some(input);
+            self
+        }
+        pub fn set_relative_time_range(
+            mut self,
+            input: std::option::Option<crate::model::RelativeTimeRange>,
+        ) -> Self {
+            self.relative_time_range = input;
+            self
+        }
+        /// <p>Set to <code>TRUE</code> to look for a time period where there was no interruption.</p>
+        pub fn negate(mut self, input: bool) -> Self {
+            self.negate = Some(input);
+            self
+        }
+        pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+            self.negate = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InterruptionFilter`](crate::model::InterruptionFilter)
+        pub fn build(self) -> crate::model::InterruptionFilter {
+            crate::model::InterruptionFilter {
+                threshold: self.threshold,
+                participant_role: self.participant_role,
+                absolute_time_range: self.absolute_time_range,
+                relative_time_range: self.relative_time_range,
+                negate: self.negate,
+            }
+        }
+    }
+}
+impl InterruptionFilter {
+    /// Creates a new builder-style object to manufacture [`InterruptionFilter`](crate::model::InterruptionFilter)
+    pub fn builder() -> crate::model::interruption_filter::Builder {
+        crate::model::interruption_filter::Builder::default()
+    }
+}
+
+/// <p>An object that enables you to configure your category to be applied to call analytics jobs where
+/// either the customer or agent was interrupted.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct NonTalkTimeFilter {
+    /// <p>The duration of the period when neither the customer nor agent was talking.</p>
+    pub threshold: std::option::Option<i64>,
+    /// <p>An object you can use to specify a time range (in milliseconds) for when no one is talking.
+    /// For example, you could specify a time period between the 30,000 millisecond mark and
+    /// the 45,000 millisecond mark. You could also specify the time period as the first 15,000
+    /// milliseconds or the last 15,000 milliseconds.</p>
+    pub absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+    /// <p>An object that allows percentages to specify the proportion of the call where there
+    /// was silence. For example, you can specify the first half of the call. You can also
+    /// specify the period of time between halfway through to three-quarters of the way through
+    /// the call. Because the length of conversation can vary between calls, you can apply
+    /// relative time ranges across all calls.</p>
+    pub relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+    /// <p>Set to <code>TRUE</code> to look for a time period when people were talking.</p>
+    pub negate: std::option::Option<bool>,
+}
+impl std::fmt::Debug for NonTalkTimeFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("NonTalkTimeFilter");
+        formatter.field("threshold", &self.threshold);
+        formatter.field("absolute_time_range", &self.absolute_time_range);
+        formatter.field("relative_time_range", &self.relative_time_range);
+        formatter.field("negate", &self.negate);
+        formatter.finish()
+    }
+}
+/// See [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter)
+pub mod non_talk_time_filter {
+    /// A builder for [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) threshold: std::option::Option<i64>,
+        pub(crate) absolute_time_range: std::option::Option<crate::model::AbsoluteTimeRange>,
+        pub(crate) relative_time_range: std::option::Option<crate::model::RelativeTimeRange>,
+        pub(crate) negate: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>The duration of the period when neither the customer nor agent was talking.</p>
+        pub fn threshold(mut self, input: i64) -> Self {
+            self.threshold = Some(input);
+            self
+        }
+        pub fn set_threshold(mut self, input: std::option::Option<i64>) -> Self {
+            self.threshold = input;
+            self
+        }
+        /// <p>An object you can use to specify a time range (in milliseconds) for when no one is talking.
+        /// For example, you could specify a time period between the 30,000 millisecond mark and
+        /// the 45,000 millisecond mark. You could also specify the time period as the first 15,000
+        /// milliseconds or the last 15,000 milliseconds.</p>
+        pub fn absolute_time_range(mut self, input: crate::model::AbsoluteTimeRange) -> Self {
+            self.absolute_time_range = Some(input);
+            self
+        }
+        pub fn set_absolute_time_range(
+            mut self,
+            input: std::option::Option<crate::model::AbsoluteTimeRange>,
+        ) -> Self {
+            self.absolute_time_range = input;
+            self
+        }
+        /// <p>An object that allows percentages to specify the proportion of the call where there
+        /// was silence. For example, you can specify the first half of the call. You can also
+        /// specify the period of time between halfway through to three-quarters of the way through
+        /// the call. Because the length of conversation can vary between calls, you can apply
+        /// relative time ranges across all calls.</p>
+        pub fn relative_time_range(mut self, input: crate::model::RelativeTimeRange) -> Self {
+            self.relative_time_range = Some(input);
+            self
+        }
+        pub fn set_relative_time_range(
+            mut self,
+            input: std::option::Option<crate::model::RelativeTimeRange>,
+        ) -> Self {
+            self.relative_time_range = input;
+            self
+        }
+        /// <p>Set to <code>TRUE</code> to look for a time period when people were talking.</p>
+        pub fn negate(mut self, input: bool) -> Self {
+            self.negate = Some(input);
+            self
+        }
+        pub fn set_negate(mut self, input: std::option::Option<bool>) -> Self {
+            self.negate = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter)
+        pub fn build(self) -> crate::model::NonTalkTimeFilter {
+            crate::model::NonTalkTimeFilter {
+                threshold: self.threshold,
+                absolute_time_range: self.absolute_time_range,
+                relative_time_range: self.relative_time_range,
+                negate: self.negate,
+            }
+        }
+    }
+}
+impl NonTalkTimeFilter {
+    /// Creates a new builder-style object to manufacture [`NonTalkTimeFilter`](crate::model::NonTalkTimeFilter)
+    pub fn builder() -> crate::model::non_talk_time_filter::Builder {
+        crate::model::non_talk_time_filter::Builder::default()
+    }
+}
+
 /// <p>Describes an asynchronous transcription job that was created with the
 /// <code>StartTranscriptionJob</code> operation. </p>
 #[non_exhaustive]
@@ -1307,13 +2425,16 @@ pub struct Media {
     /// <p>The S3 object location of the input media file. The URI must be in the same region as
     /// the API endpoint that you are calling. The general form is:</p>
     /// <p>For example:</p>
-    /// <p>For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+    /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
     pub media_file_uri: std::option::Option<std::string::String>,
+    /// <p> The S3 object location for your redacted output media file. This is only supported for call analytics jobs.</p>
+    pub redacted_media_file_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Media {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Media");
         formatter.field("media_file_uri", &self.media_file_uri);
+        formatter.field("redacted_media_file_uri", &self.redacted_media_file_uri);
         formatter.finish()
     }
 }
@@ -1324,12 +2445,13 @@ pub mod media {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) media_file_uri: std::option::Option<std::string::String>,
+        pub(crate) redacted_media_file_uri: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The S3 object location of the input media file. The URI must be in the same region as
         /// the API endpoint that you are calling. The general form is:</p>
         /// <p>For example:</p>
-        /// <p>For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
         pub fn media_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.media_file_uri = Some(input.into());
             self
@@ -1341,10 +2463,23 @@ pub mod media {
             self.media_file_uri = input;
             self
         }
+        /// <p> The S3 object location for your redacted output media file. This is only supported for call analytics jobs.</p>
+        pub fn redacted_media_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
+            self.redacted_media_file_uri = Some(input.into());
+            self
+        }
+        pub fn set_redacted_media_file_uri(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.redacted_media_file_uri = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Media`](crate::model::Media)
         pub fn build(self) -> crate::model::Media {
             crate::model::Media {
                 media_file_uri: self.media_file_uri,
+                redacted_media_file_uri: self.redacted_media_file_uri,
             }
         }
     }
@@ -1493,7 +2628,7 @@ pub struct MedicalTranscriptionJob {
     /// <p>The sample rate, in Hertz, of the source audio containing medical information.</p>
     /// <p>If you don't specify the sample rate, Amazon Transcribe Medical determines it for you. If you choose to
     /// specify the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you
-    /// should leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical determine the sample
+    /// should leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe Medical determine the sample
     /// rate.</p>
     pub media_sample_rate_hertz: std::option::Option<i32>,
     /// <p>The format of the input media file.</p>
@@ -1577,8 +2712,8 @@ pub struct MedicalTranscriptionJob {
     pub specialty: std::option::Option<crate::model::Specialty>,
     /// <p>The type of speech in the transcription job. <code>CONVERSATION</code> is generally
     /// used for patient-physician dialogues. <code>DICTATION</code> is the setting for
-    /// physicians speaking their notes after seeing a patient. For more information, see <a>how-it-works-med</a>
-    /// </p>
+    /// physicians speaking their notes after seeing a patient. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What is
+    /// Amazon Transcribe Medical?</a>.</p>
     pub r#type: std::option::Option<crate::model::Type>,
 }
 impl std::fmt::Debug for MedicalTranscriptionJob {
@@ -1680,7 +2815,7 @@ pub mod medical_transcription_job {
         /// <p>The sample rate, in Hertz, of the source audio containing medical information.</p>
         /// <p>If you don't specify the sample rate, Amazon Transcribe Medical determines it for you. If you choose to
         /// specify the sample rate, it must match the rate detected by Amazon Transcribe Medical. In most cases, you
-        /// should leave the <code>MediaSampleHertz</code> blank and let Amazon Transcribe Medical determine the sample
+        /// should leave the <code>MedicalMediaSampleHertz</code> blank and let Amazon Transcribe Medical determine the sample
         /// rate.</p>
         pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
             self.media_sample_rate_hertz = Some(input);
@@ -1867,8 +3002,8 @@ pub mod medical_transcription_job {
         }
         /// <p>The type of speech in the transcription job. <code>CONVERSATION</code> is generally
         /// used for patient-physician dialogues. <code>DICTATION</code> is the setting for
-        /// physicians speaking their notes after seeing a patient. For more information, see <a>how-it-works-med</a>
-        /// </p>
+        /// physicians speaking their notes after seeing a patient. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/what-is-transcribe-med.html">What is
+        /// Amazon Transcribe Medical?</a>.</p>
         pub fn r#type(mut self, input: crate::model::Type) -> Self {
             self.r#type = Some(input);
             self
@@ -2270,6 +3405,874 @@ impl MedicalTranscript {
     /// Creates a new builder-style object to manufacture [`MedicalTranscript`](crate::model::MedicalTranscript)
     pub fn builder() -> crate::model::medical_transcript::Builder {
         crate::model::medical_transcript::Builder::default()
+    }
+}
+
+/// <p>Describes an asynchronous analytics job that was created with the <code>StartAnalyticsJob</code>
+/// operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CallAnalyticsJob {
+    /// <p>The name of the call analytics job.</p>
+    pub call_analytics_job_name: std::option::Option<std::string::String>,
+    /// <p>The status of the analytics job.</p>
+    pub call_analytics_job_status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+    /// <p>If you know the language spoken between the customer and the agent, specify a language
+    /// code for this field.</p>
+    /// <p>If you don't know the language, you can leave this field blank, and Amazon Transcribe will use machine
+    /// learning to automatically identify the language. To improve the accuracy of language identification,
+    /// you can provide an array containing the possible language codes for the language spoken in your
+    /// audio.</p>
+    /// <p>The following list shows the supported languages and corresponding language codes for
+    /// call analytics jobs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Gulf Arabic (ar-AE)</p>
+    /// </li>
+    /// <li>
+    /// <p>Mandarin Chinese, Mainland (zh-CN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Australian English (en-AU)</p>
+    /// </li>
+    /// <li>
+    /// <p>British English (en-GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>Indian English (en-IN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Irish English (en-IE)</p>
+    /// </li>
+    /// <li>
+    /// <p>Scottish English (en-AB)</p>
+    /// </li>
+    /// <li>
+    /// <p>US English (en-US)</p>
+    /// </li>
+    /// <li>
+    /// <p>Welsh English (en-WL)</p>
+    /// </li>
+    /// <li>
+    /// <p>Spanish (es-ES)</p>
+    /// </li>
+    /// <li>
+    /// <p>US Spanish (es-US)</p>
+    /// </li>
+    /// <li>
+    /// <p>French (fr-FR)</p>
+    /// </li>
+    /// <li>
+    /// <p>Canadian French (fr-CA)</p>
+    /// </li>
+    /// <li>
+    /// <p>German (de-DE)</p>
+    /// </li>
+    /// <li>
+    /// <p>Swiss German (de-CH)</p>
+    /// </li>
+    /// <li>
+    /// <p>Indian Hindi (hi-IN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Italian (it-IT)</p>
+    /// </li>
+    /// <li>
+    /// <p>Japanese (ja-JP)</p>
+    /// </li>
+    /// <li>
+    /// <p>Korean (ko-KR)</p>
+    /// </li>
+    /// <li>
+    /// <p>Portuguese (pt-PT)</p>
+    /// </li>
+    /// <li>
+    /// <p>Brazilian Portuguese (pt-BR)</p>
+    /// </li>
+    /// </ul>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The sample rate, in Hertz, of the audio.</p>
+    pub media_sample_rate_hertz: std::option::Option<i32>,
+    /// <p>The format of the input audio file. Note: for call analytics jobs, only the following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+    pub media_format: std::option::Option<crate::model::MediaFormat>,
+    /// <p>Describes the input media file in a transcription request.</p>
+    pub media: std::option::Option<crate::model::Media>,
+    /// <p>Identifies the location of a transcription.</p>
+    pub transcript: std::option::Option<crate::model::Transcript>,
+    /// <p>A timestamp that shows when the analytics job started processing.</p>
+    pub start_time: std::option::Option<smithy_types::Instant>,
+    /// <p>A timestamp that shows when the analytics job was created.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>A timestamp that shows when the analytics job was completed.</p>
+    pub completion_time: std::option::Option<smithy_types::Instant>,
+    /// <p>If the <code>AnalyticsJobStatus</code> is <code>FAILED</code>, this field contains
+    /// information about why the job failed.</p>
+    /// <p>The <code>FailureReason</code> field can contain one of the following values:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>Unsupported media format</code>: The media format
+    /// specified in the <code>MediaFormat</code> field of the request isn't valid. See the
+    /// description of the <code>MediaFormat</code> field for a list of valid values.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The media format provided does not match the detected media
+    /// format</code>: The media format of the audio file doesn't match the format specified in
+    /// the <code>MediaFormat</code> field in the request. Check the media format of your media file
+    /// and make sure the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid sample rate for audio file</code>: The sample rate specified in the
+    /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be
+    /// between 8000 and 48000 Hertz.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>The sample rate provided does not match the detected sample rate</code>:
+    /// The sample rate in the audio file doesn't match the sample rate specified in the
+    /// <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of your media
+    /// file and make sure that the two values match.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid file size: file size too large</code>: The size of your audio file is
+    /// larger than what Amazon Transcribe Medical can process. For more information,
+    /// see <i>Guidelines and Quotas</i> in the Amazon Transcribe Medical Guide</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Invalid number of channels: number of channels too large</code>:
+    /// Your audio contains more channels than Amazon Transcribe Medical is configured to
+    /// process. To request additional channels, see Amazon Transcribe Medical Endpoints and Quotas in the
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/Welcome.html">Amazon Web
+    /// Services General Reference</a>.</p>
+    /// </li>
+    /// </ul>
+    pub failure_reason: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Number (ARN) that you use to get access to the analytics job.</p>
+    pub data_access_role_arn: std::option::Option<std::string::String>,
+    /// <p>A value between zero and one that Amazon Transcribe assigned to the language that it
+    /// identified in the source audio. This value appears only when you don't provide a single
+    /// language code. Larger values indicate that Amazon Transcribe has higher confidence in the language
+    /// that it identified</p>
+    pub identified_language_score: std::option::Option<f32>,
+    /// <p>Provides information about the settings used to run a transcription job.</p>
+    pub settings: std::option::Option<crate::model::CallAnalyticsJobSettings>,
+    /// <p>Shows numeric values to indicate the channel assigned to the agent's audio and the
+    /// channel assigned to the customer's audio. </p>
+    pub channel_definitions: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+}
+impl std::fmt::Debug for CallAnalyticsJob {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CallAnalyticsJob");
+        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
+        formatter.field("call_analytics_job_status", &self.call_analytics_job_status);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("media_sample_rate_hertz", &self.media_sample_rate_hertz);
+        formatter.field("media_format", &self.media_format);
+        formatter.field("media", &self.media);
+        formatter.field("transcript", &self.transcript);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("completion_time", &self.completion_time);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.field("data_access_role_arn", &self.data_access_role_arn);
+        formatter.field("identified_language_score", &self.identified_language_score);
+        formatter.field("settings", &self.settings);
+        formatter.field("channel_definitions", &self.channel_definitions);
+        formatter.finish()
+    }
+}
+/// See [`CallAnalyticsJob`](crate::model::CallAnalyticsJob)
+pub mod call_analytics_job {
+    /// A builder for [`CallAnalyticsJob`](crate::model::CallAnalyticsJob)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
+        pub(crate) call_analytics_job_status:
+            std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) media_sample_rate_hertz: std::option::Option<i32>,
+        pub(crate) media_format: std::option::Option<crate::model::MediaFormat>,
+        pub(crate) media: std::option::Option<crate::model::Media>,
+        pub(crate) transcript: std::option::Option<crate::model::Transcript>,
+        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) completion_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+        pub(crate) data_access_role_arn: std::option::Option<std::string::String>,
+        pub(crate) identified_language_score: std::option::Option<f32>,
+        pub(crate) settings: std::option::Option<crate::model::CallAnalyticsJobSettings>,
+        pub(crate) channel_definitions:
+            std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+    }
+    impl Builder {
+        /// <p>The name of the call analytics job.</p>
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.call_analytics_job_name = Some(input.into());
+            self
+        }
+        pub fn set_call_analytics_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.call_analytics_job_name = input;
+            self
+        }
+        /// <p>The status of the analytics job.</p>
+        pub fn call_analytics_job_status(
+            mut self,
+            input: crate::model::CallAnalyticsJobStatus,
+        ) -> Self {
+            self.call_analytics_job_status = Some(input);
+            self
+        }
+        pub fn set_call_analytics_job_status(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        ) -> Self {
+            self.call_analytics_job_status = input;
+            self
+        }
+        /// <p>If you know the language spoken between the customer and the agent, specify a language
+        /// code for this field.</p>
+        /// <p>If you don't know the language, you can leave this field blank, and Amazon Transcribe will use machine
+        /// learning to automatically identify the language. To improve the accuracy of language identification,
+        /// you can provide an array containing the possible language codes for the language spoken in your
+        /// audio.</p>
+        /// <p>The following list shows the supported languages and corresponding language codes for
+        /// call analytics jobs:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Gulf Arabic (ar-AE)</p>
+        /// </li>
+        /// <li>
+        /// <p>Mandarin Chinese, Mainland (zh-CN)</p>
+        /// </li>
+        /// <li>
+        /// <p>Australian English (en-AU)</p>
+        /// </li>
+        /// <li>
+        /// <p>British English (en-GB)</p>
+        /// </li>
+        /// <li>
+        /// <p>Indian English (en-IN)</p>
+        /// </li>
+        /// <li>
+        /// <p>Irish English (en-IE)</p>
+        /// </li>
+        /// <li>
+        /// <p>Scottish English (en-AB)</p>
+        /// </li>
+        /// <li>
+        /// <p>US English (en-US)</p>
+        /// </li>
+        /// <li>
+        /// <p>Welsh English (en-WL)</p>
+        /// </li>
+        /// <li>
+        /// <p>Spanish (es-ES)</p>
+        /// </li>
+        /// <li>
+        /// <p>US Spanish (es-US)</p>
+        /// </li>
+        /// <li>
+        /// <p>French (fr-FR)</p>
+        /// </li>
+        /// <li>
+        /// <p>Canadian French (fr-CA)</p>
+        /// </li>
+        /// <li>
+        /// <p>German (de-DE)</p>
+        /// </li>
+        /// <li>
+        /// <p>Swiss German (de-CH)</p>
+        /// </li>
+        /// <li>
+        /// <p>Indian Hindi (hi-IN)</p>
+        /// </li>
+        /// <li>
+        /// <p>Italian (it-IT)</p>
+        /// </li>
+        /// <li>
+        /// <p>Japanese (ja-JP)</p>
+        /// </li>
+        /// <li>
+        /// <p>Korean (ko-KR)</p>
+        /// </li>
+        /// <li>
+        /// <p>Portuguese (pt-PT)</p>
+        /// </li>
+        /// <li>
+        /// <p>Brazilian Portuguese (pt-BR)</p>
+        /// </li>
+        /// </ul>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The sample rate, in Hertz, of the audio.</p>
+        pub fn media_sample_rate_hertz(mut self, input: i32) -> Self {
+            self.media_sample_rate_hertz = Some(input);
+            self
+        }
+        pub fn set_media_sample_rate_hertz(mut self, input: std::option::Option<i32>) -> Self {
+            self.media_sample_rate_hertz = input;
+            self
+        }
+        /// <p>The format of the input audio file. Note: for call analytics jobs, only the following media formats are supported: MP3, MP4, WAV, FLAC, OGG, and WebM. </p>
+        pub fn media_format(mut self, input: crate::model::MediaFormat) -> Self {
+            self.media_format = Some(input);
+            self
+        }
+        pub fn set_media_format(
+            mut self,
+            input: std::option::Option<crate::model::MediaFormat>,
+        ) -> Self {
+            self.media_format = input;
+            self
+        }
+        /// <p>Describes the input media file in a transcription request.</p>
+        pub fn media(mut self, input: crate::model::Media) -> Self {
+            self.media = Some(input);
+            self
+        }
+        pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
+            self.media = input;
+            self
+        }
+        /// <p>Identifies the location of a transcription.</p>
+        pub fn transcript(mut self, input: crate::model::Transcript) -> Self {
+            self.transcript = Some(input);
+            self
+        }
+        pub fn set_transcript(
+            mut self,
+            input: std::option::Option<crate::model::Transcript>,
+        ) -> Self {
+            self.transcript = input;
+            self
+        }
+        /// <p>A timestamp that shows when the analytics job started processing.</p>
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the analytics job was created.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the analytics job was completed.</p>
+        pub fn completion_time(mut self, input: smithy_types::Instant) -> Self {
+            self.completion_time = Some(input);
+            self
+        }
+        pub fn set_completion_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.completion_time = input;
+            self
+        }
+        /// <p>If the <code>AnalyticsJobStatus</code> is <code>FAILED</code>, this field contains
+        /// information about why the job failed.</p>
+        /// <p>The <code>FailureReason</code> field can contain one of the following values:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>Unsupported media format</code>: The media format
+        /// specified in the <code>MediaFormat</code> field of the request isn't valid. See the
+        /// description of the <code>MediaFormat</code> field for a list of valid values.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>The media format provided does not match the detected media
+        /// format</code>: The media format of the audio file doesn't match the format specified in
+        /// the <code>MediaFormat</code> field in the request. Check the media format of your media file
+        /// and make sure the two values match.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Invalid sample rate for audio file</code>: The sample rate specified in the
+        /// <code>MediaSampleRateHertz</code> of the request isn't valid. The sample rate must be
+        /// between 8000 and 48000 Hertz.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>The sample rate provided does not match the detected sample rate</code>:
+        /// The sample rate in the audio file doesn't match the sample rate specified in the
+        /// <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of your media
+        /// file and make sure that the two values match.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Invalid file size: file size too large</code>: The size of your audio file is
+        /// larger than what Amazon Transcribe Medical can process. For more information,
+        /// see <i>Guidelines and Quotas</i> in the Amazon Transcribe Medical Guide</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Invalid number of channels: number of channels too large</code>:
+        /// Your audio contains more channels than Amazon Transcribe Medical is configured to
+        /// process. To request additional channels, see Amazon Transcribe Medical Endpoints and Quotas in the
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/Welcome.html">Amazon Web
+        /// Services General Reference</a>.</p>
+        /// </li>
+        /// </ul>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// <p>The Amazon Resource Number (ARN) that you use to get access to the analytics job.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.data_access_role_arn = Some(input.into());
+            self
+        }
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.data_access_role_arn = input;
+            self
+        }
+        /// <p>A value between zero and one that Amazon Transcribe assigned to the language that it
+        /// identified in the source audio. This value appears only when you don't provide a single
+        /// language code. Larger values indicate that Amazon Transcribe has higher confidence in the language
+        /// that it identified</p>
+        pub fn identified_language_score(mut self, input: f32) -> Self {
+            self.identified_language_score = Some(input);
+            self
+        }
+        pub fn set_identified_language_score(mut self, input: std::option::Option<f32>) -> Self {
+            self.identified_language_score = input;
+            self
+        }
+        /// <p>Provides information about the settings used to run a transcription job.</p>
+        pub fn settings(mut self, input: crate::model::CallAnalyticsJobSettings) -> Self {
+            self.settings = Some(input);
+            self
+        }
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJobSettings>,
+        ) -> Self {
+            self.settings = input;
+            self
+        }
+        pub fn channel_definitions(
+            mut self,
+            input: impl Into<crate::model::ChannelDefinition>,
+        ) -> Self {
+            let mut v = self.channel_definitions.unwrap_or_default();
+            v.push(input.into());
+            self.channel_definitions = Some(v);
+            self
+        }
+        pub fn set_channel_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+        ) -> Self {
+            self.channel_definitions = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CallAnalyticsJob`](crate::model::CallAnalyticsJob)
+        pub fn build(self) -> crate::model::CallAnalyticsJob {
+            crate::model::CallAnalyticsJob {
+                call_analytics_job_name: self.call_analytics_job_name,
+                call_analytics_job_status: self.call_analytics_job_status,
+                language_code: self.language_code,
+                media_sample_rate_hertz: self.media_sample_rate_hertz,
+                media_format: self.media_format,
+                media: self.media,
+                transcript: self.transcript,
+                start_time: self.start_time,
+                creation_time: self.creation_time,
+                completion_time: self.completion_time,
+                failure_reason: self.failure_reason,
+                data_access_role_arn: self.data_access_role_arn,
+                identified_language_score: self.identified_language_score,
+                settings: self.settings,
+                channel_definitions: self.channel_definitions,
+            }
+        }
+    }
+}
+impl CallAnalyticsJob {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsJob`](crate::model::CallAnalyticsJob)
+    pub fn builder() -> crate::model::call_analytics_job::Builder {
+        crate::model::call_analytics_job::Builder::default()
+    }
+}
+
+/// <p>For a call analytics job, an object that indicates the audio channel that belongs to the agent and
+/// the audio channel that belongs to the customer.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ChannelDefinition {
+    /// <p>A value that indicates the audio channel.</p>
+    pub channel_id: i32,
+    /// <p>Indicates whether the person speaking on the audio channel is the agent or customer.</p>
+    pub participant_role: std::option::Option<crate::model::ParticipantRole>,
+}
+impl std::fmt::Debug for ChannelDefinition {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ChannelDefinition");
+        formatter.field("channel_id", &self.channel_id);
+        formatter.field("participant_role", &self.participant_role);
+        formatter.finish()
+    }
+}
+/// See [`ChannelDefinition`](crate::model::ChannelDefinition)
+pub mod channel_definition {
+    /// A builder for [`ChannelDefinition`](crate::model::ChannelDefinition)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) channel_id: std::option::Option<i32>,
+        pub(crate) participant_role: std::option::Option<crate::model::ParticipantRole>,
+    }
+    impl Builder {
+        /// <p>A value that indicates the audio channel.</p>
+        pub fn channel_id(mut self, input: i32) -> Self {
+            self.channel_id = Some(input);
+            self
+        }
+        pub fn set_channel_id(mut self, input: std::option::Option<i32>) -> Self {
+            self.channel_id = input;
+            self
+        }
+        /// <p>Indicates whether the person speaking on the audio channel is the agent or customer.</p>
+        pub fn participant_role(mut self, input: crate::model::ParticipantRole) -> Self {
+            self.participant_role = Some(input);
+            self
+        }
+        pub fn set_participant_role(
+            mut self,
+            input: std::option::Option<crate::model::ParticipantRole>,
+        ) -> Self {
+            self.participant_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ChannelDefinition`](crate::model::ChannelDefinition)
+        pub fn build(self) -> crate::model::ChannelDefinition {
+            crate::model::ChannelDefinition {
+                channel_id: self.channel_id.unwrap_or_default(),
+                participant_role: self.participant_role,
+            }
+        }
+    }
+}
+impl ChannelDefinition {
+    /// Creates a new builder-style object to manufacture [`ChannelDefinition`](crate::model::ChannelDefinition)
+    pub fn builder() -> crate::model::channel_definition::Builder {
+        crate::model::channel_definition::Builder::default()
+    }
+}
+
+/// <p>Provides optional settings for the <code>CallAnalyticsJob</code> operation. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CallAnalyticsJobSettings {
+    /// <p>The name of a vocabulary to use when processing the call analytics job.</p>
+    pub vocabulary_name: std::option::Option<std::string::String>,
+    /// <p>The name of the vocabulary filter to use when running a call analytics job. The filter that
+    /// you specify must have the same language code as the analytics job.</p>
+    pub vocabulary_filter_name: std::option::Option<std::string::String>,
+    /// <p>Set to mask to remove filtered text from the transcript and replace it with three asterisks
+    /// ("***") as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript
+    /// without using placeholder text. Set to <code>tag</code> to mark the word in the transcription output
+    /// that matches the vocabulary filter. When you set the filter method to <code>tag</code>, the words
+    /// matching your vocabulary filter are not masked or removed.</p>
+    pub vocabulary_filter_method: std::option::Option<crate::model::VocabularyFilterMethod>,
+    /// <p>The structure used to describe a custom language model.</p>
+    pub language_model_name: std::option::Option<std::string::String>,
+    /// <p>Settings for content redaction within a transcription job.</p>
+    pub content_redaction: std::option::Option<crate::model::ContentRedaction>,
+    /// <p>When you run a call analytics job, you can specify the language spoken in the audio, or
+    /// you can have Amazon Transcribe identify the language for you.</p>
+    /// <p>To specify a language, specify an array with one language code. If you don't know the
+    /// language, you can leave this field blank and Amazon Transcribe will use machine learning to identify the
+    /// language for you. To improve the ability of Amazon Transcribe to correctly identify the language, you can
+    /// provide an array of the languages that can be present in the audio.</p>
+    /// <p>The following list shows the supported languages and corresponding language codes for
+    /// call analytics jobs:</p>
+    /// <ul>
+    /// <li>
+    /// <p>Gulf Arabic (ar-AE)</p>
+    /// </li>
+    /// <li>
+    /// <p>Mandarin Chinese, Mainland (zh-CN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Australian English (en-AU)</p>
+    /// </li>
+    /// <li>
+    /// <p>British English (en-GB)</p>
+    /// </li>
+    /// <li>
+    /// <p>Indian English (en-IN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Irish English (en-IE)</p>
+    /// </li>
+    /// <li>
+    /// <p>Scottish English (en-AB)</p>
+    /// </li>
+    /// <li>
+    /// <p>US English (en-US)</p>
+    /// </li>
+    /// <li>
+    /// <p>Welsh English (en-WL)</p>
+    /// </li>
+    /// <li>
+    /// <p>Spanish (es-ES)</p>
+    /// </li>
+    /// <li>
+    /// <p>US Spanish (es-US)</p>
+    /// </li>
+    /// <li>
+    /// <p>French (fr-FR)</p>
+    /// </li>
+    /// <li>
+    /// <p>Canadian French (fr-CA)</p>
+    /// </li>
+    /// <li>
+    /// <p>German (de-DE)</p>
+    /// </li>
+    /// <li>
+    /// <p>Swiss German (de-CH)</p>
+    /// </li>
+    /// <li>
+    /// <p>Indian Hindi (hi-IN)</p>
+    /// </li>
+    /// <li>
+    /// <p>Italian (it-IT)</p>
+    /// </li>
+    /// <li>
+    /// <p>Japanese (ja-JP)</p>
+    /// </li>
+    /// <li>
+    /// <p>Korean (ko-KR)</p>
+    /// </li>
+    /// <li>
+    /// <p>Portuguese (pt-PT)</p>
+    /// </li>
+    /// <li>
+    /// <p>Brazilian Portuguese (pt-BR)</p>
+    /// </li>
+    /// </ul>
+    pub language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+}
+impl std::fmt::Debug for CallAnalyticsJobSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CallAnalyticsJobSettings");
+        formatter.field("vocabulary_name", &self.vocabulary_name);
+        formatter.field("vocabulary_filter_name", &self.vocabulary_filter_name);
+        formatter.field("vocabulary_filter_method", &self.vocabulary_filter_method);
+        formatter.field("language_model_name", &self.language_model_name);
+        formatter.field("content_redaction", &self.content_redaction);
+        formatter.field("language_options", &self.language_options);
+        formatter.finish()
+    }
+}
+/// See [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
+pub mod call_analytics_job_settings {
+    /// A builder for [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vocabulary_name: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_filter_name: std::option::Option<std::string::String>,
+        pub(crate) vocabulary_filter_method:
+            std::option::Option<crate::model::VocabularyFilterMethod>,
+        pub(crate) language_model_name: std::option::Option<std::string::String>,
+        pub(crate) content_redaction: std::option::Option<crate::model::ContentRedaction>,
+        pub(crate) language_options: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+    }
+    impl Builder {
+        /// <p>The name of a vocabulary to use when processing the call analytics job.</p>
+        pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_name = Some(input.into());
+            self
+        }
+        pub fn set_vocabulary_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_name = input;
+            self
+        }
+        /// <p>The name of the vocabulary filter to use when running a call analytics job. The filter that
+        /// you specify must have the same language code as the analytics job.</p>
+        pub fn vocabulary_filter_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vocabulary_filter_name = Some(input.into());
+            self
+        }
+        pub fn set_vocabulary_filter_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.vocabulary_filter_name = input;
+            self
+        }
+        /// <p>Set to mask to remove filtered text from the transcript and replace it with three asterisks
+        /// ("***") as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript
+        /// without using placeholder text. Set to <code>tag</code> to mark the word in the transcription output
+        /// that matches the vocabulary filter. When you set the filter method to <code>tag</code>, the words
+        /// matching your vocabulary filter are not masked or removed.</p>
+        pub fn vocabulary_filter_method(
+            mut self,
+            input: crate::model::VocabularyFilterMethod,
+        ) -> Self {
+            self.vocabulary_filter_method = Some(input);
+            self
+        }
+        pub fn set_vocabulary_filter_method(
+            mut self,
+            input: std::option::Option<crate::model::VocabularyFilterMethod>,
+        ) -> Self {
+            self.vocabulary_filter_method = input;
+            self
+        }
+        /// <p>The structure used to describe a custom language model.</p>
+        pub fn language_model_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.language_model_name = Some(input.into());
+            self
+        }
+        pub fn set_language_model_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.language_model_name = input;
+            self
+        }
+        /// <p>Settings for content redaction within a transcription job.</p>
+        pub fn content_redaction(mut self, input: crate::model::ContentRedaction) -> Self {
+            self.content_redaction = Some(input);
+            self
+        }
+        pub fn set_content_redaction(
+            mut self,
+            input: std::option::Option<crate::model::ContentRedaction>,
+        ) -> Self {
+            self.content_redaction = input;
+            self
+        }
+        pub fn language_options(mut self, input: impl Into<crate::model::LanguageCode>) -> Self {
+            let mut v = self.language_options.unwrap_or_default();
+            v.push(input.into());
+            self.language_options = Some(v);
+            self
+        }
+        pub fn set_language_options(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
+        ) -> Self {
+            self.language_options = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
+        pub fn build(self) -> crate::model::CallAnalyticsJobSettings {
+            crate::model::CallAnalyticsJobSettings {
+                vocabulary_name: self.vocabulary_name,
+                vocabulary_filter_name: self.vocabulary_filter_name,
+                vocabulary_filter_method: self.vocabulary_filter_method,
+                language_model_name: self.language_model_name,
+                content_redaction: self.content_redaction,
+                language_options: self.language_options,
+            }
+        }
+    }
+}
+impl CallAnalyticsJobSettings {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSettings`](crate::model::CallAnalyticsJobSettings)
+    pub fn builder() -> crate::model::call_analytics_job_settings::Builder {
+        crate::model::call_analytics_job_settings::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CallAnalyticsJobStatus {
+    Completed,
+    Failed,
+    InProgress,
+    Queued,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CallAnalyticsJobStatus {
+    fn from(s: &str) -> Self {
+        match s {
+            "COMPLETED" => CallAnalyticsJobStatus::Completed,
+            "FAILED" => CallAnalyticsJobStatus::Failed,
+            "IN_PROGRESS" => CallAnalyticsJobStatus::InProgress,
+            "QUEUED" => CallAnalyticsJobStatus::Queued,
+            other => CallAnalyticsJobStatus::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CallAnalyticsJobStatus {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CallAnalyticsJobStatus::from(s))
+    }
+}
+impl CallAnalyticsJobStatus {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CallAnalyticsJobStatus::Completed => "COMPLETED",
+            CallAnalyticsJobStatus::Failed => "FAILED",
+            CallAnalyticsJobStatus::InProgress => "IN_PROGRESS",
+            CallAnalyticsJobStatus::Queued => "QUEUED",
+            CallAnalyticsJobStatus::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["COMPLETED", "FAILED", "IN_PROGRESS", "QUEUED"]
+    }
+}
+impl AsRef<str> for CallAnalyticsJobStatus {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -2793,8 +4796,8 @@ pub struct MedicalTranscriptionJobSummary {
     /// valid value.</p>
     pub specialty: std::option::Option<crate::model::Specialty>,
     /// <p>Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription
-    /// job. If the value is <code>PHI</code>, you've configured the transcription job to identify
-    /// personal health information (PHI).</p>
+    /// job. If the value is <code>PHI</code>, you've configured the transcription job to
+    /// identify personal health information (PHI).</p>
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
     /// <p>The speech of the clinician in the input audio.</p>
@@ -2960,8 +4963,8 @@ pub mod medical_transcription_job_summary {
             self
         }
         /// <p>Shows the type of information you've configured Amazon Transcribe Medical to identify in a transcription
-        /// job. If the value is <code>PHI</code>, you've configured the transcription job to identify
-        /// personal health information (PHI).</p>
+        /// job. If the value is <code>PHI</code>, you've configured the transcription job to
+        /// identify personal health information (PHI).</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::MedicalContentIdentificationType,
@@ -3447,5 +5450,160 @@ impl ClmLanguageCode {
 impl AsRef<str> for ClmLanguageCode {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Provides summary information about a call analytics job.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CallAnalyticsJobSummary {
+    /// <p>The name of the call analytics job.</p>
+    pub call_analytics_job_name: std::option::Option<std::string::String>,
+    /// <p>A timestamp that shows when the call analytics job was created.</p>
+    pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>A timestamp that shows when the job began processing.</p>
+    pub start_time: std::option::Option<smithy_types::Instant>,
+    /// <p>A timestamp that shows when the job was completed.</p>
+    pub completion_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The language of the transcript in the source audio file.</p>
+    pub language_code: std::option::Option<crate::model::LanguageCode>,
+    /// <p>The status of the call analytics job.</p>
+    pub call_analytics_job_status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+    /// <p>If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of
+    /// the error.</p>
+    pub failure_reason: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CallAnalyticsJobSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CallAnalyticsJobSummary");
+        formatter.field("call_analytics_job_name", &self.call_analytics_job_name);
+        formatter.field("creation_time", &self.creation_time);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("completion_time", &self.completion_time);
+        formatter.field("language_code", &self.language_code);
+        formatter.field("call_analytics_job_status", &self.call_analytics_job_status);
+        formatter.field("failure_reason", &self.failure_reason);
+        formatter.finish()
+    }
+}
+/// See [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary)
+pub mod call_analytics_job_summary {
+    /// A builder for [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) call_analytics_job_name: std::option::Option<std::string::String>,
+        pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) start_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) completion_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) language_code: std::option::Option<crate::model::LanguageCode>,
+        pub(crate) call_analytics_job_status:
+            std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        pub(crate) failure_reason: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the call analytics job.</p>
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.call_analytics_job_name = Some(input.into());
+            self
+        }
+        pub fn set_call_analytics_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.call_analytics_job_name = input;
+            self
+        }
+        /// <p>A timestamp that shows when the call analytics job was created.</p>
+        pub fn creation_time(mut self, input: smithy_types::Instant) -> Self {
+            self.creation_time = Some(input);
+            self
+        }
+        pub fn set_creation_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.creation_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job began processing.</p>
+        pub fn start_time(mut self, input: smithy_types::Instant) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>A timestamp that shows when the job was completed.</p>
+        pub fn completion_time(mut self, input: smithy_types::Instant) -> Self {
+            self.completion_time = Some(input);
+            self
+        }
+        pub fn set_completion_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.completion_time = input;
+            self
+        }
+        /// <p>The language of the transcript in the source audio file.</p>
+        pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
+            self.language_code = Some(input);
+            self
+        }
+        pub fn set_language_code(
+            mut self,
+            input: std::option::Option<crate::model::LanguageCode>,
+        ) -> Self {
+            self.language_code = input;
+            self
+        }
+        /// <p>The status of the call analytics job.</p>
+        pub fn call_analytics_job_status(
+            mut self,
+            input: crate::model::CallAnalyticsJobStatus,
+        ) -> Self {
+            self.call_analytics_job_status = Some(input);
+            self
+        }
+        pub fn set_call_analytics_job_status(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        ) -> Self {
+            self.call_analytics_job_status = input;
+            self
+        }
+        /// <p>If the <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, a description of
+        /// the error.</p>
+        pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
+            self.failure_reason = Some(input.into());
+            self
+        }
+        pub fn set_failure_reason(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.failure_reason = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary)
+        pub fn build(self) -> crate::model::CallAnalyticsJobSummary {
+            crate::model::CallAnalyticsJobSummary {
+                call_analytics_job_name: self.call_analytics_job_name,
+                creation_time: self.creation_time,
+                start_time: self.start_time,
+                completion_time: self.completion_time,
+                language_code: self.language_code,
+                call_analytics_job_status: self.call_analytics_job_status,
+                failure_reason: self.failure_reason,
+            }
+        }
+    }
+}
+impl CallAnalyticsJobSummary {
+    /// Creates a new builder-style object to manufacture [`CallAnalyticsJobSummary`](crate::model::CallAnalyticsJobSummary)
+    pub fn builder() -> crate::model::call_analytics_job_summary::Builder {
+        crate::model::call_analytics_job_summary::Builder::default()
     }
 }

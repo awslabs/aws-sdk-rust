@@ -7547,6 +7547,17 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dry_run(input);
             self
         }
+        /// <p>The type of key pair. Note that ED25519 keys are not supported for Windows instances, EC2 Instance Connect, and EC2 Serial Console.</p>
+        /// <p>Default: <code>rsa</code>
+        /// </p>
+        pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
+            self.inner = self.inner.key_type(input);
+            self
+        }
+        pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
+            self.inner = self.inner.set_key_type(input);
+            self
+        }
         /// <p>The tags to apply to the new key pair.</p>
         pub fn tag_specifications(
             mut self,

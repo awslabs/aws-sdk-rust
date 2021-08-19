@@ -1478,7 +1478,7 @@ pub struct StartSessionOutput {
     /// </p>
     /// <p>
     /// <b>region</b> represents the Region identifier for an
-    /// Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
+    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
     /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     /// <p>
@@ -1530,7 +1530,7 @@ pub mod start_session_output {
         /// </p>
         /// <p>
         /// <b>region</b> represents the Region identifier for an
-        /// Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
+        /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
         /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
         /// <i>Amazon Web Services General Reference</i>.</p>
         /// <p>
@@ -1779,7 +1779,7 @@ pub struct ResumeSessionOutput {
     /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
     /// <p>
     /// <b>region</b> represents the Region identifier for an
-    /// Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
+    /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
     /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     /// <p>
@@ -1830,7 +1830,7 @@ pub mod resume_session_output {
         /// receive output from the instance. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>.</p>
         /// <p>
         /// <b>region</b> represents the Region identifier for an
-        /// Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
+        /// Amazon Web Services Region supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for the US East (Ohio) Region.
         /// For a list of supported <b>region</b> values, see the <b>Region</b> column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems Manager service endpoints</a> in the
         /// <i>Amazon Web Services General Reference</i>.</p>
         /// <p>
@@ -2994,13 +2994,14 @@ impl ListDocumentsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentMetadataHistoryOutput {
-    /// <p>The name of the document.</p>
+    /// <p>The name of the change template.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the document.</p>
+    /// <p>The version of the change template.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The user ID of the person in the organization who requested the document review.</p>
+    /// <p>The user ID of the person in the organization who requested the review of the
+    /// change template.</p>
     pub author: std::option::Option<std::string::String>,
-    /// <p>Information about the response to the document approval request.</p>
+    /// <p>Information about the response to the change template approval request.</p>
     pub metadata: std::option::Option<crate::model::DocumentMetadataResponseInfo>,
     /// <p>The maximum number of items to return for this call. The call also returns a token that you
     /// can specify in a subsequent call to get the next set of results.</p>
@@ -3030,7 +3031,7 @@ pub mod list_document_metadata_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the document.</p>
+        /// <p>The name of the change template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -3039,7 +3040,7 @@ pub mod list_document_metadata_history_output {
             self.name = input;
             self
         }
-        /// <p>The version of the document.</p>
+        /// <p>The version of the change template.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -3051,7 +3052,8 @@ pub mod list_document_metadata_history_output {
             self.document_version = input;
             self
         }
-        /// <p>The user ID of the person in the organization who requested the document review.</p>
+        /// <p>The user ID of the person in the organization who requested the review of the
+        /// change template.</p>
         pub fn author(mut self, input: impl Into<std::string::String>) -> Self {
             self.author = Some(input.into());
             self
@@ -3060,7 +3062,7 @@ pub mod list_document_metadata_history_output {
             self.author = input;
             self
         }
-        /// <p>Information about the response to the document approval request.</p>
+        /// <p>Information about the response to the change template approval request.</p>
         pub fn metadata(mut self, input: crate::model::DocumentMetadataResponseInfo) -> Self {
             self.metadata = Some(input);
             self
@@ -4263,7 +4265,7 @@ impl GetParameterOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetOpsSummaryOutput {
-    /// <p>The list of aggregated and filtered OpsData.</p>
+    /// <p>The list of aggregated details and filtered OpsData.</p>
     pub entities: std::option::Option<std::vec::Vec<crate::model::OpsEntity>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results.</p>
@@ -6124,7 +6126,7 @@ impl GetDocumentOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDeployablePatchSnapshotForInstanceOutput {
-    /// <p>The ID of the instance.</p>
+    /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The user-defined snapshot ID.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
@@ -6157,7 +6159,7 @@ pub mod get_deployable_patch_snapshot_for_instance_output {
         pub(crate) product: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the instance.</p>
+        /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
@@ -8887,9 +8889,9 @@ impl DescribeEffectiveInstanceAssociationsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeDocumentPermissionOutput {
     /// <p>The account IDs that have permission to use this document. The ID can be either an
-    /// account or <i>All</i>.</p>
+    /// Amazon Web Services account or <i>All</i>.</p>
     pub account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A list of accounts where the current document is shared and the version shared with
+    /// <p>A list of Amazon Web Services accounts where the current document is shared and the version shared with
     /// each account.</p>
     pub account_sharing_info_list:
         std::option::Option<std::vec::Vec<crate::model::AccountSharingInfo>>,
@@ -9431,7 +9433,7 @@ impl DescribeAssociationOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeActivationsOutput {
-    /// <p>A list of activations for your account.</p>
+    /// <p>A list of activations for your Amazon Web Services account.</p>
     pub activation_list: std::option::Option<std::vec::Vec<crate::model::Activation>>,
     /// <p>The token for the next set of items to return. Use this token to get the next set of
     /// results. </p>

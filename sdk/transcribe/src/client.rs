@@ -39,6 +39,11 @@ impl<C> Client<C>
 where
     C: aws_hyper::SmithyConnector,
 {
+    pub fn create_call_analytics_category(
+        &self,
+    ) -> fluent_builders::CreateCallAnalyticsCategory<C> {
+        fluent_builders::CreateCallAnalyticsCategory::new(self.handle.clone())
+    }
     pub fn create_language_model(&self) -> fluent_builders::CreateLanguageModel<C> {
         fluent_builders::CreateLanguageModel::new(self.handle.clone())
     }
@@ -50,6 +55,14 @@ where
     }
     pub fn create_vocabulary_filter(&self) -> fluent_builders::CreateVocabularyFilter<C> {
         fluent_builders::CreateVocabularyFilter::new(self.handle.clone())
+    }
+    pub fn delete_call_analytics_category(
+        &self,
+    ) -> fluent_builders::DeleteCallAnalyticsCategory<C> {
+        fluent_builders::DeleteCallAnalyticsCategory::new(self.handle.clone())
+    }
+    pub fn delete_call_analytics_job(&self) -> fluent_builders::DeleteCallAnalyticsJob<C> {
+        fluent_builders::DeleteCallAnalyticsJob::new(self.handle.clone())
     }
     pub fn delete_language_model(&self) -> fluent_builders::DeleteLanguageModel<C> {
         fluent_builders::DeleteLanguageModel::new(self.handle.clone())
@@ -74,6 +87,12 @@ where
     pub fn describe_language_model(&self) -> fluent_builders::DescribeLanguageModel<C> {
         fluent_builders::DescribeLanguageModel::new(self.handle.clone())
     }
+    pub fn get_call_analytics_category(&self) -> fluent_builders::GetCallAnalyticsCategory<C> {
+        fluent_builders::GetCallAnalyticsCategory::new(self.handle.clone())
+    }
+    pub fn get_call_analytics_job(&self) -> fluent_builders::GetCallAnalyticsJob<C> {
+        fluent_builders::GetCallAnalyticsJob::new(self.handle.clone())
+    }
     pub fn get_medical_transcription_job(&self) -> fluent_builders::GetMedicalTranscriptionJob<C> {
         fluent_builders::GetMedicalTranscriptionJob::new(self.handle.clone())
     }
@@ -88,6 +107,14 @@ where
     }
     pub fn get_vocabulary_filter(&self) -> fluent_builders::GetVocabularyFilter<C> {
         fluent_builders::GetVocabularyFilter::new(self.handle.clone())
+    }
+    pub fn list_call_analytics_categories(
+        &self,
+    ) -> fluent_builders::ListCallAnalyticsCategories<C> {
+        fluent_builders::ListCallAnalyticsCategories::new(self.handle.clone())
+    }
+    pub fn list_call_analytics_jobs(&self) -> fluent_builders::ListCallAnalyticsJobs<C> {
+        fluent_builders::ListCallAnalyticsJobs::new(self.handle.clone())
     }
     pub fn list_language_models(&self) -> fluent_builders::ListLanguageModels<C> {
         fluent_builders::ListLanguageModels::new(self.handle.clone())
@@ -109,6 +136,9 @@ where
     pub fn list_vocabulary_filters(&self) -> fluent_builders::ListVocabularyFilters<C> {
         fluent_builders::ListVocabularyFilters::new(self.handle.clone())
     }
+    pub fn start_call_analytics_job(&self) -> fluent_builders::StartCallAnalyticsJob<C> {
+        fluent_builders::StartCallAnalyticsJob::new(self.handle.clone())
+    }
     pub fn start_medical_transcription_job(
         &self,
     ) -> fluent_builders::StartMedicalTranscriptionJob<C> {
@@ -116,6 +146,11 @@ where
     }
     pub fn start_transcription_job(&self) -> fluent_builders::StartTranscriptionJob<C> {
         fluent_builders::StartTranscriptionJob::new(self.handle.clone())
+    }
+    pub fn update_call_analytics_category(
+        &self,
+    ) -> fluent_builders::UpdateCallAnalyticsCategory<C> {
+        fluent_builders::UpdateCallAnalyticsCategory::new(self.handle.clone())
     }
     pub fn update_medical_vocabulary(&self) -> fluent_builders::UpdateMedicalVocabulary<C> {
         fluent_builders::UpdateMedicalVocabulary::new(self.handle.clone())
@@ -128,6 +163,64 @@ where
     }
 }
 pub mod fluent_builders {
+    #[derive(std::fmt::Debug)]
+    pub struct CreateCallAnalyticsCategory<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_call_analytics_category_input::Builder,
+    }
+    impl<C> CreateCallAnalyticsCategory<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateCallAnalyticsCategoryOutput,
+            smithy_http::result::SdkError<crate::error::CreateCallAnalyticsCategoryError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name that you choose for your category when you create it. </p>
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input);
+            self
+        }
+        pub fn set_category_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_category_name(input);
+            self
+        }
+        /// <p>To create a category, you must specify between 1 and 20 rules. For each rule, you specify a
+        /// filter to be applied to the attributes of the call. For example, you can specify a sentiment
+        /// filter to detect if the customer's sentiment was negative or neutral. </p>
+        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
+            self.inner = self.inner.rules(inp);
+            self
+        }
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
+            self
+        }
+    }
     #[derive(std::fmt::Debug)]
     pub struct CreateLanguageModel<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
@@ -244,8 +337,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the custom vocabulary. This case-sensitive name must be unique within an
-        /// AWS account. If you try to create a vocabulary with the same name as a previous
-        /// vocabulary, you get a <code>ConflictException</code> error.</p>
+        /// Amazon Web Services account. If you try to create a vocabulary with the same name as
+        /// a previous vocabulary, you get a <code>ConflictException</code> error.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_name(input);
             self
@@ -273,7 +366,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The location in Amazon S3 of the text file you use to define your custom vocabulary. The
-        /// URI must be in the same AWS Region as the
+        /// URI must be in the same Amazon Web Services Region as the
         /// resource
         /// that you're calling. Enter information about your
         /// <code>VocabularyFileUri</code> in the following format:</p>
@@ -286,8 +379,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
         /// </p>
-        /// <p>For more information about Amazon S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary-med">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input);
             self
@@ -331,9 +424,10 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The name of the vocabulary. The name must be unique within an AWS account. The name is
-        /// case sensitive. If you try to create a vocabulary with the same name as a previous
-        /// vocabulary you will receive a <code>ConflictException</code> error.</p>
+        /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services
+        /// account. The name is case sensitive. If you try to create a vocabulary with the same
+        /// name as a previous vocabulary you will receive a <code>ConflictException</code>
+        /// error.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_name(input);
             self
@@ -373,8 +467,8 @@ pub mod fluent_builders {
         /// <p>The S3 location of the text file that contains the definition of the custom
         /// vocabulary. The URI must be in the same region as the API endpoint that you are calling.
         /// The general form is </p>
-        /// <p>For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
+        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom
         /// Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input);
@@ -479,6 +573,95 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_vocabulary_filter_file_uri(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteCallAnalyticsCategory<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_call_analytics_category_input::Builder,
+    }
+    impl<C> DeleteCallAnalyticsCategory<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCallAnalyticsCategoryOutput,
+            smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsCategoryError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the call analytics category that you're choosing to delete. The value is case
+        /// sensitive. </p>
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input);
+            self
+        }
+        pub fn set_category_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_category_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DeleteCallAnalyticsJob<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_call_analytics_job_input::Builder,
+    }
+    impl<C> DeleteCallAnalyticsJob<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteCallAnalyticsJobOutput,
+            smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsJobError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the call analytics job you want to delete.</p>
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.call_analytics_job_name(input);
+            self
+        }
+        pub fn set_call_analytics_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_call_analytics_job_name(input);
             self
         }
     }
@@ -789,6 +972,95 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct GetCallAnalyticsCategory<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_call_analytics_category_input::Builder,
+    }
+    impl<C> GetCallAnalyticsCategory<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCallAnalyticsCategoryOutput,
+            smithy_http::result::SdkError<crate::error::GetCallAnalyticsCategoryError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the category you want information about. This value is case sensitive.</p>
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input);
+            self
+        }
+        pub fn set_category_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_category_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct GetCallAnalyticsJob<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::get_call_analytics_job_input::Builder,
+    }
+    impl<C> GetCallAnalyticsJob<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::GetCallAnalyticsJobOutput,
+            smithy_http::result::SdkError<crate::error::GetCallAnalyticsJobError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the analytics job you want information about. This value is case
+        /// sensitive. </p>
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.call_analytics_job_name(input);
+            self
+        }
+        pub fn set_call_analytics_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_call_analytics_job_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct GetMedicalTranscriptionJob<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::get_medical_transcription_job_input::Builder,
@@ -1010,6 +1282,138 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_vocabulary_filter_name(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListCallAnalyticsCategories<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_call_analytics_categories_input::Builder,
+    }
+    impl<C> ListCallAnalyticsCategories<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCallAnalyticsCategoriesOutput,
+            smithy_http::result::SdkError<crate::error::ListCallAnalyticsCategoriesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>When included, <code>NextToken</code>fetches the next set of categories if the result
+        /// of the previous request was truncated.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of categories to return in the response. If there are fewer results in
+        /// the list, the response contains only the actual results.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListCallAnalyticsJobs<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_call_analytics_jobs_input::Builder,
+    }
+    impl<C> ListCallAnalyticsJobs<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListCallAnalyticsJobsOutput,
+            smithy_http::result::SdkError<crate::error::ListCallAnalyticsJobsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>When specified, returns only call analytics jobs with the specified status. Jobs are ordered
+        /// by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe
+        /// returns all analytics jobs ordered by creation date.</p>
+        pub fn status(mut self, input: crate::model::CallAnalyticsJobStatus) -> Self {
+            self.inner = self.inner.status(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        ) -> Self {
+            self.inner = self.inner.set_status(input);
+            self
+        }
+        /// <p>When specified, the jobs returned in the list are limited to jobs whose name contains the
+        /// specified string.</p>
+        pub fn job_name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.job_name_contains(input);
+            self
+        }
+        pub fn set_job_name_contains(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_job_name_contains(input);
+            self
+        }
+        /// <p>If you receive a truncated result in the previous request of
+        /// ,
+        /// include <code>NextToken</code> to fetch the next set of jobs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of call analytics jobs to return in the response. If there are fewer
+        /// results in the list, this response contains only the actual results. </p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
             self
         }
     }
@@ -1481,6 +1885,183 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct StartCallAnalyticsJob<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::start_call_analytics_job_input::Builder,
+    }
+    impl<C> StartCallAnalyticsJob<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::StartCallAnalyticsJobOutput,
+            smithy_http::result::SdkError<crate::error::StartCallAnalyticsJobError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the call analytics job. You can't use the string "." or ".." by themselves as the
+        /// job name. The name must also be unique within an AWS account. If you try to create a
+        /// call analytics job with the same name as a previous call analytics job, you get a
+        /// <code>ConflictException</code> error.</p>
+        pub fn call_analytics_job_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.call_analytics_job_name(input);
+            self
+        }
+        pub fn set_call_analytics_job_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_call_analytics_job_name(input);
+            self
+        }
+        /// <p>Describes the input media file in a transcription request.</p>
+        pub fn media(mut self, input: crate::model::Media) -> Self {
+            self.inner = self.inner.media(input);
+            self
+        }
+        pub fn set_media(mut self, input: std::option::Option<crate::model::Media>) -> Self {
+            self.inner = self.inner.set_media(input);
+            self
+        }
+        /// <p>The Amazon S3 location where the output of the call analytics job is stored.
+        /// You can provide the following location types to store the output of call analytics job:</p>
+        /// <ul>
+        /// <li>
+        /// <p>s3://DOC-EXAMPLE-BUCKET1</p>
+        /// <p> If you specify a bucket, Amazon Transcribe saves the output of the analytics job
+        /// as a JSON file at the root level of the bucket.</p>
+        /// </li>
+        /// <li>
+        /// <p>s3://DOC-EXAMPLE-BUCKET1/folder/</p>
+        /// <p>f you specify a path, Amazon Transcribe saves the output of the analytics job as
+        /// s3://DOC-EXAMPLE-BUCKET1/folder/your-transcription-job-name.json</p>
+        /// <p>If you specify a folder, you must provide a trailing slash.</p>
+        /// </li>
+        /// <li>
+        /// <p>s3://DOC-EXAMPLE-BUCKET1/folder/filename.json</p>
+        /// <p> If you provide a path that has the filename specified, Amazon Transcribe saves
+        /// the output of the analytics job as s3://DOC-EXAMPLEBUCKET1/folder/filename.json</p>
+        /// </li>
+        /// </ul>
+        /// <p>You can specify an AWS Key Management Service key to encrypt the output of our
+        /// analytics job using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't specify a
+        /// KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption
+        /// of the analytics job output that is placed in your S3 bucket. </p>
+        pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.output_location(input);
+            self
+        }
+        pub fn set_output_location(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_output_location(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service key used to
+        /// encrypt the output of the call analytics job. The user calling the
+        /// operation must have permission to use the specified KMS key.</p>
+        /// <p>You use either of the following to identify an AWS KMS key in the current account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>KMS Key ID: "1234abcd-12ab-34cd-56ef-1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>KMS Key Alias: "alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p> You can use either of the following to identify a KMS key in the current account or
+        /// another account:</p>
+        /// <ul>
+        /// <li>
+        /// <p>Amazon Resource Name (ARN) of a KMS key in the current account or another
+        /// account: "arn:aws:kms:region:account ID:key/1234abcd-12ab-34cd-56ef1234567890ab"</p>
+        /// </li>
+        /// <li>
+        /// <p>ARN of a KMS Key Alias: "arn:aws:kms:region:account ID:alias/ExampleAlias"</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you don't specify an encryption key, the output of the call analytics job is encrypted
+        /// with the default Amazon S3 key (SSE-S3).</p>
+        /// <p>If you specify a KMS key to encrypt your output, you must also specify an output
+        /// location in the <code>OutputLocation</code> parameter. </p>
+        pub fn output_encryption_kms_key_id(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.output_encryption_kms_key_id(input);
+            self
+        }
+        pub fn set_output_encryption_kms_key_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_output_encryption_kms_key_id(input);
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) of a role that has access to the S3 bucket that
+        /// contains your input files. Amazon Transcribe assumes this role to read queued audio files.
+        /// If you have specified an output S3 bucket for your transcription results, this role should
+        /// have access to the output bucket as well.</p>
+        pub fn data_access_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.data_access_role_arn(input);
+            self
+        }
+        pub fn set_data_access_role_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_data_access_role_arn(input);
+            self
+        }
+        /// <p>A <code>Settings</code> object that provides optional settings for a call analytics job. </p>
+        pub fn settings(mut self, input: crate::model::CallAnalyticsJobSettings) -> Self {
+            self.inner = self.inner.settings(input);
+            self
+        }
+        pub fn set_settings(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJobSettings>,
+        ) -> Self {
+            self.inner = self.inner.set_settings(input);
+            self
+        }
+        /// <p>When you start a call analytics job, you must pass an array that maps the agent and the
+        /// customer to specific audio channels. The values you can assign to a channel are 0
+        /// and 1. The agent and the customer must each have their own channel. You can't assign more
+        /// than one channel to an agent or customer. </p>
+        pub fn channel_definitions(
+            mut self,
+            inp: impl Into<crate::model::ChannelDefinition>,
+        ) -> Self {
+            self.inner = self.inner.channel_definitions(inp);
+            self
+        }
+        pub fn set_channel_definitions(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::ChannelDefinition>>,
+        ) -> Self {
+            self.inner = self.inner.set_channel_definitions(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct StartMedicalTranscriptionJob<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::start_medical_transcription_job_input::Builder,
@@ -1513,9 +2094,9 @@ pub mod fluent_builders {
         }
         /// <p>The name of the medical transcription job. You can't use the strings "<code>.</code>"
         /// or "<code>..</code>" by themselves as the job name. The name must also be unique within
-        /// an AWS account. If you try to create a medical transcription job with the same name as a
-        /// previous medical transcription job, you get a <code>ConflictException</code>
-        /// error.</p>
+        /// an Amazon Web Services account. If you try to create a medical transcription job with the
+        /// same name as a previous medical transcription job, you get a
+        /// <code>ConflictException</code> error.</p>
         pub fn medical_transcription_job_name(
             mut self,
             input: impl Into<std::string::String>,
@@ -1583,10 +2164,10 @@ pub mod fluent_builders {
         /// results. Your transcript appears in the S3 location you specify. When you call the <a>GetMedicalTranscriptionJob</a>, the operation returns this location in the
         /// <code>TranscriptFileUri</code> field. The S3 bucket must have permissions that allow
         /// Amazon Transcribe Medical to put files in the bucket. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-        /// <p>You can specify an AWS Key Management Service (KMS) key to encrypt the output of your
-        /// transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't
-        /// specify a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for server-side encryption of
-        /// transcripts that are placed in your S3 bucket.</p>
+        /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the
+        /// output of your transcription using the <code>OutputEncryptionKMSKeyId</code> parameter.
+        /// If you don't specify a KMS key, Amazon Transcribe Medical uses the default Amazon S3 key for server-side
+        /// encryption of transcripts that are placed in your S3 bucket.</p>
         pub fn output_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.output_bucket_name(input);
             self
@@ -1620,8 +2201,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_key(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to
-        /// encrypt the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS)
+        /// key used to encrypt the output of the transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have permission to use the
         /// specified KMS key.</p>
         /// <p>You use either of the following to identify a KMS key in the current account:</p>
         /// <ul>
@@ -1676,8 +2257,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
-        /// <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in the transcription
-        /// output.</p>
+        /// <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
+        /// identifies in the transcription output.</p>
         pub fn content_identification_type(
             mut self,
             input: crate::model::MedicalContentIdentificationType,
@@ -1749,9 +2330,9 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The name of the job. You can't use the strings "<code>.</code>" or "<code>..</code>"
-        /// by themselves as the job name. The name must also be unique within an AWS account. If
-        /// you try to create a transcription job with the same name as a previous transcription
-        /// job, you get a <code>ConflictException</code> error.</p>
+        /// by themselves as the job name. The name must also be unique within an Amazon Web Services
+        /// account. If you try to create a transcription job with the same name as a previous
+        /// transcription job, you get a <code>ConflictException</code> error.</p>
         pub fn transcription_job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.transcription_job_name(input);
             self
@@ -1820,10 +2401,10 @@ pub mod fluent_builders {
         /// to output an unredacted transcript, that transcript's location still appears in the
         /// <code>TranscriptFileUri</code>. The S3 bucket must have permissions that allow Amazon Transcribe
         /// to put files in the bucket. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions Required for IAM User Roles</a>.</p>
-        /// <p>You can specify an AWS Key Management Service (KMS) key to encrypt the output of your
-        /// transcription using the <code>OutputEncryptionKMSKeyId</code> parameter. If you don't
-        /// specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side encryption of
-        /// transcripts that are placed in your S3 bucket.</p>
+        /// <p>You can specify an Amazon Web Services Key Management Service (KMS) key to encrypt the
+        /// output of your transcription using the <code>OutputEncryptionKMSKeyId</code> parameter.
+        /// If you don't specify a KMS key, Amazon Transcribe uses the default Amazon S3 key for server-side
+        /// encryption of transcripts that are placed in your S3 bucket.</p>
         /// <p>If you don't set the <code>OutputBucketName</code>, Amazon Transcribe generates a pre-signed URL,
         /// a shareable URL that provides secure access to your transcription, and returns it in the
         /// <code>TranscriptFileUri</code> field. Use this URL to download the
@@ -1861,8 +2442,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_output_key(input);
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to
-        /// encrypt the output of the transcription job. The user calling the
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services Key Management Service (KMS)
+        /// key used to encrypt the output of the transcription job. The user calling the
         /// <code>StartTranscriptionJob</code> operation must have permission to use the
         /// specified KMS key.</p>
         /// <p>You can use either of the following to identify a KMS key in the current
@@ -1969,6 +2550,8 @@ pub mod fluent_builders {
         /// <p>An object containing a list of languages that might be present in your collection of
         /// audio files. Automatic language identification chooses a language that best matches the
         /// source audio from that list.</p>
+        /// <p>To transcribe speech in Modern Standard Arabic (ar-SA), your audio or video file must
+        /// be encoded at a sample rate of 16000 Hz or higher.</p>
         pub fn language_options(mut self, inp: impl Into<crate::model::LanguageCode>) -> Self {
             self.inner = self.inner.language_options(inp);
             self
@@ -1978,6 +2561,65 @@ pub mod fluent_builders {
             input: std::option::Option<std::vec::Vec<crate::model::LanguageCode>>,
         ) -> Self {
             self.inner = self.inner.set_language_options(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateCallAnalyticsCategory<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_call_analytics_category_input::Builder,
+    }
+    impl<C> UpdateCallAnalyticsCategory<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateCallAnalyticsCategoryOutput,
+            smithy_http::result::SdkError<crate::error::UpdateCallAnalyticsCategoryError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The name of the analytics category to update. The name is case sensitive. If you try to
+        /// update a call analytics category with the same name as a previous category you will receive a
+        /// <code>ConflictException</code> error. </p>
+        pub fn category_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.category_name(input);
+            self
+        }
+        pub fn set_category_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_category_name(input);
+            self
+        }
+        /// <p>The rules used for the updated analytics category. The rules that you provide in this field
+        /// replace the ones that are currently being used. </p>
+        pub fn rules(mut self, inp: impl Into<crate::model::Rule>) -> Self {
+            self.inner = self.inner.rules(inp);
+            self
+        }
+        pub fn set_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Rule>>,
+        ) -> Self {
+            self.inner = self.inner.set_rules(input);
             self
         }
     }
@@ -2043,7 +2685,7 @@ pub mod fluent_builders {
         }
         /// <p>The location in Amazon S3 of the text file that contains
         /// the
-        /// you use for your custom vocabulary. The URI must be in the same AWS
+        /// you use for your custom vocabulary. The URI must be in the same Amazon Web Services
         /// Region as the resource that you are calling. The following is the format for a
         /// URI:</p>
         /// <p>
@@ -2055,8 +2697,8 @@ pub mod fluent_builders {
         /// <p>
         /// <code>https://s3.us-east-1.amazonaws.com/AWSDOC-EXAMPLE-BUCKET/vocab.txt</code>
         /// </p>
-        /// <p>For more information about Amazon S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
+        /// <p>For more information about Amazon S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies in Amazon Transcribe Medical, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Medical Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input);
             self
@@ -2143,8 +2785,8 @@ pub mod fluent_builders {
         /// vocabulary. The URI must be in the same region as the API endpoint that you are calling.
         /// The general form is </p>
         /// <p>For example:</p>
-        /// <p>For more information about S3 object names, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-        /// <p>For more information about custom vocabularies, see <a href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
+        /// <p>For more information about S3 object names, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#object-keys">Object Keys</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+        /// <p>For more information about custom vocabularies, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.</p>
         pub fn vocabulary_file_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.vocabulary_file_uri(input);
             self

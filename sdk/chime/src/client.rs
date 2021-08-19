@@ -1047,9 +1047,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-        /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+        /// by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
@@ -1846,8 +1848,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators, moderators, and channel members can add themselves
-        /// and other members to unrestricted channels. Only administrators and moderators can add members to restricted channels.</p>
+        /// <p>The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
+        /// moderators, and channel members can add themselves and other members to unrestricted
+        /// channels. Only administrators and moderators can add members to restricted channels.</p>
         pub fn mode(mut self, input: crate::model::ChannelMode) -> Self {
             self.inner = self.inner.mode(input);
             self
@@ -1856,8 +1859,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mode(input);
             self
         }
-        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private channels aren't discoverable by users outside the channel.
-        /// Public channels are discoverable by anyone in the <code>AppInstance</code>.</p>
+        /// <p>The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
+        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
+        /// by anyone in the <code>AppInstance</code>.</p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.inner = self.inner.privacy(input);
             self
@@ -2020,9 +2024,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_member_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-        /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
-        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported by moderators.</p>
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
+        /// <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only supported
+        /// by moderators.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
             self
@@ -7404,8 +7410,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are always returned as part of
-        /// <code>ListChannelMemberships</code>. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals
+        /// <p>The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
+        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden members
+        /// are only returned if the type filter in <code>ListChannelMemberships</code> equals
         /// <code>HIDDEN</code>. Otherwise hidden members are not returned.</p>
         pub fn r#type(mut self, input: crate::model::ChannelMembershipType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -7427,7 +7434,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are
+        /// returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -7559,7 +7567,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_channel_arn(input);
             self
         }
-        /// <p>The order in which you want messages sorted. Default is Descending, based on time created.</p>
+        /// <p>The order in which you want messages sorted. Default is Descending, based on time
+        /// created.</p>
         pub fn sort_order(mut self, input: crate::model::SortOrder) -> Self {
             self.inner = self.inner.sort_order(input);
             self
@@ -7666,7 +7675,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are
+        /// returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -7728,9 +7738,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_app_instance_arn(input);
             self
         }
-        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an
-        /// <code>AppInstanceAdmin</code> can retrieve private channels.
-        /// </p>
+        /// <p>The privacy setting. <code>PUBLIC</code> retrieves all the public channels.
+        /// <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code>
+        /// can retrieve private channels. </p>
         pub fn privacy(mut self, input: crate::model::ChannelPrivacy) -> Self {
             self.inner = self.inner.privacy(input);
             self
@@ -7824,7 +7834,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by
+        /// the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self

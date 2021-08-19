@@ -4913,6 +4913,7 @@ impl EntitlementData {
     std::hash::Hash,
 )]
 pub enum CheckoutType {
+    Perpetual,
     Provisional,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -4920,6 +4921,7 @@ pub enum CheckoutType {
 impl std::convert::From<&str> for CheckoutType {
     fn from(s: &str) -> Self {
         match s {
+            "PERPETUAL" => CheckoutType::Perpetual,
             "PROVISIONAL" => CheckoutType::Provisional,
             other => CheckoutType::Unknown(other.to_owned()),
         }
@@ -4935,12 +4937,13 @@ impl std::str::FromStr for CheckoutType {
 impl CheckoutType {
     pub fn as_str(&self) -> &str {
         match self {
+            CheckoutType::Perpetual => "PERPETUAL",
             CheckoutType::Provisional => "PROVISIONAL",
             CheckoutType::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["PROVISIONAL"]
+        &["PERPETUAL", "PROVISIONAL"]
     }
 }
 impl AsRef<str> for CheckoutType {

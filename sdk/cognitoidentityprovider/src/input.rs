@@ -5092,6 +5092,8 @@ impl ChangePasswordInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -5512,6 +5514,8 @@ impl ConfirmForgotPasswordInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -5755,6 +5759,8 @@ impl ConfirmSignUpInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -8236,6 +8242,8 @@ impl DeleteUserInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -8390,6 +8398,8 @@ impl DeleteUserAttributesInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -10225,6 +10235,8 @@ impl ForgotPasswordInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -11235,6 +11247,8 @@ impl GetUserInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -11415,6 +11429,8 @@ impl GetUserAttributeVerificationCodeInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -11971,6 +11987,8 @@ impl InitiateAuthInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -13886,6 +13904,8 @@ impl ResendConfirmationCodeInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -14133,6 +14153,8 @@ impl RespondToAuthChallengeInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -15204,6 +15226,8 @@ impl SetUserSettingsInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -15455,6 +15479,8 @@ impl SignUpInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -17175,6 +17201,8 @@ impl UpdateUserAttributesInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -18573,6 +18601,8 @@ impl VerifyUserAttributeInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()

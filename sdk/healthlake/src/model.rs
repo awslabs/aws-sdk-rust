@@ -145,7 +145,9 @@ pub enum OutputDataConfig {
 }
 impl OutputDataConfig {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_s3_configuration(&self) -> Result<&crate::model::S3Configuration, &Self> {
+    pub fn as_s3_configuration(
+        &self,
+    ) -> std::result::Result<&crate::model::S3Configuration, &Self> {
         if let OutputDataConfig::S3Configuration(val) = &self {
             Ok(&val)
         } else {
@@ -236,7 +238,7 @@ pub enum InputDataConfig {
 }
 impl InputDataConfig {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_s3_uri(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_s3_uri(&self) -> std::result::Result<&std::string::String, &Self> {
         if let InputDataConfig::S3Uri(val) = &self {
             Ok(&val)
         } else {

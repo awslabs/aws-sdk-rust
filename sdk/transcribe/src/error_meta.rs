@@ -21,6 +21,32 @@ impl std::fmt::Display for Error {
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::CreateCallAnalyticsCategoryError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateCallAnalyticsCategoryError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::CreateCallAnalyticsCategoryErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::CreateCallAnalyticsCategoryErrorKind::InternalFailureException(
+                    inner,
+                ) => Error::InternalFailureException(inner),
+                crate::error::CreateCallAnalyticsCategoryErrorKind::LimitExceededException(
+                    inner,
+                ) => Error::LimitExceededException(inner),
+                crate::error::CreateCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateLanguageModelError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateLanguageModelError>) -> Self {
         match err {
@@ -112,6 +138,53 @@ impl From<smithy_http::result::SdkError<crate::error::CreateVocabularyFilterErro
                     Error::LimitExceededException(inner)
                 }
                 crate::error::CreateVocabularyFilterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsCategoryError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsCategoryError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DeleteCallAnalyticsCategoryErrorKind::InternalFailureException(
+                    inner,
+                ) => Error::InternalFailureException(inner),
+                crate::error::DeleteCallAnalyticsCategoryErrorKind::LimitExceededException(
+                    inner,
+                ) => Error::LimitExceededException(inner),
+                crate::error::DeleteCallAnalyticsCategoryErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::DeleteCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsJobError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteCallAnalyticsJobError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteCallAnalyticsJobErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::DeleteCallAnalyticsJobErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::DeleteCallAnalyticsJobErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::DeleteCallAnalyticsJobErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -284,6 +357,56 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLanguageModelError
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::GetCallAnalyticsCategoryError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetCallAnalyticsCategoryError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetCallAnalyticsCategoryErrorKind::InternalFailureException(
+                    inner,
+                ) => Error::InternalFailureException(inner),
+                crate::error::GetCallAnalyticsCategoryErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::GetCallAnalyticsCategoryErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::GetCallAnalyticsJobError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::GetCallAnalyticsJobError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::GetCallAnalyticsJobErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::GetCallAnalyticsJobErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::GetCallAnalyticsJobErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::GetCallAnalyticsJobErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::GetCallAnalyticsJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::GetMedicalTranscriptionJobError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::GetMedicalTranscriptionJobError>,
@@ -397,6 +520,50 @@ impl From<smithy_http::result::SdkError<crate::error::GetVocabularyFilterError>>
                     Error::NotFoundException(inner)
                 }
                 crate::error::GetVocabularyFilterErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListCallAnalyticsCategoriesError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListCallAnalyticsCategoriesError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListCallAnalyticsCategoriesErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListCallAnalyticsCategoriesErrorKind::InternalFailureException(
+                    inner,
+                ) => Error::InternalFailureException(inner),
+                crate::error::ListCallAnalyticsCategoriesErrorKind::LimitExceededException(
+                    inner,
+                ) => Error::LimitExceededException(inner),
+                crate::error::ListCallAnalyticsCategoriesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListCallAnalyticsJobsError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListCallAnalyticsJobsError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListCallAnalyticsJobsErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::ListCallAnalyticsJobsErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::ListCallAnalyticsJobsErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::ListCallAnalyticsJobsErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -536,6 +703,30 @@ impl From<smithy_http::result::SdkError<crate::error::ListVocabularyFiltersError
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::StartCallAnalyticsJobError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::StartCallAnalyticsJobError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::StartCallAnalyticsJobErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::StartCallAnalyticsJobErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::StartCallAnalyticsJobErrorKind::InternalFailureException(inner) => {
+                    Error::InternalFailureException(inner)
+                }
+                crate::error::StartCallAnalyticsJobErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::StartCallAnalyticsJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::StartMedicalTranscriptionJobError>>
     for Error
 {
@@ -581,6 +772,35 @@ impl From<smithy_http::result::SdkError<crate::error::StartTranscriptionJobError
                     Error::LimitExceededException(inner)
                 }
                 crate::error::StartTranscriptionJobErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::UpdateCallAnalyticsCategoryError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateCallAnalyticsCategoryError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateCallAnalyticsCategoryErrorKind::BadRequestException(inner) => {
+                    Error::BadRequestException(inner)
+                }
+                crate::error::UpdateCallAnalyticsCategoryErrorKind::ConflictException(inner) => {
+                    Error::ConflictException(inner)
+                }
+                crate::error::UpdateCallAnalyticsCategoryErrorKind::InternalFailureException(
+                    inner,
+                ) => Error::InternalFailureException(inner),
+                crate::error::UpdateCallAnalyticsCategoryErrorKind::LimitExceededException(
+                    inner,
+                ) => Error::LimitExceededException(inner),
+                crate::error::UpdateCallAnalyticsCategoryErrorKind::NotFoundException(inner) => {
+                    Error::NotFoundException(inner)
+                }
+                crate::error::UpdateCallAnalyticsCategoryErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

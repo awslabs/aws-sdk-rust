@@ -2616,6 +2616,155 @@ impl std::error::Error for DescribeCertificateError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DescribeClientAuthenticationSettingsError {
+    pub kind: DescribeClientAuthenticationSettingsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeClientAuthenticationSettingsErrorKind {
+    AccessDeniedException(crate::error::AccessDeniedException),
+    ClientException(crate::error::ClientException),
+    DirectoryDoesNotExistException(crate::error::DirectoryDoesNotExistException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    ServiceException(crate::error::ServiceException),
+    UnsupportedOperationException(crate::error::UnsupportedOperationException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeClientAuthenticationSettingsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeClientAuthenticationSettingsErrorKind::ClientException(_inner) => _inner.fmt(f),
+            DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeClientAuthenticationSettingsErrorKind::ServiceException(_inner) => {
+                _inner.fmt(f)
+            }
+            DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException(
+                _inner,
+            ) => _inner.fmt(f),
+            DescribeClientAuthenticationSettingsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeClientAuthenticationSettingsError {
+    fn code(&self) -> Option<&str> {
+        DescribeClientAuthenticationSettingsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeClientAuthenticationSettingsError {
+    pub fn new(
+        kind: DescribeClientAuthenticationSettingsErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeClientAuthenticationSettingsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeClientAuthenticationSettingsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_access_denied_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException(_)
+        )
+    }
+    pub fn is_client_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientAuthenticationSettingsErrorKind::ClientException(_)
+        )
+    }
+    pub fn is_directory_does_not_exist_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientAuthenticationSettingsErrorKind::ServiceException(_)
+        )
+    }
+    pub fn is_unsupported_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeClientAuthenticationSettingsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException(_inner) => {
+                Some(_inner)
+            }
+            DescribeClientAuthenticationSettingsErrorKind::ClientException(_inner) => Some(_inner),
+            DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException(
+                _inner,
+            ) => Some(_inner),
+            DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            DescribeClientAuthenticationSettingsErrorKind::ServiceException(_inner) => Some(_inner),
+            DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException(
+                _inner,
+            ) => Some(_inner),
+            DescribeClientAuthenticationSettingsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DescribeConditionalForwardersError {
     pub kind: DescribeConditionalForwardersErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -7406,7 +7555,7 @@ impl std::error::Error for VerifyTrustError {
 pub struct UnsupportedOperationException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UnsupportedOperationException {
@@ -7451,7 +7600,7 @@ pub mod unsupported_operation_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7476,13 +7625,13 @@ impl UnsupportedOperationException {
     }
 }
 
-/// <p>An exception has occurred in AWS Directory Service.</p>
+/// <p>An exception has occurred in Directory Service.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ServiceException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ServiceException {
@@ -7527,7 +7676,7 @@ pub mod service_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7558,7 +7707,7 @@ impl ServiceException {
 pub struct InvalidParameterException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidParameterException {
@@ -7603,7 +7752,7 @@ pub mod invalid_parameter_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7634,7 +7783,7 @@ impl InvalidParameterException {
 pub struct EntityDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityDoesNotExistException {
@@ -7679,7 +7828,7 @@ pub mod entity_does_not_exist_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7710,7 +7859,7 @@ impl EntityDoesNotExistException {
 pub struct ClientException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ClientException {
@@ -7755,7 +7904,7 @@ pub mod client_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7780,13 +7929,14 @@ impl ClientException {
     }
 }
 
-/// <p>The maximum allowed number of domain controllers per directory was exceeded. The default limit per directory is 20 domain controllers.</p>
+/// <p>The maximum allowed number of domain controllers per directory was exceeded. The
+/// default limit per directory is 20 domain controllers.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DomainControllerLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DomainControllerLimitExceededException {
@@ -7831,7 +7981,7 @@ pub mod domain_controller_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7862,7 +8012,7 @@ impl DomainControllerLimitExceededException {
 pub struct DirectoryUnavailableException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryUnavailableException {
@@ -7907,7 +8057,7 @@ pub mod directory_unavailable_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -7938,7 +8088,7 @@ impl DirectoryUnavailableException {
 pub struct InvalidTargetException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidTargetException {
@@ -7983,7 +8133,7 @@ pub mod invalid_target_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8008,13 +8158,13 @@ impl InvalidTargetException {
     }
 }
 
-/// <p>The specified directory has not been shared with this AWS account.</p>
+/// <p>The specified directory has not been shared with this Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryNotSharedException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryNotSharedException {
@@ -8059,7 +8209,7 @@ pub mod directory_not_shared_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8085,14 +8235,14 @@ impl DirectoryNotSharedException {
 }
 
 /// <p>The maximum number of manual snapshots for the directory has been reached. You can
-/// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits for a
-/// directory.</p>
+/// use the <a>GetSnapshotLimits</a> operation to determine the snapshot limits
+/// for a directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SnapshotLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for SnapshotLimitExceededException {
@@ -8137,7 +8287,7 @@ pub mod snapshot_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8162,13 +8312,14 @@ impl SnapshotLimitExceededException {
     }
 }
 
-/// <p>The maximum number of AWS accounts that you can share with this directory has been reached.</p>
+/// <p>The maximum number of Amazon Web Services accounts that you can share with this directory has been
+/// reached.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ShareLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ShareLimitExceededException {
@@ -8213,7 +8364,7 @@ pub mod share_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8238,13 +8389,13 @@ impl ShareLimitExceededException {
     }
 }
 
-/// <p>Exception encountered while trying to access your AWS organization.</p>
+/// <p>Exception encountered while trying to access your Amazon Web Services organization.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct OrganizationsException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for OrganizationsException {
@@ -8289,7 +8440,7 @@ pub mod organizations_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8314,13 +8465,13 @@ impl OrganizationsException {
     }
 }
 
-/// <p>The specified directory has already been shared with this AWS account.</p>
+/// <p>The specified directory has already been shared with this Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadySharedException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryAlreadySharedException {
@@ -8365,7 +8516,7 @@ pub mod directory_already_shared_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8396,7 +8547,7 @@ impl DirectoryAlreadySharedException {
 pub struct AccessDeniedException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AccessDeniedException {
@@ -8441,7 +8592,7 @@ pub mod access_denied_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8472,7 +8623,7 @@ impl AccessDeniedException {
 pub struct UserDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UserDoesNotExistException {
@@ -8517,7 +8668,7 @@ pub mod user_does_not_exist_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8542,13 +8693,14 @@ impl UserDoesNotExistException {
     }
 }
 
-/// <p>The new password provided by the user does not meet the password complexity requirements defined in your directory.</p>
+/// <p>The new password provided by the user does not meet the password complexity
+/// requirements defined in your directory.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidPasswordException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidPasswordException {
@@ -8593,7 +8745,7 @@ pub mod invalid_password_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8624,7 +8776,7 @@ impl InvalidPasswordException {
 pub struct DirectoryDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryDoesNotExistException {
@@ -8669,7 +8821,7 @@ pub mod directory_does_not_exist_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8700,7 +8852,7 @@ impl DirectoryDoesNotExistException {
 pub struct InvalidCertificateException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidCertificateException {
@@ -8745,7 +8897,7 @@ pub mod invalid_certificate_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8776,7 +8928,7 @@ impl InvalidCertificateException {
 pub struct CertificateLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateLimitExceededException {
@@ -8821,7 +8973,7 @@ pub mod certificate_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8852,7 +9004,7 @@ impl CertificateLimitExceededException {
 pub struct CertificateAlreadyExistsException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateAlreadyExistsException {
@@ -8897,7 +9049,7 @@ pub mod certificate_already_exists_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -8928,7 +9080,7 @@ impl CertificateAlreadyExistsException {
 pub struct InvalidNextTokenException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidNextTokenException {
@@ -8973,7 +9125,7 @@ pub mod invalid_next_token_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9004,7 +9156,7 @@ impl InvalidNextTokenException {
 pub struct InsufficientPermissionsException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InsufficientPermissionsException {
@@ -9049,7 +9201,7 @@ pub mod insufficient_permissions_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9156,7 +9308,7 @@ impl AuthenticationFailedException {
 pub struct EntityAlreadyExistsException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EntityAlreadyExistsException {
@@ -9201,7 +9353,7 @@ pub mod entity_already_exists_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9233,7 +9385,7 @@ impl EntityAlreadyExistsException {
 pub struct NoAvailableCertificateException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for NoAvailableCertificateException {
@@ -9278,7 +9430,7 @@ pub mod no_available_certificate_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9310,7 +9462,7 @@ impl NoAvailableCertificateException {
 pub struct InvalidLdapsStatusException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidLdapsStatusException {
@@ -9358,7 +9510,7 @@ pub mod invalid_ldaps_status_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9389,7 +9541,7 @@ impl InvalidLdapsStatusException {
 pub struct InvalidClientAuthStatusException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidClientAuthStatusException {
@@ -9434,7 +9586,7 @@ pub mod invalid_client_auth_status_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9465,7 +9617,7 @@ impl InvalidClientAuthStatusException {
 pub struct CertificateDoesNotExistException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateDoesNotExistException {
@@ -9510,7 +9662,7 @@ pub mod certificate_does_not_exist_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9542,7 +9694,7 @@ impl CertificateDoesNotExistException {
 pub struct CertificateInUseException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CertificateInUseException {
@@ -9587,7 +9739,7 @@ pub mod certificate_in_use_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9613,14 +9765,14 @@ impl CertificateInUseException {
 }
 
 /// <p>The maximum number of directories in the region has been reached. You can use the
-/// <a>GetDirectoryLimits</a> operation to determine your directory limits in the
-/// region.</p>
+/// <a>GetDirectoryLimits</a> operation to determine your directory limits in
+/// the region.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryLimitExceededException {
@@ -9665,7 +9817,7 @@ pub mod directory_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9696,7 +9848,7 @@ impl DirectoryLimitExceededException {
 pub struct TagLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagLimitExceededException {
@@ -9741,7 +9893,7 @@ pub mod tag_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9773,7 +9925,7 @@ impl TagLimitExceededException {
 pub struct RegionLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RegionLimitExceededException {
@@ -9818,7 +9970,7 @@ pub mod region_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9843,14 +9995,14 @@ impl RegionLimitExceededException {
     }
 }
 
-/// <p>The Region you specified is the same Region where the AWS Managed Microsoft AD directory
+/// <p>The Region you specified is the same Region where the Managed Microsoft AD directory
 /// was created. Specify a different Region and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DirectoryAlreadyInRegionException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DirectoryAlreadyInRegionException {
@@ -9895,7 +10047,7 @@ pub mod directory_already_in_region_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -9920,13 +10072,14 @@ impl DirectoryAlreadyInRegionException {
     }
 }
 
-/// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP address blocks.</p>
+/// <p>The maximum allowed number of IP addresses was exceeded. The default limit is 100 IP
+/// address blocks.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct IpRouteLimitExceededException {
     /// <p>The descriptive message for the exception.</p>
     pub message: std::option::Option<std::string::String>,
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for IpRouteLimitExceededException {
@@ -9971,7 +10124,7 @@ pub mod ip_route_limit_exceeded_exception {
             self.message = input;
             self
         }
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self

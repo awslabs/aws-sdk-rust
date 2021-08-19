@@ -18,7 +18,7 @@ pub enum Field {
     StringValue(std::string::String),
 }
 impl Field {
-    pub fn as_array_value(&self) -> Result<&crate::model::ArrayValue, &Self> {
+    pub fn as_array_value(&self) -> std::result::Result<&crate::model::ArrayValue, &Self> {
         if let Field::ArrayValue(val) = &self {
             Ok(&val)
         } else {
@@ -28,7 +28,7 @@ impl Field {
     pub fn is_array_value(&self) -> bool {
         self.as_array_value().is_ok()
     }
-    pub fn as_blob_value(&self) -> Result<&smithy_types::Blob, &Self> {
+    pub fn as_blob_value(&self) -> std::result::Result<&smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
             Ok(&val)
         } else {
@@ -38,7 +38,7 @@ impl Field {
     pub fn is_blob_value(&self) -> bool {
         self.as_blob_value().is_ok()
     }
-    pub fn as_boolean_value(&self) -> Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
             Ok(&val)
         } else {
@@ -48,7 +48,7 @@ impl Field {
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
             Ok(&val)
         } else {
@@ -58,7 +58,7 @@ impl Field {
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    pub fn as_is_null(&self) -> Result<&bool, &Self> {
+    pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
             Ok(&val)
         } else {
@@ -68,7 +68,7 @@ impl Field {
     pub fn is_is_null(&self) -> bool {
         self.as_is_null().is_ok()
     }
-    pub fn as_long_value(&self) -> Result<&i64, &Self> {
+    pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
             Ok(&val)
         } else {
@@ -78,7 +78,7 @@ impl Field {
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
             Ok(&val)
         } else {
@@ -105,7 +105,9 @@ pub enum ArrayValue {
     StringValues(std::vec::Vec<std::string::String>),
 }
 impl ArrayValue {
-    pub fn as_array_values(&self) -> Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
+    pub fn as_array_values(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<crate::model::ArrayValue>, &Self> {
         if let ArrayValue::ArrayValues(val) = &self {
             Ok(&val)
         } else {
@@ -115,7 +117,7 @@ impl ArrayValue {
     pub fn is_array_values(&self) -> bool {
         self.as_array_values().is_ok()
     }
-    pub fn as_boolean_values(&self) -> Result<&std::vec::Vec<bool>, &Self> {
+    pub fn as_boolean_values(&self) -> std::result::Result<&std::vec::Vec<bool>, &Self> {
         if let ArrayValue::BooleanValues(val) = &self {
             Ok(&val)
         } else {
@@ -125,7 +127,7 @@ impl ArrayValue {
     pub fn is_boolean_values(&self) -> bool {
         self.as_boolean_values().is_ok()
     }
-    pub fn as_double_values(&self) -> Result<&std::vec::Vec<f64>, &Self> {
+    pub fn as_double_values(&self) -> std::result::Result<&std::vec::Vec<f64>, &Self> {
         if let ArrayValue::DoubleValues(val) = &self {
             Ok(&val)
         } else {
@@ -135,7 +137,7 @@ impl ArrayValue {
     pub fn is_double_values(&self) -> bool {
         self.as_double_values().is_ok()
     }
-    pub fn as_long_values(&self) -> Result<&std::vec::Vec<i64>, &Self> {
+    pub fn as_long_values(&self) -> std::result::Result<&std::vec::Vec<i64>, &Self> {
         if let ArrayValue::LongValues(val) = &self {
             Ok(&val)
         } else {
@@ -145,7 +147,9 @@ impl ArrayValue {
     pub fn is_long_values(&self) -> bool {
         self.as_long_values().is_ok()
     }
-    pub fn as_string_values(&self) -> Result<&std::vec::Vec<std::string::String>, &Self> {
+    pub fn as_string_values(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let ArrayValue::StringValues(val) = &self {
             Ok(&val)
         } else {
@@ -918,7 +922,9 @@ pub enum Value {
     StructValue(crate::model::StructValue),
 }
 impl Value {
-    pub fn as_array_values(&self) -> Result<&std::vec::Vec<crate::model::Value>, &Self> {
+    pub fn as_array_values(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<crate::model::Value>, &Self> {
         if let Value::ArrayValues(val) = &self {
             Ok(&val)
         } else {
@@ -928,7 +934,7 @@ impl Value {
     pub fn is_array_values(&self) -> bool {
         self.as_array_values().is_ok()
     }
-    pub fn as_big_int_value(&self) -> Result<&i64, &Self> {
+    pub fn as_big_int_value(&self) -> std::result::Result<&i64, &Self> {
         if let Value::BigIntValue(val) = &self {
             Ok(&val)
         } else {
@@ -938,7 +944,7 @@ impl Value {
     pub fn is_big_int_value(&self) -> bool {
         self.as_big_int_value().is_ok()
     }
-    pub fn as_bit_value(&self) -> Result<&bool, &Self> {
+    pub fn as_bit_value(&self) -> std::result::Result<&bool, &Self> {
         if let Value::BitValue(val) = &self {
             Ok(&val)
         } else {
@@ -948,7 +954,7 @@ impl Value {
     pub fn is_bit_value(&self) -> bool {
         self.as_bit_value().is_ok()
     }
-    pub fn as_blob_value(&self) -> Result<&smithy_types::Blob, &Self> {
+    pub fn as_blob_value(&self) -> std::result::Result<&smithy_types::Blob, &Self> {
         if let Value::BlobValue(val) = &self {
             Ok(&val)
         } else {
@@ -958,7 +964,7 @@ impl Value {
     pub fn is_blob_value(&self) -> bool {
         self.as_blob_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Value::DoubleValue(val) = &self {
             Ok(&val)
         } else {
@@ -968,7 +974,7 @@ impl Value {
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    pub fn as_int_value(&self) -> Result<&i32, &Self> {
+    pub fn as_int_value(&self) -> std::result::Result<&i32, &Self> {
         if let Value::IntValue(val) = &self {
             Ok(&val)
         } else {
@@ -978,7 +984,7 @@ impl Value {
     pub fn is_int_value(&self) -> bool {
         self.as_int_value().is_ok()
     }
-    pub fn as_is_null(&self) -> Result<&bool, &Self> {
+    pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Value::IsNull(val) = &self {
             Ok(&val)
         } else {
@@ -988,7 +994,7 @@ impl Value {
     pub fn is_is_null(&self) -> bool {
         self.as_is_null().is_ok()
     }
-    pub fn as_real_value(&self) -> Result<&f32, &Self> {
+    pub fn as_real_value(&self) -> std::result::Result<&f32, &Self> {
         if let Value::RealValue(val) = &self {
             Ok(&val)
         } else {
@@ -998,7 +1004,7 @@ impl Value {
     pub fn is_real_value(&self) -> bool {
         self.as_real_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Value::StringValue(val) = &self {
             Ok(&val)
         } else {
@@ -1008,7 +1014,7 @@ impl Value {
     pub fn is_string_value(&self) -> bool {
         self.as_string_value().is_ok()
     }
-    pub fn as_struct_value(&self) -> Result<&crate::model::StructValue, &Self> {
+    pub fn as_struct_value(&self) -> std::result::Result<&crate::model::StructValue, &Self> {
         if let Value::StructValue(val) = &self {
             Ok(&val)
         } else {

@@ -24507,7 +24507,7 @@ impl CreateLaunchTemplateOutput {
 pub struct CreateKeyPairOutput {
     /// <p>The SHA-1 digest of the DER encoded private key.</p>
     pub key_fingerprint: std::option::Option<std::string::String>,
-    /// <p>An unencrypted PEM encoded RSA private key.</p>
+    /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
     pub key_material: std::option::Option<std::string::String>,
     /// <p>The name of the key pair.</p>
     pub key_name: std::option::Option<std::string::String>,
@@ -24552,7 +24552,7 @@ pub mod create_key_pair_output {
             self.key_fingerprint = input;
             self
         }
-        /// <p>An unencrypted PEM encoded RSA private key.</p>
+        /// <p>An unencrypted PEM encoded RSA or ED25519 private key.</p>
         pub fn key_material(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_material = Some(input.into());
             self

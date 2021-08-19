@@ -951,9 +951,9 @@ impl Address {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ObjectTypeKey {
     /// <p>The types of keys that a ProfileObject can have. Each ProfileObject can have only 1
-    /// UNIQUE key but multiple PROFILE keys. PROFILE means that this key can be used to tie an
-    /// object to a PROFILE. UNIQUE means that it can be used to uniquely identify an object. If a
-    /// key a is marked as SECONDARY, it will be used to search for profiles after all other
+    /// UNIQUE key but multiple PROFILE keys. PROFILE, ASSET or CASE means that this key can be used to tie an
+    /// object to a PROFILE, ASSET or CASE respectively. UNIQUE means that it can be used to uniquely identify an object.
+    /// If a key a is marked as SECONDARY, it will be used to search for profiles after all other
     /// PROFILE keys have been searched. A LOOKUP_ONLY key is only used to match a profile but is
     /// not persisted to be used for searching of the profile. A NEW_ONLY key is only used if the
     /// profile does not already exist before the object is ingested, otherwise it is only used for
@@ -1037,6 +1037,8 @@ impl ObjectTypeKey {
     std::hash::Hash,
 )]
 pub enum StandardIdentifier {
+    Asset,
+    Case,
     LookupOnly,
     NewOnly,
     Profile,
@@ -1048,6 +1050,8 @@ pub enum StandardIdentifier {
 impl std::convert::From<&str> for StandardIdentifier {
     fn from(s: &str) -> Self {
         match s {
+            "ASSET" => StandardIdentifier::Asset,
+            "CASE" => StandardIdentifier::Case,
             "LOOKUP_ONLY" => StandardIdentifier::LookupOnly,
             "NEW_ONLY" => StandardIdentifier::NewOnly,
             "PROFILE" => StandardIdentifier::Profile,
@@ -1067,6 +1071,8 @@ impl std::str::FromStr for StandardIdentifier {
 impl StandardIdentifier {
     pub fn as_str(&self) -> &str {
         match self {
+            StandardIdentifier::Asset => "ASSET",
+            StandardIdentifier::Case => "CASE",
             StandardIdentifier::LookupOnly => "LOOKUP_ONLY",
             StandardIdentifier::NewOnly => "NEW_ONLY",
             StandardIdentifier::Profile => "PROFILE",
@@ -1076,7 +1082,15 @@ impl StandardIdentifier {
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["LOOKUP_ONLY", "NEW_ONLY", "PROFILE", "SECONDARY", "UNIQUE"]
+        &[
+            "ASSET",
+            "CASE",
+            "LOOKUP_ONLY",
+            "NEW_ONLY",
+            "PROFILE",
+            "SECONDARY",
+            "UNIQUE",
+        ]
     }
 }
 impl AsRef<str> for StandardIdentifier {
@@ -4053,6 +4067,74 @@ impl ListProfileObjectsItem {
     /// Creates a new builder-style object to manufacture [`ListProfileObjectsItem`](crate::model::ListProfileObjectsItem)
     pub fn builder() -> crate::model::list_profile_objects_item::Builder {
         crate::model::list_profile_objects_item::Builder::default()
+    }
+}
+
+/// <p>The filter applied to ListProfileObjects response to include profile objects with the specified index values.
+/// This filter is only supported for ObjectTypeName _asset and _case.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ObjectFilter {
+    /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
+    /// The predefined keys you can use to search for _case include: _caseId.</p>
+    pub key_name: std::option::Option<std::string::String>,
+    /// <p>A list of key values.</p>
+    pub values: std::option::Option<std::vec::Vec<std::string::String>>,
+}
+impl std::fmt::Debug for ObjectFilter {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ObjectFilter");
+        formatter.field("key_name", &self.key_name);
+        formatter.field("values", &self.values);
+        formatter.finish()
+    }
+}
+/// See [`ObjectFilter`](crate::model::ObjectFilter)
+pub mod object_filter {
+    /// A builder for [`ObjectFilter`](crate::model::ObjectFilter)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) values: std::option::Option<std::vec::Vec<std::string::String>>,
+    }
+    impl Builder {
+        /// <p>A searchable identifier of a standard profile object. The predefined keys you can use to search for _asset include: _assetId, _assetName, _serialNumber.
+        /// The predefined keys you can use to search for _case include: _caseId.</p>
+        pub fn key_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.key_name = Some(input.into());
+            self
+        }
+        pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.key_name = input;
+            self
+        }
+        pub fn values(mut self, input: impl Into<std::string::String>) -> Self {
+            let mut v = self.values.unwrap_or_default();
+            v.push(input.into());
+            self.values = Some(v);
+            self
+        }
+        pub fn set_values(
+            mut self,
+            input: std::option::Option<std::vec::Vec<std::string::String>>,
+        ) -> Self {
+            self.values = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ObjectFilter`](crate::model::ObjectFilter)
+        pub fn build(self) -> crate::model::ObjectFilter {
+            crate::model::ObjectFilter {
+                key_name: self.key_name,
+                values: self.values,
+            }
+        }
+    }
+}
+impl ObjectFilter {
+    /// Creates a new builder-style object to manufacture [`ObjectFilter`](crate::model::ObjectFilter)
+    pub fn builder() -> crate::model::object_filter::Builder {
+        crate::model::object_filter::Builder::default()
     }
 }
 

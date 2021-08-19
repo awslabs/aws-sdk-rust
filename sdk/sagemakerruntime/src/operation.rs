@@ -43,3 +43,44 @@ impl smithy_http::response::ParseStrictResponse for InvokeEndpoint {
         }
     }
 }
+
+/// <p>After you deploy a model into production using Amazon SageMaker hosting services,
+/// your client applications use this API to get inferences from the model hosted at
+/// the specified endpoint in an asynchronous manner.</p>
+/// <p>Inference requests sent to this API are enqueued for asynchronous processing.
+/// The processing of the inference request may or may not complete before the
+/// you receive a response from this API. The response from this API will
+/// not contain the result of the inference request but contain information
+/// about where you can locate it.</p>
+/// <p>Amazon SageMaker strips all <code>POST</code> headers except those supported by the API.
+/// Amazon SageMaker might add additional headers. You should not rely on the behavior
+/// of headers outside those enumerated in the request syntax.</p>
+/// <p>Calls to <code>InvokeEndpointAsync</code> are authenticated by using AWS Signature
+/// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating Requests (AWS Signature Version 4)</a> in the <i>Amazon S3 API
+/// Reference</i>.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct InvokeEndpointAsync {
+    _private: (),
+}
+impl InvokeEndpointAsync {
+    /// Creates a new builder-style object to manufacture [`InvokeEndpointAsyncInput`](crate::input::InvokeEndpointAsyncInput)
+    pub fn builder() -> crate::input::invoke_endpoint_async_input::Builder {
+        crate::input::invoke_endpoint_async_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for InvokeEndpointAsync {
+    type Output = std::result::Result<
+        crate::output::InvokeEndpointAsyncOutput,
+        crate::error::InvokeEndpointAsyncError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 202 {
+            crate::operation_deser::parse_invoke_endpoint_async_error(response)
+        } else {
+            crate::operation_deser::parse_invoke_endpoint_async_response(response)
+        }
+    }
+}

@@ -82,12 +82,32 @@ pub fn serialize_operation_associate_security_key(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_create_agent_status(
+    input: &crate::input::CreateAgentStatusInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_agent_status_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_create_contact_flow(
     input: &crate::input::CreateContactFlowInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_create_contact_flow_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_create_hours_of_operation(
+    input: &crate::input::CreateHoursOfOperationInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_hours_of_operation_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -318,6 +338,16 @@ pub fn serialize_operation_tag_resource(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_update_agent_status(
+    input: &crate::input::UpdateAgentStatusInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_agent_status_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_update_contact_attributes(
     input: &crate::input::UpdateContactAttributesInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -344,6 +374,16 @@ pub fn serialize_operation_update_contact_flow_name(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_update_contact_flow_name_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_hours_of_operation(
+    input: &crate::input::UpdateHoursOfOperationInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_hours_of_operation_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

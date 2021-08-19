@@ -20,6 +20,8 @@ mod builder;
 pub use builder::Builder;
 
 #[cfg(feature = "test-util")]
+pub mod dvr;
+#[cfg(feature = "test-util")]
 pub mod test_connection;
 
 #[cfg(feature = "hyper")]
@@ -41,10 +43,26 @@ pub mod static_tests;
 #[cfg(feature = "hyper")]
 #[allow(missing_docs)]
 pub mod conns {
+    use smithy_http::body::SdkBody;
+
     #[cfg(feature = "rustls")]
     pub type Https = crate::hyper_impls::HyperAdapter<
         hyper_rustls::HttpsConnector<hyper::client::HttpConnector>,
     >;
+
+    #[cfg(feature = "rustls")]
+    pub fn https() -> Https {
+        let https = hyper_rustls::HttpsConnector::with_native_roots();
+        let client = hyper::Client::builder().build::<_, SdkBody>(https);
+        crate::hyper_impls::HyperAdapter::from(client)
+    }
+
+    #[cfg(feature = "native-tls")]
+    pub fn native_tls() -> NativeTls {
+        let https = hyper_tls::HttpsConnector::new();
+        let client = hyper::Client::builder().build::<_, SdkBody>(https);
+        crate::hyper_impls::HyperAdapter::from(client)
+    }
 
     #[cfg(feature = "native-tls")]
     pub type NativeTls =

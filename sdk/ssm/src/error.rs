@@ -18292,7 +18292,7 @@ impl ParameterMaxVersionLimitExceeded {
     }
 }
 
-/// <p>You have exceeded the number of parameters for this account. Delete one or more
+/// <p>You have exceeded the number of parameters for this Amazon Web Services account. Delete one or more
 /// parameters and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

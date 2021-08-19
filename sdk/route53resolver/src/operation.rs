@@ -253,7 +253,7 @@ impl smithy_http::response::ParseStrictResponse for CreateResolverEndpoint {
 /// Resolver can log queries only for VPCs that are in the same Region as the query logging configuration.</p>
 /// <p>To specify which VPCs you want to log queries for, you use <code>AssociateResolverQueryLogConfig</code>. For more information, see
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverQueryLogConfig.html">AssociateResolverQueryLogConfig</a>. </p>
-/// <p>You can optionally use AWS Resource Access Manager (AWS RAM) to share a query logging configuration with other AWS accounts. The other accounts
+/// <p>You can optionally use Resource Access Manager (RAM) to share a query logging configuration with other Amazon Web Services accounts. The other accounts
 /// can then associate VPCs with the configuration. The query logs that Resolver creates for a configuration include all DNS queries that originate in all
 /// VPCs that are associated with the configuration.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -437,7 +437,7 @@ impl smithy_http::response::ParseStrictResponse for DeleteResolverEndpoint {
 }
 
 /// <p>Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs that are
-/// associated with the configuration. This also applies if the query logging configuration is shared with other AWS accounts, and
+/// associated with the configuration. This also applies if the query logging configuration is shared with other Amazon Web Services accounts, and
 /// the other accounts have associated VPCs with the shared configuration.</p>
 /// <p>Before you can delete a query logging configuration, you must first disassociate all VPCs from the configuration. See
 /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DisassociateResolverQueryLogConfig.html">DisassociateResolverQueryLogConfig</a>.</p>
@@ -567,7 +567,7 @@ impl smithy_http::response::ParseStrictResponse for DisassociateResolverEndpoint
 /// <p>Disassociates a VPC from a query logging configuration.</p>
 /// <note>
 /// <p>Before you can delete a query logging configuration, you must first disassociate all VPCs
-/// from the configuration. If you used AWS Resource Access Manager (AWS RAM) to share a
+/// from the configuration. If you used Resource Access Manager (RAM) to share a
 /// query logging configuration with other accounts, VPCs can be disassociated from the
 /// configuration in the following ways:</p>
 /// <ul>
@@ -751,9 +751,8 @@ impl smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupAssociat
     }
 }
 
-/// <p>Returns the AWS Identity and Access Management (AWS IAM) policy for sharing the
-/// specified rule group. You can use the policy to share the rule group using AWS Resource
-/// Access Manager (AWS RAM). </p>
+/// <p>Returns the Identity and Access Management (Amazon Web Services IAM) policy for sharing the
+/// specified rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetFirewallRuleGroupPolicy {
     _private: (),
@@ -899,7 +898,7 @@ impl smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfigAss
 }
 
 /// <p>Gets information about a query logging policy. A query logging policy specifies the Resolver query logging
-/// operations and resources that you want to allow another AWS account to be able to use.</p>
+/// operations and resources that you want to allow another Amazon Web Services account to be able to use.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetResolverQueryLogConfigPolicy {
     _private: (),
@@ -1231,7 +1230,7 @@ impl smithy_http::response::ParseStrictResponse for ListFirewallRules {
     }
 }
 
-/// <p>Lists the configurations for DNSSEC validation that are associated with the current AWS account.</p>
+/// <p>Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverDnssecConfigs {
     _private: (),
@@ -1287,7 +1286,7 @@ impl smithy_http::response::ParseStrictResponse for ListResolverEndpointIpAddres
     }
 }
 
-/// <p>Lists all the Resolver endpoints that were created using the current AWS account.</p>
+/// <p>Lists all the Resolver endpoints that were created using the current Amazon Web Services account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverEndpoints {
     _private: (),
@@ -1376,7 +1375,7 @@ impl smithy_http::response::ParseStrictResponse for ListResolverQueryLogConfigs 
     }
 }
 
-/// <p>Lists the associations that were created between Resolver rules and VPCs using the current AWS account.</p>
+/// <p>Lists the associations that were created between Resolver rules and VPCs using the current Amazon Web Services account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverRuleAssociations {
     _private: (),
@@ -1404,7 +1403,7 @@ impl smithy_http::response::ParseStrictResponse for ListResolverRuleAssociations
     }
 }
 
-/// <p>Lists the Resolver rules that were created using the current AWS account.</p>
+/// <p>Lists the Resolver rules that were created using the current Amazon Web Services account.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListResolverRules {
     _private: (),
@@ -1460,9 +1459,9 @@ impl smithy_http::response::ParseStrictResponse for ListTagsForResource {
     }
 }
 
-/// <p>Attaches an AWS Identity and Access Management (AWS IAM) policy for sharing the rule
-/// group. You can use the policy to share the rule group using AWS Resource Access Manager
-/// (AWS RAM). </p>
+/// <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule
+/// group. You can use the policy to share the rule group using Resource Access Manager
+/// (RAM). </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutFirewallRuleGroupPolicy {
     _private: (),
@@ -1490,7 +1489,7 @@ impl smithy_http::response::ParseStrictResponse for PutFirewallRuleGroupPolicy {
     }
 }
 
-/// <p>Specifies an AWS account that you want to share a query logging configuration with, the query logging configuration that you want to share,
+/// <p>Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share,
 /// and the operations that you want the account to be able to perform on the configuration.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutResolverQueryLogConfigPolicy {
@@ -1519,7 +1518,7 @@ impl smithy_http::response::ParseStrictResponse for PutResolverQueryLogConfigPol
     }
 }
 
-/// <p>Specifies an AWS rule that you want to share with another account, the account that you want to share the rule with,
+/// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with,
 /// and the operations that you want the account to be able to perform on the rule.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutResolverRulePolicy {

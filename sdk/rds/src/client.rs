@@ -3200,7 +3200,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
-        /// <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+        /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
         /// <p>Type: Integer</p>
         /// <p>
         /// <b>Amazon Aurora</b>
@@ -4334,7 +4334,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deletion_protection(input);
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -4986,7 +4986,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replica_mode(input);
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -13083,7 +13083,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_db_instance_identifier(input);
             self
         }
-        /// <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+        /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
         /// </p>
         /// <p>For MariaDB, MySQL, Oracle, and PostgreSQL,
         /// the value supplied must be at least 10% greater than the current value.
@@ -13908,7 +13908,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deletion_protection(input);
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -18412,7 +18412,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_deletion_protection(input);
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -18985,7 +18985,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_source_dbi_resource_id(input);
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>

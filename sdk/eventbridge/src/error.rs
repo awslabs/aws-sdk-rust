@@ -5321,7 +5321,7 @@ impl InvalidEventPatternException {
     }
 }
 
-/// <p>This rule was created by an AWS service on behalf of your account. It is managed by that
+/// <p>This rule was created by an Amazon Web Services service on behalf of your account. It is managed by that
 /// service. If you see this error in response to <code>DeleteRule</code> or
 /// <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those calls to
 /// delete the rule or remove targets from the rule. You cannot modify these managed rules by

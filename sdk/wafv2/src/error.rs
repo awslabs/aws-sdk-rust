@@ -125,6 +125,9 @@ pub struct CheckCapacityError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum CheckCapacityErrorKind {
+    WafExpiredManagedRuleGroupVersionException(
+        crate::error::WafExpiredManagedRuleGroupVersionException,
+    ),
     WafInternalErrorException(crate::error::WafInternalErrorException),
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
     WafInvalidResourceException(crate::error::WafInvalidResourceException),
@@ -138,6 +141,9 @@ pub enum CheckCapacityErrorKind {
 impl std::fmt::Display for CheckCapacityError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+                _inner.fmt(f)
+            }
             CheckCapacityErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
             CheckCapacityErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
             CheckCapacityErrorKind::WafInvalidResourceException(_inner) => _inner.fmt(f),
@@ -193,6 +199,12 @@ impl CheckCapacityError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_)
+        )
+    }
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -239,6 +251,9 @@ impl CheckCapacityError {
 impl std::error::Error for CheckCapacityError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            CheckCapacityErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+                Some(_inner)
+            }
             CheckCapacityErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             CheckCapacityErrorKind::WafInvalidResourceException(_inner) => Some(_inner),
@@ -1854,6 +1869,9 @@ pub struct DescribeManagedRuleGroupError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DescribeManagedRuleGroupErrorKind {
+    WafExpiredManagedRuleGroupVersionException(
+        crate::error::WafExpiredManagedRuleGroupVersionException,
+    ),
     WafInternalErrorException(crate::error::WafInternalErrorException),
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
@@ -1865,6 +1883,9 @@ pub enum DescribeManagedRuleGroupErrorKind {
 impl std::fmt::Display for DescribeManagedRuleGroupError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(
+                _inner,
+            ) => _inner.fmt(f),
             DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
             DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_inner) => {
                 _inner.fmt(f)
@@ -1922,6 +1943,12 @@ impl DescribeManagedRuleGroupError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(_)
+        )
+    }
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1956,6 +1983,9 @@ impl DescribeManagedRuleGroupError {
 impl std::error::Error for DescribeManagedRuleGroupError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DescribeManagedRuleGroupErrorKind::WafExpiredManagedRuleGroupVersionException(
+                _inner,
+            ) => Some(_inner),
             DescribeManagedRuleGroupErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             DescribeManagedRuleGroupErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             DescribeManagedRuleGroupErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
@@ -2283,6 +2313,114 @@ impl std::error::Error for GetLoggingConfigurationError {
             GetLoggingConfigurationErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
             GetLoggingConfigurationErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
             GetLoggingConfigurationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct GetManagedRuleSetError {
+    pub kind: GetManagedRuleSetErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum GetManagedRuleSetErrorKind {
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    WafNonexistentItemException(crate::error::WafNonexistentItemException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for GetManagedRuleSetError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            GetManagedRuleSetErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
+            GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
+            GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
+            GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) => _inner.fmt(f),
+            GetManagedRuleSetErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for GetManagedRuleSetError {
+    fn code(&self) -> Option<&str> {
+        GetManagedRuleSetError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl GetManagedRuleSetError {
+    pub fn new(kind: GetManagedRuleSetErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: GetManagedRuleSetErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: GetManagedRuleSetErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetManagedRuleSetErrorKind::WafInternalErrorException(_)
+        )
+    }
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetManagedRuleSetErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetManagedRuleSetErrorKind::WafInvalidParameterException(_)
+        )
+    }
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetManagedRuleSetErrorKind::WafNonexistentItemException(_)
+        )
+    }
+}
+impl std::error::Error for GetManagedRuleSetError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            GetManagedRuleSetErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            GetManagedRuleSetErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
+            GetManagedRuleSetErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
+            GetManagedRuleSetErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
+            GetManagedRuleSetErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -3160,6 +3298,122 @@ impl std::error::Error for ListAvailableManagedRuleGroupsError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct ListAvailableManagedRuleGroupVersionsError {
+    pub kind: ListAvailableManagedRuleGroupVersionsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAvailableManagedRuleGroupVersionsErrorKind {
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAvailableManagedRuleGroupVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(
+                _inner,
+            ) => _inner.fmt(f),
+            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListAvailableManagedRuleGroupVersionsError {
+    fn code(&self) -> Option<&str> {
+        ListAvailableManagedRuleGroupVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAvailableManagedRuleGroupVersionsError {
+    pub fn new(
+        kind: ListAvailableManagedRuleGroupVersionsErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_)
+        )
+    }
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(_)
+        )
+    }
+}
+impl std::error::Error for ListAvailableManagedRuleGroupVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidOperationException(
+                _inner,
+            ) => Some(_inner),
+            ListAvailableManagedRuleGroupVersionsErrorKind::WafInvalidParameterException(
+                _inner,
+            ) => Some(_inner),
+            ListAvailableManagedRuleGroupVersionsErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct ListIPSetsError {
     pub kind: ListIPSetsErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3360,6 +3614,105 @@ impl std::error::Error for ListLoggingConfigurationsError {
                 Some(_inner)
             }
             ListLoggingConfigurationsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListManagedRuleSetsError {
+    pub kind: ListManagedRuleSetsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListManagedRuleSetsErrorKind {
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListManagedRuleSetsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
+            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
+            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
+            ListManagedRuleSetsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListManagedRuleSetsError {
+    fn code(&self) -> Option<&str> {
+        ListManagedRuleSetsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListManagedRuleSetsError {
+    pub fn new(kind: ListManagedRuleSetsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListManagedRuleSetsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListManagedRuleSetsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedRuleSetsErrorKind::WafInternalErrorException(_)
+        )
+    }
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_)
+        )
+    }
+}
+impl std::error::Error for ListManagedRuleSetsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListManagedRuleSetsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            ListManagedRuleSetsErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
+            ListManagedRuleSetsErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
+            ListManagedRuleSetsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -4040,6 +4393,133 @@ impl std::error::Error for PutLoggingConfigurationError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct PutManagedRuleSetVersionsError {
+    pub kind: PutManagedRuleSetVersionsErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum PutManagedRuleSetVersionsErrorKind {
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    WafNonexistentItemException(crate::error::WafNonexistentItemException),
+    WafOptimisticLockException(crate::error::WafOptimisticLockException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for PutManagedRuleSetVersionsError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
+            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) => {
+                _inner.fmt(f)
+            }
+            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) => _inner.fmt(f),
+            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for PutManagedRuleSetVersionsError {
+    fn code(&self) -> Option<&str> {
+        PutManagedRuleSetVersionsError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl PutManagedRuleSetVersionsError {
+    pub fn new(kind: PutManagedRuleSetVersionsErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: PutManagedRuleSetVersionsErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_)
+        )
+    }
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_)
+        )
+    }
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_)
+        )
+    }
+    pub fn is_waf_optimistic_lock_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_)
+        )
+    }
+}
+impl std::error::Error for PutManagedRuleSetVersionsError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            PutManagedRuleSetVersionsErrorKind::WafInternalErrorException(_inner) => Some(_inner),
+            PutManagedRuleSetVersionsErrorKind::WafInvalidOperationException(_inner) => {
+                Some(_inner)
+            }
+            PutManagedRuleSetVersionsErrorKind::WafInvalidParameterException(_inner) => {
+                Some(_inner)
+            }
+            PutManagedRuleSetVersionsErrorKind::WafNonexistentItemException(_inner) => Some(_inner),
+            PutManagedRuleSetVersionsErrorKind::WafOptimisticLockException(_inner) => Some(_inner),
+            PutManagedRuleSetVersionsErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct PutPermissionPolicyError {
     pub kind: PutPermissionPolicyErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4548,6 +5028,148 @@ impl std::error::Error for UpdateIPSetError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdateManagedRuleSetVersionExpiryDateError {
+    pub kind: UpdateManagedRuleSetVersionExpiryDateErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateManagedRuleSetVersionExpiryDateErrorKind {
+    WafInternalErrorException(crate::error::WafInternalErrorException),
+    WafInvalidOperationException(crate::error::WafInvalidOperationException),
+    WafInvalidParameterException(crate::error::WafInvalidParameterException),
+    WafNonexistentItemException(crate::error::WafNonexistentItemException),
+    WafOptimisticLockException(crate::error::WafOptimisticLockException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateManagedRuleSetVersionExpiryDateError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(
+                _inner,
+            ) => _inner.fmt(f),
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(
+                _inner,
+            ) => _inner.fmt(f),
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) => {
+                _inner.fmt(f)
+            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateManagedRuleSetVersionExpiryDateError {
+    fn code(&self) -> Option<&str> {
+        UpdateManagedRuleSetVersionExpiryDateError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateManagedRuleSetVersionExpiryDateError {
+    pub fn new(
+        kind: UpdateManagedRuleSetVersionExpiryDateErrorKind,
+        meta: smithy_types::Error,
+    ) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_waf_internal_error_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_)
+        )
+    }
+    pub fn is_waf_invalid_operation_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(_)
+        )
+    }
+    pub fn is_waf_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(_)
+        )
+    }
+    pub fn is_waf_nonexistent_item_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_)
+        )
+    }
+    pub fn is_waf_optimistic_lock_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateManagedRuleSetVersionExpiryDateError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInternalErrorException(_inner) => {
+                Some(_inner)
+            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidOperationException(
+                _inner,
+            ) => Some(_inner),
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafInvalidParameterException(
+                _inner,
+            ) => Some(_inner),
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafNonexistentItemException(_inner) => {
+                Some(_inner)
+            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::WafOptimisticLockException(_inner) => {
+                Some(_inner)
+            }
+            UpdateManagedRuleSetVersionExpiryDateErrorKind::Unhandled(_inner) => {
+                Some(_inner.as_ref())
+            }
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UpdateRegexPatternSetError {
     pub kind: UpdateRegexPatternSetErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -4844,6 +5466,9 @@ pub struct UpdateWebACLError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateWebACLErrorKind {
     WafDuplicateItemException(crate::error::WafDuplicateItemException),
+    WafExpiredManagedRuleGroupVersionException(
+        crate::error::WafExpiredManagedRuleGroupVersionException,
+    ),
     WafInternalErrorException(crate::error::WafInternalErrorException),
     WafInvalidOperationException(crate::error::WafInvalidOperationException),
     WafInvalidParameterException(crate::error::WafInvalidParameterException),
@@ -4860,6 +5485,9 @@ impl std::fmt::Display for UpdateWebACLError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateWebACLErrorKind::WafDuplicateItemException(_inner) => _inner.fmt(f),
+            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+                _inner.fmt(f)
+            }
             UpdateWebACLErrorKind::WafInternalErrorException(_inner) => _inner.fmt(f),
             UpdateWebACLErrorKind::WafInvalidOperationException(_inner) => _inner.fmt(f),
             UpdateWebACLErrorKind::WafInvalidParameterException(_inner) => _inner.fmt(f),
@@ -4923,6 +5551,12 @@ impl UpdateWebACLError {
             UpdateWebACLErrorKind::WafDuplicateItemException(_)
         )
     }
+    pub fn is_waf_expired_managed_rule_group_version_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_)
+        )
+    }
     pub fn is_waf_internal_error_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -4982,6 +5616,9 @@ impl std::error::Error for UpdateWebACLError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateWebACLErrorKind::WafDuplicateItemException(_inner) => Some(_inner),
+            UpdateWebACLErrorKind::WafExpiredManagedRuleGroupVersionException(_inner) => {
+                Some(_inner)
+            }
             UpdateWebACLErrorKind::WafInternalErrorException(_inner) => Some(_inner),
             UpdateWebACLErrorKind::WafInvalidOperationException(_inner) => Some(_inner),
             UpdateWebACLErrorKind::WafInvalidParameterException(_inner) => Some(_inner),
@@ -5059,7 +5696,8 @@ impl WafUnavailableEntityException {
     }
 }
 
-/// <p>You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it yet. </p>
+/// <p>You tried to use a managed rule group that's available by subscription, but you aren't
+/// subscribed to it yet. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafSubscriptionNotFoundException {
@@ -5122,7 +5760,9 @@ impl WafSubscriptionNotFoundException {
     }
 }
 
-/// <p>WAF couldn’t save your changes because you tried to update or delete a resource that has changed since you last retrieved it. Get the resource again, make any changes you need to make to the new copy, and retry your operation. </p>
+/// <p>WAF couldn’t save your changes because you tried to update or delete a resource
+/// that has changed since you last retrieved it. Get the resource again, make any changes you
+/// need to make to the new copy, and retry your operation. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafOptimisticLockException {
@@ -5245,9 +5885,10 @@ impl WafNonexistentItemException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum number of <code>WebACL</code> objects that you can create
-/// for an account. For more information, see
-/// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>WAF Developer Guide</i>.</p>
+/// <p>WAF couldn’t perform the operation because you exceeded your resource limit. For
+/// example, the maximum number of <code>WebACL</code> objects that you can create for an Amazon Web Services
+/// account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF quotas</a> in the
+/// <i>WAF Developer Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafLimitsExceededException {
@@ -5307,7 +5948,8 @@ impl WafLimitsExceededException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because the resource that you requested isn’t valid. Check the resource, and try again.</p>
+/// <p>WAF couldn’t perform the operation because the resource that you requested isn’t
+/// valid. Check the resource, and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidResourceException {
@@ -5370,7 +6012,8 @@ impl WafInvalidResourceException {
     }
 }
 
-/// <p>The operation failed because WAF didn't recognize a parameter in the request. For example: </p>
+/// <p>The operation failed because WAF didn't recognize a parameter in the request. For
+/// example: </p>
 /// <ul>
 /// <li>
 /// <p>You specified
@@ -5378,11 +6021,12 @@ impl WafInvalidResourceException {
 /// parameter name or value that isn't valid.</p>
 /// </li>
 /// <li>
-/// <p>Your nested statement isn't valid. You might have tried to nest a statement that can’t be nested. </p>
+/// <p>Your nested statement isn't valid. You might have tried to nest a statement that
+/// can’t be nested. </p>
 /// </li>
 /// <li>
-/// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't among the types
-/// available at <a>DefaultAction</a>.</p>
+/// <p>You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that
+/// isn't among the types available at <a>DefaultAction</a>.</p>
 /// </li>
 /// <li>
 /// <p>Your request references an ARN that is malformed, or corresponds to a resource with which a web ACL can't be associated.</p>
@@ -5392,8 +6036,11 @@ impl WafInvalidResourceException {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInvalidParameterException {
     pub message: std::option::Option<std::string::String>,
+    /// <p>The settings where the invalid parameter was found. </p>
     pub field: std::option::Option<crate::model::ParameterExceptionField>,
+    /// <p>The invalid parameter that resulted in the exception. </p>
     pub parameter: std::option::Option<std::string::String>,
+    /// <p>Additional information about the exception.</p>
     pub reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for WafInvalidParameterException {
@@ -5444,6 +6091,7 @@ pub mod waf_invalid_parameter_exception {
             self.message = input;
             self
         }
+        /// <p>The settings where the invalid parameter was found. </p>
         pub fn field(mut self, input: crate::model::ParameterExceptionField) -> Self {
             self.field = Some(input);
             self
@@ -5455,6 +6103,7 @@ pub mod waf_invalid_parameter_exception {
             self.field = input;
             self
         }
+        /// <p>The invalid parameter that resulted in the exception. </p>
         pub fn parameter(mut self, input: impl Into<std::string::String>) -> Self {
             self.parameter = Some(input.into());
             self
@@ -5463,6 +6112,7 @@ pub mod waf_invalid_parameter_exception {
             self.parameter = input;
             self
         }
+        /// <p>Additional information about the exception.</p>
         pub fn reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.reason = Some(input.into());
             self
@@ -5552,7 +6202,8 @@ impl WafInvalidOperationException {
     }
 }
 
-/// <p>Your request is valid, but WAF couldn’t perform the operation because of a system problem. Retry your request. </p>
+/// <p>Your request is valid, but WAF couldn’t perform the operation because of a system
+/// problem. Retry your request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafInternalErrorException {
@@ -5612,7 +6263,70 @@ impl WafInternalErrorException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because the resource that you tried to save is a duplicate of an existing one.</p>
+/// <p>The operation failed because the specified version for the managed rule group has
+/// expired. You can retrieve the available versions for the managed rule group by calling
+/// <a>ListAvailableManagedRuleGroupVersions</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct WafExpiredManagedRuleGroupVersionException {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for WafExpiredManagedRuleGroupVersionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("WafExpiredManagedRuleGroupVersionException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl WafExpiredManagedRuleGroupVersionException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for WafExpiredManagedRuleGroupVersionException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "WafExpiredManagedRuleGroupVersionException [WAFExpiredManagedRuleGroupVersionException]")?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for WafExpiredManagedRuleGroupVersionException {}
+/// See [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+pub mod waf_expired_managed_rule_group_version_exception {
+    /// A builder for [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+        pub fn build(self) -> crate::error::WafExpiredManagedRuleGroupVersionException {
+            crate::error::WafExpiredManagedRuleGroupVersionException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl WafExpiredManagedRuleGroupVersionException {
+    /// Creates a new builder-style object to manufacture [`WafExpiredManagedRuleGroupVersionException`](crate::error::WafExpiredManagedRuleGroupVersionException)
+    pub fn builder() -> crate::error::waf_expired_managed_rule_group_version_exception::Builder {
+        crate::error::waf_expired_managed_rule_group_version_exception::Builder::default()
+    }
+}
+
+/// <p>WAF couldn’t perform the operation because the resource that you tried to save is
+/// a duplicate of an existing one.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafDuplicateItemException {
@@ -5633,8 +6347,8 @@ impl WafDuplicateItemException {
 impl std::fmt::Display for WafDuplicateItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafDuplicateItemException [WAFDuplicateItemException]")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -5672,7 +6386,8 @@ impl WafDuplicateItemException {
     }
 }
 
-/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry your request.</p>
+/// <p>WAF couldn’t perform your tagging operation because of an internal error. Retry
+/// your request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafTagOperationInternalErrorException {
@@ -5696,8 +6411,8 @@ impl std::fmt::Display for WafTagOperationInternalErrorException {
             f,
             "WafTagOperationInternalErrorException [WAFTagOperationInternalErrorException]"
         )?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -5756,8 +6471,8 @@ impl WafTagOperationException {
 impl std::fmt::Display for WafTagOperationException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafTagOperationException [WAFTagOperationException]")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
+        if let Some(inner_13) = &self.message {
+            write!(f, ": {}", inner_13)?;
         }
         Ok(())
     }
@@ -5840,8 +6555,8 @@ impl std::fmt::Display for WafInvalidPermissionPolicyException {
             f,
             "WafInvalidPermissionPolicyException [WAFInvalidPermissionPolicyException]"
         )?;
-        if let Some(inner_13) = &self.message {
-            write!(f, ": {}", inner_13)?;
+        if let Some(inner_14) = &self.message {
+            write!(f, ": {}", inner_14)?;
         }
         Ok(())
     }
@@ -5879,7 +6594,14 @@ impl WafInvalidPermissionPolicyException {
     }
 }
 
-/// <p>WAF is not able to access the service linked role. This can be caused by a previous <code>PutLoggingConfiguration</code> request, which can lock the service linked role for about 20 seconds. Please try your request again. The service linked role can also be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request again. If you receive this same exception again, you will have to wait additional time until the role is unlocked.</p>
+/// <p>WAF is not able to access the service linked role. This can be caused by a
+/// previous <code>PutLoggingConfiguration</code> request, which can lock the service linked
+/// role for about 20 seconds. Please try your request again. The service linked role can also
+/// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock the
+/// role for 15 minutes or more. If you recently made a call to
+/// <code>DeleteServiceLinkedRole</code>, wait at least 15 minutes and try the request
+/// again. If you receive this same exception again, you will have to wait additional time
+/// until the role is unlocked.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafServiceLinkedRoleErrorException {
@@ -5903,8 +6625,8 @@ impl std::fmt::Display for WafServiceLinkedRoleErrorException {
             f,
             "WafServiceLinkedRoleErrorException [WAFServiceLinkedRoleErrorException]"
         )?;
-        if let Some(inner_14) = &self.message {
-            write!(f, ": {}", inner_14)?;
+        if let Some(inner_15) = &self.message {
+            write!(f, ": {}", inner_15)?;
         }
         Ok(())
     }
@@ -5942,7 +6664,8 @@ impl WafServiceLinkedRoleErrorException {
     }
 }
 
-/// <p>WAF couldn’t perform the operation because your resource is being used by another resource or it’s associated with another resource. </p>
+/// <p>WAF couldn’t perform the operation because your resource is being used by another
+/// resource or it’s associated with another resource. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WafAssociatedItemException {
@@ -5963,8 +6686,8 @@ impl WafAssociatedItemException {
 impl std::fmt::Display for WafAssociatedItemException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "WafAssociatedItemException [WAFAssociatedItemException]")?;
-        if let Some(inner_15) = &self.message {
-            write!(f, ": {}", inner_15)?;
+        if let Some(inner_16) = &self.message {
+            write!(f, ": {}", inner_16)?;
         }
         Ok(())
     }
