@@ -17,6 +17,16 @@ pub trait AsyncSleep: std::fmt::Debug + Send + Sync {
     fn sleep(&self, duration: Duration) -> Sleep;
 }
 
+impl<T> AsyncSleep for Box<T>
+where
+    T: AsyncSleep,
+    T: ?Sized,
+{
+    fn sleep(&self, duration: Duration) -> Sleep {
+        T::sleep(&self, duration)
+    }
+}
+
 /// Returns a default sleep implementation based on the features enabled, or `None` if
 /// there isn't one available from this crate.
 pub fn default_async_sleep() -> Option<Box<dyn AsyncSleep>> {

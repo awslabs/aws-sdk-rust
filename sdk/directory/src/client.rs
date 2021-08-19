@@ -105,6 +105,11 @@ where
     pub fn describe_certificate(&self) -> fluent_builders::DescribeCertificate<C> {
         fluent_builders::DescribeCertificate::new(self.handle.clone())
     }
+    pub fn describe_client_authentication_settings(
+        &self,
+    ) -> fluent_builders::DescribeClientAuthenticationSettings<C> {
+        fluent_builders::DescribeClientAuthenticationSettings::new(self.handle.clone())
+    }
     pub fn describe_conditional_forwarders(
         &self,
     ) -> fluent_builders::DescribeConditionalForwarders<C> {
@@ -316,7 +321,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP address block of the DNS server used for your on-premises domain.</p>
+        /// <p>IP address blocks, using CIDR format, of the traffic to route. This is often the IP
+        /// address block of the DNS server used for your self-managed domain.</p>
         pub fn ip_routes(mut self, inp: impl Into<crate::model::IpRoute>) -> Self {
             self.inner = self.inner.ip_routes(inp);
             self
@@ -328,9 +334,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ip_routes(input);
             self
         }
-        /// <p>If set to true, updates the inbound and outbound rules of the security group that has the description: "AWS created security group for <i>directory ID</i> directory controllers."
-        /// Following are the new rules:
-        /// </p>
+        /// <p>If set to true, updates the inbound and outbound rules of the security group that has
+        /// the description: "Amazon Web Services created security group for <i>directory ID</i>
+        /// directory controllers." Following are the new rules: </p>
         /// <p>Inbound:</p>
         /// <ul>
         /// <li>
@@ -367,10 +373,12 @@ pub mod fluent_builders {
         /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
         /// </li>
         /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source: 0.0.0.0/0</p>
+        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
+        /// 0.0.0.0/0</p>
         /// </li>
         /// <li>
-        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source: 0.0.0.0/0</p>
+        /// <p>Type: Custom TCP Rule, Protocol: TCP, Range: 3268-33269, Source:
+        /// 0.0.0.0/0</p>
         /// </li>
         /// <li>
         /// <p>Type: DNS (UDP), Protocol: UDP, Range: 53, Source: 0.0.0.0/0</p>
@@ -392,7 +400,8 @@ pub mod fluent_builders {
         /// <p>Type: All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p>
         /// </li>
         /// </ul>
-        /// <p>These security rules impact an internal network interface that is not exposed publicly.</p>
+        /// <p>These security rules impact an internal network interface that is not exposed
+        /// publicly.</p>
         pub fn update_security_group_for_directory_controllers(mut self, input: bool) -> Self {
             self.inner = self
                 .inner
@@ -609,7 +618,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The fully qualified name of the on-premises directory, such as
+        /// <p>The fully qualified name of your self-managed directory, such as
         /// <code>corp.example.com</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.name(input);
@@ -619,7 +628,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The NetBIOS name of the on-premises directory, such as <code>CORP</code>.</p>
+        /// <p>The NetBIOS name of your self-managed directory, such as <code>CORP</code>.</p>
         pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.short_name(input);
             self
@@ -628,7 +637,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_short_name(input);
             self
         }
-        /// <p>The password for the on-premises user account.</p>
+        /// <p>The password for your self-managed user account.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input);
             self
@@ -722,7 +731,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The requested alias.</p>
-        /// <p>The alias must be unique amongst all aliases in AWS. This operation throws an
+        /// <p>The alias must be unique amongst all aliases in Amazon Web Services. This operation throws an
         /// <code>EntityAlreadyExistsException</code> error if the alias already exists.</p>
         pub fn alias(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.alias(input);
@@ -854,7 +863,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The directory ID of the AWS directory for which you are creating the conditional forwarder.</p>
+        /// <p>The directory ID of the Amazon Web Services directory for which you are creating the conditional
+        /// forwarder.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -863,7 +873,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
+        /// a trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_domain_name(input);
             self
@@ -1104,7 +1115,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The fully qualified domain name for the AWS Managed Microsoft AD directory, such as
+        /// <p>The fully qualified domain name for the Managed Microsoft AD directory, such as
         /// <code>corp.example.com</code>. This name will resolve inside your VPC only. It does not need
         /// to be publicly resolvable.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -1115,7 +1126,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_name(input);
             self
         }
-        /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a NetBIOS name, it will default to the first part of your directory DNS. For example, <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
+        /// <p>The NetBIOS name for your domain, such as <code>CORP</code>. If you don't specify a
+        /// NetBIOS name, it will default to the first part of your directory DNS. For example,
+        /// <code>CORP</code> for the directory DNS <code>corp.example.com</code>. </p>
         pub fn short_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.short_name(input);
             self
@@ -1134,7 +1147,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_password(input);
             self
         }
-        /// <p>A description for the directory. This label will appear on the AWS console <code>Directory Details</code> page after the directory is created.</p>
+        /// <p>A description for the directory. This label will appear on the Amazon Web Services console
+        /// <code>Directory Details</code> page after the directory is created.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.description(input);
             self
@@ -1155,7 +1169,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_vpc_settings(input);
             self
         }
-        /// <p>AWS Managed Microsoft AD is available in two editions: <code>Standard</code> and <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
+        /// <p>Managed Microsoft AD is available in two editions: <code>Standard</code> and
+        /// <code>Enterprise</code>. <code>Enterprise</code> is the default.</p>
         pub fn edition(mut self, input: crate::model::DirectoryEdition) -> Self {
             self.inner = self.inner.edition(input);
             self
@@ -1167,7 +1182,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_edition(input);
             self
         }
-        /// <p>The tags to be assigned to the AWS Managed Microsoft AD directory.</p>
+        /// <p>The tags to be assigned to the Managed Microsoft AD directory.</p>
         pub fn tags(mut self, inp: impl Into<crate::model::Tag>) -> Self {
             self.inner = self.inner.tags(inp);
             self
@@ -1261,7 +1276,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Directory ID of the AWS Managed Microsoft AD directory for which to establish the trust relationship.</p>
+        /// <p>The Directory ID of the Managed Microsoft AD directory for which to establish the trust
+        /// relationship.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -1270,7 +1286,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the trust relationship.</p>
+        /// <p>The Fully Qualified Domain Name (FQDN) of the external domain for which to create the
+        /// trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_domain_name(input);
             self
@@ -1282,7 +1299,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_remote_domain_name(input);
             self
         }
-        /// <p>The trust password. The must be the same password that was used when creating the trust relationship on the external domain.</p>
+        /// <p>The trust password. The must be the same password that was used when creating the trust
+        /// relationship on the external domain.</p>
         pub fn trust_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trust_password(input);
             self
@@ -1386,7 +1404,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting the conditional forwarder.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you are deleting
+        /// the conditional forwarder.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_domain_name(input);
             self
@@ -1661,7 +1680,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages to the specified SNS topic.</p>
+        /// <p>The Directory ID to remove as a publisher. This directory will no longer send messages
+        /// to the specified Amazon SNS topic.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -1670,7 +1690,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The name of the SNS topic from which to remove the directory as a publisher.</p>
+        /// <p>The name of the Amazon SNS topic from which to remove the directory as a
+        /// publisher.</p>
         pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.topic_name(input);
             self
@@ -1734,6 +1755,77 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DescribeClientAuthenticationSettings<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_client_authentication_settings_input::Builder,
+    }
+    impl<C> DescribeClientAuthenticationSettings<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeClientAuthenticationSettingsOutput,
+            smithy_http::result::SdkError<crate::error::DescribeClientAuthenticationSettingsError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the directory for which to retrieve information.</p>
+        pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.directory_id(input);
+            self
+        }
+        pub fn set_directory_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_directory_id(input);
+            self
+        }
+        /// <p>The type of client authentication for which to retrieve information. If no type is specified, a list of all client authentication types that are supported for the specified directory is retrieved.</p>
+        pub fn r#type(mut self, input: crate::model::ClientAuthenticationType) -> Self {
+            self.inner = self.inner.r#type(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::ClientAuthenticationType>,
+        ) -> Self {
+            self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The <i>DescribeClientAuthenticationSettingsResult.NextToken</i> value from a previous call to <a>DescribeClientAuthenticationSettings</a>. Pass null if this is the first call.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation. </p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.inner = self.inner.limit(input);
+            self
+        }
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_limit(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DescribeConditionalForwarders<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::describe_conditional_forwarders_input::Builder,
@@ -1764,7 +1856,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The directory ID for which to get the list of associated conditional forwarders.</p>
+        /// <p>The directory ID for which to get the list of associated conditional
+        /// forwarders.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -1773,7 +1866,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list of associated conditional forwarders. If this member is null, all conditional forwarders are returned.</p>
+        /// <p>The fully qualified domain names (FQDN) of the remote domains for which to get the list
+        /// of associated conditional forwarders. If this member is null, all conditional forwarders are
+        /// returned.</p>
         pub fn remote_domain_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_domain_names(inp);
             self
@@ -1882,7 +1977,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifier of the directory for which to retrieve the domain controller information.</p>
+        /// <p>Identifier of the directory for which to retrieve the domain controller
+        /// information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -1891,7 +1987,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>A list of identifiers for the domain controllers whose information will be provided.</p>
+        /// <p>A list of identifiers for the domain controllers whose information will be
+        /// provided.</p>
         pub fn domain_controller_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.domain_controller_ids(inp);
             self
@@ -1903,7 +2000,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_domain_controller_ids(input);
             self
         }
-        /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call to <a>DescribeDomainControllers</a>. Pass null if this is the first call. </p>
+        /// <p>The <i>DescribeDomainControllers.NextToken</i> value from a previous call
+        /// to <a>DescribeDomainControllers</a>. Pass null if this is the first call.
+        /// </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -1953,7 +2052,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Directory ID for which to get the list of associated SNS topics. If this member is null, associations for all Directory IDs are returned.</p>
+        /// <p>The Directory ID for which to get the list of associated Amazon SNS topics. If this member
+        /// is null, associations for all Directory IDs are returned.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -1962,8 +2062,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>A list of SNS topic names for which to obtain the information. If this member is null, all associations for the specified Directory ID are returned.</p>
-        /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
+        /// <p>A list of Amazon SNS topic names for which to obtain the information. If this member is
+        /// null, all associations for the specified Directory ID are returned.</p>
+        /// <p>An empty list results in an <code>InvalidParameterException</code> being
+        /// thrown.</p>
         pub fn topic_names(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.topic_names(inp);
             self
@@ -2284,7 +2386,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Directory ID of the AWS directory that is a part of the requested trust relationship.</p>
+        /// <p>The Directory ID of the Amazon Web Services directory that is a part of the requested trust
+        /// relationship.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -2293,7 +2396,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>A list of identifiers of the trust relationships for which to obtain the information. If this member is null, all trust relationships that belong to the current account are returned.</p>
+        /// <p>A list of identifiers of the trust relationships for which to obtain the information. If
+        /// this member is null, all trust relationships that belong to the current account are
+        /// returned.</p>
         /// <p>An empty list results in an <code>InvalidParameterException</code> being thrown.</p>
         pub fn trust_ids(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.trust_ids(inp);
@@ -2511,11 +2616,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The username of an alternate account to use to disable single-sign on. This is only used for AD Connector directories. This account must have privileges to remove a service principal name.</p>
-        /// <p>If the AD Connector service account does not have privileges to remove a service principal
-        /// name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i>
-        /// parameters. These credentials are only used to disable single sign-on and are not stored by
-        /// the service. The AD Connector service account is not changed.</p>
+        /// <p>The username of an alternate account to use to disable single-sign on. This is only used
+        /// for AD Connector directories. This account must have privileges to remove a service
+        /// principal name.</p>
+        /// <p>If the AD Connector service account does not have privileges to remove a service
+        /// principal name, you can specify an alternate account with the <i>UserName</i>
+        /// and <i>Password</i> parameters. These credentials are only used to disable
+        /// single sign-on and are not stored by the service. The AD Connector service account is not
+        /// changed.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input);
             self
@@ -2525,7 +2633,8 @@ pub mod fluent_builders {
             self
         }
         /// <p>The password of an alternate account to use to disable single-sign on. This is only used
-        /// for AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
+        /// for AD Connector directories. For more information, see the <i>UserName</i>
+        /// parameter.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input);
             self
@@ -2577,7 +2686,7 @@ pub mod fluent_builders {
         }
         /// <p>The type of client authentication to enable. Currently only the value <code>SmartCard</code> is
         /// supported. Smart card authentication in AD Connector requires that you enable Kerberos
-        /// Constrained Delegation for the Service User to the LDAP service in the on-premises AD.
+        /// Constrained Delegation for the Service User to the LDAP service in your self-managed AD.
         /// </p>
         pub fn r#type(mut self, input: crate::model::ClientAuthenticationType) -> Self {
             self.inner = self.inner.r#type(input);
@@ -2682,7 +2791,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS server.</p>
+        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+        /// server.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
             self.inner = self.inner.radius_settings(input);
             self
@@ -2735,11 +2845,14 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The username of an alternate account to use to enable single-sign on. This is only used for AD Connector directories. This account must have privileges to add a service principal name.</p>
+        /// <p>The username of an alternate account to use to enable single-sign on. This is only used
+        /// for AD Connector directories. This account must have privileges to add a service principal
+        /// name.</p>
         /// <p>If the AD Connector service account does not have privileges to add a service principal
-        /// name, you can specify an alternate account with the <i>UserName</i> and <i>Password</i>
-        /// parameters. These credentials are only used to enable single sign-on and are not stored by
-        /// the service. The AD Connector service account is not changed.</p>
+        /// name, you can specify an alternate account with the <i>UserName</i> and
+        /// <i>Password</i> parameters. These credentials are only used to enable single
+        /// sign-on and are not stored by the service. The AD Connector service account is not
+        /// changed.</p>
         pub fn user_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.user_name(input);
             self
@@ -2748,8 +2861,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_user_name(input);
             self
         }
-        /// <p>The password of an alternate account to use to enable single-sign on. This is only used for
-        /// AD Connector directories. For more information, see the <i>UserName</i> parameter.</p>
+        /// <p>The password of an alternate account to use to enable single-sign on. This is only used
+        /// for AD Connector directories. For more information, see the <i>UserName</i>
+        /// parameter.</p>
         pub fn password(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.password(input);
             self
@@ -2925,7 +3039,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifier (ID) of the directory for which you want to retrieve the IP addresses.</p>
+        /// <p>Identifier (ID) of the directory for which you want to retrieve the IP
+        /// addresses.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -2934,8 +3049,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to
-        /// <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
+        /// <p>The <i>ListIpRoutes.NextToken</i> value from a previous call to <a>ListIpRoutes</a>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -2944,7 +3058,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_token(input);
             self
         }
-        /// <p>Maximum number of items to return. If this value is zero, the maximum number of items is specified by the limitations of the operation.</p>
+        /// <p>Maximum number of items to return. If this value is zero, the maximum number of items
+        /// is specified by the limitations of the operation.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.inner = self.inner.limit(input);
             self
@@ -2987,8 +3102,8 @@ pub mod fluent_builders {
         }
         /// <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
         /// associated with that directory. If no <i>DirectoryId</i> is provided, lists all
-        /// log subscriptions associated with your AWS account. If there are no log subscriptions for the
-        /// AWS account or the directory, an empty list will be returned.</p>
+        /// log subscriptions associated with your Amazon Web Services account. If there are no log subscriptions for the
+        /// Amazon Web Services account or the directory, an empty list will be returned.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3047,7 +3162,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the directory from which to retrieve the schema extension information.</p>
+        /// <p>The identifier of the directory from which to retrieve the schema extension
+        /// information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3056,7 +3172,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+        /// <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
+        /// <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_token(input);
             self
@@ -3245,7 +3362,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The Directory ID that will publish status messages to the SNS topic.</p>
+        /// <p>The Directory ID that will publish status messages to the Amazon SNS topic.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3254,7 +3371,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The SNS topic name to which the directory will publish status messages. This SNS topic must be in the same region as the specified Directory ID.</p>
+        /// <p>The Amazon SNS topic name to which the directory will publish status messages. This Amazon SNS
+        /// topic must be in the same region as the specified Directory ID.</p>
         pub fn topic_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.topic_name(input);
             self
@@ -3340,7 +3458,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifier (ID) of the directory from which you want to remove the IP addresses.</p>
+        /// <p>Identifier (ID) of the directory from which you want to remove the IP
+        /// addresses.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3487,7 +3606,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which the user
+        /// <p>Identifier of the Managed Microsoft AD or Simple AD directory in which the user
         /// resides.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
@@ -3588,8 +3707,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifier of the AWS Managed Microsoft AD directory that you want to share with other AWS
-        /// accounts.</p>
+        /// <p>Identifier of the Managed Microsoft AD directory that you want to share with other Amazon Web Services accounts.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3623,7 +3741,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The method used when sharing a directory to determine whether the directory should be
-        /// shared within your AWS organization (<code>ORGANIZATIONS</code>) or with any AWS account by
+        /// shared within your Amazon Web Services organization (<code>ORGANIZATIONS</code>) or with any Amazon Web Services account by
         /// sending a directory sharing request (<code>HANDSHAKE</code>).</p>
         pub fn share_method(mut self, input: crate::model::ShareMethod) -> Self {
             self.inner = self.inner.share_method(input);
@@ -3668,7 +3786,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the directory for which the schema extension will be applied to.</p>
+        /// <p>The identifier of the directory for which the schema extension will be applied
+        /// to.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3677,7 +3796,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>If true, creates a snapshot of the directory before applying the schema extension.</p>
+        /// <p>If true, creates a snapshot of the directory before applying the schema
+        /// extension.</p>
         pub fn create_snapshot_before_schema_extension(mut self, input: bool) -> Self {
             self.inner = self.inner.create_snapshot_before_schema_extension(input);
             self
@@ -3691,7 +3811,9 @@ pub mod fluent_builders {
                 .set_create_snapshot_before_schema_extension(input);
             self
         }
-        /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede each line as it would be formatted in an ldif file with \n. See the example request below for more details. The file size can be no larger than 1MB.</p>
+        /// <p>The LDIF file represented as a string. To construct the LdifContent string, precede
+        /// each line as it would be formatted in an ldif file with \n. See the example request below for
+        /// more details. The file size can be no larger than 1MB.</p>
         pub fn ldif_content(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.ldif_content(input);
             self
@@ -3741,7 +3863,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the AWS Managed Microsoft AD directory that you want to stop
+        /// <p>The identifier of the Managed Microsoft AD directory that you want to stop
         /// sharing.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
@@ -3796,7 +3918,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The directory ID of the AWS directory for which to update the conditional forwarder.</p>
+        /// <p>The directory ID of the Amazon Web Services directory for which to update the conditional
+        /// forwarder.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3805,7 +3928,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up a trust relationship.</p>
+        /// <p>The fully qualified domain name (FQDN) of the remote domain with which you will set up
+        /// a trust relationship.</p>
         pub fn remote_domain_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.remote_domain_name(input);
             self
@@ -3817,7 +3941,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_remote_domain_name(input);
             self
         }
-        /// <p>The updated IP addresses of the remote DNS server associated with the conditional forwarder.</p>
+        /// <p>The updated IP addresses of the remote DNS server associated with the conditional
+        /// forwarder.</p>
         pub fn dns_ip_addrs(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.dns_ip_addrs(inp);
             self
@@ -3861,7 +3986,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Identifier of the directory to which the domain controllers will be added or removed.</p>
+        /// <p>Identifier of the directory to which the domain controllers will be added or
+        /// removed.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3911,7 +4037,8 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The identifier of the directory for which to update the RADIUS server information.</p>
+        /// <p>The identifier of the directory for which to update the RADIUS server
+        /// information.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.directory_id(input);
             self
@@ -3920,7 +4047,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_directory_id(input);
             self
         }
-        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS server.</p>
+        /// <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+        /// server.</p>
         pub fn radius_settings(mut self, input: crate::model::RadiusSettings) -> Self {
             self.inner = self.inner.radius_settings(input);
             self

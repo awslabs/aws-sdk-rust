@@ -1,0 +1,7 @@
+{
+  "name": "web identity profile no env",
+  "docs": "invalid configuration where web identity is used as a source profile but a key is missing. The missing key is in the environment, but that must not be used.",
+  "result": {
+    "ErrorContains": "`web_identity_token_file` was specified but `role_arn` was missing"
+  }
+}

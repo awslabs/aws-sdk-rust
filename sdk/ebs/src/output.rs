@@ -6,7 +6,7 @@ pub struct StartSnapshotOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The ID of the snapshot.</p>
     pub snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the snapshot owner.</p>
+    /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The status of the snapshot.</p>
     pub status: std::option::Option<crate::model::Status>,
@@ -22,8 +22,7 @@ pub struct StartSnapshotOutput {
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     /// <p>The ID of the parent snapshot.</p>
     pub parent_snapshot_id: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
-    /// master key (CMK) used to encrypt the snapshot.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for StartSnapshotOutput {
@@ -78,7 +77,7 @@ pub mod start_snapshot_output {
             self.snapshot_id = input;
             self
         }
-        /// <p>The AWS account ID of the snapshot owner.</p>
+        /// <p>The Amazon Web Services account ID of the snapshot owner.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -148,8 +147,7 @@ pub mod start_snapshot_output {
             self.parent_snapshot_id = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) customer
-        /// master key (CMK) used to encrypt the snapshot.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used to encrypt the snapshot.</p>
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
             self
@@ -254,7 +252,7 @@ pub struct ListSnapshotBlocksOutput {
     pub expiry_time: std::option::Option<smithy_types::Instant>,
     /// <p>The size of the volume in GB.</p>
     pub volume_size: std::option::Option<i64>,
-    /// <p>The size of the block.</p>
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub block_size: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there
     /// are no more results to return.</p>
@@ -318,7 +316,7 @@ pub mod list_snapshot_blocks_output {
             self.volume_size = input;
             self
         }
-        /// <p>The size of the block.</p>
+        /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn block_size(mut self, input: i32) -> Self {
             self.block_size = Some(input);
             self
@@ -365,7 +363,7 @@ pub struct ListChangedBlocksOutput {
     pub expiry_time: std::option::Option<smithy_types::Instant>,
     /// <p>The size of the volume in GB.</p>
     pub volume_size: std::option::Option<i64>,
-    /// <p>The size of the block.</p>
+    /// <p>The size of the blocks in the snapshot, in bytes.</p>
     pub block_size: std::option::Option<i32>,
     /// <p>The token to use to retrieve the next page of results. This value is null when there
     /// are no more results to return.</p>
@@ -429,7 +427,7 @@ pub mod list_changed_blocks_output {
             self.volume_size = input;
             self
         }
-        /// <p>The size of the block.</p>
+        /// <p>The size of the blocks in the snapshot, in bytes.</p>
         pub fn block_size(mut self, input: i32) -> Self {
             self.block_size = Some(input);
             self

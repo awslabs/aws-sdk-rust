@@ -6390,6 +6390,7 @@ pub mod get_interpolated_asset_property_values_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) r#type: std::option::Option<std::string::String>,
+        pub(crate) interval_window_in_seconds: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>The ID of the asset.</p>
@@ -6502,14 +6503,51 @@ pub mod get_interpolated_asset_property_values_input {
             self
         }
         /// <p>The interpolation type.</p>
-        /// <p>Valid values: <code>LINEAR_INTERPOLATION</code>
+        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
         /// </p>
+        /// <p>For the <code>LOCF_INTERPOLATION</code> interpolation, if no data point is found for an interval,
+        /// IoT SiteWise returns the same interpolated value calculated for the previous interval
+        /// and carries forward this interpolated value until a new data point is found.</p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
+        /// If the <code>LOCF_INTERPOLATION</code> interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise uses the data points from July 1, 2021,
+        /// at 9 AM to July 2, 2021, at 9 AM to compute the first interpolated value.
+        /// If no data points is found after 9 A.M. on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.r#type = Some(input.into());
             self
         }
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.r#type = input;
+            self
+        }
+        /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
+        /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
+        /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+        /// <note>
+        /// <ul>
+        /// <li>
+        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
+        /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If no data point is found during the specified query window,
+        /// IoT SiteWise won't return an interpolated value for the interval.
+        /// This indicates that there's a gap in the ingested data points.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine
+        /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
+        /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
+        /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
+        /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
+        /// to compute the second interpolated value, and so on. </p>
+        pub fn interval_window_in_seconds(mut self, input: i64) -> Self {
+            self.interval_window_in_seconds = Some(input);
+            self
+        }
+        pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.interval_window_in_seconds = input;
             self
         }
         /// Consumes the builder and constructs a [`GetInterpolatedAssetPropertyValuesInput`](crate::input::GetInterpolatedAssetPropertyValuesInput)
@@ -6532,6 +6570,7 @@ pub mod get_interpolated_asset_property_values_input {
                 next_token: self.next_token,
                 max_results: self.max_results,
                 r#type: self.r#type,
+                interval_window_in_seconds: self.interval_window_in_seconds,
             })
         }
     }
@@ -6667,6 +6706,12 @@ impl GetInterpolatedAssetPropertyValuesInput {
         }
         if let Some(inner_66) = &self.r#type {
             query.push_kv("type", &smithy_http::query::fmt_string(&inner_66));
+        }
+        if let Some(inner_67) = &self.interval_window_in_seconds {
+            query.push_kv(
+                "intervalWindowInSeconds",
+                &smithy_types::primitive::Encoder::from(*inner_67).encode(),
+            );
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -6890,28 +6935,28 @@ impl ListAccessPoliciesInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_67) = &self.identity_type {
-            query.push_kv("identityType", &smithy_http::query::fmt_string(&inner_67));
+        if let Some(inner_68) = &self.identity_type {
+            query.push_kv("identityType", &smithy_http::query::fmt_string(&inner_68));
         }
-        if let Some(inner_68) = &self.identity_id {
-            query.push_kv("identityId", &smithy_http::query::fmt_string(&inner_68));
+        if let Some(inner_69) = &self.identity_id {
+            query.push_kv("identityId", &smithy_http::query::fmt_string(&inner_69));
         }
-        if let Some(inner_69) = &self.resource_type {
-            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_69));
+        if let Some(inner_70) = &self.resource_type {
+            query.push_kv("resourceType", &smithy_http::query::fmt_string(&inner_70));
         }
-        if let Some(inner_70) = &self.resource_id {
-            query.push_kv("resourceId", &smithy_http::query::fmt_string(&inner_70));
+        if let Some(inner_71) = &self.resource_id {
+            query.push_kv("resourceId", &smithy_http::query::fmt_string(&inner_71));
         }
-        if let Some(inner_71) = &self.iam_arn {
-            query.push_kv("iamArn", &smithy_http::query::fmt_string(&inner_71));
+        if let Some(inner_72) = &self.iam_arn {
+            query.push_kv("iamArn", &smithy_http::query::fmt_string(&inner_72));
         }
-        if let Some(inner_72) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_72));
+        if let Some(inner_73) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_73));
         }
-        if let Some(inner_73) = &self.max_results {
+        if let Some(inner_74) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_73).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_74).encode(),
             );
         }
     }
@@ -7069,13 +7114,13 @@ impl ListAssetModelsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_74) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_74));
+        if let Some(inner_75) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_75));
         }
-        if let Some(inner_75) = &self.max_results {
+        if let Some(inner_76) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_75).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_76).encode(),
             );
         }
     }
@@ -7261,15 +7306,15 @@ impl ListAssetRelationshipsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_76 = &self.asset_id;
-        let input_76 =
-            input_76
+        let input_77 = &self.asset_id;
+        let input_77 =
+            input_77
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
                 })?;
-        let asset_id = smithy_http::label::fmt_string(input_76, false);
+        let asset_id = smithy_http::label::fmt_string(input_77, false);
         if asset_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "asset_id",
@@ -7286,16 +7331,16 @@ impl ListAssetRelationshipsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_77) = &self.traversal_type {
-            query.push_kv("traversalType", &smithy_http::query::fmt_string(&inner_77));
+        if let Some(inner_78) = &self.traversal_type {
+            query.push_kv("traversalType", &smithy_http::query::fmt_string(&inner_78));
         }
-        if let Some(inner_78) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_78));
+        if let Some(inner_79) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_79));
         }
-        if let Some(inner_79) = &self.max_results {
+        if let Some(inner_80) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_79).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_80).encode(),
             );
         }
     }
@@ -7495,20 +7540,20 @@ impl ListAssetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_80) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_80));
+        if let Some(inner_81) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_81));
         }
-        if let Some(inner_81) = &self.max_results {
+        if let Some(inner_82) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_81).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_82).encode(),
             );
         }
-        if let Some(inner_82) = &self.asset_model_id {
-            query.push_kv("assetModelId", &smithy_http::query::fmt_string(&inner_82));
+        if let Some(inner_83) = &self.asset_model_id {
+            query.push_kv("assetModelId", &smithy_http::query::fmt_string(&inner_83));
         }
-        if let Some(inner_83) = &self.filter {
-            query.push_kv("filter", &smithy_http::query::fmt_string(&inner_83));
+        if let Some(inner_84) = &self.filter {
+            query.push_kv("filter", &smithy_http::query::fmt_string(&inner_84));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -7714,15 +7759,15 @@ impl ListAssociatedAssetsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_84 = &self.asset_id;
-        let input_84 =
-            input_84
+        let input_85 = &self.asset_id;
+        let input_85 =
+            input_85
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
                 })?;
-        let asset_id = smithy_http::label::fmt_string(input_84, false);
+        let asset_id = smithy_http::label::fmt_string(input_85, false);
         if asset_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "asset_id",
@@ -7735,22 +7780,22 @@ impl ListAssociatedAssetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_85) = &self.hierarchy_id {
-            query.push_kv("hierarchyId", &smithy_http::query::fmt_string(&inner_85));
+        if let Some(inner_86) = &self.hierarchy_id {
+            query.push_kv("hierarchyId", &smithy_http::query::fmt_string(&inner_86));
         }
-        if let Some(inner_86) = &self.traversal_direction {
+        if let Some(inner_87) = &self.traversal_direction {
             query.push_kv(
                 "traversalDirection",
-                &smithy_http::query::fmt_string(&inner_86),
+                &smithy_http::query::fmt_string(&inner_87),
             );
         }
-        if let Some(inner_87) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_87));
+        if let Some(inner_88) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_88));
         }
-        if let Some(inner_88) = &self.max_results {
+        if let Some(inner_89) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_88).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_89).encode(),
             );
         }
     }
@@ -7919,16 +7964,16 @@ impl ListDashboardsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_89) = &self.project_id {
-            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_89));
+        if let Some(inner_90) = &self.project_id {
+            query.push_kv("projectId", &smithy_http::query::fmt_string(&inner_90));
         }
-        if let Some(inner_90) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_90));
+        if let Some(inner_91) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_91));
         }
-        if let Some(inner_91) = &self.max_results {
+        if let Some(inner_92) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_91).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_92).encode(),
             );
         }
     }
@@ -8084,13 +8129,13 @@ impl ListGatewaysInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_92) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_92));
+        if let Some(inner_93) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_93));
         }
-        if let Some(inner_93) = &self.max_results {
+        if let Some(inner_94) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_93).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_94).encode(),
             );
         }
     }
@@ -8246,13 +8291,13 @@ impl ListPortalsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_94) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_94));
+        if let Some(inner_95) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_95));
         }
-        if let Some(inner_95) = &self.max_results {
+        if let Some(inner_96) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_95).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_96).encode(),
             );
         }
     }
@@ -8416,15 +8461,15 @@ impl ListProjectAssetsInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_96 = &self.project_id;
-        let input_96 =
-            input_96
+        let input_97 = &self.project_id;
+        let input_97 =
+            input_97
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
                 })?;
-        let project_id = smithy_http::label::fmt_string(input_96, false);
+        let project_id = smithy_http::label::fmt_string(input_97, false);
         if project_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "project_id",
@@ -8441,13 +8486,13 @@ impl ListProjectAssetsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_97) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_97));
+        if let Some(inner_98) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_98));
         }
-        if let Some(inner_98) = &self.max_results {
+        if let Some(inner_99) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_98).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_99).encode(),
             );
         }
     }
@@ -8614,16 +8659,16 @@ impl ListProjectsInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_99) = &self.portal_id {
-            query.push_kv("portalId", &smithy_http::query::fmt_string(&inner_99));
+        if let Some(inner_100) = &self.portal_id {
+            query.push_kv("portalId", &smithy_http::query::fmt_string(&inner_100));
         }
-        if let Some(inner_100) = &self.next_token {
-            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_100));
+        if let Some(inner_101) = &self.next_token {
+            query.push_kv("nextToken", &smithy_http::query::fmt_string(&inner_101));
         }
-        if let Some(inner_101) = &self.max_results {
+        if let Some(inner_102) = &self.max_results {
             query.push_kv(
                 "maxResults",
-                &smithy_types::primitive::Encoder::from(*inner_101).encode(),
+                &smithy_types::primitive::Encoder::from(*inner_102).encode(),
             );
         }
     }
@@ -8769,8 +8814,8 @@ impl ListTagsForResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_102) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_102));
+        if let Some(inner_103) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_103));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9416,8 +9461,8 @@ impl TagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_103) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_103));
+        if let Some(inner_104) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_104));
         }
     }
     #[allow(clippy::unnecessary_wraps)]
@@ -9575,12 +9620,12 @@ impl UntagResourceInput {
     }
     fn uri_query(&self, mut output: &mut String) {
         let mut query = smithy_http::query::Writer::new(&mut output);
-        if let Some(inner_104) = &self.resource_arn {
-            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_104));
+        if let Some(inner_105) = &self.resource_arn {
+            query.push_kv("resourceArn", &smithy_http::query::fmt_string(&inner_105));
         }
-        if let Some(inner_105) = &self.tag_keys {
-            for inner_106 in inner_105 {
-                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_106));
+        if let Some(inner_106) = &self.tag_keys {
+            for inner_107 in inner_106 {
+                query.push_kv("tagKeys", &smithy_http::query::fmt_string(&inner_107));
             }
         }
     }
@@ -9783,15 +9828,15 @@ impl UpdateAccessPolicyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_107 = &self.access_policy_id;
-        let input_107 =
-            input_107
+        let input_108 = &self.access_policy_id;
+        let input_108 =
+            input_108
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "access_policy_id",
                     details: "cannot be empty or unset",
                 })?;
-        let access_policy_id = smithy_http::label::fmt_string(input_107, false);
+        let access_policy_id = smithy_http::label::fmt_string(input_108, false);
         if access_policy_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "access_policy_id",
@@ -9968,15 +10013,15 @@ impl UpdateAssetInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_108 = &self.asset_id;
-        let input_108 =
-            input_108
+        let input_109 = &self.asset_id;
+        let input_109 =
+            input_109
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
                 })?;
-        let asset_id = smithy_http::label::fmt_string(input_108, false);
+        let asset_id = smithy_http::label::fmt_string(input_109, false);
         if asset_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "asset_id",
@@ -10227,15 +10272,15 @@ impl UpdateAssetModelInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_109 = &self.asset_model_id;
-        let input_109 =
-            input_109
+        let input_110 = &self.asset_model_id;
+        let input_110 =
+            input_110
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "asset_model_id",
                     details: "cannot be empty or unset",
                 })?;
-        let asset_model_id = smithy_http::label::fmt_string(input_109, false);
+        let asset_model_id = smithy_http::label::fmt_string(input_110, false);
         if asset_model_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "asset_model_id",
@@ -10453,30 +10498,30 @@ impl UpdateAssetPropertyInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_110 = &self.asset_id;
-        let input_110 =
-            input_110
+        let input_111 = &self.asset_id;
+        let input_111 =
+            input_111
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "asset_id",
                     details: "cannot be empty or unset",
                 })?;
-        let asset_id = smithy_http::label::fmt_string(input_110, false);
+        let asset_id = smithy_http::label::fmt_string(input_111, false);
         if asset_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "asset_id",
                 details: "cannot be empty or unset",
             });
         }
-        let input_111 = &self.property_id;
-        let input_111 =
-            input_111
+        let input_112 = &self.property_id;
+        let input_112 =
+            input_112
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "property_id",
                     details: "cannot be empty or unset",
                 })?;
-        let property_id = smithy_http::label::fmt_string(input_111, false);
+        let property_id = smithy_http::label::fmt_string(input_112, false);
         if property_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "property_id",
@@ -10687,15 +10732,15 @@ impl UpdateDashboardInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_112 = &self.dashboard_id;
-        let input_112 =
-            input_112
+        let input_113 = &self.dashboard_id;
+        let input_113 =
+            input_113
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "dashboard_id",
                     details: "cannot be empty or unset",
                 })?;
-        let dashboard_id = smithy_http::label::fmt_string(input_112, false);
+        let dashboard_id = smithy_http::label::fmt_string(input_113, false);
         if dashboard_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "dashboard_id",
@@ -10858,15 +10903,15 @@ impl UpdateGatewayInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_113 = &self.gateway_id;
-        let input_113 =
-            input_113
+        let input_114 = &self.gateway_id;
+        let input_114 =
+            input_114
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
                 })?;
-        let gateway_id = smithy_http::label::fmt_string(input_113, false);
+        let gateway_id = smithy_http::label::fmt_string(input_114, false);
         if gateway_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "gateway_id",
@@ -11058,15 +11103,15 @@ impl UpdateGatewayCapabilityConfigurationInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_114 = &self.gateway_id;
-        let input_114 =
-            input_114
+        let input_115 = &self.gateway_id;
+        let input_115 =
+            input_115
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "gateway_id",
                     details: "cannot be empty or unset",
                 })?;
-        let gateway_id = smithy_http::label::fmt_string(input_114, false);
+        let gateway_id = smithy_http::label::fmt_string(input_115, false);
         if gateway_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "gateway_id",
@@ -11333,15 +11378,15 @@ impl UpdatePortalInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_115 = &self.portal_id;
-        let input_115 =
-            input_115
+        let input_116 = &self.portal_id;
+        let input_116 =
+            input_116
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "portal_id",
                     details: "cannot be empty or unset",
                 })?;
-        let portal_id = smithy_http::label::fmt_string(input_115, false);
+        let portal_id = smithy_http::label::fmt_string(input_116, false);
         if portal_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "portal_id",
@@ -11528,15 +11573,15 @@ impl UpdateProjectInput {
         })
     }
     fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
-        let input_116 = &self.project_id;
-        let input_116 =
-            input_116
+        let input_117 = &self.project_id;
+        let input_117 =
+            input_117
                 .as_ref()
                 .ok_or(smithy_http::operation::BuildError::MissingField {
                     field: "project_id",
                     details: "cannot be empty or unset",
                 })?;
-        let project_id = smithy_http::label::fmt_string(input_116, false);
+        let project_id = smithy_http::label::fmt_string(input_117, false);
         if project_id.is_empty() {
             return Err(smithy_http::operation::BuildError::MissingField {
                 field: "project_id",
@@ -12269,9 +12314,39 @@ pub struct GetInterpolatedAssetPropertyValuesInput {
     /// <p>The maximum number of results to return for each paginated request. If not specified, the default value is 10.</p>
     pub max_results: std::option::Option<i32>,
     /// <p>The interpolation type.</p>
-    /// <p>Valid values: <code>LINEAR_INTERPOLATION</code>
+    /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
     /// </p>
+    /// <p>For the <code>LOCF_INTERPOLATION</code> interpolation, if no data point is found for an interval,
+    /// IoT SiteWise returns the same interpolated value calculated for the previous interval
+    /// and carries forward this interpolated value until a new data point is found.</p>
+    /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
+    /// If the <code>LOCF_INTERPOLATION</code> interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise uses the data points from July 1, 2021,
+    /// at 9 AM to July 2, 2021, at 9 AM to compute the first interpolated value.
+    /// If no data points is found after 9 A.M. on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
     pub r#type: std::option::Option<std::string::String>,
+    /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
+    /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
+    /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+    /// <note>
+    /// <ul>
+    /// <li>
+    /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
+    /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+    /// </li>
+    /// <li>
+    /// <p>If no data point is found during the specified query window,
+    /// IoT SiteWise won't return an interpolated value for the interval.
+    /// This indicates that there's a gap in the ingested data points.</p>
+    /// </li>
+    /// </ul>
+    /// </note>
+    /// <p>For example, you can get the interpolated temperature values for a wind turbine
+    /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
+    /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
+    /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
+    /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
+    /// to compute the second interpolated value, and so on. </p>
+    pub interval_window_in_seconds: std::option::Option<i64>,
 }
 impl std::fmt::Debug for GetInterpolatedAssetPropertyValuesInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12291,6 +12366,10 @@ impl std::fmt::Debug for GetInterpolatedAssetPropertyValuesInput {
         formatter.field("next_token", &self.next_token);
         formatter.field("max_results", &self.max_results);
         formatter.field("r#type", &self.r#type);
+        formatter.field(
+            "interval_window_in_seconds",
+            &self.interval_window_in_seconds,
+        );
         formatter.finish()
     }
 }

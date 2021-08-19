@@ -1181,6 +1181,21 @@ pub mod fluent_builders {
             self.inner = self.inner.set_mutual_tls_authentication(input);
             self
         }
+        /// <p>The ARN of the public certificate issued by ACM to validate ownership of your custom domain. Only required when configuring mutual TLS and using an ACM imported or private CA certificate ARN as the regionalCertificateArn.</p>
+        pub fn ownership_verification_certificate_arn(
+            mut self,
+            input: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.ownership_verification_certificate_arn(input);
+            self
+        }
+        pub fn set_ownership_verification_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_ownership_verification_certificate_arn(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateModel<C = aws_hyper::DynConnector> {

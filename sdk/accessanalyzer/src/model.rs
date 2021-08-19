@@ -1174,7 +1174,7 @@ pub enum PathElement {
     Value(std::string::String),
 }
 impl PathElement {
-    pub fn as_index(&self) -> Result<&i32, &Self> {
+    pub fn as_index(&self) -> std::result::Result<&i32, &Self> {
         if let PathElement::Index(val) = &self {
             Ok(&val)
         } else {
@@ -1184,7 +1184,7 @@ impl PathElement {
     pub fn is_index(&self) -> bool {
         self.as_index().is_ok()
     }
-    pub fn as_key(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_key(&self) -> std::result::Result<&std::string::String, &Self> {
         if let PathElement::Key(val) = &self {
             Ok(&val)
         } else {
@@ -1194,7 +1194,7 @@ impl PathElement {
     pub fn is_key(&self) -> bool {
         self.as_key().is_ok()
     }
-    pub fn as_substring(&self) -> Result<&crate::model::Substring, &Self> {
+    pub fn as_substring(&self) -> std::result::Result<&crate::model::Substring, &Self> {
         if let PathElement::Substring(val) = &self {
             Ok(&val)
         } else {
@@ -1204,7 +1204,7 @@ impl PathElement {
     pub fn is_substring(&self) -> bool {
         self.as_substring().is_ok()
     }
-    pub fn as_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let PathElement::Value(val) = &self {
             Ok(&val)
         } else {
@@ -4708,7 +4708,7 @@ pub enum Configuration {
     SqsQueue(crate::model::SqsQueueConfiguration),
 }
 impl Configuration {
-    pub fn as_iam_role(&self) -> Result<&crate::model::IamRoleConfiguration, &Self> {
+    pub fn as_iam_role(&self) -> std::result::Result<&crate::model::IamRoleConfiguration, &Self> {
         if let Configuration::IamRole(val) = &self {
             Ok(&val)
         } else {
@@ -4718,7 +4718,7 @@ impl Configuration {
     pub fn is_iam_role(&self) -> bool {
         self.as_iam_role().is_ok()
     }
-    pub fn as_kms_key(&self) -> Result<&crate::model::KmsKeyConfiguration, &Self> {
+    pub fn as_kms_key(&self) -> std::result::Result<&crate::model::KmsKeyConfiguration, &Self> {
         if let Configuration::KmsKey(val) = &self {
             Ok(&val)
         } else {
@@ -4728,7 +4728,7 @@ impl Configuration {
     pub fn is_kms_key(&self) -> bool {
         self.as_kms_key().is_ok()
     }
-    pub fn as_s3_bucket(&self) -> Result<&crate::model::S3BucketConfiguration, &Self> {
+    pub fn as_s3_bucket(&self) -> std::result::Result<&crate::model::S3BucketConfiguration, &Self> {
         if let Configuration::S3Bucket(val) = &self {
             Ok(&val)
         } else {
@@ -4740,7 +4740,7 @@ impl Configuration {
     }
     pub fn as_secrets_manager_secret(
         &self,
-    ) -> Result<&crate::model::SecretsManagerSecretConfiguration, &Self> {
+    ) -> std::result::Result<&crate::model::SecretsManagerSecretConfiguration, &Self> {
         if let Configuration::SecretsManagerSecret(val) = &self {
             Ok(&val)
         } else {
@@ -4750,7 +4750,7 @@ impl Configuration {
     pub fn is_secrets_manager_secret(&self) -> bool {
         self.as_secrets_manager_secret().is_ok()
     }
-    pub fn as_sqs_queue(&self) -> Result<&crate::model::SqsQueueConfiguration, &Self> {
+    pub fn as_sqs_queue(&self) -> std::result::Result<&crate::model::SqsQueueConfiguration, &Self> {
         if let Configuration::SqsQueue(val) = &self {
             Ok(&val)
         } else {
@@ -5076,7 +5076,9 @@ pub enum NetworkOriginConfiguration {
     VpcConfiguration(crate::model::VpcConfiguration),
 }
 impl NetworkOriginConfiguration {
-    pub fn as_internet_configuration(&self) -> Result<&crate::model::InternetConfiguration, &Self> {
+    pub fn as_internet_configuration(
+        &self,
+    ) -> std::result::Result<&crate::model::InternetConfiguration, &Self> {
         if let NetworkOriginConfiguration::InternetConfiguration(val) = &self {
             Ok(&val)
         } else {
@@ -5086,7 +5088,9 @@ impl NetworkOriginConfiguration {
     pub fn is_internet_configuration(&self) -> bool {
         self.as_internet_configuration().is_ok()
     }
-    pub fn as_vpc_configuration(&self) -> Result<&crate::model::VpcConfiguration, &Self> {
+    pub fn as_vpc_configuration(
+        &self,
+    ) -> std::result::Result<&crate::model::VpcConfiguration, &Self> {
         if let NetworkOriginConfiguration::VpcConfiguration(val) = &self {
             Ok(&val)
         } else {
@@ -5324,7 +5328,7 @@ pub enum AclGrantee {
     Uri(std::string::String),
 }
 impl AclGrantee {
-    pub fn as_id(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_id(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AclGrantee::Id(val) = &self {
             Ok(&val)
         } else {
@@ -5334,7 +5338,7 @@ impl AclGrantee {
     pub fn is_id(&self) -> bool {
         self.as_id().is_ok()
     }
-    pub fn as_uri(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_uri(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AclGrantee::Uri(val) = &self {
             Ok(&val)
         } else {

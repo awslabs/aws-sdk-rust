@@ -377,7 +377,7 @@ pub struct MetricTransformation {
     /// <p>You can also set up a billing alarm to alert you if your charges are higher than
     /// expected. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html">
-    /// Creating a Billing Alarm to Monitor Your Estimated AWS Charges</a>.
+    /// Creating a Billing Alarm to Monitor Your Estimated Amazon Web Services Charges</a>.
     /// </p>
     /// </important>
     pub dimensions:
@@ -817,7 +817,7 @@ pub struct Destination {
     pub target_arn: std::option::Option<std::string::String>,
     /// <p>A role for impersonation, used when delivering log events to the target.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>An IAM policy document that governs which AWS accounts can create subscription filters
+    /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
     /// against this destination.</p>
     pub access_policy: std::option::Option<std::string::String>,
     /// <p>The ARN of this destination.</p>
@@ -883,7 +883,7 @@ pub mod destination {
             self.role_arn = input;
             self
         }
-        /// <p>An IAM policy document that governs which AWS accounts can create subscription filters
+        /// <p>An IAM policy document that governs which Amazon Web Services accounts can create subscription filters
         /// against this destination.</p>
         pub fn access_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.access_policy = Some(input.into());
@@ -2196,8 +2196,9 @@ pub struct LogGroup {
     pub creation_time: std::option::Option<i64>,
     /// <p>The number of days to retain the log events in the specified log group.
     /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
-    /// <p>If you omit <code>retentionInDays</code> in a <code>PutRetentionPolicy</code> operation,
-    /// the events in the log group are always retained and never expire.</p>
+    /// <p>To set a log group to never have log events expire, use
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
+    /// </p>
     pub retention_in_days: std::option::Option<i32>,
     /// <p>The number of metric filters.</p>
     pub metric_filter_count: std::option::Option<i32>,
@@ -2260,8 +2261,9 @@ pub mod log_group {
         }
         /// <p>The number of days to retain the log events in the specified log group.
         /// Possible values are: 1, 3, 5, 7, 14, 30, 60, 90, 120, 150, 180, 365, 400, 545, 731, 1827, and 3653.</p>
-        /// <p>If you omit <code>retentionInDays</code> in a <code>PutRetentionPolicy</code> operation,
-        /// the events in the log group are always retained and never expire.</p>
+        /// <p>To set a log group to never have log events expire, use
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DeleteRetentionPolicy.html">DeleteRetentionPolicy</a>.
+        /// </p>
         pub fn retention_in_days(mut self, input: i32) -> Self {
             self.retention_in_days = Some(input);
             self

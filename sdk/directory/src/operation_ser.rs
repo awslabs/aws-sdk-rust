@@ -219,6 +219,19 @@ pub fn serialize_operation_describe_certificate(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_describe_client_authentication_settings(
+    input: &crate::input::DescribeClientAuthenticationSettingsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_describe_client_authentication_settings_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_describe_conditional_forwarders(
     input: &crate::input::DescribeConditionalForwardersInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {

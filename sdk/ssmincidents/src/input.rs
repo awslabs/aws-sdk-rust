@@ -450,7 +450,7 @@ pub mod create_timeline_event_input {
             self.event_type = input;
             self
         }
-        /// <p>A short description of the event.</p>
+        /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
         pub fn event_data(mut self, input: impl Into<std::string::String>) -> Self {
             self.event_data = Some(input.into());
             self
@@ -4501,6 +4501,7 @@ pub mod update_response_plan_input {
         /// AWS
         /// Chatbot chat channel used for collaboration during an
         /// incident.</p>
+        /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
         pub fn chat_channel(mut self, input: crate::model::ChatChannel) -> Self {
             self.chat_channel = Some(input);
             self
@@ -4930,16 +4931,14 @@ pub struct UpdateResponsePlanInput {
     pub incident_template_summary: std::option::Option<std::string::String>,
     /// <p>Used to create only one incident record for an incident.</p>
     pub incident_template_dedupe_string: std::option::Option<std::string::String>,
-    /// <p>The SNS targets that
-    /// AWS
-    /// Chatbot uses to notify the chat channels and perform actions on the
-    /// incident record.</p>
+    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
     pub incident_template_notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
     /// <p>The
     /// AWS
     /// Chatbot chat channel used for collaboration during an
     /// incident.</p>
+    /// <p>Use the empty structure to remove the chat channel from the response plan.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
     /// <p>The contacts and escalation plans that Incident Manager engages at the start of the incident.</p>
     pub engagements: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -5059,9 +5058,7 @@ pub struct UpdateIncidentRecordInput {
     pub status: std::option::Option<crate::model::IncidentRecordStatus>,
     /// <p>The AWS Chatbot chat channel for responders to collaborate in.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an
-    /// incident. You can also make updates to the incident through the chat channel using the
-    /// SNS topics. </p>
+    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
     /// <p>Using multiple SNS topics creates redundancy in the case that a Region is down during
     /// the incident.</p>
     pub notification_targets:
@@ -5540,7 +5537,7 @@ pub struct CreateTimelineEventInput {
     /// <p>The type of the event. You can create timeline events of type <code>Custom
     /// Event</code>.</p>
     pub event_type: std::option::Option<std::string::String>,
-    /// <p>A short description of the event.</p>
+    /// <p>A valid JSON string. There is no other schema imposed. A short description of the event.</p>
     pub event_data: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateTimelineEventInput {

@@ -1288,7 +1288,7 @@ pub struct ActiveDirectoryConfiguration {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
     pub computer_attributes:
         std::option::Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
-    /// <p>The directory ID of the AWS Directory Service for Microsoft AD to access using this studio component.</p>
+    /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The distinguished name (DN) and organizational unit (OU) of an Active Directory computer.</p>
     pub organizational_unit_distinguished_name: std::option::Option<std::string::String>,
@@ -1335,7 +1335,7 @@ pub mod active_directory_configuration {
             self.computer_attributes = input;
             self
         }
-        /// <p>The directory ID of the AWS Directory Service for Microsoft AD to access using this studio component.</p>
+        /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this studio component.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self
@@ -1448,9 +1448,9 @@ pub struct Studio {
     pub created_at: std::option::Option<smithy_types::Instant>,
     /// <p>A friendly name for the studio.</p>
     pub display_name: std::option::Option<std::string::String>,
-    /// <p>The AWS region where the studio resource is located.</p>
+    /// <p>The Amazon Web Services Region where the studio resource is located.</p>
     pub home_region: std::option::Option<std::string::String>,
-    /// <p>The AWS SSO application client ID used to integrate with AWS SSO to enable AWS SSO users to log in to Nimble portal.</p>
+    /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble portal.</p>
     pub sso_client_id: std::option::Option<std::string::String>,
     /// <p>The current state of the studio resource.</p>
     pub state: std::option::Option<crate::model::StudioState>,
@@ -1566,7 +1566,7 @@ pub mod studio {
             self.display_name = input;
             self
         }
-        /// <p>The AWS region where the studio resource is located.</p>
+        /// <p>The Amazon Web Services Region where the studio resource is located.</p>
         pub fn home_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.home_region = Some(input.into());
             self
@@ -1575,7 +1575,7 @@ pub mod studio {
             self.home_region = input;
             self
         }
-        /// <p>The AWS SSO application client ID used to integrate with AWS SSO to enable AWS SSO users to log in to Nimble portal.</p>
+        /// <p>The Amazon Web Services SSO application client ID used to integrate with Amazon Web Services SSO to enable Amazon Web Services SSO users to log in to Nimble portal.</p>
         pub fn sso_client_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.sso_client_id = Some(input.into());
             self
@@ -3819,6 +3819,8 @@ pub struct StreamingSession {
     pub ec2_instance_type: std::option::Option<std::string::String>,
     /// <p>The ID of the launch profile used to control access from the streaming session.</p>
     pub launch_profile_id: std::option::Option<std::string::String>,
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub owned_by: std::option::Option<std::string::String>,
     /// <p>The session ID.</p>
     pub session_id: std::option::Option<std::string::String>,
     /// <p>The current state.</p>
@@ -3847,6 +3849,7 @@ impl std::fmt::Debug for StreamingSession {
         formatter.field("created_by", &self.created_by);
         formatter.field("ec2_instance_type", &self.ec2_instance_type);
         formatter.field("launch_profile_id", &self.launch_profile_id);
+        formatter.field("owned_by", &self.owned_by);
         formatter.field("session_id", &self.session_id);
         formatter.field("state", &self.state);
         formatter.field("status_code", &self.status_code);
@@ -3870,6 +3873,7 @@ pub mod streaming_session {
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) ec2_instance_type: std::option::Option<std::string::String>,
         pub(crate) launch_profile_id: std::option::Option<std::string::String>,
+        pub(crate) owned_by: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::StreamingSessionState>,
         pub(crate) status_code: std::option::Option<crate::model::StreamingSessionStatusCode>,
@@ -3932,6 +3936,15 @@ pub mod streaming_session {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.launch_profile_id = input;
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owned_by = Some(input.into());
+            self
+        }
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owned_by = input;
             self
         }
         /// <p>The session ID.</p>
@@ -4048,6 +4061,7 @@ pub mod streaming_session {
                 created_by: self.created_by,
                 ec2_instance_type: self.ec2_instance_type,
                 launch_profile_id: self.launch_profile_id,
+                owned_by: self.owned_by,
                 session_id: self.session_id,
                 state: self.state,
                 status_code: self.status_code,
@@ -4463,6 +4477,8 @@ pub struct StreamingSessionStream {
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The Unix epoch timestamp in seconds for when the resource expires.</p>
     pub expires_at: std::option::Option<smithy_types::Instant>,
+    /// <p>The user ID of the user that owns the streaming session.</p>
+    pub owned_by: std::option::Option<std::string::String>,
     /// <p>The current state.</p>
     pub state: std::option::Option<crate::model::StreamingSessionStreamState>,
     /// <p>The streaming session stream status code.</p>
@@ -4478,6 +4494,7 @@ impl std::fmt::Debug for StreamingSessionStream {
         formatter.field("created_at", &self.created_at);
         formatter.field("created_by", &self.created_by);
         formatter.field("expires_at", &self.expires_at);
+        formatter.field("owned_by", &self.owned_by);
         formatter.field("state", &self.state);
         formatter.field("status_code", &self.status_code);
         formatter.field("stream_id", &self.stream_id);
@@ -4494,6 +4511,7 @@ pub mod streaming_session_stream {
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
         pub(crate) created_by: std::option::Option<std::string::String>,
         pub(crate) expires_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) owned_by: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::StreamingSessionStreamState>,
         pub(crate) status_code: std::option::Option<crate::model::StreamingSessionStreamStatusCode>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
@@ -4525,6 +4543,15 @@ pub mod streaming_session_stream {
         }
         pub fn set_expires_at(mut self, input: std::option::Option<smithy_types::Instant>) -> Self {
             self.expires_at = input;
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.owned_by = Some(input.into());
+            self
+        }
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.owned_by = input;
             self
         }
         /// <p>The current state.</p>
@@ -4578,6 +4605,7 @@ pub mod streaming_session_stream {
                 created_at: self.created_at,
                 created_by: self.created_by,
                 expires_at: self.expires_at,
+                owned_by: self.owned_by,
                 state: self.state,
                 status_code: self.status_code,
                 stream_id: self.stream_id,
@@ -5033,7 +5061,7 @@ pub struct LaunchProfileInitializationActiveDirectory {
     /// <p>A collection of custom attributes for an Active Directory computer.</p>
     pub computer_attributes:
         std::option::Option<std::vec::Vec<crate::model::ActiveDirectoryComputerAttribute>>,
-    /// <p>The directory ID of the AWS Directory Service for Microsoft AD to access using this launch profile.</p>
+    /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
     pub directory_id: std::option::Option<std::string::String>,
     /// <p>The directory name.</p>
     pub directory_name: std::option::Option<std::string::String>,
@@ -5096,7 +5124,7 @@ pub mod launch_profile_initialization_active_directory {
             self.computer_attributes = input;
             self
         }
-        /// <p>The directory ID of the AWS Directory Service for Microsoft AD to access using this launch profile.</p>
+        /// <p>The directory ID of the Directory Service for Microsoft Active Directory to access using this launch profile.</p>
         pub fn directory_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.directory_id = Some(input.into());
             self

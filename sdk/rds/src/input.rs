@@ -4527,7 +4527,7 @@ pub mod create_db_instance_input {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+        /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
         /// <p>Type: Integer</p>
         /// <p>
         /// <b>Amazon Aurora</b>
@@ -5625,7 +5625,7 @@ pub mod create_db_instance_input {
             self.deletion_protection = input;
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -6446,7 +6446,7 @@ pub mod create_db_instance_read_replica_input {
             self.replica_mode = input;
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -22323,7 +22323,7 @@ pub mod modify_db_instance_input {
             self.db_instance_identifier = input;
             self
         }
-        /// <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+        /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
         /// </p>
         /// <p>For MariaDB, MySQL, Oracle, and PostgreSQL,
         /// the value supplied must be at least 10% greater than the current value.
@@ -23134,7 +23134,7 @@ pub mod modify_db_instance_input {
             self.deletion_protection = input;
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -30521,7 +30521,7 @@ pub mod restore_db_instance_from_s3_input {
             self.deletion_protection = input;
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -31262,7 +31262,7 @@ pub mod restore_db_instance_to_point_in_time_input {
             self.source_dbi_resource_id = input;
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         /// <p>For more information about this setting, including limitations that apply to it, see
         /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
         /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -33701,7 +33701,7 @@ pub struct RestoreDbInstanceToPointInTimeInput {
     pub deletion_protection: std::option::Option<bool>,
     /// <p>The resource ID of the source DB instance from which to restore.</p>
     pub source_dbi_resource_id: std::option::Option<std::string::String>,
-    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
     /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -34087,7 +34087,7 @@ pub struct RestoreDbInstanceFromS3Input {
     /// Deleting a DB Instance</a>.
     /// </p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
     /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -35940,7 +35940,7 @@ pub struct ModifyDbInstanceInput {
     /// </li>
     /// </ul>
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>The new amount of storage (in gibibytes) to allocate for the DB instance.
+    /// <p>The new amount of storage in gibibytes (GiB) to allocate for the DB instance.
     /// </p>
     /// <p>For MariaDB, MySQL, Oracle, and PostgreSQL,
     /// the value supplied must be at least 10% greater than the current value.
@@ -36412,7 +36412,7 @@ pub struct ModifyDbInstanceInput {
     /// Deleting a DB Instance</a>.
     /// </p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
     /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -40732,7 +40732,7 @@ pub struct CreateDbInstanceReadReplicaInput {
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read Replicas for Amazon RDS</a>
     /// in the <i>Amazon RDS User Guide</i>.</p>
     pub replica_mode: std::option::Option<crate::model::ReplicaMode>,
-    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
     /// Managing capacity automatically with Amazon RDS storage autoscaling</a>
@@ -40928,7 +40928,7 @@ pub struct CreateDbInstanceInput {
     /// <p>Example: <code>mydbinstance</code>
     /// </p>
     pub db_instance_identifier: std::option::Option<std::string::String>,
-    /// <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+    /// <p>The amount of storage in gibibytes (GiB) to allocate for the DB instance.</p>
     /// <p>Type: Integer</p>
     /// <p>
     /// <b>Amazon Aurora</b>
@@ -41664,7 +41664,7 @@ pub struct CreateDbInstanceInput {
     /// cluster can be deleted even when deletion protection is enabled for the DB cluster.
     /// </p>
     pub deletion_protection: std::option::Option<bool>,
-    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     /// <p>For more information about this setting, including limitations that apply to it, see
     /// <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
     /// Managing capacity automatically with Amazon RDS storage autoscaling</a>

@@ -514,7 +514,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current Region;. You can add
+        /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
         /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
@@ -772,7 +772,7 @@ pub mod fluent_builders {
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Region;. </p>
+        /// QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -906,7 +906,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(input);
             self
@@ -1117,7 +1117,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+        /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input);
             self
@@ -1871,7 +1871,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the template that you want to create. This template is unique per Region; in
+        /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
         /// each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.template_id(input);
@@ -1908,7 +1908,7 @@ pub mod fluent_builders {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
+        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -2067,7 +2067,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per Region; in
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region; in
         /// each Amazon Web Services account;.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.theme_id(input);
@@ -2260,7 +2260,7 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
-        /// this Region;.</p>
+        /// this Amazon Web Services Region;.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.aws_account_id(input);
             self
@@ -2467,7 +2467,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(input);
             self
@@ -2520,7 +2520,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input);
             self
@@ -3688,7 +3688,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(input);
             self
@@ -3741,7 +3741,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(input);
             self
@@ -3794,7 +3794,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input);
             self
@@ -3850,7 +3850,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input);
             self
@@ -7398,7 +7398,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_namespace(input);
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current Region;. </p>
+        /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.inner = self.inner.account_customization(input);
             self
@@ -7741,7 +7741,7 @@ pub mod fluent_builders {
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Region;. </p>
+        /// QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -8023,7 +8023,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID for the dataset that you want to update. This ID is unique per Region; for each
+        /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region; for each
         /// Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(input);
@@ -8212,7 +8212,7 @@ pub mod fluent_builders {
             self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Region; for each Amazon Web Services account;.</p>
+        /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_set_id(input);
             self
@@ -8295,7 +8295,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input);
             self
@@ -8414,7 +8414,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_aws_account_id(input);
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.data_source_id(input);
             self
@@ -8853,7 +8853,7 @@ pub mod fluent_builders {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
+        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>

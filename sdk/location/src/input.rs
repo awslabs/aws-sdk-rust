@@ -639,6 +639,8 @@ impl BatchEvaluateGeofencesInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -3683,6 +3685,8 @@ impl DescribeGeofenceCollectionInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -3840,6 +3844,8 @@ impl DescribeMapInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -3995,6 +4001,8 @@ impl DescribePlaceIndexInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -4158,6 +4166,8 @@ impl DescribeRouteCalculatorInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -4317,6 +4327,8 @@ impl DescribeTrackerInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()

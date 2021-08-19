@@ -63,8 +63,8 @@ use std::collections::HashMap;
 /// [other]
 /// aws_access_key_id = 456
 /// ```
-pub fn load(fs: &Fs, env: &Env) -> Result<ProfileSet, ProfileParseError> {
-    let source = source::load(&env, &fs);
+pub async fn load(fs: &Fs, env: &Env) -> Result<ProfileSet, ProfileParseError> {
+    let source = source::load(&env, &fs).await;
     ProfileSet::parse(source)
 }
 
@@ -105,6 +105,28 @@ impl ProfileSet {
         }
         base
     }
+
+    /// Retrieves a key-value pair from the currently selected profile
+    pub fn get(&self, key: &str) -> Option<&str> {
+        self.profiles
+            .get(self.selected_profile.as_ref())
+            .and_then(|profile| profile.get(key))
+    }
+
+    /// Retrieve a named profile from the profile set
+    pub fn get_profile(&self, profile_name: &str) -> Option<&Profile> {
+        self.profiles.get(profile_name)
+    }
+
+    pub fn selected_profile(&self) -> &str {
+        self.selected_profile.as_ref()
+    }
+
+    /// Returns true if no profiles are contained in this profile set
+    pub fn is_empty(&self) -> bool {
+        self.profiles.is_empty()
+    }
+
     fn parse(source: Source) -> Result<Self, ProfileParseError> {
         let mut base = ProfileSet::empty();
         base.selected_profile = source.profile;
@@ -127,22 +149,6 @@ impl ProfileSet {
             profiles: Default::default(),
             selected_profile: "default".into(),
         }
-    }
-
-    /// Retrieves a key-value pair from the currently selected profile
-    pub fn get(&self, key: &str) -> Option<&str> {
-        self.profiles
-            .get(self.selected_profile.as_ref())
-            .and_then(|profile| profile.get(key))
-    }
-
-    /// Retrieve a named profile from the profile set
-    pub fn get_profile(&self, profile_name: &str) -> Option<&Profile> {
-        self.profiles.get(profile_name)
-    }
-
-    pub fn selected_profile(&self) -> &str {
-        self.selected_profile.as_ref()
     }
 }
 
@@ -216,6 +222,23 @@ mod test {
         Ok(())
     }
 
+    #[test]
+    fn empty_source_empty_profile() {
+        let source = Source {
+            config_file: File {
+                path: "~/.aws/config".to_string(),
+                contents: "".into(),
+            },
+            credentials_file: File {
+                path: "~/.aws/credentials".to_string(),
+                contents: "".into(),
+            },
+            profile: "default".into(),
+        };
+        let profile_set = ProfileSet::parse(source).expect("empty profiles are valid");
+        assert_eq!(profile_set.is_empty(), true);
+    }
+
     /// Run all tests from the fuzzing corpus to validate coverage
     #[test]
     #[ignore]
@@ -274,7 +297,7 @@ mod test {
                 path: "~/.aws/credentials".to_string(),
                 contents: input.credentials_file.unwrap_or_default(),
             },
-            profile: Default::default(),
+            profile: "default".into(),
         }
     }
 

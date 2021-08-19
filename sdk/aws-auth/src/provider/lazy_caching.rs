@@ -84,15 +84,14 @@ impl AsyncProvideCredentials for LazyCachingCredentialsProvider {
                 cache
                     .get_or_load(|| {
                         async move {
-                            let mut credentials = future
+                            let credentials = future
                                 .await
                                 .map_err(|_| CredentialsError::ProviderTimedOut(load_timeout))??;
                             // If the credentials don't have an expiration time, then create a default one
-                            if credentials.expiry().is_none() {
-                                *credentials.expiry_mut() =
-                                    Some(now + default_credential_expiration);
-                            }
-                            Ok(credentials)
+                            let expiry = credentials
+                                .expiry()
+                                .unwrap_or(now + default_credential_expiration);
+                            Ok((credentials, expiry))
                         }
                         // Only instrument the the actual load future so that no span
                         // is opened if the cache decides not to execute it.

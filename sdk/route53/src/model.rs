@@ -1319,8 +1319,8 @@ pub struct HealthCheckConfig {
     /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the
     /// <code>Host</code> header in each of the preceding cases.</p>
     /// <p>
-    /// <b>If you don't specify a value for <code>IPAddress</code>
-    /// </b>:</p>
+    /// <b>If you don't specify a value for</b>
+    /// <code>IPAddress</code>:</p>
     /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for
     /// <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p>
     /// <note>
@@ -1452,7 +1452,8 @@ pub struct HealthCheckConfig {
     /// </ul>
     pub insufficient_data_health_status:
         std::option::Option<crate::model::InsufficientDataHealthStatus>,
-    /// <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.</p>
+    /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
+    /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
     pub routing_control_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for HealthCheckConfig {
@@ -1685,8 +1686,8 @@ pub mod health_check_config {
         /// <p>If you don't specify a value for <code>FullyQualifiedDomainName</code>, Route 53 substitutes the value of <code>IPAddress</code> in the
         /// <code>Host</code> header in each of the preceding cases.</p>
         /// <p>
-        /// <b>If you don't specify a value for <code>IPAddress</code>
-        /// </b>:</p>
+        /// <b>If you don't specify a value for</b>
+        /// <code>IPAddress</code>:</p>
         /// <p>Route 53 sends a DNS request to the domain that you specify for <code>FullyQualifiedDomainName</code> at the interval that you specify for
         /// <code>RequestInterval</code>. Using an IPv4 address that DNS returns, Route 53 then checks the health of the endpoint.</p>
         /// <note>
@@ -1927,7 +1928,8 @@ pub mod health_check_config {
             self.insufficient_data_health_status = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) for Route53 Application Recovery Controller routing control.</p>
+        /// <p>The Amazon Resource Name (ARN) for the Route 53 Application Recovery Controller routing control.</p>
+        /// <p>For more information about Route 53 Application Recovery Controller, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/what-is-route-53-recovery.html">Route 53 Application Recovery Controller Developer Guide.</a>.</p>
         pub fn routing_control_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.routing_control_arn = Some(input.into());
             self
@@ -2703,7 +2705,7 @@ impl AsRef<str> for VpcRegion {
 }
 
 /// <p>A complex type that contains information about the latest version of one traffic policy
-/// that is associated with the current account.</p>
+/// that is associated with the current Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TrafficPolicySummary {
@@ -2716,7 +2718,7 @@ pub struct TrafficPolicySummary {
     pub r#type: std::option::Option<crate::model::RrType>,
     /// <p>The version number of the latest version of the traffic policy.</p>
     pub latest_version: std::option::Option<i32>,
-    /// <p>The number of traffic policies that are associated with the current account.</p>
+    /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
     pub traffic_policy_count: std::option::Option<i32>,
 }
 impl std::fmt::Debug for TrafficPolicySummary {
@@ -2780,7 +2782,7 @@ pub mod traffic_policy_summary {
             self.latest_version = input;
             self
         }
-        /// <p>The number of traffic policies that are associated with the current account.</p>
+        /// <p>The number of traffic policies that are associated with the current Amazon Web Services account.</p>
         pub fn traffic_policy_count(mut self, input: i32) -> Self {
             self.traffic_policy_count = Some(input);
             self
@@ -4317,7 +4319,7 @@ pub struct AliasTarget {
     /// </li>
     /// <li>
     /// <p>
-    /// <b>Management Console</b>: Go to the Amazon EC2 page, choose
+    /// <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
     /// <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the
     /// <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
     /// </li>
@@ -4435,7 +4437,7 @@ pub struct AliasTarget {
     /// <ul>
     /// <li>
     /// <p>
-    /// <i>Management Console</i>: For information about how to get the value by using the console,
+    /// <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console,
     /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the
     /// <i>Elastic Beanstalk Developer Guide</i>.</p>
     /// </li>
@@ -4457,12 +4459,12 @@ pub struct AliasTarget {
     /// </dd>
     /// <dt>ELB load balancer</dt>
     /// <dd>
-    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+    /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console,
     /// the ELB API, or the CLI. </p>
     /// <ul>
     /// <li>
     /// <p>
-    /// <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
+    /// <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
     /// in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value
     /// of the <b>DNS name</b> field. </p>
     /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.
@@ -4682,7 +4684,7 @@ pub mod alias_target {
         /// </li>
         /// <li>
         /// <p>
-        /// <b>Management Console</b>: Go to the Amazon EC2 page, choose
+        /// <b>Amazon Web Services Management Console</b>: Go to the Amazon EC2 page, choose
         /// <b>Load Balancers</b> in the navigation pane, select the load balancer, and get the value of the
         /// <b>Hosted zone</b> field on the <b>Description</b> tab.</p>
         /// </li>
@@ -4810,7 +4812,7 @@ pub mod alias_target {
         /// <ul>
         /// <li>
         /// <p>
-        /// <i>Management Console</i>: For information about how to get the value by using the console,
+        /// <i>Amazon Web Services Management Console</i>: For information about how to get the value by using the console,
         /// see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/customdomains.html">Using Custom Domains with Elastic Beanstalk</a> in the
         /// <i>Elastic Beanstalk Developer Guide</i>.</p>
         /// </li>
@@ -4832,12 +4834,12 @@ pub mod alias_target {
         /// </dd>
         /// <dt>ELB load balancer</dt>
         /// <dd>
-        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Management Console,
+        /// <p>Specify the DNS name that is associated with the load balancer. Get the DNS name by using the Amazon Web Services Management Console,
         /// the ELB API, or the CLI. </p>
         /// <ul>
         /// <li>
         /// <p>
-        /// <b>Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
+        /// <b>Amazon Web Services Management Console</b>: Go to the EC2 page, choose <b>Load Balancers</b>
         /// in the navigation pane, choose the load balancer, choose the <b>Description</b> tab, and get the value
         /// of the <b>DNS name</b> field. </p>
         /// <p>If you're routing traffic to a Classic Load Balancer, get the value that begins with <b>dualstack</b>.
@@ -5525,7 +5527,7 @@ pub struct HostedZoneSummary {
     pub hosted_zone_id: std::option::Option<std::string::String>,
     /// <p>The name of the private hosted zone, such as <code>example.com</code>.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an account or
+    /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or
     /// an Amazon Web Services service.</p>
     pub owner: std::option::Option<crate::model::HostedZoneOwner>,
 }
@@ -5570,7 +5572,7 @@ pub mod hosted_zone_summary {
             self.name = input;
             self
         }
-        /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an account or
+        /// <p>The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an Amazon Web Services account or
         /// an Amazon Web Services service.</p>
         pub fn owner(mut self, input: crate::model::HostedZoneOwner) -> Self {
             self.owner = Some(input);
@@ -5605,9 +5607,9 @@ impl HostedZoneSummary {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct HostedZoneOwner {
-    /// <p>If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates hosted zones using the current account,  
+    /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account,  
     /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
-    /// creates the hosted zone using the current account. </p>
+    /// creates the hosted zone using the current Amazon Web Services account. </p>
     pub owning_account: std::option::Option<std::string::String>,
     /// <p>If an Amazon Web Services service uses its own account to create a hosted zone and associate the specified VPC with that hosted zone, <code>OwningService</code>
     /// contains an abbreviation that identifies the service. For example, if Amazon Elastic File System (Amazon EFS) created a hosted zone and
@@ -5632,9 +5634,9 @@ pub mod hosted_zone_owner {
         pub(crate) owning_service: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>If the hosted zone was created by an account, or was created by an Amazon Web Services service that creates hosted zones using the current account,  
+        /// <p>If the hosted zone was created by an Amazon Web Services account, or was created by an Amazon Web Services service that creates hosted zones using the current account,  
         /// <code>OwningAccount</code> contains the account ID of that account. For example, when you use Cloud Map to create a hosted zone, Cloud Map
-        /// creates the hosted zone using the current account. </p>
+        /// creates the hosted zone using the current Amazon Web Services account. </p>
         pub fn owning_account(mut self, input: impl Into<std::string::String>) -> Self {
             self.owning_account = Some(input.into());
             self

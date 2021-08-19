@@ -468,7 +468,7 @@ mod list_snapshot_blocks_request_test {
 /// <p>Writes a block of data to a snapshot. If the specified block contains
 /// data, the existing data is overwritten. The target snapshot must be in the
 /// <code>pending</code> state.</p>    
-/// <p>Data written to a snapshot must be aligned with 512-byte sectors.</p>
+/// <p>Data written to a snapshot must be aligned with 512-KiB sectors.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct PutSnapshotBlock {
     _private: (),

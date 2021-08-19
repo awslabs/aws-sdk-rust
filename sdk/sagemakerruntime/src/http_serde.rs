@@ -35,3 +35,11 @@ pub fn deser_header_invoke_endpoint_invoke_endpoint_output_invoked_production_va
         .iter();
     smithy_http::header::one_or_none(headers)
 }
+
+pub fn deser_header_invoke_endpoint_async_invoke_endpoint_async_output_output_location(
+    header_map: &http::HeaderMap,
+) -> std::result::Result<std::option::Option<std::string::String>, smithy_http::header::ParseError>
+{
+    let headers = header_map.get_all("X-Amzn-SageMaker-OutputLocation").iter();
+    smithy_http::header::one_or_none(headers)
+}

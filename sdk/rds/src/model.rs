@@ -660,6 +660,8 @@ pub struct DbInstance {
     /// in the <i>Amazon RDS User Guide.</i>
     /// </p>
     pub db_instance_status: std::option::Option<std::string::String>,
+    /// <p>The time when a stopped DB instance is restarted automatically.</p>
+    pub automatic_restart_time: std::option::Option<smithy_types::Instant>,
     /// <p>Contains the master username for the DB instance.</p>
     pub master_username: std::option::Option<std::string::String>,
     /// <p>The meaning of this parameter differs according to the database engine you use.</p>
@@ -674,8 +676,11 @@ pub struct DbInstance {
     /// <p>Contains the Oracle System ID (SID) of the created DB instance. Not shown when the returned parameters do not apply to an Oracle DB instance.</p>
     pub db_name: std::option::Option<std::string::String>,
     /// <p>Specifies the connection endpoint.</p>
+    /// <note>
+    /// <p>The endpoint might not be shown for instances whose status is <code>creating</code>.</p>
+    /// </note>
     pub endpoint: std::option::Option<crate::model::Endpoint>,
-    /// <p>Specifies the allocated storage size specified in gibibytes.</p>
+    /// <p>Specifies the allocated storage size specified in gibibytes (GiB).</p>
     pub allocated_storage: i32,
     /// <p>Provides the date and time the DB instance was created.</p>
     pub instance_create_time: std::option::Option<smithy_types::Instant>,
@@ -857,7 +862,7 @@ pub struct DbInstance {
     pub associated_roles: std::option::Option<std::vec::Vec<crate::model::DbInstanceRole>>,
     /// <p>Specifies the listener connection endpoint for SQL Server Always On.</p>
     pub listener_endpoint: std::option::Option<crate::model::Endpoint>,
-    /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+    /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
     pub max_allocated_storage: std::option::Option<i32>,
     /// <p>A list of tags.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i>           
@@ -899,6 +904,7 @@ impl std::fmt::Debug for DbInstance {
         formatter.field("db_instance_class", &self.db_instance_class);
         formatter.field("engine", &self.engine);
         formatter.field("db_instance_status", &self.db_instance_status);
+        formatter.field("automatic_restart_time", &self.automatic_restart_time);
         formatter.field("master_username", &self.master_username);
         formatter.field("db_name", &self.db_name);
         formatter.field("endpoint", &self.endpoint);
@@ -1028,6 +1034,7 @@ pub mod db_instance {
         pub(crate) db_instance_class: std::option::Option<std::string::String>,
         pub(crate) engine: std::option::Option<std::string::String>,
         pub(crate) db_instance_status: std::option::Option<std::string::String>,
+        pub(crate) automatic_restart_time: std::option::Option<smithy_types::Instant>,
         pub(crate) master_username: std::option::Option<std::string::String>,
         pub(crate) db_name: std::option::Option<std::string::String>,
         pub(crate) endpoint: std::option::Option<crate::model::Endpoint>,
@@ -1158,6 +1165,18 @@ pub mod db_instance {
             self.db_instance_status = input;
             self
         }
+        /// <p>The time when a stopped DB instance is restarted automatically.</p>
+        pub fn automatic_restart_time(mut self, input: smithy_types::Instant) -> Self {
+            self.automatic_restart_time = Some(input);
+            self
+        }
+        pub fn set_automatic_restart_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.automatic_restart_time = input;
+            self
+        }
         /// <p>Contains the master username for the DB instance.</p>
         pub fn master_username(mut self, input: impl Into<std::string::String>) -> Self {
             self.master_username = Some(input.into());
@@ -1189,6 +1208,9 @@ pub mod db_instance {
             self
         }
         /// <p>Specifies the connection endpoint.</p>
+        /// <note>
+        /// <p>The endpoint might not be shown for instances whose status is <code>creating</code>.</p>
+        /// </note>
         pub fn endpoint(mut self, input: crate::model::Endpoint) -> Self {
             self.endpoint = Some(input);
             self
@@ -1197,7 +1219,7 @@ pub mod db_instance {
             self.endpoint = input;
             self
         }
-        /// <p>Specifies the allocated storage size specified in gibibytes.</p>
+        /// <p>Specifies the allocated storage size specified in gibibytes (GiB).</p>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.allocated_storage = Some(input);
             self
@@ -1892,7 +1914,7 @@ pub mod db_instance {
             self.listener_endpoint = input;
             self
         }
-        /// <p>The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+        /// <p>The upper limit in gibibytes (GiB) to which Amazon RDS can automatically scale the storage of the DB instance.</p>
         pub fn max_allocated_storage(mut self, input: i32) -> Self {
             self.max_allocated_storage = Some(input);
             self
@@ -2039,6 +2061,7 @@ pub mod db_instance {
                 db_instance_class: self.db_instance_class,
                 engine: self.engine,
                 db_instance_status: self.db_instance_status,
+                automatic_restart_time: self.automatic_restart_time,
                 master_username: self.master_username,
                 db_name: self.db_name,
                 endpoint: self.endpoint,
@@ -2957,7 +2980,7 @@ impl AsRef<str> for ReplicaMode {
 pub struct PendingModifiedValues {
     /// <p>The name of the compute and memory capacity class for the DB instance.</p>
     pub db_instance_class: std::option::Option<std::string::String>,
-    /// <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+    /// <p>The allocated storage size for the DB instance specified in gibibytes (GiB).</p>
     pub allocated_storage: std::option::Option<i32>,
     /// <p>The master credentials for the DB instance.</p>
     pub master_user_password: std::option::Option<std::string::String>,
@@ -3059,7 +3082,7 @@ pub mod pending_modified_values {
             self.db_instance_class = input;
             self
         }
-        /// <p>The allocated storage size for the DB instance specified in gibibytes .</p>
+        /// <p>The allocated storage size for the DB instance specified in gibibytes (GiB).</p>
         pub fn allocated_storage(mut self, input: i32) -> Self {
             self.allocated_storage = Some(input);
             self
@@ -3961,6 +3984,8 @@ pub struct DbCluster {
     pub db_subnet_group: std::option::Option<std::string::String>,
     /// <p>Specifies the current state of this DB cluster.</p>
     pub status: std::option::Option<std::string::String>,
+    /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+    pub automatic_restart_time: std::option::Option<smithy_types::Instant>,
     /// <p>Specifies the progress of the operation as a percentage.</p>
     pub percent_progress: std::option::Option<std::string::String>,
     /// <p>The earliest time to which a database can be restored with point-in-time
@@ -4120,6 +4145,7 @@ impl std::fmt::Debug for DbCluster {
         );
         formatter.field("db_subnet_group", &self.db_subnet_group);
         formatter.field("status", &self.status);
+        formatter.field("automatic_restart_time", &self.automatic_restart_time);
         formatter.field("percent_progress", &self.percent_progress);
         formatter.field("earliest_restorable_time", &self.earliest_restorable_time);
         formatter.field("endpoint", &self.endpoint);
@@ -4218,6 +4244,7 @@ pub mod db_cluster {
         pub(crate) db_cluster_parameter_group: std::option::Option<std::string::String>,
         pub(crate) db_subnet_group: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        pub(crate) automatic_restart_time: std::option::Option<smithy_types::Instant>,
         pub(crate) percent_progress: std::option::Option<std::string::String>,
         pub(crate) earliest_restorable_time: std::option::Option<smithy_types::Instant>,
         pub(crate) endpoint: std::option::Option<std::string::String>,
@@ -4377,6 +4404,18 @@ pub mod db_cluster {
         }
         pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.status = input;
+            self
+        }
+        /// <p>The time when a stopped DB cluster is restarted automatically.</p>
+        pub fn automatic_restart_time(mut self, input: smithy_types::Instant) -> Self {
+            self.automatic_restart_time = Some(input);
+            self
+        }
+        pub fn set_automatic_restart_time(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.automatic_restart_time = input;
             self
         }
         /// <p>Specifies the progress of the operation as a percentage.</p>
@@ -4997,6 +5036,7 @@ pub mod db_cluster {
                 db_cluster_parameter_group: self.db_cluster_parameter_group,
                 db_subnet_group: self.db_subnet_group,
                 status: self.status,
+                automatic_restart_time: self.automatic_restart_time,
                 percent_progress: self.percent_progress,
                 earliest_restorable_time: self.earliest_restorable_time,
                 endpoint: self.endpoint,
@@ -11703,7 +11743,7 @@ pub struct ValidStorageOptions {
     /// For example, gp2, io1.
     /// </p>
     pub storage_type: std::option::Option<std::string::String>,
-    /// <p>The valid range of storage in gibibytes.
+    /// <p>The valid range of storage in gibibytes (GiB).
     /// For example, 100 to 16384.
     /// </p>
     pub storage_size: std::option::Option<std::vec::Vec<crate::model::Range>>,

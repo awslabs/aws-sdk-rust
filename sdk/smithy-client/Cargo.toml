@@ -8,7 +8,7 @@ license = "Apache-2.0"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [features]
-test-util = ["protocol-test-helpers"]
+test-util = ["protocol-test-helpers", "serde/derive"]
 default = ["hyper", "rustls"]
 native-tls = ["hyper", "hyper-tls"]
 rustls = ["hyper", "hyper-rustls"]
@@ -31,7 +31,10 @@ pin-project = "1"
 tracing = "0.1"
 
 protocol-test-helpers = { path = "../protocol-test-helpers", optional = true }
+serde = { version = "1", features = ["derive"], optional = true }
 
 [dev-dependencies]
 tokio = { version = "1", features = ["full", "test-util"] }
 tower-test = "0.4.0"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"

@@ -25,8 +25,18 @@ use aws_types::profile::{Profile, ProfileSet};
 /// that don't actually have implementations.
 #[derive(Debug)]
 pub struct ProfileChain<'a> {
-    base: BaseProvider<'a>,
-    chain: Vec<RoleArn<'a>>,
+    pub(crate) base: BaseProvider<'a>,
+    pub(crate) chain: Vec<RoleArn<'a>>,
+}
+
+impl<'a> ProfileChain<'a> {
+    pub fn base(&self) -> &BaseProvider<'a> {
+        &self.base
+    }
+
+    pub fn chain(&self) -> &[RoleArn<'a>] {
+        &self.chain.as_slice()
+    }
 }
 
 /// A base member of the profile chain
@@ -58,16 +68,21 @@ pub enum BaseProvider<'a> {
     /// aws_secret_access_key = def456
     /// ```
     AccessKey(Credentials),
-    // TODO: add SSO support
-    /*
-    /// An SSO Provider
-    Sso {
-        sso_account_id: &'a str,
-        sso_region: &'a str,
-        sso_role_name: &'a str,
-        sso_start_url: &'a str,
-    },
-     */
+
+    WebIdentityTokenRole {
+        role_arn: &'a str,
+        web_identity_token_file: &'a str,
+        session_name: Option<&'a str>,
+    }, // TODO: add SSO support
+       /*
+       /// An SSO Provider
+       Sso {
+           sso_account_id: &'a str,
+           sso_region: &'a str,
+           sso_role_name: &'a str,
+           sso_start_url: &'a str,
+       },
+        */
 }
 
 /// A profile that specifies a role to assume
@@ -77,16 +92,19 @@ pub enum BaseProvider<'a> {
 #[derive(Debug)]
 pub struct RoleArn<'a> {
     /// Role to assume
-    role_arn: &'a str,
+    pub role_arn: &'a str,
     /// external_id parameter to pass to the assume role provider
-    external_id: Option<&'a str>,
+    pub external_id: Option<&'a str>,
 
     /// session name parameter to pass to the assume role provider
-    session_name: Option<&'a str>,
+    pub session_name: Option<&'a str>,
 }
 
 /// Resolve a ProfileChain from a ProfileSet or return an error
 pub fn resolve_chain(profile_set: &ProfileSet) -> Result<ProfileChain, ProfileFileError> {
+    if profile_set.is_empty() {
+        return Err(ProfileFileError::NoProfilesDefined);
+    }
     let mut source_profile_name = profile_set.selected_profile();
     let mut visited_profiles = vec![];
     let mut chain = vec![];
@@ -153,6 +171,10 @@ mod role {
     pub const SOURCE_PROFILE: &str = "source_profile";
 }
 
+mod web_identity_token {
+    pub const TOKEN_FILE: &str = "web_identity_token_file";
+}
+
 mod static_credentials {
     pub const AWS_ACCESS_KEY_ID: &str = "aws_access_key_id";
     pub const AWS_SECRET_ACCESS_KEY: &str = "aws_secret_access_key";
@@ -162,11 +184,11 @@ const PROVIDER_NAME: &str = "ProfileFile";
 
 fn base_provider(profile: &Profile) -> Result<BaseProvider, ProfileFileError> {
     // the profile must define either a `CredentialsSource` or a concrete set of access keys
-    let profile = match profile.get(role::CREDENTIAL_SOURCE) {
-        Some(source) => BaseProvider::NamedSource(source),
-        None => BaseProvider::AccessKey(static_creds_from_profile(profile)?),
-    };
-    Ok(profile)
+    match profile.get(role::CREDENTIAL_SOURCE) {
+        Some(source) => Ok(BaseProvider::NamedSource(source)),
+        None => web_identity_token_from_profile(profile)
+            .unwrap_or_else(|| Ok(BaseProvider::AccessKey(static_creds_from_profile(profile)?))),
+    }
 }
 
 enum NextProfile<'a> {
@@ -205,6 +227,10 @@ fn chain_provider(profile: &Profile) -> Option<Result<(RoleArn, NextProfile), Pr
 }
 
 fn role_arn_from_profile(profile: &Profile) -> Option<RoleArn> {
+    // Web Identity Tokens are root providers, not chained roles
+    if profile.get(web_identity_token::TOKEN_FILE).is_some() {
+        return None;
+    }
     let role_arn = profile.get(role::ROLE_ARN)?;
     let session_name = profile.get(role::SESSION_NAME);
     let external_id = profile.get(role::EXTERNAL_ID);
@@ -213,6 +239,28 @@ fn role_arn_from_profile(profile: &Profile) -> Option<RoleArn> {
         external_id,
         session_name,
     })
+}
+
+fn web_identity_token_from_profile(
+    profile: &Profile,
+) -> Option<Result<BaseProvider, ProfileFileError>> {
+    let session_name = profile.get(role::SESSION_NAME);
+    match (
+        profile.get(role::ROLE_ARN),
+        profile.get(web_identity_token::TOKEN_FILE),
+    ) {
+        (Some(role_arn), Some(token_file)) => Some(Ok(BaseProvider::WebIdentityTokenRole {
+            role_arn,
+            web_identity_token_file: token_file,
+            session_name,
+        })),
+        (None, None) => None,
+        (Some(_role_arn), None) => None,
+        (None, Some(_token_file)) => Some(Err(ProfileFileError::InvalidCredentialSource {
+            profile: profile.name().to_string(),
+            message: "`web_identity_token_file` was specified but `role_arn` was missing".into(),
+        })),
+    }
 }
 
 /// Load static credentials from a profile
@@ -279,8 +327,8 @@ mod tests {
         let expected = test_case.output;
         match (expected, actual) {
             (TestOutput::Error(s), Err(e)) => assert!(
-                format!("{:?}", e).contains(&s),
-                "expected {:?} to contain `{}`",
+                format!("{}", e).contains(&s),
+                "expected {} to contain `{}`",
                 e,
                 s
             ),
@@ -316,6 +364,15 @@ mod tests {
                 secret_access_key: creds.secret_access_key().into(),
                 session_token: creds.session_token().map(|tok| tok.to_string()),
             }),
+            BaseProvider::WebIdentityTokenRole {
+                role_arn,
+                web_identity_token_file,
+                session_name,
+            } => output.push(Provider::WebIdentityToken {
+                role_arn: role_arn.into(),
+                web_identity_token_file: web_identity_token_file.into(),
+                role_session_name: session_name.map(|sess| sess.to_string()),
+            }),
         };
         for role in profile_chain.chain {
             output.push(Provider::AssumeRole {
@@ -346,5 +403,10 @@ mod tests {
             session_token: Option<String>,
         },
         NamedSource(String),
+        WebIdentityToken {
+            role_arn: String,
+            web_identity_token_file: String,
+            role_session_name: Option<String>,
+        },
     }
 }

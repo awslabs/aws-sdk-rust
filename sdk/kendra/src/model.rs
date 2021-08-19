@@ -8024,7 +8024,7 @@ pub enum DocumentAttributeValue {
     StringValue(std::string::String),
 }
 impl DocumentAttributeValue {
-    pub fn as_date_value(&self) -> Result<&smithy_types::Instant, &Self> {
+    pub fn as_date_value(&self) -> std::result::Result<&smithy_types::Instant, &Self> {
         if let DocumentAttributeValue::DateValue(val) = &self {
             Ok(&val)
         } else {
@@ -8034,7 +8034,7 @@ impl DocumentAttributeValue {
     pub fn is_date_value(&self) -> bool {
         self.as_date_value().is_ok()
     }
-    pub fn as_long_value(&self) -> Result<&i64, &Self> {
+    pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let DocumentAttributeValue::LongValue(val) = &self {
             Ok(&val)
         } else {
@@ -8044,7 +8044,9 @@ impl DocumentAttributeValue {
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    pub fn as_string_list_value(&self) -> Result<&std::vec::Vec<std::string::String>, &Self> {
+    pub fn as_string_list_value(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let DocumentAttributeValue::StringListValue(val) = &self {
             Ok(&val)
         } else {
@@ -8054,7 +8056,7 @@ impl DocumentAttributeValue {
     pub fn is_string_list_value(&self) -> bool {
         self.as_string_list_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let DocumentAttributeValue::StringValue(val) = &self {
             Ok(&val)
         } else {

@@ -2913,6 +2913,91 @@ pub fn parse_update_project_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_project_visibility_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateProjectVisibilityOutput,
+    crate::error::UpdateProjectVisibilityError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::UpdateProjectVisibilityError::unhandled(
+                generic,
+            ))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidInputException" => crate::error::UpdateProjectVisibilityError {
+            meta: generic,
+            kind: crate::error::UpdateProjectVisibilityErrorKind::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_input_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::UpdateProjectVisibilityError {
+                meta: generic,
+                kind: crate::error::UpdateProjectVisibilityErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateProjectVisibilityError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_project_visibility_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::UpdateProjectVisibilityOutput,
+    crate::error::UpdateProjectVisibilityError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_project_visibility_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_update_project_visibility(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::UpdateProjectVisibilityError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_report_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateReportGroupOutput, crate::error::UpdateReportGroupError>

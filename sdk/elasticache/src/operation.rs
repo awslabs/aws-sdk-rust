@@ -4,7 +4,7 @@
 /// For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level permissions</a>.</p>
 /// <p>
 /// For example, you can use cost-allocation tags to your ElastiCache resources,
-/// AWS generates a cost allocation report as a comma-separated value (CSV) file
+/// Amazon generates a cost allocation report as a comma-separated value (CSV) file
 /// with your usage and costs aggregated by your tags.
 /// You can apply tags that represent business categories (such as cost centers, application names, or owners)
 /// to organize your costs across multiple services.</p>
@@ -463,7 +463,7 @@ impl smithy_http::response::ParseStrictResponse for CreateGlobalReplicationGroup
 /// <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/SubnetGroups.Creating.html">Creating a Subnet Group</a>. For versions below 5.0.6,
 /// the limit is 250 per cluster.</p>
 /// <p>To request a limit increase, see
-/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a>
+/// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon Service Limits</a>
 /// and choose the limit type <b>Nodes per cluster per instance type</b>. </p>
 /// <p>When a Redis (cluster mode disabled) replication group has been successfully created,
 /// you can add one or more read replicas to it, up to a total of 5 read replicas.
@@ -1474,7 +1474,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeUsers {
     }
 }
 
-/// <p>Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will no longer receive updates from the primary cluster, but will remain as a standalone cluster in that AWS region.</p>
+/// <p>Remove a secondary cluster from the Global datastore using the Global datastore name. The secondary cluster will no longer receive updates from the primary cluster, but will remain as a standalone cluster in that Amazon region.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DisassociateGlobalReplicationGroup {
     _private: (),
@@ -2130,7 +2130,7 @@ impl smithy_http::response::ParseStrictResponse for StartMigration {
 /// </p>
 /// <ul>
 /// <li>
-/// <p>A customer can use this operation to test automatic failover on up to 5 shards (called node groups in the ElastiCache API and AWS CLI)
+/// <p>A customer can use this operation to test automatic failover on up to 5 shards (called node groups in the ElastiCache API and Amazon CLI)
 /// in any rolling 24-hour period.</p>
 /// </li>
 /// <li>
@@ -2143,7 +2143,7 @@ impl smithy_http::response::ParseStrictResponse for StartMigration {
 /// </li>
 /// <li>
 /// <p>To determine whether the node replacement is complete you can check Events using the Amazon ElastiCache console,
-/// the AWS CLI, or the ElastiCache API.
+/// the Amazon CLI, or the ElastiCache API.
 /// Look for the following automatic failover related events, listed here in order of occurrance:</p>
 /// <ol>
 /// <li>

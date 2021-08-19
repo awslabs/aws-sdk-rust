@@ -57784,11 +57784,32 @@ impl LaunchTemplateVersion {
 pub struct KeyPairInfo {
     /// <p>The ID of the key pair.</p>
     pub key_pair_id: std::option::Option<std::string::String>,
-    /// <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-    /// If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
+    /// <p>If you used <a>CreateKeyPair</a> to create the key pair:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which
+    /// is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p>
+    /// </li>
+    /// </ul>
+    /// <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:</p>
+    /// <ul>
+    /// <li>
+    /// <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
+    /// </li>
+    /// <li>
+    /// <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+    /// digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p>
+    /// </li>
+    /// </ul>
     pub key_fingerprint: std::option::Option<std::string::String>,
     /// <p>The name of the key pair.</p>
     pub key_name: std::option::Option<std::string::String>,
+    /// <p>The type of key pair.</p>
+    pub key_type: std::option::Option<crate::model::KeyType>,
     /// <p>Any tags applied to the key pair.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -57798,6 +57819,7 @@ impl std::fmt::Debug for KeyPairInfo {
         formatter.field("key_pair_id", &self.key_pair_id);
         formatter.field("key_fingerprint", &self.key_fingerprint);
         formatter.field("key_name", &self.key_name);
+        formatter.field("key_type", &self.key_type);
         formatter.field("tags", &self.tags);
         formatter.finish()
     }
@@ -57811,6 +57833,7 @@ pub mod key_pair_info {
         pub(crate) key_pair_id: std::option::Option<std::string::String>,
         pub(crate) key_fingerprint: std::option::Option<std::string::String>,
         pub(crate) key_name: std::option::Option<std::string::String>,
+        pub(crate) key_type: std::option::Option<crate::model::KeyType>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
@@ -57823,8 +57846,27 @@ pub mod key_pair_info {
             self.key_pair_id = input;
             self
         }
-        /// <p>If you used <a>CreateKeyPair</a> to create the key pair, this is the SHA-1 digest of the DER encoded private key.
-        /// If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key, this is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
+        /// <p>If you used <a>CreateKeyPair</a> to create the key pair:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For RSA key pairs, the key fingerprint is the SHA-1 digest of the DER encoded private key.
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256 digest, which
+        /// is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p>
+        /// </li>
+        /// </ul>
+        /// <p>If you used <a>ImportKeyPair</a> to provide Amazon Web Services the public key:</p>
+        /// <ul>
+        /// <li>
+        /// <p>For RSA key pairs, the key fingerprint is the MD5 public key fingerprint as specified in section 4 of RFC4716.</p>
+        /// </li>
+        /// <li>
+        /// <p>For ED25519 key pairs, the key fingerprint is the base64-encoded SHA-256
+        /// digest, which is the default for OpenSSH, starting with <a href="http://www.openssh.com/txt/release-6.8">OpenSSH 6.8</a>.</p>
+        /// </li>
+        /// </ul>
         pub fn key_fingerprint(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_fingerprint = Some(input.into());
             self
@@ -57843,6 +57885,15 @@ pub mod key_pair_info {
         }
         pub fn set_key_name(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.key_name = input;
+            self
+        }
+        /// <p>The type of key pair.</p>
+        pub fn key_type(mut self, input: crate::model::KeyType) -> Self {
+            self.key_type = Some(input);
+            self
+        }
+        pub fn set_key_type(mut self, input: std::option::Option<crate::model::KeyType>) -> Self {
+            self.key_type = input;
             self
         }
         pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
@@ -57864,6 +57915,7 @@ pub mod key_pair_info {
                 key_pair_id: self.key_pair_id,
                 key_fingerprint: self.key_fingerprint,
                 key_name: self.key_name,
+                key_type: self.key_type,
                 tags: self.tags,
             }
         }
@@ -57873,6 +57925,56 @@ impl KeyPairInfo {
     /// Creates a new builder-style object to manufacture [`KeyPairInfo`](crate::model::KeyPairInfo)
     pub fn builder() -> crate::model::key_pair_info::Builder {
         crate::model::key_pair_info::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum KeyType {
+    Ed25519,
+    Rsa,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for KeyType {
+    fn from(s: &str) -> Self {
+        match s {
+            "ed25519" => KeyType::Ed25519,
+            "rsa" => KeyType::Rsa,
+            other => KeyType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for KeyType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(KeyType::from(s))
+    }
+}
+impl KeyType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            KeyType::Ed25519 => "ed25519",
+            KeyType::Rsa => "rsa",
+            KeyType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ed25519", "rsa"]
+    }
+}
+impl AsRef<str> for KeyType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 

@@ -6655,7 +6655,7 @@ pub mod list_resolver_dnssec_configs_input {
             self.max_results = input;
             self
         }
-        /// <p>(Optional) If the current AWS account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
+        /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
         /// to get the second and subsequent pages of results.</p>
         /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
         /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value
@@ -7502,12 +7502,12 @@ pub mod list_resolver_query_log_configs_input {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>OwnerId</code>: The AWS account number of the account that created the configuration</p>
+        /// <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ShareStatus</code>: Whether the configuration is shared with other AWS accounts or shared with the current account by
-        /// another AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+        /// <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by
+        /// another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
         /// </li>
         /// <li>
         /// <p>
@@ -8215,7 +8215,7 @@ pub mod put_firewall_rule_group_policy_input {
             self.arn = input;
             self
         }
-        /// <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule group.</p>
+        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
         pub fn firewall_rule_group_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_rule_group_policy = Some(input.into());
             self
@@ -8370,7 +8370,7 @@ pub mod put_resolver_query_log_config_policy_input {
             self.arn = input;
             self
         }
-        /// <p>An AWS Identity and Access Management policy statement that lists the query logging configurations that you want to share with another AWS account
+        /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
         /// and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section
         /// of the statement:</p>
         /// <ul>
@@ -8556,7 +8556,7 @@ pub mod put_resolver_rule_policy_input {
             self.arn = input;
             self
         }
-        /// <p>An AWS Identity and Access Management policy statement that lists the rules that you want to share with another AWS account and the operations that you want the account
+        /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
         /// to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
         /// <ul>
         /// <li>
@@ -10709,7 +10709,7 @@ impl std::fmt::Debug for TagResourceInput {
 pub struct PutResolverRulePolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the rule that you want to share with another account.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An AWS Identity and Access Management policy statement that lists the rules that you want to share with another AWS account and the operations that you want the account
+    /// <p>An Identity and Access Management policy statement that lists the rules that you want to share with another Amazon Web Services account and the operations that you want the account
     /// to be able to perform. You can specify the following operations in the <code>Action</code> section of the statement:</p>
     /// <ul>
     /// <li>
@@ -10756,7 +10756,7 @@ impl std::fmt::Debug for PutResolverRulePolicyInput {
 pub struct PutResolverQueryLogConfigPolicyInput {
     /// <p>The Amazon Resource Name (ARN) of the account that you want to share rules with.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>An AWS Identity and Access Management policy statement that lists the query logging configurations that you want to share with another AWS account
+    /// <p>An Identity and Access Management policy statement that lists the query logging configurations that you want to share with another Amazon Web Services account
     /// and the operations that you want the account to be able to perform. You can specify the following operations in the <code>Actions</code> section
     /// of the statement:</p>
     /// <ul>
@@ -10802,7 +10802,7 @@ impl std::fmt::Debug for PutResolverQueryLogConfigPolicyInput {
 pub struct PutFirewallRuleGroupPolicyInput {
     /// <p>The ARN (Amazon Resource Name) for the rule group that you want to share.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The AWS Identity and Access Management (AWS IAM) policy to attach to the rule group.</p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy to attach to the rule group.</p>
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutFirewallRuleGroupPolicyInput {
@@ -10948,12 +10948,12 @@ pub struct ListResolverQueryLogConfigsInput {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>OwnerId</code>: The AWS account number of the account that created the configuration</p>
+    /// <code>OwnerId</code>: The Amazon Web Services account number of the account that created the configuration</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ShareStatus</code>: Whether the configuration is shared with other AWS accounts or shared with the current account by
-    /// another AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+    /// <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web Services accounts or shared with the current account by
+    /// another Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     /// </li>
     /// <li>
     /// <p>
@@ -11177,7 +11177,7 @@ pub struct ListResolverDnssecConfigsInput {
     /// <i>Optional</i>: An integer that specifies the maximum number of DNSSEC configuration results that you want Amazon Route 53 to return.
     /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100 configuration per page.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>(Optional) If the current AWS account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
+    /// <p>(Optional) If the current Amazon Web Services account has more than <code>MaxResults</code> DNSSEC configurations, use <code>NextToken</code>
     /// to get the second and subsequent pages of results.</p>
     /// <p>For the first <code>ListResolverDnssecConfigs</code> request, omit this value.</p>
     /// <p>For the second and subsequent requests, get the value of <code>NextToken</code> from the previous response and specify that value

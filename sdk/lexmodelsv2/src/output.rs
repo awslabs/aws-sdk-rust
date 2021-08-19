@@ -3326,8 +3326,8 @@ pub struct DescribeSlotOutput {
     /// <p>A timestamp of the date and time that the slot was last
     /// updated.</p>
     pub last_updated_date_time: std::option::Option<smithy_types::Instant>,
-    /// <p>Indicates whether the slot accepts multiple values in a
-    /// single utterance.</p>
+    /// <p>Indicates whether the slot accepts multiple values in a single
+    /// utterance.</p>
     /// <p>If the <code>multipleValuesSetting</code> is not set, the default
     /// value is <code>false</code>.</p>
     pub multiple_values_setting: std::option::Option<crate::model::MultipleValuesSetting>,
@@ -3501,8 +3501,8 @@ pub mod describe_slot_output {
             self.last_updated_date_time = input;
             self
         }
-        /// <p>Indicates whether the slot accepts multiple values in a
-        /// single utterance.</p>
+        /// <p>Indicates whether the slot accepts multiple values in a single
+        /// utterance.</p>
         /// <p>If the <code>multipleValuesSetting</code> is not set, the default
         /// value is <code>false</code>.</p>
         pub fn multiple_values_setting(

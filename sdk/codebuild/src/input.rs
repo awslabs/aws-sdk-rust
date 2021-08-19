@@ -928,7 +928,7 @@ pub mod create_project_input {
         /// version is used. If specified, it must be one of: </p>
         /// <ul>
         /// <li>
-        /// <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
         /// </li>
         /// <li>
         /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
@@ -952,7 +952,7 @@ pub mod create_project_input {
         /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes
         /// precedence over this <code>sourceVersion</code> (at the project level). </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
         /// </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
@@ -1031,8 +1031,8 @@ pub mod create_project_input {
             self.environment = input;
             self
         }
-        /// <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services
-        /// on behalf of the AWS account.</p>
+        /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
+        /// on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
@@ -1041,7 +1041,7 @@ pub mod create_project_input {
             self.service_role = input;
             self
         }
-        /// <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before it times out
+        /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out
         /// any build that has not been marked as completed. The default is 60 minutes.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
             self.timeout_in_minutes = Some(input);
@@ -1060,7 +1060,7 @@ pub mod create_project_input {
             self.queued_timeout_in_minutes = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
         /// artifacts.</p>
         /// <note>
         /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -1093,7 +1093,7 @@ pub mod create_project_input {
             self.tags = input;
             self
         }
-        /// <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+        /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
@@ -1115,7 +1115,7 @@ pub mod create_project_input {
             self.badge_enabled = input;
             self
         }
-        /// <p>Information about logs for the build project. These can be logs in Amazon CloudWatch Logs, logs
+        /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs
         /// uploaded to a specified S3 bucket, or both. </p>
         pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
             self.logs_config = Some(input);
@@ -1506,7 +1506,7 @@ pub mod create_webhook_input {
         pub(crate) build_type: std::option::Option<crate::model::WebhookBuildType>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
@@ -2532,7 +2532,7 @@ pub mod delete_webhook_input {
         pub(crate) project_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
@@ -3487,7 +3487,7 @@ pub mod import_source_credentials_input {
         }
         /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or
         /// Bitbucket repository. An OAUTH connection is not supported by the API and must be
-        /// created using the AWS CodeBuild console. </p>
+        /// created using the CodeBuild console. </p>
         pub fn auth_type(mut self, input: crate::model::AuthType) -> Self {
             self.auth_type = Some(input);
             self
@@ -3642,7 +3642,7 @@ pub mod invalidate_project_cache_input {
         pub(crate) project_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeBuild build project that the cache is reset for.</p>
+        /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
@@ -4346,7 +4346,7 @@ pub mod list_builds_for_project_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
@@ -5477,7 +5477,7 @@ pub mod list_shared_projects_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The criterion to be used to list build projects shared with the current AWS account
+        /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account
         /// or user. Valid values include: </p>
         /// <ul>
         /// <li>
@@ -5706,7 +5706,7 @@ pub mod list_shared_report_groups_input {
             self.sort_order = input;
             self
         }
-        /// <p> The criterion to be used to list report groups shared with the current AWS account or
+        /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or
         /// user. Valid values include: </p>
         /// <ul>
         /// <li>
@@ -6016,7 +6016,7 @@ pub mod put_resource_policy_input {
     }
     impl Builder {
         /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
-        /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
         /// </p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
@@ -6181,7 +6181,7 @@ pub mod retry_build_input {
         /// <code>RetryBuild</code> request. The token is included in the
         /// <code>RetryBuild</code> request and is valid for five minutes. If you repeat
         /// the <code>RetryBuild</code> request with the same token, but change a parameter,
-        /// AWS CodeBuild returns a parameter mismatch error.</p>
+        /// CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
@@ -6337,7 +6337,7 @@ pub mod retry_build_batch_input {
         /// <code>RetryBuildBatch</code> request. The token is included in the
         /// <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat
         /// the <code>RetryBuildBatch</code> request with the same token, but change a parameter,
-        /// AWS CodeBuild returns a parameter mismatch error.</p>
+        /// CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
@@ -6530,7 +6530,7 @@ pub mod start_build_input {
         pub(crate) debug_session_enabled: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeBuild build project to start running a build.</p>
+        /// <p>The name of the CodeBuild build project to start running a build.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
@@ -6575,7 +6575,7 @@ pub mod start_build_input {
         /// the latest version is used. If specified, the contents depends on the source
         /// provider:</p>
         /// <dl>
-        /// <dt>AWS CodeCommit</dt>
+        /// <dt>CodeCommit</dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
@@ -6604,7 +6604,7 @@ pub mod start_build_input {
         /// <p>If <code>sourceVersion</code> is specified at the project level, then this
         /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
@@ -6711,7 +6711,7 @@ pub mod start_build_input {
             self.git_clone_depth_override = input;
             self
         }
-        /// <p> Information about the Git submodules configuration for this build of an AWS CodeBuild build
+        /// <p> Information about the Git submodules configuration for this build of an CodeBuild build
         /// project. </p>
         pub fn git_submodules_config_override(
             mut self,
@@ -6732,7 +6732,7 @@ pub mod start_build_input {
         /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
         /// alternate buildspec file relative to the value of the built-in
         /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same AWS Region as the build project. Specify the buildspec
+        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
         /// file using its ARN (for example,
         /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
         /// provided or is set to an empty string, the source code must contain a buildspec file in
@@ -6764,7 +6764,7 @@ pub mod start_build_input {
         /// completion. If you use this option with a source provider other than GitHub, GitHub
         /// Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
         /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
-        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>
+        /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
         /// <note>
         /// <p> The status of a build triggered by a webhook is always reported to your source
         /// provider. </p>
@@ -6907,7 +6907,7 @@ pub mod start_build_input {
             self.queued_timeout_in_minutes_override = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build
         /// project. The CMK key encrypts the build output artifacts.</p>
         /// <note>
         /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -6929,7 +6929,7 @@ pub mod start_build_input {
         /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
         /// StartBuild request. The token is included in the StartBuild request and is valid for 5
         /// minutes. If you repeat the StartBuild request with the same token, but change a
-        /// parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+        /// parameter, CodeBuild returns a parameter mismatch error. </p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
@@ -6969,21 +6969,21 @@ pub mod start_build_input {
             self.registry_credential_override = input;
             self
         }
-        /// <p>The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid
+        /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid
         /// values: </p>
         /// <dl>
         /// <dt>CODEBUILD</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust AWS CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
         /// <dt>SERVICE_ROLE</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses your build project's service role. </p>
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
         /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an AWS CodeBuild curated image,
+        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
         /// you must use <code>CODEBUILD</code> credentials. </p>
         pub fn image_pull_credentials_type_override(
             mut self,
@@ -7250,7 +7250,7 @@ pub mod start_build_batch_input {
         /// the latest version is used. If specified, the contents depends on the source
         /// provider:</p>
         /// <dl>
-        /// <dt>AWS CodeCommit</dt>
+        /// <dt>CodeCommit</dt>
         /// <dd>
         /// <p>The commit ID, branch, or Git tag to use.</p>
         /// </dd>
@@ -7279,7 +7279,7 @@ pub mod start_build_batch_input {
         /// <p>If <code>sourceVersion</code> is specified at the project level, then this
         /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
         /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
             self
@@ -7407,7 +7407,7 @@ pub mod start_build_batch_input {
         /// <p>If this value is set, it can be either an inline buildspec definition, the path to an
         /// alternate buildspec file relative to the value of the built-in
         /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-        /// The bucket must be in the same AWS Region as the build project. Specify the buildspec
+        /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
         /// file using its ARN (for example,
         /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
         /// provided or is set to an empty string, the source code must contain a buildspec file in
@@ -7563,7 +7563,7 @@ pub mod start_build_batch_input {
             self.queued_timeout_in_minutes_override = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the batch build
+        /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build
         /// project. The CMK key encrypts the build output artifacts.</p>
         /// <note>
         /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -7586,7 +7586,7 @@ pub mod start_build_batch_input {
         /// <code>StartBuildBatch</code> request. The token is included in the
         /// <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat
         /// the <code>StartBuildBatch</code> request with the same token, but change a parameter,
-        /// AWS CodeBuild returns a parameter mismatch error.</p>
+        /// CodeBuild returns a parameter mismatch error.</p>
         pub fn idempotency_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.idempotency_token = Some(input.into());
             self
@@ -7627,21 +7627,21 @@ pub mod start_build_batch_input {
             self.registry_credential_override = input;
             self
         }
-        /// <p>The type of credentials AWS CodeBuild uses to pull images in your batch build. There are two valid
+        /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid
         /// values: </p>
         /// <dl>
         /// <dt>CODEBUILD</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses its own credentials. This requires that you
-        /// modify your ECR repository policy to trust AWS CodeBuild's service principal.</p>
+        /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+        /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
         /// </dd>
         /// <dt>SERVICE_ROLE</dt>
         /// <dd>
-        /// <p>Specifies that AWS CodeBuild uses your build project's service role. </p>
+        /// <p>Specifies that CodeBuild uses your build project's service role. </p>
         /// </dd>
         /// </dl>
         /// <p>When using a cross-account or private registry image, you must use
-        /// <code>SERVICE_ROLE</code> credentials. When using an AWS CodeBuild curated image,
+        /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
         /// you must use <code>CODEBUILD</code> credentials. </p>
         pub fn image_pull_credentials_type_override(
             mut self,
@@ -8186,7 +8186,7 @@ pub mod update_project_input {
         /// latest version is used. If specified, it must be one of: </p>
         /// <ul>
         /// <li>
-        /// <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p>
+        /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
         /// </li>
         /// <li>
         /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
@@ -8210,7 +8210,7 @@ pub mod update_project_input {
         /// <p> If <code>sourceVersion</code> is specified at the build level, then that version
         /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
         /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-        /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+        /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
         /// </p>
         pub fn source_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_version = Some(input.into());
@@ -8290,8 +8290,8 @@ pub mod update_project_input {
             self.environment = input;
             self
         }
-        /// <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent
-        /// AWS services on behalf of the AWS account.</p>
+        /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent
+        /// Amazon Web Services services on behalf of the Amazon Web Services account.</p>
         pub fn service_role(mut self, input: impl Into<std::string::String>) -> Self {
             self.service_role = Some(input.into());
             self
@@ -8300,7 +8300,7 @@ pub mod update_project_input {
             self.service_role = input;
             self
         }
-        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before
+        /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
         /// timing out any related build that did not get marked as completed.</p>
         pub fn timeout_in_minutes(mut self, input: i32) -> Self {
             self.timeout_in_minutes = Some(input);
@@ -8319,7 +8319,7 @@ pub mod update_project_input {
             self.queued_timeout_in_minutes = input;
             self
         }
-        /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+        /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
         /// artifacts.</p>
         /// <note>
         /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -8352,7 +8352,7 @@ pub mod update_project_input {
             self.tags = input;
             self
         }
-        /// <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+        /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
         pub fn vpc_config(mut self, input: crate::model::VpcConfig) -> Self {
             self.vpc_config = Some(input);
             self
@@ -8374,7 +8374,7 @@ pub mod update_project_input {
             self.badge_enabled = input;
             self
         }
-        /// <p> Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs,
+        /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs,
         /// logs in an S3 bucket, or both. </p>
         pub fn logs_config(mut self, input: crate::model::LogsConfig) -> Self {
             self.logs_config = Some(input);
@@ -8563,6 +8563,185 @@ impl UpdateProjectInput {
     /// Creates a new builder-style object to manufacture [`UpdateProjectInput`](crate::input::UpdateProjectInput)
     pub fn builder() -> crate::input::update_project_input::Builder {
         crate::input::update_project_input::Builder::default()
+    }
+}
+
+/// See [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput)
+pub mod update_project_visibility_input {
+    /// A builder for [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) project_arn: std::option::Option<std::string::String>,
+        pub(crate) project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
+        pub(crate) resource_access_role: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+        pub fn project_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.project_arn = Some(input.into());
+            self
+        }
+        pub fn set_project_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.project_arn = input;
+            self
+        }
+        /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+        /// <dl>
+        /// <dt>PUBLIC_READ</dt>
+        /// <dd>
+        /// <p>The project builds are visible to the public.</p>
+        /// </dd>
+        /// <dt>PRIVATE</dt>
+        /// <dd>
+        /// <p>The project builds are not visible to the public.</p>
+        /// </dd>
+        /// </dl>
+        pub fn project_visibility(mut self, input: crate::model::ProjectVisibilityType) -> Self {
+            self.project_visibility = Some(input);
+            self
+        }
+        pub fn set_project_visibility(
+            mut self,
+            input: std::option::Option<crate::model::ProjectVisibilityType>,
+        ) -> Self {
+            self.project_visibility = input;
+            self
+        }
+        /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
+        /// the project's builds.</p>
+        pub fn resource_access_role(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_access_role = Some(input.into());
+            self
+        }
+        pub fn set_resource_access_role(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.resource_access_role = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateProjectVisibilityInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateProjectVisibilityInput {
+                project_arn: self.project_arn,
+                project_visibility: self.project_visibility,
+                resource_access_role: self.resource_access_role,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateProjectVisibilityInputOperationOutputAlias =
+    crate::operation::UpdateProjectVisibility;
+#[doc(hidden)]
+pub type UpdateProjectVisibilityInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl UpdateProjectVisibilityInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateProjectVisibility`](crate::operation::UpdateProjectVisibility)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateProjectVisibility,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_update_project_visibility(&self)
+                .map_err(|err| {
+                smithy_http::operation::BuildError::SerializationError(err.into())
+            })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateProjectVisibility::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateProjectVisibility",
+                "codebuild",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "CodeBuild_20161006.UpdateProjectVisibility",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateProjectVisibilityInput`](crate::input::UpdateProjectVisibilityInput)
+    pub fn builder() -> crate::input::update_project_visibility_input::Builder {
+        crate::input::update_project_visibility_input::Builder::default()
     }
 }
 
@@ -8764,7 +8943,7 @@ pub mod update_webhook_input {
         pub(crate) build_type: std::option::Option<crate::model::WebhookBuildType>,
     }
     impl Builder {
-        /// <p>The name of the AWS CodeBuild project.</p>
+        /// <p>The name of the CodeBuild project.</p>
         pub fn project_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.project_name = Some(input.into());
             self
@@ -8956,7 +9135,7 @@ impl UpdateWebhookInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateWebhookInput {
-    /// <p>The name of the AWS CodeBuild project.</p>
+    /// <p>The name of the CodeBuild project.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a
     /// webhook is triggered. If the name of a branch matches the regular expression, then it is
@@ -9017,7 +9196,7 @@ pub struct UpdateReportGroupInput {
     /// <p>
     /// An updated list of tag key and value pairs associated with this report group.
     /// </p>
-    /// <p>These tags are available for use by AWS services that support AWS CodeBuild report group
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -9027,6 +9206,37 @@ impl std::fmt::Debug for UpdateReportGroupInput {
         formatter.field("arn", &self.arn);
         formatter.field("export_config", &self.export_config);
         formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateProjectVisibilityInput {
+    /// <p>The Amazon Resource Name (ARN) of the build project.</p>
+    pub project_arn: std::option::Option<std::string::String>,
+    /// <p>Specifies the visibility of the project's builds. Possible values are:</p>
+    /// <dl>
+    /// <dt>PUBLIC_READ</dt>
+    /// <dd>
+    /// <p>The project builds are visible to the public.</p>
+    /// </dd>
+    /// <dt>PRIVATE</dt>
+    /// <dd>
+    /// <p>The project builds are not visible to the public.</p>
+    /// </dd>
+    /// </dl>
+    pub project_visibility: std::option::Option<crate::model::ProjectVisibilityType>,
+    /// <p>The ARN of the IAM role that enables CodeBuild to access the CloudWatch Logs and Amazon S3 artifacts for
+    /// the project's builds.</p>
+    pub resource_access_role: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for UpdateProjectVisibilityInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateProjectVisibilityInput");
+        formatter.field("project_arn", &self.project_arn);
+        formatter.field("project_visibility", &self.project_visibility);
+        formatter.field("resource_access_role", &self.resource_access_role);
         formatter.finish()
     }
 }
@@ -9050,7 +9260,7 @@ pub struct UpdateProjectInput {
     /// latest version is used. If specified, it must be one of: </p>
     /// <ul>
     /// <li>
-    /// <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
     /// </li>
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
@@ -9074,7 +9284,7 @@ pub struct UpdateProjectInput {
     /// <p> If <code>sourceVersion</code> is specified at the build level, then that version
     /// takes precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p> For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-    /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
     /// </p>
     pub source_version: std::option::Option<std::string::String>,
     /// <p> An array of <code>ProjectSourceVersion</code> objects. If
@@ -9092,15 +9302,15 @@ pub struct UpdateProjectInput {
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information to be changed about the build environment for the build project.</p>
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
-    /// <p>The replacement ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent
-    /// AWS services on behalf of the AWS account.</p>
+    /// <p>The replacement ARN of the IAM role that enables CodeBuild to interact with dependent
+    /// Amazon Web Services services on behalf of the Amazon Web Services account.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before
+    /// <p>The replacement value in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before
     /// timing out any related build that did not get marked as completed.</p>
     pub timeout_in_minutes: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
     pub queued_timeout_in_minutes: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
     /// artifacts.</p>
     /// <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -9111,15 +9321,15 @@ pub struct UpdateProjectInput {
     /// </p>
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>An updated list of tag key and value pairs associated with this build project.</p>
-    /// <p>These tags are available for use by AWS services that support AWS CodeBuild build project
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build
     /// badge.</p>
     pub badge_enabled: std::option::Option<bool>,
-    /// <p> Information about logs for the build project. A project can create logs in Amazon CloudWatch Logs,
+    /// <p> Information about logs for the build project. A project can create logs in CloudWatch Logs,
     /// logs in an S3 bucket, or both. </p>
     pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p>
@@ -9209,7 +9419,7 @@ pub struct StartBuildBatchInput {
     /// the latest version is used. If specified, the contents depends on the source
     /// provider:</p>
     /// <dl>
-    /// <dt>AWS CodeCommit</dt>
+    /// <dt>CodeCommit</dt>
     /// <dd>
     /// <p>The commit ID, branch, or Git tag to use.</p>
     /// </dd>
@@ -9238,7 +9448,7 @@ pub struct StartBuildBatchInput {
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this
     /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-    /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectArtifacts</code> objects that contains information about the
     /// build output artifact overrides for the build project.</p>
@@ -9272,7 +9482,7 @@ pub struct StartBuildBatchInput {
     /// <p>If this value is set, it can be either an inline buildspec definition, the path to an
     /// alternate buildspec file relative to the value of the built-in
     /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-    /// The bucket must be in the same AWS Region as the build project. Specify the buildspec
+    /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
     /// file using its ARN (for example,
     /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
     /// provided or is set to an empty string, the source code must contain a buildspec file in
@@ -9314,7 +9524,7 @@ pub struct StartBuildBatchInput {
     pub build_timeout_in_minutes_override: std::option::Option<i32>,
     /// <p>The number of minutes a batch build is allowed to be queued before it times out.</p>
     pub queued_timeout_in_minutes_override: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the batch build
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the batch build
     /// project. The CMK key encrypts the build output artifacts.</p>
     /// <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -9327,7 +9537,7 @@ pub struct StartBuildBatchInput {
     /// <code>StartBuildBatch</code> request. The token is included in the
     /// <code>StartBuildBatch</code> request and is valid for five minutes. If you repeat
     /// the <code>StartBuildBatch</code> request with the same token, but change a parameter,
-    /// AWS CodeBuild returns a parameter mismatch error.</p>
+    /// CodeBuild returns a parameter mismatch error.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>A <code>LogsConfig</code> object that override the log settings defined in the batch build
     /// project.</p>
@@ -9335,21 +9545,21 @@ pub struct StartBuildBatchInput {
     /// <p>A <code>RegistryCredential</code> object that overrides credentials for access to a
     /// private registry.</p>
     pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
-    /// <p>The type of credentials AWS CodeBuild uses to pull images in your batch build. There are two valid
+    /// <p>The type of credentials CodeBuild uses to pull images in your batch build. There are two valid
     /// values: </p>
     /// <dl>
     /// <dt>CODEBUILD</dt>
     /// <dd>
-    /// <p>Specifies that AWS CodeBuild uses its own credentials. This requires that you
-    /// modify your ECR repository policy to trust AWS CodeBuild's service principal.</p>
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+    /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
     /// </dd>
     /// <dt>SERVICE_ROLE</dt>
     /// <dd>
-    /// <p>Specifies that AWS CodeBuild uses your build project's service role. </p>
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use
-    /// <code>SERVICE_ROLE</code> credentials. When using an AWS CodeBuild curated image,
+    /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
     /// you must use <code>CODEBUILD</code> credentials. </p>
     pub image_pull_credentials_type_override:
         std::option::Option<crate::model::ImagePullCredentialsType>,
@@ -9434,7 +9644,7 @@ impl std::fmt::Debug for StartBuildBatchInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartBuildInput {
-    /// <p>The name of the AWS CodeBuild build project to start running a build.</p>
+    /// <p>The name of the CodeBuild build project to start running a build.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p> An array of <code>ProjectSource</code> objects. </p>
     pub secondary_sources_override: std::option::Option<std::vec::Vec<crate::model::ProjectSource>>,
@@ -9446,7 +9656,7 @@ pub struct StartBuildInput {
     /// the latest version is used. If specified, the contents depends on the source
     /// provider:</p>
     /// <dl>
-    /// <dt>AWS CodeCommit</dt>
+    /// <dt>CodeCommit</dt>
     /// <dd>
     /// <p>The commit ID, branch, or Git tag to use.</p>
     /// </dd>
@@ -9475,7 +9685,7 @@ pub struct StartBuildInput {
     /// <p>If <code>sourceVersion</code> is specified at the project level, then this
     /// <code>sourceVersion</code> (at the build level) takes precedence. </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-    /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>. </p>
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>. </p>
     pub source_version: std::option::Option<std::string::String>,
     /// <p>Build output artifact settings that override, for this build only, the latest ones
     /// already defined in the build project.</p>
@@ -9500,7 +9710,7 @@ pub struct StartBuildInput {
     /// <p>The user-defined depth of history, with a minimum value of 0, that overrides, for this
     /// build only, any previous depth of history defined in the build project.</p>
     pub git_clone_depth_override: std::option::Option<i32>,
-    /// <p> Information about the Git submodules configuration for this build of an AWS CodeBuild build
+    /// <p> Information about the Git submodules configuration for this build of an CodeBuild build
     /// project. </p>
     pub git_submodules_config_override: std::option::Option<crate::model::GitSubmodulesConfig>,
     /// <p>A buildspec file declaration that overrides, for this build only, the latest one
@@ -9508,7 +9718,7 @@ pub struct StartBuildInput {
     /// <p> If this value is set, it can be either an inline buildspec definition, the path to an
     /// alternate buildspec file relative to the value of the built-in
     /// <code>CODEBUILD_SRC_DIR</code> environment variable, or the path to an S3 bucket.
-    /// The bucket must be in the same AWS Region as the build project. Specify the buildspec
+    /// The bucket must be in the same Amazon Web Services Region as the build project. Specify the buildspec
     /// file using its ARN (for example,
     /// <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>). If this value is not
     /// provided or is set to an empty string, the source code must contain a buildspec file in
@@ -9523,7 +9733,7 @@ pub struct StartBuildInput {
     /// completion. If you use this option with a source provider other than GitHub, GitHub
     /// Enterprise, or Bitbucket, an <code>invalidInputException</code> is thrown. </p>
     /// <p>To be able to report the build status to the source provider, the user associated with the source provider must
-    /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>AWS CodeBuild User Guide</i>.</p>
+    /// have write access to the repo. If the user does not have write access, the build status cannot be updated. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider access</a> in the <i>CodeBuild User Guide</i>.</p>
     /// <note>
     /// <p> The status of a build triggered by a webhook is always reported to your source
     /// provider. </p>
@@ -9559,7 +9769,7 @@ pub struct StartBuildInput {
     pub timeout_in_minutes_override: std::option::Option<i32>,
     /// <p> The number of minutes a build is allowed to be queued before it times out. </p>
     pub queued_timeout_in_minutes_override: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) that overrides the one specified in the build
+    /// <p>The Key Management Service customer master key (CMK) that overrides the one specified in the build
     /// project. The CMK key encrypts the build output artifacts.</p>
     /// <note>
     /// <p> You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -9571,28 +9781,28 @@ pub struct StartBuildInput {
     /// <p>A unique, case sensitive identifier you provide to ensure the idempotency of the
     /// StartBuild request. The token is included in the StartBuild request and is valid for 5
     /// minutes. If you repeat the StartBuild request with the same token, but change a
-    /// parameter, AWS CodeBuild returns a parameter mismatch error. </p>
+    /// parameter, CodeBuild returns a parameter mismatch error. </p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p> Log settings for this build that override the log settings defined in the build
     /// project. </p>
     pub logs_config_override: std::option::Option<crate::model::LogsConfig>,
     /// <p> The credentials for access to a private registry. </p>
     pub registry_credential_override: std::option::Option<crate::model::RegistryCredential>,
-    /// <p>The type of credentials AWS CodeBuild uses to pull images in your build. There are two valid
+    /// <p>The type of credentials CodeBuild uses to pull images in your build. There are two valid
     /// values: </p>
     /// <dl>
     /// <dt>CODEBUILD</dt>
     /// <dd>
-    /// <p>Specifies that AWS CodeBuild uses its own credentials. This requires that you
-    /// modify your ECR repository policy to trust AWS CodeBuild's service principal.</p>
+    /// <p>Specifies that CodeBuild uses its own credentials. This requires that you
+    /// modify your ECR repository policy to trust CodeBuild's service principal.</p>
     /// </dd>
     /// <dt>SERVICE_ROLE</dt>
     /// <dd>
-    /// <p>Specifies that AWS CodeBuild uses your build project's service role. </p>
+    /// <p>Specifies that CodeBuild uses your build project's service role. </p>
     /// </dd>
     /// </dl>
     /// <p>When using a cross-account or private registry image, you must use
-    /// <code>SERVICE_ROLE</code> credentials. When using an AWS CodeBuild curated image,
+    /// <code>SERVICE_ROLE</code> credentials. When using an CodeBuild curated image,
     /// you must use <code>CODEBUILD</code> credentials. </p>
     pub image_pull_credentials_type_override:
         std::option::Option<crate::model::ImagePullCredentialsType>,
@@ -9680,7 +9890,7 @@ pub struct RetryBuildBatchInput {
     /// <code>RetryBuildBatch</code> request. The token is included in the
     /// <code>RetryBuildBatch</code> request and is valid for five minutes. If you repeat
     /// the <code>RetryBuildBatch</code> request with the same token, but change a parameter,
-    /// AWS CodeBuild returns a parameter mismatch error.</p>
+    /// CodeBuild returns a parameter mismatch error.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
     /// <p>Specifies the type of retry to perform.</p>
     pub retry_type: std::option::Option<crate::model::RetryBuildBatchType>,
@@ -9704,7 +9914,7 @@ pub struct RetryBuildInput {
     /// <code>RetryBuild</code> request. The token is included in the
     /// <code>RetryBuild</code> request and is valid for five minutes. If you repeat
     /// the <code>RetryBuild</code> request with the same token, but change a parameter,
-    /// AWS CodeBuild returns a parameter mismatch error.</p>
+    /// CodeBuild returns a parameter mismatch error.</p>
     pub idempotency_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RetryBuildInput {
@@ -9720,7 +9930,7 @@ impl std::fmt::Debug for RetryBuildInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutResourcePolicyInput {
     /// <p> A JSON-formatted resource policy. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/project-sharing.html#project-sharing-share">Sharing
-    /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>AWS CodeBuild User Guide</i>.
+    /// a Project</a> and <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/report-groups-sharing.html#report-groups-sharing-share">Sharing a Report Group</a> in the <i>CodeBuild User Guide</i>.
     /// </p>
     pub policy: std::option::Option<std::string::String>,
     /// <p> The ARN of the <code>Project</code> or <code>ReportGroup</code> resource you want to
@@ -9761,7 +9971,7 @@ pub struct ListSharedReportGroupsInput {
     /// </li>
     /// </ul>
     pub sort_order: std::option::Option<crate::model::SortOrderType>,
-    /// <p> The criterion to be used to list report groups shared with the current AWS account or
+    /// <p> The criterion to be used to list report groups shared with the current Amazon Web Services account or
     /// user. Valid values include: </p>
     /// <ul>
     /// <li>
@@ -9801,7 +10011,7 @@ impl std::fmt::Debug for ListSharedReportGroupsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSharedProjectsInput {
-    /// <p> The criterion to be used to list build projects shared with the current AWS account
+    /// <p> The criterion to be used to list build projects shared with the current Amazon Web Services account
     /// or user. Valid values include: </p>
     /// <ul>
     /// <li>
@@ -10059,7 +10269,7 @@ impl std::fmt::Debug for ListCuratedEnvironmentImagesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListBuildsForProjectInput {
-    /// <p>The name of the AWS CodeBuild project.</p>
+    /// <p>The name of the CodeBuild project.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>The order to list results in. The results are sorted by build number, not the build
     /// identifier.</p>
@@ -10209,7 +10419,7 @@ impl std::fmt::Debug for ListBuildBatchesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidateProjectCacheInput {
-    /// <p>The name of the AWS CodeBuild build project that the cache is reset for.</p>
+    /// <p>The name of the CodeBuild build project that the cache is reset for.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InvalidateProjectCacheInput {
@@ -10233,7 +10443,7 @@ pub struct ImportSourceCredentialsInput {
     pub server_type: std::option::Option<crate::model::ServerType>,
     /// <p> The type of authentication used to connect to a GitHub, GitHub Enterprise, or
     /// Bitbucket repository. An OAUTH connection is not supported by the API and must be
-    /// created using the AWS CodeBuild console. </p>
+    /// created using the CodeBuild console. </p>
     pub auth_type: std::option::Option<crate::model::AuthType>,
     /// <p> Set to <code>false</code> to prevent overwriting the repository source credentials.
     /// Set to <code>true</code> to overwrite the repository source credentials. The default
@@ -10438,7 +10648,7 @@ impl std::fmt::Debug for DescribeCodeCoveragesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteWebhookInput {
-    /// <p>The name of the AWS CodeBuild project.</p>
+    /// <p>The name of the CodeBuild project.</p>
     pub project_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteWebhookInput {
@@ -10545,7 +10755,7 @@ impl std::fmt::Debug for DeleteBuildBatchInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateWebhookInput {
-    /// <p>The name of the AWS CodeBuild project.</p>
+    /// <p>The name of the CodeBuild project.</p>
     pub project_name: std::option::Option<std::string::String>,
     /// <p>A regular expression used to determine which repository branches are built when a
     /// webhook is triggered. If the name of a branch matches the regular expression, then it is
@@ -10595,7 +10805,7 @@ pub struct CreateReportGroupInput {
     /// <p>
     /// A list of tag key and value pairs associated with this report group.
     /// </p>
-    /// <p>These tags are available for use by AWS services that support AWS CodeBuild report group
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild report group
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -10625,7 +10835,7 @@ pub struct CreateProjectInput {
     /// version is used. If specified, it must be one of: </p>
     /// <ul>
     /// <li>
-    /// <p>For AWS CodeCommit: the commit ID, branch, or Git tag to use.</p>
+    /// <p>For CodeCommit: the commit ID, branch, or Git tag to use.</p>
     /// </li>
     /// <li>
     /// <p>For GitHub: the commit ID, pull request ID, branch name, or tag name that
@@ -10649,7 +10859,7 @@ pub struct CreateProjectInput {
     /// <p>If <code>sourceVersion</code> is specified at the build level, then that version takes
     /// precedence over this <code>sourceVersion</code> (at the project level). </p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/sample-source-version.html">Source Version Sample
-    /// with CodeBuild</a> in the <i>AWS CodeBuild User Guide</i>.
+    /// with CodeBuild</a> in the <i>CodeBuild User Guide</i>.
     /// </p>
     pub source_version: std::option::Option<std::string::String>,
     /// <p>An array of <code>ProjectSourceVersion</code> objects. If
@@ -10667,15 +10877,15 @@ pub struct CreateProjectInput {
     pub cache: std::option::Option<crate::model::ProjectCache>,
     /// <p>Information about the build environment for the build project.</p>
     pub environment: std::option::Option<crate::model::ProjectEnvironment>,
-    /// <p>The ARN of the AWS Identity and Access Management (IAM) role that enables AWS CodeBuild to interact with dependent AWS services
-    /// on behalf of the AWS account.</p>
+    /// <p>The ARN of the IAM role that enables CodeBuild to interact with dependent Amazon Web Services services
+    /// on behalf of the Amazon Web Services account.</p>
     pub service_role: std::option::Option<std::string::String>,
-    /// <p>How long, in minutes, from 5 to 480 (8 hours), for AWS CodeBuild to wait before it times out
+    /// <p>How long, in minutes, from 5 to 480 (8 hours), for CodeBuild to wait before it times out
     /// any build that has not been marked as completed. The default is 60 minutes.</p>
     pub timeout_in_minutes: std::option::Option<i32>,
     /// <p>The number of minutes a build is allowed to be queued before it times out. </p>
     pub queued_timeout_in_minutes: std::option::Option<i32>,
-    /// <p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output
+    /// <p>The Key Management Service customer master key (CMK) to be used for encrypting the build output
     /// artifacts.</p>
     /// <note>
     /// <p>You can use a cross-account KMS key to encrypt the build output artifacts if your
@@ -10686,15 +10896,15 @@ pub struct CreateProjectInput {
     /// </p>
     pub encryption_key: std::option::Option<std::string::String>,
     /// <p>A list of tag key and value pairs associated with this build project.</p>
-    /// <p>These tags are available for use by AWS services that support AWS CodeBuild build project
+    /// <p>These tags are available for use by Amazon Web Services services that support CodeBuild build project
     /// tags.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>VpcConfig enables AWS CodeBuild to access resources in an Amazon VPC.</p>
+    /// <p>VpcConfig enables CodeBuild to access resources in an Amazon VPC.</p>
     pub vpc_config: std::option::Option<crate::model::VpcConfig>,
     /// <p>Set this to true to generate a publicly accessible URL for your project's build
     /// badge.</p>
     pub badge_enabled: std::option::Option<bool>,
-    /// <p>Information about logs for the build project. These can be logs in Amazon CloudWatch Logs, logs
+    /// <p>Information about logs for the build project. These can be logs in CloudWatch Logs, logs
     /// uploaded to a specified S3 bucket, or both. </p>
     pub logs_config: std::option::Option<crate::model::LogsConfig>,
     /// <p>
@@ -10777,7 +10987,7 @@ impl std::fmt::Debug for BatchGetReportGroupsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchGetProjectsInput {
     /// <p>The names or ARNs of the build projects. To get information about a project shared
-    /// with your AWS account, its ARN must be specified. You cannot specify a shared project
+    /// with your Amazon Web Services account, its ARN must be specified. You cannot specify a shared project
     /// using its name.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }

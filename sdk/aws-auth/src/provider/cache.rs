@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use crate::provider::CredentialsResult;
+use crate::provider::{CredentialsError, CredentialsResult};
 use crate::Credentials;
 use std::future::Future;
 use std::sync::Arc;
@@ -15,7 +15,7 @@ pub(super) struct Cache {
     /// Amount of time before the actual credential expiration time
     /// where credentials are considered expired.
     buffer_time: Duration,
-    value: Arc<RwLock<OnceCell<Credentials>>>,
+    value: Arc<RwLock<OnceCell<(Credentials, SystemTime)>>>,
 }
 
 impl Cache {
@@ -28,7 +28,12 @@ impl Cache {
 
     #[cfg(test)]
     async fn get(&self) -> Option<Credentials> {
-        self.value.read().await.get().cloned()
+        self.value
+            .read()
+            .await
+            .get()
+            .cloned()
+            .map(|(creds, _expiry)| creds)
     }
 
     /// Attempts to refresh the cached credentials with the given async future.
@@ -39,18 +44,20 @@ impl Cache {
     pub async fn get_or_load<F, Fut>(&self, f: F) -> CredentialsResult
     where
         F: FnOnce() -> Fut,
-        Fut: Future<Output = CredentialsResult>,
+        Fut: Future<Output = Result<(Credentials, SystemTime), CredentialsError>>,
     {
         let lock = self.value.read().await;
         let future = lock.get_or_try_init(f);
-        future.await.map(|credentials| credentials.clone())
+        future
+            .await
+            .map(|(credentials, _expiry)| credentials.clone())
     }
 
     /// If the credentials are expired, clears the cache. Otherwise, yields the current credentials value.
     pub async fn yield_or_clear_if_expired(&self, now: SystemTime) -> Option<Credentials> {
         // Short-circuit if the credential is not expired
-        if let Some(credentials) = self.value.read().await.get() {
-            if !expired(credentials, self.buffer_time, now) {
+        if let Some((credentials, expiry)) = self.value.read().await.get() {
+            if !expired(*expiry, self.buffer_time, now) {
                 return Some(credentials.clone());
             }
         }
@@ -59,10 +66,10 @@ impl Cache {
         // check again that the credential is not already cleared. If it has been cleared,
         // then another thread is refreshing the cache by the time the write lock was acquired.
         let mut lock = self.value.write().await;
-        if let Some(credentials) = lock.get() {
+        if let Some((_credentials, expiration)) = lock.get() {
             // Also check that we're clearing the expired credentials and not credentials
             // that have been refreshed by another thread.
-            if expired(credentials, self.buffer_time, now) {
+            if expired(*expiration, self.buffer_time, now) {
                 *lock = OnceCell::new();
             }
         }
@@ -70,21 +77,21 @@ impl Cache {
     }
 }
 
-fn expired(credentials: &Credentials, buffer_time: Duration, now: SystemTime) -> bool {
-    credentials
-        .expiry()
-        .map(|expiration| now >= (expiration - buffer_time))
-        .expect("Cached credentials don't have an expiration time. This is a bug in aws-auth.")
+fn expired(expiration: SystemTime, buffer_time: Duration, now: SystemTime) -> bool {
+    now >= (expiration - buffer_time)
 }
 
 #[cfg(test)]
 mod tests {
     use super::{expired, Cache};
+    use crate::provider::CredentialsError;
     use crate::Credentials;
     use std::time::{Duration, SystemTime};
 
-    fn credentials(expired_secs: u64) -> Credentials {
-        Credentials::new("test", "test", None, Some(epoch_secs(expired_secs)), "test")
+    fn credentials(expired_secs: u64) -> Result<(Credentials, SystemTime), CredentialsError> {
+        let expiry = epoch_secs(expired_secs);
+        let creds = Credentials::new("test", "test", None, Some(expiry), "test");
+        Ok((creds, expiry))
     }
 
     fn epoch_secs(secs: u64) -> SystemTime {
@@ -93,10 +100,10 @@ mod tests {
 
     #[test]
     fn expired_check() {
-        let creds = credentials(100);
-        assert!(expired(&creds, Duration::from_secs(10), epoch_secs(1000)));
-        assert!(expired(&creds, Duration::from_secs(10), epoch_secs(90)));
-        assert!(!expired(&creds, Duration::from_secs(10), epoch_secs(10)));
+        let ts = epoch_secs(100);
+        assert!(expired(ts, Duration::from_secs(10), epoch_secs(1000)));
+        assert!(expired(ts, Duration::from_secs(10), epoch_secs(90)));
+        assert!(!expired(ts, Duration::from_secs(10), epoch_secs(10)));
     }
 
     #[test_env_log::test(tokio::test)]
@@ -108,7 +115,7 @@ mod tests {
             .is_none());
 
         cache
-            .get_or_load(|| async { Ok(credentials(100)) })
+            .get_or_load(|| async { credentials(100) })
             .await
             .unwrap();
         assert_eq!(Some(epoch_secs(100)), cache.get().await.unwrap().expiry());

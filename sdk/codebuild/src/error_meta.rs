@@ -713,6 +713,26 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateProjectError>> for E
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::UpdateProjectVisibilityError>> for Error {
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateProjectVisibilityError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateProjectVisibilityErrorKind::InvalidInputException(inner) => {
+                    Error::InvalidInputException(inner)
+                }
+                crate::error::UpdateProjectVisibilityErrorKind::ResourceNotFoundException(
+                    inner,
+                ) => Error::ResourceNotFoundException(inner),
+                crate::error::UpdateProjectVisibilityErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::UpdateReportGroupError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::UpdateReportGroupError>) -> Self {
         match err {

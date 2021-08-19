@@ -642,7 +642,7 @@ pub enum Field {
     StringValue(std::string::String),
 }
 impl Field {
-    pub fn as_blob_value(&self) -> Result<&smithy_types::Blob, &Self> {
+    pub fn as_blob_value(&self) -> std::result::Result<&smithy_types::Blob, &Self> {
         if let Field::BlobValue(val) = &self {
             Ok(&val)
         } else {
@@ -652,7 +652,7 @@ impl Field {
     pub fn is_blob_value(&self) -> bool {
         self.as_blob_value().is_ok()
     }
-    pub fn as_boolean_value(&self) -> Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let Field::BooleanValue(val) = &self {
             Ok(&val)
         } else {
@@ -662,7 +662,7 @@ impl Field {
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let Field::DoubleValue(val) = &self {
             Ok(&val)
         } else {
@@ -672,7 +672,7 @@ impl Field {
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    pub fn as_is_null(&self) -> Result<&bool, &Self> {
+    pub fn as_is_null(&self) -> std::result::Result<&bool, &Self> {
         if let Field::IsNull(val) = &self {
             Ok(&val)
         } else {
@@ -682,7 +682,7 @@ impl Field {
     pub fn is_is_null(&self) -> bool {
         self.as_is_null().is_ok()
     }
-    pub fn as_long_value(&self) -> Result<&i64, &Self> {
+    pub fn as_long_value(&self) -> std::result::Result<&i64, &Self> {
         if let Field::LongValue(val) = &self {
             Ok(&val)
         } else {
@@ -692,7 +692,7 @@ impl Field {
     pub fn is_long_value(&self) -> bool {
         self.as_long_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let Field::StringValue(val) = &self {
             Ok(&val)
         } else {

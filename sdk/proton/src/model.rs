@@ -691,7 +691,7 @@ pub enum TemplateVersionSourceInput {
 }
 impl TemplateVersionSourceInput {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_s3(&self) -> Result<&crate::model::S3ObjectSource, &Self> {
+    pub fn as_s3(&self) -> std::result::Result<&crate::model::S3ObjectSource, &Self> {
         if let TemplateVersionSourceInput::S3(val) = &self {
             Ok(&val)
         } else {

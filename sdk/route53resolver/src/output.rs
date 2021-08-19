@@ -670,7 +670,7 @@ pub struct ListResolverRulesOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Resolver rules that were created using the current AWS account and that match the specified filters, if any.</p>
+    /// <p>The Resolver rules that were created using the current Amazon Web Services account and that match the specified filters, if any.</p>
     pub resolver_rules: std::option::Option<std::vec::Vec<crate::model::ResolverRule>>,
 }
 impl std::fmt::Debug for ListResolverRulesOutput {
@@ -752,7 +752,7 @@ pub struct ListResolverRuleAssociationsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The associations that were created between Resolver rules and VPCs using the current AWS account, and that match the
+    /// <p>The associations that were created between Resolver rules and VPCs using the current Amazon Web Services account, and that match the
     /// specified filters, if any.</p>
     pub resolver_rule_associations:
         std::option::Option<std::vec::Vec<crate::model::ResolverRuleAssociation>>,
@@ -1068,7 +1068,7 @@ pub struct ListResolverEndpointsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The value that you specified for <code>MaxResults</code> in the request.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The Resolver endpoints that were created by using the current AWS account, and that match the specified filters, if any.</p>
+    /// <p>The Resolver endpoints that were created by using the current Amazon Web Services account, and that match the specified filters, if any.</p>
     pub resolver_endpoints: std::option::Option<std::vec::Vec<crate::model::ResolverEndpoint>>,
 }
 impl std::fmt::Debug for ListResolverEndpointsOutput {
@@ -1231,7 +1231,7 @@ impl ListResolverEndpointIpAddressesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResolverDnssecConfigsOutput {
-    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current AWS account,
+    /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
     /// <code>NextToken</code> doesn't appear in the response.</p>
     /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
@@ -1240,7 +1240,7 @@ pub struct ListResolverDnssecConfigsOutput {
     pub next_token: std::option::Option<std::string::String>,
     /// <p>An array that contains one
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ResolverDnssecConfig.html">ResolverDnssecConfig</a> element
-    /// for each configuration for DNSSEC validation that is associated with the current AWS account.</p>
+    /// for each configuration for DNSSEC validation that is associated with the current Amazon Web Services account.</p>
     pub resolver_dnssec_configs:
         std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
 }
@@ -1263,7 +1263,7 @@ pub mod list_resolver_dnssec_configs_output {
             std::option::Option<std::vec::Vec<crate::model::ResolverDnssecConfig>>,
     }
     impl Builder {
-        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current AWS account,
+        /// <p>If a response includes the last of the DNSSEC configurations that are associated with the current Amazon Web Services account,
         /// <code>NextToken</code> doesn't appear in the response.</p>
         /// <p>If a response doesn't include the last of the configurations, you can get more configurations by submitting another
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListResolverDnssecConfigs.html">ListResolverDnssecConfigs</a>
@@ -2246,9 +2246,9 @@ impl GetResolverDnssecConfigOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetFirewallRuleGroupPolicyOutput {
-    /// <p>The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule
-    /// group. You can use the policy to share the rule group using AWS Resource Access Manager
-    /// (AWS RAM). </p>
+    /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
+    /// group. You can use the policy to share the rule group using Resource Access Manager
+    /// (RAM). </p>
     pub firewall_rule_group_policy: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetFirewallRuleGroupPolicyOutput {
@@ -2270,9 +2270,9 @@ pub mod get_firewall_rule_group_policy_output {
         pub(crate) firewall_rule_group_policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS Identity and Access Management (AWS IAM) policy for sharing the specified rule
-        /// group. You can use the policy to share the rule group using AWS Resource Access Manager
-        /// (AWS RAM). </p>
+        /// <p>The Identity and Access Management (Amazon Web Services IAM) policy for sharing the specified rule
+        /// group. You can use the policy to share the rule group using Resource Access Manager
+        /// (RAM). </p>
         pub fn firewall_rule_group_policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.firewall_rule_group_policy = Some(input.into());
             self

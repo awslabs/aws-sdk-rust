@@ -14,7 +14,7 @@ pub mod add_tags_to_resource_input {
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
         /// ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
@@ -191,9 +191,9 @@ pub mod authorize_cache_security_group_ingress_input {
             self.ec2_security_group_name = input;
             self
         }
-        /// <p>The AWS account number of the Amazon EC2 security group owner.
-        /// Note that this is not the same thing as an AWS access key ID -
-        /// you must provide a valid AWS account number for this parameter.</p>
+        /// <p>The Amazon account number of the Amazon EC2 security group owner.
+        /// Note that this is not the same thing as an Amazon access key ID -
+        /// you must provide a valid Amazon account number for this parameter.</p>
         pub fn ec2_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -2321,8 +2321,8 @@ pub mod create_global_replication_group_input {
     }
     impl Builder {
         /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix
-        /// to the Global datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
-        /// <p>For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS CLI with Global datastores </a>.</p>
+        /// to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
+        /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
         pub fn global_replication_group_id_suffix(
             mut self,
             input: impl Into<std::string::String>,
@@ -9407,7 +9407,7 @@ pub mod disassociate_global_replication_group_input {
             self.replication_group_id = input;
             self
         }
-        /// <p>The AWS region of secondary cluster you wish to remove from the Global datastore</p>
+        /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
         pub fn replication_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.replication_group_region = Some(input.into());
             self
@@ -9567,7 +9567,7 @@ pub mod failover_global_replication_group_input {
             self.global_replication_group_id = input;
             self
         }
-        /// <p>The AWS region of the primary cluster of the Global datastore</p>
+        /// <p>The Amazon region of the primary cluster of the Global datastore</p>
         pub fn primary_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.primary_region = Some(input.into());
             self
@@ -10259,7 +10259,7 @@ pub mod list_tags_for_resource_input {
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
@@ -11583,7 +11583,7 @@ pub mod modify_replication_group_input {
             self.automatic_failover_enabled = input;
             self
         }
-        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+        /// <p>A flag to indicate MultiAZ is enabled.</p>
         pub fn multi_az_enabled(mut self, input: bool) -> Self {
             self.multi_az_enabled = Some(input);
             self
@@ -13139,7 +13139,7 @@ pub mod remove_tags_from_resource_input {
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed,
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_name = Some(input.into());
             self
@@ -13489,9 +13489,9 @@ pub mod revoke_cache_security_group_ingress_input {
             self.ec2_security_group_name = input;
             self
         }
-        /// <p>The AWS account number of the Amazon EC2 security group owner.
-        /// Note that this is not the same thing as an AWS access key ID - you must provide
-        /// a valid AWS account number for this parameter.</p>
+        /// <p>The Amazon account number of the Amazon EC2 security group owner.
+        /// Note that this is not the same thing as an Amazon access key ID - you must provide
+        /// a valid Amazon account number for this parameter.</p>
         pub fn ec2_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -13984,9 +13984,9 @@ pub struct RevokeCacheSecurityGroupIngressInput {
     pub cache_security_group_name: std::option::Option<std::string::String>,
     /// <p>The name of the Amazon EC2 security group to revoke access from.</p>
     pub ec2_security_group_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account number of the Amazon EC2 security group owner.
-    /// Note that this is not the same thing as an AWS access key ID - you must provide
-    /// a valid AWS account number for this parameter.</p>
+    /// <p>The Amazon account number of the Amazon EC2 security group owner.
+    /// Note that this is not the same thing as an Amazon access key ID - you must provide
+    /// a valid Amazon account number for this parameter.</p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for RevokeCacheSecurityGroupIngressInput {
@@ -14042,7 +14042,7 @@ pub struct RemoveTagsFromResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed,
     /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
     /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>A list of <code>TagKeys</code> identifying the tags you want removed from the named resource.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -14249,7 +14249,7 @@ pub struct ModifyReplicationGroupInput {
     /// <p>Valid values: <code>true</code> | <code>false</code>
     /// </p>
     pub automatic_failover_enabled: std::option::Option<bool>,
-    /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+    /// <p>A flag to indicate MultiAZ is enabled.</p>
     pub multi_az_enabled: std::option::Option<bool>,
     /// <p>Deprecated. This parameter is not used.</p>
     pub node_group_id: std::option::Option<std::string::String>,
@@ -14888,7 +14888,7 @@ pub struct ListTagsForResourceInput {
     /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
     /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
     /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
     pub resource_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListTagsForResourceInput {
@@ -14964,7 +14964,7 @@ pub struct IncreaseNodeGroupsInGlobalReplicationGroupInput {
     pub global_replication_group_id: std::option::Option<std::string::String>,
     /// <p>The number of node groups you wish to add</p>
     pub node_group_count: i32,
-    /// <p>Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+    /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
     pub regional_configurations:
         std::option::Option<std::vec::Vec<crate::model::RegionalConfiguration>>,
     /// <p>Indicates that the process begins immediately. At present, the only permitted value for this parameter is true.</p>
@@ -14989,7 +14989,7 @@ impl std::fmt::Debug for IncreaseNodeGroupsInGlobalReplicationGroupInput {
 pub struct FailoverGlobalReplicationGroupInput {
     /// <p>The name of the Global datastore</p>
     pub global_replication_group_id: std::option::Option<std::string::String>,
-    /// <p>The AWS region of the primary cluster of the Global datastore</p>
+    /// <p>The Amazon region of the primary cluster of the Global datastore</p>
     pub primary_region: std::option::Option<std::string::String>,
     /// <p>The name of the primary replication group</p>
     pub primary_replication_group_id: std::option::Option<std::string::String>,
@@ -15017,7 +15017,7 @@ pub struct DisassociateGlobalReplicationGroupInput {
     pub global_replication_group_id: std::option::Option<std::string::String>,
     /// <p>The name of the secondary cluster you wish to remove from the Global datastore</p>
     pub replication_group_id: std::option::Option<std::string::String>,
-    /// <p>The AWS region of secondary cluster you wish to remove from the Global datastore</p>
+    /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
     pub replication_group_region: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisassociateGlobalReplicationGroupInput {
@@ -16850,8 +16850,8 @@ impl std::fmt::Debug for CreateReplicationGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGlobalReplicationGroupInput {
     /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix
-    /// to the Global datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
-    /// <p>For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS CLI with Global datastores </a>.</p>
+    /// to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
+    /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
     pub global_replication_group_id_suffix: std::option::Option<std::string::String>,
     /// <p>Provides details of the Global datastore</p>
     pub global_replication_group_description: std::option::Option<std::string::String>,
@@ -17454,9 +17454,9 @@ pub struct AuthorizeCacheSecurityGroupIngressInput {
     pub cache_security_group_name: std::option::Option<std::string::String>,
     /// <p>The Amazon EC2 security group to be authorized for ingress to the cache security group.</p>
     pub ec2_security_group_name: std::option::Option<std::string::String>,
-    /// <p>The AWS account number of the Amazon EC2 security group owner.
-    /// Note that this is not the same thing as an AWS access key ID -
-    /// you must provide a valid AWS account number for this parameter.</p>
+    /// <p>The Amazon account number of the Amazon EC2 security group owner.
+    /// Note that this is not the same thing as an Amazon access key ID -
+    /// you must provide a valid Amazon account number for this parameter.</p>
     pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for AuthorizeCacheSecurityGroupIngressInput {
@@ -17480,7 +17480,7 @@ pub struct AddTagsToResourceInput {
     /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
     /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
     /// ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>
-    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+    /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
     pub resource_name: std::option::Option<std::string::String>,
     /// <p>A list of tags to be added to this resource. A tag is a key-value pair.
     /// A tag key must be accompanied by a tag value, although null is accepted.</p>

@@ -4141,6 +4141,19 @@ where
                                     .map(|v| v.to_i64()),
                                 );
                             }
+                            "ColorRange" => {
+                                builder = builder.set_color_range(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| {
+                                        s.to_unescaped().map(|u| {
+                                            crate::model::VideoColorRange::from(u.as_ref())
+                                        })
+                                    })
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -6417,6 +6430,30 @@ where
                             "ShotSegment" => {
                                 builder = builder.set_shot_segment(
                                     crate::json_deser::deser_structure_shot_segment(tokens)?,
+                                );
+                            }
+                            "StartFrameNumber" => {
+                                builder = builder.set_start_frame_number(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "EndFrameNumber" => {
+                                builder = builder.set_end_frame_number(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
+                                );
+                            }
+                            "DurationFrames" => {
+                                builder = builder.set_duration_frames(
+                                    smithy_json::deserialize::token::expect_number_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|v| v.to_i64()),
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

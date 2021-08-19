@@ -2654,14 +2654,51 @@ pub mod fluent_builders {
             self
         }
         /// <p>The interpolation type.</p>
-        /// <p>Valid values: <code>LINEAR_INTERPOLATION</code>
+        /// <p>Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code>
         /// </p>
+        /// <p>For the <code>LOCF_INTERPOLATION</code> interpolation, if no data point is found for an interval,
+        /// IoT SiteWise returns the same interpolated value calculated for the previous interval
+        /// and carries forward this interpolated value until a new data point is found.</p>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine every 24 hours over a duration of 7 days.
+        /// If the <code>LOCF_INTERPOLATION</code> interpolation starts on July 1, 2021, at 9 AM, IoT SiteWise uses the data points from July 1, 2021,
+        /// at 9 AM to July 2, 2021, at 9 AM to compute the first interpolated value.
+        /// If no data points is found after 9 A.M. on July 2, 2021, IoT SiteWise uses the same interpolated value for the rest of the days.</p>
         pub fn r#type(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.r#type(input);
             self
         }
         pub fn set_type(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_type(input);
+            self
+        }
+        /// <p>The query interval for the window in seconds. IoT SiteWise computes each interpolated value by using data points
+        /// from the timestamp of each interval minus the window to the timestamp of each interval plus the window.
+        /// If not specified, the window is between the start time minus the interval and the end time plus the interval. </p>
+        /// <note>
+        /// <ul>
+        /// <li>
+        /// <p>If you specify a value for the <code>intervalWindowInSeconds</code> parameter,
+        /// the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.</p>
+        /// </li>
+        /// <li>
+        /// <p>If no data point is found during the specified query window,
+        /// IoT SiteWise won't return an interpolated value for the interval.
+        /// This indicates that there's a gap in the ingested data points.</p>
+        /// </li>
+        /// </ul>
+        /// </note>
+        /// <p>For example, you can get the interpolated temperature values for a wind turbine
+        /// every 24 hours over a duration of 7 days. If the interpolation starts on July 1, 2021,
+        /// at 9 AM with a window of 2 hours, IoT SiteWise uses the data points from 7 AM (9 AM - 2 hours)
+        /// to 11 AM (9 AM + 2 hours) on July 2, 2021 to compute the first interpolated value,
+        /// uses the data points from 7 AM (9 AM - 2 hours) to 11 AM (9 AM + 2 hours) on July 3, 2021
+        /// to compute the second interpolated value, and so on. </p>
+        pub fn interval_window_in_seconds(mut self, input: i64) -> Self {
+            self.inner = self.inner.interval_window_in_seconds(input);
+            self
+        }
+        pub fn set_interval_window_in_seconds(mut self, input: std::option::Option<i64>) -> Self {
+            self.inner = self.inner.set_interval_window_in_seconds(input);
             self
         }
     }

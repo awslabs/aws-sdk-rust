@@ -9076,7 +9076,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListInfrastructureConfigurationsInput {
-    /// <p>The filters.</p>
+    /// <p>You can filter on <code>name</code> to streamline results.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9102,7 +9102,34 @@ pub struct ListImagesInput {
     /// owned by yourself, by Amazon, or those images that have been shared with you by other
     /// customers.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>The filters.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>osVersion</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Requests a list of images with a specific recipe name.</p>
     pub by_name: bool,
@@ -9135,7 +9162,24 @@ pub struct ListImageRecipesInput {
     /// view image recipes owned by yourself, by Amazon, or those image recipes that have been shared
     /// with you by other customers.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>The filters.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>parentImage</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9157,7 +9201,39 @@ impl std::fmt::Debug for ListImageRecipesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListImagePipelinesInput {
-    /// <p>The filters.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>description</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>distributionConfigurationArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>imageRecipeArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>infrastructureConfigurationArn</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>status</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9180,7 +9256,19 @@ impl std::fmt::Debug for ListImagePipelinesInput {
 pub struct ListImagePipelineImagesInput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline whose images you want to view.</p>
     pub image_pipeline_arn: std::option::Option<std::string::String>,
-    /// <p>The filters.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9224,7 +9312,34 @@ impl std::fmt::Debug for ListImagePackagesInput {
 pub struct ListImageBuildVersionsInput {
     /// <p>The Amazon Resource Name (ARN) of the image whose build versions you want to retrieve.</p>
     pub image_version_arn: std::option::Option<std::string::String>,
-    /// <p>The filters.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>osVersion</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9246,13 +9361,7 @@ impl std::fmt::Debug for ListImageBuildVersionsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDistributionConfigurationsInput {
-    /// <p>The filters.</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>name</code> - The name of this distribution configuration.</p>
-    /// </li>
-    /// </ul>
+    /// <p>You can filter on <code>name</code> to streamline results.</p>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum items to return in a request.</p>
     pub max_results: std::option::Option<i32>,
@@ -9275,7 +9384,29 @@ impl std::fmt::Debug for ListDistributionConfigurationsInput {
 pub struct ListContainerRecipesInput {
     /// <p>Returns container recipes belonging to the specified owner, that have been shared with you. You can omit this field to return container recipes belonging to your account.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>Request filters that are used to narrow the list of container images that are returned.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>containerType</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>parentImage</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>The maximum number of results to return in the list.</p>
     pub max_results: std::option::Option<i32>,
@@ -9301,7 +9432,39 @@ pub struct ListComponentsInput {
     /// components owned by yourself, by Amazon, or those components that have been shared with you by
     /// other customers.</p>
     pub owner: std::option::Option<crate::model::Ownership>,
-    /// <p>The filters.</p>
+    /// <p>Use the following filters to streamline results:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>description</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>name</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>platform</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>supportedOsVersion</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>type</code>
+    /// </p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>version</code>
+    /// </p>
+    /// </li>
+    /// </ul>
     pub filters: std::option::Option<std::vec::Vec<crate::model::Filter>>,
     /// <p>Returns the list of component build versions for the specified name.</p>
     pub by_name: bool,

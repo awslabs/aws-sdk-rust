@@ -199,7 +199,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeCostCategoryDefiniti
     }
 }
 
-/// <p>Retrieves all of the cost anomalies detected on your account, during the time period
+/// <p>Retrieves all of the cost anomalies detected on your account during the time period that's
 /// specified by the <code>DateInterval</code> object. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetAnomalies {
@@ -284,12 +284,11 @@ impl smithy_http::response::ParseStrictResponse for GetAnomalySubscriptions {
     }
 }
 
-/// <p>Retrieves cost and usage metrics for your account. You can specify which cost and usage-related metric, such as
-/// <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group
-/// your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list
-/// of valid dimensions, see the
-/// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-/// operation. Management account in an organization in AWS Organizations have access to all member accounts.</p>
+/// <p>Retrieves cost and usage metrics for your account. You can specify which cost and
+/// usage-related metric that you want the request to return. For example, you can specify
+/// <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group your
+/// data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific
+/// time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts.</p>
 /// <p>For information about filter limitations, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-limits.html">Quotas and restrictions</a> in the <i>Billing and Cost Management User Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCostAndUsage {
@@ -322,10 +321,9 @@ impl smithy_http::response::ParseStrictResponse for GetCostAndUsage {
 /// usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that
 /// you want the request to return. You can also filter and group your data by various dimensions,
 /// such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list
-/// of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in AWS
-/// Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p>
+/// of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p>
 /// <note>
-/// <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost Explorer</a> in the <i>AWS Billing and Cost Management User Guide</i>.</p>
+/// <p>This is an opt-in only feature. You can enable this feature from the Cost Explorer Settings page. For information on how to access the Settings page, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-access.html">Controlling Access for Cost Explorer</a> in the <i>Billing and Cost Management User Guide</i>.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetCostAndUsageWithResources {
@@ -512,12 +510,12 @@ impl smithy_http::response::ParseStrictResponse for GetReservationCoverage {
 
 /// <p>Gets recommendations for which reservations to purchase. These recommendations could help you reduce your costs.
 /// Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p>
-/// <p>AWS generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage
-/// into categories that are eligible for a reservation. After AWS has these categories, it simulates every combination of reservations
+/// <p>Amazon Web Services generates your recommendations by identifying your On-Demand usage during a specific time period and collecting your usage
+/// into categories that are eligible for a reservation. After Amazon Web Services has these categories, it simulates every combination of reservations
 /// in each category of usage to identify the best number of each type of RI to purchase to maximize your estimated savings. </p>
-/// <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region
-/// and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. AWS recommends the smallest size instance
-/// in an instance family. This makes it easier to purchase a size-flexible RI. AWS also shows the equal number of normalized units
+/// <p>For example, Amazon Web Services automatically aggregates your Amazon EC2 Linux, shared tenancy, and c4 family usage in the US West (Oregon) Region
+/// and recommends that you buy size-flexible regional reservations to apply to the c4 family usage. Amazon Web Services recommends the smallest size instance
+/// in an instance family. This makes it easier to purchase a size-flexible RI. Amazon Web Services also shows the equal number of normalized units
 /// so that you can purchase any instance size that you want. For this example, your RI recommendation would be for <code>c4.large</code>
 /// because that is the smallest size instance in the c4 instance family.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -585,7 +583,7 @@ impl smithy_http::response::ParseStrictResponse for GetReservationUtilization {
 /// <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/ce-rightsizing.html">Optimizing
 /// Your Cost with Rightsizing
 /// Recommendations</a>
-/// in the <i>AWS Billing and Cost Management User
+/// in the <i>Billing and Cost Management User
 /// Guide</i>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetRightsizingRecommendation {
@@ -868,7 +866,7 @@ impl smithy_http::response::ParseStrictResponse for ProvideAnomalyFeedback {
 }
 
 /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and
-/// does not change anomalies detected in the past. </p>
+/// doesn'tt change anomalies detected in the past. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAnomalyMonitor {
     _private: (),
@@ -896,7 +894,7 @@ impl smithy_http::response::ParseStrictResponse for UpdateAnomalyMonitor {
     }
 }
 
-/// <p> Updates an existing cost anomaly monitor subscription. </p>
+/// <p>Updates an existing cost anomaly monitor subscription. </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateAnomalySubscription {
     _private: (),

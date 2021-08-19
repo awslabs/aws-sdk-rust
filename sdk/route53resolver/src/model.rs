@@ -41,7 +41,7 @@ pub struct ResolverRule {
     pub target_ips: std::option::Option<std::vec::Vec<crate::model::TargetAddress>>,
     /// <p>The ID of the endpoint that the rule is associated with.</p>
     pub resolver_endpoint_id: std::option::Option<std::string::String>,
-    /// <p>When a rule is shared with another AWS account, the account ID of the account that the rule is shared with.</p>
+    /// <p>When a rule is shared with another Amazon Web Services account, the account ID of the account that the rule is shared with.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Whether the rule is shared and, if so, whether the current account is sharing the rule with
     /// another account, or another account is sharing the rule with the current account.</p>
@@ -212,7 +212,7 @@ pub mod resolver_rule {
             self.resolver_endpoint_id = input;
             self
         }
-        /// <p>When a rule is shared with another AWS account, the account ID of the account that the rule is shared with.</p>
+        /// <p>When a rule is shared with another Amazon Web Services account, the account ID of the account that the rule is shared with.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -1320,7 +1320,7 @@ pub struct FirewallRuleGroupAssociation {
     pub priority: std::option::Option<i32>,
     /// <p>If enabled, this setting disallows modification or removal of the association, to help prevent against accidentally altering DNS firewall protections. </p>
     pub mutation_protection: std::option::Option<crate::model::MutationProtectionStatus>,
-    /// <p>The owner of the association, used only for associations that are not managed by you. If you use AWS Firewall Manager to
+    /// <p>The owner of the association, used only for associations that are not managed by you. If you use Firewall Manager to
     /// manage your DNS Firewalls, then this reports Firewall Manager as the managed owner.</p>
     pub managed_owner_name: std::option::Option<std::string::String>,
     /// <p>The current status of the association.</p>
@@ -1449,7 +1449,7 @@ pub mod firewall_rule_group_association {
             self.mutation_protection = input;
             self
         }
-        /// <p>The owner of the association, used only for associations that are not managed by you. If you use AWS Firewall Manager to
+        /// <p>The owner of the association, used only for associations that are not managed by you. If you use Firewall Manager to
         /// manage your DNS Firewalls, then this reports Firewall Manager as the managed owner.</p>
         pub fn managed_owner_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.managed_owner_name = Some(input.into());
@@ -2220,7 +2220,7 @@ pub struct FirewallConfig {
     pub id: std::option::Option<std::string::String>,
     /// <p>The ID of the VPC that this firewall configuration applies to.</p>
     pub resource_id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID of the owner of the VPC that this firewall configuration applies to.</p>
+    /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>Determines how DNS Firewall operates during failures, for example when all traffic that is sent to DNS Firewall fails to receive a reply. </p>
     /// <ul>
@@ -2276,7 +2276,7 @@ pub mod firewall_config {
             self.resource_id = input;
             self
         }
-        /// <p>The AWS account ID of the owner of the VPC that this firewall configuration applies to.</p>
+        /// <p>The Amazon Web Services account ID of the owner of the VPC that this firewall configuration applies to.</p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -2483,7 +2483,7 @@ pub struct Filter {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through on the way from your network to your VPCs in a region, or
+    /// <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through on the way from your network to your VPCs in a region, or
     /// the VPC that outbound queries pass through on the way from your VPCs to your network. In a
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
     /// request, <code>SubnetId</code> indirectly identifies the VPC. In a
@@ -2602,7 +2602,7 @@ pub struct Filter {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>Destination</code>: The AWS service that you want to forward query logs to. Valid values include the following:</p>
+    /// <code>Destination</code>: The Amazon Web Services service that you want to forward query logs to. Valid values include the following:</p>
     /// <ul>
     /// <li>
     /// <p>
@@ -2636,12 +2636,12 @@ pub struct Filter {
     /// </li>
     /// <li>
     /// <p>
-    /// <code>OwnerId</code>: The AWS account ID for the account that created the query logging configuration.</p>
+    /// <code>OwnerId</code>: The Amazon Web Services account ID for the account that created the query logging configuration.</p>
     /// </li>
     /// <li>
     /// <p>
-    /// <code>ShareStatus</code>: An indication of whether the query logging configuration is shared with other AWS accounts,
-    /// or was shared with the current account by another AWS account. Valid values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>,
+    /// <code>ShareStatus</code>: An indication of whether the query logging configuration is shared with other Amazon Web Services accounts,
+    /// or was shared with the current account by another Amazon Web Services account. Valid values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>,
     /// or <code>SHARED_BY_ME</code>.</p>
     /// </li>
     /// <li>
@@ -2741,7 +2741,7 @@ pub mod filter {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>HostVpcId</code>: The ID of the VPC that inbound DNS queries pass through on the way from your network to your VPCs in a region, or
+        /// <code>HostVPCId</code>: The ID of the VPC that inbound DNS queries pass through on the way from your network to your VPCs in a region, or
         /// the VPC that outbound queries pass through on the way from your VPCs to your network. In a
         /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>
         /// request, <code>SubnetId</code> indirectly identifies the VPC. In a
@@ -2860,7 +2860,7 @@ pub mod filter {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>Destination</code>: The AWS service that you want to forward query logs to. Valid values include the following:</p>
+        /// <code>Destination</code>: The Amazon Web Services service that you want to forward query logs to. Valid values include the following:</p>
         /// <ul>
         /// <li>
         /// <p>
@@ -2894,12 +2894,12 @@ pub mod filter {
         /// </li>
         /// <li>
         /// <p>
-        /// <code>OwnerId</code>: The AWS account ID for the account that created the query logging configuration.</p>
+        /// <code>OwnerId</code>: The Amazon Web Services account ID for the account that created the query logging configuration.</p>
         /// </li>
         /// <li>
         /// <p>
-        /// <code>ShareStatus</code>: An indication of whether the query logging configuration is shared with other AWS accounts,
-        /// or was shared with the current account by another AWS account. Valid values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>,
+        /// <code>ShareStatus</code>: An indication of whether the query logging configuration is shared with other Amazon Web Services accounts,
+        /// or was shared with the current account by another Amazon Web Services account. Valid values include: <code>NOT_SHARED</code>, <code>SHARED_WITH_ME</code>,
         /// or <code>SHARED_BY_ME</code>.</p>
         /// </li>
         /// <li>
@@ -3191,7 +3191,7 @@ impl AsRef<str> for ResolverRuleAssociationStatus {
 pub struct ResolverQueryLogConfig {
     /// <p>The ID for the query logging configuration.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID for the account that created the query logging configuration. </p>
+    /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>The status of the specified query logging configuration. Valid values include the following:</p>
     /// <ul>
@@ -3223,8 +3223,8 @@ pub struct ResolverQueryLogConfig {
     /// </li>
     /// </ul>
     pub status: std::option::Option<crate::model::ResolverQueryLogConfigStatus>,
-    /// <p>An indication of whether the query logging configuration is shared with other AWS accounts, or was shared with the current account by another
-    /// AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+    /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another
+    /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub share_status: std::option::Option<crate::model::ShareStatus>,
     /// <p>The number of VPCs that are associated with the query logging configuration.</p>
     pub association_count: i32,
@@ -3285,7 +3285,7 @@ pub mod resolver_query_log_config {
             self.id = input;
             self
         }
-        /// <p>The AWS account ID for the account that created the query logging configuration. </p>
+        /// <p>The Amazon Web Services account ID for the account that created the query logging configuration. </p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
             self
@@ -3334,8 +3334,8 @@ pub mod resolver_query_log_config {
             self.status = input;
             self
         }
-        /// <p>An indication of whether the query logging configuration is shared with other AWS accounts, or was shared with the current account by another
-        /// AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+        /// <p>An indication of whether the query logging configuration is shared with other Amazon Web Services accounts, or was shared with the current account by another
+        /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
         pub fn share_status(mut self, input: crate::model::ShareStatus) -> Self {
             self.share_status = Some(input);
             self
@@ -4133,15 +4133,15 @@ pub struct FirewallRuleGroupMetadata {
     pub arn: std::option::Option<std::string::String>,
     /// <p>The name of the rule group.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID for the account that created the rule group. When a rule group is shared with your account,
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account,
     /// this is the account that has shared the rule group with you.  </p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed
     /// requests without the risk of running the operation twice. This can be any unique string,
     /// for example, a timestamp. </p>
     pub creator_request_id: std::option::Option<std::string::String>,
-    /// <p>Whether the rule group is shared with other AWS accounts, or was shared with the current account by another
-    /// AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+    /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another
+    /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub share_status: std::option::Option<crate::model::ShareStatus>,
 }
 impl std::fmt::Debug for FirewallRuleGroupMetadata {
@@ -4197,7 +4197,7 @@ pub mod firewall_rule_group_metadata {
             self.name = input;
             self
         }
-        /// <p>The AWS account ID for the account that created the rule group. When a rule group is shared with your account,
+        /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account,
         /// this is the account that has shared the rule group with you.  </p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
@@ -4221,8 +4221,8 @@ pub mod firewall_rule_group_metadata {
             self.creator_request_id = input;
             self
         }
-        /// <p>Whether the rule group is shared with other AWS accounts, or was shared with the current account by another
-        /// AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+        /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another
+        /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
         pub fn share_status(mut self, input: crate::model::ShareStatus) -> Self {
             self.share_status = Some(input);
             self
@@ -4431,15 +4431,15 @@ pub struct FirewallRuleGroup {
     pub status: std::option::Option<crate::model::FirewallRuleGroupStatus>,
     /// <p>Additional information about the status of the rule group, if available.</p>
     pub status_message: std::option::Option<std::string::String>,
-    /// <p>The AWS account ID for the account that created the rule group. When a rule group is shared with your account,
+    /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account,
     /// this is the account that has shared the rule group with you.  </p>
     pub owner_id: std::option::Option<std::string::String>,
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed
     /// requests without the risk of running the operation twice. This can be any unique string,
     /// for example, a timestamp. </p>
     pub creator_request_id: std::option::Option<std::string::String>,
-    /// <p>Whether the rule group is shared with other AWS accounts, or was shared with the current account by another
-    /// AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+    /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another
+    /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
     pub share_status: std::option::Option<crate::model::ShareStatus>,
     /// <p>The date and time that the rule group was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub creation_time: std::option::Option<std::string::String>,
@@ -4542,7 +4542,7 @@ pub mod firewall_rule_group {
             self.status_message = input;
             self
         }
-        /// <p>The AWS account ID for the account that created the rule group. When a rule group is shared with your account,
+        /// <p>The Amazon Web Services account ID for the account that created the rule group. When a rule group is shared with your account,
         /// this is the account that has shared the rule group with you.  </p>
         pub fn owner_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.owner_id = Some(input.into());
@@ -4566,8 +4566,8 @@ pub mod firewall_rule_group {
             self.creator_request_id = input;
             self
         }
-        /// <p>Whether the rule group is shared with other AWS accounts, or was shared with the current account by another
-        /// AWS account. Sharing is configured through AWS Resource Access Manager (AWS RAM).</p>
+        /// <p>Whether the rule group is shared with other Amazon Web Services accounts, or was shared with the current account by another
+        /// Amazon Web Services account. Sharing is configured through Resource Access Manager (RAM).</p>
         pub fn share_status(mut self, input: crate::model::ShareStatus) -> Self {
             self.share_status = Some(input);
             self

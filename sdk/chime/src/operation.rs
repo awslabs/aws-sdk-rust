@@ -155,7 +155,7 @@ impl smithy_http::response::ParseStrictResponse for BatchCreateAttendee {
     }
 }
 
-/// <p>Adds a specified number of users to a channel. </p>
+/// <p>Adds a specified number of users to a channel.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchCreateChannelMembership {
     _private: (),
@@ -568,10 +568,12 @@ impl smithy_http::response::ParseStrictResponse for CreateBot {
 
 /// <p>Creates a channel to which you can add users and send messages.</p>
 /// <p>
-/// <b>Restriction</b>: You can't change a channel's privacy.</p>
+/// <b>Restriction</b>: You can't change a channel's
+/// privacy.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannel {
@@ -598,14 +600,16 @@ impl smithy_http::response::ParseStrictResponse for CreateChannel {
     }
 }
 
-/// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel.
-/// To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
+/// <p>Permanently bans a member from a channel. Moderators can't add banned members to a
+/// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
 /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
 /// channels.</p>
-/// <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p>
+/// <p>If you ban a user who is already part of a channel, that user is automatically kicked
+/// from the channel.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelBan {
@@ -656,15 +660,17 @@ impl smithy_http::response::ParseStrictResponse for CreateChannelBan {
 /// <p>Privacy settings impact this action as follows:</p>
 /// <ul>
 /// <li>
-/// <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p>
+/// <p>Public Channels: You do not need to be a member to list messages, but you must be
+/// a member to send messages.</p>
 /// </li>
 /// <li>
 /// <p>Private Channels: You must be a member to list or send messages.</p>
 /// </li>
 /// </ul>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelMembership {
@@ -712,8 +718,9 @@ impl smithy_http::response::ParseStrictResponse for CreateChannelMembership {
 /// </li>
 /// </ul>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct CreateChannelModerator {
@@ -1341,10 +1348,12 @@ impl smithy_http::response::ParseStrictResponse for DeleteAttendee {
     }
 }
 
-/// <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p>
+/// <p>Immediately makes a channel and its memberships inaccessible and marks them for
+/// deletion. This is an irreversible process.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannel {
@@ -1373,8 +1382,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannel {
 
 /// <p>Removes a user from a channel's ban list.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelBan {
@@ -1405,8 +1415,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelBan {
 
 /// <p>Removes a member from a channel.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelMembership {
@@ -1439,8 +1450,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelMembership {
 /// inaccessible immediately. A background process deletes any revisions created by
 /// <code>UpdateChannelMessage</code>.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelMessage {
@@ -1471,8 +1483,9 @@ impl smithy_http::response::ParseStrictResponse for DeleteChannelMessage {
 
 /// <p>Deletes a channel moderator.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DeleteChannelModerator {
@@ -2059,11 +2072,7 @@ impl smithy_http::response::ParseStrictResponse for DescribeAppInstanceAdmin {
     }
 }
 
-/// <p>
-/// Returns the full details of an
-/// <code>AppInstanceUser</code>
-/// .
-/// </p>
+/// <p>Returns the full details of an <code>AppInstanceUser</code>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeAppInstanceUser {
     _private: (),
@@ -2091,10 +2100,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeAppInstanceUser {
     }
 }
 
-/// <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p>
+/// <p>Returns the full details of a channel in an Amazon Chime
+/// <code>AppInstance</code>.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannel {
@@ -2125,8 +2136,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannel {
 
 /// <p>Returns the full details of a channel ban.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannelBan {
@@ -2157,8 +2169,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelBan {
 
 /// <p>Returns the full details of a user's channel membership.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannelMembership {
@@ -2187,11 +2200,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelMembership {
     }
 }
 
-/// <p>
-/// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.</p>
+/// <p> Returns the details of a channel based on the membership of the specified
+/// <code>AppInstanceUser</code>.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannelMembershipForAppInstanceUser {
@@ -2225,10 +2239,12 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelMembershipFor
     }
 }
 
-/// <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.</p>
+/// <p>Returns the full details of a channel moderated by the specified
+/// <code>AppInstanceUser</code>.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannelModeratedByAppInstanceUser {
@@ -2264,8 +2280,9 @@ impl smithy_http::response::ParseStrictResponse for DescribeChannelModeratedByAp
 
 /// <p>Returns the full details of a single ChannelModerator.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct DescribeChannelModerator {
@@ -2595,8 +2612,9 @@ impl smithy_http::response::ParseStrictResponse for GetBot {
 
 /// <p>Gets the full details of a channel message.</p>
 /// <note>
-/// <p>The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-/// value in the header.</p>
+/// <p>The x-amz-chime-bearer request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct GetChannelMessage {
@@ -3458,9 +3476,7 @@ impl smithy_http::response::ParseStrictResponse for ListAppInstances {
     }
 }
 
-/// <p>
-/// List all
-/// <code>AppInstanceUsers</code>
+/// <p>List all <code>AppInstanceUsers</code>
 /// created under a single <code>AppInstance</code>.
 /// </p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -3575,8 +3591,9 @@ impl smithy_http::response::ParseStrictResponse for ListBots {
 
 /// <p>Lists all the users banned from a particular channel.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelBans {
@@ -3607,8 +3624,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannelBans {
 
 /// <p>Lists all channel memberships in a channel.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelMemberships {
@@ -3638,11 +3656,11 @@ impl smithy_http::response::ParseStrictResponse for ListChannelMemberships {
 }
 
 /// <p> Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
-/// <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
-/// own. </p>
+/// <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelMembershipsForAppInstanceUser {
@@ -3676,13 +3694,16 @@ impl smithy_http::response::ParseStrictResponse for ListChannelMembershipsForApp
     }
 }
 
-/// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p>
+/// <p>List all the messages in a channel. Returns a paginated list of
+/// <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending
+/// order.</p>
 /// <note>
-/// <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted.
-/// Deleted messages do not appear in the results. This action always returns the latest
-/// version of an edited message.</p>
-/// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the
-/// value in the header.</p>
+/// <p>Redacted messages appear in the results as empty, since they are only redacted, not
+/// deleted. Deleted messages do not appear in the results. This action always returns the
+/// latest version of an edited message.</p>
+/// <p>Also, the x-amz-chime-bearer request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelMessages {
@@ -3713,8 +3734,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannelMessages {
 
 /// <p>Lists all the moderators for a channel.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelModerators {
@@ -3743,22 +3765,25 @@ impl smithy_http::response::ParseStrictResponse for ListChannelModerators {
     }
 }
 
-/// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p>
+/// <p>Lists all Channels created under a single Chime App as a paginated list. You can specify
+/// filters to narrow results.</p>
 /// <p class="title">
 /// <b>Functionality & restrictions</b>
 /// </p>
 /// <ul>
 /// <li>
-/// <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p>
+/// <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the
+/// account.</p>
 /// </li>
 /// <li>
-/// <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the
-/// private channels in an account.</p>
+/// <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to
+/// list the private channels in an account.</p>
 /// </li>
 /// </ul>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannels {
@@ -3787,8 +3812,9 @@ impl smithy_http::response::ParseStrictResponse for ListChannels {
 
 /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct ListChannelsModeratedByAppInstanceUser {
@@ -4672,10 +4698,12 @@ impl smithy_http::response::ParseStrictResponse for PutVoiceConnectorTermination
     }
 }
 
-/// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p>
+/// <p>Redacts message content, but not metadata. The message exists in the back end, but the
+/// action returns null content, and the state shows as redacted.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct RedactChannelMessage {
@@ -4880,10 +4908,11 @@ impl smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumbers 
 
 /// <p>Sends a message to a particular channel that the member is a part of.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
-/// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code> messages can contain 30 bytes of
-/// data and no metadata.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
+/// <p>Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
+/// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct SendChannelMessage {
@@ -5265,11 +5294,11 @@ impl smithy_http::response::ParseStrictResponse for UpdateBot {
 
 /// <p>Update a channel's attributes.</p>
 /// <p>
-/// <b>Restriction</b>: You can't change a channel's privacy.
-/// </p>
+/// <b>Restriction</b>: You can't change a channel's privacy. </p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateChannel {
@@ -5298,8 +5327,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannel {
 
 /// <p>Updates the content of a message.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateChannelMessage {
@@ -5330,8 +5360,9 @@ impl smithy_http::response::ParseStrictResponse for UpdateChannelMessage {
 
 /// <p>The details of the time when a user last read messages in a channel.</p>
 /// <note>
-/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes
-/// the API call as the value in the header.</p>
+/// <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the
+/// <code>AppInstanceUserArn</code> of the user that makes the API call as the value in
+/// the header.</p>
 /// </note>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct UpdateChannelReadMarker {

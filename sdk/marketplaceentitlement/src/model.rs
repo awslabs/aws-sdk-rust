@@ -148,7 +148,7 @@ pub enum EntitlementValue {
     StringValue(std::string::String),
 }
 impl EntitlementValue {
-    pub fn as_boolean_value(&self) -> Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let EntitlementValue::BooleanValue(val) = &self {
             Ok(&val)
         } else {
@@ -158,7 +158,7 @@ impl EntitlementValue {
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Result<&f64, &Self> {
+    pub fn as_double_value(&self) -> std::result::Result<&f64, &Self> {
         if let EntitlementValue::DoubleValue(val) = &self {
             Ok(&val)
         } else {
@@ -168,7 +168,7 @@ impl EntitlementValue {
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    pub fn as_integer_value(&self) -> Result<&i32, &Self> {
+    pub fn as_integer_value(&self) -> std::result::Result<&i32, &Self> {
         if let EntitlementValue::IntegerValue(val) = &self {
             Ok(&val)
         } else {
@@ -178,7 +178,7 @@ impl EntitlementValue {
     pub fn is_integer_value(&self) -> bool {
         self.as_integer_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let EntitlementValue::StringValue(val) = &self {
             Ok(&val)
         } else {

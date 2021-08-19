@@ -3111,6 +3111,8 @@ pub struct InstanceTypeConfig {
     /// <p>A configuration classification that applies when provisioning cluster instances, which
     /// can include configurations for applications and software that run on the cluster.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
+    /// <p>The custom AMI ID to use for the instance type.</p>
+    pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceTypeConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3124,6 +3126,7 @@ impl std::fmt::Debug for InstanceTypeConfig {
         );
         formatter.field("ebs_configuration", &self.ebs_configuration);
         formatter.field("configurations", &self.configurations);
+        formatter.field("custom_ami_id", &self.custom_ami_id);
         formatter.finish()
     }
 }
@@ -3139,6 +3142,7 @@ pub mod instance_type_config {
         pub(crate) bid_price_as_percentage_of_on_demand_price: std::option::Option<f64>,
         pub(crate) ebs_configuration: std::option::Option<crate::model::EbsConfiguration>,
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
+        pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
@@ -3218,6 +3222,18 @@ pub mod instance_type_config {
             self.configurations = input;
             self
         }
+        /// <p>The custom AMI ID to use for the instance type.</p>
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_ami_id = Some(input.into());
+            self
+        }
+        pub fn set_custom_ami_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_ami_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceTypeConfig`](crate::model::InstanceTypeConfig)
         pub fn build(self) -> crate::model::InstanceTypeConfig {
             crate::model::InstanceTypeConfig {
@@ -3228,6 +3244,7 @@ pub mod instance_type_config {
                     .bid_price_as_percentage_of_on_demand_price,
                 ebs_configuration: self.ebs_configuration,
                 configurations: self.configurations,
+                custom_ami_id: self.custom_ami_id,
             }
         }
     }
@@ -3539,6 +3556,8 @@ pub struct InstanceGroupConfig {
     /// adds and terminates EC2 instances in response to the value of a CloudWatch metric. See
     /// <a>PutAutoScalingPolicy</a>.</p>
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
+    /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceGroupConfig {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3552,6 +3571,7 @@ impl std::fmt::Debug for InstanceGroupConfig {
         formatter.field("configurations", &self.configurations);
         formatter.field("ebs_configuration", &self.ebs_configuration);
         formatter.field("auto_scaling_policy", &self.auto_scaling_policy);
+        formatter.field("custom_ami_id", &self.custom_ami_id);
         formatter.finish()
     }
 }
@@ -3570,6 +3590,7 @@ pub mod instance_group_config {
         pub(crate) configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
         pub(crate) ebs_configuration: std::option::Option<crate::model::EbsConfiguration>,
         pub(crate) auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicy>,
+        pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Friendly name given to the instance group.</p>
@@ -3673,6 +3694,18 @@ pub mod instance_group_config {
             self.auto_scaling_policy = input;
             self
         }
+        /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_ami_id = Some(input.into());
+            self
+        }
+        pub fn set_custom_ami_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_ami_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceGroupConfig`](crate::model::InstanceGroupConfig)
         pub fn build(self) -> crate::model::InstanceGroupConfig {
             crate::model::InstanceGroupConfig {
@@ -3685,6 +3718,7 @@ pub mod instance_group_config {
                 configurations: self.configurations,
                 ebs_configuration: self.ebs_configuration,
                 auto_scaling_policy: self.auto_scaling_policy,
+                custom_ami_id: self.custom_ami_id,
             }
         }
     }
@@ -7924,6 +7958,8 @@ pub struct InstanceGroup {
     /// adds and terminates EC2 instances in response to the value of a CloudWatch metric. See
     /// PutAutoScalingPolicy.</p>
     pub auto_scaling_policy: std::option::Option<crate::model::AutoScalingPolicyDescription>,
+    /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceGroup {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7951,6 +7987,7 @@ impl std::fmt::Debug for InstanceGroup {
         formatter.field("ebs_optimized", &self.ebs_optimized);
         formatter.field("shrink_policy", &self.shrink_policy);
         formatter.field("auto_scaling_policy", &self.auto_scaling_policy);
+        formatter.field("custom_ami_id", &self.custom_ami_id);
         formatter.finish()
     }
 }
@@ -7980,6 +8017,7 @@ pub mod instance_group {
         pub(crate) shrink_policy: std::option::Option<crate::model::ShrinkPolicy>,
         pub(crate) auto_scaling_policy:
             std::option::Option<crate::model::AutoScalingPolicyDescription>,
+        pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The identifier of the instance group.</p>
@@ -8181,6 +8219,18 @@ pub mod instance_group {
             self.auto_scaling_policy = input;
             self
         }
+        /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_ami_id = Some(input.into());
+            self
+        }
+        pub fn set_custom_ami_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_ami_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceGroup`](crate::model::InstanceGroup)
         pub fn build(self) -> crate::model::InstanceGroup {
             crate::model::InstanceGroup {
@@ -8204,6 +8254,7 @@ pub mod instance_group {
                 ebs_optimized: self.ebs_optimized,
                 shrink_policy: self.shrink_policy,
                 auto_scaling_policy: self.auto_scaling_policy,
+                custom_ami_id: self.custom_ami_id,
             }
         }
     }
@@ -8989,6 +9040,8 @@ pub struct InstanceTypeSpecification {
     /// <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is
     /// EBS-optimized.</p>
     pub ebs_optimized: std::option::Option<bool>,
+    /// <p>The custom AMI ID to use for the instance type.</p>
+    pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceTypeSpecification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9003,6 +9056,7 @@ impl std::fmt::Debug for InstanceTypeSpecification {
         formatter.field("configurations", &self.configurations);
         formatter.field("ebs_block_devices", &self.ebs_block_devices);
         formatter.field("ebs_optimized", &self.ebs_optimized);
+        formatter.field("custom_ami_id", &self.custom_ami_id);
         formatter.finish()
     }
 }
@@ -9020,6 +9074,7 @@ pub mod instance_type_specification {
         pub(crate) ebs_block_devices:
             std::option::Option<std::vec::Vec<crate::model::EbsBlockDevice>>,
         pub(crate) ebs_optimized: std::option::Option<bool>,
+        pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
@@ -9105,6 +9160,18 @@ pub mod instance_type_specification {
             self.ebs_optimized = input;
             self
         }
+        /// <p>The custom AMI ID to use for the instance type.</p>
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_ami_id = Some(input.into());
+            self
+        }
+        pub fn set_custom_ami_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_ami_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceTypeSpecification`](crate::model::InstanceTypeSpecification)
         pub fn build(self) -> crate::model::InstanceTypeSpecification {
             crate::model::InstanceTypeSpecification {
@@ -9116,6 +9183,7 @@ pub mod instance_type_specification {
                 configurations: self.configurations,
                 ebs_block_devices: self.ebs_block_devices,
                 ebs_optimized: self.ebs_optimized,
+                custom_ami_id: self.custom_ami_id,
             }
         }
     }
@@ -11303,7 +11371,9 @@ pub struct JobFlowDetail {
     /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
     /// with the cluster. When <code>true</code>, IAM principals in the
     /// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>The default value is <code>true</code> if a value is not provided when creating a
+    /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>The IAM role that was specified when the job flow was launched. The EC2 instances of the
     /// job flow assume this role.</p>
@@ -11498,7 +11568,9 @@ pub mod job_flow_detail {
         /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
         /// with the cluster. When <code>true</code>, IAM principals in the
         /// account can perform EMR cluster actions that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-        /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>The default value is <code>true</code> if a value is not provided when creating a
+        /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are authorized to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
@@ -12217,6 +12289,8 @@ pub struct InstanceGroupDetail {
     pub ready_date_time: std::option::Option<smithy_types::Instant>,
     /// <p>The date/time the instance group was terminated.</p>
     pub end_date_time: std::option::Option<smithy_types::Instant>,
+    /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+    pub custom_ami_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for InstanceGroupDetail {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -12235,6 +12309,7 @@ impl std::fmt::Debug for InstanceGroupDetail {
         formatter.field("start_date_time", &self.start_date_time);
         formatter.field("ready_date_time", &self.ready_date_time);
         formatter.field("end_date_time", &self.end_date_time);
+        formatter.field("custom_ami_id", &self.custom_ami_id);
         formatter.finish()
     }
 }
@@ -12258,6 +12333,7 @@ pub mod instance_group_detail {
         pub(crate) start_date_time: std::option::Option<smithy_types::Instant>,
         pub(crate) ready_date_time: std::option::Option<smithy_types::Instant>,
         pub(crate) end_date_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) custom_ami_id: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>Unique identifier for the instance group.</p>
@@ -12414,6 +12490,18 @@ pub mod instance_group_detail {
             self.end_date_time = input;
             self
         }
+        /// <p>The custom AMI ID to use for the provisioned instance group.</p>
+        pub fn custom_ami_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.custom_ami_id = Some(input.into());
+            self
+        }
+        pub fn set_custom_ami_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.custom_ami_id = input;
+            self
+        }
         /// Consumes the builder and constructs a [`InstanceGroupDetail`](crate::model::InstanceGroupDetail)
         pub fn build(self) -> crate::model::InstanceGroupDetail {
             crate::model::InstanceGroupDetail {
@@ -12431,6 +12519,7 @@ pub mod instance_group_detail {
                 start_date_time: self.start_date_time,
                 ready_date_time: self.ready_date_time,
                 end_date_time: self.end_date_time,
+                custom_ami_id: self.custom_ami_id,
             }
         }
     }
@@ -12702,7 +12791,10 @@ pub struct Cluster {
     /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
     /// with the cluster. When <code>true</code>, IAM principals in the
     /// account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-    /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>The default value is <code>true</code> if a value is not provided when creating a
+    /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
+    /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are
+    /// allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>The applications installed on this cluster.</p>
     pub applications: std::option::Option<std::vec::Vec<crate::model::Application>>,
@@ -12996,7 +13088,10 @@ pub mod cluster {
         /// <p>Indicates whether the cluster is visible to IAM principals in the account associated
         /// with the cluster. When <code>true</code>, IAM principals in the
         /// account can perform EMR cluster actions on the cluster that their IAM policies allow. When <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions, regardless of IAM permissions policies attached to other IAM principals.</p>
-        /// <p>The default value is <code>false</code> if a value is not provided when creating a cluster using the EMR API <a>RunJobFlow</a> command or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command. The default value is <code>true</code> when a cluster is created using the Management Console. IAM principals that are allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>The default value is <code>true</code> if a value is not provided when creating a
+        /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI
+        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command, or the Management Console. IAM principals that are
+        /// allowed to perform actions on the cluster can use the <a>SetVisibleToAllUsers</a> action to change the value on a running cluster. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self

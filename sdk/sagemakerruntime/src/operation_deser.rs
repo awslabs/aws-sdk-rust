@@ -134,3 +134,110 @@ pub fn parse_invoke_endpoint_response(
         output.build()
     })
 }
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_invoke_endpoint_async_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::InvokeEndpointAsyncOutput,
+    crate::error::InvokeEndpointAsyncError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::InvokeEndpointAsyncError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InternalFailure" => crate::error::InvokeEndpointAsyncError {
+            meta: generic,
+            kind: crate::error::InvokeEndpointAsyncErrorKind::InternalFailure({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failurejson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailable" => crate::error::InvokeEndpointAsyncError {
+            meta: generic,
+            kind: crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_unavailable::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_unavailablejson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ValidationError" => crate::error::InvokeEndpointAsyncError {
+            meta: generic,
+            kind: crate::error::InvokeEndpointAsyncErrorKind::ValidationError({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::validation_error::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_validation_errorjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::InvokeEndpointAsyncError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_invoke_endpoint_async_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::InvokeEndpointAsyncOutput,
+    crate::error::InvokeEndpointAsyncError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::invoke_endpoint_async_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_invoke_endpoint_async(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+        output = output.set_output_location(
+            crate::http_serde::deser_header_invoke_endpoint_async_invoke_endpoint_async_output_output_location(response.headers())
+                                        .map_err(|_|crate::error::InvokeEndpointAsyncError::unhandled("Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation"))?
+        );
+        output.build()
+    })
+}

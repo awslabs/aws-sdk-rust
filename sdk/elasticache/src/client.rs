@@ -309,7 +309,7 @@ pub mod fluent_builders {
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
         /// ElastiCache resources are <i>cluster</i> and <i>snapshot</i>.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(input);
             self
@@ -390,9 +390,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_security_group_name(input);
             self
         }
-        /// <p>The AWS account number of the Amazon EC2 security group owner.
-        /// Note that this is not the same thing as an AWS access key ID -
-        /// you must provide a valid AWS account number for this parameter.</p>
+        /// <p>The Amazon account number of the Amazon EC2 security group owner.
+        /// Note that this is not the same thing as an Amazon access key ID -
+        /// you must provide a valid Amazon account number for this parameter.</p>
         pub fn ec2_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,
@@ -1584,8 +1584,8 @@ pub mod fluent_builders {
             self.handle.client.call(op).await
         }
         /// <p>The suffix name of a Global datastore. Amazon ElastiCache automatically applies a prefix
-        /// to the Global datastore ID when it is created. Each AWS Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
-        /// <p>For a full list of AWS Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the AWS CLI with Global datastores </a>.</p>
+        /// to the Global datastore ID when it is created. Each Amazon Region has its own prefix. For instance, a Global datastore ID created in the US-West-1 region will begin with "dsdfu" along with the suffix name you provide. The suffix, combined with the auto-generated prefix, guarantees uniqueness of the Global datastore name across multiple regions.  </p>
+        /// <p>For a full list of Amazon Regions and their respective Global datastore iD prefixes, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastores-CLI.html">Using the Amazon CLI with Global datastores </a>.</p>
         pub fn global_replication_group_id_suffix(
             mut self,
             input: impl Into<std::string::String>,
@@ -5322,7 +5322,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_replication_group_id(input);
             self
         }
-        /// <p>The AWS region of secondary cluster you wish to remove from the Global datastore</p>
+        /// <p>The Amazon region of secondary cluster you wish to remove from the Global datastore</p>
         pub fn replication_group_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.replication_group_region(input);
             self
@@ -5381,7 +5381,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_global_replication_group_id(input);
             self
         }
-        /// <p>The AWS region of the primary cluster of the Global datastore</p>
+        /// <p>The Amazon region of the primary cluster of the Global datastore</p>
         pub fn primary_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.primary_region(input);
             self
@@ -5466,7 +5466,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_node_group_count(input);
             self
         }
-        /// <p>Describes the replication group IDs, the AWS regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
+        /// <p>Describes the replication group IDs, the Amazon regions where they are stored and the shard configuration for each that comprise the Global datastore</p>
         pub fn regional_configurations(
             mut self,
             inp: impl Into<crate::model::RegionalConfiguration>,
@@ -5675,7 +5675,7 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(input);
             self
@@ -6546,7 +6546,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_automatic_failover_enabled(input);
             self
         }
-        /// <p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>
+        /// <p>A flag to indicate MultiAZ is enabled.</p>
         pub fn multi_az_enabled(mut self, input: bool) -> Self {
             self.inner = self.inner.multi_az_enabled(input);
             self
@@ -7400,7 +7400,7 @@ pub mod fluent_builders {
         /// <p>The Amazon Resource Name (ARN) of the resource from which you want the tags removed,
         /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
         /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+        /// <p>For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and Amazon Service Namespaces</a>.</p>
         pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.resource_name(input);
             self
@@ -7557,9 +7557,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_ec2_security_group_name(input);
             self
         }
-        /// <p>The AWS account number of the Amazon EC2 security group owner.
-        /// Note that this is not the same thing as an AWS access key ID - you must provide
-        /// a valid AWS account number for this parameter.</p>
+        /// <p>The Amazon account number of the Amazon EC2 security group owner.
+        /// Note that this is not the same thing as an Amazon access key ID - you must provide
+        /// a valid Amazon account number for this parameter.</p>
         pub fn ec2_security_group_owner_id(
             mut self,
             input: impl Into<std::string::String>,

@@ -366,47 +366,69 @@ pub fn serialize_structure_predictive_scaling_configuration(
 }
 
 #[allow(unused_mut)]
+pub fn serialize_structure_desired_configuration(
+    mut writer: smithy_query::QueryValueWriter,
+    input: &crate::model::DesiredConfiguration,
+) {
+    #[allow(unused_mut)]
+    let mut scope_101 = writer.prefix("LaunchTemplate");
+    if let Some(var_102) = &input.launch_template {
+        crate::query_ser::serialize_structure_launch_template_specification(scope_101, var_102);
+    }
+    #[allow(unused_mut)]
+    let mut scope_103 = writer.prefix("MixedInstancesPolicy");
+    if let Some(var_104) = &input.mixed_instances_policy {
+        crate::query_ser::serialize_structure_mixed_instances_policy(scope_103, var_104);
+    }
+}
+
+#[allow(unused_mut)]
 pub fn serialize_structure_refresh_preferences(
     mut writer: smithy_query::QueryValueWriter,
     input: &crate::model::RefreshPreferences,
 ) {
     #[allow(unused_mut)]
-    let mut scope_101 = writer.prefix("MinHealthyPercentage");
-    if let Some(var_102) = &input.min_healthy_percentage {
-        scope_101.number(
+    let mut scope_105 = writer.prefix("MinHealthyPercentage");
+    if let Some(var_106) = &input.min_healthy_percentage {
+        scope_105.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_102).into()),
+            smithy_types::Number::NegInt((*var_106).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_103 = writer.prefix("InstanceWarmup");
-    if let Some(var_104) = &input.instance_warmup {
-        scope_103.number(
+    let mut scope_107 = writer.prefix("InstanceWarmup");
+    if let Some(var_108) = &input.instance_warmup {
+        scope_107.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_104).into()),
+            smithy_types::Number::NegInt((*var_108).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_105 = writer.prefix("CheckpointPercentages");
-    if let Some(var_106) = &input.checkpoint_percentages {
-        let mut list_108 = scope_105.start_list(false, None);
-        for item_107 in var_106 {
+    let mut scope_109 = writer.prefix("CheckpointPercentages");
+    if let Some(var_110) = &input.checkpoint_percentages {
+        let mut list_112 = scope_109.start_list(false, None);
+        for item_111 in var_110 {
             #[allow(unused_mut)]
-            let mut entry_109 = list_108.entry();
-            entry_109.number(
+            let mut entry_113 = list_112.entry();
+            entry_113.number(
                 #[allow(clippy::useless_conversion)]
-                smithy_types::Number::NegInt((*item_107).into()),
+                smithy_types::Number::NegInt((*item_111).into()),
             );
         }
-        list_108.finish();
+        list_112.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_110 = writer.prefix("CheckpointDelay");
-    if let Some(var_111) = &input.checkpoint_delay {
-        scope_110.number(
+    let mut scope_114 = writer.prefix("CheckpointDelay");
+    if let Some(var_115) = &input.checkpoint_delay {
+        scope_114.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_111).into()),
+            smithy_types::Number::NegInt((*var_115).into()),
         );
+    }
+    #[allow(unused_mut)]
+    let mut scope_116 = writer.prefix("SkipMatching");
+    if let Some(var_117) = &input.skip_matching {
+        scope_116.boolean(*var_117);
     }
 }
 
@@ -416,20 +438,20 @@ pub fn serialize_structure_launch_template(
     input: &crate::model::LaunchTemplate,
 ) {
     #[allow(unused_mut)]
-    let mut scope_112 = writer.prefix("LaunchTemplateSpecification");
-    if let Some(var_113) = &input.launch_template_specification {
-        crate::query_ser::serialize_structure_launch_template_specification(scope_112, var_113);
+    let mut scope_118 = writer.prefix("LaunchTemplateSpecification");
+    if let Some(var_119) = &input.launch_template_specification {
+        crate::query_ser::serialize_structure_launch_template_specification(scope_118, var_119);
     }
     #[allow(unused_mut)]
-    let mut scope_114 = writer.prefix("Overrides");
-    if let Some(var_115) = &input.overrides {
-        let mut list_117 = scope_114.start_list(false, None);
-        for item_116 in var_115 {
+    let mut scope_120 = writer.prefix("Overrides");
+    if let Some(var_121) = &input.overrides {
+        let mut list_123 = scope_120.start_list(false, None);
+        for item_122 in var_121 {
             #[allow(unused_mut)]
-            let mut entry_118 = list_117.entry();
-            crate::query_ser::serialize_structure_launch_template_overrides(entry_118, item_116);
+            let mut entry_124 = list_123.entry();
+            crate::query_ser::serialize_structure_launch_template_overrides(entry_124, item_122);
         }
-        list_117.finish();
+        list_123.finish();
     }
 }
 
@@ -439,43 +461,43 @@ pub fn serialize_structure_instances_distribution(
     input: &crate::model::InstancesDistribution,
 ) {
     #[allow(unused_mut)]
-    let mut scope_119 = writer.prefix("OnDemandAllocationStrategy");
-    if let Some(var_120) = &input.on_demand_allocation_strategy {
-        scope_119.string(var_120);
-    }
-    #[allow(unused_mut)]
-    let mut scope_121 = writer.prefix("OnDemandBaseCapacity");
-    if let Some(var_122) = &input.on_demand_base_capacity {
-        scope_121.number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_122).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_123 = writer.prefix("OnDemandPercentageAboveBaseCapacity");
-    if let Some(var_124) = &input.on_demand_percentage_above_base_capacity {
-        scope_123.number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_124).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_125 = writer.prefix("SpotAllocationStrategy");
-    if let Some(var_126) = &input.spot_allocation_strategy {
+    let mut scope_125 = writer.prefix("OnDemandAllocationStrategy");
+    if let Some(var_126) = &input.on_demand_allocation_strategy {
         scope_125.string(var_126);
     }
     #[allow(unused_mut)]
-    let mut scope_127 = writer.prefix("SpotInstancePools");
-    if let Some(var_128) = &input.spot_instance_pools {
+    let mut scope_127 = writer.prefix("OnDemandBaseCapacity");
+    if let Some(var_128) = &input.on_demand_base_capacity {
         scope_127.number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::NegInt((*var_128).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_129 = writer.prefix("SpotMaxPrice");
-    if let Some(var_130) = &input.spot_max_price {
-        scope_129.string(var_130);
+    let mut scope_129 = writer.prefix("OnDemandPercentageAboveBaseCapacity");
+    if let Some(var_130) = &input.on_demand_percentage_above_base_capacity {
+        scope_129.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_130).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_131 = writer.prefix("SpotAllocationStrategy");
+    if let Some(var_132) = &input.spot_allocation_strategy {
+        scope_131.string(var_132);
+    }
+    #[allow(unused_mut)]
+    let mut scope_133 = writer.prefix("SpotInstancePools");
+    if let Some(var_134) = &input.spot_instance_pools {
+        scope_133.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_134).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_135 = writer.prefix("SpotMaxPrice");
+    if let Some(var_136) = &input.spot_max_price {
+        scope_135.string(var_136);
     }
 }
 
@@ -485,47 +507,47 @@ pub fn serialize_structure_ebs(
     input: &crate::model::Ebs,
 ) {
     #[allow(unused_mut)]
-    let mut scope_131 = writer.prefix("SnapshotId");
-    if let Some(var_132) = &input.snapshot_id {
-        scope_131.string(var_132);
+    let mut scope_137 = writer.prefix("SnapshotId");
+    if let Some(var_138) = &input.snapshot_id {
+        scope_137.string(var_138);
     }
     #[allow(unused_mut)]
-    let mut scope_133 = writer.prefix("VolumeSize");
-    if let Some(var_134) = &input.volume_size {
-        scope_133.number(
-            #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_134).into()),
-        );
-    }
-    #[allow(unused_mut)]
-    let mut scope_135 = writer.prefix("VolumeType");
-    if let Some(var_136) = &input.volume_type {
-        scope_135.string(var_136);
-    }
-    #[allow(unused_mut)]
-    let mut scope_137 = writer.prefix("DeleteOnTermination");
-    if let Some(var_138) = &input.delete_on_termination {
-        scope_137.boolean(*var_138);
-    }
-    #[allow(unused_mut)]
-    let mut scope_139 = writer.prefix("Iops");
-    if let Some(var_140) = &input.iops {
+    let mut scope_139 = writer.prefix("VolumeSize");
+    if let Some(var_140) = &input.volume_size {
         scope_139.number(
             #[allow(clippy::useless_conversion)]
             smithy_types::Number::NegInt((*var_140).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_141 = writer.prefix("Encrypted");
-    if let Some(var_142) = &input.encrypted {
-        scope_141.boolean(*var_142);
+    let mut scope_141 = writer.prefix("VolumeType");
+    if let Some(var_142) = &input.volume_type {
+        scope_141.string(var_142);
     }
     #[allow(unused_mut)]
-    let mut scope_143 = writer.prefix("Throughput");
-    if let Some(var_144) = &input.throughput {
-        scope_143.number(
+    let mut scope_143 = writer.prefix("DeleteOnTermination");
+    if let Some(var_144) = &input.delete_on_termination {
+        scope_143.boolean(*var_144);
+    }
+    #[allow(unused_mut)]
+    let mut scope_145 = writer.prefix("Iops");
+    if let Some(var_146) = &input.iops {
+        scope_145.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::NegInt((*var_144).into()),
+            smithy_types::Number::NegInt((*var_146).into()),
+        );
+    }
+    #[allow(unused_mut)]
+    let mut scope_147 = writer.prefix("Encrypted");
+    if let Some(var_148) = &input.encrypted {
+        scope_147.boolean(*var_148);
+    }
+    #[allow(unused_mut)]
+    let mut scope_149 = writer.prefix("Throughput");
+    if let Some(var_150) = &input.throughput {
+        scope_149.number(
+            #[allow(clippy::useless_conversion)]
+            smithy_types::Number::NegInt((*var_150).into()),
         );
     }
 }
@@ -536,14 +558,14 @@ pub fn serialize_structure_predefined_metric_specification(
     input: &crate::model::PredefinedMetricSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_145 = writer.prefix("PredefinedMetricType");
-    if let Some(var_146) = &input.predefined_metric_type {
-        scope_145.string(var_146.as_str());
+    let mut scope_151 = writer.prefix("PredefinedMetricType");
+    if let Some(var_152) = &input.predefined_metric_type {
+        scope_151.string(var_152.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_147 = writer.prefix("ResourceLabel");
-    if let Some(var_148) = &input.resource_label {
-        scope_147.string(var_148);
+    let mut scope_153 = writer.prefix("ResourceLabel");
+    if let Some(var_154) = &input.resource_label {
+        scope_153.string(var_154);
     }
 }
 
@@ -553,35 +575,35 @@ pub fn serialize_structure_customized_metric_specification(
     input: &crate::model::CustomizedMetricSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_149 = writer.prefix("MetricName");
-    if let Some(var_150) = &input.metric_name {
-        scope_149.string(var_150);
+    let mut scope_155 = writer.prefix("MetricName");
+    if let Some(var_156) = &input.metric_name {
+        scope_155.string(var_156);
     }
     #[allow(unused_mut)]
-    let mut scope_151 = writer.prefix("Namespace");
-    if let Some(var_152) = &input.namespace {
-        scope_151.string(var_152);
+    let mut scope_157 = writer.prefix("Namespace");
+    if let Some(var_158) = &input.namespace {
+        scope_157.string(var_158);
     }
     #[allow(unused_mut)]
-    let mut scope_153 = writer.prefix("Dimensions");
-    if let Some(var_154) = &input.dimensions {
-        let mut list_156 = scope_153.start_list(false, None);
-        for item_155 in var_154 {
+    let mut scope_159 = writer.prefix("Dimensions");
+    if let Some(var_160) = &input.dimensions {
+        let mut list_162 = scope_159.start_list(false, None);
+        for item_161 in var_160 {
             #[allow(unused_mut)]
-            let mut entry_157 = list_156.entry();
-            crate::query_ser::serialize_structure_metric_dimension(entry_157, item_155);
+            let mut entry_163 = list_162.entry();
+            crate::query_ser::serialize_structure_metric_dimension(entry_163, item_161);
         }
-        list_156.finish();
+        list_162.finish();
     }
     #[allow(unused_mut)]
-    let mut scope_158 = writer.prefix("Statistic");
-    if let Some(var_159) = &input.statistic {
-        scope_158.string(var_159.as_str());
+    let mut scope_164 = writer.prefix("Statistic");
+    if let Some(var_165) = &input.statistic {
+        scope_164.string(var_165.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_160 = writer.prefix("Unit");
-    if let Some(var_161) = &input.unit {
-        scope_160.string(var_161);
+    let mut scope_166 = writer.prefix("Unit");
+    if let Some(var_167) = &input.unit {
+        scope_166.string(var_167);
     }
 }
 
@@ -591,32 +613,32 @@ pub fn serialize_structure_predictive_scaling_metric_specification(
     input: &crate::model::PredictiveScalingMetricSpecification,
 ) {
     #[allow(unused_mut)]
-    let mut scope_162 = writer.prefix("TargetValue");
-    if let Some(var_163) = &input.target_value {
-        scope_162.number(
+    let mut scope_168 = writer.prefix("TargetValue");
+    if let Some(var_169) = &input.target_value {
+        scope_168.number(
             #[allow(clippy::useless_conversion)]
-            smithy_types::Number::Float((*var_163).into()),
+            smithy_types::Number::Float((*var_169).into()),
         );
     }
     #[allow(unused_mut)]
-    let mut scope_164 = writer.prefix("PredefinedMetricPairSpecification");
-    if let Some(var_165) = &input.predefined_metric_pair_specification {
+    let mut scope_170 = writer.prefix("PredefinedMetricPairSpecification");
+    if let Some(var_171) = &input.predefined_metric_pair_specification {
         crate::query_ser::serialize_structure_predictive_scaling_predefined_metric_pair(
-            scope_164, var_165,
+            scope_170, var_171,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_166 = writer.prefix("PredefinedScalingMetricSpecification");
-    if let Some(var_167) = &input.predefined_scaling_metric_specification {
+    let mut scope_172 = writer.prefix("PredefinedScalingMetricSpecification");
+    if let Some(var_173) = &input.predefined_scaling_metric_specification {
         crate::query_ser::serialize_structure_predictive_scaling_predefined_scaling_metric(
-            scope_166, var_167,
+            scope_172, var_173,
         );
     }
     #[allow(unused_mut)]
-    let mut scope_168 = writer.prefix("PredefinedLoadMetricSpecification");
-    if let Some(var_169) = &input.predefined_load_metric_specification {
+    let mut scope_174 = writer.prefix("PredefinedLoadMetricSpecification");
+    if let Some(var_175) = &input.predefined_load_metric_specification {
         crate::query_ser::serialize_structure_predictive_scaling_predefined_load_metric(
-            scope_168, var_169,
+            scope_174, var_175,
         );
     }
 }
@@ -627,19 +649,19 @@ pub fn serialize_structure_launch_template_overrides(
     input: &crate::model::LaunchTemplateOverrides,
 ) {
     #[allow(unused_mut)]
-    let mut scope_170 = writer.prefix("InstanceType");
-    if let Some(var_171) = &input.instance_type {
-        scope_170.string(var_171);
+    let mut scope_176 = writer.prefix("InstanceType");
+    if let Some(var_177) = &input.instance_type {
+        scope_176.string(var_177);
     }
     #[allow(unused_mut)]
-    let mut scope_172 = writer.prefix("WeightedCapacity");
-    if let Some(var_173) = &input.weighted_capacity {
-        scope_172.string(var_173);
+    let mut scope_178 = writer.prefix("WeightedCapacity");
+    if let Some(var_179) = &input.weighted_capacity {
+        scope_178.string(var_179);
     }
     #[allow(unused_mut)]
-    let mut scope_174 = writer.prefix("LaunchTemplateSpecification");
-    if let Some(var_175) = &input.launch_template_specification {
-        crate::query_ser::serialize_structure_launch_template_specification(scope_174, var_175);
+    let mut scope_180 = writer.prefix("LaunchTemplateSpecification");
+    if let Some(var_181) = &input.launch_template_specification {
+        crate::query_ser::serialize_structure_launch_template_specification(scope_180, var_181);
     }
 }
 
@@ -649,14 +671,14 @@ pub fn serialize_structure_metric_dimension(
     input: &crate::model::MetricDimension,
 ) {
     #[allow(unused_mut)]
-    let mut scope_176 = writer.prefix("Name");
-    if let Some(var_177) = &input.name {
-        scope_176.string(var_177);
+    let mut scope_182 = writer.prefix("Name");
+    if let Some(var_183) = &input.name {
+        scope_182.string(var_183);
     }
     #[allow(unused_mut)]
-    let mut scope_178 = writer.prefix("Value");
-    if let Some(var_179) = &input.value {
-        scope_178.string(var_179);
+    let mut scope_184 = writer.prefix("Value");
+    if let Some(var_185) = &input.value {
+        scope_184.string(var_185);
     }
 }
 
@@ -666,14 +688,14 @@ pub fn serialize_structure_predictive_scaling_predefined_metric_pair(
     input: &crate::model::PredictiveScalingPredefinedMetricPair,
 ) {
     #[allow(unused_mut)]
-    let mut scope_180 = writer.prefix("PredefinedMetricType");
-    if let Some(var_181) = &input.predefined_metric_type {
-        scope_180.string(var_181.as_str());
+    let mut scope_186 = writer.prefix("PredefinedMetricType");
+    if let Some(var_187) = &input.predefined_metric_type {
+        scope_186.string(var_187.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_182 = writer.prefix("ResourceLabel");
-    if let Some(var_183) = &input.resource_label {
-        scope_182.string(var_183);
+    let mut scope_188 = writer.prefix("ResourceLabel");
+    if let Some(var_189) = &input.resource_label {
+        scope_188.string(var_189);
     }
 }
 
@@ -683,14 +705,14 @@ pub fn serialize_structure_predictive_scaling_predefined_scaling_metric(
     input: &crate::model::PredictiveScalingPredefinedScalingMetric,
 ) {
     #[allow(unused_mut)]
-    let mut scope_184 = writer.prefix("PredefinedMetricType");
-    if let Some(var_185) = &input.predefined_metric_type {
-        scope_184.string(var_185.as_str());
+    let mut scope_190 = writer.prefix("PredefinedMetricType");
+    if let Some(var_191) = &input.predefined_metric_type {
+        scope_190.string(var_191.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_186 = writer.prefix("ResourceLabel");
-    if let Some(var_187) = &input.resource_label {
-        scope_186.string(var_187);
+    let mut scope_192 = writer.prefix("ResourceLabel");
+    if let Some(var_193) = &input.resource_label {
+        scope_192.string(var_193);
     }
 }
 
@@ -700,13 +722,13 @@ pub fn serialize_structure_predictive_scaling_predefined_load_metric(
     input: &crate::model::PredictiveScalingPredefinedLoadMetric,
 ) {
     #[allow(unused_mut)]
-    let mut scope_188 = writer.prefix("PredefinedMetricType");
-    if let Some(var_189) = &input.predefined_metric_type {
-        scope_188.string(var_189.as_str());
+    let mut scope_194 = writer.prefix("PredefinedMetricType");
+    if let Some(var_195) = &input.predefined_metric_type {
+        scope_194.string(var_195.as_str());
     }
     #[allow(unused_mut)]
-    let mut scope_190 = writer.prefix("ResourceLabel");
-    if let Some(var_191) = &input.resource_label {
-        scope_190.string(var_191);
+    let mut scope_196 = writer.prefix("ResourceLabel");
+    if let Some(var_197) = &input.resource_label {
+        scope_196.string(var_197);
     }
 }

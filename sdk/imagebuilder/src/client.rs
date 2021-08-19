@@ -2525,7 +2525,39 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owner(input);
             self
         }
-        /// <p>The filters.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>description</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>supportedOsVersion</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>type</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>version</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -2606,7 +2638,29 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owner(input);
             self
         }
-        /// <p>Request filters that are used to narrow the list of container images that are returned.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>containerType</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>parentImage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -2668,13 +2722,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The filters.</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>name</code> - The name of this distribution configuration.</p>
-        /// </li>
-        /// </ul>
+        /// <p>You can filter on <code>name</code> to streamline results.</p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -2749,7 +2797,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_version_arn(input);
             self
         }
-        /// <p>The filters.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>osVersion</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>type</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>version</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -2886,7 +2961,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_image_pipeline_arn(input);
             self
         }
-        /// <p>The filters.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>version</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -2949,7 +3036,39 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The filters.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>description</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>distributionConfigurationArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>imageRecipeArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>infrastructureConfigurationArn</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>status</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -3024,7 +3143,24 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owner(input);
             self
         }
-        /// <p>The filters.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>parentImage</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -3099,7 +3235,34 @@ pub mod fluent_builders {
             self.inner = self.inner.set_owner(input);
             self
         }
-        /// <p>The filters.</p>
+        /// <p>Use the following filters to streamline results:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>name</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>osVersion</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>platform</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>type</code>
+        /// </p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>version</code>
+        /// </p>
+        /// </li>
+        /// </ul>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self
@@ -3180,7 +3343,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The filters.</p>
+        /// <p>You can filter on <code>name</code> to streamline results.</p>
         pub fn filters(mut self, inp: impl Into<crate::model::Filter>) -> Self {
             self.inner = self.inner.filters(inp);
             self

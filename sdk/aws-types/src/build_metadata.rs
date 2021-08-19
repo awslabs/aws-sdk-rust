@@ -33,7 +33,7 @@ pub enum OsFamily {
 /// ```
 macro_rules! get_cfg {
     ($i:ident : $($s:expr),+) => (
-        (|| { $( if cfg!($i=$s) { return $s; } );+ "unknown"})();
+        (|| { $( if cfg!($i=$s) { return $s; } );+ "unknown"})()
     )
 }
 

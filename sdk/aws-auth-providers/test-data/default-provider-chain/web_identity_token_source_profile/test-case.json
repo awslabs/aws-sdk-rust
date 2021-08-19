@@ -1,0 +1,12 @@
+{
+  "name": "web-identity-token-source-profile",
+  "docs": "loads a web identity token via `source_profile`",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARTESTID",
+      "secret_access_key": "TESTSECRETKEY",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1628193482
+    }
+  }
+}

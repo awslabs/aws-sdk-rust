@@ -582,6 +582,35 @@ impl UpdateInstanceAttributeOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateHoursOfOperationOutput {}
+impl std::fmt::Debug for UpdateHoursOfOperationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateHoursOfOperationOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
+pub mod update_hours_of_operation_output {
+    /// A builder for [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
+        pub fn build(self) -> crate::output::UpdateHoursOfOperationOutput {
+            crate::output::UpdateHoursOfOperationOutput {}
+        }
+    }
+}
+impl UpdateHoursOfOperationOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateHoursOfOperationOutput`](crate::output::UpdateHoursOfOperationOutput)
+    pub fn builder() -> crate::output::update_hours_of_operation_output::Builder {
+        crate::output::update_hours_of_operation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateContactFlowNameOutput {}
 impl std::fmt::Debug for UpdateContactFlowNameOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -664,6 +693,35 @@ impl UpdateContactAttributesOutput {
     /// Creates a new builder-style object to manufacture [`UpdateContactAttributesOutput`](crate::output::UpdateContactAttributesOutput)
     pub fn builder() -> crate::output::update_contact_attributes_output::Builder {
         crate::output::update_contact_attributes_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateAgentStatusOutput {}
+impl std::fmt::Debug for UpdateAgentStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateAgentStatusOutput");
+        formatter.finish()
+    }
+}
+/// See [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
+pub mod update_agent_status_output {
+    /// A builder for [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
+        pub fn build(self) -> crate::output::UpdateAgentStatusOutput {
+            crate::output::UpdateAgentStatusOutput {}
+        }
+    }
+}
+impl UpdateAgentStatusOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateAgentStatusOutput`](crate::output::UpdateAgentStatusOutput)
+    pub fn builder() -> crate::output::update_agent_status_output::Builder {
+        crate::output::update_agent_status_output::Builder::default()
     }
 }
 
@@ -2608,6 +2666,75 @@ impl ListApprovedOriginsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAgentStatusesOutput {
+    /// <p>If there are additional results, this is the token for the next set of results.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A summary of agent statuses.</p>
+    pub agent_status_summary_list:
+        std::option::Option<std::vec::Vec<crate::model::AgentStatusSummary>>,
+}
+impl std::fmt::Debug for ListAgentStatusesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAgentStatusesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("agent_status_summary_list", &self.agent_status_summary_list);
+        formatter.finish()
+    }
+}
+/// See [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput)
+pub mod list_agent_statuses_output {
+    /// A builder for [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) agent_status_summary_list:
+            std::option::Option<std::vec::Vec<crate::model::AgentStatusSummary>>,
+    }
+    impl Builder {
+        /// <p>If there are additional results, this is the token for the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        pub fn agent_status_summary_list(
+            mut self,
+            input: impl Into<crate::model::AgentStatusSummary>,
+        ) -> Self {
+            let mut v = self.agent_status_summary_list.unwrap_or_default();
+            v.push(input.into());
+            self.agent_status_summary_list = Some(v);
+            self
+        }
+        pub fn set_agent_status_summary_list(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AgentStatusSummary>>,
+        ) -> Self {
+            self.agent_status_summary_list = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput)
+        pub fn build(self) -> crate::output::ListAgentStatusesOutput {
+            crate::output::ListAgentStatusesOutput {
+                next_token: self.next_token,
+                agent_status_summary_list: self.agent_status_summary_list,
+            }
+        }
+    }
+}
+impl ListAgentStatusesOutput {
+    /// Creates a new builder-style object to manufacture [`ListAgentStatusesOutput`](crate::output::ListAgentStatusesOutput)
+    pub fn builder() -> crate::output::list_agent_statuses_output::Builder {
+        crate::output::list_agent_statuses_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetMetricDataOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     /// <p>The token expires after 5 minutes from the time it is created. Subsequent requests that use
@@ -3640,6 +3767,55 @@ impl DescribeContactFlowOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeAgentStatusOutput {
+    /// <p>The agent status.</p>
+    pub agent_status: std::option::Option<crate::model::AgentStatus>,
+}
+impl std::fmt::Debug for DescribeAgentStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeAgentStatusOutput");
+        formatter.field("agent_status", &self.agent_status);
+        formatter.finish()
+    }
+}
+/// See [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput)
+pub mod describe_agent_status_output {
+    /// A builder for [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agent_status: std::option::Option<crate::model::AgentStatus>,
+    }
+    impl Builder {
+        /// <p>The agent status.</p>
+        pub fn agent_status(mut self, input: crate::model::AgentStatus) -> Self {
+            self.agent_status = Some(input);
+            self
+        }
+        pub fn set_agent_status(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatus>,
+        ) -> Self {
+            self.agent_status = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput)
+        pub fn build(self) -> crate::output::DescribeAgentStatusOutput {
+            crate::output::DescribeAgentStatusOutput {
+                agent_status: self.agent_status,
+            }
+        }
+    }
+}
+impl DescribeAgentStatusOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeAgentStatusOutput`](crate::output::DescribeAgentStatusOutput)
+    pub fn builder() -> crate::output::describe_agent_status_output::Builder {
+        crate::output::describe_agent_status_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteUserHierarchyGroupOutput {}
 impl std::fmt::Debug for DeleteUserHierarchyGroupOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3809,6 +3985,35 @@ impl DeleteInstanceOutput {
     /// Creates a new builder-style object to manufacture [`DeleteInstanceOutput`](crate::output::DeleteInstanceOutput)
     pub fn builder() -> crate::output::delete_instance_output::Builder {
         crate::output::delete_instance_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteHoursOfOperationOutput {}
+impl std::fmt::Debug for DeleteHoursOfOperationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteHoursOfOperationOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
+pub mod delete_hours_of_operation_output {
+    /// A builder for [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
+        pub fn build(self) -> crate::output::DeleteHoursOfOperationOutput {
+            crate::output::DeleteHoursOfOperationOutput {}
+        }
+    }
+}
+impl DeleteHoursOfOperationOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteHoursOfOperationOutput`](crate::output::DeleteHoursOfOperationOutput)
+    pub fn builder() -> crate::output::delete_hours_of_operation_output::Builder {
+        crate::output::delete_hours_of_operation_output::Builder::default()
     }
 }
 
@@ -4329,6 +4534,72 @@ impl CreateInstanceOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateHoursOfOperationOutput {
+    /// <p>The identifier for the hours of operation.</p>
+    pub hours_of_operation_id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+    pub hours_of_operation_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateHoursOfOperationOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateHoursOfOperationOutput");
+        formatter.field("hours_of_operation_id", &self.hours_of_operation_id);
+        formatter.field("hours_of_operation_arn", &self.hours_of_operation_arn);
+        formatter.finish()
+    }
+}
+/// See [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
+pub mod create_hours_of_operation_output {
+    /// A builder for [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hours_of_operation_id: std::option::Option<std::string::String>,
+        pub(crate) hours_of_operation_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The identifier for the hours of operation.</p>
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hours_of_operation_id = Some(input.into());
+            self
+        }
+        pub fn set_hours_of_operation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hours_of_operation_id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the hours of operation.</p>
+        pub fn hours_of_operation_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.hours_of_operation_arn = Some(input.into());
+            self
+        }
+        pub fn set_hours_of_operation_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.hours_of_operation_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
+        pub fn build(self) -> crate::output::CreateHoursOfOperationOutput {
+            crate::output::CreateHoursOfOperationOutput {
+                hours_of_operation_id: self.hours_of_operation_id,
+                hours_of_operation_arn: self.hours_of_operation_arn,
+            }
+        }
+    }
+}
+impl CreateHoursOfOperationOutput {
+    /// Creates a new builder-style object to manufacture [`CreateHoursOfOperationOutput`](crate::output::CreateHoursOfOperationOutput)
+    pub fn builder() -> crate::output::create_hours_of_operation_output::Builder {
+        crate::output::create_hours_of_operation_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateContactFlowOutput {
     /// <p>The identifier of the contact flow.</p>
     pub contact_flow_id: std::option::Option<std::string::String>,
@@ -4390,6 +4661,72 @@ impl CreateContactFlowOutput {
     /// Creates a new builder-style object to manufacture [`CreateContactFlowOutput`](crate::output::CreateContactFlowOutput)
     pub fn builder() -> crate::output::create_contact_flow_output::Builder {
         crate::output::create_contact_flow_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateAgentStatusOutput {
+    /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    pub agent_status_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the agent status.</p>
+    pub agent_status_id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CreateAgentStatusOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateAgentStatusOutput");
+        formatter.field("agent_status_arn", &self.agent_status_arn);
+        formatter.field("agent_status_id", &self.agent_status_id);
+        formatter.finish()
+    }
+}
+/// See [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput)
+pub mod create_agent_status_output {
+    /// A builder for [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agent_status_arn: std::option::Option<std::string::String>,
+        pub(crate) agent_status_id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+        pub fn agent_status_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_status_arn = Some(input.into());
+            self
+        }
+        pub fn set_agent_status_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_status_arn = input;
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_status_id = Some(input.into());
+            self
+        }
+        pub fn set_agent_status_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_status_id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput)
+        pub fn build(self) -> crate::output::CreateAgentStatusOutput {
+            crate::output::CreateAgentStatusOutput {
+                agent_status_arn: self.agent_status_arn,
+                agent_status_id: self.agent_status_id,
+            }
+        }
+    }
+}
+impl CreateAgentStatusOutput {
+    /// Creates a new builder-style object to manufacture [`CreateAgentStatusOutput`](crate::output::CreateAgentStatusOutput)
+    pub fn builder() -> crate::output::create_agent_status_output::Builder {
+        crate::output::create_agent_status_output::Builder::default()
     }
 }
 

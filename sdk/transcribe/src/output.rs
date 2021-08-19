@@ -294,6 +294,59 @@ impl UpdateMedicalVocabularyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateCallAnalyticsCategoryOutput {
+    /// <p>The attributes describing the analytics category. You can see information such as the
+    /// rules that you've used to update the category and when the category was originally
+    /// created. </p>
+    pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+}
+impl std::fmt::Debug for UpdateCallAnalyticsCategoryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateCallAnalyticsCategoryOutput");
+        formatter.field("category_properties", &self.category_properties);
+        formatter.finish()
+    }
+}
+/// See [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
+pub mod update_call_analytics_category_output {
+    /// A builder for [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
+    }
+    impl Builder {
+        /// <p>The attributes describing the analytics category. You can see information such as the
+        /// rules that you've used to update the category and when the category was originally
+        /// created. </p>
+        pub fn category_properties(mut self, input: crate::model::CategoryProperties) -> Self {
+            self.category_properties = Some(input);
+            self
+        }
+        pub fn set_category_properties(
+            mut self,
+            input: std::option::Option<crate::model::CategoryProperties>,
+        ) -> Self {
+            self.category_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
+        pub fn build(self) -> crate::output::UpdateCallAnalyticsCategoryOutput {
+            crate::output::UpdateCallAnalyticsCategoryOutput {
+                category_properties: self.category_properties,
+            }
+        }
+    }
+}
+impl UpdateCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
+    pub fn builder() -> crate::output::update_call_analytics_category_output::Builder {
+        crate::output::update_call_analytics_category_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartTranscriptionJobOutput {
     /// <p>An object containing details of the asynchronous transcription job.</p>
     pub transcription_job: std::option::Option<crate::model::TranscriptionJob>,
@@ -391,6 +444,55 @@ impl StartMedicalTranscriptionJobOutput {
     /// Creates a new builder-style object to manufacture [`StartMedicalTranscriptionJobOutput`](crate::output::StartMedicalTranscriptionJobOutput)
     pub fn builder() -> crate::output::start_medical_transcription_job_output::Builder {
         crate::output::start_medical_transcription_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StartCallAnalyticsJobOutput {
+    /// <p>An object containing the details of the asynchronous call analytics job.</p>
+    pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+}
+impl std::fmt::Debug for StartCallAnalyticsJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StartCallAnalyticsJobOutput");
+        formatter.field("call_analytics_job", &self.call_analytics_job);
+        formatter.finish()
+    }
+}
+/// See [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput)
+pub mod start_call_analytics_job_output {
+    /// A builder for [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+    }
+    impl Builder {
+        /// <p>An object containing the details of the asynchronous call analytics job.</p>
+        pub fn call_analytics_job(mut self, input: crate::model::CallAnalyticsJob) -> Self {
+            self.call_analytics_job = Some(input);
+            self
+        }
+        pub fn set_call_analytics_job(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJob>,
+        ) -> Self {
+            self.call_analytics_job = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput)
+        pub fn build(self) -> crate::output::StartCallAnalyticsJobOutput {
+            crate::output::StartCallAnalyticsJobOutput {
+                call_analytics_job: self.call_analytics_job,
+            }
+        }
+    }
+}
+impl StartCallAnalyticsJobOutput {
+    /// Creates a new builder-style object to manufacture [`StartCallAnalyticsJobOutput`](crate::output::StartCallAnalyticsJobOutput)
+    pub fn builder() -> crate::output::start_call_analytics_job_output::Builder {
+        crate::output::start_call_analytics_job_output::Builder::default()
     }
 }
 
@@ -927,6 +1029,177 @@ impl ListLanguageModelsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCallAnalyticsJobsOutput {
+    /// <p>When specified, returns only call analytics jobs with that status. Jobs are ordered
+    /// by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe
+    /// returns all transcription jobs ordered by creation date.</p>
+    pub status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+    /// <p>The  operation returns a page of jobs at a time. The
+    /// maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more
+    /// jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the
+    /// token in your next request to the  operation to return next page of jobs.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of objects containing summary information for a transcription job.</p>
+    pub call_analytics_job_summaries:
+        std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+}
+impl std::fmt::Debug for ListCallAnalyticsJobsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCallAnalyticsJobsOutput");
+        formatter.field("status", &self.status);
+        formatter.field("next_token", &self.next_token);
+        formatter.field(
+            "call_analytics_job_summaries",
+            &self.call_analytics_job_summaries,
+        );
+        formatter.finish()
+    }
+}
+/// See [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput)
+pub mod list_call_analytics_jobs_output {
+    /// A builder for [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) status: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) call_analytics_job_summaries:
+            std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+    }
+    impl Builder {
+        /// <p>When specified, returns only call analytics jobs with that status. Jobs are ordered
+        /// by creation date, with the most recent jobs returned first. If you don't specify a status, Amazon Transcribe
+        /// returns all transcription jobs ordered by creation date.</p>
+        pub fn status(mut self, input: crate::model::CallAnalyticsJobStatus) -> Self {
+            self.status = Some(input);
+            self
+        }
+        pub fn set_status(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJobStatus>,
+        ) -> Self {
+            self.status = input;
+            self
+        }
+        /// <p>The  operation returns a page of jobs at a time. The
+        /// maximum size of the page is set by the <code>MaxResults</code> parameter. If there are more
+        /// jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the
+        /// token in your next request to the  operation to return next page of jobs.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        pub fn call_analytics_job_summaries(
+            mut self,
+            input: impl Into<crate::model::CallAnalyticsJobSummary>,
+        ) -> Self {
+            let mut v = self.call_analytics_job_summaries.unwrap_or_default();
+            v.push(input.into());
+            self.call_analytics_job_summaries = Some(v);
+            self
+        }
+        pub fn set_call_analytics_job_summaries(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CallAnalyticsJobSummary>>,
+        ) -> Self {
+            self.call_analytics_job_summaries = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput)
+        pub fn build(self) -> crate::output::ListCallAnalyticsJobsOutput {
+            crate::output::ListCallAnalyticsJobsOutput {
+                status: self.status,
+                next_token: self.next_token,
+                call_analytics_job_summaries: self.call_analytics_job_summaries,
+            }
+        }
+    }
+}
+impl ListCallAnalyticsJobsOutput {
+    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsJobsOutput`](crate::output::ListCallAnalyticsJobsOutput)
+    pub fn builder() -> crate::output::list_call_analytics_jobs_output::Builder {
+        crate::output::list_call_analytics_jobs_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListCallAnalyticsCategoriesOutput {
+    /// <p>The  operation returns a page of jobs at a time. The
+    /// maximum size of the list is set by the <code>MaxResults</code> parameter. If there are
+    /// more categories in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
+    /// token. Include the token in the next request to the
+    /// operation to return the next page of analytics categories.</p>
+    pub next_token: std::option::Option<std::string::String>,
+    /// <p>A list of objects containing information about analytics categories.</p>
+    pub categories: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
+}
+impl std::fmt::Debug for ListCallAnalyticsCategoriesOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListCallAnalyticsCategoriesOutput");
+        formatter.field("next_token", &self.next_token);
+        formatter.field("categories", &self.categories);
+        formatter.finish()
+    }
+}
+/// See [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput)
+pub mod list_call_analytics_categories_output {
+    /// A builder for [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) next_token: std::option::Option<std::string::String>,
+        pub(crate) categories: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
+    }
+    impl Builder {
+        /// <p>The  operation returns a page of jobs at a time. The
+        /// maximum size of the list is set by the <code>MaxResults</code> parameter. If there are
+        /// more categories in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
+        /// token. Include the token in the next request to the
+        /// operation to return the next page of analytics categories.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        pub fn categories(mut self, input: impl Into<crate::model::CategoryProperties>) -> Self {
+            let mut v = self.categories.unwrap_or_default();
+            v.push(input.into());
+            self.categories = Some(v);
+            self
+        }
+        pub fn set_categories(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CategoryProperties>>,
+        ) -> Self {
+            self.categories = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput)
+        pub fn build(self) -> crate::output::ListCallAnalyticsCategoriesOutput {
+            crate::output::ListCallAnalyticsCategoriesOutput {
+                next_token: self.next_token,
+                categories: self.categories,
+            }
+        }
+    }
+}
+impl ListCallAnalyticsCategoriesOutput {
+    /// Creates a new builder-style object to manufacture [`ListCallAnalyticsCategoriesOutput`](crate::output::ListCallAnalyticsCategoriesOutput)
+    pub fn builder() -> crate::output::list_call_analytics_categories_output::Builder {
+        crate::output::list_call_analytics_categories_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetVocabularyFilterOutput {
     /// <p>The name of the vocabulary filter.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -1410,6 +1683,104 @@ impl GetMedicalTranscriptionJobOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCallAnalyticsJobOutput {
+    /// <p>An object that contains the results of your call analytics job.</p>
+    pub call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+}
+impl std::fmt::Debug for GetCallAnalyticsJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCallAnalyticsJobOutput");
+        formatter.field("call_analytics_job", &self.call_analytics_job);
+        formatter.finish()
+    }
+}
+/// See [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput)
+pub mod get_call_analytics_job_output {
+    /// A builder for [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) call_analytics_job: std::option::Option<crate::model::CallAnalyticsJob>,
+    }
+    impl Builder {
+        /// <p>An object that contains the results of your call analytics job.</p>
+        pub fn call_analytics_job(mut self, input: crate::model::CallAnalyticsJob) -> Self {
+            self.call_analytics_job = Some(input);
+            self
+        }
+        pub fn set_call_analytics_job(
+            mut self,
+            input: std::option::Option<crate::model::CallAnalyticsJob>,
+        ) -> Self {
+            self.call_analytics_job = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput)
+        pub fn build(self) -> crate::output::GetCallAnalyticsJobOutput {
+            crate::output::GetCallAnalyticsJobOutput {
+                call_analytics_job: self.call_analytics_job,
+            }
+        }
+    }
+}
+impl GetCallAnalyticsJobOutput {
+    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsJobOutput`](crate::output::GetCallAnalyticsJobOutput)
+    pub fn builder() -> crate::output::get_call_analytics_job_output::Builder {
+        crate::output::get_call_analytics_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetCallAnalyticsCategoryOutput {
+    /// <p>The rules you've defined for a category.</p>
+    pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+}
+impl std::fmt::Debug for GetCallAnalyticsCategoryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetCallAnalyticsCategoryOutput");
+        formatter.field("category_properties", &self.category_properties);
+        formatter.finish()
+    }
+}
+/// See [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput)
+pub mod get_call_analytics_category_output {
+    /// A builder for [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
+    }
+    impl Builder {
+        /// <p>The rules you've defined for a category.</p>
+        pub fn category_properties(mut self, input: crate::model::CategoryProperties) -> Self {
+            self.category_properties = Some(input);
+            self
+        }
+        pub fn set_category_properties(
+            mut self,
+            input: std::option::Option<crate::model::CategoryProperties>,
+        ) -> Self {
+            self.category_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput)
+        pub fn build(self) -> crate::output::GetCallAnalyticsCategoryOutput {
+            crate::output::GetCallAnalyticsCategoryOutput {
+                category_properties: self.category_properties,
+            }
+        }
+    }
+}
+impl GetCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`GetCallAnalyticsCategoryOutput`](crate::output::GetCallAnalyticsCategoryOutput)
+    pub fn builder() -> crate::output::get_call_analytics_category_output::Builder {
+        crate::output::get_call_analytics_category_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeLanguageModelOutput {
     /// <p>The name of the custom language model you requested more information about.</p>
     pub language_model: std::option::Option<crate::model::LanguageModel>,
@@ -1633,6 +2004,64 @@ impl DeleteLanguageModelOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCallAnalyticsJobOutput {}
+impl std::fmt::Debug for DeleteCallAnalyticsJobOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCallAnalyticsJobOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
+pub mod delete_call_analytics_job_output {
+    /// A builder for [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
+        pub fn build(self) -> crate::output::DeleteCallAnalyticsJobOutput {
+            crate::output::DeleteCallAnalyticsJobOutput {}
+        }
+    }
+}
+impl DeleteCallAnalyticsJobOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsJobOutput`](crate::output::DeleteCallAnalyticsJobOutput)
+    pub fn builder() -> crate::output::delete_call_analytics_job_output::Builder {
+        crate::output::delete_call_analytics_job_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DeleteCallAnalyticsCategoryOutput {}
+impl std::fmt::Debug for DeleteCallAnalyticsCategoryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DeleteCallAnalyticsCategoryOutput");
+        formatter.finish()
+    }
+}
+/// See [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
+pub mod delete_call_analytics_category_output {
+    /// A builder for [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
+        pub fn build(self) -> crate::output::DeleteCallAnalyticsCategoryOutput {
+            crate::output::DeleteCallAnalyticsCategoryOutput {}
+        }
+    }
+}
+impl DeleteCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`DeleteCallAnalyticsCategoryOutput`](crate::output::DeleteCallAnalyticsCategoryOutput)
+    pub fn builder() -> crate::output::delete_call_analytics_category_output::Builder {
+        crate::output::delete_call_analytics_category_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateVocabularyFilterOutput {
     /// <p>The name of the vocabulary filter.</p>
     pub vocabulary_filter_name: std::option::Option<std::string::String>,
@@ -1840,7 +2269,7 @@ impl CreateVocabularyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateMedicalVocabularyOutput {
-    /// <p>The name of the vocabulary. The name must be unique within an AWS account and is case
+    /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account and is case
     /// sensitive.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code for the entries in your custom vocabulary. US English (en-US) is the
@@ -1880,7 +2309,7 @@ pub mod create_medical_vocabulary_output {
         pub(crate) failure_reason: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the vocabulary. The name must be unique within an AWS account and is case
+        /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account and is case
         /// sensitive.</p>
         pub fn vocabulary_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.vocabulary_name = Some(input.into());
@@ -2081,5 +2510,54 @@ impl CreateLanguageModelOutput {
     /// Creates a new builder-style object to manufacture [`CreateLanguageModelOutput`](crate::output::CreateLanguageModelOutput)
     pub fn builder() -> crate::output::create_language_model_output::Builder {
         crate::output::create_language_model_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CreateCallAnalyticsCategoryOutput {
+    /// <p>The rules and associated metadata used to create a category.</p>
+    pub category_properties: std::option::Option<crate::model::CategoryProperties>,
+}
+impl std::fmt::Debug for CreateCallAnalyticsCategoryOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CreateCallAnalyticsCategoryOutput");
+        formatter.field("category_properties", &self.category_properties);
+        formatter.finish()
+    }
+}
+/// See [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput)
+pub mod create_call_analytics_category_output {
+    /// A builder for [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
+    }
+    impl Builder {
+        /// <p>The rules and associated metadata used to create a category.</p>
+        pub fn category_properties(mut self, input: crate::model::CategoryProperties) -> Self {
+            self.category_properties = Some(input);
+            self
+        }
+        pub fn set_category_properties(
+            mut self,
+            input: std::option::Option<crate::model::CategoryProperties>,
+        ) -> Self {
+            self.category_properties = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput)
+        pub fn build(self) -> crate::output::CreateCallAnalyticsCategoryOutput {
+            crate::output::CreateCallAnalyticsCategoryOutput {
+                category_properties: self.category_properties,
+            }
+        }
+    }
+}
+impl CreateCallAnalyticsCategoryOutput {
+    /// Creates a new builder-style object to manufacture [`CreateCallAnalyticsCategoryOutput`](crate::output::CreateCallAnalyticsCategoryOutput)
+    pub fn builder() -> crate::output::create_call_analytics_category_output::Builder {
+        crate::output::create_call_analytics_category_output::Builder::default()
     }
 }

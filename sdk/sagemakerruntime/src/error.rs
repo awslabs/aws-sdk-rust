@@ -95,6 +95,99 @@ impl std::error::Error for InvokeEndpointError {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct InvokeEndpointAsyncError {
+    pub kind: InvokeEndpointAsyncErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum InvokeEndpointAsyncErrorKind {
+    InternalFailure(crate::error::InternalFailure),
+    ServiceUnavailable(crate::error::ServiceUnavailable),
+    ValidationError(crate::error::ValidationError),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for InvokeEndpointAsyncError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            InvokeEndpointAsyncErrorKind::InternalFailure(_inner) => _inner.fmt(f),
+            InvokeEndpointAsyncErrorKind::ServiceUnavailable(_inner) => _inner.fmt(f),
+            InvokeEndpointAsyncErrorKind::ValidationError(_inner) => _inner.fmt(f),
+            InvokeEndpointAsyncErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for InvokeEndpointAsyncError {
+    fn code(&self) -> Option<&str> {
+        InvokeEndpointAsyncError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl InvokeEndpointAsyncError {
+    pub fn new(kind: InvokeEndpointAsyncErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: InvokeEndpointAsyncErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: InvokeEndpointAsyncErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_failure(&self) -> bool {
+        matches!(&self.kind, InvokeEndpointAsyncErrorKind::InternalFailure(_))
+    }
+    pub fn is_service_unavailable(&self) -> bool {
+        matches!(
+            &self.kind,
+            InvokeEndpointAsyncErrorKind::ServiceUnavailable(_)
+        )
+    }
+    pub fn is_validation_error(&self) -> bool {
+        matches!(&self.kind, InvokeEndpointAsyncErrorKind::ValidationError(_))
+    }
+}
+impl std::error::Error for InvokeEndpointAsyncError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            InvokeEndpointAsyncErrorKind::InternalFailure(_inner) => Some(_inner),
+            InvokeEndpointAsyncErrorKind::ServiceUnavailable(_inner) => Some(_inner),
+            InvokeEndpointAsyncErrorKind::ValidationError(_inner) => Some(_inner),
+            InvokeEndpointAsyncErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
 /// <p> Inspect your request and try again. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -215,6 +308,66 @@ impl ServiceUnavailable {
     }
 }
 
+/// <p> An internal failure occurred. </p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InternalFailure {
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for InternalFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InternalFailure");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl InternalFailure {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for InternalFailure {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "InternalFailure")?;
+        if let Some(inner_3) = &self.message {
+            write!(f, ": {}", inner_3)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for InternalFailure {}
+/// See [`InternalFailure`](crate::error::InternalFailure)
+pub mod internal_failure {
+    /// A builder for [`InternalFailure`](crate::error::InternalFailure)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InternalFailure`](crate::error::InternalFailure)
+        pub fn build(self) -> crate::error::InternalFailure {
+            crate::error::InternalFailure {
+                message: self.message,
+            }
+        }
+    }
+}
+impl InternalFailure {
+    /// Creates a new builder-style object to manufacture [`InternalFailure`](crate::error::InternalFailure)
+    pub fn builder() -> crate::error::internal_failure::Builder {
+        crate::error::internal_failure::Builder::default()
+    }
+}
+
 /// <p> Model (owned by the customer in the container) returned 4xx or 5xx error code.
 /// </p>
 #[non_exhaustive]
@@ -246,8 +399,8 @@ impl ModelError {
 impl std::fmt::Display for ModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ModelError")?;
-        if let Some(inner_3) = &self.message {
-            write!(f, ": {}", inner_3)?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
         }
         Ok(())
     }
@@ -321,65 +474,5 @@ impl ModelError {
     /// Creates a new builder-style object to manufacture [`ModelError`](crate::error::ModelError)
     pub fn builder() -> crate::error::model_error::Builder {
         crate::error::model_error::Builder::default()
-    }
-}
-
-/// <p> An internal failure occurred. </p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InternalFailure {
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for InternalFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InternalFailure");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl InternalFailure {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for InternalFailure {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "InternalFailure")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for InternalFailure {}
-/// See [`InternalFailure`](crate::error::InternalFailure)
-pub mod internal_failure {
-    /// A builder for [`InternalFailure`](crate::error::InternalFailure)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InternalFailure`](crate::error::InternalFailure)
-        pub fn build(self) -> crate::error::InternalFailure {
-            crate::error::InternalFailure {
-                message: self.message,
-            }
-        }
-    }
-}
-impl InternalFailure {
-    /// Creates a new builder-style object to manufacture [`InternalFailure`](crate::error::InternalFailure)
-    pub fn builder() -> crate::error::internal_failure::Builder {
-        crate::error::internal_failure::Builder::default()
     }
 }

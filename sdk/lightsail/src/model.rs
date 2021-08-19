@@ -18176,6 +18176,13 @@ pub struct AccessKey {
     pub status: std::option::Option<crate::model::StatusType>,
     /// <p>The timestamp when the access key was created.</p>
     pub created_at: std::option::Option<smithy_types::Instant>,
+    /// <p>An object that describes the last time the access key was used.</p>
+    /// <note>
+    /// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+    /// <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+    /// <code>lastUsedDate</code> value is null.</p>
+    /// </note>
+    pub last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
 }
 impl std::fmt::Debug for AccessKey {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -18184,6 +18191,7 @@ impl std::fmt::Debug for AccessKey {
         formatter.field("secret_access_key", &self.secret_access_key);
         formatter.field("status", &self.status);
         formatter.field("created_at", &self.created_at);
+        formatter.field("last_used", &self.last_used);
         formatter.finish()
     }
 }
@@ -18197,6 +18205,7 @@ pub mod access_key {
         pub(crate) secret_access_key: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StatusType>,
         pub(crate) created_at: std::option::Option<smithy_types::Instant>,
+        pub(crate) last_used: std::option::Option<crate::model::AccessKeyLastUsed>,
     }
     impl Builder {
         /// <p>The ID of the access key.</p>
@@ -18245,6 +18254,23 @@ pub mod access_key {
             self.created_at = input;
             self
         }
+        /// <p>An object that describes the last time the access key was used.</p>
+        /// <note>
+        /// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action. If the access key has not been used, the
+        /// <code>region</code> and <code>serviceName</code> values are <code>N/A</code>, and the
+        /// <code>lastUsedDate</code> value is null.</p>
+        /// </note>
+        pub fn last_used(mut self, input: crate::model::AccessKeyLastUsed) -> Self {
+            self.last_used = Some(input);
+            self
+        }
+        pub fn set_last_used(
+            mut self,
+            input: std::option::Option<crate::model::AccessKeyLastUsed>,
+        ) -> Self {
+            self.last_used = input;
+            self
+        }
         /// Consumes the builder and constructs a [`AccessKey`](crate::model::AccessKey)
         pub fn build(self) -> crate::model::AccessKey {
             crate::model::AccessKey {
@@ -18252,6 +18278,7 @@ pub mod access_key {
                 secret_access_key: self.secret_access_key,
                 status: self.status,
                 created_at: self.created_at,
+                last_used: self.last_used,
             }
         }
     }
@@ -18260,6 +18287,93 @@ impl AccessKey {
     /// Creates a new builder-style object to manufacture [`AccessKey`](crate::model::AccessKey)
     pub fn builder() -> crate::model::access_key::Builder {
         crate::model::access_key::Builder::default()
+    }
+}
+
+/// <p>Describes the last time an access key was used.</p>
+/// <note>
+/// <p>This object does not include data in the response of a <a>CreateBucketAccessKey</a> action.</p>
+/// </note>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AccessKeyLastUsed {
+    /// <p>The date and time when the access key was most recently used.</p>
+    /// <p>This value is null if the access key has not been used.</p>
+    pub last_used_date: std::option::Option<smithy_types::Instant>,
+    /// <p>The AWS Region where this access key was most recently used.</p>
+    /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
+    pub region: std::option::Option<std::string::String>,
+    /// <p>The name of the AWS service with which this access key was most recently used.</p>
+    /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
+    pub service_name: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for AccessKeyLastUsed {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AccessKeyLastUsed");
+        formatter.field("last_used_date", &self.last_used_date);
+        formatter.field("region", &self.region);
+        formatter.field("service_name", &self.service_name);
+        formatter.finish()
+    }
+}
+/// See [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed)
+pub mod access_key_last_used {
+    /// A builder for [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) last_used_date: std::option::Option<smithy_types::Instant>,
+        pub(crate) region: std::option::Option<std::string::String>,
+        pub(crate) service_name: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The date and time when the access key was most recently used.</p>
+        /// <p>This value is null if the access key has not been used.</p>
+        pub fn last_used_date(mut self, input: smithy_types::Instant) -> Self {
+            self.last_used_date = Some(input);
+            self
+        }
+        pub fn set_last_used_date(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.last_used_date = input;
+            self
+        }
+        /// <p>The AWS Region where this access key was most recently used.</p>
+        /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
+        pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
+            self.region = Some(input.into());
+            self
+        }
+        pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.region = input;
+            self
+        }
+        /// <p>The name of the AWS service with which this access key was most recently used.</p>
+        /// <p>This value is <code>N/A</code> if the access key has not been used.</p>
+        pub fn service_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.service_name = Some(input.into());
+            self
+        }
+        pub fn set_service_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.service_name = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed)
+        pub fn build(self) -> crate::model::AccessKeyLastUsed {
+            crate::model::AccessKeyLastUsed {
+                last_used_date: self.last_used_date,
+                region: self.region,
+                service_name: self.service_name,
+            }
+        }
+    }
+}
+impl AccessKeyLastUsed {
+    /// Creates a new builder-style object to manufacture [`AccessKeyLastUsed`](crate::model::AccessKeyLastUsed)
+    pub fn builder() -> crate::model::access_key_last_used::Builder {
+        crate::model::access_key_last_used::Builder::default()
     }
 }
 

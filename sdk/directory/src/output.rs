@@ -49,7 +49,7 @@ impl VerifyTrustOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateTrustOutput {
-    /// <p>The AWS request identifier.</p>
+    /// <p>The Amazon Web Services request identifier.</p>
     pub request_id: std::option::Option<std::string::String>,
     /// <p>Identifier of the trust relationship.</p>
     pub trust_id: std::option::Option<std::string::String>,
@@ -72,7 +72,7 @@ pub mod update_trust_output {
         pub(crate) trust_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The AWS request identifier.</p>
+        /// <p>The Amazon Web Services request identifier.</p>
         pub fn request_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.request_id = Some(input.into());
             self
@@ -690,7 +690,9 @@ pub struct ListSchemaExtensionsOutput {
     /// <p>Information about the schema extensions applied to the directory.</p>
     pub schema_extensions_info:
         std::option::Option<std::vec::Vec<crate::model::SchemaExtensionInfo>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+    /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
+    /// of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListSchemaExtensionsOutput {
@@ -728,7 +730,9 @@ pub mod list_schema_extensions_output {
             self.schema_extensions_info = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the next set
+        /// of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -756,8 +760,7 @@ impl ListSchemaExtensionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLogSubscriptionsOutput {
-    /// <p>A list of active <a>LogSubscription</a> objects for calling the AWS
-    /// account.</p>
+    /// <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web Services account.</p>
     pub log_subscriptions: std::option::Option<std::vec::Vec<crate::model::LogSubscription>>,
     /// <p>The token for the next set of items to return.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -827,8 +830,8 @@ impl ListLogSubscriptionsOutput {
 pub struct ListIpRoutesOutput {
     /// <p>A list of <a>IpRoute</a>s.</p>
     pub ip_routes_info: std::option::Option<std::vec::Vec<crate::model::IpRouteInfo>>,
-    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter
-    /// in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the
+    /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListIpRoutesOutput {
@@ -862,8 +865,8 @@ pub mod list_ip_routes_output {
             self.ip_routes_info = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter
-        /// in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the
+        /// <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1016,7 +1019,7 @@ impl GetSnapshotLimitsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetDirectoryLimitsOutput {
     /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-    /// current rRegion.</p>
+    /// current Region.</p>
     pub directory_limits: std::option::Option<crate::model::DirectoryLimits>,
 }
 impl std::fmt::Debug for GetDirectoryLimitsOutput {
@@ -1036,7 +1039,7 @@ pub mod get_directory_limits_output {
     }
     impl Builder {
         /// <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-        /// current rRegion.</p>
+        /// current Region.</p>
         pub fn directory_limits(mut self, input: crate::model::DirectoryLimits) -> Self {
             self.directory_limits = Some(input);
             self
@@ -1305,12 +1308,12 @@ impl DisableClientAuthenticationOutput {
 pub struct DescribeTrustsOutput {
     /// <p>The list of Trust objects that were retrieved.</p>
     /// <p>It is possible that this list contains less than the number of items specified in the
-    /// <i>Limit</i> member of the request. This occurs if there are less than the requested
-    /// number of items left to retrieve, or if the limitations of the operation have been
+    /// <i>Limit</i> member of the request. This occurs if there are less than the
+    /// requested number of items left to retrieve, or if the limitations of the operation have been
     /// exceeded.</p>
     pub trusts: std::option::Option<std::vec::Vec<crate::model::Trust>>,
-    /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter
-    /// in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the
+    /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeTrustsOutput {
@@ -1344,8 +1347,8 @@ pub mod describe_trusts_output {
             self.trusts = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <i>NextToken</i> parameter
-        /// in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the
+        /// <i>NextToken</i> parameter in a subsequent call to <a>DescribeTrusts</a> to retrieve the next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1658,7 +1661,8 @@ impl DescribeLdapsSettingsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeEventTopicsOutput {
-    /// <p>A list of SNS topic names that receive status messages from the specified Directory ID.</p>
+    /// <p>A list of Amazon SNS topic names that receive status messages from the specified Directory
+    /// ID.</p>
     pub event_topics: std::option::Option<std::vec::Vec<crate::model::EventTopic>>,
 }
 impl std::fmt::Debug for DescribeEventTopicsOutput {
@@ -1710,7 +1714,9 @@ impl DescribeEventTopicsOutput {
 pub struct DescribeDomainControllersOutput {
     /// <p>List of the <a>DomainController</a> objects that were retrieved.</p>
     pub domain_controllers: std::option::Option<std::vec::Vec<crate::model::DomainController>>,
-    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the next set of items.</p>
+    /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+    /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
+    /// next set of items.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDomainControllersOutput {
@@ -1748,7 +1754,9 @@ pub mod describe_domain_controllers_output {
             self.domain_controllers = input;
             self
         }
-        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code> parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the next set of items.</p>
+        /// <p>If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// parameter in a subsequent call to <a>DescribeDomainControllers</a> retrieve the
+        /// next set of items.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1904,6 +1912,82 @@ impl DescribeConditionalForwardersOutput {
     /// Creates a new builder-style object to manufacture [`DescribeConditionalForwardersOutput`](crate::output::DescribeConditionalForwardersOutput)
     pub fn builder() -> crate::output::describe_conditional_forwarders_output::Builder {
         crate::output::describe_conditional_forwarders_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct DescribeClientAuthenticationSettingsOutput {
+    /// <p>Information about the type of client authentication for the specified directory. The following information is retrieved: The date and time when the status of the client authentication type was last updated, whether the client authentication type is enabled or disabled, and the type of client authentication.</p>
+    pub client_authentication_settings_info:
+        std::option::Option<std::vec::Vec<crate::model::ClientAuthenticationSettingInfo>>,
+    /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
+    /// page limit and there is another page.</p>
+    pub next_token: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for DescribeClientAuthenticationSettingsOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("DescribeClientAuthenticationSettingsOutput");
+        formatter.field(
+            "client_authentication_settings_info",
+            &self.client_authentication_settings_info,
+        );
+        formatter.field("next_token", &self.next_token);
+        formatter.finish()
+    }
+}
+/// See [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput)
+pub mod describe_client_authentication_settings_output {
+    /// A builder for [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) client_authentication_settings_info:
+            std::option::Option<std::vec::Vec<crate::model::ClientAuthenticationSettingInfo>>,
+        pub(crate) next_token: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn client_authentication_settings_info(
+            mut self,
+            input: impl Into<crate::model::ClientAuthenticationSettingInfo>,
+        ) -> Self {
+            let mut v = self.client_authentication_settings_info.unwrap_or_default();
+            v.push(input.into());
+            self.client_authentication_settings_info = Some(v);
+            self
+        }
+        pub fn set_client_authentication_settings_info(
+            mut self,
+            input: std::option::Option<
+                std::vec::Vec<crate::model::ClientAuthenticationSettingInfo>,
+            >,
+        ) -> Self {
+            self.client_authentication_settings_info = input;
+            self
+        }
+        /// <p>The next token used to retrieve the client authentication settings if the number of setting types exceeds
+        /// page limit and there is another page.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_token = Some(input.into());
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_token = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput)
+        pub fn build(self) -> crate::output::DescribeClientAuthenticationSettingsOutput {
+            crate::output::DescribeClientAuthenticationSettingsOutput {
+                client_authentication_settings_info: self.client_authentication_settings_info,
+                next_token: self.next_token,
+            }
+        }
+    }
+}
+impl DescribeClientAuthenticationSettingsOutput {
+    /// Creates a new builder-style object to manufacture [`DescribeClientAuthenticationSettingsOutput`](crate::output::DescribeClientAuthenticationSettingsOutput)
+    pub fn builder() -> crate::output::describe_client_authentication_settings_output::Builder {
+        crate::output::describe_client_authentication_settings_output::Builder::default()
     }
 }
 

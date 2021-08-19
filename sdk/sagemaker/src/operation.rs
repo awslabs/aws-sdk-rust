@@ -270,7 +270,7 @@ impl smithy_http::response::ParseStrictResponse for CreateArtifact {
 }
 
 /// <p>Creates an Autopilot job.</p>
-/// <p>Find the best performing model after you run an Autopilot job by calling .</p>
+/// <p>Find the best-performing model after you run an Autopilot job by calling .</p>
 /// <p>For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate Model
 /// Development with Amazon SageMaker Autopilot</a>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
@@ -6535,6 +6535,9 @@ impl smithy_http::response::ParseStrictResponse for StopNotebookInstance {
 }
 
 /// <p>Stops a pipeline execution.</p>
+/// <p>
+/// <b>Callback Step</b>
+/// </p>
 /// <p>A pipeline execution won't stop while a callback step is running.
 /// When you call <code>StopPipelineExecution</code>
 /// on a pipeline execution with a running callback step, SageMaker Pipelines sends an
@@ -6545,6 +6548,15 @@ impl smithy_http::response::ParseStrictResponse for StopNotebookInstance {
 /// <code>SendPipelineExecutionStepSuccess</code> or
 /// <code>SendPipelineExecutionStepFailure</code>.</p>
 /// <p>Only when SageMaker Pipelines receives one of these calls will it stop the pipeline execution.</p>
+/// <p>
+/// <b>Lambda Step</b>
+/// </p>
+/// <p>A pipeline execution can't be stopped while a lambda step is running because the Lambda
+/// function invoked by the lambda step can't be stopped. If you attempt to stop the execution
+/// while the Lambda function is running, the pipeline waits for the Lambda function to finish
+/// or until the timeout is hit, whichever occurs first, and then stops. If the Lambda function
+/// finishes, the pipeline execution status is <code>Stopped</code>. If the timeout is hit
+/// the pipeline execution status is <code>Failed</code>.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct StopPipelineExecution {
     _private: (),

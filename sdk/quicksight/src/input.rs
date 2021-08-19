@@ -235,7 +235,7 @@ pub mod create_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're adding in the current Region;. You can add
+        /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
         /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
         /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
         /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":
@@ -759,7 +759,7 @@ pub mod create_dashboard_input {
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Region;. </p>
+        /// QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -1047,7 +1047,7 @@ pub mod create_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -1393,7 +1393,7 @@ pub mod create_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+        /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -3257,7 +3257,7 @@ pub mod create_template_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the template that you want to create. This template is unique per Region; in
+        /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
         /// each Amazon Web Services account;.</p>
         pub fn template_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.template_id = Some(input.into());
@@ -3295,7 +3295,7 @@ pub mod create_template_input {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
+        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -3742,7 +3742,7 @@ pub mod create_theme_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>An ID for the theme that you want to create. The theme ID is unique per Region; in
+        /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region; in
         /// each Amazon Web Services account;.</p>
         pub fn theme_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.theme_id = Some(input.into());
@@ -4215,7 +4215,7 @@ pub mod delete_account_customization_input {
     }
     impl Builder {
         /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
-        /// this Region;.</p>
+        /// this Amazon Web Services Region;.</p>
         pub fn aws_account_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.aws_account_id = Some(input.into());
             self
@@ -4824,7 +4824,7 @@ pub mod delete_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -5000,7 +5000,7 @@ pub mod delete_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -8728,7 +8728,7 @@ pub mod describe_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -8906,7 +8906,7 @@ pub mod describe_data_set_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -9085,7 +9085,7 @@ pub mod describe_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -9266,7 +9266,7 @@ pub mod describe_data_source_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -19215,7 +19215,7 @@ pub mod update_account_customization_input {
             self.namespace = input;
             self
         }
-        /// <p>The QuickSight customizations you're updating in the current Region;. </p>
+        /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
         pub fn account_customization(mut self, input: crate::model::AccountCustomization) -> Self {
             self.account_customization = Some(input);
             self
@@ -20071,7 +20071,7 @@ pub mod update_dashboard_input {
         /// to a template by using the <a>CreateTemplate</a> API operation. For
         /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
         /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
-        /// QuickSight-supported Region;. </p>
+        /// QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
         /// list the replacement datasets for the placeholders listed in the original. The schema in
         /// each dataset must match its placeholder. </p>
@@ -20787,7 +20787,7 @@ pub mod update_data_set_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID for the dataset that you want to update. This ID is unique per Region; for each
+        /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region; for each
         /// Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
@@ -21117,7 +21117,7 @@ pub mod update_data_set_permissions_input {
             self
         }
         /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-        /// Region; for each Amazon Web Services account;.</p>
+        /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
         pub fn data_set_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_set_id = Some(input.into());
             self
@@ -21339,7 +21339,7 @@ pub mod update_data_source_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -21595,7 +21595,7 @@ pub mod update_data_source_permissions_input {
             self.aws_account_id = input;
             self
         }
-        /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+        /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
         pub fn data_source_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_source_id = Some(input.into());
             self
@@ -22732,7 +22732,7 @@ pub mod update_template_input {
         /// analysis. Both of these require an Amazon Resource Name (ARN). For
         /// <code>SourceTemplate</code>, specify the ARN of the source template. For
         /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
+        /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
         /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
         /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -24661,7 +24661,7 @@ pub struct UpdateTemplateInput {
     /// analysis. Both of these require an Amazon Resource Name (ARN). For
     /// <code>SourceTemplate</code>, specify the ARN of the source template. For
     /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
+    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
     /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
     /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -24806,7 +24806,7 @@ impl std::fmt::Debug for UpdateFolderInput {
 pub struct UpdateDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A list of resource permissions that you want to grant on the data source.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -24829,7 +24829,7 @@ impl std::fmt::Debug for UpdateDataSourcePermissionsInput {
 pub struct UpdateDataSourceInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
@@ -24865,7 +24865,7 @@ pub struct UpdateDataSetPermissionsInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The ID for the dataset whose permissions you want to update. This ID is unique per
-    /// Region; for each Amazon Web Services account;.</p>
+    /// Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The resource permissions that you want to grant to the dataset.</p>
     pub grant_permissions: std::option::Option<std::vec::Vec<crate::model::ResourcePermission>>,
@@ -24888,7 +24888,7 @@ impl std::fmt::Debug for UpdateDataSetPermissionsInput {
 pub struct UpdateDataSetInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to update. This ID is unique per Region; for each
+    /// <p>The ID for the dataset that you want to update. This ID is unique per Amazon Web Services Region; for each
     /// Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
@@ -25009,7 +25009,7 @@ pub struct UpdateDashboardInput {
     /// to a template by using the <a>CreateTemplate</a> API operation. For
     /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
     /// template. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services account; and any
-    /// QuickSight-supported Region;. </p>
+    /// QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
     /// list the replacement datasets for the placeholders listed in the original. The schema in
     /// each dataset must match its placeholder. </p>
@@ -25161,7 +25161,7 @@ pub struct UpdateAccountCustomizationInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The namespace that you want to update QuickSight customizations for.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're updating in the current Region;. </p>
+    /// <p>The QuickSight customizations you're updating in the current Amazon Web Services Region;. </p>
     pub account_customization: std::option::Option<crate::model::AccountCustomization>,
 }
 impl std::fmt::Debug for UpdateAccountCustomizationInput {
@@ -26448,7 +26448,7 @@ impl std::fmt::Debug for DescribeFolderInput {
 pub struct DescribeDataSourcePermissionsInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
@@ -26465,7 +26465,7 @@ impl std::fmt::Debug for DescribeDataSourcePermissionsInput {
 pub struct DescribeDataSourceInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSourceInput {
@@ -26482,7 +26482,7 @@ impl std::fmt::Debug for DescribeDataSourceInput {
 pub struct DescribeDataSetPermissionsInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSetPermissionsInput {
@@ -26499,7 +26499,7 @@ impl std::fmt::Debug for DescribeDataSetPermissionsInput {
 pub struct DescribeDataSetInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeDataSetInput {
@@ -26891,7 +26891,7 @@ impl std::fmt::Debug for DeleteFolderInput {
 pub struct DeleteDataSourceInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID of the data source. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID of the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_source_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDataSourceInput {
@@ -26908,7 +26908,7 @@ impl std::fmt::Debug for DeleteDataSourceInput {
 pub struct DeleteDataSetInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>The ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>The ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteDataSetInput {
@@ -26976,7 +26976,7 @@ impl std::fmt::Debug for DeleteAnalysisInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteAccountCustomizationInput {
     /// <p>The ID for the Amazon Web Services account; that you want to delete QuickSight customizations from in
-    /// this Region;.</p>
+    /// this Amazon Web Services Region;.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The QuickSight namespace that you're deleting the customizations from.</p>
     pub namespace: std::option::Option<std::string::String>,
@@ -27020,7 +27020,7 @@ impl std::fmt::Debug for CreateThemeAliasInput {
 pub struct CreateThemeInput {
     /// <p>The ID of the Amazon Web Services account; where you want to store the new theme. </p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the theme that you want to create. The theme ID is unique per Region; in
+    /// <p>An ID for the theme that you want to create. The theme ID is unique per Amazon Web Services Region; in
     /// each Amazon Web Services account;.</p>
     pub theme_id: std::option::Option<std::string::String>,
     /// <p>A display name for the theme.</p>
@@ -27090,7 +27090,7 @@ pub struct CreateTemplateInput {
     /// <p>The ID for the Amazon Web Services account; that the group is in. Currently, you use the ID for the
     /// Amazon Web Services account; that contains your Amazon QuickSight account.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the template that you want to create. This template is unique per Region; in
+    /// <p>An ID for the template that you want to create. This template is unique per Amazon Web Services Region; in
     /// each Amazon Web Services account;.</p>
     pub template_id: std::option::Option<std::string::String>,
     /// <p>A display name for the template.</p>
@@ -27103,7 +27103,7 @@ pub struct CreateTemplateInput {
     /// analysis. Both of these require an Amazon Resource Name (ARN). For
     /// <code>SourceTemplate</code>, specify the ARN of the source template. For
     /// <code>SourceAnalysis</code>, specify the ARN of the source analysis. The <code>SourceTemplate</code>
-    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Region;. </p>
+    /// ARN can contain any Amazon Web Services account; and any QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
     /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders listed
     /// in the original. The schema in each dataset must match its placeholder. </p>
@@ -27335,7 +27335,7 @@ impl std::fmt::Debug for CreateFolderInput {
 pub struct CreateDataSourceInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the data source. This ID is unique per Region; for each Amazon Web Services account;. </p>
+    /// <p>An ID for the data source. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;. </p>
     pub data_source_id: std::option::Option<std::string::String>,
     /// <p>A display name for the data source.</p>
     pub name: std::option::Option<std::string::String>,
@@ -27384,7 +27384,7 @@ impl std::fmt::Debug for CreateDataSourceInput {
 pub struct CreateDataSetInput {
     /// <p>The Amazon Web Services account; ID.</p>
     pub aws_account_id: std::option::Option<std::string::String>,
-    /// <p>An ID for the dataset that you want to create. This ID is unique per Region; for each Amazon Web Services account;.</p>
+    /// <p>An ID for the dataset that you want to create. This ID is unique per Amazon Web Services Region; for each Amazon Web Services account;.</p>
     pub data_set_id: std::option::Option<std::string::String>,
     /// <p>The display name for the dataset.</p>
     pub name: std::option::Option<std::string::String>,
@@ -27473,7 +27473,7 @@ pub struct CreateDashboardInput {
     /// to a template by using the <a>CreateTemplate</a> API operation. For
     /// <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source
     /// template. The <code>SourceTemplate</code>ARN can contain any Amazon Web Services account; and any
-    /// QuickSight-supported Region;. </p>
+    /// QuickSight-supported Amazon Web Services Region;. </p>
     /// <p>Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
     /// list the replacement datasets for the placeholders listed in the original. The schema in
     /// each dataset must match its placeholder. </p>
@@ -27583,7 +27583,7 @@ pub struct CreateAccountCustomizationInput {
     pub aws_account_id: std::option::Option<std::string::String>,
     /// <p>The QuickSight namespace that you want to add customizations to.</p>
     pub namespace: std::option::Option<std::string::String>,
-    /// <p>The QuickSight customizations you're adding in the current Region;. You can add
+    /// <p>The QuickSight customizations you're adding in the current Amazon Web Services Region;. You can add
     /// these to an Amazon Web Services account; and a QuickSight namespace. </p>
     /// <p>For example, you can add a default theme by setting <code>AccountCustomization</code>
     /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme":

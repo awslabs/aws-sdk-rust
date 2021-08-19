@@ -50,10 +50,11 @@ impl AsRef<str> for WorkGroupState {
 }
 
 /// <p>The configuration information that will be updated for this workgroup, which includes
-/// the location in Amazon S3 where query results are stored, the encryption option, if any,
-/// used for query results, whether the Amazon CloudWatch Metrics are enabled for the
-/// workgroup, whether the workgroup settings override the client-side settings, and the
-/// data usage limit for the amount of bytes scanned per query, if it is specified.</p>
+/// the location in Amazon S3 where query results are stored, the encryption option,
+/// if any, used for query results, whether the Amazon CloudWatch Metrics are enabled
+/// for the workgroup, whether the workgroup settings override the client-side settings, and
+/// the data usage limit for the amount of bytes scanned per query, if it is
+/// specified.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroupConfigurationUpdates {
@@ -64,8 +65,7 @@ pub struct WorkGroupConfigurationUpdates {
     /// updated. Includes the updated results location and an updated option for encrypting
     /// query results.</p>
     pub result_configuration_updates: std::option::Option<crate::model::ResultConfigurationUpdates>,
-    /// <p>Indicates whether this workgroup enables publishing metrics to Amazon
-    /// CloudWatch.</p>
+    /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
     pub publish_cloud_watch_metrics_enabled: std::option::Option<bool>,
     /// <p>The upper limit (cutoff) for the amount of bytes a single query in a workgroup is
     /// allowed to scan.</p>
@@ -73,14 +73,16 @@ pub struct WorkGroupConfigurationUpdates {
     /// <p>Indicates that the data usage control limit per query is removed. <a>WorkGroupConfiguration$BytesScannedCutoffPerQuery</a>
     /// </p>
     pub remove_bytes_scanned_cutoff_per_query: std::option::Option<bool>,
-    /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon
-    /// S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members
-    /// cannot query data from Requester Pays buckets, and queries that retrieve data from
-    /// Requester Pays buckets cause an error. The default is <code>false</code>. For more
+    /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup
+    /// members cannot query data from Requester Pays buckets, and queries that retrieve data
+    /// from Requester Pays buckets cause an error. The default is <code>false</code>. For more
     /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a>
     /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
     pub requester_pays_enabled: std::option::Option<bool>,
-    /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version requested when a workgroup is updated. After the update, all
+    /// queries on the workgroup run on the requested engine version. If no value was previously
+    /// set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code>
+    /// workgroup run on the preview engine regardless of this setting.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
 impl std::fmt::Debug for WorkGroupConfigurationUpdates {
@@ -157,8 +159,7 @@ pub mod work_group_configuration_updates {
             self.result_configuration_updates = input;
             self
         }
-        /// <p>Indicates whether this workgroup enables publishing metrics to Amazon
-        /// CloudWatch.</p>
+        /// <p>Indicates whether this workgroup enables publishing metrics to Amazon CloudWatch.</p>
         pub fn publish_cloud_watch_metrics_enabled(mut self, input: bool) -> Self {
             self.publish_cloud_watch_metrics_enabled = Some(input);
             self
@@ -196,10 +197,9 @@ pub mod work_group_configuration_updates {
             self.remove_bytes_scanned_cutoff_per_query = input;
             self
         }
-        /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon
-        /// S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members
-        /// cannot query data from Requester Pays buckets, and queries that retrieve data from
-        /// Requester Pays buckets cause an error. The default is <code>false</code>. For more
+        /// <p>If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup
+        /// members cannot query data from Requester Pays buckets, and queries that retrieve data
+        /// from Requester Pays buckets cause an error. The default is <code>false</code>. For more
         /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a>
         /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
         pub fn requester_pays_enabled(mut self, input: bool) -> Self {
@@ -210,7 +210,10 @@ pub mod work_group_configuration_updates {
             self.requester_pays_enabled = input;
             self
         }
-        /// <p>The engine version requested when a workgroup is updated. After the update, all queries on the workgroup run on the requested engine version. If no value was previously set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+        /// <p>The engine version requested when a workgroup is updated. After the update, all
+        /// queries on the workgroup run on the requested engine version. If no value was previously
+        /// set, the default is Auto. Queries on the <code>AmazonAthenaPreviewFunctionality</code>
+        /// workgroup run on the preview engine regardless of this setting.</p>
         pub fn engine_version(mut self, input: crate::model::EngineVersion) -> Self {
             self.engine_version = Some(input);
             self
@@ -247,11 +250,14 @@ impl WorkGroupConfigurationUpdates {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineVersion {
-    /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
+    /// <p>The engine version requested by the user. Possible values are determined by the output
+    /// of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
     pub selected_engine_version: std::option::Option<std::string::String>,
-    /// <p>Read only. The engine version on which the query runs. If the user requests
-    /// a valid engine version other than Auto, the effective engine version is the same as the
-    /// engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the
+    /// <p>Read only. The engine version on which the query runs. If the user requests a valid
+    /// engine version other than Auto, the effective engine version is the same as the engine
+    /// version that the user requested. If the user requests Auto, the effective engine version
+    /// is chosen by Athena. When a request to update the engine version is made by
+    /// a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the
     /// <code>EffectiveEngineVersion</code> field is ignored.</p>
     pub effective_engine_version: std::option::Option<std::string::String>,
 }
@@ -273,7 +279,8 @@ pub mod engine_version {
         pub(crate) effective_engine_version: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The engine version requested by the user. Possible values are determined by the output of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
+        /// <p>The engine version requested by the user. Possible values are determined by the output
+        /// of <code>ListEngineVersions</code>, including Auto. The default is Auto.</p>
         pub fn selected_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.selected_engine_version = Some(input.into());
             self
@@ -285,9 +292,11 @@ pub mod engine_version {
             self.selected_engine_version = input;
             self
         }
-        /// <p>Read only. The engine version on which the query runs. If the user requests
-        /// a valid engine version other than Auto, the effective engine version is the same as the
-        /// engine version that the user requested. If the user requests Auto, the effective engine version is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the
+        /// <p>Read only. The engine version on which the query runs. If the user requests a valid
+        /// engine version other than Auto, the effective engine version is the same as the engine
+        /// version that the user requested. If the user requests Auto, the effective engine version
+        /// is chosen by Athena. When a request to update the engine version is made by
+        /// a <code>CreateWorkGroup</code> or <code>UpdateWorkGroup</code> operation, the
         /// <code>EffectiveEngineVersion</code> field is ignored.</p>
         pub fn effective_engine_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.effective_engine_version = Some(input.into());
@@ -325,14 +334,16 @@ pub struct ResultConfigurationUpdates {
     /// <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If
     /// workgroup settings override client-side settings, then the query uses the location for
     /// the query results and the encryption configuration that are specified for the workgroup.
-    /// The "workgroup settings override" is specified in EnforceWorkGroupConfiguration
-    /// (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// The "workgroup settings override" is specified in
+    /// <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+    /// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
     pub output_location: std::option::Option<std::string::String>,
     /// <p>If set to "true", indicates that the previously-specified query results location (also
     /// known as a client-side setting) for queries in this workgroup should be ignored and set
-    /// to null. If set to "false" or not set, and a value is present in the OutputLocation in
-    /// ResultConfigurationUpdates (the client-side setting), the OutputLocation in the
-    /// workgroup's ResultConfiguration will be updated with the new value. For more
+    /// to null. If set to "false" or not set, and a value is present in the
+    /// <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the
+    /// client-side setting), the <code>OutputLocation</code> in the workgroup's
+    /// <code>ResultConfiguration</code> will be updated with the new value. For more
     /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
     /// Client-Side Settings</a>.</p>
     pub remove_output_location: std::option::Option<bool>,
@@ -341,9 +352,10 @@ pub struct ResultConfigurationUpdates {
     /// <p>If set to "true", indicates that the previously-specified encryption configuration
     /// (also known as the client-side setting) for queries in this workgroup should be ignored
     /// and set to null. If set to "false" or not set, and a value is present in the
-    /// EncryptionConfiguration in ResultConfigurationUpdates (the client-side setting), the
-    /// EncryptionConfiguration in the workgroup's ResultConfiguration will be updated with the
-    /// new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
+    /// <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
+    /// client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
+    /// <code>ResultConfiguration</code> will be updated with the new value. For more
+    /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
     /// Client-Side Settings</a>.</p>
     pub remove_encryption_configuration: std::option::Option<bool>,
 }
@@ -377,8 +389,9 @@ pub mod result_configuration_updates {
         /// <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a> If
         /// workgroup settings override client-side settings, then the query uses the location for
         /// the query results and the encryption configuration that are specified for the workgroup.
-        /// The "workgroup settings override" is specified in EnforceWorkGroupConfiguration
-        /// (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// The "workgroup settings override" is specified in
+        /// <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+        /// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
         pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_location = Some(input.into());
             self
@@ -392,9 +405,10 @@ pub mod result_configuration_updates {
         }
         /// <p>If set to "true", indicates that the previously-specified query results location (also
         /// known as a client-side setting) for queries in this workgroup should be ignored and set
-        /// to null. If set to "false" or not set, and a value is present in the OutputLocation in
-        /// ResultConfigurationUpdates (the client-side setting), the OutputLocation in the
-        /// workgroup's ResultConfiguration will be updated with the new value. For more
+        /// to null. If set to "false" or not set, and a value is present in the
+        /// <code>OutputLocation</code> in <code>ResultConfigurationUpdates</code> (the
+        /// client-side setting), the <code>OutputLocation</code> in the workgroup's
+        /// <code>ResultConfiguration</code> will be updated with the new value. For more
         /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
         /// Client-Side Settings</a>.</p>
         pub fn remove_output_location(mut self, input: bool) -> Self {
@@ -423,9 +437,10 @@ pub mod result_configuration_updates {
         /// <p>If set to "true", indicates that the previously-specified encryption configuration
         /// (also known as the client-side setting) for queries in this workgroup should be ignored
         /// and set to null. If set to "false" or not set, and a value is present in the
-        /// EncryptionConfiguration in ResultConfigurationUpdates (the client-side setting), the
-        /// EncryptionConfiguration in the workgroup's ResultConfiguration will be updated with the
-        /// new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
+        /// <code>EncryptionConfiguration</code> in <code>ResultConfigurationUpdates</code> (the
+        /// client-side setting), the <code>EncryptionConfiguration</code> in the workgroup's
+        /// <code>ResultConfiguration</code> will be updated with the new value. For more
+        /// information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override
         /// Client-Side Settings</a>.</p>
         pub fn remove_encryption_configuration(mut self, input: bool) -> Self {
             self.remove_encryption_configuration = Some(input);
@@ -456,13 +471,13 @@ impl ResultConfigurationUpdates {
     }
 }
 
-/// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for
-/// example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.</p>
+/// <p>If query results are encrypted in Amazon S3, indicates the encryption option
+/// used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key
+/// information.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptionConfiguration {
-    /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys
-    /// (<code>SSE-S3</code>), server-side encryption with KMS-managed keys
+    /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys
     /// (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is
     /// used.</p>
     /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then
@@ -491,8 +506,7 @@ pub mod encryption_configuration {
         pub(crate) kms_key: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys
-        /// (<code>SSE-S3</code>), server-side encryption with KMS-managed keys
+        /// <p>Indicates whether Amazon S3 server-side encryption with Amazon S3-managed keys (<code>SSE-S3</code>), server-side encryption with KMS-managed keys
         /// (<code>SSE-KMS</code>), or client-side encryption with KMS-managed keys (CSE-KMS) is
         /// used.</p>
         /// <p>If a query runs in a workgroup and the workgroup overrides client-side settings, then
@@ -641,12 +655,12 @@ impl AsRef<str> for DataCatalogType {
     }
 }
 
-/// <p>A label that you assign to a resource. In Athena, a resource can be a workgroup or
-/// data catalog. Each tag consists of a key and an optional value, both of which you
-/// define. For example, you can use tags to categorize Athena workgroups or data catalogs
-/// by purpose, owner, or environment. Use a consistent set of tag keys to make it easier to
-/// search and filter workgroups or data catalogs in your account. For best practices, see
-/// <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode
+/// <p>A label that you assign to a resource. In Athena, a resource can be a
+/// workgroup or data catalog. Each tag consists of a key and an optional value, both of
+/// which you define. For example, you can use tags to categorize Athena
+/// workgroups or data catalogs by purpose, owner, or environment. Use a consistent set of
+/// tag keys to make it easier to search and filter workgroups or data catalogs in your
+/// account. For best practices, see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode
 /// characters, and tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use
 /// letters and numbers representable in UTF-8, and the following characters: + - = . _ : /
 /// @. Tag keys and values are case-sensitive. Tag keys must be unique per resource. If you
@@ -768,9 +782,9 @@ impl AsRef<str> for ThrottleReason {
     }
 }
 
-/// <p>The location in Amazon S3 where query results are stored and the encryption option, if
-/// any, used for query results. These are known as "client-side settings". If workgroup
-/// settings override client-side settings, then the query uses the workgroup
+/// <p>The location in Amazon S3 where query results are stored and the encryption
+/// option, if any, used for query results. These are known as "client-side settings". If
+/// workgroup settings override client-side settings, then the query uses the workgroup
 /// settings.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -778,16 +792,16 @@ pub struct ResultConfiguration {
     /// <p>The location in Amazon S3 where your query results are stored, such as
     /// <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the
     /// query results location using one of the ways: either for individual queries using either
-    /// this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an error
-    /// that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If
+    /// this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>. If none of them is set, Athena
+    /// issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If
     /// workgroup settings override client-side settings, then the query uses the settings
     /// specified for the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
     pub output_location: std::option::Option<std::string::String>,
-    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for
-    /// example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. This is a
-    /// client-side setting. If workgroup settings override client-side settings, then the query
-    /// uses the encryption configuration that is specified for the workgroup, and also uses the
-    /// location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+    /// <p>If query results are encrypted in Amazon S3, indicates the encryption option
+    /// used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
+    /// This is a client-side setting. If workgroup settings override client-side settings, then
+    /// the query uses the encryption configuration that is specified for the workgroup, and
+    /// also uses the location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
     pub encryption_configuration: std::option::Option<crate::model::EncryptionConfiguration>,
 }
 impl std::fmt::Debug for ResultConfiguration {
@@ -812,8 +826,8 @@ pub mod result_configuration {
         /// <p>The location in Amazon S3 where your query results are stored, such as
         /// <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the
         /// query results location using one of the ways: either for individual queries using either
-        /// this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an error
-        /// that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If
+        /// this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>. If none of them is set, Athena
+        /// issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>. If
         /// workgroup settings override client-side settings, then the query uses the settings
         /// specified for the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
         pub fn output_location(mut self, input: impl Into<std::string::String>) -> Self {
@@ -827,11 +841,11 @@ pub mod result_configuration {
             self.output_location = input;
             self
         }
-        /// <p>If query results are encrypted in Amazon S3, indicates the encryption option used (for
-        /// example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information. This is a
-        /// client-side setting. If workgroup settings override client-side settings, then the query
-        /// uses the encryption configuration that is specified for the workgroup, and also uses the
-        /// location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
+        /// <p>If query results are encrypted in Amazon S3, indicates the encryption option
+        /// used (for example, <code>SSE-KMS</code> or <code>CSE-KMS</code>) and key information.
+        /// This is a client-side setting. If workgroup settings override client-side settings, then
+        /// the query uses the encryption configuration that is specified for the workgroup, and
+        /// also uses the location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
         pub fn encryption_configuration(
             mut self,
             input: crate::model::EncryptionConfiguration,
@@ -866,7 +880,7 @@ impl ResultConfiguration {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryExecutionContext {
-    /// <p>The name of the database used in the query execution.</p>
+    /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
     pub database: std::option::Option<std::string::String>,
     /// <p>The name of the data catalog used in the query execution.</p>
     pub catalog: std::option::Option<std::string::String>,
@@ -889,7 +903,7 @@ pub mod query_execution_context {
         pub(crate) catalog: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the database used in the query execution.</p>
+        /// <p>The name of the database used in the query execution. The database must exist in the catalog.</p>
         pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
             self.database = Some(input.into());
             self
@@ -936,7 +950,9 @@ pub struct WorkGroupSummary {
     pub description: std::option::Option<std::string::String>,
     /// <p>The workgroup creation date and time.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version setting for all queries on the workgroup. Queries on the
+    /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
+    /// regardless of this setting.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
 impl std::fmt::Debug for WorkGroupSummary {
@@ -1005,7 +1021,9 @@ pub mod work_group_summary {
             self.creation_time = input;
             self
         }
-        /// <p>The engine version setting for all queries on the workgroup. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+        /// <p>The engine version setting for all queries on the workgroup. Queries on the
+        /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
+        /// regardless of this setting.</p>
         pub fn engine_version(mut self, input: crate::model::EngineVersion) -> Self {
             self.engine_version = Some(input);
             self
@@ -1046,7 +1064,8 @@ pub struct TableMetadata {
     pub create_time: std::option::Option<smithy_types::Instant>,
     /// <p>The last time the table was accessed.</p>
     pub last_access_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
+    /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is
+    /// supported.</p>
     pub table_type: std::option::Option<std::string::String>,
     /// <p>A list of the columns in the table.</p>
     pub columns: std::option::Option<std::vec::Vec<crate::model::Column>>,
@@ -1119,7 +1138,8 @@ pub mod table_metadata {
             self.last_access_time = input;
             self
         }
-        /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.</p>
+        /// <p>The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is
+        /// supported.</p>
         pub fn table_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.table_type = Some(input.into());
             self
@@ -1492,10 +1512,10 @@ impl Database {
 /// configuration, listed under <a>WorkGroup$Configuration</a>. Each workgroup
 /// enables you to isolate queries for you or your group of users from other queries in the
 /// same account, to configure the query results location and the encryption configuration
-/// (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch, and
-/// to establish per-query data usage control limits for all queries in a workgroup. The
-/// workgroup settings override is specified in EnforceWorkGroupConfiguration (true/false)
-/// in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+/// (known as workgroup settings), to enable sending query metrics to Amazon CloudWatch,
+/// and to establish per-query data usage control limits for all queries in a workgroup. The
+/// workgroup settings override is specified in <code>EnforceWorkGroupConfiguration</code>
+/// (true/false) in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroup {
@@ -1503,12 +1523,13 @@ pub struct WorkGroup {
     pub name: std::option::Option<std::string::String>,
     /// <p>The state of the workgroup: ENABLED or DISABLED.</p>
     pub state: std::option::Option<crate::model::WorkGroupState>,
-    /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where
-    /// query results are stored, the encryption configuration, if any, used for query results;
-    /// whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup
-    /// settings override client-side settings; and the data usage limits for the amount of data
-    /// scanned per query or per workgroup. The workgroup settings override is specified in
-    /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+    /// <p>The configuration of the workgroup, which includes the location in Amazon S3
+    /// where query results are stored, the encryption configuration, if any, used for query
+    /// results; whether the Amazon CloudWatch Metrics are enabled for the workgroup;
+    /// whether workgroup settings override client-side settings; and the data usage limits for
+    /// the amount of data scanned per query or per workgroup. The workgroup settings override
+    /// is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+    /// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
     pub configuration: std::option::Option<crate::model::WorkGroupConfiguration>,
     /// <p>The workgroup description.</p>
     pub description: std::option::Option<std::string::String>,
@@ -1560,12 +1581,13 @@ pub mod work_group {
             self.state = input;
             self
         }
-        /// <p>The configuration of the workgroup, which includes the location in Amazon S3 where
-        /// query results are stored, the encryption configuration, if any, used for query results;
-        /// whether the Amazon CloudWatch Metrics are enabled for the workgroup; whether workgroup
-        /// settings override client-side settings; and the data usage limits for the amount of data
-        /// scanned per query or per workgroup. The workgroup settings override is specified in
-        /// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
+        /// <p>The configuration of the workgroup, which includes the location in Amazon S3
+        /// where query results are stored, the encryption configuration, if any, used for query
+        /// results; whether the Amazon CloudWatch Metrics are enabled for the workgroup;
+        /// whether workgroup settings override client-side settings; and the data usage limits for
+        /// the amount of data scanned per query or per workgroup. The workgroup settings override
+        /// is specified in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+        /// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
         pub fn configuration(mut self, input: crate::model::WorkGroupConfiguration) -> Self {
             self.configuration = Some(input);
             self
@@ -1617,22 +1639,23 @@ impl WorkGroup {
     }
 }
 
-/// <p>The configuration of the workgroup, which includes the location in Amazon S3 where
-/// query results are stored, the encryption option, if any, used for query results, whether
-/// the Amazon CloudWatch Metrics are enabled for the workgroup and whether workgroup
-/// settings override query settings, and the data usage limits for the amount of data
-/// scanned per query or per workgroup. The workgroup settings override is specified in
-/// EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. </p>
+/// <p>The configuration of the workgroup, which includes the location in Amazon S3
+/// where query results are stored, the encryption option, if any, used for query results,
+/// whether the Amazon CloudWatch Metrics are enabled for the workgroup and whether
+/// workgroup settings override query settings, and the data usage limits for the amount of
+/// data scanned per query or per workgroup. The workgroup settings override is specified in
+/// <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+/// <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct WorkGroupConfiguration {
-    /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where
-    /// query results are stored and the encryption option, if any, used for query results. To
-    /// run the query, you must specify the query results location using one of the ways: either
-    /// in the workgroup using this setting, or for individual queries (client-side), using
-    /// <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena
-    /// issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-    /// Results</a>.</p>
+    /// <p>The configuration for the workgroup, which includes the location in Amazon S3
+    /// where query results are stored and the encryption option, if any, used for query
+    /// results. To run the query, you must specify the query results location using one of the
+    /// ways: either in the workgroup using this setting, or for individual queries
+    /// (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of
+    /// them is set, Athena issues an error that no output location is provided. For
+    /// more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>If set to "true", the settings for the workgroup override client-side settings. If set
     /// to "false", client-side settings are used. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup Settings Override Client-Side Settings</a>.</p>
@@ -1643,14 +1666,16 @@ pub struct WorkGroupConfiguration {
     /// workgroup is allowed to scan.</p>
     pub bytes_scanned_cutoff_per_query: std::option::Option<i64>,
     /// <p>If set to <code>true</code>, allows members assigned to a workgroup to reference
-    /// Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup
-    /// members cannot query data from Requester Pays buckets, and queries that retrieve data
-    /// from Requester Pays buckets cause an error. The default is <code>false</code>. For more
-    /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a>
-    /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+    /// Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>,
+    /// workgroup members cannot query data from Requester Pays buckets, and queries that
+    /// retrieve data from Requester Pays buckets cause an error. The default is
+    /// <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+    /// Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+    /// Guide</i>.</p>
     pub requester_pays_enabled: std::option::Option<bool>,
-    /// <p>The engine version that all queries running on
-    /// the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+    /// <p>The engine version that all queries running on the workgroup use. Queries on the
+    /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
+    /// regardless of this setting.</p>
     pub engine_version: std::option::Option<crate::model::EngineVersion>,
 }
 impl std::fmt::Debug for WorkGroupConfiguration {
@@ -1688,13 +1713,13 @@ pub mod work_group_configuration {
         pub(crate) engine_version: std::option::Option<crate::model::EngineVersion>,
     }
     impl Builder {
-        /// <p>The configuration for the workgroup, which includes the location in Amazon S3 where
-        /// query results are stored and the encryption option, if any, used for query results. To
-        /// run the query, you must specify the query results location using one of the ways: either
-        /// in the workgroup using this setting, or for individual queries (client-side), using
-        /// <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena
-        /// issues an error that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-        /// Results</a>.</p>
+        /// <p>The configuration for the workgroup, which includes the location in Amazon S3
+        /// where query results are stored and the encryption option, if any, used for query
+        /// results. To run the query, you must specify the query results location using one of the
+        /// ways: either in the workgroup using this setting, or for individual queries
+        /// (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of
+        /// them is set, Athena issues an error that no output location is provided. For
+        /// more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.</p>
         pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
             self.result_configuration = Some(input);
             self
@@ -1745,11 +1770,12 @@ pub mod work_group_configuration {
             self
         }
         /// <p>If set to <code>true</code>, allows members assigned to a workgroup to reference
-        /// Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup
-        /// members cannot query data from Requester Pays buckets, and queries that retrieve data
-        /// from Requester Pays buckets cause an error. The default is <code>false</code>. For more
-        /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a>
-        /// in the <i>Amazon Simple Storage Service Developer Guide</i>.</p>
+        /// Amazon S3 Requester Pays buckets in queries. If set to <code>false</code>,
+        /// workgroup members cannot query data from Requester Pays buckets, and queries that
+        /// retrieve data from Requester Pays buckets cause an error. The default is
+        /// <code>false</code>. For more information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+        /// Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer
+        /// Guide</i>.</p>
         pub fn requester_pays_enabled(mut self, input: bool) -> Self {
             self.requester_pays_enabled = Some(input);
             self
@@ -1758,8 +1784,9 @@ pub mod work_group_configuration {
             self.requester_pays_enabled = input;
             self
         }
-        /// <p>The engine version that all queries running on
-        /// the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.</p>
+        /// <p>The engine version that all queries running on the workgroup use. Queries on the
+        /// <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine
+        /// regardless of this setting.</p>
         pub fn engine_version(mut self, input: crate::model::EngineVersion) -> Self {
             self.engine_version = Some(input);
             self
@@ -2260,12 +2287,13 @@ pub struct QueryExecution {
     /// statements. <code>DML</code> indicates DML (Data Manipulation Language) query
     /// statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates
     /// query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or
-    /// <code>DESCRIBE <table></code>.</p>
+    /// <code>DESCRIBE TABLE</code>.</p>
     pub statement_type: std::option::Option<crate::model::StatementType>,
-    /// <p>The location in Amazon S3 where query results were stored and the encryption option,
-    /// if any, used for query results. These are known as "client-side settings". If workgroup
-    /// settings override client-side settings, then the query uses the location for the query
-    /// results and the encryption configuration that are specified for the workgroup.</p>
+    /// <p>The location in Amazon S3 where query results were stored and the encryption
+    /// option, if any, used for query results. These are known as "client-side settings". If
+    /// workgroup settings override client-side settings, then the query uses the location for
+    /// the query results and the encryption configuration that are specified for the
+    /// workgroup.</p>
     pub result_configuration: std::option::Option<crate::model::ResultConfiguration>,
     /// <p>The database in which the query execution occurred.</p>
     pub query_execution_context: std::option::Option<crate::model::QueryExecutionContext>,
@@ -2338,7 +2366,7 @@ pub mod query_execution {
         /// statements. <code>DML</code> indicates DML (Data Manipulation Language) query
         /// statements, such as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates
         /// query statements other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or
-        /// <code>DESCRIBE <table></code>.</p>
+        /// <code>DESCRIBE TABLE</code>.</p>
         pub fn statement_type(mut self, input: crate::model::StatementType) -> Self {
             self.statement_type = Some(input);
             self
@@ -2350,10 +2378,11 @@ pub mod query_execution {
             self.statement_type = input;
             self
         }
-        /// <p>The location in Amazon S3 where query results were stored and the encryption option,
-        /// if any, used for query results. These are known as "client-side settings". If workgroup
-        /// settings override client-side settings, then the query uses the location for the query
-        /// results and the encryption configuration that are specified for the workgroup.</p>
+        /// <p>The location in Amazon S3 where query results were stored and the encryption
+        /// option, if any, used for query results. These are known as "client-side settings". If
+        /// workgroup settings override client-side settings, then the query uses the location for
+        /// the query results and the encryption configuration that are specified for the
+        /// workgroup.</p>
         pub fn result_configuration(mut self, input: crate::model::ResultConfiguration) -> Self {
             self.result_configuration = Some(input);
             self
@@ -2460,25 +2489,26 @@ pub struct QueryExecutionStatistics {
     /// <p>The number of bytes in the data that was queried.</p>
     pub data_scanned_in_bytes: std::option::Option<i64>,
     /// <p>The location and file name of a data manifest file. The manifest file is saved to the
-    /// Athena query results location in Amazon S3. The manifest file tracks files that the
-    /// query wrote to Amazon S3. If the query fails, the manifest file also tracks files that
-    /// the query intended to write. The manifest is useful for identifying orphaned files
-    /// resulting from a failed query. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query Results, Output Files, and
-    /// Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
+    /// Athena query results location in Amazon S3. The manifest file
+    /// tracks files that the query wrote to Amazon S3. If the query fails, the manifest
+    /// file also tracks files that the query intended to write. The manifest is useful for
+    /// identifying orphaned files resulting from a failed query. For more information, see
+    /// <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query
+    /// Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
     pub data_manifest_location: std::option::Option<std::string::String>,
     /// <p>The number of milliseconds that Athena took to run the query.</p>
     pub total_execution_time_in_millis: std::option::Option<i64>,
     /// <p>The number of milliseconds that the query was in your query queue waiting for
-    /// resources. Note that if transient errors occur, Athena might automatically add the query
-    /// back to the queue.</p>
+    /// resources. Note that if transient errors occur, Athena might automatically
+    /// add the query back to the queue.</p>
     pub query_queue_time_in_millis: std::option::Option<i64>,
-    /// <p>The number of milliseconds that Athena took to plan the query processing flow. This
-    /// includes the time spent retrieving table partitions from the data source. Note that
-    /// because the query engine performs the query planning, query planning time is a subset of
-    /// engine processing time.</p>
+    /// <p>The number of milliseconds that Athena took to plan the query processing
+    /// flow. This includes the time spent retrieving table partitions from the data source.
+    /// Note that because the query engine performs the query planning, query planning time is a
+    /// subset of engine processing time.</p>
     pub query_planning_time_in_millis: std::option::Option<i64>,
-    /// <p>The number of milliseconds that Athena took to finalize and publish the query results
-    /// after the query engine finished running the query.</p>
+    /// <p>The number of milliseconds that Athena took to finalize and publish the
+    /// query results after the query engine finished running the query.</p>
     pub service_processing_time_in_millis: std::option::Option<i64>,
 }
 impl std::fmt::Debug for QueryExecutionStatistics {
@@ -2546,11 +2576,12 @@ pub mod query_execution_statistics {
             self
         }
         /// <p>The location and file name of a data manifest file. The manifest file is saved to the
-        /// Athena query results location in Amazon S3. The manifest file tracks files that the
-        /// query wrote to Amazon S3. If the query fails, the manifest file also tracks files that
-        /// the query intended to write. The manifest is useful for identifying orphaned files
-        /// resulting from a failed query. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query Results, Output Files, and
-        /// Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
+        /// Athena query results location in Amazon S3. The manifest file
+        /// tracks files that the query wrote to Amazon S3. If the query fails, the manifest
+        /// file also tracks files that the query intended to write. The manifest is useful for
+        /// identifying orphaned files resulting from a failed query. For more information, see
+        /// <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with Query
+        /// Results, Output Files, and Query History</a> in the <i>Amazon Athena User Guide</i>.</p>
         pub fn data_manifest_location(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_manifest_location = Some(input.into());
             self
@@ -2575,8 +2606,8 @@ pub mod query_execution_statistics {
             self
         }
         /// <p>The number of milliseconds that the query was in your query queue waiting for
-        /// resources. Note that if transient errors occur, Athena might automatically add the query
-        /// back to the queue.</p>
+        /// resources. Note that if transient errors occur, Athena might automatically
+        /// add the query back to the queue.</p>
         pub fn query_queue_time_in_millis(mut self, input: i64) -> Self {
             self.query_queue_time_in_millis = Some(input);
             self
@@ -2585,10 +2616,10 @@ pub mod query_execution_statistics {
             self.query_queue_time_in_millis = input;
             self
         }
-        /// <p>The number of milliseconds that Athena took to plan the query processing flow. This
-        /// includes the time spent retrieving table partitions from the data source. Note that
-        /// because the query engine performs the query planning, query planning time is a subset of
-        /// engine processing time.</p>
+        /// <p>The number of milliseconds that Athena took to plan the query processing
+        /// flow. This includes the time spent retrieving table partitions from the data source.
+        /// Note that because the query engine performs the query planning, query planning time is a
+        /// subset of engine processing time.</p>
         pub fn query_planning_time_in_millis(mut self, input: i64) -> Self {
             self.query_planning_time_in_millis = Some(input);
             self
@@ -2600,8 +2631,8 @@ pub mod query_execution_statistics {
             self.query_planning_time_in_millis = input;
             self
         }
-        /// <p>The number of milliseconds that Athena took to finalize and publish the query results
-        /// after the query engine finished running the query.</p>
+        /// <p>The number of milliseconds that Athena took to finalize and publish the
+        /// query results after the query engine finished running the query.</p>
         pub fn service_processing_time_in_millis(mut self, input: i64) -> Self {
             self.service_processing_time_in_millis = Some(input);
             self
@@ -2640,16 +2671,16 @@ impl QueryExecutionStatistics {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct QueryExecutionStatus {
     /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been
-    /// submitted to the service, and Athena will execute the query as soon as resources are
-    /// available. <code>RUNNING</code> indicates that the query is in execution phase.
-    /// <code>SUCCEEDED</code> indicates that the query completed without errors.
+    /// submitted to the service, and Athena will execute the query as soon as
+    /// resources are available. <code>RUNNING</code> indicates that the query is in execution
+    /// phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
     /// <code>FAILED</code> indicates that the query experienced an error and did not
     /// complete processing. <code>CANCELLED</code> indicates that a user input interrupted
     /// query execution.</p>
     /// <note>
-    /// <p>Athena automatically retries your queries in cases of certain transient errors. As
-    /// a result, you may see the query state transition from <code>RUNNING</code> or
-    /// <code>FAILED</code> to <code>QUEUED</code>. </p>
+    /// <p>Athena automatically retries your queries in cases of certain
+    /// transient errors. As a result, you may see the query state transition from
+    /// <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
     /// </note>
     pub state: std::option::Option<crate::model::QueryExecutionState>,
     /// <p>Further detail about the status of the query.</p>
@@ -2682,16 +2713,16 @@ pub mod query_execution_status {
     }
     impl Builder {
         /// <p>The state of query execution. <code>QUEUED</code> indicates that the query has been
-        /// submitted to the service, and Athena will execute the query as soon as resources are
-        /// available. <code>RUNNING</code> indicates that the query is in execution phase.
-        /// <code>SUCCEEDED</code> indicates that the query completed without errors.
+        /// submitted to the service, and Athena will execute the query as soon as
+        /// resources are available. <code>RUNNING</code> indicates that the query is in execution
+        /// phase. <code>SUCCEEDED</code> indicates that the query completed without errors.
         /// <code>FAILED</code> indicates that the query experienced an error and did not
         /// complete processing. <code>CANCELLED</code> indicates that a user input interrupted
         /// query execution.</p>
         /// <note>
-        /// <p>Athena automatically retries your queries in cases of certain transient errors. As
-        /// a result, you may see the query state transition from <code>RUNNING</code> or
-        /// <code>FAILED</code> to <code>QUEUED</code>. </p>
+        /// <p>Athena automatically retries your queries in cases of certain
+        /// transient errors. As a result, you may see the query state transition from
+        /// <code>RUNNING</code> or <code>FAILED</code> to <code>QUEUED</code>. </p>
         /// </note>
         pub fn state(mut self, input: crate::model::QueryExecutionState) -> Self {
             self.state = Some(input);
@@ -3106,22 +3137,21 @@ impl NamedQuery {
     }
 }
 
-/// <p>Contains information about a data catalog in an AWS account.</p>
+/// <p>Contains information about a data catalog in an Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DataCatalog {
-    /// <p>The name of the data catalog. The catalog name must be unique for the AWS account and
-    /// can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+    /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign,
+    /// or hyphen characters.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>An optional description of the data catalog.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog or
-    /// <code>HIVE</code> for an external hive metastore. <code>GLUE</code> refers to the
-    /// <code>AwsDataCatalog</code> that already exists in your account, of which you can
-    /// have only one.</p>
+    /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
+    /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
+    /// Glue Data Catalog.</p>
     pub r#type: std::option::Option<crate::model::DataCatalogType>,
-    /// <p>Specifies the Lambda function or functions to use for the data catalog. This is a
-    /// mapping whose values depend on the catalog type. </p>
+    /// <p>Specifies the Lambda function or functions to use for the data catalog.
+    /// This is a mapping whose values depend on the catalog type. </p>
     /// <ul>
     /// <li>
     /// <p>For the <code>HIVE</code> data catalog type, use the following syntax. The
@@ -3139,9 +3169,9 @@ pub struct DataCatalog {
     /// of required parameters, but not both.</p>
     /// <ul>
     /// <li>
-    /// <p>If you have one Lambda function that processes metadata and another
-    /// for reading the actual data, use the following syntax. Both parameters
-    /// are required.</p>
+    /// <p>If you have one Lambda function that processes metadata
+    /// and another for reading the actual data, use the following syntax. Both
+    /// parameters are required.</p>
     /// <p>
     /// <code>metadata-function=<i>lambda_arn</i>,
     /// record-function=<i>lambda_arn</i>
@@ -3149,13 +3179,36 @@ pub struct DataCatalog {
     /// </p>
     /// </li>
     /// <li>
-    /// <p> If you have a composite Lambda function that processes both metadata
-    /// and data, use the following syntax to specify your Lambda
-    /// function.</p>
+    /// <p> If you have a composite Lambda function that processes
+    /// both metadata and data, use the following syntax to specify your Lambda function.</p>
     /// <p>
     /// <code>function=<i>lambda_arn</i>
     /// </code>
     /// </p>
+    /// </li>
+    /// </ul>
+    /// </li>
+    /// <li>
+    /// <p>The <code>GLUE</code> type takes a catalog ID parameter and is required. The
+    /// <code>
+    /// <i>catalog_id</i>
+    /// </code> is the account ID of the
+    /// Amazon Web Services account to which the Glue catalog
+    /// belongs.</p>
+    /// <p>
+    /// <code>catalog-id=<i>catalog_id</i>
+    /// </code>
+    /// </p>
+    /// <ul>
+    /// <li>
+    /// <p>The <code>GLUE</code> data catalog type also applies to the default
+    /// <code>AwsDataCatalog</code> that already exists in your account, of
+    /// which you can have only one and cannot modify.</p>
+    /// </li>
+    /// <li>
+    /// <p>Queries that specify a Glue Data Catalog other than the default
+    /// <code>AwsDataCatalog</code> must be run on Athena engine
+    /// version 2.</p>
     /// </li>
     /// </ul>
     /// </li>
@@ -3187,8 +3240,8 @@ pub mod data_catalog {
         >,
     }
     impl Builder {
-        /// <p>The name of the data catalog. The catalog name must be unique for the AWS account and
-        /// can use a maximum of 128 alphanumeric, underscore, at sign, or hyphen characters.</p>
+        /// <p>The name of the data catalog. The catalog name must be unique for the Amazon Web Services account and can use a maximum of 128 alphanumeric, underscore, at sign,
+        /// or hyphen characters.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -3206,10 +3259,9 @@ pub mod data_catalog {
             self.description = input;
             self
         }
-        /// <p>The type of data catalog: <code>LAMBDA</code> for a federated catalog or
-        /// <code>HIVE</code> for an external hive metastore. <code>GLUE</code> refers to the
-        /// <code>AwsDataCatalog</code> that already exists in your account, of which you can
-        /// have only one.</p>
+        /// <p>The type of data catalog to create: <code>LAMBDA</code> for a federated catalog,
+        /// <code>HIVE</code> for an external hive metastore, or <code>GLUE</code> for an
+        /// Glue Data Catalog.</p>
         pub fn r#type(mut self, input: crate::model::DataCatalogType) -> Self {
             self.r#type = Some(input);
             self

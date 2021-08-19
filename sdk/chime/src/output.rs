@@ -818,7 +818,7 @@ impl UpdateAppInstanceUserOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAppInstanceOutput {
-    /// <p>The ARN of the <code>AppInstance</code>.</p>
+    /// <p>The ARN of the <code>AppInstance</code>. </p>
     pub app_instance_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAppInstanceOutput {
@@ -837,7 +837,7 @@ pub mod update_app_instance_output {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ARN of the <code>AppInstance</code>.</p>
+        /// <p>The ARN of the <code>AppInstance</code>. </p>
         pub fn app_instance_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.app_instance_arn = Some(input.into());
             self
@@ -3224,7 +3224,8 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
     pub channels:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>>,
-    /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels moderated by
+    /// the user is reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
@@ -3265,7 +3266,8 @@ pub mod list_channels_moderated_by_app_instance_user_output {
             self.channels = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels moderated by
+        /// the user is reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -3296,7 +3298,8 @@ impl ListChannelsModeratedByAppInstanceUserOutput {
 pub struct ListChannelsOutput {
     /// <p>The information about each channel.</p>
     pub channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
-    /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+    /// <p>The token returned from previous API requests until the number of channels is
+    /// reached.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListChannelsOutput {
@@ -3330,7 +3333,8 @@ pub mod list_channels_output {
             self.channels = input;
             self
         }
-        /// <p>The token returned from previous API requests until the number of channels is reached.</p>
+        /// <p>The token returned from previous API requests until the number of channels is
+        /// reached.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -3360,7 +3364,8 @@ impl ListChannelsOutput {
 pub struct ListChannelModeratorsOutput {
     /// <p>The ARN of the channel.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+    /// <p>The token passed by previous API calls until all requested moderators are
+    /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>The information about and names of each moderator.</p>
     pub channel_moderators:
@@ -3396,7 +3401,8 @@ pub mod list_channel_moderators_output {
             self.channel_arn = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested moderators are returned.</p>
+        /// <p>The token passed by previous API calls until all requested moderators are
+        /// returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -3602,7 +3608,8 @@ pub struct ListChannelMembershipsOutput {
     /// <p>The information for the requested channel memberships.</p>
     pub channel_memberships:
         std::option::Option<std::vec::Vec<crate::model::ChannelMembershipSummary>>,
-    /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+    /// <p>The token passed by previous API calls until all requested channel memberships are
+    /// returned.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListChannelMembershipsOutput {
@@ -3651,7 +3658,8 @@ pub mod list_channel_memberships_output {
             self.channel_memberships = input;
             self
         }
-        /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
+        /// <p>The token passed by previous API calls until all requested channel memberships are
+        /// returned.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -8225,7 +8233,8 @@ impl CreateChannelMembershipOutput {
 pub struct CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
     pub channel_arn: std::option::Option<std::string::String>,
-    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
+    /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
+    /// response.</p>
     pub member: std::option::Option<crate::model::Identity>,
 }
 impl std::fmt::Debug for CreateChannelBanOutput {
@@ -8255,7 +8264,8 @@ pub mod create_channel_ban_output {
             self.channel_arn = input;
             self
         }
-        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
+        /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
+        /// response.</p>
         pub fn member(mut self, input: crate::model::Identity) -> Self {
             self.member = Some(input);
             self
@@ -8942,7 +8952,8 @@ impl BatchCreateRoomMembershipOutput {
 pub struct BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
     pub batch_channel_memberships: std::option::Option<crate::model::BatchChannelMemberships>,
-    /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
+    /// <p>If the action fails for one or more of the memberships in the request, a list of the
+    /// memberships is returned, along with error codes and error messages.</p>
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
 }
 impl std::fmt::Debug for BatchCreateChannelMembershipOutput {

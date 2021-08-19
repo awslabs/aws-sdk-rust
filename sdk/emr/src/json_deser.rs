@@ -4573,6 +4573,15 @@ where
                                     crate::json_deser::deser_structure_auto_scaling_policy_description(tokens)?
                                 );
                             }
+                            "CustomAmiId" => {
+                                builder = builder.set_custom_ami_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -7117,6 +7126,15 @@ where
                                     )?,
                                 );
                             }
+                            "CustomAmiId" => {
+                                builder = builder.set_custom_ami_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,
                         }
                     }
@@ -7908,6 +7926,15 @@ where
                                         tokens.next(),
                                         smithy_types::instant::Format::EpochSeconds,
                                     )?,
+                                );
+                            }
+                            "CustomAmiId" => {
+                                builder = builder.set_custom_ami_id(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             _ => smithy_json::deserialize::token::skip_value(tokens)?,

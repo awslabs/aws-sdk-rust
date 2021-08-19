@@ -1078,6 +1078,141 @@ impl std::error::Error for AssociateSecurityKeyError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct CreateAgentStatusError {
+    pub kind: CreateAgentStatusErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateAgentStatusErrorKind {
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateAgentStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateAgentStatusErrorKind::DuplicateResourceException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateAgentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateAgentStatusError {
+    fn code(&self) -> Option<&str> {
+        CreateAgentStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateAgentStatusError {
+    pub fn new(kind: CreateAgentStatusErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateAgentStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateAgentStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::DuplicateResourceException(_)
+        )
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateAgentStatusErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateAgentStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateAgentStatusErrorKind::DuplicateResourceException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateAgentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct CreateContactFlowError {
     pub kind: CreateContactFlowErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -1216,6 +1351,141 @@ impl std::error::Error for CreateContactFlowError {
             CreateContactFlowErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             CreateContactFlowErrorKind::ThrottlingException(_inner) => Some(_inner),
             CreateContactFlowErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct CreateHoursOfOperationError {
+    pub kind: CreateHoursOfOperationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum CreateHoursOfOperationErrorKind {
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for CreateHoursOfOperationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            CreateHoursOfOperationErrorKind::DuplicateResourceException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            CreateHoursOfOperationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for CreateHoursOfOperationError {
+    fn code(&self) -> Option<&str> {
+        CreateHoursOfOperationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl CreateHoursOfOperationError {
+    pub fn new(kind: CreateHoursOfOperationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: CreateHoursOfOperationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: CreateHoursOfOperationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::DuplicateResourceException(_)
+        )
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateHoursOfOperationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for CreateHoursOfOperationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            CreateHoursOfOperationErrorKind::DuplicateResourceException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::InternalServiceException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::LimitExceededException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            CreateHoursOfOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -2231,6 +2501,123 @@ impl std::error::Error for CreateUserHierarchyGroupError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct DeleteHoursOfOperationError {
+    pub kind: DeleteHoursOfOperationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DeleteHoursOfOperationErrorKind {
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DeleteHoursOfOperationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DeleteHoursOfOperationErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DeleteHoursOfOperationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DeleteHoursOfOperationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DeleteHoursOfOperationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DeleteHoursOfOperationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DeleteHoursOfOperationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DeleteHoursOfOperationError {
+    fn code(&self) -> Option<&str> {
+        DeleteHoursOfOperationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DeleteHoursOfOperationError {
+    pub fn new(kind: DeleteHoursOfOperationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DeleteHoursOfOperationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DeleteHoursOfOperationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHoursOfOperationErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHoursOfOperationErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHoursOfOperationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHoursOfOperationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteHoursOfOperationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DeleteHoursOfOperationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DeleteHoursOfOperationErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DeleteHoursOfOperationErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DeleteHoursOfOperationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DeleteHoursOfOperationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DeleteHoursOfOperationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DeleteHoursOfOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct DeleteInstanceError {
     pub kind: DeleteInstanceErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -2894,6 +3281,123 @@ impl std::error::Error for DeleteUserHierarchyGroupError {
             DeleteUserHierarchyGroupErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             DeleteUserHierarchyGroupErrorKind::ThrottlingException(_inner) => Some(_inner),
             DeleteUserHierarchyGroupErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct DescribeAgentStatusError {
+    pub kind: DescribeAgentStatusErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum DescribeAgentStatusErrorKind {
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for DescribeAgentStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            DescribeAgentStatusErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            DescribeAgentStatusErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            DescribeAgentStatusErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            DescribeAgentStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            DescribeAgentStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            DescribeAgentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for DescribeAgentStatusError {
+    fn code(&self) -> Option<&str> {
+        DescribeAgentStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl DescribeAgentStatusError {
+    pub fn new(kind: DescribeAgentStatusErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: DescribeAgentStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: DescribeAgentStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgentStatusErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgentStatusErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgentStatusErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgentStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DescribeAgentStatusErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for DescribeAgentStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            DescribeAgentStatusErrorKind::InternalServiceException(_inner) => Some(_inner),
+            DescribeAgentStatusErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            DescribeAgentStatusErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            DescribeAgentStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            DescribeAgentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
+            DescribeAgentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -5629,6 +6133,123 @@ impl std::error::Error for GetMetricDataError {
             GetMetricDataErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             GetMetricDataErrorKind::ThrottlingException(_inner) => Some(_inner),
             GetMetricDataErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct ListAgentStatusesError {
+    pub kind: ListAgentStatusesErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum ListAgentStatusesErrorKind {
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for ListAgentStatusesError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            ListAgentStatusesErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            ListAgentStatusesErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            ListAgentStatusesErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            ListAgentStatusesErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            ListAgentStatusesErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            ListAgentStatusesErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for ListAgentStatusesError {
+    fn code(&self) -> Option<&str> {
+        ListAgentStatusesError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl ListAgentStatusesError {
+    pub fn new(kind: ListAgentStatusesErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: ListAgentStatusesErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: ListAgentStatusesErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgentStatusesErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgentStatusesErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgentStatusesErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgentStatusesErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ListAgentStatusesErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for ListAgentStatusesError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            ListAgentStatusesErrorKind::InternalServiceException(_inner) => Some(_inner),
+            ListAgentStatusesErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            ListAgentStatusesErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            ListAgentStatusesErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            ListAgentStatusesErrorKind::ThrottlingException(_inner) => Some(_inner),
+            ListAgentStatusesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -9353,6 +9974,141 @@ impl std::error::Error for UntagResourceError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdateAgentStatusError {
+    pub kind: UpdateAgentStatusErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateAgentStatusErrorKind {
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    LimitExceededException(crate::error::LimitExceededException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateAgentStatusError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateAgentStatusErrorKind::DuplicateResourceException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateAgentStatusErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateAgentStatusError {
+    fn code(&self) -> Option<&str> {
+        UpdateAgentStatusError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateAgentStatusError {
+    pub fn new(kind: UpdateAgentStatusErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateAgentStatusErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateAgentStatusErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::DuplicateResourceException(_)
+        )
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::LimitExceededException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAgentStatusErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateAgentStatusError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateAgentStatusErrorKind::DuplicateResourceException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::LimitExceededException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateAgentStatusErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UpdateContactAttributesError {
     pub kind: UpdateContactAttributesErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -9707,6 +10463,132 @@ impl std::error::Error for UpdateContactFlowNameError {
             UpdateContactFlowNameErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
             UpdateContactFlowNameErrorKind::ThrottlingException(_inner) => Some(_inner),
             UpdateContactFlowNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub struct UpdateHoursOfOperationError {
+    pub kind: UpdateHoursOfOperationErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateHoursOfOperationErrorKind {
+    DuplicateResourceException(crate::error::DuplicateResourceException),
+    InternalServiceException(crate::error::InternalServiceException),
+    InvalidParameterException(crate::error::InvalidParameterException),
+    InvalidRequestException(crate::error::InvalidRequestException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    ThrottlingException(crate::error::ThrottlingException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateHoursOfOperationError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateHoursOfOperationErrorKind::DuplicateResourceException(_inner) => _inner.fmt(f),
+            UpdateHoursOfOperationErrorKind::InternalServiceException(_inner) => _inner.fmt(f),
+            UpdateHoursOfOperationErrorKind::InvalidParameterException(_inner) => _inner.fmt(f),
+            UpdateHoursOfOperationErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
+            UpdateHoursOfOperationErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateHoursOfOperationErrorKind::ThrottlingException(_inner) => _inner.fmt(f),
+            UpdateHoursOfOperationErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateHoursOfOperationError {
+    fn code(&self) -> Option<&str> {
+        UpdateHoursOfOperationError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateHoursOfOperationError {
+    pub fn new(kind: UpdateHoursOfOperationErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateHoursOfOperationErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateHoursOfOperationErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_duplicate_resource_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHoursOfOperationErrorKind::DuplicateResourceException(_)
+        )
+    }
+    pub fn is_internal_service_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHoursOfOperationErrorKind::InternalServiceException(_)
+        )
+    }
+    pub fn is_invalid_parameter_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHoursOfOperationErrorKind::InvalidParameterException(_)
+        )
+    }
+    pub fn is_invalid_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHoursOfOperationErrorKind::InvalidRequestException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHoursOfOperationErrorKind::ResourceNotFoundException(_)
+        )
+    }
+    pub fn is_throttling_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateHoursOfOperationErrorKind::ThrottlingException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateHoursOfOperationError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateHoursOfOperationErrorKind::DuplicateResourceException(_inner) => Some(_inner),
+            UpdateHoursOfOperationErrorKind::InternalServiceException(_inner) => Some(_inner),
+            UpdateHoursOfOperationErrorKind::InvalidParameterException(_inner) => Some(_inner),
+            UpdateHoursOfOperationErrorKind::InvalidRequestException(_inner) => Some(_inner),
+            UpdateHoursOfOperationErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateHoursOfOperationErrorKind::ThrottlingException(_inner) => Some(_inner),
+            UpdateHoursOfOperationErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
 }
@@ -12710,6 +13592,68 @@ impl InvalidContactFlowException {
     }
 }
 
+/// <p>The allowed limit for the resource has been exceeded.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    /// <p>The message about the limit.</p>
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_9) = &self.message {
+            write!(f, ": {}", inner_9)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The message about the limit.</p>
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                message: self.message,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The contact with the specified ID is not active or does not exist.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12732,8 +13676,8 @@ impl ContactNotFoundException {
 impl std::fmt::Display for ContactNotFoundException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ContactNotFoundException")?;
-        if let Some(inner_9) = &self.message {
-            write!(f, ": {}", inner_9)?;
+        if let Some(inner_10) = &self.message {
+            write!(f, ": {}", inner_10)?;
         }
         Ok(())
     }
@@ -12793,8 +13737,8 @@ impl ServiceQuotaExceededException {
 impl std::fmt::Display for ServiceQuotaExceededException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ServiceQuotaExceededException")?;
-        if let Some(inner_10) = &self.message {
-            write!(f, ": {}", inner_10)?;
+        if let Some(inner_11) = &self.message {
+            write!(f, ": {}", inner_11)?;
         }
         Ok(())
     }
@@ -12854,8 +13798,8 @@ impl OutboundContactNotPermittedException {
 impl std::fmt::Display for OutboundContactNotPermittedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "OutboundContactNotPermittedException")?;
-        if let Some(inner_11) = &self.message {
-            write!(f, ": {}", inner_11)?;
+        if let Some(inner_12) = &self.message {
+            write!(f, ": {}", inner_12)?;
         }
         Ok(())
     }
@@ -12891,68 +13835,6 @@ impl OutboundContactNotPermittedException {
     /// Creates a new builder-style object to manufacture [`OutboundContactNotPermittedException`](crate::error::OutboundContactNotPermittedException)
     pub fn builder() -> crate::error::outbound_contact_not_permitted_exception::Builder {
         crate::error::outbound_contact_not_permitted_exception::Builder::default()
-    }
-}
-
-/// <p>The allowed limit for the resource has been exceeded.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    /// <p>The message about the limit.</p>
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl LimitExceededException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_12) = &self.message {
-            write!(f, ": {}", inner_12)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
-pub mod limit_exceeded_exception {
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The message about the limit.</p>
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                message: self.message,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 

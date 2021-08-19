@@ -2197,7 +2197,7 @@ pub mod deregister_container_instance_input {
             self
         }
         /// <p>The container instance ID or full ARN of the container instance to deregister.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_instance = Some(input.into());
             self
@@ -3718,7 +3718,7 @@ pub mod discover_poll_endpoint_input {
     }
     impl Builder {
         /// <p>The container instance ID or full ARN of the container instance.
-        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+        /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
         pub fn container_instance(mut self, input: impl Into<std::string::String>) -> Self {
             self.container_instance = Some(input.into());
             self
@@ -7424,7 +7424,7 @@ pub mod run_task_input {
             self
         }
         /// <p>The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, family:my-family-name).</p>
+        /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
         pub fn group(mut self, input: impl Into<std::string::String>) -> Self {
             self.group = Some(input.into());
             self
@@ -7464,7 +7464,7 @@ pub mod run_task_input {
         /// <p>The network configuration for the task. This parameter is required for task
         /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
         /// network interface, and it is not supported for other network modes. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
         /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn network_configuration(mut self, input: crate::model::NetworkConfiguration) -> Self {
             self.network_configuration = Some(input);
@@ -7483,10 +7483,8 @@ pub mod run_task_input {
         /// image) with a <code>command</code> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container or
         /// add new environment variables to it with an <code>environment</code> override.</p>
-        /// <note>
         /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
         /// formatting characters of the override structure.</p>
-        /// </note>
         pub fn overrides(mut self, input: crate::model::TaskOverride) -> Self {
             self.overrides = Some(input);
             self
@@ -7530,11 +7528,10 @@ pub mod run_task_input {
             self.placement_strategy = input;
             self
         }
-        /// <p>The platform version the task should run. A platform version is only specified for
-        /// tasks using the Fargate launch type. If one is not specified, the
-        /// <code>LATEST</code> platform version is used by default. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-        /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+        /// <p>The platform version the task should use. A platform version is only specified for
+        /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
+        /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
+        /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.platform_version = Some(input.into());
             self
@@ -7564,7 +7561,8 @@ pub mod run_task_input {
             self.propagate_tags = input;
             self
         }
-        /// <p>The reference ID to use for the task.</p>
+        /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
+        /// 1024 characters.</p>
         pub fn reference_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.reference_id = Some(input.into());
             self
@@ -11216,6 +11214,7 @@ pub struct RunTaskInput {
     /// <code>launchType</code> is specified, the
     /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
     /// <p>When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code> and not <code>launchType</code>. </p>
+    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster on which to run your task.
@@ -11233,7 +11232,7 @@ pub struct RunTaskInput {
     /// in the task.</p>
     pub enable_execute_command: bool,
     /// <p>The name of the task group to associate with the task. The default value is the family
-    /// name of the task definition (for example, family:my-family-name).</p>
+    /// name of the task definition (for example, <code>family:my-family-name</code>).</p>
     pub group: std::option::Option<std::string::String>,
     /// <p>The infrastructure on which to run your standalone task. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
@@ -11256,7 +11255,7 @@ pub struct RunTaskInput {
     /// <p>The network configuration for the task. This parameter is required for task
     /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
     /// network interface, and it is not supported for other network modes. For more
-    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a>
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task networking</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub network_configuration: std::option::Option<crate::model::NetworkConfiguration>,
     /// <p>A list of container overrides in JSON format that specify the name of a container in
@@ -11265,24 +11264,21 @@ pub struct RunTaskInput {
     /// image) with a <code>command</code> override. You can also override existing environment
     /// variables (that are specified in the task definition or Docker image) on a container or
     /// add new environment variables to it with an <code>environment</code> override.</p>
-    /// <note>
     /// <p>A total of 8192 characters are allowed for overrides. This limit includes the JSON
     /// formatting characters of the override structure.</p>
-    /// </note>
     pub overrides: std::option::Option<crate::model::TaskOverride>,
     /// <p>An array of placement constraint objects to use for the task. You can specify up to 10
     /// constraints per task (including constraints in the task definition and those specified
     /// at runtime).</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
-    /// <p>The placement strategy objects to use for the task. You can specify a maximum of five
+    /// <p>The placement strategy objects to use for the task. You can specify a maximum of 5
     /// strategy rules per task.</p>
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
-    /// <p>The platform version the task should run. A platform version is only specified for
-    /// tasks using the Fargate launch type. If one is not specified, the
-    /// <code>LATEST</code> platform version is used by default. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
-    /// Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
+    /// <p>The platform version the task should use. A platform version is only specified for
+    /// tasks hosted on Fargate. If one is not specified, the <code>LATEST</code>
+    /// platform version is used by default. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate platform versions</a> in the
+    /// <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
     /// <p>Specifies whether to propagate the tags from the task definition to the task. If no
     /// value is specified, the tags are not propagated. Tags can only be propagated to the task
@@ -11292,7 +11288,8 @@ pub struct RunTaskInput {
     /// running a task.</p>
     /// </note>
     pub propagate_tags: std::option::Option<crate::model::PropagateTags>,
-    /// <p>The reference ID to use for the task.</p>
+    /// <p>The reference ID to use for the task. The reference ID can have a maximum length of
+    /// 1024 characters.</p>
     pub reference_id: std::option::Option<std::string::String>,
     /// <p>An optional tag specified when a task is started. For example, if you automatically
     /// trigger a task to run a batch process job, you could apply a unique identifier for that
@@ -12285,7 +12282,7 @@ impl std::fmt::Debug for ExecuteCommandInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DiscoverPollEndpointInput {
     /// <p>The container instance ID or full ARN of the container instance.
-    /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+    /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
     pub container_instance: std::option::Option<std::string::String>,
     /// <p>The short name or full Amazon Resource Name (ARN) of the cluster to which the container instance
     /// belongs.</p>
@@ -12435,6 +12432,8 @@ pub struct DescribeClustersInput {
     /// or tasks within the cluster are included.</p>
     /// <p>If <code>SETTINGS</code> is specified, the settings for the cluster are
     /// included.</p>
+    /// <p>If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
+    /// included.</p>
     /// <p>If <code>STATISTICS</code> is specified, the task and service count is included,
     /// separated by launch type.</p>
     /// <p>If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
@@ -12516,7 +12515,7 @@ pub struct DeregisterContainerInstanceInput {
     /// deregister. If you do not specify a cluster, the default cluster is assumed.</p>
     pub cluster: std::option::Option<std::string::String>,
     /// <p>The container instance ID or full ARN of the container instance to deregister.
-    /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
+    /// The ARN contains the <code>arn:aws:ecs</code> namespace, followed by the Region of the container instance, the Amazon Web Services account ID of the container instance owner, the <code>container-instance</code> namespace, and then the container instance ID. For example, <code>arn:aws:ecs:region:aws_account_id:container-instance/container_instance_ID</code>.</p>
     pub container_instance: std::option::Option<std::string::String>,
     /// <p>Forces the deregistration of the container instance. If you have tasks running on the
     /// container instance when you deregister it with the <code>force</code> option, these
@@ -12877,6 +12876,7 @@ pub struct CreateServiceInput {
     /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or
     /// <code>launchType</code> is specified, the
     /// <code>defaultCapacityProviderStrategy</code> for the cluster is used.</p>
+    /// <p>A capacity provider strategy may contain a maximum of 6 capacity providers.</p>
     pub capacity_provider_strategy:
         std::option::Option<std::vec::Vec<crate::model::CapacityProviderStrategyItem>>,
     /// <p>The platform version that your tasks in the service are running on. A platform version
@@ -12911,11 +12911,11 @@ pub struct CreateServiceInput {
     pub deployment_configuration: std::option::Option<crate::model::DeploymentConfiguration>,
     /// <p>An array of placement constraint objects to use for tasks in your service. You can
     /// specify a maximum of 10 constraints per task (this limit includes constraints in the
-    /// task definition and those specified at runtime). </p>
+    /// task definition and those specified at runtime).</p>
     pub placement_constraints:
         std::option::Option<std::vec::Vec<crate::model::PlacementConstraint>>,
     /// <p>The placement strategy objects to use for tasks in your service. You can specify a
-    /// maximum of five strategy rules per service.</p>
+    /// maximum of 5 strategy rules per service.</p>
     pub placement_strategy: std::option::Option<std::vec::Vec<crate::model::PlacementStrategy>>,
     /// <p>The network configuration for the service. This parameter is required for task
     /// definitions that use the <code>awsvpc</code> network mode to receive their own elastic
@@ -13115,7 +13115,7 @@ pub struct CreateClusterInput {
     /// list of available capacity providers for a cluster after the cluster is created.</p>
     pub capacity_providers: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The capacity provider strategy to set as the default for the cluster. When a default
-    /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs wtih no capacity
+    /// capacity provider strategy is set for a cluster, when calling the <a>RunTask</a> or <a>CreateService</a> APIs with no capacity
     /// provider strategy or launch type specified, the default capacity provider strategy for
     /// the cluster is used.</p>
     /// <p>If a default capacity provider strategy is not defined for a cluster during creation,

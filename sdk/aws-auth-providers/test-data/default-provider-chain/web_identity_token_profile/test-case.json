@@ -1,0 +1,12 @@
+{
+  "name": "web-identity-token-profile",
+  "docs": "loads a web identity token as a direct key in the profile",
+  "result": {
+    "Ok": {
+      "access_key_id": "ASIARABCDEFGHIJKLMNOP",
+      "secret_access_key": "TESTSECRET",
+      "session_token": "TESTSESSIONTOKEN",
+      "expiry": 1629233704
+    }
+  }
+}

@@ -182,7 +182,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> The cost anomaly detection monitor object that you want to create.</p>
+        /// <p>The cost anomaly detection monitor object that you want to create.</p>
         pub fn anomaly_monitor(mut self, input: crate::model::AnomalyMonitor) -> Self {
             self.inner = self.inner.anomaly_monitor(input);
             self
@@ -226,9 +226,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// The cost anomaly subscription object that you want to create.
-        /// </p>
+        /// <p>The cost anomaly subscription object that you want to create. </p>
         pub fn anomaly_subscription(mut self, input: crate::model::AnomalySubscription) -> Self {
             self.inner = self.inner.anomaly_subscription(input);
             self
@@ -306,7 +304,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The default value for the cost category.</p>
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_value(input);
             self
@@ -316,6 +315,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_default_value(input);
+            self
+        }
+        /// <p>
+        /// The split charge rules used to allocate your charges between your Cost Category values.
+        /// </p>
+        pub fn split_charge_rules(
+            mut self,
+            inp: impl Into<crate::model::CostCategorySplitChargeRule>,
+        ) -> Self {
+            self.inner = self.inner.split_charge_rules(inp);
+            self
+        }
+        pub fn set_split_charge_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
+        ) -> Self {
+            self.inner = self.inner.set_split_charge_rules(input);
             self
         }
     }
@@ -350,7 +366,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> The unique identifier of the cost anomaly monitor that you want to delete. </p>
+        /// <p>The unique identifier of the cost anomaly monitor that you want to delete. </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitor_arn(input);
             self
@@ -391,7 +407,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> The unique identifier of the cost anomaly subscription that you want to delete. </p>
+        /// <p>The unique identifier of the cost anomaly subscription that you want to delete. </p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_arn(input);
             self
@@ -587,9 +603,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_total_impact(input);
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -601,9 +616,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>
-        /// The number of entries a paginated response contains.
-        /// </p>
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -644,9 +657,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// A list of cost anomaly monitor ARNs.
-        /// </p>
+        /// <p>A list of cost anomaly monitor ARNs. </p>
         pub fn monitor_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitor_arn_list(inp);
             self
@@ -658,9 +669,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor_arn_list(input);
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -672,9 +682,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>
-        /// The number of entries a paginated response contains.
-        /// </p>
+        /// <p>The number of entries that a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -715,9 +723,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// A list of cost anomaly subscription ARNs.
-        /// </p>
+        /// <p>A list of cost anomaly subscription ARNs. </p>
         pub fn subscription_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_arn_list(inp);
             self
@@ -729,9 +735,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscription_arn_list(input);
             self
         }
-        /// <p>
-        /// Cost anomaly monitor ARNs.
-        /// </p>
+        /// <p>Cost anomaly monitor ARNs. </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitor_arn(input);
             self
@@ -740,9 +744,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor_arn(input);
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -754,9 +757,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>
-        /// The number of entries a paginated response contains.
-        /// </p>
+        /// <p>The number of entries a paginated response contains. </p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -797,8 +798,11 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>Sets the start and end dates for retrieving AWS costs. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>Sets the start date and end date for retrieving Amazon Web Services costs. The start date
+        /// is inclusive, but the end date is exclusive. For example, if <code>start</code> is
+        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+        /// usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.inner = self.inner.time_period(input);
             self
@@ -810,7 +814,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>Sets the AWS cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. If <code>Granularity</code> isn't set,
         /// the response object doesn't include the <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
             self.inner = self.inner.granularity(input);
@@ -823,7 +827,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_granularity(input);
             self
         }
-        /// <p>Filters AWS costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
+        /// <p>Filters Amazon Web Services costs by different dimensions. For example, you can specify <code>SERVICE</code> and <code>LINKED_ACCOUNT</code>
         /// and get the costs that are associated with that account's usage of that service. You can nest <code>Expression</code> objects
         /// to define any combination of dimension filters. For more information, see
         /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>. </p>
@@ -841,11 +845,12 @@ pub mod fluent_builders {
         /// <p>Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
         /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>, and <code>UsageQuantity</code>. </p>
         /// <note>
-        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage numbers without
-        /// taking into account the units. For example, if you aggregate <code>usageQuantity</code> across all of Amazon EC2,
-        /// the results aren't meaningful because Amazon EC2 compute hours and data transfer are measured in different units
-        /// (for example, hours vs. GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code> or
-        /// <code>UsageTypeGroups</code>. </p>
+        /// <p>If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
+        /// numbers without taking into account the units. For example, if you aggregate
+        /// <code>usageQuantity</code> across all of Amazon EC2, the results aren't meaningful because
+        /// Amazon EC2 compute hours and data transfer are measured in different units (for example,
+        /// hours and GB). To get more meaningful <code>UsageQuantity</code> metrics, filter by
+        /// <code>UsageType</code> or <code>UsageTypeGroups</code>. </p>
         /// </note>
         /// <p>
         /// <code>Metrics</code> is required for <code>GetCostAndUsage</code> requests.</p>
@@ -860,12 +865,12 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metrics(input);
             self
         }
-        /// <p>You can group AWS costs using up to two different groups, either dimensions, tag keys,
+        /// <p>You can group Amazon Web Services costs using up to two different groups, either dimensions, tag keys,
         /// cost categories, or any two group by types.</p>
-        /// <p>When you group by tag key, you get all tag values, including empty strings.</p>
-        /// <p>Valid values are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
-        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>, <code>TAGS</code>,
+        /// <p>Valid values for the <code>DIMENSION</code> type are <code>AZ</code>, <code>INSTANCE_TYPE</code>, <code>LEGAL_ENTITY_NAME</code>, <code>LINKED_ACCOUNT</code>,
+        /// <code>OPERATION</code>, <code>PLATFORM</code>, <code>PURCHASE_TYPE</code>, <code>SERVICE</code>,
         /// <code>TENANCY</code>, <code>RECORD_TYPE</code>, and <code>USAGE_TYPE</code>.</p>
+        /// <p>When you group by the <code>TAG</code>  type and include a valid tag key, you get all tag values, including empty strings.</p>
         pub fn group_by(mut self, inp: impl Into<crate::model::GroupDefinition>) -> Self {
             self.inner = self.inner.group_by(inp);
             self
@@ -877,7 +882,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -934,7 +939,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_time_period(input);
             self
         }
-        /// <p>Sets the AWS cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
+        /// <p>Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. If
         /// <code>Granularity</code> isn't set, the response object doesn't include the
         /// <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>, or <code>HOURLY</code>. </p>
         pub fn granularity(mut self, input: crate::model::Granularity) -> Self {
@@ -1003,7 +1008,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -1060,8 +1065,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_string(input);
             self
         }
-        /// <p>The time period of the request.
-        /// </p>
+        /// <p>The time period of the request. </p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.inner = self.inner.time_period(input);
             self
@@ -1090,31 +1094,33 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -1129,13 +1135,14 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
@@ -1208,7 +1215,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the NextPageToken from the prior call in your next request.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -1487,8 +1494,11 @@ pub mod fluent_builders {
             self.inner = self.inner.set_search_string(input);
             self
         }
-        /// <p>The start and end dates for retrieving the dimension values. The start date is inclusive,  but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is  
-        /// retrieved from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
+        /// <p>The start date and end date for retrieving the dimension values. The start date is
+        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is
+        /// <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the cost and
+        /// usage data is retrieved from <code>2017-01-01</code> up to and including
+        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.</p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.inner = self.inner.time_period(input);
             self
@@ -1531,11 +1541,11 @@ pub mod fluent_builders {
         /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
         /// </li>
         /// <li>
-        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p>
+        /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
         /// </li>
         /// <li>
         /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the AWS ID of the member account.</p>
+        /// field contains the Amazon Web Services ID of the member account.</p>
         /// </li>
         /// <li>
         /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
@@ -1551,7 +1561,7 @@ pub mod fluent_builders {
         /// Instances and Standard Reserved Instances.</p>
         /// </li>
         /// <li>
-        /// <p>SERVICE - The AWS service such as Amazon DynamoDB.</p>
+        /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
         /// </li>
         /// <li>
         /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
@@ -1562,7 +1572,7 @@ pub mod fluent_builders {
         /// operation includes a unit attribute.</p>
         /// </li>
         /// <li>
-        /// <p>REGION - The AWS Region.</p>
+        /// <p>REGION - The Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.</p>
@@ -1588,13 +1598,13 @@ pub mod fluent_builders {
         /// </li>
         /// <li>
         /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the AWS ID of the member account.</p>
+        /// field contains the Amazon Web Services ID of the member account.</p>
         /// </li>
         /// <li>
         /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
         /// </li>
         /// <li>
-        /// <p>REGION - The AWS Region.</p>
+        /// <p>REGION - The Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
@@ -1615,14 +1625,14 @@ pub mod fluent_builders {
         /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
         /// </li>
         /// <li>
-        /// <p>REGION - The AWS Region.</p>
+        /// <p>REGION - The Amazon Web Services Region.</p>
         /// </li>
         /// <li>
         /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
         /// </li>
         /// <li>
         /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-        /// field contains the AWS ID of the member account.</p>
+        /// field contains the Amazon Web Services ID of the member account.</p>
         /// </li>
         /// <li>
         /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
@@ -1641,31 +1651,33 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -1680,13 +1692,14 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
@@ -1758,7 +1771,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -1860,7 +1873,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_group_by(input);
             self
         }
-        /// <p>The granularity of the AWS cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
+        /// <p>The granularity of the Amazon Web Services cost data for the reservation. Valid values are <code>MONTHLY</code> and <code>DAILY</code>.</p>
         /// <p>If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code> isn't set,
         /// the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code> or <code>DAILY</code>.</p>
         /// <p>The <code>GetReservationCoverage</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code> granularities.</p>
@@ -1942,7 +1955,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_metrics(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -2020,7 +2033,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -2084,31 +2097,33 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -2123,13 +2138,14 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
@@ -2151,7 +2167,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_account_scope(input);
             self
         }
-        /// <p>The number of previous days that you want AWS to consider when it calculates your recommendations.</p>
+        /// <p>The number of previous days that you want Amazon Web Services to consider when it calculates your recommendations.</p>
         pub fn lookback_period_in_days(
             mut self,
             input: crate::model::LookbackPeriodInDays,
@@ -2445,7 +2461,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_sort_by(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -2457,7 +2473,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_next_page_token(input);
             self
         }
-        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, AWS provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
+        /// <p>The maximum number of objects that you returned for this request. If more objects are available, in the response, Amazon Web Services provides a NextPageToken value that you can use in a subsequent call to get the next batch of objects.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.inner = self.inner.max_results(input);
             self
@@ -2503,31 +2519,33 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -2542,13 +2560,14 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
@@ -3312,31 +3331,33 @@ pub mod fluent_builders {
         /// <li>
         /// <p>Simple dimension values - You can set the dimension name and values for the
         /// filters that you plan to use. For example, you can filter for
-        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example, <code>REGION==US East (N. Virginia)</code>. The
-        /// <code>Expression</code> example looks like:</p>
+        /// <code>REGION==us-east-1 OR REGION==us-west-1</code>. For
+        /// <code>GetRightsizingRecommendation</code>, the Region is a full name (for
+        /// example, <code>REGION==US East (N. Virginia)</code>. The <code>Expression</code>
+        /// example is as follows:</p>
         /// <p>
-        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1",
-        /// “us-west-1” ] } }</code>
+        /// <code>{ "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", “us-west-1” ]
+        /// } }</code>
         /// </p>
-        /// <p>The list of dimension values are OR'd together to retrieve cost or usage
-        /// data. You can create <code>Expression</code> and <code>DimensionValues</code>
-        /// objects using either <code>with*</code> methods or <code>set*</code> methods in
-        /// multiple lines. </p>
+        /// <p>The list of dimension values are OR'd together to retrieve cost or usage data.
+        /// You can create <code>Expression</code> and <code>DimensionValues</code> objects
+        /// using either <code>with*</code> methods or <code>set*</code> methods in multiple
+        /// lines. </p>
         /// </li>
         /// <li>
         /// <p>Compound dimension values with logical operations - You can use multiple
         /// <code>Expression</code> types and the logical operators
         /// <code>AND/OR/NOT</code> to create a list of one or more
-        /// <code>Expression</code> objects. This allows you to filter on more advanced
-        /// options. For example, you can filter on <code>((REGION == us-east-1 OR
+        /// <code>Expression</code> objects. By doing this, you can filter on more
+        /// advanced options. For example, you can filter on <code>((REGION == us-east-1 OR
         /// REGION == us-west-1) OR (TAG.Type == Type1)) AND (USAGE_TYPE !=
-        /// DataTransfer)</code>. The <code>Expression</code> for that looks like
-        /// this:</p>
+        /// DataTransfer)</code>. The <code>Expression</code> for that is as
+        /// follows:</p>
         /// <p>
-        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION",
-        /// "Values": [ "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName",
-        /// "Values": ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-        /// "Values": ["DataTransfer"] }}} ] } </code>
+        /// <code>{ "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [
+        /// "us-east-1", "us-west-1" ] }}, {"Tags": { "Key": "TagName", "Values":
+        /// ["Value1"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values":
+        /// ["DataTransfer"] }}} ] } </code>
         /// </p>
         /// <note>
         /// <p>Because each <code>Expression</code> can have only one operator, the
@@ -3351,13 +3372,14 @@ pub mod fluent_builders {
         /// </li>
         /// </ul>
         /// <note>
-        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and NOT is not
-        /// supported. OR is not supported between different dimensions, or dimensions and tags.
-        /// NOT operators aren't supported.
-        /// Dimensions
-        /// are also limited to <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
+        /// <p>For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
+        /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
+        /// and tags. NOT operators aren't supported. Dimensions are also limited to
+        /// <code>LINKED_ACCOUNT</code>, <code>REGION</code>, or
         /// <code>RIGHTSIZING_TYPE</code>.</p>
-        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported. AND and OR are not supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.</p>
+        /// <p>For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is
+        /// supported. AND and OR aren't supported. Dimensions are limited to
+        /// <code>LINKED_ACCOUNT</code>.</p>
         /// </note>
         pub fn filter(mut self, input: crate::model::Expression) -> Self {
             self.inner = self.inner.filter(input);
@@ -3429,7 +3451,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_max_results(input);
             self
         }
-        /// <p>The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.next_page_token(input);
             self
@@ -3749,9 +3771,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>
-        /// A cost anomaly ID.
-        /// </p>
+        /// <p>A cost anomaly ID. </p>
         pub fn anomaly_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.anomaly_id(input);
             self
@@ -3804,7 +3824,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> Cost anomaly monitor Amazon Resource Names (ARNs). </p>
+        /// <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitor_arn(input);
             self
@@ -3813,9 +3833,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor_arn(input);
             self
         }
-        /// <p>
-        /// The new name for the cost anomaly monitor.
-        /// </p>
+        /// <p>The new name for the cost anomaly monitor. </p>
         pub fn monitor_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitor_name(input);
             self
@@ -3856,7 +3874,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p> A cost anomaly subscription Amazon Resource Name (ARN). </p>
+        /// <p>A cost anomaly subscription Amazon Resource Name (ARN). </p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_arn(input);
             self
@@ -3868,9 +3886,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscription_arn(input);
             self
         }
-        /// <p>
-        /// The update to the threshold value for receiving notifications.
-        /// </p>
+        /// <p>The update to the threshold value for receiving notifications. </p>
         pub fn threshold(mut self, input: f64) -> Self {
             self.inner = self.inner.threshold(input);
             self
@@ -3879,9 +3895,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_threshold(input);
             self
         }
-        /// <p>
-        /// The update to the frequency value at which subscribers will receive notifications.
-        /// </p>
+        /// <p>The update to the frequency value that subscribers receive notifications. </p>
         pub fn frequency(mut self, input: crate::model::AnomalySubscriptionFrequency) -> Self {
             self.inner = self.inner.frequency(input);
             self
@@ -3893,9 +3907,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_frequency(input);
             self
         }
-        /// <p>
-        /// A list of cost anomaly monitor ARNs.
-        /// </p>
+        /// <p>A list of cost anomaly monitor ARNs. </p>
         pub fn monitor_arn_list(mut self, inp: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.monitor_arn_list(inp);
             self
@@ -3907,9 +3919,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_monitor_arn_list(input);
             self
         }
-        /// <p>
-        /// The update to the subscriber list.
-        /// </p>
+        /// <p>The update to the subscriber list. </p>
         pub fn subscribers(mut self, inp: impl Into<crate::model::Subscriber>) -> Self {
             self.inner = self.inner.subscribers(inp);
             self
@@ -3921,9 +3931,7 @@ pub mod fluent_builders {
             self.inner = self.inner.set_subscribers(input);
             self
         }
-        /// <p>
-        /// The subscription's new name.
-        /// </p>
+        /// <p>The new name of the subscription. </p>
         pub fn subscription_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.subscription_name(input);
             self
@@ -4004,7 +4012,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_rules(input);
             self
         }
-        /// <p>The default value for the cost category.</p>
+        /// <p>The
+        /// default value for the cost category.</p>
         pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.default_value(input);
             self
@@ -4014,6 +4023,23 @@ pub mod fluent_builders {
             input: std::option::Option<std::string::String>,
         ) -> Self {
             self.inner = self.inner.set_default_value(input);
+            self
+        }
+        /// <p>
+        /// The split charge rules used to allocate your charges between your Cost Category values.
+        /// </p>
+        pub fn split_charge_rules(
+            mut self,
+            inp: impl Into<crate::model::CostCategorySplitChargeRule>,
+        ) -> Self {
+            self.inner = self.inner.split_charge_rules(inp);
+            self
+        }
+        pub fn set_split_charge_rules(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::CostCategorySplitChargeRule>>,
+        ) -> Self {
+            self.inner = self.inner.set_split_charge_rules(input);
             self
         }
     }

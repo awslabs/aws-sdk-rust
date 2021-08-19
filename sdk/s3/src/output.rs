@@ -46,10 +46,10 @@ pub struct UploadPartCopyOutput {
     /// response will include this header to provide round-trip message integrity verification of
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the
     /// request.</p>
@@ -150,7 +150,7 @@ pub mod upload_part_copy_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -163,7 +163,7 @@ pub mod upload_part_copy_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -222,10 +222,10 @@ pub struct UploadPartOutput {
     /// response will include this header to provide round-trip message integrity verification of
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the
     /// request.</p>
@@ -308,7 +308,7 @@ pub mod upload_part_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -321,7 +321,7 @@ pub mod upload_part_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -722,7 +722,7 @@ pub struct PutObjectOutput {
     pub expiration: std::option::Option<std::string::String>,
     /// <p>Entity tag for the uploaded object.</p>
     pub e_tag: std::option::Option<std::string::String>,
-    /// <p>If you specified server-side encryption either with an AWS KMS customer master key (CMK)
+    /// <p>If you specified server-side encryption either with an Amazon Web Services KMS customer master key (CMK)
     /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
     /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
@@ -736,15 +736,15 @@ pub struct PutObjectOutput {
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
     /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-    /// <code>aws:kms</code>, this header specifies the ID of the AWS Key Management Service
-    /// (AWS KMS) symmetric customer managed customer master key (CMK) that was used for the
+    /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
+    /// (Amazon Web Services KMS) symmetric customer managed customer master key (CMK) that was used for the
     /// object. </p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
     /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
     /// context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the
     /// request.</p>
@@ -807,7 +807,7 @@ pub mod put_object_output {
             self.e_tag = input;
             self
         }
-        /// <p>If you specified server-side encryption either with an AWS KMS customer master key (CMK)
+        /// <p>If you specified server-side encryption either with an Amazon Web Services KMS customer master key (CMK)
         /// or Amazon S3-managed encryption key in your PUT request, the response includes this header. It
         /// confirms the encryption algorithm that Amazon S3 used to encrypt the object.</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
@@ -858,8 +858,8 @@ pub mod put_object_output {
             self
         }
         /// <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
-        /// <code>aws:kms</code>, this header specifies the ID of the AWS Key Management Service
-        /// (AWS KMS) symmetric customer managed customer master key (CMK) that was used for the
+        /// <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services Key Management Service
+        /// (Amazon Web Services KMS) symmetric customer managed customer master key (CMK) that was used for the
         /// object. </p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -872,7 +872,7 @@ pub mod put_object_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
         /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -886,7 +886,7 @@ pub mod put_object_output {
             self.ssekms_encryption_context = input;
             self
         }
-        /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the uploaded object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -1470,7 +1470,7 @@ pub struct ListPartsOutput {
     /// identifies applicable lifecycle configuration rule that defines the action to abort
     /// incomplete multipart uploads.</p>
     pub abort_rule_id: std::option::Option<std::string::String>,
-    /// <p>The name of the bucket to which the multipart upload was initiated.</p>
+    /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
@@ -1494,7 +1494,7 @@ pub struct ListPartsOutput {
     /// more <code>Part</code> elements.</p>
     pub parts: std::option::Option<std::vec::Vec<crate::model::Part>>,
     /// <p>Container element that identifies who initiated the multipart upload. If the initiator
-    /// is an AWS account, this element provides the same information as the <code>Owner</code>
+    /// is an Amazon Web Services account, this element provides the same information as the <code>Owner</code>
     /// element. If the initiator is an IAM User, this element provides the user ARN and display
     /// name.</p>
     pub initiator: std::option::Option<crate::model::Initiator>,
@@ -1580,7 +1580,7 @@ pub mod list_parts_output {
             self.abort_rule_id = input;
             self
         }
-        /// <p>The name of the bucket to which the multipart upload was initiated.</p>
+        /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -1669,7 +1669,7 @@ pub mod list_parts_output {
             self
         }
         /// <p>Container element that identifies who initiated the multipart upload. If the initiator
-        /// is an AWS account, this element provides the same information as the <code>Owner</code>
+        /// is an Amazon Web Services account, this element provides the same information as the <code>Owner</code>
         /// element. If the initiator is an IAM User, this element provides the user ARN and display
         /// name.</p>
         pub fn initiator(mut self, input: crate::model::Initiator) -> Self {
@@ -2032,8 +2032,8 @@ pub struct ListObjectsV2Output {
     /// <p>Metadata about each object returned.</p>
     pub contents: std::option::Option<std::vec::Vec<crate::model::Object>>,
     /// <p>The bucket name.</p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p> Keys that begin with the indicated prefix.</p>
     pub prefix: std::option::Option<std::string::String>,
@@ -2146,8 +2146,8 @@ pub mod list_objects_v2_output {
             self
         }
         /// <p>The bucket name.</p>
-        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -2508,7 +2508,7 @@ impl ListObjectsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMultipartUploadsOutput {
-    /// <p>The name of the bucket to which the multipart upload was initiated.</p>
+    /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The key at or after which the listing began.</p>
     pub key_marker: std::option::Option<std::string::String>,
@@ -2587,7 +2587,7 @@ pub mod list_multipart_uploads_output {
         pub(crate) encoding_type: std::option::Option<crate::model::EncodingType>,
     }
     impl Builder {
-        /// <p>The name of the bucket to which the multipart upload was initiated.</p>
+        /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -3351,7 +3351,7 @@ pub struct HeadObjectOutput {
     /// object in the same bucket or to an external URL. Amazon S3 stores the value of this header in
     /// the object metadata.</p>
     pub website_redirect_location: std::option::Option<std::string::String>,
-    /// <p>If the object is stored using server-side encryption either with an AWS KMS customer
+    /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS customer
     /// master key (CMK) or an Amazon S3-managed encryption key, the response includes this header with
     /// the value of the server-side encryption algorithm used when storing this object in Amazon
     /// S3 (for example, AES256, aws:kms).</p>
@@ -3366,10 +3366,10 @@ pub struct HeadObjectOutput {
     /// response will include this header to provide round-trip message integrity verification of
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
     /// objects except for S3 Standard storage class objects.</p>
@@ -3713,7 +3713,7 @@ pub mod head_object_output {
             self.website_redirect_location = input;
             self
         }
-        /// <p>If the object is stored using server-side encryption either with an AWS KMS customer
+        /// <p>If the object is stored using server-side encryption either with an Amazon Web Services KMS customer
         /// master key (CMK) or an Amazon S3-managed encryption key, the response includes this header with
         /// the value of the server-side encryption algorithm used when storing this object in Amazon
         /// S3 (for example, AES256, aws:kms).</p>
@@ -3774,7 +3774,7 @@ pub mod head_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -3787,7 +3787,7 @@ pub mod head_object_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -4486,10 +4486,10 @@ pub struct GetObjectOutput {
     /// response will include this header to provide round-trip message integrity verification of
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>Provides storage class information of the object. Amazon S3 returns this header for all
     /// objects except for S3 Standard storage class objects.</p>
@@ -4859,7 +4859,7 @@ pub mod get_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -4872,7 +4872,7 @@ pub mod get_object_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -5509,7 +5509,7 @@ pub struct GetBucketNotificationConfigurationOutput {
     /// <p>The Amazon Simple Queue Service queues to publish messages to and the events for which
     /// to publish messages.</p>
     pub queue_configurations: std::option::Option<std::vec::Vec<crate::model::QueueConfiguration>>,
-    /// <p>Describes the AWS Lambda functions to invoke and the events for which to invoke
+    /// <p>Describes the Lambda functions to invoke and the events for which to invoke
     /// them.</p>
     pub lambda_function_configurations:
         std::option::Option<std::vec::Vec<crate::model::LambdaFunctionConfiguration>>,
@@ -6838,9 +6838,9 @@ pub struct CreateMultipartUploadOutput {
     /// identifies the applicable lifecycle configuration rule that defines the action to abort
     /// incomplete multipart uploads.</p>
     pub abort_rule_id: std::option::Option<std::string::String>,
-    /// <p>The name of the bucket to which the multipart upload was initiated. </p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>Object key for which the multipart upload was initiated.</p>
     pub key: std::option::Option<std::string::String>,
@@ -6856,14 +6856,14 @@ pub struct CreateMultipartUploadOutput {
     /// response will include this header to provide round-trip message integrity verification of
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
     /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
     /// context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the
     /// request.</p>
@@ -6939,9 +6939,9 @@ pub mod create_multipart_upload_output {
             self.abort_rule_id = input;
             self
         }
-        /// <p>The name of the bucket to which the multipart upload was initiated. </p>
-        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The name of the bucket to which the multipart upload was initiated. Does not return the access point ARN or access point alias if used.</p>
+        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -7008,7 +7008,7 @@ pub mod create_multipart_upload_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -7021,7 +7021,7 @@ pub mod create_multipart_upload_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
         /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7035,7 +7035,7 @@ pub mod create_multipart_upload_output {
             self.ssekms_encryption_context = input;
             self
         }
-        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -7154,14 +7154,14 @@ pub struct CopyObjectOutput {
     /// response will include this header to provide round-trip message integrity verification of
     /// the customer-provided encryption key.</p>
     pub sse_customer_key_md5: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
+    /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
     /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
     /// context key-value pairs.</p>
     pub ssekms_encryption_context: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the
     /// request.</p>
@@ -7288,7 +7288,7 @@ pub mod copy_object_output {
             self.sse_customer_key_md5 = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -7301,7 +7301,7 @@ pub mod copy_object_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>If present, specifies the AWS KMS Encryption Context to use for object encryption. The
+        /// <p>If present, specifies the Amazon Web Services KMS Encryption Context to use for object encryption. The
         /// value of this header is a base64-encoded UTF-8 string holding JSON with the encryption
         /// context key-value pairs.</p>
         pub fn ssekms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7315,7 +7315,7 @@ pub mod copy_object_output {
             self.ssekms_encryption_context = input;
             self
         }
-        /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the copied object uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self
@@ -7367,9 +7367,9 @@ impl CopyObjectOutput {
 pub struct CompleteMultipartUploadOutput {
     /// <p>The URI that identifies the newly created object.</p>
     pub location: std::option::Option<std::string::String>,
-    /// <p>The name of the bucket that contains the newly created object.</p>
-    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p>
+    /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+    /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
     pub bucket: std::option::Option<std::string::String>,
     /// <p>The object key of the newly created object.</p>
     pub key: std::option::Option<std::string::String>,
@@ -7383,17 +7383,17 @@ pub struct CompleteMultipartUploadOutput {
     /// will consist of less than 32 or more than 32 hexadecimal digits.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-    /// AWS KMS customer master key (CMK) in your initiate multipart upload request, the response
+    /// Amazon Web Services KMS customer master key (CMK) in your initiate multipart upload request, the response
     /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
     /// object.</p>
     pub server_side_encryption: std::option::Option<crate::model::ServerSideEncryption>,
     /// <p>Version ID of the newly created object, in case the bucket has versioning turned
     /// on.</p>
     pub version_id: std::option::Option<std::string::String>,
-    /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+    /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
     /// customer managed customer master key (CMK) that was used for the object.</p>
     pub ssekms_key_id: std::option::Option<std::string::String>,
-    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+    /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
     pub bucket_key_enabled: bool,
     /// <p>If present, indicates that the requester was successfully charged for the
     /// request.</p>
@@ -7442,9 +7442,9 @@ pub mod complete_multipart_upload_output {
             self.location = input;
             self
         }
-        /// <p>The name of the bucket that contains the newly created object.</p>
-        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
-        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>The name of the bucket that contains the newly created object. Does not return the access point ARN or access point alias if used.</p>
+        /// <p>When using this action with an access point, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.</p>
+        /// <p>When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this action using S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts bucket ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
         pub fn bucket(mut self, input: impl Into<std::string::String>) -> Self {
             self.bucket = Some(input.into());
             self
@@ -7486,7 +7486,7 @@ pub mod complete_multipart_upload_output {
             self
         }
         /// <p>If you specified server-side encryption either with an Amazon S3-managed encryption key or an
-        /// AWS KMS customer master key (CMK) in your initiate multipart upload request, the response
+        /// Amazon Web Services KMS customer master key (CMK) in your initiate multipart upload request, the response
         /// includes this header. It confirms the encryption algorithm that Amazon S3 used to encrypt the
         /// object.</p>
         pub fn server_side_encryption(mut self, input: crate::model::ServerSideEncryption) -> Self {
@@ -7510,7 +7510,7 @@ pub mod complete_multipart_upload_output {
             self.version_id = input;
             self
         }
-        /// <p>If present, specifies the ID of the AWS Key Management Service (AWS KMS) symmetric
+        /// <p>If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon Web Services KMS) symmetric
         /// customer managed customer master key (CMK) that was used for the object.</p>
         pub fn ssekms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssekms_key_id = Some(input.into());
@@ -7523,7 +7523,7 @@ pub mod complete_multipart_upload_output {
             self.ssekms_key_id = input;
             self
         }
-        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).</p>
+        /// <p>Indicates whether the multipart upload uses an S3 Bucket Key for server-side encryption with Amazon Web Services KMS (SSE-KMS).</p>
         pub fn bucket_key_enabled(mut self, input: bool) -> Self {
             self.bucket_key_enabled = Some(input);
             self

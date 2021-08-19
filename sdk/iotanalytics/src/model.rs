@@ -1348,7 +1348,7 @@ pub enum DatastoreStorage {
 impl DatastoreStorage {
     pub fn as_customer_managed_s3(
         &self,
-    ) -> Result<&crate::model::CustomerManagedDatastoreS3Storage, &Self> {
+    ) -> std::result::Result<&crate::model::CustomerManagedDatastoreS3Storage, &Self> {
         if let DatastoreStorage::CustomerManagedS3(val) = &self {
             Ok(&val)
         } else {
@@ -1360,7 +1360,7 @@ impl DatastoreStorage {
     }
     pub fn as_iot_site_wise_multi_layer_storage(
         &self,
-    ) -> Result<&crate::model::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
+    ) -> std::result::Result<&crate::model::DatastoreIotSiteWiseMultiLayerStorage, &Self> {
         if let DatastoreStorage::IotSiteWiseMultiLayerStorage(val) = &self {
             Ok(&val)
         } else {
@@ -1372,7 +1372,7 @@ impl DatastoreStorage {
     }
     pub fn as_service_managed_s3(
         &self,
-    ) -> Result<&crate::model::ServiceManagedDatastoreS3Storage, &Self> {
+    ) -> std::result::Result<&crate::model::ServiceManagedDatastoreS3Storage, &Self> {
         if let DatastoreStorage::ServiceManagedS3(val) = &self {
             Ok(&val)
         } else {

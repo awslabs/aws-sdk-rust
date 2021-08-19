@@ -657,6 +657,26 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateError>>
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DescribeClientAuthenticationSettingsError>>
+    for Error
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeClientAuthenticationSettingsError>,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::ClientException(inner) => Error::ClientException(inner),
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException(inner) => Error::DirectoryDoesNotExistException(inner),
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException(inner) => Error::InvalidParameterException(inner),
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::ServiceException(inner) => Error::ServiceException(inner),
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException(inner) => Error::UnsupportedOperationException(inner),
+                crate::error::DescribeClientAuthenticationSettingsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DescribeConditionalForwardersError>>
     for Error
 {

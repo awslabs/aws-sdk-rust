@@ -7834,7 +7834,7 @@ pub enum AssetPropertyVariant {
     StringValue(std::string::String),
 }
 impl AssetPropertyVariant {
-    pub fn as_boolean_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_boolean_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssetPropertyVariant::BooleanValue(val) = &self {
             Ok(&val)
         } else {
@@ -7844,7 +7844,7 @@ impl AssetPropertyVariant {
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    pub fn as_double_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_double_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssetPropertyVariant::DoubleValue(val) = &self {
             Ok(&val)
         } else {
@@ -7854,7 +7854,7 @@ impl AssetPropertyVariant {
     pub fn is_double_value(&self) -> bool {
         self.as_double_value().is_ok()
     }
-    pub fn as_integer_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_integer_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssetPropertyVariant::IntegerValue(val) = &self {
             Ok(&val)
         } else {
@@ -7864,7 +7864,7 @@ impl AssetPropertyVariant {
     pub fn is_integer_value(&self) -> bool {
         self.as_integer_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AssetPropertyVariant::StringValue(val) = &self {
             Ok(&val)
         } else {

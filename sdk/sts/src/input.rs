@@ -523,6 +523,8 @@ impl AssumeRoleWithSamlInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()
@@ -789,6 +791,8 @@ impl AssumeRoleWithWebIdentityInput {
             );
             #[allow(unused_mut)]
             let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            signing_config.signing_requirements =
+                aws_sig_auth::signer::SigningRequirements::Disabled;
             request.properties_mut().insert(signing_config);
             request
                 .properties_mut()

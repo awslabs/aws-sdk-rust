@@ -1128,7 +1128,7 @@ impl AsRef<str> for ApiDestinationHttpMethod {
     }
 }
 
-/// <p>A key-value pair associated with an AWS resource. In EventBridge, rules and event buses
+/// <p>A key-value pair associated with an Amazon Web Services resource. In EventBridge, rules and event buses
 /// support tagging.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1493,17 +1493,17 @@ impl PutTargetsResultEntry {
 }
 
 /// <p>Targets are the resources to be invoked when a rule is triggered. For a complete list of
-/// services and resources that can be set as a target, see <a>PutTargets</a>.</p>
+/// services and resources that can be set as a target, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutTargets.html">PutTargets</a>.</p>
 /// <p>If you are setting the event bus of another account as the target, and that account
 /// granted permission to your account through an organization instead of directly by the account
 /// ID, then you must specify a <code>RoleArn</code> with proper permissions in the
 /// <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending and
-/// Receiving Events Between AWS Accounts</a> in the <i>Amazon EventBridge User
+/// Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge User
 /// Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct Target {
-    /// <p>The ID of the target.</p>
+    /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
     pub id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the target.</p>
     pub arn: std::option::Option<std::string::String>,
@@ -1534,8 +1534,8 @@ pub struct Target {
     /// Definitions </a> in the <i>Amazon EC2 Container Service Developer
     /// Guide</i>.</p>
     pub ecs_parameters: std::option::Option<crate::model::EcsParameters>,
-    /// <p>If the event target is an AWS Batch job, this contains the job definition, job name, and
-    /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
+    /// <p>If the event target is an Batch job, this contains the job definition, job name, and
+    /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
     /// Guide</i>.</p>
     pub batch_parameters: std::option::Option<crate::model::BatchParameters>,
     /// <p>Contains the message group ID to use when the target is a FIFO queue.</p>
@@ -1550,10 +1550,10 @@ pub struct Target {
     /// can also have these values configured. In case of any conflicting keys, values from the
     /// Connection take precedence.</p>
     pub http_parameters: std::option::Option<crate::model::HttpParameters>,
-    /// <p>Contains the Redshift Data API parameters to use when the target is a Redshift
+    /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
     /// cluster.</p>
-    /// <p>If you specify a Redshift Cluster as a Target, you can use this to specify parameters to
-    /// invoke the Redshift Data API ExecuteStatement based on EventBridge events.</p>
+    /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
+    /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
     pub redshift_data_parameters: std::option::Option<crate::model::RedshiftDataParameters>,
     /// <p>Contains the SageMaker Model Building Pipeline parameters to start execution of a
     /// SageMaker Model Building Pipeline.</p>
@@ -1619,7 +1619,7 @@ pub mod target {
         pub(crate) retry_policy: std::option::Option<crate::model::RetryPolicy>,
     }
     impl Builder {
-        /// <p>The ID of the target.</p>
+        /// <p>The ID of the target. We recommend using a memorable and unique string.</p>
         pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
             self.id = Some(input.into());
             self
@@ -1725,8 +1725,8 @@ pub mod target {
             self.ecs_parameters = input;
             self
         }
-        /// <p>If the event target is an AWS Batch job, this contains the job definition, job name, and
-        /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>AWS Batch User
+        /// <p>If the event target is an Batch job, this contains the job definition, job name, and
+        /// other parameters. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in the <i>Batch User
         /// Guide</i>.</p>
         pub fn batch_parameters(mut self, input: crate::model::BatchParameters) -> Self {
             self.batch_parameters = Some(input);
@@ -1771,10 +1771,10 @@ pub mod target {
             self.http_parameters = input;
             self
         }
-        /// <p>Contains the Redshift Data API parameters to use when the target is a Redshift
+        /// <p>Contains the Amazon Redshift Data API parameters to use when the target is a Amazon Redshift
         /// cluster.</p>
-        /// <p>If you specify a Redshift Cluster as a Target, you can use this to specify parameters to
-        /// invoke the Redshift Data API ExecuteStatement based on EventBridge events.</p>
+        /// <p>If you specify a Amazon Redshift Cluster as a Target, you can use this to specify parameters to
+        /// invoke the Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
         pub fn redshift_data_parameters(
             mut self,
             input: crate::model::RedshiftDataParameters,
@@ -2097,13 +2097,13 @@ impl SageMakerPipelineParameter {
     }
 }
 
-/// <p>These are custom parameters to be used when the target is a Redshift cluster to invoke the
-/// Redshift Data API ExecuteStatement based on EventBridge events.</p>
+/// <p>These are custom parameters to be used when the target is a Amazon Redshift cluster to invoke the
+/// Amazon Redshift Data API ExecuteStatement based on EventBridge events.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RedshiftDataParameters {
     /// <p>The name or ARN of the secret that enables access to the database. Required when
-    /// authenticating using AWS Secrets Manager.</p>
+    /// authenticating using Amazon Web Services Secrets Manager.</p>
     pub secret_manager_arn: std::option::Option<std::string::String>,
     /// <p>The name of the database. Required when authenticating using temporary credentials.</p>
     pub database: std::option::Option<std::string::String>,
@@ -2145,7 +2145,7 @@ pub mod redshift_data_parameters {
     }
     impl Builder {
         /// <p>The name or ARN of the secret that enables access to the database. Required when
-        /// authenticating using AWS Secrets Manager.</p>
+        /// authenticating using Amazon Web Services Secrets Manager.</p>
         pub fn secret_manager_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.secret_manager_arn = Some(input.into());
             self
@@ -2241,8 +2241,8 @@ pub struct HttpParameters {
     /// EventBridge ApiDestination.</p>
     pub header_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>The query string keys/values that need to be sent as part of request invoking the API
-    /// Gateway REST API or EventBridge ApiDestination.</p>
+    /// <p>The query string keys/values that need to be sent as part of request invoking the API Gateway
+    /// REST API or EventBridge ApiDestination.</p>
     pub query_string_parameters:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
 }
@@ -2389,20 +2389,20 @@ impl SqsParameters {
     }
 }
 
-/// <p>The custom parameters to be used when the target is an AWS Batch job.</p>
+/// <p>The custom parameters to be used when the target is an Batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchParameters {
-    /// <p>The ARN or name of the job definition to use if the event target is an AWS Batch job. This
+    /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
     /// job definition must already exist.</p>
     pub job_definition: std::option::Option<std::string::String>,
-    /// <p>The name to use for this execution of the job, if the target is an AWS Batch job.</p>
+    /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
     pub job_name: std::option::Option<std::string::String>,
     /// <p>The array properties for the submitted job, such as the size of the array. The array size
     /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-    /// job. This parameter is used only if the target is an AWS Batch job.</p>
+    /// job. This parameter is used only if the target is an Batch job.</p>
     pub array_properties: std::option::Option<crate::model::BatchArrayProperties>,
-    /// <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry
+    /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
     /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
     /// you specify a retry strategy here, it overrides the retry strategy defined in the job
     /// definition.</p>
@@ -2430,7 +2430,7 @@ pub mod batch_parameters {
         pub(crate) retry_strategy: std::option::Option<crate::model::BatchRetryStrategy>,
     }
     impl Builder {
-        /// <p>The ARN or name of the job definition to use if the event target is an AWS Batch job. This
+        /// <p>The ARN or name of the job definition to use if the event target is an Batch job. This
         /// job definition must already exist.</p>
         pub fn job_definition(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_definition = Some(input.into());
@@ -2443,7 +2443,7 @@ pub mod batch_parameters {
             self.job_definition = input;
             self
         }
-        /// <p>The name to use for this execution of the job, if the target is an AWS Batch job.</p>
+        /// <p>The name to use for this execution of the job, if the target is an Batch job.</p>
         pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.job_name = Some(input.into());
             self
@@ -2454,7 +2454,7 @@ pub mod batch_parameters {
         }
         /// <p>The array properties for the submitted job, such as the size of the array. The array size
         /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-        /// job. This parameter is used only if the target is an AWS Batch job.</p>
+        /// job. This parameter is used only if the target is an Batch job.</p>
         pub fn array_properties(mut self, input: crate::model::BatchArrayProperties) -> Self {
             self.array_properties = Some(input);
             self
@@ -2466,7 +2466,7 @@ pub mod batch_parameters {
             self.array_properties = input;
             self
         }
-        /// <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry
+        /// <p>The retry strategy to use for failed jobs, if the target is an Batch job. The retry
         /// strategy is the number of times to retry the failed job execution. Valid values are 1–10. When
         /// you specify a retry strategy here, it overrides the retry strategy defined in the job
         /// definition.</p>
@@ -2499,7 +2499,7 @@ impl BatchParameters {
     }
 }
 
-/// <p>The retry strategy to use for failed jobs, if the target is an AWS Batch job. If you
+/// <p>The retry strategy to use for failed jobs, if the target is an Batch job. If you
 /// specify a retry strategy here, it overrides the retry strategy defined in the job
 /// definition.</p>
 #[non_exhaustive]
@@ -2550,7 +2550,7 @@ impl BatchRetryStrategy {
 
 /// <p>The array properties for the submitted job, such as the size of the array. The array size
 /// can be between 2 and 10,000. If you specify array properties for a job, it becomes an array
-/// job. This parameter is used only if the target is an AWS Batch job.</p>
+/// job. This parameter is used only if the target is an Batch job.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BatchArrayProperties {
@@ -2610,11 +2610,11 @@ pub struct EcsParameters {
     pub task_count: std::option::Option<i32>,
     /// <p>Specifies the launch type on which your task is running. The launch type that you specify
     /// here must match one of the launch type (compatibilities) of the target task. The
-    /// <code>FARGATE</code> value is supported only in the Regions where AWS Fargate with Amazon
-    /// ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS Fargate on Amazon ECS</a> in
+    /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
+    /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
     /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
     pub launch_type: std::option::Option<crate::model::LaunchType>,
-    /// <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This
+    /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
     /// structure specifies the VPC subnets and security groups associated with the task, and whether
     /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
     /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
@@ -2625,7 +2625,7 @@ pub struct EcsParameters {
     /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
     /// platform version, such as <code>1.1.0</code>.</p>
     /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
-    /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+    /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
     /// Versions</a> in the <i>Amazon Elastic Container Service Developer
     /// Guide</i>.</p>
     pub platform_version: std::option::Option<std::string::String>,
@@ -2735,8 +2735,8 @@ pub mod ecs_parameters {
         }
         /// <p>Specifies the launch type on which your task is running. The launch type that you specify
         /// here must match one of the launch type (compatibilities) of the target task. The
-        /// <code>FARGATE</code> value is supported only in the Regions where AWS Fargate with Amazon
-        /// ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">AWS Fargate on Amazon ECS</a> in
+        /// <code>FARGATE</code> value is supported only in the Regions where Fargate witt Amazon ECS
+        /// is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate on Amazon ECS</a> in
         /// the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
         pub fn launch_type(mut self, input: crate::model::LaunchType) -> Self {
             self.launch_type = Some(input);
@@ -2749,7 +2749,7 @@ pub mod ecs_parameters {
             self.launch_type = input;
             self
         }
-        /// <p>Use this structure if the ECS task uses the <code>awsvpc</code> network mode. This
+        /// <p>Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode. This
         /// structure specifies the VPC subnets and security groups associated with the task, and whether
         /// a public IP address is to be used. This structure is required if <code>LaunchType</code> is
         /// <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
@@ -2770,7 +2770,7 @@ pub mod ecs_parameters {
         /// <p>Specifies the platform version for the task. Specify only the numeric portion of the
         /// platform version, such as <code>1.1.0</code>.</p>
         /// <p>This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For more
-        /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform
+        /// information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate Platform
         /// Versions</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.</p>
         pub fn platform_version(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2974,7 +2974,7 @@ impl AsRef<str> for PropagateTags {
     }
 }
 
-/// <p>The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Developer
+/// <p>The task placement strategy for a task or service. To learn more, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the Amazon Elastic Container Service Service Developer
 /// Guide.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3768,7 +3768,7 @@ pub struct InputTransformer {
     /// <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid JSON
     /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation, not bracket
     /// notation.</p>
-    /// <p>The keys cannot start with "AWS." </p>
+    /// <p>The keys cannot start with "Amazon Web Services." </p>
     pub input_paths_map:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Input template where you specify placeholders that will be filled with the values of the
@@ -4023,9 +4023,9 @@ impl AsRef<str> for RuleState {
 
 /// <p>A JSON string which you can use to limit the event bus permissions you are granting to
 /// only accounts that fulfill the condition. Currently, the only supported condition is
-/// membership in a certain AWS organization. The string must contain <code>Type</code>,
+/// membership in a certain Amazon Web Services organization. The string must contain <code>Type</code>,
 /// <code>Key</code>, and <code>Value</code> fields. The <code>Value</code> field specifies the
-/// ID of the AWS organization. Following is an example value for <code>Condition</code>:</p>
+/// ID of the Amazon Web Services organization. Following is an example value for <code>Condition</code>:</p>
 /// <p>
 /// <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value":
 /// "o-1234567890"}'</code>
@@ -4194,9 +4194,9 @@ impl PutPartnerEventsResultEntry {
 pub struct PutPartnerEventsRequestEntry {
     /// <p>The date and time of the event.</p>
     pub time: std::option::Option<smithy_types::Instant>,
-    /// <p>The event source that is generating the evntry.</p>
+    /// <p>The event source that is generating the entry.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
     /// concerns. Any number, including zero, may be present.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A free-form string used to decide what fields to expect in the event detail.</p>
@@ -4238,7 +4238,7 @@ pub mod put_partner_events_request_entry {
             self.time = input;
             self
         }
-        /// <p>The event source that is generating the evntry.</p>
+        /// <p>The event source that is generating the entry.</p>
         pub fn source(mut self, input: impl Into<std::string::String>) -> Self {
             self.source = Some(input.into());
             self
@@ -4380,11 +4380,11 @@ impl PutEventsResultEntry {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutEventsRequestEntry {
-    /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+    /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
     pub time: std::option::Option<smithy_types::Instant>,
     /// <p>The source of the event.</p>
     pub source: std::option::Option<std::string::String>,
-    /// <p>AWS resources, identified by Amazon Resource Name (ARN), which the event primarily
+    /// <p>Amazon Web Services resources, identified by Amazon Resource Name (ARN), which the event primarily
     /// concerns. Any number, including zero, may be present.</p>
     pub resources: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Free-form string used to decide what fields to expect in the event detail.</p>
@@ -4396,9 +4396,9 @@ pub struct PutEventsRequestEntry {
     /// with this event bus are used to match the event. If you omit this, the default event bus is
     /// used.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
-    /// <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
+    /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
     /// trace-id associated with the event.</p>
-    /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the AWS X-Ray Developer Guide.</p>
+    /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
     pub trace_header: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for PutEventsRequestEntry {
@@ -4429,7 +4429,7 @@ pub mod put_events_request_entry {
         pub(crate) trace_header: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a>PutEvents</a> call is used.</p>
+        /// <p>The time stamp of the event, per <a href="https://www.rfc-editor.org/rfc/rfc3339.txt">RFC3339</a>. If no time stamp is provided, the time stamp of the <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a> call is used.</p>
         pub fn time(mut self, input: smithy_types::Instant) -> Self {
             self.time = Some(input);
             self
@@ -4493,9 +4493,9 @@ pub mod put_events_request_entry {
             self.event_bus_name = input;
             self
         }
-        /// <p>An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
+        /// <p>An X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the
         /// trace-id associated with the event.</p>
-        /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the AWS X-Ray Developer Guide.</p>
+        /// <p>To learn more about X-Ray trace headers, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing header</a> in the X-Ray Developer Guide.</p>
         pub fn trace_header(mut self, input: impl Into<std::string::String>) -> Self {
             self.trace_header = Some(input.into());
             self
@@ -4540,11 +4540,15 @@ pub struct Rule {
     pub state: std::option::Option<crate::model::RuleState>,
     /// <p>The description of the rule.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
+    /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
     pub schedule_expression: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
+    /// <p>If you're setting an event bus in another account as the target and that account granted
+    /// permission to your account through an organization instead of directly by the account ID, you
+    /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+    /// structure, instead of here in this parameter.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>If the rule was created on behalf of your account by an AWS service, this field displays
+    /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
     /// the principal name of the service that created the rule.</p>
     pub managed_by: std::option::Option<std::string::String>,
     /// <p>The name or ARN of the event bus associated with the rule. If you omit this, the default
@@ -4632,7 +4636,7 @@ pub mod rule {
             self.description = input;
             self
         }
-        /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)".</p>
+        /// <p>The scheduling expression. For example, "cron(0 20 * * ? *)", "rate(5 minutes)". For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-create-rule-schedule.html">Creating an Amazon EventBridge rule that runs on a schedule</a>.</p>
         pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
             self.schedule_expression = Some(input.into());
             self
@@ -4645,6 +4649,10 @@ pub mod rule {
             self
         }
         /// <p>The Amazon Resource Name (ARN) of the role that is used for target invocation.</p>
+        /// <p>If you're setting an event bus in another account as the target and that account granted
+        /// permission to your account through an organization instead of directly by the account ID, you
+        /// must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+        /// structure, instead of here in this parameter.</p>
         pub fn role_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.role_arn = Some(input.into());
             self
@@ -4653,7 +4661,7 @@ pub mod rule {
             self.role_arn = input;
             self
         }
-        /// <p>If the rule was created on behalf of your account by an AWS service, this field displays
+        /// <p>If the rule was created on behalf of your account by an Amazon Web Services service, this field displays
         /// the principal name of the service that created the rule.</p>
         pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.managed_by = Some(input.into());
@@ -4881,7 +4889,7 @@ impl Replay {
 }
 
 /// <p>A partner event source is created by an SaaS partner. If a customer creates a partner
-/// event bus that matches this event source, that AWS account can receive events from the
+/// event bus that matches this event source, that Amazon Web Services account can receive events from the
 /// partner's applications or services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -4943,15 +4951,15 @@ impl PartnerEventSource {
     }
 }
 
-/// <p>The AWS account that a partner event source has been offered to.</p>
+/// <p>The Amazon Web Services account that a partner event source has been offered to.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PartnerEventSourceAccount {
-    /// <p>The AWS account ID that the partner event source was offered to.</p>
+    /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
     pub account: std::option::Option<std::string::String>,
     /// <p>The date and time the event source was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The date and time that the event source will expire, if the AWS account doesn't create a
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
     /// matching event bus for it.</p>
     pub expiration_time: std::option::Option<smithy_types::Instant>,
     /// <p>The state of the event source. If it is ACTIVE, you have already created a matching event
@@ -4982,7 +4990,7 @@ pub mod partner_event_source_account {
         pub(crate) state: std::option::Option<crate::model::EventSourceState>,
     }
     impl Builder {
-        /// <p>The AWS account ID that the partner event source was offered to.</p>
+        /// <p>The Amazon Web Services account ID that the partner event source was offered to.</p>
         pub fn account(mut self, input: impl Into<std::string::String>) -> Self {
             self.account = Some(input.into());
             self
@@ -5003,7 +5011,7 @@ pub mod partner_event_source_account {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time that the event source will expire, if the AWS account doesn't create a
+        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
         /// matching event bus for it.</p>
         pub fn expiration_time(mut self, input: smithy_types::Instant) -> Self {
             self.expiration_time = Some(input);
@@ -5103,7 +5111,7 @@ impl AsRef<str> for EventSourceState {
 }
 
 /// <p>A partner event source is created by an SaaS partner. If a customer creates a partner
-/// event bus that matches this event source, that AWS account can receive events from the
+/// event bus that matches this event source, that Amazon Web Services account can receive events from the
 /// partner's applications or services.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -5114,7 +5122,7 @@ pub struct EventSource {
     pub created_by: std::option::Option<std::string::String>,
     /// <p>The date and time the event source was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The date and time that the event source will expire, if the AWS account doesn't create a
+    /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
     /// matching event bus for it.</p>
     pub expiration_time: std::option::Option<smithy_types::Instant>,
     /// <p>The name of the event source.</p>
@@ -5181,7 +5189,7 @@ pub mod event_source {
             self.creation_time = input;
             self
         }
-        /// <p>The date and time that the event source will expire, if the AWS account doesn't create a
+        /// <p>The date and time that the event source will expire, if the Amazon Web Services account doesn't create a
         /// matching event bus for it.</p>
         pub fn expiration_time(mut self, input: smithy_types::Instant) -> Self {
             self.expiration_time = Some(input);
@@ -5239,7 +5247,7 @@ impl EventSource {
 }
 
 /// <p>An event bus receives events from a source and routes them to rules associated with that
-/// event bus. Your account's default event bus receives events from AWS services. A custom event
+/// event bus. Your account's default event bus receives events from Amazon Web Services services. A custom event
 /// bus can receive events from your custom applications and services. A partner event bus
 /// receives events from an event source created by an SaaS partner. These events come from the
 /// partners services or applications.</p>
@@ -5250,7 +5258,7 @@ pub struct EventBus {
     pub name: std::option::Option<std::string::String>,
     /// <p>The ARN of the event bus.</p>
     pub arn: std::option::Option<std::string::String>,
-    /// <p>The permissions policy of the event bus, describing which other AWS accounts can write
+    /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
     /// events to this event bus.</p>
     pub policy: std::option::Option<std::string::String>,
 }
@@ -5292,7 +5300,7 @@ pub mod event_bus {
             self.arn = input;
             self
         }
-        /// <p>The permissions policy of the event bus, describing which other AWS accounts can write
+        /// <p>The permissions policy of the event bus, describing which other Amazon Web Services accounts can write
         /// events to this event bus.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());

@@ -1370,7 +1370,7 @@ pub enum ConfigDetails {
 impl ConfigDetails {
     pub fn as_antenna_demod_decode_details(
         &self,
-    ) -> Result<&crate::model::AntennaDemodDecodeDetails, &Self> {
+    ) -> std::result::Result<&crate::model::AntennaDemodDecodeDetails, &Self> {
         if let ConfigDetails::AntennaDemodDecodeDetails(val) = &self {
             Ok(&val)
         } else {
@@ -1380,7 +1380,9 @@ impl ConfigDetails {
     pub fn is_antenna_demod_decode_details(&self) -> bool {
         self.as_antenna_demod_decode_details().is_ok()
     }
-    pub fn as_endpoint_details(&self) -> Result<&crate::model::EndpointDetails, &Self> {
+    pub fn as_endpoint_details(
+        &self,
+    ) -> std::result::Result<&crate::model::EndpointDetails, &Self> {
         if let ConfigDetails::EndpointDetails(val) = &self {
             Ok(&val)
         } else {
@@ -1390,7 +1392,9 @@ impl ConfigDetails {
     pub fn is_endpoint_details(&self) -> bool {
         self.as_endpoint_details().is_ok()
     }
-    pub fn as_s3_recording_details(&self) -> Result<&crate::model::S3RecordingDetails, &Self> {
+    pub fn as_s3_recording_details(
+        &self,
+    ) -> std::result::Result<&crate::model::S3RecordingDetails, &Self> {
         if let ConfigDetails::S3RecordingDetails(val) = &self {
             Ok(&val)
         } else {
@@ -1795,7 +1799,7 @@ pub enum ConfigTypeData {
 impl ConfigTypeData {
     pub fn as_antenna_downlink_config(
         &self,
-    ) -> Result<&crate::model::AntennaDownlinkConfig, &Self> {
+    ) -> std::result::Result<&crate::model::AntennaDownlinkConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkConfig(val) = &self {
             Ok(&val)
         } else {
@@ -1807,7 +1811,7 @@ impl ConfigTypeData {
     }
     pub fn as_antenna_downlink_demod_decode_config(
         &self,
-    ) -> Result<&crate::model::AntennaDownlinkDemodDecodeConfig, &Self> {
+    ) -> std::result::Result<&crate::model::AntennaDownlinkDemodDecodeConfig, &Self> {
         if let ConfigTypeData::AntennaDownlinkDemodDecodeConfig(val) = &self {
             Ok(&val)
         } else {
@@ -1817,7 +1821,9 @@ impl ConfigTypeData {
     pub fn is_antenna_downlink_demod_decode_config(&self) -> bool {
         self.as_antenna_downlink_demod_decode_config().is_ok()
     }
-    pub fn as_antenna_uplink_config(&self) -> Result<&crate::model::AntennaUplinkConfig, &Self> {
+    pub fn as_antenna_uplink_config(
+        &self,
+    ) -> std::result::Result<&crate::model::AntennaUplinkConfig, &Self> {
         if let ConfigTypeData::AntennaUplinkConfig(val) = &self {
             Ok(&val)
         } else {
@@ -1829,7 +1835,7 @@ impl ConfigTypeData {
     }
     pub fn as_dataflow_endpoint_config(
         &self,
-    ) -> Result<&crate::model::DataflowEndpointConfig, &Self> {
+    ) -> std::result::Result<&crate::model::DataflowEndpointConfig, &Self> {
         if let ConfigTypeData::DataflowEndpointConfig(val) = &self {
             Ok(&val)
         } else {
@@ -1839,7 +1845,9 @@ impl ConfigTypeData {
     pub fn is_dataflow_endpoint_config(&self) -> bool {
         self.as_dataflow_endpoint_config().is_ok()
     }
-    pub fn as_s3_recording_config(&self) -> Result<&crate::model::S3RecordingConfig, &Self> {
+    pub fn as_s3_recording_config(
+        &self,
+    ) -> std::result::Result<&crate::model::S3RecordingConfig, &Self> {
         if let ConfigTypeData::S3RecordingConfig(val) = &self {
             Ok(&val)
         } else {
@@ -1849,7 +1857,7 @@ impl ConfigTypeData {
     pub fn is_s3_recording_config(&self) -> bool {
         self.as_s3_recording_config().is_ok()
     }
-    pub fn as_tracking_config(&self) -> Result<&crate::model::TrackingConfig, &Self> {
+    pub fn as_tracking_config(&self) -> std::result::Result<&crate::model::TrackingConfig, &Self> {
         if let ConfigTypeData::TrackingConfig(val) = &self {
             Ok(&val)
         } else {
@@ -1859,7 +1867,9 @@ impl ConfigTypeData {
     pub fn is_tracking_config(&self) -> bool {
         self.as_tracking_config().is_ok()
     }
-    pub fn as_uplink_echo_config(&self) -> Result<&crate::model::UplinkEchoConfig, &Self> {
+    pub fn as_uplink_echo_config(
+        &self,
+    ) -> std::result::Result<&crate::model::UplinkEchoConfig, &Self> {
         if let ConfigTypeData::UplinkEchoConfig(val) = &self {
             Ok(&val)
         } else {

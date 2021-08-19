@@ -2956,7 +2956,7 @@ pub enum AnnotationValue {
     StringValue(std::string::String),
 }
 impl AnnotationValue {
-    pub fn as_boolean_value(&self) -> Result<&bool, &Self> {
+    pub fn as_boolean_value(&self) -> std::result::Result<&bool, &Self> {
         if let AnnotationValue::BooleanValue(val) = &self {
             Ok(&val)
         } else {
@@ -2966,7 +2966,7 @@ impl AnnotationValue {
     pub fn is_boolean_value(&self) -> bool {
         self.as_boolean_value().is_ok()
     }
-    pub fn as_number_value(&self) -> Result<&f64, &Self> {
+    pub fn as_number_value(&self) -> std::result::Result<&f64, &Self> {
         if let AnnotationValue::NumberValue(val) = &self {
             Ok(&val)
         } else {
@@ -2976,7 +2976,7 @@ impl AnnotationValue {
     pub fn is_number_value(&self) -> bool {
         self.as_number_value().is_ok()
     }
-    pub fn as_string_value(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_string_value(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AnnotationValue::StringValue(val) = &self {
             Ok(&val)
         } else {

@@ -120,7 +120,7 @@ pub enum Action {
 }
 impl Action {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_ssm_automation(&self) -> Result<&crate::model::SsmAutomation, &Self> {
+    pub fn as_ssm_automation(&self) -> std::result::Result<&crate::model::SsmAutomation, &Self> {
         if let Action::SsmAutomation(val) = &self {
             Ok(&val)
         } else {
@@ -320,7 +320,9 @@ pub enum ChatChannel {
     Empty(crate::model::EmptyChatChannel),
 }
 impl ChatChannel {
-    pub fn as_chatbot_sns(&self) -> Result<&std::vec::Vec<std::string::String>, &Self> {
+    pub fn as_chatbot_sns(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let ChatChannel::ChatbotSns(val) = &self {
             Ok(&val)
         } else {
@@ -330,7 +332,7 @@ impl ChatChannel {
     pub fn is_chatbot_sns(&self) -> bool {
         self.as_chatbot_sns().is_ok()
     }
-    pub fn as_empty(&self) -> Result<&crate::model::EmptyChatChannel, &Self> {
+    pub fn as_empty(&self) -> std::result::Result<&crate::model::EmptyChatChannel, &Self> {
         if let ChatChannel::Empty(val) = &self {
             Ok(&val)
         } else {
@@ -380,7 +382,7 @@ pub enum NotificationTargetItem {
 }
 impl NotificationTargetItem {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_sns_topic_arn(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_sns_topic_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let NotificationTargetItem::SnsTopicArn(val) = &self {
             Ok(&val)
         } else {
@@ -401,7 +403,9 @@ pub enum UpdateReplicationSetAction {
     DeleteRegionAction(crate::model::DeleteRegionAction),
 }
 impl UpdateReplicationSetAction {
-    pub fn as_add_region_action(&self) -> Result<&crate::model::AddRegionAction, &Self> {
+    pub fn as_add_region_action(
+        &self,
+    ) -> std::result::Result<&crate::model::AddRegionAction, &Self> {
         if let UpdateReplicationSetAction::AddRegionAction(val) = &self {
             Ok(&val)
         } else {
@@ -411,7 +415,9 @@ impl UpdateReplicationSetAction {
     pub fn is_add_region_action(&self) -> bool {
         self.as_add_region_action().is_ok()
     }
-    pub fn as_delete_region_action(&self) -> Result<&crate::model::DeleteRegionAction, &Self> {
+    pub fn as_delete_region_action(
+        &self,
+    ) -> std::result::Result<&crate::model::DeleteRegionAction, &Self> {
         if let UpdateReplicationSetAction::DeleteRegionAction(val) = &self {
             Ok(&val)
         } else {
@@ -544,7 +550,7 @@ pub enum RelatedItemsUpdate {
     ItemToRemove(crate::model::ItemIdentifier),
 }
 impl RelatedItemsUpdate {
-    pub fn as_item_to_add(&self) -> Result<&crate::model::RelatedItem, &Self> {
+    pub fn as_item_to_add(&self) -> std::result::Result<&crate::model::RelatedItem, &Self> {
         if let RelatedItemsUpdate::ItemToAdd(val) = &self {
             Ok(&val)
         } else {
@@ -554,7 +560,7 @@ impl RelatedItemsUpdate {
     pub fn is_item_to_add(&self) -> bool {
         self.as_item_to_add().is_ok()
     }
-    pub fn as_item_to_remove(&self) -> Result<&crate::model::ItemIdentifier, &Self> {
+    pub fn as_item_to_remove(&self) -> std::result::Result<&crate::model::ItemIdentifier, &Self> {
         if let RelatedItemsUpdate::ItemToRemove(val) = &self {
             Ok(&val)
         } else {
@@ -772,7 +778,7 @@ pub enum ItemValue {
     Url(std::string::String),
 }
 impl ItemValue {
-    pub fn as_arn(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::Arn(val) = &self {
             Ok(&val)
         } else {
@@ -782,7 +788,7 @@ impl ItemValue {
     pub fn is_arn(&self) -> bool {
         self.as_arn().is_ok()
     }
-    pub fn as_metric_definition(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_metric_definition(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::MetricDefinition(val) = &self {
             Ok(&val)
         } else {
@@ -792,7 +798,7 @@ impl ItemValue {
     pub fn is_metric_definition(&self) -> bool {
         self.as_metric_definition().is_ok()
     }
-    pub fn as_url(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_url(&self) -> std::result::Result<&std::string::String, &Self> {
         if let ItemValue::Url(val) = &self {
             Ok(&val)
         } else {
@@ -1294,7 +1300,7 @@ pub enum Condition {
     Equals(crate::model::AttributeValueList),
 }
 impl Condition {
-    pub fn as_after(&self) -> Result<&smithy_types::Instant, &Self> {
+    pub fn as_after(&self) -> std::result::Result<&smithy_types::Instant, &Self> {
         if let Condition::After(val) = &self {
             Ok(&val)
         } else {
@@ -1304,7 +1310,7 @@ impl Condition {
     pub fn is_after(&self) -> bool {
         self.as_after().is_ok()
     }
-    pub fn as_before(&self) -> Result<&smithy_types::Instant, &Self> {
+    pub fn as_before(&self) -> std::result::Result<&smithy_types::Instant, &Self> {
         if let Condition::Before(val) = &self {
             Ok(&val)
         } else {
@@ -1314,7 +1320,7 @@ impl Condition {
     pub fn is_before(&self) -> bool {
         self.as_before().is_ok()
     }
-    pub fn as_equals(&self) -> Result<&crate::model::AttributeValueList, &Self> {
+    pub fn as_equals(&self) -> std::result::Result<&crate::model::AttributeValueList, &Self> {
         if let Condition::Equals(val) = &self {
             Ok(&val)
         } else {
@@ -1335,7 +1341,7 @@ pub enum AttributeValueList {
     StringValues(std::vec::Vec<std::string::String>),
 }
 impl AttributeValueList {
-    pub fn as_integer_values(&self) -> Result<&std::vec::Vec<i32>, &Self> {
+    pub fn as_integer_values(&self) -> std::result::Result<&std::vec::Vec<i32>, &Self> {
         if let AttributeValueList::IntegerValues(val) = &self {
             Ok(&val)
         } else {
@@ -1345,7 +1351,9 @@ impl AttributeValueList {
     pub fn is_integer_values(&self) -> bool {
         self.as_integer_values().is_ok()
     }
-    pub fn as_string_values(&self) -> Result<&std::vec::Vec<std::string::String>, &Self> {
+    pub fn as_string_values(
+        &self,
+    ) -> std::result::Result<&std::vec::Vec<std::string::String>, &Self> {
         if let AttributeValueList::StringValues(val) = &self {
             Ok(&val)
         } else {
@@ -1814,9 +1822,7 @@ pub struct IncidentTemplate {
     pub summary: std::option::Option<std::string::String>,
     /// <p>Used to stop Incident Manager from creating multiple incident records for the same incident. </p>
     pub dedupe_string: std::option::Option<std::string::String>,
-    /// <p>The SNS targets that AWS Chatbot uses to notify the chat channel of updates to an
-    /// incident. You can also make updates to the incident through the chat channel using the SNS
-    /// topics. </p>
+    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -2006,6 +2012,8 @@ impl ResourcePolicy {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicationSet {
+    /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
+    pub arn: std::option::Option<std::string::String>,
     /// <p>The map between each Region in your replication set and the KMS key that is used to
     /// encrypt the data in that Region.</p>
     pub region_map: std::option::Option<
@@ -2029,6 +2037,7 @@ pub struct ReplicationSet {
 impl std::fmt::Debug for ReplicationSet {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ReplicationSet");
+        formatter.field("arn", &self.arn);
         formatter.field("region_map", &self.region_map);
         formatter.field("status", &self.status);
         formatter.field("deletion_protected", &self.deletion_protected);
@@ -2045,6 +2054,7 @@ pub mod replication_set {
     #[non_exhaustive]
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
+        pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) region_map: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RegionInfo>,
         >,
@@ -2056,6 +2066,15 @@ pub mod replication_set {
         pub(crate) last_modified_by: std::option::Option<std::string::String>,
     }
     impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the replication set.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
         pub fn region_map(
             mut self,
             k: impl Into<std::string::String>,
@@ -2146,6 +2165,7 @@ pub mod replication_set {
         /// Consumes the builder and constructs a [`ReplicationSet`](crate::model::ReplicationSet)
         pub fn build(self) -> crate::model::ReplicationSet {
             crate::model::ReplicationSet {
+                arn: self.arn,
                 region_map: self.region_map,
                 status: self.status,
                 deletion_protected: self.deletion_protected,
@@ -2420,9 +2440,7 @@ pub struct IncidentRecord {
     pub dedupe_string: std::option::Option<std::string::String>,
     /// <p>The chat channel used for collaboration during an incident.</p>
     pub chat_channel: std::option::Option<crate::model::ChatChannel>,
-    /// <p>The SNS targets that
-    /// AWS Chatbot uses
-    /// to notify the chat channels and perform actions on the incident record.</p>
+    /// <p>The SNS targets that are notified when updates are made to an incident.</p>
     pub notification_targets:
         std::option::Option<std::vec::Vec<crate::model::NotificationTargetItem>>,
 }
@@ -2670,7 +2688,7 @@ pub enum AutomationExecution {
 }
 impl AutomationExecution {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_ssm_execution_arn(&self) -> Result<&std::string::String, &Self> {
+    pub fn as_ssm_execution_arn(&self) -> std::result::Result<&std::string::String, &Self> {
         if let AutomationExecution::SsmExecutionArn(val) = &self {
             Ok(&val)
         } else {

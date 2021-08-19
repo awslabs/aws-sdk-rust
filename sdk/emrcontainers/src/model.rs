@@ -807,7 +807,7 @@ pub enum ContainerInfo {
 }
 impl ContainerInfo {
     #[allow(irrefutable_let_patterns)]
-    pub fn as_eks_info(&self) -> Result<&crate::model::EksInfo, &Self> {
+    pub fn as_eks_info(&self) -> std::result::Result<&crate::model::EksInfo, &Self> {
         if let ContainerInfo::EksInfo(val) = &self {
             Ok(&val)
         } else {

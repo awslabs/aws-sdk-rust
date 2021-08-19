@@ -1,0 +1,7 @@
+{
+  "name": "empty-config",
+  "docs": "no config was defined",
+  "result": {
+    "ErrorContains": "provider could not provide credentials"
+  }
+}

@@ -2362,6 +2362,15 @@ where
                                     .transpose()?,
                                 );
                             }
+                            "ownedBy" => {
+                                builder = builder.set_owned_by(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
+                                );
+                            }
                             "sessionId" => {
                                 builder = builder.set_session_id(
                                     smithy_json::deserialize::token::expect_string_or_null(
@@ -2505,6 +2514,15 @@ where
                                         tokens.next(),
                                         smithy_types::instant::Format::DateTime,
                                     )?,
+                                );
+                            }
+                            "ownedBy" => {
+                                builder = builder.set_owned_by(
+                                    smithy_json::deserialize::token::expect_string_or_null(
+                                        tokens.next(),
+                                    )?
+                                    .map(|s| s.to_unescaped().map(|u| u.into_owned()))
+                                    .transpose()?,
                                 );
                             }
                             "state" => {

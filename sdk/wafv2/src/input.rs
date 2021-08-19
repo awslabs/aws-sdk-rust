@@ -10,7 +10,8 @@ pub mod associate_web_acl_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+        /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
+        /// resource.</p>
         pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_arn = Some(input.into());
             self
@@ -378,7 +379,7 @@ pub mod create_ip_set_input {
             self.description = input;
             self
         }
-        /// <p>Specify IPV4 or IPV6. </p>
+        /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
         pub fn ip_address_version(mut self, input: crate::model::IpAddressVersion) -> Self {
             self.ip_address_version = Some(input);
             self
@@ -1266,7 +1267,7 @@ pub mod delete_firewall_manager_rule_groups_input {
             self.web_acl_arn = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn web_acl_lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_lock_token = Some(input.into());
             self
@@ -1452,7 +1453,7 @@ pub mod delete_ip_set_input {
             self.id = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -1733,7 +1734,8 @@ pub mod delete_permission_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
+        /// policy.</p>
         /// <p>You must be the owner of the rule group to perform this operation.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
@@ -1912,7 +1914,7 @@ pub mod delete_regex_pattern_set_input {
             self.id = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -2093,7 +2095,7 @@ pub mod delete_rule_group_input {
             self.id = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -2273,7 +2275,7 @@ pub mod delete_web_acl_input {
             self.id = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -2413,6 +2415,7 @@ pub mod describe_managed_rule_group_input {
         pub(crate) vendor_name: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) version_name: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
@@ -2451,6 +2454,17 @@ pub mod describe_managed_rule_group_input {
             self.scope = input;
             self
         }
+        /// <p>The version of the rule group. You can only use a version that is not
+        /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
+        /// </p>
+        pub fn version_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_name = Some(input.into());
+            self
+        }
+        pub fn set_version_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.version_name = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeManagedRuleGroupInput`](crate::input::DescribeManagedRuleGroupInput)
         pub fn build(
             self,
@@ -2462,6 +2476,7 @@ pub mod describe_managed_rule_group_input {
                 vendor_name: self.vendor_name,
                 name: self.name,
                 scope: self.scope,
+                version_name: self.version_name,
             })
         }
     }
@@ -3035,6 +3050,177 @@ impl GetLoggingConfigurationInput {
     }
 }
 
+/// See [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput)
+pub mod get_managed_rule_set_input {
+    /// A builder for [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) id: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::GetManagedRuleSetInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::GetManagedRuleSetInput {
+                name: self.name,
+                scope: self.scope,
+                id: self.id,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type GetManagedRuleSetInputOperationOutputAlias = crate::operation::GetManagedRuleSet;
+#[doc(hidden)]
+pub type GetManagedRuleSetInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl GetManagedRuleSetInput {
+    /// Consumes the builder and constructs an Operation<[`GetManagedRuleSet`](crate::operation::GetManagedRuleSet)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::GetManagedRuleSet,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_get_managed_rule_set(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::GetManagedRuleSet::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "GetManagedRuleSet",
+                "wafv2",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AWSWAF_20190729.GetManagedRuleSet",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`GetManagedRuleSetInput`](crate::input::GetManagedRuleSetInput)
+    pub fn builder() -> crate::input::get_managed_rule_set_input::Builder {
+        crate::input::get_managed_rule_set_input::Builder::default()
+    }
+}
+
 /// See [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput)
 pub mod get_permission_policy_input {
     /// A builder for [`GetPermissionPolicyInput`](crate::input::GetPermissionPolicyInput)
@@ -3044,7 +3230,8 @@ pub mod get_permission_policy_input {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
+        /// policy.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -3721,7 +3908,8 @@ pub mod get_sampled_requests_input {
         pub(crate) max_items: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
+        /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
+        /// requests.</p>
         pub fn web_acl_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.web_acl_arn = Some(input.into());
             self
@@ -3730,7 +3918,8 @@ pub mod get_sampled_requests_input {
             self.web_acl_arn = input;
             self
         }
-        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+        /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
+        /// you want a sample of requests.</p>
         pub fn rule_metric_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.rule_metric_name = Some(input.into());
             self
@@ -3760,8 +3949,12 @@ pub mod get_sampled_requests_input {
             self.scope = input;
             self
         }
-        /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-        /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
+        /// <p>The start date and time and the end date and time of the range for which you want
+        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
+        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
+        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
+        /// any time range in the previous three hours. If you specify a start time that's earlier than
+        /// three hours ago, WAF sets it to three hours ago.</p>
         pub fn time_window(mut self, input: crate::model::TimeWindow) -> Self {
             self.time_window = Some(input);
             self
@@ -3773,8 +3966,9 @@ pub mod get_sampled_requests_input {
             self.time_window = input;
             self
         }
-        /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received
-        /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+        /// <p>The number of requests that you want WAF to return from among the first 5,000
+        /// requests that your Amazon Web Services resource received during the time range. If your resource received
+        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
         /// returns information about all of them. </p>
         pub fn max_items(mut self, input: i64) -> Self {
             self.max_items = Some(input);
@@ -4387,6 +4581,203 @@ impl ListAvailableManagedRuleGroupsInput {
     }
 }
 
+/// See [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput)
+pub mod list_available_managed_rule_group_versions_input {
+    /// A builder for [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) vendor_name: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+        pub fn vendor_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.vendor_name = Some(input.into());
+            self
+        }
+        pub fn set_vendor_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.vendor_name = input;
+            self
+        }
+        /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListAvailableManagedRuleGroupVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListAvailableManagedRuleGroupVersionsInput {
+                vendor_name: self.vendor_name,
+                name: self.name,
+                scope: self.scope,
+                next_marker: self.next_marker,
+                limit: self.limit,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListAvailableManagedRuleGroupVersionsInputOperationOutputAlias =
+    crate::operation::ListAvailableManagedRuleGroupVersions;
+#[doc(hidden)]
+pub type ListAvailableManagedRuleGroupVersionsInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl ListAvailableManagedRuleGroupVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`ListAvailableManagedRuleGroupVersions`](crate::operation::ListAvailableManagedRuleGroupVersions)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListAvailableManagedRuleGroupVersions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_list_available_managed_rule_group_versions(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListAvailableManagedRuleGroupVersions::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListAvailableManagedRuleGroupVersions",
+                "wafv2",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AWSWAF_20190729.ListAvailableManagedRuleGroupVersions",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListAvailableManagedRuleGroupVersionsInput`](crate::input::ListAvailableManagedRuleGroupVersionsInput)
+    pub fn builder() -> crate::input::list_available_managed_rule_group_versions_input::Builder {
+        crate::input::list_available_managed_rule_group_versions_input::Builder::default()
+    }
+}
+
 /// See [`ListIpSetsInput`](crate::input::ListIpSetsInput)
 pub mod list_ip_sets_input {
     /// A builder for [`ListIpSetsInput`](crate::input::ListIpSetsInput)
@@ -4731,6 +5122,180 @@ impl ListLoggingConfigurationsInput {
     }
 }
 
+/// See [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput)
+pub mod list_managed_rule_sets_input {
+    /// A builder for [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) next_marker: std::option::Option<std::string::String>,
+        pub(crate) limit: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+        /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        pub fn next_marker(mut self, input: impl Into<std::string::String>) -> Self {
+            self.next_marker = Some(input.into());
+            self
+        }
+        pub fn set_next_marker(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.next_marker = input;
+            self
+        }
+        /// <p>The maximum number of objects that you want WAF to return for this request. If more
+        /// objects are available, in the response, WAF provides a
+        /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+        pub fn limit(mut self, input: i32) -> Self {
+            self.limit = Some(input);
+            self
+        }
+        pub fn set_limit(mut self, input: std::option::Option<i32>) -> Self {
+            self.limit = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::ListManagedRuleSetsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::ListManagedRuleSetsInput {
+                scope: self.scope,
+                next_marker: self.next_marker,
+                limit: self.limit,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type ListManagedRuleSetsInputOperationOutputAlias = crate::operation::ListManagedRuleSets;
+#[doc(hidden)]
+pub type ListManagedRuleSetsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl ListManagedRuleSetsInput {
+    /// Consumes the builder and constructs an Operation<[`ListManagedRuleSets`](crate::operation::ListManagedRuleSets)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::ListManagedRuleSets,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body = crate::operation_ser::serialize_operation_list_managed_rule_sets(&self)
+                .map_err(|err| {
+                    smithy_http::operation::BuildError::SerializationError(err.into())
+                })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::ListManagedRuleSets::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "ListManagedRuleSets",
+                "wafv2",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AWSWAF_20190729.ListManagedRuleSets",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`ListManagedRuleSetsInput`](crate::input::ListManagedRuleSetsInput)
+    pub fn builder() -> crate::input::list_managed_rule_sets_input::Builder {
+        crate::input::list_managed_rule_sets_input::Builder::default()
+    }
+}
+
 /// See [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput)
 pub mod list_regex_pattern_sets_input {
     /// A builder for [`ListRegexPatternSetsInput`](crate::input::ListRegexPatternSetsInput)
@@ -4924,7 +5489,8 @@ pub mod list_resources_for_web_acl_input {
             self.web_acl_arn = input;
             self
         }
-        /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+        /// <p>Used for web ACLs that are scoped for regional applications.
+        /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
         pub fn resource_type(mut self, input: crate::model::ResourceType) -> Self {
             self.resource_type = Some(input);
             self
@@ -5711,6 +6277,228 @@ impl PutLoggingConfigurationInput {
     }
 }
 
+/// See [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput)
+pub mod put_managed_rule_set_versions_input {
+    /// A builder for [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) lock_token: std::option::Option<std::string::String>,
+        pub(crate) recommended_version: std::option::Option<std::string::String>,
+        pub(crate) versions_to_publish: std::option::Option<
+            std::collections::HashMap<std::string::String, crate::model::VersionToPublish>,
+        >,
+    }
+    impl Builder {
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lock_token = Some(input.into());
+            self
+        }
+        pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lock_token = input;
+            self
+        }
+        /// <p>The version of the named managed rule group that you'd like your customers to choose,
+        /// from among your version offerings. </p>
+        pub fn recommended_version(mut self, input: impl Into<std::string::String>) -> Self {
+            self.recommended_version = Some(input.into());
+            self
+        }
+        pub fn set_recommended_version(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.recommended_version = input;
+            self
+        }
+        pub fn versions_to_publish(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<crate::model::VersionToPublish>,
+        ) -> Self {
+            let mut hash_map = self.versions_to_publish.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.versions_to_publish = Some(hash_map);
+            self
+        }
+        pub fn set_versions_to_publish(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, crate::model::VersionToPublish>,
+            >,
+        ) -> Self {
+            self.versions_to_publish = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::PutManagedRuleSetVersionsInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::PutManagedRuleSetVersionsInput {
+                name: self.name,
+                scope: self.scope,
+                id: self.id,
+                lock_token: self.lock_token,
+                recommended_version: self.recommended_version,
+                versions_to_publish: self.versions_to_publish,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type PutManagedRuleSetVersionsInputOperationOutputAlias =
+    crate::operation::PutManagedRuleSetVersions;
+#[doc(hidden)]
+pub type PutManagedRuleSetVersionsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+impl PutManagedRuleSetVersionsInput {
+    /// Consumes the builder and constructs an Operation<[`PutManagedRuleSetVersions`](crate::operation::PutManagedRuleSetVersions)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::PutManagedRuleSetVersions,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_put_managed_rule_set_versions(&self)
+                    .map_err(|err| {
+                        smithy_http::operation::BuildError::SerializationError(err.into())
+                    })?;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::PutManagedRuleSetVersions::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "PutManagedRuleSetVersions",
+                "wafv2",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AWSWAF_20190729.PutManagedRuleSetVersions",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`PutManagedRuleSetVersionsInput`](crate::input::PutManagedRuleSetVersionsInput)
+    pub fn builder() -> crate::input::put_managed_rule_set_versions_input::Builder {
+        crate::input::put_managed_rule_set_versions_input::Builder::default()
+    }
+}
+
 /// See [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput)
 pub mod put_permission_policy_input {
     /// A builder for [`PutPermissionPolicyInput`](crate::input::PutPermissionPolicyInput)
@@ -5721,7 +6509,8 @@ pub mod put_permission_policy_input {
         pub(crate) policy: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to attach the policy.</p>
+        /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
+        /// attach the policy.</p>
         pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.resource_arn = Some(input.into());
             self
@@ -6258,7 +7047,7 @@ pub mod update_ip_set_input {
             self.addresses = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -6391,6 +7180,219 @@ impl UpdateIpSetInput {
     }
 }
 
+/// See [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput)
+pub mod update_managed_rule_set_version_expiry_date_input {
+    /// A builder for [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) scope: std::option::Option<crate::model::Scope>,
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) lock_token: std::option::Option<std::string::String>,
+        pub(crate) version_to_expire: std::option::Option<std::string::String>,
+        pub(crate) expiry_timestamp: std::option::Option<smithy_types::Instant>,
+    }
+    impl Builder {
+        /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+        /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+        /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+        /// <ul>
+        /// <li>
+        /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+        /// </li>
+        /// <li>
+        /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+        /// </li>
+        /// </ul>
+        pub fn scope(mut self, input: crate::model::Scope) -> Self {
+            self.scope = Some(input);
+            self
+        }
+        pub fn set_scope(mut self, input: std::option::Option<crate::model::Scope>) -> Self {
+            self.scope = input;
+            self
+        }
+        /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+        pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.lock_token = Some(input.into());
+            self
+        }
+        pub fn set_lock_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.lock_token = input;
+            self
+        }
+        /// <p>The version that you want to remove from your list of offerings for the named managed
+        /// rule group. </p>
+        pub fn version_to_expire(mut self, input: impl Into<std::string::String>) -> Self {
+            self.version_to_expire = Some(input.into());
+            self
+        }
+        pub fn set_version_to_expire(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.version_to_expire = input;
+            self
+        }
+        /// <p>The time that you want the version to expire.</p>
+        /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+        pub fn expiry_timestamp(mut self, input: smithy_types::Instant) -> Self {
+            self.expiry_timestamp = Some(input);
+            self
+        }
+        pub fn set_expiry_timestamp(
+            mut self,
+            input: std::option::Option<smithy_types::Instant>,
+        ) -> Self {
+            self.expiry_timestamp = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::input::UpdateManagedRuleSetVersionExpiryDateInput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(crate::input::UpdateManagedRuleSetVersionExpiryDateInput {
+                name: self.name,
+                scope: self.scope,
+                id: self.id,
+                lock_token: self.lock_token,
+                version_to_expire: self.version_to_expire,
+                expiry_timestamp: self.expiry_timestamp,
+            })
+        }
+    }
+}
+#[doc(hidden)]
+pub type UpdateManagedRuleSetVersionExpiryDateInputOperationOutputAlias =
+    crate::operation::UpdateManagedRuleSetVersionExpiryDate;
+#[doc(hidden)]
+pub type UpdateManagedRuleSetVersionExpiryDateInputOperationRetryAlias =
+    aws_http::AwsErrorRetryPolicy;
+impl UpdateManagedRuleSetVersionExpiryDateInput {
+    /// Consumes the builder and constructs an Operation<[`UpdateManagedRuleSetVersionExpiryDate`](crate::operation::UpdateManagedRuleSetVersionExpiryDate)>
+    #[allow(clippy::let_and_return)]
+    pub fn make_operation(
+        &self,
+        _config: &crate::config::Config,
+    ) -> std::result::Result<
+        smithy_http::operation::Operation<
+            crate::operation::UpdateManagedRuleSetVersionExpiryDate,
+            aws_http::AwsErrorRetryPolicy,
+        >,
+        smithy_http::operation::BuildError,
+    > {
+        Ok({
+            let request = self.request_builder_base()?;
+            let body =
+                crate::operation_ser::serialize_operation_update_managed_rule_set_version_expiry_date(&self).map_err(|err|smithy_http::operation::BuildError::SerializationError(err.into()))?
+            ;
+            let request = Self::assemble(request, body);
+            #[allow(unused_mut)]
+            let mut request =
+                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            request.properties_mut().insert(
+                aws_http::user_agent::AwsUserAgent::new_from_environment(
+                    crate::API_METADATA.clone(),
+                ),
+            );
+            #[allow(unused_mut)]
+            let mut signing_config = aws_sig_auth::signer::OperationSigningConfig::default_config();
+            request.properties_mut().insert(signing_config);
+            request
+                .properties_mut()
+                .insert(aws_types::SigningService::from_static(
+                    _config.signing_service(),
+                ));
+            aws_endpoint::set_endpoint_resolver(
+                &mut request.properties_mut(),
+                _config.endpoint_resolver.clone(),
+            );
+            if let Some(region) = &_config.region {
+                request.properties_mut().insert(region.clone());
+            }
+            aws_auth::provider::set_provider(
+                &mut request.properties_mut(),
+                _config.credentials_provider.clone(),
+            );
+            let op = smithy_http::operation::Operation::new(
+                request,
+                crate::operation::UpdateManagedRuleSetVersionExpiryDate::new(),
+            )
+            .with_metadata(smithy_http::operation::Metadata::new(
+                "UpdateManagedRuleSetVersionExpiryDate",
+                "wafv2",
+            ));
+            let op = op.with_retry_policy(aws_http::AwsErrorRetryPolicy::new());
+            op
+        })
+    }
+    fn uri_base(&self, output: &mut String) -> Result<(), smithy_http::operation::BuildError> {
+        write!(output, "/").expect("formatting should succeed");
+        Ok(())
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn update_http_builder(
+        &self,
+        builder: http::request::Builder,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut uri = String::new();
+        self.uri_base(&mut uri)?;
+        Ok(builder.method("POST").uri(uri))
+    }
+    #[allow(clippy::unnecessary_wraps)]
+    fn request_builder_base(
+        &self,
+    ) -> std::result::Result<http::request::Builder, smithy_http::operation::BuildError> {
+        let mut builder = self.update_http_builder(http::request::Builder::new())?;
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "content-type",
+            "application/x-amz-json-1.1",
+        );
+        builder = smithy_http::header::set_header_if_absent(
+            builder,
+            "x-amz-target",
+            "AWSWAF_20190729.UpdateManagedRuleSetVersionExpiryDate",
+        );
+        Ok(builder)
+    }
+    fn assemble(
+        mut builder: http::request::Builder,
+        body: smithy_http::body::SdkBody,
+    ) -> http::request::Request<smithy_http::body::SdkBody> {
+        if let Some(content_length) = body.content_length() {
+            builder = builder.header(http::header::CONTENT_LENGTH, content_length)
+        }
+        builder.body(body).expect("should be valid request")
+    }
+    /// Creates a new builder-style object to manufacture [`UpdateManagedRuleSetVersionExpiryDateInput`](crate::input::UpdateManagedRuleSetVersionExpiryDateInput)
+    pub fn builder() -> crate::input::update_managed_rule_set_version_expiry_date_input::Builder {
+        crate::input::update_managed_rule_set_version_expiry_date_input::Builder::default()
+    }
+}
+
 /// See [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput)
 pub mod update_regex_pattern_set_input {
     /// A builder for [`UpdateRegexPatternSetInput`](crate::input::UpdateRegexPatternSetInput)
@@ -6463,7 +7465,7 @@ pub mod update_regex_pattern_set_input {
             self.regular_expression_list = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -6686,7 +7688,7 @@ pub mod update_rule_group_input {
             self.visibility_config = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -6942,7 +7944,7 @@ pub mod update_web_acl_input {
             self.visibility_config = input;
             self
         }
-        /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+        /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
         pub fn lock_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.lock_token = Some(input.into());
             self
@@ -7126,7 +8128,7 @@ pub struct UpdateWebAclInput {
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the web ACL, and then use them in the rules and default actions that you define in the web ACL. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
@@ -7180,7 +8182,7 @@ pub struct UpdateRuleGroupInput {
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
     /// <p>Defines and enables Amazon CloudWatch metrics and web request sample collection.  </p>
     pub visibility_config: std::option::Option<crate::model::VisibilityConfig>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
     /// <p>A map of custom response keys and content bodies. When you create a rule with a block action, you can send a custom response to the web request. You define these for the rule group, and then use them in the rules that you define in the rule group. </p>
     /// <p>For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web requests and responses in WAF</a> in the
@@ -7228,7 +8230,7 @@ pub struct UpdateRegexPatternSetInput {
     pub description: std::option::Option<std::string::String>,
     /// <p></p>
     pub regular_expression_list: std::option::Option<std::vec::Vec<crate::model::Regex>>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateRegexPatternSetInput {
@@ -7240,6 +8242,47 @@ impl std::fmt::Debug for UpdateRegexPatternSetInput {
         formatter.field("description", &self.description);
         formatter.field("regular_expression_list", &self.regular_expression_list);
         formatter.field("lock_token", &self.lock_token);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UpdateManagedRuleSetVersionExpiryDateInput {
+    /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+    /// </li>
+    /// </ul>
+    pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub lock_token: std::option::Option<std::string::String>,
+    /// <p>The version that you want to remove from your list of offerings for the named managed
+    /// rule group. </p>
+    pub version_to_expire: std::option::Option<std::string::String>,
+    /// <p>The time that you want the version to expire.</p>
+    /// <p>Times are in Coordinated Universal Time (UTC) format. UTC format includes the special designator, Z. For example, "2016-09-27T14:50Z". </p>
+    pub expiry_timestamp: std::option::Option<smithy_types::Instant>,
+}
+impl std::fmt::Debug for UpdateManagedRuleSetVersionExpiryDateInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UpdateManagedRuleSetVersionExpiryDateInput");
+        formatter.field("name", &self.name);
+        formatter.field("scope", &self.scope);
+        formatter.field("id", &self.id);
+        formatter.field("lock_token", &self.lock_token);
+        formatter.field("version_to_expire", &self.version_to_expire);
+        formatter.field("expiry_timestamp", &self.expiry_timestamp);
         formatter.finish()
     }
 }
@@ -7281,10 +8324,9 @@ pub struct UpdateIpSetInput {
     /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
     /// </li>
     /// </ul>
-    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-    /// Inter-Domain Routing</a>.</p>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateIpSetInput {
@@ -7337,7 +8379,8 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutPermissionPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to attach the policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the <a>RuleGroup</a> to which you want to
+    /// attach the policy.</p>
     pub resource_arn: std::option::Option<std::string::String>,
     /// <p>The policy to attach to the specified rule group. </p>
     /// <p>The policy specifications must conform to the following:</p>
@@ -7368,6 +8411,49 @@ impl std::fmt::Debug for PutPermissionPolicyInput {
         let mut formatter = f.debug_struct("PutPermissionPolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
         formatter.field("policy", &self.policy);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutManagedRuleSetVersionsInput {
+    /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+    /// </li>
+    /// </ul>
+    pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
+    pub lock_token: std::option::Option<std::string::String>,
+    /// <p>The version of the named managed rule group that you'd like your customers to choose,
+    /// from among your version offerings. </p>
+    pub recommended_version: std::option::Option<std::string::String>,
+    /// <p>The versions of the named managed rule group that you want to offer to your customers.
+    /// </p>
+    pub versions_to_publish: std::option::Option<
+        std::collections::HashMap<std::string::String, crate::model::VersionToPublish>,
+    >,
+}
+impl std::fmt::Debug for PutManagedRuleSetVersionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutManagedRuleSetVersionsInput");
+        formatter.field("name", &self.name);
+        formatter.field("scope", &self.scope);
+        formatter.field("id", &self.id);
+        formatter.field("lock_token", &self.lock_token);
+        formatter.field("recommended_version", &self.recommended_version);
+        formatter.field("versions_to_publish", &self.versions_to_publish);
         formatter.finish()
     }
 }
@@ -7481,7 +8567,8 @@ impl std::fmt::Debug for ListRuleGroupsInput {
 pub struct ListResourcesForWebAclInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub web_acl_arn: std::option::Option<std::string::String>,
-    /// <p>Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
+    /// <p>Used for web ACLs that are scoped for regional applications.
+    /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API. </p>
     pub resource_type: std::option::Option<crate::model::ResourceType>,
 }
 impl std::fmt::Debug for ListResourcesForWebAclInput {
@@ -7519,6 +8606,39 @@ pub struct ListRegexPatternSetsInput {
 impl std::fmt::Debug for ListRegexPatternSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListRegexPatternSetsInput");
+        formatter.field("scope", &self.scope);
+        formatter.field("next_marker", &self.next_marker);
+        formatter.field("limit", &self.limit);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListManagedRuleSetsInput {
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+    /// </li>
+    /// </ul>
+    pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of objects that you want WAF to return for this request. If more
+    /// objects are available, in the response, WAF provides a
+    /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub limit: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListManagedRuleSetsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListManagedRuleSetsInput");
         formatter.field("scope", &self.scope);
         formatter.field("next_marker", &self.next_marker);
         formatter.field("limit", &self.limit);
@@ -7585,6 +8705,45 @@ pub struct ListIpSetsInput {
 impl std::fmt::Debug for ListIpSetsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListIpSetsInput");
+        formatter.field("scope", &self.scope);
+        formatter.field("next_marker", &self.next_marker);
+        formatter.field("limit", &self.limit);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListAvailableManagedRuleGroupVersionsInput {
+    /// <p>The name of the managed rule group vendor. You use this, along with the rule group name, to identify the rule group.</p>
+    pub vendor_name: std::option::Option<std::string::String>,
+    /// <p>The name of the managed rule group. You use this, along with the vendor name, to identify the rule group.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+    /// </li>
+    /// </ul>
+    pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>When you request a list of objects with a <code>Limit</code> setting, if the number of objects that are still available
+    /// for retrieval exceeds the limit, WAF returns a <code>NextMarker</code>
+    /// value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    pub next_marker: std::option::Option<std::string::String>,
+    /// <p>The maximum number of objects that you want WAF to return for this request. If more
+    /// objects are available, in the response, WAF provides a
+    /// <code>NextMarker</code> value that you can use in a subsequent call to get the next batch of objects.</p>
+    pub limit: std::option::Option<i32>,
+}
+impl std::fmt::Debug for ListAvailableManagedRuleGroupVersionsInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListAvailableManagedRuleGroupVersionsInput");
+        formatter.field("vendor_name", &self.vendor_name);
+        formatter.field("name", &self.name);
         formatter.field("scope", &self.scope);
         formatter.field("next_marker", &self.next_marker);
         formatter.field("limit", &self.limit);
@@ -7671,9 +8830,11 @@ impl std::fmt::Debug for GetWebAclInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetSampledRequestsInput {
-    /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of requests.</p>
+    /// <p>The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample of
+    /// requests.</p>
     pub web_acl_arn: std::option::Option<std::string::String>,
-    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which you want a sample of requests.</p>
+    /// <p>The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> for which
+    /// you want a sample of requests.</p>
     pub rule_metric_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
     /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
@@ -7686,11 +8847,16 @@ pub struct GetSampledRequestsInput {
     /// </li>
     /// </ul>
     pub scope: std::option::Option<crate::model::Scope>,
-    /// <p>The start date and time and the end date and time of the range for which you want <code>GetSampledRequests</code> to return a
-    /// sample of requests. You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours. If you specify a start time that's earlier than three hours ago, WAF sets it to three hours ago.</p>
+    /// <p>The start date and time and the end date and time of the range for which you want
+    /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
+    /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
+    /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify
+    /// any time range in the previous three hours. If you specify a start time that's earlier than
+    /// three hours ago, WAF sets it to three hours ago.</p>
     pub time_window: std::option::Option<crate::model::TimeWindow>,
-    /// <p>The number of requests that you want WAF to return from among the first 5,000 requests that your Amazon Web Services resource received
-    /// during the time range. If your resource received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+    /// <p>The number of requests that you want WAF to return from among the first 5,000
+    /// requests that your Amazon Web Services resource received during the time range. If your resource received
+    /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
     /// returns information about all of them. </p>
     pub max_items: i64,
 }
@@ -7802,13 +8968,44 @@ impl std::fmt::Debug for GetRateBasedStatementManagedKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPermissionPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group for which you want to get the
+    /// policy.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetPermissionPolicyInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetPermissionPolicyInput");
         formatter.field("resource_arn", &self.resource_arn);
+        formatter.finish()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetManagedRuleSetInput {
+    /// <p>The name of the managed rule set. You use this, along with the rule set ID, to identify the rule set.</p>
+    /// <p>This name is assigned to the corresponding managed rule group, which your customers can access and use. </p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>Specifies whether this is for an Amazon CloudFront distribution or for a regional application. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, or an AppSync GraphQL API.  </p>
+    /// <p>To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows: </p>
+    /// <ul>
+    /// <li>
+    /// <p>CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT --region=us-east-1</code>. </p>
+    /// </li>
+    /// <li>
+    /// <p>API and SDKs - For all calls, use the Region endpoint us-east-1. </p>
+    /// </li>
+    /// </ul>
+    pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>A unique identifier for the managed rule set. The ID is returned in the responses to commands like <code>list</code>. You provide it to operations like <code>get</code> and <code>update</code>.</p>
+    pub id: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for GetManagedRuleSetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetManagedRuleSetInput");
+        formatter.field("name", &self.name);
+        formatter.field("scope", &self.scope);
+        formatter.field("id", &self.id);
         formatter.finish()
     }
 }
@@ -7906,6 +9103,10 @@ pub struct DescribeManagedRuleGroupInput {
     /// </li>
     /// </ul>
     pub scope: std::option::Option<crate::model::Scope>,
+    /// <p>The version of the rule group. You can only use a version that is not
+    /// scheduled for expiration. If you don't provide this, WAF uses the vendor's default version.
+    /// </p>
+    pub version_name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeManagedRuleGroupInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -7913,6 +9114,7 @@ impl std::fmt::Debug for DescribeManagedRuleGroupInput {
         formatter.field("vendor_name", &self.vendor_name);
         formatter.field("name", &self.name);
         formatter.field("scope", &self.scope);
+        formatter.field("version_name", &self.version_name);
         formatter.finish()
     }
 }
@@ -7935,7 +9137,7 @@ pub struct DeleteWebAclInput {
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>The unique identifier for the web ACL. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteWebAclInput {
@@ -7967,7 +9169,7 @@ pub struct DeleteRuleGroupInput {
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>A unique identifier for the rule group. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteRuleGroupInput {
@@ -7999,7 +9201,7 @@ pub struct DeleteRegexPatternSetInput {
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteRegexPatternSetInput {
@@ -8016,7 +9218,8 @@ impl std::fmt::Debug for DeleteRegexPatternSetInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeletePermissionPolicyInput {
-    /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the policy.</p>
+    /// <p>The Amazon Resource Name (ARN) of the rule group from which you want to delete the
+    /// policy.</p>
     /// <p>You must be the owner of the rule group to perform this operation.</p>
     pub resource_arn: std::option::Option<std::string::String>,
 }
@@ -8060,7 +9263,7 @@ pub struct DeleteIpSetInput {
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>A unique identifier for the set. This ID is returned in the responses to create and list commands. You provide it to operations like update and delete.</p>
     pub id: std::option::Option<std::string::String>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteIpSetInput {
@@ -8079,7 +9282,7 @@ impl std::fmt::Debug for DeleteIpSetInput {
 pub struct DeleteFirewallManagerRuleGroupsInput {
     /// <p>The Amazon Resource Name (ARN) of the web ACL.</p>
     pub web_acl_arn: std::option::Option<std::string::String>,
-    /// <p>A token used for optimistic locking. WAF returns a token to your get and list requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like update and delete. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another get, and use the new token returned by that operation. </p>
+    /// <p>A token used for optimistic locking. WAF returns a token to your <code>get</code> and <code>list</code> requests, to mark the state of the entity at the time of the request. To make changes to the entity associated with the token, you provide the token to operations like <code>update</code> and <code>delete</code>. WAF uses the token to ensure that no changes have been made to the entity since you last retrieved it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>. If this happens, perform another <code>get</code>, and use the new token returned by that operation. </p>
     pub web_acl_lock_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteFirewallManagerRuleGroupsInput {
@@ -8261,7 +9464,7 @@ pub struct CreateIpSetInput {
     pub scope: std::option::Option<crate::model::Scope>,
     /// <p>A description of the IP set that helps with identification. </p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Specify IPV4 or IPV6. </p>
+    /// <p>The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. </p>
     pub ip_address_version: std::option::Option<crate::model::IpAddressVersion>,
     /// <p>Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless Inter-Domain Routing (CIDR) notation. WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
     /// <p>Examples: </p>
@@ -8280,8 +9483,7 @@ pub struct CreateIpSetInput {
     /// <p>To configure WAF to allow, block, or count requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.</p>
     /// </li>
     /// </ul>
-    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
-    /// Inter-Domain Routing</a>.</p>
+    /// <p>For more information about CIDR notation, see the Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.</p>
     pub addresses: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>An array of key:value pairs to associate with the resource.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
@@ -8313,7 +9515,8 @@ pub struct CheckCapacityInput {
     /// </li>
     /// </ul>
     pub scope: std::option::Option<crate::model::Scope>,
-    /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web ACL. </p>
+    /// <p>An array of <a>Rule</a> that you're configuring to use in a rule group or web
+    /// ACL. </p>
     pub rules: std::option::Option<std::vec::Vec<crate::model::Rule>>,
 }
 impl std::fmt::Debug for CheckCapacityInput {
@@ -8328,7 +9531,8 @@ impl std::fmt::Debug for CheckCapacityInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AssociateWebAclInput {
-    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the resource.</p>
+    /// <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with the
+    /// resource.</p>
     pub web_acl_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the resource to associate with the web ACL. </p>
     /// <p>The ARN must be in one of the following formats:</p>

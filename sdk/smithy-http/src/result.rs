@@ -44,7 +44,7 @@ where
 {
     fn fmt(&self, f: &mut Formatter<'_>) -> fmt::Result {
         match self {
-            SdkError::ConstructionFailure(err) => Display::fmt(&err, f),
+            SdkError::ConstructionFailure(err) => write!(f, "failed to construct request: {}", err),
             SdkError::DispatchFailure(err) => Display::fmt(&err, f),
             SdkError::ResponseError { err, .. } => Display::fmt(&err, f),
             SdkError::ServiceError { err, .. } => Display::fmt(&err, f),

@@ -284,7 +284,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.inner = self.inner.matching(input);
             self
@@ -1427,6 +1430,19 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_id(input);
             self
         }
+        /// <p>Applies a filter to the response to include profile objects with the specified index values.
+        /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+        pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
+            self.inner = self.inner.object_filter(input);
+            self
+        }
+        pub fn set_object_filter(
+            mut self,
+            input: std::option::Option<crate::model::ObjectFilter>,
+        ) -> Self {
+            self.inner = self.inner.set_object_filter(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct ListProfileObjectTypes<C = aws_hyper::DynConnector> {
@@ -1642,9 +1658,9 @@ pub mod fluent_builders {
             self.inner = self.inner.set_profile_ids_to_be_merged(input);
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the
-        /// merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the
-        /// identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply
+        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
+        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
             input: crate::model::FieldSourceProfileIds,
@@ -2252,7 +2268,10 @@ pub mod fluent_builders {
             self.inner = self.inner.set_dead_letter_queue_url(input);
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.inner = self.inner.matching(input);
             self

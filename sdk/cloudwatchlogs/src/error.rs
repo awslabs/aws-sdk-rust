@@ -4684,7 +4684,7 @@ impl OperationAbortedException {
     }
 }
 
-/// <p>The most likely cause is an invalid AWS access key ID or secret key.</p>
+/// <p>The most likely cause is an invalid Amazon Web Services access key ID or secret key.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnrecognizedClientException {

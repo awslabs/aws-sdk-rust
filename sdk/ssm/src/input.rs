@@ -730,9 +730,9 @@ pub mod create_activation_input {
             self.default_instance_name = input;
             self
         }
-        /// <p>The Identity and Access Management (IAM) role that you want to assign to the managed
-        /// instance. This IAMrole must provide AssumeRole permissions for the Amazon Web Services Systems Manager
-        /// service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
+        /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
+        /// the managed instance. This IAM role must provide AssumeRole permissions for the
+        /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
         /// IAM service role for a hybrid environment</a> in the
         /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn iam_role(mut self, input: impl Into<std::string::String>) -> Self {
@@ -938,7 +938,7 @@ pub mod create_association_input {
         /// information for the instance.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
-        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other accounts, you
+        /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
         /// must specify the complete SSM document ARN, in the following format:</p>
         /// <p>
         /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -2976,7 +2976,7 @@ pub mod create_resource_data_sync_input {
         /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
         /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
         /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
-        /// from a single account and multiple Regions, or multiple accounts and Regions, as
+        /// from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as
         /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
         /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
@@ -3285,7 +3285,18 @@ pub mod delete_association_input {
             self.name = input;
             self
         }
-        /// <p>The ID of the instance.</p>
+        /// <p>The instance ID.</p>
+        /// <note>
+        /// <p>
+        /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+        /// use the <code>Targets</code> parameter. Requests that include the
+        /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+        /// 2.0 or later will fail. In addition, if you use the parameter
+        /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+        /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+        /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+        /// must use the <code>Targets</code> parameter.</p>
+        /// </note>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
@@ -11609,7 +11620,7 @@ pub mod get_connection_status_input {
         pub(crate) target: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The ID of the instance.</p>
+        /// <p>The instance ID.</p>
         pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
             self.target = Some(input.into());
             self
@@ -13891,6 +13902,8 @@ pub mod get_parameter_input {
     }
     impl Builder {
         /// <p>The name of the parameter you want to query.</p>
+        /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
+        /// version, use <code>"Name": "name:version"</code>.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -14579,6 +14592,13 @@ pub mod get_patch_baseline_input {
     }
     impl Builder {
         /// <p>The ID of the patch baseline to retrieve.</p>
+        /// <note>
+        /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon
+        /// Resource Name (ARN) of the baseline. For example, for the baseline
+        /// <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify
+        /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of
+        /// <code>pb-0e392de35e7c563b7</code>.</p>
+        /// </note>
         pub fn baseline_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.baseline_id = Some(input.into());
             self
@@ -16304,7 +16324,7 @@ pub mod list_document_metadata_history_input {
         pub(crate) max_results: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The name of the document.</p>
+        /// <p>The name of the change template.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -16313,7 +16333,7 @@ pub mod list_document_metadata_history_input {
             self.name = input;
             self
         }
-        /// <p>The version of the document.</p>
+        /// <p>The version of the change template.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -17718,7 +17738,7 @@ pub mod list_resource_data_sync_input {
     impl Builder {
         /// <p>View a list of resource data syncs according to the sync type. Specify
         /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
-        /// or from multiple Regions.</p>
+        /// or from multiple Amazon Web Services Regions.</p>
         pub fn sync_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.sync_type = Some(input.into());
             self
@@ -18643,7 +18663,7 @@ pub mod put_parameter_input {
         /// <p>Parameter names are case sensitive.</p>
         /// </li>
         /// <li>
-        /// <p>A parameter name must be unique within an Region</p>
+        /// <p>A parameter name must be unique within an Amazon Web Services Region</p>
         /// </li>
         /// <li>
         /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
@@ -18731,11 +18751,11 @@ pub mod put_parameter_input {
             self
         }
         /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-        /// parameter. Either the default KMS key automatically assigned to your account
+        /// parameter. Either the default KMS key automatically assigned to your Amazon Web Services account
         /// or a custom key. Required for parameters that use the <code>SecureString</code>
         /// data type.</p>
         /// <p>If you don't specify a key ID, the system uses the default key associated with your
-        /// account.</p>
+        /// Amazon Web Services account.</p>
         /// <ul>
         /// <li>
         /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
@@ -18792,11 +18812,11 @@ pub mod put_parameter_input {
         /// <p>The parameter tier to assign to a parameter.</p>
         /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
         /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
-        /// You can create a maximum of 10,000 standard parameters for each Region in an account.
+        /// You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account.
         /// Standard parameters are offered at no additional cost. </p>
         /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
         /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
-        /// account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
+        /// Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
         /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
         /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
@@ -18841,8 +18861,8 @@ pub mod put_parameter_input {
         /// <p>The parameter uses a parameter policy.</p>
         /// </li>
         /// <li>
-        /// <p>More than 10,000 parameters already exist in your account in the current
-        /// Region.</p>
+        /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current
+        /// Amazon Web Services Region.</p>
         /// </li>
         /// </ul>
         /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
@@ -18898,7 +18918,7 @@ pub mod put_parameter_input {
         /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
         /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
         /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
-        /// account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
+        /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
         /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
         pub fn data_type(mut self, input: impl Into<std::string::String>) -> Self {
             self.data_type = Some(input.into());
@@ -20757,7 +20777,7 @@ pub mod send_command_input {
             self
         }
         /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-        /// automatically determines the Region of the S3 bucket.</p>
+        /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
         pub fn output_s3_region(mut self, input: impl Into<std::string::String>) -> Self {
             self.output_s3_region = Some(input.into());
             self
@@ -22495,7 +22515,7 @@ pub mod update_association_input {
         /// information for the instance.</p>
         /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
         /// shared with you from another account.</p>
-        /// <p>For Systems Manager document (SSM document) that are shared with you from other accounts, you
+        /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
         /// must specify the complete SSM document ARN, in the following format:</p>
         /// <p>
         /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -22844,7 +22864,7 @@ pub mod update_association_status_input {
             self.name = input;
             self
         }
-        /// <p>The ID of the instance.</p>
+        /// <p>The instance ID.</p>
         pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.instance_id = Some(input.into());
             self
@@ -23387,7 +23407,7 @@ pub mod update_document_metadata_input {
         pub(crate) document_reviews: std::option::Option<crate::model::DocumentReviews>,
     }
     impl Builder {
-        /// <p>The name of the document for which a version is to be updated.</p>
+        /// <p>The name of the change template for which a version's metadata is to be updated.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -23396,7 +23416,7 @@ pub mod update_document_metadata_input {
             self.name = input;
             self
         }
-        /// <p>The version of a document to update.</p>
+        /// <p>The version of a change template in which to update approval metadata.</p>
         pub fn document_version(mut self, input: impl Into<std::string::String>) -> Self {
             self.document_version = Some(input.into());
             self
@@ -23408,7 +23428,7 @@ pub mod update_document_metadata_input {
             self.document_version = input;
             self
         }
-        /// <p>The document review details to update.</p>
+        /// <p>The change template review details to update.</p>
         pub fn document_reviews(mut self, input: crate::model::DocumentReviews) -> Self {
             self.document_reviews = Some(input);
             self
@@ -26349,11 +26369,11 @@ impl std::fmt::Debug for UpdateMaintenanceWindowInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateDocumentMetadataInput {
-    /// <p>The name of the document for which a version is to be updated.</p>
+    /// <p>The name of the change template for which a version's metadata is to be updated.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of a document to update.</p>
+    /// <p>The version of a change template in which to update approval metadata.</p>
     pub document_version: std::option::Option<std::string::String>,
-    /// <p>The document review details to update.</p>
+    /// <p>The change template review details to update.</p>
     pub document_reviews: std::option::Option<crate::model::DocumentReviews>,
 }
 impl std::fmt::Debug for UpdateDocumentMetadataInput {
@@ -26430,7 +26450,7 @@ impl std::fmt::Debug for UpdateDocumentInput {
 pub struct UpdateAssociationStatusInput {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the instance.</p>
+    /// <p>The instance ID.</p>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association status.</p>
     pub association_status: std::option::Option<crate::model::AssociationStatus>,
@@ -26466,7 +26486,7 @@ pub struct UpdateAssociationInput {
     /// information for the instance.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
-    /// <p>For Systems Manager document (SSM document) that are shared with you from other accounts, you
+    /// <p>For Systems Manager document (SSM document) that are shared with you from other Amazon Web Services accounts, you
     /// must specify the complete SSM document ARN, in the following format:</p>
     /// <p>
     /// <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -26539,7 +26559,7 @@ pub struct UpdateAssociationInput {
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
     /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A location is a combination of Regions and accounts where you want to run the
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
     /// association. Use this action to update an association in multiple Regions and multiple
     /// accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -26683,7 +26703,7 @@ pub struct StartChangeRequestExecutionInput {
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
     /// a change request. Tags enable you to categorize a resource in different ways, such as by
     /// purpose, owner, or environment. For example, you might want to tag a change request to identify
-    /// an environment or target Region. In this case, you could specify the following key-value
+    /// an environment or target Amazon Web Services Region. In this case, you could specify the following key-value
     /// pairs:</p>
     /// <ul>
     /// <li>
@@ -26771,9 +26791,9 @@ pub struct StartAutomationExecutionInput {
     /// be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one
     /// at a time.</p>
     pub max_errors: std::option::Option<std::string::String>,
-    /// <p>A location is a combination of Regions and/or accounts where you want to run the
-    /// automation. Use this operation to start an automation in multiple Regions and multiple
-    /// accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Regions and accounts</a> in the
+    /// <p>A location is a combination of Amazon Web Services Regions and/or Amazon Web Services accounts where you want to run the
+    /// automation. Use this operation to start an automation in multiple Amazon Web Services Regions and multiple
+    /// Amazon Web Services accounts. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-automation-multiple-accounts-and-regions.html">Running Automation workflows in multiple Amazon Web Services Regions and Amazon Web Services accounts</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>. </p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
@@ -26889,7 +26909,7 @@ pub struct SendCommandInput {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>(Deprecated) You can no longer specify this parameter. The system ignores it. Instead, Systems Manager
-    /// automatically determines the Region of the S3 bucket.</p>
+    /// automatically determines the Amazon Web Services Region of the S3 bucket.</p>
     pub output_s3_region: std::option::Option<std::string::String>,
     /// <p>The name of the S3 bucket where command execution responses should be stored.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
@@ -27334,7 +27354,7 @@ pub struct PutParameterInput {
     /// <p>Parameter names are case sensitive.</p>
     /// </li>
     /// <li>
-    /// <p>A parameter name must be unique within an Region</p>
+    /// <p>A parameter name must be unique within an Amazon Web Services Region</p>
     /// </li>
     /// <li>
     /// <p>A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>"
@@ -27394,11 +27414,11 @@ pub struct PutParameterInput {
     /// </important>
     pub r#type: std::option::Option<crate::model::ParameterType>,
     /// <p>The Key Management Service (KMS) ID that you want to use to encrypt a
-    /// parameter. Either the default KMS key automatically assigned to your account
+    /// parameter. Either the default KMS key automatically assigned to your Amazon Web Services account
     /// or a custom key. Required for parameters that use the <code>SecureString</code>
     /// data type.</p>
     /// <p>If you don't specify a key ID, the system uses the default key associated with your
-    /// account.</p>
+    /// Amazon Web Services account.</p>
     /// <ul>
     /// <li>
     /// <p>To use your default KMS key, choose the <code>SecureString</code> data type, and do <i>not</i> specify the <code>Key ID</code> when you create the parameter. The system automatically populates
@@ -27445,11 +27465,11 @@ pub struct PutParameterInput {
     /// <p>The parameter tier to assign to a parameter.</p>
     /// <p>Parameter Store offers a standard tier and an advanced tier for parameters. Standard
     /// parameters have a content size limit of 4 KB and can't be configured to use parameter policies.
-    /// You can create a maximum of 10,000 standard parameters for each Region in an account.
+    /// You can create a maximum of 10,000 standard parameters for each Region in an Amazon Web Services account.
     /// Standard parameters are offered at no additional cost. </p>
     /// <p>Advanced parameters have a content size limit of 8 KB and can be configured to use parameter
     /// policies. You can create a maximum of 100,000 advanced parameters for each Region in an
-    /// account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
+    /// Amazon Web Services account. Advanced parameters incur a charge. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">Standard and
     /// advanced parameter tiers</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     /// <p>You can change a standard parameter to an advanced parameter any time. But you can't revert
     /// an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
@@ -27494,8 +27514,8 @@ pub struct PutParameterInput {
     /// <p>The parameter uses a parameter policy.</p>
     /// </li>
     /// <li>
-    /// <p>More than 10,000 parameters already exist in your account in the current
-    /// Region.</p>
+    /// <p>More than 10,000 parameters already exist in your Amazon Web Services account in the current
+    /// Amazon Web Services Region.</p>
     /// </li>
     /// </ul>
     /// <p>For more information about configuring the default tier option, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
@@ -27537,7 +27557,7 @@ pub struct PutParameterInput {
     /// <p>When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
     /// Amazon Web Services Systems Manager validates the parameter value is in the required format, such as
     /// <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is available in your
-    /// account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
+    /// Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native parameter support
     /// for Amazon Machine Image (AMI) IDs</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub data_type: std::option::Option<std::string::String>,
 }
@@ -27679,7 +27699,7 @@ impl std::fmt::Debug for ListTagsForResourceInput {
 pub struct ListResourceDataSyncInput {
     /// <p>View a list of resource data syncs according to the sync type. Specify
     /// <code>SyncToDestination</code> to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource data syncs from Organizations
-    /// or from multiple Regions.</p>
+    /// or from multiple Amazon Web Services Regions.</p>
     pub sync_type: std::option::Option<std::string::String>,
     /// <p>A token to start the list. Use this token to get the next set of results. </p>
     pub next_token: std::option::Option<std::string::String>,
@@ -27873,9 +27893,9 @@ impl std::fmt::Debug for ListDocumentsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListDocumentMetadataHistoryInput {
-    /// <p>The name of the document.</p>
+    /// <p>The name of the change template.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The version of the document.</p>
+    /// <p>The version of the change template.</p>
     pub document_version: std::option::Option<std::string::String>,
     /// <p>The type of data for which details are being requested. Currently, the only supported value
     /// is <code>DocumentReviews</code>.</p>
@@ -28157,6 +28177,13 @@ impl std::fmt::Debug for GetPatchBaselineForPatchGroupInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPatchBaselineInput {
     /// <p>The ID of the patch baseline to retrieve.</p>
+    /// <note>
+    /// <p>To retrieve information about an Amazon Web Services managed patch baseline, specify the full Amazon
+    /// Resource Name (ARN) of the baseline. For example, for the baseline
+    /// <code>AWS-AmazonLinuxDefaultPatchBaseline</code>, specify
+    /// <code>arn:aws:ssm:us-east-2:733109147000:patchbaseline/pb-0e392de35e7c563b7</code> instead of
+    /// <code>pb-0e392de35e7c563b7</code>.</p>
+    /// </note>
     pub baseline_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetPatchBaselineInput {
@@ -28221,6 +28248,8 @@ impl std::fmt::Debug for GetParametersByPathInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersInput {
     /// <p>Names of the parameters for which you want to query information.</p>
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
+    /// version, use <code>"Name": "name:version"</code>.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Return decrypted secure string value. Return decrypted values for secure string parameters.
     /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter types.</p>
@@ -28265,6 +28294,8 @@ impl std::fmt::Debug for GetParameterHistoryInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParameterInput {
     /// <p>The name of the parameter you want to query.</p>
+    /// <p>To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
+    /// version, use <code>"Name": "name:version"</code>.</p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Return decrypted values for secure string parameters. This flag is ignored for
     /// <code>String</code> and <code>StringList</code> parameter types.</p>
@@ -28552,7 +28583,7 @@ impl std::fmt::Debug for GetDefaultPatchBaselineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetConnectionStatusInput {
-    /// <p>The ID of the instance.</p>
+    /// <p>The instance ID.</p>
     pub target: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetConnectionStatusInput {
@@ -29904,7 +29935,8 @@ impl std::fmt::Debug for DeletePatchBaselineInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteParametersInput {
-    /// <p>The names of the parameters to delete.</p>
+    /// <p>The names of the parameters to delete. After deleting a parameter, wait for at least 30
+    /// seconds to create a parameter with the same name.</p>
     pub names: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DeleteParametersInput {
@@ -30024,7 +30056,18 @@ impl std::fmt::Debug for DeleteDocumentInput {
 pub struct DeleteAssociationInput {
     /// <p>The name of the SSM document.</p>
     pub name: std::option::Option<std::string::String>,
-    /// <p>The ID of the instance.</p>
+    /// <p>The instance ID.</p>
+    /// <note>
+    /// <p>
+    /// <code>InstanceId</code> has been deprecated. To specify an instance ID for an association,
+    /// use the <code>Targets</code> parameter. Requests that include the
+    /// parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version
+    /// 2.0 or later will fail. In addition, if you use the parameter
+    /// <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>,
+    /// <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>,
+    /// <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you
+    /// must use the <code>Targets</code> parameter.</p>
+    /// </note>
     pub instance_id: std::option::Option<std::string::String>,
     /// <p>The association ID that you want to delete.</p>
     pub association_id: std::option::Option<std::string::String>,
@@ -30064,7 +30107,7 @@ pub struct CreateResourceDataSyncInput {
     /// <p>Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes data
     /// to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>, you must provide a
     /// value for <code>S3Destination</code>. Specify <code>SyncFromSource</code> to synchronize data
-    /// from a single account and multiple Regions, or multiple accounts and Regions, as
+    /// from a single account and multiple Regions, or multiple Amazon Web Services accounts and Amazon Web Services Regions, as
     /// listed in Organizations for Explorer. If you specify <code>SyncFromSource</code>, you must provide a
     /// value for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.</p>
     pub sync_type: std::option::Option<std::string::String>,
@@ -30204,7 +30247,7 @@ pub struct CreateOpsMetadataInput {
     /// <p>Optional metadata that you assign to a resource. You can specify a maximum of five tags for
     /// an OpsMetadata object. Tags enable you to categorize a resource in different ways, such as by
     /// purpose, owner, or environment. For example, you might want to tag an OpsMetadata object to
-    /// identify an environment or target Region. In this case, you could specify the following
+    /// identify an environment or target Amazon Web Services Region. In this case, you could specify the following
     /// key-value pairs:</p>
     /// <ul>
     /// <li>
@@ -30565,7 +30608,7 @@ pub struct CreateAssociationInput {
     /// information for the instance.</p>
     /// <p>You can specify Amazon Web Services-predefined documents, documents you created, or a document that is
     /// shared with you from another account.</p>
-    /// <p>For Systems Manager documents (SSM documents) that are shared with you from other accounts, you
+    /// <p>For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you
     /// must specify the complete SSM document ARN, in the following format:</p>
     /// <p>
     /// <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i>
@@ -30600,7 +30643,7 @@ pub struct CreateAssociationInput {
         std::collections::HashMap<std::string::String, std::vec::Vec<std::string::String>>,
     >,
     /// <p>The targets for the association. You can target instances by using tags, Amazon Web Services resource
-    /// groups, all instances in an account, or individual instance IDs. For more information about
+    /// groups, all instances in an Amazon Web Services account, or individual instance IDs. For more information about
     /// choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using targets and rate controls with State Manager associations</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub targets: std::option::Option<std::vec::Vec<crate::model::Target>>,
@@ -30657,7 +30700,7 @@ pub struct CreateAssociationInput {
     /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar">Amazon Web Services Systems Manager Change
     /// Calendar</a>.</p>
     pub calendar_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>A location is a combination of Regions and accounts where you want to run the
+    /// <p>A location is a combination of Amazon Web Services Regions and Amazon Web Services accounts where you want to run the
     /// association. Use this action to create an association in multiple Regions and multiple
     /// accounts.</p>
     pub target_locations: std::option::Option<std::vec::Vec<crate::model::TargetLocation>>,
@@ -30705,9 +30748,9 @@ pub struct CreateActivationInput {
     /// <p>Don't enter personally identifiable information in this field.</p>
     /// </important>
     pub default_instance_name: std::option::Option<std::string::String>,
-    /// <p>The Identity and Access Management (IAM) role that you want to assign to the managed
-    /// instance. This IAMrole must provide AssumeRole permissions for the Amazon Web Services Systems Manager
-    /// service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
+    /// <p>The name of the Identity and Access Management (IAM) role that you want to assign to
+    /// the managed instance. This IAM role must provide AssumeRole permissions for the
+    /// Amazon Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create an
     /// IAM service role for a hybrid environment</a> in the
     /// <i>Amazon Web Services Systems Manager User Guide</i>.</p>
     pub iam_role: std::option::Option<std::string::String>,

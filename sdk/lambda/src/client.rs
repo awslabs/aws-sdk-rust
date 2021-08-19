@@ -3203,7 +3203,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>For Lambda@Edge functions, the Region of the master function. For example, <code>us-east-1</code> filters
+        /// <p>For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters
         /// the list of functions to only include Lambda@Edge functions replicated from a master function in US East (N.
         /// Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</p>
         pub fn master_region(mut self, input: impl Into<std::string::String>) -> Self {

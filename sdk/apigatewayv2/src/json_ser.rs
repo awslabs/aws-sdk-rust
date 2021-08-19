@@ -1088,17 +1088,22 @@ pub fn serialize_structure_domain_name_configuration(
     if let Some(var_301) = &input.security_policy {
         object.key("securityPolicy").string(var_301.as_str());
     }
+    if let Some(var_302) = &input.ownership_verification_certificate_arn {
+        object
+            .key("ownershipVerificationCertificateArn")
+            .string(var_302);
+    }
 }
 
 pub fn serialize_structure_mutual_tls_authentication_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::MutualTlsAuthenticationInput,
 ) {
-    if let Some(var_302) = &input.truststore_uri {
-        object.key("truststoreUri").string(var_302);
+    if let Some(var_303) = &input.truststore_uri {
+        object.key("truststoreUri").string(var_303);
     }
-    if let Some(var_303) = &input.truststore_version {
-        object.key("truststoreVersion").string(var_303);
+    if let Some(var_304) = &input.truststore_version {
+        object.key("truststoreVersion").string(var_304);
     }
 }
 
@@ -1106,8 +1111,8 @@ pub fn serialize_structure_tls_config_input(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::TlsConfigInput,
 ) {
-    if let Some(var_304) = &input.server_name_to_verify {
-        object.key("serverNameToVerify").string(var_304);
+    if let Some(var_305) = &input.server_name_to_verify {
+        object.key("serverNameToVerify").string(var_305);
     }
 }
 
@@ -1124,11 +1129,11 @@ pub fn serialize_structure_access_log_settings(
     object: &mut smithy_json::serialize::JsonObjectWriter,
     input: &crate::model::AccessLogSettings,
 ) {
-    if let Some(var_305) = &input.destination_arn {
-        object.key("destinationArn").string(var_305);
+    if let Some(var_306) = &input.destination_arn {
+        object.key("destinationArn").string(var_306);
     }
-    if let Some(var_306) = &input.format {
-        object.key("format").string(var_306);
+    if let Some(var_307) = &input.format {
+        object.key("format").string(var_307);
     }
 }
 
@@ -1146,8 +1151,8 @@ pub fn serialize_structure_route_settings(
             .key("detailedMetricsEnabled")
             .boolean(input.detailed_metrics_enabled);
     }
-    if let Some(var_307) = &input.logging_level {
-        object.key("loggingLevel").string(var_307.as_str());
+    if let Some(var_308) = &input.logging_level {
+        object.key("loggingLevel").string(var_308.as_str());
     }
     if input.throttling_burst_limit != 0 {
         object.key("throttlingBurstLimit").number(

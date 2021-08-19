@@ -247,7 +247,10 @@ pub mod create_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
@@ -3174,6 +3177,7 @@ pub mod list_profile_objects_input {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) object_type_name: std::option::Option<std::string::String>,
         pub(crate) profile_id: std::option::Option<std::string::String>,
+        pub(crate) object_filter: std::option::Option<crate::model::ObjectFilter>,
     }
     impl Builder {
         /// <p>The pagination token from the previous call to ListProfileObjects.</p>
@@ -3224,6 +3228,19 @@ pub mod list_profile_objects_input {
             self.profile_id = input;
             self
         }
+        /// <p>Applies a filter to the response to include profile objects with the specified index values.
+        /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+        pub fn object_filter(mut self, input: crate::model::ObjectFilter) -> Self {
+            self.object_filter = Some(input);
+            self
+        }
+        pub fn set_object_filter(
+            mut self,
+            input: std::option::Option<crate::model::ObjectFilter>,
+        ) -> Self {
+            self.object_filter = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProfileObjectsInput`](crate::input::ListProfileObjectsInput)
         pub fn build(
             self,
@@ -3237,6 +3254,7 @@ pub mod list_profile_objects_input {
                 domain_name: self.domain_name,
                 object_type_name: self.object_type_name,
                 profile_id: self.profile_id,
+                object_filter: self.object_filter,
             })
         }
     }
@@ -3902,9 +3920,9 @@ pub mod merge_profiles_input {
             self.profile_ids_to_be_merged = input;
             self
         }
-        /// <p>The identifiers of the fields in the profile that has the information you want to apply to the
-        /// merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the
-        /// identifier of the EmailAddress field in Profile1. </p>
+        /// <p>The identifiers of the fields in the profile that has the information you want to apply
+        /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
+        /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
         pub fn field_source_profile_ids(
             mut self,
             input: crate::model::FieldSourceProfileIds,
@@ -5373,7 +5391,10 @@ pub mod update_domain_input {
             self.dead_letter_queue_url = input;
             self
         }
-        /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+        /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+        /// After that batch process completes, use the
+        /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+        /// API to return and review the results.  </p>
         pub fn matching(mut self, input: crate::model::MatchingRequest) -> Self {
             self.matching = Some(input);
             self
@@ -6086,7 +6107,10 @@ pub struct UpdateDomainInput {
     /// SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the
     /// DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:
@@ -6276,9 +6300,9 @@ pub struct MergeProfilesInput {
     pub main_profile_id: std::option::Option<std::string::String>,
     /// <p>The identifier of the profile to be merged into MainProfileId.</p>
     pub profile_ids_to_be_merged: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The identifiers of the fields in the profile that has the information you want to apply to the
-    /// merge. For example, say you want to merge EmailAddress from Profile1 into MainProfile. This would be the
-    /// identifier of the EmailAddress field in Profile1. </p>
+    /// <p>The identifiers of the fields in the profile that has the information you want to apply
+    /// to the merge. For example, say you want to merge EmailAddress from Profile1 into
+    /// MainProfile. This would be the identifier of the EmailAddress field in Profile1. </p>
     pub field_source_profile_ids: std::option::Option<crate::model::FieldSourceProfileIds>,
 }
 impl std::fmt::Debug for MergeProfilesInput {
@@ -6356,6 +6380,9 @@ pub struct ListProfileObjectsInput {
     pub object_type_name: std::option::Option<std::string::String>,
     /// <p>The unique identifier of a customer profile.</p>
     pub profile_id: std::option::Option<std::string::String>,
+    /// <p>Applies a filter to the response to include profile objects with the specified index values.
+    /// This filter is only supported for ObjectTypeName _asset and _case.</p>
+    pub object_filter: std::option::Option<crate::model::ObjectFilter>,
 }
 impl std::fmt::Debug for ListProfileObjectsInput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -6365,6 +6392,7 @@ impl std::fmt::Debug for ListProfileObjectsInput {
         formatter.field("domain_name", &self.domain_name);
         formatter.field("object_type_name", &self.object_type_name);
         formatter.field("profile_id", &self.profile_id);
+        formatter.field("object_filter", &self.object_filter);
         formatter.finish()
     }
 }
@@ -6717,7 +6745,10 @@ pub struct CreateDomainInput {
     /// DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send
     /// messages to the DeadLetterQueue.</p>
     pub dead_letter_queue_url: std::option::Option<std::string::String>,
-    /// <p>The process of matching duplicate profiles. This process runs every Saturday at 12AM.</p>
+    /// <p>The process of matching duplicate profiles. If Matching = true, Amazon Connect Customer Profiles starts a weekly batch process every Saturday at 12AM UTC to detect duplicate profiles in your domains.
+    /// After that batch process completes, use the
+    /// <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
+    /// API to return and review the results.  </p>
     pub matching: std::option::Option<crate::model::MatchingRequest>,
     /// <p>The tags used to organize, track, or control access for this resource.</p>
     pub tags:

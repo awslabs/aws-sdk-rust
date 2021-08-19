@@ -83,9 +83,7 @@ impl<M, R> Builder<(), M, R> {
         self,
     ) -> Builder<HyperAdapter<hyper_rustls::HttpsConnector<hyper::client::HttpConnector>>, M, R>
     {
-        let https = hyper_rustls::HttpsConnector::with_native_roots();
-        let client = hyper::Client::builder().build::<_, SdkBody>(https);
-        self.connector(HyperAdapter::from(client))
+        self.connector(crate::conns::https())
     }
 
     /// Connect to the service over HTTPS using Rustls.
@@ -105,8 +103,6 @@ impl<M, R> Builder<(), M, R> {
     pub fn native_tls(
         self,
     ) -> Builder<HyperAdapter<hyper_tls::HttpsConnector<hyper::client::HttpConnector>>, M, R> {
-        let https = hyper_tls::HttpsConnector::new();
-        let client = hyper::Client::builder().build::<_, SdkBody>(https);
-        self.connector(HyperAdapter::from(client))
+        self.connector(crate::conns::native_tls())
     }
 }

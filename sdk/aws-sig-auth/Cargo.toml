@@ -9,8 +9,7 @@ license = "Apache-2.0"
 
 [dependencies]
 http = "0.2.2"
-# Renaming to clearly indicate that this is not a permanent signing solution
-aws-sigv4-poc = { package = "aws-sigv4", git = "https://github.com/rcoh/sigv4", rev = "66b1646a7ab119c73be966ca70ee5f556bd8379b"}
+aws-sigv4 = { path = "../aws-sigv4" }
 aws-auth = { path = "../aws-auth" }
 aws-types = { path = "../aws-types" }
 smithy-http = { path = "../smithy-http" }

@@ -3622,6 +3622,96 @@ impl std::error::Error for UpdateProjectError {
 
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
+pub struct UpdateProjectVisibilityError {
+    pub kind: UpdateProjectVisibilityErrorKind,
+    pub(crate) meta: smithy_types::Error,
+}
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
+pub enum UpdateProjectVisibilityErrorKind {
+    InvalidInputException(crate::error::InvalidInputException),
+    ResourceNotFoundException(crate::error::ResourceNotFoundException),
+    /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
+    Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
+}
+impl std::fmt::Display for UpdateProjectVisibilityError {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        match &self.kind {
+            UpdateProjectVisibilityErrorKind::InvalidInputException(_inner) => _inner.fmt(f),
+            UpdateProjectVisibilityErrorKind::ResourceNotFoundException(_inner) => _inner.fmt(f),
+            UpdateProjectVisibilityErrorKind::Unhandled(_inner) => _inner.fmt(f),
+        }
+    }
+}
+impl smithy_types::retry::ProvideErrorKind for UpdateProjectVisibilityError {
+    fn code(&self) -> Option<&str> {
+        UpdateProjectVisibilityError::code(self)
+    }
+    fn retryable_error_kind(&self) -> Option<smithy_types::retry::ErrorKind> {
+        None
+    }
+}
+impl UpdateProjectVisibilityError {
+    pub fn new(kind: UpdateProjectVisibilityErrorKind, meta: smithy_types::Error) -> Self {
+        Self { kind, meta }
+    }
+
+    pub fn unhandled(err: impl Into<Box<dyn std::error::Error + Send + Sync + 'static>>) -> Self {
+        Self {
+            kind: UpdateProjectVisibilityErrorKind::Unhandled(err.into()),
+            meta: Default::default(),
+        }
+    }
+
+    pub fn generic(err: smithy_types::Error) -> Self {
+        Self {
+            meta: err.clone(),
+            kind: UpdateProjectVisibilityErrorKind::Unhandled(err.into()),
+        }
+    }
+
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
+    // by std::Error to generate a message in that case.
+    pub fn message(&self) -> Option<&str> {
+        self.meta.message()
+    }
+
+    pub fn meta(&self) -> &smithy_types::Error {
+        &self.meta
+    }
+
+    pub fn request_id(&self) -> Option<&str> {
+        self.meta.request_id()
+    }
+
+    pub fn code(&self) -> Option<&str> {
+        self.meta.code()
+    }
+    pub fn is_invalid_input_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateProjectVisibilityErrorKind::InvalidInputException(_)
+        )
+    }
+    pub fn is_resource_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateProjectVisibilityErrorKind::ResourceNotFoundException(_)
+        )
+    }
+}
+impl std::error::Error for UpdateProjectVisibilityError {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        match &self.kind {
+            UpdateProjectVisibilityErrorKind::InvalidInputException(_inner) => Some(_inner),
+            UpdateProjectVisibilityErrorKind::ResourceNotFoundException(_inner) => Some(_inner),
+            UpdateProjectVisibilityErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
+        }
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::fmt::Debug)]
 pub struct UpdateReportGroupError {
     pub kind: UpdateReportGroupErrorKind,
     pub(crate) meta: smithy_types::Error,
@@ -3806,7 +3896,7 @@ impl std::error::Error for UpdateWebhookError {
     }
 }
 
-/// <p>The specified AWS resource cannot be found.</p>
+/// <p>The specified Amazon Web Services resource cannot be found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ResourceNotFoundException {
@@ -3986,7 +4076,7 @@ impl InvalidInputException {
     }
 }
 
-/// <p>An AWS service limit was exceeded for the calling AWS account.</p>
+/// <p>An Amazon Web Services service limit was exceeded for the calling Amazon Web Services account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountLimitExceededException {
@@ -4046,7 +4136,7 @@ impl AccountLimitExceededException {
     }
 }
 
-/// <p>The specified AWS resource cannot be created, because an AWS resource with the same
+/// <p>The specified Amazon Web Services resource cannot be created, because an Amazon Web Services resource with the same
 /// settings already exists.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]

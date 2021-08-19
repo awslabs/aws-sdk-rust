@@ -76,9 +76,7 @@ impl UpdateCostCategoryDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalySubscriptionOutput {
-    /// <p>
-    /// A cost anomaly subscription ARN.
-    /// </p>
+    /// <p>A cost anomaly subscription ARN. </p>
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAnomalySubscriptionOutput {
@@ -97,9 +95,7 @@ pub mod update_anomaly_subscription_output {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A cost anomaly subscription ARN.
-        /// </p>
+        /// <p>A cost anomaly subscription ARN. </p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subscription_arn = Some(input.into());
             self
@@ -129,9 +125,7 @@ impl UpdateAnomalySubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAnomalyMonitorOutput {
-    /// <p>
-    /// A cost anomaly monitor ARN.
-    /// </p>
+    /// <p>A cost anomaly monitor ARN. </p>
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAnomalyMonitorOutput {
@@ -150,9 +144,7 @@ pub mod update_anomaly_monitor_output {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// A cost anomaly monitor ARN.
-        /// </p>
+        /// <p>A cost anomaly monitor ARN. </p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitor_arn = Some(input.into());
             self
@@ -179,9 +171,7 @@ impl UpdateAnomalyMonitorOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ProvideAnomalyFeedbackOutput {
-    /// <p>
-    /// The ID of the modified cost anomaly.
-    /// </p>
+    /// <p>The ID of the modified cost anomaly. </p>
     pub anomaly_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ProvideAnomalyFeedbackOutput {
@@ -200,9 +190,7 @@ pub mod provide_anomaly_feedback_output {
         pub(crate) anomaly_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The ID of the modified cost anomaly.
-        /// </p>
+        /// <p>The ID of the modified cost anomaly. </p>
         pub fn anomaly_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.anomaly_id = Some(input.into());
             self
@@ -373,11 +361,11 @@ impl GetUsageForecastOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetTagsOutput {
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The tags that match your request.</p>
     pub tags: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The number of query results that AWS returns at a time.</p>
+    /// <p>The number of query results that Amazon Web Services returns at a time.</p>
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of query results.</p>
     pub total_size: std::option::Option<i32>,
@@ -404,7 +392,7 @@ pub mod get_tags_output {
         pub(crate) total_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -429,7 +417,7 @@ pub mod get_tags_output {
             self.tags = input;
             self
         }
-        /// <p>The number of query results that AWS returns at a time.</p>
+        /// <p>The number of query results that Amazon Web Services returns at a time.</p>
         pub fn return_size(mut self, input: i32) -> Self {
             self.return_size = Some(input);
             self
@@ -473,8 +461,7 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
         std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationDetail>>,
     /// <p>The total Savings Plans utilization, regardless of time period.</p>
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
-    /// <p>The time period of the request.
-    /// </p>
+    /// <p>The time period of the request. </p>
     pub time_period: std::option::Option<crate::model::DateInterval>,
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_token: std::option::Option<std::string::String>,
@@ -533,8 +520,7 @@ pub mod get_savings_plans_utilization_details_output {
             self.total = input;
             self
         }
-        /// <p>The time period of the request.
-        /// </p>
+        /// <p>The time period of the request. </p>
         pub fn time_period(mut self, input: crate::model::DateInterval) -> Self {
             self.time_period = Some(input);
             self
@@ -656,7 +642,7 @@ pub struct GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>Contains your request parameters, Savings Plan Recommendations Summary, and Details.</p>
     pub savings_plans_purchase_recommendation:
         std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetSavingsPlansPurchaseRecommendationOutput {
@@ -714,7 +700,7 @@ pub mod get_savings_plans_purchase_recommendation_output {
             self.savings_plans_purchase_recommendation = input;
             self
         }
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -957,7 +943,7 @@ pub struct GetReservationUtilizationOutput {
     pub utilizations_by_time: std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
     /// <p>The total amount of time that you used your RIs.</p>
     pub total: std::option::Option<crate::model::ReservationAggregates>,
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetReservationUtilizationOutput {
@@ -1009,7 +995,7 @@ pub mod get_reservation_utilization_output {
             self.total = input;
             self
         }
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1140,7 +1126,7 @@ pub struct GetReservationCoverageOutput {
     pub coverages_by_time: std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
     /// <p>The total amount of instance usage that a reservation covered.</p>
     pub total: std::option::Option<crate::model::Coverage>,
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetReservationCoverageOutput {
@@ -1186,7 +1172,7 @@ pub mod get_reservation_coverage_output {
             self.total = input;
             self
         }
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1232,11 +1218,11 @@ pub struct GetDimensionValuesOutput {
     /// <p>INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.</p>
     /// </li>
     /// <li>
-    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services.</p>
+    /// <p>LEGAL_ENTITY_NAME - The name of the organization that sells you Amazon Web Services services, such as Amazon Web Services.</p>
     /// </li>
     /// <li>
     /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the AWS ID of the member account.</p>
+    /// field contains the Amazon Web Services ID of the member account.</p>
     /// </li>
     /// <li>
     /// <p>OPERATING_SYSTEM - The operating system. Examples are Windows or Linux.</p>
@@ -1252,7 +1238,7 @@ pub struct GetDimensionValuesOutput {
     /// Instances and Standard Reserved Instances.</p>
     /// </li>
     /// <li>
-    /// <p>SERVICE - The AWS service such as Amazon DynamoDB.</p>
+    /// <p>SERVICE - The Amazon Web Services service such as Amazon DynamoDB.</p>
     /// </li>
     /// <li>
     /// <p>USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the <code>GetDimensionValues</code> operation
@@ -1286,13 +1272,13 @@ pub struct GetDimensionValuesOutput {
     /// </li>
     /// <li>
     /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the AWS ID of the member account.</p>
+    /// field contains the Amazon Web Services ID of the member account.</p>
     /// </li>
     /// <li>
     /// <p>PLATFORM - The Amazon EC2 operating system. Examples are Windows or Linux.</p>
     /// </li>
     /// <li>
-    /// <p>REGION - The AWS Region.</p>
+    /// <p>REGION - The Amazon Web Services Region.</p>
     /// </li>
     /// <li>
     /// <p>SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone.</p>
@@ -1313,14 +1299,14 @@ pub struct GetDimensionValuesOutput {
     /// <p>PAYMENT_OPTION - Payment option for the given Savings Plans (for example, All Upfront)</p>
     /// </li>
     /// <li>
-    /// <p>REGION - The AWS Region.</p>
+    /// <p>REGION - The Amazon Web Services Region.</p>
     /// </li>
     /// <li>
     /// <p>INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)</p>
     /// </li>
     /// <li>
     /// <p>LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value
-    /// field contains the AWS ID of the member account.</p>
+    /// field contains the Amazon Web Services ID of the member account.</p>
     /// </li>
     /// <li>
     /// <p>SAVINGS_PLAN_ARN - The unique identifier for your Savings Plan</p>
@@ -1328,11 +1314,11 @@ pub struct GetDimensionValuesOutput {
     /// </ul>
     pub dimension_values:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
-    /// <p>The number of results that AWS returned at one time.</p>
+    /// <p>The number of results that Amazon Web Services returned at one time.</p>
     pub return_size: std::option::Option<i32>,
     /// <p>The total number of search results.</p>
     pub total_size: std::option::Option<i32>,
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetDimensionValuesOutput {
@@ -1374,7 +1360,7 @@ pub mod get_dimension_values_output {
             self.dimension_values = input;
             self
         }
-        /// <p>The number of results that AWS returned at one time.</p>
+        /// <p>The number of results that Amazon Web Services returned at one time.</p>
         pub fn return_size(mut self, input: i32) -> Self {
             self.return_size = Some(input);
             self
@@ -1392,7 +1378,7 @@ pub mod get_dimension_values_output {
             self.total_size = input;
             self
         }
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1494,7 +1480,7 @@ impl GetCostForecastOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostCategoriesOutput {
-    /// <p>If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+    /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The names of the Cost Categories.</p>
     pub cost_category_names: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -1531,7 +1517,7 @@ pub mod get_cost_categories_output {
         pub(crate) total_size: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>If the number of objects that are still available for retrieval exceeds the limit, AWS returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
+        /// <p>If the number of objects that are still available for retrieval exceeds the limit, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1609,7 +1595,7 @@ impl GetCostCategoriesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageWithResourcesOutput {
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code>
     /// parameters in the request.</p>
@@ -1647,7 +1633,7 @@ pub mod get_cost_and_usage_with_resources_output {
             std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
     }
     impl Builder {
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1725,11 +1711,11 @@ impl GetCostAndUsageWithResourcesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetCostAndUsageOutput {
-    /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+    /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     pub next_page_token: std::option::Option<std::string::String>,
     /// <p>The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters in the request.</p>
     pub group_definitions: std::option::Option<std::vec::Vec<crate::model::GroupDefinition>>,
-    /// <p>The time period that is covered by the results in the response.</p>
+    /// <p>The time period that's covered by the results in the response.</p>
     pub results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
     /// <p>The attributes that apply to a specific dimension value. For example, if the value is a linked account, the attribute is that account name.</p>
     pub dimension_value_attributes:
@@ -1762,7 +1748,7 @@ pub mod get_cost_and_usage_output {
             std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
     }
     impl Builder {
-        /// <p>The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.</p>
+        /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1840,14 +1826,11 @@ impl GetCostAndUsageOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalySubscriptionsOutput {
-    /// <p>
-    /// A list of cost anomaly subscriptions that includes the detailed metadata for each one.
-    /// </p>
+    /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
     pub anomaly_subscriptions:
         std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
-    /// <p>
-    /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetAnomalySubscriptionsOutput {
@@ -1885,9 +1868,8 @@ pub mod get_anomaly_subscriptions_output {
             self.anomaly_subscriptions = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1918,13 +1900,10 @@ impl GetAnomalySubscriptionsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomalyMonitorsOutput {
-    /// <p>
-    /// A list of cost anomaly monitors that includes the detailed metadata for each monitor.
-    /// </p>
+    /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
     pub anomaly_monitors: std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
-    /// <p>
-    /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetAnomalyMonitorsOutput {
@@ -1959,9 +1938,8 @@ pub mod get_anomaly_monitors_output {
             self.anomaly_monitors = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -1992,13 +1970,10 @@ impl GetAnomalyMonitorsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetAnomaliesOutput {
-    /// <p>
-    /// A list of cost anomalies.
-    /// </p>
+    /// <p>A list of cost anomalies. </p>
     pub anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
-    /// <p>
-    /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-    /// </p>
+    /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+    /// the response from a previous call has more results than the maximum page size. </p>
     pub next_page_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetAnomaliesOutput {
@@ -2032,9 +2007,8 @@ pub mod get_anomalies_output {
             self.anomalies = input;
             self
         }
-        /// <p>
-        /// The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
-        /// </p>
+        /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when
+        /// the response from a previous call has more results than the maximum page size. </p>
         pub fn next_page_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_page_token = Some(input.into());
             self
@@ -2065,7 +2039,8 @@ impl GetAnomaliesOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeCostCategoryDefinitionOutput {
-    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
+    /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
+    /// for the <code>CostCategory</code> object.</p>
     pub cost_category: std::option::Option<crate::model::CostCategory>,
 }
 impl std::fmt::Debug for DescribeCostCategoryDefinitionOutput {
@@ -2084,7 +2059,8 @@ pub mod describe_cost_category_definition_output {
         pub(crate) cost_category: std::option::Option<crate::model::CostCategory>,
     }
     impl Builder {
-        /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
+        /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules
+        /// for the <code>CostCategory</code> object.</p>
         pub fn cost_category(mut self, input: crate::model::CostCategory) -> Self {
             self.cost_category = Some(input);
             self
@@ -2320,9 +2296,7 @@ impl CreateCostCategoryDefinitionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalySubscriptionOutput {
-    /// <p>
-    /// The unique identifier of your newly created cost anomaly subscription.
-    /// </p>
+    /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
     pub subscription_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAnomalySubscriptionOutput {
@@ -2341,9 +2315,7 @@ pub mod create_anomaly_subscription_output {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>
-        /// The unique identifier of your newly created cost anomaly subscription.
-        /// </p>
+        /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
         pub fn subscription_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.subscription_arn = Some(input.into());
             self
@@ -2373,7 +2345,7 @@ impl CreateAnomalySubscriptionOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAnomalyMonitorOutput {
-    /// <p> The unique identifier of your newly created cost anomaly detection monitor.</p>
+    /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     pub monitor_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAnomalyMonitorOutput {
@@ -2392,7 +2364,7 @@ pub mod create_anomaly_monitor_output {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p> The unique identifier of your newly created cost anomaly detection monitor.</p>
+        /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
         pub fn monitor_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.monitor_arn = Some(input.into());
             self

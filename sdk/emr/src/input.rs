@@ -1234,7 +1234,7 @@ pub mod create_studio_session_mapping_input {
         }
         /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
         /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_id = Some(input.into());
             self
@@ -1244,7 +1244,7 @@ pub mod create_studio_session_mapping_input {
             self
         }
         /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+        /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
         pub fn identity_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.identity_name = Some(input.into());
             self
@@ -4490,7 +4490,7 @@ pub mod list_release_labels_input {
             self.filters = input;
             self
         }
-        /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (AWS AccountID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+        /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -6847,8 +6847,8 @@ pub mod run_job_flow_input {
             self.configurations = input;
             self
         }
-        /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>false</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
-        /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+        /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+        /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
         pub fn visible_to_all_users(mut self, input: bool) -> Self {
             self.visible_to_all_users = Some(input);
             self
@@ -8687,8 +8687,8 @@ pub struct RunJobFlowInput {
     /// <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied for the EMR
     /// cluster you are creating.</p>
     pub configurations: std::option::Option<std::vec::Vec<crate::model::Configuration>>,
-    /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>false</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
-    /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management Guide</i>.</p>
+    /// <p>Set this value to <code>true</code> so that IAM principals in the account associated with the cluster can perform EMR actions on the cluster that their IAM policies allow. This value defaults to <code>true</code> for clusters created using the EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a> command.</p>
+    /// <p>When set to <code>false</code>, only the IAM principal that created the cluster and the account root user can perform EMR actions for the cluster, regardless of the IAM permissions policies attached to other IAM principals. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.</p>
     pub visible_to_all_users: bool,
     /// <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster. The EC2
     /// instances of the cluster assume this role. The default role is
@@ -9043,7 +9043,7 @@ impl std::fmt::Debug for ListSecurityConfigurationsInput {
 pub struct ListReleaseLabelsInput {
     /// <p>Filters the results of the request. <code>Prefix</code> specifies the prefix of release labels to return. <code>Application</code> specifies the application (with/without version) of release labels to return.</p>
     pub filters: std::option::Option<crate::model::ReleaseLabelFilter>,
-    /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (AWS AccountID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
+    /// <p>Specifies the next page of results. If <code>NextToken</code> is not specified, which is usually the case for the first request of ListReleaseLabels, the first page of results are determined by other filtering parameters or by the latest version. The <code>ListReleaseLabels</code> request fails if the identity (account ID) and all filtering parameters are different from the original request, or if the <code>NextToken</code> is expired or tampered with.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>Defines the maximum number of release labels to return in a single response. The default is <code>100</code>.</p>
     pub max_results: std::option::Option<i32>,
@@ -9483,10 +9483,10 @@ pub struct CreateStudioSessionMappingInput {
     pub studio_id: std::option::Option<std::string::String>,
     /// <p>The globally unique identifier (GUID) of the user or group from the Amazon Web Services SSO Identity
     /// Store. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserId">UserId</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-GroupId">GroupId</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub identity_id: std::option::Option<std::string::String>,
     /// <p>The name of the user or group. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_User.html#singlesignon-Type-User-UserName">UserName</a> and <a href="https://docs.aws.amazon.com/singlesignon/latest/IdentityStoreAPIReference/API_Group.html#singlesignon-Type-Group-DisplayName">DisplayName</a> in the <i>Amazon Web Services SSO Identity Store API Reference</i>.
-    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified.</p>
+    /// Either <code>IdentityName</code> or <code>IdentityId</code> must be specified, but not both.</p>
     pub identity_name: std::option::Option<std::string::String>,
     /// <p>Specifies whether the identity to map to the Amazon EMR Studio is a user or a group.</p>
     pub identity_type: std::option::Option<crate::model::IdentityType>,

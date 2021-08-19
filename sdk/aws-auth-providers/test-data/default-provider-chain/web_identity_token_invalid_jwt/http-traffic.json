@@ -1,0 +1,104 @@
+{
+  "docs": "web identity token request/response where the response is a assume role error",
+  "version": "V0",
+  "events": [
+    {
+      "connection_id": 0,
+      "action": {
+        "Request": {
+          "request": {
+            "uri": "https://sts.us-east-1.amazonaws.com/",
+            "headers": {
+              "host": [
+                "sts.us-east-1.amazonaws.com"
+              ],
+              "user-agent": [
+                "aws-sdk-rust/0.1.0 os/macos lang/rust/1.55.0-nightly"
+              ],
+              "content-type": [
+                "application/x-www-form-urlencoded"
+              ],
+              "x-amz-user-agent": [
+                "aws-sdk-rust/0.1.0 api/sts/0.0.15-alpha os/macos lang/rust/1.55.0-nightly"
+              ],
+              "content-length": [
+                "1016"
+              ]
+            },
+            "method": "POST"
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "Action=AssumeRoleWithWebIdentity&Version=2011-06-15&RoleArn=arn%3Aaws%3Aiam%3A%3A123456789%3Arole%2FRoleB&RoleSessionName=web-identity-token-profile-1629229438294&WebIdentityToken=eyJhbGciOiJSUzI1NiIsImtpZCI6IjQxOTg5NTBhMWU0Y2U3YjIxZDRhYTBjNTRkM2EzNmFhZGI0ZWRiOTcifQ.eyJhdWQiOlsibXktY2x1c3Rlci5zazEudXMtd2VzdC0yLmVrcy5hbWF6b25hd3MuY29tIl0sImV4cCI6MTYyOTIyODE2MSwiaWF0IjoxNjI5MTQxNzYxLCJpc3MiOiJodHRwczovL3MzLXVzLXdlc3QtMi5hbWF6b25hd3MuY29tL29pZGMtdGVzdC10enpvdGJ3bXpud2ltdXJjYmtlYm5kcHhhaW1peGJrYyIsImt1YmVybmV0ZXMuaW8iOnsiYm91bmRPYmplY3RSZWYiOnsiYXBpVmVyc2lvbiI6InYxIiwia2luZCI6IlBvZCIsIm5hbWUiOiJteS1wb2QteHZmZyIsInVpZCI6ImZiZmRlMTZiLTYwNDYtNDZlNS1hZDAzLTVkYWRlMjRiYzBhMiJ9LCJzZXJ2aWNlQWNjb3VudFVJRCI6IjEwMTRmY2QzLTg2MDktNDgwOC05M2JkLWZiMDQzMzdkMjVjYiJ9LCJuYmYiOjE2MjkxNDE3NjEsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.R3W4H0Lj-XQdY_PVJ8HGrCcb0__ouFcvgNxs_e--t-fVrPbuBqTyaG1on1RMQtI1SWyDviS85w_cPVi7F-0kSR93hWtZGtwO_iHmOJQzxD-MEgxyUgW9ZGakQAaxVeaV5981B3ejgcaDOFGwUw3PLCU8LZwy-AxKGfPXCqkK0aA%0A"
+          },
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Request"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Response": {
+          "response": {
+            "Ok": {
+              "status": 400,
+              "version": "HTTP/1.1",
+              "headers": {
+                "content-type": [
+                  "text/xml"
+                ],
+                "x-amzn-requestid": [
+                  "5045ca91-d123-4749-9d66-00a3c906be6c"
+                ],
+                "content-length": [
+                  "381"
+                ],
+                "date": [
+                  "Tue, 17 Aug 2021 19:43:57 GMT"
+                ],
+                "connection": [
+                  "close"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Data": {
+          "data": {
+            "Utf8": "<ErrorResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\">\n  <Error>\n    <Type>Sender</Type>\n    <Code>InvalidIdentityToken</Code>\n    <Message>No OpenIDConnect provider found in your account for https://s3-us-west-2.amazonaws.com/oidc-test-tzzotbwmznwimurcbkebndpxaimixbkc</Message>\n  </Error>\n  <RequestId>5045ca91-d123-4749-9d66-00a3c906be6c</RequestId>\n</ErrorResponse>\n"
+          },
+          "direction": "Response"
+        }
+      }
+    },
+    {
+      "connection_id": 0,
+      "action": {
+        "Eof": {
+          "ok": true,
+          "direction": "Response"
+        }
+      }
+    }
+  ]
+}

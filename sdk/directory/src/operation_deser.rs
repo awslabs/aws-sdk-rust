@@ -3214,6 +3214,133 @@ pub fn parse_describe_certificate_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_client_authentication_settings_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeClientAuthenticationSettingsOutput,
+    crate::error::DescribeClientAuthenticationSettingsError,
+> {
+    let generic = crate::json_deser::parse_generic_error(&response)
+        .map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::DescribeClientAuthenticationSettingsError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ClientException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::ClientException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_client_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "DirectoryDoesNotExistException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::DirectoryDoesNotExistException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::directory_does_not_exist_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_directory_does_not_exist_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::InvalidParameterException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::ServiceException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "UnsupportedOperationException" => crate::error::DescribeClientAuthenticationSettingsError { meta: generic, kind: crate::error::DescribeClientAuthenticationSettingsErrorKind::UnsupportedOperationException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_unsupported_operation_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::DescribeClientAuthenticationSettingsError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_client_authentication_settings_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeClientAuthenticationSettingsOutput,
+    crate::error::DescribeClientAuthenticationSettingsError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::describe_client_authentication_settings_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_describe_client_authentication_settings(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeClientAuthenticationSettingsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_conditional_forwarders_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<

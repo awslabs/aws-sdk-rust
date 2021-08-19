@@ -542,6 +542,15 @@ pub mod fluent_builders {
             self.inner = self.inner.set_launch_profile_id(input);
             self
         }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owned_by(input);
+            self
+        }
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_owned_by(input);
+            self
+        }
         /// <p>The ID of the streaming image.</p>
         pub fn streaming_image_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.streaming_image_id(input);
@@ -2317,7 +2326,7 @@ pub mod fluent_builders {
                 .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
             self.handle.client.call(op).await
         }
-        /// <p>The user ID.</p>
+        /// <p>The user ID of the user that created the streaming session.</p>
         pub fn created_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.inner = self.inner.created_by(input);
             self
@@ -2333,6 +2342,15 @@ pub mod fluent_builders {
         }
         pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The user ID of the user that owns the streaming session.</p>
+        pub fn owned_by(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.owned_by(input);
+            self
+        }
+        pub fn set_owned_by(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_owned_by(input);
             self
         }
         /// <p>A collection of session IDs.</p>

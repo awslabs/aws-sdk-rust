@@ -1647,8 +1647,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_input_data_config(input);
             self
         }
-        /// <p>Provides information about encryption and the Amazon S3 output path needed to store
-        /// artifacts from an AutoML job. Format(s) supported: CSV.</p>
+        /// <p>Provides information about encryption and the Amazon S3 output path needed to store artifacts
+        /// from an AutoML job. Format(s) supported: CSV.</p>
         pub fn output_data_config(mut self, input: crate::model::AutoMlOutputDataConfig) -> Self {
             self.inner = self.inner.output_data_config(input);
             self
@@ -1675,8 +1675,8 @@ pub mod fluent_builders {
             self.inner = self.inner.set_problem_type(input);
             self
         }
-        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
+        /// <p>Defines the objective metric used to measure the predictive quality of an AutoML job. You
+        /// provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
         /// minimize or maximize it.</p>
         pub fn auto_ml_job_objective(mut self, input: crate::model::AutoMlJobObjective) -> Self {
             self.inner = self.inner.auto_ml_job_objective(input);
@@ -2816,6 +2816,22 @@ pub mod fluent_builders {
             self.inner = self.inner.set_kms_key_id(input);
             self
         }
+        /// <p>Specifies configuration for how an endpoint performs asynchronous inference.
+        /// This is a required field in order for your Endpoint to be invoked using
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">
+        /// <code>InvokeEndpointAsync</code>
+        /// </a>.</p>
+        pub fn async_inference_config(mut self, input: crate::model::AsyncInferenceConfig) -> Self {
+            self.inner = self.inner.async_inference_config(input);
+            self
+        }
+        pub fn set_async_inference_config(
+            mut self,
+            input: std::option::Option<crate::model::AsyncInferenceConfig>,
+        ) -> Self {
+            self.inner = self.inner.set_async_inference_config(input);
+            self
+        }
     }
     #[derive(std::fmt::Debug)]
     pub struct CreateExperiment<C = aws_hyper::DynConnector> {
@@ -3771,6 +3787,13 @@ pub mod fluent_builders {
         /// <p>For 3D point cloud and video frame task types, you can add label category attributes
         /// and frame attributes to your label category configuration file. To learn how, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-point-cloud-label-category-config.html">Create a
         /// Labeling Category Configuration File for 3D Point Cloud Labeling Jobs</a>. </p>
+        /// <p>For named entity recognition jobs, in addition to <code>"labels"</code>, you must
+        /// provide worker instructions in the label category configuration file using the
+        /// <code>"instructions"</code> parameter: <code>"instructions":
+        /// {"shortInstruction":"<h1>Add header</h1><p>Add Instructions</p>",
+        /// "fullInstruction":"<p>Add additional instructions.</p>"}</code>. For details
+        /// and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create a
+        /// Named Entity Recognition Labeling Job (API) </a>.</p>
         /// <p>For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
         /// tasks</a>, your label category configuration file must be a JSON file in the
         /// following format. Identify the labels you want to use by replacing <code>label_1</code>,
@@ -5112,6 +5135,18 @@ pub mod fluent_builders {
             input: std::option::Option<crate::model::RootAccess>,
         ) -> Self {
             self.inner = self.inner.set_root_access(input);
+            self
+        }
+        /// <p>The platform identifier of the notebook instance runtime environment.</p>
+        pub fn platform_identifier(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.platform_identifier(input);
+            self
+        }
+        pub fn set_platform_identifier(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_platform_identifier(input);
             self
         }
     }

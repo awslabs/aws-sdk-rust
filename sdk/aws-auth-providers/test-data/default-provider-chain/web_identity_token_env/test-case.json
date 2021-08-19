@@ -1,0 +1,12 @@
+{
+  "name": "web-identity-token-env",
+  "docs": "Loads a web identity token configured via environment variables",
+  "result": {
+    "Ok": {
+      "access_key_id": "AKIDTEST",
+      "secret_access_key": "SECRETKEYTEST",
+      "session_token": "SESSIONTOKEN_TEST",
+      "expiry": 1629147173
+    }
+  }
+}

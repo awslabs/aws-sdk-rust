@@ -291,6 +291,39 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateSecurityKeyError>
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::CreateAgentStatusError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateAgentStatusError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateAgentStatusErrorKind::DuplicateResourceException(inner) => {
+                    Error::DuplicateResourceException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateAgentStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::CreateContactFlowError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::CreateContactFlowError>) -> Self {
         match err {
@@ -320,6 +353,39 @@ impl From<smithy_http::result::SdkError<crate::error::CreateContactFlowError>> f
                     Error::ThrottlingException(inner)
                 }
                 crate::error::CreateContactFlowErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::CreateHoursOfOperationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateHoursOfOperationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::CreateHoursOfOperationErrorKind::DuplicateResourceException(
+                    inner,
+                ) => Error::DuplicateResourceException(inner),
+                crate::error::CreateHoursOfOperationErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::CreateHoursOfOperationErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::CreateHoursOfOperationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::CreateHoursOfOperationErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::CreateHoursOfOperationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::CreateHoursOfOperationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::CreateHoursOfOperationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -571,6 +637,33 @@ impl From<smithy_http::result::SdkError<crate::error::CreateUserHierarchyGroupEr
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::DeleteHoursOfOperationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHoursOfOperationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DeleteHoursOfOperationErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DeleteHoursOfOperationErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DeleteHoursOfOperationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DeleteHoursOfOperationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DeleteHoursOfOperationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DeleteHoursOfOperationErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::DeleteInstanceError>> for Error {
     fn from(err: smithy_http::result::SdkError<crate::error::DeleteInstanceError>) -> Self {
         match err {
@@ -717,6 +810,33 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteUserHierarchyGroupEr
                     Error::ThrottlingException(inner)
                 }
                 crate::error::DeleteUserHierarchyGroupErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::DescribeAgentStatusError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeAgentStatusError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::DescribeAgentStatusErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::DescribeAgentStatusErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::DescribeAgentStatusErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::DescribeAgentStatusErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::DescribeAgentStatusErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::DescribeAgentStatusErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },
@@ -1307,6 +1427,33 @@ impl From<smithy_http::result::SdkError<crate::error::GetMetricDataError>> for E
                     Error::ThrottlingException(inner)
                 }
                 crate::error::GetMetricDataErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::ListAgentStatusesError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::ListAgentStatusesError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::ListAgentStatusesErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::ListAgentStatusesErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::ListAgentStatusesErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::ListAgentStatusesErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::ListAgentStatusesErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::ListAgentStatusesErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
             },
             _ => Error::Unhandled(err.into()),
         }
@@ -2149,6 +2296,39 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
+impl From<smithy_http::result::SdkError<crate::error::UpdateAgentStatusError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateAgentStatusError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateAgentStatusErrorKind::DuplicateResourceException(inner) => {
+                    Error::DuplicateResourceException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::LimitExceededException(inner) => {
+                    Error::LimitExceededException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateAgentStatusErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
 impl From<smithy_http::result::SdkError<crate::error::UpdateContactAttributesError>> for Error {
     fn from(
         err: smithy_http::result::SdkError<crate::error::UpdateContactAttributesError>,
@@ -2230,6 +2410,36 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateContactFlowNameError
                     Error::ThrottlingException(inner)
                 }
                 crate::error::UpdateContactFlowNameErrorKind::Unhandled(inner) => {
+                    Error::Unhandled(inner)
+                }
+            },
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl From<smithy_http::result::SdkError<crate::error::UpdateHoursOfOperationError>> for Error {
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateHoursOfOperationError>) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
+                crate::error::UpdateHoursOfOperationErrorKind::DuplicateResourceException(
+                    inner,
+                ) => Error::DuplicateResourceException(inner),
+                crate::error::UpdateHoursOfOperationErrorKind::InternalServiceException(inner) => {
+                    Error::InternalServiceException(inner)
+                }
+                crate::error::UpdateHoursOfOperationErrorKind::InvalidParameterException(inner) => {
+                    Error::InvalidParameterException(inner)
+                }
+                crate::error::UpdateHoursOfOperationErrorKind::InvalidRequestException(inner) => {
+                    Error::InvalidRequestException(inner)
+                }
+                crate::error::UpdateHoursOfOperationErrorKind::ResourceNotFoundException(inner) => {
+                    Error::ResourceNotFoundException(inner)
+                }
+                crate::error::UpdateHoursOfOperationErrorKind::ThrottlingException(inner) => {
+                    Error::ThrottlingException(inner)
+                }
+                crate::error::UpdateHoursOfOperationErrorKind::Unhandled(inner) => {
                     Error::Unhandled(inner)
                 }
             },

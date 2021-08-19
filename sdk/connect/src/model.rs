@@ -1936,6 +1936,224 @@ impl AsRef<str> for InstanceAttributeType {
     }
 }
 
+/// <p>Contains information about the hours of operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HoursOfOperationConfig {
+    /// <p>The day that the hours of operation applies to.</p>
+    pub day: std::option::Option<crate::model::HoursOfOperationDays>,
+    /// <p>The start time that your contact center is open.</p>
+    pub start_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
+    /// <p>The end time that your contact center is closes.</p>
+    pub end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
+}
+impl std::fmt::Debug for HoursOfOperationConfig {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HoursOfOperationConfig");
+        formatter.field("day", &self.day);
+        formatter.field("start_time", &self.start_time);
+        formatter.field("end_time", &self.end_time);
+        formatter.finish()
+    }
+}
+/// See [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
+pub mod hours_of_operation_config {
+    /// A builder for [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) day: std::option::Option<crate::model::HoursOfOperationDays>,
+        pub(crate) start_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
+        pub(crate) end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
+    }
+    impl Builder {
+        /// <p>The day that the hours of operation applies to.</p>
+        pub fn day(mut self, input: crate::model::HoursOfOperationDays) -> Self {
+            self.day = Some(input);
+            self
+        }
+        pub fn set_day(
+            mut self,
+            input: std::option::Option<crate::model::HoursOfOperationDays>,
+        ) -> Self {
+            self.day = input;
+            self
+        }
+        /// <p>The start time that your contact center is open.</p>
+        pub fn start_time(mut self, input: crate::model::HoursOfOperationTimeSlice) -> Self {
+            self.start_time = Some(input);
+            self
+        }
+        pub fn set_start_time(
+            mut self,
+            input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
+        ) -> Self {
+            self.start_time = input;
+            self
+        }
+        /// <p>The end time that your contact center is closes.</p>
+        pub fn end_time(mut self, input: crate::model::HoursOfOperationTimeSlice) -> Self {
+            self.end_time = Some(input);
+            self
+        }
+        pub fn set_end_time(
+            mut self,
+            input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
+        ) -> Self {
+            self.end_time = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
+        pub fn build(self) -> crate::model::HoursOfOperationConfig {
+            crate::model::HoursOfOperationConfig {
+                day: self.day,
+                start_time: self.start_time,
+                end_time: self.end_time,
+            }
+        }
+    }
+}
+impl HoursOfOperationConfig {
+    /// Creates a new builder-style object to manufacture [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
+    pub fn builder() -> crate::model::hours_of_operation_config::Builder {
+        crate::model::hours_of_operation_config::Builder::default()
+    }
+}
+
+/// <p>The start time or end time for an hours of operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct HoursOfOperationTimeSlice {
+    /// <p>The hours.</p>
+    pub hours: std::option::Option<i32>,
+    /// <p>The minutes.</p>
+    pub minutes: std::option::Option<i32>,
+}
+impl std::fmt::Debug for HoursOfOperationTimeSlice {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("HoursOfOperationTimeSlice");
+        formatter.field("hours", &self.hours);
+        formatter.field("minutes", &self.minutes);
+        formatter.finish()
+    }
+}
+/// See [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
+pub mod hours_of_operation_time_slice {
+    /// A builder for [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) hours: std::option::Option<i32>,
+        pub(crate) minutes: std::option::Option<i32>,
+    }
+    impl Builder {
+        /// <p>The hours.</p>
+        pub fn hours(mut self, input: i32) -> Self {
+            self.hours = Some(input);
+            self
+        }
+        pub fn set_hours(mut self, input: std::option::Option<i32>) -> Self {
+            self.hours = input;
+            self
+        }
+        /// <p>The minutes.</p>
+        pub fn minutes(mut self, input: i32) -> Self {
+            self.minutes = Some(input);
+            self
+        }
+        pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
+            self.minutes = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
+        pub fn build(self) -> crate::model::HoursOfOperationTimeSlice {
+            crate::model::HoursOfOperationTimeSlice {
+                hours: self.hours,
+                minutes: self.minutes,
+            }
+        }
+    }
+}
+impl HoursOfOperationTimeSlice {
+    /// Creates a new builder-style object to manufacture [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
+    pub fn builder() -> crate::model::hours_of_operation_time_slice::Builder {
+        crate::model::hours_of_operation_time_slice::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HoursOfOperationDays {
+    Friday,
+    Monday,
+    Saturday,
+    Sunday,
+    Thursday,
+    Tuesday,
+    Wednesday,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HoursOfOperationDays {
+    fn from(s: &str) -> Self {
+        match s {
+            "FRIDAY" => HoursOfOperationDays::Friday,
+            "MONDAY" => HoursOfOperationDays::Monday,
+            "SATURDAY" => HoursOfOperationDays::Saturday,
+            "SUNDAY" => HoursOfOperationDays::Sunday,
+            "THURSDAY" => HoursOfOperationDays::Thursday,
+            "TUESDAY" => HoursOfOperationDays::Tuesday,
+            "WEDNESDAY" => HoursOfOperationDays::Wednesday,
+            other => HoursOfOperationDays::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HoursOfOperationDays {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HoursOfOperationDays::from(s))
+    }
+}
+impl HoursOfOperationDays {
+    pub fn as_str(&self) -> &str {
+        match self {
+            HoursOfOperationDays::Friday => "FRIDAY",
+            HoursOfOperationDays::Monday => "MONDAY",
+            HoursOfOperationDays::Saturday => "SATURDAY",
+            HoursOfOperationDays::Sunday => "SUNDAY",
+            HoursOfOperationDays::Thursday => "THURSDAY",
+            HoursOfOperationDays::Tuesday => "TUESDAY",
+            HoursOfOperationDays::Wednesday => "WEDNESDAY",
+            HoursOfOperationDays::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "FRIDAY",
+            "MONDAY",
+            "SATURDAY",
+            "SUNDAY",
+            "THURSDAY",
+            "TUESDAY",
+            "WEDNESDAY",
+        ]
+    }
+}
+impl AsRef<str> for HoursOfOperationDays {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Information about a problem detail.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1980,6 +2198,56 @@ impl ProblemDetail {
     /// Creates a new builder-style object to manufacture [`ProblemDetail`](crate::model::ProblemDetail)
     pub fn builder() -> crate::model::problem_detail::Builder {
         crate::model::problem_detail::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AgentStatusState {
+    Disabled,
+    Enabled,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AgentStatusState {
+    fn from(s: &str) -> Self {
+        match s {
+            "DISABLED" => AgentStatusState::Disabled,
+            "ENABLED" => AgentStatusState::Enabled,
+            other => AgentStatusState::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AgentStatusState {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AgentStatusState::from(s))
+    }
+}
+impl AgentStatusState {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AgentStatusState::Disabled => "DISABLED",
+            AgentStatusState::Enabled => "ENABLED",
+            AgentStatusState::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DISABLED", "ENABLED"]
+    }
+}
+impl AsRef<str> for AgentStatusState {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -5272,6 +5540,151 @@ impl AsRef<str> for LexVersion {
     }
 }
 
+/// <p>Summary information for an agent status.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AgentStatusSummary {
+    /// <p>The identifier for an agent status.</p>
+    pub id: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
+    pub arn: std::option::Option<std::string::String>,
+    /// <p>The name of the agent status.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The type of the agent status.</p>
+    pub r#type: std::option::Option<crate::model::AgentStatusType>,
+}
+impl std::fmt::Debug for AgentStatusSummary {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentStatusSummary");
+        formatter.field("id", &self.id);
+        formatter.field("arn", &self.arn);
+        formatter.field("name", &self.name);
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`AgentStatusSummary`](crate::model::AgentStatusSummary)
+pub mod agent_status_summary {
+    /// A builder for [`AgentStatusSummary`](crate::model::AgentStatusSummary)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) id: std::option::Option<std::string::String>,
+        pub(crate) arn: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AgentStatusType>,
+    }
+    impl Builder {
+        /// <p>The identifier for an agent status.</p>
+        pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.id = Some(input.into());
+            self
+        }
+        pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.id = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the agent status.</p>
+        pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.arn = Some(input.into());
+            self
+        }
+        pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.arn = input;
+            self
+        }
+        /// <p>The name of the agent status.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The type of the agent status.</p>
+        pub fn r#type(mut self, input: crate::model::AgentStatusType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatusType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AgentStatusSummary`](crate::model::AgentStatusSummary)
+        pub fn build(self) -> crate::model::AgentStatusSummary {
+            crate::model::AgentStatusSummary {
+                id: self.id,
+                arn: self.arn,
+                name: self.name,
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl AgentStatusSummary {
+    /// Creates a new builder-style object to manufacture [`AgentStatusSummary`](crate::model::AgentStatusSummary)
+    pub fn builder() -> crate::model::agent_status_summary::Builder {
+        crate::model::agent_status_summary::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum AgentStatusType {
+    Custom,
+    Offline,
+    Routable,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for AgentStatusType {
+    fn from(s: &str) -> Self {
+        match s {
+            "CUSTOM" => AgentStatusType::Custom,
+            "OFFLINE" => AgentStatusType::Offline,
+            "ROUTABLE" => AgentStatusType::Routable,
+            other => AgentStatusType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for AgentStatusType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(AgentStatusType::from(s))
+    }
+}
+impl AgentStatusType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            AgentStatusType::Custom => "CUSTOM",
+            AgentStatusType::Offline => "OFFLINE",
+            AgentStatusType::Routable => "ROUTABLE",
+            AgentStatusType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["CUSTOM", "OFFLINE", "ROUTABLE"]
+    }
+}
+impl AsRef<str> for AgentStatusType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Contains information about the historical metrics retrieved.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8023,224 +8436,6 @@ impl HoursOfOperation {
     }
 }
 
-/// <p>Contains information about the hours of operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HoursOfOperationConfig {
-    /// <p>The day that the hours of operation applies to.</p>
-    pub day: std::option::Option<crate::model::HoursOfOperationDays>,
-    /// <p>The start time that your contact center is open.</p>
-    pub start_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-    /// <p>The end time that your contact center is closes.</p>
-    pub end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-}
-impl std::fmt::Debug for HoursOfOperationConfig {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoursOfOperationConfig");
-        formatter.field("day", &self.day);
-        formatter.field("start_time", &self.start_time);
-        formatter.field("end_time", &self.end_time);
-        formatter.finish()
-    }
-}
-/// See [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
-pub mod hours_of_operation_config {
-    /// A builder for [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) day: std::option::Option<crate::model::HoursOfOperationDays>,
-        pub(crate) start_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-        pub(crate) end_time: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-    }
-    impl Builder {
-        /// <p>The day that the hours of operation applies to.</p>
-        pub fn day(mut self, input: crate::model::HoursOfOperationDays) -> Self {
-            self.day = Some(input);
-            self
-        }
-        pub fn set_day(
-            mut self,
-            input: std::option::Option<crate::model::HoursOfOperationDays>,
-        ) -> Self {
-            self.day = input;
-            self
-        }
-        /// <p>The start time that your contact center is open.</p>
-        pub fn start_time(mut self, input: crate::model::HoursOfOperationTimeSlice) -> Self {
-            self.start_time = Some(input);
-            self
-        }
-        pub fn set_start_time(
-            mut self,
-            input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-        ) -> Self {
-            self.start_time = input;
-            self
-        }
-        /// <p>The end time that your contact center is closes.</p>
-        pub fn end_time(mut self, input: crate::model::HoursOfOperationTimeSlice) -> Self {
-            self.end_time = Some(input);
-            self
-        }
-        pub fn set_end_time(
-            mut self,
-            input: std::option::Option<crate::model::HoursOfOperationTimeSlice>,
-        ) -> Self {
-            self.end_time = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
-        pub fn build(self) -> crate::model::HoursOfOperationConfig {
-            crate::model::HoursOfOperationConfig {
-                day: self.day,
-                start_time: self.start_time,
-                end_time: self.end_time,
-            }
-        }
-    }
-}
-impl HoursOfOperationConfig {
-    /// Creates a new builder-style object to manufacture [`HoursOfOperationConfig`](crate::model::HoursOfOperationConfig)
-    pub fn builder() -> crate::model::hours_of_operation_config::Builder {
-        crate::model::hours_of_operation_config::Builder::default()
-    }
-}
-
-/// <p>The start time or end time for an hours of operation.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct HoursOfOperationTimeSlice {
-    /// <p>The hours.</p>
-    pub hours: i32,
-    /// <p>The minutes.</p>
-    pub minutes: i32,
-}
-impl std::fmt::Debug for HoursOfOperationTimeSlice {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("HoursOfOperationTimeSlice");
-        formatter.field("hours", &self.hours);
-        formatter.field("minutes", &self.minutes);
-        formatter.finish()
-    }
-}
-/// See [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
-pub mod hours_of_operation_time_slice {
-    /// A builder for [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) hours: std::option::Option<i32>,
-        pub(crate) minutes: std::option::Option<i32>,
-    }
-    impl Builder {
-        /// <p>The hours.</p>
-        pub fn hours(mut self, input: i32) -> Self {
-            self.hours = Some(input);
-            self
-        }
-        pub fn set_hours(mut self, input: std::option::Option<i32>) -> Self {
-            self.hours = input;
-            self
-        }
-        /// <p>The minutes.</p>
-        pub fn minutes(mut self, input: i32) -> Self {
-            self.minutes = Some(input);
-            self
-        }
-        pub fn set_minutes(mut self, input: std::option::Option<i32>) -> Self {
-            self.minutes = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
-        pub fn build(self) -> crate::model::HoursOfOperationTimeSlice {
-            crate::model::HoursOfOperationTimeSlice {
-                hours: self.hours.unwrap_or_default(),
-                minutes: self.minutes.unwrap_or_default(),
-            }
-        }
-    }
-}
-impl HoursOfOperationTimeSlice {
-    /// Creates a new builder-style object to manufacture [`HoursOfOperationTimeSlice`](crate::model::HoursOfOperationTimeSlice)
-    pub fn builder() -> crate::model::hours_of_operation_time_slice::Builder {
-        crate::model::hours_of_operation_time_slice::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum HoursOfOperationDays {
-    Friday,
-    Monday,
-    Saturday,
-    Sunday,
-    Thursday,
-    Tuesday,
-    Wednesday,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for HoursOfOperationDays {
-    fn from(s: &str) -> Self {
-        match s {
-            "FRIDAY" => HoursOfOperationDays::Friday,
-            "MONDAY" => HoursOfOperationDays::Monday,
-            "SATURDAY" => HoursOfOperationDays::Saturday,
-            "SUNDAY" => HoursOfOperationDays::Sunday,
-            "THURSDAY" => HoursOfOperationDays::Thursday,
-            "TUESDAY" => HoursOfOperationDays::Tuesday,
-            "WEDNESDAY" => HoursOfOperationDays::Wednesday,
-            other => HoursOfOperationDays::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for HoursOfOperationDays {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HoursOfOperationDays::from(s))
-    }
-}
-impl HoursOfOperationDays {
-    pub fn as_str(&self) -> &str {
-        match self {
-            HoursOfOperationDays::Friday => "FRIDAY",
-            HoursOfOperationDays::Monday => "MONDAY",
-            HoursOfOperationDays::Saturday => "SATURDAY",
-            HoursOfOperationDays::Sunday => "SUNDAY",
-            HoursOfOperationDays::Thursday => "THURSDAY",
-            HoursOfOperationDays::Tuesday => "TUESDAY",
-            HoursOfOperationDays::Wednesday => "WEDNESDAY",
-            HoursOfOperationDays::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &[
-            "FRIDAY",
-            "MONDAY",
-            "SATURDAY",
-            "SUNDAY",
-            "THURSDAY",
-            "TUESDAY",
-            "WEDNESDAY",
-        ]
-    }
-}
-impl AsRef<str> for HoursOfOperationDays {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
 /// <p>Contains information about a contact flow.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -8387,5 +8582,175 @@ impl ContactFlow {
     /// Creates a new builder-style object to manufacture [`ContactFlow`](crate::model::ContactFlow)
     pub fn builder() -> crate::model::contact_flow::Builder {
         crate::model::contact_flow::Builder::default()
+    }
+}
+
+/// <p>Contains information about an agent status.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct AgentStatus {
+    /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+    pub agent_status_arn: std::option::Option<std::string::String>,
+    /// <p>The identifier of the agent status.</p>
+    pub agent_status_id: std::option::Option<std::string::String>,
+    /// <p>The name of the agent status.</p>
+    pub name: std::option::Option<std::string::String>,
+    /// <p>The description of the agent status.</p>
+    pub description: std::option::Option<std::string::String>,
+    /// <p>The type of agent status.</p>
+    pub r#type: std::option::Option<crate::model::AgentStatusType>,
+    /// <p>The display order of the agent status.</p>
+    pub display_order: std::option::Option<i32>,
+    /// <p>The state of the agent status.</p>
+    pub state: std::option::Option<crate::model::AgentStatusState>,
+    /// <p>One or more tags.</p>
+    pub tags:
+        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+}
+impl std::fmt::Debug for AgentStatus {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("AgentStatus");
+        formatter.field("agent_status_arn", &self.agent_status_arn);
+        formatter.field("agent_status_id", &self.agent_status_id);
+        formatter.field("name", &self.name);
+        formatter.field("description", &self.description);
+        formatter.field("r#type", &self.r#type);
+        formatter.field("display_order", &self.display_order);
+        formatter.field("state", &self.state);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`AgentStatus`](crate::model::AgentStatus)
+pub mod agent_status {
+    /// A builder for [`AgentStatus`](crate::model::AgentStatus)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) agent_status_arn: std::option::Option<std::string::String>,
+        pub(crate) agent_status_id: std::option::Option<std::string::String>,
+        pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) description: std::option::Option<std::string::String>,
+        pub(crate) r#type: std::option::Option<crate::model::AgentStatusType>,
+        pub(crate) display_order: std::option::Option<i32>,
+        pub(crate) state: std::option::Option<crate::model::AgentStatusState>,
+        pub(crate) tags: std::option::Option<
+            std::collections::HashMap<std::string::String, std::string::String>,
+        >,
+    }
+    impl Builder {
+        /// <p>The Amazon Resource Name (ARN) of the agent status.</p>
+        pub fn agent_status_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_status_arn = Some(input.into());
+            self
+        }
+        pub fn set_agent_status_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_status_arn = input;
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.agent_status_id = Some(input.into());
+            self
+        }
+        pub fn set_agent_status_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.agent_status_id = input;
+            self
+        }
+        /// <p>The name of the agent status.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.name = Some(input.into());
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.name = input;
+            self
+        }
+        /// <p>The description of the agent status.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.description = Some(input.into());
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.description = input;
+            self
+        }
+        /// <p>The type of agent status.</p>
+        pub fn r#type(mut self, input: crate::model::AgentStatusType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatusType>,
+        ) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// <p>The display order of the agent status.</p>
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.display_order = Some(input);
+            self
+        }
+        pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
+            self.display_order = input;
+            self
+        }
+        /// <p>The state of the agent status.</p>
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.state = Some(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatusState>,
+        ) -> Self {
+            self.state = input;
+            self
+        }
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            let mut hash_map = self.tags.unwrap_or_default();
+            hash_map.insert(k.into(), v.into());
+            self.tags = Some(hash_map);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`AgentStatus`](crate::model::AgentStatus)
+        pub fn build(self) -> crate::model::AgentStatus {
+            crate::model::AgentStatus {
+                agent_status_arn: self.agent_status_arn,
+                agent_status_id: self.agent_status_id,
+                name: self.name,
+                description: self.description,
+                r#type: self.r#type,
+                display_order: self.display_order,
+                state: self.state,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl AgentStatus {
+    /// Creates a new builder-style object to manufacture [`AgentStatus`](crate::model::AgentStatus)
+    pub fn builder() -> crate::model::agent_status::Builder {
+        crate::model::agent_status::Builder::default()
     }
 }

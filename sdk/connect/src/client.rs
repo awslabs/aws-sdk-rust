@@ -69,8 +69,14 @@ where
     pub fn associate_security_key(&self) -> fluent_builders::AssociateSecurityKey<C> {
         fluent_builders::AssociateSecurityKey::new(self.handle.clone())
     }
+    pub fn create_agent_status(&self) -> fluent_builders::CreateAgentStatus<C> {
+        fluent_builders::CreateAgentStatus::new(self.handle.clone())
+    }
     pub fn create_contact_flow(&self) -> fluent_builders::CreateContactFlow<C> {
         fluent_builders::CreateContactFlow::new(self.handle.clone())
+    }
+    pub fn create_hours_of_operation(&self) -> fluent_builders::CreateHoursOfOperation<C> {
+        fluent_builders::CreateHoursOfOperation::new(self.handle.clone())
     }
     pub fn create_instance(&self) -> fluent_builders::CreateInstance<C> {
         fluent_builders::CreateInstance::new(self.handle.clone())
@@ -98,6 +104,9 @@ where
     pub fn create_user_hierarchy_group(&self) -> fluent_builders::CreateUserHierarchyGroup<C> {
         fluent_builders::CreateUserHierarchyGroup::new(self.handle.clone())
     }
+    pub fn delete_hours_of_operation(&self) -> fluent_builders::DeleteHoursOfOperation<C> {
+        fluent_builders::DeleteHoursOfOperation::new(self.handle.clone())
+    }
     pub fn delete_instance(&self) -> fluent_builders::DeleteInstance<C> {
         fluent_builders::DeleteInstance::new(self.handle.clone())
     }
@@ -117,6 +126,9 @@ where
     }
     pub fn delete_user_hierarchy_group(&self) -> fluent_builders::DeleteUserHierarchyGroup<C> {
         fluent_builders::DeleteUserHierarchyGroup::new(self.handle.clone())
+    }
+    pub fn describe_agent_status(&self) -> fluent_builders::DescribeAgentStatus<C> {
+        fluent_builders::DescribeAgentStatus::new(self.handle.clone())
     }
     pub fn describe_contact_flow(&self) -> fluent_builders::DescribeContactFlow<C> {
         fluent_builders::DescribeContactFlow::new(self.handle.clone())
@@ -196,6 +208,9 @@ where
     }
     pub fn get_metric_data(&self) -> fluent_builders::GetMetricData<C> {
         fluent_builders::GetMetricData::new(self.handle.clone())
+    }
+    pub fn list_agent_statuses(&self) -> fluent_builders::ListAgentStatuses<C> {
+        fluent_builders::ListAgentStatuses::new(self.handle.clone())
     }
     pub fn list_approved_origins(&self) -> fluent_builders::ListApprovedOrigins<C> {
         fluent_builders::ListApprovedOrigins::new(self.handle.clone())
@@ -296,6 +311,9 @@ where
     pub fn untag_resource(&self) -> fluent_builders::UntagResource<C> {
         fluent_builders::UntagResource::new(self.handle.clone())
     }
+    pub fn update_agent_status(&self) -> fluent_builders::UpdateAgentStatus<C> {
+        fluent_builders::UpdateAgentStatus::new(self.handle.clone())
+    }
     pub fn update_contact_attributes(&self) -> fluent_builders::UpdateContactAttributes<C> {
         fluent_builders::UpdateContactAttributes::new(self.handle.clone())
     }
@@ -304,6 +322,9 @@ where
     }
     pub fn update_contact_flow_name(&self) -> fluent_builders::UpdateContactFlowName<C> {
         fluent_builders::UpdateContactFlowName::new(self.handle.clone())
+    }
+    pub fn update_hours_of_operation(&self) -> fluent_builders::UpdateHoursOfOperation<C> {
+        fluent_builders::UpdateHoursOfOperation::new(self.handle.clone())
     }
     pub fn update_instance_attribute(&self) -> fluent_builders::UpdateInstanceAttribute<C> {
         fluent_builders::UpdateInstanceAttribute::new(self.handle.clone())
@@ -840,6 +861,104 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct CreateAgentStatus<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_agent_status_input::Builder,
+    }
+    impl<C> CreateAgentStatus<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateAgentStatusOutput,
+            smithy_http::result::SdkError<crate::error::CreateAgentStatusError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The name of the status.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the status.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The state of the status.</p>
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.inner = self.inner.state(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatusState>,
+        ) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The display order of the status.</p>
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.inner = self.inner.display_order(input);
+            self
+        }
+        pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_display_order(input);
+            self
+        }
+        /// <p>One or more tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct CreateContactFlow<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::create_contact_flow_input::Builder,
@@ -917,6 +1036,104 @@ pub mod fluent_builders {
         }
         pub fn set_content(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_content(input);
+            self
+        }
+        /// <p>One or more tags.</p>
+        pub fn tags(
+            mut self,
+            k: impl Into<std::string::String>,
+            v: impl Into<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.tags(k, v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<
+                std::collections::HashMap<std::string::String, std::string::String>,
+            >,
+        ) -> Self {
+            self.inner = self.inner.set_tags(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct CreateHoursOfOperation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::create_hours_of_operation_input::Builder,
+    }
+    impl<C> CreateHoursOfOperation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::CreateHoursOfOperationOutput,
+            smithy_http::result::SdkError<crate::error::CreateHoursOfOperationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The name of the hours of operation.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the hours of operation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The time zone of the hours of operation.</p>
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input);
+            self
+        }
+        pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_time_zone(input);
+            self
+        }
+        /// <p>Configuration information for the hours of operation: day, start time, and end time.</p>
+        pub fn config(mut self, inp: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
+            self.inner = self.inner.config(inp);
+            self
+        }
+        pub fn set_config(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
+        ) -> Self {
+            self.inner = self.inner.set_config(input);
             self
         }
         /// <p>One or more tags.</p>
@@ -1787,6 +2004,59 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct DeleteHoursOfOperation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::delete_hours_of_operation_input::Builder,
+    }
+    impl<C> DeleteHoursOfOperation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DeleteHoursOfOperationOutput,
+            smithy_http::result::SdkError<crate::error::DeleteHoursOfOperationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier for the hours of operation.</p>
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input);
+            self
+        }
+        pub fn set_hours_of_operation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hours_of_operation_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct DeleteInstance<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::delete_instance_input::Builder,
@@ -2095,6 +2365,59 @@ pub mod fluent_builders {
         }
         pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_instance_id(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct DescribeAgentStatus<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::describe_agent_status_input::Builder,
+    }
+    impl<C> DescribeAgentStatus<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::DescribeAgentStatusOutput,
+            smithy_http::result::SdkError<crate::error::DescribeAgentStatusError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier for the agent status.</p>
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input);
+            self
+        }
+        pub fn set_agent_status_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_status_id(input);
             self
         }
     }
@@ -3683,6 +4006,78 @@ pub mod fluent_builders {
         }
         pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
             self.inner = self.inner.set_max_results(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct ListAgentStatuses<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::list_agent_statuses_input::Builder,
+    }
+    impl<C> ListAgentStatuses<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::ListAgentStatusesOutput,
+            smithy_http::result::SdkError<crate::error::ListAgentStatusesError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The token for the next set of results. Use the value returned in the previous
+        /// response in the next request to retrieve the next set of results.</p>
+        pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.next_token(input);
+            self
+        }
+        pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_next_token(input);
+            self
+        }
+        /// <p>The maximum number of results to return per page.</p>
+        pub fn max_results(mut self, input: i32) -> Self {
+            self.inner = self.inner.max_results(input);
+            self
+        }
+        pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_max_results(input);
+            self
+        }
+        /// <p>Available agent status types.</p>
+        pub fn agent_status_types(mut self, inp: impl Into<crate::model::AgentStatusType>) -> Self {
+            self.inner = self.inner.agent_status_types(inp);
+            self
+        }
+        pub fn set_agent_status_types(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::AgentStatusType>>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_status_types(input);
             self
         }
     }
@@ -5975,6 +6370,107 @@ pub mod fluent_builders {
         }
     }
     #[derive(std::fmt::Debug)]
+    pub struct UpdateAgentStatus<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_agent_status_input::Builder,
+    }
+    impl<C> UpdateAgentStatus<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateAgentStatusOutput,
+            smithy_http::result::SdkError<crate::error::UpdateAgentStatusError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the agent status.</p>
+        pub fn agent_status_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.agent_status_id(input);
+            self
+        }
+        pub fn set_agent_status_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_agent_status_id(input);
+            self
+        }
+        /// <p>The name of the agent status.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the agent status.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The state of the agent status.</p>
+        pub fn state(mut self, input: crate::model::AgentStatusState) -> Self {
+            self.inner = self.inner.state(input);
+            self
+        }
+        pub fn set_state(
+            mut self,
+            input: std::option::Option<crate::model::AgentStatusState>,
+        ) -> Self {
+            self.inner = self.inner.set_state(input);
+            self
+        }
+        /// <p>The display order of the agent status.</p>
+        pub fn display_order(mut self, input: i32) -> Self {
+            self.inner = self.inner.display_order(input);
+            self
+        }
+        pub fn set_display_order(mut self, input: std::option::Option<i32>) -> Self {
+            self.inner = self.inner.set_display_order(input);
+            self
+        }
+        /// <p>A number indicating the reset order of the agent status.</p>
+        pub fn reset_order_number(mut self, input: bool) -> Self {
+            self.inner = self.inner.reset_order_number(input);
+            self
+        }
+        pub fn set_reset_order_number(mut self, input: std::option::Option<bool>) -> Self {
+            self.inner = self.inner.set_reset_order_number(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
     pub struct UpdateContactAttributes<C = aws_hyper::DynConnector> {
         handle: std::sync::Arc<super::Handle<C>>,
         inner: crate::input::update_contact_attributes_input::Builder,
@@ -6181,6 +6677,98 @@ pub mod fluent_builders {
         }
         pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
             self.inner = self.inner.set_description(input);
+            self
+        }
+    }
+    #[derive(std::fmt::Debug)]
+    pub struct UpdateHoursOfOperation<C = aws_hyper::DynConnector> {
+        handle: std::sync::Arc<super::Handle<C>>,
+        inner: crate::input::update_hours_of_operation_input::Builder,
+    }
+    impl<C> UpdateHoursOfOperation<C> {
+        pub(crate) fn new(handle: std::sync::Arc<super::Handle<C>>) -> Self {
+            Self {
+                handle,
+                inner: Default::default(),
+            }
+        }
+
+        pub async fn send(
+            self,
+        ) -> std::result::Result<
+            crate::output::UpdateHoursOfOperationOutput,
+            smithy_http::result::SdkError<crate::error::UpdateHoursOfOperationError>,
+        >
+        where
+            C: aws_hyper::SmithyConnector,
+        {
+            let input = self
+                .inner
+                .build()
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            let op = input
+                .make_operation(&self.handle.conf)
+                .map_err(|err| smithy_http::result::SdkError::ConstructionFailure(err.into()))?;
+            self.handle.client.call(op).await
+        }
+        /// <p>The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.</p>
+        pub fn instance_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.instance_id(input);
+            self
+        }
+        pub fn set_instance_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_instance_id(input);
+            self
+        }
+        /// <p>The identifier of the hours of operation.</p>
+        pub fn hours_of_operation_id(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.hours_of_operation_id(input);
+            self
+        }
+        pub fn set_hours_of_operation_id(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.inner = self.inner.set_hours_of_operation_id(input);
+            self
+        }
+        /// <p>The name of the hours of operation.</p>
+        pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.name(input);
+            self
+        }
+        pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_name(input);
+            self
+        }
+        /// <p>The description of the hours of operation.</p>
+        pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.description(input);
+            self
+        }
+        pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_description(input);
+            self
+        }
+        /// <p>The time zone of the hours of operation.</p>
+        pub fn time_zone(mut self, input: impl Into<std::string::String>) -> Self {
+            self.inner = self.inner.time_zone(input);
+            self
+        }
+        pub fn set_time_zone(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.inner = self.inner.set_time_zone(input);
+            self
+        }
+        /// <p>Configuration information of the hours of operation.</p>
+        pub fn config(mut self, inp: impl Into<crate::model::HoursOfOperationConfig>) -> Self {
+            self.inner = self.inner.config(inp);
+            self
+        }
+        pub fn set_config(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::HoursOfOperationConfig>>,
+        ) -> Self {
+            self.inner = self.inner.set_config(input);
             self
         }
     }

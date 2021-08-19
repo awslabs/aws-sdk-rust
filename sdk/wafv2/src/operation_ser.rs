@@ -172,6 +172,16 @@ pub fn serialize_operation_get_logging_configuration(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_get_managed_rule_set(
+    input: &crate::input::GetManagedRuleSetInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_get_managed_rule_set_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_get_permission_policy(
     input: &crate::input::GetPermissionPolicyInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -258,6 +268,19 @@ pub fn serialize_operation_list_available_managed_rule_groups(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_list_available_managed_rule_group_versions(
+    input: &crate::input::ListAvailableManagedRuleGroupVersionsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_list_available_managed_rule_group_versions_input(
+        &mut object,
+        input,
+    );
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_list_ip_sets(
     input: &crate::input::ListIpSetsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -274,6 +297,16 @@ pub fn serialize_operation_list_logging_configurations(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_list_logging_configurations_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_list_managed_rule_sets(
+    input: &crate::input::ListManagedRuleSetsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_list_managed_rule_sets_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
@@ -338,6 +371,16 @@ pub fn serialize_operation_put_logging_configuration(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_put_managed_rule_set_versions(
+    input: &crate::input::PutManagedRuleSetVersionsInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_put_managed_rule_set_versions_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_put_permission_policy(
     input: &crate::input::PutPermissionPolicyInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -374,6 +417,19 @@ pub fn serialize_operation_update_ip_set(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_update_ip_set_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_managed_rule_set_version_expiry_date(
+    input: &crate::input::UpdateManagedRuleSetVersionExpiryDateInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_managed_rule_set_version_expiry_date_input(
+        &mut object,
+        input,
+    );
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }
