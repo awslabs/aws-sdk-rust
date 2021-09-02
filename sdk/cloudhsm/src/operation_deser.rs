@@ -4,7 +4,7 @@ pub fn parse_add_tags_to_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -102,7 +102,7 @@ pub fn parse_add_tags_to_resource_response(
 pub fn parse_create_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHapgOutput, crate::error::CreateHapgError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHapgError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -196,7 +196,7 @@ pub fn parse_create_hapg_response(
 pub fn parse_create_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHsmOutput, crate::error::CreateHsmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHsmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -291,7 +291,7 @@ pub fn parse_create_luna_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLunaClientOutput, crate::error::CreateLunaClientError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLunaClientError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -387,7 +387,7 @@ pub fn parse_create_luna_client_response(
 pub fn parse_delete_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHapgOutput, crate::error::DeleteHapgError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteHapgError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -481,7 +481,7 @@ pub fn parse_delete_hapg_response(
 pub fn parse_delete_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHsmOutput, crate::error::DeleteHsmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteHsmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -576,7 +576,7 @@ pub fn parse_delete_luna_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLunaClientOutput, crate::error::DeleteLunaClientError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLunaClientError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -672,7 +672,7 @@ pub fn parse_delete_luna_client_response(
 pub fn parse_describe_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHapgOutput, crate::error::DescribeHapgError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHapgError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -766,7 +766,7 @@ pub fn parse_describe_hapg_response(
 pub fn parse_describe_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHsmOutput, crate::error::DescribeHsmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHsmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -863,7 +863,7 @@ pub fn parse_describe_luna_client_error(
     crate::output::DescribeLunaClientOutput,
     crate::error::DescribeLunaClientError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLunaClientError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -963,7 +963,7 @@ pub fn parse_describe_luna_client_response(
 pub fn parse_get_config_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetConfigOutput, crate::error::GetConfigError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1060,7 +1060,7 @@ pub fn parse_list_available_zones_error(
     crate::output::ListAvailableZonesOutput,
     crate::error::ListAvailableZonesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAvailableZonesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1160,7 +1160,7 @@ pub fn parse_list_available_zones_response(
 pub fn parse_list_hapgs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHapgsOutput, crate::error::ListHapgsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListHapgsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1254,7 +1254,7 @@ pub fn parse_list_hapgs_response(
 pub fn parse_list_hsms_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHsmsOutput, crate::error::ListHsmsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListHsmsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1348,7 +1348,7 @@ pub fn parse_list_hsms_response(
 pub fn parse_list_luna_clients_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLunaClientsOutput, crate::error::ListLunaClientsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLunaClientsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1446,7 +1446,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1546,7 +1546,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_modify_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyHapgOutput, crate::error::ModifyHapgError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyHapgError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1640,7 +1640,7 @@ pub fn parse_modify_hapg_response(
 pub fn parse_modify_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyHsmOutput, crate::error::ModifyHsmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyHsmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1735,7 +1735,7 @@ pub fn parse_modify_luna_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyLunaClientOutput, crate::error::ModifyLunaClientError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyLunaClientError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1793,7 +1793,7 @@ pub fn parse_remove_tags_from_resource_error(
     crate::output::RemoveTagsFromResourceOutput,
     crate::error::RemoveTagsFromResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

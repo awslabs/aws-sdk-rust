@@ -3,7 +3,7 @@
 pub fn parse_delete_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSessionOutput, crate::error::DeleteSessionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSessionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -144,7 +144,7 @@ pub fn parse_delete_session_response(
 pub fn parse_get_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSessionOutput, crate::error::GetSessionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSessionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -439,7 +439,7 @@ pub fn parse_post_content(
 pub fn parse_post_content_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PostContentOutput, crate::error::PostContentError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PostContentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -689,7 +689,7 @@ pub fn parse_post_content_error(
 pub fn parse_post_text_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PostTextOutput, crate::error::PostTextError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PostTextError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1021,7 +1021,7 @@ pub fn parse_put_session(
 pub fn parse_put_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutSessionOutput, crate::error::PutSessionError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutSessionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -6,7 +6,7 @@ pub fn parse_accept_reserved_instances_exchange_quote_error(
     crate::output::AcceptReservedInstancesExchangeQuoteOutput,
     crate::error::AcceptReservedInstancesExchangeQuoteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptReservedInstancesExchangeQuoteError::unhandled)?;
     Err(crate::error::AcceptReservedInstancesExchangeQuoteError::generic(generic))
 }
@@ -39,7 +39,7 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_error(
     crate::output::AcceptTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::AcceptTransitGatewayMulticastDomainAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::unhandled)?;
     Err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::generic(generic))
 }
@@ -73,7 +73,7 @@ pub fn parse_accept_transit_gateway_peering_attachment_error(
     crate::output::AcceptTransitGatewayPeeringAttachmentOutput,
     crate::error::AcceptTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptTransitGatewayPeeringAttachmentError::unhandled)?;
     Err(crate::error::AcceptTransitGatewayPeeringAttachmentError::generic(generic))
 }
@@ -106,7 +106,7 @@ pub fn parse_accept_transit_gateway_vpc_attachment_error(
     crate::output::AcceptTransitGatewayVpcAttachmentOutput,
     crate::error::AcceptTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptTransitGatewayVpcAttachmentError::unhandled)?;
     Err(crate::error::AcceptTransitGatewayVpcAttachmentError::generic(generic))
 }
@@ -139,7 +139,7 @@ pub fn parse_accept_vpc_endpoint_connections_error(
     crate::output::AcceptVpcEndpointConnectionsOutput,
     crate::error::AcceptVpcEndpointConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptVpcEndpointConnectionsError::unhandled)?;
     Err(crate::error::AcceptVpcEndpointConnectionsError::generic(
         generic,
@@ -173,7 +173,7 @@ pub fn parse_accept_vpc_peering_connection_error(
     crate::output::AcceptVpcPeeringConnectionOutput,
     crate::error::AcceptVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptVpcPeeringConnectionError::unhandled)?;
     Err(crate::error::AcceptVpcPeeringConnectionError::generic(
         generic,
@@ -207,7 +207,7 @@ pub fn parse_advertise_byoip_cidr_error(
     crate::output::AdvertiseByoipCidrOutput,
     crate::error::AdvertiseByoipCidrError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
     Err(crate::error::AdvertiseByoipCidrError::generic(generic))
 }
@@ -236,7 +236,7 @@ pub fn parse_advertise_byoip_cidr_response(
 pub fn parse_allocate_address_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AllocateAddressError::unhandled)?;
     Err(crate::error::AllocateAddressError::generic(generic))
 }
@@ -260,7 +260,7 @@ pub fn parse_allocate_address_response(
 pub fn parse_allocate_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AllocateHostsError::unhandled)?;
     Err(crate::error::AllocateHostsError::generic(generic))
 }
@@ -286,7 +286,7 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_error(
     crate::output::ApplySecurityGroupsToClientVpnTargetNetworkOutput,
     crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::unhandled)?;
     Err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::generic(generic))
 }
@@ -318,7 +318,7 @@ pub fn parse_assign_ipv6_addresses_error(
     crate::output::AssignIpv6AddressesOutput,
     crate::error::AssignIpv6AddressesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssignIpv6AddressesError::unhandled)?;
     Err(crate::error::AssignIpv6AddressesError::generic(generic))
 }
@@ -350,7 +350,7 @@ pub fn parse_assign_private_ip_addresses_error(
     crate::output::AssignPrivateIpAddressesOutput,
     crate::error::AssignPrivateIpAddressesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssignPrivateIpAddressesError::unhandled)?;
     Err(crate::error::AssignPrivateIpAddressesError::generic(
         generic,
@@ -382,7 +382,7 @@ pub fn parse_associate_address_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateAddressError::unhandled)?;
     Err(crate::error::AssociateAddressError::generic(generic))
 }
@@ -410,7 +410,7 @@ pub fn parse_associate_client_vpn_target_network_error(
     crate::output::AssociateClientVpnTargetNetworkOutput,
     crate::error::AssociateClientVpnTargetNetworkError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateClientVpnTargetNetworkError::unhandled)?;
     Err(crate::error::AssociateClientVpnTargetNetworkError::generic(
         generic,
@@ -445,7 +445,7 @@ pub fn parse_associate_dhcp_options_error(
     crate::output::AssociateDhcpOptionsOutput,
     crate::error::AssociateDhcpOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateDhcpOptionsError::unhandled)?;
     Err(crate::error::AssociateDhcpOptionsError::generic(generic))
 }
@@ -472,7 +472,7 @@ pub fn parse_associate_enclave_certificate_iam_role_error(
     crate::output::AssociateEnclaveCertificateIamRoleOutput,
     crate::error::AssociateEnclaveCertificateIamRoleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateEnclaveCertificateIamRoleError::unhandled)?;
     Err(crate::error::AssociateEnclaveCertificateIamRoleError::generic(generic))
 }
@@ -505,7 +505,7 @@ pub fn parse_associate_iam_instance_profile_error(
     crate::output::AssociateIamInstanceProfileOutput,
     crate::error::AssociateIamInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateIamInstanceProfileError::unhandled)?;
     Err(crate::error::AssociateIamInstanceProfileError::generic(
         generic,
@@ -539,7 +539,7 @@ pub fn parse_associate_instance_event_window_error(
     crate::output::AssociateInstanceEventWindowOutput,
     crate::error::AssociateInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateInstanceEventWindowError::unhandled)?;
     Err(crate::error::AssociateInstanceEventWindowError::generic(
         generic,
@@ -573,7 +573,7 @@ pub fn parse_associate_route_table_error(
     crate::output::AssociateRouteTableOutput,
     crate::error::AssociateRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateRouteTableError::unhandled)?;
     Err(crate::error::AssociateRouteTableError::generic(generic))
 }
@@ -605,7 +605,7 @@ pub fn parse_associate_subnet_cidr_block_error(
     crate::output::AssociateSubnetCidrBlockOutput,
     crate::error::AssociateSubnetCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateSubnetCidrBlockError::unhandled)?;
     Err(crate::error::AssociateSubnetCidrBlockError::generic(
         generic,
@@ -639,7 +639,7 @@ pub fn parse_associate_transit_gateway_multicast_domain_error(
     crate::output::AssociateTransitGatewayMulticastDomainOutput,
     crate::error::AssociateTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateTransitGatewayMulticastDomainError::unhandled)?;
     Err(crate::error::AssociateTransitGatewayMulticastDomainError::generic(generic))
 }
@@ -672,7 +672,7 @@ pub fn parse_associate_transit_gateway_route_table_error(
     crate::output::AssociateTransitGatewayRouteTableOutput,
     crate::error::AssociateTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateTransitGatewayRouteTableError::unhandled)?;
     Err(crate::error::AssociateTransitGatewayRouteTableError::generic(generic))
 }
@@ -705,7 +705,7 @@ pub fn parse_associate_trunk_interface_error(
     crate::output::AssociateTrunkInterfaceOutput,
     crate::error::AssociateTrunkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateTrunkInterfaceError::unhandled)?;
     Err(crate::error::AssociateTrunkInterfaceError::generic(generic))
 }
@@ -737,7 +737,7 @@ pub fn parse_associate_vpc_cidr_block_error(
     crate::output::AssociateVpcCidrBlockOutput,
     crate::error::AssociateVpcCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateVpcCidrBlockError::unhandled)?;
     Err(crate::error::AssociateVpcCidrBlockError::generic(generic))
 }
@@ -769,7 +769,7 @@ pub fn parse_attach_classic_link_vpc_error(
     crate::output::AttachClassicLinkVpcOutput,
     crate::error::AttachClassicLinkVpcError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachClassicLinkVpcError::unhandled)?;
     Err(crate::error::AttachClassicLinkVpcError::generic(generic))
 }
@@ -801,7 +801,7 @@ pub fn parse_attach_internet_gateway_error(
     crate::output::AttachInternetGatewayOutput,
     crate::error::AttachInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachInternetGatewayError::unhandled)?;
     Err(crate::error::AttachInternetGatewayError::generic(generic))
 }
@@ -828,7 +828,7 @@ pub fn parse_attach_network_interface_error(
     crate::output::AttachNetworkInterfaceOutput,
     crate::error::AttachNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachNetworkInterfaceError::unhandled)?;
     Err(crate::error::AttachNetworkInterfaceError::generic(generic))
 }
@@ -857,7 +857,7 @@ pub fn parse_attach_network_interface_response(
 pub fn parse_attach_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachVolumeError::unhandled)?;
     Err(crate::error::AttachVolumeError::generic(generic))
 }
@@ -881,7 +881,7 @@ pub fn parse_attach_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachVpnGatewayError::unhandled)?;
     Err(crate::error::AttachVpnGatewayError::generic(generic))
 }
@@ -909,7 +909,7 @@ pub fn parse_authorize_client_vpn_ingress_error(
     crate::output::AuthorizeClientVpnIngressOutput,
     crate::error::AuthorizeClientVpnIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeClientVpnIngressError::unhandled)?;
     Err(crate::error::AuthorizeClientVpnIngressError::generic(
         generic,
@@ -943,7 +943,7 @@ pub fn parse_authorize_security_group_egress_error(
     crate::output::AuthorizeSecurityGroupEgressOutput,
     crate::error::AuthorizeSecurityGroupEgressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeSecurityGroupEgressError::unhandled)?;
     Err(crate::error::AuthorizeSecurityGroupEgressError::generic(
         generic,
@@ -977,7 +977,7 @@ pub fn parse_authorize_security_group_ingress_error(
     crate::output::AuthorizeSecurityGroupIngressOutput,
     crate::error::AuthorizeSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeSecurityGroupIngressError::unhandled)?;
     Err(crate::error::AuthorizeSecurityGroupIngressError::generic(
         generic,
@@ -1008,7 +1008,7 @@ pub fn parse_authorize_security_group_ingress_response(
 pub fn parse_bundle_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::BundleInstanceError::unhandled)?;
     Err(crate::error::BundleInstanceError::generic(generic))
 }
@@ -1033,7 +1033,7 @@ pub fn parse_cancel_bundle_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelBundleTaskError::unhandled)?;
     Err(crate::error::CancelBundleTaskError::generic(generic))
 }
@@ -1061,7 +1061,7 @@ pub fn parse_cancel_capacity_reservation_error(
     crate::output::CancelCapacityReservationOutput,
     crate::error::CancelCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelCapacityReservationError::unhandled)?;
     Err(crate::error::CancelCapacityReservationError::generic(
         generic,
@@ -1095,7 +1095,7 @@ pub fn parse_cancel_conversion_task_error(
     crate::output::CancelConversionTaskOutput,
     crate::error::CancelConversionTaskError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelConversionTaskError::unhandled)?;
     Err(crate::error::CancelConversionTaskError::generic(generic))
 }
@@ -1120,7 +1120,7 @@ pub fn parse_cancel_export_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelExportTaskError::unhandled)?;
     Err(crate::error::CancelExportTaskError::generic(generic))
 }
@@ -1143,7 +1143,7 @@ pub fn parse_cancel_import_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelImportTaskError::unhandled)?;
     Err(crate::error::CancelImportTaskError::generic(generic))
 }
@@ -1171,7 +1171,7 @@ pub fn parse_cancel_reserved_instances_listing_error(
     crate::output::CancelReservedInstancesListingOutput,
     crate::error::CancelReservedInstancesListingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
     Err(crate::error::CancelReservedInstancesListingError::generic(
         generic,
@@ -1206,7 +1206,7 @@ pub fn parse_cancel_spot_fleet_requests_error(
     crate::output::CancelSpotFleetRequestsOutput,
     crate::error::CancelSpotFleetRequestsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelSpotFleetRequestsError::unhandled)?;
     Err(crate::error::CancelSpotFleetRequestsError::generic(generic))
 }
@@ -1238,7 +1238,7 @@ pub fn parse_cancel_spot_instance_requests_error(
     crate::output::CancelSpotInstanceRequestsOutput,
     crate::error::CancelSpotInstanceRequestsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelSpotInstanceRequestsError::unhandled)?;
     Err(crate::error::CancelSpotInstanceRequestsError::generic(
         generic,
@@ -1272,7 +1272,7 @@ pub fn parse_confirm_product_instance_error(
     crate::output::ConfirmProductInstanceOutput,
     crate::error::ConfirmProductInstanceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ConfirmProductInstanceError::unhandled)?;
     Err(crate::error::ConfirmProductInstanceError::generic(generic))
 }
@@ -1301,7 +1301,7 @@ pub fn parse_confirm_product_instance_response(
 pub fn parse_copy_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyFpgaImageError::unhandled)?;
     Err(crate::error::CopyFpgaImageError::generic(generic))
 }
@@ -1325,7 +1325,7 @@ pub fn parse_copy_fpga_image_response(
 pub fn parse_copy_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyImageOutput, crate::error::CopyImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyImageError::unhandled)?;
     Err(crate::error::CopyImageError::generic(generic))
 }
@@ -1348,7 +1348,7 @@ pub fn parse_copy_image_response(
 pub fn parse_copy_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopySnapshotError::unhandled)?;
     Err(crate::error::CopySnapshotError::generic(generic))
 }
@@ -1374,7 +1374,7 @@ pub fn parse_create_capacity_reservation_error(
     crate::output::CreateCapacityReservationOutput,
     crate::error::CreateCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCapacityReservationError::unhandled)?;
     Err(crate::error::CreateCapacityReservationError::generic(
         generic,
@@ -1408,7 +1408,7 @@ pub fn parse_create_carrier_gateway_error(
     crate::output::CreateCarrierGatewayOutput,
     crate::error::CreateCarrierGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCarrierGatewayError::unhandled)?;
     Err(crate::error::CreateCarrierGatewayError::generic(generic))
 }
@@ -1440,7 +1440,7 @@ pub fn parse_create_client_vpn_endpoint_error(
     crate::output::CreateClientVpnEndpointOutput,
     crate::error::CreateClientVpnEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClientVpnEndpointError::unhandled)?;
     Err(crate::error::CreateClientVpnEndpointError::generic(generic))
 }
@@ -1472,7 +1472,7 @@ pub fn parse_create_client_vpn_route_error(
     crate::output::CreateClientVpnRouteOutput,
     crate::error::CreateClientVpnRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClientVpnRouteError::unhandled)?;
     Err(crate::error::CreateClientVpnRouteError::generic(generic))
 }
@@ -1504,7 +1504,7 @@ pub fn parse_create_customer_gateway_error(
     crate::output::CreateCustomerGatewayOutput,
     crate::error::CreateCustomerGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCustomerGatewayError::unhandled)?;
     Err(crate::error::CreateCustomerGatewayError::generic(generic))
 }
@@ -1536,7 +1536,7 @@ pub fn parse_create_default_subnet_error(
     crate::output::CreateDefaultSubnetOutput,
     crate::error::CreateDefaultSubnetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDefaultSubnetError::unhandled)?;
     Err(crate::error::CreateDefaultSubnetError::generic(generic))
 }
@@ -1566,7 +1566,7 @@ pub fn parse_create_default_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDefaultVpcError::unhandled)?;
     Err(crate::error::CreateDefaultVpcError::generic(generic))
 }
@@ -1592,7 +1592,7 @@ pub fn parse_create_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDhcpOptionsError::unhandled)?;
     Err(crate::error::CreateDhcpOptionsError::generic(generic))
 }
@@ -1620,7 +1620,7 @@ pub fn parse_create_egress_only_internet_gateway_error(
     crate::output::CreateEgressOnlyInternetGatewayOutput,
     crate::error::CreateEgressOnlyInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEgressOnlyInternetGatewayError::unhandled)?;
     Err(crate::error::CreateEgressOnlyInternetGatewayError::generic(
         generic,
@@ -1652,7 +1652,7 @@ pub fn parse_create_egress_only_internet_gateway_response(
 pub fn parse_create_fleet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFleetError::unhandled)?;
     Err(crate::error::CreateFleetError::generic(generic))
 }
@@ -1675,7 +1675,7 @@ pub fn parse_create_fleet_response(
 pub fn parse_create_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFlowLogsError::unhandled)?;
     Err(crate::error::CreateFlowLogsError::generic(generic))
 }
@@ -1699,7 +1699,7 @@ pub fn parse_create_flow_logs_response(
 pub fn parse_create_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFpgaImageError::unhandled)?;
     Err(crate::error::CreateFpgaImageError::generic(generic))
 }
@@ -1723,7 +1723,7 @@ pub fn parse_create_fpga_image_response(
 pub fn parse_create_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateImageError::unhandled)?;
     Err(crate::error::CreateImageError::generic(generic))
 }
@@ -1749,7 +1749,7 @@ pub fn parse_create_instance_event_window_error(
     crate::output::CreateInstanceEventWindowOutput,
     crate::error::CreateInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateInstanceEventWindowError::unhandled)?;
     Err(crate::error::CreateInstanceEventWindowError::generic(
         generic,
@@ -1783,7 +1783,7 @@ pub fn parse_create_instance_export_task_error(
     crate::output::CreateInstanceExportTaskOutput,
     crate::error::CreateInstanceExportTaskError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateInstanceExportTaskError::unhandled)?;
     Err(crate::error::CreateInstanceExportTaskError::generic(
         generic,
@@ -1817,7 +1817,7 @@ pub fn parse_create_internet_gateway_error(
     crate::output::CreateInternetGatewayOutput,
     crate::error::CreateInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateInternetGatewayError::unhandled)?;
     Err(crate::error::CreateInternetGatewayError::generic(generic))
 }
@@ -1846,7 +1846,7 @@ pub fn parse_create_internet_gateway_response(
 pub fn parse_create_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateKeyPairError::unhandled)?;
     Err(crate::error::CreateKeyPairError::generic(generic))
 }
@@ -1873,7 +1873,7 @@ pub fn parse_create_launch_template_error(
     crate::output::CreateLaunchTemplateOutput,
     crate::error::CreateLaunchTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLaunchTemplateError::unhandled)?;
     Err(crate::error::CreateLaunchTemplateError::generic(generic))
 }
@@ -1905,7 +1905,7 @@ pub fn parse_create_launch_template_version_error(
     crate::output::CreateLaunchTemplateVersionOutput,
     crate::error::CreateLaunchTemplateVersionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLaunchTemplateVersionError::unhandled)?;
     Err(crate::error::CreateLaunchTemplateVersionError::generic(
         generic,
@@ -1939,7 +1939,7 @@ pub fn parse_create_local_gateway_route_error(
     crate::output::CreateLocalGatewayRouteOutput,
     crate::error::CreateLocalGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLocalGatewayRouteError::unhandled)?;
     Err(crate::error::CreateLocalGatewayRouteError::generic(generic))
 }
@@ -1971,7 +1971,7 @@ pub fn parse_create_local_gateway_route_table_vpc_association_error(
     crate::output::CreateLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::CreateLocalGatewayRouteTableVpcAssociationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::unhandled)?;
     Err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::generic(generic))
 }
@@ -2003,7 +2003,7 @@ pub fn parse_create_managed_prefix_list_error(
     crate::output::CreateManagedPrefixListOutput,
     crate::error::CreateManagedPrefixListError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateManagedPrefixListError::unhandled)?;
     Err(crate::error::CreateManagedPrefixListError::generic(generic))
 }
@@ -2033,7 +2033,7 @@ pub fn parse_create_nat_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateNatGatewayError::unhandled)?;
     Err(crate::error::CreateNatGatewayError::generic(generic))
 }
@@ -2059,7 +2059,7 @@ pub fn parse_create_network_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateNetworkAclError::unhandled)?;
     Err(crate::error::CreateNetworkAclError::generic(generic))
 }
@@ -2087,7 +2087,7 @@ pub fn parse_create_network_acl_entry_error(
     crate::output::CreateNetworkAclEntryOutput,
     crate::error::CreateNetworkAclEntryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateNetworkAclEntryError::unhandled)?;
     Err(crate::error::CreateNetworkAclEntryError::generic(generic))
 }
@@ -2114,7 +2114,7 @@ pub fn parse_create_network_insights_path_error(
     crate::output::CreateNetworkInsightsPathOutput,
     crate::error::CreateNetworkInsightsPathError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateNetworkInsightsPathError::unhandled)?;
     Err(crate::error::CreateNetworkInsightsPathError::generic(
         generic,
@@ -2148,7 +2148,7 @@ pub fn parse_create_network_interface_error(
     crate::output::CreateNetworkInterfaceOutput,
     crate::error::CreateNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateNetworkInterfaceError::unhandled)?;
     Err(crate::error::CreateNetworkInterfaceError::generic(generic))
 }
@@ -2180,7 +2180,7 @@ pub fn parse_create_network_interface_permission_error(
     crate::output::CreateNetworkInterfacePermissionOutput,
     crate::error::CreateNetworkInterfacePermissionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateNetworkInterfacePermissionError::unhandled)?;
     Err(crate::error::CreateNetworkInterfacePermissionError::generic(generic))
 }
@@ -2213,7 +2213,7 @@ pub fn parse_create_placement_group_error(
     crate::output::CreatePlacementGroupOutput,
     crate::error::CreatePlacementGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePlacementGroupError::unhandled)?;
     Err(crate::error::CreatePlacementGroupError::generic(generic))
 }
@@ -2245,7 +2245,7 @@ pub fn parse_create_replace_root_volume_task_error(
     crate::output::CreateReplaceRootVolumeTaskOutput,
     crate::error::CreateReplaceRootVolumeTaskError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateReplaceRootVolumeTaskError::unhandled)?;
     Err(crate::error::CreateReplaceRootVolumeTaskError::generic(
         generic,
@@ -2279,7 +2279,7 @@ pub fn parse_create_reserved_instances_listing_error(
     crate::output::CreateReservedInstancesListingOutput,
     crate::error::CreateReservedInstancesListingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
     Err(crate::error::CreateReservedInstancesListingError::generic(
         generic,
@@ -2314,7 +2314,7 @@ pub fn parse_create_restore_image_task_error(
     crate::output::CreateRestoreImageTaskOutput,
     crate::error::CreateRestoreImageTaskError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRestoreImageTaskError::unhandled)?;
     Err(crate::error::CreateRestoreImageTaskError::generic(generic))
 }
@@ -2343,7 +2343,7 @@ pub fn parse_create_restore_image_task_response(
 pub fn parse_create_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRouteError::unhandled)?;
     Err(crate::error::CreateRouteError::generic(generic))
 }
@@ -2367,7 +2367,7 @@ pub fn parse_create_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRouteTableError::unhandled)?;
     Err(crate::error::CreateRouteTableError::generic(generic))
 }
@@ -2395,7 +2395,7 @@ pub fn parse_create_security_group_error(
     crate::output::CreateSecurityGroupOutput,
     crate::error::CreateSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSecurityGroupError::unhandled)?;
     Err(crate::error::CreateSecurityGroupError::generic(generic))
 }
@@ -2424,7 +2424,7 @@ pub fn parse_create_security_group_response(
 pub fn parse_create_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSnapshotError::unhandled)?;
     Err(crate::error::CreateSnapshotError::generic(generic))
 }
@@ -2448,7 +2448,7 @@ pub fn parse_create_snapshot_response(
 pub fn parse_create_snapshots_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSnapshotsError::unhandled)?;
     Err(crate::error::CreateSnapshotsError::generic(generic))
 }
@@ -2475,7 +2475,7 @@ pub fn parse_create_spot_datafeed_subscription_error(
     crate::output::CreateSpotDatafeedSubscriptionOutput,
     crate::error::CreateSpotDatafeedSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSpotDatafeedSubscriptionError::unhandled)?;
     Err(crate::error::CreateSpotDatafeedSubscriptionError::generic(
         generic,
@@ -2510,7 +2510,7 @@ pub fn parse_create_store_image_task_error(
     crate::output::CreateStoreImageTaskOutput,
     crate::error::CreateStoreImageTaskError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateStoreImageTaskError::unhandled)?;
     Err(crate::error::CreateStoreImageTaskError::generic(generic))
 }
@@ -2539,7 +2539,7 @@ pub fn parse_create_store_image_task_response(
 pub fn parse_create_subnet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSubnetError::unhandled)?;
     Err(crate::error::CreateSubnetError::generic(generic))
 }
@@ -2565,7 +2565,7 @@ pub fn parse_create_subnet_cidr_reservation_error(
     crate::output::CreateSubnetCidrReservationOutput,
     crate::error::CreateSubnetCidrReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
     Err(crate::error::CreateSubnetCidrReservationError::generic(
         generic,
@@ -2596,7 +2596,7 @@ pub fn parse_create_subnet_cidr_reservation_response(
 pub fn parse_create_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTagsError::unhandled)?;
     Err(crate::error::CreateTagsError::generic(generic))
 }
@@ -2620,7 +2620,7 @@ pub fn parse_create_traffic_mirror_filter_error(
     crate::output::CreateTrafficMirrorFilterOutput,
     crate::error::CreateTrafficMirrorFilterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTrafficMirrorFilterError::unhandled)?;
     Err(crate::error::CreateTrafficMirrorFilterError::generic(
         generic,
@@ -2654,7 +2654,7 @@ pub fn parse_create_traffic_mirror_filter_rule_error(
     crate::output::CreateTrafficMirrorFilterRuleOutput,
     crate::error::CreateTrafficMirrorFilterRuleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTrafficMirrorFilterRuleError::unhandled)?;
     Err(crate::error::CreateTrafficMirrorFilterRuleError::generic(
         generic,
@@ -2689,7 +2689,7 @@ pub fn parse_create_traffic_mirror_session_error(
     crate::output::CreateTrafficMirrorSessionOutput,
     crate::error::CreateTrafficMirrorSessionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTrafficMirrorSessionError::unhandled)?;
     Err(crate::error::CreateTrafficMirrorSessionError::generic(
         generic,
@@ -2723,7 +2723,7 @@ pub fn parse_create_traffic_mirror_target_error(
     crate::output::CreateTrafficMirrorTargetOutput,
     crate::error::CreateTrafficMirrorTargetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTrafficMirrorTargetError::unhandled)?;
     Err(crate::error::CreateTrafficMirrorTargetError::generic(
         generic,
@@ -2757,7 +2757,7 @@ pub fn parse_create_transit_gateway_error(
     crate::output::CreateTransitGatewayOutput,
     crate::error::CreateTransitGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayError::unhandled)?;
     Err(crate::error::CreateTransitGatewayError::generic(generic))
 }
@@ -2789,7 +2789,7 @@ pub fn parse_create_transit_gateway_connect_error(
     crate::output::CreateTransitGatewayConnectOutput,
     crate::error::CreateTransitGatewayConnectError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayConnectError::unhandled)?;
     Err(crate::error::CreateTransitGatewayConnectError::generic(
         generic,
@@ -2823,7 +2823,7 @@ pub fn parse_create_transit_gateway_connect_peer_error(
     crate::output::CreateTransitGatewayConnectPeerOutput,
     crate::error::CreateTransitGatewayConnectPeerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayConnectPeerError::unhandled)?;
     Err(crate::error::CreateTransitGatewayConnectPeerError::generic(
         generic,
@@ -2858,7 +2858,7 @@ pub fn parse_create_transit_gateway_multicast_domain_error(
     crate::output::CreateTransitGatewayMulticastDomainOutput,
     crate::error::CreateTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayMulticastDomainError::unhandled)?;
     Err(crate::error::CreateTransitGatewayMulticastDomainError::generic(generic))
 }
@@ -2891,7 +2891,7 @@ pub fn parse_create_transit_gateway_peering_attachment_error(
     crate::output::CreateTransitGatewayPeeringAttachmentOutput,
     crate::error::CreateTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayPeeringAttachmentError::unhandled)?;
     Err(crate::error::CreateTransitGatewayPeeringAttachmentError::generic(generic))
 }
@@ -2924,7 +2924,7 @@ pub fn parse_create_transit_gateway_prefix_list_reference_error(
     crate::output::CreateTransitGatewayPrefixListReferenceOutput,
     crate::error::CreateTransitGatewayPrefixListReferenceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayPrefixListReferenceError::unhandled)?;
     Err(crate::error::CreateTransitGatewayPrefixListReferenceError::generic(generic))
 }
@@ -2957,7 +2957,7 @@ pub fn parse_create_transit_gateway_route_error(
     crate::output::CreateTransitGatewayRouteOutput,
     crate::error::CreateTransitGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayRouteError::unhandled)?;
     Err(crate::error::CreateTransitGatewayRouteError::generic(
         generic,
@@ -2991,7 +2991,7 @@ pub fn parse_create_transit_gateway_route_table_error(
     crate::output::CreateTransitGatewayRouteTableOutput,
     crate::error::CreateTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayRouteTableError::unhandled)?;
     Err(crate::error::CreateTransitGatewayRouteTableError::generic(
         generic,
@@ -3026,7 +3026,7 @@ pub fn parse_create_transit_gateway_vpc_attachment_error(
     crate::output::CreateTransitGatewayVpcAttachmentOutput,
     crate::error::CreateTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTransitGatewayVpcAttachmentError::unhandled)?;
     Err(crate::error::CreateTransitGatewayVpcAttachmentError::generic(generic))
 }
@@ -3056,7 +3056,7 @@ pub fn parse_create_transit_gateway_vpc_attachment_response(
 pub fn parse_create_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVolumeError::unhandled)?;
     Err(crate::error::CreateVolumeError::generic(generic))
 }
@@ -3079,7 +3079,7 @@ pub fn parse_create_volume_response(
 pub fn parse_create_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpcError::unhandled)?;
     Err(crate::error::CreateVpcError::generic(generic))
 }
@@ -3103,7 +3103,7 @@ pub fn parse_create_vpc_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpcEndpointError::unhandled)?;
     Err(crate::error::CreateVpcEndpointError::generic(generic))
 }
@@ -3131,7 +3131,7 @@ pub fn parse_create_vpc_endpoint_connection_notification_error(
     crate::output::CreateVpcEndpointConnectionNotificationOutput,
     crate::error::CreateVpcEndpointConnectionNotificationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpcEndpointConnectionNotificationError::unhandled)?;
     Err(crate::error::CreateVpcEndpointConnectionNotificationError::generic(generic))
 }
@@ -3164,7 +3164,7 @@ pub fn parse_create_vpc_endpoint_service_configuration_error(
     crate::output::CreateVpcEndpointServiceConfigurationOutput,
     crate::error::CreateVpcEndpointServiceConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpcEndpointServiceConfigurationError::unhandled)?;
     Err(crate::error::CreateVpcEndpointServiceConfigurationError::generic(generic))
 }
@@ -3197,7 +3197,7 @@ pub fn parse_create_vpc_peering_connection_error(
     crate::output::CreateVpcPeeringConnectionOutput,
     crate::error::CreateVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
     Err(crate::error::CreateVpcPeeringConnectionError::generic(
         generic,
@@ -3231,7 +3231,7 @@ pub fn parse_create_vpn_connection_error(
     crate::output::CreateVpnConnectionOutput,
     crate::error::CreateVpnConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpnConnectionError::unhandled)?;
     Err(crate::error::CreateVpnConnectionError::generic(generic))
 }
@@ -3263,7 +3263,7 @@ pub fn parse_create_vpn_connection_route_error(
     crate::output::CreateVpnConnectionRouteOutput,
     crate::error::CreateVpnConnectionRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpnConnectionRouteError::unhandled)?;
     Err(crate::error::CreateVpnConnectionRouteError::generic(
         generic,
@@ -3290,7 +3290,7 @@ pub fn parse_create_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVpnGatewayError::unhandled)?;
     Err(crate::error::CreateVpnGatewayError::generic(generic))
 }
@@ -3318,7 +3318,7 @@ pub fn parse_delete_carrier_gateway_error(
     crate::output::DeleteCarrierGatewayOutput,
     crate::error::DeleteCarrierGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCarrierGatewayError::unhandled)?;
     Err(crate::error::DeleteCarrierGatewayError::generic(generic))
 }
@@ -3350,7 +3350,7 @@ pub fn parse_delete_client_vpn_endpoint_error(
     crate::output::DeleteClientVpnEndpointOutput,
     crate::error::DeleteClientVpnEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClientVpnEndpointError::unhandled)?;
     Err(crate::error::DeleteClientVpnEndpointError::generic(generic))
 }
@@ -3382,7 +3382,7 @@ pub fn parse_delete_client_vpn_route_error(
     crate::output::DeleteClientVpnRouteOutput,
     crate::error::DeleteClientVpnRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClientVpnRouteError::unhandled)?;
     Err(crate::error::DeleteClientVpnRouteError::generic(generic))
 }
@@ -3414,7 +3414,7 @@ pub fn parse_delete_customer_gateway_error(
     crate::output::DeleteCustomerGatewayOutput,
     crate::error::DeleteCustomerGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCustomerGatewayError::unhandled)?;
     Err(crate::error::DeleteCustomerGatewayError::generic(generic))
 }
@@ -3439,7 +3439,7 @@ pub fn parse_delete_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDhcpOptionsError::unhandled)?;
     Err(crate::error::DeleteDhcpOptionsError::generic(generic))
 }
@@ -3464,7 +3464,7 @@ pub fn parse_delete_egress_only_internet_gateway_error(
     crate::output::DeleteEgressOnlyInternetGatewayOutput,
     crate::error::DeleteEgressOnlyInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEgressOnlyInternetGatewayError::unhandled)?;
     Err(crate::error::DeleteEgressOnlyInternetGatewayError::generic(
         generic,
@@ -3496,7 +3496,7 @@ pub fn parse_delete_egress_only_internet_gateway_response(
 pub fn parse_delete_fleets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFleetsError::unhandled)?;
     Err(crate::error::DeleteFleetsError::generic(generic))
 }
@@ -3519,7 +3519,7 @@ pub fn parse_delete_fleets_response(
 pub fn parse_delete_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFlowLogsError::unhandled)?;
     Err(crate::error::DeleteFlowLogsError::generic(generic))
 }
@@ -3543,7 +3543,7 @@ pub fn parse_delete_flow_logs_response(
 pub fn parse_delete_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFpgaImageError::unhandled)?;
     Err(crate::error::DeleteFpgaImageError::generic(generic))
 }
@@ -3570,7 +3570,7 @@ pub fn parse_delete_instance_event_window_error(
     crate::output::DeleteInstanceEventWindowOutput,
     crate::error::DeleteInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInstanceEventWindowError::unhandled)?;
     Err(crate::error::DeleteInstanceEventWindowError::generic(
         generic,
@@ -3604,7 +3604,7 @@ pub fn parse_delete_internet_gateway_error(
     crate::output::DeleteInternetGatewayOutput,
     crate::error::DeleteInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInternetGatewayError::unhandled)?;
     Err(crate::error::DeleteInternetGatewayError::generic(generic))
 }
@@ -3628,7 +3628,7 @@ pub fn parse_delete_internet_gateway_response(
 pub fn parse_delete_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteKeyPairError::unhandled)?;
     Err(crate::error::DeleteKeyPairError::generic(generic))
 }
@@ -3652,7 +3652,7 @@ pub fn parse_delete_launch_template_error(
     crate::output::DeleteLaunchTemplateOutput,
     crate::error::DeleteLaunchTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLaunchTemplateError::unhandled)?;
     Err(crate::error::DeleteLaunchTemplateError::generic(generic))
 }
@@ -3684,7 +3684,7 @@ pub fn parse_delete_launch_template_versions_error(
     crate::output::DeleteLaunchTemplateVersionsOutput,
     crate::error::DeleteLaunchTemplateVersionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLaunchTemplateVersionsError::unhandled)?;
     Err(crate::error::DeleteLaunchTemplateVersionsError::generic(
         generic,
@@ -3718,7 +3718,7 @@ pub fn parse_delete_local_gateway_route_error(
     crate::output::DeleteLocalGatewayRouteOutput,
     crate::error::DeleteLocalGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLocalGatewayRouteError::unhandled)?;
     Err(crate::error::DeleteLocalGatewayRouteError::generic(generic))
 }
@@ -3750,7 +3750,7 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_error(
     crate::output::DeleteLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::DeleteLocalGatewayRouteTableVpcAssociationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::unhandled)?;
     Err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::generic(generic))
 }
@@ -3782,7 +3782,7 @@ pub fn parse_delete_managed_prefix_list_error(
     crate::output::DeleteManagedPrefixListOutput,
     crate::error::DeleteManagedPrefixListError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteManagedPrefixListError::unhandled)?;
     Err(crate::error::DeleteManagedPrefixListError::generic(generic))
 }
@@ -3812,7 +3812,7 @@ pub fn parse_delete_nat_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNatGatewayError::unhandled)?;
     Err(crate::error::DeleteNatGatewayError::generic(generic))
 }
@@ -3838,7 +3838,7 @@ pub fn parse_delete_network_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNetworkAclError::unhandled)?;
     Err(crate::error::DeleteNetworkAclError::generic(generic))
 }
@@ -3863,7 +3863,7 @@ pub fn parse_delete_network_acl_entry_error(
     crate::output::DeleteNetworkAclEntryOutput,
     crate::error::DeleteNetworkAclEntryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNetworkAclEntryError::unhandled)?;
     Err(crate::error::DeleteNetworkAclEntryError::generic(generic))
 }
@@ -3890,7 +3890,7 @@ pub fn parse_delete_network_insights_analysis_error(
     crate::output::DeleteNetworkInsightsAnalysisOutput,
     crate::error::DeleteNetworkInsightsAnalysisError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNetworkInsightsAnalysisError::unhandled)?;
     Err(crate::error::DeleteNetworkInsightsAnalysisError::generic(
         generic,
@@ -3924,7 +3924,7 @@ pub fn parse_delete_network_insights_path_error(
     crate::output::DeleteNetworkInsightsPathOutput,
     crate::error::DeleteNetworkInsightsPathError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNetworkInsightsPathError::unhandled)?;
     Err(crate::error::DeleteNetworkInsightsPathError::generic(
         generic,
@@ -3958,7 +3958,7 @@ pub fn parse_delete_network_interface_error(
     crate::output::DeleteNetworkInterfaceOutput,
     crate::error::DeleteNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNetworkInterfaceError::unhandled)?;
     Err(crate::error::DeleteNetworkInterfaceError::generic(generic))
 }
@@ -3985,7 +3985,7 @@ pub fn parse_delete_network_interface_permission_error(
     crate::output::DeleteNetworkInterfacePermissionOutput,
     crate::error::DeleteNetworkInterfacePermissionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNetworkInterfacePermissionError::unhandled)?;
     Err(crate::error::DeleteNetworkInterfacePermissionError::generic(generic))
 }
@@ -4018,7 +4018,7 @@ pub fn parse_delete_placement_group_error(
     crate::output::DeletePlacementGroupOutput,
     crate::error::DeletePlacementGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePlacementGroupError::unhandled)?;
     Err(crate::error::DeletePlacementGroupError::generic(generic))
 }
@@ -4045,7 +4045,7 @@ pub fn parse_delete_queued_reserved_instances_error(
     crate::output::DeleteQueuedReservedInstancesOutput,
     crate::error::DeleteQueuedReservedInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteQueuedReservedInstancesError::unhandled)?;
     Err(crate::error::DeleteQueuedReservedInstancesError::generic(
         generic,
@@ -4076,7 +4076,7 @@ pub fn parse_delete_queued_reserved_instances_response(
 pub fn parse_delete_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRouteError::unhandled)?;
     Err(crate::error::DeleteRouteError::generic(generic))
 }
@@ -4098,7 +4098,7 @@ pub fn parse_delete_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRouteTableError::unhandled)?;
     Err(crate::error::DeleteRouteTableError::generic(generic))
 }
@@ -4123,7 +4123,7 @@ pub fn parse_delete_security_group_error(
     crate::output::DeleteSecurityGroupOutput,
     crate::error::DeleteSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSecurityGroupError::unhandled)?;
     Err(crate::error::DeleteSecurityGroupError::generic(generic))
 }
@@ -4147,7 +4147,7 @@ pub fn parse_delete_security_group_response(
 pub fn parse_delete_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSnapshotError::unhandled)?;
     Err(crate::error::DeleteSnapshotError::generic(generic))
 }
@@ -4171,7 +4171,7 @@ pub fn parse_delete_spot_datafeed_subscription_error(
     crate::output::DeleteSpotDatafeedSubscriptionOutput,
     crate::error::DeleteSpotDatafeedSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSpotDatafeedSubscriptionError::unhandled)?;
     Err(crate::error::DeleteSpotDatafeedSubscriptionError::generic(
         generic,
@@ -4198,7 +4198,7 @@ pub fn parse_delete_spot_datafeed_subscription_response(
 pub fn parse_delete_subnet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSubnetError::unhandled)?;
     Err(crate::error::DeleteSubnetError::generic(generic))
 }
@@ -4222,7 +4222,7 @@ pub fn parse_delete_subnet_cidr_reservation_error(
     crate::output::DeleteSubnetCidrReservationOutput,
     crate::error::DeleteSubnetCidrReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSubnetCidrReservationError::unhandled)?;
     Err(crate::error::DeleteSubnetCidrReservationError::generic(
         generic,
@@ -4253,7 +4253,7 @@ pub fn parse_delete_subnet_cidr_reservation_response(
 pub fn parse_delete_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTagsError::unhandled)?;
     Err(crate::error::DeleteTagsError::generic(generic))
 }
@@ -4277,7 +4277,7 @@ pub fn parse_delete_traffic_mirror_filter_error(
     crate::output::DeleteTrafficMirrorFilterOutput,
     crate::error::DeleteTrafficMirrorFilterError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTrafficMirrorFilterError::unhandled)?;
     Err(crate::error::DeleteTrafficMirrorFilterError::generic(
         generic,
@@ -4311,7 +4311,7 @@ pub fn parse_delete_traffic_mirror_filter_rule_error(
     crate::output::DeleteTrafficMirrorFilterRuleOutput,
     crate::error::DeleteTrafficMirrorFilterRuleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTrafficMirrorFilterRuleError::unhandled)?;
     Err(crate::error::DeleteTrafficMirrorFilterRuleError::generic(
         generic,
@@ -4346,7 +4346,7 @@ pub fn parse_delete_traffic_mirror_session_error(
     crate::output::DeleteTrafficMirrorSessionOutput,
     crate::error::DeleteTrafficMirrorSessionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTrafficMirrorSessionError::unhandled)?;
     Err(crate::error::DeleteTrafficMirrorSessionError::generic(
         generic,
@@ -4380,7 +4380,7 @@ pub fn parse_delete_traffic_mirror_target_error(
     crate::output::DeleteTrafficMirrorTargetOutput,
     crate::error::DeleteTrafficMirrorTargetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTrafficMirrorTargetError::unhandled)?;
     Err(crate::error::DeleteTrafficMirrorTargetError::generic(
         generic,
@@ -4414,7 +4414,7 @@ pub fn parse_delete_transit_gateway_error(
     crate::output::DeleteTransitGatewayOutput,
     crate::error::DeleteTransitGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayError::generic(generic))
 }
@@ -4446,7 +4446,7 @@ pub fn parse_delete_transit_gateway_connect_error(
     crate::output::DeleteTransitGatewayConnectOutput,
     crate::error::DeleteTransitGatewayConnectError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayConnectError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayConnectError::generic(
         generic,
@@ -4480,7 +4480,7 @@ pub fn parse_delete_transit_gateway_connect_peer_error(
     crate::output::DeleteTransitGatewayConnectPeerOutput,
     crate::error::DeleteTransitGatewayConnectPeerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayConnectPeerError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayConnectPeerError::generic(
         generic,
@@ -4515,7 +4515,7 @@ pub fn parse_delete_transit_gateway_multicast_domain_error(
     crate::output::DeleteTransitGatewayMulticastDomainOutput,
     crate::error::DeleteTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayMulticastDomainError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayMulticastDomainError::generic(generic))
 }
@@ -4548,7 +4548,7 @@ pub fn parse_delete_transit_gateway_peering_attachment_error(
     crate::output::DeleteTransitGatewayPeeringAttachmentOutput,
     crate::error::DeleteTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayPeeringAttachmentError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayPeeringAttachmentError::generic(generic))
 }
@@ -4581,7 +4581,7 @@ pub fn parse_delete_transit_gateway_prefix_list_reference_error(
     crate::output::DeleteTransitGatewayPrefixListReferenceOutput,
     crate::error::DeleteTransitGatewayPrefixListReferenceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayPrefixListReferenceError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayPrefixListReferenceError::generic(generic))
 }
@@ -4614,7 +4614,7 @@ pub fn parse_delete_transit_gateway_route_error(
     crate::output::DeleteTransitGatewayRouteOutput,
     crate::error::DeleteTransitGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayRouteError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayRouteError::generic(
         generic,
@@ -4648,7 +4648,7 @@ pub fn parse_delete_transit_gateway_route_table_error(
     crate::output::DeleteTransitGatewayRouteTableOutput,
     crate::error::DeleteTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayRouteTableError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayRouteTableError::generic(
         generic,
@@ -4683,7 +4683,7 @@ pub fn parse_delete_transit_gateway_vpc_attachment_error(
     crate::output::DeleteTransitGatewayVpcAttachmentOutput,
     crate::error::DeleteTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTransitGatewayVpcAttachmentError::unhandled)?;
     Err(crate::error::DeleteTransitGatewayVpcAttachmentError::generic(generic))
 }
@@ -4713,7 +4713,7 @@ pub fn parse_delete_transit_gateway_vpc_attachment_response(
 pub fn parse_delete_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVolumeError::unhandled)?;
     Err(crate::error::DeleteVolumeError::generic(generic))
 }
@@ -4734,7 +4734,7 @@ pub fn parse_delete_volume_response(
 pub fn parse_delete_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpcError::unhandled)?;
     Err(crate::error::DeleteVpcError::generic(generic))
 }
@@ -4758,7 +4758,7 @@ pub fn parse_delete_vpc_endpoint_connection_notifications_error(
     crate::output::DeleteVpcEndpointConnectionNotificationsOutput,
     crate::error::DeleteVpcEndpointConnectionNotificationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpcEndpointConnectionNotificationsError::unhandled)?;
     Err(crate::error::DeleteVpcEndpointConnectionNotificationsError::generic(generic))
 }
@@ -4791,7 +4791,7 @@ pub fn parse_delete_vpc_endpoints_error(
     crate::output::DeleteVpcEndpointsOutput,
     crate::error::DeleteVpcEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpcEndpointsError::unhandled)?;
     Err(crate::error::DeleteVpcEndpointsError::generic(generic))
 }
@@ -4823,7 +4823,7 @@ pub fn parse_delete_vpc_endpoint_service_configurations_error(
     crate::output::DeleteVpcEndpointServiceConfigurationsOutput,
     crate::error::DeleteVpcEndpointServiceConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpcEndpointServiceConfigurationsError::unhandled)?;
     Err(crate::error::DeleteVpcEndpointServiceConfigurationsError::generic(generic))
 }
@@ -4856,7 +4856,7 @@ pub fn parse_delete_vpc_peering_connection_error(
     crate::output::DeleteVpcPeeringConnectionOutput,
     crate::error::DeleteVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
     Err(crate::error::DeleteVpcPeeringConnectionError::generic(
         generic,
@@ -4890,7 +4890,7 @@ pub fn parse_delete_vpn_connection_error(
     crate::output::DeleteVpnConnectionOutput,
     crate::error::DeleteVpnConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpnConnectionError::unhandled)?;
     Err(crate::error::DeleteVpnConnectionError::generic(generic))
 }
@@ -4917,7 +4917,7 @@ pub fn parse_delete_vpn_connection_route_error(
     crate::output::DeleteVpnConnectionRouteOutput,
     crate::error::DeleteVpnConnectionRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpnConnectionRouteError::unhandled)?;
     Err(crate::error::DeleteVpnConnectionRouteError::generic(
         generic,
@@ -4944,7 +4944,7 @@ pub fn parse_delete_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVpnGatewayError::unhandled)?;
     Err(crate::error::DeleteVpnGatewayError::generic(generic))
 }
@@ -4969,7 +4969,7 @@ pub fn parse_deprovision_byoip_cidr_error(
     crate::output::DeprovisionByoipCidrOutput,
     crate::error::DeprovisionByoipCidrError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
     Err(crate::error::DeprovisionByoipCidrError::generic(generic))
 }
@@ -4998,7 +4998,7 @@ pub fn parse_deprovision_byoip_cidr_response(
 pub fn parse_deregister_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterImageError::unhandled)?;
     Err(crate::error::DeregisterImageError::generic(generic))
 }
@@ -5022,7 +5022,7 @@ pub fn parse_deregister_instance_event_notification_attributes_error(
     crate::output::DeregisterInstanceEventNotificationAttributesOutput,
     crate::error::DeregisterInstanceEventNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterInstanceEventNotificationAttributesError::unhandled)?;
     Err(crate::error::DeregisterInstanceEventNotificationAttributesError::generic(generic))
 }
@@ -5054,7 +5054,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_error(
     crate::output::DeregisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupMembersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::unhandled)?;
     Err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::generic(generic))
 }
@@ -5086,7 +5086,7 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_error(
     crate::output::DeregisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupSourcesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
     Err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::generic(generic))
 }
@@ -5118,7 +5118,7 @@ pub fn parse_describe_account_attributes_error(
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
     Err(crate::error::DescribeAccountAttributesError::generic(
         generic,
@@ -5150,7 +5150,7 @@ pub fn parse_describe_addresses_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAddressesError::unhandled)?;
     Err(crate::error::DescribeAddressesError::generic(generic))
 }
@@ -5178,7 +5178,7 @@ pub fn parse_describe_addresses_attribute_error(
     crate::output::DescribeAddressesAttributeOutput,
     crate::error::DescribeAddressesAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAddressesAttributeError::unhandled)?;
     Err(crate::error::DescribeAddressesAttributeError::generic(
         generic,
@@ -5212,7 +5212,7 @@ pub fn parse_describe_aggregate_id_format_error(
     crate::output::DescribeAggregateIdFormatOutput,
     crate::error::DescribeAggregateIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAggregateIdFormatError::unhandled)?;
     Err(crate::error::DescribeAggregateIdFormatError::generic(
         generic,
@@ -5246,7 +5246,7 @@ pub fn parse_describe_availability_zones_error(
     crate::output::DescribeAvailabilityZonesOutput,
     crate::error::DescribeAvailabilityZonesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAvailabilityZonesError::unhandled)?;
     Err(crate::error::DescribeAvailabilityZonesError::generic(
         generic,
@@ -5280,7 +5280,7 @@ pub fn parse_describe_bundle_tasks_error(
     crate::output::DescribeBundleTasksOutput,
     crate::error::DescribeBundleTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeBundleTasksError::unhandled)?;
     Err(crate::error::DescribeBundleTasksError::generic(generic))
 }
@@ -5312,7 +5312,7 @@ pub fn parse_describe_byoip_cidrs_error(
     crate::output::DescribeByoipCidrsOutput,
     crate::error::DescribeByoipCidrsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeByoipCidrsError::unhandled)?;
     Err(crate::error::DescribeByoipCidrsError::generic(generic))
 }
@@ -5344,7 +5344,7 @@ pub fn parse_describe_capacity_reservations_error(
     crate::output::DescribeCapacityReservationsOutput,
     crate::error::DescribeCapacityReservationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCapacityReservationsError::unhandled)?;
     Err(crate::error::DescribeCapacityReservationsError::generic(
         generic,
@@ -5378,7 +5378,7 @@ pub fn parse_describe_carrier_gateways_error(
     crate::output::DescribeCarrierGatewaysOutput,
     crate::error::DescribeCarrierGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCarrierGatewaysError::unhandled)?;
     Err(crate::error::DescribeCarrierGatewaysError::generic(generic))
 }
@@ -5410,7 +5410,7 @@ pub fn parse_describe_classic_link_instances_error(
     crate::output::DescribeClassicLinkInstancesOutput,
     crate::error::DescribeClassicLinkInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClassicLinkInstancesError::unhandled)?;
     Err(crate::error::DescribeClassicLinkInstancesError::generic(
         generic,
@@ -5444,7 +5444,7 @@ pub fn parse_describe_client_vpn_authorization_rules_error(
     crate::output::DescribeClientVpnAuthorizationRulesOutput,
     crate::error::DescribeClientVpnAuthorizationRulesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClientVpnAuthorizationRulesError::unhandled)?;
     Err(crate::error::DescribeClientVpnAuthorizationRulesError::generic(generic))
 }
@@ -5477,7 +5477,7 @@ pub fn parse_describe_client_vpn_connections_error(
     crate::output::DescribeClientVpnConnectionsOutput,
     crate::error::DescribeClientVpnConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClientVpnConnectionsError::unhandled)?;
     Err(crate::error::DescribeClientVpnConnectionsError::generic(
         generic,
@@ -5511,7 +5511,7 @@ pub fn parse_describe_client_vpn_endpoints_error(
     crate::output::DescribeClientVpnEndpointsOutput,
     crate::error::DescribeClientVpnEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClientVpnEndpointsError::unhandled)?;
     Err(crate::error::DescribeClientVpnEndpointsError::generic(
         generic,
@@ -5545,7 +5545,7 @@ pub fn parse_describe_client_vpn_routes_error(
     crate::output::DescribeClientVpnRoutesOutput,
     crate::error::DescribeClientVpnRoutesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClientVpnRoutesError::unhandled)?;
     Err(crate::error::DescribeClientVpnRoutesError::generic(generic))
 }
@@ -5577,7 +5577,7 @@ pub fn parse_describe_client_vpn_target_networks_error(
     crate::output::DescribeClientVpnTargetNetworksOutput,
     crate::error::DescribeClientVpnTargetNetworksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClientVpnTargetNetworksError::unhandled)?;
     Err(crate::error::DescribeClientVpnTargetNetworksError::generic(
         generic,
@@ -5610,7 +5610,7 @@ pub fn parse_describe_coip_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCoipPoolsError::unhandled)?;
     Err(crate::error::DescribeCoipPoolsError::generic(generic))
 }
@@ -5638,7 +5638,7 @@ pub fn parse_describe_conversion_tasks_error(
     crate::output::DescribeConversionTasksOutput,
     crate::error::DescribeConversionTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeConversionTasksError::unhandled)?;
     Err(crate::error::DescribeConversionTasksError::generic(generic))
 }
@@ -5670,7 +5670,7 @@ pub fn parse_describe_customer_gateways_error(
     crate::output::DescribeCustomerGatewaysOutput,
     crate::error::DescribeCustomerGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCustomerGatewaysError::unhandled)?;
     Err(crate::error::DescribeCustomerGatewaysError::generic(
         generic,
@@ -5704,7 +5704,7 @@ pub fn parse_describe_dhcp_options_error(
     crate::output::DescribeDhcpOptionsOutput,
     crate::error::DescribeDhcpOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDhcpOptionsError::unhandled)?;
     Err(crate::error::DescribeDhcpOptionsError::generic(generic))
 }
@@ -5736,7 +5736,7 @@ pub fn parse_describe_egress_only_internet_gateways_error(
     crate::output::DescribeEgressOnlyInternetGatewaysOutput,
     crate::error::DescribeEgressOnlyInternetGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEgressOnlyInternetGatewaysError::unhandled)?;
     Err(crate::error::DescribeEgressOnlyInternetGatewaysError::generic(generic))
 }
@@ -5769,7 +5769,7 @@ pub fn parse_describe_elastic_gpus_error(
     crate::output::DescribeElasticGpusOutput,
     crate::error::DescribeElasticGpusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeElasticGpusError::unhandled)?;
     Err(crate::error::DescribeElasticGpusError::generic(generic))
 }
@@ -5801,7 +5801,7 @@ pub fn parse_describe_export_image_tasks_error(
     crate::output::DescribeExportImageTasksOutput,
     crate::error::DescribeExportImageTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeExportImageTasksError::unhandled)?;
     Err(crate::error::DescribeExportImageTasksError::generic(
         generic,
@@ -5835,7 +5835,7 @@ pub fn parse_describe_export_tasks_error(
     crate::output::DescribeExportTasksOutput,
     crate::error::DescribeExportTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeExportTasksError::unhandled)?;
     Err(crate::error::DescribeExportTasksError::generic(generic))
 }
@@ -5867,7 +5867,7 @@ pub fn parse_describe_fast_snapshot_restores_error(
     crate::output::DescribeFastSnapshotRestoresOutput,
     crate::error::DescribeFastSnapshotRestoresError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFastSnapshotRestoresError::unhandled)?;
     Err(crate::error::DescribeFastSnapshotRestoresError::generic(
         generic,
@@ -5901,7 +5901,7 @@ pub fn parse_describe_fleet_history_error(
     crate::output::DescribeFleetHistoryOutput,
     crate::error::DescribeFleetHistoryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFleetHistoryError::unhandled)?;
     Err(crate::error::DescribeFleetHistoryError::generic(generic))
 }
@@ -5933,7 +5933,7 @@ pub fn parse_describe_fleet_instances_error(
     crate::output::DescribeFleetInstancesOutput,
     crate::error::DescribeFleetInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFleetInstancesError::unhandled)?;
     Err(crate::error::DescribeFleetInstancesError::generic(generic))
 }
@@ -5962,7 +5962,7 @@ pub fn parse_describe_fleet_instances_response(
 pub fn parse_describe_fleets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFleetsError::unhandled)?;
     Err(crate::error::DescribeFleetsError::generic(generic))
 }
@@ -5987,7 +5987,7 @@ pub fn parse_describe_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFlowLogsError::unhandled)?;
     Err(crate::error::DescribeFlowLogsError::generic(generic))
 }
@@ -6015,7 +6015,7 @@ pub fn parse_describe_fpga_image_attribute_error(
     crate::output::DescribeFpgaImageAttributeOutput,
     crate::error::DescribeFpgaImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFpgaImageAttributeError::unhandled)?;
     Err(crate::error::DescribeFpgaImageAttributeError::generic(
         generic,
@@ -6049,7 +6049,7 @@ pub fn parse_describe_fpga_images_error(
     crate::output::DescribeFpgaImagesOutput,
     crate::error::DescribeFpgaImagesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeFpgaImagesError::unhandled)?;
     Err(crate::error::DescribeFpgaImagesError::generic(generic))
 }
@@ -6081,7 +6081,7 @@ pub fn parse_describe_host_reservation_offerings_error(
     crate::output::DescribeHostReservationOfferingsOutput,
     crate::error::DescribeHostReservationOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHostReservationOfferingsError::unhandled)?;
     Err(crate::error::DescribeHostReservationOfferingsError::generic(generic))
 }
@@ -6114,7 +6114,7 @@ pub fn parse_describe_host_reservations_error(
     crate::output::DescribeHostReservationsOutput,
     crate::error::DescribeHostReservationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHostReservationsError::unhandled)?;
     Err(crate::error::DescribeHostReservationsError::generic(
         generic,
@@ -6145,7 +6145,7 @@ pub fn parse_describe_host_reservations_response(
 pub fn parse_describe_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHostsError::unhandled)?;
     Err(crate::error::DescribeHostsError::generic(generic))
 }
@@ -6171,7 +6171,7 @@ pub fn parse_describe_iam_instance_profile_associations_error(
     crate::output::DescribeIamInstanceProfileAssociationsOutput,
     crate::error::DescribeIamInstanceProfileAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeIamInstanceProfileAssociationsError::unhandled)?;
     Err(crate::error::DescribeIamInstanceProfileAssociationsError::generic(generic))
 }
@@ -6204,7 +6204,7 @@ pub fn parse_describe_identity_id_format_error(
     crate::output::DescribeIdentityIdFormatOutput,
     crate::error::DescribeIdentityIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeIdentityIdFormatError::unhandled)?;
     Err(crate::error::DescribeIdentityIdFormatError::generic(
         generic,
@@ -6236,7 +6236,7 @@ pub fn parse_describe_id_format_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeIdFormatError::unhandled)?;
     Err(crate::error::DescribeIdFormatError::generic(generic))
 }
@@ -6264,7 +6264,7 @@ pub fn parse_describe_image_attribute_error(
     crate::output::DescribeImageAttributeOutput,
     crate::error::DescribeImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeImageAttributeError::unhandled)?;
     Err(crate::error::DescribeImageAttributeError::generic(generic))
 }
@@ -6293,7 +6293,7 @@ pub fn parse_describe_image_attribute_response(
 pub fn parse_describe_images_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeImagesError::unhandled)?;
     Err(crate::error::DescribeImagesError::generic(generic))
 }
@@ -6320,7 +6320,7 @@ pub fn parse_describe_import_image_tasks_error(
     crate::output::DescribeImportImageTasksOutput,
     crate::error::DescribeImportImageTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeImportImageTasksError::unhandled)?;
     Err(crate::error::DescribeImportImageTasksError::generic(
         generic,
@@ -6354,7 +6354,7 @@ pub fn parse_describe_import_snapshot_tasks_error(
     crate::output::DescribeImportSnapshotTasksOutput,
     crate::error::DescribeImportSnapshotTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeImportSnapshotTasksError::unhandled)?;
     Err(crate::error::DescribeImportSnapshotTasksError::generic(
         generic,
@@ -6388,7 +6388,7 @@ pub fn parse_describe_instance_attribute_error(
     crate::output::DescribeInstanceAttributeOutput,
     crate::error::DescribeInstanceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceAttributeError::unhandled)?;
     Err(crate::error::DescribeInstanceAttributeError::generic(
         generic,
@@ -6422,7 +6422,7 @@ pub fn parse_describe_instance_credit_specifications_error(
     crate::output::DescribeInstanceCreditSpecificationsOutput,
     crate::error::DescribeInstanceCreditSpecificationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceCreditSpecificationsError::unhandled)?;
     Err(crate::error::DescribeInstanceCreditSpecificationsError::generic(generic))
 }
@@ -6455,7 +6455,7 @@ pub fn parse_describe_instance_event_notification_attributes_error(
     crate::output::DescribeInstanceEventNotificationAttributesOutput,
     crate::error::DescribeInstanceEventNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceEventNotificationAttributesError::unhandled)?;
     Err(crate::error::DescribeInstanceEventNotificationAttributesError::generic(generic))
 }
@@ -6489,7 +6489,7 @@ pub fn parse_describe_instance_event_windows_error(
     crate::output::DescribeInstanceEventWindowsOutput,
     crate::error::DescribeInstanceEventWindowsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
     Err(crate::error::DescribeInstanceEventWindowsError::generic(
         generic,
@@ -6521,7 +6521,7 @@ pub fn parse_describe_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstancesError::unhandled)?;
     Err(crate::error::DescribeInstancesError::generic(generic))
 }
@@ -6549,7 +6549,7 @@ pub fn parse_describe_instance_status_error(
     crate::output::DescribeInstanceStatusOutput,
     crate::error::DescribeInstanceStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceStatusError::unhandled)?;
     Err(crate::error::DescribeInstanceStatusError::generic(generic))
 }
@@ -6581,7 +6581,7 @@ pub fn parse_describe_instance_type_offerings_error(
     crate::output::DescribeInstanceTypeOfferingsOutput,
     crate::error::DescribeInstanceTypeOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceTypeOfferingsError::unhandled)?;
     Err(crate::error::DescribeInstanceTypeOfferingsError::generic(
         generic,
@@ -6615,7 +6615,7 @@ pub fn parse_describe_instance_types_error(
     crate::output::DescribeInstanceTypesOutput,
     crate::error::DescribeInstanceTypesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceTypesError::unhandled)?;
     Err(crate::error::DescribeInstanceTypesError::generic(generic))
 }
@@ -6647,7 +6647,7 @@ pub fn parse_describe_internet_gateways_error(
     crate::output::DescribeInternetGatewaysOutput,
     crate::error::DescribeInternetGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInternetGatewaysError::unhandled)?;
     Err(crate::error::DescribeInternetGatewaysError::generic(
         generic,
@@ -6679,7 +6679,7 @@ pub fn parse_describe_ipv6_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeIpv6PoolsError::unhandled)?;
     Err(crate::error::DescribeIpv6PoolsError::generic(generic))
 }
@@ -6705,7 +6705,7 @@ pub fn parse_describe_key_pairs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeKeyPairsError::unhandled)?;
     Err(crate::error::DescribeKeyPairsError::generic(generic))
 }
@@ -6733,7 +6733,7 @@ pub fn parse_describe_launch_templates_error(
     crate::output::DescribeLaunchTemplatesOutput,
     crate::error::DescribeLaunchTemplatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLaunchTemplatesError::unhandled)?;
     Err(crate::error::DescribeLaunchTemplatesError::generic(generic))
 }
@@ -6765,7 +6765,7 @@ pub fn parse_describe_launch_template_versions_error(
     crate::output::DescribeLaunchTemplateVersionsOutput,
     crate::error::DescribeLaunchTemplateVersionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLaunchTemplateVersionsError::unhandled)?;
     Err(crate::error::DescribeLaunchTemplateVersionsError::generic(
         generic,
@@ -6800,7 +6800,7 @@ pub fn parse_describe_local_gateway_route_tables_error(
     crate::output::DescribeLocalGatewayRouteTablesOutput,
     crate::error::DescribeLocalGatewayRouteTablesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLocalGatewayRouteTablesError::unhandled)?;
     Err(crate::error::DescribeLocalGatewayRouteTablesError::generic(
         generic,
@@ -6835,7 +6835,7 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
     crate::output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
+    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
     Err(
         crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::generic(
             generic,
@@ -6865,7 +6865,7 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_error(
     crate::output::DescribeLocalGatewayRouteTableVpcAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::unhandled)?;
     Err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::generic(generic))
 }
@@ -6897,7 +6897,7 @@ pub fn parse_describe_local_gateways_error(
     crate::output::DescribeLocalGatewaysOutput,
     crate::error::DescribeLocalGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLocalGatewaysError::unhandled)?;
     Err(crate::error::DescribeLocalGatewaysError::generic(generic))
 }
@@ -6929,7 +6929,7 @@ pub fn parse_describe_local_gateway_virtual_interface_groups_error(
     crate::output::DescribeLocalGatewayVirtualInterfaceGroupsOutput,
     crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::unhandled)?;
     Err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::generic(generic))
 }
@@ -6963,7 +6963,7 @@ pub fn parse_describe_local_gateway_virtual_interfaces_error(
     crate::output::DescribeLocalGatewayVirtualInterfacesOutput,
     crate::error::DescribeLocalGatewayVirtualInterfacesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLocalGatewayVirtualInterfacesError::unhandled)?;
     Err(crate::error::DescribeLocalGatewayVirtualInterfacesError::generic(generic))
 }
@@ -6996,7 +6996,7 @@ pub fn parse_describe_managed_prefix_lists_error(
     crate::output::DescribeManagedPrefixListsOutput,
     crate::error::DescribeManagedPrefixListsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeManagedPrefixListsError::unhandled)?;
     Err(crate::error::DescribeManagedPrefixListsError::generic(
         generic,
@@ -7030,7 +7030,7 @@ pub fn parse_describe_moving_addresses_error(
     crate::output::DescribeMovingAddressesOutput,
     crate::error::DescribeMovingAddressesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeMovingAddressesError::unhandled)?;
     Err(crate::error::DescribeMovingAddressesError::generic(generic))
 }
@@ -7062,7 +7062,7 @@ pub fn parse_describe_nat_gateways_error(
     crate::output::DescribeNatGatewaysOutput,
     crate::error::DescribeNatGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNatGatewaysError::unhandled)?;
     Err(crate::error::DescribeNatGatewaysError::generic(generic))
 }
@@ -7094,7 +7094,7 @@ pub fn parse_describe_network_acls_error(
     crate::output::DescribeNetworkAclsOutput,
     crate::error::DescribeNetworkAclsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNetworkAclsError::unhandled)?;
     Err(crate::error::DescribeNetworkAclsError::generic(generic))
 }
@@ -7126,7 +7126,7 @@ pub fn parse_describe_network_insights_analyses_error(
     crate::output::DescribeNetworkInsightsAnalysesOutput,
     crate::error::DescribeNetworkInsightsAnalysesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNetworkInsightsAnalysesError::unhandled)?;
     Err(crate::error::DescribeNetworkInsightsAnalysesError::generic(
         generic,
@@ -7161,7 +7161,7 @@ pub fn parse_describe_network_insights_paths_error(
     crate::output::DescribeNetworkInsightsPathsOutput,
     crate::error::DescribeNetworkInsightsPathsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNetworkInsightsPathsError::unhandled)?;
     Err(crate::error::DescribeNetworkInsightsPathsError::generic(
         generic,
@@ -7195,7 +7195,7 @@ pub fn parse_describe_network_interface_attribute_error(
     crate::output::DescribeNetworkInterfaceAttributeOutput,
     crate::error::DescribeNetworkInterfaceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNetworkInterfaceAttributeError::unhandled)?;
     Err(crate::error::DescribeNetworkInterfaceAttributeError::generic(generic))
 }
@@ -7228,7 +7228,7 @@ pub fn parse_describe_network_interface_permissions_error(
     crate::output::DescribeNetworkInterfacePermissionsOutput,
     crate::error::DescribeNetworkInterfacePermissionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNetworkInterfacePermissionsError::unhandled)?;
     Err(crate::error::DescribeNetworkInterfacePermissionsError::generic(generic))
 }
@@ -7261,7 +7261,7 @@ pub fn parse_describe_network_interfaces_error(
     crate::output::DescribeNetworkInterfacesOutput,
     crate::error::DescribeNetworkInterfacesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNetworkInterfacesError::unhandled)?;
     Err(crate::error::DescribeNetworkInterfacesError::generic(
         generic,
@@ -7295,7 +7295,7 @@ pub fn parse_describe_placement_groups_error(
     crate::output::DescribePlacementGroupsOutput,
     crate::error::DescribePlacementGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePlacementGroupsError::unhandled)?;
     Err(crate::error::DescribePlacementGroupsError::generic(generic))
 }
@@ -7327,7 +7327,7 @@ pub fn parse_describe_prefix_lists_error(
     crate::output::DescribePrefixListsOutput,
     crate::error::DescribePrefixListsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePrefixListsError::unhandled)?;
     Err(crate::error::DescribePrefixListsError::generic(generic))
 }
@@ -7359,7 +7359,7 @@ pub fn parse_describe_principal_id_format_error(
     crate::output::DescribePrincipalIdFormatOutput,
     crate::error::DescribePrincipalIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePrincipalIdFormatError::unhandled)?;
     Err(crate::error::DescribePrincipalIdFormatError::generic(
         generic,
@@ -7393,7 +7393,7 @@ pub fn parse_describe_public_ipv4_pools_error(
     crate::output::DescribePublicIpv4PoolsOutput,
     crate::error::DescribePublicIpv4PoolsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePublicIpv4PoolsError::unhandled)?;
     Err(crate::error::DescribePublicIpv4PoolsError::generic(generic))
 }
@@ -7422,7 +7422,7 @@ pub fn parse_describe_public_ipv4_pools_response(
 pub fn parse_describe_regions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRegionsError::unhandled)?;
     Err(crate::error::DescribeRegionsError::generic(generic))
 }
@@ -7449,7 +7449,7 @@ pub fn parse_describe_replace_root_volume_tasks_error(
     crate::output::DescribeReplaceRootVolumeTasksOutput,
     crate::error::DescribeReplaceRootVolumeTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReplaceRootVolumeTasksError::unhandled)?;
     Err(crate::error::DescribeReplaceRootVolumeTasksError::generic(
         generic,
@@ -7484,7 +7484,7 @@ pub fn parse_describe_reserved_instances_error(
     crate::output::DescribeReservedInstancesOutput,
     crate::error::DescribeReservedInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedInstancesError::unhandled)?;
     Err(crate::error::DescribeReservedInstancesError::generic(
         generic,
@@ -7518,7 +7518,7 @@ pub fn parse_describe_reserved_instances_listings_error(
     crate::output::DescribeReservedInstancesListingsOutput,
     crate::error::DescribeReservedInstancesListingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedInstancesListingsError::unhandled)?;
     Err(crate::error::DescribeReservedInstancesListingsError::generic(generic))
 }
@@ -7551,7 +7551,7 @@ pub fn parse_describe_reserved_instances_modifications_error(
     crate::output::DescribeReservedInstancesModificationsOutput,
     crate::error::DescribeReservedInstancesModificationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedInstancesModificationsError::unhandled)?;
     Err(crate::error::DescribeReservedInstancesModificationsError::generic(generic))
 }
@@ -7584,7 +7584,7 @@ pub fn parse_describe_reserved_instances_offerings_error(
     crate::output::DescribeReservedInstancesOfferingsOutput,
     crate::error::DescribeReservedInstancesOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedInstancesOfferingsError::unhandled)?;
     Err(crate::error::DescribeReservedInstancesOfferingsError::generic(generic))
 }
@@ -7617,7 +7617,7 @@ pub fn parse_describe_route_tables_error(
     crate::output::DescribeRouteTablesOutput,
     crate::error::DescribeRouteTablesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRouteTablesError::unhandled)?;
     Err(crate::error::DescribeRouteTablesError::generic(generic))
 }
@@ -7649,7 +7649,7 @@ pub fn parse_describe_scheduled_instance_availability_error(
     crate::output::DescribeScheduledInstanceAvailabilityOutput,
     crate::error::DescribeScheduledInstanceAvailabilityError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScheduledInstanceAvailabilityError::unhandled)?;
     Err(crate::error::DescribeScheduledInstanceAvailabilityError::generic(generic))
 }
@@ -7682,7 +7682,7 @@ pub fn parse_describe_scheduled_instances_error(
     crate::output::DescribeScheduledInstancesOutput,
     crate::error::DescribeScheduledInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScheduledInstancesError::unhandled)?;
     Err(crate::error::DescribeScheduledInstancesError::generic(
         generic,
@@ -7716,7 +7716,7 @@ pub fn parse_describe_security_group_references_error(
     crate::output::DescribeSecurityGroupReferencesOutput,
     crate::error::DescribeSecurityGroupReferencesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSecurityGroupReferencesError::unhandled)?;
     Err(crate::error::DescribeSecurityGroupReferencesError::generic(
         generic,
@@ -7751,7 +7751,7 @@ pub fn parse_describe_security_group_rules_error(
     crate::output::DescribeSecurityGroupRulesOutput,
     crate::error::DescribeSecurityGroupRulesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSecurityGroupRulesError::unhandled)?;
     Err(crate::error::DescribeSecurityGroupRulesError::generic(
         generic,
@@ -7785,7 +7785,7 @@ pub fn parse_describe_security_groups_error(
     crate::output::DescribeSecurityGroupsOutput,
     crate::error::DescribeSecurityGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSecurityGroupsError::unhandled)?;
     Err(crate::error::DescribeSecurityGroupsError::generic(generic))
 }
@@ -7817,7 +7817,7 @@ pub fn parse_describe_snapshot_attribute_error(
     crate::output::DescribeSnapshotAttributeOutput,
     crate::error::DescribeSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSnapshotAttributeError::unhandled)?;
     Err(crate::error::DescribeSnapshotAttributeError::generic(
         generic,
@@ -7849,7 +7849,7 @@ pub fn parse_describe_snapshots_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
     Err(crate::error::DescribeSnapshotsError::generic(generic))
 }
@@ -7877,7 +7877,7 @@ pub fn parse_describe_spot_datafeed_subscription_error(
     crate::output::DescribeSpotDatafeedSubscriptionOutput,
     crate::error::DescribeSpotDatafeedSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSpotDatafeedSubscriptionError::unhandled)?;
     Err(crate::error::DescribeSpotDatafeedSubscriptionError::generic(generic))
 }
@@ -7910,7 +7910,7 @@ pub fn parse_describe_spot_fleet_instances_error(
     crate::output::DescribeSpotFleetInstancesOutput,
     crate::error::DescribeSpotFleetInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSpotFleetInstancesError::unhandled)?;
     Err(crate::error::DescribeSpotFleetInstancesError::generic(
         generic,
@@ -7944,7 +7944,7 @@ pub fn parse_describe_spot_fleet_request_history_error(
     crate::output::DescribeSpotFleetRequestHistoryOutput,
     crate::error::DescribeSpotFleetRequestHistoryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSpotFleetRequestHistoryError::unhandled)?;
     Err(crate::error::DescribeSpotFleetRequestHistoryError::generic(
         generic,
@@ -7979,7 +7979,7 @@ pub fn parse_describe_spot_fleet_requests_error(
     crate::output::DescribeSpotFleetRequestsOutput,
     crate::error::DescribeSpotFleetRequestsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSpotFleetRequestsError::unhandled)?;
     Err(crate::error::DescribeSpotFleetRequestsError::generic(
         generic,
@@ -8013,7 +8013,7 @@ pub fn parse_describe_spot_instance_requests_error(
     crate::output::DescribeSpotInstanceRequestsOutput,
     crate::error::DescribeSpotInstanceRequestsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSpotInstanceRequestsError::unhandled)?;
     Err(crate::error::DescribeSpotInstanceRequestsError::generic(
         generic,
@@ -8047,7 +8047,7 @@ pub fn parse_describe_spot_price_history_error(
     crate::output::DescribeSpotPriceHistoryOutput,
     crate::error::DescribeSpotPriceHistoryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSpotPriceHistoryError::unhandled)?;
     Err(crate::error::DescribeSpotPriceHistoryError::generic(
         generic,
@@ -8081,7 +8081,7 @@ pub fn parse_describe_stale_security_groups_error(
     crate::output::DescribeStaleSecurityGroupsOutput,
     crate::error::DescribeStaleSecurityGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStaleSecurityGroupsError::unhandled)?;
     Err(crate::error::DescribeStaleSecurityGroupsError::generic(
         generic,
@@ -8115,7 +8115,7 @@ pub fn parse_describe_store_image_tasks_error(
     crate::output::DescribeStoreImageTasksOutput,
     crate::error::DescribeStoreImageTasksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStoreImageTasksError::unhandled)?;
     Err(crate::error::DescribeStoreImageTasksError::generic(generic))
 }
@@ -8144,7 +8144,7 @@ pub fn parse_describe_store_image_tasks_response(
 pub fn parse_describe_subnets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSubnetsError::unhandled)?;
     Err(crate::error::DescribeSubnetsError::generic(generic))
 }
@@ -8168,7 +8168,7 @@ pub fn parse_describe_subnets_response(
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
     Err(crate::error::DescribeTagsError::generic(generic))
 }
@@ -8194,7 +8194,7 @@ pub fn parse_describe_traffic_mirror_filters_error(
     crate::output::DescribeTrafficMirrorFiltersOutput,
     crate::error::DescribeTrafficMirrorFiltersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrafficMirrorFiltersError::unhandled)?;
     Err(crate::error::DescribeTrafficMirrorFiltersError::generic(
         generic,
@@ -8228,7 +8228,7 @@ pub fn parse_describe_traffic_mirror_sessions_error(
     crate::output::DescribeTrafficMirrorSessionsOutput,
     crate::error::DescribeTrafficMirrorSessionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrafficMirrorSessionsError::unhandled)?;
     Err(crate::error::DescribeTrafficMirrorSessionsError::generic(
         generic,
@@ -8262,7 +8262,7 @@ pub fn parse_describe_traffic_mirror_targets_error(
     crate::output::DescribeTrafficMirrorTargetsOutput,
     crate::error::DescribeTrafficMirrorTargetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrafficMirrorTargetsError::unhandled)?;
     Err(crate::error::DescribeTrafficMirrorTargetsError::generic(
         generic,
@@ -8296,7 +8296,7 @@ pub fn parse_describe_transit_gateway_attachments_error(
     crate::output::DescribeTransitGatewayAttachmentsOutput,
     crate::error::DescribeTransitGatewayAttachmentsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayAttachmentsError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayAttachmentsError::generic(generic))
 }
@@ -8329,7 +8329,7 @@ pub fn parse_describe_transit_gateway_connect_peers_error(
     crate::output::DescribeTransitGatewayConnectPeersOutput,
     crate::error::DescribeTransitGatewayConnectPeersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayConnectPeersError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayConnectPeersError::generic(generic))
 }
@@ -8362,7 +8362,7 @@ pub fn parse_describe_transit_gateway_connects_error(
     crate::output::DescribeTransitGatewayConnectsOutput,
     crate::error::DescribeTransitGatewayConnectsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayConnectsError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayConnectsError::generic(
         generic,
@@ -8397,7 +8397,7 @@ pub fn parse_describe_transit_gateway_multicast_domains_error(
     crate::output::DescribeTransitGatewayMulticastDomainsOutput,
     crate::error::DescribeTransitGatewayMulticastDomainsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayMulticastDomainsError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayMulticastDomainsError::generic(generic))
 }
@@ -8430,7 +8430,7 @@ pub fn parse_describe_transit_gateway_peering_attachments_error(
     crate::output::DescribeTransitGatewayPeeringAttachmentsOutput,
     crate::error::DescribeTransitGatewayPeeringAttachmentsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::generic(generic))
 }
@@ -8463,7 +8463,7 @@ pub fn parse_describe_transit_gateway_route_tables_error(
     crate::output::DescribeTransitGatewayRouteTablesOutput,
     crate::error::DescribeTransitGatewayRouteTablesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayRouteTablesError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayRouteTablesError::generic(generic))
 }
@@ -8496,7 +8496,7 @@ pub fn parse_describe_transit_gateways_error(
     crate::output::DescribeTransitGatewaysOutput,
     crate::error::DescribeTransitGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewaysError::unhandled)?;
     Err(crate::error::DescribeTransitGatewaysError::generic(generic))
 }
@@ -8528,7 +8528,7 @@ pub fn parse_describe_transit_gateway_vpc_attachments_error(
     crate::output::DescribeTransitGatewayVpcAttachmentsOutput,
     crate::error::DescribeTransitGatewayVpcAttachmentsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTransitGatewayVpcAttachmentsError::unhandled)?;
     Err(crate::error::DescribeTransitGatewayVpcAttachmentsError::generic(generic))
 }
@@ -8561,7 +8561,7 @@ pub fn parse_describe_trunk_interface_associations_error(
     crate::output::DescribeTrunkInterfaceAssociationsOutput,
     crate::error::DescribeTrunkInterfaceAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
     Err(crate::error::DescribeTrunkInterfaceAssociationsError::generic(generic))
 }
@@ -8594,7 +8594,7 @@ pub fn parse_describe_volume_attribute_error(
     crate::output::DescribeVolumeAttributeOutput,
     crate::error::DescribeVolumeAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVolumeAttributeError::unhandled)?;
     Err(crate::error::DescribeVolumeAttributeError::generic(generic))
 }
@@ -8623,7 +8623,7 @@ pub fn parse_describe_volume_attribute_response(
 pub fn parse_describe_volumes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVolumesError::unhandled)?;
     Err(crate::error::DescribeVolumesError::generic(generic))
 }
@@ -8650,7 +8650,7 @@ pub fn parse_describe_volumes_modifications_error(
     crate::output::DescribeVolumesModificationsOutput,
     crate::error::DescribeVolumesModificationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVolumesModificationsError::unhandled)?;
     Err(crate::error::DescribeVolumesModificationsError::generic(
         generic,
@@ -8684,7 +8684,7 @@ pub fn parse_describe_volume_status_error(
     crate::output::DescribeVolumeStatusOutput,
     crate::error::DescribeVolumeStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVolumeStatusError::unhandled)?;
     Err(crate::error::DescribeVolumeStatusError::generic(generic))
 }
@@ -8716,7 +8716,7 @@ pub fn parse_describe_vpc_attribute_error(
     crate::output::DescribeVpcAttributeOutput,
     crate::error::DescribeVpcAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcAttributeError::unhandled)?;
     Err(crate::error::DescribeVpcAttributeError::generic(generic))
 }
@@ -8748,7 +8748,7 @@ pub fn parse_describe_vpc_classic_link_error(
     crate::output::DescribeVpcClassicLinkOutput,
     crate::error::DescribeVpcClassicLinkError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcClassicLinkError::unhandled)?;
     Err(crate::error::DescribeVpcClassicLinkError::generic(generic))
 }
@@ -8780,7 +8780,7 @@ pub fn parse_describe_vpc_classic_link_dns_support_error(
     crate::output::DescribeVpcClassicLinkDnsSupportOutput,
     crate::error::DescribeVpcClassicLinkDnsSupportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcClassicLinkDnsSupportError::unhandled)?;
     Err(crate::error::DescribeVpcClassicLinkDnsSupportError::generic(generic))
 }
@@ -8813,7 +8813,7 @@ pub fn parse_describe_vpc_endpoint_connection_notifications_error(
     crate::output::DescribeVpcEndpointConnectionNotificationsOutput,
     crate::error::DescribeVpcEndpointConnectionNotificationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcEndpointConnectionNotificationsError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointConnectionNotificationsError::generic(generic))
 }
@@ -8847,7 +8847,7 @@ pub fn parse_describe_vpc_endpoint_connections_error(
     crate::output::DescribeVpcEndpointConnectionsOutput,
     crate::error::DescribeVpcEndpointConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcEndpointConnectionsError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointConnectionsError::generic(
         generic,
@@ -8882,7 +8882,7 @@ pub fn parse_describe_vpc_endpoints_error(
     crate::output::DescribeVpcEndpointsOutput,
     crate::error::DescribeVpcEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcEndpointsError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointsError::generic(generic))
 }
@@ -8914,7 +8914,7 @@ pub fn parse_describe_vpc_endpoint_service_configurations_error(
     crate::output::DescribeVpcEndpointServiceConfigurationsOutput,
     crate::error::DescribeVpcEndpointServiceConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcEndpointServiceConfigurationsError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointServiceConfigurationsError::generic(generic))
 }
@@ -8947,7 +8947,7 @@ pub fn parse_describe_vpc_endpoint_service_permissions_error(
     crate::output::DescribeVpcEndpointServicePermissionsOutput,
     crate::error::DescribeVpcEndpointServicePermissionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcEndpointServicePermissionsError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointServicePermissionsError::generic(generic))
 }
@@ -8980,7 +8980,7 @@ pub fn parse_describe_vpc_endpoint_services_error(
     crate::output::DescribeVpcEndpointServicesOutput,
     crate::error::DescribeVpcEndpointServicesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcEndpointServicesError::unhandled)?;
     Err(crate::error::DescribeVpcEndpointServicesError::generic(
         generic,
@@ -9014,7 +9014,7 @@ pub fn parse_describe_vpc_peering_connections_error(
     crate::output::DescribeVpcPeeringConnectionsOutput,
     crate::error::DescribeVpcPeeringConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
     Err(crate::error::DescribeVpcPeeringConnectionsError::generic(
         generic,
@@ -9045,7 +9045,7 @@ pub fn parse_describe_vpc_peering_connections_response(
 pub fn parse_describe_vpcs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpcsError::unhandled)?;
     Err(crate::error::DescribeVpcsError::generic(generic))
 }
@@ -9071,7 +9071,7 @@ pub fn parse_describe_vpn_connections_error(
     crate::output::DescribeVpnConnectionsOutput,
     crate::error::DescribeVpnConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpnConnectionsError::unhandled)?;
     Err(crate::error::DescribeVpnConnectionsError::generic(generic))
 }
@@ -9103,7 +9103,7 @@ pub fn parse_describe_vpn_gateways_error(
     crate::output::DescribeVpnGatewaysOutput,
     crate::error::DescribeVpnGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeVpnGatewaysError::unhandled)?;
     Err(crate::error::DescribeVpnGatewaysError::generic(generic))
 }
@@ -9135,7 +9135,7 @@ pub fn parse_detach_classic_link_vpc_error(
     crate::output::DetachClassicLinkVpcOutput,
     crate::error::DetachClassicLinkVpcError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachClassicLinkVpcError::unhandled)?;
     Err(crate::error::DetachClassicLinkVpcError::generic(generic))
 }
@@ -9167,7 +9167,7 @@ pub fn parse_detach_internet_gateway_error(
     crate::output::DetachInternetGatewayOutput,
     crate::error::DetachInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachInternetGatewayError::unhandled)?;
     Err(crate::error::DetachInternetGatewayError::generic(generic))
 }
@@ -9194,7 +9194,7 @@ pub fn parse_detach_network_interface_error(
     crate::output::DetachNetworkInterfaceOutput,
     crate::error::DetachNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachNetworkInterfaceError::unhandled)?;
     Err(crate::error::DetachNetworkInterfaceError::generic(generic))
 }
@@ -9218,7 +9218,7 @@ pub fn parse_detach_network_interface_response(
 pub fn parse_detach_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachVolumeError::unhandled)?;
     Err(crate::error::DetachVolumeError::generic(generic))
 }
@@ -9242,7 +9242,7 @@ pub fn parse_detach_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachVpnGatewayError::unhandled)?;
     Err(crate::error::DetachVpnGatewayError::generic(generic))
 }
@@ -9267,7 +9267,7 @@ pub fn parse_disable_ebs_encryption_by_default_error(
     crate::output::DisableEbsEncryptionByDefaultOutput,
     crate::error::DisableEbsEncryptionByDefaultError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
     Err(crate::error::DisableEbsEncryptionByDefaultError::generic(
         generic,
@@ -9302,7 +9302,7 @@ pub fn parse_disable_fast_snapshot_restores_error(
     crate::output::DisableFastSnapshotRestoresOutput,
     crate::error::DisableFastSnapshotRestoresError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableFastSnapshotRestoresError::unhandled)?;
     Err(crate::error::DisableFastSnapshotRestoresError::generic(
         generic,
@@ -9336,7 +9336,7 @@ pub fn parse_disable_image_deprecation_error(
     crate::output::DisableImageDeprecationOutput,
     crate::error::DisableImageDeprecationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableImageDeprecationError::unhandled)?;
     Err(crate::error::DisableImageDeprecationError::generic(generic))
 }
@@ -9368,7 +9368,7 @@ pub fn parse_disable_serial_console_access_error(
     crate::output::DisableSerialConsoleAccessOutput,
     crate::error::DisableSerialConsoleAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableSerialConsoleAccessError::unhandled)?;
     Err(crate::error::DisableSerialConsoleAccessError::generic(
         generic,
@@ -9402,7 +9402,7 @@ pub fn parse_disable_transit_gateway_route_table_propagation_error(
     crate::output::DisableTransitGatewayRouteTablePropagationOutput,
     crate::error::DisableTransitGatewayRouteTablePropagationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableTransitGatewayRouteTablePropagationError::unhandled)?;
     Err(crate::error::DisableTransitGatewayRouteTablePropagationError::generic(generic))
 }
@@ -9436,7 +9436,7 @@ pub fn parse_disable_vgw_route_propagation_error(
     crate::output::DisableVgwRoutePropagationOutput,
     crate::error::DisableVgwRoutePropagationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableVgwRoutePropagationError::unhandled)?;
     Err(crate::error::DisableVgwRoutePropagationError::generic(
         generic,
@@ -9465,7 +9465,7 @@ pub fn parse_disable_vpc_classic_link_error(
     crate::output::DisableVpcClassicLinkOutput,
     crate::error::DisableVpcClassicLinkError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableVpcClassicLinkError::unhandled)?;
     Err(crate::error::DisableVpcClassicLinkError::generic(generic))
 }
@@ -9497,7 +9497,7 @@ pub fn parse_disable_vpc_classic_link_dns_support_error(
     crate::output::DisableVpcClassicLinkDnsSupportOutput,
     crate::error::DisableVpcClassicLinkDnsSupportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableVpcClassicLinkDnsSupportError::unhandled)?;
     Err(crate::error::DisableVpcClassicLinkDnsSupportError::generic(
         generic,
@@ -9532,7 +9532,7 @@ pub fn parse_disassociate_address_error(
     crate::output::DisassociateAddressOutput,
     crate::error::DisassociateAddressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateAddressError::unhandled)?;
     Err(crate::error::DisassociateAddressError::generic(generic))
 }
@@ -9559,7 +9559,7 @@ pub fn parse_disassociate_client_vpn_target_network_error(
     crate::output::DisassociateClientVpnTargetNetworkOutput,
     crate::error::DisassociateClientVpnTargetNetworkError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateClientVpnTargetNetworkError::unhandled)?;
     Err(crate::error::DisassociateClientVpnTargetNetworkError::generic(generic))
 }
@@ -9592,7 +9592,7 @@ pub fn parse_disassociate_enclave_certificate_iam_role_error(
     crate::output::DisassociateEnclaveCertificateIamRoleOutput,
     crate::error::DisassociateEnclaveCertificateIamRoleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateEnclaveCertificateIamRoleError::unhandled)?;
     Err(crate::error::DisassociateEnclaveCertificateIamRoleError::generic(generic))
 }
@@ -9625,7 +9625,7 @@ pub fn parse_disassociate_iam_instance_profile_error(
     crate::output::DisassociateIamInstanceProfileOutput,
     crate::error::DisassociateIamInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateIamInstanceProfileError::unhandled)?;
     Err(crate::error::DisassociateIamInstanceProfileError::generic(
         generic,
@@ -9660,7 +9660,7 @@ pub fn parse_disassociate_instance_event_window_error(
     crate::output::DisassociateInstanceEventWindowOutput,
     crate::error::DisassociateInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
     Err(crate::error::DisassociateInstanceEventWindowError::generic(
         generic,
@@ -9695,7 +9695,7 @@ pub fn parse_disassociate_route_table_error(
     crate::output::DisassociateRouteTableOutput,
     crate::error::DisassociateRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateRouteTableError::unhandled)?;
     Err(crate::error::DisassociateRouteTableError::generic(generic))
 }
@@ -9722,7 +9722,7 @@ pub fn parse_disassociate_subnet_cidr_block_error(
     crate::output::DisassociateSubnetCidrBlockOutput,
     crate::error::DisassociateSubnetCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateSubnetCidrBlockError::unhandled)?;
     Err(crate::error::DisassociateSubnetCidrBlockError::generic(
         generic,
@@ -9756,7 +9756,7 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_error(
     crate::output::DisassociateTransitGatewayMulticastDomainOutput,
     crate::error::DisassociateTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateTransitGatewayMulticastDomainError::unhandled)?;
     Err(crate::error::DisassociateTransitGatewayMulticastDomainError::generic(generic))
 }
@@ -9789,7 +9789,7 @@ pub fn parse_disassociate_transit_gateway_route_table_error(
     crate::output::DisassociateTransitGatewayRouteTableOutput,
     crate::error::DisassociateTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateTransitGatewayRouteTableError::unhandled)?;
     Err(crate::error::DisassociateTransitGatewayRouteTableError::generic(generic))
 }
@@ -9822,7 +9822,7 @@ pub fn parse_disassociate_trunk_interface_error(
     crate::output::DisassociateTrunkInterfaceOutput,
     crate::error::DisassociateTrunkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateTrunkInterfaceError::unhandled)?;
     Err(crate::error::DisassociateTrunkInterfaceError::generic(
         generic,
@@ -9856,7 +9856,7 @@ pub fn parse_disassociate_vpc_cidr_block_error(
     crate::output::DisassociateVpcCidrBlockOutput,
     crate::error::DisassociateVpcCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateVpcCidrBlockError::unhandled)?;
     Err(crate::error::DisassociateVpcCidrBlockError::generic(
         generic,
@@ -9890,7 +9890,7 @@ pub fn parse_enable_ebs_encryption_by_default_error(
     crate::output::EnableEbsEncryptionByDefaultOutput,
     crate::error::EnableEbsEncryptionByDefaultError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableEbsEncryptionByDefaultError::unhandled)?;
     Err(crate::error::EnableEbsEncryptionByDefaultError::generic(
         generic,
@@ -9924,7 +9924,7 @@ pub fn parse_enable_fast_snapshot_restores_error(
     crate::output::EnableFastSnapshotRestoresOutput,
     crate::error::EnableFastSnapshotRestoresError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableFastSnapshotRestoresError::unhandled)?;
     Err(crate::error::EnableFastSnapshotRestoresError::generic(
         generic,
@@ -9958,7 +9958,7 @@ pub fn parse_enable_image_deprecation_error(
     crate::output::EnableImageDeprecationOutput,
     crate::error::EnableImageDeprecationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableImageDeprecationError::unhandled)?;
     Err(crate::error::EnableImageDeprecationError::generic(generic))
 }
@@ -9990,7 +9990,7 @@ pub fn parse_enable_serial_console_access_error(
     crate::output::EnableSerialConsoleAccessOutput,
     crate::error::EnableSerialConsoleAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableSerialConsoleAccessError::unhandled)?;
     Err(crate::error::EnableSerialConsoleAccessError::generic(
         generic,
@@ -10024,7 +10024,7 @@ pub fn parse_enable_transit_gateway_route_table_propagation_error(
     crate::output::EnableTransitGatewayRouteTablePropagationOutput,
     crate::error::EnableTransitGatewayRouteTablePropagationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableTransitGatewayRouteTablePropagationError::unhandled)?;
     Err(crate::error::EnableTransitGatewayRouteTablePropagationError::generic(generic))
 }
@@ -10058,7 +10058,7 @@ pub fn parse_enable_vgw_route_propagation_error(
     crate::output::EnableVgwRoutePropagationOutput,
     crate::error::EnableVgwRoutePropagationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableVgwRoutePropagationError::unhandled)?;
     Err(crate::error::EnableVgwRoutePropagationError::generic(
         generic,
@@ -10084,7 +10084,7 @@ pub fn parse_enable_vgw_route_propagation_response(
 pub fn parse_enable_volume_io_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableVolumeIoOutput, crate::error::EnableVolumeIOError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableVolumeIOError::unhandled)?;
     Err(crate::error::EnableVolumeIOError::generic(generic))
 }
@@ -10108,7 +10108,7 @@ pub fn parse_enable_vpc_classic_link_error(
     crate::output::EnableVpcClassicLinkOutput,
     crate::error::EnableVpcClassicLinkError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableVpcClassicLinkError::unhandled)?;
     Err(crate::error::EnableVpcClassicLinkError::generic(generic))
 }
@@ -10140,7 +10140,7 @@ pub fn parse_enable_vpc_classic_link_dns_support_error(
     crate::output::EnableVpcClassicLinkDnsSupportOutput,
     crate::error::EnableVpcClassicLinkDnsSupportError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
     Err(crate::error::EnableVpcClassicLinkDnsSupportError::generic(
         generic,
@@ -10175,7 +10175,7 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_error(
     crate::output::ExportClientVpnClientCertificateRevocationListOutput,
     crate::error::ExportClientVpnClientCertificateRevocationListError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportClientVpnClientCertificateRevocationListError::unhandled)?;
     Err(crate::error::ExportClientVpnClientCertificateRevocationListError::generic(generic))
 }
@@ -10209,7 +10209,7 @@ pub fn parse_export_client_vpn_client_configuration_error(
     crate::output::ExportClientVpnClientConfigurationOutput,
     crate::error::ExportClientVpnClientConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportClientVpnClientConfigurationError::unhandled)?;
     Err(crate::error::ExportClientVpnClientConfigurationError::generic(generic))
 }
@@ -10239,7 +10239,7 @@ pub fn parse_export_client_vpn_client_configuration_response(
 pub fn parse_export_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportImageError::unhandled)?;
     Err(crate::error::ExportImageError::generic(generic))
 }
@@ -10265,7 +10265,7 @@ pub fn parse_export_transit_gateway_routes_error(
     crate::output::ExportTransitGatewayRoutesOutput,
     crate::error::ExportTransitGatewayRoutesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportTransitGatewayRoutesError::unhandled)?;
     Err(crate::error::ExportTransitGatewayRoutesError::generic(
         generic,
@@ -10299,7 +10299,7 @@ pub fn parse_get_associated_enclave_certificate_iam_roles_error(
     crate::output::GetAssociatedEnclaveCertificateIamRolesOutput,
     crate::error::GetAssociatedEnclaveCertificateIamRolesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::unhandled)?;
     Err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::generic(generic))
 }
@@ -10332,7 +10332,7 @@ pub fn parse_get_associated_ipv6_pool_cidrs_error(
     crate::output::GetAssociatedIpv6PoolCidrsOutput,
     crate::error::GetAssociatedIpv6PoolCidrsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAssociatedIpv6PoolCidrsError::unhandled)?;
     Err(crate::error::GetAssociatedIpv6PoolCidrsError::generic(
         generic,
@@ -10366,7 +10366,7 @@ pub fn parse_get_capacity_reservation_usage_error(
     crate::output::GetCapacityReservationUsageOutput,
     crate::error::GetCapacityReservationUsageError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCapacityReservationUsageError::unhandled)?;
     Err(crate::error::GetCapacityReservationUsageError::generic(
         generic,
@@ -10398,7 +10398,7 @@ pub fn parse_get_coip_pool_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCoipPoolUsageError::unhandled)?;
     Err(crate::error::GetCoipPoolUsageError::generic(generic))
 }
@@ -10424,7 +10424,7 @@ pub fn parse_get_console_output_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetConsoleOutputError::unhandled)?;
     Err(crate::error::GetConsoleOutputError::generic(generic))
 }
@@ -10452,7 +10452,7 @@ pub fn parse_get_console_screenshot_error(
     crate::output::GetConsoleScreenshotOutput,
     crate::error::GetConsoleScreenshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetConsoleScreenshotError::unhandled)?;
     Err(crate::error::GetConsoleScreenshotError::generic(generic))
 }
@@ -10484,7 +10484,7 @@ pub fn parse_get_default_credit_specification_error(
     crate::output::GetDefaultCreditSpecificationOutput,
     crate::error::GetDefaultCreditSpecificationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDefaultCreditSpecificationError::unhandled)?;
     Err(crate::error::GetDefaultCreditSpecificationError::generic(
         generic,
@@ -10518,7 +10518,7 @@ pub fn parse_get_ebs_default_kms_key_id_error(
     crate::output::GetEbsDefaultKmsKeyIdOutput,
     crate::error::GetEbsDefaultKmsKeyIdError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEbsDefaultKmsKeyIdError::unhandled)?;
     Err(crate::error::GetEbsDefaultKmsKeyIdError::generic(generic))
 }
@@ -10550,7 +10550,7 @@ pub fn parse_get_ebs_encryption_by_default_error(
     crate::output::GetEbsEncryptionByDefaultOutput,
     crate::error::GetEbsEncryptionByDefaultError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEbsEncryptionByDefaultError::unhandled)?;
     Err(crate::error::GetEbsEncryptionByDefaultError::generic(
         generic,
@@ -10584,7 +10584,7 @@ pub fn parse_get_flow_logs_integration_template_error(
     crate::output::GetFlowLogsIntegrationTemplateOutput,
     crate::error::GetFlowLogsIntegrationTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFlowLogsIntegrationTemplateError::unhandled)?;
     Err(crate::error::GetFlowLogsIntegrationTemplateError::generic(
         generic,
@@ -10619,7 +10619,7 @@ pub fn parse_get_groups_for_capacity_reservation_error(
     crate::output::GetGroupsForCapacityReservationOutput,
     crate::error::GetGroupsForCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetGroupsForCapacityReservationError::unhandled)?;
     Err(crate::error::GetGroupsForCapacityReservationError::generic(
         generic,
@@ -10654,7 +10654,7 @@ pub fn parse_get_host_reservation_purchase_preview_error(
     crate::output::GetHostReservationPurchasePreviewOutput,
     crate::error::GetHostReservationPurchasePreviewError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetHostReservationPurchasePreviewError::unhandled)?;
     Err(crate::error::GetHostReservationPurchasePreviewError::generic(generic))
 }
@@ -10687,7 +10687,7 @@ pub fn parse_get_launch_template_data_error(
     crate::output::GetLaunchTemplateDataOutput,
     crate::error::GetLaunchTemplateDataError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLaunchTemplateDataError::unhandled)?;
     Err(crate::error::GetLaunchTemplateDataError::generic(generic))
 }
@@ -10719,7 +10719,7 @@ pub fn parse_get_managed_prefix_list_associations_error(
     crate::output::GetManagedPrefixListAssociationsOutput,
     crate::error::GetManagedPrefixListAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetManagedPrefixListAssociationsError::unhandled)?;
     Err(crate::error::GetManagedPrefixListAssociationsError::generic(generic))
 }
@@ -10752,7 +10752,7 @@ pub fn parse_get_managed_prefix_list_entries_error(
     crate::output::GetManagedPrefixListEntriesOutput,
     crate::error::GetManagedPrefixListEntriesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetManagedPrefixListEntriesError::unhandled)?;
     Err(crate::error::GetManagedPrefixListEntriesError::generic(
         generic,
@@ -10783,7 +10783,7 @@ pub fn parse_get_managed_prefix_list_entries_response(
 pub fn parse_get_password_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPasswordDataError::unhandled)?;
     Err(crate::error::GetPasswordDataError::generic(generic))
 }
@@ -10810,7 +10810,7 @@ pub fn parse_get_reserved_instances_exchange_quote_error(
     crate::output::GetReservedInstancesExchangeQuoteOutput,
     crate::error::GetReservedInstancesExchangeQuoteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetReservedInstancesExchangeQuoteError::unhandled)?;
     Err(crate::error::GetReservedInstancesExchangeQuoteError::generic(generic))
 }
@@ -10843,7 +10843,7 @@ pub fn parse_get_serial_console_access_status_error(
     crate::output::GetSerialConsoleAccessStatusOutput,
     crate::error::GetSerialConsoleAccessStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSerialConsoleAccessStatusError::unhandled)?;
     Err(crate::error::GetSerialConsoleAccessStatusError::generic(
         generic,
@@ -10877,7 +10877,7 @@ pub fn parse_get_subnet_cidr_reservations_error(
     crate::output::GetSubnetCidrReservationsOutput,
     crate::error::GetSubnetCidrReservationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSubnetCidrReservationsError::unhandled)?;
     Err(crate::error::GetSubnetCidrReservationsError::generic(
         generic,
@@ -10911,7 +10911,7 @@ pub fn parse_get_transit_gateway_attachment_propagations_error(
     crate::output::GetTransitGatewayAttachmentPropagationsOutput,
     crate::error::GetTransitGatewayAttachmentPropagationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTransitGatewayAttachmentPropagationsError::unhandled)?;
     Err(crate::error::GetTransitGatewayAttachmentPropagationsError::generic(generic))
 }
@@ -10944,7 +10944,7 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_error(
     crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::GetTransitGatewayMulticastDomainAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
     Err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::generic(generic))
 }
@@ -10976,7 +10976,7 @@ pub fn parse_get_transit_gateway_prefix_list_references_error(
     crate::output::GetTransitGatewayPrefixListReferencesOutput,
     crate::error::GetTransitGatewayPrefixListReferencesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTransitGatewayPrefixListReferencesError::unhandled)?;
     Err(crate::error::GetTransitGatewayPrefixListReferencesError::generic(generic))
 }
@@ -11009,7 +11009,7 @@ pub fn parse_get_transit_gateway_route_table_associations_error(
     crate::output::GetTransitGatewayRouteTableAssociationsOutput,
     crate::error::GetTransitGatewayRouteTableAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTransitGatewayRouteTableAssociationsError::unhandled)?;
     Err(crate::error::GetTransitGatewayRouteTableAssociationsError::generic(generic))
 }
@@ -11042,7 +11042,7 @@ pub fn parse_get_transit_gateway_route_table_propagations_error(
     crate::output::GetTransitGatewayRouteTablePropagationsOutput,
     crate::error::GetTransitGatewayRouteTablePropagationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTransitGatewayRouteTablePropagationsError::unhandled)?;
     Err(crate::error::GetTransitGatewayRouteTablePropagationsError::generic(generic))
 }
@@ -11075,7 +11075,7 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_error(
     crate::output::ImportClientVpnClientCertificateRevocationListOutput,
     crate::error::ImportClientVpnClientCertificateRevocationListError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportClientVpnClientCertificateRevocationListError::unhandled)?;
     Err(crate::error::ImportClientVpnClientCertificateRevocationListError::generic(generic))
 }
@@ -11106,7 +11106,7 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
 pub fn parse_import_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportImageError::unhandled)?;
     Err(crate::error::ImportImageError::generic(generic))
 }
@@ -11129,7 +11129,7 @@ pub fn parse_import_image_response(
 pub fn parse_import_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportInstanceError::unhandled)?;
     Err(crate::error::ImportInstanceError::generic(generic))
 }
@@ -11153,7 +11153,7 @@ pub fn parse_import_instance_response(
 pub fn parse_import_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportKeyPairError::unhandled)?;
     Err(crate::error::ImportKeyPairError::generic(generic))
 }
@@ -11177,7 +11177,7 @@ pub fn parse_import_key_pair_response(
 pub fn parse_import_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportSnapshotError::unhandled)?;
     Err(crate::error::ImportSnapshotError::generic(generic))
 }
@@ -11201,7 +11201,7 @@ pub fn parse_import_snapshot_response(
 pub fn parse_import_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportVolumeError::unhandled)?;
     Err(crate::error::ImportVolumeError::generic(generic))
 }
@@ -11227,7 +11227,7 @@ pub fn parse_modify_address_attribute_error(
     crate::output::ModifyAddressAttributeOutput,
     crate::error::ModifyAddressAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyAddressAttributeError::unhandled)?;
     Err(crate::error::ModifyAddressAttributeError::generic(generic))
 }
@@ -11259,7 +11259,7 @@ pub fn parse_modify_availability_zone_group_error(
     crate::output::ModifyAvailabilityZoneGroupOutput,
     crate::error::ModifyAvailabilityZoneGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyAvailabilityZoneGroupError::unhandled)?;
     Err(crate::error::ModifyAvailabilityZoneGroupError::generic(
         generic,
@@ -11293,7 +11293,7 @@ pub fn parse_modify_capacity_reservation_error(
     crate::output::ModifyCapacityReservationOutput,
     crate::error::ModifyCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyCapacityReservationError::unhandled)?;
     Err(crate::error::ModifyCapacityReservationError::generic(
         generic,
@@ -11327,7 +11327,7 @@ pub fn parse_modify_client_vpn_endpoint_error(
     crate::output::ModifyClientVpnEndpointOutput,
     crate::error::ModifyClientVpnEndpointError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClientVpnEndpointError::unhandled)?;
     Err(crate::error::ModifyClientVpnEndpointError::generic(generic))
 }
@@ -11359,7 +11359,7 @@ pub fn parse_modify_default_credit_specification_error(
     crate::output::ModifyDefaultCreditSpecificationOutput,
     crate::error::ModifyDefaultCreditSpecificationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyDefaultCreditSpecificationError::unhandled)?;
     Err(crate::error::ModifyDefaultCreditSpecificationError::generic(generic))
 }
@@ -11392,7 +11392,7 @@ pub fn parse_modify_ebs_default_kms_key_id_error(
     crate::output::ModifyEbsDefaultKmsKeyIdOutput,
     crate::error::ModifyEbsDefaultKmsKeyIdError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyEbsDefaultKmsKeyIdError::unhandled)?;
     Err(crate::error::ModifyEbsDefaultKmsKeyIdError::generic(
         generic,
@@ -11423,7 +11423,7 @@ pub fn parse_modify_ebs_default_kms_key_id_response(
 pub fn parse_modify_fleet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyFleetError::unhandled)?;
     Err(crate::error::ModifyFleetError::generic(generic))
 }
@@ -11449,7 +11449,7 @@ pub fn parse_modify_fpga_image_attribute_error(
     crate::output::ModifyFpgaImageAttributeOutput,
     crate::error::ModifyFpgaImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyFpgaImageAttributeError::unhandled)?;
     Err(crate::error::ModifyFpgaImageAttributeError::generic(
         generic,
@@ -11480,7 +11480,7 @@ pub fn parse_modify_fpga_image_attribute_response(
 pub fn parse_modify_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyHostsError::unhandled)?;
     Err(crate::error::ModifyHostsError::generic(generic))
 }
@@ -11506,7 +11506,7 @@ pub fn parse_modify_identity_id_format_error(
     crate::output::ModifyIdentityIdFormatOutput,
     crate::error::ModifyIdentityIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyIdentityIdFormatError::unhandled)?;
     Err(crate::error::ModifyIdentityIdFormatError::generic(generic))
 }
@@ -11530,7 +11530,7 @@ pub fn parse_modify_identity_id_format_response(
 pub fn parse_modify_id_format_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyIdFormatError::unhandled)?;
     Err(crate::error::ModifyIdFormatError::generic(generic))
 }
@@ -11554,7 +11554,7 @@ pub fn parse_modify_image_attribute_error(
     crate::output::ModifyImageAttributeOutput,
     crate::error::ModifyImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyImageAttributeError::unhandled)?;
     Err(crate::error::ModifyImageAttributeError::generic(generic))
 }
@@ -11581,7 +11581,7 @@ pub fn parse_modify_instance_attribute_error(
     crate::output::ModifyInstanceAttributeOutput,
     crate::error::ModifyInstanceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstanceAttributeError::unhandled)?;
     Err(crate::error::ModifyInstanceAttributeError::generic(generic))
 }
@@ -11608,7 +11608,7 @@ pub fn parse_modify_instance_capacity_reservation_attributes_error(
     crate::output::ModifyInstanceCapacityReservationAttributesOutput,
     crate::error::ModifyInstanceCapacityReservationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstanceCapacityReservationAttributesError::unhandled)?;
     Err(crate::error::ModifyInstanceCapacityReservationAttributesError::generic(generic))
 }
@@ -11642,7 +11642,7 @@ pub fn parse_modify_instance_credit_specification_error(
     crate::output::ModifyInstanceCreditSpecificationOutput,
     crate::error::ModifyInstanceCreditSpecificationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstanceCreditSpecificationError::unhandled)?;
     Err(crate::error::ModifyInstanceCreditSpecificationError::generic(generic))
 }
@@ -11675,7 +11675,7 @@ pub fn parse_modify_instance_event_start_time_error(
     crate::output::ModifyInstanceEventStartTimeOutput,
     crate::error::ModifyInstanceEventStartTimeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstanceEventStartTimeError::unhandled)?;
     Err(crate::error::ModifyInstanceEventStartTimeError::generic(
         generic,
@@ -11709,7 +11709,7 @@ pub fn parse_modify_instance_event_window_error(
     crate::output::ModifyInstanceEventWindowOutput,
     crate::error::ModifyInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstanceEventWindowError::unhandled)?;
     Err(crate::error::ModifyInstanceEventWindowError::generic(
         generic,
@@ -11743,7 +11743,7 @@ pub fn parse_modify_instance_metadata_options_error(
     crate::output::ModifyInstanceMetadataOptionsOutput,
     crate::error::ModifyInstanceMetadataOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstanceMetadataOptionsError::unhandled)?;
     Err(crate::error::ModifyInstanceMetadataOptionsError::generic(
         generic,
@@ -11777,7 +11777,7 @@ pub fn parse_modify_instance_placement_error(
     crate::output::ModifyInstancePlacementOutput,
     crate::error::ModifyInstancePlacementError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyInstancePlacementError::unhandled)?;
     Err(crate::error::ModifyInstancePlacementError::generic(generic))
 }
@@ -11809,7 +11809,7 @@ pub fn parse_modify_launch_template_error(
     crate::output::ModifyLaunchTemplateOutput,
     crate::error::ModifyLaunchTemplateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyLaunchTemplateError::unhandled)?;
     Err(crate::error::ModifyLaunchTemplateError::generic(generic))
 }
@@ -11841,7 +11841,7 @@ pub fn parse_modify_managed_prefix_list_error(
     crate::output::ModifyManagedPrefixListOutput,
     crate::error::ModifyManagedPrefixListError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyManagedPrefixListError::unhandled)?;
     Err(crate::error::ModifyManagedPrefixListError::generic(generic))
 }
@@ -11873,7 +11873,7 @@ pub fn parse_modify_network_interface_attribute_error(
     crate::output::ModifyNetworkInterfaceAttributeOutput,
     crate::error::ModifyNetworkInterfaceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyNetworkInterfaceAttributeError::unhandled)?;
     Err(crate::error::ModifyNetworkInterfaceAttributeError::generic(
         generic,
@@ -11903,7 +11903,7 @@ pub fn parse_modify_reserved_instances_error(
     crate::output::ModifyReservedInstancesOutput,
     crate::error::ModifyReservedInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyReservedInstancesError::unhandled)?;
     Err(crate::error::ModifyReservedInstancesError::generic(generic))
 }
@@ -11935,7 +11935,7 @@ pub fn parse_modify_security_group_rules_error(
     crate::output::ModifySecurityGroupRulesOutput,
     crate::error::ModifySecurityGroupRulesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifySecurityGroupRulesError::unhandled)?;
     Err(crate::error::ModifySecurityGroupRulesError::generic(
         generic,
@@ -11969,7 +11969,7 @@ pub fn parse_modify_snapshot_attribute_error(
     crate::output::ModifySnapshotAttributeOutput,
     crate::error::ModifySnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifySnapshotAttributeError::unhandled)?;
     Err(crate::error::ModifySnapshotAttributeError::generic(generic))
 }
@@ -11996,7 +11996,7 @@ pub fn parse_modify_spot_fleet_request_error(
     crate::output::ModifySpotFleetRequestOutput,
     crate::error::ModifySpotFleetRequestError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifySpotFleetRequestError::unhandled)?;
     Err(crate::error::ModifySpotFleetRequestError::generic(generic))
 }
@@ -12028,7 +12028,7 @@ pub fn parse_modify_subnet_attribute_error(
     crate::output::ModifySubnetAttributeOutput,
     crate::error::ModifySubnetAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifySubnetAttributeError::unhandled)?;
     Err(crate::error::ModifySubnetAttributeError::generic(generic))
 }
@@ -12055,7 +12055,7 @@ pub fn parse_modify_traffic_mirror_filter_network_services_error(
     crate::output::ModifyTrafficMirrorFilterNetworkServicesOutput,
     crate::error::ModifyTrafficMirrorFilterNetworkServicesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::unhandled)?;
     Err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::generic(generic))
 }
@@ -12088,7 +12088,7 @@ pub fn parse_modify_traffic_mirror_filter_rule_error(
     crate::output::ModifyTrafficMirrorFilterRuleOutput,
     crate::error::ModifyTrafficMirrorFilterRuleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyTrafficMirrorFilterRuleError::unhandled)?;
     Err(crate::error::ModifyTrafficMirrorFilterRuleError::generic(
         generic,
@@ -12123,7 +12123,7 @@ pub fn parse_modify_traffic_mirror_session_error(
     crate::output::ModifyTrafficMirrorSessionOutput,
     crate::error::ModifyTrafficMirrorSessionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyTrafficMirrorSessionError::unhandled)?;
     Err(crate::error::ModifyTrafficMirrorSessionError::generic(
         generic,
@@ -12157,7 +12157,7 @@ pub fn parse_modify_transit_gateway_error(
     crate::output::ModifyTransitGatewayOutput,
     crate::error::ModifyTransitGatewayError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyTransitGatewayError::unhandled)?;
     Err(crate::error::ModifyTransitGatewayError::generic(generic))
 }
@@ -12189,7 +12189,7 @@ pub fn parse_modify_transit_gateway_prefix_list_reference_error(
     crate::output::ModifyTransitGatewayPrefixListReferenceOutput,
     crate::error::ModifyTransitGatewayPrefixListReferenceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyTransitGatewayPrefixListReferenceError::unhandled)?;
     Err(crate::error::ModifyTransitGatewayPrefixListReferenceError::generic(generic))
 }
@@ -12222,7 +12222,7 @@ pub fn parse_modify_transit_gateway_vpc_attachment_error(
     crate::output::ModifyTransitGatewayVpcAttachmentOutput,
     crate::error::ModifyTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyTransitGatewayVpcAttachmentError::unhandled)?;
     Err(crate::error::ModifyTransitGatewayVpcAttachmentError::generic(generic))
 }
@@ -12252,7 +12252,7 @@ pub fn parse_modify_transit_gateway_vpc_attachment_response(
 pub fn parse_modify_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVolumeError::unhandled)?;
     Err(crate::error::ModifyVolumeError::generic(generic))
 }
@@ -12278,7 +12278,7 @@ pub fn parse_modify_volume_attribute_error(
     crate::output::ModifyVolumeAttributeOutput,
     crate::error::ModifyVolumeAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVolumeAttributeError::unhandled)?;
     Err(crate::error::ModifyVolumeAttributeError::generic(generic))
 }
@@ -12305,7 +12305,7 @@ pub fn parse_modify_vpc_attribute_error(
     crate::output::ModifyVpcAttributeOutput,
     crate::error::ModifyVpcAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcAttributeError::unhandled)?;
     Err(crate::error::ModifyVpcAttributeError::generic(generic))
 }
@@ -12330,7 +12330,7 @@ pub fn parse_modify_vpc_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcEndpointError::unhandled)?;
     Err(crate::error::ModifyVpcEndpointError::generic(generic))
 }
@@ -12358,7 +12358,7 @@ pub fn parse_modify_vpc_endpoint_connection_notification_error(
     crate::output::ModifyVpcEndpointConnectionNotificationOutput,
     crate::error::ModifyVpcEndpointConnectionNotificationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcEndpointConnectionNotificationError::unhandled)?;
     Err(crate::error::ModifyVpcEndpointConnectionNotificationError::generic(generic))
 }
@@ -12391,7 +12391,7 @@ pub fn parse_modify_vpc_endpoint_service_configuration_error(
     crate::output::ModifyVpcEndpointServiceConfigurationOutput,
     crate::error::ModifyVpcEndpointServiceConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcEndpointServiceConfigurationError::unhandled)?;
     Err(crate::error::ModifyVpcEndpointServiceConfigurationError::generic(generic))
 }
@@ -12424,7 +12424,7 @@ pub fn parse_modify_vpc_endpoint_service_permissions_error(
     crate::output::ModifyVpcEndpointServicePermissionsOutput,
     crate::error::ModifyVpcEndpointServicePermissionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcEndpointServicePermissionsError::unhandled)?;
     Err(crate::error::ModifyVpcEndpointServicePermissionsError::generic(generic))
 }
@@ -12457,7 +12457,7 @@ pub fn parse_modify_vpc_peering_connection_options_error(
     crate::output::ModifyVpcPeeringConnectionOptionsOutput,
     crate::error::ModifyVpcPeeringConnectionOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcPeeringConnectionOptionsError::unhandled)?;
     Err(crate::error::ModifyVpcPeeringConnectionOptionsError::generic(generic))
 }
@@ -12488,7 +12488,7 @@ pub fn parse_modify_vpc_tenancy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpcTenancyError::unhandled)?;
     Err(crate::error::ModifyVpcTenancyError::generic(generic))
 }
@@ -12516,7 +12516,7 @@ pub fn parse_modify_vpn_connection_error(
     crate::output::ModifyVpnConnectionOutput,
     crate::error::ModifyVpnConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpnConnectionError::unhandled)?;
     Err(crate::error::ModifyVpnConnectionError::generic(generic))
 }
@@ -12548,7 +12548,7 @@ pub fn parse_modify_vpn_connection_options_error(
     crate::output::ModifyVpnConnectionOptionsOutput,
     crate::error::ModifyVpnConnectionOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpnConnectionOptionsError::unhandled)?;
     Err(crate::error::ModifyVpnConnectionOptionsError::generic(
         generic,
@@ -12582,7 +12582,7 @@ pub fn parse_modify_vpn_tunnel_certificate_error(
     crate::output::ModifyVpnTunnelCertificateOutput,
     crate::error::ModifyVpnTunnelCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpnTunnelCertificateError::unhandled)?;
     Err(crate::error::ModifyVpnTunnelCertificateError::generic(
         generic,
@@ -12616,7 +12616,7 @@ pub fn parse_modify_vpn_tunnel_options_error(
     crate::output::ModifyVpnTunnelOptionsOutput,
     crate::error::ModifyVpnTunnelOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyVpnTunnelOptionsError::unhandled)?;
     Err(crate::error::ModifyVpnTunnelOptionsError::generic(generic))
 }
@@ -12646,7 +12646,7 @@ pub fn parse_monitor_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::MonitorInstancesError::unhandled)?;
     Err(crate::error::MonitorInstancesError::generic(generic))
 }
@@ -12672,7 +12672,7 @@ pub fn parse_move_address_to_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
     Err(crate::error::MoveAddressToVpcError::generic(generic))
 }
@@ -12700,7 +12700,7 @@ pub fn parse_provision_byoip_cidr_error(
     crate::output::ProvisionByoipCidrOutput,
     crate::error::ProvisionByoipCidrError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
     Err(crate::error::ProvisionByoipCidrError::generic(generic))
 }
@@ -12732,7 +12732,7 @@ pub fn parse_purchase_host_reservation_error(
     crate::output::PurchaseHostReservationOutput,
     crate::error::PurchaseHostReservationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PurchaseHostReservationError::unhandled)?;
     Err(crate::error::PurchaseHostReservationError::generic(generic))
 }
@@ -12764,7 +12764,7 @@ pub fn parse_purchase_reserved_instances_offering_error(
     crate::output::PurchaseReservedInstancesOfferingOutput,
     crate::error::PurchaseReservedInstancesOfferingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PurchaseReservedInstancesOfferingError::unhandled)?;
     Err(crate::error::PurchaseReservedInstancesOfferingError::generic(generic))
 }
@@ -12797,7 +12797,7 @@ pub fn parse_purchase_scheduled_instances_error(
     crate::output::PurchaseScheduledInstancesOutput,
     crate::error::PurchaseScheduledInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PurchaseScheduledInstancesError::unhandled)?;
     Err(crate::error::PurchaseScheduledInstancesError::generic(
         generic,
@@ -12828,7 +12828,7 @@ pub fn parse_purchase_scheduled_instances_response(
 pub fn parse_reboot_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RebootInstancesError::unhandled)?;
     Err(crate::error::RebootInstancesError::generic(generic))
 }
@@ -12849,7 +12849,7 @@ pub fn parse_reboot_instances_response(
 pub fn parse_register_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterImageError::unhandled)?;
     Err(crate::error::RegisterImageError::generic(generic))
 }
@@ -12875,7 +12875,7 @@ pub fn parse_register_instance_event_notification_attributes_error(
     crate::output::RegisterInstanceEventNotificationAttributesOutput,
     crate::error::RegisterInstanceEventNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterInstanceEventNotificationAttributesError::unhandled)?;
     Err(crate::error::RegisterInstanceEventNotificationAttributesError::generic(generic))
 }
@@ -12909,7 +12909,7 @@ pub fn parse_register_transit_gateway_multicast_group_members_error(
     crate::output::RegisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::RegisterTransitGatewayMulticastGroupMembersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::unhandled)?;
     Err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::generic(generic))
 }
@@ -12941,7 +12941,7 @@ pub fn parse_register_transit_gateway_multicast_group_sources_error(
     crate::output::RegisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::RegisterTransitGatewayMulticastGroupSourcesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
     Err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::generic(generic))
 }
@@ -12973,7 +12973,7 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_error(
     crate::output::RejectTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::RejectTransitGatewayMulticastDomainAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::unhandled)?;
     Err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::generic(generic))
 }
@@ -13007,7 +13007,7 @@ pub fn parse_reject_transit_gateway_peering_attachment_error(
     crate::output::RejectTransitGatewayPeeringAttachmentOutput,
     crate::error::RejectTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectTransitGatewayPeeringAttachmentError::unhandled)?;
     Err(crate::error::RejectTransitGatewayPeeringAttachmentError::generic(generic))
 }
@@ -13040,7 +13040,7 @@ pub fn parse_reject_transit_gateway_vpc_attachment_error(
     crate::output::RejectTransitGatewayVpcAttachmentOutput,
     crate::error::RejectTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectTransitGatewayVpcAttachmentError::unhandled)?;
     Err(crate::error::RejectTransitGatewayVpcAttachmentError::generic(generic))
 }
@@ -13073,7 +13073,7 @@ pub fn parse_reject_vpc_endpoint_connections_error(
     crate::output::RejectVpcEndpointConnectionsOutput,
     crate::error::RejectVpcEndpointConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectVpcEndpointConnectionsError::unhandled)?;
     Err(crate::error::RejectVpcEndpointConnectionsError::generic(
         generic,
@@ -13107,7 +13107,7 @@ pub fn parse_reject_vpc_peering_connection_error(
     crate::output::RejectVpcPeeringConnectionOutput,
     crate::error::RejectVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectVpcPeeringConnectionError::unhandled)?;
     Err(crate::error::RejectVpcPeeringConnectionError::generic(
         generic,
@@ -13138,7 +13138,7 @@ pub fn parse_reject_vpc_peering_connection_response(
 pub fn parse_release_address_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReleaseAddressError::unhandled)?;
     Err(crate::error::ReleaseAddressError::generic(generic))
 }
@@ -13159,7 +13159,7 @@ pub fn parse_release_address_response(
 pub fn parse_release_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReleaseHostsError::unhandled)?;
     Err(crate::error::ReleaseHostsError::generic(generic))
 }
@@ -13185,7 +13185,7 @@ pub fn parse_replace_iam_instance_profile_association_error(
     crate::output::ReplaceIamInstanceProfileAssociationOutput,
     crate::error::ReplaceIamInstanceProfileAssociationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReplaceIamInstanceProfileAssociationError::unhandled)?;
     Err(crate::error::ReplaceIamInstanceProfileAssociationError::generic(generic))
 }
@@ -13218,7 +13218,7 @@ pub fn parse_replace_network_acl_association_error(
     crate::output::ReplaceNetworkAclAssociationOutput,
     crate::error::ReplaceNetworkAclAssociationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReplaceNetworkAclAssociationError::unhandled)?;
     Err(crate::error::ReplaceNetworkAclAssociationError::generic(
         generic,
@@ -13252,7 +13252,7 @@ pub fn parse_replace_network_acl_entry_error(
     crate::output::ReplaceNetworkAclEntryOutput,
     crate::error::ReplaceNetworkAclEntryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReplaceNetworkAclEntryError::unhandled)?;
     Err(crate::error::ReplaceNetworkAclEntryError::generic(generic))
 }
@@ -13276,7 +13276,7 @@ pub fn parse_replace_network_acl_entry_response(
 pub fn parse_replace_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReplaceRouteError::unhandled)?;
     Err(crate::error::ReplaceRouteError::generic(generic))
 }
@@ -13300,7 +13300,7 @@ pub fn parse_replace_route_table_association_error(
     crate::output::ReplaceRouteTableAssociationOutput,
     crate::error::ReplaceRouteTableAssociationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReplaceRouteTableAssociationError::unhandled)?;
     Err(crate::error::ReplaceRouteTableAssociationError::generic(
         generic,
@@ -13334,7 +13334,7 @@ pub fn parse_replace_transit_gateway_route_error(
     crate::output::ReplaceTransitGatewayRouteOutput,
     crate::error::ReplaceTransitGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReplaceTransitGatewayRouteError::unhandled)?;
     Err(crate::error::ReplaceTransitGatewayRouteError::generic(
         generic,
@@ -13368,7 +13368,7 @@ pub fn parse_report_instance_status_error(
     crate::output::ReportInstanceStatusOutput,
     crate::error::ReportInstanceStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReportInstanceStatusError::unhandled)?;
     Err(crate::error::ReportInstanceStatusError::generic(generic))
 }
@@ -13393,7 +13393,7 @@ pub fn parse_request_spot_fleet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RequestSpotFleetError::unhandled)?;
     Err(crate::error::RequestSpotFleetError::generic(generic))
 }
@@ -13421,7 +13421,7 @@ pub fn parse_request_spot_instances_error(
     crate::output::RequestSpotInstancesOutput,
     crate::error::RequestSpotInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RequestSpotInstancesError::unhandled)?;
     Err(crate::error::RequestSpotInstancesError::generic(generic))
 }
@@ -13453,7 +13453,7 @@ pub fn parse_reset_address_attribute_error(
     crate::output::ResetAddressAttributeOutput,
     crate::error::ResetAddressAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetAddressAttributeError::unhandled)?;
     Err(crate::error::ResetAddressAttributeError::generic(generic))
 }
@@ -13485,7 +13485,7 @@ pub fn parse_reset_ebs_default_kms_key_id_error(
     crate::output::ResetEbsDefaultKmsKeyIdOutput,
     crate::error::ResetEbsDefaultKmsKeyIdError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetEbsDefaultKmsKeyIdError::unhandled)?;
     Err(crate::error::ResetEbsDefaultKmsKeyIdError::generic(generic))
 }
@@ -13517,7 +13517,7 @@ pub fn parse_reset_fpga_image_attribute_error(
     crate::output::ResetFpgaImageAttributeOutput,
     crate::error::ResetFpgaImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetFpgaImageAttributeError::unhandled)?;
     Err(crate::error::ResetFpgaImageAttributeError::generic(generic))
 }
@@ -13549,7 +13549,7 @@ pub fn parse_reset_image_attribute_error(
     crate::output::ResetImageAttributeOutput,
     crate::error::ResetImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetImageAttributeError::unhandled)?;
     Err(crate::error::ResetImageAttributeError::generic(generic))
 }
@@ -13576,7 +13576,7 @@ pub fn parse_reset_instance_attribute_error(
     crate::output::ResetInstanceAttributeOutput,
     crate::error::ResetInstanceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetInstanceAttributeError::unhandled)?;
     Err(crate::error::ResetInstanceAttributeError::generic(generic))
 }
@@ -13603,7 +13603,7 @@ pub fn parse_reset_network_interface_attribute_error(
     crate::output::ResetNetworkInterfaceAttributeOutput,
     crate::error::ResetNetworkInterfaceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetNetworkInterfaceAttributeError::unhandled)?;
     Err(crate::error::ResetNetworkInterfaceAttributeError::generic(
         generic,
@@ -13633,7 +13633,7 @@ pub fn parse_reset_snapshot_attribute_error(
     crate::output::ResetSnapshotAttributeOutput,
     crate::error::ResetSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetSnapshotAttributeError::unhandled)?;
     Err(crate::error::ResetSnapshotAttributeError::generic(generic))
 }
@@ -13660,7 +13660,7 @@ pub fn parse_restore_address_to_classic_error(
     crate::output::RestoreAddressToClassicOutput,
     crate::error::RestoreAddressToClassicError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreAddressToClassicError::unhandled)?;
     Err(crate::error::RestoreAddressToClassicError::generic(generic))
 }
@@ -13692,7 +13692,7 @@ pub fn parse_restore_managed_prefix_list_version_error(
     crate::output::RestoreManagedPrefixListVersionOutput,
     crate::error::RestoreManagedPrefixListVersionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreManagedPrefixListVersionError::unhandled)?;
     Err(crate::error::RestoreManagedPrefixListVersionError::generic(
         generic,
@@ -13727,7 +13727,7 @@ pub fn parse_revoke_client_vpn_ingress_error(
     crate::output::RevokeClientVpnIngressOutput,
     crate::error::RevokeClientVpnIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeClientVpnIngressError::unhandled)?;
     Err(crate::error::RevokeClientVpnIngressError::generic(generic))
 }
@@ -13759,7 +13759,7 @@ pub fn parse_revoke_security_group_egress_error(
     crate::output::RevokeSecurityGroupEgressOutput,
     crate::error::RevokeSecurityGroupEgressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeSecurityGroupEgressError::unhandled)?;
     Err(crate::error::RevokeSecurityGroupEgressError::generic(
         generic,
@@ -13793,7 +13793,7 @@ pub fn parse_revoke_security_group_ingress_error(
     crate::output::RevokeSecurityGroupIngressOutput,
     crate::error::RevokeSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeSecurityGroupIngressError::unhandled)?;
     Err(crate::error::RevokeSecurityGroupIngressError::generic(
         generic,
@@ -13824,7 +13824,7 @@ pub fn parse_revoke_security_group_ingress_response(
 pub fn parse_run_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RunInstancesError::unhandled)?;
     Err(crate::error::RunInstancesError::generic(generic))
 }
@@ -13850,7 +13850,7 @@ pub fn parse_run_scheduled_instances_error(
     crate::output::RunScheduledInstancesOutput,
     crate::error::RunScheduledInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RunScheduledInstancesError::unhandled)?;
     Err(crate::error::RunScheduledInstancesError::generic(generic))
 }
@@ -13882,7 +13882,7 @@ pub fn parse_search_local_gateway_routes_error(
     crate::output::SearchLocalGatewayRoutesOutput,
     crate::error::SearchLocalGatewayRoutesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchLocalGatewayRoutesError::unhandled)?;
     Err(crate::error::SearchLocalGatewayRoutesError::generic(
         generic,
@@ -13916,7 +13916,7 @@ pub fn parse_search_transit_gateway_multicast_groups_error(
     crate::output::SearchTransitGatewayMulticastGroupsOutput,
     crate::error::SearchTransitGatewayMulticastGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchTransitGatewayMulticastGroupsError::unhandled)?;
     Err(crate::error::SearchTransitGatewayMulticastGroupsError::generic(generic))
 }
@@ -13949,7 +13949,7 @@ pub fn parse_search_transit_gateway_routes_error(
     crate::output::SearchTransitGatewayRoutesOutput,
     crate::error::SearchTransitGatewayRoutesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchTransitGatewayRoutesError::unhandled)?;
     Err(crate::error::SearchTransitGatewayRoutesError::generic(
         generic,
@@ -13983,7 +13983,7 @@ pub fn parse_send_diagnostic_interrupt_error(
     crate::output::SendDiagnosticInterruptOutput,
     crate::error::SendDiagnosticInterruptError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendDiagnosticInterruptError::unhandled)?;
     Err(crate::error::SendDiagnosticInterruptError::generic(generic))
 }
@@ -14007,7 +14007,7 @@ pub fn parse_send_diagnostic_interrupt_response(
 pub fn parse_start_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartInstancesError::unhandled)?;
     Err(crate::error::StartInstancesError::generic(generic))
 }
@@ -14034,7 +14034,7 @@ pub fn parse_start_network_insights_analysis_error(
     crate::output::StartNetworkInsightsAnalysisOutput,
     crate::error::StartNetworkInsightsAnalysisError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartNetworkInsightsAnalysisError::unhandled)?;
     Err(crate::error::StartNetworkInsightsAnalysisError::generic(
         generic,
@@ -14068,7 +14068,7 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_error(
     crate::output::StartVpcEndpointServicePrivateDnsVerificationOutput,
     crate::error::StartVpcEndpointServicePrivateDnsVerificationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::unhandled)?;
     Err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::generic(generic))
 }
@@ -14097,7 +14097,7 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
 pub fn parse_stop_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopInstancesError::unhandled)?;
     Err(crate::error::StopInstancesError::generic(generic))
 }
@@ -14123,7 +14123,7 @@ pub fn parse_terminate_client_vpn_connections_error(
     crate::output::TerminateClientVpnConnectionsOutput,
     crate::error::TerminateClientVpnConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TerminateClientVpnConnectionsError::unhandled)?;
     Err(crate::error::TerminateClientVpnConnectionsError::generic(
         generic,
@@ -14157,7 +14157,7 @@ pub fn parse_terminate_instances_error(
     crate::output::TerminateInstancesOutput,
     crate::error::TerminateInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TerminateInstancesError::unhandled)?;
     Err(crate::error::TerminateInstancesError::generic(generic))
 }
@@ -14187,7 +14187,7 @@ pub fn parse_unassign_ipv6_addresses_error(
     crate::output::UnassignIpv6AddressesOutput,
     crate::error::UnassignIpv6AddressesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UnassignIpv6AddressesError::unhandled)?;
     Err(crate::error::UnassignIpv6AddressesError::generic(generic))
 }
@@ -14219,7 +14219,7 @@ pub fn parse_unassign_private_ip_addresses_error(
     crate::output::UnassignPrivateIpAddressesOutput,
     crate::error::UnassignPrivateIpAddressesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UnassignPrivateIpAddressesError::unhandled)?;
     Err(crate::error::UnassignPrivateIpAddressesError::generic(
         generic,
@@ -14248,7 +14248,7 @@ pub fn parse_unmonitor_instances_error(
     crate::output::UnmonitorInstancesOutput,
     crate::error::UnmonitorInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UnmonitorInstancesError::unhandled)?;
     Err(crate::error::UnmonitorInstancesError::generic(generic))
 }
@@ -14278,7 +14278,7 @@ pub fn parse_update_security_group_rule_descriptions_egress_error(
     crate::output::UpdateSecurityGroupRuleDescriptionsEgressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsEgressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::unhandled)?;
     Err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::generic(generic))
 }
@@ -14312,7 +14312,7 @@ pub fn parse_update_security_group_rule_descriptions_ingress_error(
     crate::output::UpdateSecurityGroupRuleDescriptionsIngressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::unhandled)?;
     Err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::generic(generic))
 }
@@ -14344,7 +14344,7 @@ pub fn parse_withdraw_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
     Err(crate::error::WithdrawByoipCidrError::generic(generic))
 }

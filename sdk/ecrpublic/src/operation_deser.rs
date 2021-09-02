@@ -6,7 +6,7 @@ pub fn parse_batch_check_layer_availability_error(
     crate::output::BatchCheckLayerAvailabilityOutput,
     crate::error::BatchCheckLayerAvailabilityError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchCheckLayerAvailabilityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -133,7 +133,7 @@ pub fn parse_batch_delete_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchDeleteImageOutput, crate::error::BatchDeleteImageError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDeleteImageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -232,7 +232,7 @@ pub fn parse_complete_layer_upload_error(
     crate::output::CompleteLayerUploadOutput,
     crate::error::CompleteLayerUploadError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CompleteLayerUploadError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -476,7 +476,7 @@ pub fn parse_create_repository_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRepositoryOutput, crate::error::CreateRepositoryError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateRepositoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -633,7 +633,7 @@ pub fn parse_delete_repository_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRepositoryOutput, crate::error::DeleteRepositoryError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRepositoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -752,7 +752,7 @@ pub fn parse_delete_repository_policy_error(
     crate::output::DeleteRepositoryPolicyOutput,
     crate::error::DeleteRepositoryPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRepositoryPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -876,7 +876,7 @@ pub fn parse_delete_repository_policy_response(
 pub fn parse_describe_images_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeImagesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -993,7 +993,7 @@ pub fn parse_describe_image_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeImageTagsOutput, crate::error::DescribeImageTagsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeImageTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1094,7 +1094,7 @@ pub fn parse_describe_registries_error(
     crate::output::DescribeRegistriesOutput,
     crate::error::DescribeRegistriesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRegistriesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1197,7 +1197,7 @@ pub fn parse_describe_repositories_error(
     crate::output::DescribeRepositoriesOutput,
     crate::error::DescribeRepositoriesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRepositoriesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1300,7 +1300,7 @@ pub fn parse_get_authorization_token_error(
     crate::output::GetAuthorizationTokenOutput,
     crate::error::GetAuthorizationTokenError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAuthorizationTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1383,7 +1383,7 @@ pub fn parse_get_registry_catalog_data_error(
     crate::output::GetRegistryCatalogDataOutput,
     crate::error::GetRegistryCatalogDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRegistryCatalogDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1468,7 +1468,7 @@ pub fn parse_get_repository_catalog_data_error(
     crate::output::GetRepositoryCatalogDataOutput,
     crate::error::GetRepositoryCatalogDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRepositoryCatalogDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1577,7 +1577,7 @@ pub fn parse_get_repository_policy_error(
     crate::output::GetRepositoryPolicyOutput,
     crate::error::GetRepositoryPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRepositoryPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1698,7 +1698,7 @@ pub fn parse_initiate_layer_upload_error(
     crate::output::InitiateLayerUploadOutput,
     crate::error::InitiateLayerUploadError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InitiateLayerUploadError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1841,7 +1841,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1941,7 +1941,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_put_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutImageOutput, crate::error::PutImageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutImageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2194,7 +2194,7 @@ pub fn parse_put_registry_catalog_data_error(
     crate::output::PutRegistryCatalogDataOutput,
     crate::error::PutRegistryCatalogDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRegistryCatalogDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2301,7 +2301,7 @@ pub fn parse_put_repository_catalog_data_error(
     crate::output::PutRepositoryCatalogDataOutput,
     crate::error::PutRepositoryCatalogDataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRepositoryCatalogDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2410,7 +2410,7 @@ pub fn parse_set_repository_policy_error(
     crate::output::SetRepositoryPolicyOutput,
     crate::error::SetRepositoryPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetRepositoryPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2510,7 +2510,7 @@ pub fn parse_set_repository_policy_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2643,7 +2643,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2776,7 +2776,7 @@ pub fn parse_untag_resource_response(
 pub fn parse_upload_layer_part_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadLayerPartOutput, crate::error::UploadLayerPartError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadLayerPartError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

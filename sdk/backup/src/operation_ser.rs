@@ -29,6 +29,26 @@ pub fn serialize_operation_create_backup_vault(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_create_framework(
+    input: &crate::input::CreateFrameworkInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_framework_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_create_report_plan(
+    input: &crate::input::CreateReportPlanInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_create_report_plan_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_get_backup_plan_from_json(
     input: &crate::input::GetBackupPlanFromJsonInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -79,6 +99,16 @@ pub fn serialize_operation_start_copy_job(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_start_report_job(
+    input: &crate::input::StartReportJobInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_start_report_job_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_start_restore_job(
     input: &crate::input::StartRestoreJobInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -119,6 +149,16 @@ pub fn serialize_operation_update_backup_plan(
     Ok(smithy_http::body::SdkBody::from(out))
 }
 
+pub fn serialize_operation_update_framework(
+    input: &crate::input::UpdateFrameworkInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_framework_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
 pub fn serialize_operation_update_global_settings(
     input: &crate::input::UpdateGlobalSettingsInput,
 ) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
@@ -145,6 +185,16 @@ pub fn serialize_operation_update_region_settings(
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_update_region_settings_input(&mut object, input);
+    object.finish();
+    Ok(smithy_http::body::SdkBody::from(out))
+}
+
+pub fn serialize_operation_update_report_plan(
+    input: &crate::input::UpdateReportPlanInput,
+) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+    let mut out = String::new();
+    let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
+    crate::json_ser::serialize_structure_update_report_plan_input(&mut object, input);
     object.finish();
     Ok(smithy_http::body::SdkBody::from(out))
 }

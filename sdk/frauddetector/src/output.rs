@@ -1419,7 +1419,7 @@ impl GetEventTypesOutput {
 pub struct GetEventPredictionOutput {
     /// <p>The model scores. Amazon Fraud Detector generates model scores between 0 and 1000, where 0 is low fraud risk and 1000 is high fraud risk. Model scores are directly related to the false positive rate (FPR). For example, a score of 600 corresponds to an estimated 10% false positive rate whereas a score of 900 corresponds to an estimated 2% false positive rate.</p>
     pub model_scores: std::option::Option<std::vec::Vec<crate::model::ModelScores>>,
-    /// <p>The results.</p>
+    /// <p>The results from the rules.</p>
     pub rule_results: std::option::Option<std::vec::Vec<crate::model::RuleResult>>,
 }
 impl std::fmt::Debug for GetEventPredictionOutput {

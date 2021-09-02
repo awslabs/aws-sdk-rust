@@ -149,6 +149,34 @@ impl smithy_http::response::ParseStrictResponse for BatchDeleteTableVersion {
     }
 }
 
+/// <p>Retrieves information about a list of blueprints.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct BatchGetBlueprints {
+    _private: (),
+}
+impl BatchGetBlueprints {
+    /// Creates a new builder-style object to manufacture [`BatchGetBlueprintsInput`](crate::input::BatchGetBlueprintsInput)
+    pub fn builder() -> crate::input::batch_get_blueprints_input::Builder {
+        crate::input::batch_get_blueprints_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for BatchGetBlueprints {
+    type Output = std::result::Result<
+        crate::output::BatchGetBlueprintsOutput,
+        crate::error::BatchGetBlueprintsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_batch_get_blueprints_error(response)
+        } else {
+            crate::operation_deser::parse_batch_get_blueprints_response(response)
+        }
+    }
+}
+
 /// <p>Returns a list of resource metadata for a given list of crawler names. After calling the <code>ListCrawlers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>
 #[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
 pub struct BatchGetCrawlers {
@@ -429,6 +457,34 @@ impl smithy_http::response::ParseStrictResponse for CheckSchemaVersionValidity {
             crate::operation_deser::parse_check_schema_version_validity_error(response)
         } else {
             crate::operation_deser::parse_check_schema_version_validity_response(response)
+        }
+    }
+}
+
+/// <p>Registers a blueprint with Glue.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct CreateBlueprint {
+    _private: (),
+}
+impl CreateBlueprint {
+    /// Creates a new builder-style object to manufacture [`CreateBlueprintInput`](crate::input::CreateBlueprintInput)
+    pub fn builder() -> crate::input::create_blueprint_input::Builder {
+        crate::input::create_blueprint_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for CreateBlueprint {
+    type Output = std::result::Result<
+        crate::output::CreateBlueprintOutput,
+        crate::error::CreateBlueprintError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_create_blueprint_error(response)
+        } else {
+            crate::operation_deser::parse_create_blueprint_response(response)
         }
     }
 }
@@ -902,6 +958,34 @@ impl smithy_http::response::ParseStrictResponse for CreateWorkflow {
             crate::operation_deser::parse_create_workflow_error(response)
         } else {
             crate::operation_deser::parse_create_workflow_response(response)
+        }
+    }
+}
+
+/// <p>Deletes an existing blueprint.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct DeleteBlueprint {
+    _private: (),
+}
+impl DeleteBlueprint {
+    /// Creates a new builder-style object to manufacture [`DeleteBlueprintInput`](crate::input::DeleteBlueprintInput)
+    pub fn builder() -> crate::input::delete_blueprint_input::Builder {
+        crate::input::delete_blueprint_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for DeleteBlueprint {
+    type Output = std::result::Result<
+        crate::output::DeleteBlueprintOutput,
+        crate::error::DeleteBlueprintError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_delete_blueprint_error(response)
+        } else {
+            crate::operation_deser::parse_delete_blueprint_response(response)
         }
     }
 }
@@ -1508,6 +1592,88 @@ impl smithy_http::response::ParseStrictResponse for DeleteWorkflow {
             crate::operation_deser::parse_delete_workflow_error(response)
         } else {
             crate::operation_deser::parse_delete_workflow_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the details of a blueprint.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBlueprint {
+    _private: (),
+}
+impl GetBlueprint {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintInput`](crate::input::GetBlueprintInput)
+    pub fn builder() -> crate::input::get_blueprint_input::Builder {
+        crate::input::get_blueprint_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBlueprint {
+    type Output =
+        std::result::Result<crate::output::GetBlueprintOutput, crate::error::GetBlueprintError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_blueprint_error(response)
+        } else {
+            crate::operation_deser::parse_get_blueprint_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the details of a blueprint run.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBlueprintRun {
+    _private: (),
+}
+impl GetBlueprintRun {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintRunInput`](crate::input::GetBlueprintRunInput)
+    pub fn builder() -> crate::input::get_blueprint_run_input::Builder {
+        crate::input::get_blueprint_run_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBlueprintRun {
+    type Output = std::result::Result<
+        crate::output::GetBlueprintRunOutput,
+        crate::error::GetBlueprintRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_blueprint_run_error(response)
+        } else {
+            crate::operation_deser::parse_get_blueprint_run_response(response)
+        }
+    }
+}
+
+/// <p>Retrieves the details of blueprint runs for a specified blueprint.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct GetBlueprintRuns {
+    _private: (),
+}
+impl GetBlueprintRuns {
+    /// Creates a new builder-style object to manufacture [`GetBlueprintRunsInput`](crate::input::GetBlueprintRunsInput)
+    pub fn builder() -> crate::input::get_blueprint_runs_input::Builder {
+        crate::input::get_blueprint_runs_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for GetBlueprintRuns {
+    type Output = std::result::Result<
+        crate::output::GetBlueprintRunsOutput,
+        crate::error::GetBlueprintRunsError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_get_blueprint_runs_error(response)
+        } else {
+            crate::operation_deser::parse_get_blueprint_runs_response(response)
         }
     }
 }
@@ -2967,6 +3133,32 @@ impl smithy_http::response::ParseStrictResponse for ImportCatalogToGlue {
     }
 }
 
+/// <p>Lists all the blueprint names in an account.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct ListBlueprints {
+    _private: (),
+}
+impl ListBlueprints {
+    /// Creates a new builder-style object to manufacture [`ListBlueprintsInput`](crate::input::ListBlueprintsInput)
+    pub fn builder() -> crate::input::list_blueprints_input::Builder {
+        crate::input::list_blueprints_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for ListBlueprints {
+    type Output =
+        std::result::Result<crate::output::ListBlueprintsOutput, crate::error::ListBlueprintsError>;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_list_blueprints_error(response)
+        } else {
+            crate::operation_deser::parse_list_blueprints_response(response)
+        }
+    }
+}
+
 /// <p>Retrieves the names of all crawler resources in this Amazon Web Services account, or the
 /// resources with the specified tag. This operation allows you to see which
 /// resources are available in your account, and their names.</p>
@@ -3509,6 +3701,34 @@ impl smithy_http::response::ParseStrictResponse for SearchTables {
     }
 }
 
+/// <p>Starts a new run of the specified blueprint.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct StartBlueprintRun {
+    _private: (),
+}
+impl StartBlueprintRun {
+    /// Creates a new builder-style object to manufacture [`StartBlueprintRunInput`](crate::input::StartBlueprintRunInput)
+    pub fn builder() -> crate::input::start_blueprint_run_input::Builder {
+        crate::input::start_blueprint_run_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for StartBlueprintRun {
+    type Output = std::result::Result<
+        crate::output::StartBlueprintRunOutput,
+        crate::error::StartBlueprintRunError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_start_blueprint_run_error(response)
+        } else {
+            crate::operation_deser::parse_start_blueprint_run_response(response)
+        }
+    }
+}
+
 /// <p>Starts a crawl using the specified crawler, regardless
 /// of what is scheduled. If the crawler is already running, returns a
 /// <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>
@@ -3967,6 +4187,34 @@ impl smithy_http::response::ParseStrictResponse for UntagResource {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
             crate::operation_deser::parse_untag_resource_response(response)
+        }
+    }
+}
+
+/// <p>Updates a registered blueprint.</p>
+#[derive(std::default::Default, std::clone::Clone, std::fmt::Debug)]
+pub struct UpdateBlueprint {
+    _private: (),
+}
+impl UpdateBlueprint {
+    /// Creates a new builder-style object to manufacture [`UpdateBlueprintInput`](crate::input::UpdateBlueprintInput)
+    pub fn builder() -> crate::input::update_blueprint_input::Builder {
+        crate::input::update_blueprint_input::Builder::default()
+    }
+    pub fn new() -> Self {
+        Self { _private: () }
+    }
+}
+impl smithy_http::response::ParseStrictResponse for UpdateBlueprint {
+    type Output = std::result::Result<
+        crate::output::UpdateBlueprintOutput,
+        crate::error::UpdateBlueprintError,
+    >;
+    fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        if !response.status().is_success() && response.status().as_u16() != 200 {
+            crate::operation_deser::parse_update_blueprint_error(response)
+        } else {
+            crate::operation_deser::parse_update_blueprint_response(response)
         }
     }
 }

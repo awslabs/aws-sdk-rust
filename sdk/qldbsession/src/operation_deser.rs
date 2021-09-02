@@ -3,7 +3,7 @@
 pub fn parse_send_command_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendCommandError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -5,6 +5,7 @@ authors = ["Russell Cohen <rcoh@amazon.com>", "Doug Schwartz <dougsch@amazon.com
 edition = "2018"
 
 [dependencies]
+aws-config = { path = "../../aws-config" }
 ses = { package = "aws-sdk-sesv2", path = "../../sesv2" }
 
 aws-types = { path = "../../aws-types" }

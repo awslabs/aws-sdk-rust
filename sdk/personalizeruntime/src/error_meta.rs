@@ -15,8 +15,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetPersonalizedRankingError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetPersonalizedRankingError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetPersonalizedRankingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetPersonalizedRankingError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetPersonalizedRankingErrorKind::InvalidInputException(inner) => {
@@ -33,8 +38,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetPersonalizedRankingErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetRecommendationsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetRecommendationsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRecommendationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetRecommendationsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetRecommendationsErrorKind::InvalidInputException(inner) => {

@@ -9,7 +9,8 @@ use cloudwatchlogs::Client;
 async fn main() -> Result<(), cloudwatchlogs::Error> {
     tracing_subscriber::fmt::init();
 
-    let client = Client::from_env();
+    let shared_config = aws_config::load_from_env().await;
+    let client = Client::new(&shared_config);
     /* uncomment to create a log group */
     /*
     client

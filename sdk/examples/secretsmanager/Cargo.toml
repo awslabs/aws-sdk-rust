@@ -6,6 +6,7 @@ edition = "2018"
 description = "Example usage of the SecretManager service"
 
 [dependencies]
+aws-config = { path = "../../aws-config" }
 secretsmanager = { package = "aws-sdk-secretsmanager", path = "../../secretsmanager" }
 aws-hyper = { path = "../../aws-hyper" }
 aws-types = { path = "../../aws-types" }

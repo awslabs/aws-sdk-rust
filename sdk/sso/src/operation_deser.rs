@@ -6,7 +6,7 @@ pub fn parse_get_role_credentials_error(
     crate::output::GetRoleCredentialsOutput,
     crate::error::GetRoleCredentialsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRoleCredentialsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -128,7 +128,7 @@ pub fn parse_list_account_roles_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAccountRolesOutput, crate::error::ListAccountRolesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountRolesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -245,7 +245,7 @@ pub fn parse_list_account_roles_response(
 pub fn parse_list_accounts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAccountsOutput, crate::error::ListAccountsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAccountsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -360,7 +360,7 @@ pub fn parse_list_accounts_response(
 pub fn parse_logout_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::LogoutOutput, crate::error::LogoutError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::LogoutError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

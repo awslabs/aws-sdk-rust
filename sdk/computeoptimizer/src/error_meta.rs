@@ -29,11 +29,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeRecommendationExportJobsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -51,12 +53,16 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeRecommendationExpo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExportAutoScalingGroupRecommendationsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::ExportAutoScalingGroupRecommendationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::ExportAutoScalingGroupRecommendationsError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -75,11 +81,13 @@ impl From<smithy_http::result::SdkError<crate::error::ExportAutoScalingGroupReco
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExportEBSVolumeRecommendationsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ExportEBSVolumeRecommendationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ExportEBSVolumeRecommendationsError>,
+        err: smithy_http::result::SdkError<crate::error::ExportEBSVolumeRecommendationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -97,11 +105,13 @@ impl From<smithy_http::result::SdkError<crate::error::ExportEBSVolumeRecommendat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExportEC2InstanceRecommendationsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ExportEC2InstanceRecommendationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ExportEC2InstanceRecommendationsError>,
+        err: smithy_http::result::SdkError<crate::error::ExportEC2InstanceRecommendationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -119,11 +129,17 @@ impl From<smithy_http::result::SdkError<crate::error::ExportEC2InstanceRecommend
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExportLambdaFunctionRecommendationsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::ExportLambdaFunctionRecommendationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ExportLambdaFunctionRecommendationsError>,
+        err: smithy_http::result::SdkError<
+            crate::error::ExportLambdaFunctionRecommendationsError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -141,11 +157,17 @@ impl From<smithy_http::result::SdkError<crate::error::ExportLambdaFunctionRecomm
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAutoScalingGroupRecommendationsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetAutoScalingGroupRecommendationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetAutoScalingGroupRecommendationsError>,
+        err: smithy_http::result::SdkError<
+            crate::error::GetAutoScalingGroupRecommendationsError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -163,9 +185,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAutoScalingGroupRecomme
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError>,
+        err: smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -183,11 +209,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetEBSVolumeRecommendation
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError>,
+        err: smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -205,11 +233,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetEC2InstanceRecommendati
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEC2RecommendationProjectedMetricsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetEC2RecommendationProjectedMetricsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetEC2RecommendationProjectedMetricsError>,
+        err: smithy_http::result::SdkError<
+            crate::error::GetEC2RecommendationProjectedMetricsError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -227,8 +261,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetEC2RecommendationProjec
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetEnrollmentStatusErrorKind::AccessDeniedException(inner) => {
@@ -257,11 +294,39 @@ impl From<smithy_http::result::SdkError<crate::error::GetEnrollmentStatusError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommendationsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetEnrollmentStatusesForOrganizationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommendationsError>,
+        err: smithy_http::result::SdkError<
+            crate::error::GetEnrollmentStatusesForOrganizationError,
+            R,
+        >,
+    ) -> Self {
+        match err {
+            smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException(inner) => Error::InvalidParameterValueException(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken(inner) => Error::MissingAuthenticationToken(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException(inner) => Error::ServiceUnavailableException(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
+                crate::error::GetEnrollmentStatusesForOrganizationErrorKind::Unhandled(inner) => Error::Unhandled(inner),
+            }
+            _ => Error::Unhandled(err.into()),
+        }
+    }
+}
+impl<R> From<smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommendationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommendationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -279,9 +344,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetLambdaFunctionRecommend
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError>,
+        err: smithy_http::result::SdkError<crate::error::GetRecommendationSummariesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -298,8 +367,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetRecommendationSummaries
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateEnrollmentStatusError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateEnrollmentStatusErrorKind::AccessDeniedException(inner) => {

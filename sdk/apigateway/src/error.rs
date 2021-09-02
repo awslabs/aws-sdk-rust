@@ -57,8 +57,8 @@ impl CreateApiKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -120,6 +120,7 @@ pub struct CreateAuthorizerError {
 #[derive(std::fmt::Debug)]
 pub enum CreateAuthorizerErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -131,6 +132,7 @@ impl std::fmt::Display for CreateAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateAuthorizerErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateAuthorizerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -166,8 +168,8 @@ impl CreateAuthorizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -188,6 +190,9 @@ impl CreateAuthorizerError {
             &self.kind,
             CreateAuthorizerErrorKind::BadRequestException(_)
         )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateAuthorizerErrorKind::ConflictException(_))
     }
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -215,6 +220,7 @@ impl std::error::Error for CreateAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateAuthorizerErrorKind::ConflictException(_inner) => Some(_inner),
             CreateAuthorizerErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -235,6 +241,7 @@ pub struct CreateBasePathMappingError {
 pub enum CreateBasePathMappingErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -246,6 +253,7 @@ impl std::fmt::Display for CreateBasePathMappingError {
         match &self.kind {
             CreateBasePathMappingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateBasePathMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateBasePathMappingErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -280,8 +288,8 @@ impl CreateBasePathMappingError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -309,6 +317,12 @@ impl CreateBasePathMappingError {
             CreateBasePathMappingErrorKind::ConflictException(_)
         )
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateBasePathMappingErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -333,6 +347,7 @@ impl std::error::Error for CreateBasePathMappingError {
         match &self.kind {
             CreateBasePathMappingErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateBasePathMappingErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -401,8 +416,8 @@ impl CreateDeploymentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -528,8 +543,8 @@ impl CreateDocumentationPartError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -654,8 +669,8 @@ impl CreateDocumentationVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -733,6 +748,7 @@ pub struct CreateDomainNameError {
 pub enum CreateDomainNameErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -743,6 +759,7 @@ impl std::fmt::Display for CreateDomainNameError {
         match &self.kind {
             CreateDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateDomainNameErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateDomainNameErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateDomainNameErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -776,8 +793,8 @@ impl CreateDomainNameError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -802,6 +819,12 @@ impl CreateDomainNameError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, CreateDomainNameErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateDomainNameErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -820,6 +843,7 @@ impl std::error::Error for CreateDomainNameError {
         match &self.kind {
             CreateDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateDomainNameErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -885,8 +909,8 @@ impl CreateModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -948,6 +972,7 @@ pub struct CreateRequestValidatorError {
 #[derive(std::fmt::Debug)]
 pub enum CreateRequestValidatorErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -959,6 +984,7 @@ impl std::fmt::Display for CreateRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateRequestValidatorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateRequestValidatorErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateRequestValidatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -994,8 +1020,8 @@ impl CreateRequestValidatorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1015,6 +1041,12 @@ impl CreateRequestValidatorError {
         matches!(
             &self.kind,
             CreateRequestValidatorErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateRequestValidatorErrorKind::ConflictException(_)
         )
     }
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -1046,6 +1078,7 @@ impl std::error::Error for CreateRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateRequestValidatorErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateRequestValidatorErrorKind::ConflictException(_inner) => Some(_inner),
             CreateRequestValidatorErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -1113,8 +1146,8 @@ impl CreateResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1182,6 +1215,7 @@ pub struct CreateRestApiError {
 #[derive(std::fmt::Debug)]
 pub enum CreateRestApiErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1192,6 +1226,7 @@ impl std::fmt::Display for CreateRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
             CreateRestApiErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -1226,8 +1261,8 @@ impl CreateRestApiError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1245,6 +1280,9 @@ impl CreateRestApiError {
     }
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateRestApiErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateRestApiErrorKind::ConflictException(_))
     }
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -1266,6 +1304,7 @@ impl std::error::Error for CreateRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateRestApiErrorKind::ConflictException(_inner) => Some(_inner),
             CreateRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -1332,8 +1371,8 @@ impl CreateStageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1443,8 +1482,8 @@ impl CreateUsagePlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1513,6 +1552,7 @@ pub struct CreateUsagePlanKeyError {
 pub enum CreateUsagePlanKeyErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1524,6 +1564,7 @@ impl std::fmt::Display for CreateUsagePlanKeyError {
         match &self.kind {
             CreateUsagePlanKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             CreateUsagePlanKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateUsagePlanKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateUsagePlanKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             CreateUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateUsagePlanKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -1558,8 +1599,8 @@ impl CreateUsagePlanKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1587,6 +1628,12 @@ impl CreateUsagePlanKeyError {
             CreateUsagePlanKeyErrorKind::ConflictException(_)
         )
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateUsagePlanKeyErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1611,6 +1658,7 @@ impl std::error::Error for CreateUsagePlanKeyError {
         match &self.kind {
             CreateUsagePlanKeyErrorKind::BadRequestException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateUsagePlanKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateUsagePlanKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -1629,6 +1677,8 @@ pub struct CreateVpcLinkError {
 #[derive(std::fmt::Debug)]
 pub enum CreateVpcLinkErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -1638,6 +1688,8 @@ impl std::fmt::Display for CreateVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             CreateVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            CreateVpcLinkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            CreateVpcLinkErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             CreateVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             CreateVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             CreateVpcLinkErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -1671,8 +1723,8 @@ impl CreateVpcLinkError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1691,6 +1743,15 @@ impl CreateVpcLinkError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, CreateVpcLinkErrorKind::BadRequestException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, CreateVpcLinkErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            CreateVpcLinkErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -1705,6 +1766,8 @@ impl std::error::Error for CreateVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             CreateVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
+            CreateVpcLinkErrorKind::ConflictException(_inner) => Some(_inner),
+            CreateVpcLinkErrorKind::LimitExceededException(_inner) => Some(_inner),
             CreateVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             CreateVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
             CreateVpcLinkErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -1721,6 +1784,8 @@ pub struct DeleteApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteApiKeyErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -1730,6 +1795,8 @@ pub enum DeleteApiKeyErrorKind {
 impl std::fmt::Display for DeleteApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteApiKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteApiKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -1764,8 +1831,8 @@ impl DeleteApiKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1780,6 +1847,12 @@ impl DeleteApiKeyError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteApiKeyErrorKind::ConflictException(_))
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteApiKeyErrorKind::NotFoundException(_))
@@ -1797,6 +1870,8 @@ impl DeleteApiKeyError {
 impl std::error::Error for DeleteApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteApiKeyErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteApiKeyErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -1861,8 +1936,8 @@ impl DeleteAuthorizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1972,8 +2047,8 @@ impl DeleteBasePathMappingError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2043,6 +2118,7 @@ pub struct DeleteClientCertificateError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteClientCertificateErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2053,6 +2129,7 @@ impl std::fmt::Display for DeleteClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteClientCertificateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteClientCertificateErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteClientCertificateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -2087,8 +2164,8 @@ impl DeleteClientCertificateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2108,6 +2185,12 @@ impl DeleteClientCertificateError {
         matches!(
             &self.kind,
             DeleteClientCertificateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteClientCertificateErrorKind::ConflictException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -2133,6 +2216,7 @@ impl std::error::Error for DeleteClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteClientCertificateErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteClientCertificateErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -2151,6 +2235,8 @@ pub struct DeleteDeploymentError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteDeploymentErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2161,6 +2247,8 @@ impl std::fmt::Display for DeleteDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteDeploymentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteDeploymentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DeleteDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteDeploymentErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -2195,8 +2283,8 @@ impl DeleteDeploymentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2216,6 +2304,15 @@ impl DeleteDeploymentError {
         matches!(
             &self.kind,
             DeleteDeploymentErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDeploymentErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteDeploymentErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -2238,6 +2335,8 @@ impl std::error::Error for DeleteDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteDeploymentErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDeploymentErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -2302,8 +2401,8 @@ impl DeleteDocumentationPartError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2419,8 +2518,8 @@ impl DeleteDocumentationVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2490,6 +2589,7 @@ pub struct DeleteDomainNameError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteDomainNameErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -2500,6 +2600,7 @@ impl std::fmt::Display for DeleteDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteDomainNameErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteDomainNameErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -2534,8 +2635,8 @@ impl DeleteDomainNameError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2557,6 +2658,9 @@ impl DeleteDomainNameError {
             DeleteDomainNameErrorKind::BadRequestException(_)
         )
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteDomainNameErrorKind::ConflictException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteDomainNameErrorKind::NotFoundException(_))
     }
@@ -2577,6 +2681,7 @@ impl std::error::Error for DeleteDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteDomainNameErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -2641,8 +2746,8 @@ impl DeleteGatewayResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2711,6 +2816,7 @@ pub struct DeleteIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum DeleteIntegrationErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -2721,6 +2827,7 @@ pub enum DeleteIntegrationErrorKind {
 impl std::fmt::Display for DeleteIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            DeleteIntegrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             DeleteIntegrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -2756,8 +2863,8 @@ impl DeleteIntegrationError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2772,6 +2879,12 @@ impl DeleteIntegrationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            DeleteIntegrationErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, DeleteIntegrationErrorKind::ConflictException(_))
@@ -2795,6 +2908,7 @@ impl DeleteIntegrationError {
 impl std::error::Error for DeleteIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            DeleteIntegrationErrorKind::BadRequestException(_inner) => Some(_inner),
             DeleteIntegrationErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -2860,8 +2974,8 @@ impl DeleteIntegrationResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2975,8 +3089,8 @@ impl DeleteMethodError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3076,8 +3190,8 @@ impl DeleteMethodResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3193,8 +3307,8 @@ impl DeleteModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3298,8 +3412,8 @@ impl DeleteRequestValidatorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3415,8 +3529,8 @@ impl DeleteResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3477,6 +3591,7 @@ pub struct DeleteRestApiError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteRestApiErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3487,6 +3602,7 @@ impl std::fmt::Display for DeleteRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -3521,8 +3637,8 @@ impl DeleteRestApiError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3541,6 +3657,9 @@ impl DeleteRestApiError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteRestApiErrorKind::BadRequestException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteRestApiErrorKind::ConflictException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteRestApiErrorKind::NotFoundException(_))
     }
@@ -3558,6 +3677,7 @@ impl std::error::Error for DeleteRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteRestApiErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -3576,6 +3696,8 @@ pub struct DeleteStageError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteStageErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3586,6 +3708,8 @@ impl std::fmt::Display for DeleteStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteStageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteStageErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            DeleteStageErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             DeleteStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -3620,8 +3744,8 @@ impl DeleteStageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3640,6 +3764,12 @@ impl DeleteStageError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteStageErrorKind::BadRequestException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, DeleteStageErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteStageErrorKind::NotFoundException(_))
     }
@@ -3657,6 +3787,8 @@ impl std::error::Error for DeleteStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteStageErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteStageErrorKind::ConflictException(_inner) => Some(_inner),
+            DeleteStageErrorKind::LimitExceededException(_inner) => Some(_inner),
             DeleteStageErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -3675,6 +3807,7 @@ pub struct DeleteUsagePlanError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteUsagePlanErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3685,6 +3818,7 @@ impl std::fmt::Display for DeleteUsagePlanError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteUsagePlanErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteUsagePlanErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteUsagePlanErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteUsagePlanErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteUsagePlanErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -3719,8 +3853,8 @@ impl DeleteUsagePlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3738,6 +3872,9 @@ impl DeleteUsagePlanError {
     }
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteUsagePlanErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteUsagePlanErrorKind::ConflictException(_))
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteUsagePlanErrorKind::NotFoundException(_))
@@ -3759,6 +3896,7 @@ impl std::error::Error for DeleteUsagePlanError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteUsagePlanErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteUsagePlanErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -3823,8 +3961,8 @@ impl DeleteUsagePlanKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3894,6 +4032,7 @@ pub struct DeleteVpcLinkError {
 #[derive(std::fmt::Debug)]
 pub enum DeleteVpcLinkErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -3904,6 +4043,7 @@ impl std::fmt::Display for DeleteVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             DeleteVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            DeleteVpcLinkErrorKind::ConflictException(_inner) => _inner.fmt(f),
             DeleteVpcLinkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             DeleteVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             DeleteVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -3938,8 +4078,8 @@ impl DeleteVpcLinkError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3958,6 +4098,9 @@ impl DeleteVpcLinkError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, DeleteVpcLinkErrorKind::BadRequestException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, DeleteVpcLinkErrorKind::ConflictException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, DeleteVpcLinkErrorKind::NotFoundException(_))
     }
@@ -3975,6 +4118,7 @@ impl std::error::Error for DeleteVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             DeleteVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
+            DeleteVpcLinkErrorKind::ConflictException(_inner) => Some(_inner),
             DeleteVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
             DeleteVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             DeleteVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -3993,6 +4137,8 @@ pub struct FlushStageAuthorizersCacheError {
 #[derive(std::fmt::Debug)]
 pub enum FlushStageAuthorizersCacheErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4003,6 +4149,8 @@ impl std::fmt::Display for FlushStageAuthorizersCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             FlushStageAuthorizersCacheErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            FlushStageAuthorizersCacheErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            FlushStageAuthorizersCacheErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             FlushStageAuthorizersCacheErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             FlushStageAuthorizersCacheErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4037,8 +4185,8 @@ impl FlushStageAuthorizersCacheError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4058,6 +4206,18 @@ impl FlushStageAuthorizersCacheError {
         matches!(
             &self.kind,
             FlushStageAuthorizersCacheErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageAuthorizersCacheErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageAuthorizersCacheErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -4083,6 +4243,8 @@ impl std::error::Error for FlushStageAuthorizersCacheError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             FlushStageAuthorizersCacheErrorKind::BadRequestException(_inner) => Some(_inner),
+            FlushStageAuthorizersCacheErrorKind::ConflictException(_inner) => Some(_inner),
+            FlushStageAuthorizersCacheErrorKind::LimitExceededException(_inner) => Some(_inner),
             FlushStageAuthorizersCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             FlushStageAuthorizersCacheErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             FlushStageAuthorizersCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4101,6 +4263,8 @@ pub struct FlushStageCacheError {
 #[derive(std::fmt::Debug)]
 pub enum FlushStageCacheErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4111,6 +4275,8 @@ impl std::fmt::Display for FlushStageCacheError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             FlushStageCacheErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            FlushStageCacheErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            FlushStageCacheErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             FlushStageCacheErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             FlushStageCacheErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             FlushStageCacheErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4145,8 +4311,8 @@ impl FlushStageCacheError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4164,6 +4330,15 @@ impl FlushStageCacheError {
     }
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, FlushStageCacheErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, FlushStageCacheErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            FlushStageCacheErrorKind::LimitExceededException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, FlushStageCacheErrorKind::NotFoundException(_))
@@ -4185,6 +4360,8 @@ impl std::error::Error for FlushStageCacheError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             FlushStageCacheErrorKind::BadRequestException(_inner) => Some(_inner),
+            FlushStageCacheErrorKind::ConflictException(_inner) => Some(_inner),
+            FlushStageCacheErrorKind::LimitExceededException(_inner) => Some(_inner),
             FlushStageCacheErrorKind::NotFoundException(_inner) => Some(_inner),
             FlushStageCacheErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             FlushStageCacheErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4202,6 +4379,8 @@ pub struct GenerateClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GenerateClientCertificateErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4211,6 +4390,8 @@ pub enum GenerateClientCertificateErrorKind {
 impl std::fmt::Display for GenerateClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GenerateClientCertificateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GenerateClientCertificateErrorKind::ConflictException(_inner) => _inner.fmt(f),
             GenerateClientCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             GenerateClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GenerateClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4245,8 +4426,8 @@ impl GenerateClientCertificateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4261,6 +4442,18 @@ impl GenerateClientCertificateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateClientCertificateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GenerateClientCertificateErrorKind::ConflictException(_)
+        )
     }
     pub fn is_limit_exceeded_exception(&self) -> bool {
         matches!(
@@ -4284,6 +4477,8 @@ impl GenerateClientCertificateError {
 impl std::error::Error for GenerateClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GenerateClientCertificateErrorKind::BadRequestException(_inner) => Some(_inner),
+            GenerateClientCertificateErrorKind::ConflictException(_inner) => Some(_inner),
             GenerateClientCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
             GenerateClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GenerateClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4301,6 +4496,7 @@ pub struct GetAccountError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAccountErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4310,6 +4506,7 @@ pub enum GetAccountErrorKind {
 impl std::fmt::Display for GetAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetAccountErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetAccountErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetAccountErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetAccountErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4344,8 +4541,8 @@ impl GetAccountError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4361,6 +4558,9 @@ impl GetAccountError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetAccountErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAccountErrorKind::NotFoundException(_))
     }
@@ -4374,6 +4574,7 @@ impl GetAccountError {
 impl std::error::Error for GetAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetAccountErrorKind::BadRequestException(_inner) => Some(_inner),
             GetAccountErrorKind::NotFoundException(_inner) => Some(_inner),
             GetAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAccountErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4391,6 +4592,7 @@ pub struct GetApiKeyError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetApiKeyErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4400,6 +4602,7 @@ pub enum GetApiKeyErrorKind {
 impl std::fmt::Display for GetApiKeyError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetApiKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4434,8 +4637,8 @@ impl GetApiKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4451,6 +4654,9 @@ impl GetApiKeyError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeyErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetApiKeyErrorKind::NotFoundException(_))
     }
@@ -4464,6 +4670,7 @@ impl GetApiKeyError {
 impl std::error::Error for GetApiKeyError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetApiKeyErrorKind::BadRequestException(_inner) => Some(_inner),
             GetApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4482,6 +4689,7 @@ pub struct GetApiKeysError {
 #[derive(std::fmt::Debug)]
 pub enum GetApiKeysErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -4491,6 +4699,7 @@ impl std::fmt::Display for GetApiKeysError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetApiKeysErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetApiKeysErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetApiKeysErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetApiKeysErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetApiKeysErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -4524,8 +4733,8 @@ impl GetApiKeysError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4544,6 +4753,9 @@ impl GetApiKeysError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetApiKeysErrorKind::BadRequestException(_))
     }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetApiKeysErrorKind::NotFoundException(_))
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(&self.kind, GetApiKeysErrorKind::TooManyRequestsException(_))
     }
@@ -4555,6 +4767,7 @@ impl std::error::Error for GetApiKeysError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetApiKeysErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetApiKeysErrorKind::NotFoundException(_inner) => Some(_inner),
             GetApiKeysErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetApiKeysErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetApiKeysErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -4571,6 +4784,7 @@ pub struct GetAuthorizerError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetAuthorizerErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4580,6 +4794,7 @@ pub enum GetAuthorizerErrorKind {
 impl std::fmt::Display for GetAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4614,8 +4829,8 @@ impl GetAuthorizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4630,6 +4845,9 @@ impl GetAuthorizerError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetAuthorizerErrorKind::BadRequestException(_))
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetAuthorizerErrorKind::NotFoundException(_))
@@ -4647,6 +4865,7 @@ impl GetAuthorizerError {
 impl std::error::Error for GetAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
             GetAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             GetAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4709,8 +4928,8 @@ impl GetAuthorizersError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4766,6 +4985,7 @@ pub struct GetBasePathMappingError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBasePathMappingErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4775,6 +4995,7 @@ pub enum GetBasePathMappingErrorKind {
 impl std::fmt::Display for GetBasePathMappingError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetBasePathMappingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4809,8 +5030,8 @@ impl GetBasePathMappingError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4825,6 +5046,12 @@ impl GetBasePathMappingError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -4848,6 +5075,7 @@ impl GetBasePathMappingError {
 impl std::error::Error for GetBasePathMappingError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetBasePathMappingErrorKind::BadRequestException(_inner) => Some(_inner),
             GetBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4865,6 +5093,7 @@ pub struct GetBasePathMappingsError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetBasePathMappingsErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4874,6 +5103,7 @@ pub enum GetBasePathMappingsErrorKind {
 impl std::fmt::Display for GetBasePathMappingsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetBasePathMappingsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetBasePathMappingsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetBasePathMappingsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetBasePathMappingsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -4908,8 +5138,8 @@ impl GetBasePathMappingsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4924,6 +5154,12 @@ impl GetBasePathMappingsError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetBasePathMappingsErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -4947,6 +5183,7 @@ impl GetBasePathMappingsError {
 impl std::error::Error for GetBasePathMappingsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetBasePathMappingsErrorKind::BadRequestException(_inner) => Some(_inner),
             GetBasePathMappingsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetBasePathMappingsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetBasePathMappingsErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -4964,6 +5201,7 @@ pub struct GetClientCertificateError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetClientCertificateErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -4973,6 +5211,7 @@ pub enum GetClientCertificateErrorKind {
 impl std::fmt::Display for GetClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetClientCertificateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetClientCertificateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -5007,8 +5246,8 @@ impl GetClientCertificateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5023,6 +5262,12 @@ impl GetClientCertificateError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificateErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -5046,6 +5291,7 @@ impl GetClientCertificateError {
 impl std::error::Error for GetClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetClientCertificateErrorKind::BadRequestException(_inner) => Some(_inner),
             GetClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             GetClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -5064,6 +5310,7 @@ pub struct GetClientCertificatesError {
 #[derive(std::fmt::Debug)]
 pub enum GetClientCertificatesErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -5073,6 +5320,7 @@ impl std::fmt::Display for GetClientCertificatesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetClientCertificatesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetClientCertificatesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetClientCertificatesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetClientCertificatesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetClientCertificatesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5106,8 +5354,8 @@ impl GetClientCertificatesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5129,6 +5377,12 @@ impl GetClientCertificatesError {
             GetClientCertificatesErrorKind::BadRequestException(_)
         )
     }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetClientCertificatesErrorKind::NotFoundException(_)
+        )
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5146,6 +5400,7 @@ impl std::error::Error for GetClientCertificatesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetClientCertificatesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetClientCertificatesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetClientCertificatesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetClientCertificatesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetClientCertificatesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5162,6 +5417,7 @@ pub struct GetDeploymentError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDeploymentErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -5172,6 +5428,7 @@ pub enum GetDeploymentErrorKind {
 impl std::fmt::Display for GetDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetDeploymentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetDeploymentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             GetDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -5207,8 +5464,8 @@ impl GetDeploymentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5223,6 +5480,9 @@ impl GetDeploymentError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetDeploymentErrorKind::BadRequestException(_))
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDeploymentErrorKind::NotFoundException(_))
@@ -5246,6 +5506,7 @@ impl GetDeploymentError {
 impl std::error::Error for GetDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -5311,8 +5572,8 @@ impl GetDeploymentsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5375,6 +5636,7 @@ pub struct GetDocumentationPartError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDocumentationPartErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -5384,6 +5646,7 @@ pub enum GetDocumentationPartErrorKind {
 impl std::fmt::Display for GetDocumentationPartError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetDocumentationPartErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetDocumentationPartErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetDocumentationPartErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDocumentationPartErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -5418,8 +5681,8 @@ impl GetDocumentationPartError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5434,6 +5697,12 @@ impl GetDocumentationPartError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetDocumentationPartErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -5457,6 +5726,7 @@ impl GetDocumentationPartError {
 impl std::error::Error for GetDocumentationPartError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetDocumentationPartErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDocumentationPartErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDocumentationPartErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDocumentationPartErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -5519,8 +5789,8 @@ impl GetDocumentationPartsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5625,8 +5895,8 @@ impl GetDocumentationVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5726,8 +5996,8 @@ impl GetDocumentationVersionsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5789,8 +6059,8 @@ pub struct GetDomainNameError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetDomainNameErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
-    ServiceUnavailableException(crate::error::ServiceUnavailableException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -5799,8 +6069,8 @@ pub enum GetDomainNameErrorKind {
 impl std::fmt::Display for GetDomainNameError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetDomainNameErrorKind::NotFoundException(_inner) => _inner.fmt(f),
-            GetDomainNameErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             GetDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDomainNameErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5834,8 +6104,8 @@ impl GetDomainNameError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5851,14 +6121,11 @@ impl GetDomainNameError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetDomainNameErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetDomainNameErrorKind::NotFoundException(_))
-    }
-    pub fn is_service_unavailable_exception(&self) -> bool {
-        matches!(
-            &self.kind,
-            GetDomainNameErrorKind::ServiceUnavailableException(_)
-        )
     }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
@@ -5873,8 +6140,8 @@ impl GetDomainNameError {
 impl std::error::Error for GetDomainNameError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
             GetDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
-            GetDomainNameErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             GetDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDomainNameErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5892,6 +6159,7 @@ pub struct GetDomainNamesError {
 #[derive(std::fmt::Debug)]
 pub enum GetDomainNamesErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -5901,6 +6169,7 @@ impl std::fmt::Display for GetDomainNamesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetDomainNamesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetDomainNamesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetDomainNamesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetDomainNamesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetDomainNamesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5934,8 +6203,8 @@ impl GetDomainNamesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5954,6 +6223,9 @@ impl GetDomainNamesError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetDomainNamesErrorKind::BadRequestException(_))
     }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetDomainNamesErrorKind::NotFoundException(_))
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -5971,6 +6243,7 @@ impl std::error::Error for GetDomainNamesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetDomainNamesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetDomainNamesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetDomainNamesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetDomainNamesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetDomainNamesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5989,6 +6262,7 @@ pub struct GetExportError {
 pub enum GetExportErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6000,6 +6274,7 @@ impl std::fmt::Display for GetExportError {
         match &self.kind {
             GetExportErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetExportErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetExportErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             GetExportErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetExportErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetExportErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -6034,8 +6309,8 @@ impl GetExportError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6057,6 +6332,9 @@ impl GetExportError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetExportErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, GetExportErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetExportErrorKind::NotFoundException(_))
     }
@@ -6072,6 +6350,7 @@ impl std::error::Error for GetExportError {
         match &self.kind {
             GetExportErrorKind::BadRequestException(_inner) => Some(_inner),
             GetExportErrorKind::ConflictException(_inner) => Some(_inner),
+            GetExportErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetExportErrorKind::NotFoundException(_inner) => Some(_inner),
             GetExportErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetExportErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -6089,6 +6368,7 @@ pub struct GetGatewayResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetGatewayResponseErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6098,6 +6378,7 @@ pub enum GetGatewayResponseErrorKind {
 impl std::fmt::Display for GetGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetGatewayResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetGatewayResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -6132,8 +6413,8 @@ impl GetGatewayResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6148,6 +6429,12 @@ impl GetGatewayResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetGatewayResponseErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -6171,6 +6458,7 @@ impl GetGatewayResponseError {
 impl std::error::Error for GetGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetGatewayResponseErrorKind::BadRequestException(_inner) => Some(_inner),
             GetGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             GetGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -6233,8 +6521,8 @@ impl GetGatewayResponsesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6296,6 +6584,7 @@ pub struct GetIntegrationError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntegrationErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6305,6 +6594,7 @@ pub enum GetIntegrationErrorKind {
 impl std::fmt::Display for GetIntegrationError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetIntegrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -6339,8 +6629,8 @@ impl GetIntegrationError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6355,6 +6645,9 @@ impl GetIntegrationError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetIntegrationErrorKind::BadRequestException(_))
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetIntegrationErrorKind::NotFoundException(_))
@@ -6375,6 +6668,7 @@ impl GetIntegrationError {
 impl std::error::Error for GetIntegrationError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetIntegrationErrorKind::BadRequestException(_inner) => Some(_inner),
             GetIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             GetIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -6392,6 +6686,7 @@ pub struct GetIntegrationResponseError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetIntegrationResponseErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6401,6 +6696,7 @@ pub enum GetIntegrationResponseErrorKind {
 impl std::fmt::Display for GetIntegrationResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetIntegrationResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetIntegrationResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetIntegrationResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetIntegrationResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -6435,8 +6731,8 @@ impl GetIntegrationResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6451,6 +6747,12 @@ impl GetIntegrationResponseError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetIntegrationResponseErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -6474,6 +6776,7 @@ impl GetIntegrationResponseError {
 impl std::error::Error for GetIntegrationResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetIntegrationResponseErrorKind::BadRequestException(_inner) => Some(_inner),
             GetIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             GetIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -6534,8 +6837,8 @@ impl GetMethodError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6624,8 +6927,8 @@ impl GetMethodResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6677,6 +6980,7 @@ pub struct GetModelError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetModelErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6686,6 +6990,7 @@ pub enum GetModelErrorKind {
 impl std::fmt::Display for GetModelError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetModelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetModelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetModelErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -6720,8 +7025,8 @@ impl GetModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6737,6 +7042,9 @@ impl GetModelError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetModelErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetModelErrorKind::NotFoundException(_))
     }
@@ -6750,6 +7058,7 @@ impl GetModelError {
 impl std::error::Error for GetModelError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetModelErrorKind::BadRequestException(_inner) => Some(_inner),
             GetModelErrorKind::NotFoundException(_inner) => Some(_inner),
             GetModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -6812,8 +7121,8 @@ impl GetModelsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6908,8 +7217,8 @@ impl GetModelTemplateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6968,6 +7277,7 @@ pub struct GetRequestValidatorError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRequestValidatorErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -6977,6 +7287,7 @@ pub enum GetRequestValidatorErrorKind {
 impl std::fmt::Display for GetRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetRequestValidatorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetRequestValidatorErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -7011,8 +7322,8 @@ impl GetRequestValidatorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7027,6 +7338,12 @@ impl GetRequestValidatorError {
 
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
+    }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            GetRequestValidatorErrorKind::BadRequestException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
@@ -7050,6 +7367,7 @@ impl GetRequestValidatorError {
 impl std::error::Error for GetRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetRequestValidatorErrorKind::BadRequestException(_inner) => Some(_inner),
             GetRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -7112,8 +7430,8 @@ impl GetRequestValidatorsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7218,8 +7536,8 @@ impl GetResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7313,8 +7631,8 @@ impl GetResourcesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7367,6 +7685,7 @@ pub struct GetRestApiError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetRestApiErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7376,6 +7695,7 @@ pub enum GetRestApiErrorKind {
 impl std::fmt::Display for GetRestApiError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -7410,8 +7730,8 @@ impl GetRestApiError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7427,6 +7747,9 @@ impl GetRestApiError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApiErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetRestApiErrorKind::NotFoundException(_))
     }
@@ -7440,6 +7763,7 @@ impl GetRestApiError {
 impl std::error::Error for GetRestApiError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
             GetRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -7458,6 +7782,7 @@ pub struct GetRestApisError {
 #[derive(std::fmt::Debug)]
 pub enum GetRestApisErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -7467,6 +7792,7 @@ impl std::fmt::Display for GetRestApisError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetRestApisErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetRestApisErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetRestApisErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetRestApisErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetRestApisErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7500,8 +7826,8 @@ impl GetRestApisError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7520,6 +7846,9 @@ impl GetRestApisError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetRestApisErrorKind::BadRequestException(_))
     }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetRestApisErrorKind::NotFoundException(_))
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7534,6 +7863,7 @@ impl std::error::Error for GetRestApisError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetRestApisErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetRestApisErrorKind::NotFoundException(_inner) => Some(_inner),
             GetRestApisErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetRestApisErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetRestApisErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -7552,6 +7882,7 @@ pub struct GetSdkError {
 pub enum GetSdkErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7563,6 +7894,7 @@ impl std::fmt::Display for GetSdkError {
         match &self.kind {
             GetSdkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetSdkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetSdkErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             GetSdkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetSdkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetSdkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -7597,8 +7929,8 @@ impl GetSdkError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7620,6 +7952,9 @@ impl GetSdkError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, GetSdkErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSdkErrorKind::NotFoundException(_))
     }
@@ -7635,6 +7970,7 @@ impl std::error::Error for GetSdkError {
         match &self.kind {
             GetSdkErrorKind::BadRequestException(_inner) => Some(_inner),
             GetSdkErrorKind::ConflictException(_inner) => Some(_inner),
+            GetSdkErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetSdkErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSdkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSdkErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -7652,6 +7988,7 @@ pub struct GetSdkTypeError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSdkTypeErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7661,6 +7998,7 @@ pub enum GetSdkTypeErrorKind {
 impl std::fmt::Display for GetSdkTypeError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetSdkTypeErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetSdkTypeErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetSdkTypeErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetSdkTypeErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -7695,8 +8033,8 @@ impl GetSdkTypeError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7712,6 +8050,9 @@ impl GetSdkTypeError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypeErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetSdkTypeErrorKind::NotFoundException(_))
     }
@@ -7725,6 +8066,7 @@ impl GetSdkTypeError {
 impl std::error::Error for GetSdkTypeError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetSdkTypeErrorKind::BadRequestException(_inner) => Some(_inner),
             GetSdkTypeErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSdkTypeErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSdkTypeErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -7742,6 +8084,8 @@ pub struct GetSdkTypesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetSdkTypesErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -7750,6 +8094,8 @@ pub enum GetSdkTypesErrorKind {
 impl std::fmt::Display for GetSdkTypesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetSdkTypesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetSdkTypesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetSdkTypesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetSdkTypesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetSdkTypesErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -7783,8 +8129,8 @@ impl GetSdkTypesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7800,6 +8146,12 @@ impl GetSdkTypesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypesErrorKind::BadRequestException(_))
+    }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetSdkTypesErrorKind::NotFoundException(_))
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -7813,6 +8165,8 @@ impl GetSdkTypesError {
 impl std::error::Error for GetSdkTypesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetSdkTypesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetSdkTypesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetSdkTypesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetSdkTypesErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetSdkTypesErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -7829,6 +8183,9 @@ pub struct GetStageError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStageErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7838,6 +8195,9 @@ pub enum GetStageErrorKind {
 impl std::fmt::Display for GetStageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetStageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetStageErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetStageErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             GetStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -7872,8 +8232,8 @@ impl GetStageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7889,6 +8249,15 @@ impl GetStageError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, GetStageErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStageErrorKind::NotFoundException(_))
     }
@@ -7902,6 +8271,9 @@ impl GetStageError {
 impl std::error::Error for GetStageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetStageErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetStageErrorKind::ConflictException(_inner) => Some(_inner),
+            GetStageErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetStageErrorKind::NotFoundException(_inner) => Some(_inner),
             GetStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -7919,6 +8291,9 @@ pub struct GetStagesError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetStagesErrorKind {
+    BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -7928,6 +8303,9 @@ pub enum GetStagesErrorKind {
 impl std::fmt::Display for GetStagesError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetStagesErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetStagesErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            GetStagesErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             GetStagesErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetStagesErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetStagesErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -7962,8 +8340,8 @@ impl GetStagesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -7979,6 +8357,15 @@ impl GetStagesError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::BadRequestException(_))
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, GetStagesErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetStagesErrorKind::NotFoundException(_))
     }
@@ -7992,6 +8379,9 @@ impl GetStagesError {
 impl std::error::Error for GetStagesError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetStagesErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetStagesErrorKind::ConflictException(_inner) => Some(_inner),
+            GetStagesErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetStagesErrorKind::NotFoundException(_inner) => Some(_inner),
             GetStagesErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetStagesErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -8010,7 +8400,6 @@ pub struct GetTagsError {
 #[derive(std::fmt::Debug)]
 pub enum GetTagsErrorKind {
     BadRequestException(crate::error::BadRequestException),
-    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8021,7 +8410,6 @@ impl std::fmt::Display for GetTagsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetTagsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetTagsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             GetTagsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetTagsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetTagsErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -8056,8 +8444,8 @@ impl GetTagsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8076,9 +8464,6 @@ impl GetTagsError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::BadRequestException(_))
     }
-    pub fn is_limit_exceeded_exception(&self) -> bool {
-        matches!(&self.kind, GetTagsErrorKind::LimitExceededException(_))
-    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetTagsErrorKind::NotFoundException(_))
     }
@@ -8093,7 +8478,6 @@ impl std::error::Error for GetTagsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetTagsErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetTagsErrorKind::LimitExceededException(_inner) => Some(_inner),
             GetTagsErrorKind::NotFoundException(_inner) => Some(_inner),
             GetTagsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetTagsErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -8156,8 +8540,8 @@ impl GetUsageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8252,8 +8636,8 @@ impl GetUsagePlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8351,8 +8735,8 @@ impl GetUsagePlanKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8453,8 +8837,8 @@ impl GetUsagePlanKeysError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8514,7 +8898,6 @@ pub struct GetUsagePlansError {
 #[derive(std::fmt::Debug)]
 pub enum GetUsagePlansErrorKind {
     BadRequestException(crate::error::BadRequestException),
-    ConflictException(crate::error::ConflictException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8525,7 +8908,6 @@ impl std::fmt::Display for GetUsagePlansError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetUsagePlansErrorKind::BadRequestException(_inner) => _inner.fmt(f),
-            GetUsagePlansErrorKind::ConflictException(_inner) => _inner.fmt(f),
             GetUsagePlansErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetUsagePlansErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetUsagePlansErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -8560,8 +8942,8 @@ impl GetUsagePlansError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8580,9 +8962,6 @@ impl GetUsagePlansError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetUsagePlansErrorKind::BadRequestException(_))
     }
-    pub fn is_conflict_exception(&self) -> bool {
-        matches!(&self.kind, GetUsagePlansErrorKind::ConflictException(_))
-    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetUsagePlansErrorKind::NotFoundException(_))
     }
@@ -8600,7 +8979,6 @@ impl std::error::Error for GetUsagePlansError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetUsagePlansErrorKind::BadRequestException(_inner) => Some(_inner),
-            GetUsagePlansErrorKind::ConflictException(_inner) => Some(_inner),
             GetUsagePlansErrorKind::NotFoundException(_inner) => Some(_inner),
             GetUsagePlansErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetUsagePlansErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -8618,6 +8996,7 @@ pub struct GetVpcLinkError {
 #[non_exhaustive]
 #[derive(std::fmt::Debug)]
 pub enum GetVpcLinkErrorKind {
+    BadRequestException(crate::error::BadRequestException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -8627,6 +9006,7 @@ pub enum GetVpcLinkErrorKind {
 impl std::fmt::Display for GetVpcLinkError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
+            GetVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             GetVpcLinkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -8661,8 +9041,8 @@ impl GetVpcLinkError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8678,6 +9058,9 @@ impl GetVpcLinkError {
     pub fn code(&self) -> Option<&str> {
         self.meta.code()
     }
+    pub fn is_bad_request_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinkErrorKind::BadRequestException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, GetVpcLinkErrorKind::NotFoundException(_))
     }
@@ -8691,6 +9074,7 @@ impl GetVpcLinkError {
 impl std::error::Error for GetVpcLinkError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
+            GetVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
             GetVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
             GetVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -8709,6 +9093,7 @@ pub struct GetVpcLinksError {
 #[derive(std::fmt::Debug)]
 pub enum GetVpcLinksErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -8718,6 +9103,7 @@ impl std::fmt::Display for GetVpcLinksError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             GetVpcLinksErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            GetVpcLinksErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             GetVpcLinksErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             GetVpcLinksErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             GetVpcLinksErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -8751,8 +9137,8 @@ impl GetVpcLinksError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8771,6 +9157,9 @@ impl GetVpcLinksError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, GetVpcLinksErrorKind::BadRequestException(_))
     }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, GetVpcLinksErrorKind::NotFoundException(_))
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -8785,6 +9174,7 @@ impl std::error::Error for GetVpcLinksError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             GetVpcLinksErrorKind::BadRequestException(_inner) => Some(_inner),
+            GetVpcLinksErrorKind::NotFoundException(_inner) => Some(_inner),
             GetVpcLinksErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             GetVpcLinksErrorKind::UnauthorizedException(_inner) => Some(_inner),
             GetVpcLinksErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -8850,8 +9240,8 @@ impl ImportApiKeysError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8916,6 +9306,7 @@ pub struct ImportDocumentationPartsError {
 #[derive(std::fmt::Debug)]
 pub enum ImportDocumentationPartsErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -8927,6 +9318,7 @@ impl std::fmt::Display for ImportDocumentationPartsError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             ImportDocumentationPartsErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            ImportDocumentationPartsErrorKind::ConflictException(_inner) => _inner.fmt(f),
             ImportDocumentationPartsErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             ImportDocumentationPartsErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ImportDocumentationPartsErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -8962,8 +9354,8 @@ impl ImportDocumentationPartsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -8983,6 +9375,12 @@ impl ImportDocumentationPartsError {
         matches!(
             &self.kind,
             ImportDocumentationPartsErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            ImportDocumentationPartsErrorKind::ConflictException(_)
         )
     }
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -9014,6 +9412,7 @@ impl std::error::Error for ImportDocumentationPartsError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             ImportDocumentationPartsErrorKind::BadRequestException(_inner) => Some(_inner),
+            ImportDocumentationPartsErrorKind::ConflictException(_inner) => Some(_inner),
             ImportDocumentationPartsErrorKind::LimitExceededException(_inner) => Some(_inner),
             ImportDocumentationPartsErrorKind::NotFoundException(_inner) => Some(_inner),
             ImportDocumentationPartsErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -9035,6 +9434,7 @@ pub enum ImportRestApiErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
+    NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
@@ -9046,6 +9446,7 @@ impl std::fmt::Display for ImportRestApiError {
             ImportRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             ImportRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
             ImportRestApiErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
+            ImportRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             ImportRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             ImportRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
             ImportRestApiErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -9079,8 +9480,8 @@ impl ImportRestApiError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9108,6 +9509,9 @@ impl ImportRestApiError {
             ImportRestApiErrorKind::LimitExceededException(_)
         )
     }
+    pub fn is_not_found_exception(&self) -> bool {
+        matches!(&self.kind, ImportRestApiErrorKind::NotFoundException(_))
+    }
     pub fn is_too_many_requests_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -9124,6 +9528,7 @@ impl std::error::Error for ImportRestApiError {
             ImportRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
             ImportRestApiErrorKind::ConflictException(_inner) => Some(_inner),
             ImportRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
+            ImportRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             ImportRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             ImportRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
             ImportRestApiErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -9141,6 +9546,7 @@ pub struct PutGatewayResponseError {
 #[derive(std::fmt::Debug)]
 pub enum PutGatewayResponseErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
     LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -9152,6 +9558,7 @@ impl std::fmt::Display for PutGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             PutGatewayResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            PutGatewayResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
             PutGatewayResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             PutGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             PutGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -9187,8 +9594,8 @@ impl PutGatewayResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9208,6 +9615,12 @@ impl PutGatewayResponseError {
         matches!(
             &self.kind,
             PutGatewayResponseErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutGatewayResponseErrorKind::ConflictException(_)
         )
     }
     pub fn is_limit_exceeded_exception(&self) -> bool {
@@ -9239,6 +9652,7 @@ impl std::error::Error for PutGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             PutGatewayResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            PutGatewayResponseErrorKind::ConflictException(_inner) => Some(_inner),
             PutGatewayResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             PutGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -9259,6 +9673,7 @@ pub struct PutIntegrationError {
 pub enum PutIntegrationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -9270,6 +9685,7 @@ impl std::fmt::Display for PutIntegrationError {
         match &self.kind {
             PutIntegrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             PutIntegrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            PutIntegrationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             PutIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             PutIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             PutIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -9304,8 +9720,8 @@ impl PutIntegrationError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9326,6 +9742,12 @@ impl PutIntegrationError {
     }
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, PutIntegrationErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            PutIntegrationErrorKind::LimitExceededException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, PutIntegrationErrorKind::NotFoundException(_))
@@ -9348,6 +9770,7 @@ impl std::error::Error for PutIntegrationError {
         match &self.kind {
             PutIntegrationErrorKind::BadRequestException(_inner) => Some(_inner),
             PutIntegrationErrorKind::ConflictException(_inner) => Some(_inner),
+            PutIntegrationErrorKind::LimitExceededException(_inner) => Some(_inner),
             PutIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             PutIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             PutIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -9414,8 +9837,8 @@ impl PutIntegrationResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9540,8 +9963,8 @@ impl PutMethodError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9648,8 +10071,8 @@ impl PutMethodResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9768,8 +10191,8 @@ impl PutRestApiError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9876,8 +10299,8 @@ impl TagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -9983,8 +10406,8 @@ impl TestInvokeAuthorizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10091,8 +10514,8 @@ impl TestInvokeMethodError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10153,6 +10576,7 @@ pub struct UntagResourceError {
 pub enum UntagResourceErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10164,6 +10588,7 @@ impl std::fmt::Display for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UntagResourceErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UntagResourceErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -10198,8 +10623,8 @@ impl UntagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10221,6 +10646,12 @@ impl UntagResourceError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UntagResourceErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UntagResourceErrorKind::NotFoundException(_))
     }
@@ -10239,6 +10670,7 @@ impl std::error::Error for UntagResourceError {
         match &self.kind {
             UntagResourceErrorKind::BadRequestException(_inner) => Some(_inner),
             UntagResourceErrorKind::ConflictException(_inner) => Some(_inner),
+            UntagResourceErrorKind::LimitExceededException(_inner) => Some(_inner),
             UntagResourceErrorKind::NotFoundException(_inner) => Some(_inner),
             UntagResourceErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UntagResourceErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -10257,6 +10689,8 @@ pub struct UpdateAccountError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateAccountErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10267,6 +10701,8 @@ impl std::fmt::Display for UpdateAccountError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateAccountErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateAccountErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateAccountErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateAccountErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateAccountErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateAccountErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -10301,8 +10737,8 @@ impl UpdateAccountError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10321,6 +10757,15 @@ impl UpdateAccountError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateAccountErrorKind::BadRequestException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAccountErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAccountErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateAccountErrorKind::NotFoundException(_))
     }
@@ -10338,6 +10783,8 @@ impl std::error::Error for UpdateAccountError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateAccountErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateAccountErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateAccountErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateAccountErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateAccountErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAccountErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -10357,6 +10804,7 @@ pub struct UpdateApiKeyError {
 pub enum UpdateApiKeyErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10368,6 +10816,7 @@ impl std::fmt::Display for UpdateApiKeyError {
         match &self.kind {
             UpdateApiKeyErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateApiKeyErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateApiKeyErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateApiKeyErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateApiKeyErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateApiKeyErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -10402,8 +10851,8 @@ impl UpdateApiKeyError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10425,6 +10874,9 @@ impl UpdateApiKeyError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiKeyErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateApiKeyErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateApiKeyErrorKind::NotFoundException(_))
     }
@@ -10443,6 +10895,7 @@ impl std::error::Error for UpdateApiKeyError {
         match &self.kind {
             UpdateApiKeyErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateApiKeyErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateApiKeyErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -10461,6 +10914,8 @@ pub struct UpdateAuthorizerError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateAuthorizerErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10471,6 +10926,8 @@ impl std::fmt::Display for UpdateAuthorizerError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateAuthorizerErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateAuthorizerErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateAuthorizerErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateAuthorizerErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateAuthorizerErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateAuthorizerErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -10505,8 +10962,8 @@ impl UpdateAuthorizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10526,6 +10983,15 @@ impl UpdateAuthorizerError {
         matches!(
             &self.kind,
             UpdateAuthorizerErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateAuthorizerErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateAuthorizerErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -10548,6 +11014,8 @@ impl std::error::Error for UpdateAuthorizerError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateAuthorizerErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateAuthorizerErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateAuthorizerErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateAuthorizerErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateAuthorizerErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateAuthorizerErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -10567,6 +11035,7 @@ pub struct UpdateBasePathMappingError {
 pub enum UpdateBasePathMappingErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10578,6 +11047,7 @@ impl std::fmt::Display for UpdateBasePathMappingError {
         match &self.kind {
             UpdateBasePathMappingErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateBasePathMappingErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateBasePathMappingErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateBasePathMappingErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateBasePathMappingErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateBasePathMappingErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -10612,8 +11082,8 @@ impl UpdateBasePathMappingError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10641,6 +11111,12 @@ impl UpdateBasePathMappingError {
             UpdateBasePathMappingErrorKind::ConflictException(_)
         )
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateBasePathMappingErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -10665,6 +11141,7 @@ impl std::error::Error for UpdateBasePathMappingError {
         match &self.kind {
             UpdateBasePathMappingErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateBasePathMappingErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateBasePathMappingErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -10683,6 +11160,8 @@ pub struct UpdateClientCertificateError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateClientCertificateErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -10693,6 +11172,8 @@ impl std::fmt::Display for UpdateClientCertificateError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateClientCertificateErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateClientCertificateErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateClientCertificateErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateClientCertificateErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateClientCertificateErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateClientCertificateErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -10727,8 +11208,8 @@ impl UpdateClientCertificateError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10748,6 +11229,18 @@ impl UpdateClientCertificateError {
         matches!(
             &self.kind,
             UpdateClientCertificateErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClientCertificateErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateClientCertificateErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -10773,6 +11266,8 @@ impl std::error::Error for UpdateClientCertificateError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateClientCertificateErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateClientCertificateErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateClientCertificateErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateClientCertificateErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateClientCertificateErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateClientCertificateErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -10791,6 +11286,8 @@ pub struct UpdateDeploymentError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateDeploymentErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     ServiceUnavailableException(crate::error::ServiceUnavailableException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
@@ -10802,6 +11299,8 @@ impl std::fmt::Display for UpdateDeploymentError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateDeploymentErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDeploymentErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateDeploymentErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateDeploymentErrorKind::ServiceUnavailableException(_inner) => _inner.fmt(f),
             UpdateDeploymentErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
@@ -10837,8 +11336,8 @@ impl UpdateDeploymentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -10858,6 +11357,15 @@ impl UpdateDeploymentError {
         matches!(
             &self.kind,
             UpdateDeploymentErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateDeploymentErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDeploymentErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -10886,6 +11394,8 @@ impl std::error::Error for UpdateDeploymentError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateDeploymentErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDeploymentErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateDeploymentErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDeploymentErrorKind::ServiceUnavailableException(_inner) => Some(_inner),
             UpdateDeploymentErrorKind::TooManyRequestsException(_inner) => Some(_inner),
@@ -10953,8 +11463,8 @@ impl UpdateDocumentationPartError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11032,6 +11542,7 @@ pub struct UpdateDocumentationVersionError {
 pub enum UpdateDocumentationVersionErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11043,6 +11554,7 @@ impl std::fmt::Display for UpdateDocumentationVersionError {
         match &self.kind {
             UpdateDocumentationVersionErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateDocumentationVersionErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDocumentationVersionErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateDocumentationVersionErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateDocumentationVersionErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11077,8 +11589,8 @@ impl UpdateDocumentationVersionError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11106,6 +11618,12 @@ impl UpdateDocumentationVersionError {
             UpdateDocumentationVersionErrorKind::ConflictException(_)
         )
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDocumentationVersionErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11130,6 +11648,7 @@ impl std::error::Error for UpdateDocumentationVersionError {
         match &self.kind {
             UpdateDocumentationVersionErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDocumentationVersionErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDocumentationVersionErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -11149,6 +11668,7 @@ pub struct UpdateDomainNameError {
 pub enum UpdateDomainNameErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11160,6 +11680,7 @@ impl std::fmt::Display for UpdateDomainNameError {
         match &self.kind {
             UpdateDomainNameErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateDomainNameErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateDomainNameErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateDomainNameErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateDomainNameErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateDomainNameErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11194,8 +11715,8 @@ impl UpdateDomainNameError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11220,6 +11741,12 @@ impl UpdateDomainNameError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainNameErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateDomainNameErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateDomainNameErrorKind::NotFoundException(_))
     }
@@ -11241,6 +11768,7 @@ impl std::error::Error for UpdateDomainNameError {
         match &self.kind {
             UpdateDomainNameErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateDomainNameErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateDomainNameErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -11259,6 +11787,8 @@ pub struct UpdateGatewayResponseError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateGatewayResponseErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11269,6 +11799,8 @@ impl std::fmt::Display for UpdateGatewayResponseError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateGatewayResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateGatewayResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateGatewayResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateGatewayResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateGatewayResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateGatewayResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11303,8 +11835,8 @@ impl UpdateGatewayResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11324,6 +11856,18 @@ impl UpdateGatewayResponseError {
         matches!(
             &self.kind,
             UpdateGatewayResponseErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewayResponseErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateGatewayResponseErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -11349,6 +11893,8 @@ impl std::error::Error for UpdateGatewayResponseError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateGatewayResponseErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateGatewayResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateGatewayResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateGatewayResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateGatewayResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateGatewayResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -11368,6 +11914,7 @@ pub struct UpdateIntegrationError {
 pub enum UpdateIntegrationErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11379,6 +11926,7 @@ impl std::fmt::Display for UpdateIntegrationError {
         match &self.kind {
             UpdateIntegrationErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateIntegrationErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateIntegrationErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateIntegrationErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateIntegrationErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateIntegrationErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11413,8 +11961,8 @@ impl UpdateIntegrationError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11439,6 +11987,12 @@ impl UpdateIntegrationError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntegrationErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateIntegrationErrorKind::NotFoundException(_))
     }
@@ -11460,6 +12014,7 @@ impl std::error::Error for UpdateIntegrationError {
         match &self.kind {
             UpdateIntegrationErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateIntegrationErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateIntegrationErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -11479,6 +12034,7 @@ pub struct UpdateIntegrationResponseError {
 pub enum UpdateIntegrationResponseErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11490,6 +12046,7 @@ impl std::fmt::Display for UpdateIntegrationResponseError {
         match &self.kind {
             UpdateIntegrationResponseErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateIntegrationResponseErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateIntegrationResponseErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateIntegrationResponseErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateIntegrationResponseErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateIntegrationResponseErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11524,8 +12081,8 @@ impl UpdateIntegrationResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11553,6 +12110,12 @@ impl UpdateIntegrationResponseError {
             UpdateIntegrationResponseErrorKind::ConflictException(_)
         )
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateIntegrationResponseErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(
             &self.kind,
@@ -11577,6 +12140,7 @@ impl std::error::Error for UpdateIntegrationResponseError {
         match &self.kind {
             UpdateIntegrationResponseErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateIntegrationResponseErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateIntegrationResponseErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -11641,8 +12205,8 @@ impl UpdateMethodError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11748,8 +12312,8 @@ impl UpdateMethodResponseError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11827,6 +12391,7 @@ pub struct UpdateModelError {
 pub enum UpdateModelErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11838,6 +12403,7 @@ impl std::fmt::Display for UpdateModelError {
         match &self.kind {
             UpdateModelErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateModelErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateModelErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11872,8 +12438,8 @@ impl UpdateModelError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11895,6 +12461,9 @@ impl UpdateModelError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateModelErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateModelErrorKind::NotFoundException(_))
     }
@@ -11913,6 +12482,7 @@ impl std::error::Error for UpdateModelError {
         match &self.kind {
             UpdateModelErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateModelErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateModelErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateModelErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateModelErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateModelErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -11931,6 +12501,8 @@ pub struct UpdateRequestValidatorError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateRequestValidatorErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -11941,6 +12513,8 @@ impl std::fmt::Display for UpdateRequestValidatorError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateRequestValidatorErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateRequestValidatorErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateRequestValidatorErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateRequestValidatorErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateRequestValidatorErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateRequestValidatorErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -11975,8 +12549,8 @@ impl UpdateRequestValidatorError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -11996,6 +12570,18 @@ impl UpdateRequestValidatorError {
         matches!(
             &self.kind,
             UpdateRequestValidatorErrorKind::BadRequestException(_)
+        )
+    }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRequestValidatorErrorKind::ConflictException(_)
+        )
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRequestValidatorErrorKind::LimitExceededException(_)
         )
     }
     pub fn is_not_found_exception(&self) -> bool {
@@ -12021,6 +12607,8 @@ impl std::error::Error for UpdateRequestValidatorError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateRequestValidatorErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateRequestValidatorErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateRequestValidatorErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateRequestValidatorErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateRequestValidatorErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateRequestValidatorErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -12085,8 +12673,8 @@ impl UpdateResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -12148,6 +12736,7 @@ pub struct UpdateRestApiError {
 pub enum UpdateRestApiErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12159,6 +12748,7 @@ impl std::fmt::Display for UpdateRestApiError {
         match &self.kind {
             UpdateRestApiErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateRestApiErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateRestApiErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateRestApiErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateRestApiErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateRestApiErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -12193,8 +12783,8 @@ impl UpdateRestApiError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -12216,6 +12806,12 @@ impl UpdateRestApiError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateRestApiErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateRestApiErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateRestApiErrorKind::NotFoundException(_))
     }
@@ -12234,6 +12830,7 @@ impl std::error::Error for UpdateRestApiError {
         match &self.kind {
             UpdateRestApiErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateRestApiErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateRestApiErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -12253,6 +12850,7 @@ pub struct UpdateStageError {
 pub enum UpdateStageErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12264,6 +12862,7 @@ impl std::fmt::Display for UpdateStageError {
         match &self.kind {
             UpdateStageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateStageErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateStageErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateStageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateStageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateStageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -12298,8 +12897,8 @@ impl UpdateStageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -12321,6 +12920,9 @@ impl UpdateStageError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateStageErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateStageErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateStageErrorKind::NotFoundException(_))
     }
@@ -12339,6 +12941,7 @@ impl std::error::Error for UpdateStageError {
         match &self.kind {
             UpdateStageErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateStageErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateStageErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateStageErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateStageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateStageErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -12357,6 +12960,8 @@ pub struct UpdateUsageError {
 #[derive(std::fmt::Debug)]
 pub enum UpdateUsageErrorKind {
     BadRequestException(crate::error::BadRequestException),
+    ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12367,6 +12972,8 @@ impl std::fmt::Display for UpdateUsageError {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         match &self.kind {
             UpdateUsageErrorKind::BadRequestException(_inner) => _inner.fmt(f),
+            UpdateUsageErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateUsageErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateUsageErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateUsageErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateUsageErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -12401,8 +13008,8 @@ impl UpdateUsageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -12421,6 +13028,12 @@ impl UpdateUsageError {
     pub fn is_bad_request_exception(&self) -> bool {
         matches!(&self.kind, UpdateUsageErrorKind::BadRequestException(_))
     }
+    pub fn is_conflict_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(&self.kind, UpdateUsageErrorKind::LimitExceededException(_))
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateUsageErrorKind::NotFoundException(_))
     }
@@ -12438,6 +13051,8 @@ impl std::error::Error for UpdateUsageError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
         match &self.kind {
             UpdateUsageErrorKind::BadRequestException(_inner) => Some(_inner),
+            UpdateUsageErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateUsageErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateUsageErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateUsageErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateUsageErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -12457,6 +13072,7 @@ pub struct UpdateUsagePlanError {
 pub enum UpdateUsagePlanErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12468,6 +13084,7 @@ impl std::fmt::Display for UpdateUsagePlanError {
         match &self.kind {
             UpdateUsagePlanErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateUsagePlanErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateUsagePlanErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateUsagePlanErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateUsagePlanErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateUsagePlanErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -12502,8 +13119,8 @@ impl UpdateUsagePlanError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -12524,6 +13141,12 @@ impl UpdateUsagePlanError {
     }
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateUsagePlanErrorKind::ConflictException(_))
+    }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateUsagePlanErrorKind::LimitExceededException(_)
+        )
     }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateUsagePlanErrorKind::NotFoundException(_))
@@ -12546,6 +13169,7 @@ impl std::error::Error for UpdateUsagePlanError {
         match &self.kind {
             UpdateUsagePlanErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateUsagePlanErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateUsagePlanErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -12565,6 +13189,7 @@ pub struct UpdateVpcLinkError {
 pub enum UpdateVpcLinkErrorKind {
     BadRequestException(crate::error::BadRequestException),
     ConflictException(crate::error::ConflictException),
+    LimitExceededException(crate::error::LimitExceededException),
     NotFoundException(crate::error::NotFoundException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
     UnauthorizedException(crate::error::UnauthorizedException),
@@ -12576,6 +13201,7 @@ impl std::fmt::Display for UpdateVpcLinkError {
         match &self.kind {
             UpdateVpcLinkErrorKind::BadRequestException(_inner) => _inner.fmt(f),
             UpdateVpcLinkErrorKind::ConflictException(_inner) => _inner.fmt(f),
+            UpdateVpcLinkErrorKind::LimitExceededException(_inner) => _inner.fmt(f),
             UpdateVpcLinkErrorKind::NotFoundException(_inner) => _inner.fmt(f),
             UpdateVpcLinkErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
             UpdateVpcLinkErrorKind::UnauthorizedException(_inner) => _inner.fmt(f),
@@ -12610,8 +13236,8 @@ impl UpdateVpcLinkError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -12633,6 +13259,12 @@ impl UpdateVpcLinkError {
     pub fn is_conflict_exception(&self) -> bool {
         matches!(&self.kind, UpdateVpcLinkErrorKind::ConflictException(_))
     }
+    pub fn is_limit_exceeded_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            UpdateVpcLinkErrorKind::LimitExceededException(_)
+        )
+    }
     pub fn is_not_found_exception(&self) -> bool {
         matches!(&self.kind, UpdateVpcLinkErrorKind::NotFoundException(_))
     }
@@ -12651,6 +13283,7 @@ impl std::error::Error for UpdateVpcLinkError {
         match &self.kind {
             UpdateVpcLinkErrorKind::BadRequestException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::ConflictException(_inner) => Some(_inner),
+            UpdateVpcLinkErrorKind::LimitExceededException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::NotFoundException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::TooManyRequestsException(_inner) => Some(_inner),
             UpdateVpcLinkErrorKind::UnauthorizedException(_inner) => Some(_inner),
@@ -12854,6 +13487,81 @@ impl NotFoundException {
     }
 }
 
+/// <p>The request exceeded the rate limit. Retry after the specified time period.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct LimitExceededException {
+    pub retry_after_seconds: std::option::Option<std::string::String>,
+    pub message: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("LimitExceededException");
+        formatter.field("retry_after_seconds", &self.retry_after_seconds);
+        formatter.field("message", &self.message);
+        formatter.finish()
+    }
+}
+impl LimitExceededException {
+    pub fn message(&self) -> Option<&str> {
+        self.message.as_deref()
+    }
+}
+impl std::fmt::Display for LimitExceededException {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        write!(f, "LimitExceededException")?;
+        if let Some(inner_4) = &self.message {
+            write!(f, ": {}", inner_4)?;
+        }
+        Ok(())
+    }
+}
+impl std::error::Error for LimitExceededException {}
+/// See [`LimitExceededException`](crate::error::LimitExceededException)
+pub mod limit_exceeded_exception {
+    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) retry_after_seconds: std::option::Option<std::string::String>,
+        pub(crate) message: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
+            self.retry_after_seconds = Some(input.into());
+            self
+        }
+        pub fn set_retry_after_seconds(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.retry_after_seconds = input;
+            self
+        }
+        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
+            self.message = Some(input.into());
+            self
+        }
+        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.message = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
+        pub fn build(self) -> crate::error::LimitExceededException {
+            crate::error::LimitExceededException {
+                retry_after_seconds: self.retry_after_seconds,
+                message: self.message,
+            }
+        }
+    }
+}
+impl LimitExceededException {
+    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
+    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
+        crate::error::limit_exceeded_exception::Builder::default()
+    }
+}
+
 /// <p>The request configuration has conflicts. For details, see the accompanying error message.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -12875,8 +13583,8 @@ impl ConflictException {
 impl std::fmt::Display for ConflictException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "ConflictException")?;
-        if let Some(inner_4) = &self.message {
-            write!(f, ": {}", inner_4)?;
+        if let Some(inner_5) = &self.message {
+            write!(f, ": {}", inner_5)?;
         }
         Ok(())
     }
@@ -12935,8 +13643,8 @@ impl BadRequestException {
 impl std::fmt::Display for BadRequestException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         write!(f, "BadRequestException")?;
-        if let Some(inner_5) = &self.message {
-            write!(f, ": {}", inner_5)?;
+        if let Some(inner_6) = &self.message {
+            write!(f, ": {}", inner_6)?;
         }
         Ok(())
     }
@@ -12971,81 +13679,6 @@ impl BadRequestException {
     /// Creates a new builder-style object to manufacture [`BadRequestException`](crate::error::BadRequestException)
     pub fn builder() -> crate::error::bad_request_exception::Builder {
         crate::error::bad_request_exception::Builder::default()
-    }
-}
-
-/// <p>The request exceeded the rate limit. Retry after the specified time period.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct LimitExceededException {
-    pub retry_after_seconds: std::option::Option<std::string::String>,
-    pub message: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("LimitExceededException");
-        formatter.field("retry_after_seconds", &self.retry_after_seconds);
-        formatter.field("message", &self.message);
-        formatter.finish()
-    }
-}
-impl LimitExceededException {
-    pub fn message(&self) -> Option<&str> {
-        self.message.as_deref()
-    }
-}
-impl std::fmt::Display for LimitExceededException {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "LimitExceededException")?;
-        if let Some(inner_6) = &self.message {
-            write!(f, ": {}", inner_6)?;
-        }
-        Ok(())
-    }
-}
-impl std::error::Error for LimitExceededException {}
-/// See [`LimitExceededException`](crate::error::LimitExceededException)
-pub mod limit_exceeded_exception {
-    /// A builder for [`LimitExceededException`](crate::error::LimitExceededException)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) retry_after_seconds: std::option::Option<std::string::String>,
-        pub(crate) message: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        pub fn retry_after_seconds(mut self, input: impl Into<std::string::String>) -> Self {
-            self.retry_after_seconds = Some(input.into());
-            self
-        }
-        pub fn set_retry_after_seconds(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.retry_after_seconds = input;
-            self
-        }
-        pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-            self.message = Some(input.into());
-            self
-        }
-        pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.message = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`LimitExceededException`](crate::error::LimitExceededException)
-        pub fn build(self) -> crate::error::LimitExceededException {
-            crate::error::LimitExceededException {
-                retry_after_seconds: self.retry_after_seconds,
-                message: self.message,
-            }
-        }
-    }
-}
-impl LimitExceededException {
-    /// Creates a new builder-style object to manufacture [`LimitExceededException`](crate::error::LimitExceededException)
-    pub fn builder() -> crate::error::limit_exceeded_exception::Builder {
-        crate::error::limit_exceeded_exception::Builder::default()
     }
 }
 

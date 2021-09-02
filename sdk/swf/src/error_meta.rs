@@ -31,11 +31,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CountClosedWorkflowExecutionsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CountClosedWorkflowExecutionsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CountClosedWorkflowExecutionsError>,
+        err: smithy_http::result::SdkError<crate::error::CountClosedWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -47,9 +49,13 @@ impl From<smithy_http::result::SdkError<crate::error::CountClosedWorkflowExecuti
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CountOpenWorkflowExecutionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CountOpenWorkflowExecutionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CountOpenWorkflowExecutionsError>,
+        err: smithy_http::result::SdkError<crate::error::CountOpenWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -67,9 +73,13 @@ impl From<smithy_http::result::SdkError<crate::error::CountOpenWorkflowExecution
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CountPendingActivityTasksError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CountPendingActivityTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CountPendingActivityTasksError>,
+        err: smithy_http::result::SdkError<crate::error::CountPendingActivityTasksError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -87,9 +97,13 @@ impl From<smithy_http::result::SdkError<crate::error::CountPendingActivityTasksE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CountPendingDecisionTasksError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CountPendingDecisionTasksError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CountPendingDecisionTasksError>,
+        err: smithy_http::result::SdkError<crate::error::CountPendingDecisionTasksError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -107,8 +121,13 @@ impl From<smithy_http::result::SdkError<crate::error::CountPendingDecisionTasksE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeprecateActivityTypeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeprecateActivityTypeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeprecateActivityTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeprecateActivityTypeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeprecateActivityTypeErrorKind::OperationNotPermittedFault(inner) => {
@@ -128,8 +147,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeprecateActivityTypeError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeprecateDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeprecateDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeprecateDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeprecateDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeprecateDomainErrorKind::DomainDeprecatedFault(inner) => {
@@ -147,8 +169,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeprecateDomainError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeprecateWorkflowTypeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeprecateWorkflowTypeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeprecateWorkflowTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeprecateWorkflowTypeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault(inner) => {
@@ -168,8 +195,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeprecateWorkflowTypeError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeActivityTypeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeActivityTypeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeActivityTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeActivityTypeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeActivityTypeErrorKind::OperationNotPermittedFault(inner) => {
@@ -186,8 +218,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeActivityTypeError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeDomainErrorKind::OperationNotPermittedFault(inner) => {
@@ -202,9 +237,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDomainError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeWorkflowExecutionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeWorkflowExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeWorkflowExecutionError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeWorkflowExecutionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -222,8 +261,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeWorkflowExecutionE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeWorkflowTypeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeWorkflowTypeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeWorkflowTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeWorkflowTypeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeWorkflowTypeErrorKind::OperationNotPermittedFault(inner) => {
@@ -240,9 +284,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeWorkflowTypeError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetWorkflowExecutionHistoryError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetWorkflowExecutionHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetWorkflowExecutionHistoryError>,
+        err: smithy_http::result::SdkError<crate::error::GetWorkflowExecutionHistoryError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -260,8 +308,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetWorkflowExecutionHistor
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListActivityTypesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListActivityTypesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListActivityTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListActivityTypesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListActivityTypesErrorKind::OperationNotPermittedFault(inner) => {
@@ -278,11 +329,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListActivityTypesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListClosedWorkflowExecutionsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListClosedWorkflowExecutionsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListClosedWorkflowExecutionsError>,
+        err: smithy_http::result::SdkError<crate::error::ListClosedWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -300,8 +353,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListClosedWorkflowExecutio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDomainsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDomainsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDomainsErrorKind::OperationNotPermittedFault(inner) => {
@@ -313,9 +369,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListDomainsError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListOpenWorkflowExecutionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListOpenWorkflowExecutionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListOpenWorkflowExecutionsError>,
+        err: smithy_http::result::SdkError<crate::error::ListOpenWorkflowExecutionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -333,8 +393,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListOpenWorkflowExecutions
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::LimitExceededFault(inner) => {
@@ -354,8 +417,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListWorkflowTypesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListWorkflowTypesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListWorkflowTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListWorkflowTypesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListWorkflowTypesErrorKind::OperationNotPermittedFault(inner) => {
@@ -372,8 +438,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListWorkflowTypesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PollForActivityTaskError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PollForActivityTaskError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PollForActivityTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PollForActivityTaskError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PollForActivityTaskErrorKind::LimitExceededFault(inner) => {
@@ -393,8 +462,11 @@ impl From<smithy_http::result::SdkError<crate::error::PollForActivityTaskError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PollForDecisionTaskError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PollForDecisionTaskError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PollForDecisionTaskError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PollForDecisionTaskError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PollForDecisionTaskErrorKind::LimitExceededFault(inner) => {
@@ -414,9 +486,13 @@ impl From<smithy_http::result::SdkError<crate::error::PollForDecisionTaskError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RecordActivityTaskHeartbeatError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RecordActivityTaskHeartbeatError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RecordActivityTaskHeartbeatError>,
+        err: smithy_http::result::SdkError<crate::error::RecordActivityTaskHeartbeatError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -434,8 +510,13 @@ impl From<smithy_http::result::SdkError<crate::error::RecordActivityTaskHeartbea
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterActivityTypeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterActivityTypeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterActivityTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RegisterActivityTypeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterActivityTypeErrorKind::LimitExceededFault(inner) => {
@@ -458,8 +539,11 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterActivityTypeError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterDomainErrorKind::DomainAlreadyExistsFault(inner) => {
@@ -480,8 +564,13 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterDomainError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterWorkflowTypeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterWorkflowTypeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterWorkflowTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RegisterWorkflowTypeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterWorkflowTypeErrorKind::LimitExceededFault(inner) => {
@@ -504,11 +593,13 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterWorkflowTypeError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RequestCancelWorkflowExecutionError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RequestCancelWorkflowExecutionError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RequestCancelWorkflowExecutionError>,
+        err: smithy_http::result::SdkError<crate::error::RequestCancelWorkflowExecutionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -520,9 +611,13 @@ impl From<smithy_http::result::SdkError<crate::error::RequestCancelWorkflowExecu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RespondActivityTaskCanceledError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RespondActivityTaskCanceledError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RespondActivityTaskCanceledError>,
+        err: smithy_http::result::SdkError<crate::error::RespondActivityTaskCanceledError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -540,11 +635,13 @@ impl From<smithy_http::result::SdkError<crate::error::RespondActivityTaskCancele
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RespondActivityTaskCompletedError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RespondActivityTaskCompletedError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RespondActivityTaskCompletedError>,
+        err: smithy_http::result::SdkError<crate::error::RespondActivityTaskCompletedError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -562,9 +659,13 @@ impl From<smithy_http::result::SdkError<crate::error::RespondActivityTaskComplet
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RespondActivityTaskFailedError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RespondActivityTaskFailedError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RespondActivityTaskFailedError>,
+        err: smithy_http::result::SdkError<crate::error::RespondActivityTaskFailedError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -582,11 +683,13 @@ impl From<smithy_http::result::SdkError<crate::error::RespondActivityTaskFailedE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RespondDecisionTaskCompletedError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RespondDecisionTaskCompletedError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RespondDecisionTaskCompletedError>,
+        err: smithy_http::result::SdkError<crate::error::RespondDecisionTaskCompletedError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -604,9 +707,12 @@ impl From<smithy_http::result::SdkError<crate::error::RespondDecisionTaskComplet
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SignalWorkflowExecutionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::SignalWorkflowExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SignalWorkflowExecutionError>,
+        err: smithy_http::result::SdkError<crate::error::SignalWorkflowExecutionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -624,8 +730,13 @@ impl From<smithy_http::result::SdkError<crate::error::SignalWorkflowExecutionErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartWorkflowExecutionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartWorkflowExecutionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartWorkflowExecutionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StartWorkflowExecutionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartWorkflowExecutionErrorKind::DefaultUndefinedFault(inner) => Error::DefaultUndefinedFault(inner),
@@ -640,8 +751,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartWorkflowExecutionErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::LimitExceededFault(inner) => {
@@ -662,9 +776,13 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TerminateWorkflowExecutionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::TerminateWorkflowExecutionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::TerminateWorkflowExecutionError>,
+        err: smithy_http::result::SdkError<crate::error::TerminateWorkflowExecutionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -682,9 +800,12 @@ impl From<smithy_http::result::SdkError<crate::error::TerminateWorkflowExecution
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UndeprecateActivityTypeError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UndeprecateActivityTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UndeprecateActivityTypeError>,
+        err: smithy_http::result::SdkError<crate::error::UndeprecateActivityTypeError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -705,8 +826,11 @@ impl From<smithy_http::result::SdkError<crate::error::UndeprecateActivityTypeErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UndeprecateDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UndeprecateDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UndeprecateDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UndeprecateDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UndeprecateDomainErrorKind::DomainAlreadyExistsFault(inner) => {
@@ -726,9 +850,12 @@ impl From<smithy_http::result::SdkError<crate::error::UndeprecateDomainError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UndeprecateWorkflowTypeError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UndeprecateWorkflowTypeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UndeprecateWorkflowTypeError>,
+        err: smithy_http::result::SdkError<crate::error::UndeprecateWorkflowTypeError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -749,8 +876,11 @@ impl From<smithy_http::result::SdkError<crate::error::UndeprecateWorkflowTypeErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::LimitExceededFault(inner) => {

@@ -232,7 +232,7 @@ pub struct UnassignIpv6AddressesOutput {
     pub network_interface_id: std::option::Option<std::string::String>,
     /// <p>The IPv6 addresses that have been unassigned from the network interface.</p>
     pub unassigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IPv4 Prefix Delegation prefixes that have been unassigned from  the network interface.</p>
+    /// <p>The IPv4 prefixes that have been unassigned from  the network interface.</p>
     pub unassigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for UnassignIpv6AddressesOutput {
@@ -5535,8 +5535,7 @@ pub struct ImportImageOutput {
     pub image_id: std::option::Option<std::string::String>,
     /// <p>The task ID of the import image task.</p>
     pub import_task_id: std::option::Option<std::string::String>,
-    /// <p>The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key
-    /// (CMK) that was used to create the encrypted AMI.</p>
+    /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The license type of the virtual machine.</p>
     pub license_type: std::option::Option<std::string::String>,
@@ -5555,6 +5554,8 @@ pub struct ImportImageOutput {
         std::option::Option<std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>>,
     /// <p>Any tags assigned to the import image task.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    /// <p>The usage operation value.</p>
+    pub usage_operation: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ImportImageOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -5574,6 +5575,7 @@ impl std::fmt::Debug for ImportImageOutput {
         formatter.field("status_message", &self.status_message);
         formatter.field("license_specifications", &self.license_specifications);
         formatter.field("tags", &self.tags);
+        formatter.field("usage_operation", &self.usage_operation);
         formatter.finish()
     }
 }
@@ -5601,6 +5603,7 @@ pub mod import_image_output {
             std::vec::Vec<crate::model::ImportImageLicenseConfigurationResponse>,
         >,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        pub(crate) usage_operation: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>The architecture of the virtual machine.</p>
@@ -5660,8 +5663,7 @@ pub mod import_image_output {
             self.import_task_id = input;
             self
         }
-        /// <p>The identifier for the symmetric AWS Key Management Service (AWS KMS) customer master key
-        /// (CMK) that was used to create the encrypted AMI.</p>
+        /// <p>The identifier for the symmetric KMS key that was used to create the encrypted AMI.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -5762,6 +5764,18 @@ pub mod import_image_output {
             self.tags = input;
             self
         }
+        /// <p>The usage operation value.</p>
+        pub fn usage_operation(mut self, input: impl Into<std::string::String>) -> Self {
+            self.usage_operation = Some(input.into());
+            self
+        }
+        pub fn set_usage_operation(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.usage_operation = input;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportImageOutput`](crate::output::ImportImageOutput)
         pub fn build(self) -> crate::output::ImportImageOutput {
             crate::output::ImportImageOutput {
@@ -5780,6 +5794,7 @@ pub mod import_image_output {
                 status_message: self.status_message,
                 license_specifications: self.license_specifications,
                 tags: self.tags,
+                usage_operation: self.usage_operation,
             }
         }
     }
@@ -27487,9 +27502,7 @@ pub struct AssignPrivateIpAddressesOutput {
     /// <p>The private IP addresses assigned to the network interface.</p>
     pub assigned_private_ip_addresses:
         std::option::Option<std::vec::Vec<crate::model::AssignedPrivateIpAddress>>,
-    /// <p>The IPv4 Prefix Delegation prefixes
-    /// that are
-    /// assigned to the network interface.</p>
+    /// <p>The IPv4 prefixes that are assigned to the network interface.</p>
     pub assigned_ipv4_prefixes:
         std::option::Option<std::vec::Vec<crate::model::Ipv4PrefixSpecification>>,
 }
@@ -27585,9 +27598,7 @@ pub struct AssignIpv6AddressesOutput {
     /// <p>The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses
     /// that were assigned to the network interface before the request are not included.</p>
     pub assigned_ipv6_addresses: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The IPv6 Prefix Delegation prefixes
-    /// that are
-    /// assigned to the network interface.</p>
+    /// <p>The IPv6 prefixes that are assigned to the network interface.</p>
     pub assigned_ipv6_prefixes: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The ID of the network interface.</p>
     pub network_interface_id: std::option::Option<std::string::String>,

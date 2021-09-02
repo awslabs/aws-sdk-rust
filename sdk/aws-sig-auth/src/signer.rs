@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_auth::Credentials;
 use aws_sigv4::http_request::{
     calculate_signing_headers, PayloadChecksumKind, SigningSettings, UriEncoding,
 };
 use aws_types::region::SigningRegion;
+use aws_types::Credentials;
 use aws_types::SigningService;
 use http::header::HeaderName;
 use smithy_http::body::SdkBody;

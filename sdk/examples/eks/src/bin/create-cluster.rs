@@ -1,7 +1,6 @@
+use aws_config::meta::region::RegionProviderChain;
 use aws_sdk_eks::model::VpcConfigRequest;
 use aws_sdk_eks::Region;
-use aws_types::region;
-use aws_types::region::ProvideRegion;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -38,12 +37,12 @@ async fn main() -> Result<(), aws_sdk_eks::Error> {
         role_arn,
         subnet_id,
     } = Opt::from_args();
-    let region = region
-        .map(Region::new)
-        .or_else(|| region::default_provider().region())
-        .unwrap_or_else(|| Region::from_static("us-west-2"));
-    let conf = aws_sdk_eks::Config::builder().region(region).build();
-    let client = aws_sdk_eks::Client::from_conf(conf);
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = aws_sdk_eks::Client::new(&shared_config);
+
     let cluster = client
         .create_cluster()
         .name(&cluster_name)

@@ -23,14 +23,20 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl
+impl<R>
     From<
-        smithy_http::result::SdkError<crate::error::AcceptDomainTransferFromAnotherAwsAccountError>,
+        smithy_http::result::SdkError<
+            crate::error::AcceptDomainTransferFromAnotherAwsAccountError,
+            R,
+        >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::AcceptDomainTransferFromAnotherAwsAccountError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -44,12 +50,20 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CancelDomainTransferToAnotherAwsAccountError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<
+            crate::error::CancelDomainTransferToAnotherAwsAccountError,
+            R,
+        >,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::CancelDomainTransferToAnotherAwsAccountError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -62,9 +76,12 @@ impl From<smithy_http::result::SdkError<crate::error::CancelDomainTransferToAnot
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CheckDomainAvailabilityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CheckDomainAvailabilityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CheckDomainAvailabilityError>,
+        err: smithy_http::result::SdkError<crate::error::CheckDomainAvailabilityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -82,9 +99,13 @@ impl From<smithy_http::result::SdkError<crate::error::CheckDomainAvailabilityErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CheckDomainTransferabilityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CheckDomainTransferabilityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CheckDomainTransferabilityError>,
+        err: smithy_http::result::SdkError<crate::error::CheckDomainTransferabilityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -102,8 +123,11 @@ impl From<smithy_http::result::SdkError<crate::error::CheckDomainTransferability
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteTagsForDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTagsForDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteTagsForDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTagsForDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteTagsForDomainErrorKind::InvalidInput(inner) => {
@@ -123,8 +147,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTagsForDomainError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisableDomainAutoRenewError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DisableDomainAutoRenewError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisableDomainAutoRenewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DisableDomainAutoRenewError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisableDomainAutoRenewErrorKind::InvalidInput(inner) => {
@@ -141,9 +170,13 @@ impl From<smithy_http::result::SdkError<crate::error::DisableDomainAutoRenewErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisableDomainTransferLockError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisableDomainTransferLockError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisableDomainTransferLockError>,
+        err: smithy_http::result::SdkError<crate::error::DisableDomainTransferLockError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -170,8 +203,13 @@ impl From<smithy_http::result::SdkError<crate::error::DisableDomainTransferLockE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::EnableDomainAutoRenewError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::EnableDomainAutoRenewError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::EnableDomainAutoRenewError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::EnableDomainAutoRenewError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::EnableDomainAutoRenewErrorKind::InvalidInput(inner) => {
@@ -191,9 +229,13 @@ impl From<smithy_http::result::SdkError<crate::error::EnableDomainAutoRenewError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::EnableDomainTransferLockError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::EnableDomainTransferLockError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::EnableDomainTransferLockError>,
+        err: smithy_http::result::SdkError<crate::error::EnableDomainTransferLockError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -220,11 +262,13 @@ impl From<smithy_http::result::SdkError<crate::error::EnableDomainTransferLockEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetContactReachabilityStatusError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetContactReachabilityStatusError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetContactReachabilityStatusError>,
+        err: smithy_http::result::SdkError<crate::error::GetContactReachabilityStatusError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -245,8 +289,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetContactReachabilityStat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDomainDetailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDomainDetailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDomainDetailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetDomainDetailError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDomainDetailErrorKind::InvalidInput(inner) => {
@@ -261,8 +308,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetDomainDetailError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDomainSuggestionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDomainSuggestionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDomainSuggestionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetDomainSuggestionsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDomainSuggestionsErrorKind::InvalidInput(inner) => {
@@ -279,8 +331,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetDomainSuggestionsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetOperationDetailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetOperationDetailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetOperationDetailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetOperationDetailError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetOperationDetailErrorKind::InvalidInput(inner) => {
@@ -294,8 +349,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetOperationDetailError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDomainsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDomainsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListDomainsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDomainsErrorKind::InvalidInput(inner) => {
@@ -307,8 +365,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListDomainsError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListOperationsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListOperationsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListOperationsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListOperationsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListOperationsErrorKind::InvalidInput(inner) => {
@@ -320,8 +381,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListOperationsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForDomainErrorKind::InvalidInput(inner) => {
@@ -341,8 +405,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForDomainError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterDomainErrorKind::DomainLimitExceeded(inner) => {
@@ -369,14 +436,20 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterDomainError>> for 
         }
     }
 }
-impl
+impl<R>
     From<
-        smithy_http::result::SdkError<crate::error::RejectDomainTransferFromAnotherAwsAccountError>,
+        smithy_http::result::SdkError<
+            crate::error::RejectDomainTransferFromAnotherAwsAccountError,
+            R,
+        >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::RejectDomainTransferFromAnotherAwsAccountError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -389,8 +462,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RenewDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RenewDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RenewDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RenewDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RenewDomainErrorKind::DuplicateRequest(inner) => {
@@ -414,11 +490,13 @@ impl From<smithy_http::result::SdkError<crate::error::RenewDomainError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResendContactReachabilityEmailError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ResendContactReachabilityEmailError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ResendContactReachabilityEmailError>,
+        err: smithy_http::result::SdkError<crate::error::ResendContactReachabilityEmailError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -439,8 +517,13 @@ impl From<smithy_http::result::SdkError<crate::error::ResendContactReachabilityE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RetrieveDomainAuthCodeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RetrieveDomainAuthCodeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RetrieveDomainAuthCodeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RetrieveDomainAuthCodeError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RetrieveDomainAuthCodeErrorKind::InvalidInput(inner) => {
@@ -457,8 +540,11 @@ impl From<smithy_http::result::SdkError<crate::error::RetrieveDomainAuthCodeErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TransferDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TransferDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TransferDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TransferDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TransferDomainErrorKind::DomainLimitExceeded(inner) => {
@@ -485,11 +571,13 @@ impl From<smithy_http::result::SdkError<crate::error::TransferDomainError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TransferDomainToAnotherAwsAccountError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::TransferDomainToAnotherAwsAccountError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::TransferDomainToAnotherAwsAccountError>,
+        err: smithy_http::result::SdkError<crate::error::TransferDomainToAnotherAwsAccountError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -502,8 +590,11 @@ impl From<smithy_http::result::SdkError<crate::error::TransferDomainToAnotherAws
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDomainContactError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateDomainContactError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDomainContactError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateDomainContactError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateDomainContactErrorKind::DuplicateRequest(inner) => {
@@ -529,9 +620,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDomainContactError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDomainContactPrivacyError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDomainContactPrivacyError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateDomainContactPrivacyError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateDomainContactPrivacyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -558,9 +653,12 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDomainContactPrivacy
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDomainNameserversError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDomainNameserversError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateDomainNameserversError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateDomainNameserversError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -587,8 +685,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDomainNameserversErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateTagsForDomainError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTagsForDomainError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateTagsForDomainError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTagsForDomainError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateTagsForDomainErrorKind::InvalidInput(inner) => {
@@ -608,8 +709,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateTagsForDomainError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ViewBillingError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ViewBillingError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ViewBillingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ViewBillingError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ViewBillingErrorKind::InvalidInput(inner) => {

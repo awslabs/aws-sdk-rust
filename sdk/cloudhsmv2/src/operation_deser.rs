@@ -6,7 +6,7 @@ pub fn parse_copy_backup_to_region_error(
     crate::output::CopyBackupToRegionOutput,
     crate::error::CopyBackupToRegionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyBackupToRegionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -158,7 +158,7 @@ pub fn parse_copy_backup_to_region_response(
 pub fn parse_create_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -305,7 +305,7 @@ pub fn parse_create_cluster_response(
 pub fn parse_create_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHsmOutput, crate::error::CreateHsmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHsmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -430,7 +430,7 @@ pub fn parse_create_hsm_response(
 pub fn parse_delete_backup_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBackupOutput, crate::error::DeleteBackupError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -555,7 +555,7 @@ pub fn parse_delete_backup_response(
 pub fn parse_delete_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -702,7 +702,7 @@ pub fn parse_delete_cluster_response(
 pub fn parse_delete_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHsmOutput, crate::error::DeleteHsmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteHsmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -827,7 +827,7 @@ pub fn parse_delete_hsm_response(
 pub fn parse_describe_backups_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeBackupsOutput, crate::error::DescribeBackupsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeBackupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -975,7 +975,7 @@ pub fn parse_describe_clusters_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeClustersOutput, crate::error::DescribeClustersError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClustersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1106,7 +1106,7 @@ pub fn parse_initialize_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InitializeClusterOutput, crate::error::InitializeClusterError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InitializeClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1233,7 +1233,7 @@ pub fn parse_initialize_cluster_response(
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1382,7 +1382,7 @@ pub fn parse_modify_backup_attributes_error(
     crate::output::ModifyBackupAttributesOutput,
     crate::error::ModifyBackupAttributesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyBackupAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1522,7 +1522,7 @@ pub fn parse_modify_backup_attributes_response(
 pub fn parse_modify_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyClusterOutput, crate::error::ModifyClusterError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1648,7 +1648,7 @@ pub fn parse_modify_cluster_response(
 pub fn parse_restore_backup_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RestoreBackupOutput, crate::error::RestoreBackupError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreBackupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1774,7 +1774,7 @@ pub fn parse_restore_backup_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1918,7 +1918,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

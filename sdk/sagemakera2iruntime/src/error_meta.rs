@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteHumanLoopError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHumanLoopError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteHumanLoopError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHumanLoopError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteHumanLoopErrorKind::InternalServerException(inner) => {
@@ -45,8 +48,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteHumanLoopError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHumanLoopError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHumanLoopError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHumanLoopError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeHumanLoopError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeHumanLoopErrorKind::InternalServerException(inner) => {
@@ -69,8 +75,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHumanLoopError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListHumanLoopsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListHumanLoopsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListHumanLoopsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListHumanLoopsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListHumanLoopsErrorKind::InternalServerException(inner) => {
@@ -91,8 +100,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListHumanLoopsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartHumanLoopError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartHumanLoopError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartHumanLoopError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartHumanLoopError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartHumanLoopErrorKind::ConflictException(inner) => {
@@ -116,8 +128,11 @@ impl From<smithy_http::result::SdkError<crate::error::StartHumanLoopError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopHumanLoopError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopHumanLoopError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopHumanLoopError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StopHumanLoopError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopHumanLoopErrorKind::InternalServerException(inner) => {

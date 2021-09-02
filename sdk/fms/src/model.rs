@@ -261,6 +261,8 @@ pub struct Policy {
     pub exclude_resource_tags: bool,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
     pub remediation_enabled: bool,
+    /// <p>Indicates whether Firewall Manager should delete Firewall Manager managed resources, such as web ACLs and security groups, when they are not in use by the Firewall Manager policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed resources. This option is not available for Shield Advanced or WAF Classic policies.</p>
+    pub delete_unused_fm_managed_resources: bool,
     /// <p>Specifies the Amazon Web Services account IDs and Organizations organizational units (OUs) to include in the policy.
     /// Specifying an OU is the equivalent of specifying all accounts in the OU and in any of its child OUs, including any child OUs and accounts that are added at a later time.</p>
     /// <p>You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>, Firewall Manager
@@ -331,6 +333,10 @@ impl std::fmt::Debug for Policy {
         formatter.field("resource_tags", &self.resource_tags);
         formatter.field("exclude_resource_tags", &self.exclude_resource_tags);
         formatter.field("remediation_enabled", &self.remediation_enabled);
+        formatter.field(
+            "delete_unused_fm_managed_resources",
+            &self.delete_unused_fm_managed_resources,
+        );
         formatter.field("include_map", &self.include_map);
         formatter.field("exclude_map", &self.exclude_map);
         formatter.finish()
@@ -352,6 +358,7 @@ pub mod policy {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
         pub(crate) exclude_resource_tags: std::option::Option<bool>,
         pub(crate) remediation_enabled: std::option::Option<bool>,
+        pub(crate) delete_unused_fm_managed_resources: std::option::Option<bool>,
         pub(crate) include_map: std::option::Option<
             std::collections::HashMap<
                 crate::model::CustomerPolicyScopeIdType,
@@ -484,6 +491,18 @@ pub mod policy {
             self.remediation_enabled = input;
             self
         }
+        /// <p>Indicates whether Firewall Manager should delete Firewall Manager managed resources, such as web ACLs and security groups, when they are not in use by the Firewall Manager policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed resources. This option is not available for Shield Advanced or WAF Classic policies.</p>
+        pub fn delete_unused_fm_managed_resources(mut self, input: bool) -> Self {
+            self.delete_unused_fm_managed_resources = Some(input);
+            self
+        }
+        pub fn set_delete_unused_fm_managed_resources(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.delete_unused_fm_managed_resources = input;
+            self
+        }
         pub fn include_map(
             mut self,
             k: impl Into<crate::model::CustomerPolicyScopeIdType>,
@@ -540,6 +559,9 @@ pub mod policy {
                 resource_tags: self.resource_tags,
                 exclude_resource_tags: self.exclude_resource_tags.unwrap_or_default(),
                 remediation_enabled: self.remediation_enabled.unwrap_or_default(),
+                delete_unused_fm_managed_resources: self
+                    .delete_unused_fm_managed_resources
+                    .unwrap_or_default(),
                 include_map: self.include_map,
                 exclude_map: self.exclude_map,
             }
@@ -689,6 +711,9 @@ pub struct SecurityServicePolicyData {
     /// <p>
     /// <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
     /// </p>
+    /// <note>
+    /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+    /// </note>
     /// </li>
     /// <li>
     /// <p>Example: <code>NETWORK_FIREWALL</code>
@@ -701,7 +726,7 @@ pub struct SecurityServicePolicyData {
     /// <p>Example: <code>WAFV2</code>
     /// </p>
     /// <p>
-    /// <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
+    /// <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
     /// </p>
     /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
     /// </li>
@@ -791,6 +816,9 @@ pub mod security_service_policy_data {
         /// <p>
         /// <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
         /// </p>
+        /// <note>
+        /// <p>Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values for <code>postProcessRuleGroups</code> are between 9901 and 10000.</p>
+        /// </note>
         /// </li>
         /// <li>
         /// <p>Example: <code>NETWORK_FIREWALL</code>
@@ -803,7 +831,7 @@ pub mod security_service_policy_data {
         /// <p>Example: <code>WAFV2</code>
         /// </p>
         /// <p>
-        /// <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
+        /// <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
         /// </p>
         /// <p>In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>, you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code> must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or <code>METHOD</code>.</p>
         /// </li>
@@ -1309,6 +1337,8 @@ pub struct PolicySummary {
     pub security_service_type: std::option::Option<crate::model::SecurityServiceType>,
     /// <p>Indicates if the policy should be automatically applied to new resources.</p>
     pub remediation_enabled: bool,
+    /// <p>Indicates whether Firewall Manager should delete Firewall Manager managed resources, such as web ACLs and security groups, when they are not in use by the Firewall Manager policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed resources. This option is not available for Shield Advanced or WAF Classic policies.</p>
+    pub delete_unused_fm_managed_resources: bool,
 }
 impl std::fmt::Debug for PolicySummary {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -1319,6 +1349,10 @@ impl std::fmt::Debug for PolicySummary {
         formatter.field("resource_type", &self.resource_type);
         formatter.field("security_service_type", &self.security_service_type);
         formatter.field("remediation_enabled", &self.remediation_enabled);
+        formatter.field(
+            "delete_unused_fm_managed_resources",
+            &self.delete_unused_fm_managed_resources,
+        );
         formatter.finish()
     }
 }
@@ -1334,6 +1368,7 @@ pub mod policy_summary {
         pub(crate) resource_type: std::option::Option<std::string::String>,
         pub(crate) security_service_type: std::option::Option<crate::model::SecurityServiceType>,
         pub(crate) remediation_enabled: std::option::Option<bool>,
+        pub(crate) delete_unused_fm_managed_resources: std::option::Option<bool>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the specified policy.</p>
@@ -1407,6 +1442,18 @@ pub mod policy_summary {
             self.remediation_enabled = input;
             self
         }
+        /// <p>Indicates whether Firewall Manager should delete Firewall Manager managed resources, such as web ACLs and security groups, when they are not in use by the Firewall Manager policy. By default, Firewall Manager doesn't delete unused Firewall Manager managed resources. This option is not available for Shield Advanced or WAF Classic policies.</p>
+        pub fn delete_unused_fm_managed_resources(mut self, input: bool) -> Self {
+            self.delete_unused_fm_managed_resources = Some(input);
+            self
+        }
+        pub fn set_delete_unused_fm_managed_resources(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.delete_unused_fm_managed_resources = input;
+            self
+        }
         /// Consumes the builder and constructs a [`PolicySummary`](crate::model::PolicySummary)
         pub fn build(self) -> crate::model::PolicySummary {
             crate::model::PolicySummary {
@@ -1416,6 +1463,9 @@ pub mod policy_summary {
                 resource_type: self.resource_type,
                 security_service_type: self.security_service_type,
                 remediation_enabled: self.remediation_enabled.unwrap_or_default(),
+                delete_unused_fm_managed_resources: self
+                    .delete_unused_fm_managed_resources
+                    .unwrap_or_default(),
             }
         }
     }

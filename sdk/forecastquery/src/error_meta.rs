@@ -21,8 +21,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::QueryForecastError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::QueryForecastError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::QueryForecastError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::QueryForecastError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::QueryForecastErrorKind::InvalidInputException(inner) => {

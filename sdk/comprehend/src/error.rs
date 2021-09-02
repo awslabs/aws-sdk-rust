@@ -57,8 +57,8 @@ impl BatchDetectDominantLanguageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -171,8 +171,8 @@ impl BatchDetectEntitiesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -290,8 +290,8 @@ impl BatchDetectKeyPhrasesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -407,8 +407,8 @@ impl BatchDetectSentimentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -524,8 +524,8 @@ impl BatchDetectSyntaxError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -639,8 +639,8 @@ impl ClassifyDocumentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -747,8 +747,8 @@ impl ContainsPiiEntitiesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -867,8 +867,8 @@ impl CreateDocumentClassifierError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1013,8 +1013,8 @@ impl CreateEndpointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1156,8 +1156,8 @@ impl CreateEntityRecognizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1298,8 +1298,8 @@ impl DeleteDocumentClassifierError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1422,8 +1422,8 @@ impl DeleteEndpointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1541,8 +1541,8 @@ impl DeleteEntityRecognizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1674,8 +1674,8 @@ impl DescribeDocumentClassificationJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1790,8 +1790,8 @@ impl DescribeDocumentClassifierError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1909,8 +1909,8 @@ impl DescribeDominantLanguageDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2027,8 +2027,8 @@ impl DescribeEndpointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2137,8 +2137,8 @@ impl DescribeEntitiesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2245,8 +2245,8 @@ impl DescribeEntityRecognizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2353,8 +2353,8 @@ impl DescribeEventsDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2467,8 +2467,8 @@ impl DescribeKeyPhrasesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2587,8 +2587,8 @@ impl DescribePiiEntitiesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2707,8 +2707,8 @@ impl DescribeSentimentDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2817,8 +2817,8 @@ impl DescribeTopicsDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -2925,8 +2925,8 @@ impl DetectDominantLanguageError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3028,8 +3028,8 @@ impl DetectEntitiesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3143,8 +3143,8 @@ impl DetectKeyPhrasesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3251,8 +3251,8 @@ impl DetectPiiEntitiesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3359,8 +3359,8 @@ impl DetectSentimentError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3467,8 +3467,8 @@ impl DetectSyntaxError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3583,8 +3583,8 @@ impl ListDocumentClassificationJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3697,8 +3697,8 @@ impl ListDocumentClassifiersError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3816,8 +3816,8 @@ impl ListDominantLanguageDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -3930,8 +3930,8 @@ impl ListEndpointsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4031,8 +4031,8 @@ impl ListEntitiesDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4139,8 +4139,8 @@ impl ListEntityRecognizersError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4247,8 +4247,8 @@ impl ListEventsDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4355,8 +4355,8 @@ impl ListKeyPhrasesDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4465,8 +4465,8 @@ impl ListPiiEntitiesDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4573,8 +4573,8 @@ impl ListSentimentDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4679,8 +4679,8 @@ impl ListTagsForResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4780,8 +4780,8 @@ impl ListTopicsDetectionJobsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4849,6 +4849,7 @@ pub enum StartDocumentClassificationJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -4873,6 +4874,7 @@ impl std::fmt::Display for StartDocumentClassificationJobError {
             StartDocumentClassificationJobErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
+            StartDocumentClassificationJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartDocumentClassificationJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -4904,8 +4906,8 @@ impl StartDocumentClassificationJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -4957,6 +4959,12 @@ impl StartDocumentClassificationJobError {
             StartDocumentClassificationJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDocumentClassificationJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartDocumentClassificationJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -4979,6 +4987,7 @@ impl std::error::Error for StartDocumentClassificationJobError {
             StartDocumentClassificationJobErrorKind::TooManyRequestsException(_inner) => {
                 Some(_inner)
             }
+            StartDocumentClassificationJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartDocumentClassificationJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -4997,6 +5006,7 @@ pub enum StartDominantLanguageDetectionJobErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5013,6 +5023,9 @@ impl std::fmt::Display for StartDominantLanguageDetectionJobError {
                 _inner.fmt(f)
             }
             StartDominantLanguageDetectionJobErrorKind::TooManyRequestsException(_inner) => {
+                _inner.fmt(f)
+            }
+            StartDominantLanguageDetectionJobErrorKind::TooManyTagsException(_inner) => {
                 _inner.fmt(f)
             }
             StartDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
@@ -5049,8 +5062,8 @@ impl StartDominantLanguageDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5090,6 +5103,12 @@ impl StartDominantLanguageDetectionJobError {
             StartDominantLanguageDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartDominantLanguageDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartDominantLanguageDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5104,6 +5123,9 @@ impl std::error::Error for StartDominantLanguageDetectionJobError {
                 Some(_inner)
             }
             StartDominantLanguageDetectionJobErrorKind::TooManyRequestsException(_inner) => {
+                Some(_inner)
+            }
+            StartDominantLanguageDetectionJobErrorKind::TooManyTagsException(_inner) => {
                 Some(_inner)
             }
             StartDominantLanguageDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
@@ -5126,6 +5148,7 @@ pub enum StartEntitiesDetectionJobErrorKind {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     ResourceUnavailableException(crate::error::ResourceUnavailableException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5140,6 +5163,7 @@ impl std::fmt::Display for StartEntitiesDetectionJobError {
                 _inner.fmt(f)
             }
             StartEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StartEntitiesDetectionJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartEntitiesDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5171,8 +5195,8 @@ impl StartEntitiesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5224,6 +5248,12 @@ impl StartEntitiesDetectionJobError {
             StartEntitiesDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartEntitiesDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartEntitiesDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5236,6 +5266,7 @@ impl std::error::Error for StartEntitiesDetectionJobError {
                 Some(_inner)
             }
             StartEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartEntitiesDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5254,6 +5285,7 @@ pub enum StartEventsDetectionJobErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5264,6 +5296,7 @@ impl std::fmt::Display for StartEventsDetectionJobError {
             StartEventsDetectionJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             StartEventsDetectionJobErrorKind::KmsKeyValidationException(_inner) => _inner.fmt(f),
             StartEventsDetectionJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StartEventsDetectionJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartEventsDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5295,8 +5328,8 @@ impl StartEventsDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5336,6 +5369,12 @@ impl StartEventsDetectionJobError {
             StartEventsDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartEventsDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartEventsDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5344,6 +5383,7 @@ impl std::error::Error for StartEventsDetectionJobError {
             StartEventsDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartEventsDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartEventsDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartEventsDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartEventsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5362,6 +5402,7 @@ pub enum StartKeyPhrasesDetectionJobErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5374,6 +5415,7 @@ impl std::fmt::Display for StartKeyPhrasesDetectionJobError {
                 _inner.fmt(f)
             }
             StartKeyPhrasesDetectionJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StartKeyPhrasesDetectionJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5405,8 +5447,8 @@ impl StartKeyPhrasesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5446,6 +5488,12 @@ impl StartKeyPhrasesDetectionJobError {
             StartKeyPhrasesDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartKeyPhrasesDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartKeyPhrasesDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5454,6 +5502,7 @@ impl std::error::Error for StartKeyPhrasesDetectionJobError {
             StartKeyPhrasesDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartKeyPhrasesDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartKeyPhrasesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartKeyPhrasesDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartKeyPhrasesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5472,6 +5521,7 @@ pub enum StartPiiEntitiesDetectionJobErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5486,6 +5536,7 @@ impl std::fmt::Display for StartPiiEntitiesDetectionJobError {
             StartPiiEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => {
                 _inner.fmt(f)
             }
+            StartPiiEntitiesDetectionJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartPiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5517,8 +5568,8 @@ impl StartPiiEntitiesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5558,6 +5609,12 @@ impl StartPiiEntitiesDetectionJobError {
             StartPiiEntitiesDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartPiiEntitiesDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartPiiEntitiesDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5568,6 +5625,7 @@ impl std::error::Error for StartPiiEntitiesDetectionJobError {
                 Some(_inner)
             }
             StartPiiEntitiesDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartPiiEntitiesDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartPiiEntitiesDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5586,6 +5644,7 @@ pub enum StartSentimentDetectionJobErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5596,6 +5655,7 @@ impl std::fmt::Display for StartSentimentDetectionJobError {
             StartSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             StartSentimentDetectionJobErrorKind::KmsKeyValidationException(_inner) => _inner.fmt(f),
             StartSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StartSentimentDetectionJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartSentimentDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5627,8 +5687,8 @@ impl StartSentimentDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5668,6 +5728,12 @@ impl StartSentimentDetectionJobError {
             StartSentimentDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartSentimentDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartSentimentDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5676,6 +5742,7 @@ impl std::error::Error for StartSentimentDetectionJobError {
             StartSentimentDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartSentimentDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartSentimentDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartSentimentDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartSentimentDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5694,6 +5761,7 @@ pub enum StartTopicsDetectionJobErrorKind {
     InvalidRequestException(crate::error::InvalidRequestException),
     KmsKeyValidationException(crate::error::KmsKeyValidationException),
     TooManyRequestsException(crate::error::TooManyRequestsException),
+    TooManyTagsException(crate::error::TooManyTagsException),
     /// An unexpected error, eg. invalid JSON returned by the service or an unknown error code
     Unhandled(Box<dyn std::error::Error + Send + Sync + 'static>),
 }
@@ -5704,6 +5772,7 @@ impl std::fmt::Display for StartTopicsDetectionJobError {
             StartTopicsDetectionJobErrorKind::InvalidRequestException(_inner) => _inner.fmt(f),
             StartTopicsDetectionJobErrorKind::KmsKeyValidationException(_inner) => _inner.fmt(f),
             StartTopicsDetectionJobErrorKind::TooManyRequestsException(_inner) => _inner.fmt(f),
+            StartTopicsDetectionJobErrorKind::TooManyTagsException(_inner) => _inner.fmt(f),
             StartTopicsDetectionJobErrorKind::Unhandled(_inner) => _inner.fmt(f),
         }
     }
@@ -5735,8 +5804,8 @@ impl StartTopicsDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5776,6 +5845,12 @@ impl StartTopicsDetectionJobError {
             StartTopicsDetectionJobErrorKind::TooManyRequestsException(_)
         )
     }
+    pub fn is_too_many_tags_exception(&self) -> bool {
+        matches!(
+            &self.kind,
+            StartTopicsDetectionJobErrorKind::TooManyTagsException(_)
+        )
+    }
 }
 impl std::error::Error for StartTopicsDetectionJobError {
     fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
@@ -5784,6 +5859,7 @@ impl std::error::Error for StartTopicsDetectionJobError {
             StartTopicsDetectionJobErrorKind::InvalidRequestException(_inner) => Some(_inner),
             StartTopicsDetectionJobErrorKind::KmsKeyValidationException(_inner) => Some(_inner),
             StartTopicsDetectionJobErrorKind::TooManyRequestsException(_inner) => Some(_inner),
+            StartTopicsDetectionJobErrorKind::TooManyTagsException(_inner) => Some(_inner),
             StartTopicsDetectionJobErrorKind::Unhandled(_inner) => Some(_inner.as_ref()),
         }
     }
@@ -5847,8 +5923,8 @@ impl StopDominantLanguageDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -5950,8 +6026,8 @@ impl StopEntitiesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6049,8 +6125,8 @@ impl StopEventsDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6148,8 +6224,8 @@ impl StopKeyPhrasesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6247,8 +6323,8 @@ impl StopPiiEntitiesDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6346,8 +6422,8 @@ impl StopSentimentDetectionJobError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6455,8 +6531,8 @@ impl StopTrainingDocumentClassifierError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6575,8 +6651,8 @@ impl StopTrainingEntityRecognizerError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6687,8 +6763,8 @@ impl TagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6795,8 +6871,8 @@ impl UntagResourceError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -6916,8 +6992,8 @@ impl UpdateEndpointError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }

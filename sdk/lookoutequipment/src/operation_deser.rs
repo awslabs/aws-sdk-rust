@@ -3,7 +3,7 @@
 pub fn parse_create_dataset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDatasetOutput, crate::error::CreateDatasetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateDatasetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -161,7 +161,7 @@ pub fn parse_create_inference_scheduler_error(
     crate::output::CreateInferenceSchedulerOutput,
     crate::error::CreateInferenceSchedulerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateInferenceSchedulerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -345,7 +345,7 @@ pub fn parse_create_inference_scheduler_response(
 pub fn parse_create_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateModelOutput, crate::error::CreateModelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -519,7 +519,7 @@ pub fn parse_create_model_response(
 pub fn parse_delete_dataset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDatasetOutput, crate::error::DeleteDatasetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteDatasetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -655,7 +655,7 @@ pub fn parse_delete_inference_scheduler_error(
     crate::output::DeleteInferenceSchedulerOutput,
     crate::error::DeleteInferenceSchedulerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteInferenceSchedulerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -816,7 +816,7 @@ pub fn parse_delete_inference_scheduler_response(
 pub fn parse_delete_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteModelOutput, crate::error::DeleteModelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -952,7 +952,7 @@ pub fn parse_describe_data_ingestion_job_error(
     crate::output::DescribeDataIngestionJobOutput,
     crate::error::DescribeDataIngestionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDataIngestionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1097,7 +1097,7 @@ pub fn parse_describe_data_ingestion_job_response(
 pub fn parse_describe_dataset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeDatasetOutput, crate::error::DescribeDatasetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDatasetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1236,7 +1236,7 @@ pub fn parse_describe_inference_scheduler_error(
     crate::output::DescribeInferenceSchedulerOutput,
     crate::error::DescribeInferenceSchedulerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInferenceSchedulerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1383,7 +1383,7 @@ pub fn parse_describe_inference_scheduler_response(
 pub fn parse_describe_model_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeModelOutput, crate::error::DescribeModelError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1522,7 +1522,7 @@ pub fn parse_list_data_ingestion_jobs_error(
     crate::output::ListDataIngestionJobsOutput,
     crate::error::ListDataIngestionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDataIngestionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1643,7 +1643,7 @@ pub fn parse_list_data_ingestion_jobs_response(
 pub fn parse_list_datasets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListDatasetsOutput, crate::error::ListDatasetsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDatasetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1761,7 +1761,7 @@ pub fn parse_list_inference_executions_error(
     crate::output::ListInferenceExecutionsOutput,
     crate::error::ListInferenceExecutionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInferenceExecutionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1909,7 +1909,7 @@ pub fn parse_list_inference_schedulers_error(
     crate::output::ListInferenceSchedulersOutput,
     crate::error::ListInferenceSchedulersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInferenceSchedulersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2034,7 +2034,7 @@ pub fn parse_list_inference_schedulers_response(
 pub fn parse_list_models_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListModelsOutput, crate::error::ListModelsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListModelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2152,7 +2152,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2296,7 +2296,7 @@ pub fn parse_start_data_ingestion_job_error(
     crate::output::StartDataIngestionJobOutput,
     crate::error::StartDataIngestionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDataIngestionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2479,7 +2479,7 @@ pub fn parse_start_inference_scheduler_error(
     crate::output::StartInferenceSchedulerOutput,
     crate::error::StartInferenceSchedulerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartInferenceSchedulerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2648,7 +2648,7 @@ pub fn parse_stop_inference_scheduler_error(
     crate::output::StopInferenceSchedulerOutput,
     crate::error::StopInferenceSchedulerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopInferenceSchedulerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2814,7 +2814,7 @@ pub fn parse_stop_inference_scheduler_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2965,7 +2965,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3101,7 +3101,7 @@ pub fn parse_update_inference_scheduler_error(
     crate::output::UpdateInferenceSchedulerOutput,
     crate::error::UpdateInferenceSchedulerError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateInferenceSchedulerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

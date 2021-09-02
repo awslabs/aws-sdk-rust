@@ -1,13 +1,13 @@
-use batch::Region;
+use aws_config::meta::region::RegionProviderChain;
+use batch::{Client, Region};
 
 #[tokio::main]
 async fn main() -> Result<(), batch::Error> {
     tracing_subscriber::fmt::init();
 
-    let conf = batch::Config::builder()
-        .region(Region::new("us-east-2"))
-        .build();
-    let client = batch::Client::from_conf(conf);
+    let region_provider = RegionProviderChain::default_provider().or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
     let rsp = client.describe_compute_environments().send().await?;
 
     let compute_envs = rsp.compute_environments.unwrap_or_default();

@@ -15,8 +15,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SearchError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SearchError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SearchErrorKind::SearchException(inner) => {
@@ -28,8 +31,11 @@ impl From<smithy_http::result::SdkError<crate::error::SearchError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SuggestError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SuggestError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SuggestError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SuggestError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SuggestErrorKind::SearchException(inner) => {
@@ -41,8 +47,11 @@ impl From<smithy_http::result::SdkError<crate::error::SuggestError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UploadDocumentsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UploadDocumentsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UploadDocumentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UploadDocumentsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UploadDocumentsErrorKind::DocumentServiceException(inner) => {

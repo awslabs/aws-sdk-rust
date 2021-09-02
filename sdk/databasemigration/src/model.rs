@@ -2043,8 +2043,8 @@ pub struct ReplicationInstance {
     /// instance.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
     /// DMS uses your default encryption key.</p>
-    /// <p>KMS creates the default encryption key for your account. Your account has a
-    /// different default encryption key for each Region.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+    /// different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the replication instance.</p>
     pub replication_instance_arn: std::option::Option<std::string::String>,
@@ -2435,8 +2435,8 @@ pub mod replication_instance {
         /// instance.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
         /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your account. Your account has a
-        /// different default encryption key for each Region.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+        /// different default encryption key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -2951,7 +2951,7 @@ impl Subnet {
 /// <code>AvailabilityZone</code> is an optional parameter to the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationInstance.html">
 /// <code>CreateReplicationInstance</code>
 /// </a> operation, and it’s value relates to
-/// the Region of an endpoint. For example, the availability zone of an endpoint in the
+/// the Amazon Web Services Region of an endpoint. For example, the availability zone of an endpoint in the
 /// us-east-1 region might be us-east-1a, us-east-1b, us-east-1c, or us-east-1d.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -3317,8 +3317,8 @@ pub struct Endpoint {
     /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
     /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
     /// DMS uses your default encryption key.</p>
-    /// <p>KMS creates the default encryption key for your account. Your account has a
-    /// different default encryption key for each Region.</p>
+    /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+    /// different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</p>
     pub endpoint_arn: std::option::Option<std::string::String>,
@@ -3400,6 +3400,9 @@ pub struct Endpoint {
     pub ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
     /// <p>Provides information that defines a DocumentDB endpoint.</p>
     pub doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
+    /// <p>The settings for the Redis target endpoint. For more information, see the
+    /// <code>RedisSettings</code> structure.</p>
+    pub redis_settings: std::option::Option<crate::model::RedisSettings>,
 }
 impl std::fmt::Debug for Endpoint {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -3443,6 +3446,7 @@ impl std::fmt::Debug for Endpoint {
         );
         formatter.field("ibm_db2_settings", &self.ibm_db2_settings);
         formatter.field("doc_db_settings", &self.doc_db_settings);
+        formatter.field("redis_settings", &self.redis_settings);
         formatter.finish()
     }
 }
@@ -3486,6 +3490,7 @@ pub mod endpoint {
             std::option::Option<crate::model::MicrosoftSqlServerSettings>,
         pub(crate) ibm_db2_settings: std::option::Option<crate::model::IbmDb2Settings>,
         pub(crate) doc_db_settings: std::option::Option<crate::model::DocDbSettings>,
+        pub(crate) redis_settings: std::option::Option<crate::model::RedisSettings>,
     }
     impl Builder {
         /// <p>The database endpoint identifier. Identifiers must begin with a letter and must contain
@@ -3608,8 +3613,8 @@ pub mod endpoint {
         /// <p>An KMS key identifier that is used to encrypt the connection parameters for the endpoint.</p>
         /// <p>If you don't specify a value for the <code>KmsKeyId</code> parameter, then
         /// DMS uses your default encryption key.</p>
-        /// <p>KMS creates the default encryption key for your account. Your account has a
-        /// different default encryption key for each Region.</p>
+        /// <p>KMS creates the default encryption key for your Amazon Web Services account. Your Amazon Web Services account has a
+        /// different default encryption key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -3917,6 +3922,19 @@ pub mod endpoint {
             self.doc_db_settings = input;
             self
         }
+        /// <p>The settings for the Redis target endpoint. For more information, see the
+        /// <code>RedisSettings</code> structure.</p>
+        pub fn redis_settings(mut self, input: crate::model::RedisSettings) -> Self {
+            self.redis_settings = Some(input);
+            self
+        }
+        pub fn set_redis_settings(
+            mut self,
+            input: std::option::Option<crate::model::RedisSettings>,
+        ) -> Self {
+            self.redis_settings = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Endpoint`](crate::model::Endpoint)
         pub fn build(self) -> crate::model::Endpoint {
             crate::model::Endpoint {
@@ -3953,6 +3971,7 @@ pub mod endpoint {
                 microsoft_sql_server_settings: self.microsoft_sql_server_settings,
                 ibm_db2_settings: self.ibm_db2_settings,
                 doc_db_settings: self.doc_db_settings,
+                redis_settings: self.redis_settings,
             }
         }
     }
@@ -3961,6 +3980,289 @@ impl Endpoint {
     /// Creates a new builder-style object to manufacture [`Endpoint`](crate::model::Endpoint)
     pub fn builder() -> crate::model::endpoint::Builder {
         crate::model::endpoint::Builder::default()
+    }
+}
+
+/// <p>Provides information that defines a Redis target endpoint.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RedisSettings {
+    /// <p>Fully qualified domain name of the endpoint.</p>
+    pub server_name: std::option::Option<std::string::String>,
+    /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
+    pub port: i32,
+    /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid
+    /// values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is
+    /// <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted
+    /// connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA)
+    /// using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS
+    /// uses the Amazon root CA.</p>
+    /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS)
+    /// encryption for traffic between endpoint and database.</p>
+    pub ssl_security_protocol: std::option::Option<crate::model::SslSecurityProtocolValue>,
+    /// <p>The type of authentication to perform when connecting to a Redis target. Options include
+    /// <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The
+    /// <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The
+    /// <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values
+    /// to be provided.</p>
+    pub auth_type: std::option::Option<crate::model::RedisAuthTypeValue>,
+    /// <p>The user name provided with the <code>auth-role</code> option of the
+    /// <code>AuthType</code> setting for a Redis target endpoint.</p>
+    pub auth_user_name: std::option::Option<std::string::String>,
+    /// <p>The password provided with the <code>auth-role</code> and
+    /// <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis
+    /// target endpoint.</p>
+    pub auth_password: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to
+    /// connect to your Redis target endpoint.</p>
+    pub ssl_ca_certificate_arn: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for RedisSettings {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RedisSettings");
+        formatter.field("server_name", &self.server_name);
+        formatter.field("port", &self.port);
+        formatter.field("ssl_security_protocol", &self.ssl_security_protocol);
+        formatter.field("auth_type", &self.auth_type);
+        formatter.field("auth_user_name", &self.auth_user_name);
+        formatter.field("auth_password", &"*** Sensitive Data Redacted ***");
+        formatter.field("ssl_ca_certificate_arn", &self.ssl_ca_certificate_arn);
+        formatter.finish()
+    }
+}
+/// See [`RedisSettings`](crate::model::RedisSettings)
+pub mod redis_settings {
+    /// A builder for [`RedisSettings`](crate::model::RedisSettings)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) server_name: std::option::Option<std::string::String>,
+        pub(crate) port: std::option::Option<i32>,
+        pub(crate) ssl_security_protocol:
+            std::option::Option<crate::model::SslSecurityProtocolValue>,
+        pub(crate) auth_type: std::option::Option<crate::model::RedisAuthTypeValue>,
+        pub(crate) auth_user_name: std::option::Option<std::string::String>,
+        pub(crate) auth_password: std::option::Option<std::string::String>,
+        pub(crate) ssl_ca_certificate_arn: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Fully qualified domain name of the endpoint.</p>
+        pub fn server_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.server_name = Some(input.into());
+            self
+        }
+        pub fn set_server_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.server_name = input;
+            self
+        }
+        /// <p>Transmission Control Protocol (TCP) port for the endpoint.</p>
+        pub fn port(mut self, input: i32) -> Self {
+            self.port = Some(input);
+            self
+        }
+        pub fn set_port(mut self, input: std::option::Option<i32>) -> Self {
+            self.port = input;
+            self
+        }
+        /// <p>The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid
+        /// values include <code>plaintext</code> and <code>ssl-encryption</code>. The default is
+        /// <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted
+        /// connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA)
+        /// using the <code>SslCaCertificateArn </code>setting. If an ARN isn't given for a CA, DMS
+        /// uses the Amazon root CA.</p>
+        /// <p>The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS)
+        /// encryption for traffic between endpoint and database.</p>
+        pub fn ssl_security_protocol(
+            mut self,
+            input: crate::model::SslSecurityProtocolValue,
+        ) -> Self {
+            self.ssl_security_protocol = Some(input);
+            self
+        }
+        pub fn set_ssl_security_protocol(
+            mut self,
+            input: std::option::Option<crate::model::SslSecurityProtocolValue>,
+        ) -> Self {
+            self.ssl_security_protocol = input;
+            self
+        }
+        /// <p>The type of authentication to perform when connecting to a Redis target. Options include
+        /// <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The
+        /// <code>auth-token</code> option requires an <code>AuthPassword</code> value to be provided. The
+        /// <code>auth-role</code> option requires <code>AuthUserName</code> and <code>AuthPassword</code> values
+        /// to be provided.</p>
+        pub fn auth_type(mut self, input: crate::model::RedisAuthTypeValue) -> Self {
+            self.auth_type = Some(input);
+            self
+        }
+        pub fn set_auth_type(
+            mut self,
+            input: std::option::Option<crate::model::RedisAuthTypeValue>,
+        ) -> Self {
+            self.auth_type = input;
+            self
+        }
+        /// <p>The user name provided with the <code>auth-role</code> option of the
+        /// <code>AuthType</code> setting for a Redis target endpoint.</p>
+        pub fn auth_user_name(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_user_name = Some(input.into());
+            self
+        }
+        pub fn set_auth_user_name(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.auth_user_name = input;
+            self
+        }
+        /// <p>The password provided with the <code>auth-role</code> and
+        /// <code>auth-token</code> options of the <code>AuthType</code> setting for a Redis
+        /// target endpoint.</p>
+        pub fn auth_password(mut self, input: impl Into<std::string::String>) -> Self {
+            self.auth_password = Some(input.into());
+            self
+        }
+        pub fn set_auth_password(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.auth_password = input;
+            self
+        }
+        /// <p>The Amazon Resource Name (ARN) for the certificate authority (CA) that DMS uses to
+        /// connect to your Redis target endpoint.</p>
+        pub fn ssl_ca_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.ssl_ca_certificate_arn = Some(input.into());
+            self
+        }
+        pub fn set_ssl_ca_certificate_arn(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.ssl_ca_certificate_arn = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RedisSettings`](crate::model::RedisSettings)
+        pub fn build(self) -> crate::model::RedisSettings {
+            crate::model::RedisSettings {
+                server_name: self.server_name,
+                port: self.port.unwrap_or_default(),
+                ssl_security_protocol: self.ssl_security_protocol,
+                auth_type: self.auth_type,
+                auth_user_name: self.auth_user_name,
+                auth_password: self.auth_password,
+                ssl_ca_certificate_arn: self.ssl_ca_certificate_arn,
+            }
+        }
+    }
+}
+impl RedisSettings {
+    /// Creates a new builder-style object to manufacture [`RedisSettings`](crate::model::RedisSettings)
+    pub fn builder() -> crate::model::redis_settings::Builder {
+        crate::model::redis_settings::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum RedisAuthTypeValue {
+    AuthRole,
+    AuthToken,
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for RedisAuthTypeValue {
+    fn from(s: &str) -> Self {
+        match s {
+            "auth-role" => RedisAuthTypeValue::AuthRole,
+            "auth-token" => RedisAuthTypeValue::AuthToken,
+            "none" => RedisAuthTypeValue::None,
+            other => RedisAuthTypeValue::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for RedisAuthTypeValue {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(RedisAuthTypeValue::from(s))
+    }
+}
+impl RedisAuthTypeValue {
+    pub fn as_str(&self) -> &str {
+        match self {
+            RedisAuthTypeValue::AuthRole => "auth-role",
+            RedisAuthTypeValue::AuthToken => "auth-token",
+            RedisAuthTypeValue::None => "none",
+            RedisAuthTypeValue::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["auth-role", "auth-token", "none"]
+    }
+}
+impl AsRef<str> for RedisAuthTypeValue {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum SslSecurityProtocolValue {
+    Plaintext,
+    SslEncryption,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for SslSecurityProtocolValue {
+    fn from(s: &str) -> Self {
+        match s {
+            "plaintext" => SslSecurityProtocolValue::Plaintext,
+            "ssl-encryption" => SslSecurityProtocolValue::SslEncryption,
+            other => SslSecurityProtocolValue::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for SslSecurityProtocolValue {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(SslSecurityProtocolValue::from(s))
+    }
+}
+impl SslSecurityProtocolValue {
+    pub fn as_str(&self) -> &str {
+        match self {
+            SslSecurityProtocolValue::Plaintext => "plaintext",
+            SslSecurityProtocolValue::SslEncryption => "ssl-encryption",
+            SslSecurityProtocolValue::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["plaintext", "ssl-encryption"]
+    }
+}
+impl AsRef<str> for SslSecurityProtocolValue {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -3995,7 +4297,7 @@ pub struct DocDbSettings {
     /// <p>The KMS key identifier that is used to encrypt the content on the replication
     /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
     /// DMS uses your default encryption key. KMS creates the default encryption key for
-    /// your account. Your account has a different default encryption key for each Region.</p>
+    /// your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
     /// trusted entity and grants the required permissions to access the value in
@@ -4145,7 +4447,7 @@ pub mod doc_db_settings {
         /// <p>The KMS key identifier that is used to encrypt the content on the replication
         /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
         /// DMS uses your default encryption key. KMS creates the default encryption key for
-        /// your account. Your account has a different default encryption key for each Region.</p>
+        /// your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -5125,6 +5427,27 @@ pub struct OracleSettings {
     /// information about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN Data Repair Concepts</a> in the
     /// <i>Oracle Database Backup and Recovery User's Guide</i>.</p>
     pub additional_archived_log_dest_id: std::option::Option<i32>,
+    /// <p>Specifies the IDs of one more destinations for one or more archived redo logs. These IDs
+    /// are the values of the <code>dest_id</code> column in the <code>v$archived_log</code> view.
+    /// Use this setting with the <code>archivedLogDestId</code> extra connection attribute in a
+    /// primary-to-single setup or a primary-to-multiple-standby setup. </p>
+    /// <p>This setting is useful in a switchover when you use an Oracle Data Guard database as a
+    /// source. In this case, DMS needs information about what destination to get archive redo
+    /// logs from to read changes. DMS needs this because after the switchover the previous
+    /// primary is a standby instance. For example, in a primary-to-single standby setup you might
+    /// apply the following settings. </p>
+    /// <p>
+    /// <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code>
+    /// </p>
+    /// <p>In a primary-to-multiple-standby setup, you might apply the following settings.</p>
+    /// <p>
+    /// <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code>
+    /// </p>
+    /// <p>Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open the
+    /// database, never use <code>RESETLOGS</code> unless it's necessary. For more information
+    /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B"> RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery
+    /// User's Guide</i>.</p>
+    pub extra_archived_log_dest_ids: std::option::Option<std::vec::Vec<i32>>,
     /// <p>Set this attribute to <code>true</code> to enable replication of Oracle
     /// tables containing columns that are nested tables or defined
     /// types.</p>
@@ -5342,6 +5665,10 @@ impl std::fmt::Debug for OracleSettings {
             &self.additional_archived_log_dest_id,
         );
         formatter.field(
+            "extra_archived_log_dest_ids",
+            &self.extra_archived_log_dest_ids,
+        );
+        formatter.field(
             "allow_select_nested_tables",
             &self.allow_select_nested_tables,
         );
@@ -5416,6 +5743,7 @@ pub mod oracle_settings {
         pub(crate) add_supplemental_logging: std::option::Option<bool>,
         pub(crate) archived_log_dest_id: std::option::Option<i32>,
         pub(crate) additional_archived_log_dest_id: std::option::Option<i32>,
+        pub(crate) extra_archived_log_dest_ids: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) allow_select_nested_tables: std::option::Option<bool>,
         pub(crate) parallel_asm_read_threads: std::option::Option<i32>,
         pub(crate) read_ahead_blocks: std::option::Option<i32>,
@@ -5504,6 +5832,19 @@ pub mod oracle_settings {
             input: std::option::Option<i32>,
         ) -> Self {
             self.additional_archived_log_dest_id = input;
+            self
+        }
+        pub fn extra_archived_log_dest_ids(mut self, input: impl Into<i32>) -> Self {
+            let mut v = self.extra_archived_log_dest_ids.unwrap_or_default();
+            v.push(input.into());
+            self.extra_archived_log_dest_ids = Some(v);
+            self
+        }
+        pub fn set_extra_archived_log_dest_ids(
+            mut self,
+            input: std::option::Option<std::vec::Vec<i32>>,
+        ) -> Self {
+            self.extra_archived_log_dest_ids = input;
             self
         }
         /// <p>Set this attribute to <code>true</code> to enable replication of Oracle
@@ -6027,6 +6368,7 @@ pub mod oracle_settings {
                 add_supplemental_logging: self.add_supplemental_logging,
                 archived_log_dest_id: self.archived_log_dest_id,
                 additional_archived_log_dest_id: self.additional_archived_log_dest_id,
+                extra_archived_log_dest_ids: self.extra_archived_log_dest_ids,
                 allow_select_nested_tables: self.allow_select_nested_tables,
                 parallel_asm_read_threads: self.parallel_asm_read_threads,
                 read_ahead_blocks: self.read_ahead_blocks,
@@ -6570,12 +6912,10 @@ pub struct PostgreSqlSettings {
     /// <p>If task is set to Limited LOB mode and this option is set to
     /// true, the task fails instead of truncating the LOB data.</p>
     pub fail_tasks_on_lob_truncation: std::option::Option<bool>,
-    /// <p>If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps
-    /// <code>restart_lsn</code> moving and prevents storage full scenarios.
-    /// The WAL heartbeat mimics a dummy transaction, so that idle
-    /// logical replication slots don't hold onto old WAL logs that result in storage full
-    /// situations on the source.
-    /// </p>
+    /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this,
+    /// it prevents idle logical replication slots from holding onto old WAL logs, which can result in
+    /// storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving
+    /// and prevents storage full scenarios.</p>
     pub heartbeat_enable: std::option::Option<bool>,
     /// <p>Sets the schema in which the heartbeat artifacts are created.</p>
     pub heartbeat_schema: std::option::Option<std::string::String>,
@@ -6590,10 +6930,20 @@ pub struct PostgreSqlSettings {
     /// <p>Endpoint connection user name.</p>
     pub username: std::option::Option<std::string::String>,
     /// <p>Sets the name of a previously created logical replication slot
-    /// for a CDC load of the PostgreSQL source instance.</p>
-    /// <p>When used with the DMS API <code>CdcStartPosition</code>
-    /// request parameter, this attribute also enables using native
-    /// CDC start points.</p>
+    /// for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+    /// <p>When used with the <code>CdcStartPosition</code>
+    /// request parameter for the DMS API , this attribute also makes it possible to use native CDC
+    /// start points. DMS verifies that the specified logical
+    /// replication slot exists before starting the CDC load task. It
+    /// also verifies that the task was created with a valid setting of
+    /// <code>CdcStartPosition</code>. If the specified slot
+    /// doesn't exist or the task doesn't have a valid
+    /// <code>CdcStartPosition</code> setting, DMS raises an
+    /// error.</p>
+    /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter,
+    /// see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User
+    /// Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+    /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
     pub slot_name: std::option::Option<std::string::String>,
     /// <p>Specifies the plugin to use to create a replication slot.</p>
     pub plugin_name: std::option::Option<crate::model::PluginNameValue>,
@@ -6770,12 +7120,10 @@ pub mod postgre_sql_settings {
             self.fail_tasks_on_lob_truncation = input;
             self
         }
-        /// <p>If this attribute is set to true, the write-ahead log (WAL) heartbeat keeps
-        /// <code>restart_lsn</code> moving and prevents storage full scenarios.
-        /// The WAL heartbeat mimics a dummy transaction, so that idle
-        /// logical replication slots don't hold onto old WAL logs that result in storage full
-        /// situations on the source.
-        /// </p>
+        /// <p>The write-ahead log (WAL) heartbeat feature mimics a dummy transaction. By doing this,
+        /// it prevents idle logical replication slots from holding onto old WAL logs, which can result in
+        /// storage full situations on the source. This heartbeat keeps <code>restart_lsn</code> moving
+        /// and prevents storage full scenarios.</p>
         pub fn heartbeat_enable(mut self, input: bool) -> Self {
             self.heartbeat_enable = Some(input);
             self
@@ -6842,10 +7190,20 @@ pub mod postgre_sql_settings {
             self
         }
         /// <p>Sets the name of a previously created logical replication slot
-        /// for a CDC load of the PostgreSQL source instance.</p>
-        /// <p>When used with the DMS API <code>CdcStartPosition</code>
-        /// request parameter, this attribute also enables using native
-        /// CDC start points.</p>
+        /// for a change data capture (CDC) load of the PostgreSQL source instance. </p>
+        /// <p>When used with the <code>CdcStartPosition</code>
+        /// request parameter for the DMS API , this attribute also makes it possible to use native CDC
+        /// start points. DMS verifies that the specified logical
+        /// replication slot exists before starting the CDC load task. It
+        /// also verifies that the task was created with a valid setting of
+        /// <code>CdcStartPosition</code>. If the specified slot
+        /// doesn't exist or the task doesn't have a valid
+        /// <code>CdcStartPosition</code> setting, DMS raises an
+        /// error.</p>
+        /// <p>For more information about setting the <code>CdcStartPosition</code> request parameter,
+        /// see <a href="dms/latest/userguide/CHAP_Task.CDC.html#CHAP_Task.CDC.StartPoint.Native">Determining a CDC native start point</a> in the <i>Database Migration Service User
+        /// Guide</i>. For more information about using <code>CdcStartPosition</code>, see
+        /// <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_CreateReplicationTask.html">CreateReplicationTask</a>, <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html">StartReplicationTask</a>, and <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ModifyReplicationTask.html">ModifyReplicationTask</a>.</p>
         pub fn slot_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.slot_name = Some(input.into());
             self
@@ -8061,7 +8419,7 @@ pub struct KafkaSettings {
     pub ssl_client_key_arn: std::option::Option<std::string::String>,
     /// <p> The password for the client private key used to securely connect to a Kafka target endpoint.</p>
     pub ssl_client_key_password: std::option::Option<std::string::String>,
-    /// <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses
+    /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses
     /// to securely connect to your Kafka target endpoint.</p>
     pub ssl_ca_certificate_arn: std::option::Option<std::string::String>,
     /// <p> The secure user name you created when you first set up your MSK cluster to validate a
@@ -8071,9 +8429,11 @@ pub struct KafkaSettings {
     /// <p>The secure password you created when you first set up your MSK cluster to validate a client identity and
     /// make an encrypted connection between server and client using SASL-SSL authentication.</p>
     pub sasl_password: std::option::Option<std::string::String>,
-    /// <p>If this attribute is Y, it allows hexadecimal values that don't have the
-    /// <code>0x</code> prefix when migrated to a Kafka target. If this attribute is N, all
-    /// hexadecimal values include this prefix when migrated to Kafka.</p>
+    /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix
+    /// to raw data in hexadecimal format. For example, by default, DMS adds a '0x'
+    /// prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka
+    /// target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data
+    /// type columns without adding the '0x' prefix.</p>
     pub no_hex_prefix: std::option::Option<bool>,
 }
 impl std::fmt::Debug for KafkaSettings {
@@ -8313,7 +8673,7 @@ pub mod kafka_settings {
             self.ssl_client_key_password = input;
             self
         }
-        /// <p> The Amazon Resource Name (ARN) for the private Certification Authority (CA) cert that DMS uses
+        /// <p> The Amazon Resource Name (ARN) for the private certificate authority (CA) cert that DMS uses
         /// to securely connect to your Kafka target endpoint.</p>
         pub fn ssl_ca_certificate_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.ssl_ca_certificate_arn = Some(input.into());
@@ -8353,9 +8713,11 @@ pub mod kafka_settings {
             self.sasl_password = input;
             self
         }
-        /// <p>If this attribute is Y, it allows hexadecimal values that don't have the
-        /// <code>0x</code> prefix when migrated to a Kafka target. If this attribute is N, all
-        /// hexadecimal values include this prefix when migrated to Kafka.</p>
+        /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix
+        /// to raw data in hexadecimal format. For example, by default, DMS adds a '0x'
+        /// prefix to the LOB column type in hexadecimal format moving from an Oracle source to a Kafka
+        /// target. Use the <code>NoHexPrefix</code> endpoint setting to enable migration of RAW data
+        /// type columns without adding the '0x' prefix.</p>
         pub fn no_hex_prefix(mut self, input: bool) -> Self {
             self.no_hex_prefix = Some(input);
             self
@@ -8546,9 +8908,11 @@ pub struct KinesisSettings {
     pub include_control_details: std::option::Option<bool>,
     /// <p>Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.</p>
     pub include_null_and_empty: std::option::Option<bool>,
-    /// <p>If this attribute is Y, it allows hexadecimal values that don't have the
-    /// <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is N, all
-    /// hexadecimal values include this prefix when migrated to Kinesis.</p>
+    /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix
+    /// to raw data in hexadecimal format. For example, by default, DMS adds a '0x'
+    /// prefix to the LOB column type in hexadecimal format moving from an Oracle source to an
+    /// Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint setting to enable
+    /// migration of RAW data type columns without adding the '0x' prefix.</p>
     pub no_hex_prefix: std::option::Option<bool>,
 }
 impl std::fmt::Debug for KinesisSettings {
@@ -8702,9 +9066,11 @@ pub mod kinesis_settings {
             self.include_null_and_empty = input;
             self
         }
-        /// <p>If this attribute is Y, it allows hexadecimal values that don't have the
-        /// <code>0x</code> prefix when migrated to a Kinesis target. If this attribute is N, all
-        /// hexadecimal values include this prefix when migrated to Kinesis.</p>
+        /// <p>Set this optional parameter to <code>true</code> to avoid adding a '0x' prefix
+        /// to raw data in hexadecimal format. For example, by default, DMS adds a '0x'
+        /// prefix to the LOB column type in hexadecimal format moving from an Oracle source to an
+        /// Amazon Kinesis target. Use the <code>NoHexPrefix</code> endpoint setting to enable
+        /// migration of RAW data type columns without adding the '0x' prefix.</p>
         pub fn no_hex_prefix(mut self, input: bool) -> Self {
             self.no_hex_prefix = Some(input);
             self
@@ -8782,7 +9148,7 @@ pub struct MongoDbSettings {
     /// <p>The KMS key identifier that is used to encrypt the content on the replication
     /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
     /// DMS uses your default encryption key. KMS creates the default encryption key for
-    /// your account. Your account has a different default encryption key for each Region.</p>
+    /// your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
     pub kms_key_id: std::option::Option<std::string::String>,
     /// <p>The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the
     /// trusted entity and grants the required permissions to access the value in
@@ -8984,7 +9350,7 @@ pub mod mongo_db_settings {
         /// <p>The KMS key identifier that is used to encrypt the content on the replication
         /// instance. If you don't specify a value for the <code>KmsKeyId</code> parameter, then
         /// DMS uses your default encryption key. KMS creates the default encryption key for
-        /// your account. Your account has a different default encryption key for each Region.</p>
+        /// your Amazon Web Services account. Your Amazon Web Services account has a different default encryption key for each Amazon Web Services Region.</p>
         pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_id = Some(input.into());
             self
@@ -9581,6 +9947,70 @@ pub struct S3Settings {
     /// <p>This setting is supported in DMS versions 3.4.2 and later.</p>
     /// </note>
     pub cdc_path: std::option::Option<std::string::String>,
+    /// <p>A value that enables DMS to specify a predefined (canned) access control list for
+    /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
+    /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+    /// ACL</a> in the <i>Amazon S3 Developer Guide.</i>
+    /// </p>
+    /// <p>The default value is NONE. Valid values include NONE, PRIVATE,
+    /// PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ,
+    /// AWS_EXEC_READ, BUCKET_OWNER_READ, and
+    /// BUCKET_OWNER_FULL_CONTROL.</p>
+    pub canned_acl_for_objects: std::option::Option<crate::model::CannedAclForObjectsValue>,
+    /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use
+    /// to add column name information to the .csv output file.</p>
+    /// <p>The default value is <code>false</code>. Valid values are <code>true</code>, <code>false</code>,
+    /// <code>y</code>, and <code>n</code>.</p>
+    pub add_column_name: std::option::Option<bool>,
+    /// <p>Maximum length of the interval, defined in seconds, after which to output a file to Amazon S3.</p>
+    /// <p>When <code>CdcMaxBatchInterval</code> and <code>CdcMinFileSize</code> are both specified, the
+    /// file write is triggered by whichever parameter condition is met first within an DMS
+    /// CloudFormation template.</p>
+    /// <p>The default value is 60 seconds.</p>
+    pub cdc_max_batch_interval: std::option::Option<i32>,
+    /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+    /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file
+    /// write is triggered by whichever parameter condition is met first within an DMS
+    /// CloudFormation template.</p>
+    /// <p>The default value is 32 MB.</p>
+    pub cdc_min_file_size: std::option::Option<i32>,
+    /// <p>An optional parameter that specifies how DMS treats null
+    /// values. While handling the null value, you can use this
+    /// parameter to pass a user-defined string as null when writing to
+    /// the target. For example, when target columns are not nullable,
+    /// you can use this option to differentiate between the empty
+    /// string value and the null value. So, if you set this parameter
+    /// value to the empty string ("" or ''), DMS treats the empty
+    /// string as the null value instead of <code>NULL</code>.</p>
+    /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
+    pub csv_null_value: std::option::Option<std::string::String>,
+    /// <p>When this value is set to 1, DMS ignores the first row header in a .csv file. A value
+    /// of 1 turns on the feature; a value of 0 turns off the feature.</p>
+    /// <p>The default is 0.</p>
+    pub ignore_header_rows: std::option::Option<i32>,
+    /// <p>A value that specifies the maximum size (in KB) of any .csv
+    /// file to be created while migrating to an S3 target during full
+    /// load.</p>
+    /// <p>The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+    pub max_file_size: std::option::Option<i32>,
+    /// <p>For an S3 source, when this value is set to <code>true</code> or <code>y</code>,
+    /// each leading double quotation mark has to be followed by an
+    /// ending double quotation mark. This formatting complies with RFC
+    /// 4180. When this value is set to <code>false</code> or
+    /// <code>n</code>, string literals are copied to the target as
+    /// is. In this case, a delimiter (row or column) signals the end of
+    /// the field. Thus, you can't use a delimiter as part of the
+    /// string, because it signals the end of the value.</p>
+    /// <p>For an S3 target, an optional parameter used to set behavior to comply with RFC
+    /// 4180 for data migrated to Amazon S3 using .csv file format only. When this
+    /// value is set to <code>true</code> or <code>y</code> using Amazon
+    /// S3 as a target, if the data has quotation marks or newline
+    /// characters in it, DMS encloses the entire column with an
+    /// additional pair of double quotation marks ("). Every quotation
+    /// mark within the data is repeated twice.</p>
+    /// <p>The default value is <code>true</code>. Valid values include <code>true</code>, <code>false</code>,
+    /// <code>y</code>, and <code>n</code>.</p>
+    pub rfc4180: std::option::Option<bool>,
 }
 impl std::fmt::Debug for S3Settings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -9619,6 +10049,14 @@ impl std::fmt::Debug for S3Settings {
         formatter.field("csv_no_sup_value", &self.csv_no_sup_value);
         formatter.field("preserve_transactions", &self.preserve_transactions);
         formatter.field("cdc_path", &self.cdc_path);
+        formatter.field("canned_acl_for_objects", &self.canned_acl_for_objects);
+        formatter.field("add_column_name", &self.add_column_name);
+        formatter.field("cdc_max_batch_interval", &self.cdc_max_batch_interval);
+        formatter.field("cdc_min_file_size", &self.cdc_min_file_size);
+        formatter.field("csv_null_value", &self.csv_null_value);
+        formatter.field("ignore_header_rows", &self.ignore_header_rows);
+        formatter.field("max_file_size", &self.max_file_size);
+        formatter.field("rfc4180", &self.rfc4180);
         formatter.finish()
     }
 }
@@ -9658,6 +10096,15 @@ pub mod s3_settings {
         pub(crate) csv_no_sup_value: std::option::Option<std::string::String>,
         pub(crate) preserve_transactions: std::option::Option<bool>,
         pub(crate) cdc_path: std::option::Option<std::string::String>,
+        pub(crate) canned_acl_for_objects:
+            std::option::Option<crate::model::CannedAclForObjectsValue>,
+        pub(crate) add_column_name: std::option::Option<bool>,
+        pub(crate) cdc_max_batch_interval: std::option::Option<i32>,
+        pub(crate) cdc_min_file_size: std::option::Option<i32>,
+        pub(crate) csv_null_value: std::option::Option<std::string::String>,
+        pub(crate) ignore_header_rows: std::option::Option<i32>,
+        pub(crate) max_file_size: std::option::Option<i32>,
+        pub(crate) rfc4180: std::option::Option<bool>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) used by the service to access the IAM role.
@@ -10257,6 +10704,135 @@ pub mod s3_settings {
             self.cdc_path = input;
             self
         }
+        /// <p>A value that enables DMS to specify a predefined (canned) access control list for
+        /// objects created in an Amazon S3 bucket as .csv or .parquet files. For more information
+        /// about Amazon S3 canned ACLs, see <a href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+        /// ACL</a> in the <i>Amazon S3 Developer Guide.</i>
+        /// </p>
+        /// <p>The default value is NONE. Valid values include NONE, PRIVATE,
+        /// PUBLIC_READ, PUBLIC_READ_WRITE, AUTHENTICATED_READ,
+        /// AWS_EXEC_READ, BUCKET_OWNER_READ, and
+        /// BUCKET_OWNER_FULL_CONTROL.</p>
+        pub fn canned_acl_for_objects(
+            mut self,
+            input: crate::model::CannedAclForObjectsValue,
+        ) -> Self {
+            self.canned_acl_for_objects = Some(input);
+            self
+        }
+        pub fn set_canned_acl_for_objects(
+            mut self,
+            input: std::option::Option<crate::model::CannedAclForObjectsValue>,
+        ) -> Self {
+            self.canned_acl_for_objects = input;
+            self
+        }
+        /// <p>An optional parameter that, when set to <code>true</code> or <code>y</code>, you can use
+        /// to add column name information to the .csv output file.</p>
+        /// <p>The default value is <code>false</code>. Valid values are <code>true</code>, <code>false</code>,
+        /// <code>y</code>, and <code>n</code>.</p>
+        pub fn add_column_name(mut self, input: bool) -> Self {
+            self.add_column_name = Some(input);
+            self
+        }
+        pub fn set_add_column_name(mut self, input: std::option::Option<bool>) -> Self {
+            self.add_column_name = input;
+            self
+        }
+        /// <p>Maximum length of the interval, defined in seconds, after which to output a file to Amazon S3.</p>
+        /// <p>When <code>CdcMaxBatchInterval</code> and <code>CdcMinFileSize</code> are both specified, the
+        /// file write is triggered by whichever parameter condition is met first within an DMS
+        /// CloudFormation template.</p>
+        /// <p>The default value is 60 seconds.</p>
+        pub fn cdc_max_batch_interval(mut self, input: i32) -> Self {
+            self.cdc_max_batch_interval = Some(input);
+            self
+        }
+        pub fn set_cdc_max_batch_interval(mut self, input: std::option::Option<i32>) -> Self {
+            self.cdc_max_batch_interval = input;
+            self
+        }
+        /// <p>Minimum file size, defined in megabytes, to reach for a file output to Amazon S3.</p>
+        /// <p>When <code>CdcMinFileSize</code> and <code>CdcMaxBatchInterval</code> are both specified, the file
+        /// write is triggered by whichever parameter condition is met first within an DMS
+        /// CloudFormation template.</p>
+        /// <p>The default value is 32 MB.</p>
+        pub fn cdc_min_file_size(mut self, input: i32) -> Self {
+            self.cdc_min_file_size = Some(input);
+            self
+        }
+        pub fn set_cdc_min_file_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.cdc_min_file_size = input;
+            self
+        }
+        /// <p>An optional parameter that specifies how DMS treats null
+        /// values. While handling the null value, you can use this
+        /// parameter to pass a user-defined string as null when writing to
+        /// the target. For example, when target columns are not nullable,
+        /// you can use this option to differentiate between the empty
+        /// string value and the null value. So, if you set this parameter
+        /// value to the empty string ("" or ''), DMS treats the empty
+        /// string as the null value instead of <code>NULL</code>.</p>
+        /// <p>The default value is <code>NULL</code>. Valid values include any valid string.</p>
+        pub fn csv_null_value(mut self, input: impl Into<std::string::String>) -> Self {
+            self.csv_null_value = Some(input.into());
+            self
+        }
+        pub fn set_csv_null_value(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.csv_null_value = input;
+            self
+        }
+        /// <p>When this value is set to 1, DMS ignores the first row header in a .csv file. A value
+        /// of 1 turns on the feature; a value of 0 turns off the feature.</p>
+        /// <p>The default is 0.</p>
+        pub fn ignore_header_rows(mut self, input: i32) -> Self {
+            self.ignore_header_rows = Some(input);
+            self
+        }
+        pub fn set_ignore_header_rows(mut self, input: std::option::Option<i32>) -> Self {
+            self.ignore_header_rows = input;
+            self
+        }
+        /// <p>A value that specifies the maximum size (in KB) of any .csv
+        /// file to be created while migrating to an S3 target during full
+        /// load.</p>
+        /// <p>The default value is 1,048,576 KB (1 GB). Valid values include 1 to 1,048,576.</p>
+        pub fn max_file_size(mut self, input: i32) -> Self {
+            self.max_file_size = Some(input);
+            self
+        }
+        pub fn set_max_file_size(mut self, input: std::option::Option<i32>) -> Self {
+            self.max_file_size = input;
+            self
+        }
+        /// <p>For an S3 source, when this value is set to <code>true</code> or <code>y</code>,
+        /// each leading double quotation mark has to be followed by an
+        /// ending double quotation mark. This formatting complies with RFC
+        /// 4180. When this value is set to <code>false</code> or
+        /// <code>n</code>, string literals are copied to the target as
+        /// is. In this case, a delimiter (row or column) signals the end of
+        /// the field. Thus, you can't use a delimiter as part of the
+        /// string, because it signals the end of the value.</p>
+        /// <p>For an S3 target, an optional parameter used to set behavior to comply with RFC
+        /// 4180 for data migrated to Amazon S3 using .csv file format only. When this
+        /// value is set to <code>true</code> or <code>y</code> using Amazon
+        /// S3 as a target, if the data has quotation marks or newline
+        /// characters in it, DMS encloses the entire column with an
+        /// additional pair of double quotation marks ("). Every quotation
+        /// mark within the data is repeated twice.</p>
+        /// <p>The default value is <code>true</code>. Valid values include <code>true</code>, <code>false</code>,
+        /// <code>y</code>, and <code>n</code>.</p>
+        pub fn rfc4180(mut self, input: bool) -> Self {
+            self.rfc4180 = Some(input);
+            self
+        }
+        pub fn set_rfc4180(mut self, input: std::option::Option<bool>) -> Self {
+            self.rfc4180 = input;
+            self
+        }
         /// Consumes the builder and constructs a [`S3Settings`](crate::model::S3Settings)
         pub fn build(self) -> crate::model::S3Settings {
             crate::model::S3Settings {
@@ -10288,6 +10864,14 @@ pub mod s3_settings {
                 csv_no_sup_value: self.csv_no_sup_value,
                 preserve_transactions: self.preserve_transactions,
                 cdc_path: self.cdc_path,
+                canned_acl_for_objects: self.canned_acl_for_objects,
+                add_column_name: self.add_column_name,
+                cdc_max_batch_interval: self.cdc_max_batch_interval,
+                cdc_min_file_size: self.cdc_min_file_size,
+                csv_null_value: self.csv_null_value,
+                ignore_header_rows: self.ignore_header_rows,
+                max_file_size: self.max_file_size,
+                rfc4180: self.rfc4180,
             }
         }
     }
@@ -10296,6 +10880,83 @@ impl S3Settings {
     /// Creates a new builder-style object to manufacture [`S3Settings`](crate::model::S3Settings)
     pub fn builder() -> crate::model::s3_settings::Builder {
         crate::model::s3_settings::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CannedAclForObjectsValue {
+    AuthenticatedRead,
+    AwsExecRead,
+    BucketOwnerFullControl,
+    BucketOwnerRead,
+    None,
+    Private,
+    PublicRead,
+    PublicReadWrite,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CannedAclForObjectsValue {
+    fn from(s: &str) -> Self {
+        match s {
+            "authenticated-read" => CannedAclForObjectsValue::AuthenticatedRead,
+            "aws-exec-read" => CannedAclForObjectsValue::AwsExecRead,
+            "bucket-owner-full-control" => CannedAclForObjectsValue::BucketOwnerFullControl,
+            "bucket-owner-read" => CannedAclForObjectsValue::BucketOwnerRead,
+            "none" => CannedAclForObjectsValue::None,
+            "private" => CannedAclForObjectsValue::Private,
+            "public-read" => CannedAclForObjectsValue::PublicRead,
+            "public-read-write" => CannedAclForObjectsValue::PublicReadWrite,
+            other => CannedAclForObjectsValue::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CannedAclForObjectsValue {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CannedAclForObjectsValue::from(s))
+    }
+}
+impl CannedAclForObjectsValue {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CannedAclForObjectsValue::AuthenticatedRead => "authenticated-read",
+            CannedAclForObjectsValue::AwsExecRead => "aws-exec-read",
+            CannedAclForObjectsValue::BucketOwnerFullControl => "bucket-owner-full-control",
+            CannedAclForObjectsValue::BucketOwnerRead => "bucket-owner-read",
+            CannedAclForObjectsValue::None => "none",
+            CannedAclForObjectsValue::Private => "private",
+            CannedAclForObjectsValue::PublicRead => "public-read",
+            CannedAclForObjectsValue::PublicReadWrite => "public-read-write",
+            CannedAclForObjectsValue::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &[
+            "authenticated-read",
+            "aws-exec-read",
+            "bucket-owner-full-control",
+            "bucket-owner-read",
+            "none",
+            "private",
+            "public-read",
+            "public-read-write",
+        ]
+    }
+}
+impl AsRef<str> for CannedAclForObjectsValue {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -10806,12 +11467,15 @@ pub struct Tag {
     /// contain only the set of Unicode letters, digits, white-space, '_', '.', '/', '=', '+', '-'
     /// (Java regular expressions: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-]*)$").</p>
     pub value: std::option::Option<std::string::String>,
+    /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.</p>
+    pub resource_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for Tag {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("Tag");
         formatter.field("key", &self.key);
         formatter.field("value", &self.value);
+        formatter.field("resource_arn", &self.resource_arn);
         formatter.finish()
     }
 }
@@ -10823,6 +11487,7 @@ pub mod tag {
     pub struct Builder {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) value: std::option::Option<std::string::String>,
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
         /// <p>A key is the required name of the tag. The string value can be 1-128 Unicode characters
@@ -10849,11 +11514,21 @@ pub mod tag {
             self.value = input;
             self
         }
+        /// <p>The Amazon Resource Name (ARN) string that uniquely identifies the resource for which the tag is created.</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
         /// Consumes the builder and constructs a [`Tag`](crate::model::Tag)
         pub fn build(self) -> crate::model::Tag {
             crate::model::Tag {
                 key: self.key,
                 value: self.value,
+                resource_arn: self.resource_arn,
             }
         }
     }
@@ -13128,12 +13803,12 @@ impl AsRef<str> for EndpointSettingTypeValue {
     }
 }
 
-/// <p>Describes a quota for an account, for example the number of replication instances
+/// <p>Describes a quota for an Amazon Web Services account, for example the number of replication instances
 /// allowed.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct AccountQuota {
-    /// <p>The name of the DMS quota for this account.</p>
+    /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
     pub account_quota_name: std::option::Option<std::string::String>,
     /// <p>The amount currently used toward the quota maximum.</p>
     pub used: i64,
@@ -13160,7 +13835,7 @@ pub mod account_quota {
         pub(crate) max: std::option::Option<i64>,
     }
     impl Builder {
-        /// <p>The name of the DMS quota for this account.</p>
+        /// <p>The name of the DMS quota for this Amazon Web Services account.</p>
         pub fn account_quota_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.account_quota_name = Some(input.into());
             self

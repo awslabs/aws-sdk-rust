@@ -275,9 +275,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchangeError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchangeError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchangeError>,
+        err: smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchangeError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -294,8 +298,11 @@ impl From<smithy_http::result::SdkError<crate::error::AcceptReservedNodeExchange
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddPartnerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddPartnerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddPartnerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AddPartnerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddPartnerErrorKind::ClusterNotFoundFault(inner) => {
@@ -313,9 +320,13 @@ impl From<smithy_http::result::SdkError<crate::error::AddPartnerError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateDataShareConsumerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -333,11 +344,17 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateDataShareConsumer
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AuthorizeClusterSecurityGroupIngressError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::AuthorizeClusterSecurityGroupIngressError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AuthorizeClusterSecurityGroupIngressError>,
+        err: smithy_http::result::SdkError<
+            crate::error::AuthorizeClusterSecurityGroupIngressError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -351,8 +368,11 @@ impl From<smithy_http::result::SdkError<crate::error::AuthorizeClusterSecurityGr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AuthorizeDataShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AuthorizeDataShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AuthorizeDataShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::AuthorizeDataShareError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AuthorizeDataShareErrorKind::InvalidDataShareFault(inner) => {
@@ -366,9 +386,12 @@ impl From<smithy_http::result::SdkError<crate::error::AuthorizeDataShareError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessError>,
+        err: smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -384,9 +407,12 @@ impl From<smithy_http::result::SdkError<crate::error::AuthorizeEndpointAccessErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessError>,
+        err: smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -402,9 +428,13 @@ impl From<smithy_http::result::SdkError<crate::error::AuthorizeSnapshotAccessErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshotsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshotsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshotsError>,
+        err: smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshotsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -415,9 +445,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchDeleteClusterSnapshot
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshotsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshotsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshotsError>,
+        err: smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshotsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -429,8 +463,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchModifyClusterSnapshot
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CancelResizeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CancelResizeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CancelResizeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CancelResizeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CancelResizeErrorKind::ClusterNotFoundFault(inner) => {
@@ -451,8 +488,11 @@ impl From<smithy_http::result::SdkError<crate::error::CancelResizeError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CopyClusterSnapshotErrorKind::ClusterSnapshotAlreadyExistsFault(
@@ -478,9 +518,13 @@ impl From<smithy_http::result::SdkError<crate::error::CopyClusterSnapshotError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError>,
+        err: smithy_http::result::SdkError<crate::error::CreateAuthenticationProfileError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -493,8 +537,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateAuthenticationProfil
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateClusterErrorKind::ClusterAlreadyExistsFault(inner) => {
@@ -569,9 +616,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateClusterParameterGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateClusterParameterGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateClusterParameterGroupError>,
+        err: smithy_http::result::SdkError<crate::error::CreateClusterParameterGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -585,9 +636,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateClusterParameterGrou
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroupError>,
+        err: smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -601,8 +656,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateClusterSecurityGroup
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateClusterSnapshotErrorKind::ClusterNotFoundFault(inner) => {
@@ -634,9 +694,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateClusterSnapshotError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupError>,
+        err: smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -654,8 +718,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateClusterSubnetGroupEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateEndpointAccessError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateEndpointAccessError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateEndpointAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateEndpointAccessError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateEndpointAccessErrorKind::AccessToClusterDeniedFault(inner) => Error::AccessToClusterDeniedFault(inner),
@@ -674,9 +743,12 @@ impl From<smithy_http::result::SdkError<crate::error::CreateEndpointAccessError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError>,
+        err: smithy_http::result::SdkError<crate::error::CreateEventSubscriptionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -697,9 +769,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateEventSubscriptionErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHsmClientCertificateError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHsmClientCertificateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateHsmClientCertificateError>,
+        err: smithy_http::result::SdkError<crate::error::CreateHsmClientCertificateError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -713,8 +789,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHsmClientCertificate
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateHsmConfigurationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateHsmConfigurationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateHsmConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateHsmConfigurationError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateHsmConfigurationErrorKind::HsmConfigurationAlreadyExistsFault(inner) => Error::HsmConfigurationAlreadyExistsFault(inner),
@@ -727,8 +808,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateHsmConfigurationErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateScheduledActionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateScheduledActionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateScheduledActionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateScheduledActionErrorKind::InvalidScheduledActionFault(inner) => Error::InvalidScheduledActionFault(inner),
@@ -743,9 +829,12 @@ impl From<smithy_http::result::SdkError<crate::error::CreateScheduledActionError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantError>,
+        err: smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -761,8 +850,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateSnapshotCopyGrantErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateSnapshotScheduleErrorKind::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
@@ -777,8 +871,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateSnapshotScheduleErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateTagsErrorKind::InvalidClusterStateFault(inner) => {
@@ -799,8 +896,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTagsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateUsageLimitError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateUsageLimitError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateUsageLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateUsageLimitError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateUsageLimitErrorKind::ClusterNotFoundFault(inner) => {
@@ -832,8 +932,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateUsageLimitError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeauthorizeDataShareErrorKind::InvalidDataShareFault(inner) => {
@@ -847,9 +952,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeauthorizeDataShareError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfileError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -861,8 +970,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteAuthenticationProfil
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteClusterErrorKind::ClusterNotFoundFault(inner) => {
@@ -886,9 +998,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteClusterParameterGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteClusterParameterGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteClusterParameterGroupError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteClusterParameterGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -900,9 +1016,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClusterParameterGrou
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroupError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -914,8 +1034,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClusterSecurityGroup
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(
@@ -932,9 +1057,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClusterSnapshotError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -947,8 +1076,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteClusterSubnetGroupEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteEndpointAccessErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
@@ -962,9 +1096,12 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEndpointAccessError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -982,9 +1119,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEventSubscriptionErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificateError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificateError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificateError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -996,8 +1137,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteHsmClientCertificate
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteHsmConfigurationErrorKind::HsmConfigurationNotFoundFault(inner) => Error::HsmConfigurationNotFoundFault(inner),
@@ -1008,8 +1154,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteHsmConfigurationErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePartnerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeletePartnerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePartnerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePartnerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeletePartnerErrorKind::ClusterNotFoundFault(inner) => {
@@ -1027,8 +1176,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePartnerError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteScheduledActionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteScheduledActionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteScheduledActionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteScheduledActionErrorKind::ScheduledActionNotFoundFault(
@@ -1045,9 +1199,12 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteScheduledActionError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1059,8 +1216,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSnapshotCopyGrantErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteSnapshotScheduleErrorKind::InvalidClusterSnapshotScheduleStateFault(inner) => Error::InvalidClusterSnapshotScheduleStateFault(inner),
@@ -1071,8 +1233,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSnapshotScheduleErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteTagsErrorKind::InvalidTagFault(inner) => {
@@ -1087,8 +1252,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTagsError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteUsageLimitError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteUsageLimitError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteUsageLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteUsageLimitError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteUsageLimitErrorKind::UnsupportedOperationFault(inner) => {
@@ -1105,9 +1273,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteUsageLimitError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeAccountAttributesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1119,11 +1291,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeAccountAttributesE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeAuthenticationProfilesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1135,9 +1309,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeAuthenticationProf
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1155,11 +1333,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterDbRevisions
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterParameterGroupsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterParameterGroupsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterParameterGroupsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterParameterGroupsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1171,9 +1351,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterParameterGr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterParametersError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterParametersError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterParametersError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterParametersError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1184,8 +1368,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterParametersE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClustersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeClustersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClustersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeClustersError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeClustersErrorKind::ClusterNotFoundFault(inner) => {
@@ -1202,11 +1389,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClustersError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGroupsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGroupsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGroupsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGroupsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1218,9 +1407,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterSecurityGro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1241,9 +1434,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterSnapshotsEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroupsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroupsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroupsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroupsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1255,8 +1452,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterSubnetGroup
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterTracksError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeClusterTracksError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterTracksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterTracksError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeClusterTracksErrorKind::InvalidClusterTrackFault(inner) => {
@@ -1273,9 +1475,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterTracksError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeClusterVersionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeClusterVersionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeClusterVersionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeClusterVersionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1287,8 +1492,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeClusterVersionsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDataSharesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDataSharesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDataSharesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeDataSharesErrorKind::InvalidDataShareFault(inner) => {
@@ -1302,11 +1510,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsumerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1321,11 +1531,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForConsu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeDataSharesForProducerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1340,11 +1552,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDataSharesForProdu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDefaultClusterParametersError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDefaultClusterParametersError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeDefaultClusterParametersError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeDefaultClusterParametersError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1356,8 +1570,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDefaultClusterPara
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeEndpointAccessError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeEndpointAccessError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeEndpointAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeEndpointAccessError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEndpointAccessErrorKind::ClusterNotFoundFault(inner) => {
@@ -1377,11 +1596,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeEndpointAccessErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizationError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1399,9 +1620,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeEndpointAuthorizat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeEventCategoriesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1413,8 +1637,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeEventCategoriesErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeEventsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeEventsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeEventsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeEventsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -1423,9 +1650,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeEventsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeEventSubscriptionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1443,11 +1674,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeEventSubscriptions
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHsmClientCertificatesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHsmClientCertificatesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeHsmClientCertificatesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeHsmClientCertificatesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1459,9 +1692,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHsmClientCertifica
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1479,8 +1716,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeHsmConfigurationsE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeLoggingStatusErrorKind::ClusterNotFoundFault(inner) => {
@@ -1494,11 +1736,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeLoggingStatusError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeNodeConfigurationOptionsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeNodeConfigurationOptionsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeNodeConfigurationOptionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeNodeConfigurationOptionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1512,11 +1756,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeNodeConfigurationO
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeOrderableClusterOptionsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeOrderableClusterOptionsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeOrderableClusterOptionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeOrderableClusterOptionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1528,8 +1774,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeOrderableClusterOp
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribePartnersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribePartnersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribePartnersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribePartnersError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribePartnersErrorKind::ClusterNotFoundFault(inner) => {
@@ -1546,11 +1795,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribePartnersError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferingsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1563,8 +1814,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeReservedNodeOfferi
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeReservedNodesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeReservedNodesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeReservedNodesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeReservedNodesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeReservedNodesErrorKind::DependentServiceUnavailableFault(
@@ -1581,8 +1837,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeReservedNodesError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeResizeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeResizeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeResizeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeResizeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeResizeErrorKind::ClusterNotFoundFault(inner) => {
@@ -1597,9 +1856,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeResizeError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeScheduledActionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1617,9 +1880,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeScheduledActionsEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrantsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrantsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrantsError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrantsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1631,9 +1898,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSnapshotCopyGrants
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1645,8 +1916,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSnapshotSchedulesE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeStorageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeStorageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeStorageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeStorageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStorageErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -1655,9 +1929,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeStorageError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatusError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatusError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatusError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatusError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1675,8 +1953,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTableRestoreStatus
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTagsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTagsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTagsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTagsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeTagsErrorKind::InvalidTagFault(inner) => {
@@ -1691,8 +1972,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTagsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeUsageLimitsErrorKind::ClusterNotFoundFault(inner) => {
@@ -1709,8 +1993,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeUsageLimitsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisableLoggingError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DisableLoggingError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisableLoggingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DisableLoggingError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisableLoggingErrorKind::ClusterNotFoundFault(inner) => {
@@ -1725,8 +2012,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisableLoggingError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DisableSnapshotCopyErrorKind::ClusterNotFoundFault(inner) => {
@@ -1749,11 +2039,13 @@ impl From<smithy_http::result::SdkError<crate::error::DisableSnapshotCopyError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateDataShareConsumerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1771,8 +2063,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateDataShareConsu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::EnableLoggingError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::EnableLoggingError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::EnableLoggingError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::EnableLoggingError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::EnableLoggingErrorKind::BucketNotFoundFault(inner) => {
@@ -1799,8 +2094,11 @@ impl From<smithy_http::result::SdkError<crate::error::EnableLoggingError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::EnableSnapshotCopyErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
@@ -1820,8 +2118,13 @@ impl From<smithy_http::result::SdkError<crate::error::EnableSnapshotCopyError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetClusterCredentialsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetClusterCredentialsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetClusterCredentialsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetClusterCredentialsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetClusterCredentialsErrorKind::ClusterNotFoundFault(inner) => {
@@ -1838,11 +2141,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetClusterCredentialsError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetReservedNodeExchangeOfferingsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetReservedNodeExchangeOfferingsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetReservedNodeExchangeOfferingsError>,
+        err: smithy_http::result::SdkError<crate::error::GetReservedNodeExchangeOfferingsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1858,9 +2163,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetReservedNodeExchangeOff
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1881,9 +2189,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyAquaConfigurationErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfileError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -1896,8 +2208,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyAuthenticationProfil
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ModifyClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyClusterErrorKind::ClusterAlreadyExistsFault(inner) => {
@@ -1963,9 +2278,12 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1986,8 +2304,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterDbRevisionErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyClusterIamRolesErrorKind::ClusterNotFoundFault(inner) => {
@@ -2004,9 +2327,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterIamRolesError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -2024,9 +2351,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterMaintenanceEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterParameterGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterParameterGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyClusterParameterGroupError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterParameterGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2038,8 +2369,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterParameterGrou
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyClusterSnapshotErrorKind::ClusterSnapshotNotFoundFault(
@@ -2059,11 +2395,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotScheduleError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotScheduleError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotScheduleError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotScheduleError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2076,9 +2414,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterSnapshotSched
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2094,8 +2436,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyClusterSubnetGroupEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ModifyEndpointAccessErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
@@ -2110,9 +2457,12 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyEndpointAccessError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError>,
+        err: smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2131,8 +2481,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyEventSubscriptionErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyScheduledActionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyScheduledActionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyScheduledActionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifyScheduledActionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ModifyScheduledActionErrorKind::InvalidScheduledActionFault(inner) => Error::InvalidScheduledActionFault(inner),
@@ -2146,11 +2501,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyScheduledActionError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifySnapshotCopyRetentionPeriodError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifySnapshotCopyRetentionPeriodError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ModifySnapshotCopyRetentionPeriodError>,
+        err: smithy_http::result::SdkError<crate::error::ModifySnapshotCopyRetentionPeriodError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2165,8 +2522,13 @@ impl From<smithy_http::result::SdkError<crate::error::ModifySnapshotCopyRetentio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ModifySnapshotScheduleErrorKind::InvalidScheduleFault(inner) => Error::InvalidScheduleFault(inner),
@@ -2178,8 +2540,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifySnapshotScheduleErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ModifyUsageLimitError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ModifyUsageLimitError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ModifyUsageLimitError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ModifyUsageLimitError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ModifyUsageLimitErrorKind::InvalidUsageLimitFault(inner) => {
@@ -2199,8 +2564,11 @@ impl From<smithy_http::result::SdkError<crate::error::ModifyUsageLimitError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PauseClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PauseClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PauseClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PauseClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PauseClusterErrorKind::ClusterNotFoundFault(inner) => {
@@ -2215,11 +2583,13 @@ impl From<smithy_http::result::SdkError<crate::error::PauseClusterError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferingError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferingError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferingError>,
+        err: smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferingError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2233,8 +2603,11 @@ impl From<smithy_http::result::SdkError<crate::error::PurchaseReservedNodeOfferi
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RebootClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RebootClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RebootClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RebootClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RebootClusterErrorKind::ClusterNotFoundFault(inner) => {
@@ -2249,8 +2622,11 @@ impl From<smithy_http::result::SdkError<crate::error::RebootClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RejectDataShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RejectDataShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RejectDataShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RejectDataShareError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RejectDataShareErrorKind::InvalidDataShareFault(inner) => {
@@ -2262,9 +2638,13 @@ impl From<smithy_http::result::SdkError<crate::error::RejectDataShareError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResetClusterParameterGroupError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ResetClusterParameterGroupError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ResetClusterParameterGroupError>,
+        err: smithy_http::result::SdkError<crate::error::ResetClusterParameterGroupError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2276,8 +2656,11 @@ impl From<smithy_http::result::SdkError<crate::error::ResetClusterParameterGroup
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResizeClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ResizeClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ResizeClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ResizeClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ResizeClusterErrorKind::ClusterNotFoundFault(inner) => {
@@ -2313,9 +2696,13 @@ impl From<smithy_http::result::SdkError<crate::error::ResizeClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshotError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshotError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshotError>,
+        err: smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshotError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2350,11 +2737,13 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreFromClusterSnapshot
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RestoreTableFromClusterSnapshotError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RestoreTableFromClusterSnapshotError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RestoreTableFromClusterSnapshotError>,
+        err: smithy_http::result::SdkError<crate::error::RestoreTableFromClusterSnapshotError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2371,8 +2760,11 @@ impl From<smithy_http::result::SdkError<crate::error::RestoreTableFromClusterSna
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResumeClusterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ResumeClusterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ResumeClusterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ResumeClusterError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ResumeClusterErrorKind::ClusterNotFoundFault(inner) => {
@@ -2390,11 +2782,13 @@ impl From<smithy_http::result::SdkError<crate::error::ResumeClusterError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokeClusterSecurityGroupIngressError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokeClusterSecurityGroupIngressError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RevokeClusterSecurityGroupIngressError>,
+        err: smithy_http::result::SdkError<crate::error::RevokeClusterSecurityGroupIngressError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -2407,8 +2801,13 @@ impl From<smithy_http::result::SdkError<crate::error::RevokeClusterSecurityGroup
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RevokeEndpointAccessErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
@@ -2424,8 +2823,13 @@ impl From<smithy_http::result::SdkError<crate::error::RevokeEndpointAccessError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RevokeSnapshotAccessErrorKind::AccessToSnapshotDeniedFault(inner) => {
@@ -2445,8 +2849,11 @@ impl From<smithy_http::result::SdkError<crate::error::RevokeSnapshotAccessError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RotateEncryptionKeyErrorKind::ClusterNotFoundFault(inner) => Error::ClusterNotFoundFault(inner),
@@ -2458,8 +2865,11 @@ impl From<smithy_http::result::SdkError<crate::error::RotateEncryptionKeyError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdatePartnerStatusError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePartnerStatusError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdatePartnerStatusError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePartnerStatusError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdatePartnerStatusErrorKind::ClusterNotFoundFault(inner) => {

@@ -3,11 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_sdk_s3::{Client, Config, Error, Region, PKG_VERSION};
-use aws_types::region;
+use aws_config::meta::region::RegionProviderChain;
+use aws_sdk_s3::{Client, Error, Region, PKG_VERSION};
 
-use aws_auth_providers::DefaultProviderChain;
-use aws_types::region::ProvideRegion;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -43,26 +41,20 @@ async fn main() -> Result<(), Error> {
         verbose,
     } = Opt::from_args();
 
-    let region = region::ChainProvider::first_try(region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     println!();
-    let credential_provider = DefaultProviderChain::builder().region(&region).build();
 
     if verbose {
         println!("S3 client version: {}", PKG_VERSION);
-        println!("Region:            {}", region.region().unwrap().as_ref());
+        println!("Region:            {}", shared_config.region().unwrap());
         println!("Bucket:            {}", &bucket);
         println!();
     }
-
-    let config = Config::builder()
-        .region(region)
-        .credentials_provider(credential_provider)
-        .build();
-
-    let client = Client::from_conf(config);
 
     let resp = client.list_objects_v2().bucket(&bucket).send().await?;
 

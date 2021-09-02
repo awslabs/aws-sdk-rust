@@ -1470,6 +1470,20 @@ pub fn deser_header_restore_object_restore_object_output_restore_output_path(
     smithy_http::header::one_or_none(headers)
 }
 
+pub fn deser_payload_select_object_content_select_object_content_output_payload(
+    body: &mut smithy_http::body::SdkBody,
+) -> std::result::Result<
+    smithy_http::event_stream::Receiver<
+        crate::model::SelectObjectContentEventStream,
+        crate::error::SelectObjectContentError,
+    >,
+    crate::error::SelectObjectContentError,
+> {
+    let unmarshaller = crate::event_stream_serde::SelectObjectContentEventStreamUnmarshaller::new();
+    let body = std::mem::replace(body, smithy_http::body::SdkBody::taken());
+    Ok(smithy_http::event_stream::Receiver::new(unmarshaller, body))
+}
+
 pub fn deser_header_upload_part_upload_part_output_bucket_key_enabled(
     header_map: &http::HeaderMap,
 ) -> std::result::Result<std::option::Option<bool>, smithy_http::header::ParseError> {

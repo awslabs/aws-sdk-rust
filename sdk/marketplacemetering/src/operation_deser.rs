@@ -3,7 +3,7 @@
 pub fn parse_batch_meter_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchMeterUsageOutput, crate::error::BatchMeterUsageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchMeterUsageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -208,7 +208,7 @@ pub fn parse_batch_meter_usage_response(
 pub fn parse_meter_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::MeterUsageOutput, crate::error::MeterUsageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::MeterUsageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -433,7 +433,7 @@ pub fn parse_meter_usage_response(
 pub fn parse_register_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterUsageOutput, crate::error::RegisterUsageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterUsageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -622,7 +622,7 @@ pub fn parse_register_usage_response(
 pub fn parse_resolve_customer_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResolveCustomerOutput, crate::error::ResolveCustomerError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResolveCustomerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

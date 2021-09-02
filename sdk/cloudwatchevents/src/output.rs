@@ -1727,8 +1727,8 @@ pub struct DescribeRuleOutput {
     pub description: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the IAM role associated with the rule.</p>
     pub role_arn: std::option::Option<std::string::String>,
-    /// <p>If this is a managed rule, created by an AWS service on your behalf, this field displays
-    /// the principal name of the AWS service that created the rule.</p>
+    /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
+    /// the principal name of the Amazon Web Services service that created the rule.</p>
     pub managed_by: std::option::Option<std::string::String>,
     /// <p>The name of the event bus associated with the rule.</p>
     pub event_bus_name: std::option::Option<std::string::String>,
@@ -1843,8 +1843,8 @@ pub mod describe_rule_output {
             self.role_arn = input;
             self
         }
-        /// <p>If this is a managed rule, created by an AWS service on your behalf, this field displays
-        /// the principal name of the AWS service that created the rule.</p>
+        /// <p>If this is a managed rule, created by an Amazon Web Services service on your behalf, this field displays
+        /// the principal name of the Amazon Web Services service that created the rule.</p>
         pub fn managed_by(mut self, input: impl Into<std::string::String>) -> Self {
             self.managed_by = Some(input.into());
             self

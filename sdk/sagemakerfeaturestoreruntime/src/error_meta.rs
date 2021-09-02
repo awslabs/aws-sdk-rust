@@ -21,8 +21,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchGetRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchGetRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchGetRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::BatchGetRecordError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchGetRecordErrorKind::AccessForbidden(inner) => {
@@ -43,8 +46,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchGetRecordError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteRecordError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteRecordErrorKind::AccessForbidden(inner) => {
@@ -65,8 +71,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteRecordError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetRecordError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetRecordErrorKind::AccessForbidden(inner) => {
@@ -90,8 +99,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetRecordError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutRecordError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutRecordError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutRecordError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutRecordError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutRecordErrorKind::AccessForbidden(inner) => {

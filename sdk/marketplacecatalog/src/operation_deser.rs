@@ -3,7 +3,7 @@
 pub fn parse_cancel_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelChangeSetOutput, crate::error::CancelChangeSetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -161,7 +161,7 @@ pub fn parse_describe_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeChangeSetOutput, crate::error::DescribeChangeSetError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -300,7 +300,7 @@ pub fn parse_describe_change_set_response(
 pub fn parse_describe_entity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEntityOutput, crate::error::DescribeEntityError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEntityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -454,7 +454,7 @@ pub fn parse_describe_entity_response(
 pub fn parse_list_change_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChangeSetsOutput, crate::error::ListChangeSetsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChangeSetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -570,7 +570,7 @@ pub fn parse_list_change_sets_response(
 pub fn parse_list_entities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListEntitiesOutput, crate::error::ListEntitiesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -705,7 +705,7 @@ pub fn parse_list_entities_response(
 pub fn parse_start_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartChangeSetOutput, crate::error::StartChangeSetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

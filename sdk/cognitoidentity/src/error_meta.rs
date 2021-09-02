@@ -35,8 +35,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateIdentityPoolError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateIdentityPoolError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateIdentityPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateIdentityPoolError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateIdentityPoolErrorKind::InternalErrorException(inner) => {
@@ -65,8 +68,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateIdentityPoolError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteIdentitiesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteIdentitiesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteIdentitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteIdentitiesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteIdentitiesErrorKind::InternalErrorException(inner) => {
@@ -86,8 +92,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteIdentitiesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteIdentityPoolError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteIdentityPoolError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteIdentityPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteIdentityPoolError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteIdentityPoolErrorKind::InternalErrorException(inner) => {
@@ -113,8 +122,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteIdentityPoolError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeIdentityError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeIdentityError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeIdentityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeIdentityError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeIdentityErrorKind::InternalErrorException(inner) => {
@@ -140,8 +152,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeIdentityError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeIdentityPoolError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeIdentityPoolError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeIdentityPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeIdentityPoolError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeIdentityPoolErrorKind::InternalErrorException(inner) => {
@@ -167,9 +184,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeIdentityPoolError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetCredentialsForIdentityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetCredentialsForIdentityError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetCredentialsForIdentityError>,
+        err: smithy_http::result::SdkError<crate::error::GetCredentialsForIdentityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -187,8 +208,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetCredentialsForIdentityE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetIdError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetIdError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetIdError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetIdError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetIdErrorKind::ExternalServiceException(inner) => {
@@ -221,8 +245,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetIdError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetIdentityPoolRolesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetIdentityPoolRolesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetIdentityPoolRolesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetIdentityPoolRolesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetIdentityPoolRolesErrorKind::InternalErrorException(inner) => {
@@ -251,8 +280,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetIdentityPoolRolesError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetOpenIdTokenError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetOpenIdTokenError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetOpenIdTokenError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetOpenIdTokenError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetOpenIdTokenErrorKind::ExternalServiceException(inner) => {
@@ -282,11 +314,17 @@ impl From<smithy_http::result::SdkError<crate::error::GetOpenIdTokenError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetOpenIdTokenForDeveloperIdentityError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetOpenIdTokenForDeveloperIdentityError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetOpenIdTokenForDeveloperIdentityError>,
+        err: smithy_http::result::SdkError<
+            crate::error::GetOpenIdTokenForDeveloperIdentityError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -303,9 +341,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetOpenIdTokenForDeveloper
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetPrincipalTagAttributeMapError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetPrincipalTagAttributeMapError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetPrincipalTagAttributeMapError>,
+        err: smithy_http::result::SdkError<crate::error::GetPrincipalTagAttributeMapError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -332,8 +374,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetPrincipalTagAttributeMa
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListIdentitiesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListIdentitiesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListIdentitiesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListIdentitiesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListIdentitiesErrorKind::InternalErrorException(inner) => {
@@ -357,8 +402,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListIdentitiesError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListIdentityPoolsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListIdentityPoolsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListIdentityPoolsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListIdentityPoolsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListIdentityPoolsErrorKind::InternalErrorException(inner) => {
@@ -384,8 +432,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListIdentityPoolsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::InternalErrorException(inner) => {
@@ -411,9 +462,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::LookupDeveloperIdentityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::LookupDeveloperIdentityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::LookupDeveloperIdentityError>,
+        err: smithy_http::result::SdkError<crate::error::LookupDeveloperIdentityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -443,9 +497,13 @@ impl From<smithy_http::result::SdkError<crate::error::LookupDeveloperIdentityErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::MergeDeveloperIdentitiesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::MergeDeveloperIdentitiesError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::MergeDeveloperIdentitiesError>,
+        err: smithy_http::result::SdkError<crate::error::MergeDeveloperIdentitiesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -475,8 +533,13 @@ impl From<smithy_http::result::SdkError<crate::error::MergeDeveloperIdentitiesEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SetIdentityPoolRolesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SetIdentityPoolRolesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SetIdentityPoolRolesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::SetIdentityPoolRolesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SetIdentityPoolRolesErrorKind::ConcurrentModificationException(
@@ -508,9 +571,13 @@ impl From<smithy_http::result::SdkError<crate::error::SetIdentityPoolRolesError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SetPrincipalTagAttributeMapError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::SetPrincipalTagAttributeMapError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SetPrincipalTagAttributeMapError>,
+        err: smithy_http::result::SdkError<crate::error::SetPrincipalTagAttributeMapError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -537,8 +604,11 @@ impl From<smithy_http::result::SdkError<crate::error::SetPrincipalTagAttributeMa
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InternalErrorException(inner) => {
@@ -562,9 +632,12 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UnlinkDeveloperIdentityError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UnlinkDeveloperIdentityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UnlinkDeveloperIdentityError>,
+        err: smithy_http::result::SdkError<crate::error::UnlinkDeveloperIdentityError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -594,8 +667,11 @@ impl From<smithy_http::result::SdkError<crate::error::UnlinkDeveloperIdentityErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UnlinkIdentityError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UnlinkIdentityError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UnlinkIdentityError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UnlinkIdentityError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UnlinkIdentityErrorKind::ExternalServiceException(inner) => {
@@ -625,8 +701,11 @@ impl From<smithy_http::result::SdkError<crate::error::UnlinkIdentityError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InternalErrorException(inner) => {
@@ -650,8 +729,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateIdentityPoolError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateIdentityPoolError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateIdentityPoolError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateIdentityPoolError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateIdentityPoolErrorKind::ConcurrentModificationException(

@@ -4,11 +4,12 @@
 #![allow(clippy::wrong_self_convention)]
 #![allow(clippy::should_implement_trait)]
 #![allow(clippy::blacklisted_name)]
+#![allow(clippy::vec_init_then_push)]
 //! <p>Welcome to the Amazon AppFlow API reference. This guide is for developers who need
 //! detailed information about the Amazon AppFlow API operations, data types, and errors. </p>
 //! <p>Amazon AppFlow is a fully managed integration service that enables you to securely
 //! transfer data between software as a service (SaaS) applications like Salesforce, Marketo,
-//! Slack, and ServiceNow, and AWS services like Amazon S3 and Amazon Redshift. </p>
+//! Slack, and ServiceNow, and Amazon Web Services like Amazon S3 and Amazon Redshift. </p>
 //! <p>Use the following links to get started on the Amazon AppFlow API:</p>
 //! <ul>
 //! <li>
@@ -56,6 +57,7 @@ mod json_deser;
 mod json_errors;
 mod json_ser;
 pub mod model;
+mod no_credentials;
 pub mod operation;
 mod operation_deser;
 mod operation_ser;
@@ -66,8 +68,8 @@ pub use smithy_http::result::SdkError;
 pub use smithy_types::Blob;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("appflow", PKG_VERSION);
-pub use aws_auth::Credentials;
 pub use aws_types::region::Region;
+pub use aws_types::Credentials;
 #[cfg(feature = "client")]
 pub use client::Client;
 pub use smithy_http::endpoint::Endpoint;

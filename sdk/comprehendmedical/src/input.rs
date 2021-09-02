@@ -52,6 +52,7 @@ impl DescribeEntitiesDetectionV2JobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_describe_entities_detection_v2_job(&self)
@@ -60,8 +61,10 @@ impl DescribeEntitiesDetectionV2JobInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -82,7 +85,7 @@ impl DescribeEntitiesDetectionV2JobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -176,10 +179,10 @@ pub mod describe_icd10_cm_inference_job_input {
     }
 }
 #[doc(hidden)]
-pub type DescribeICD10CMInferenceJobInputOperationOutputAlias =
+pub type DescribeIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::DescribeICD10CMInferenceJob;
 #[doc(hidden)]
-pub type DescribeICD10CMInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribeIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribeIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribeICD10CMInferenceJob`](crate::operation::DescribeICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -194,6 +197,7 @@ impl DescribeIcd10CmInferenceJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_describe_icd10_cm_inference_job(&self)
@@ -202,8 +206,10 @@ impl DescribeIcd10CmInferenceJobInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -224,7 +230,7 @@ impl DescribeIcd10CmInferenceJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -318,10 +324,10 @@ pub mod describe_phi_detection_job_input {
     }
 }
 #[doc(hidden)]
-pub type DescribePHIDetectionJobInputOperationOutputAlias =
+pub type DescribePhiDetectionJobInputOperationOutputAlias =
     crate::operation::DescribePHIDetectionJob;
 #[doc(hidden)]
-pub type DescribePHIDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DescribePhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DescribePhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`DescribePHIDetectionJob`](crate::operation::DescribePHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -336,6 +342,7 @@ impl DescribePhiDetectionJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_phi_detection_job(&self)
                 .map_err(|err| {
@@ -343,8 +350,10 @@ impl DescribePhiDetectionJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -365,7 +374,7 @@ impl DescribePhiDetectionJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -477,6 +486,7 @@ impl DescribeRxNormInferenceJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_describe_rx_norm_inference_job(&self)
@@ -485,8 +495,10 @@ impl DescribeRxNormInferenceJobInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -507,7 +519,7 @@ impl DescribeRxNormInferenceJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -616,14 +628,17 @@ impl DetectEntitiesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_detect_entities(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -644,7 +659,7 @@ impl DetectEntitiesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -753,6 +768,7 @@ impl DetectEntitiesV2Input {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_detect_entities_v2(&self)
                 .map_err(|err| {
@@ -760,8 +776,10 @@ impl DetectEntitiesV2Input {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -782,7 +800,7 @@ impl DetectEntitiesV2Input {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -872,9 +890,9 @@ pub mod detect_phi_input {
     }
 }
 #[doc(hidden)]
-pub type DetectPHIInputOperationOutputAlias = crate::operation::DetectPHI;
+pub type DetectPhiInputOperationOutputAlias = crate::operation::DetectPHI;
 #[doc(hidden)]
-pub type DetectPHIInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type DetectPhiInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl DetectPhiInput {
     /// Consumes the builder and constructs an Operation<[`DetectPHI`](crate::operation::DetectPHI)>
     #[allow(clippy::let_and_return)]
@@ -889,6 +907,7 @@ impl DetectPhiInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_detect_phi(&self).map_err(|err| {
@@ -896,8 +915,10 @@ impl DetectPhiInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -918,7 +939,7 @@ impl DetectPhiInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1006,9 +1027,9 @@ pub mod infer_icd10_cm_input {
     }
 }
 #[doc(hidden)]
-pub type InferICD10CMInputOperationOutputAlias = crate::operation::InferICD10CM;
+pub type InferIcd10CmInputOperationOutputAlias = crate::operation::InferICD10CM;
 #[doc(hidden)]
-pub type InferICD10CMInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type InferIcd10CmInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl InferIcd10CmInput {
     /// Consumes the builder and constructs an Operation<[`InferICD10CM`](crate::operation::InferICD10CM)>
     #[allow(clippy::let_and_return)]
@@ -1023,6 +1044,7 @@ impl InferIcd10CmInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_infer_icd10_cm(&self).map_err(|err| {
@@ -1030,8 +1052,10 @@ impl InferIcd10CmInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1052,7 +1076,7 @@ impl InferIcd10CmInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1159,6 +1183,7 @@ impl InferRxNormInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_infer_rx_norm(&self).map_err(|err| {
@@ -1166,8 +1191,10 @@ impl InferRxNormInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1188,7 +1215,7 @@ impl InferRxNormInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1325,6 +1352,7 @@ impl ListEntitiesDetectionV2JobsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_entities_detection_v2_jobs(&self)
@@ -1333,8 +1361,10 @@ impl ListEntitiesDetectionV2JobsInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1355,7 +1385,7 @@ impl ListEntitiesDetectionV2JobsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1474,10 +1504,10 @@ pub mod list_icd10_cm_inference_jobs_input {
     }
 }
 #[doc(hidden)]
-pub type ListICD10CMInferenceJobsInputOperationOutputAlias =
+pub type ListIcd10CmInferenceJobsInputOperationOutputAlias =
     crate::operation::ListICD10CMInferenceJobs;
 #[doc(hidden)]
-pub type ListICD10CMInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListIcd10CmInferenceJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListIcd10CmInferenceJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListICD10CMInferenceJobs`](crate::operation::ListICD10CMInferenceJobs)>
     #[allow(clippy::let_and_return)]
@@ -1492,6 +1522,7 @@ impl ListIcd10CmInferenceJobsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_icd10_cm_inference_jobs(&self)
@@ -1500,8 +1531,10 @@ impl ListIcd10CmInferenceJobsInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1522,7 +1555,7 @@ impl ListIcd10CmInferenceJobsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1641,9 +1674,9 @@ pub mod list_phi_detection_jobs_input {
     }
 }
 #[doc(hidden)]
-pub type ListPHIDetectionJobsInputOperationOutputAlias = crate::operation::ListPHIDetectionJobs;
+pub type ListPhiDetectionJobsInputOperationOutputAlias = crate::operation::ListPHIDetectionJobs;
 #[doc(hidden)]
-pub type ListPHIDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type ListPhiDetectionJobsInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl ListPhiDetectionJobsInput {
     /// Consumes the builder and constructs an Operation<[`ListPHIDetectionJobs`](crate::operation::ListPHIDetectionJobs)>
     #[allow(clippy::let_and_return)]
@@ -1658,6 +1691,7 @@ impl ListPhiDetectionJobsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_phi_detection_jobs(&self)
                 .map_err(|err| {
@@ -1665,8 +1699,10 @@ impl ListPhiDetectionJobsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1687,7 +1723,7 @@ impl ListPhiDetectionJobsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1824,6 +1860,7 @@ impl ListRxNormInferenceJobsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_rx_norm_inference_jobs(&self)
                 .map_err(|err| {
@@ -1831,8 +1868,10 @@ impl ListRxNormInferenceJobsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1853,7 +1892,7 @@ impl ListRxNormInferenceJobsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2051,6 +2090,7 @@ impl StartEntitiesDetectionV2JobInput {
             if self.client_request_token.is_none() {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_start_entities_detection_v2_job(&self)
@@ -2059,8 +2099,10 @@ impl StartEntitiesDetectionV2JobInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2081,7 +2123,7 @@ impl StartEntitiesDetectionV2JobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2258,10 +2300,10 @@ pub mod start_icd10_cm_inference_job_input {
     }
 }
 #[doc(hidden)]
-pub type StartICD10CMInferenceJobInputOperationOutputAlias =
+pub type StartIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::StartICD10CMInferenceJob;
 #[doc(hidden)]
-pub type StartICD10CMInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StartICD10CMInferenceJob`](crate::operation::StartICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -2279,6 +2321,7 @@ impl StartIcd10CmInferenceJobInput {
             if self.client_request_token.is_none() {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_start_icd10_cm_inference_job(&self)
@@ -2287,8 +2330,10 @@ impl StartIcd10CmInferenceJobInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2309,7 +2354,7 @@ impl StartIcd10CmInferenceJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2486,9 +2531,9 @@ pub mod start_phi_detection_job_input {
     }
 }
 #[doc(hidden)]
-pub type StartPHIDetectionJobInputOperationOutputAlias = crate::operation::StartPHIDetectionJob;
+pub type StartPhiDetectionJobInputOperationOutputAlias = crate::operation::StartPHIDetectionJob;
 #[doc(hidden)]
-pub type StartPHIDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StartPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StartPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StartPHIDetectionJob`](crate::operation::StartPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -2506,6 +2551,7 @@ impl StartPhiDetectionJobInput {
             if self.client_request_token.is_none() {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_start_phi_detection_job(&self)
                 .map_err(|err| {
@@ -2513,8 +2559,10 @@ impl StartPhiDetectionJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2535,7 +2583,7 @@ impl StartPhiDetectionJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2733,6 +2781,7 @@ impl StartRxNormInferenceJobInput {
             if self.client_request_token.is_none() {
                 self.client_request_token = Some(_config.make_token.make_idempotency_token());
             }
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_start_rx_norm_inference_job(&self)
                 .map_err(|err| {
@@ -2740,8 +2789,10 @@ impl StartRxNormInferenceJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2762,7 +2813,7 @@ impl StartRxNormInferenceJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2873,6 +2924,7 @@ impl StopEntitiesDetectionV2JobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_stop_entities_detection_v2_job(&self)
@@ -2881,8 +2933,10 @@ impl StopEntitiesDetectionV2JobInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2903,7 +2957,7 @@ impl StopEntitiesDetectionV2JobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2996,10 +3050,10 @@ pub mod stop_icd10_cm_inference_job_input {
     }
 }
 #[doc(hidden)]
-pub type StopICD10CMInferenceJobInputOperationOutputAlias =
+pub type StopIcd10CmInferenceJobInputOperationOutputAlias =
     crate::operation::StopICD10CMInferenceJob;
 #[doc(hidden)]
-pub type StopICD10CMInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopIcd10CmInferenceJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopIcd10CmInferenceJobInput {
     /// Consumes the builder and constructs an Operation<[`StopICD10CMInferenceJob`](crate::operation::StopICD10CMInferenceJob)>
     #[allow(clippy::let_and_return)]
@@ -3014,6 +3068,7 @@ impl StopIcd10CmInferenceJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_stop_icd10_cm_inference_job(&self)
                 .map_err(|err| {
@@ -3021,8 +3076,10 @@ impl StopIcd10CmInferenceJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3043,7 +3100,7 @@ impl StopIcd10CmInferenceJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3136,9 +3193,9 @@ pub mod stop_phi_detection_job_input {
     }
 }
 #[doc(hidden)]
-pub type StopPHIDetectionJobInputOperationOutputAlias = crate::operation::StopPHIDetectionJob;
+pub type StopPhiDetectionJobInputOperationOutputAlias = crate::operation::StopPHIDetectionJob;
 #[doc(hidden)]
-pub type StopPHIDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type StopPhiDetectionJobInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl StopPhiDetectionJobInput {
     /// Consumes the builder and constructs an Operation<[`StopPHIDetectionJob`](crate::operation::StopPHIDetectionJob)>
     #[allow(clippy::let_and_return)]
@@ -3153,6 +3210,7 @@ impl StopPhiDetectionJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_stop_phi_detection_job(&self)
                 .map_err(|err| {
@@ -3160,8 +3218,10 @@ impl StopPhiDetectionJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3182,7 +3242,7 @@ impl StopPhiDetectionJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3292,6 +3352,7 @@ impl StopRxNormInferenceJobInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_stop_rx_norm_inference_job(&self)
                 .map_err(|err| {
@@ -3299,8 +3360,10 @@ impl StopRxNormInferenceJobInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3321,7 +3384,7 @@ impl StopRxNormInferenceJobInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );

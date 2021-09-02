@@ -6,7 +6,7 @@ pub fn parse_create_http_namespace_error(
     crate::output::CreateHttpNamespaceOutput,
     crate::error::CreateHttpNamespaceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHttpNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -151,7 +151,7 @@ pub fn parse_create_private_dns_namespace_error(
     crate::output::CreatePrivateDnsNamespaceOutput,
     crate::error::CreatePrivateDnsNamespaceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePrivateDnsNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -300,7 +300,7 @@ pub fn parse_create_public_dns_namespace_error(
     crate::output::CreatePublicDnsNamespaceOutput,
     crate::error::CreatePublicDnsNamespaceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePublicDnsNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -446,7 +446,7 @@ pub fn parse_create_public_dns_namespace_response(
 pub fn parse_create_service_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateServiceOutput, crate::error::CreateServiceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateServiceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -583,7 +583,7 @@ pub fn parse_create_service_response(
 pub fn parse_delete_namespace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteNamespaceOutput, crate::error::DeleteNamespaceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -699,7 +699,7 @@ pub fn parse_delete_namespace_response(
 pub fn parse_delete_service_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteServiceOutput, crate::error::DeleteServiceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteServiceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -794,7 +794,7 @@ pub fn parse_deregister_instance_error(
     crate::output::DeregisterInstanceOutput,
     crate::error::DeregisterInstanceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -937,7 +937,7 @@ pub fn parse_discover_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DiscoverInstancesOutput, crate::error::DiscoverInstancesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DiscoverInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1054,7 +1054,7 @@ pub fn parse_discover_instances_response(
 pub fn parse_get_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetInstanceOutput, crate::error::GetInstanceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1151,7 +1151,7 @@ pub fn parse_get_instances_health_status_error(
     crate::output::GetInstancesHealthStatusOutput,
     crate::error::GetInstancesHealthStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetInstancesHealthStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1255,7 +1255,7 @@ pub fn parse_get_instances_health_status_response(
 pub fn parse_get_namespace_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetNamespaceOutput, crate::error::GetNamespaceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1328,7 +1328,7 @@ pub fn parse_get_namespace_response(
 pub fn parse_get_operation_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetOperationOutput, crate::error::GetOperationError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetOperationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1401,7 +1401,7 @@ pub fn parse_get_operation_response(
 pub fn parse_get_service_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetServiceOutput, crate::error::GetServiceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1474,7 +1474,7 @@ pub fn parse_get_service_response(
 pub fn parse_list_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1548,7 +1548,7 @@ pub fn parse_list_instances_response(
 pub fn parse_list_namespaces_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListNamespacesOutput, crate::error::ListNamespacesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListNamespacesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1601,7 +1601,7 @@ pub fn parse_list_namespaces_response(
 pub fn parse_list_operations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListOperationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1654,7 +1654,7 @@ pub fn parse_list_operations_response(
 pub fn parse_list_services_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListServicesOutput, crate::error::ListServicesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListServicesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1709,7 +1709,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1788,7 +1788,7 @@ pub fn parse_register_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterInstanceOutput, crate::error::RegisterInstanceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1926,7 +1926,7 @@ pub fn parse_register_instance_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2017,7 +2017,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2090,7 +2090,7 @@ pub fn parse_update_http_namespace_error(
     crate::output::UpdateHttpNamespaceOutput,
     crate::error::UpdateHttpNamespaceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateHttpNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2214,7 +2214,7 @@ pub fn parse_update_instance_custom_health_status_error(
     crate::output::UpdateInstanceCustomHealthStatusOutput,
     crate::error::UpdateInstanceCustomHealthStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateInstanceCustomHealthStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2336,7 +2336,7 @@ pub fn parse_update_private_dns_namespace_error(
     crate::output::UpdatePrivateDnsNamespaceOutput,
     crate::error::UpdatePrivateDnsNamespaceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePrivateDnsNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2464,7 +2464,7 @@ pub fn parse_update_public_dns_namespace_error(
     crate::output::UpdatePublicDnsNamespaceOutput,
     crate::error::UpdatePublicDnsNamespaceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePublicDnsNamespaceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2589,7 +2589,7 @@ pub fn parse_update_public_dns_namespace_response(
 pub fn parse_update_service_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateServiceOutput, crate::error::UpdateServiceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateServiceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

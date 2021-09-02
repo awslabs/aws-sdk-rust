@@ -23,6 +23,8 @@ pub enum Error {
     PayloadTooLong,
     PreludeChecksumMismatch(u32, u32),
     TimestampValueTooLarge(Instant),
+    Marshalling(String),
+    Unmarshalling(String),
 }
 
 impl StdError for Error {}
@@ -56,6 +58,8 @@ impl fmt::Display for Error {
                 "timestamp value {:?} is too large to fit into an i64",
                 time
             ),
+            Marshalling(error) => write!(f, "failed to marshall message: {}", error),
+            Unmarshalling(error) => write!(f, "failed to unmarshall message: {}", error),
         }
     }
 }

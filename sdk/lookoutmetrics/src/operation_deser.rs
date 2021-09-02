@@ -6,7 +6,7 @@ pub fn parse_activate_anomaly_detector_error(
     crate::output::ActivateAnomalyDetectorOutput,
     crate::error::ActivateAnomalyDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ActivateAnomalyDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -171,7 +171,7 @@ pub fn parse_back_test_anomaly_detector_error(
     crate::output::BackTestAnomalyDetectorOutput,
     crate::error::BackTestAnomalyDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BackTestAnomalyDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -312,7 +312,7 @@ pub fn parse_back_test_anomaly_detector_response(
 pub fn parse_create_alert_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAlertOutput, crate::error::CreateAlertError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAlertError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -490,7 +490,7 @@ pub fn parse_create_anomaly_detector_error(
     crate::output::CreateAnomalyDetectorOutput,
     crate::error::CreateAnomalyDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAnomalyDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -651,7 +651,7 @@ pub fn parse_create_anomaly_detector_response(
 pub fn parse_create_metric_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateMetricSetOutput, crate::error::CreateMetricSetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateMetricSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -827,7 +827,7 @@ pub fn parse_create_metric_set_response(
 pub fn parse_delete_alert_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAlertOutput, crate::error::DeleteAlertError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAlertError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -964,7 +964,7 @@ pub fn parse_delete_anomaly_detector_error(
     crate::output::DeleteAnomalyDetectorOutput,
     crate::error::DeleteAnomalyDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAnomalyDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1122,7 +1122,7 @@ pub fn parse_delete_anomaly_detector_response(
 pub fn parse_describe_alert_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeAlertOutput, crate::error::DescribeAlertError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAlertError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1262,7 +1262,7 @@ pub fn parse_describe_anomaly_detection_executions_error(
     crate::output::DescribeAnomalyDetectionExecutionsOutput,
     crate::error::DescribeAnomalyDetectionExecutionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAnomalyDetectionExecutionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1412,7 +1412,7 @@ pub fn parse_describe_anomaly_detector_error(
     crate::output::DescribeAnomalyDetectorOutput,
     crate::error::DescribeAnomalyDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAnomalyDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1559,7 +1559,7 @@ pub fn parse_describe_metric_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeMetricSetOutput, crate::error::DescribeMetricSetError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeMetricSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1699,7 +1699,7 @@ pub fn parse_describe_metric_set_response(
 pub fn parse_get_anomaly_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAnomalyGroupOutput, crate::error::GetAnomalyGroupError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAnomalyGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1836,7 +1836,7 @@ pub fn parse_get_anomaly_group_response(
 pub fn parse_get_feedback_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetFeedbackOutput, crate::error::GetFeedbackError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFeedbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1972,7 +1972,7 @@ pub fn parse_get_feedback_response(
 pub fn parse_get_sample_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSampleDataOutput, crate::error::GetSampleDataError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSampleDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2109,7 +2109,7 @@ pub fn parse_get_sample_data_response(
 pub fn parse_list_alerts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAlertsOutput, crate::error::ListAlertsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAlertsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2248,7 +2248,7 @@ pub fn parse_list_anomaly_detectors_error(
     crate::output::ListAnomalyDetectorsOutput,
     crate::error::ListAnomalyDetectorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAnomalyDetectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2393,7 +2393,7 @@ pub fn parse_list_anomaly_group_summaries_error(
     crate::output::ListAnomalyGroupSummariesOutput,
     crate::error::ListAnomalyGroupSummariesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAnomalyGroupSummariesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2544,7 +2544,7 @@ pub fn parse_list_anomaly_group_time_series_error(
     crate::output::ListAnomalyGroupTimeSeriesOutput,
     crate::error::ListAnomalyGroupTimeSeriesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAnomalyGroupTimeSeriesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2692,7 +2692,7 @@ pub fn parse_list_anomaly_group_time_series_response(
 pub fn parse_list_metric_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMetricSetsOutput, crate::error::ListMetricSetsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMetricSetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2832,7 +2832,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2931,7 +2931,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_put_feedback_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutFeedbackOutput, crate::error::PutFeedbackError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutFeedbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3065,7 +3065,7 @@ pub fn parse_put_feedback_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3156,7 +3156,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3250,7 +3250,7 @@ pub fn parse_update_anomaly_detector_error(
     crate::output::UpdateAnomalyDetectorOutput,
     crate::error::UpdateAnomalyDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAnomalyDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3392,7 +3392,7 @@ pub fn parse_update_anomaly_detector_response(
 pub fn parse_update_metric_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateMetricSetOutput, crate::error::UpdateMetricSetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateMetricSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

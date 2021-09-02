@@ -2,8 +2,8 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-use aws_types::region::{self, ProvideRegion};
-use lambda::{Client, Config, Error, Region, PKG_VERSION};
+use aws_config::meta::region::RegionProviderChain;
+use lambda::{Client, Error, Region, PKG_VERSION};
 use std::str;
 use structopt::StructOpt;
 
@@ -39,22 +39,19 @@ async fn main() -> Result<(), Error> {
         verbose,
     } = Opt::from_args();
 
-    let region_provider = region::ChainProvider::first_try(region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     if verbose {
         println!("Lambda version: {}", PKG_VERSION);
-        println!(
-            "Region:         {}",
-            region_provider.region().unwrap().as_ref()
-        );
+        println!("Region:         {}", shared_config.region().unwrap());
         println!("Function ARN:   {}", arn);
         println!();
     }
 
-    let config = Config::builder().region(region_provider).build();
-    let client = Client::from_conf(config);
+    let client = Client::new(&shared_config);
 
     let resp = client.invoke().function_name(arn).send().await?;
     if let Some(blob) = resp.payload {

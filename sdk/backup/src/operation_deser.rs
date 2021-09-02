@@ -4,7 +4,7 @@ pub fn parse_create_backup_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBackupPlanOutput, crate::error::CreateBackupPlanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackupPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -138,7 +138,7 @@ pub fn parse_create_backup_selection_error(
     crate::output::CreateBackupSelectionOutput,
     crate::error::CreateBackupSelectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackupSelectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -274,7 +274,7 @@ pub fn parse_create_backup_vault_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBackupVaultOutput, crate::error::CreateBackupVaultError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBackupVaultError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -404,11 +404,273 @@ pub fn parse_create_backup_vault_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_framework_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateFrameworkOutput, crate::error::CreateFrameworkError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateFrameworkError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateFrameworkError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AlreadyExistsException" => crate::error::CreateFrameworkError {
+            meta: generic,
+            kind: crate::error::CreateFrameworkErrorKind::AlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::CreateFrameworkError {
+            meta: generic,
+            kind: crate::error::CreateFrameworkErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateFrameworkError {
+            meta: generic,
+            kind: crate::error::CreateFrameworkErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::CreateFrameworkError {
+            meta: generic,
+            kind: crate::error::CreateFrameworkErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::CreateFrameworkError {
+                meta: generic,
+                kind: crate::error::CreateFrameworkErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::CreateFrameworkError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_framework_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateFrameworkOutput, crate::error::CreateFrameworkError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_framework_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_create_framework(response.body().as_ref(), output)
+                .map_err(crate::error::CreateFrameworkError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_report_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateReportPlanOutput, crate::error::CreateReportPlanError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::CreateReportPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::CreateReportPlanError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AlreadyExistsException" => crate::error::CreateReportPlanError {
+            meta: generic,
+            kind: crate::error::CreateReportPlanErrorKind::AlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_already_exists_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::CreateReportPlanError {
+            meta: generic,
+            kind: crate::error::CreateReportPlanErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::CreateReportPlanError {
+            meta: generic,
+            kind: crate::error::CreateReportPlanErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::CreateReportPlanError {
+            meta: generic,
+            kind: crate::error::CreateReportPlanErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::CreateReportPlanError {
+                meta: generic,
+                kind: crate::error::CreateReportPlanErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::CreateReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::CreateReportPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_create_report_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::CreateReportPlanOutput, crate::error::CreateReportPlanError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::create_report_plan_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_create_report_plan(response.body().as_ref(), output)
+                .map_err(crate::error::CreateReportPlanError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_backup_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBackupPlanOutput, crate::error::DeleteBackupPlanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackupPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -541,7 +803,7 @@ pub fn parse_delete_backup_selection_error(
     crate::output::DeleteBackupSelectionOutput,
     crate::error::DeleteBackupSelectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackupSelectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -650,7 +912,7 @@ pub fn parse_delete_backup_vault_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBackupVaultOutput, crate::error::DeleteBackupVaultError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackupVaultError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -780,7 +1042,7 @@ pub fn parse_delete_backup_vault_access_policy_error(
     crate::output::DeleteBackupVaultAccessPolicyOutput,
     crate::error::DeleteBackupVaultAccessPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackupVaultAccessPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -902,7 +1164,7 @@ pub fn parse_delete_backup_vault_notifications_error(
     crate::output::DeleteBackupVaultNotificationsOutput,
     crate::error::DeleteBackupVaultNotificationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBackupVaultNotificationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -988,13 +1250,139 @@ pub fn parse_delete_backup_vault_notifications_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_framework_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteFrameworkOutput, crate::error::DeleteFrameworkError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteFrameworkError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteFrameworkError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => crate::error::DeleteFrameworkError {
+            meta: generic,
+            kind: crate::error::DeleteFrameworkErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::DeleteFrameworkError {
+            meta: generic,
+            kind: crate::error::DeleteFrameworkErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::DeleteFrameworkError {
+            meta: generic,
+            kind: crate::error::DeleteFrameworkErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::DeleteFrameworkError {
+                meta: generic,
+                kind: crate::error::DeleteFrameworkErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteFrameworkError {
+                meta: generic,
+                kind: crate::error::DeleteFrameworkErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteFrameworkError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_framework_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteFrameworkOutput, crate::error::DeleteFrameworkError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_framework_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_delete_recovery_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::DeleteRecoveryPointOutput,
     crate::error::DeleteRecoveryPointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteRecoveryPointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1138,11 +1526,139 @@ pub fn parse_delete_recovery_point_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_report_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteReportPlanOutput, crate::error::DeleteReportPlanError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DeleteReportPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DeleteReportPlanError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => crate::error::DeleteReportPlanError {
+            meta: generic,
+            kind: crate::error::DeleteReportPlanErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::DeleteReportPlanError {
+            meta: generic,
+            kind: crate::error::DeleteReportPlanErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::DeleteReportPlanError {
+            meta: generic,
+            kind: crate::error::DeleteReportPlanErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::DeleteReportPlanError {
+                meta: generic,
+                kind: crate::error::DeleteReportPlanErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteReportPlanError {
+                meta: generic,
+                kind: crate::error::DeleteReportPlanErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DeleteReportPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_delete_report_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DeleteReportPlanOutput, crate::error::DeleteReportPlanError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::delete_report_plan_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_backup_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeBackupJobOutput, crate::error::DescribeBackupJobError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeBackupJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1276,7 +1792,7 @@ pub fn parse_describe_backup_vault_error(
     crate::output::DescribeBackupVaultOutput,
     crate::error::DescribeBackupVaultError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeBackupVaultError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1389,7 +1905,7 @@ pub fn parse_describe_backup_vault_response(
 pub fn parse_describe_copy_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeCopyJobOutput, crate::error::DescribeCopyJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCopyJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1494,13 +2010,123 @@ pub fn parse_describe_copy_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_framework_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeFrameworkOutput, crate::error::DescribeFrameworkError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeFrameworkError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeFrameworkError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::DescribeFrameworkError {
+            meta: generic,
+            kind: crate::error::DescribeFrameworkErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::DescribeFrameworkError {
+            meta: generic,
+            kind: crate::error::DescribeFrameworkErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::DescribeFrameworkError {
+                meta: generic,
+                kind: crate::error::DescribeFrameworkErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeFrameworkError {
+                meta: generic,
+                kind: crate::error::DescribeFrameworkErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeFrameworkError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_framework_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeFrameworkOutput, crate::error::DescribeFrameworkError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_framework_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_describe_framework(response.body().as_ref(), output)
+                .map_err(crate::error::DescribeFrameworkError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_global_settings_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::DescribeGlobalSettingsOutput,
     crate::error::DescribeGlobalSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeGlobalSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1585,7 +2211,7 @@ pub fn parse_describe_protected_resource_error(
     crate::output::DescribeProtectedResourceOutput,
     crate::error::DescribeProtectedResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeProtectedResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1713,7 +2339,7 @@ pub fn parse_describe_recovery_point_error(
     crate::output::DescribeRecoveryPointOutput,
     crate::error::DescribeRecoveryPointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRecoveryPointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1829,7 +2455,7 @@ pub fn parse_describe_region_settings_error(
     crate::output::DescribeRegionSettingsOutput,
     crate::error::DescribeRegionSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRegionSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1887,13 +2513,223 @@ pub fn parse_describe_region_settings_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_report_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeReportJobOutput, crate::error::DescribeReportJobError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeReportJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeReportJobError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "MissingParameterValueException" => crate::error::DescribeReportJobError {
+            meta: generic,
+            kind: crate::error::DescribeReportJobErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::DescribeReportJobError {
+                meta: generic,
+                kind: crate::error::DescribeReportJobErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeReportJobError {
+                meta: generic,
+                kind: crate::error::DescribeReportJobErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeReportJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_report_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::DescribeReportJobOutput, crate::error::DescribeReportJobError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_report_job_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_describe_report_job(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeReportJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_report_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReportPlanOutput,
+    crate::error::DescribeReportPlanError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::DescribeReportPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::DescribeReportPlanError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::DescribeReportPlanError {
+            meta: generic,
+            kind: crate::error::DescribeReportPlanErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::DescribeReportPlanError {
+            meta: generic,
+            kind: crate::error::DescribeReportPlanErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::DescribeReportPlanError {
+                meta: generic,
+                kind: crate::error::DescribeReportPlanErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeReportPlanError {
+                meta: generic,
+                kind: crate::error::DescribeReportPlanErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::DescribeReportPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_describe_report_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::DescribeReportPlanOutput,
+    crate::error::DescribeReportPlanError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::describe_report_plan_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_describe_report_plan(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::DescribeReportPlanError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_describe_restore_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::DescribeRestoreJobOutput,
     crate::error::DescribeRestoreJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRestoreJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2029,7 +2865,7 @@ pub fn parse_disassociate_recovery_point_error(
     crate::output::DisassociateRecoveryPointOutput,
     crate::error::DisassociateRecoveryPointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateRecoveryPointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2193,7 +3029,7 @@ pub fn parse_export_backup_plan_template_error(
     crate::output::ExportBackupPlanTemplateOutput,
     crate::error::ExportBackupPlanTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportBackupPlanTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2316,7 +3152,7 @@ pub fn parse_export_backup_plan_template_response(
 pub fn parse_get_backup_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBackupPlanOutput, crate::error::GetBackupPlanError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackupPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2427,7 +3263,7 @@ pub fn parse_get_backup_plan_from_json_error(
     crate::output::GetBackupPlanFromJsonOutput,
     crate::error::GetBackupPlanFromJSONError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackupPlanFromJSONError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2565,7 +3401,7 @@ pub fn parse_get_backup_plan_from_template_error(
     crate::output::GetBackupPlanFromTemplateOutput,
     crate::error::GetBackupPlanFromTemplateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackupPlanFromTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2693,7 +3529,7 @@ pub fn parse_get_backup_selection_error(
     crate::output::GetBackupSelectionOutput,
     crate::error::GetBackupSelectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackupSelectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2809,7 +3645,7 @@ pub fn parse_get_backup_vault_access_policy_error(
     crate::output::GetBackupVaultAccessPolicyOutput,
     crate::error::GetBackupVaultAccessPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackupVaultAccessPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2938,7 +3774,7 @@ pub fn parse_get_backup_vault_notifications_error(
     crate::output::GetBackupVaultNotificationsOutput,
     crate::error::GetBackupVaultNotificationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBackupVaultNotificationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3066,7 +3902,7 @@ pub fn parse_get_recovery_point_restore_metadata_error(
     crate::output::GetRecoveryPointRestoreMetadataOutput,
     crate::error::GetRecoveryPointRestoreMetadataError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRecoveryPointRestoreMetadataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3163,7 +3999,7 @@ pub fn parse_get_supported_resource_types_error(
     crate::output::GetSupportedResourceTypesOutput,
     crate::error::GetSupportedResourceTypesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSupportedResourceTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3226,7 +4062,7 @@ pub fn parse_get_supported_resource_types_response(
 pub fn parse_list_backup_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBackupJobsOutput, crate::error::ListBackupJobsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackupJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3296,7 +4132,7 @@ pub fn parse_list_backup_jobs_response(
 pub fn parse_list_backup_plans_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBackupPlansOutput, crate::error::ListBackupPlansError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackupPlansError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3407,7 +4243,7 @@ pub fn parse_list_backup_plan_templates_error(
     crate::output::ListBackupPlanTemplatesOutput,
     crate::error::ListBackupPlanTemplatesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackupPlanTemplatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3529,7 +4365,7 @@ pub fn parse_list_backup_plan_versions_error(
     crate::output::ListBackupPlanVersionsOutput,
     crate::error::ListBackupPlanVersionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackupPlanVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3649,7 +4485,7 @@ pub fn parse_list_backup_selections_error(
     crate::output::ListBackupSelectionsOutput,
     crate::error::ListBackupSelectionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackupSelectionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3763,7 +4599,7 @@ pub fn parse_list_backup_vaults_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBackupVaultsOutput, crate::error::ListBackupVaultsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBackupVaultsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3872,7 +4708,7 @@ pub fn parse_list_backup_vaults_response(
 pub fn parse_list_copy_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListCopyJobsOutput, crate::error::ListCopyJobsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCopyJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3939,13 +4775,83 @@ pub fn parse_list_copy_jobs_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_frameworks_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListFrameworksOutput, crate::error::ListFrameworksError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListFrameworksError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListFrameworksError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::ListFrameworksError {
+            meta: generic,
+            kind: crate::error::ListFrameworksErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFrameworksError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::ListFrameworksError {
+                meta: generic,
+                kind: crate::error::ListFrameworksErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListFrameworksError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListFrameworksError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_frameworks_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListFrameworksOutput, crate::error::ListFrameworksError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_frameworks_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_list_frameworks(response.body().as_ref(), output)
+                .map_err(crate::error::ListFrameworksError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_protected_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::ListProtectedResourcesOutput,
     crate::error::ListProtectedResourcesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListProtectedResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4027,7 +4933,7 @@ pub fn parse_list_recovery_points_by_backup_vault_error(
     crate::output::ListRecoveryPointsByBackupVaultOutput,
     crate::error::ListRecoveryPointsByBackupVaultError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRecoveryPointsByBackupVaultError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4124,7 +5030,7 @@ pub fn parse_list_recovery_points_by_resource_error(
     crate::output::ListRecoveryPointsByResourceOutput,
     crate::error::ListRecoveryPointsByResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRecoveryPointsByResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4246,10 +5152,150 @@ pub fn parse_list_recovery_points_by_resource_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_report_jobs_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListReportJobsOutput, crate::error::ListReportJobsError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListReportJobsError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListReportJobsError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::ListReportJobsError {
+            meta: generic,
+            kind: crate::error::ListReportJobsErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportJobsError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::ListReportJobsError {
+                meta: generic,
+                kind: crate::error::ListReportJobsErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportJobsError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListReportJobsError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_report_jobs_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListReportJobsOutput, crate::error::ListReportJobsError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_report_jobs_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_list_report_jobs(response.body().as_ref(), output)
+                .map_err(crate::error::ListReportJobsError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_report_plans_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListReportPlansOutput, crate::error::ListReportPlansError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListReportPlansError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListReportPlansError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::ListReportPlansError {
+            meta: generic,
+            kind: crate::error::ListReportPlansErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportPlansError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ServiceUnavailableException" => {
+            crate::error::ListReportPlansError {
+                meta: generic,
+                kind: crate::error::ListReportPlansErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::ListReportPlansError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::ListReportPlansError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_report_plans_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::ListReportPlansOutput, crate::error::ListReportPlansError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_report_plans_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_list_report_plans(response.body().as_ref(), output)
+                .map_err(crate::error::ListReportPlansError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_restore_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRestoreJobsOutput, crate::error::ListRestoreJobsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRestoreJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4357,7 +5403,7 @@ pub fn parse_list_restore_jobs_response(
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4467,7 +5513,7 @@ pub fn parse_put_backup_vault_access_policy_error(
     crate::output::PutBackupVaultAccessPolicyOutput,
     crate::error::PutBackupVaultAccessPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBackupVaultAccessPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4591,7 +5637,7 @@ pub fn parse_put_backup_vault_notifications_error(
     crate::output::PutBackupVaultNotificationsOutput,
     crate::error::PutBackupVaultNotificationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBackupVaultNotificationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4711,7 +5757,7 @@ pub fn parse_put_backup_vault_notifications_response(
 pub fn parse_start_backup_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartBackupJobOutput, crate::error::StartBackupJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartBackupJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4861,7 +5907,7 @@ pub fn parse_start_backup_job_response(
 pub fn parse_start_copy_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartCopyJobOutput, crate::error::StartCopyJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartCopyJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5008,10 +6054,118 @@ pub fn parse_start_copy_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_report_job_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartReportJobOutput, crate::error::StartReportJobError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::StartReportJobError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::StartReportJobError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "InvalidParameterValueException" => crate::error::StartReportJobError {
+            meta: generic,
+            kind: crate::error::StartReportJobErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartReportJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::StartReportJobError {
+            meta: generic,
+            kind: crate::error::StartReportJobErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartReportJobError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::StartReportJobError {
+                meta: generic,
+                kind: crate::error::StartReportJobErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartReportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::StartReportJobError {
+                meta: generic,
+                kind: crate::error::StartReportJobErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::StartReportJobError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::StartReportJobError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_start_report_job_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::StartReportJobOutput, crate::error::StartReportJobError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::start_report_job_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_start_report_job(response.body().as_ref(), output)
+                .map_err(crate::error::StartReportJobError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_start_restore_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartRestoreJobOutput, crate::error::StartRestoreJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartRestoreJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5119,7 +6273,7 @@ pub fn parse_start_restore_job_response(
 pub fn parse_stop_backup_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopBackupJobOutput, crate::error::StopBackupJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopBackupJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5245,7 +6399,7 @@ pub fn parse_stop_backup_job_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5371,7 +6525,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5477,7 +6631,7 @@ pub fn parse_update_backup_plan_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateBackupPlanOutput, crate::error::UpdateBackupPlanError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateBackupPlanError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5583,13 +6737,163 @@ pub fn parse_update_backup_plan_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_framework_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateFrameworkOutput, crate::error::UpdateFrameworkError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateFrameworkError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateFrameworkError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => crate::error::UpdateFrameworkError {
+            meta: generic,
+            kind: crate::error::UpdateFrameworkErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::UpdateFrameworkError {
+            meta: generic,
+            kind: crate::error::UpdateFrameworkErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::UpdateFrameworkError {
+            meta: generic,
+            kind: crate::error::UpdateFrameworkErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::UpdateFrameworkError {
+            meta: generic,
+            kind: crate::error::UpdateFrameworkErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::UpdateFrameworkError {
+                meta: generic,
+                kind: crate::error::UpdateFrameworkErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateFrameworkError {
+                meta: generic,
+                kind: crate::error::UpdateFrameworkErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateFrameworkError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateFrameworkError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_framework_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateFrameworkOutput, crate::error::UpdateFrameworkError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_framework_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_update_framework(response.body().as_ref(), output)
+                .map_err(crate::error::UpdateFrameworkError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_global_settings_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::UpdateGlobalSettingsOutput,
     crate::error::UpdateGlobalSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5701,7 +7005,7 @@ pub fn parse_update_recovery_point_lifecycle_error(
     crate::output::UpdateRecoveryPointLifecycleOutput,
     crate::error::UpdateRecoveryPointLifecycleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRecoveryPointLifecycleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5829,7 +7133,7 @@ pub fn parse_update_region_settings_error(
     crate::output::UpdateRegionSettingsOutput,
     crate::error::UpdateRegionSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRegionSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5909,6 +7213,137 @@ pub fn parse_update_region_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_region_settings_output::Builder::default();
         let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_report_plan_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateReportPlanOutput, crate::error::UpdateReportPlanError>
+{
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UpdateReportPlanError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UpdateReportPlanError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "ConflictException" => crate::error::UpdateReportPlanError {
+            meta: generic,
+            kind: crate::error::UpdateReportPlanErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InvalidParameterValueException" => crate::error::UpdateReportPlanError {
+            meta: generic,
+            kind: crate::error::UpdateReportPlanErrorKind::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "MissingParameterValueException" => crate::error::UpdateReportPlanError {
+            meta: generic,
+            kind: crate::error::UpdateReportPlanErrorKind::MissingParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::missing_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportPlanError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ResourceNotFoundException" => {
+            crate::error::UpdateReportPlanError {
+                meta: generic,
+                kind: crate::error::UpdateReportPlanErrorKind::ResourceNotFoundException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::resource_not_found_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_resource_not_found_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateReportPlanError {
+                meta: generic,
+                kind: crate::error::UpdateReportPlanErrorKind::ServiceUnavailableException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::UpdateReportPlanError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::UpdateReportPlanError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_update_report_plan_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UpdateReportPlanOutput, crate::error::UpdateReportPlanError>
+{
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::update_report_plan_output::Builder::default();
+        let _ = response;
+        output =
+            crate::json_deser::deser_operation_update_report_plan(response.body().as_ref(), output)
+                .map_err(crate::error::UpdateReportPlanError::unhandled)?;
         output.build()
     })
 }

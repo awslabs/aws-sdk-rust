@@ -6,7 +6,7 @@ pub fn parse_describe_dimension_keys_error(
     crate::output::DescribeDimensionKeysOutput,
     crate::error::DescribeDimensionKeysError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDimensionKeysError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -109,7 +109,7 @@ pub fn parse_get_dimension_key_details_error(
     crate::output::GetDimensionKeyDetailsOutput,
     crate::error::GetDimensionKeyDetailsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDimensionKeyDetailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -216,7 +216,7 @@ pub fn parse_get_resource_metrics_error(
     crate::output::GetResourceMetricsOutput,
     crate::error::GetResourceMetricsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourceMetricsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -3,7 +3,7 @@
 pub fn parse_cancel_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelJobOutput, crate::error::CancelJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -156,7 +156,7 @@ pub fn parse_cancel_job_response(
 pub fn parse_create_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -311,7 +311,7 @@ pub fn parse_create_job_response(
 pub fn parse_create_pipeline_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreatePipelineOutput, crate::error::CreatePipelineError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePipelineError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -467,7 +467,7 @@ pub fn parse_create_pipeline_response(
 pub fn parse_create_preset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreatePresetOutput, crate::error::CreatePresetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreatePresetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -602,7 +602,7 @@ pub fn parse_create_preset_response(
 pub fn parse_delete_pipeline_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePipelineOutput, crate::error::DeletePipelineError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePipelineError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -755,7 +755,7 @@ pub fn parse_delete_pipeline_response(
 pub fn parse_delete_preset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePresetOutput, crate::error::DeletePresetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePresetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -890,7 +890,7 @@ pub fn parse_list_jobs_by_pipeline_error(
     crate::output::ListJobsByPipelineOutput,
     crate::error::ListJobsByPipelineError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListJobsByPipelineError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1031,7 +1031,7 @@ pub fn parse_list_jobs_by_status_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListJobsByStatusOutput, crate::error::ListJobsByStatusError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListJobsByStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1169,7 +1169,7 @@ pub fn parse_list_jobs_by_status_response(
 pub fn parse_list_pipelines_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPipelinesOutput, crate::error::ListPipelinesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPipelinesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1284,7 +1284,7 @@ pub fn parse_list_pipelines_response(
 pub fn parse_list_presets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPresetsOutput, crate::error::ListPresetsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPresetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1398,7 +1398,7 @@ pub fn parse_list_presets_response(
 pub fn parse_read_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReadJobOutput, crate::error::ReadJobError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReadJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1532,7 +1532,7 @@ pub fn parse_read_job_response(
 pub fn parse_read_pipeline_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReadPipelineOutput, crate::error::ReadPipelineError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReadPipelineError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1666,7 +1666,7 @@ pub fn parse_read_pipeline_response(
 pub fn parse_read_preset_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReadPresetOutput, crate::error::ReadPresetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ReadPresetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1800,7 +1800,7 @@ pub fn parse_read_preset_response(
 pub fn parse_test_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TestRoleOutput, crate::error::TestRoleError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TestRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1934,7 +1934,7 @@ pub fn parse_test_role_response(
 pub fn parse_update_pipeline_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdatePipelineOutput, crate::error::UpdatePipelineError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePipelineError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2093,7 +2093,7 @@ pub fn parse_update_pipeline_notifications_error(
     crate::output::UpdatePipelineNotificationsOutput,
     crate::error::UpdatePipelineNotificationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePipelineNotificationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2263,7 +2263,7 @@ pub fn parse_update_pipeline_status_error(
     crate::output::UpdatePipelineStatusOutput,
     crate::error::UpdatePipelineStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePipelineStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

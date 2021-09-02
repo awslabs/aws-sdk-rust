@@ -6,7 +6,7 @@ pub fn parse_associate_firewall_rule_group_error(
     crate::output::AssociateFirewallRuleGroupOutput,
     crate::error::AssociateFirewallRuleGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateFirewallRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -197,7 +197,7 @@ pub fn parse_associate_resolver_endpoint_ip_address_error(
     crate::output::AssociateResolverEndpointIpAddressOutput,
     crate::error::AssociateResolverEndpointIpAddressError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateResolverEndpointIpAddressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -338,7 +338,7 @@ pub fn parse_associate_resolver_query_log_config_error(
     crate::output::AssociateResolverQueryLogConfigOutput,
     crate::error::AssociateResolverQueryLogConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateResolverQueryLogConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -491,7 +491,7 @@ pub fn parse_associate_resolver_rule_error(
     crate::output::AssociateResolverRuleOutput,
     crate::error::AssociateResolverRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateResolverRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -695,7 +695,7 @@ pub fn parse_create_firewall_domain_list_error(
     crate::output::CreateFirewallDomainListOutput,
     crate::error::CreateFirewallDomainListError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFirewallDomainListError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -841,7 +841,7 @@ pub fn parse_create_firewall_rule_error(
     crate::output::CreateFirewallRuleOutput,
     crate::error::CreateFirewallRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFirewallRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1003,7 +1003,7 @@ pub fn parse_create_firewall_rule_group_error(
     crate::output::CreateFirewallRuleGroupOutput,
     crate::error::CreateFirewallRuleGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateFirewallRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1149,7 +1149,7 @@ pub fn parse_create_resolver_endpoint_error(
     crate::output::CreateResolverEndpointOutput,
     crate::error::CreateResolverEndpointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateResolverEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1337,7 +1337,7 @@ pub fn parse_create_resolver_query_log_config_error(
     crate::output::CreateResolverQueryLogConfigOutput,
     crate::error::CreateResolverQueryLogConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateResolverQueryLogConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1551,7 +1551,7 @@ pub fn parse_create_resolver_rule_error(
     crate::output::CreateResolverRuleOutput,
     crate::error::CreateResolverRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateResolverRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1755,7 +1755,7 @@ pub fn parse_delete_firewall_domain_list_error(
     crate::output::DeleteFirewallDomainListOutput,
     crate::error::DeleteFirewallDomainListError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFirewallDomainListError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1900,7 +1900,7 @@ pub fn parse_delete_firewall_rule_error(
     crate::output::DeleteFirewallRuleOutput,
     crate::error::DeleteFirewallRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFirewallRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2020,7 +2020,7 @@ pub fn parse_delete_firewall_rule_group_error(
     crate::output::DeleteFirewallRuleGroupOutput,
     crate::error::DeleteFirewallRuleGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteFirewallRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2186,7 +2186,7 @@ pub fn parse_delete_resolver_endpoint_error(
     crate::output::DeleteResolverEndpointOutput,
     crate::error::DeleteResolverEndpointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteResolverEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2332,7 +2332,7 @@ pub fn parse_delete_resolver_query_log_config_error(
     crate::output::DeleteResolverQueryLogConfigOutput,
     crate::error::DeleteResolverQueryLogConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteResolverQueryLogConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2504,7 +2504,7 @@ pub fn parse_delete_resolver_rule_error(
     crate::output::DeleteResolverRuleOutput,
     crate::error::DeleteResolverRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteResolverRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2646,7 +2646,7 @@ pub fn parse_disassociate_firewall_rule_group_error(
     crate::output::DisassociateFirewallRuleGroupOutput,
     crate::error::DisassociateFirewallRuleGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateFirewallRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2815,7 +2815,7 @@ pub fn parse_disassociate_resolver_endpoint_ip_address_error(
     crate::output::DisassociateResolverEndpointIpAddressOutput,
     crate::error::DisassociateResolverEndpointIpAddressError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateResolverEndpointIpAddressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2944,7 +2944,7 @@ pub fn parse_disassociate_resolver_query_log_config_error(
     crate::output::DisassociateResolverQueryLogConfigOutput,
     crate::error::DisassociateResolverQueryLogConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateResolverQueryLogConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3071,7 +3071,7 @@ pub fn parse_disassociate_resolver_rule_error(
     crate::output::DisassociateResolverRuleOutput,
     crate::error::DisassociateResolverRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateResolverRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3194,7 +3194,7 @@ pub fn parse_get_firewall_config_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetFirewallConfigOutput, crate::error::GetFirewallConfigError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFirewallConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3333,7 +3333,7 @@ pub fn parse_get_firewall_domain_list_error(
     crate::output::GetFirewallDomainListOutput,
     crate::error::GetFirewallDomainListError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFirewallDomainListError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3453,7 +3453,7 @@ pub fn parse_get_firewall_rule_group_error(
     crate::output::GetFirewallRuleGroupOutput,
     crate::error::GetFirewallRuleGroupError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFirewallRuleGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3573,7 +3573,7 @@ pub fn parse_get_firewall_rule_group_association_error(
     crate::output::GetFirewallRuleGroupAssociationOutput,
     crate::error::GetFirewallRuleGroupAssociationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFirewallRuleGroupAssociationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3670,7 +3670,7 @@ pub fn parse_get_firewall_rule_group_policy_error(
     crate::output::GetFirewallRuleGroupPolicyOutput,
     crate::error::GetFirewallRuleGroupPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFirewallRuleGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3819,7 +3819,7 @@ pub fn parse_get_resolver_dnssec_config_error(
     crate::output::GetResolverDnssecConfigOutput,
     crate::error::GetResolverDnssecConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverDnssecConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3986,7 +3986,7 @@ pub fn parse_get_resolver_endpoint_error(
     crate::output::GetResolverEndpointOutput,
     crate::error::GetResolverEndpointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4107,7 +4107,7 @@ pub fn parse_get_resolver_query_log_config_error(
     crate::output::GetResolverQueryLogConfigOutput,
     crate::error::GetResolverQueryLogConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverQueryLogConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4278,7 +4278,7 @@ pub fn parse_get_resolver_query_log_config_association_error(
     crate::output::GetResolverQueryLogConfigAssociationOutput,
     crate::error::GetResolverQueryLogConfigAssociationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverQueryLogConfigAssociationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4405,7 +4405,7 @@ pub fn parse_get_resolver_query_log_config_policy_error(
     crate::output::GetResolverQueryLogConfigPolicyOutput,
     crate::error::GetResolverQueryLogConfigPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverQueryLogConfigPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4513,7 +4513,7 @@ pub fn parse_get_resolver_query_log_config_policy_response(
 pub fn parse_get_resolver_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetResolverRuleOutput, crate::error::GetResolverRuleError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4629,7 +4629,7 @@ pub fn parse_get_resolver_rule_association_error(
     crate::output::GetResolverRuleAssociationOutput,
     crate::error::GetResolverRuleAssociationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverRuleAssociationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4758,7 +4758,7 @@ pub fn parse_get_resolver_rule_policy_error(
     crate::output::GetResolverRulePolicyOutput,
     crate::error::GetResolverRulePolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResolverRulePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4859,7 +4859,7 @@ pub fn parse_import_firewall_domains_error(
     crate::output::ImportFirewallDomainsOutput,
     crate::error::ImportFirewallDomainsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportFirewallDomainsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5042,7 +5042,7 @@ pub fn parse_list_firewall_configs_error(
     crate::output::ListFirewallConfigsOutput,
     crate::error::ListFirewallConfigsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallConfigsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5163,7 +5163,7 @@ pub fn parse_list_firewall_domain_lists_error(
     crate::output::ListFirewallDomainListsOutput,
     crate::error::ListFirewallDomainListsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallDomainListsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5288,7 +5288,7 @@ pub fn parse_list_firewall_domains_error(
     crate::output::ListFirewallDomainsOutput,
     crate::error::ListFirewallDomainsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallDomainsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5429,7 +5429,7 @@ pub fn parse_list_firewall_rule_group_associations_error(
     crate::output::ListFirewallRuleGroupAssociationsOutput,
     crate::error::ListFirewallRuleGroupAssociationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallRuleGroupAssociationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5528,7 +5528,7 @@ pub fn parse_list_firewall_rule_groups_error(
     crate::output::ListFirewallRuleGroupsOutput,
     crate::error::ListFirewallRuleGroupsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallRuleGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5651,7 +5651,7 @@ pub fn parse_list_firewall_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListFirewallRulesOutput, crate::error::ListFirewallRulesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFirewallRulesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5790,7 +5790,7 @@ pub fn parse_list_resolver_dnssec_configs_error(
     crate::output::ListResolverDnssecConfigsOutput,
     crate::error::ListResolverDnssecConfigsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverDnssecConfigsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5961,7 +5961,7 @@ pub fn parse_list_resolver_endpoint_ip_addresses_error(
     crate::output::ListResolverEndpointIpAddressesOutput,
     crate::error::ListResolverEndpointIpAddressesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverEndpointIpAddressesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6072,7 +6072,7 @@ pub fn parse_list_resolver_endpoints_error(
     crate::output::ListResolverEndpointsOutput,
     crate::error::ListResolverEndpointsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverEndpointsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6214,7 +6214,7 @@ pub fn parse_list_resolver_query_log_config_associations_error(
     crate::output::ListResolverQueryLogConfigAssociationsOutput,
     crate::error::ListResolverQueryLogConfigAssociationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverQueryLogConfigAssociationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6343,7 +6343,7 @@ pub fn parse_list_resolver_query_log_configs_error(
     crate::output::ListResolverQueryLogConfigsOutput,
     crate::error::ListResolverQueryLogConfigsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverQueryLogConfigsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6514,7 +6514,7 @@ pub fn parse_list_resolver_rule_associations_error(
     crate::output::ListResolverRuleAssociationsOutput,
     crate::error::ListResolverRuleAssociationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverRuleAssociationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6663,7 +6663,7 @@ pub fn parse_list_resolver_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResolverRulesOutput, crate::error::ListResolverRulesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResolverRulesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6803,7 +6803,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6965,7 +6965,7 @@ pub fn parse_put_firewall_rule_group_policy_error(
     crate::output::PutFirewallRuleGroupPolicyOutput,
     crate::error::PutFirewallRuleGroupPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutFirewallRuleGroupPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7114,7 +7114,7 @@ pub fn parse_put_resolver_query_log_config_policy_error(
     crate::output::PutResolverQueryLogConfigPolicyOutput,
     crate::error::PutResolverQueryLogConfigPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutResolverQueryLogConfigPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7239,7 +7239,7 @@ pub fn parse_put_resolver_rule_policy_error(
     crate::output::PutResolverRulePolicyOutput,
     crate::error::PutResolverRulePolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutResolverRulePolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7358,7 +7358,7 @@ pub fn parse_put_resolver_rule_policy_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7531,7 +7531,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7665,7 +7665,7 @@ pub fn parse_update_firewall_config_error(
     crate::output::UpdateFirewallConfigOutput,
     crate::error::UpdateFirewallConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7806,7 +7806,7 @@ pub fn parse_update_firewall_domains_error(
     crate::output::UpdateFirewallDomainsOutput,
     crate::error::UpdateFirewallDomainsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallDomainsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7989,7 +7989,7 @@ pub fn parse_update_firewall_rule_error(
     crate::output::UpdateFirewallRuleOutput,
     crate::error::UpdateFirewallRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8151,7 +8151,7 @@ pub fn parse_update_firewall_rule_group_association_error(
     crate::output::UpdateFirewallRuleGroupAssociationOutput,
     crate::error::UpdateFirewallRuleGroupAssociationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateFirewallRuleGroupAssociationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8278,7 +8278,7 @@ pub fn parse_update_resolver_dnssec_config_error(
     crate::output::UpdateResolverDnssecConfigOutput,
     crate::error::UpdateResolverDnssecConfigError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateResolverDnssecConfigError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8449,7 +8449,7 @@ pub fn parse_update_resolver_endpoint_error(
     crate::output::UpdateResolverEndpointOutput,
     crate::error::UpdateResolverEndpointError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateResolverEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8595,7 +8595,7 @@ pub fn parse_update_resolver_rule_error(
     crate::output::UpdateResolverRuleOutput,
     crate::error::UpdateResolverRuleError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateResolverRuleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

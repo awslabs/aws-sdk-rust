@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_types::region::ProvideRegion;
-use kms::{Client, Config, Error, Region, PKG_VERSION};
+use aws_config::meta::region::RegionProviderChain;
+use kms::{Client, Error, Region, PKG_VERSION};
 use std::process;
 use structopt::StructOpt;
 
@@ -12,7 +12,7 @@ use structopt::StructOpt;
 struct Opt {
     /// The default AWS Region.
     #[structopt(short, long)]
-    default_region: Option<String>,
+    region: Option<String>,
 
     /// The # of bytes. Must be less than 1024.
     #[structopt(short, long)]
@@ -37,15 +37,15 @@ async fn main() -> Result<(), Error> {
 
     let Opt {
         length,
-        default_region,
+        region,
         verbose,
     } = Opt::from_args();
 
-    let region = default_region
-        .as_ref()
-        .map(|region| Region::new(region.clone()))
-        .or_else(|| aws_types::region::default_provider().region())
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     // Trap out-of-range-values:
     match length {
@@ -60,13 +60,10 @@ async fn main() -> Result<(), Error> {
 
     if verbose {
         println!("KMS version: {}", PKG_VERSION);
-        println!("Region:      {:?}", &region);
+        println!("Region:      {:?}", shared_config.region().unwrap());
         println!("Length:      {}", &length);
         println!();
     }
-
-    let conf = Config::builder().region(region).build();
-    let client = Client::from_conf(conf);
 
     let resp = client
         .generate_random()

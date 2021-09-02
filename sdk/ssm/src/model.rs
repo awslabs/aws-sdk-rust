@@ -13363,7 +13363,7 @@ impl std::fmt::Debug for Parameter {
         let mut formatter = f.debug_struct("Parameter");
         formatter.field("name", &self.name);
         formatter.field("r#type", &self.r#type);
-        formatter.field("value", &self.value);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("version", &self.version);
         formatter.field("selector", &self.selector);
         formatter.field("source_result", &self.source_result);
@@ -13664,7 +13664,7 @@ impl std::fmt::Debug for ParameterHistory {
         formatter.field("last_modified_date", &self.last_modified_date);
         formatter.field("last_modified_user", &self.last_modified_user);
         formatter.field("description", &self.description);
-        formatter.field("value", &self.value);
+        formatter.field("value", &"*** Sensitive Data Redacted ***");
         formatter.field("allowed_pattern", &self.allowed_pattern);
         formatter.field("version", &self.version);
         formatter.field("labels", &self.labels);

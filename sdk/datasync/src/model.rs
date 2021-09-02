@@ -35,14 +35,14 @@ pub struct Options {
     /// protect against overwriting those changes. </p>
     /// <p>Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
     /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>
-    /// in the <i>AWS DataSync
+    /// in the <i>DataSync
     /// User Guide</i>.</p>
     pub overwrite_mode: std::option::Option<crate::model::OverwriteMode>,
     /// <p>A file metadata value that shows the last time a file was accessed (that is, when the
     /// file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync
     /// attempts to preserve the original <code>Atime</code> attribute on all source files (that is,
     /// the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not
-    /// fully standard across platforms, so AWS DataSync can only do this on a best-effort basis. </p>
+    /// fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
     /// <p>Default value: BEST_EFFORT.</p>
     /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value
     /// (recommended).</p>
@@ -82,18 +82,18 @@ pub struct Options {
     /// <p>A value that specifies whether files in the destination that don't exist in the source
     /// file system should be preserved. This option can affect your storage cost.
     /// If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed
-    /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+    /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User
     /// Guide</i>.</p>
     /// <p>Default value: PRESERVE.</p>
     /// <p>PRESERVE: Ignore such destination files (recommended). </p>
     /// <p>REMOVE: Delete destination files that aren’t present in the source.</p>
     pub preserve_deleted_files: std::option::Option<crate::model::PreserveDeletedFiles>,
-    /// <p>A value that determines whether AWS DataSync should preserve the metadata of block
+    /// <p>A value that determines whether DataSync should preserve the metadata of block
     /// and character devices in the source file system, and re-create the files with that device name
     /// and metadata on the destination. DataSync does not copy the contents of such devices, only the
     /// name and metadata. </p>
     /// <note>
-    /// <p>AWS DataSync can't sync the actual contents of such devices, because they are
+    /// <p>DataSync can't sync the actual contents of such devices, because they are
     /// nonterminal and don't return an end-of-file (EOF) marker.</p>
     /// </note>
     /// <p>Default value: NONE.</p>
@@ -109,11 +109,11 @@ pub struct Options {
     /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
     /// <p>NONE: Ignore permissions. </p>
     /// <note>
-    /// <p>AWS DataSync can preserve extant permissions of a source location.</p>
+    /// <p>DataSync can preserve extant permissions of a source location.</p>
     /// </note>
     pub posix_permissions: std::option::Option<crate::model::PosixPermissions>,
-    /// <p>A value that limits the bandwidth used by AWS DataSync. For example, if you want
-    /// AWS DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+    /// <p>A value that limits the bandwidth used by DataSync. For example, if you want
+    /// DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
     /// (<code>=1024*1024</code>).</p>
     pub bytes_per_second: std::option::Option<i64>,
     /// <p>A value that determines whether tasks should be queued before executing the tasks. If set
@@ -265,7 +265,7 @@ pub mod options {
         /// protect against overwriting those changes. </p>
         /// <p>Some storage classes have specific behaviors that can affect your S3 storage cost. For detailed information, see
         /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a>
-        /// in the <i>AWS DataSync
+        /// in the <i>DataSync
         /// User Guide</i>.</p>
         pub fn overwrite_mode(mut self, input: crate::model::OverwriteMode) -> Self {
             self.overwrite_mode = Some(input);
@@ -282,7 +282,7 @@ pub mod options {
         /// file was read or written to). If you set <code>Atime</code> to BEST_EFFORT, DataSync
         /// attempts to preserve the original <code>Atime</code> attribute on all source files (that is,
         /// the version before the PREPARING phase). However, <code>Atime</code>'s behavior is not
-        /// fully standard across platforms, so AWS DataSync can only do this on a best-effort basis. </p>
+        /// fully standard across platforms, so DataSync can only do this on a best-effort basis. </p>
         /// <p>Default value: BEST_EFFORT.</p>
         /// <p>BEST_EFFORT: Attempt to preserve the per-file <code>Atime</code> value
         /// (recommended).</p>
@@ -350,7 +350,7 @@ pub mod options {
         /// <p>A value that specifies whether files in the destination that don't exist in the source
         /// file system should be preserved. This option can affect your storage cost.
         /// If your task deletes objects, you might incur minimum storage duration charges for certain storage classes. For detailed
-        /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>AWS DataSync User
+        /// information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when working with Amazon S3 storage classes in DataSync </a> in the <i>DataSync User
         /// Guide</i>.</p>
         /// <p>Default value: PRESERVE.</p>
         /// <p>PRESERVE: Ignore such destination files (recommended). </p>
@@ -366,12 +366,12 @@ pub mod options {
             self.preserve_deleted_files = input;
             self
         }
-        /// <p>A value that determines whether AWS DataSync should preserve the metadata of block
+        /// <p>A value that determines whether DataSync should preserve the metadata of block
         /// and character devices in the source file system, and re-create the files with that device name
         /// and metadata on the destination. DataSync does not copy the contents of such devices, only the
         /// name and metadata. </p>
         /// <note>
-        /// <p>AWS DataSync can't sync the actual contents of such devices, because they are
+        /// <p>DataSync can't sync the actual contents of such devices, because they are
         /// nonterminal and don't return an end-of-file (EOF) marker.</p>
         /// </note>
         /// <p>Default value: NONE.</p>
@@ -397,7 +397,7 @@ pub mod options {
         /// <p>PRESERVE: Preserve POSIX-style permissions (recommended).</p>
         /// <p>NONE: Ignore permissions. </p>
         /// <note>
-        /// <p>AWS DataSync can preserve extant permissions of a source location.</p>
+        /// <p>DataSync can preserve extant permissions of a source location.</p>
         /// </note>
         pub fn posix_permissions(mut self, input: crate::model::PosixPermissions) -> Self {
             self.posix_permissions = Some(input);
@@ -410,8 +410,8 @@ pub mod options {
             self.posix_permissions = input;
             self
         }
-        /// <p>A value that limits the bandwidth used by AWS DataSync. For example, if you want
-        /// AWS DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
+        /// <p>A value that limits the bandwidth used by DataSync. For example, if you want
+        /// DataSync to use a maximum of 1 MB, set this value to <code>1048576</code>
         /// (<code>=1024*1024</code>).</p>
         pub fn bytes_per_second(mut self, input: i64) -> Self {
             self.bytes_per_second = Some(input);
@@ -1228,65 +1228,12 @@ impl AsRef<str> for VerifyMode {
     }
 }
 
-/// <p>Specifies the schedule you want your task to use for repeated executions. For more
-/// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct TaskSchedule {
-    /// <p>A cron expression that specifies when AWS DataSync initiates a scheduled transfer from a
-    /// source to a destination location. </p>
-    pub schedule_expression: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for TaskSchedule {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("TaskSchedule");
-        formatter.field("schedule_expression", &self.schedule_expression);
-        formatter.finish()
-    }
-}
-/// See [`TaskSchedule`](crate::model::TaskSchedule)
-pub mod task_schedule {
-    /// A builder for [`TaskSchedule`](crate::model::TaskSchedule)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) schedule_expression: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>A cron expression that specifies when AWS DataSync initiates a scheduled transfer from a
-        /// source to a destination location. </p>
-        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
-            self.schedule_expression = Some(input.into());
-            self
-        }
-        pub fn set_schedule_expression(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.schedule_expression = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`TaskSchedule`](crate::model::TaskSchedule)
-        pub fn build(self) -> crate::model::TaskSchedule {
-            crate::model::TaskSchedule {
-                schedule_expression: self.schedule_expression,
-            }
-        }
-    }
-}
-impl TaskSchedule {
-    /// Creates a new builder-style object to manufacture [`TaskSchedule`](crate::model::TaskSchedule)
-    pub fn builder() -> crate::model::task_schedule::Builder {
-        crate::model::task_schedule::Builder::default()
-    }
-}
-
 /// <p>Specifies which files, folders, and objects to include or exclude when transferring files
 /// from source to destination.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct FilterRule {
-    /// <p>The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule
+    /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule
     /// type.</p>
     pub filter_type: std::option::Option<crate::model::FilterType>,
     /// <p>A single filter string that consists of the patterns to include or exclude. The patterns
@@ -1314,7 +1261,7 @@ pub mod filter_rule {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The type of filter rule to apply. AWS DataSync only supports the SIMPLE_PATTERN rule
+        /// <p>The type of filter rule to apply. DataSync only supports the SIMPLE_PATTERN rule
         /// type.</p>
         pub fn filter_type(mut self, input: crate::model::FilterType) -> Self {
             self.filter_type = Some(input);
@@ -1400,6 +1347,59 @@ impl FilterType {
 impl AsRef<str> for FilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
+    }
+}
+
+/// <p>Specifies the schedule you want your task to use for repeated executions. For more
+/// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for Rules</a>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TaskSchedule {
+    /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a
+    /// source to a destination location. </p>
+    pub schedule_expression: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for TaskSchedule {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TaskSchedule");
+        formatter.field("schedule_expression", &self.schedule_expression);
+        formatter.finish()
+    }
+}
+/// See [`TaskSchedule`](crate::model::TaskSchedule)
+pub mod task_schedule {
+    /// A builder for [`TaskSchedule`](crate::model::TaskSchedule)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) schedule_expression: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>A cron expression that specifies when DataSync initiates a scheduled transfer from a
+        /// source to a destination location. </p>
+        pub fn schedule_expression(mut self, input: impl Into<std::string::String>) -> Self {
+            self.schedule_expression = Some(input.into());
+            self
+        }
+        pub fn set_schedule_expression(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.schedule_expression = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`TaskSchedule`](crate::model::TaskSchedule)
+        pub fn build(self) -> crate::model::TaskSchedule {
+            crate::model::TaskSchedule {
+                schedule_expression: self.schedule_expression,
+            }
+        }
+    }
+}
+impl TaskSchedule {
+    /// Creates a new builder-style object to manufacture [`TaskSchedule`](crate::model::TaskSchedule)
+    pub fn builder() -> crate::model::task_schedule::Builder {
+        crate::model::task_schedule::Builder::default()
     }
 }
 
@@ -1777,9 +1777,9 @@ impl OnPremConfig {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagListEntry {
-    /// <p>The key for an AWS resource tag.</p>
+    /// <p>The key for an Amazon Web Services resource tag.</p>
     pub key: std::option::Option<std::string::String>,
-    /// <p>The value for an AWS resource tag.</p>
+    /// <p>The value for an Amazon Web Services resource tag.</p>
     pub value: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for TagListEntry {
@@ -1800,7 +1800,7 @@ pub mod tag_list_entry {
         pub(crate) value: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The key for an AWS resource tag.</p>
+        /// <p>The key for an Amazon Web Services resource tag.</p>
         pub fn key(mut self, input: impl Into<std::string::String>) -> Self {
             self.key = Some(input.into());
             self
@@ -1809,7 +1809,7 @@ pub mod tag_list_entry {
             self.key = input;
             self
         }
-        /// <p>The value for an AWS resource tag.</p>
+        /// <p>The value for an Amazon Web Services resource tag.</p>
         pub fn value(mut self, input: impl Into<std::string::String>) -> Self {
             self.value = Some(input.into());
             self
@@ -2714,24 +2714,24 @@ impl AsRef<str> for AgentStatus {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TaskExecutionResultDetail {
-    /// <p>The total time in milliseconds that AWS DataSync spent in the PREPARING phase.
+    /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
     /// </p>
     pub prepare_duration: std::option::Option<i64>,
     /// <p>The status of the PREPARING phase.</p>
     pub prepare_status: std::option::Option<crate::model::PhaseStatus>,
-    /// <p>The total time in milliseconds that AWS DataSync took to transfer the file from the source to the destination location.</p>
+    /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
     pub total_duration: std::option::Option<i64>,
-    /// <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+    /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
     /// phase.</p>
     pub transfer_duration: std::option::Option<i64>,
     /// <p>The status of the TRANSFERRING phase.</p>
     pub transfer_status: std::option::Option<crate::model::PhaseStatus>,
-    /// <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+    /// <p>The total time in milliseconds that DataSync spent in the VERIFYING
     /// phase.</p>
     pub verify_duration: std::option::Option<i64>,
     /// <p>The status of the VERIFYING phase.</p>
     pub verify_status: std::option::Option<crate::model::PhaseStatus>,
-    /// <p>Errors that AWS DataSync encountered during execution of the task. You can use this
+    /// <p>Errors that DataSync encountered during execution of the task. You can use this
     /// error code to help troubleshoot issues.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Detailed description of an error that was encountered during the task execution. You
@@ -2770,7 +2770,7 @@ pub mod task_execution_result_detail {
         pub(crate) error_detail: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The total time in milliseconds that AWS DataSync spent in the PREPARING phase.
+        /// <p>The total time in milliseconds that DataSync spent in the PREPARING phase.
         /// </p>
         pub fn prepare_duration(mut self, input: i64) -> Self {
             self.prepare_duration = Some(input);
@@ -2792,7 +2792,7 @@ pub mod task_execution_result_detail {
             self.prepare_status = input;
             self
         }
-        /// <p>The total time in milliseconds that AWS DataSync took to transfer the file from the source to the destination location.</p>
+        /// <p>The total time in milliseconds that DataSync took to transfer the file from the source to the destination location.</p>
         pub fn total_duration(mut self, input: i64) -> Self {
             self.total_duration = Some(input);
             self
@@ -2801,7 +2801,7 @@ pub mod task_execution_result_detail {
             self.total_duration = input;
             self
         }
-        /// <p>The total time in milliseconds that AWS DataSync spent in the TRANSFERRING
+        /// <p>The total time in milliseconds that DataSync spent in the TRANSFERRING
         /// phase.</p>
         pub fn transfer_duration(mut self, input: i64) -> Self {
             self.transfer_duration = Some(input);
@@ -2823,7 +2823,7 @@ pub mod task_execution_result_detail {
             self.transfer_status = input;
             self
         }
-        /// <p>The total time in milliseconds that AWS DataSync spent in the VERIFYING
+        /// <p>The total time in milliseconds that DataSync spent in the VERIFYING
         /// phase.</p>
         pub fn verify_duration(mut self, input: i64) -> Self {
             self.verify_duration = Some(input);
@@ -2845,7 +2845,7 @@ pub mod task_execution_result_detail {
             self.verify_status = input;
             self
         }
-        /// <p>Errors that AWS DataSync encountered during execution of the task. You can use this
+        /// <p>Errors that DataSync encountered during execution of the task. You can use this
         /// error code to help troubleshoot issues.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
@@ -2941,10 +2941,10 @@ impl AsRef<str> for PhaseStatus {
     }
 }
 
-/// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+/// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
 /// that is used to access an Amazon S3 bucket.</p>
 /// <p>For detailed information about using such a role, see Creating a Location for
-/// Amazon S3 in the <i>AWS DataSync User Guide</i>.</p>
+/// Amazon S3 in the <i>DataSync User Guide</i>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct S3Config {

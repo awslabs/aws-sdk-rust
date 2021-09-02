@@ -4,7 +4,7 @@ pub fn parse_create_app_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAppInstanceOutput, crate::error::CreateAppInstanceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAppInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -205,7 +205,7 @@ pub fn parse_create_app_instance_admin_error(
     crate::output::CreateAppInstanceAdminOutput,
     crate::error::CreateAppInstanceAdminError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAppInstanceAdminError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -412,7 +412,7 @@ pub fn parse_create_app_instance_user_error(
     crate::output::CreateAppInstanceUserOutput,
     crate::error::CreateAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -613,7 +613,7 @@ pub fn parse_delete_app_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAppInstanceOutput, crate::error::DeleteAppInstanceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAppInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -788,7 +788,7 @@ pub fn parse_delete_app_instance_admin_error(
     crate::output::DeleteAppInstanceAdminOutput,
     crate::error::DeleteAppInstanceAdminError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAppInstanceAdminError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -990,7 +990,7 @@ pub fn parse_delete_app_instance_user_error(
     crate::output::DeleteAppInstanceUserOutput,
     crate::error::DeleteAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1188,7 +1188,7 @@ pub fn parse_describe_app_instance_error(
     crate::output::DescribeAppInstanceOutput,
     crate::error::DescribeAppInstanceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAppInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1352,7 +1352,7 @@ pub fn parse_describe_app_instance_admin_error(
     crate::output::DescribeAppInstanceAdminOutput,
     crate::error::DescribeAppInstanceAdminError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAppInstanceAdminError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1524,7 +1524,7 @@ pub fn parse_describe_app_instance_user_error(
     crate::output::DescribeAppInstanceUserOutput,
     crate::error::DescribeAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1696,7 +1696,7 @@ pub fn parse_get_app_instance_retention_settings_error(
     crate::output::GetAppInstanceRetentionSettingsOutput,
     crate::error::GetAppInstanceRetentionSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAppInstanceRetentionSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1867,7 +1867,7 @@ pub fn parse_list_app_instance_admins_error(
     crate::output::ListAppInstanceAdminsOutput,
     crate::error::ListAppInstanceAdminsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAppInstanceAdminsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2047,7 +2047,7 @@ pub fn parse_list_app_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAppInstancesOutput, crate::error::ListAppInstancesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAppInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2207,7 +2207,7 @@ pub fn parse_list_app_instance_users_error(
     crate::output::ListAppInstanceUsersOutput,
     crate::error::ListAppInstanceUsersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAppInstanceUsersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2371,7 +2371,7 @@ pub fn parse_put_app_instance_retention_settings_error(
     crate::output::PutAppInstanceRetentionSettingsOutput,
     crate::error::PutAppInstanceRetentionSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutAppInstanceRetentionSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2540,7 +2540,7 @@ pub fn parse_update_app_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAppInstanceOutput, crate::error::UpdateAppInstanceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAppInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2723,7 +2723,7 @@ pub fn parse_update_app_instance_user_error(
     crate::output::UpdateAppInstanceUserOutput,
     crate::error::UpdateAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateAppInstanceUserError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

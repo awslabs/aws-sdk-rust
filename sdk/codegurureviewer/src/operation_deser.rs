@@ -6,7 +6,7 @@ pub fn parse_associate_repository_error(
     crate::output::AssociateRepositoryOutput,
     crate::error::AssociateRepositoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateRepositoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -149,7 +149,7 @@ pub fn parse_create_code_review_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCodeReviewOutput, crate::error::CreateCodeReviewError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCodeReviewError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -310,7 +310,7 @@ pub fn parse_describe_code_review_error(
     crate::output::DescribeCodeReviewOutput,
     crate::error::DescribeCodeReviewError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCodeReviewError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -454,7 +454,7 @@ pub fn parse_describe_recommendation_feedback_error(
     crate::output::DescribeRecommendationFeedbackOutput,
     crate::error::DescribeRecommendationFeedbackError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRecommendationFeedbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -598,7 +598,7 @@ pub fn parse_describe_repository_association_error(
     crate::output::DescribeRepositoryAssociationOutput,
     crate::error::DescribeRepositoryAssociationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRepositoryAssociationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -747,7 +747,7 @@ pub fn parse_disassociate_repository_error(
     crate::output::DisassociateRepositoryOutput,
     crate::error::DisassociateRepositoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateRepositoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -914,7 +914,7 @@ pub fn parse_disassociate_repository_response(
 pub fn parse_list_code_reviews_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListCodeReviewsOutput, crate::error::ListCodeReviewsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCodeReviewsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1033,7 +1033,7 @@ pub fn parse_list_recommendation_feedback_error(
     crate::output::ListRecommendationFeedbackOutput,
     crate::error::ListRecommendationFeedbackError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRecommendationFeedbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1183,7 +1183,7 @@ pub fn parse_list_recommendations_error(
     crate::output::ListRecommendationsOutput,
     crate::error::ListRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1327,7 +1327,7 @@ pub fn parse_list_repository_associations_error(
     crate::output::ListRepositoryAssociationsOutput,
     crate::error::ListRepositoryAssociationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRepositoryAssociationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1434,7 +1434,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1536,7 +1536,7 @@ pub fn parse_put_recommendation_feedback_error(
     crate::output::PutRecommendationFeedbackOutput,
     crate::error::PutRecommendationFeedbackError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutRecommendationFeedbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1678,7 +1678,7 @@ pub fn parse_put_recommendation_feedback_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1769,7 +1769,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

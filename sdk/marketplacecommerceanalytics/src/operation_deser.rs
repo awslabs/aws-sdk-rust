@@ -3,7 +3,7 @@
 pub fn parse_generate_data_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GenerateDataSetOutput, crate::error::GenerateDataSetError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GenerateDataSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -56,7 +56,7 @@ pub fn parse_start_support_data_export_error(
     crate::output::StartSupportDataExportOutput,
     crate::error::StartSupportDataExportError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartSupportDataExportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

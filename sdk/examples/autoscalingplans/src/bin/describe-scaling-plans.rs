@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use autoscalingplans::{Client, Config, Error, Region};
-use aws_types::region::{self, ProvideRegion};
+use autoscalingplans::{Client, Error, Region};
+use aws_config::meta::region::RegionProviderChain;
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
@@ -31,9 +31,10 @@ async fn main() -> Result<(), Error> {
 
     let Opt { region, verbose } = Opt::from_args();
 
-    let region_provider = region::ChainProvider::first_try(region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     if verbose {
         println!(
@@ -42,13 +43,12 @@ async fn main() -> Result<(), Error> {
         );
         println!(
             "Region:                            {:?}",
-            region_provider.region()
+            shared_config.region().unwrap()
         );
         println!();
     }
 
-    let config = Config::builder().region(region_provider).build();
-    let client = Client::from_conf(config);
+    let client = Client::new(&shared_config);
 
     let response = client.describe_scaling_plans().send().await?;
     if let Some(plans) = response.scaling_plans {

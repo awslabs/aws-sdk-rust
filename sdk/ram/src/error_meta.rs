@@ -59,11 +59,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError>,
+        err: smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -83,8 +85,13 @@ impl From<smithy_http::result::SdkError<crate::error::AcceptResourceShareInvitat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateResourceShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AssociateResourceShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateResourceShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AssociateResourceShareError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::AssociateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
@@ -103,11 +110,13 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateResourceShareErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateResourceSharePermissionError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateResourceSharePermissionError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateResourceSharePermissionError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateResourceSharePermissionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -124,8 +133,11 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateResourceSharePerm
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateResourceShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateResourceShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateResourceShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateResourceShareError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
@@ -145,8 +157,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateResourceShareError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteResourceShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourceShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteResourceShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourceShareError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::DeleteResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),
@@ -164,9 +179,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourceShareError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateResourceShareError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateResourceShareError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateResourceShareError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateResourceShareError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -186,11 +205,17 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateResourceShareE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateResourceSharePermissionError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::DisassociateResourceSharePermissionError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateResourceSharePermissionError>,
+        err: smithy_http::result::SdkError<
+            crate::error::DisassociateResourceSharePermissionError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -208,11 +233,13 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateResourceShareP
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::EnableSharingWithAwsOrganizationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::EnableSharingWithAwsOrganizationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::EnableSharingWithAwsOrganizationError>,
+        err: smithy_http::result::SdkError<crate::error::EnableSharingWithAwsOrganizationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -225,8 +252,11 @@ impl From<smithy_http::result::SdkError<crate::error::EnableSharingWithAwsOrgani
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetPermissionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetPermissionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetPermissionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetPermissionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetPermissionErrorKind::InvalidParameterException(inner) => {
@@ -253,8 +283,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetPermissionError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetResourcePoliciesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetResourcePoliciesErrorKind::InvalidNextTokenException(inner) => {
@@ -283,11 +316,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourcePoliciesError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError>,
+        err: smithy_http::result::SdkError<crate::error::GetResourceShareAssociationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -304,9 +339,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourceShareAssociatio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError>,
+        err: smithy_http::result::SdkError<crate::error::GetResourceShareInvitationsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -324,8 +363,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourceShareInvitation
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetResourceSharesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetResourceSharesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetResourceSharesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetResourceSharesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetResourceSharesErrorKind::InvalidNextTokenException(inner) => {
@@ -354,11 +396,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetResourceSharesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPendingInvitationResourcesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPendingInvitationResourcesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListPendingInvitationResourcesError>,
+        err: smithy_http::result::SdkError<crate::error::ListPendingInvitationResourcesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -377,8 +421,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPendingInvitationResou
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPermissionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPermissionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPermissionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPermissionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPermissionsErrorKind::InvalidNextTokenException(inner) => {
@@ -402,8 +449,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPermissionsError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPrincipalsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPrincipalsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPrincipalsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPrincipalsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPrincipalsErrorKind::InvalidNextTokenException(inner) => {
@@ -430,8 +480,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPrincipalsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListResourcesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListResourcesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListResourcesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListResourcesErrorKind::InvalidNextTokenException(inner) => {
@@ -461,11 +514,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListResourcesError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError>,
+        err: smithy_http::result::SdkError<crate::error::ListResourceSharePermissionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -482,8 +537,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListResourceSharePermissio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListResourceTypesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListResourceTypesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListResourceTypesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListResourceTypesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListResourceTypesErrorKind::InvalidNextTokenException(inner) => {
@@ -506,12 +564,16 @@ impl From<smithy_http::result::SdkError<crate::error::ListResourceTypesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PromoteResourceShareCreatedFromPolicyError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::PromoteResourceShareCreatedFromPolicyError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::PromoteResourceShareCreatedFromPolicyError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -530,11 +592,13 @@ impl From<smithy_http::result::SdkError<crate::error::PromoteResourceShareCreate
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError>,
+        err: smithy_http::result::SdkError<crate::error::RejectResourceShareInvitationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -554,8 +618,11 @@ impl From<smithy_http::result::SdkError<crate::error::RejectResourceShareInvitat
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InvalidParameterException(inner) => {
@@ -588,8 +655,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InvalidParameterException(inner) => {
@@ -607,8 +677,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateResourceShareError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateResourceShareError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateResourceShareError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateResourceShareError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::UpdateResourceShareErrorKind::IdempotentParameterMismatchException(inner) => Error::IdempotentParameterMismatchException(inner),

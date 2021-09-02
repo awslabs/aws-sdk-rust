@@ -21,8 +21,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateEndpointError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateEndpointErrorKind::AccessDeniedException(inner) => {
@@ -46,8 +49,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateEndpointError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteEndpointError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteEndpointErrorKind::AccessDeniedException(inner) => {
@@ -68,8 +74,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteEndpointError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListEndpointsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListEndpointsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListEndpointsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListEndpointsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListEndpointsErrorKind::AccessDeniedException(inner) => {

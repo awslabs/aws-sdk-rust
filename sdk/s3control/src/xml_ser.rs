@@ -44,7 +44,7 @@ pub fn serialize_structure_create_access_point_for_object_lambda_input(
 
 pub fn serialize_member_create_bucket_input_create_bucket_configuration(
     input: &crate::model::CreateBucketConfiguration,
-) -> Result<smithy_http::body::SdkBody, String> {
+) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
         let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
@@ -54,7 +54,7 @@ pub fn serialize_member_create_bucket_input_create_bucket_configuration(
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_create_bucket_configuration(&&input, root)
     }
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_structure_create_job_input(
@@ -182,7 +182,7 @@ pub fn serialize_structure_put_access_point_policy_for_object_lambda_input(
 
 pub fn serialize_member_put_bucket_lifecycle_configuration_input_lifecycle_configuration(
     input: &crate::model::LifecycleConfiguration,
-) -> Result<smithy_http::body::SdkBody, String> {
+) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
         let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
@@ -192,7 +192,7 @@ pub fn serialize_member_put_bucket_lifecycle_configuration_input_lifecycle_confi
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_lifecycle_configuration(&&input, root)
     }
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_structure_put_bucket_policy_input(
@@ -213,7 +213,7 @@ pub fn serialize_structure_put_bucket_policy_input(
 
 pub fn serialize_member_put_bucket_tagging_input_tagging(
     input: &crate::model::Tagging,
-) -> Result<smithy_http::body::SdkBody, String> {
+) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
         let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
@@ -223,7 +223,7 @@ pub fn serialize_member_put_bucket_tagging_input_tagging(
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_tagging(&&input, root)
     }
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_structure_put_job_tagging_input(
@@ -251,7 +251,7 @@ pub fn serialize_structure_put_job_tagging_input(
 
 pub fn serialize_member_put_public_access_block_input_public_access_block_configuration(
     input: &crate::model::PublicAccessBlockConfiguration,
-) -> Result<smithy_http::body::SdkBody, String> {
+) -> std::result::Result<std::vec::Vec<u8>, String> {
     let mut out = String::new();
     {
         let mut writer = smithy_xml::encode::XmlWriter::new(&mut out);
@@ -261,7 +261,7 @@ pub fn serialize_member_put_public_access_block_input_public_access_block_config
             .write_ns("http://awss3control.amazonaws.com/doc/2018-08-20/", None);
         crate::xml_ser::serialize_structure_public_access_block_configuration(&&input, root)
     }
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_structure_put_storage_lens_configuration_input(

@@ -268,6 +268,7 @@ impl<T: AsRef<str>> From<T> for MediaType {
     fn from(inp: T) -> Self {
         match inp.as_ref() {
             "application/json" => MediaType::Json,
+            "application/x-amz-json-1.1" => MediaType::Json,
             "application/xml" => MediaType::Xml,
             "application/x-www-form-urlencoded" => MediaType::UrlEncodedForm,
             other => MediaType::Other(other.to_string()),

@@ -3,7 +3,7 @@
 pub fn parse_assume_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssumeRoleOutput, crate::error::AssumeRoleError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssumeRoleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -115,7 +115,7 @@ pub fn parse_assume_role_with_saml_error(
     crate::output::AssumeRoleWithSamlOutput,
     crate::error::AssumeRoleWithSAMLError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -275,7 +275,7 @@ pub fn parse_assume_role_with_web_identity_error(
     crate::output::AssumeRoleWithWebIdentityOutput,
     crate::error::AssumeRoleWithWebIdentityError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -465,7 +465,7 @@ pub fn parse_decode_authorization_message_error(
     crate::output::DecodeAuthorizationMessageOutput,
     crate::error::DecodeAuthorizationMessageError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -521,7 +521,7 @@ pub fn parse_get_access_key_info_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccessKeyInfoOutput, crate::error::GetAccessKeyInfoError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessKeyInfoError::unhandled)?;
     Err(crate::error::GetAccessKeyInfoError::generic(generic))
 }
@@ -547,7 +547,7 @@ pub fn parse_get_caller_identity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCallerIdentityOutput, crate::error::GetCallerIdentityError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCallerIdentityError::unhandled)?;
     Err(crate::error::GetCallerIdentityError::generic(generic))
 }
@@ -575,7 +575,7 @@ pub fn parse_get_federation_token_error(
     crate::output::GetFederationTokenOutput,
     crate::error::GetFederationTokenError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetFederationTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -669,7 +669,7 @@ pub fn parse_get_federation_token_response(
 pub fn parse_get_session_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSessionTokenOutput, crate::error::GetSessionTokenError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSessionTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

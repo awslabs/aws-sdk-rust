@@ -3,8 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-mod credentials;
-pub mod middleware;
-pub mod provider;
+//! AWS authentication middleware used to store and retrieve credentials from the property bag
 
-pub use credentials::Credentials;
+pub mod middleware;
+
+use aws_types::credentials::SharedCredentialsProvider;
+use smithy_http::property_bag::PropertyBag;
+
+pub fn set_provider(bag: &mut PropertyBag, provider: SharedCredentialsProvider) {
+    bag.insert(provider);
+}

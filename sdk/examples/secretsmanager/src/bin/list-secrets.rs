@@ -4,9 +4,9 @@
  */
 use std::process;
 
-use secretsmanager::{Client, Config, Region};
+use secretsmanager::{Client, Region};
 
-use aws_types::region::{EnvironmentProvider, ProvideRegion};
+use aws_config::meta::region::RegionProviderChain;
 
 use structopt::StructOpt;
 
@@ -35,17 +35,18 @@ struct Opt {
 async fn main() {
     let Opt { region, verbose } = Opt::from_args();
 
-    let region = EnvironmentProvider::new()
-        .region()
-        .or_else(|| region.as_ref().map(|region| Region::new(region.clone())))
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let _client = Client::new(&shared_config);
 
     if verbose {
         println!(
             "SecretsManager client version: {}",
             secretsmanager::PKG_VERSION
         );
-        println!("Region: {:?}", &region);
+        println!("Region: {:?}", shared_config.region().unwrap());
 
         SubscriberBuilder::default()
             .with_env_filter("info")
@@ -53,8 +54,7 @@ async fn main() {
             .init();
     }
 
-    let config = Config::builder().region(region).build();
-    let client = Client::from_conf(config);
+    let client = Client::new(&shared_config);
 
     match client.list_secrets().send().await {
         Ok(resp) => {

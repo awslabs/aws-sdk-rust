@@ -1,0 +1,53 @@
+[package]
+name = "aws-config"
+version = "0.1.0"
+authors = ["AWS Rust SDK Team <aws-sdk-rust@amazon.com>", "Russell Cohen <rcoh@amazon.com>"]
+edition = "2018"
+exclude = ["test-data/*"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+default-provider = ["profile", "imds", "meta", "sts", "environment"]
+profile = ["sts", "web-identity-token", "meta", "environment"]
+# note: IMDS currently unsupported
+imds = []
+meta = ["tokio/sync"]
+environment = ["meta"]
+sts = ["aws-sdk-sts", "aws-hyper"]
+web-identity-token = ["sts"]
+sso = []
+
+rustls = ["smithy-client/rustls"]
+native-tls = ["smithy-client/native-tls"]
+rt-tokio = ["smithy-async/rt-tokio"]
+
+default = ["default-provider", "rustls", "rt-tokio"]
+
+[dependencies]
+aws-types = { path = "../aws-types" }
+smithy-async = { path = "../smithy-async" }
+smithy-client = { path = "../smithy-client" }
+tracing = { version = "0.1" }
+tokio = { version = "1", features = ["sync"], optional = true }
+aws-sdk-sts = { path = "../sts", optional = true }
+
+# TODO: remove when middleware stacks are moved inside of clients directly
+aws-hyper = { path = "../aws-hyper", optional = true }
+
+[dev-dependencies]
+futures-util = "0.3.16"
+tracing-test = "0.1.0"
+
+tokio = { version = "1", features = ["full"] }
+# used to test compatibility
+async-trait = "0.1.51"
+env_logger = "0.9.0"
+
+# used for fuzzing profile parsing
+arbitrary = "1.0.2"
+
+# used for test case deserialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+smithy-client = { path = "../smithy-client", features = ["test-util"] }

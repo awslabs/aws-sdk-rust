@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetIceServerConfigError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetIceServerConfigError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetIceServerConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetIceServerConfigError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetIceServerConfigErrorKind::ClientLimitExceededException(inner) => {
@@ -53,8 +56,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetIceServerConfigError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::SendAlexaOfferToMasterError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SendAlexaOfferToMasterErrorKind::ClientLimitExceededException(

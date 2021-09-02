@@ -9,7 +9,8 @@ pub mod delete_lexicon_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
+        /// <p>The name of the lexicon to delete. Must be an existing lexicon in
+        /// the region.</p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -45,12 +46,15 @@ impl DeleteLexiconInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -71,7 +75,7 @@ impl DeleteLexiconInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -150,8 +154,8 @@ pub mod describe_voices_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly
-        /// when processing input text for speech synthesis. </p>
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+        /// used by Amazon Polly when processing input text for speech synthesis. </p>
         pub fn engine(mut self, input: crate::model::Engine) -> Self {
             self.engine = Some(input);
             self
@@ -160,9 +164,10 @@ pub mod describe_voices_input {
             self.engine = input;
             self
         }
-        /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country
-        /// code) for filtering the list of voices returned. If you don't specify this optional parameter,
-        /// all available voices are returned. </p>
+        /// <p> The language identification tag (ISO 639 code for the language
+        /// name-ISO 3166 country code) for filtering the list of voices returned. If
+        /// you don't specify this optional parameter, all available voices are
+        /// returned. </p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
@@ -174,10 +179,11 @@ pub mod describe_voices_input {
             self.language_code = input;
             self
         }
-        /// <p>Boolean value indicating whether to return any bilingual voices that use the specified
-        /// language as an additional language. For instance, if you request all languages that use US
-        /// English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US
-        /// English, that voice will be included if you specify <code>yes</code> but not if you specify
+        /// <p>Boolean value indicating whether to return any bilingual voices that
+        /// use the specified language as an additional language. For instance, if you
+        /// request all languages that use US English (es-US), and there is an Italian
+        /// voice that speaks both Italian (it-IT) and US English, that voice will be
+        /// included if you specify <code>yes</code> but not if you specify
         /// <code>no</code>.</p>
         pub fn include_additional_language_codes(mut self, input: bool) -> Self {
             self.include_additional_language_codes = Some(input);
@@ -190,8 +196,9 @@ pub mod describe_voices_input {
             self.include_additional_language_codes = input;
             self
         }
-        /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code>
-        /// operation. If present, this indicates where to continue the listing.</p>
+        /// <p>An opaque pagination token returned from the previous
+        /// <code>DescribeVoices</code> operation. If present, this indicates where
+        /// to continue the listing.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -236,12 +243,15 @@ impl DescribeVoicesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -262,7 +272,7 @@ impl DescribeVoicesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -380,12 +390,15 @@ impl GetLexiconInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -406,7 +419,7 @@ impl GetLexiconInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -519,12 +532,15 @@ impl GetSpeechSynthesisTaskInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -545,7 +561,7 @@ impl GetSpeechSynthesisTaskInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -622,8 +638,9 @@ pub mod list_lexicons_input {
         pub(crate) next_token: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation.
-        /// If present, indicates where to continue the list of lexicons.</p>
+        /// <p>An opaque pagination token returned from previous
+        /// <code>ListLexicons</code> operation. If present, indicates where to
+        /// continue the list of lexicons.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -661,12 +678,15 @@ impl ListLexiconsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -687,7 +707,7 @@ impl ListLexiconsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -758,7 +778,8 @@ pub mod list_speech_synthesis_tasks_input {
         pub(crate) status: std::option::Option<crate::model::TaskStatus>,
     }
     impl Builder {
-        /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
+        /// <p>Maximum number of speech synthesis tasks returned in a List
+        /// operation.</p>
         pub fn max_results(mut self, input: i32) -> Self {
             self.max_results = Some(input);
             self
@@ -767,8 +788,8 @@ pub mod list_speech_synthesis_tasks_input {
             self.max_results = input;
             self
         }
-        /// <p>The pagination token to use in the next request to continue the listing of speech
-        /// synthesis tasks. </p>
+        /// <p>The pagination token to use in the next request to continue the
+        /// listing of speech synthesis tasks. </p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -777,7 +798,8 @@ pub mod list_speech_synthesis_tasks_input {
             self.next_token = input;
             self
         }
-        /// <p>Status of the speech synthesis tasks returned in a List operation</p>
+        /// <p>Status of the speech synthesis tasks returned in a List
+        /// operation</p>
         pub fn status(mut self, input: crate::model::TaskStatus) -> Self {
             self.status = Some(input);
             self
@@ -820,12 +842,15 @@ impl ListSpeechSynthesisTasksInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = smithy_http::body::SdkBody::from("");
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -846,7 +871,7 @@ impl ListSpeechSynthesisTasksInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -925,8 +950,9 @@ pub mod put_lexicon_input {
         pub(crate) content: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
-        /// That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
+        /// <p>Name of the lexicon. The name must follow the regular express
+        /// format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive
+        /// alphanumeric string up to 20 characters long. </p>
         pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
             self.name = Some(input.into());
             self
@@ -974,6 +1000,7 @@ impl PutLexiconInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_put_lexicon(&self).map_err(|err| {
@@ -981,8 +1008,10 @@ impl PutLexiconInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1003,7 +1032,7 @@ impl PutLexiconInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1089,9 +1118,10 @@ pub mod start_speech_synthesis_task_input {
         pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
     }
     impl Builder {
-        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
-        /// use when processing input text for speech synthesis. Using a voice that is not supported for
-        /// the engine selected will result in an error.</p>
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+        /// for Amazon Polly to use when processing input text for speech synthesis. Using a
+        /// voice that is not supported for the engine selected will result in an
+        /// error.</p>
         pub fn engine(mut self, input: crate::model::Engine) -> Self {
             self.engine = Some(input);
             self
@@ -1100,13 +1130,14 @@ pub mod start_speech_synthesis_task_input {
             self.engine = input;
             self
         }
-        /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a
-        /// bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi
-        /// (hi-IN). </p>
-        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the
-        /// default language of the bilingual voice. The default language for any voice is the one
-        /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
-        /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+        /// <p>Optional language code for the Speech Synthesis request. This is only
+        /// necessary if using a bilingual voice, such as Aditi, which can be used for
+        /// either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
+        /// uses the default language of the bilingual voice. The default language for
+        /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
+        /// parameter. For example, if no language code is specified, Aditi will use
+        /// Indian English rather than Hindi.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
@@ -1131,8 +1162,9 @@ pub mod start_speech_synthesis_task_input {
             self.lexicon_names = input;
             self
         }
-        /// <p>The format in which the returned output will be encoded. For audio stream, this will be
-        /// mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+        /// <p>The format in which the returned output will be encoded. For audio
+        /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
+        /// be json. </p>
         pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
             self.output_format = Some(input);
             self
@@ -1169,10 +1201,11 @@ pub mod start_speech_synthesis_task_input {
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
-        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The
-        /// default value for standard voices is "22050". The default value for neural voices is
-        /// "24000".</p>
-        /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
+        /// and "24000". The default value for standard voices is "22050". The default
+        /// value for neural voices is "24000".</p>
+        /// <p>Valid values for pcm are "8000" and "16000" The default value is
+        /// "16000". </p>
         pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
             self.sample_rate = Some(input.into());
             self
@@ -1181,8 +1214,8 @@ pub mod start_speech_synthesis_task_input {
             self.sample_rate = input;
             self
         }
-        /// <p>ARN for the SNS topic optionally used for providing status notification for a speech
-        /// synthesis task.</p>
+        /// <p>ARN for the SNS topic optionally used for providing status
+        /// notification for a speech synthesis task.</p>
         pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.sns_topic_arn = Some(input.into());
             self
@@ -1207,8 +1240,8 @@ pub mod start_speech_synthesis_task_input {
             self.speech_mark_types = input;
             self
         }
-        /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format
-        /// for the input text. </p>
+        /// <p>The input text to synthesize. If you specify ssml as the TextType,
+        /// follow the SSML format for the input text. </p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
@@ -1217,8 +1250,8 @@ pub mod start_speech_synthesis_task_input {
             self.text = input;
             self
         }
-        /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text.
-        /// </p>
+        /// <p>Specifies whether the input text is plain text or SSML. The default
+        /// value is plain text. </p>
         pub fn text_type(mut self, input: crate::model::TextType) -> Self {
             self.text_type = Some(input);
             self
@@ -1279,6 +1312,7 @@ impl StartSpeechSynthesisTaskInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_start_speech_synthesis_task(&self)
                 .map_err(|err| {
@@ -1286,8 +1320,10 @@ impl StartSpeechSynthesisTaskInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1308,7 +1344,7 @@ impl StartSpeechSynthesisTaskInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1379,25 +1415,28 @@ pub mod synthesize_speech_input {
         pub(crate) voice_id: std::option::Option<crate::model::VoiceId>,
     }
     impl Builder {
-        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
-        /// use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and
-        /// both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+        /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+        /// for Amazon Polly to use when processing input text for speech synthesis. For
+        /// information on Amazon Polly voices and which voices are available in
+        /// standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
         /// <p>
         /// <b>NTTS-only voices</b>
         /// </p>
-        /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be
-        /// set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>,
-        /// this will result in an error. </p>
+        /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is
+        /// required and must be set to <code>neural</code>. If the engine is not
+        /// specified, or is set to <code>standard</code>, this will result in an
+        /// error. </p>
         /// <p>Type: String</p>
-        /// <p>Valid Values: <code>standard</code>  |  <code>neural</code>
+        /// <p>Valid Values: <code>standard</code> | <code>neural</code>
         /// </p>
         /// <p>Required: Yes</p>
         /// <p>
         /// <b>Standard voices</b>
         /// </p>
-        /// <p>For standard voices, this is not required; the engine parameter defaults to
-        /// <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and
-        /// an NTTS-only voice is selected, this will result in an error. </p>
+        /// <p>For standard voices, this is not required; the engine parameter
+        /// defaults to <code>standard</code>. If the engine is not specified, or is
+        /// set to <code>standard</code> and an NTTS-only voice is selected, this will
+        /// result in an error. </p>
         pub fn engine(mut self, input: crate::model::Engine) -> Self {
             self.engine = Some(input);
             self
@@ -1406,13 +1445,14 @@ pub mod synthesize_speech_input {
             self.engine = input;
             self
         }
-        /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using
-        /// a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi
-        /// (hi-IN). </p>
-        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the
-        /// default language of the bilingual voice. The default language for any voice is the one
-        /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
-        /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+        /// <p>Optional language code for the Synthesize Speech request. This is only
+        /// necessary if using a bilingual voice, such as Aditi, which can be used for
+        /// either Indian English (en-IN) or Hindi (hi-IN). </p>
+        /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
+        /// uses the default language of the bilingual voice. The default language for
+        /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
+        /// parameter. For example, if no language code is specified, Aditi will use
+        /// Indian English rather than Hindi.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
@@ -1437,10 +1477,11 @@ pub mod synthesize_speech_input {
             self.lexicon_names = input;
             self
         }
-        /// <p> The format in which the returned output will be encoded. For audio stream, this will
-        /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-        /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel
-        /// (mono), little-endian format. </p>
+        /// <p> The format in which the returned output will be encoded. For audio
+        /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
+        /// be json. </p>
+        /// <p>When pcm is used, the content returned is audio/pcm in a signed
+        /// 16-bit, 1 channel (mono), little-endian format. </p>
         pub fn output_format(mut self, input: crate::model::OutputFormat) -> Self {
             self.output_format = Some(input);
             self
@@ -1453,10 +1494,11 @@ pub mod synthesize_speech_input {
             self
         }
         /// <p>The audio frequency specified in Hz.</p>
-        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The
-        /// default value for standard voices is "22050". The default value for neural voices is
-        /// "24000".</p>
-        /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+        /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
+        /// and "24000". The default value for standard voices is "22050". The default
+        /// value for neural voices is "24000".</p>
+        /// <p>Valid values for pcm are "8000" and "16000" The default value is
+        /// "16000". </p>
         pub fn sample_rate(mut self, input: impl Into<std::string::String>) -> Self {
             self.sample_rate = Some(input.into());
             self
@@ -1479,7 +1521,8 @@ pub mod synthesize_speech_input {
             self
         }
         /// <p> Input text to synthesize. If you specify <code>ssml</code> as the
-        /// <code>TextType</code>, follow the SSML format for the input text. </p>
+        /// <code>TextType</code>, follow the SSML format for the input text.
+        /// </p>
         pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
             self.text = Some(input.into());
             self
@@ -1488,8 +1531,9 @@ pub mod synthesize_speech_input {
             self.text = input;
             self
         }
-        /// <p> Specifies whether the input text is plain text or SSML. The default value is plain
-        /// text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
+        /// <p> Specifies whether the input text is plain text or SSML. The
+        /// default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using
+        /// SSML</a>.</p>
         pub fn text_type(mut self, input: crate::model::TextType) -> Self {
             self.text_type = Some(input);
             self
@@ -1498,8 +1542,8 @@ pub mod synthesize_speech_input {
             self.text_type = input;
             self
         }
-        /// <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by
-        /// calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
+        /// <p> Voice ID to use for the synthesis. You can get a list of available
+        /// voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
         pub fn voice_id(mut self, input: crate::model::VoiceId) -> Self {
             self.voice_id = Some(input);
             self
@@ -1547,14 +1591,17 @@ impl SynthesizeSpeechInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_synthesize_speech(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1575,7 +1622,7 @@ impl SynthesizeSpeechInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1631,59 +1678,68 @@ impl SynthesizeSpeechInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesizeSpeechInput {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
-    /// use when processing input text for speech synthesis. For information on Amazon Polly voices and which voices are available in standard-only, NTTS-only, and
-    /// both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+    /// for Amazon Polly to use when processing input text for speech synthesis. For
+    /// information on Amazon Polly voices and which voices are available in
+    /// standard-only, NTTS-only, and both standard and NTTS formats, see <a href="https://docs.aws.amazon.com/polly/latest/dg/voicelist.html">Available Voices</a>.</p>
     /// <p>
     /// <b>NTTS-only voices</b>
     /// </p>
-    /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is required and must be
-    /// set to <code>neural</code>. If the engine is not specified, or is set to <code>standard</code>,
-    /// this will result in an error. </p>
+    /// <p>When using NTTS-only voices such as Kevin (en-US), this parameter is
+    /// required and must be set to <code>neural</code>. If the engine is not
+    /// specified, or is set to <code>standard</code>, this will result in an
+    /// error. </p>
     /// <p>Type: String</p>
-    /// <p>Valid Values: <code>standard</code>  |  <code>neural</code>
+    /// <p>Valid Values: <code>standard</code> | <code>neural</code>
     /// </p>
     /// <p>Required: Yes</p>
     /// <p>
     /// <b>Standard voices</b>
     /// </p>
-    /// <p>For standard voices, this is not required; the engine parameter defaults to
-    /// <code>standard</code>. If the engine is not specified, or is set to <code>standard</code> and
-    /// an NTTS-only voice is selected, this will result in an error. </p>
+    /// <p>For standard voices, this is not required; the engine parameter
+    /// defaults to <code>standard</code>. If the engine is not specified, or is
+    /// set to <code>standard</code> and an NTTS-only voice is selected, this will
+    /// result in an error. </p>
     pub engine: std::option::Option<crate::model::Engine>,
-    /// <p>Optional language code for the Synthesize Speech request. This is only necessary if using
-    /// a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi
-    /// (hi-IN). </p>
-    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the
-    /// default language of the bilingual voice. The default language for any voice is the one
-    /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
-    /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+    /// <p>Optional language code for the Synthesize Speech request. This is only
+    /// necessary if using a bilingual voice, such as Aditi, which can be used for
+    /// either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
+    /// uses the default language of the bilingual voice. The default language for
+    /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
+    /// parameter. For example, if no language code is specified, Aditi will use
+    /// Indian English rather than Hindi.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>List of one or more pronunciation lexicon names you want the service to apply during
-    /// synthesis. Lexicons are applied only if the language of the lexicon is the same as the
-    /// language of the voice. For information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
+    /// <p>List of one or more pronunciation lexicon names you want the
+    /// service to apply during synthesis. Lexicons are applied only if the
+    /// language of the lexicon is the same as the language of the voice. For
+    /// information about storing lexicons, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html">PutLexicon</a>.</p>
     pub lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p> The format in which the returned output will be encoded. For audio stream, this will
-    /// be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
-    /// <p>When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel
-    /// (mono), little-endian format. </p>
+    /// <p> The format in which the returned output will be encoded. For audio
+    /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
+    /// be json. </p>
+    /// <p>When pcm is used, the content returned is audio/pcm in a signed
+    /// 16-bit, 1 channel (mono), little-endian format. </p>
     pub output_format: std::option::Option<crate::model::OutputFormat>,
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The
-    /// default value for standard voices is "22050". The default value for neural voices is
-    /// "24000".</p>
-    /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
+    /// and "24000". The default value for standard voices is "22050". The default
+    /// value for neural voices is "24000".</p>
+    /// <p>Valid values for pcm are "8000" and "16000" The default value is
+    /// "16000". </p>
     pub sample_rate: std::option::Option<std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
     pub speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
     /// <p> Input text to synthesize. If you specify <code>ssml</code> as the
-    /// <code>TextType</code>, follow the SSML format for the input text. </p>
+    /// <code>TextType</code>, follow the SSML format for the input text.
+    /// </p>
     pub text: std::option::Option<std::string::String>,
-    /// <p> Specifies whether the input text is plain text or SSML. The default value is plain
-    /// text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using SSML</a>.</p>
+    /// <p> Specifies whether the input text is plain text or SSML. The
+    /// default value is plain text. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/ssml.html">Using
+    /// SSML</a>.</p>
     pub text_type: std::option::Option<crate::model::TextType>,
-    /// <p> Voice ID to use for the synthesis. You can get a list of available voice IDs by
-    /// calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
+    /// <p> Voice ID to use for the synthesis. You can get a list of available
+    /// voice IDs by calling the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation. </p>
     pub voice_id: std::option::Option<crate::model::VoiceId>,
 }
 impl std::fmt::Debug for SynthesizeSpeechInput {
@@ -1705,45 +1761,49 @@ impl std::fmt::Debug for SynthesizeSpeechInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct StartSpeechSynthesisTaskInput {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) for Amazon Polly to
-    /// use when processing input text for speech synthesis. Using a voice that is not supported for
-    /// the engine selected will result in an error.</p>
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+    /// for Amazon Polly to use when processing input text for speech synthesis. Using a
+    /// voice that is not supported for the engine selected will result in an
+    /// error.</p>
     pub engine: std::option::Option<crate::model::Engine>,
-    /// <p>Optional language code for the Speech Synthesis request. This is only necessary if using a
-    /// bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi
-    /// (hi-IN). </p>
-    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly will use the
-    /// default language of the bilingual voice. The default language for any voice is the one
-    /// returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code> parameter. For example,
-    /// if no language code is specified, Aditi will use Indian English rather than Hindi.</p>
+    /// <p>Optional language code for the Speech Synthesis request. This is only
+    /// necessary if using a bilingual voice, such as Aditi, which can be used for
+    /// either Indian English (en-IN) or Hindi (hi-IN). </p>
+    /// <p>If a bilingual voice is used and no language code is specified, Amazon Polly
+    /// uses the default language of the bilingual voice. The default language for
+    /// any voice is the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a> operation for the <code>LanguageCode</code>
+    /// parameter. For example, if no language code is specified, Aditi will use
+    /// Indian English rather than Hindi.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>List of one or more pronunciation lexicon names you want the service to apply during
-    /// synthesis. Lexicons are applied only if the language of the lexicon is the same as the
-    /// language of the voice. </p>
+    /// <p>List of one or more pronunciation lexicon names you want the service
+    /// to apply during synthesis. Lexicons are applied only if the language of
+    /// the lexicon is the same as the language of the voice. </p>
     pub lexicon_names: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>The format in which the returned output will be encoded. For audio stream, this will be
-    /// mp3, ogg_vorbis, or pcm. For speech marks, this will be json. </p>
+    /// <p>The format in which the returned output will be encoded. For audio
+    /// stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will
+    /// be json. </p>
     pub output_format: std::option::Option<crate::model::OutputFormat>,
     /// <p>Amazon S3 bucket name to which the output file will be saved.</p>
     pub output_s3_bucket_name: std::option::Option<std::string::String>,
     /// <p>The Amazon S3 key prefix for the output speech file.</p>
     pub output_s3_key_prefix: std::option::Option<std::string::String>,
     /// <p>The audio frequency specified in Hz.</p>
-    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050", and "24000". The
-    /// default value for standard voices is "22050". The default value for neural voices is
-    /// "24000".</p>
-    /// <p>Valid values for pcm are "8000" and "16000" The default value is "16000". </p>
+    /// <p>The valid values for mp3 and ogg_vorbis are "8000", "16000", "22050",
+    /// and "24000". The default value for standard voices is "22050". The default
+    /// value for neural voices is "24000".</p>
+    /// <p>Valid values for pcm are "8000" and "16000" The default value is
+    /// "16000". </p>
     pub sample_rate: std::option::Option<std::string::String>,
-    /// <p>ARN for the SNS topic optionally used for providing status notification for a speech
-    /// synthesis task.</p>
+    /// <p>ARN for the SNS topic optionally used for providing status
+    /// notification for a speech synthesis task.</p>
     pub sns_topic_arn: std::option::Option<std::string::String>,
     /// <p>The type of speech marks returned for the input text.</p>
     pub speech_mark_types: std::option::Option<std::vec::Vec<crate::model::SpeechMarkType>>,
-    /// <p>The input text to synthesize. If you specify ssml as the TextType, follow the SSML format
-    /// for the input text. </p>
+    /// <p>The input text to synthesize. If you specify ssml as the TextType,
+    /// follow the SSML format for the input text. </p>
     pub text: std::option::Option<std::string::String>,
-    /// <p>Specifies whether the input text is plain text or SSML. The default value is plain text.
-    /// </p>
+    /// <p>Specifies whether the input text is plain text or SSML. The default
+    /// value is plain text. </p>
     pub text_type: std::option::Option<crate::model::TextType>,
     /// <p>Voice ID to use for the synthesis. </p>
     pub voice_id: std::option::Option<crate::model::VoiceId>,
@@ -1770,8 +1830,9 @@ impl std::fmt::Debug for StartSpeechSynthesisTaskInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutLexiconInput {
-    /// <p>Name of the lexicon. The name must follow the regular express format [0-9A-Za-z]{1,20}.
-    /// That is, the name is a case-sensitive alphanumeric string up to 20 characters long. </p>
+    /// <p>Name of the lexicon. The name must follow the regular express
+    /// format [0-9A-Za-z]{1,20}. That is, the name is a case-sensitive
+    /// alphanumeric string up to 20 characters long. </p>
     pub name: std::option::Option<std::string::String>,
     /// <p>Content of the PLS lexicon as string data.</p>
     pub content: std::option::Option<std::string::String>,
@@ -1788,12 +1849,14 @@ impl std::fmt::Debug for PutLexiconInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListSpeechSynthesisTasksInput {
-    /// <p>Maximum number of speech synthesis tasks returned in a List operation.</p>
+    /// <p>Maximum number of speech synthesis tasks returned in a List
+    /// operation.</p>
     pub max_results: std::option::Option<i32>,
-    /// <p>The pagination token to use in the next request to continue the listing of speech
-    /// synthesis tasks. </p>
+    /// <p>The pagination token to use in the next request to continue the
+    /// listing of speech synthesis tasks. </p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>Status of the speech synthesis tasks returned in a List operation</p>
+    /// <p>Status of the speech synthesis tasks returned in a List
+    /// operation</p>
     pub status: std::option::Option<crate::model::TaskStatus>,
 }
 impl std::fmt::Debug for ListSpeechSynthesisTasksInput {
@@ -1809,8 +1872,9 @@ impl std::fmt::Debug for ListSpeechSynthesisTasksInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLexiconsInput {
-    /// <p>An opaque pagination token returned from previous <code>ListLexicons</code> operation.
-    /// If present, indicates where to continue the list of lexicons.</p>
+    /// <p>An opaque pagination token returned from previous
+    /// <code>ListLexicons</code> operation. If present, indicates where to
+    /// continue the list of lexicons.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for ListLexiconsInput {
@@ -1852,21 +1916,24 @@ impl std::fmt::Debug for GetLexiconInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeVoicesInput {
-    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>) used by Amazon Polly
-    /// when processing input text for speech synthesis. </p>
+    /// <p>Specifies the engine (<code>standard</code> or <code>neural</code>)
+    /// used by Amazon Polly when processing input text for speech synthesis. </p>
     pub engine: std::option::Option<crate::model::Engine>,
-    /// <p> The language identification tag (ISO 639 code for the language name-ISO 3166 country
-    /// code) for filtering the list of voices returned. If you don't specify this optional parameter,
-    /// all available voices are returned. </p>
+    /// <p> The language identification tag (ISO 639 code for the language
+    /// name-ISO 3166 country code) for filtering the list of voices returned. If
+    /// you don't specify this optional parameter, all available voices are
+    /// returned. </p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>Boolean value indicating whether to return any bilingual voices that use the specified
-    /// language as an additional language. For instance, if you request all languages that use US
-    /// English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US
-    /// English, that voice will be included if you specify <code>yes</code> but not if you specify
+    /// <p>Boolean value indicating whether to return any bilingual voices that
+    /// use the specified language as an additional language. For instance, if you
+    /// request all languages that use US English (es-US), and there is an Italian
+    /// voice that speaks both Italian (it-IT) and US English, that voice will be
+    /// included if you specify <code>yes</code> but not if you specify
     /// <code>no</code>.</p>
     pub include_additional_language_codes: bool,
-    /// <p>An opaque pagination token returned from the previous <code>DescribeVoices</code>
-    /// operation. If present, this indicates where to continue the listing.</p>
+    /// <p>An opaque pagination token returned from the previous
+    /// <code>DescribeVoices</code> operation. If present, this indicates where
+    /// to continue the listing.</p>
     pub next_token: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DescribeVoicesInput {
@@ -1886,7 +1953,8 @@ impl std::fmt::Debug for DescribeVoicesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteLexiconInput {
-    /// <p>The name of the lexicon to delete. Must be an existing lexicon in the region.</p>
+    /// <p>The name of the lexicon to delete. Must be an existing lexicon in
+    /// the region.</p>
     pub name: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteLexiconInput {

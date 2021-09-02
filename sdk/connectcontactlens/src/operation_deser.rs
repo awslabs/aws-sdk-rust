@@ -6,7 +6,7 @@ pub fn parse_list_realtime_contact_analysis_segments_error(
     crate::output::ListRealtimeContactAnalysisSegmentsOutput,
     crate::error::ListRealtimeContactAnalysisSegmentsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRealtimeContactAnalysisSegmentsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

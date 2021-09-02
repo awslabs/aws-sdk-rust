@@ -3,7 +3,7 @@
 pub fn parse_activate_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ActivateTypeOutput, crate::error::ActivateTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ActivateTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -79,7 +79,7 @@ pub fn parse_batch_describe_type_configurations_error(
     crate::output::BatchDescribeTypeConfigurationsOutput,
     crate::error::BatchDescribeTypeConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDescribeTypeConfigurationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -146,7 +146,7 @@ pub fn parse_cancel_update_stack_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelUpdateStackOutput, crate::error::CancelUpdateStackError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelUpdateStackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -199,7 +199,7 @@ pub fn parse_continue_update_rollback_error(
     crate::output::ContinueUpdateRollbackOutput,
     crate::error::ContinueUpdateRollbackError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ContinueUpdateRollbackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -255,7 +255,7 @@ pub fn parse_continue_update_rollback_response(
 pub fn parse_create_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChangeSetOutput, crate::error::CreateChangeSetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -347,7 +347,7 @@ pub fn parse_create_change_set_response(
 pub fn parse_create_stack_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateStackOutput, crate::error::CreateStackError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateStackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -461,7 +461,7 @@ pub fn parse_create_stack_instances_error(
     crate::output::CreateStackInstancesOutput,
     crate::error::CreateStackInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateStackInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -619,7 +619,7 @@ pub fn parse_create_stack_instances_response(
 pub fn parse_create_stack_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateStackSetOutput, crate::error::CreateStackSetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateStackSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -712,7 +712,7 @@ pub fn parse_create_stack_set_response(
 pub fn parse_deactivate_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeactivateTypeOutput, crate::error::DeactivateTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeactivateTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -783,7 +783,7 @@ pub fn parse_deactivate_type_response(
 pub fn parse_delete_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChangeSetOutput, crate::error::DeleteChangeSetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -830,7 +830,7 @@ pub fn parse_delete_change_set_response(
 pub fn parse_delete_stack_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteStackOutput, crate::error::DeleteStackError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteStackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -882,7 +882,7 @@ pub fn parse_delete_stack_instances_error(
     crate::output::DeleteStackInstancesOutput,
     crate::error::DeleteStackInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteStackInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1019,7 +1019,7 @@ pub fn parse_delete_stack_instances_response(
 pub fn parse_delete_stack_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteStackSetOutput, crate::error::DeleteStackSetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteStackSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1088,7 +1088,7 @@ pub fn parse_delete_stack_set_response(
 pub fn parse_deregister_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeregisterTypeOutput, crate::error::DeregisterTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1162,7 +1162,7 @@ pub fn parse_describe_account_limits_error(
     crate::output::DescribeAccountLimitsOutput,
     crate::error::DescribeAccountLimitsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
     Err(crate::error::DescribeAccountLimitsError::generic(generic))
 }
@@ -1192,7 +1192,7 @@ pub fn parse_describe_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeChangeSetOutput, crate::error::DescribeChangeSetError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1246,7 +1246,7 @@ pub fn parse_describe_publisher_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribePublisherOutput, crate::error::DescribePublisherError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePublisherError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1303,7 +1303,7 @@ pub fn parse_describe_stack_drift_detection_status_error(
     crate::output::DescribeStackDriftDetectionStatusOutput,
     crate::error::DescribeStackDriftDetectionStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackDriftDetectionStatusError::unhandled)?;
     Err(crate::error::DescribeStackDriftDetectionStatusError::generic(generic))
 }
@@ -1336,7 +1336,7 @@ pub fn parse_describe_stack_events_error(
     crate::output::DescribeStackEventsOutput,
     crate::error::DescribeStackEventsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackEventsError::unhandled)?;
     Err(crate::error::DescribeStackEventsError::generic(generic))
 }
@@ -1368,7 +1368,7 @@ pub fn parse_describe_stack_instance_error(
     crate::output::DescribeStackInstanceOutput,
     crate::error::DescribeStackInstanceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackInstanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1446,7 +1446,7 @@ pub fn parse_describe_stack_resource_error(
     crate::output::DescribeStackResourceOutput,
     crate::error::DescribeStackResourceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackResourceError::unhandled)?;
     Err(crate::error::DescribeStackResourceError::generic(generic))
 }
@@ -1478,7 +1478,7 @@ pub fn parse_describe_stack_resource_drifts_error(
     crate::output::DescribeStackResourceDriftsOutput,
     crate::error::DescribeStackResourceDriftsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackResourceDriftsError::unhandled)?;
     Err(crate::error::DescribeStackResourceDriftsError::generic(
         generic,
@@ -1512,7 +1512,7 @@ pub fn parse_describe_stack_resources_error(
     crate::output::DescribeStackResourcesOutput,
     crate::error::DescribeStackResourcesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackResourcesError::unhandled)?;
     Err(crate::error::DescribeStackResourcesError::generic(generic))
 }
@@ -1541,7 +1541,7 @@ pub fn parse_describe_stack_resources_response(
 pub fn parse_describe_stacks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeStacksOutput, crate::error::DescribeStacksError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStacksError::unhandled)?;
     Err(crate::error::DescribeStacksError::generic(generic))
 }
@@ -1566,7 +1566,7 @@ pub fn parse_describe_stack_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeStackSetOutput, crate::error::DescribeStackSetError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1622,7 +1622,7 @@ pub fn parse_describe_stack_set_operation_error(
     crate::output::DescribeStackSetOperationOutput,
     crate::error::DescribeStackSetOperationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStackSetOperationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1707,7 +1707,7 @@ pub fn parse_describe_stack_set_operation_response(
 pub fn parse_describe_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTypeOutput, crate::error::DescribeTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1783,7 +1783,7 @@ pub fn parse_describe_type_registration_error(
     crate::output::DescribeTypeRegistrationOutput,
     crate::error::DescribeTypeRegistrationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTypeRegistrationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1846,7 +1846,7 @@ pub fn parse_detect_stack_drift_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectStackDriftOutput, crate::error::DetectStackDriftError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectStackDriftError::unhandled)?;
     Err(crate::error::DetectStackDriftError::generic(generic))
 }
@@ -1874,7 +1874,7 @@ pub fn parse_detect_stack_resource_drift_error(
     crate::output::DetectStackResourceDriftOutput,
     crate::error::DetectStackResourceDriftError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectStackResourceDriftError::unhandled)?;
     Err(crate::error::DetectStackResourceDriftError::generic(
         generic,
@@ -1908,7 +1908,7 @@ pub fn parse_detect_stack_set_drift_error(
     crate::output::DetectStackSetDriftOutput,
     crate::error::DetectStackSetDriftError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectStackSetDriftError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2009,7 +2009,7 @@ pub fn parse_estimate_template_cost_error(
     crate::output::EstimateTemplateCostOutput,
     crate::error::EstimateTemplateCostError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EstimateTemplateCostError::unhandled)?;
     Err(crate::error::EstimateTemplateCostError::generic(generic))
 }
@@ -2039,7 +2039,7 @@ pub fn parse_execute_change_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExecuteChangeSetOutput, crate::error::ExecuteChangeSetError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExecuteChangeSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2145,7 +2145,7 @@ pub fn parse_execute_change_set_response(
 pub fn parse_get_stack_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetStackPolicyOutput, crate::error::GetStackPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetStackPolicyError::unhandled)?;
     Err(crate::error::GetStackPolicyError::generic(generic))
 }
@@ -2169,7 +2169,7 @@ pub fn parse_get_stack_policy_response(
 pub fn parse_get_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTemplateOutput, crate::error::GetTemplateError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTemplateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2223,7 +2223,7 @@ pub fn parse_get_template_summary_error(
     crate::output::GetTemplateSummaryOutput,
     crate::error::GetTemplateSummaryError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTemplateSummaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2283,7 +2283,7 @@ pub fn parse_import_stacks_to_stack_set_error(
     crate::output::ImportStacksToStackSetOutput,
     crate::error::ImportStacksToStackSetError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ImportStacksToStackSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2470,7 +2470,7 @@ pub fn parse_import_stacks_to_stack_set_response(
 pub fn parse_list_change_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChangeSetsOutput, crate::error::ListChangeSetsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListChangeSetsError::unhandled)?;
     Err(crate::error::ListChangeSetsError::generic(generic))
 }
@@ -2494,7 +2494,7 @@ pub fn parse_list_change_sets_response(
 pub fn parse_list_exports_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListExportsOutput, crate::error::ListExportsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListExportsError::unhandled)?;
     Err(crate::error::ListExportsError::generic(generic))
 }
@@ -2517,7 +2517,7 @@ pub fn parse_list_exports_response(
 pub fn parse_list_imports_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListImportsOutput, crate::error::ListImportsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListImportsError::unhandled)?;
     Err(crate::error::ListImportsError::generic(generic))
 }
@@ -2543,7 +2543,7 @@ pub fn parse_list_stack_instances_error(
     crate::output::ListStackInstancesOutput,
     crate::error::ListStackInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStackInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2603,7 +2603,7 @@ pub fn parse_list_stack_resources_error(
     crate::output::ListStackResourcesOutput,
     crate::error::ListStackResourcesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStackResourcesError::unhandled)?;
     Err(crate::error::ListStackResourcesError::generic(generic))
 }
@@ -2632,7 +2632,7 @@ pub fn parse_list_stack_resources_response(
 pub fn parse_list_stacks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListStacksOutput, crate::error::ListStacksError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStacksError::unhandled)?;
     Err(crate::error::ListStacksError::generic(generic))
 }
@@ -2658,7 +2658,7 @@ pub fn parse_list_stack_set_operation_results_error(
     crate::output::ListStackSetOperationResultsOutput,
     crate::error::ListStackSetOperationResultsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStackSetOperationResultsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2745,7 +2745,7 @@ pub fn parse_list_stack_set_operations_error(
     crate::output::ListStackSetOperationsOutput,
     crate::error::ListStackSetOperationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStackSetOperationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2806,7 +2806,7 @@ pub fn parse_list_stack_set_operations_response(
 pub fn parse_list_stack_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListStackSetsOutput, crate::error::ListStackSetsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListStackSetsError::unhandled)?;
     Err(crate::error::ListStackSetsError::generic(generic))
 }
@@ -2833,7 +2833,7 @@ pub fn parse_list_type_registrations_error(
     crate::output::ListTypeRegistrationsOutput,
     crate::error::ListTypeRegistrationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTypeRegistrationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2891,7 +2891,7 @@ pub fn parse_list_type_registrations_response(
 pub fn parse_list_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTypesOutput, crate::error::ListTypesError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2944,7 +2944,7 @@ pub fn parse_list_type_versions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTypeVersionsOutput, crate::error::ListTypeVersionsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTypeVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2998,7 +2998,7 @@ pub fn parse_list_type_versions_response(
 pub fn parse_publish_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PublishTypeOutput, crate::error::PublishTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PublishTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3074,7 +3074,7 @@ pub fn parse_record_handler_progress_error(
     crate::output::RecordHandlerProgressOutput,
     crate::error::RecordHandlerProgressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RecordHandlerProgressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3146,7 +3146,7 @@ pub fn parse_register_publisher_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterPublisherOutput, crate::error::RegisterPublisherError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterPublisherError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3200,7 +3200,7 @@ pub fn parse_register_publisher_response(
 pub fn parse_register_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterTypeOutput, crate::error::RegisterTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3249,10 +3249,61 @@ pub fn parse_register_type_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_rollback_stack_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RollbackStackOutput, crate::error::RollbackStackError> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::RollbackStackError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::RollbackStackError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "TokenAlreadyExistsException" => {
+            crate::error::RollbackStackError {
+                meta: generic,
+                kind: crate::error::RollbackStackErrorKind::TokenAlreadyExistsException({
+                    #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::token_already_exists_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_token_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RollbackStackError::unhandled)?;
+                        output.build()
+                    };
+                    if (&tmp.message).is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                }),
+            }
+        }
+        _ => crate::error::RollbackStackError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_rollback_stack_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::RollbackStackOutput, crate::error::RollbackStackError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::rollback_stack_output::Builder::default();
+        let _ = response;
+        output = crate::xml_deser::deser_operation_rollback_stack(response.body().as_ref(), output)
+            .map_err(crate::error::RollbackStackError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_set_stack_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SetStackPolicyOutput, crate::error::SetStackPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetStackPolicyError::unhandled)?;
     Err(crate::error::SetStackPolicyError::generic(generic))
 }
@@ -3276,7 +3327,7 @@ pub fn parse_set_type_configuration_error(
     crate::output::SetTypeConfigurationOutput,
     crate::error::SetTypeConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetTypeConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3358,7 +3409,7 @@ pub fn parse_set_type_default_version_error(
     crate::output::SetTypeDefaultVersionOutput,
     crate::error::SetTypeDefaultVersionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetTypeDefaultVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3432,7 +3483,7 @@ pub fn parse_set_type_default_version_response(
 pub fn parse_signal_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SignalResourceOutput, crate::error::SignalResourceError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SignalResourceError::unhandled)?;
     Err(crate::error::SignalResourceError::generic(generic))
 }
@@ -3456,7 +3507,7 @@ pub fn parse_stop_stack_set_operation_error(
     crate::output::StopStackSetOperationOutput,
     crate::error::StopStackSetOperationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopStackSetOperationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3549,7 +3600,7 @@ pub fn parse_stop_stack_set_operation_response(
 pub fn parse_test_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TestTypeOutput, crate::error::TestTypeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::TestTypeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3622,7 +3673,7 @@ pub fn parse_test_type_response(
 pub fn parse_update_stack_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateStackOutput, crate::error::UpdateStackError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateStackError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3694,7 +3745,7 @@ pub fn parse_update_stack_instances_error(
     crate::output::UpdateStackInstancesOutput,
     crate::error::UpdateStackInstancesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateStackInstancesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3849,7 +3900,7 @@ pub fn parse_update_stack_instances_response(
 pub fn parse_update_stack_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateStackSetOutput, crate::error::UpdateStackSetError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateStackSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4002,7 +4053,7 @@ pub fn parse_update_termination_protection_error(
     crate::output::UpdateTerminationProtectionOutput,
     crate::error::UpdateTerminationProtectionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateTerminationProtectionError::unhandled)?;
     Err(crate::error::UpdateTerminationProtectionError::generic(
         generic,
@@ -4034,7 +4085,7 @@ pub fn parse_validate_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ValidateTemplateOutput, crate::error::ValidateTemplateError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ValidateTemplateError::unhandled)?;
     Err(crate::error::ValidateTemplateError::generic(generic))
 }

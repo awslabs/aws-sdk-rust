@@ -47,11 +47,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTemplateError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -69,16 +71,20 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateServiceQuotaTempl
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::DeleteServiceQuotaIncreaseRequestFromTemplateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -98,11 +104,13 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTemplateError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -120,12 +128,16 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateServiceQuotaTe
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAssociationForServiceQuotaTemplateError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::GetAssociationForServiceQuotaTemplateError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::GetAssociationForServiceQuotaTemplateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -144,9 +156,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAssociationForServiceQu
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError>,
+        err: smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -173,11 +189,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetAWSDefaultServiceQuotaE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError>,
+        err: smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaChangeError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -204,8 +222,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetRequestedServiceQuotaCh
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetServiceQuotaError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetServiceQuotaError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetServiceQuotaError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetServiceQuotaError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetServiceQuotaErrorKind::AccessDeniedException(inner) => {
@@ -229,16 +250,20 @@ impl From<smithy_http::result::SdkError<crate::error::GetServiceQuotaError>> for
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::GetServiceQuotaIncreaseRequestFromTemplateError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::GetServiceQuotaIncreaseRequestFromTemplateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -258,9 +283,13 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError>,
+        err: smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuotasError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -276,12 +305,17 @@ impl From<smithy_http::result::SdkError<crate::error::ListAWSDefaultServiceQuota
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListRequestedServiceQuotaChangeHistoryError>>
-    for Error
+impl<R>
+    From<
+        smithy_http::result::SdkError<crate::error::ListRequestedServiceQuotaChangeHistoryError, R>,
+    > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::ListRequestedServiceQuotaChangeHistoryError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -298,16 +332,20 @@ impl From<smithy_http::result::SdkError<crate::error::ListRequestedServiceQuotaC
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::ListRequestedServiceQuotaChangeHistoryByQuotaError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -324,16 +362,20 @@ impl
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::ListServiceQuotaIncreaseRequestsInTemplateError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::ListServiceQuotaIncreaseRequestsInTemplateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -352,8 +394,11 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListServiceQuotasError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListServiceQuotasError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListServiceQuotasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListServiceQuotasError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListServiceQuotasErrorKind::AccessDeniedException(inner) => {
@@ -382,8 +427,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListServiceQuotasError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListServicesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListServicesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListServicesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListServicesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListServicesErrorKind::AccessDeniedException(inner) => {
@@ -407,8 +455,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListServicesError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
@@ -434,16 +485,20 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl
+impl<R>
     From<
         smithy_http::result::SdkError<
             crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError,
+            R,
         >,
     > for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
         err: smithy_http::result::SdkError<
             crate::error::PutServiceQuotaIncreaseRequestIntoTemplateError,
+            R,
         >,
     ) -> Self {
         match err {
@@ -464,9 +519,13 @@ impl
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError>,
+        err: smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreaseError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -485,8 +544,11 @@ impl From<smithy_http::result::SdkError<crate::error::RequestServiceQuotaIncreas
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
@@ -516,8 +578,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {

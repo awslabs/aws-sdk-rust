@@ -6,7 +6,7 @@ pub fn parse_accept_reserved_node_exchange_error(
     crate::output::AcceptReservedNodeExchangeOutput,
     crate::error::AcceptReservedNodeExchangeError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptReservedNodeExchangeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -190,7 +190,7 @@ pub fn parse_accept_reserved_node_exchange_response(
 pub fn parse_add_partner_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddPartnerOutput, crate::error::AddPartnerError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddPartnerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -284,7 +284,7 @@ pub fn parse_associate_data_share_consumer_error(
     crate::output::AssociateDataShareConsumerOutput,
     crate::error::AssociateDataShareConsumerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AssociateDataShareConsumerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -370,7 +370,7 @@ pub fn parse_authorize_cluster_security_group_ingress_error(
     crate::output::AuthorizeClusterSecurityGroupIngressOutput,
     crate::error::AuthorizeClusterSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeClusterSecurityGroupIngressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -469,7 +469,7 @@ pub fn parse_authorize_data_share_error(
     crate::output::AuthorizeDataShareOutput,
     crate::error::AuthorizeDataShareError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeDataShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -530,7 +530,7 @@ pub fn parse_authorize_endpoint_access_error(
     crate::output::AuthorizeEndpointAccessOutput,
     crate::error::AuthorizeEndpointAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeEndpointAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -658,7 +658,7 @@ pub fn parse_authorize_snapshot_access_error(
     crate::output::AuthorizeSnapshotAccessOutput,
     crate::error::AuthorizeSnapshotAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AuthorizeSnapshotAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -786,7 +786,7 @@ pub fn parse_batch_delete_cluster_snapshots_error(
     crate::output::BatchDeleteClusterSnapshotsOutput,
     crate::error::BatchDeleteClusterSnapshotsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDeleteClusterSnapshotsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -844,7 +844,7 @@ pub fn parse_batch_modify_cluster_snapshots_error(
     crate::output::BatchModifyClusterSnapshotsOutput,
     crate::error::BatchModifyClusterSnapshotsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchModifyClusterSnapshotsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -913,7 +913,7 @@ pub fn parse_batch_modify_cluster_snapshots_response(
 pub fn parse_cancel_resize_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelResizeOutput, crate::error::CancelResizeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelResizeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1031,7 +1031,7 @@ pub fn parse_copy_cluster_snapshot_error(
     crate::output::CopyClusterSnapshotOutput,
     crate::error::CopyClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1165,7 +1165,7 @@ pub fn parse_create_authentication_profile_error(
     crate::output::CreateAuthenticationProfileOutput,
     crate::error::CreateAuthenticationProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAuthenticationProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1248,7 +1248,7 @@ pub fn parse_create_authentication_profile_response(
 pub fn parse_create_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateClusterOutput, crate::error::CreateClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1712,7 +1712,7 @@ pub fn parse_create_cluster_parameter_group_error(
     crate::output::CreateClusterParameterGroupOutput,
     crate::error::CreateClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1812,7 +1812,7 @@ pub fn parse_create_cluster_security_group_error(
     crate::output::CreateClusterSecurityGroupOutput,
     crate::error::CreateClusterSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterSecurityGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1912,7 +1912,7 @@ pub fn parse_create_cluster_snapshot_error(
     crate::output::CreateClusterSnapshotOutput,
     crate::error::CreateClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2096,7 +2096,7 @@ pub fn parse_create_cluster_subnet_group_error(
     crate::output::CreateClusterSubnetGroupOutput,
     crate::error::CreateClusterSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateClusterSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2252,7 +2252,7 @@ pub fn parse_create_endpoint_access_error(
     crate::output::CreateEndpointAccessOutput,
     crate::error::CreateEndpointAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEndpointAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2432,7 +2432,7 @@ pub fn parse_create_event_subscription_error(
     crate::output::CreateEventSubscriptionOutput,
     crate::error::CreateEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2702,7 +2702,7 @@ pub fn parse_create_hsm_client_certificate_error(
     crate::output::CreateHsmClientCertificateOutput,
     crate::error::CreateHsmClientCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHsmClientCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2802,7 +2802,7 @@ pub fn parse_create_hsm_configuration_error(
     crate::output::CreateHsmConfigurationOutput,
     crate::error::CreateHsmConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateHsmConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2930,7 +2930,7 @@ pub fn parse_create_scheduled_action_error(
     crate::output::CreateScheduledActionOutput,
     crate::error::CreateScheduledActionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateScheduledActionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3093,7 +3093,7 @@ pub fn parse_create_snapshot_copy_grant_error(
     crate::output::CreateSnapshotCopyGrantOutput,
     crate::error::CreateSnapshotCopyGrantError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSnapshotCopyGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3221,7 +3221,7 @@ pub fn parse_create_snapshot_schedule_error(
     crate::output::CreateSnapshotScheduleOutput,
     crate::error::CreateSnapshotScheduleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSnapshotScheduleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3346,7 +3346,7 @@ pub fn parse_create_snapshot_schedule_response(
 pub fn parse_create_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3460,7 +3460,7 @@ pub fn parse_create_usage_limit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateUsageLimitOutput, crate::error::CreateUsageLimitError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateUsageLimitError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3642,7 +3642,7 @@ pub fn parse_deauthorize_data_share_error(
     crate::output::DeauthorizeDataShareOutput,
     crate::error::DeauthorizeDataShareError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeauthorizeDataShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3703,7 +3703,7 @@ pub fn parse_delete_authentication_profile_error(
     crate::output::DeleteAuthenticationProfileOutput,
     crate::error::DeleteAuthenticationProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteAuthenticationProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3772,7 +3772,7 @@ pub fn parse_delete_authentication_profile_response(
 pub fn parse_delete_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteClusterOutput, crate::error::DeleteClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3904,7 +3904,7 @@ pub fn parse_delete_cluster_parameter_group_error(
     crate::output::DeleteClusterParameterGroupOutput,
     crate::error::DeleteClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3971,7 +3971,7 @@ pub fn parse_delete_cluster_security_group_error(
     crate::output::DeleteClusterSecurityGroupOutput,
     crate::error::DeleteClusterSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterSecurityGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4038,7 +4038,7 @@ pub fn parse_delete_cluster_snapshot_error(
     crate::output::DeleteClusterSnapshotOutput,
     crate::error::DeleteClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4116,7 +4116,7 @@ pub fn parse_delete_cluster_subnet_group_error(
     crate::output::DeleteClusterSubnetGroupOutput,
     crate::error::DeleteClusterSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteClusterSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4214,7 +4214,7 @@ pub fn parse_delete_endpoint_access_error(
     crate::output::DeleteEndpointAccessOutput,
     crate::error::DeleteEndpointAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEndpointAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4358,7 +4358,7 @@ pub fn parse_delete_event_subscription_error(
     crate::output::DeleteEventSubscriptionOutput,
     crate::error::DeleteEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4441,7 +4441,7 @@ pub fn parse_delete_hsm_client_certificate_error(
     crate::output::DeleteHsmClientCertificateOutput,
     crate::error::DeleteHsmClientCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteHsmClientCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4508,7 +4508,7 @@ pub fn parse_delete_hsm_configuration_error(
     crate::output::DeleteHsmConfigurationOutput,
     crate::error::DeleteHsmConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteHsmConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4582,7 +4582,7 @@ pub fn parse_delete_hsm_configuration_response(
 pub fn parse_delete_partner_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePartnerOutput, crate::error::DeletePartnerError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePartnerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4676,7 +4676,7 @@ pub fn parse_delete_scheduled_action_error(
     crate::output::DeleteScheduledActionOutput,
     crate::error::DeleteScheduledActionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4752,7 +4752,7 @@ pub fn parse_delete_snapshot_copy_grant_error(
     crate::output::DeleteSnapshotCopyGrantOutput,
     crate::error::DeleteSnapshotCopyGrantError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSnapshotCopyGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4828,7 +4828,7 @@ pub fn parse_delete_snapshot_schedule_error(
     crate::output::DeleteSnapshotScheduleOutput,
     crate::error::DeleteSnapshotScheduleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4892,7 +4892,7 @@ pub fn parse_delete_snapshot_schedule_response(
 pub fn parse_delete_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4964,7 +4964,7 @@ pub fn parse_delete_usage_limit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUsageLimitOutput, crate::error::DeleteUsageLimitError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteUsageLimitError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5039,7 +5039,7 @@ pub fn parse_describe_account_attributes_error(
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
     Err(crate::error::DescribeAccountAttributesError::generic(
         generic,
@@ -5073,7 +5073,7 @@ pub fn parse_describe_authentication_profiles_error(
     crate::output::DescribeAuthenticationProfilesOutput,
     crate::error::DescribeAuthenticationProfilesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAuthenticationProfilesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5141,7 +5141,7 @@ pub fn parse_describe_cluster_db_revisions_error(
     crate::output::DescribeClusterDbRevisionsOutput,
     crate::error::DescribeClusterDbRevisionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterDbRevisionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5227,7 +5227,7 @@ pub fn parse_describe_cluster_parameter_groups_error(
     crate::output::DescribeClusterParameterGroupsOutput,
     crate::error::DescribeClusterParameterGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterParameterGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5296,7 +5296,7 @@ pub fn parse_describe_cluster_parameters_error(
     crate::output::DescribeClusterParametersOutput,
     crate::error::DescribeClusterParametersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterParametersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5357,7 +5357,7 @@ pub fn parse_describe_clusters_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeClustersOutput, crate::error::DescribeClustersError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClustersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5435,7 +5435,7 @@ pub fn parse_describe_cluster_security_groups_error(
     crate::output::DescribeClusterSecurityGroupsOutput,
     crate::error::DescribeClusterSecurityGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterSecurityGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5507,7 +5507,7 @@ pub fn parse_describe_cluster_snapshots_error(
     crate::output::DescribeClusterSnapshotsOutput,
     crate::error::DescribeClusterSnapshotsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterSnapshotsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5615,7 +5615,7 @@ pub fn parse_describe_cluster_subnet_groups_error(
     crate::output::DescribeClusterSubnetGroupsOutput,
     crate::error::DescribeClusterSubnetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterSubnetGroupsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5699,7 +5699,7 @@ pub fn parse_describe_cluster_tracks_error(
     crate::output::DescribeClusterTracksOutput,
     crate::error::DescribeClusterTracksError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterTracksError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5781,7 +5781,7 @@ pub fn parse_describe_cluster_versions_error(
     crate::output::DescribeClusterVersionsOutput,
     crate::error::DescribeClusterVersionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeClusterVersionsError::unhandled)?;
     Err(crate::error::DescribeClusterVersionsError::generic(generic))
 }
@@ -5813,7 +5813,7 @@ pub fn parse_describe_data_shares_error(
     crate::output::DescribeDataSharesOutput,
     crate::error::DescribeDataSharesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDataSharesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5874,7 +5874,7 @@ pub fn parse_describe_data_shares_for_consumer_error(
     crate::output::DescribeDataSharesForConsumerOutput,
     crate::error::DescribeDataSharesForConsumerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDataSharesForConsumerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5940,7 +5940,7 @@ pub fn parse_describe_data_shares_for_producer_error(
     crate::output::DescribeDataSharesForProducerOutput,
     crate::error::DescribeDataSharesForProducerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDataSharesForProducerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6006,7 +6006,7 @@ pub fn parse_describe_default_cluster_parameters_error(
     crate::output::DescribeDefaultClusterParametersOutput,
     crate::error::DescribeDefaultClusterParametersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDefaultClusterParametersError::unhandled)?;
     Err(crate::error::DescribeDefaultClusterParametersError::generic(generic))
 }
@@ -6039,7 +6039,7 @@ pub fn parse_describe_endpoint_access_error(
     crate::output::DescribeEndpointAccessOutput,
     crate::error::DescribeEndpointAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEndpointAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6146,7 +6146,7 @@ pub fn parse_describe_endpoint_authorization_error(
     crate::output::DescribeEndpointAuthorizationOutput,
     crate::error::DescribeEndpointAuthorizationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEndpointAuthorizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6234,7 +6234,7 @@ pub fn parse_describe_event_categories_error(
     crate::output::DescribeEventCategoriesOutput,
     crate::error::DescribeEventCategoriesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventCategoriesError::unhandled)?;
     Err(crate::error::DescribeEventCategoriesError::generic(generic))
 }
@@ -6263,7 +6263,7 @@ pub fn parse_describe_event_categories_response(
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
     Err(crate::error::DescribeEventsError::generic(generic))
 }
@@ -6290,7 +6290,7 @@ pub fn parse_describe_event_subscriptions_error(
     crate::output::DescribeEventSubscriptionsOutput,
     crate::error::DescribeEventSubscriptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6377,7 +6377,7 @@ pub fn parse_describe_hsm_client_certificates_error(
     crate::output::DescribeHsmClientCertificatesOutput,
     crate::error::DescribeHsmClientCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHsmClientCertificatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6449,7 +6449,7 @@ pub fn parse_describe_hsm_configurations_error(
     crate::output::DescribeHsmConfigurationsOutput,
     crate::error::DescribeHsmConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHsmConfigurationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6534,7 +6534,7 @@ pub fn parse_describe_logging_status_error(
     crate::output::DescribeLoggingStatusOutput,
     crate::error::DescribeLoggingStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLoggingStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6595,7 +6595,7 @@ pub fn parse_describe_node_configuration_options_error(
     crate::output::DescribeNodeConfigurationOptionsOutput,
     crate::error::DescribeNodeConfigurationOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeNodeConfigurationOptionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6694,7 +6694,7 @@ pub fn parse_describe_orderable_cluster_options_error(
     crate::output::DescribeOrderableClusterOptionsOutput,
     crate::error::DescribeOrderableClusterOptionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeOrderableClusterOptionsError::unhandled)?;
     Err(crate::error::DescribeOrderableClusterOptionsError::generic(
         generic,
@@ -6727,7 +6727,7 @@ pub fn parse_describe_partners_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribePartnersOutput, crate::error::DescribePartnersError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePartnersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6802,7 +6802,7 @@ pub fn parse_describe_reserved_node_offerings_error(
     crate::output::DescribeReservedNodeOfferingsOutput,
     crate::error::DescribeReservedNodeOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedNodeOfferingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6888,7 +6888,7 @@ pub fn parse_describe_reserved_nodes_error(
     crate::output::DescribeReservedNodesOutput,
     crate::error::DescribeReservedNodesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeReservedNodesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6963,7 +6963,7 @@ pub fn parse_describe_reserved_nodes_response(
 pub fn parse_describe_resize_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeResizeOutput, crate::error::DescribeResizeError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeResizeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7040,7 +7040,7 @@ pub fn parse_describe_scheduled_actions_error(
     crate::output::DescribeScheduledActionsOutput,
     crate::error::DescribeScheduledActionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7127,7 +7127,7 @@ pub fn parse_describe_snapshot_copy_grants_error(
     crate::output::DescribeSnapshotCopyGrantsOutput,
     crate::error::DescribeSnapshotCopyGrantsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSnapshotCopyGrantsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7212,7 +7212,7 @@ pub fn parse_describe_snapshot_schedules_error(
     crate::output::DescribeSnapshotSchedulesOutput,
     crate::error::DescribeSnapshotSchedulesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeSnapshotSchedulesError::unhandled)?;
     Err(crate::error::DescribeSnapshotSchedulesError::generic(
         generic,
@@ -7243,7 +7243,7 @@ pub fn parse_describe_snapshot_schedules_response(
 pub fn parse_describe_storage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeStorageOutput, crate::error::DescribeStorageError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeStorageError::unhandled)?;
     Err(crate::error::DescribeStorageError::generic(generic))
 }
@@ -7270,7 +7270,7 @@ pub fn parse_describe_table_restore_status_error(
     crate::output::DescribeTableRestoreStatusOutput,
     crate::error::DescribeTableRestoreStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTableRestoreStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7354,7 +7354,7 @@ pub fn parse_describe_table_restore_status_response(
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7430,7 +7430,7 @@ pub fn parse_describe_usage_limits_error(
     crate::output::DescribeUsageLimitsOutput,
     crate::error::DescribeUsageLimitsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeUsageLimitsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7509,7 +7509,7 @@ pub fn parse_describe_usage_limits_response(
 pub fn parse_disable_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DisableLoggingOutput, crate::error::DisableLoggingError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableLoggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7586,7 +7586,7 @@ pub fn parse_disable_snapshot_copy_error(
     crate::output::DisableSnapshotCopyOutput,
     crate::error::DisableSnapshotCopyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableSnapshotCopyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7707,7 +7707,7 @@ pub fn parse_disassociate_data_share_consumer_error(
     crate::output::DisassociateDataShareConsumerOutput,
     crate::error::DisassociateDataShareConsumerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisassociateDataShareConsumerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7790,7 +7790,7 @@ pub fn parse_disassociate_data_share_consumer_response(
 pub fn parse_enable_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableLoggingOutput, crate::error::EnableLoggingError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableLoggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7948,7 +7948,7 @@ pub fn parse_enable_snapshot_copy_error(
     crate::output::EnableSnapshotCopyOutput,
     crate::error::EnableSnapshotCopyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableSnapshotCopyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8204,7 +8204,7 @@ pub fn parse_get_cluster_credentials_error(
     crate::output::GetClusterCredentialsOutput,
     crate::error::GetClusterCredentialsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetClusterCredentialsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8286,7 +8286,7 @@ pub fn parse_get_reserved_node_exchange_offerings_error(
     crate::output::GetReservedNodeExchangeOfferingsOutput,
     crate::error::GetReservedNodeExchangeOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetReservedNodeExchangeOfferingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8413,7 +8413,7 @@ pub fn parse_modify_aqua_configuration_error(
     crate::output::ModifyAquaConfigurationOutput,
     crate::error::ModifyAquaConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyAquaConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8520,7 +8520,7 @@ pub fn parse_modify_authentication_profile_error(
     crate::output::ModifyAuthenticationProfileOutput,
     crate::error::ModifyAuthenticationProfileError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyAuthenticationProfileError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -8603,7 +8603,7 @@ pub fn parse_modify_authentication_profile_response(
 pub fn parse_modify_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyClusterOutput, crate::error::ModifyClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9011,7 +9011,7 @@ pub fn parse_modify_cluster_db_revision_error(
     crate::output::ModifyClusterDbRevisionOutput,
     crate::error::ModifyClusterDbRevisionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterDbRevisionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9119,7 +9119,7 @@ pub fn parse_modify_cluster_iam_roles_error(
     crate::output::ModifyClusterIamRolesOutput,
     crate::error::ModifyClusterIamRolesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterIamRolesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9201,7 +9201,7 @@ pub fn parse_modify_cluster_maintenance_error(
     crate::output::ModifyClusterMaintenanceOutput,
     crate::error::ModifyClusterMaintenanceError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterMaintenanceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9287,7 +9287,7 @@ pub fn parse_modify_cluster_parameter_group_error(
     crate::output::ModifyClusterParameterGroupOutput,
     crate::error::ModifyClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9359,7 +9359,7 @@ pub fn parse_modify_cluster_snapshot_error(
     crate::output::ModifyClusterSnapshotOutput,
     crate::error::ModifyClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9457,7 +9457,7 @@ pub fn parse_modify_cluster_snapshot_schedule_error(
     crate::output::ModifyClusterSnapshotScheduleOutput,
     crate::error::ModifyClusterSnapshotScheduleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterSnapshotScheduleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9538,7 +9538,7 @@ pub fn parse_modify_cluster_subnet_group_error(
     crate::output::ModifyClusterSubnetGroupOutput,
     crate::error::ModifyClusterSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyClusterSubnetGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9666,7 +9666,7 @@ pub fn parse_modify_endpoint_access_error(
     crate::output::ModifyEndpointAccessOutput,
     crate::error::ModifyEndpointAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyEndpointAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -9831,7 +9831,7 @@ pub fn parse_modify_event_subscription_error(
     crate::output::ModifyEventSubscriptionOutput,
     crate::error::ModifyEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10062,7 +10062,7 @@ pub fn parse_modify_scheduled_action_error(
     crate::output::ModifyScheduledActionOutput,
     crate::error::ModifyScheduledActionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyScheduledActionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10205,7 +10205,7 @@ pub fn parse_modify_snapshot_copy_retention_period_error(
     crate::output::ModifySnapshotCopyRetentionPeriodOutput,
     crate::error::ModifySnapshotCopyRetentionPeriodError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifySnapshotCopyRetentionPeriodError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10318,7 +10318,7 @@ pub fn parse_modify_snapshot_schedule_error(
     crate::output::ModifySnapshotScheduleOutput,
     crate::error::ModifySnapshotScheduleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifySnapshotScheduleError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10418,7 +10418,7 @@ pub fn parse_modify_usage_limit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyUsageLimitOutput, crate::error::ModifyUsageLimitError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyUsageLimitError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10514,7 +10514,7 @@ pub fn parse_modify_usage_limit_response(
 pub fn parse_pause_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PauseClusterOutput, crate::error::PauseClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PauseClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10590,7 +10590,7 @@ pub fn parse_purchase_reserved_node_offering_error(
     crate::output::PurchaseReservedNodeOfferingOutput,
     crate::error::PurchaseReservedNodeOfferingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PurchaseReservedNodeOfferingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10687,7 +10687,7 @@ pub fn parse_purchase_reserved_node_offering_response(
 pub fn parse_reboot_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RebootClusterOutput, crate::error::RebootClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RebootClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10760,7 +10760,7 @@ pub fn parse_reboot_cluster_response(
 pub fn parse_reject_data_share_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RejectDataShareOutput, crate::error::RejectDataShareError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectDataShareError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10816,7 +10816,7 @@ pub fn parse_reset_cluster_parameter_group_error(
     crate::output::ResetClusterParameterGroupOutput,
     crate::error::ResetClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResetClusterParameterGroupError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -10885,7 +10885,7 @@ pub fn parse_reset_cluster_parameter_group_response(
 pub fn parse_resize_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResizeClusterOutput, crate::error::ResizeClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResizeClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11099,7 +11099,7 @@ pub fn parse_restore_from_cluster_snapshot_error(
     crate::output::RestoreFromClusterSnapshotOutput,
     crate::error::RestoreFromClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreFromClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11493,7 +11493,7 @@ pub fn parse_restore_table_from_cluster_snapshot_error(
     crate::output::RestoreTableFromClusterSnapshotOutput,
     crate::error::RestoreTableFromClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreTableFromClusterSnapshotError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11629,7 +11629,7 @@ pub fn parse_restore_table_from_cluster_snapshot_response(
 pub fn parse_resume_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResumeClusterOutput, crate::error::ResumeClusterError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResumeClusterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11723,7 +11723,7 @@ pub fn parse_revoke_cluster_security_group_ingress_error(
     crate::output::RevokeClusterSecurityGroupIngressOutput,
     crate::error::RevokeClusterSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeClusterSecurityGroupIngressError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11808,7 +11808,7 @@ pub fn parse_revoke_endpoint_access_error(
     crate::output::RevokeEndpointAccessOutput,
     crate::error::RevokeEndpointAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeEndpointAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -11991,7 +11991,7 @@ pub fn parse_revoke_snapshot_access_error(
     crate::output::RevokeSnapshotAccessOutput,
     crate::error::RevokeSnapshotAccessError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokeSnapshotAccessError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12091,7 +12091,7 @@ pub fn parse_rotate_encryption_key_error(
     crate::output::RotateEncryptionKeyOutput,
     crate::error::RotateEncryptionKeyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RotateEncryptionKeyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -12192,7 +12192,7 @@ pub fn parse_update_partner_status_error(
     crate::output::UpdatePartnerStatusOutput,
     crate::error::UpdatePartnerStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdatePartnerStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

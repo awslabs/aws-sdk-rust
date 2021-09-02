@@ -6,7 +6,7 @@ pub fn parse_delete_scaling_policy_error(
     crate::output::DeleteScalingPolicyOutput,
     crate::error::DeleteScalingPolicyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteScalingPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -126,7 +126,7 @@ pub fn parse_delete_scheduled_action_error(
     crate::output::DeleteScheduledActionOutput,
     crate::error::DeleteScheduledActionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -246,7 +246,7 @@ pub fn parse_deregister_scalable_target_error(
     crate::output::DeregisterScalableTargetOutput,
     crate::error::DeregisterScalableTargetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterScalableTargetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -370,7 +370,7 @@ pub fn parse_describe_scalable_targets_error(
     crate::output::DescribeScalableTargetsOutput,
     crate::error::DescribeScalableTargetsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScalableTargetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -498,7 +498,7 @@ pub fn parse_describe_scaling_activities_error(
     crate::output::DescribeScalingActivitiesOutput,
     crate::error::DescribeScalingActivitiesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -628,7 +628,7 @@ pub fn parse_describe_scaling_policies_error(
     crate::output::DescribeScalingPoliciesOutput,
     crate::error::DescribeScalingPoliciesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScalingPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -774,7 +774,7 @@ pub fn parse_describe_scheduled_actions_error(
     crate::output::DescribeScheduledActionsOutput,
     crate::error::DescribeScheduledActionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -900,7 +900,7 @@ pub fn parse_put_scaling_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutScalingPolicyOutput, crate::error::PutScalingPolicyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutScalingPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1060,7 +1060,7 @@ pub fn parse_put_scheduled_action_error(
     crate::output::PutScheduledActionOutput,
     crate::error::PutScheduledActionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutScheduledActionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1201,7 +1201,7 @@ pub fn parse_register_scalable_target_error(
     crate::output::RegisterScalableTargetOutput,
     crate::error::RegisterScalableTargetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterScalableTargetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

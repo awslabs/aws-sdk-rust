@@ -6,9 +6,9 @@
 use std::process;
 
 use ssm::model::ParameterType;
-use ssm::{Client, Config, Region};
+use ssm::{Client, Region};
 
-use aws_types::region::{EnvironmentProvider, ProvideRegion};
+use aws_config::meta::region::RegionProviderChain;
 
 use structopt::StructOpt;
 
@@ -55,23 +55,24 @@ async fn main() {
         verbose,
     } = Opt::from_args();
 
-    let region = EnvironmentProvider::new()
-        .region()
-        .or_else(|| region.as_ref().map(|region| Region::new(region.clone())))
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     if verbose {
         println!("SSM client version:   {}", ssm::PKG_VERSION);
-        println!("Region:               {:?}", &region);
+        println!(
+            "Region:               {:?}",
+            shared_config.region().unwrap()
+        );
         println!("Parameter name:       {}", name);
         println!("Paramter value:       {}", parameter_value);
         println!("Paramter description: {}", description);
 
         tracing_subscriber::fmt::init();
     }
-
-    let config = Config::builder().region(region).build();
-    let client = Client::from_conf(config);
 
     match client
         .put_parameter()

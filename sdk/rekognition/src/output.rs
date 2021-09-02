@@ -788,10 +788,18 @@ impl SearchFacesOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RecognizeCelebritiesOutput {
     /// <p>Details about each celebrity found in the image. Amazon Rekognition can detect a maximum of 64
-    /// celebrities in an image.</p>
+    /// celebrities in an image. Each celebrity object includes the following attributes:
+    /// <code>Face</code>, <code>Confidence</code>, <code>Emotions</code>, <code>Landmarks</code>,
+    /// <code>Pose</code>, <code>Quality</code>, <code>Smile</code>, <code>Id</code>,
+    /// <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
+    /// <code>Urls</code>.</p>
     pub celebrity_faces: std::option::Option<std::vec::Vec<crate::model::Celebrity>>,
     /// <p>Details about each unrecognized face in the image.</p>
     pub unrecognized_faces: std::option::Option<std::vec::Vec<crate::model::ComparedFace>>,
+    /// <note>
+    /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021.
+    /// Any returned values for this field included in an API response will always be NULL.</p>
+    /// </note>
     /// <p>The orientation of the input image (counterclockwise direction). If your application
     /// displays the image, you can use this value to correct the orientation. The bounding box
     /// coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
@@ -853,6 +861,10 @@ pub mod recognize_celebrities_output {
             self.unrecognized_faces = input;
             self
         }
+        /// <note>
+        /// <p>Support for estimating image orientation using the the OrientationCorrection field has ceased as of August 2021.
+        /// Any returned values for this field included in an API response will always be NULL.</p>
+        /// </note>
         /// <p>The orientation of the input image (counterclockwise direction). If your application
         /// displays the image, you can use this value to correct the orientation. The bounding box
         /// coordinates returned in <code>CelebrityFaces</code> and <code>UnrecognizedFaces</code>
@@ -2426,12 +2438,15 @@ pub struct GetCelebrityInfoOutput {
     pub urls: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The name of the celebrity.</p>
     pub name: std::option::Option<std::string::String>,
+    /// <p>Retrieves the known gender for the celebrity.</p>
+    pub known_gender: std::option::Option<crate::model::KnownGender>,
 }
 impl std::fmt::Debug for GetCelebrityInfoOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("GetCelebrityInfoOutput");
         formatter.field("urls", &self.urls);
         formatter.field("name", &self.name);
+        formatter.field("known_gender", &self.known_gender);
         formatter.finish()
     }
 }
@@ -2443,6 +2458,7 @@ pub mod get_celebrity_info_output {
     pub struct Builder {
         pub(crate) urls: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) name: std::option::Option<std::string::String>,
+        pub(crate) known_gender: std::option::Option<crate::model::KnownGender>,
     }
     impl Builder {
         pub fn urls(mut self, input: impl Into<std::string::String>) -> Self {
@@ -2467,11 +2483,24 @@ pub mod get_celebrity_info_output {
             self.name = input;
             self
         }
+        /// <p>Retrieves the known gender for the celebrity.</p>
+        pub fn known_gender(mut self, input: crate::model::KnownGender) -> Self {
+            self.known_gender = Some(input);
+            self
+        }
+        pub fn set_known_gender(
+            mut self,
+            input: std::option::Option<crate::model::KnownGender>,
+        ) -> Self {
+            self.known_gender = input;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCelebrityInfoOutput`](crate::output::GetCelebrityInfoOutput)
         pub fn build(self) -> crate::output::GetCelebrityInfoOutput {
             crate::output::GetCelebrityInfoOutput {
                 urls: self.urls,
                 name: self.name,
+                known_gender: self.known_gender,
             }
         }
     }

@@ -1,14 +1,14 @@
-use aws_types::region;
-use aws_types::region::ProvideRegion;
+use aws_config::meta::region::RegionProviderChain;
+
 use config::model::ResourceType;
-use config::{Client, Config, Error, Region};
+use config::{Client, Error, Region};
 use structopt::StructOpt;
 
 #[derive(Debug, StructOpt)]
 struct Opt {
     /// The default AWS Region.
     #[structopt(short, long)]
-    default_region: Option<String>,
+    region: Option<String>,
 
     /// The resource id.
     #[structopt(long)]
@@ -36,25 +36,29 @@ struct Opt {
 async fn main() -> Result<(), Error> {
     tracing_subscriber::fmt::init();
     let Opt {
-        default_region,
+        region,
         resource_id,
         resource_type,
         verbose,
     } = Opt::from_args();
 
-    let region = region::ChainProvider::first_try(default_region.map(Region::new))
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
         .or_default_provider()
         .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("Config client version: {}", config::PKG_VERSION);
-        println!("Region:               {:?}", region.region());
+        println!(
+            "Region:               {:?}",
+            shared_config.region().unwrap()
+        );
         println!();
     }
 
-    let conf = Config::builder().region(region).build();
     // parse resource type from user input
     let parsed = ResourceType::from(resource_type.as_str());
     if matches!(parsed, ResourceType::Unknown(_)) {
@@ -64,7 +68,6 @@ async fn main() -> Result<(), Error> {
             ResourceType::values()
         )
     }
-    let client = Client::from_conf(conf);
     let rsp = client
         .get_resource_config_history()
         .resource_id(&resource_id)

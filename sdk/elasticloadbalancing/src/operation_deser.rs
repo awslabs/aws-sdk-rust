@@ -3,7 +3,7 @@
 pub fn parse_add_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -98,7 +98,7 @@ pub fn parse_apply_security_groups_to_load_balancer_error(
     crate::output::ApplySecurityGroupsToLoadBalancerOutput,
     crate::error::ApplySecurityGroupsToLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ApplySecurityGroupsToLoadBalancerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -183,7 +183,7 @@ pub fn parse_attach_load_balancer_to_subnets_error(
     crate::output::AttachLoadBalancerToSubnetsOutput,
     crate::error::AttachLoadBalancerToSubnetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AttachLoadBalancerToSubnetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -283,7 +283,7 @@ pub fn parse_configure_health_check_error(
     crate::output::ConfigureHealthCheckOutput,
     crate::error::ConfigureHealthCheckError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ConfigureHealthCheckError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -343,7 +343,7 @@ pub fn parse_create_app_cookie_stickiness_policy_error(
     crate::output::CreateAppCookieStickinessPolicyOutput,
     crate::error::CreateAppCookieStickinessPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateAppCookieStickinessPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -435,7 +435,7 @@ pub fn parse_create_lb_cookie_stickiness_policy_error(
     crate::output::CreateLbCookieStickinessPolicyOutput,
     crate::error::CreateLBCookieStickinessPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLBCookieStickinessPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -527,7 +527,7 @@ pub fn parse_create_load_balancer_error(
     crate::output::CreateLoadBalancerOutput,
     crate::error::CreateLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLoadBalancerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -810,7 +810,7 @@ pub fn parse_create_load_balancer_listeners_error(
     crate::output::CreateLoadBalancerListenersOutput,
     crate::error::CreateLoadBalancerListenersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLoadBalancerListenersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -919,7 +919,7 @@ pub fn parse_create_load_balancer_policy_error(
     crate::output::CreateLoadBalancerPolicyOutput,
     crate::error::CreateLoadBalancerPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLoadBalancerPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1028,7 +1028,7 @@ pub fn parse_delete_load_balancer_error(
     crate::output::DeleteLoadBalancerOutput,
     crate::error::DeleteLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLoadBalancerError::unhandled)?;
     Err(crate::error::DeleteLoadBalancerError::generic(generic))
 }
@@ -1055,7 +1055,7 @@ pub fn parse_delete_load_balancer_listeners_error(
     crate::output::DeleteLoadBalancerListenersOutput,
     crate::error::DeleteLoadBalancerListenersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLoadBalancerListenersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1114,7 +1114,7 @@ pub fn parse_delete_load_balancer_policy_error(
     crate::output::DeleteLoadBalancerPolicyOutput,
     crate::error::DeleteLoadBalancerPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLoadBalancerPolicyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1181,7 +1181,7 @@ pub fn parse_deregister_instances_from_load_balancer_error(
     crate::output::DeregisterInstancesFromLoadBalancerOutput,
     crate::error::DeregisterInstancesFromLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterInstancesFromLoadBalancerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1252,7 +1252,7 @@ pub fn parse_describe_account_limits_error(
     crate::output::DescribeAccountLimitsOutput,
     crate::error::DescribeAccountLimitsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
     Err(crate::error::DescribeAccountLimitsError::generic(generic))
 }
@@ -1284,7 +1284,7 @@ pub fn parse_describe_instance_health_error(
     crate::output::DescribeInstanceHealthOutput,
     crate::error::DescribeInstanceHealthError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeInstanceHealthError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1371,7 +1371,7 @@ pub fn parse_describe_load_balancer_attributes_error(
     crate::output::DescribeLoadBalancerAttributesOutput,
     crate::error::DescribeLoadBalancerAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLoadBalancerAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1440,7 +1440,7 @@ pub fn parse_describe_load_balancer_policies_error(
     crate::output::DescribeLoadBalancerPoliciesOutput,
     crate::error::DescribeLoadBalancerPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLoadBalancerPoliciesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1525,7 +1525,7 @@ pub fn parse_describe_load_balancer_policy_types_error(
     crate::output::DescribeLoadBalancerPolicyTypesOutput,
     crate::error::DescribeLoadBalancerPolicyTypesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLoadBalancerPolicyTypesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1587,7 +1587,7 @@ pub fn parse_describe_load_balancers_error(
     crate::output::DescribeLoadBalancersOutput,
     crate::error::DescribeLoadBalancersError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1664,7 +1664,7 @@ pub fn parse_describe_load_balancers_response(
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1718,7 +1718,7 @@ pub fn parse_detach_load_balancer_from_subnets_error(
     crate::output::DetachLoadBalancerFromSubnetsOutput,
     crate::error::DetachLoadBalancerFromSubnetsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetachLoadBalancerFromSubnetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1791,7 +1791,7 @@ pub fn parse_disable_availability_zones_for_load_balancer_error(
     crate::output::DisableAvailabilityZonesForLoadBalancerOutput,
     crate::error::DisableAvailabilityZonesForLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableAvailabilityZonesForLoadBalancerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1864,7 +1864,7 @@ pub fn parse_enable_availability_zones_for_load_balancer_error(
     crate::output::EnableAvailabilityZonesForLoadBalancerOutput,
     crate::error::EnableAvailabilityZonesForLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableAvailabilityZonesForLoadBalancerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1923,7 +1923,7 @@ pub fn parse_modify_load_balancer_attributes_error(
     crate::output::ModifyLoadBalancerAttributesOutput,
     crate::error::ModifyLoadBalancerAttributesError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ModifyLoadBalancerAttributesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2009,7 +2009,7 @@ pub fn parse_register_instances_with_load_balancer_error(
     crate::output::RegisterInstancesWithLoadBalancerOutput,
     crate::error::RegisterInstancesWithLoadBalancerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterInstancesWithLoadBalancerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2077,7 +2077,7 @@ pub fn parse_register_instances_with_load_balancer_response(
 pub fn parse_remove_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2129,7 +2129,7 @@ pub fn parse_set_load_balancer_listener_ssl_certificate_error(
     crate::output::SetLoadBalancerListenerSslCertificateOutput,
     crate::error::SetLoadBalancerListenerSSLCertificateError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetLoadBalancerListenerSSLCertificateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2239,7 +2239,7 @@ pub fn parse_set_load_balancer_policies_for_backend_server_error(
     crate::output::SetLoadBalancerPoliciesForBackendServerOutput,
     crate::error::SetLoadBalancerPoliciesForBackendServerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetLoadBalancerPoliciesForBackendServerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2321,7 +2321,7 @@ pub fn parse_set_load_balancer_policies_of_listener_error(
     crate::output::SetLoadBalancerPoliciesOfListenerOutput,
     crate::error::SetLoadBalancerPoliciesOfListenerError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::SetLoadBalancerPoliciesOfListenerError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

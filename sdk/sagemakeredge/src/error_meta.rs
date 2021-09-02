@@ -13,8 +13,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDeviceRegistrationErrorKind::InternalServiceException(inner) => {
@@ -28,8 +33,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetDeviceRegistrationError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SendHeartbeatError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SendHeartbeatError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SendHeartbeatError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SendHeartbeatError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SendHeartbeatErrorKind::InternalServiceException(inner) => {

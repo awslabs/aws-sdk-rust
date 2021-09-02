@@ -23,8 +23,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateDatasetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateDatasetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateDatasetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateDatasetErrorKind::InvalidInputException(inner) => {
@@ -42,8 +45,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDatasetError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateDatasetGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateDatasetGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateDatasetGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateDatasetGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateDatasetGroupErrorKind::InvalidInputException(inner) => {
@@ -69,8 +75,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDatasetGroupError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateDatasetImportJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateDatasetImportJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateDatasetImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateDatasetImportJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateDatasetImportJobErrorKind::InvalidInputException(inner) => {
@@ -96,8 +107,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateDatasetImportJobErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateForecastError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateForecastError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateForecastError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateForecastError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateForecastErrorKind::InvalidInputException(inner) => {
@@ -121,9 +135,12 @@ impl From<smithy_http::result::SdkError<crate::error::CreateForecastError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateForecastExportJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateForecastExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateForecastExportJobError>,
+        err: smithy_http::result::SdkError<crate::error::CreateForecastExportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -150,8 +167,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateForecastExportJobErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePredictorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreatePredictorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePredictorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreatePredictorError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreatePredictorErrorKind::InvalidInputException(inner) => {
@@ -175,11 +195,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePredictorError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePredictorBacktestExportJobError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePredictorBacktestExportJobError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreatePredictorBacktestExportJobError>,
+        err: smithy_http::result::SdkError<crate::error::CreatePredictorBacktestExportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -194,8 +216,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePredictorBacktestExp
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteDatasetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteDatasetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteDatasetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteDatasetErrorKind::InvalidInputException(inner) => {
@@ -213,8 +238,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDatasetError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteDatasetGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteDatasetGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteDatasetGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteDatasetGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteDatasetGroupErrorKind::InvalidInputException(inner) => {
@@ -234,8 +262,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDatasetGroupError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteDatasetImportJobError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteDatasetImportJobError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteDatasetImportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteDatasetImportJobError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteDatasetImportJobErrorKind::InvalidInputException(inner) => {
@@ -255,8 +288,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteDatasetImportJobErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteForecastError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteForecastError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteForecastError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteForecastError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteForecastErrorKind::InvalidInputException(inner) => {
@@ -274,9 +310,12 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteForecastError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteForecastExportJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteForecastExportJobError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteForecastExportJobError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteForecastExportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -297,8 +336,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteForecastExportJobErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePredictorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeletePredictorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePredictorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePredictorError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeletePredictorErrorKind::InvalidInputException(inner) => {
@@ -316,11 +358,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePredictorError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePredictorBacktestExportJobError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePredictorBacktestExportJobError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeletePredictorBacktestExportJobError>,
+        err: smithy_http::result::SdkError<crate::error::DeletePredictorBacktestExportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -333,8 +377,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePredictorBacktestExp
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteResourceTreeError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourceTreeError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteResourceTreeError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteResourceTreeError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteResourceTreeErrorKind::InvalidInputException(inner) => {
@@ -354,8 +401,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteResourceTreeError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDatasetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDatasetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDatasetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeDatasetErrorKind::InvalidInputException(inner) => {
@@ -370,8 +420,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDatasetError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDatasetGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeDatasetGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDatasetGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DescribeDatasetGroupError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeDatasetGroupErrorKind::InvalidInputException(inner) => {
@@ -388,9 +443,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDatasetGroupError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeDatasetImportJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeDatasetImportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeDatasetImportJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeDatasetImportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -408,8 +467,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeDatasetImportJobEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeForecastError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeForecastError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeForecastError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeForecastError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeForecastErrorKind::InvalidInputException(inner) => {
@@ -426,9 +488,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeForecastError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeForecastExportJobError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeForecastExportJobError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeForecastExportJobError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeForecastExportJobError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -446,8 +512,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeForecastExportJobE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribePredictorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribePredictorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribePredictorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribePredictorError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribePredictorErrorKind::InvalidInputException(inner) => {
@@ -464,11 +533,17 @@ impl From<smithy_http::result::SdkError<crate::error::DescribePredictorError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribePredictorBacktestExportJobError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::DescribePredictorBacktestExportJobError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribePredictorBacktestExportJobError>,
+        err: smithy_http::result::SdkError<
+            crate::error::DescribePredictorBacktestExportJobError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -480,8 +555,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribePredictorBacktestE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAccuracyMetricsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetAccuracyMetricsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAccuracyMetricsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetAccuracyMetricsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetAccuracyMetricsErrorKind::InvalidInputException(inner) => {
@@ -501,8 +579,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetAccuracyMetricsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDatasetGroupsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDatasetGroupsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDatasetGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListDatasetGroupsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDatasetGroupsErrorKind::InvalidNextTokenException(inner) => {
@@ -516,8 +597,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListDatasetGroupsError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDatasetImportJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDatasetImportJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDatasetImportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListDatasetImportJobsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDatasetImportJobsErrorKind::InvalidInputException(inner) => {
@@ -534,8 +620,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListDatasetImportJobsError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDatasetsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDatasetsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDatasetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListDatasetsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDatasetsErrorKind::InvalidNextTokenException(inner) => {
@@ -547,8 +636,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListDatasetsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListForecastExportJobsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListForecastExportJobsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListForecastExportJobsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListForecastExportJobsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListForecastExportJobsErrorKind::InvalidInputException(inner) => {
@@ -565,8 +659,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListForecastExportJobsErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListForecastsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListForecastsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListForecastsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListForecastsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListForecastsErrorKind::InvalidInputException(inner) => {
@@ -581,11 +678,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListForecastsError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPredictorBacktestExportJobsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPredictorBacktestExportJobsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListPredictorBacktestExportJobsError>,
+        err: smithy_http::result::SdkError<crate::error::ListPredictorBacktestExportJobsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -597,8 +696,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPredictorBacktestExpor
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPredictorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPredictorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPredictorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPredictorsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPredictorsErrorKind::InvalidInputException(inner) => {
@@ -613,8 +715,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListPredictorsError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::InvalidInputException(inner) => {
@@ -631,8 +736,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StopResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StopResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StopResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StopResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StopResourceErrorKind::InvalidInputException(inner) => {
@@ -650,8 +758,11 @@ impl From<smithy_http::result::SdkError<crate::error::StopResourceError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InvalidInputException(inner) => {
@@ -669,8 +780,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InvalidInputException(inner) => {
@@ -685,8 +799,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDatasetGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateDatasetGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDatasetGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateDatasetGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateDatasetGroupErrorKind::InvalidInputException(inner) => {

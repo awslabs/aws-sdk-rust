@@ -7,9 +7,9 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+aws-config = { path = "../../aws-config" }
 aws-sdk-s3 = { package = "aws-sdk-s3", path = "../../s3" }
 aws-types = { path = "../../aws-types" }
-aws-auth-providers = { path = "../../aws-auth-providers" }
 
 tokio = { version = "1", features = ["full"] }
 

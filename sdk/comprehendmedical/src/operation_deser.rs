@@ -6,7 +6,7 @@ pub fn parse_describe_entities_detection_v2_job_error(
     crate::output::DescribeEntitiesDetectionV2JobOutput,
     crate::error::DescribeEntitiesDetectionV2JobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEntitiesDetectionV2JobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -132,7 +132,7 @@ pub fn parse_describe_icd10_cm_inference_job_error(
     crate::output::DescribeIcd10CmInferenceJobOutput,
     crate::error::DescribeICD10CMInferenceJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeICD10CMInferenceJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -262,7 +262,7 @@ pub fn parse_describe_phi_detection_job_error(
     crate::output::DescribePhiDetectionJobOutput,
     crate::error::DescribePHIDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribePHIDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -390,7 +390,7 @@ pub fn parse_describe_rx_norm_inference_job_error(
     crate::output::DescribeRxNormInferenceJobOutput,
     crate::error::DescribeRxNormInferenceJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRxNormInferenceJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -517,7 +517,7 @@ pub fn parse_describe_rx_norm_inference_job_response(
 pub fn parse_detect_entities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectEntitiesOutput, crate::error::DetectEntitiesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectEntitiesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -673,7 +673,7 @@ pub fn parse_detect_entities_v2_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectEntitiesV2Output, crate::error::DetectEntitiesV2Error>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectEntitiesV2Error::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -829,7 +829,7 @@ pub fn parse_detect_entities_v2_response(
 pub fn parse_detect_phi_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetectPhiOutput, crate::error::DetectPHIError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DetectPHIError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -983,7 +983,7 @@ pub fn parse_detect_phi_response(
 pub fn parse_infer_icd10_cm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InferIcd10CmOutput, crate::error::InferICD10CMError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InferICD10CMError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1138,7 +1138,7 @@ pub fn parse_infer_icd10_cm_response(
 pub fn parse_infer_rx_norm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InferRxNormOutput, crate::error::InferRxNormError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InferRxNormError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1295,7 +1295,7 @@ pub fn parse_list_entities_detection_v2_jobs_error(
     crate::output::ListEntitiesDetectionV2JobsOutput,
     crate::error::ListEntitiesDetectionV2JobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEntitiesDetectionV2JobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1424,7 +1424,7 @@ pub fn parse_list_icd10_cm_inference_jobs_error(
     crate::output::ListIcd10CmInferenceJobsOutput,
     crate::error::ListICD10CMInferenceJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListICD10CMInferenceJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1553,7 +1553,7 @@ pub fn parse_list_phi_detection_jobs_error(
     crate::output::ListPhiDetectionJobsOutput,
     crate::error::ListPHIDetectionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPHIDetectionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1678,7 +1678,7 @@ pub fn parse_list_rx_norm_inference_jobs_error(
     crate::output::ListRxNormInferenceJobsOutput,
     crate::error::ListRxNormInferenceJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListRxNormInferenceJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1807,7 +1807,7 @@ pub fn parse_start_entities_detection_v2_job_error(
     crate::output::StartEntitiesDetectionV2JobOutput,
     crate::error::StartEntitiesDetectionV2JobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartEntitiesDetectionV2JobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1937,7 +1937,7 @@ pub fn parse_start_icd10_cm_inference_job_error(
     crate::output::StartIcd10CmInferenceJobOutput,
     crate::error::StartICD10CMInferenceJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartICD10CMInferenceJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2065,7 +2065,7 @@ pub fn parse_start_phi_detection_job_error(
     crate::output::StartPhiDetectionJobOutput,
     crate::error::StartPHIDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartPHIDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2189,7 +2189,7 @@ pub fn parse_start_rx_norm_inference_job_error(
     crate::output::StartRxNormInferenceJobOutput,
     crate::error::StartRxNormInferenceJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartRxNormInferenceJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2317,7 +2317,7 @@ pub fn parse_stop_entities_detection_v2_job_error(
     crate::output::StopEntitiesDetectionV2JobOutput,
     crate::error::StopEntitiesDetectionV2JobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopEntitiesDetectionV2JobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2425,7 +2425,7 @@ pub fn parse_stop_icd10_cm_inference_job_error(
     crate::output::StopIcd10CmInferenceJobOutput,
     crate::error::StopICD10CMInferenceJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopICD10CMInferenceJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2531,7 +2531,7 @@ pub fn parse_stop_phi_detection_job_error(
     crate::output::StopPhiDetectionJobOutput,
     crate::error::StopPHIDetectionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopPHIDetectionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2633,7 +2633,7 @@ pub fn parse_stop_rx_norm_inference_job_error(
     crate::output::StopRxNormInferenceJobOutput,
     crate::error::StopRxNormInferenceJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopRxNormInferenceJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

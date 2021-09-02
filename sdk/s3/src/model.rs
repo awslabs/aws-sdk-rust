@@ -446,6 +446,1464 @@ impl AsRef<str> for RequestPayer {
     }
 }
 
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+pub enum SelectObjectContentEventStream {
+    /// <p>The Continuation Event.</p>
+    Cont(crate::model::ContinuationEvent),
+    /// <p>The End Event.</p>
+    End(crate::model::EndEvent),
+    /// <p>The Progress Event.</p>
+    Progress(crate::model::ProgressEvent),
+    /// <p>The Records Event.</p>
+    Records(crate::model::RecordsEvent),
+    /// <p>The Stats Event.</p>
+    Stats(crate::model::StatsEvent),
+}
+impl SelectObjectContentEventStream {
+    pub fn as_cont(&self) -> std::result::Result<&crate::model::ContinuationEvent, &Self> {
+        if let SelectObjectContentEventStream::Cont(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_cont(&self) -> bool {
+        self.as_cont().is_ok()
+    }
+    pub fn as_end(&self) -> std::result::Result<&crate::model::EndEvent, &Self> {
+        if let SelectObjectContentEventStream::End(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_end(&self) -> bool {
+        self.as_end().is_ok()
+    }
+    pub fn as_progress(&self) -> std::result::Result<&crate::model::ProgressEvent, &Self> {
+        if let SelectObjectContentEventStream::Progress(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_progress(&self) -> bool {
+        self.as_progress().is_ok()
+    }
+    pub fn as_records(&self) -> std::result::Result<&crate::model::RecordsEvent, &Self> {
+        if let SelectObjectContentEventStream::Records(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_records(&self) -> bool {
+        self.as_records().is_ok()
+    }
+    pub fn as_stats(&self) -> std::result::Result<&crate::model::StatsEvent, &Self> {
+        if let SelectObjectContentEventStream::Stats(val) = &self {
+            Ok(&val)
+        } else {
+            Err(&self)
+        }
+    }
+    pub fn is_stats(&self) -> bool {
+        self.as_stats().is_ok()
+    }
+}
+
+/// <p>A message that indicates the request is complete and no more messages will be sent. You
+/// should not assume that the request is complete until the client receives an
+/// <code>EndEvent</code>.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct EndEvent {}
+impl std::fmt::Debug for EndEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("EndEvent");
+        formatter.finish()
+    }
+}
+/// See [`EndEvent`](crate::model::EndEvent)
+pub mod end_event {
+    /// A builder for [`EndEvent`](crate::model::EndEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`EndEvent`](crate::model::EndEvent)
+        pub fn build(self) -> crate::model::EndEvent {
+            crate::model::EndEvent {}
+        }
+    }
+}
+impl EndEvent {
+    /// Creates a new builder-style object to manufacture [`EndEvent`](crate::model::EndEvent)
+    pub fn builder() -> crate::model::end_event::Builder {
+        crate::model::end_event::Builder::default()
+    }
+}
+
+/// <p></p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ContinuationEvent {}
+impl std::fmt::Debug for ContinuationEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ContinuationEvent");
+        formatter.finish()
+    }
+}
+/// See [`ContinuationEvent`](crate::model::ContinuationEvent)
+pub mod continuation_event {
+    /// A builder for [`ContinuationEvent`](crate::model::ContinuationEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ContinuationEvent`](crate::model::ContinuationEvent)
+        pub fn build(self) -> crate::model::ContinuationEvent {
+            crate::model::ContinuationEvent {}
+        }
+    }
+}
+impl ContinuationEvent {
+    /// Creates a new builder-style object to manufacture [`ContinuationEvent`](crate::model::ContinuationEvent)
+    pub fn builder() -> crate::model::continuation_event::Builder {
+        crate::model::continuation_event::Builder::default()
+    }
+}
+
+/// <p>This data type contains information about the progress event of an operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ProgressEvent {
+    /// <p>The Progress event details.</p>
+    pub details: std::option::Option<crate::model::Progress>,
+}
+impl std::fmt::Debug for ProgressEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ProgressEvent");
+        formatter.field("details", &self.details);
+        formatter.finish()
+    }
+}
+/// See [`ProgressEvent`](crate::model::ProgressEvent)
+pub mod progress_event {
+    /// A builder for [`ProgressEvent`](crate::model::ProgressEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) details: std::option::Option<crate::model::Progress>,
+    }
+    impl Builder {
+        /// <p>The Progress event details.</p>
+        pub fn details(mut self, input: crate::model::Progress) -> Self {
+            self.details = Some(input);
+            self
+        }
+        pub fn set_details(mut self, input: std::option::Option<crate::model::Progress>) -> Self {
+            self.details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ProgressEvent`](crate::model::ProgressEvent)
+        pub fn build(self) -> crate::model::ProgressEvent {
+            crate::model::ProgressEvent {
+                details: self.details,
+            }
+        }
+    }
+}
+impl ProgressEvent {
+    /// Creates a new builder-style object to manufacture [`ProgressEvent`](crate::model::ProgressEvent)
+    pub fn builder() -> crate::model::progress_event::Builder {
+        crate::model::progress_event::Builder::default()
+    }
+}
+
+/// <p>This data type contains information about progress of an operation.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Progress {
+    /// <p>The current number of object bytes scanned.</p>
+    pub bytes_scanned: i64,
+    /// <p>The current number of uncompressed object bytes processed.</p>
+    pub bytes_processed: i64,
+    /// <p>The current number of bytes of records payload data returned.</p>
+    pub bytes_returned: i64,
+}
+impl std::fmt::Debug for Progress {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Progress");
+        formatter.field("bytes_scanned", &self.bytes_scanned);
+        formatter.field("bytes_processed", &self.bytes_processed);
+        formatter.field("bytes_returned", &self.bytes_returned);
+        formatter.finish()
+    }
+}
+/// See [`Progress`](crate::model::Progress)
+pub mod progress {
+    /// A builder for [`Progress`](crate::model::Progress)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bytes_scanned: std::option::Option<i64>,
+        pub(crate) bytes_processed: std::option::Option<i64>,
+        pub(crate) bytes_returned: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The current number of object bytes scanned.</p>
+        pub fn bytes_scanned(mut self, input: i64) -> Self {
+            self.bytes_scanned = Some(input);
+            self
+        }
+        pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_scanned = input;
+            self
+        }
+        /// <p>The current number of uncompressed object bytes processed.</p>
+        pub fn bytes_processed(mut self, input: i64) -> Self {
+            self.bytes_processed = Some(input);
+            self
+        }
+        pub fn set_bytes_processed(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_processed = input;
+            self
+        }
+        /// <p>The current number of bytes of records payload data returned.</p>
+        pub fn bytes_returned(mut self, input: i64) -> Self {
+            self.bytes_returned = Some(input);
+            self
+        }
+        pub fn set_bytes_returned(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_returned = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Progress`](crate::model::Progress)
+        pub fn build(self) -> crate::model::Progress {
+            crate::model::Progress {
+                bytes_scanned: self.bytes_scanned.unwrap_or_default(),
+                bytes_processed: self.bytes_processed.unwrap_or_default(),
+                bytes_returned: self.bytes_returned.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Progress {
+    /// Creates a new builder-style object to manufacture [`Progress`](crate::model::Progress)
+    pub fn builder() -> crate::model::progress::Builder {
+        crate::model::progress::Builder::default()
+    }
+}
+
+/// <p>Container for the Stats Event.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct StatsEvent {
+    /// <p>The Stats event details.</p>
+    pub details: std::option::Option<crate::model::Stats>,
+}
+impl std::fmt::Debug for StatsEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("StatsEvent");
+        formatter.field("details", &self.details);
+        formatter.finish()
+    }
+}
+/// See [`StatsEvent`](crate::model::StatsEvent)
+pub mod stats_event {
+    /// A builder for [`StatsEvent`](crate::model::StatsEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) details: std::option::Option<crate::model::Stats>,
+    }
+    impl Builder {
+        /// <p>The Stats event details.</p>
+        pub fn details(mut self, input: crate::model::Stats) -> Self {
+            self.details = Some(input);
+            self
+        }
+        pub fn set_details(mut self, input: std::option::Option<crate::model::Stats>) -> Self {
+            self.details = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`StatsEvent`](crate::model::StatsEvent)
+        pub fn build(self) -> crate::model::StatsEvent {
+            crate::model::StatsEvent {
+                details: self.details,
+            }
+        }
+    }
+}
+impl StatsEvent {
+    /// Creates a new builder-style object to manufacture [`StatsEvent`](crate::model::StatsEvent)
+    pub fn builder() -> crate::model::stats_event::Builder {
+        crate::model::stats_event::Builder::default()
+    }
+}
+
+/// <p>Container for the stats details.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct Stats {
+    /// <p>The total number of object bytes scanned.</p>
+    pub bytes_scanned: i64,
+    /// <p>The total number of uncompressed object bytes processed.</p>
+    pub bytes_processed: i64,
+    /// <p>The total number of bytes of records payload data returned.</p>
+    pub bytes_returned: i64,
+}
+impl std::fmt::Debug for Stats {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("Stats");
+        formatter.field("bytes_scanned", &self.bytes_scanned);
+        formatter.field("bytes_processed", &self.bytes_processed);
+        formatter.field("bytes_returned", &self.bytes_returned);
+        formatter.finish()
+    }
+}
+/// See [`Stats`](crate::model::Stats)
+pub mod stats {
+    /// A builder for [`Stats`](crate::model::Stats)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) bytes_scanned: std::option::Option<i64>,
+        pub(crate) bytes_processed: std::option::Option<i64>,
+        pub(crate) bytes_returned: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>The total number of object bytes scanned.</p>
+        pub fn bytes_scanned(mut self, input: i64) -> Self {
+            self.bytes_scanned = Some(input);
+            self
+        }
+        pub fn set_bytes_scanned(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_scanned = input;
+            self
+        }
+        /// <p>The total number of uncompressed object bytes processed.</p>
+        pub fn bytes_processed(mut self, input: i64) -> Self {
+            self.bytes_processed = Some(input);
+            self
+        }
+        pub fn set_bytes_processed(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_processed = input;
+            self
+        }
+        /// <p>The total number of bytes of records payload data returned.</p>
+        pub fn bytes_returned(mut self, input: i64) -> Self {
+            self.bytes_returned = Some(input);
+            self
+        }
+        pub fn set_bytes_returned(mut self, input: std::option::Option<i64>) -> Self {
+            self.bytes_returned = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`Stats`](crate::model::Stats)
+        pub fn build(self) -> crate::model::Stats {
+            crate::model::Stats {
+                bytes_scanned: self.bytes_scanned.unwrap_or_default(),
+                bytes_processed: self.bytes_processed.unwrap_or_default(),
+                bytes_returned: self.bytes_returned.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl Stats {
+    /// Creates a new builder-style object to manufacture [`Stats`](crate::model::Stats)
+    pub fn builder() -> crate::model::stats::Builder {
+        crate::model::stats::Builder::default()
+    }
+}
+
+/// <p>The container for the records event.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RecordsEvent {
+    /// <p>The byte array of partial, one or more result records.</p>
+    pub payload: std::option::Option<smithy_types::Blob>,
+}
+impl std::fmt::Debug for RecordsEvent {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RecordsEvent");
+        formatter.field("payload", &self.payload);
+        formatter.finish()
+    }
+}
+/// See [`RecordsEvent`](crate::model::RecordsEvent)
+pub mod records_event {
+    /// A builder for [`RecordsEvent`](crate::model::RecordsEvent)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) payload: std::option::Option<smithy_types::Blob>,
+    }
+    impl Builder {
+        /// <p>The byte array of partial, one or more result records.</p>
+        pub fn payload(mut self, input: smithy_types::Blob) -> Self {
+            self.payload = Some(input);
+            self
+        }
+        pub fn set_payload(mut self, input: std::option::Option<smithy_types::Blob>) -> Self {
+            self.payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RecordsEvent`](crate::model::RecordsEvent)
+        pub fn build(self) -> crate::model::RecordsEvent {
+            crate::model::RecordsEvent {
+                payload: self.payload,
+            }
+        }
+    }
+}
+impl RecordsEvent {
+    /// Creates a new builder-style object to manufacture [`RecordsEvent`](crate::model::RecordsEvent)
+    pub fn builder() -> crate::model::records_event::Builder {
+        crate::model::records_event::Builder::default()
+    }
+}
+
+/// <p>Specifies the byte range of the object to get the records from. A record is processed
+/// when its first byte is contained by the range. This parameter is optional, but when
+/// specified, it must not be empty. See RFC 2616, Section 14.35.1 about how to specify the
+/// start and end of the range.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ScanRange {
+    /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
+    /// non-negative integers. The default value is 0. If only start is supplied, it means scan
+    /// from that point to the end of the file.For example;
+    /// <code><scanrange><start>50</start></scanrange></code> means scan
+    /// from byte 50 until the end of the file.</p>
+    pub start: i64,
+    /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
+    /// non-negative integers. The default value is one less than the size of the object being
+    /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
+    /// bytes of the file. For example,
+    /// <code><scanrange><end>50</end></scanrange></code> means scan the
+    /// last 50 bytes.</p>
+    pub end: i64,
+}
+impl std::fmt::Debug for ScanRange {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ScanRange");
+        formatter.field("start", &self.start);
+        formatter.field("end", &self.end);
+        formatter.finish()
+    }
+}
+/// See [`ScanRange`](crate::model::ScanRange)
+pub mod scan_range {
+    /// A builder for [`ScanRange`](crate::model::ScanRange)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) start: std::option::Option<i64>,
+        pub(crate) end: std::option::Option<i64>,
+    }
+    impl Builder {
+        /// <p>Specifies the start of the byte range. This parameter is optional. Valid values:
+        /// non-negative integers. The default value is 0. If only start is supplied, it means scan
+        /// from that point to the end of the file.For example;
+        /// <code><scanrange><start>50</start></scanrange></code> means scan
+        /// from byte 50 until the end of the file.</p>
+        pub fn start(mut self, input: i64) -> Self {
+            self.start = Some(input);
+            self
+        }
+        pub fn set_start(mut self, input: std::option::Option<i64>) -> Self {
+            self.start = input;
+            self
+        }
+        /// <p>Specifies the end of the byte range. This parameter is optional. Valid values:
+        /// non-negative integers. The default value is one less than the size of the object being
+        /// queried. If only the End parameter is supplied, it is interpreted to mean scan the last N
+        /// bytes of the file. For example,
+        /// <code><scanrange><end>50</end></scanrange></code> means scan the
+        /// last 50 bytes.</p>
+        pub fn end(mut self, input: i64) -> Self {
+            self.end = Some(input);
+            self
+        }
+        pub fn set_end(mut self, input: std::option::Option<i64>) -> Self {
+            self.end = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ScanRange`](crate::model::ScanRange)
+        pub fn build(self) -> crate::model::ScanRange {
+            crate::model::ScanRange {
+                start: self.start.unwrap_or_default(),
+                end: self.end.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl ScanRange {
+    /// Creates a new builder-style object to manufacture [`ScanRange`](crate::model::ScanRange)
+    pub fn builder() -> crate::model::scan_range::Builder {
+        crate::model::scan_range::Builder::default()
+    }
+}
+
+/// <p>Describes how results of the Select job are serialized.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct OutputSerialization {
+    /// <p>Describes the serialization of CSV-encoded Select results.</p>
+    pub csv: std::option::Option<crate::model::CsvOutput>,
+    /// <p>Specifies JSON as request's output serialization format.</p>
+    pub json: std::option::Option<crate::model::JsonOutput>,
+}
+impl std::fmt::Debug for OutputSerialization {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("OutputSerialization");
+        formatter.field("csv", &self.csv);
+        formatter.field("json", &self.json);
+        formatter.finish()
+    }
+}
+/// See [`OutputSerialization`](crate::model::OutputSerialization)
+pub mod output_serialization {
+    /// A builder for [`OutputSerialization`](crate::model::OutputSerialization)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) csv: std::option::Option<crate::model::CsvOutput>,
+        pub(crate) json: std::option::Option<crate::model::JsonOutput>,
+    }
+    impl Builder {
+        /// <p>Describes the serialization of CSV-encoded Select results.</p>
+        pub fn csv(mut self, input: crate::model::CsvOutput) -> Self {
+            self.csv = Some(input);
+            self
+        }
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOutput>) -> Self {
+            self.csv = input;
+            self
+        }
+        /// <p>Specifies JSON as request's output serialization format.</p>
+        pub fn json(mut self, input: crate::model::JsonOutput) -> Self {
+            self.json = Some(input);
+            self
+        }
+        pub fn set_json(mut self, input: std::option::Option<crate::model::JsonOutput>) -> Self {
+            self.json = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`OutputSerialization`](crate::model::OutputSerialization)
+        pub fn build(self) -> crate::model::OutputSerialization {
+            crate::model::OutputSerialization {
+                csv: self.csv,
+                json: self.json,
+            }
+        }
+    }
+}
+impl OutputSerialization {
+    /// Creates a new builder-style object to manufacture [`OutputSerialization`](crate::model::OutputSerialization)
+    pub fn builder() -> crate::model::output_serialization::Builder {
+        crate::model::output_serialization::Builder::default()
+    }
+}
+
+/// <p>Specifies JSON as request's output serialization format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JsonOutput {
+    /// <p>The value used to separate individual records in the output. If no value is specified,
+    /// Amazon S3 uses a newline character ('\n').</p>
+    pub record_delimiter: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for JsonOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JsonOutput");
+        formatter.field("record_delimiter", &self.record_delimiter);
+        formatter.finish()
+    }
+}
+/// See [`JsonOutput`](crate::model::JsonOutput)
+pub mod json_output {
+    /// A builder for [`JsonOutput`](crate::model::JsonOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) record_delimiter: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>The value used to separate individual records in the output. If no value is specified,
+        /// Amazon S3 uses a newline character ('\n').</p>
+        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_delimiter = Some(input.into());
+            self
+        }
+        pub fn set_record_delimiter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.record_delimiter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JsonOutput`](crate::model::JsonOutput)
+        pub fn build(self) -> crate::model::JsonOutput {
+            crate::model::JsonOutput {
+                record_delimiter: self.record_delimiter,
+            }
+        }
+    }
+}
+impl JsonOutput {
+    /// Creates a new builder-style object to manufacture [`JsonOutput`](crate::model::JsonOutput)
+    pub fn builder() -> crate::model::json_output::Builder {
+        crate::model::json_output::Builder::default()
+    }
+}
+
+/// <p>Describes how uncompressed comma-separated values (CSV)-formatted results are
+/// formatted.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CsvOutput {
+    /// <p>Indicates whether to use quotation marks around output fields. </p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
+    /// </li>
+    /// </ul>
+    pub quote_fields: std::option::Option<crate::model::QuoteFields>,
+    /// <p>The single character used for escaping the quote character inside an already escaped
+    /// value.</p>
+    pub quote_escape_character: std::option::Option<std::string::String>,
+    /// <p>A single character used to separate individual records in the output. Instead of the
+    /// default value, you can specify an arbitrary delimiter.</p>
+    pub record_delimiter: std::option::Option<std::string::String>,
+    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
+    /// delimiter.</p>
+    pub field_delimiter: std::option::Option<std::string::String>,
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For
+    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
+    /// as follows: <code>" a , b "</code>.</p>
+    pub quote_character: std::option::Option<std::string::String>,
+}
+impl std::fmt::Debug for CsvOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CsvOutput");
+        formatter.field("quote_fields", &self.quote_fields);
+        formatter.field("quote_escape_character", &self.quote_escape_character);
+        formatter.field("record_delimiter", &self.record_delimiter);
+        formatter.field("field_delimiter", &self.field_delimiter);
+        formatter.field("quote_character", &self.quote_character);
+        formatter.finish()
+    }
+}
+/// See [`CsvOutput`](crate::model::CsvOutput)
+pub mod csv_output {
+    /// A builder for [`CsvOutput`](crate::model::CsvOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) quote_fields: std::option::Option<crate::model::QuoteFields>,
+        pub(crate) quote_escape_character: std::option::Option<std::string::String>,
+        pub(crate) record_delimiter: std::option::Option<std::string::String>,
+        pub(crate) field_delimiter: std::option::Option<std::string::String>,
+        pub(crate) quote_character: std::option::Option<std::string::String>,
+    }
+    impl Builder {
+        /// <p>Indicates whether to use quotation marks around output fields. </p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
+        /// </li>
+        /// </ul>
+        pub fn quote_fields(mut self, input: crate::model::QuoteFields) -> Self {
+            self.quote_fields = Some(input);
+            self
+        }
+        pub fn set_quote_fields(
+            mut self,
+            input: std::option::Option<crate::model::QuoteFields>,
+        ) -> Self {
+            self.quote_fields = input;
+            self
+        }
+        /// <p>The single character used for escaping the quote character inside an already escaped
+        /// value.</p>
+        pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_escape_character = Some(input.into());
+            self
+        }
+        pub fn set_quote_escape_character(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.quote_escape_character = input;
+            self
+        }
+        /// <p>A single character used to separate individual records in the output. Instead of the
+        /// default value, you can specify an arbitrary delimiter.</p>
+        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_delimiter = Some(input.into());
+            self
+        }
+        pub fn set_record_delimiter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.record_delimiter = input;
+            self
+        }
+        /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
+        /// delimiter.</p>
+        pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_delimiter = Some(input.into());
+            self
+        }
+        pub fn set_field_delimiter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.field_delimiter = input;
+            self
+        }
+        /// <p>A single character used for escaping when the field delimiter is part of the value. For
+        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
+        /// as follows: <code>" a , b "</code>.</p>
+        pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_character = Some(input.into());
+            self
+        }
+        pub fn set_quote_character(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.quote_character = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CsvOutput`](crate::model::CsvOutput)
+        pub fn build(self) -> crate::model::CsvOutput {
+            crate::model::CsvOutput {
+                quote_fields: self.quote_fields,
+                quote_escape_character: self.quote_escape_character,
+                record_delimiter: self.record_delimiter,
+                field_delimiter: self.field_delimiter,
+                quote_character: self.quote_character,
+            }
+        }
+    }
+}
+impl CsvOutput {
+    /// Creates a new builder-style object to manufacture [`CsvOutput`](crate::model::CsvOutput)
+    pub fn builder() -> crate::model::csv_output::Builder {
+        crate::model::csv_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum QuoteFields {
+    Always,
+    Asneeded,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for QuoteFields {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALWAYS" => QuoteFields::Always,
+            "ASNEEDED" => QuoteFields::Asneeded,
+            other => QuoteFields::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for QuoteFields {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(QuoteFields::from(s))
+    }
+}
+impl QuoteFields {
+    pub fn as_str(&self) -> &str {
+        match self {
+            QuoteFields::Always => "ALWAYS",
+            QuoteFields::Asneeded => "ASNEEDED",
+            QuoteFields::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALWAYS", "ASNEEDED"]
+    }
+}
+impl AsRef<str> for QuoteFields {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes the serialization format of the object.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct InputSerialization {
+    /// <p>Describes the serialization of a CSV-encoded object.</p>
+    pub csv: std::option::Option<crate::model::CsvInput>,
+    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
+    /// NONE.</p>
+    pub compression_type: std::option::Option<crate::model::CompressionType>,
+    /// <p>Specifies JSON as object's input serialization format.</p>
+    pub json: std::option::Option<crate::model::JsonInput>,
+    /// <p>Specifies Parquet as object's input serialization format.</p>
+    pub parquet: std::option::Option<crate::model::ParquetInput>,
+}
+impl std::fmt::Debug for InputSerialization {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("InputSerialization");
+        formatter.field("csv", &self.csv);
+        formatter.field("compression_type", &self.compression_type);
+        formatter.field("json", &self.json);
+        formatter.field("parquet", &self.parquet);
+        formatter.finish()
+    }
+}
+/// See [`InputSerialization`](crate::model::InputSerialization)
+pub mod input_serialization {
+    /// A builder for [`InputSerialization`](crate::model::InputSerialization)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) csv: std::option::Option<crate::model::CsvInput>,
+        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
+        pub(crate) json: std::option::Option<crate::model::JsonInput>,
+        pub(crate) parquet: std::option::Option<crate::model::ParquetInput>,
+    }
+    impl Builder {
+        /// <p>Describes the serialization of a CSV-encoded object.</p>
+        pub fn csv(mut self, input: crate::model::CsvInput) -> Self {
+            self.csv = Some(input);
+            self
+        }
+        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvInput>) -> Self {
+            self.csv = input;
+            self
+        }
+        /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
+        /// NONE.</p>
+        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
+            self.compression_type = Some(input);
+            self
+        }
+        pub fn set_compression_type(
+            mut self,
+            input: std::option::Option<crate::model::CompressionType>,
+        ) -> Self {
+            self.compression_type = input;
+            self
+        }
+        /// <p>Specifies JSON as object's input serialization format.</p>
+        pub fn json(mut self, input: crate::model::JsonInput) -> Self {
+            self.json = Some(input);
+            self
+        }
+        pub fn set_json(mut self, input: std::option::Option<crate::model::JsonInput>) -> Self {
+            self.json = input;
+            self
+        }
+        /// <p>Specifies Parquet as object's input serialization format.</p>
+        pub fn parquet(mut self, input: crate::model::ParquetInput) -> Self {
+            self.parquet = Some(input);
+            self
+        }
+        pub fn set_parquet(
+            mut self,
+            input: std::option::Option<crate::model::ParquetInput>,
+        ) -> Self {
+            self.parquet = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`InputSerialization`](crate::model::InputSerialization)
+        pub fn build(self) -> crate::model::InputSerialization {
+            crate::model::InputSerialization {
+                csv: self.csv,
+                compression_type: self.compression_type,
+                json: self.json,
+                parquet: self.parquet,
+            }
+        }
+    }
+}
+impl InputSerialization {
+    /// Creates a new builder-style object to manufacture [`InputSerialization`](crate::model::InputSerialization)
+    pub fn builder() -> crate::model::input_serialization::Builder {
+        crate::model::input_serialization::Builder::default()
+    }
+}
+
+/// <p>Container for Parquet.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ParquetInput {}
+impl std::fmt::Debug for ParquetInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ParquetInput");
+        formatter.finish()
+    }
+}
+/// See [`ParquetInput`](crate::model::ParquetInput)
+pub mod parquet_input {
+    /// A builder for [`ParquetInput`](crate::model::ParquetInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`ParquetInput`](crate::model::ParquetInput)
+        pub fn build(self) -> crate::model::ParquetInput {
+            crate::model::ParquetInput {}
+        }
+    }
+}
+impl ParquetInput {
+    /// Creates a new builder-style object to manufacture [`ParquetInput`](crate::model::ParquetInput)
+    pub fn builder() -> crate::model::parquet_input::Builder {
+        crate::model::parquet_input::Builder::default()
+    }
+}
+
+/// <p>Specifies JSON as object's input serialization format.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct JsonInput {
+    /// <p>The type of JSON. Valid values: Document, Lines.</p>
+    pub r#type: std::option::Option<crate::model::JsonType>,
+}
+impl std::fmt::Debug for JsonInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("JsonInput");
+        formatter.field("r#type", &self.r#type);
+        formatter.finish()
+    }
+}
+/// See [`JsonInput`](crate::model::JsonInput)
+pub mod json_input {
+    /// A builder for [`JsonInput`](crate::model::JsonInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) r#type: std::option::Option<crate::model::JsonType>,
+    }
+    impl Builder {
+        /// <p>The type of JSON. Valid values: Document, Lines.</p>
+        pub fn r#type(mut self, input: crate::model::JsonType) -> Self {
+            self.r#type = Some(input);
+            self
+        }
+        pub fn set_type(mut self, input: std::option::Option<crate::model::JsonType>) -> Self {
+            self.r#type = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`JsonInput`](crate::model::JsonInput)
+        pub fn build(self) -> crate::model::JsonInput {
+            crate::model::JsonInput {
+                r#type: self.r#type,
+            }
+        }
+    }
+}
+impl JsonInput {
+    /// Creates a new builder-style object to manufacture [`JsonInput`](crate::model::JsonInput)
+    pub fn builder() -> crate::model::json_input::Builder {
+        crate::model::json_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum JsonType {
+    Document,
+    Lines,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for JsonType {
+    fn from(s: &str) -> Self {
+        match s {
+            "DOCUMENT" => JsonType::Document,
+            "LINES" => JsonType::Lines,
+            other => JsonType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for JsonType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(JsonType::from(s))
+    }
+}
+impl JsonType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            JsonType::Document => "DOCUMENT",
+            JsonType::Lines => "LINES",
+            JsonType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["DOCUMENT", "LINES"]
+    }
+}
+impl AsRef<str> for JsonType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CompressionType {
+    Bzip2,
+    Gzip,
+    None,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CompressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "BZIP2" => CompressionType::Bzip2,
+            "GZIP" => CompressionType::Gzip,
+            "NONE" => CompressionType::None,
+            other => CompressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CompressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CompressionType::from(s))
+    }
+}
+impl CompressionType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CompressionType::Bzip2 => "BZIP2",
+            CompressionType::Gzip => "GZIP",
+            CompressionType::None => "NONE",
+            CompressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["BZIP2", "GZIP", "NONE"]
+    }
+}
+impl AsRef<str> for CompressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is
+/// formatted.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct CsvInput {
+    /// <p>Describes the first line of input. Valid values are:</p>
+    /// <ul>
+    /// <li>
+    /// <p>
+    /// <code>NONE</code>: First line is not a header.</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>IGNORE</code>: First line is a header, but you can't use the header values
+    /// to indicate the column in an expression. You can use column position (such as _1, _2,
+    /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
+    /// </li>
+    /// <li>
+    /// <p>
+    /// <code>Use</code>: First line is a header, and you can use the header value to
+    /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
+    /// </li>
+    /// </ul>
+    pub file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
+    /// <p>A single character used to indicate that a row should be ignored when the character is
+    /// present at the start of that row. You can specify any character to indicate a comment
+    /// line.</p>
+    pub comments: std::option::Option<std::string::String>,
+    /// <p>A single character used for escaping the quotation mark character inside an already
+    /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+    pub quote_escape_character: std::option::Option<std::string::String>,
+    /// <p>A single character used to separate individual records in the input. Instead of the
+    /// default value, you can specify an arbitrary delimiter.</p>
+    pub record_delimiter: std::option::Option<std::string::String>,
+    /// <p>A single character used to separate individual fields in a record. You can specify an
+    /// arbitrary delimiter.</p>
+    pub field_delimiter: std::option::Option<std::string::String>,
+    /// <p>A single character used for escaping when the field delimiter is part of the value. For
+    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
+    /// as follows: <code>" a , b "</code>.</p>
+    /// <p>Type: String</p>
+    /// <p>Default: <code>"</code>
+    /// </p>
+    /// <p>Ancestors: <code>CSV</code>
+    /// </p>
+    pub quote_character: std::option::Option<std::string::String>,
+    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
+    /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
+    /// performance.</p>
+    pub allow_quoted_record_delimiter: bool,
+}
+impl std::fmt::Debug for CsvInput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("CsvInput");
+        formatter.field("file_header_info", &self.file_header_info);
+        formatter.field("comments", &self.comments);
+        formatter.field("quote_escape_character", &self.quote_escape_character);
+        formatter.field("record_delimiter", &self.record_delimiter);
+        formatter.field("field_delimiter", &self.field_delimiter);
+        formatter.field("quote_character", &self.quote_character);
+        formatter.field(
+            "allow_quoted_record_delimiter",
+            &self.allow_quoted_record_delimiter,
+        );
+        formatter.finish()
+    }
+}
+/// See [`CsvInput`](crate::model::CsvInput)
+pub mod csv_input {
+    /// A builder for [`CsvInput`](crate::model::CsvInput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
+        pub(crate) comments: std::option::Option<std::string::String>,
+        pub(crate) quote_escape_character: std::option::Option<std::string::String>,
+        pub(crate) record_delimiter: std::option::Option<std::string::String>,
+        pub(crate) field_delimiter: std::option::Option<std::string::String>,
+        pub(crate) quote_character: std::option::Option<std::string::String>,
+        pub(crate) allow_quoted_record_delimiter: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Describes the first line of input. Valid values are:</p>
+        /// <ul>
+        /// <li>
+        /// <p>
+        /// <code>NONE</code>: First line is not a header.</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>IGNORE</code>: First line is a header, but you can't use the header values
+        /// to indicate the column in an expression. You can use column position (such as _1, _2,
+        /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
+        /// </li>
+        /// <li>
+        /// <p>
+        /// <code>Use</code>: First line is a header, and you can use the header value to
+        /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
+        /// </li>
+        /// </ul>
+        pub fn file_header_info(mut self, input: crate::model::FileHeaderInfo) -> Self {
+            self.file_header_info = Some(input);
+            self
+        }
+        pub fn set_file_header_info(
+            mut self,
+            input: std::option::Option<crate::model::FileHeaderInfo>,
+        ) -> Self {
+            self.file_header_info = input;
+            self
+        }
+        /// <p>A single character used to indicate that a row should be ignored when the character is
+        /// present at the start of that row. You can specify any character to indicate a comment
+        /// line.</p>
+        pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
+            self.comments = Some(input.into());
+            self
+        }
+        pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.comments = input;
+            self
+        }
+        /// <p>A single character used for escaping the quotation mark character inside an already
+        /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
+        pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_escape_character = Some(input.into());
+            self
+        }
+        pub fn set_quote_escape_character(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.quote_escape_character = input;
+            self
+        }
+        /// <p>A single character used to separate individual records in the input. Instead of the
+        /// default value, you can specify an arbitrary delimiter.</p>
+        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.record_delimiter = Some(input.into());
+            self
+        }
+        pub fn set_record_delimiter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.record_delimiter = input;
+            self
+        }
+        /// <p>A single character used to separate individual fields in a record. You can specify an
+        /// arbitrary delimiter.</p>
+        pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
+            self.field_delimiter = Some(input.into());
+            self
+        }
+        pub fn set_field_delimiter(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.field_delimiter = input;
+            self
+        }
+        /// <p>A single character used for escaping when the field delimiter is part of the value. For
+        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
+        /// as follows: <code>" a , b "</code>.</p>
+        /// <p>Type: String</p>
+        /// <p>Default: <code>"</code>
+        /// </p>
+        /// <p>Ancestors: <code>CSV</code>
+        /// </p>
+        pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
+            self.quote_character = Some(input.into());
+            self
+        }
+        pub fn set_quote_character(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.quote_character = input;
+            self
+        }
+        /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
+        /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
+        /// performance.</p>
+        pub fn allow_quoted_record_delimiter(mut self, input: bool) -> Self {
+            self.allow_quoted_record_delimiter = Some(input);
+            self
+        }
+        pub fn set_allow_quoted_record_delimiter(
+            mut self,
+            input: std::option::Option<bool>,
+        ) -> Self {
+            self.allow_quoted_record_delimiter = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`CsvInput`](crate::model::CsvInput)
+        pub fn build(self) -> crate::model::CsvInput {
+            crate::model::CsvInput {
+                file_header_info: self.file_header_info,
+                comments: self.comments,
+                quote_escape_character: self.quote_escape_character,
+                record_delimiter: self.record_delimiter,
+                field_delimiter: self.field_delimiter,
+                quote_character: self.quote_character,
+                allow_quoted_record_delimiter: self
+                    .allow_quoted_record_delimiter
+                    .unwrap_or_default(),
+            }
+        }
+    }
+}
+impl CsvInput {
+    /// Creates a new builder-style object to manufacture [`CsvInput`](crate::model::CsvInput)
+    pub fn builder() -> crate::model::csv_input::Builder {
+        crate::model::csv_input::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum FileHeaderInfo {
+    Ignore,
+    None,
+    Use,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for FileHeaderInfo {
+    fn from(s: &str) -> Self {
+        match s {
+            "IGNORE" => FileHeaderInfo::Ignore,
+            "NONE" => FileHeaderInfo::None,
+            "USE" => FileHeaderInfo::Use,
+            other => FileHeaderInfo::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for FileHeaderInfo {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(FileHeaderInfo::from(s))
+    }
+}
+impl FileHeaderInfo {
+    pub fn as_str(&self) -> &str {
+        match self {
+            FileHeaderInfo::Ignore => "IGNORE",
+            FileHeaderInfo::None => "NONE",
+            FileHeaderInfo::Use => "USE",
+            FileHeaderInfo::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["IGNORE", "NONE", "USE"]
+    }
+}
+impl AsRef<str> for FileHeaderInfo {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// <p>Container for specifying if periodic <code>QueryProgress</code> messages should be
+/// sent.</p>
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RequestProgress {
+    /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
+    /// FALSE. Default value: FALSE.</p>
+    pub enabled: bool,
+}
+impl std::fmt::Debug for RequestProgress {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RequestProgress");
+        formatter.field("enabled", &self.enabled);
+        formatter.finish()
+    }
+}
+/// See [`RequestProgress`](crate::model::RequestProgress)
+pub mod request_progress {
+    /// A builder for [`RequestProgress`](crate::model::RequestProgress)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) enabled: std::option::Option<bool>,
+    }
+    impl Builder {
+        /// <p>Specifies whether periodic QueryProgress frames should be sent. Valid values: TRUE,
+        /// FALSE. Default value: FALSE.</p>
+        pub fn enabled(mut self, input: bool) -> Self {
+            self.enabled = Some(input);
+            self
+        }
+        pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+            self.enabled = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`RequestProgress`](crate::model::RequestProgress)
+        pub fn build(self) -> crate::model::RequestProgress {
+            crate::model::RequestProgress {
+                enabled: self.enabled.unwrap_or_default(),
+            }
+        }
+    }
+}
+impl RequestProgress {
+    /// Creates a new builder-style object to manufacture [`RequestProgress`](crate::model::RequestProgress)
+    pub fn builder() -> crate::model::request_progress::Builder {
+        crate::model::request_progress::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum ExpressionType {
+    Sql,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for ExpressionType {
+    fn from(s: &str) -> Self {
+        match s {
+            "SQL" => ExpressionType::Sql,
+            other => ExpressionType::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for ExpressionType {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(ExpressionType::from(s))
+    }
+}
+impl ExpressionType {
+    pub fn as_str(&self) -> &str {
+        match self {
+            ExpressionType::Sql => "SQL",
+            ExpressionType::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["SQL"]
+    }
+}
+impl AsRef<str> for ExpressionType {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// <p>Container for restore job parameters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1575,912 +3033,6 @@ impl SelectParameters {
     /// Creates a new builder-style object to manufacture [`SelectParameters`](crate::model::SelectParameters)
     pub fn builder() -> crate::model::select_parameters::Builder {
         crate::model::select_parameters::Builder::default()
-    }
-}
-
-/// <p>Describes how results of the Select job are serialized.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct OutputSerialization {
-    /// <p>Describes the serialization of CSV-encoded Select results.</p>
-    pub csv: std::option::Option<crate::model::CsvOutput>,
-    /// <p>Specifies JSON as request's output serialization format.</p>
-    pub json: std::option::Option<crate::model::JsonOutput>,
-}
-impl std::fmt::Debug for OutputSerialization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("OutputSerialization");
-        formatter.field("csv", &self.csv);
-        formatter.field("json", &self.json);
-        formatter.finish()
-    }
-}
-/// See [`OutputSerialization`](crate::model::OutputSerialization)
-pub mod output_serialization {
-    /// A builder for [`OutputSerialization`](crate::model::OutputSerialization)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) csv: std::option::Option<crate::model::CsvOutput>,
-        pub(crate) json: std::option::Option<crate::model::JsonOutput>,
-    }
-    impl Builder {
-        /// <p>Describes the serialization of CSV-encoded Select results.</p>
-        pub fn csv(mut self, input: crate::model::CsvOutput) -> Self {
-            self.csv = Some(input);
-            self
-        }
-        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvOutput>) -> Self {
-            self.csv = input;
-            self
-        }
-        /// <p>Specifies JSON as request's output serialization format.</p>
-        pub fn json(mut self, input: crate::model::JsonOutput) -> Self {
-            self.json = Some(input);
-            self
-        }
-        pub fn set_json(mut self, input: std::option::Option<crate::model::JsonOutput>) -> Self {
-            self.json = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`OutputSerialization`](crate::model::OutputSerialization)
-        pub fn build(self) -> crate::model::OutputSerialization {
-            crate::model::OutputSerialization {
-                csv: self.csv,
-                json: self.json,
-            }
-        }
-    }
-}
-impl OutputSerialization {
-    /// Creates a new builder-style object to manufacture [`OutputSerialization`](crate::model::OutputSerialization)
-    pub fn builder() -> crate::model::output_serialization::Builder {
-        crate::model::output_serialization::Builder::default()
-    }
-}
-
-/// <p>Specifies JSON as request's output serialization format.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct JsonOutput {
-    /// <p>The value used to separate individual records in the output. If no value is specified,
-    /// Amazon S3 uses a newline character ('\n').</p>
-    pub record_delimiter: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for JsonOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonOutput");
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.finish()
-    }
-}
-/// See [`JsonOutput`](crate::model::JsonOutput)
-pub mod json_output {
-    /// A builder for [`JsonOutput`](crate::model::JsonOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) record_delimiter: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>The value used to separate individual records in the output. If no value is specified,
-        /// Amazon S3 uses a newline character ('\n').</p>
-        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.record_delimiter = Some(input.into());
-            self
-        }
-        pub fn set_record_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_delimiter = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`JsonOutput`](crate::model::JsonOutput)
-        pub fn build(self) -> crate::model::JsonOutput {
-            crate::model::JsonOutput {
-                record_delimiter: self.record_delimiter,
-            }
-        }
-    }
-}
-impl JsonOutput {
-    /// Creates a new builder-style object to manufacture [`JsonOutput`](crate::model::JsonOutput)
-    pub fn builder() -> crate::model::json_output::Builder {
-        crate::model::json_output::Builder::default()
-    }
-}
-
-/// <p>Describes how uncompressed comma-separated values (CSV)-formatted results are
-/// formatted.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CsvOutput {
-    /// <p>Indicates whether to use quotation marks around output fields. </p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
-    /// </li>
-    /// </ul>
-    pub quote_fields: std::option::Option<crate::model::QuoteFields>,
-    /// <p>The single character used for escaping the quote character inside an already escaped
-    /// value.</p>
-    pub quote_escape_character: std::option::Option<std::string::String>,
-    /// <p>A single character used to separate individual records in the output. Instead of the
-    /// default value, you can specify an arbitrary delimiter.</p>
-    pub record_delimiter: std::option::Option<std::string::String>,
-    /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
-    /// delimiter.</p>
-    pub field_delimiter: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping when the field delimiter is part of the value. For
-    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-    /// as follows: <code>" a , b "</code>.</p>
-    pub quote_character: std::option::Option<std::string::String>,
-}
-impl std::fmt::Debug for CsvOutput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvOutput");
-        formatter.field("quote_fields", &self.quote_fields);
-        formatter.field("quote_escape_character", &self.quote_escape_character);
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.field("field_delimiter", &self.field_delimiter);
-        formatter.field("quote_character", &self.quote_character);
-        formatter.finish()
-    }
-}
-/// See [`CsvOutput`](crate::model::CsvOutput)
-pub mod csv_output {
-    /// A builder for [`CsvOutput`](crate::model::CsvOutput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) quote_fields: std::option::Option<crate::model::QuoteFields>,
-        pub(crate) quote_escape_character: std::option::Option<std::string::String>,
-        pub(crate) record_delimiter: std::option::Option<std::string::String>,
-        pub(crate) field_delimiter: std::option::Option<std::string::String>,
-        pub(crate) quote_character: std::option::Option<std::string::String>,
-    }
-    impl Builder {
-        /// <p>Indicates whether to use quotation marks around output fields. </p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>ALWAYS</code>: Always use quotation marks for output fields.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>ASNEEDED</code>: Use quotation marks for output fields when needed.</p>
-        /// </li>
-        /// </ul>
-        pub fn quote_fields(mut self, input: crate::model::QuoteFields) -> Self {
-            self.quote_fields = Some(input);
-            self
-        }
-        pub fn set_quote_fields(
-            mut self,
-            input: std::option::Option<crate::model::QuoteFields>,
-        ) -> Self {
-            self.quote_fields = input;
-            self
-        }
-        /// <p>The single character used for escaping the quote character inside an already escaped
-        /// value.</p>
-        pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quote_escape_character = Some(input.into());
-            self
-        }
-        pub fn set_quote_escape_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_escape_character = input;
-            self
-        }
-        /// <p>A single character used to separate individual records in the output. Instead of the
-        /// default value, you can specify an arbitrary delimiter.</p>
-        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.record_delimiter = Some(input.into());
-            self
-        }
-        pub fn set_record_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_delimiter = input;
-            self
-        }
-        /// <p>The value used to separate individual fields in a record. You can specify an arbitrary
-        /// delimiter.</p>
-        pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.field_delimiter = Some(input.into());
-            self
-        }
-        pub fn set_field_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.field_delimiter = input;
-            self
-        }
-        /// <p>A single character used for escaping when the field delimiter is part of the value. For
-        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-        /// as follows: <code>" a , b "</code>.</p>
-        pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quote_character = Some(input.into());
-            self
-        }
-        pub fn set_quote_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_character = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CsvOutput`](crate::model::CsvOutput)
-        pub fn build(self) -> crate::model::CsvOutput {
-            crate::model::CsvOutput {
-                quote_fields: self.quote_fields,
-                quote_escape_character: self.quote_escape_character,
-                record_delimiter: self.record_delimiter,
-                field_delimiter: self.field_delimiter,
-                quote_character: self.quote_character,
-            }
-        }
-    }
-}
-impl CsvOutput {
-    /// Creates a new builder-style object to manufacture [`CsvOutput`](crate::model::CsvOutput)
-    pub fn builder() -> crate::model::csv_output::Builder {
-        crate::model::csv_output::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum QuoteFields {
-    Always,
-    Asneeded,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for QuoteFields {
-    fn from(s: &str) -> Self {
-        match s {
-            "ALWAYS" => QuoteFields::Always,
-            "ASNEEDED" => QuoteFields::Asneeded,
-            other => QuoteFields::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for QuoteFields {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(QuoteFields::from(s))
-    }
-}
-impl QuoteFields {
-    pub fn as_str(&self) -> &str {
-        match self {
-            QuoteFields::Always => "ALWAYS",
-            QuoteFields::Asneeded => "ASNEEDED",
-            QuoteFields::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["ALWAYS", "ASNEEDED"]
-    }
-}
-impl AsRef<str> for QuoteFields {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum ExpressionType {
-    Sql,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for ExpressionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "SQL" => ExpressionType::Sql,
-            other => ExpressionType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for ExpressionType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ExpressionType::from(s))
-    }
-}
-impl ExpressionType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            ExpressionType::Sql => "SQL",
-            ExpressionType::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["SQL"]
-    }
-}
-impl AsRef<str> for ExpressionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Describes the serialization format of the object.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct InputSerialization {
-    /// <p>Describes the serialization of a CSV-encoded object.</p>
-    pub csv: std::option::Option<crate::model::CsvInput>,
-    /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
-    /// NONE.</p>
-    pub compression_type: std::option::Option<crate::model::CompressionType>,
-    /// <p>Specifies JSON as object's input serialization format.</p>
-    pub json: std::option::Option<crate::model::JsonInput>,
-    /// <p>Specifies Parquet as object's input serialization format.</p>
-    pub parquet: std::option::Option<crate::model::ParquetInput>,
-}
-impl std::fmt::Debug for InputSerialization {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("InputSerialization");
-        formatter.field("csv", &self.csv);
-        formatter.field("compression_type", &self.compression_type);
-        formatter.field("json", &self.json);
-        formatter.field("parquet", &self.parquet);
-        formatter.finish()
-    }
-}
-/// See [`InputSerialization`](crate::model::InputSerialization)
-pub mod input_serialization {
-    /// A builder for [`InputSerialization`](crate::model::InputSerialization)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) csv: std::option::Option<crate::model::CsvInput>,
-        pub(crate) compression_type: std::option::Option<crate::model::CompressionType>,
-        pub(crate) json: std::option::Option<crate::model::JsonInput>,
-        pub(crate) parquet: std::option::Option<crate::model::ParquetInput>,
-    }
-    impl Builder {
-        /// <p>Describes the serialization of a CSV-encoded object.</p>
-        pub fn csv(mut self, input: crate::model::CsvInput) -> Self {
-            self.csv = Some(input);
-            self
-        }
-        pub fn set_csv(mut self, input: std::option::Option<crate::model::CsvInput>) -> Self {
-            self.csv = input;
-            self
-        }
-        /// <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2. Default Value:
-        /// NONE.</p>
-        pub fn compression_type(mut self, input: crate::model::CompressionType) -> Self {
-            self.compression_type = Some(input);
-            self
-        }
-        pub fn set_compression_type(
-            mut self,
-            input: std::option::Option<crate::model::CompressionType>,
-        ) -> Self {
-            self.compression_type = input;
-            self
-        }
-        /// <p>Specifies JSON as object's input serialization format.</p>
-        pub fn json(mut self, input: crate::model::JsonInput) -> Self {
-            self.json = Some(input);
-            self
-        }
-        pub fn set_json(mut self, input: std::option::Option<crate::model::JsonInput>) -> Self {
-            self.json = input;
-            self
-        }
-        /// <p>Specifies Parquet as object's input serialization format.</p>
-        pub fn parquet(mut self, input: crate::model::ParquetInput) -> Self {
-            self.parquet = Some(input);
-            self
-        }
-        pub fn set_parquet(
-            mut self,
-            input: std::option::Option<crate::model::ParquetInput>,
-        ) -> Self {
-            self.parquet = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`InputSerialization`](crate::model::InputSerialization)
-        pub fn build(self) -> crate::model::InputSerialization {
-            crate::model::InputSerialization {
-                csv: self.csv,
-                compression_type: self.compression_type,
-                json: self.json,
-                parquet: self.parquet,
-            }
-        }
-    }
-}
-impl InputSerialization {
-    /// Creates a new builder-style object to manufacture [`InputSerialization`](crate::model::InputSerialization)
-    pub fn builder() -> crate::model::input_serialization::Builder {
-        crate::model::input_serialization::Builder::default()
-    }
-}
-
-/// <p>Container for Parquet.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct ParquetInput {}
-impl std::fmt::Debug for ParquetInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("ParquetInput");
-        formatter.finish()
-    }
-}
-/// See [`ParquetInput`](crate::model::ParquetInput)
-pub mod parquet_input {
-    /// A builder for [`ParquetInput`](crate::model::ParquetInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {}
-    impl Builder {
-        /// Consumes the builder and constructs a [`ParquetInput`](crate::model::ParquetInput)
-        pub fn build(self) -> crate::model::ParquetInput {
-            crate::model::ParquetInput {}
-        }
-    }
-}
-impl ParquetInput {
-    /// Creates a new builder-style object to manufacture [`ParquetInput`](crate::model::ParquetInput)
-    pub fn builder() -> crate::model::parquet_input::Builder {
-        crate::model::parquet_input::Builder::default()
-    }
-}
-
-/// <p>Specifies JSON as object's input serialization format.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct JsonInput {
-    /// <p>The type of JSON. Valid values: Document, Lines.</p>
-    pub r#type: std::option::Option<crate::model::JsonType>,
-}
-impl std::fmt::Debug for JsonInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("JsonInput");
-        formatter.field("r#type", &self.r#type);
-        formatter.finish()
-    }
-}
-/// See [`JsonInput`](crate::model::JsonInput)
-pub mod json_input {
-    /// A builder for [`JsonInput`](crate::model::JsonInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) r#type: std::option::Option<crate::model::JsonType>,
-    }
-    impl Builder {
-        /// <p>The type of JSON. Valid values: Document, Lines.</p>
-        pub fn r#type(mut self, input: crate::model::JsonType) -> Self {
-            self.r#type = Some(input);
-            self
-        }
-        pub fn set_type(mut self, input: std::option::Option<crate::model::JsonType>) -> Self {
-            self.r#type = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`JsonInput`](crate::model::JsonInput)
-        pub fn build(self) -> crate::model::JsonInput {
-            crate::model::JsonInput {
-                r#type: self.r#type,
-            }
-        }
-    }
-}
-impl JsonInput {
-    /// Creates a new builder-style object to manufacture [`JsonInput`](crate::model::JsonInput)
-    pub fn builder() -> crate::model::json_input::Builder {
-        crate::model::json_input::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum JsonType {
-    Document,
-    Lines,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for JsonType {
-    fn from(s: &str) -> Self {
-        match s {
-            "DOCUMENT" => JsonType::Document,
-            "LINES" => JsonType::Lines,
-            other => JsonType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for JsonType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(JsonType::from(s))
-    }
-}
-impl JsonType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            JsonType::Document => "DOCUMENT",
-            JsonType::Lines => "LINES",
-            JsonType::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["DOCUMENT", "LINES"]
-    }
-}
-impl AsRef<str> for JsonType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum CompressionType {
-    Bzip2,
-    Gzip,
-    None,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for CompressionType {
-    fn from(s: &str) -> Self {
-        match s {
-            "BZIP2" => CompressionType::Bzip2,
-            "GZIP" => CompressionType::Gzip,
-            "NONE" => CompressionType::None,
-            other => CompressionType::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for CompressionType {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(CompressionType::from(s))
-    }
-}
-impl CompressionType {
-    pub fn as_str(&self) -> &str {
-        match self {
-            CompressionType::Bzip2 => "BZIP2",
-            CompressionType::Gzip => "GZIP",
-            CompressionType::None => "NONE",
-            CompressionType::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["BZIP2", "GZIP", "NONE"]
-    }
-}
-impl AsRef<str> for CompressionType {
-    fn as_ref(&self) -> &str {
-        self.as_str()
-    }
-}
-
-/// <p>Describes how an uncompressed comma-separated values (CSV)-formatted input object is
-/// formatted.</p>
-#[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
-pub struct CsvInput {
-    /// <p>Describes the first line of input. Valid values are:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>NONE</code>: First line is not a header.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>IGNORE</code>: First line is a header, but you can't use the header values
-    /// to indicate the column in an expression. You can use column position (such as _1, _2,
-    /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>Use</code>: First line is a header, and you can use the header value to
-    /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
-    /// </li>
-    /// </ul>
-    pub file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
-    /// <p>A single character used to indicate that a row should be ignored when the character is
-    /// present at the start of that row. You can specify any character to indicate a comment
-    /// line.</p>
-    pub comments: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping the quotation mark character inside an already
-    /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
-    pub quote_escape_character: std::option::Option<std::string::String>,
-    /// <p>A single character used to separate individual records in the input. Instead of the
-    /// default value, you can specify an arbitrary delimiter.</p>
-    pub record_delimiter: std::option::Option<std::string::String>,
-    /// <p>A single character used to separate individual fields in a record. You can specify an
-    /// arbitrary delimiter.</p>
-    pub field_delimiter: std::option::Option<std::string::String>,
-    /// <p>A single character used for escaping when the field delimiter is part of the value. For
-    /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-    /// as follows: <code>" a , b "</code>.</p>
-    /// <p>Type: String</p>
-    /// <p>Default: <code>"</code>
-    /// </p>
-    /// <p>Ancestors: <code>CSV</code>
-    /// </p>
-    pub quote_character: std::option::Option<std::string::String>,
-    /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
-    /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
-    /// performance.</p>
-    pub allow_quoted_record_delimiter: bool,
-}
-impl std::fmt::Debug for CsvInput {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        let mut formatter = f.debug_struct("CsvInput");
-        formatter.field("file_header_info", &self.file_header_info);
-        formatter.field("comments", &self.comments);
-        formatter.field("quote_escape_character", &self.quote_escape_character);
-        formatter.field("record_delimiter", &self.record_delimiter);
-        formatter.field("field_delimiter", &self.field_delimiter);
-        formatter.field("quote_character", &self.quote_character);
-        formatter.field(
-            "allow_quoted_record_delimiter",
-            &self.allow_quoted_record_delimiter,
-        );
-        formatter.finish()
-    }
-}
-/// See [`CsvInput`](crate::model::CsvInput)
-pub mod csv_input {
-    /// A builder for [`CsvInput`](crate::model::CsvInput)
-    #[non_exhaustive]
-    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-    pub struct Builder {
-        pub(crate) file_header_info: std::option::Option<crate::model::FileHeaderInfo>,
-        pub(crate) comments: std::option::Option<std::string::String>,
-        pub(crate) quote_escape_character: std::option::Option<std::string::String>,
-        pub(crate) record_delimiter: std::option::Option<std::string::String>,
-        pub(crate) field_delimiter: std::option::Option<std::string::String>,
-        pub(crate) quote_character: std::option::Option<std::string::String>,
-        pub(crate) allow_quoted_record_delimiter: std::option::Option<bool>,
-    }
-    impl Builder {
-        /// <p>Describes the first line of input. Valid values are:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>NONE</code>: First line is not a header.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>IGNORE</code>: First line is a header, but you can't use the header values
-        /// to indicate the column in an expression. You can use column position (such as _1, _2,
-        /// …) to indicate the column (<code>SELECT s._1 FROM OBJECT s</code>).</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>Use</code>: First line is a header, and you can use the header value to
-        /// identify a column in an expression (<code>SELECT "name" FROM OBJECT</code>). </p>
-        /// </li>
-        /// </ul>
-        pub fn file_header_info(mut self, input: crate::model::FileHeaderInfo) -> Self {
-            self.file_header_info = Some(input);
-            self
-        }
-        pub fn set_file_header_info(
-            mut self,
-            input: std::option::Option<crate::model::FileHeaderInfo>,
-        ) -> Self {
-            self.file_header_info = input;
-            self
-        }
-        /// <p>A single character used to indicate that a row should be ignored when the character is
-        /// present at the start of that row. You can specify any character to indicate a comment
-        /// line.</p>
-        pub fn comments(mut self, input: impl Into<std::string::String>) -> Self {
-            self.comments = Some(input.into());
-            self
-        }
-        pub fn set_comments(mut self, input: std::option::Option<std::string::String>) -> Self {
-            self.comments = input;
-            self
-        }
-        /// <p>A single character used for escaping the quotation mark character inside an already
-        /// escaped value. For example, the value """ a , b """ is parsed as " a , b ".</p>
-        pub fn quote_escape_character(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quote_escape_character = Some(input.into());
-            self
-        }
-        pub fn set_quote_escape_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_escape_character = input;
-            self
-        }
-        /// <p>A single character used to separate individual records in the input. Instead of the
-        /// default value, you can specify an arbitrary delimiter.</p>
-        pub fn record_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.record_delimiter = Some(input.into());
-            self
-        }
-        pub fn set_record_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.record_delimiter = input;
-            self
-        }
-        /// <p>A single character used to separate individual fields in a record. You can specify an
-        /// arbitrary delimiter.</p>
-        pub fn field_delimiter(mut self, input: impl Into<std::string::String>) -> Self {
-            self.field_delimiter = Some(input.into());
-            self
-        }
-        pub fn set_field_delimiter(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.field_delimiter = input;
-            self
-        }
-        /// <p>A single character used for escaping when the field delimiter is part of the value. For
-        /// example, if the value is <code>a, b</code>, Amazon S3 wraps this field value in quotation marks,
-        /// as follows: <code>" a , b "</code>.</p>
-        /// <p>Type: String</p>
-        /// <p>Default: <code>"</code>
-        /// </p>
-        /// <p>Ancestors: <code>CSV</code>
-        /// </p>
-        pub fn quote_character(mut self, input: impl Into<std::string::String>) -> Self {
-            self.quote_character = Some(input.into());
-            self
-        }
-        pub fn set_quote_character(
-            mut self,
-            input: std::option::Option<std::string::String>,
-        ) -> Self {
-            self.quote_character = input;
-            self
-        }
-        /// <p>Specifies that CSV field values may contain quoted record delimiters and such records
-        /// should be allowed. Default value is FALSE. Setting this value to TRUE may lower
-        /// performance.</p>
-        pub fn allow_quoted_record_delimiter(mut self, input: bool) -> Self {
-            self.allow_quoted_record_delimiter = Some(input);
-            self
-        }
-        pub fn set_allow_quoted_record_delimiter(
-            mut self,
-            input: std::option::Option<bool>,
-        ) -> Self {
-            self.allow_quoted_record_delimiter = input;
-            self
-        }
-        /// Consumes the builder and constructs a [`CsvInput`](crate::model::CsvInput)
-        pub fn build(self) -> crate::model::CsvInput {
-            crate::model::CsvInput {
-                file_header_info: self.file_header_info,
-                comments: self.comments,
-                quote_escape_character: self.quote_escape_character,
-                record_delimiter: self.record_delimiter,
-                field_delimiter: self.field_delimiter,
-                quote_character: self.quote_character,
-                allow_quoted_record_delimiter: self
-                    .allow_quoted_record_delimiter
-                    .unwrap_or_default(),
-            }
-        }
-    }
-}
-impl CsvInput {
-    /// Creates a new builder-style object to manufacture [`CsvInput`](crate::model::CsvInput)
-    pub fn builder() -> crate::model::csv_input::Builder {
-        crate::model::csv_input::Builder::default()
-    }
-}
-
-#[non_exhaustive]
-#[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
-)]
-pub enum FileHeaderInfo {
-    Ignore,
-    None,
-    Use,
-    /// Unknown contains new variants that have been added since this code was generated.
-    Unknown(String),
-}
-impl std::convert::From<&str> for FileHeaderInfo {
-    fn from(s: &str) -> Self {
-        match s {
-            "IGNORE" => FileHeaderInfo::Ignore,
-            "NONE" => FileHeaderInfo::None,
-            "USE" => FileHeaderInfo::Use,
-            other => FileHeaderInfo::Unknown(other.to_owned()),
-        }
-    }
-}
-impl std::str::FromStr for FileHeaderInfo {
-    type Err = std::convert::Infallible;
-
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(FileHeaderInfo::from(s))
-    }
-}
-impl FileHeaderInfo {
-    pub fn as_str(&self) -> &str {
-        match self {
-            FileHeaderInfo::Ignore => "IGNORE",
-            FileHeaderInfo::None => "NONE",
-            FileHeaderInfo::Use => "USE",
-            FileHeaderInfo::Unknown(s) => s.as_ref(),
-        }
-    }
-    pub fn values() -> &'static [&'static str] {
-        &["IGNORE", "NONE", "USE"]
-    }
-}
-impl AsRef<str> for FileHeaderInfo {
-    fn as_ref(&self) -> &str {
-        self.as_str()
     }
 }
 
@@ -10705,7 +11257,7 @@ pub struct Part {
     /// <p>Entity tag returned when the part was uploaded.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the uploaded part data.</p>
-    pub size: i32,
+    pub size: i64,
 }
 impl std::fmt::Debug for Part {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -10726,7 +11278,7 @@ pub mod part {
         pub(crate) part_number: std::option::Option<i32>,
         pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) size: std::option::Option<i32>,
+        pub(crate) size: std::option::Option<i64>,
     }
     impl Builder {
         /// <p>Part number identifying the part. This is a positive integer between 1 and
@@ -10761,11 +11313,11 @@ pub mod part {
             self
         }
         /// <p>Size in bytes of the uploaded part data.</p>
-        pub fn size(mut self, input: i32) -> Self {
+        pub fn size(mut self, input: i64) -> Self {
             self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+        pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
         }
@@ -11004,7 +11556,7 @@ pub struct ObjectVersion {
     /// <p>The entity tag is an MD5 hash of that version of the object.</p>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the object.</p>
-    pub size: i32,
+    pub size: i64,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::ObjectVersionStorageClass>,
     /// <p>The object key.</p>
@@ -11040,7 +11592,7 @@ pub mod object_version {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) size: std::option::Option<i32>,
+        pub(crate) size: std::option::Option<i64>,
         pub(crate) storage_class: std::option::Option<crate::model::ObjectVersionStorageClass>,
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) version_id: std::option::Option<std::string::String>,
@@ -11059,11 +11611,11 @@ pub mod object_version {
             self
         }
         /// <p>Size in bytes of the object.</p>
-        pub fn size(mut self, input: i32) -> Self {
+        pub fn size(mut self, input: i64) -> Self {
             self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+        pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
         }
@@ -11228,7 +11780,7 @@ pub struct Object {
     /// </ul>
     pub e_tag: std::option::Option<std::string::String>,
     /// <p>Size in bytes of the object</p>
-    pub size: i32,
+    pub size: i64,
     /// <p>The class of storage used to store the object.</p>
     pub storage_class: std::option::Option<crate::model::ObjectStorageClass>,
     /// <p>The owner of the object</p>
@@ -11255,7 +11807,7 @@ pub mod object {
         pub(crate) key: std::option::Option<std::string::String>,
         pub(crate) last_modified: std::option::Option<smithy_types::Instant>,
         pub(crate) e_tag: std::option::Option<std::string::String>,
-        pub(crate) size: std::option::Option<i32>,
+        pub(crate) size: std::option::Option<i64>,
         pub(crate) storage_class: std::option::Option<crate::model::ObjectStorageClass>,
         pub(crate) owner: std::option::Option<crate::model::Owner>,
     }
@@ -11311,11 +11863,11 @@ pub mod object {
             self
         }
         /// <p>Size in bytes of the object</p>
-        pub fn size(mut self, input: i32) -> Self {
+        pub fn size(mut self, input: i64) -> Self {
             self.size = Some(input);
             self
         }
-        pub fn set_size(mut self, input: std::option::Option<i32>) -> Self {
+        pub fn set_size(mut self, input: std::option::Option<i64>) -> Self {
             self.size = input;
             self
         }

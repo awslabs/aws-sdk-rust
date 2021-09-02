@@ -3,9 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_types::region::ProvideRegion;
-
-use ses::{Client, Config, Error, Region};
+use aws_config::meta::region::RegionProviderChain;
+use ses::{Client, Error, Region};
 
 use structopt::StructOpt;
 
@@ -40,21 +39,19 @@ async fn main() -> Result<(), Error> {
         verbose,
     } = Opt::from_args();
 
-    let region = default_region
-        .as_ref()
-        .map(|region| Region::new(region.clone()))
-        .or_else(|| aws_types::region::default_provider().region())
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(default_region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
 
     if verbose {
         println!("SES client version: {}", ses::PKG_VERSION);
-        println!("Region:             {:?}", &region);
+        println!("Region:             {:?}", shared_config.region().unwrap());
         println!("Contact list:       {}", &contact_list);
         println!();
     }
 
-    let conf = Config::builder().region(region).build();
-    let client = Client::from_conf(conf);
+    let client = Client::new(&shared_config);
 
     let resp = client
         .list_contacts()

@@ -91,9 +91,9 @@ pub struct UpdateVocabularyOutput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary was updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field
-    /// contains <code>READY</code> the vocabulary is ready to be used in a
-    /// <code>StartTranscriptionJob</code> request.</p>
+    /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
+    /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+    /// request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
 }
 impl std::fmt::Debug for UpdateVocabularyOutput {
@@ -154,9 +154,9 @@ pub mod update_vocabulary_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field
-        /// contains <code>READY</code> the vocabulary is ready to be used in a
-        /// <code>StartTranscriptionJob</code> request.</p>
+        /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
+        /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+        /// request.</p>
         pub fn vocabulary_state(mut self, input: crate::model::VocabularyState) -> Self {
             self.vocabulary_state = Some(input);
             self
@@ -191,14 +191,14 @@ impl UpdateVocabularyOutput {
 pub struct UpdateMedicalVocabularyOutput {
     /// <p>The name of the updated vocabulary.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The language code for the language of the text file used to update the custom
-    /// vocabulary. US English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+    /// <p>The language code for the language of the text file used to update the custom vocabulary. US English (en-US)
+    /// is the only language supported in Amazon Transcribe Medical.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the vocabulary was updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The processing state of the update to the vocabulary. When the
-    /// <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is ready to
-    /// be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+    /// <p>The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
+    /// <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+    /// request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
 }
 impl std::fmt::Debug for UpdateMedicalVocabularyOutput {
@@ -235,8 +235,8 @@ pub mod update_medical_vocabulary_output {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The language code for the language of the text file used to update the custom
-        /// vocabulary. US English (en-US) is the only language supported in Amazon Transcribe Medical.</p>
+        /// <p>The language code for the language of the text file used to update the custom vocabulary. US English (en-US)
+        /// is the only language supported in Amazon Transcribe Medical.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
@@ -260,9 +260,9 @@ pub mod update_medical_vocabulary_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>The processing state of the update to the vocabulary. When the
-        /// <code>VocabularyState</code> field is <code>READY</code>, the vocabulary is ready to
-        /// be used in a <code>StartMedicalTranscriptionJob</code> request.</p>
+        /// <p>The processing state of the update to the vocabulary. When the <code>VocabularyState</code> field is
+        /// <code>READY</code>, the vocabulary is ready to be used in a <code>StartMedicalTranscriptionJob</code>
+        /// request.</p>
         pub fn vocabulary_state(mut self, input: crate::model::VocabularyState) -> Self {
             self.vocabulary_state = Some(input);
             self
@@ -295,9 +295,8 @@ impl UpdateMedicalVocabularyOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateCallAnalyticsCategoryOutput {
-    /// <p>The attributes describing the analytics category. You can see information such as the
-    /// rules that you've used to update the category and when the category was originally
-    /// created. </p>
+    /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used
+    /// to update the category and when the category was originally created. </p>
     pub category_properties: std::option::Option<crate::model::CategoryProperties>,
 }
 impl std::fmt::Debug for UpdateCallAnalyticsCategoryOutput {
@@ -316,9 +315,8 @@ pub mod update_call_analytics_category_output {
         pub(crate) category_properties: std::option::Option<crate::model::CategoryProperties>,
     }
     impl Builder {
-        /// <p>The attributes describing the analytics category. You can see information such as the
-        /// rules that you've used to update the category and when the category was originally
-        /// created. </p>
+        /// <p>The attributes describing the analytics category. You can see information such as the rules that you've used
+        /// to update the category and when the category was originally created. </p>
         pub fn category_properties(mut self, input: crate::model::CategoryProperties) -> Self {
             self.category_properties = Some(input);
             self
@@ -342,6 +340,64 @@ impl UpdateCallAnalyticsCategoryOutput {
     /// Creates a new builder-style object to manufacture [`UpdateCallAnalyticsCategoryOutput`](crate::output::UpdateCallAnalyticsCategoryOutput)
     pub fn builder() -> crate::output::update_call_analytics_category_output::Builder {
         crate::output::update_call_analytics_category_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct UntagResourceOutput {}
+impl std::fmt::Debug for UntagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("UntagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+pub mod untag_resource_output {
+    /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+        pub fn build(self) -> crate::output::UntagResourceOutput {
+            crate::output::UntagResourceOutput {}
+        }
+    }
+}
+impl UntagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`UntagResourceOutput`](crate::output::UntagResourceOutput)
+    pub fn builder() -> crate::output::untag_resource_output::Builder {
+        crate::output::untag_resource_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct TagResourceOutput {}
+impl std::fmt::Debug for TagResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("TagResourceOutput");
+        formatter.finish()
+    }
+}
+/// See [`TagResourceOutput`](crate::output::TagResourceOutput)
+pub mod tag_resource_output {
+    /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput)
+        pub fn build(self) -> crate::output::TagResourceOutput {
+            crate::output::TagResourceOutput {}
+        }
+    }
+}
+impl TagResourceOutput {
+    /// Creates a new builder-style object to manufacture [`TagResourceOutput`](crate::output::TagResourceOutput)
+    pub fn builder() -> crate::output::tag_resource_output::Builder {
+        crate::output::tag_resource_output::Builder::default()
     }
 }
 
@@ -499,17 +555,14 @@ impl StartCallAnalyticsJobOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListVocabularyFiltersOutput {
-    /// <p>The <code>ListVocabularyFilters</code> operation returns a page of collections at a
-    /// time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If
-    /// there are more jobs in the list than the page size, Amazon Transcribe returns the
-    /// <code>NextPage</code> token. Include the token in the next request to the
-    /// <code>ListVocabularyFilters</code> operation to return in the next page of
-    /// jobs.</p>
+    /// <p>The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size
+    /// of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
+    /// Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
+    /// <code>ListVocabularyFilters</code> operation to return in the next page of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>The list of vocabulary filters. It contains at most <code>MaxResults</code> number of
-    /// filters. If there are more filters, call the <code>ListVocabularyFilters</code>
-    /// operation again with the <code>NextToken</code> parameter in the request set to the
-    /// value of the <code>NextToken</code> field in the response.</p>
+    /// <p>The list of vocabulary filters. It contains at most <code>MaxResults</code> number of filters. If there are more
+    /// filters, call the <code>ListVocabularyFilters</code> operation again with the <code>NextToken</code> parameter
+    /// in the request set to the value of the <code>NextToken</code> field in the response.</p>
     pub vocabulary_filters: std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
 }
 impl std::fmt::Debug for ListVocabularyFiltersOutput {
@@ -531,12 +584,10 @@ pub mod list_vocabulary_filters_output {
             std::option::Option<std::vec::Vec<crate::model::VocabularyFilterInfo>>,
     }
     impl Builder {
-        /// <p>The <code>ListVocabularyFilters</code> operation returns a page of collections at a
-        /// time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If
-        /// there are more jobs in the list than the page size, Amazon Transcribe returns the
-        /// <code>NextPage</code> token. Include the token in the next request to the
-        /// <code>ListVocabularyFilters</code> operation to return in the next page of
-        /// jobs.</p>
+        /// <p>The <code>ListVocabularyFilters</code> operation returns a page of collections at a time. The maximum size
+        /// of the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
+        /// Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
+        /// <code>ListVocabularyFilters</code> operation to return in the next page of jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -582,14 +633,12 @@ impl ListVocabularyFiltersOutput {
 pub struct ListVocabulariesOutput {
     /// <p>The requested vocabulary state.</p>
     pub status: std::option::Option<crate::model::VocabularyState>,
-    /// <p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
-    /// The maximum size of the page is set in the <code>MaxResults</code> parameter. If there
-    /// are more jobs in the list than will fit on the page, Amazon Transcribe returns the
-    /// <code>NextPage</code> token. To return in the next page of jobs, include the token
-    /// in the next request to the <code>ListVocabularies</code> operation.</p>
+    /// <p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of
+    /// the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+    /// page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the token in the
+    /// next request to the <code>ListVocabularies</code> operation.</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of objects that describe the vocabularies that match the search criteria in the
-    /// request.</p>
+    /// <p>A list of objects that describe the vocabularies that match the search criteria in the request.</p>
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
 }
 impl std::fmt::Debug for ListVocabulariesOutput {
@@ -624,11 +673,10 @@ pub mod list_vocabularies_output {
             self.status = input;
             self
         }
-        /// <p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time.
-        /// The maximum size of the page is set in the <code>MaxResults</code> parameter. If there
-        /// are more jobs in the list than will fit on the page, Amazon Transcribe returns the
-        /// <code>NextPage</code> token. To return in the next page of jobs, include the token
-        /// in the next request to the <code>ListVocabularies</code> operation.</p>
+        /// <p>The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of
+        /// the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+        /// page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the token in the
+        /// next request to the <code>ListVocabularies</code> operation.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -672,11 +720,10 @@ impl ListVocabulariesOutput {
 pub struct ListTranscriptionJobsOutput {
     /// <p>The requested status of the jobs returned.</p>
     pub status: std::option::Option<crate::model::TranscriptionJobStatus>,
-    /// <p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The
-    /// maximum size of the page is set by the <code>MaxResults</code> parameter. If there are
-    /// more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token.
-    /// Include the token in the next request to the <code>ListTranscriptionJobs</code>
-    /// operation to return in the next page of jobs.</p>
+    /// <p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
+    /// page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
+    /// returns the <code>NextPage</code> token. Include the token in the next request to the
+    /// <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of objects containing summary information for a transcription job.</p>
     pub transcription_job_summaries:
@@ -718,11 +765,10 @@ pub mod list_transcription_jobs_output {
             self.status = input;
             self
         }
-        /// <p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The
-        /// maximum size of the page is set by the <code>MaxResults</code> parameter. If there are
-        /// more jobs in the list than the page size, Amazon Transcribe returns the <code>NextPage</code> token.
-        /// Include the token in the next request to the <code>ListTranscriptionJobs</code>
-        /// operation to return in the next page of jobs.</p>
+        /// <p>The <code>ListTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum size of the
+        /// page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size, Amazon Transcribe
+        /// returns the <code>NextPage</code> token. Include the token in the next request to the
+        /// <code>ListTranscriptionJobs</code> operation to return in the next page of jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -766,18 +812,80 @@ impl ListTranscriptionJobsOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct ListTagsForResourceOutput {
+    /// <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+    pub resource_arn: std::option::Option<std::string::String>,
+    /// <p>Lists all tags associated with the given transcription job, vocabulary, or resource.</p>
+    pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+}
+impl std::fmt::Debug for ListTagsForResourceOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("ListTagsForResourceOutput");
+        formatter.field("resource_arn", &self.resource_arn);
+        formatter.field("tags", &self.tags);
+        formatter.finish()
+    }
+}
+/// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+pub mod list_tags_for_resource_output {
+    /// A builder for [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) resource_arn: std::option::Option<std::string::String>,
+        pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    }
+    impl Builder {
+        /// <p>Lists all tags associated with the given Amazon Resource Name (ARN).</p>
+        pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
+            self.resource_arn = Some(input.into());
+            self
+        }
+        pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+            self.resource_arn = input;
+            self
+        }
+        pub fn tags(mut self, input: impl Into<crate::model::Tag>) -> Self {
+            let mut v = self.tags.unwrap_or_default();
+            v.push(input.into());
+            self.tags = Some(v);
+            self
+        }
+        pub fn set_tags(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        ) -> Self {
+            self.tags = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+        pub fn build(self) -> crate::output::ListTagsForResourceOutput {
+            crate::output::ListTagsForResourceOutput {
+                resource_arn: self.resource_arn,
+                tags: self.tags,
+            }
+        }
+    }
+}
+impl ListTagsForResourceOutput {
+    /// Creates a new builder-style object to manufacture [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput)
+    pub fn builder() -> crate::output::list_tags_for_resource_output::Builder {
+        crate::output::list_tags_for_resource_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListMedicalVocabulariesOutput {
     /// <p>The requested vocabulary state.</p>
     pub status: std::option::Option<crate::model::VocabularyState>,
-    /// <p>The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a
-    /// time. You set the maximum number of vocabularies to return on a page with the
-    /// <code>MaxResults</code> parameter. If there are more jobs in the list will fit on a
-    /// page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the next page of
-    /// vocabularies, include the token in the next request to the
-    /// <code>ListMedicalVocabularies</code> operation .</p>
+    /// <p>The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the
+    /// maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there
+    /// are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the next
+    /// page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
+    /// operation .</p>
     pub next_token: std::option::Option<std::string::String>,
-    /// <p>A list of objects that describe the vocabularies that match your search
-    /// criteria.</p>
+    /// <p>A list of objects that describe the vocabularies that match your search criteria.</p>
     pub vocabularies: std::option::Option<std::vec::Vec<crate::model::VocabularyInfo>>,
 }
 impl std::fmt::Debug for ListMedicalVocabulariesOutput {
@@ -812,12 +920,11 @@ pub mod list_medical_vocabularies_output {
             self.status = input;
             self
         }
-        /// <p>The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a
-        /// time. You set the maximum number of vocabularies to return on a page with the
-        /// <code>MaxResults</code> parameter. If there are more jobs in the list will fit on a
-        /// page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the next page of
-        /// vocabularies, include the token in the next request to the
-        /// <code>ListMedicalVocabularies</code> operation .</p>
+        /// <p>The <code>ListMedicalVocabularies</code> operation returns a page of vocabularies at a time. You set the
+        /// maximum number of vocabularies to return on a page with the <code>MaxResults</code> parameter. If there
+        /// are more jobs in the list will fit on a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. To return the next
+        /// page of vocabularies, include the token in the next request to the <code>ListMedicalVocabularies</code>
+        /// operation .</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -861,12 +968,10 @@ impl ListMedicalVocabulariesOutput {
 pub struct ListMedicalTranscriptionJobsOutput {
     /// <p>The requested status of the medical transcription jobs returned.</p>
     pub status: std::option::Option<crate::model::TranscriptionJobStatus>,
-    /// <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a
-    /// time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If
-    /// the number of jobs exceeds what can fit on a page, Amazon Transcribe Medical returns the
-    /// <code>NextPage</code> token. Include the token in the next request to the
-    /// <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of
-    /// jobs.</p>
+    /// <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum
+    /// size of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
+    /// a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
+    /// <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of objects containing summary information for a transcription job.</p>
     pub medical_transcription_job_summaries:
@@ -908,12 +1013,10 @@ pub mod list_medical_transcription_jobs_output {
             self.status = input;
             self
         }
-        /// <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a
-        /// time. The maximum size of the page is set by the <code>MaxResults</code> parameter. If
-        /// the number of jobs exceeds what can fit on a page, Amazon Transcribe Medical returns the
-        /// <code>NextPage</code> token. Include the token in the next request to the
-        /// <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of
-        /// jobs.</p>
+        /// <p>The <code>ListMedicalTranscriptionJobs</code> operation returns a page of jobs at a time. The maximum
+        /// size of the page is set by the <code>MaxResults</code> parameter. If the number of jobs exceeds what can fit on
+        /// a page, Amazon Transcribe Medical returns the <code>NextPage</code> token. Include the token in the next request to the
+        /// <code>ListMedicalTranscriptionJobs</code> operation to return in the next page of jobs.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -958,11 +1061,9 @@ impl ListMedicalTranscriptionJobsOutput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListLanguageModelsOutput {
-    /// <p>The  operation returns a page of jobs at a
-    /// time. The maximum size of the list is set by the MaxResults parameter. If there are more
-    /// language models in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-    /// token. Include the token in the next request to the  operation to return the next page of language
-    /// models.</p>
+    /// <p>The  operation returns a page of jobs at a time. The maximum size
+    /// of the list is set by the MaxResults parameter. If there are more language models in the list than the page size, Amazon Transcribe
+    /// returns the <code>NextPage</code> token. Include the token in the next request to the  operation to return the next page of language models.</p>
     pub next_token: std::option::Option<std::string::String>,
     /// <p>A list of objects containing information about custom language models.</p>
     pub models: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>,
@@ -985,11 +1086,9 @@ pub mod list_language_models_output {
         pub(crate) models: std::option::Option<std::vec::Vec<crate::model::LanguageModel>>,
     }
     impl Builder {
-        /// <p>The  operation returns a page of jobs at a
-        /// time. The maximum size of the list is set by the MaxResults parameter. If there are more
-        /// language models in the list than the page size, Amazon Transcribe returns the <code>NextPage</code>
-        /// token. Include the token in the next request to the  operation to return the next page of language
-        /// models.</p>
+        /// <p>The  operation returns a page of jobs at a time. The maximum size
+        /// of the list is set by the MaxResults parameter. If there are more language models in the list than the page size, Amazon Transcribe
+        /// returns the <code>NextPage</code> token. Include the token in the next request to the  operation to return the next page of language models.</p>
         pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.next_token = Some(input.into());
             self
@@ -1207,8 +1306,7 @@ pub struct GetVocabularyFilterOutput {
     pub language_code: std::option::Option<crate::model::LanguageCode>,
     /// <p>The date and time that the contents of the vocabulary filter were updated.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the
-    /// list of words.</p>
+    /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
     pub download_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetVocabularyFilterOutput {
@@ -1269,8 +1367,7 @@ pub mod get_vocabulary_filter_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the
-        /// list of words.</p>
+        /// <p>The URI of the list of words in the vocabulary filter. You can use this URI to get the list of words.</p>
         pub fn download_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.download_uri = Some(input.into());
             self
@@ -1488,21 +1585,17 @@ pub struct GetMedicalVocabularyOutput {
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The valid language code for your vocabulary entries.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The
-    /// processing state of the vocabulary. If the <code>VocabularyState</code> is
-    /// <code>READY</code> then you can use it in the
-    /// <code>StartMedicalTranscriptionJob</code> operation. </p>
+    /// <p>The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code>
+    /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
-    /// <p>The date and time that the vocabulary was last modified with a text file different
-    /// from the one that was previously used.</p>
+    /// <p>The date and time that the vocabulary was last modified with a text file different from the one that was
+    /// previously used.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains
-    /// information about why the job failed.</p>
+    /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information about why
+    /// the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
-    /// <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents
-    /// of the vocabulary. You can download your vocabulary from the
-    /// URI
-    /// for a limited time.</p>
+    /// <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+    /// can download your vocabulary from the URI for a limited time.</p>
     pub download_uri: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetMedicalVocabularyOutput {
@@ -1555,10 +1648,8 @@ pub mod get_medical_vocabulary_output {
             self.language_code = input;
             self
         }
-        /// <p>The
-        /// processing state of the vocabulary. If the <code>VocabularyState</code> is
-        /// <code>READY</code> then you can use it in the
-        /// <code>StartMedicalTranscriptionJob</code> operation. </p>
+        /// <p>The processing state of the vocabulary. If the <code>VocabularyState</code> is <code>READY</code>
+        /// then you can use it in the <code>StartMedicalTranscriptionJob</code> operation.</p>
         pub fn vocabulary_state(mut self, input: crate::model::VocabularyState) -> Self {
             self.vocabulary_state = Some(input);
             self
@@ -1570,8 +1661,8 @@ pub mod get_medical_vocabulary_output {
             self.vocabulary_state = input;
             self
         }
-        /// <p>The date and time that the vocabulary was last modified with a text file different
-        /// from the one that was previously used.</p>
+        /// <p>The date and time that the vocabulary was last modified with a text file different from the one that was
+        /// previously used.</p>
         pub fn last_modified_time(mut self, input: smithy_types::Instant) -> Self {
             self.last_modified_time = Some(input);
             self
@@ -1583,8 +1674,8 @@ pub mod get_medical_vocabulary_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains
-        /// information about why the job failed.</p>
+        /// <p>If the <code>VocabularyState</code> is <code>FAILED</code>, this field contains information about why
+        /// the job failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
@@ -1596,10 +1687,8 @@ pub mod get_medical_vocabulary_output {
             self.failure_reason = input;
             self
         }
-        /// <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents
-        /// of the vocabulary. You can download your vocabulary from the
-        /// URI
-        /// for a limited time.</p>
+        /// <p>The location in Amazon S3 where the vocabulary is stored. Use this URI to get the contents of the vocabulary. You
+        /// can download your vocabulary from the URI for a limited time.</p>
         pub fn download_uri(mut self, input: impl Into<std::string::String>) -> Self {
             self.download_uri = Some(input.into());
             self
@@ -2150,14 +2239,14 @@ pub struct CreateVocabularyOutput {
     pub vocabulary_name: std::option::Option<std::string::String>,
     /// <p>The language code of the vocabulary entries.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field
-    /// contains <code>READY</code> the vocabulary is ready to be used in a
-    /// <code>StartTranscriptionJob</code> request.</p>
+    /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
+    /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+    /// request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time that the vocabulary was created.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-    /// information about why the job failed.</p>
+    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
+    /// why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateVocabularyOutput {
@@ -2208,9 +2297,9 @@ pub mod create_vocabulary_output {
             self.language_code = input;
             self
         }
-        /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field
-        /// contains <code>READY</code> the vocabulary is ready to be used in a
-        /// <code>StartTranscriptionJob</code> request.</p>
+        /// <p>The processing state of the vocabulary. When the <code>VocabularyState</code> field contains
+        /// <code>READY</code> the vocabulary is ready to be used in a <code>StartTranscriptionJob</code>
+        /// request.</p>
         pub fn vocabulary_state(mut self, input: crate::model::VocabularyState) -> Self {
             self.vocabulary_state = Some(input);
             self
@@ -2234,8 +2323,8 @@ pub mod create_vocabulary_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-        /// information about why the job failed.</p>
+        /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
+        /// why the job failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
@@ -2272,17 +2361,16 @@ pub struct CreateMedicalVocabularyOutput {
     /// <p>The name of the vocabulary. The name must be unique within an Amazon Web Services account and is case
     /// sensitive.</p>
     pub vocabulary_name: std::option::Option<std::string::String>,
-    /// <p>The language code for the entries in your custom vocabulary. US English (en-US) is the
-    /// only valid language code for Amazon Transcribe Medical.</p>
+    /// <p>The language code for the entries in your custom vocabulary. US English (en-US) is the only valid language
+    /// code for Amazon Transcribe Medical.</p>
     pub language_code: std::option::Option<crate::model::LanguageCode>,
-    /// <p>The processing state of your custom vocabulary in Amazon Transcribe Medical. If the state is
-    /// <code>READY</code>, you can use the vocabulary in a
-    /// <code>StartMedicalTranscriptionJob</code> request.</p>
+    /// <p>The processing state of your custom vocabulary in Amazon Transcribe Medical. If the state is <code>READY</code>, you can
+    /// use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
     pub vocabulary_state: std::option::Option<crate::model::VocabularyState>,
     /// <p>The date and time that you created the vocabulary.</p>
     pub last_modified_time: std::option::Option<smithy_types::Instant>,
-    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-    /// information about why the job failed.</p>
+    /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
+    /// why the job failed.</p>
     pub failure_reason: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateMedicalVocabularyOutput {
@@ -2322,8 +2410,8 @@ pub mod create_medical_vocabulary_output {
             self.vocabulary_name = input;
             self
         }
-        /// <p>The language code for the entries in your custom vocabulary. US English (en-US) is the
-        /// only valid language code for Amazon Transcribe Medical.</p>
+        /// <p>The language code for the entries in your custom vocabulary. US English (en-US) is the only valid language
+        /// code for Amazon Transcribe Medical.</p>
         pub fn language_code(mut self, input: crate::model::LanguageCode) -> Self {
             self.language_code = Some(input);
             self
@@ -2335,9 +2423,8 @@ pub mod create_medical_vocabulary_output {
             self.language_code = input;
             self
         }
-        /// <p>The processing state of your custom vocabulary in Amazon Transcribe Medical. If the state is
-        /// <code>READY</code>, you can use the vocabulary in a
-        /// <code>StartMedicalTranscriptionJob</code> request.</p>
+        /// <p>The processing state of your custom vocabulary in Amazon Transcribe Medical. If the state is <code>READY</code>, you can
+        /// use the vocabulary in a <code>StartMedicalTranscriptionJob</code> request.</p>
         pub fn vocabulary_state(mut self, input: crate::model::VocabularyState) -> Self {
             self.vocabulary_state = Some(input);
             self
@@ -2361,8 +2448,8 @@ pub mod create_medical_vocabulary_output {
             self.last_modified_time = input;
             self
         }
-        /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains
-        /// information about why the job failed.</p>
+        /// <p>If the <code>VocabularyState</code> field is <code>FAILED</code>, this field contains information about
+        /// why the job failed.</p>
         pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
             self.failure_reason = Some(input.into());
             self
@@ -2398,16 +2485,14 @@ impl CreateMedicalVocabularyOutput {
 pub struct CreateLanguageModelOutput {
     /// <p>The language code of the text you've used to create a custom language model.</p>
     pub language_code: std::option::Option<crate::model::ClmLanguageCode>,
-    /// <p>The Amazon Transcribe standard language model, or base model you've used to create a custom
-    /// language model.</p>
+    /// <p>The Amazon Transcribe standard language model, or base model you've used to create a custom language model.</p>
     pub base_model_name: std::option::Option<crate::model::BaseModelName>,
     /// <p>The name you've chosen for your custom language model.</p>
     pub model_name: std::option::Option<std::string::String>,
-    /// <p>The data access role and Amazon S3 prefixes you've chosen to create your custom language
-    /// model.</p>
+    /// <p>The data access role and Amazon S3 prefixes you've chosen to create your custom language model.</p>
     pub input_data_config: std::option::Option<crate::model::InputDataConfig>,
-    /// <p>The status of the custom language model. When the status is <code>COMPLETED</code> the
-    /// model is ready to use.</p>
+    /// <p>The status of the custom language model. When the status is <code>COMPLETED</code> the model is ready
+    /// to use.</p>
     pub model_status: std::option::Option<crate::model::ModelStatus>,
 }
 impl std::fmt::Debug for CreateLanguageModelOutput {
@@ -2446,8 +2531,7 @@ pub mod create_language_model_output {
             self.language_code = input;
             self
         }
-        /// <p>The Amazon Transcribe standard language model, or base model you've used to create a custom
-        /// language model.</p>
+        /// <p>The Amazon Transcribe standard language model, or base model you've used to create a custom language model.</p>
         pub fn base_model_name(mut self, input: crate::model::BaseModelName) -> Self {
             self.base_model_name = Some(input);
             self
@@ -2468,8 +2552,7 @@ pub mod create_language_model_output {
             self.model_name = input;
             self
         }
-        /// <p>The data access role and Amazon S3 prefixes you've chosen to create your custom language
-        /// model.</p>
+        /// <p>The data access role and Amazon S3 prefixes you've chosen to create your custom language model.</p>
         pub fn input_data_config(mut self, input: crate::model::InputDataConfig) -> Self {
             self.input_data_config = Some(input);
             self
@@ -2481,8 +2564,8 @@ pub mod create_language_model_output {
             self.input_data_config = input;
             self
         }
-        /// <p>The status of the custom language model. When the status is <code>COMPLETED</code> the
-        /// model is ready to use.</p>
+        /// <p>The status of the custom language model. When the status is <code>COMPLETED</code> the model is ready
+        /// to use.</p>
         pub fn model_status(mut self, input: crate::model::ModelStatus) -> Self {
             self.model_status = Some(input);
             self

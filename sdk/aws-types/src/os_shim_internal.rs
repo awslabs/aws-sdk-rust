@@ -33,7 +33,7 @@ use std::sync::Arc;
 ///     map
 /// });
 /// ```
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Fs(fs::Inner);
 
 impl Default for Fs {
@@ -121,12 +121,13 @@ mod fs {
     use std::path::PathBuf;
     use std::sync::Arc;
 
-    #[derive(Clone)]
+    #[derive(Clone, Debug)]
     pub enum Inner {
         Real,
         Fake(Arc<Fake>),
     }
 
+    #[derive(Debug)]
     pub enum Fake {
         MapFs(HashMap<OsString, Vec<u8>>),
         NamespacedFs {
@@ -145,7 +146,7 @@ mod fs {
 /// Process environments are cheap to clone:
 /// - Faked process environments are wrapped in an internal Arc
 /// - Real process environments are pointer-sized
-#[derive(Clone)]
+#[derive(Clone, Debug)]
 pub struct Env(env::Inner);
 
 impl Default for Env {
@@ -200,7 +201,7 @@ mod env {
     use std::collections::HashMap;
     use std::sync::Arc;
 
-    #[derive(Clone)]
+    #[derive(Clone, Debug)]
     pub enum Inner {
         Real,
         Fake(Arc<HashMap<String, String>>),
@@ -225,9 +226,9 @@ mod test {
 
     #[test]
     fn fs_works() {
-        let fs = Fs::from_test_dir("test-data", "/users/test-data");
+        let fs = Fs::from_test_dir(".", "/users/test-data");
         let _ = fs
-            .read_to_end("/users/test-data/file-location-tests.json")
+            .read_to_end("/users/test-data/Cargo.toml")
             .now_or_never()
             .expect("future should not poll")
             .expect("file exists");

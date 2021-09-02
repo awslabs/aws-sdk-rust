@@ -37,8 +37,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateSignalingChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateSignalingChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateSignalingChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateSignalingChannelError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::CreateSignalingChannelErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
@@ -53,8 +58,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateSignalingChannelErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateStreamErrorKind::AccountStreamLimitExceededException(inner) => {
@@ -84,8 +92,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateStreamError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteSignalingChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteSignalingChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteSignalingChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteSignalingChannelError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteSignalingChannelErrorKind::AccessDeniedException(inner) => {
@@ -114,8 +127,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSignalingChannelErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteStreamErrorKind::ClientLimitExceededException(inner) => {
@@ -142,9 +158,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteStreamError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeSignalingChannelError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeSignalingChannelError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeSignalingChannelError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeSignalingChannelError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -168,8 +188,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeSignalingChannelEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeStreamErrorKind::ClientLimitExceededException(inner) => {
@@ -190,8 +213,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeStreamError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDataEndpointError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDataEndpointError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDataEndpointError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetDataEndpointError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDataEndpointErrorKind::ClientLimitExceededException(inner) => {
@@ -212,9 +238,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetDataEndpointError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSignalingChannelEndpointError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSignalingChannelEndpointError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetSignalingChannelEndpointError>,
+        err: smithy_http::result::SdkError<crate::error::GetSignalingChannelEndpointError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -229,8 +259,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetSignalingChannelEndpoin
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListSignalingChannelsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListSignalingChannelsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListSignalingChannelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListSignalingChannelsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSignalingChannelsErrorKind::AccessDeniedException(inner) => {
@@ -250,8 +285,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSignalingChannelsError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListStreamsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListStreamsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListStreamsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListStreamsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListStreamsErrorKind::ClientLimitExceededException(inner) => {
@@ -266,8 +304,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListStreamsError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
@@ -290,8 +331,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForStreamErrorKind::ClientLimitExceededException(inner) => {
@@ -317,8 +361,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForStreamError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
@@ -342,8 +389,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagStreamErrorKind::ClientLimitExceededException(inner) => {
@@ -370,8 +420,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagStreamError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
@@ -392,8 +445,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagStreamErrorKind::ClientLimitExceededException(inner) => {
@@ -417,8 +473,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagStreamError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateDataRetentionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateDataRetentionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateDataRetentionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateDataRetentionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateDataRetentionErrorKind::ClientLimitExceededException(inner) => {
@@ -447,8 +506,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateDataRetentionError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateSignalingChannelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateSignalingChannelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateSignalingChannelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateSignalingChannelError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateSignalingChannelErrorKind::AccessDeniedException(inner) => {
@@ -477,8 +541,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateSignalingChannelErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateStreamError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateStreamError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateStreamError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateStreamError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateStreamErrorKind::ClientLimitExceededException(inner) => {

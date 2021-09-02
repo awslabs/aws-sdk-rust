@@ -3,7 +3,7 @@
 pub fn parse_create_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -260,7 +260,7 @@ pub fn parse_create_token_response(
 pub fn parse_register_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterClientOutput, crate::error::RegisterClientError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterClientError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -376,7 +376,7 @@ pub fn parse_start_device_authorization_error(
     crate::output::StartDeviceAuthorizationOutput,
     crate::error::StartDeviceAuthorizationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartDeviceAuthorizationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

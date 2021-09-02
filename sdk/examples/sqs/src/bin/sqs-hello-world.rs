@@ -9,7 +9,8 @@ use std::process::exit;
 #[tokio::main]
 async fn main() -> Result<(), sqs::Error> {
     tracing_subscriber::fmt::init();
-    let client = sqs::Client::from_env();
+    let shared_config = aws_config::load_from_env().await;
+    let client = sqs::Client::new(&shared_config);
     let queues = client.list_queues().send().await?;
     let mut queue_urls = queues.queue_urls.unwrap_or_default();
     let queue_url = match queue_urls.pop() {

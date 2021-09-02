@@ -19,8 +19,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteConnectionErrorKind::ForbiddenException(inner) => {
@@ -40,8 +43,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteConnectionError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetConnectionErrorKind::ForbiddenException(inner) => {
@@ -59,8 +65,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetConnectionError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PostToConnectionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PostToConnectionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PostToConnectionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PostToConnectionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PostToConnectionErrorKind::ForbiddenException(inner) => {

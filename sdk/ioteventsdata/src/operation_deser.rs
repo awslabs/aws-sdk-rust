@@ -6,7 +6,7 @@ pub fn parse_batch_acknowledge_alarm_error(
     crate::output::BatchAcknowledgeAlarmOutput,
     crate::error::BatchAcknowledgeAlarmError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchAcknowledgeAlarmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -127,7 +127,7 @@ pub fn parse_batch_disable_alarm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchDisableAlarmOutput, crate::error::BatchDisableAlarmError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDisableAlarmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -246,7 +246,7 @@ pub fn parse_batch_enable_alarm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchEnableAlarmOutput, crate::error::BatchEnableAlarmError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchEnableAlarmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -362,7 +362,7 @@ pub fn parse_batch_enable_alarm_response(
 pub fn parse_batch_put_message_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchPutMessageOutput, crate::error::BatchPutMessageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchPutMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -477,7 +477,7 @@ pub fn parse_batch_put_message_response(
 pub fn parse_batch_reset_alarm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchResetAlarmOutput, crate::error::BatchResetAlarmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchResetAlarmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -593,7 +593,7 @@ pub fn parse_batch_snooze_alarm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchSnoozeAlarmOutput, crate::error::BatchSnoozeAlarmError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchSnoozeAlarmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -712,7 +712,7 @@ pub fn parse_batch_update_detector_error(
     crate::output::BatchUpdateDetectorOutput,
     crate::error::BatchUpdateDetectorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchUpdateDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -832,7 +832,7 @@ pub fn parse_batch_update_detector_response(
 pub fn parse_describe_alarm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeAlarmOutput, crate::error::DescribeAlarmError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeAlarmError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -968,7 +968,7 @@ pub fn parse_describe_detector_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeDetectorOutput, crate::error::DescribeDetectorError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeDetectorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1104,7 +1104,7 @@ pub fn parse_describe_detector_response(
 pub fn parse_list_alarms_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAlarmsOutput, crate::error::ListAlarmsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAlarmsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1238,7 +1238,7 @@ pub fn parse_list_alarms_response(
 pub fn parse_list_detectors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListDetectorsOutput, crate::error::ListDetectorsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDetectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

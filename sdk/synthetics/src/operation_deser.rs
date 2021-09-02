@@ -3,7 +3,7 @@
 pub fn parse_create_canary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCanaryOutput, crate::error::CreateCanaryError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCanaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -76,7 +76,7 @@ pub fn parse_create_canary_response(
 pub fn parse_delete_canary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteCanaryOutput, crate::error::DeleteCanaryError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCanaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -189,7 +189,7 @@ pub fn parse_describe_canaries_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeCanariesOutput, crate::error::DescribeCanariesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCanariesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -267,7 +267,7 @@ pub fn parse_describe_canaries_last_run_error(
     crate::output::DescribeCanariesLastRunOutput,
     crate::error::DescribeCanariesLastRunError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeCanariesLastRunError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -353,7 +353,7 @@ pub fn parse_describe_runtime_versions_error(
     crate::output::DescribeRuntimeVersionsOutput,
     crate::error::DescribeRuntimeVersionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRuntimeVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -436,7 +436,7 @@ pub fn parse_describe_runtime_versions_response(
 pub fn parse_get_canary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCanaryOutput, crate::error::GetCanaryError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCanaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -509,7 +509,7 @@ pub fn parse_get_canary_response(
 pub fn parse_get_canary_runs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCanaryRunsOutput, crate::error::GetCanaryRunsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCanaryRunsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -606,7 +606,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -705,7 +705,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_start_canary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartCanaryOutput, crate::error::StartCanaryError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartCanaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -817,7 +817,7 @@ pub fn parse_start_canary_response(
 pub fn parse_stop_canary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopCanaryOutput, crate::error::StopCanaryError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopCanaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -929,7 +929,7 @@ pub fn parse_stop_canary_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1020,7 +1020,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1111,7 +1111,7 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_canary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateCanaryOutput, crate::error::UpdateCanaryError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCanaryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -3,7 +3,7 @@
 pub fn parse_accept_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AcceptGrantOutput, crate::error::AcceptGrantError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -174,7 +174,7 @@ pub fn parse_accept_grant_response(
 pub fn parse_check_in_license_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CheckInLicenseOutput, crate::error::CheckInLicenseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CheckInLicenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -369,7 +369,7 @@ pub fn parse_checkout_borrow_license_error(
     crate::output::CheckoutBorrowLicenseOutput,
     crate::error::CheckoutBorrowLicenseError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CheckoutBorrowLicenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -560,7 +560,7 @@ pub fn parse_checkout_borrow_license_response(
 pub fn parse_checkout_license_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CheckoutLicenseOutput, crate::error::CheckoutLicenseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CheckoutLicenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -792,7 +792,7 @@ pub fn parse_checkout_license_response(
 pub fn parse_create_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -966,7 +966,7 @@ pub fn parse_create_grant_version_error(
     crate::output::CreateGrantVersionOutput,
     crate::error::CreateGrantVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateGrantVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1143,7 +1143,7 @@ pub fn parse_create_grant_version_response(
 pub fn parse_create_license_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLicenseOutput, crate::error::CreateLicenseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLicenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1321,7 +1321,7 @@ pub fn parse_create_license_configuration_error(
     crate::output::CreateLicenseConfigurationOutput,
     crate::error::CreateLicenseConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLicenseConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1490,7 +1490,7 @@ pub fn parse_create_license_manager_report_generator_error(
     crate::output::CreateLicenseManagerReportGeneratorOutput,
     crate::error::CreateLicenseManagerReportGeneratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLicenseManagerReportGeneratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1645,7 +1645,7 @@ pub fn parse_create_license_version_error(
     crate::output::CreateLicenseVersionOutput,
     crate::error::CreateLicenseVersionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLicenseVersionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1848,7 +1848,7 @@ pub fn parse_create_license_version_response(
 pub fn parse_create_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTokenOutput, crate::error::CreateTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2042,7 +2042,7 @@ pub fn parse_create_token_response(
 pub fn parse_delete_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGrantOutput, crate::error::DeleteGrantError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2213,7 +2213,7 @@ pub fn parse_delete_grant_response(
 pub fn parse_delete_license_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLicenseOutput, crate::error::DeleteLicenseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLicenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2412,7 +2412,7 @@ pub fn parse_delete_license_configuration_error(
     crate::output::DeleteLicenseConfigurationOutput,
     crate::error::DeleteLicenseConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLicenseConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2556,7 +2556,7 @@ pub fn parse_delete_license_manager_report_generator_error(
     crate::output::DeleteLicenseManagerReportGeneratorOutput,
     crate::error::DeleteLicenseManagerReportGeneratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLicenseManagerReportGeneratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2703,7 +2703,7 @@ pub fn parse_delete_license_manager_report_generator_response(
 pub fn parse_delete_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTokenOutput, crate::error::DeleteTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2880,7 +2880,7 @@ pub fn parse_extend_license_consumption_error(
     crate::output::ExtendLicenseConsumptionOutput,
     crate::error::ExtendLicenseConsumptionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExtendLicenseConsumptionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3067,7 +3067,7 @@ pub fn parse_extend_license_consumption_response(
 pub fn parse_get_access_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccessTokenOutput, crate::error::GetAccessTokenError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAccessTokenError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3203,7 +3203,7 @@ pub fn parse_get_access_token_response(
 pub fn parse_get_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGrantOutput, crate::error::GetGrantError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3374,7 +3374,7 @@ pub fn parse_get_grant_response(
 pub fn parse_get_license_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLicenseOutput, crate::error::GetLicenseError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLicenseError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3530,7 +3530,7 @@ pub fn parse_get_license_configuration_error(
     crate::output::GetLicenseConfigurationOutput,
     crate::error::GetLicenseConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLicenseConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3675,7 +3675,7 @@ pub fn parse_get_license_manager_report_generator_error(
     crate::output::GetLicenseManagerReportGeneratorOutput,
     crate::error::GetLicenseManagerReportGeneratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLicenseManagerReportGeneratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3827,7 +3827,7 @@ pub fn parse_get_license_manager_report_generator_response(
 pub fn parse_get_license_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLicenseUsageOutput, crate::error::GetLicenseUsageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLicenseUsageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3984,7 +3984,7 @@ pub fn parse_get_service_settings_error(
     crate::output::GetServiceSettingsOutput,
     crate::error::GetServiceSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetServiceSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4107,7 +4107,7 @@ pub fn parse_list_associations_for_license_configuration_error(
     crate::output::ListAssociationsForLicenseConfigurationOutput,
     crate::error::ListAssociationsForLicenseConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListAssociationsForLicenseConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4236,7 +4236,7 @@ pub fn parse_list_distributed_grants_error(
     crate::output::ListDistributedGrantsOutput,
     crate::error::ListDistributedGrantsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDistributedGrantsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4416,7 +4416,7 @@ pub fn parse_list_failures_for_license_configuration_operations_error(
     crate::output::ListFailuresForLicenseConfigurationOperationsOutput,
     crate::error::ListFailuresForLicenseConfigurationOperationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListFailuresForLicenseConfigurationOperationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4532,7 +4532,7 @@ pub fn parse_list_license_configurations_error(
     crate::output::ListLicenseConfigurationsOutput,
     crate::error::ListLicenseConfigurationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLicenseConfigurationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4704,7 +4704,7 @@ pub fn parse_list_license_manager_report_generators_error(
     crate::output::ListLicenseManagerReportGeneratorsOutput,
     crate::error::ListLicenseManagerReportGeneratorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLicenseManagerReportGeneratorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4856,7 +4856,7 @@ pub fn parse_list_license_manager_report_generators_response(
 pub fn parse_list_licenses_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLicensesOutput, crate::error::ListLicensesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLicensesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5012,7 +5012,7 @@ pub fn parse_list_license_specifications_for_resource_error(
     crate::output::ListLicenseSpecificationsForResourceOutput,
     crate::error::ListLicenseSpecificationsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLicenseSpecificationsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5125,7 +5125,7 @@ pub fn parse_list_license_versions_error(
     crate::output::ListLicenseVersionsOutput,
     crate::error::ListLicenseVersionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLicenseVersionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5266,7 +5266,7 @@ pub fn parse_list_received_grants_error(
     crate::output::ListReceivedGrantsOutput,
     crate::error::ListReceivedGrantsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListReceivedGrantsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5446,7 +5446,7 @@ pub fn parse_list_received_licenses_error(
     crate::output::ListReceivedLicensesOutput,
     crate::error::ListReceivedLicensesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListReceivedLicensesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5626,7 +5626,7 @@ pub fn parse_list_resource_inventory_error(
     crate::output::ListResourceInventoryOutput,
     crate::error::ListResourceInventoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResourceInventoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5809,7 +5809,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -5947,7 +5947,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_list_tokens_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTokensOutput, crate::error::ListTokensError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTokensError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6085,7 +6085,7 @@ pub fn parse_list_usage_for_license_configuration_error(
     crate::output::ListUsageForLicenseConfigurationOutput,
     crate::error::ListUsageForLicenseConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListUsageForLicenseConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6209,7 +6209,7 @@ pub fn parse_list_usage_for_license_configuration_response(
 pub fn parse_reject_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RejectGrantOutput, crate::error::RejectGrantError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectGrantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6380,7 +6380,7 @@ pub fn parse_reject_grant_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6510,7 +6510,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6643,7 +6643,7 @@ pub fn parse_update_license_configuration_error(
     crate::output::UpdateLicenseConfigurationOutput,
     crate::error::UpdateLicenseConfigurationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLicenseConfigurationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6807,7 +6807,7 @@ pub fn parse_update_license_manager_report_generator_error(
     crate::output::UpdateLicenseManagerReportGeneratorOutput,
     crate::error::UpdateLicenseManagerReportGeneratorError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLicenseManagerReportGeneratorError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -6957,7 +6957,7 @@ pub fn parse_update_license_specifications_for_resource_error(
     crate::output::UpdateLicenseSpecificationsForResourceOutput,
     crate::error::UpdateLicenseSpecificationsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLicenseSpecificationsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -7095,7 +7095,7 @@ pub fn parse_update_service_settings_error(
     crate::output::UpdateServiceSettingsOutput,
     crate::error::UpdateServiceSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateServiceSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

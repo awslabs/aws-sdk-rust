@@ -6,7 +6,7 @@ pub fn parse_batch_create_table_rows_error(
     crate::output::BatchCreateTableRowsOutput,
     crate::error::BatchCreateTableRowsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchCreateTableRowsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -209,7 +209,7 @@ pub fn parse_batch_delete_table_rows_error(
     crate::output::BatchDeleteTableRowsOutput,
     crate::error::BatchDeleteTableRowsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchDeleteTableRowsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -394,7 +394,7 @@ pub fn parse_batch_update_table_rows_error(
     crate::output::BatchUpdateTableRowsOutput,
     crate::error::BatchUpdateTableRowsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchUpdateTableRowsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -579,7 +579,7 @@ pub fn parse_batch_upsert_table_rows_error(
     crate::output::BatchUpsertTableRowsOutput,
     crate::error::BatchUpsertTableRowsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchUpsertTableRowsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -782,7 +782,7 @@ pub fn parse_describe_table_data_import_job_error(
     crate::output::DescribeTableDataImportJobOutput,
     crate::error::DescribeTableDataImportJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTableDataImportJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -952,7 +952,7 @@ pub fn parse_describe_table_data_import_job_response(
 pub fn parse_get_screen_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetScreenDataOutput, crate::error::GetScreenDataError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetScreenDataError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1132,7 +1132,7 @@ pub fn parse_invoke_screen_automation_error(
     crate::output::InvokeScreenAutomationOutput,
     crate::error::InvokeScreenAutomationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InvokeScreenAutomationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1360,7 +1360,7 @@ pub fn parse_list_table_columns_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTableColumnsOutput, crate::error::ListTableColumnsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTableColumnsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1538,7 +1538,7 @@ pub fn parse_list_table_columns_response(
 pub fn parse_list_table_rows_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTableRowsOutput, crate::error::ListTableRowsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTableRowsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1715,7 +1715,7 @@ pub fn parse_list_table_rows_response(
 pub fn parse_list_tables_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTablesOutput, crate::error::ListTablesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTablesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1891,7 +1891,7 @@ pub fn parse_list_tables_response(
 pub fn parse_query_table_rows_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::QueryTableRowsOutput, crate::error::QueryTableRowsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::QueryTableRowsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2071,7 +2071,7 @@ pub fn parse_start_table_data_import_job_error(
     crate::output::StartTableDataImportJobOutput,
     crate::error::StartTableDataImportJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartTableDataImportJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

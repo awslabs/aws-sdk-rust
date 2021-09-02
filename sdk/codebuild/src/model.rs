@@ -7200,11 +7200,6 @@ pub struct BuildBatchPhase {
     /// <dd>
     /// <p>The build phase is still in progress.</p>
     /// </dd>
-    /// <dt>QUEUED</dt>
-    /// <dd>
-    /// <p>The build has been submitted and is queued behind other submitted
-    /// builds.</p>
-    /// </dd>
     /// <dt>STOPPED</dt>
     /// <dd>
     /// <p>The build phase stopped.</p>
@@ -7312,11 +7307,6 @@ pub mod build_batch_phase {
         /// <dt>IN_PROGRESS</dt>
         /// <dd>
         /// <p>The build phase is still in progress.</p>
-        /// </dd>
-        /// <dt>QUEUED</dt>
-        /// <dd>
-        /// <p>The build has been submitted and is queued behind other submitted
-        /// builds.</p>
         /// </dd>
         /// <dt>STOPPED</dt>
         /// <dd>
@@ -8649,60 +8639,53 @@ impl LogsLocation {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct BuildPhase {
     /// <p>The name of the build phase. Valid values include:</p>
-    /// <ul>
-    /// <li>
-    /// <p>
-    /// <code>BUILD</code>: Core build activities typically occur in this build
-    /// phase.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>COMPLETED</code>: The build has been completed.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in this build
-    /// phase.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>FINALIZING</code>: The build process is completing in this build
-    /// phase.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>INSTALL</code>: Installation activities typically occur in this build
-    /// phase.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>POST_BUILD</code>: Post-build activities typically occur in this build
-    /// phase.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PRE_BUILD</code>: Pre-build activities typically occur in this build
-    /// phase.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>PROVISIONING</code>: The build environment is being set up.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>QUEUED</code>: The build has been submitted and is queued behind other
-    /// submitted builds.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>SUBMITTED</code>: The build has been submitted.</p>
-    /// </li>
-    /// <li>
-    /// <p>
-    /// <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to
-    /// the output location.</p>
-    /// </li>
-    /// </ul>
+    /// <dl>
+    /// <dt>BUILD</dt>
+    /// <dd>
+    /// <p>Core build activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>COMPLETED</dt>
+    /// <dd>
+    /// <p>The build has been completed.</p>
+    /// </dd>
+    /// <dt>DOWNLOAD_SOURCE</dt>
+    /// <dd>
+    /// <p>Source code is being downloaded in this build phase.</p>
+    /// </dd>
+    /// <dt>FINALIZING</dt>
+    /// <dd>
+    /// <p>The build process is completing in this build phase.</p>
+    /// </dd>
+    /// <dt>INSTALL</dt>
+    /// <dd>
+    /// <p>Installation activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>POST_BUILD</dt>
+    /// <dd>
+    /// <p>Post-build activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>PRE_BUILD</dt>
+    /// <dd>
+    /// <p>Pre-build activities typically occur in this build phase.</p>
+    /// </dd>
+    /// <dt>PROVISIONING</dt>
+    /// <dd>
+    /// <p>The build environment is being set up.</p>
+    /// </dd>
+    /// <dt>QUEUED</dt>
+    /// <dd>
+    /// <p>The build has been submitted and is queued behind other submitted
+    /// builds.</p>
+    /// </dd>
+    /// <dt>SUBMITTED</dt>
+    /// <dd>
+    /// <p>The build has been submitted.</p>
+    /// </dd>
+    /// <dt>UPLOAD_ARTIFACTS</dt>
+    /// <dd>
+    /// <p>Build output artifacts are being uploaded to the output location.</p>
+    /// </dd>
+    /// </dl>
     pub phase_type: std::option::Option<crate::model::BuildPhaseType>,
     /// <p>The current status of the build phase. Valid values include:</p>
     /// <dl>
@@ -8717,11 +8700,6 @@ pub struct BuildPhase {
     /// <dt>IN_PROGRESS</dt>
     /// <dd>
     /// <p>The build phase is still in progress.</p>
-    /// </dd>
-    /// <dt>QUEUED</dt>
-    /// <dd>
-    /// <p>The build has been submitted and is queued behind other submitted
-    /// builds.</p>
     /// </dd>
     /// <dt>STOPPED</dt>
     /// <dd>
@@ -8775,60 +8753,53 @@ pub mod build_phase {
     }
     impl Builder {
         /// <p>The name of the build phase. Valid values include:</p>
-        /// <ul>
-        /// <li>
-        /// <p>
-        /// <code>BUILD</code>: Core build activities typically occur in this build
-        /// phase.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>COMPLETED</code>: The build has been completed.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>DOWNLOAD_SOURCE</code>: Source code is being downloaded in this build
-        /// phase.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>FINALIZING</code>: The build process is completing in this build
-        /// phase.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>INSTALL</code>: Installation activities typically occur in this build
-        /// phase.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>POST_BUILD</code>: Post-build activities typically occur in this build
-        /// phase.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PRE_BUILD</code>: Pre-build activities typically occur in this build
-        /// phase.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>PROVISIONING</code>: The build environment is being set up.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>QUEUED</code>: The build has been submitted and is queued behind other
-        /// submitted builds.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>SUBMITTED</code>: The build has been submitted.</p>
-        /// </li>
-        /// <li>
-        /// <p>
-        /// <code>UPLOAD_ARTIFACTS</code>: Build output artifacts are being uploaded to
-        /// the output location.</p>
-        /// </li>
-        /// </ul>
+        /// <dl>
+        /// <dt>BUILD</dt>
+        /// <dd>
+        /// <p>Core build activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>COMPLETED</dt>
+        /// <dd>
+        /// <p>The build has been completed.</p>
+        /// </dd>
+        /// <dt>DOWNLOAD_SOURCE</dt>
+        /// <dd>
+        /// <p>Source code is being downloaded in this build phase.</p>
+        /// </dd>
+        /// <dt>FINALIZING</dt>
+        /// <dd>
+        /// <p>The build process is completing in this build phase.</p>
+        /// </dd>
+        /// <dt>INSTALL</dt>
+        /// <dd>
+        /// <p>Installation activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>POST_BUILD</dt>
+        /// <dd>
+        /// <p>Post-build activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>PRE_BUILD</dt>
+        /// <dd>
+        /// <p>Pre-build activities typically occur in this build phase.</p>
+        /// </dd>
+        /// <dt>PROVISIONING</dt>
+        /// <dd>
+        /// <p>The build environment is being set up.</p>
+        /// </dd>
+        /// <dt>QUEUED</dt>
+        /// <dd>
+        /// <p>The build has been submitted and is queued behind other submitted
+        /// builds.</p>
+        /// </dd>
+        /// <dt>SUBMITTED</dt>
+        /// <dd>
+        /// <p>The build has been submitted.</p>
+        /// </dd>
+        /// <dt>UPLOAD_ARTIFACTS</dt>
+        /// <dd>
+        /// <p>Build output artifacts are being uploaded to the output location.</p>
+        /// </dd>
+        /// </dl>
         pub fn phase_type(mut self, input: crate::model::BuildPhaseType) -> Self {
             self.phase_type = Some(input);
             self
@@ -8853,11 +8824,6 @@ pub mod build_phase {
         /// <dt>IN_PROGRESS</dt>
         /// <dd>
         /// <p>The build phase is still in progress.</p>
-        /// </dd>
-        /// <dt>QUEUED</dt>
-        /// <dd>
-        /// <p>The build has been submitted and is queued behind other submitted
-        /// builds.</p>
         /// </dd>
         /// <dt>STOPPED</dt>
         /// <dd>

@@ -2406,10 +2406,10 @@ impl DescribeApplicableIndividualAssessmentsOutput {
 pub struct DescribeAccountAttributesOutput {
     /// <p>Account quota information.</p>
     pub account_quotas: std::option::Option<std::vec::Vec<crate::model::AccountQuota>>,
-    /// <p>A unique DMS identifier for an account in a particular Region. The value of this
+    /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
     /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
     /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-    /// for storing task assessment reports in a given Region. The format of this S3 bucket
+    /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
     /// name is the following:
     /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
     /// Here is an example name for this default S3 bucket:
@@ -2451,10 +2451,10 @@ pub mod describe_account_attributes_output {
             self.account_quotas = input;
             self
         }
-        /// <p>A unique DMS identifier for an account in a particular Region. The value of this
+        /// <p>A unique DMS identifier for an account in a particular Amazon Web Services Region. The value of this
         /// identifier has the following format: <code>c99999999999</code>. DMS uses this identifier to
         /// name artifacts. For example, DMS uses this identifier to name the default Amazon S3 bucket
-        /// for storing task assessment reports in a given Region. The format of this S3 bucket
+        /// for storing task assessment reports in a given Amazon Web Services Region. The format of this S3 bucket
         /// name is the following:
         /// <code>dms-<i>AccountNumber</i>-<i>UniqueAccountIdentifier</i>.</code>
         /// Here is an example name for this default S3 bucket:

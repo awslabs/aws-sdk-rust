@@ -19,8 +19,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateMemberAccountError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AssociateMemberAccountError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateMemberAccountError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AssociateMemberAccountError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AssociateMemberAccountErrorKind::InternalException(inner) => {
@@ -40,8 +45,13 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateMemberAccountErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AssociateS3ResourcesErrorKind::AccessDeniedException(inner) => {
@@ -64,9 +74,13 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateS3ResourcesError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateMemberAccountError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -84,9 +98,12 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateMemberAccountE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -107,8 +124,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateS3ResourcesErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListMemberAccountsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListMemberAccountsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListMemberAccountsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListMemberAccountsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListMemberAccountsErrorKind::InternalException(inner) => {
@@ -125,8 +145,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListMemberAccountsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListS3ResourcesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListS3ResourcesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListS3ResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListS3ResourcesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListS3ResourcesErrorKind::AccessDeniedException(inner) => {
@@ -144,8 +167,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListS3ResourcesError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateS3ResourcesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateS3ResourcesErrorKind::AccessDeniedException(inner) => {

@@ -6,7 +6,7 @@ pub fn parse_get_personalized_ranking_error(
     crate::output::GetPersonalizedRankingOutput,
     crate::error::GetPersonalizedRankingError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPersonalizedRankingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -91,7 +91,7 @@ pub fn parse_get_recommendations_error(
     crate::output::GetRecommendationsOutput,
     crate::error::GetRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

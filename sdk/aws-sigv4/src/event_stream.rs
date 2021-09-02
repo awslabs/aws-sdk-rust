@@ -8,6 +8,7 @@
 use crate::date_fmt::{format_date, format_date_time};
 use crate::sign::{calculate_signature, generate_signing_key, sha256_hex_string};
 use crate::SigningOutput;
+use bytes::Bytes;
 use chrono::{DateTime, SubsecRound, Utc};
 use smithy_eventstream::frame::{write_headers_to, Header, HeaderValue, Message};
 use std::io::Write;
@@ -55,6 +56,26 @@ pub fn sign_message<'a>(
     last_signature: &'a str,
     params: &'a SigningParams<'a>,
 ) -> SigningOutput<Message> {
+    let message_payload = {
+        let mut payload = Vec::new();
+        message.write_to(&mut payload).unwrap();
+        payload
+    };
+    sign_payload(Some(message_payload), last_signature, params)
+}
+
+pub fn sign_empty_message<'a>(
+    last_signature: &'a str,
+    params: &'a SigningParams<'a>,
+) -> SigningOutput<Message> {
+    sign_payload(None, last_signature, params)
+}
+
+fn sign_payload<'a>(
+    message_payload: Option<Vec<u8>>,
+    last_signature: &'a str,
+    params: &'a SigningParams<'a>,
+) -> SigningOutput<Message> {
     // Truncate the sub-seconds up front since the timestamp written to the signed message header
     // needs to exactly match the string formatted timestamp, which doesn't include sub-seconds.
     let date_time = params.date_time.trunc_subsecs(0);
@@ -65,18 +86,17 @@ pub fn sign_message<'a>(
         params.region,
         params.service_name,
     );
-    let message_payload = {
-        let mut payload = Vec::new();
-        message.write_to(&mut payload).unwrap();
-        payload
-    };
-    let string_to_sign =
-        calculate_string_to_sign(&message_payload, last_signature, &date_time, params);
+    let string_to_sign = calculate_string_to_sign(
+        message_payload.as_ref().map(|v| &v[..]).unwrap_or(&[]),
+        last_signature,
+        &date_time,
+        params,
+    );
     let signature = calculate_signature(signing_key, &string_to_sign);
 
     // Generate the signed wrapper event frame
     SigningOutput::new(
-        Message::new(message_payload)
+        Message::new(message_payload.map(Bytes::from).unwrap_or_else(Bytes::new))
             .add_header(Header::new(
                 ":chunk-signature",
                 HeaderValue::ByteArray(hex::decode(&signature).unwrap().into()),

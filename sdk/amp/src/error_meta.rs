@@ -25,8 +25,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateWorkspaceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateWorkspaceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateWorkspaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateWorkspaceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateWorkspaceErrorKind::AccessDeniedException(inner) => {
@@ -53,8 +56,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateWorkspaceError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteWorkspaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteWorkspaceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteWorkspaceErrorKind::AccessDeniedException(inner) => {
@@ -78,8 +84,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteWorkspaceError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeWorkspaceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeWorkspaceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeWorkspaceErrorKind::AccessDeniedException(inner) => {
@@ -105,8 +114,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeWorkspaceError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListWorkspacesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListWorkspacesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListWorkspacesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListWorkspacesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListWorkspacesErrorKind::AccessDeniedException(inner) => {
@@ -127,8 +139,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListWorkspacesError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateWorkspaceAliasError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateWorkspaceAliasError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateWorkspaceAliasError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateWorkspaceAliasError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateWorkspaceAliasErrorKind::AccessDeniedException(inner) => {

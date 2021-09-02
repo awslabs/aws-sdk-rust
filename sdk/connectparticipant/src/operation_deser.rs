@@ -6,7 +6,7 @@ pub fn parse_complete_attachment_upload_error(
     crate::output::CompleteAttachmentUploadOutput,
     crate::error::CompleteAttachmentUploadError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CompleteAttachmentUploadError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -168,7 +168,7 @@ pub fn parse_create_participant_connection_error(
     crate::output::CreateParticipantConnectionOutput,
     crate::error::CreateParticipantConnectionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateParticipantConnectionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -296,7 +296,7 @@ pub fn parse_disconnect_participant_error(
     crate::output::DisconnectParticipantOutput,
     crate::error::DisconnectParticipantError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisconnectParticipantError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -412,7 +412,7 @@ pub fn parse_disconnect_participant_response(
 pub fn parse_get_attachment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAttachmentOutput, crate::error::GetAttachmentError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAttachmentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -528,7 +528,7 @@ pub fn parse_get_attachment_response(
 pub fn parse_get_transcript_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTranscriptOutput, crate::error::GetTranscriptError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTranscriptError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -644,7 +644,7 @@ pub fn parse_get_transcript_response(
 pub fn parse_send_event_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendEventOutput, crate::error::SendEventError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendEventError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -759,7 +759,7 @@ pub fn parse_send_event_response(
 pub fn parse_send_message_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendMessageOutput, crate::error::SendMessageError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -877,7 +877,7 @@ pub fn parse_start_attachment_upload_error(
     crate::output::StartAttachmentUploadOutput,
     crate::error::StartAttachmentUploadError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartAttachmentUploadError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

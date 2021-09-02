@@ -6,7 +6,7 @@ pub fn parse_create_suite_definition_error(
     crate::output::CreateSuiteDefinitionOutput,
     crate::error::CreateSuiteDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateSuiteDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -88,7 +88,7 @@ pub fn parse_delete_suite_definition_error(
     crate::output::DeleteSuiteDefinitionOutput,
     crate::error::DeleteSuiteDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteSuiteDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -165,7 +165,7 @@ pub fn parse_get_suite_definition_error(
     crate::output::GetSuiteDefinitionOutput,
     crate::error::GetSuiteDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSuiteDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -264,7 +264,7 @@ pub fn parse_get_suite_definition_response(
 pub fn parse_get_suite_run_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSuiteRunOutput, crate::error::GetSuiteRunError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSuiteRunError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -358,7 +358,7 @@ pub fn parse_get_suite_run_report_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSuiteRunReportOutput, crate::error::GetSuiteRunReportError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetSuiteRunReportError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -458,7 +458,7 @@ pub fn parse_list_suite_definitions_error(
     crate::output::ListSuiteDefinitionsOutput,
     crate::error::ListSuiteDefinitionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSuiteDefinitionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -537,7 +537,7 @@ pub fn parse_list_suite_definitions_response(
 pub fn parse_list_suite_runs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSuiteRunsOutput, crate::error::ListSuiteRunsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListSuiteRunsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -614,7 +614,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -713,7 +713,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_start_suite_run_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartSuiteRunOutput, crate::error::StartSuiteRunError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartSuiteRunError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -808,7 +808,7 @@ pub fn parse_start_suite_run_response(
 pub fn parse_stop_suite_run_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopSuiteRunOutput, crate::error::StopSuiteRunError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopSuiteRunError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -899,7 +899,7 @@ pub fn parse_stop_suite_run_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -990,7 +990,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1084,7 +1084,7 @@ pub fn parse_update_suite_definition_error(
     crate::output::UpdateSuiteDefinitionOutput,
     crate::error::UpdateSuiteDefinitionError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateSuiteDefinitionError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

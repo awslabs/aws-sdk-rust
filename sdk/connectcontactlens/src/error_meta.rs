@@ -21,11 +21,17 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListRealtimeContactAnalysisSegmentsError>>
+impl<R>
+    From<smithy_http::result::SdkError<crate::error::ListRealtimeContactAnalysisSegmentsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListRealtimeContactAnalysisSegmentsError>,
+        err: smithy_http::result::SdkError<
+            crate::error::ListRealtimeContactAnalysisSegmentsError,
+            R,
+        >,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {

@@ -3,7 +3,7 @@
 pub fn parse_delete_human_loop_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHumanLoopOutput, crate::error::DeleteHumanLoopError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -116,7 +116,7 @@ pub fn parse_describe_human_loop_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHumanLoopOutput, crate::error::DescribeHumanLoopError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -234,7 +234,7 @@ pub fn parse_describe_human_loop_response(
 pub fn parse_list_human_loops_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHumanLoopsOutput, crate::error::ListHumanLoopsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListHumanLoopsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -349,7 +349,7 @@ pub fn parse_list_human_loops_response(
 pub fn parse_start_human_loop_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartHumanLoopOutput, crate::error::StartHumanLoopError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -483,7 +483,7 @@ pub fn parse_start_human_loop_response(
 pub fn parse_stop_human_loop_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopHumanLoopOutput, crate::error::StopHumanLoopError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopHumanLoopError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

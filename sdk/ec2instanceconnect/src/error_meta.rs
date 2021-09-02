@@ -33,11 +33,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError>,
+        err: smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublicKeyError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -56,8 +58,11 @@ impl From<smithy_http::result::SdkError<crate::error::SendSerialConsoleSSHPublic
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::SendSSHPublicKeyError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::SendSSHPublicKeyErrorKind::AuthException(inner) => {

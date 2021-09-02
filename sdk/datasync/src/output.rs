@@ -636,7 +636,7 @@ pub struct DescribeTaskExecutionOutput {
     pub task_execution_arn: std::option::Option<std::string::String>,
     /// <p>The status of the task execution. </p>
     /// <p>For detailed information about task execution statuses, see Understanding
-    /// Task Statuses in the <i>AWS DataSync User Guide.</i>
+    /// Task Statuses in the <i>DataSync User Guide.</i>
     /// </p>
     pub status: std::option::Option<crate::model::TaskExecutionStatus>,
     /// <p>Represents the options that are available to control the behavior of a
@@ -684,7 +684,7 @@ pub struct DescribeTaskExecutionOutput {
     /// implementation-specific for some location types, so don't use it as an indicator for a correct
     /// file number or to monitor your task execution.</p>
     pub files_transferred: i64,
-    /// <p>The number of logical bytes written to the destination AWS storage resource.</p>
+    /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
     pub bytes_written: i64,
     /// <p>The physical number of bytes transferred over the network.</p>
     pub bytes_transferred: i64,
@@ -755,7 +755,7 @@ pub mod describe_task_execution_output {
         }
         /// <p>The status of the task execution. </p>
         /// <p>For detailed information about task execution statuses, see Understanding
-        /// Task Statuses in the <i>AWS DataSync User Guide.</i>
+        /// Task Statuses in the <i>DataSync User Guide.</i>
         /// </p>
         pub fn status(mut self, input: crate::model::TaskExecutionStatus) -> Self {
             self.status = Some(input);
@@ -860,7 +860,7 @@ pub mod describe_task_execution_output {
             self.files_transferred = input;
             self
         }
-        /// <p>The number of logical bytes written to the destination AWS storage resource.</p>
+        /// <p>The number of logical bytes written to the destination Amazon Web Services storage resource.</p>
         pub fn bytes_written(mut self, input: i64) -> Self {
             self.bytes_written = Some(input);
             self
@@ -924,7 +924,7 @@ pub struct DescribeTaskOutput {
     pub task_arn: std::option::Option<std::string::String>,
     /// <p>The status of the task that was described.</p>
     /// <p>For detailed information about task execution statuses, see Understanding
-    /// Task Statuses in the <i>AWS DataSync User Guide</i>.</p>
+    /// Task Statuses in the <i>DataSync User Guide</i>.</p>
     pub status: std::option::Option<crate::model::TaskStatus>,
     /// <p>The name of the task that was described.</p>
     pub name: std::option::Option<std::string::String>,
@@ -932,7 +932,7 @@ pub struct DescribeTaskOutput {
     pub current_task_execution_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the source file system's location.</p>
     pub source_location_arn: std::option::Option<std::string::String>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS storage resource's location.</p>
+    /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
     pub destination_location_arn: std::option::Option<std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to
     /// monitor and log events in the task.</p>
@@ -961,7 +961,7 @@ pub struct DescribeTaskOutput {
     pub excludes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     /// <p>The schedule used to periodically transfer files from a source to a destination location.</p>
     pub schedule: std::option::Option<crate::model::TaskSchedule>,
-    /// <p>Errors that AWS DataSync encountered during execution of the task. You can use this
+    /// <p>Errors that DataSync encountered during execution of the task. You can use this
     /// error code to help troubleshoot issues.</p>
     pub error_code: std::option::Option<std::string::String>,
     /// <p>Detailed description of an error that was encountered during the task execution. You
@@ -969,6 +969,11 @@ pub struct DescribeTaskOutput {
     pub error_detail: std::option::Option<std::string::String>,
     /// <p>The time that the task was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
+    /// <p>A list of filter rules that determines which files to include when running a task. The
+    /// pattern should contain a single filter string that consists of the patterns to include. The
+    /// patterns are delimited by "|" (that is, a pipe). For example:
+    /// <code>"/folder1|/folder2</code>"</p>
+    pub includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
 }
 impl std::fmt::Debug for DescribeTaskOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -997,6 +1002,7 @@ impl std::fmt::Debug for DescribeTaskOutput {
         formatter.field("error_code", &self.error_code);
         formatter.field("error_detail", &self.error_detail);
         formatter.field("creation_time", &self.creation_time);
+        formatter.field("includes", &self.includes);
         formatter.finish()
     }
 }
@@ -1023,6 +1029,7 @@ pub mod describe_task_output {
         pub(crate) error_code: std::option::Option<std::string::String>,
         pub(crate) error_detail: std::option::Option<std::string::String>,
         pub(crate) creation_time: std::option::Option<smithy_types::Instant>,
+        pub(crate) includes: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the task that was described.</p>
@@ -1036,7 +1043,7 @@ pub mod describe_task_output {
         }
         /// <p>The status of the task that was described.</p>
         /// <p>For detailed information about task execution statuses, see Understanding
-        /// Task Statuses in the <i>AWS DataSync User Guide</i>.</p>
+        /// Task Statuses in the <i>DataSync User Guide</i>.</p>
         pub fn status(mut self, input: crate::model::TaskStatus) -> Self {
             self.status = Some(input);
             self
@@ -1078,7 +1085,7 @@ pub mod describe_task_output {
             self.source_location_arn = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS storage resource's location.</p>
+        /// <p>The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.</p>
         pub fn destination_location_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_location_arn = Some(input.into());
             self
@@ -1176,7 +1183,7 @@ pub mod describe_task_output {
             self.schedule = input;
             self
         }
-        /// <p>Errors that AWS DataSync encountered during execution of the task. You can use this
+        /// <p>Errors that DataSync encountered during execution of the task. You can use this
         /// error code to help troubleshoot issues.</p>
         pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
             self.error_code = Some(input.into());
@@ -1208,6 +1215,19 @@ pub mod describe_task_output {
             self.creation_time = input;
             self
         }
+        pub fn includes(mut self, input: impl Into<crate::model::FilterRule>) -> Self {
+            let mut v = self.includes.unwrap_or_default();
+            v.push(input.into());
+            self.includes = Some(v);
+            self
+        }
+        pub fn set_includes(
+            mut self,
+            input: std::option::Option<std::vec::Vec<crate::model::FilterRule>>,
+        ) -> Self {
+            self.includes = input;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTaskOutput`](crate::output::DescribeTaskOutput)
         pub fn build(self) -> crate::output::DescribeTaskOutput {
             crate::output::DescribeTaskOutput {
@@ -1226,6 +1246,7 @@ pub mod describe_task_output {
                 error_code: self.error_code,
                 error_detail: self.error_detail,
                 creation_time: self.creation_time,
+                includes: self.includes,
             }
         }
     }
@@ -1394,14 +1415,14 @@ pub struct DescribeLocationS3Output {
     /// classes have behaviors that can affect your S3 storage cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations when
     /// working with S3 storage classes in DataSync</a>.</p>
     pub s3_storage_class: std::option::Option<crate::model::S3StorageClass>,
-    /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+    /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
     /// that is used to access an Amazon S3 bucket.</p>
     /// <p>For detailed information about using such a role, see Creating a Location for
-    /// Amazon S3 in the <i>AWS DataSync User Guide</i>.</p>
+    /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
     pub s3_config: std::option::Option<crate::model::S3Config>,
-    /// <p>If you are using DataSync on an AWS Outpost, the Amazon Resource Name (ARNs) of the EC2
+    /// <p>If you are using DataSync on an Amazon Web Services Outpost, the Amazon Resource Name (ARNs) of the EC2
     /// agents deployed on your Outpost. For more information about launching a DataSync agent on an
-    /// AWS Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on AWS Outposts</a>.</p>
+    /// Amazon Web Services Outpost, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/deploy-agents.html#outposts-agent">Deploy your DataSync agent on Outposts</a>.</p>
     pub agent_arns: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>The time that the Amazon S3 bucket location was created.</p>
     pub creation_time: std::option::Option<smithy_types::Instant>,
@@ -1465,10 +1486,10 @@ pub mod describe_location_s3_output {
             self.s3_storage_class = input;
             self
         }
-        /// <p>The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+        /// <p>The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role
         /// that is used to access an Amazon S3 bucket.</p>
         /// <p>For detailed information about using such a role, see Creating a Location for
-        /// Amazon S3 in the <i>AWS DataSync User Guide</i>.</p>
+        /// Amazon S3 in the <i>DataSync User Guide</i>.</p>
         pub fn s3_config(mut self, input: crate::model::S3Config) -> Self {
             self.s3_config = Some(input);
             self
@@ -2602,7 +2623,7 @@ impl CreateLocationEfsOutput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateAgentOutput {
     /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation
-    /// to return a list of agents for your account and AWS Region.</p>
+    /// to return a list of agents for your account and Amazon Web Services Region.</p>
     pub agent_arn: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAgentOutput {
@@ -2622,7 +2643,7 @@ pub mod create_agent_output {
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the agent. Use the <code>ListAgents</code> operation
-        /// to return a list of agents for your account and AWS Region.</p>
+        /// to return a list of agents for your account and Amazon Web Services Region.</p>
         pub fn agent_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.agent_arn = Some(input.into());
             self

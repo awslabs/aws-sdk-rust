@@ -6,7 +6,7 @@ pub fn parse_accept_domain_transfer_from_another_aws_account_error(
     crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput,
     crate::error::AcceptDomainTransferFromAnotherAwsAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AcceptDomainTransferFromAnotherAwsAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -95,7 +95,7 @@ pub fn parse_cancel_domain_transfer_to_another_aws_account_error(
     crate::output::CancelDomainTransferToAnotherAwsAccountOutput,
     crate::error::CancelDomainTransferToAnotherAwsAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CancelDomainTransferToAnotherAwsAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -168,7 +168,7 @@ pub fn parse_check_domain_availability_error(
     crate::output::CheckDomainAvailabilityOutput,
     crate::error::CheckDomainAvailabilityError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CheckDomainAvailabilityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -254,7 +254,7 @@ pub fn parse_check_domain_transferability_error(
     crate::output::CheckDomainTransferabilityOutput,
     crate::error::CheckDomainTransferabilityError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CheckDomainTransferabilityError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -340,7 +340,7 @@ pub fn parse_delete_tags_for_domain_error(
     crate::output::DeleteTagsForDomainOutput,
     crate::error::DeleteTagsForDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTagsForDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -438,7 +438,7 @@ pub fn parse_disable_domain_auto_renew_error(
     crate::output::DisableDomainAutoRenewOutput,
     crate::error::DisableDomainAutoRenewError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableDomainAutoRenewError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -519,7 +519,7 @@ pub fn parse_disable_domain_transfer_lock_error(
     crate::output::DisableDomainTransferLockOutput,
     crate::error::DisableDomainTransferLockError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DisableDomainTransferLockError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -668,7 +668,7 @@ pub fn parse_enable_domain_auto_renew_error(
     crate::output::EnableDomainAutoRenewOutput,
     crate::error::EnableDomainAutoRenewError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableDomainAutoRenewError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -766,7 +766,7 @@ pub fn parse_enable_domain_transfer_lock_error(
     crate::output::EnableDomainTransferLockOutput,
     crate::error::EnableDomainTransferLockError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::EnableDomainTransferLockError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -915,7 +915,7 @@ pub fn parse_get_contact_reachability_status_error(
     crate::output::GetContactReachabilityStatusOutput,
     crate::error::GetContactReachabilityStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetContactReachabilityStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1019,7 +1019,7 @@ pub fn parse_get_contact_reachability_status_response(
 pub fn parse_get_domain_detail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDomainDetailOutput, crate::error::GetDomainDetailError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDomainDetailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1096,7 +1096,7 @@ pub fn parse_get_domain_suggestions_error(
     crate::output::GetDomainSuggestionsOutput,
     crate::error::GetDomainSuggestionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDomainSuggestionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1178,7 +1178,7 @@ pub fn parse_get_operation_detail_error(
     crate::output::GetOperationDetailOutput,
     crate::error::GetOperationDetailError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetOperationDetailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1236,7 +1236,7 @@ pub fn parse_get_operation_detail_response(
 pub fn parse_list_domains_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListDomainsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1288,7 +1288,7 @@ pub fn parse_list_domains_response(
 pub fn parse_list_operations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListOperationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1342,7 +1342,7 @@ pub fn parse_list_tags_for_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsForDomainOutput, crate::error::ListTagsForDomainError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1440,7 +1440,7 @@ pub fn parse_list_tags_for_domain_response(
 pub fn parse_register_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterDomainOutput, crate::error::RegisterDomainError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1601,7 +1601,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_error(
     crate::output::RejectDomainTransferFromAnotherAwsAccountOutput,
     crate::error::RejectDomainTransferFromAnotherAwsAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RejectDomainTransferFromAnotherAwsAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1673,7 +1673,7 @@ pub fn parse_reject_domain_transfer_from_another_aws_account_response(
 pub fn parse_renew_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RenewDomainOutput, crate::error::RenewDomainError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RenewDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1812,7 +1812,7 @@ pub fn parse_resend_contact_reachability_email_error(
     crate::output::ResendContactReachabilityEmailOutput,
     crate::error::ResendContactReachabilityEmailError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ResendContactReachabilityEmailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1916,7 +1916,7 @@ pub fn parse_retrieve_domain_auth_code_error(
     crate::output::RetrieveDomainAuthCodeOutput,
     crate::error::RetrieveDomainAuthCodeError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RetrieveDomainAuthCodeError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1999,7 +1999,7 @@ pub fn parse_retrieve_domain_auth_code_response(
 pub fn parse_transfer_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TransferDomainOutput, crate::error::TransferDomainError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TransferDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2160,7 +2160,7 @@ pub fn parse_transfer_domain_to_another_aws_account_error(
     crate::output::TransferDomainToAnotherAwsAccountOutput,
     crate::error::TransferDomainToAnotherAwsAccountError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TransferDomainToAnotherAwsAccountError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2268,7 +2268,7 @@ pub fn parse_update_domain_contact_error(
     crate::output::UpdateDomainContactOutput,
     crate::error::UpdateDomainContactError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDomainContactError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2413,7 +2413,7 @@ pub fn parse_update_domain_contact_privacy_error(
     crate::output::UpdateDomainContactPrivacyOutput,
     crate::error::UpdateDomainContactPrivacyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDomainContactPrivacyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2562,7 +2562,7 @@ pub fn parse_update_domain_nameservers_error(
     crate::output::UpdateDomainNameserversOutput,
     crate::error::UpdateDomainNameserversError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateDomainNameserversError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2711,7 +2711,7 @@ pub fn parse_update_tags_for_domain_error(
     crate::output::UpdateTagsForDomainOutput,
     crate::error::UpdateTagsForDomainError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateTagsForDomainError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2806,7 +2806,7 @@ pub fn parse_update_tags_for_domain_response(
 pub fn parse_view_billing_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ViewBillingOutput, crate::error::ViewBillingError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ViewBillingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

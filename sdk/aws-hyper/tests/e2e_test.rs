@@ -3,17 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-use aws_auth::Credentials;
 use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
 use aws_endpoint::set_endpoint_resolver;
 use aws_http::user_agent::AwsUserAgent;
 use aws_http::AwsErrorRetryPolicy;
 use aws_hyper::{Client, RetryConfig};
 use aws_sig_auth::signer::OperationSigningConfig;
+use aws_types::credentials::SharedCredentialsProvider;
 use aws_types::region::Region;
+use aws_types::Credentials;
 use aws_types::SigningService;
 use bytes::Bytes;
-use http::header::{AUTHORIZATION, HOST, USER_AGENT};
+use http::header::{AUTHORIZATION, USER_AGENT};
 use http::{self, Uri};
 use smithy_client::test_connection::TestConnection;
 use smithy_http::body::SdkBody;
@@ -71,29 +72,38 @@ impl ParseHttpResponse for TestOperationParser {
 }
 
 fn test_operation() -> Operation<TestOperationParser, AwsErrorRetryPolicy> {
-    let req = operation::Request::new(http::Request::new(SdkBody::from("request body")))
-        .augment(|req, mut conf| {
-            set_endpoint_resolver(
-                &mut conf,
-                Arc::new(aws_endpoint::partition::endpoint::Metadata {
-                    uri_template: "test-service.{region}.amazonaws.com",
-                    protocol: Protocol::Https,
-                    credential_scope: Default::default(),
-                    signature_versions: SignatureVersion::V4,
-                }),
-            );
-            aws_auth::provider::set_provider(
-                &mut conf,
-                Arc::new(Credentials::from_keys("access_key", "secret_key", None)),
-            );
-            conf.insert(Region::new("test-region"));
-            conf.insert(OperationSigningConfig::default_config());
-            conf.insert(SigningService::from_static("test-service-signing"));
-            conf.insert(UNIX_EPOCH + Duration::from_secs(1613414417));
-            conf.insert(AwsUserAgent::for_tests());
-            Result::<_, Infallible>::Ok(req)
-        })
-        .unwrap();
+    let req = operation::Request::new(
+        http::Request::builder()
+            .uri("https://test-service.test-region.amazonaws.com/")
+            .body(SdkBody::from("request body"))
+            .unwrap(),
+    )
+    .augment(|req, mut conf| {
+        set_endpoint_resolver(
+            &mut conf,
+            Arc::new(aws_endpoint::partition::endpoint::Metadata {
+                uri_template: "test-service.{region}.amazonaws.com",
+                protocol: Protocol::Https,
+                credential_scope: Default::default(),
+                signature_versions: SignatureVersion::V4,
+            }),
+        );
+        aws_auth::set_provider(
+            &mut conf,
+            SharedCredentialsProvider::new(Credentials::from_keys(
+                "access_key",
+                "secret_key",
+                None,
+            )),
+        );
+        conf.insert(Region::new("test-region"));
+        conf.insert(OperationSigningConfig::default_config());
+        conf.insert(SigningService::from_static("test-service-signing"));
+        conf.insert(UNIX_EPOCH + Duration::from_secs(1613414417));
+        conf.insert(AwsUserAgent::for_tests());
+        Result::<_, Infallible>::Ok(req)
+    })
+    .unwrap();
     Operation::new(req, TestOperationParser).with_retry_policy(AwsErrorRetryPolicy::new())
 }
 
@@ -109,7 +119,6 @@ async fn e2e_test() {
     let expected_req = http::Request::builder()
         .header(USER_AGENT, "aws-sdk-rust/0.123.test os/windows/XPSP3 lang/rust/1.50.0")
         .header("x-amz-user-agent", "aws-sdk-rust/0.123.test api/test-service/0.123 os/windows/XPSP3 lang/rust/1.50.0")
-        .header(HOST, "test-service.test-region.amazonaws.com")
         .header(AUTHORIZATION, "AWS4-HMAC-SHA256 Credential=access_key/20210215/test-region/test-service-signing/aws4_request, SignedHeaders=host;x-amz-date;x-amz-user-agent, Signature=da249491d7fe3da22c2e09cbf910f37aa5b079a3cedceff8403d0b18a7bfab75")
         .header("x-amz-date", "20210215T184017Z")
         .uri(Uri::from_static("https://test-service.test-region.amazonaws.com/"))

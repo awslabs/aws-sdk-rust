@@ -6,7 +6,7 @@ pub fn parse_create_configuration_set_error(
     crate::output::CreateConfigurationSetOutput,
     crate::error::CreateConfigurationSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -148,7 +148,7 @@ pub fn parse_create_configuration_set_event_destination_error(
     crate::output::CreateConfigurationSetEventDestinationOutput,
     crate::error::CreateConfigurationSetEventDestinationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -272,7 +272,7 @@ pub fn parse_delete_configuration_set_error(
     crate::output::DeleteConfigurationSetOutput,
     crate::error::DeleteConfigurationSetError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -393,7 +393,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
     crate::output::DeleteConfigurationSetEventDestinationOutput,
     crate::error::DeleteConfigurationSetEventDestinationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -489,7 +489,7 @@ pub fn parse_get_configuration_set_event_destinations_error(
     crate::output::GetConfigurationSetEventDestinationsOutput,
     crate::error::GetConfigurationSetEventDestinationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetConfigurationSetEventDestinationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -588,7 +588,7 @@ pub fn parse_list_configuration_sets_error(
     crate::output::ListConfigurationSetsOutput,
     crate::error::ListConfigurationSetsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -687,7 +687,7 @@ pub fn parse_send_voice_message_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendVoiceMessageOutput, crate::error::SendVoiceMessageError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SendVoiceMessageError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -784,7 +784,7 @@ pub fn parse_update_configuration_set_event_destination_error(
     crate::output::UpdateConfigurationSetEventDestinationOutput,
     crate::error::UpdateConfigurationSetEventDestinationError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

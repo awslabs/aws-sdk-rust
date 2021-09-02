@@ -6,7 +6,7 @@ pub fn parse_describe_recommendation_export_jobs_error(
     crate::output::DescribeRecommendationExportJobsOutput,
     crate::error::DescribeRecommendationExportJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeRecommendationExportJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -161,7 +161,7 @@ pub fn parse_export_auto_scaling_group_recommendations_error(
     crate::output::ExportAutoScalingGroupRecommendationsOutput,
     crate::error::ExportAutoScalingGroupRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportAutoScalingGroupRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -318,7 +318,7 @@ pub fn parse_export_ebs_volume_recommendations_error(
     crate::output::ExportEbsVolumeRecommendationsOutput,
     crate::error::ExportEBSVolumeRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportEBSVolumeRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -471,7 +471,7 @@ pub fn parse_export_ec2_instance_recommendations_error(
     crate::output::ExportEc2InstanceRecommendationsOutput,
     crate::error::ExportEC2InstanceRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportEC2InstanceRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -626,7 +626,7 @@ pub fn parse_export_lambda_function_recommendations_error(
     crate::output::ExportLambdaFunctionRecommendationsOutput,
     crate::error::ExportLambdaFunctionRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ExportLambdaFunctionRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -781,7 +781,7 @@ pub fn parse_get_auto_scaling_group_recommendations_error(
     crate::output::GetAutoScalingGroupRecommendationsOutput,
     crate::error::GetAutoScalingGroupRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetAutoScalingGroupRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -936,7 +936,7 @@ pub fn parse_get_ebs_volume_recommendations_error(
     crate::output::GetEbsVolumeRecommendationsOutput,
     crate::error::GetEBSVolumeRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEBSVolumeRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1149,7 +1149,7 @@ pub fn parse_get_ec2_instance_recommendations_error(
     crate::output::GetEc2InstanceRecommendationsOutput,
     crate::error::GetEC2InstanceRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEC2InstanceRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1358,7 +1358,7 @@ pub fn parse_get_ec2_recommendation_projected_metrics_error(
     crate::output::GetEc2RecommendationProjectedMetricsOutput,
     crate::error::GetEC2RecommendationProjectedMetricsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEC2RecommendationProjectedMetricsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1513,7 +1513,7 @@ pub fn parse_get_enrollment_status_error(
     crate::output::GetEnrollmentStatusOutput,
     crate::error::GetEnrollmentStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEnrollmentStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1668,13 +1668,140 @@ pub fn parse_get_enrollment_status_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_enrollment_statuses_for_organization_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetEnrollmentStatusesForOrganizationOutput,
+    crate::error::GetEnrollmentStatusesForOrganizationError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => {
+            return Err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled(generic))
+        }
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "AccessDeniedException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::AccessDeniedException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::access_denied_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_access_denied_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InternalServerException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InternalServerException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::internal_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_server_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "InvalidParameterValueException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::InvalidParameterValueException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_invalid_parameter_value_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "MissingAuthenticationToken" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::MissingAuthenticationToken({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::missing_authentication_token::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_missing_authentication_tokenjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ServiceUnavailableException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ServiceUnavailableException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_service_unavailable_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        "ThrottlingException" => crate::error::GetEnrollmentStatusesForOrganizationError { meta: generic, kind: crate::error::GetEnrollmentStatusesForOrganizationErrorKind::ThrottlingException({
+            #[allow(unused_mut)]let mut tmp =
+                 {
+                    #[allow(unused_mut)]let mut output = crate::error::throttling_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_throttling_exceptionjson_err(response.body().as_ref(), output).map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+                    output.build()
+                }
+            ;
+            if (&tmp.message).is_none() {
+                                                        tmp.message = _error_message;
+                                                    }
+            tmp
+        })},
+        _ => crate::error::GetEnrollmentStatusesForOrganizationError::generic(generic)
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_get_enrollment_statuses_for_organization_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::GetEnrollmentStatusesForOrganizationOutput,
+    crate::error::GetEnrollmentStatusesForOrganizationError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output =
+            crate::output::get_enrollment_statuses_for_organization_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_get_enrollment_statuses_for_organization(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::GetEnrollmentStatusesForOrganizationError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_get_lambda_function_recommendations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::GetLambdaFunctionRecommendationsOutput,
     crate::error::GetLambdaFunctionRecommendationsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLambdaFunctionRecommendationsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1829,7 +1956,7 @@ pub fn parse_get_recommendation_summaries_error(
     crate::output::GetRecommendationSummariesOutput,
     crate::error::GetRecommendationSummariesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRecommendationSummariesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2022,7 +2149,7 @@ pub fn parse_update_enrollment_status_error(
     crate::output::UpdateEnrollmentStatusOutput,
     crate::error::UpdateEnrollmentStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateEnrollmentStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

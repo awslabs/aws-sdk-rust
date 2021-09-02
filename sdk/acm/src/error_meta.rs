@@ -43,8 +43,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AddTagsToCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::AddTagsToCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::AddTagsToCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::AddTagsToCertificateError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::AddTagsToCertificateErrorKind::InvalidArnException(inner) => {
@@ -76,8 +81,11 @@ impl From<smithy_http::result::SdkError<crate::error::AddTagsToCertificateError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteCertificateErrorKind::InvalidArnException(inner) => {
@@ -97,8 +105,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteCertificateError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeCertificateErrorKind::InvalidArnException(inner) => {
@@ -115,8 +126,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeCertificateError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ExportCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ExportCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ExportCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ExportCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ExportCertificateErrorKind::InvalidArnException(inner) => {
@@ -136,9 +150,12 @@ impl From<smithy_http::result::SdkError<crate::error::ExportCertificateError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetAccountConfigurationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetAccountConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetAccountConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::GetAccountConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -156,8 +173,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetAccountConfigurationErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetCertificateErrorKind::InvalidArnException(inner) => {
@@ -175,8 +195,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetCertificateError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ImportCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ImportCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ImportCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ImportCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ImportCertificateErrorKind::InvalidArnException(inner) => {
@@ -208,8 +231,11 @@ impl From<smithy_http::result::SdkError<crate::error::ImportCertificateError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListCertificatesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListCertificatesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListCertificatesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListCertificatesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListCertificatesErrorKind::InvalidArgsException(inner) => {
@@ -223,8 +249,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListCertificatesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListTagsForCertificateError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForCertificateErrorKind::InvalidArnException(inner) => {
@@ -241,9 +272,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForCertificateErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutAccountConfigurationError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutAccountConfigurationError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::PutAccountConfigurationError>,
+        err: smithy_http::result::SdkError<crate::error::PutAccountConfigurationError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -267,9 +301,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutAccountConfigurationErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RemoveTagsFromCertificateError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::RemoveTagsFromCertificateError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::RemoveTagsFromCertificateError>,
+        err: smithy_http::result::SdkError<crate::error::RemoveTagsFromCertificateError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -299,8 +337,11 @@ impl From<smithy_http::result::SdkError<crate::error::RemoveTagsFromCertificateE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RenewCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RenewCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RenewCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RenewCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RenewCertificateErrorKind::InvalidArnException(inner) => {
@@ -317,8 +358,11 @@ impl From<smithy_http::result::SdkError<crate::error::RenewCertificateError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RequestCertificateError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RequestCertificateError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RequestCertificateError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RequestCertificateError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::RequestCertificateErrorKind::InvalidArnException(inner) => Error::InvalidArnException(inner),
@@ -334,8 +378,13 @@ impl From<smithy_http::result::SdkError<crate::error::RequestCertificateError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResendValidationEmailError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ResendValidationEmailError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ResendValidationEmailError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ResendValidationEmailError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::ResendValidationEmailErrorKind::InvalidArnException(inner) => Error::InvalidArnException(inner),
@@ -348,9 +397,13 @@ impl From<smithy_http::result::SdkError<crate::error::ResendValidationEmailError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateCertificateOptionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateCertificateOptionsError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateCertificateOptionsError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateCertificateOptionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {

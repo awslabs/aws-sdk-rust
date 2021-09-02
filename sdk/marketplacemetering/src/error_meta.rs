@@ -45,8 +45,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchMeterUsageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchMeterUsageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchMeterUsageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::BatchMeterUsageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchMeterUsageErrorKind::DisabledApiException(inner) => {
@@ -82,8 +85,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchMeterUsageError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::MeterUsageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::MeterUsageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::MeterUsageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::MeterUsageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::MeterUsageErrorKind::CustomerNotEntitledException(inner) => {
@@ -122,8 +128,11 @@ impl From<smithy_http::result::SdkError<crate::error::MeterUsageError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::RegisterUsageError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::RegisterUsageError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::RegisterUsageError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::RegisterUsageError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::RegisterUsageErrorKind::CustomerNotEntitledException(inner) => {
@@ -156,8 +165,11 @@ impl From<smithy_http::result::SdkError<crate::error::RegisterUsageError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ResolveCustomerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ResolveCustomerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ResolveCustomerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ResolveCustomerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ResolveCustomerErrorKind::DisabledApiException(inner) => {

@@ -49,8 +49,8 @@ impl DeleteLexiconError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -139,8 +139,8 @@ impl DescribeVoicesError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -229,8 +229,8 @@ impl GetLexiconError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -317,8 +317,8 @@ impl GetSpeechSynthesisTaskError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -414,8 +414,8 @@ impl ListLexiconsError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -504,8 +504,8 @@ impl ListSpeechSynthesisTasksError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -604,8 +604,8 @@ impl PutLexiconError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -751,8 +751,8 @@ impl StartSpeechSynthesisTaskError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -935,8 +935,8 @@ impl SynthesizeSpeechError {
         }
     }
 
-    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display as implemented
-    // by std::Error to generate a message in that case.
+    // Consider if this should actually be `Option<Cow<&str>>`. This would enable us to use display
+    // as implemented by std::Error to generate a message in that case.
     pub fn message(&self) -> Option<&str> {
         self.meta.message()
     }
@@ -1026,11 +1026,12 @@ impl std::error::Error for SynthesizeSpeechError {
     }
 }
 
-/// <p>The value of the "Text" parameter is longer than the accepted limits. For the
-/// <code>SynthesizeSpeech</code> API, the limit for input text is a maximum of 6000 characters
-/// total, of which no more than 3000 can be billed characters. For the
-/// <code>StartSpeechSynthesisTask</code> API, the maximum is 200,000 characters, of which no
-/// more than 100,000 can be billed characters. SSML tags are not counted as billed
+/// <p>The value of the "Text" parameter is longer than the accepted
+/// limits. For the <code>SynthesizeSpeech</code> API, the limit for input
+/// text is a maximum of 6000 characters total, of which no more than 3000 can
+/// be billed characters. For the <code>StartSpeechSynthesisTask</code> API,
+/// the maximum is 200,000 characters, of which no more than 100,000 can be
+/// billed characters. SSML tags are not counted as billed
 /// characters.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
@@ -1091,7 +1092,8 @@ impl TextLengthExceededException {
     }
 }
 
-/// <p>SSML speech marks are not supported for plain text-type input.</p>
+/// <p>SSML speech marks are not supported for plain text-type
+/// input.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SsmlMarksNotSupportedForTextTypeException {
@@ -1211,8 +1213,9 @@ impl ServiceFailureException {
     }
 }
 
-/// <p>Speech marks are not supported for the <code>OutputFormat</code> selected. Speech marks
-/// are only available for content in <code>json</code> format.</p>
+/// <p>Speech marks are not supported for the <code>OutputFormat</code>
+/// selected. Speech marks are only available for content in <code>json</code>
+/// format.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MarksNotSupportedForFormatException {
@@ -1272,11 +1275,11 @@ impl MarksNotSupportedForFormatException {
     }
 }
 
-/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a lexicon that
-/// is missing, its name is misspelled or specifying a lexicon that is in a different
-/// region.</p>
-/// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>)
-/// and that you spelled its name is spelled correctly. Then try again.</p>
+/// <p>Amazon Polly can't find the specified lexicon. This could be caused by a
+/// lexicon that is missing, its name is misspelled or specifying a lexicon
+/// that is in a different region.</p>
+/// <p>Verify that the lexicon exists, is in the region (see <a>ListLexicons</a>) and that you spelled its name is spelled
+/// correctly. Then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LexiconNotFoundException {
@@ -1336,7 +1339,8 @@ impl LexiconNotFoundException {
     }
 }
 
-/// <p>The language specified is not currently supported by Amazon Polly in this capacity.</p>
+/// <p>The language specified is not currently supported by Amazon Polly in this
+/// capacity.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct LanguageNotSupportedException {
@@ -1396,8 +1400,8 @@ impl LanguageNotSupportedException {
     }
 }
 
-/// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling of tags and values,
-/// and then try again.</p>
+/// <p>The SSML you provided is invalid. Verify the SSML syntax, spelling
+/// of tags and values, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSsmlException {
@@ -1517,8 +1521,9 @@ impl InvalidSampleRateException {
     }
 }
 
-/// <p>This engine is not compatible with the voice that you have designated. Choose a new voice
-/// that is compatible with the engine or change the engine and restart the operation.</p>
+/// <p>This engine is not compatible with the voice that you have designated.
+/// Choose a new voice that is compatible with the engine or change the engine
+/// and restart the operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EngineNotSupportedException {
@@ -1578,8 +1583,8 @@ impl EngineNotSupportedException {
     }
 }
 
-/// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS topic ARN and try
-/// again.</p>
+/// <p>The provided SNS topic ARN is invalid. Please provide a valid SNS
+/// topic ARN and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidSnsTopicArnException {
@@ -1639,8 +1644,8 @@ impl InvalidSnsTopicArnException {
     }
 }
 
-/// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid S3 object key
-/// name.</p>
+/// <p>The provided Amazon S3 key prefix is invalid. Please provide a valid
+/// S3 object key name.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3KeyException {
@@ -1700,8 +1705,8 @@ impl InvalidS3KeyException {
     }
 }
 
-/// <p>The provided Amazon S3 bucket name is invalid. Please check your input with S3 bucket
-/// naming requirements and try again.</p>
+/// <p>The provided Amazon S3 bucket name is invalid. Please check your input
+/// with S3 bucket naming requirements and try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidS3BucketException {
@@ -1761,9 +1766,8 @@ impl InvalidS3BucketException {
     }
 }
 
-/// <p>The language specified in the lexicon is unsupported. For a list of supported
-/// languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon
-/// Attributes</a>.</p>
+/// <p>The language specified in the lexicon is unsupported. For a list of
+/// supported languages, see <a href="https://docs.aws.amazon.com/polly/latest/dg/API_LexiconAttributes.html">Lexicon Attributes</a>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsLanguageException {
@@ -1823,8 +1827,8 @@ impl UnsupportedPlsLanguageException {
     }
 }
 
-/// <p>The alphabet specified by the lexicon is not a supported alphabet. Valid values are
-/// <code>x-sampa</code> and <code>ipa</code>.</p>
+/// <p>The alphabet specified by the lexicon is not a supported alphabet.
+/// Valid values are <code>x-sampa</code> and <code>ipa</code>.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UnsupportedPlsAlphabetException {
@@ -1884,7 +1888,8 @@ impl UnsupportedPlsAlphabetException {
     }
 }
 
-/// <p>The maximum number of lexicons would be exceeded by this operation.</p>
+/// <p>The maximum number of lexicons would be exceeded by this
+/// operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexiconsNumberExceededException {
@@ -1944,7 +1949,8 @@ impl MaxLexiconsNumberExceededException {
     }
 }
 
-/// <p>The maximum size of the lexeme would be exceeded by this operation.</p>
+/// <p>The maximum size of the lexeme would be exceeded by this
+/// operation.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct MaxLexemeLengthExceededException {
@@ -2065,8 +2071,8 @@ impl LexiconSizeExceededException {
     }
 }
 
-/// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's name is
-/// spelled correctly, and then try again.</p>
+/// <p>Amazon Polly can't find the specified lexicon. Verify that the lexicon's
+/// name is spelled correctly, and then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidLexiconException {
@@ -2126,8 +2132,8 @@ impl InvalidLexiconException {
     }
 }
 
-/// <p>The NextToken is invalid. Verify that it's spelled correctly, and then try
-/// again.</p>
+/// <p>The NextToken is invalid. Verify that it's spelled correctly, and
+/// then try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidNextTokenException {
@@ -2187,7 +2193,8 @@ impl InvalidNextTokenException {
     }
 }
 
-/// <p>The Speech Synthesis task with requested Task ID cannot be found.</p>
+/// <p>The Speech Synthesis task with requested Task ID cannot be
+/// found.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SynthesisTaskNotFoundException {
@@ -2247,7 +2254,8 @@ impl SynthesisTaskNotFoundException {
     }
 }
 
-/// <p>The provided Task ID is not valid. Please provide a valid Task ID and try again.</p>
+/// <p>The provided Task ID is not valid. Please provide a valid Task ID and
+/// try again.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct InvalidTaskIdException {

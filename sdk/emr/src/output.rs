@@ -344,6 +344,35 @@ impl RemoveManagedScalingPolicyOutput {
 
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct RemoveAutoTerminationPolicyOutput {}
+impl std::fmt::Debug for RemoveAutoTerminationPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("RemoveAutoTerminationPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`RemoveAutoTerminationPolicyOutput`](crate::output::RemoveAutoTerminationPolicyOutput)
+pub mod remove_auto_termination_policy_output {
+    /// A builder for [`RemoveAutoTerminationPolicyOutput`](crate::output::RemoveAutoTerminationPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`RemoveAutoTerminationPolicyOutput`](crate::output::RemoveAutoTerminationPolicyOutput)
+        pub fn build(self) -> crate::output::RemoveAutoTerminationPolicyOutput {
+            crate::output::RemoveAutoTerminationPolicyOutput {}
+        }
+    }
+}
+impl RemoveAutoTerminationPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`RemoveAutoTerminationPolicyOutput`](crate::output::RemoveAutoTerminationPolicyOutput)
+    pub fn builder() -> crate::output::remove_auto_termination_policy_output::Builder {
+        crate::output::remove_auto_termination_policy_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RemoveAutoScalingPolicyOutput {}
 impl std::fmt::Debug for RemoveAutoScalingPolicyOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -426,6 +455,35 @@ impl PutBlockPublicAccessConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`PutBlockPublicAccessConfigurationOutput`](crate::output::PutBlockPublicAccessConfigurationOutput)
     pub fn builder() -> crate::output::put_block_public_access_configuration_output::Builder {
         crate::output::put_block_public_access_configuration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct PutAutoTerminationPolicyOutput {}
+impl std::fmt::Debug for PutAutoTerminationPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("PutAutoTerminationPolicyOutput");
+        formatter.finish()
+    }
+}
+/// See [`PutAutoTerminationPolicyOutput`](crate::output::PutAutoTerminationPolicyOutput)
+pub mod put_auto_termination_policy_output {
+    /// A builder for [`PutAutoTerminationPolicyOutput`](crate::output::PutAutoTerminationPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {}
+    impl Builder {
+        /// Consumes the builder and constructs a [`PutAutoTerminationPolicyOutput`](crate::output::PutAutoTerminationPolicyOutput)
+        pub fn build(self) -> crate::output::PutAutoTerminationPolicyOutput {
+            crate::output::PutAutoTerminationPolicyOutput {}
+        }
+    }
+}
+impl PutAutoTerminationPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`PutAutoTerminationPolicyOutput`](crate::output::PutAutoTerminationPolicyOutput)
+    pub fn builder() -> crate::output::put_auto_termination_policy_output::Builder {
+        crate::output::put_auto_termination_policy_output::Builder::default()
     }
 }
 
@@ -1581,6 +1639,59 @@ impl GetBlockPublicAccessConfigurationOutput {
     /// Creates a new builder-style object to manufacture [`GetBlockPublicAccessConfigurationOutput`](crate::output::GetBlockPublicAccessConfigurationOutput)
     pub fn builder() -> crate::output::get_block_public_access_configuration_output::Builder {
         crate::output::get_block_public_access_configuration_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
+#[derive(std::clone::Clone, std::cmp::PartialEq)]
+pub struct GetAutoTerminationPolicyOutput {
+    /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+    pub auto_termination_policy: std::option::Option<crate::model::AutoTerminationPolicy>,
+}
+impl std::fmt::Debug for GetAutoTerminationPolicyOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("GetAutoTerminationPolicyOutput");
+        formatter.field("auto_termination_policy", &self.auto_termination_policy);
+        formatter.finish()
+    }
+}
+/// See [`GetAutoTerminationPolicyOutput`](crate::output::GetAutoTerminationPolicyOutput)
+pub mod get_auto_termination_policy_output {
+    /// A builder for [`GetAutoTerminationPolicyOutput`](crate::output::GetAutoTerminationPolicyOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) auto_termination_policy:
+            std::option::Option<crate::model::AutoTerminationPolicy>,
+    }
+    impl Builder {
+        /// <p>Specifies the auto-termination policy that is attached to an Amazon EMR cluster. </p>
+        pub fn auto_termination_policy(
+            mut self,
+            input: crate::model::AutoTerminationPolicy,
+        ) -> Self {
+            self.auto_termination_policy = Some(input);
+            self
+        }
+        pub fn set_auto_termination_policy(
+            mut self,
+            input: std::option::Option<crate::model::AutoTerminationPolicy>,
+        ) -> Self {
+            self.auto_termination_policy = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`GetAutoTerminationPolicyOutput`](crate::output::GetAutoTerminationPolicyOutput)
+        pub fn build(self) -> crate::output::GetAutoTerminationPolicyOutput {
+            crate::output::GetAutoTerminationPolicyOutput {
+                auto_termination_policy: self.auto_termination_policy,
+            }
+        }
+    }
+}
+impl GetAutoTerminationPolicyOutput {
+    /// Creates a new builder-style object to manufacture [`GetAutoTerminationPolicyOutput`](crate::output::GetAutoTerminationPolicyOutput)
+    pub fn builder() -> crate::output::get_auto_termination_policy_output::Builder {
+        crate::output::get_auto_termination_policy_output::Builder::default()
     }
 }
 

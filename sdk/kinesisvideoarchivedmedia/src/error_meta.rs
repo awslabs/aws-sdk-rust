@@ -29,8 +29,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetClipError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetClipError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetClipError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetClipError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetClipErrorKind::ClientLimitExceededException(inner) => {
@@ -66,9 +69,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetClipError>> for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURLError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURLError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURLError>,
+        err: smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURLError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -86,9 +93,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetDASHStreamingSessionURL
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLError>,
+        err: smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -106,9 +117,12 @@ impl From<smithy_http::result::SdkError<crate::error::GetHLSStreamingSessionURLE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError>,
+        err: smithy_http::result::SdkError<crate::error::GetMediaForFragmentListError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -132,8 +146,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetMediaForFragmentListErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListFragmentsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListFragmentsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListFragmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListFragmentsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListFragmentsErrorKind::ClientLimitExceededException(inner) => {

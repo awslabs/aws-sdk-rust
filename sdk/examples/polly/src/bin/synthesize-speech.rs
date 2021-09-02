@@ -2,9 +2,9 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-use aws_types::region::ProvideRegion;
+use aws_config::meta::region::RegionProviderChain;
 use polly::model::{OutputFormat, VoiceId};
-use polly::{Client, Config, Error, Region, PKG_VERSION};
+use polly::{Client, Error, Region, PKG_VERSION};
 use std::fs;
 use structopt::StructOpt;
 use tokio::io::AsyncWriteExt;
@@ -13,7 +13,7 @@ use tokio::io::AsyncWriteExt;
 struct Opt {
     /// The default AWS Region.
     #[structopt(short, long)]
-    default_region: Option<String>,
+    region: Option<String>,
 
     /// The file containing the text to synthesize.
     #[structopt(short, long)]
@@ -29,7 +29,7 @@ struct Opt {
 ///
 /// * `-f FILENAME` - The name of the file containing the text to synthesize.
 ///    The output is saved in MP3 format in a file with the same basename, but with an __mp3__ extension.
-/// * `[-d DEFAULT-REGION]` - The Region in which the client is created.
+/// * `[-r REGION]` - The Region in which the client is created.
 ///    If not supplied, uses the value of the **AWS_REGION** environment variable.
 ///    If the environment variable is not set, defaults to **us-west-2**.
 /// * `[-v]` - Whether to display additional information.
@@ -39,27 +39,24 @@ async fn main() -> Result<(), Error> {
 
     let Opt {
         filename,
-        default_region,
+        region,
         verbose,
     } = Opt::from_args();
 
-    let region = default_region
-        .as_ref()
-        .map(|region| Region::new(region.clone()))
-        .or_else(|| aws_types::region::default_provider().region())
-        .unwrap_or_else(|| Region::new("us-west-2"));
+    let region_provider = RegionProviderChain::first_try(region.map(Region::new))
+        .or_default_provider()
+        .or_else(Region::new("us-west-2"));
+    let shared_config = aws_config::from_env().region(region_provider).load().await;
+    let client = Client::new(&shared_config);
 
     println!();
 
     if verbose {
         println!("Polly version: {}", PKG_VERSION);
-        println!("Region:        {:?}", &region);
+        println!("Region:        {:?}", shared_config.region().unwrap());
         println!("Filename:      {}", &filename);
         println!();
     }
-
-    let config = Config::builder().region(region).build();
-    let client = Client::from_conf(config);
 
     let content = fs::read_to_string(&filename);
 

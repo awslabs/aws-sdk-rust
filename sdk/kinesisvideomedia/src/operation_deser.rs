@@ -31,7 +31,7 @@ pub fn parse_get_media(
 pub fn parse_get_media_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetMediaOutput, crate::error::GetMediaError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMediaError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

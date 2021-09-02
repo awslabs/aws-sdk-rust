@@ -6,7 +6,7 @@ pub fn parse_abort_multipart_upload_error(
     crate::output::AbortMultipartUploadOutput,
     crate::error::AbortMultipartUploadError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -66,7 +66,7 @@ pub fn parse_complete_multipart_upload_error(
     crate::output::CompleteMultipartUploadOutput,
     crate::error::CompleteMultipartUploadError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CompleteMultipartUploadError::unhandled)?;
     Err(crate::error::CompleteMultipartUploadError::generic(generic))
 }
@@ -119,7 +119,7 @@ pub fn parse_complete_multipart_upload_response(
 pub fn parse_copy_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CopyObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -237,7 +237,7 @@ pub fn parse_copy_object_response(
 pub fn parse_create_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateBucketError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -246,15 +246,15 @@ pub fn parse_create_bucket_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError {
+        "BucketAlreadyExists" => crate::error::CreateBucketError {
             meta: generic,
-            kind: crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou({
+            kind: crate::error::CreateBucketErrorKind::BucketAlreadyExists({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
+                    let mut output = crate::error::bucket_already_exists::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bucket_already_owned_by_you_xml_err(
+                    output = crate::xml_deser::deser_structure_bucket_already_exists_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -267,15 +267,15 @@ pub fn parse_create_bucket_error(
                 tmp
             }),
         },
-        "BucketAlreadyExists" => crate::error::CreateBucketError {
+        "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError {
             meta: generic,
-            kind: crate::error::CreateBucketErrorKind::BucketAlreadyExists({
+            kind: crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::bucket_already_exists::Builder::default();
+                    let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_bucket_already_exists_xml_err(
+                    output = crate::xml_deser::deser_structure_bucket_already_owned_by_you_xml_err(
                         response.body().as_ref(),
                         output,
                     )
@@ -321,7 +321,7 @@ pub fn parse_create_multipart_upload_error(
     crate::output::CreateMultipartUploadOutput,
     crate::error::CreateMultipartUploadError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateMultipartUploadError::unhandled)?;
     Err(crate::error::CreateMultipartUploadError::generic(generic))
 }
@@ -386,7 +386,7 @@ pub fn parse_create_multipart_upload_response(
 pub fn parse_delete_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketError::unhandled)?;
     Err(crate::error::DeleteBucketError::generic(generic))
 }
@@ -410,7 +410,7 @@ pub fn parse_delete_bucket_analytics_configuration_error(
     crate::output::DeleteBucketAnalyticsConfigurationOutput,
     crate::error::DeleteBucketAnalyticsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketAnalyticsConfigurationError::unhandled)?;
     Err(crate::error::DeleteBucketAnalyticsConfigurationError::generic(generic))
 }
@@ -436,7 +436,7 @@ pub fn parse_delete_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketCorsError::unhandled)?;
     Err(crate::error::DeleteBucketCorsError::generic(generic))
 }
@@ -461,7 +461,7 @@ pub fn parse_delete_bucket_encryption_error(
     crate::output::DeleteBucketEncryptionOutput,
     crate::error::DeleteBucketEncryptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketEncryptionError::unhandled)?;
     Err(crate::error::DeleteBucketEncryptionError::generic(generic))
 }
@@ -488,7 +488,7 @@ pub fn parse_delete_bucket_intelligent_tiering_configuration_error(
     crate::output::DeleteBucketIntelligentTieringConfigurationOutput,
     crate::error::DeleteBucketIntelligentTieringConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketIntelligentTieringConfigurationError::unhandled)?;
     Err(crate::error::DeleteBucketIntelligentTieringConfigurationError::generic(generic))
 }
@@ -517,7 +517,7 @@ pub fn parse_delete_bucket_inventory_configuration_error(
     crate::output::DeleteBucketInventoryConfigurationOutput,
     crate::error::DeleteBucketInventoryConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketInventoryConfigurationError::unhandled)?;
     Err(crate::error::DeleteBucketInventoryConfigurationError::generic(generic))
 }
@@ -545,7 +545,7 @@ pub fn parse_delete_bucket_lifecycle_error(
     crate::output::DeleteBucketLifecycleOutput,
     crate::error::DeleteBucketLifecycleError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketLifecycleError::unhandled)?;
     Err(crate::error::DeleteBucketLifecycleError::generic(generic))
 }
@@ -572,7 +572,7 @@ pub fn parse_delete_bucket_metrics_configuration_error(
     crate::output::DeleteBucketMetricsConfigurationOutput,
     crate::error::DeleteBucketMetricsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketMetricsConfigurationError::unhandled)?;
     Err(crate::error::DeleteBucketMetricsConfigurationError::generic(generic))
 }
@@ -600,7 +600,7 @@ pub fn parse_delete_bucket_ownership_controls_error(
     crate::output::DeleteBucketOwnershipControlsOutput,
     crate::error::DeleteBucketOwnershipControlsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketOwnershipControlsError::unhandled)?;
     Err(crate::error::DeleteBucketOwnershipControlsError::generic(
         generic,
@@ -629,7 +629,7 @@ pub fn parse_delete_bucket_policy_error(
     crate::output::DeleteBucketPolicyOutput,
     crate::error::DeleteBucketPolicyError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketPolicyError::unhandled)?;
     Err(crate::error::DeleteBucketPolicyError::generic(generic))
 }
@@ -656,7 +656,7 @@ pub fn parse_delete_bucket_replication_error(
     crate::output::DeleteBucketReplicationOutput,
     crate::error::DeleteBucketReplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketReplicationError::unhandled)?;
     Err(crate::error::DeleteBucketReplicationError::generic(generic))
 }
@@ -683,7 +683,7 @@ pub fn parse_delete_bucket_tagging_error(
     crate::output::DeleteBucketTaggingOutput,
     crate::error::DeleteBucketTaggingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketTaggingError::unhandled)?;
     Err(crate::error::DeleteBucketTaggingError::generic(generic))
 }
@@ -710,7 +710,7 @@ pub fn parse_delete_bucket_website_error(
     crate::output::DeleteBucketWebsiteOutput,
     crate::error::DeleteBucketWebsiteError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteBucketWebsiteError::unhandled)?;
     Err(crate::error::DeleteBucketWebsiteError::generic(generic))
 }
@@ -734,7 +734,7 @@ pub fn parse_delete_bucket_website_response(
 pub fn parse_delete_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteObjectError::unhandled)?;
     Err(crate::error::DeleteObjectError::generic(generic))
 }
@@ -785,7 +785,7 @@ pub fn parse_delete_object_response(
 pub fn parse_delete_objects_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteObjectsError::unhandled)?;
     Err(crate::error::DeleteObjectsError::generic(generic))
 }
@@ -821,7 +821,7 @@ pub fn parse_delete_object_tagging_error(
     crate::output::DeleteObjectTaggingOutput,
     crate::error::DeleteObjectTaggingError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteObjectTaggingError::unhandled)?;
     Err(crate::error::DeleteObjectTaggingError::generic(generic))
 }
@@ -852,7 +852,7 @@ pub fn parse_delete_public_access_block_error(
     crate::output::DeletePublicAccessBlockOutput,
     crate::error::DeletePublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeletePublicAccessBlockError::unhandled)?;
     Err(crate::error::DeletePublicAccessBlockError::generic(generic))
 }
@@ -879,7 +879,7 @@ pub fn parse_get_bucket_accelerate_configuration_error(
     crate::output::GetBucketAccelerateConfigurationOutput,
     crate::error::GetBucketAccelerateConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketAccelerateConfigurationError::unhandled)?;
     Err(crate::error::GetBucketAccelerateConfigurationError::generic(generic))
 }
@@ -909,7 +909,7 @@ pub fn parse_get_bucket_accelerate_configuration_response(
 pub fn parse_get_bucket_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketAclError::unhandled)?;
     Err(crate::error::GetBucketAclError::generic(generic))
 }
@@ -935,7 +935,7 @@ pub fn parse_get_bucket_analytics_configuration_error(
     crate::output::GetBucketAnalyticsConfigurationOutput,
     crate::error::GetBucketAnalyticsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketAnalyticsConfigurationError::unhandled)?;
     Err(crate::error::GetBucketAnalyticsConfigurationError::generic(
         generic,
@@ -965,7 +965,7 @@ pub fn parse_get_bucket_analytics_configuration_response(
 pub fn parse_get_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketCorsError::unhandled)?;
     Err(crate::error::GetBucketCorsError::generic(generic))
 }
@@ -992,7 +992,7 @@ pub fn parse_get_bucket_encryption_error(
     crate::output::GetBucketEncryptionOutput,
     crate::error::GetBucketEncryptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketEncryptionError::unhandled)?;
     Err(crate::error::GetBucketEncryptionError::generic(generic))
 }
@@ -1022,7 +1022,7 @@ pub fn parse_get_bucket_intelligent_tiering_configuration_error(
     crate::output::GetBucketIntelligentTieringConfigurationOutput,
     crate::error::GetBucketIntelligentTieringConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketIntelligentTieringConfigurationError::unhandled)?;
     Err(crate::error::GetBucketIntelligentTieringConfigurationError::generic(generic))
 }
@@ -1053,7 +1053,7 @@ pub fn parse_get_bucket_inventory_configuration_error(
     crate::output::GetBucketInventoryConfigurationOutput,
     crate::error::GetBucketInventoryConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketInventoryConfigurationError::unhandled)?;
     Err(crate::error::GetBucketInventoryConfigurationError::generic(
         generic,
@@ -1086,7 +1086,7 @@ pub fn parse_get_bucket_lifecycle_configuration_error(
     crate::output::GetBucketLifecycleConfigurationOutput,
     crate::error::GetBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
     Err(crate::error::GetBucketLifecycleConfigurationError::generic(
         generic,
@@ -1119,7 +1119,7 @@ pub fn parse_get_bucket_location_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketLocationError::unhandled)?;
     Err(crate::error::GetBucketLocationError::generic(generic))
 }
@@ -1145,7 +1145,7 @@ pub fn parse_get_bucket_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketLoggingError::unhandled)?;
     Err(crate::error::GetBucketLoggingError::generic(generic))
 }
@@ -1173,7 +1173,7 @@ pub fn parse_get_bucket_metrics_configuration_error(
     crate::output::GetBucketMetricsConfigurationOutput,
     crate::error::GetBucketMetricsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketMetricsConfigurationError::unhandled)?;
     Err(crate::error::GetBucketMetricsConfigurationError::generic(
         generic,
@@ -1205,7 +1205,7 @@ pub fn parse_get_bucket_notification_configuration_error(
     crate::output::GetBucketNotificationConfigurationOutput,
     crate::error::GetBucketNotificationConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketNotificationConfigurationError::unhandled)?;
     Err(crate::error::GetBucketNotificationConfigurationError::generic(generic))
 }
@@ -1238,7 +1238,7 @@ pub fn parse_get_bucket_ownership_controls_error(
     crate::output::GetBucketOwnershipControlsOutput,
     crate::error::GetBucketOwnershipControlsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketOwnershipControlsError::unhandled)?;
     Err(crate::error::GetBucketOwnershipControlsError::generic(
         generic,
@@ -1267,7 +1267,7 @@ pub fn parse_get_bucket_ownership_controls_response(
 pub fn parse_get_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketPolicyError::unhandled)?;
     Err(crate::error::GetBucketPolicyError::generic(generic))
 }
@@ -1296,7 +1296,7 @@ pub fn parse_get_bucket_policy_status_error(
     crate::output::GetBucketPolicyStatusOutput,
     crate::error::GetBucketPolicyStatusError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketPolicyStatusError::unhandled)?;
     Err(crate::error::GetBucketPolicyStatusError::generic(generic))
 }
@@ -1326,7 +1326,7 @@ pub fn parse_get_bucket_replication_error(
     crate::output::GetBucketReplicationOutput,
     crate::error::GetBucketReplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketReplicationError::unhandled)?;
     Err(crate::error::GetBucketReplicationError::generic(generic))
 }
@@ -1356,7 +1356,7 @@ pub fn parse_get_bucket_request_payment_error(
     crate::output::GetBucketRequestPaymentOutput,
     crate::error::GetBucketRequestPaymentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketRequestPaymentError::unhandled)?;
     Err(crate::error::GetBucketRequestPaymentError::generic(generic))
 }
@@ -1386,7 +1386,7 @@ pub fn parse_get_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
     Err(crate::error::GetBucketTaggingError::generic(generic))
 }
@@ -1414,7 +1414,7 @@ pub fn parse_get_bucket_versioning_error(
     crate::output::GetBucketVersioningOutput,
     crate::error::GetBucketVersioningError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketVersioningError::unhandled)?;
     Err(crate::error::GetBucketVersioningError::generic(generic))
 }
@@ -1444,7 +1444,7 @@ pub fn parse_get_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetBucketWebsiteError::unhandled)?;
     Err(crate::error::GetBucketWebsiteError::generic(generic))
 }
@@ -1747,7 +1747,7 @@ pub fn parse_get_object(
 pub fn parse_get_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1756,27 +1756,6 @@ pub fn parse_get_object_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchKey" => crate::error::GetObjectError {
-            meta: generic,
-            kind: crate::error::GetObjectErrorKind::NoSuchKey({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_key::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_no_such_key_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetObjectError::unhandled)?;
-                    output.build()
-                };
-                if (&tmp.message).is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
         "InvalidObjectState" => crate::error::GetObjectError {
             meta: generic,
             kind: crate::error::GetObjectErrorKind::InvalidObjectState({
@@ -1798,6 +1777,27 @@ pub fn parse_get_object_error(
                 tmp
             }),
         },
+        "NoSuchKey" => crate::error::GetObjectError {
+            meta: generic,
+            kind: crate::error::GetObjectErrorKind::NoSuchKey({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::no_such_key::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_no_such_key_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetObjectError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
         _ => crate::error::GetObjectError::generic(generic),
     })
 }
@@ -1806,7 +1806,7 @@ pub fn parse_get_object_error(
 pub fn parse_get_object_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectAclError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1871,7 +1871,7 @@ pub fn parse_get_object_legal_hold_error(
     crate::output::GetObjectLegalHoldOutput,
     crate::error::GetObjectLegalHoldError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectLegalHoldError::unhandled)?;
     Err(crate::error::GetObjectLegalHoldError::generic(generic))
 }
@@ -1901,7 +1901,7 @@ pub fn parse_get_object_lock_configuration_error(
     crate::output::GetObjectLockConfigurationOutput,
     crate::error::GetObjectLockConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectLockConfigurationError::unhandled)?;
     Err(crate::error::GetObjectLockConfigurationError::generic(
         generic,
@@ -1933,7 +1933,7 @@ pub fn parse_get_object_retention_error(
     crate::output::GetObjectRetentionOutput,
     crate::error::GetObjectRetentionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectRetentionError::unhandled)?;
     Err(crate::error::GetObjectRetentionError::generic(generic))
 }
@@ -1961,7 +1961,7 @@ pub fn parse_get_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectTaggingError::unhandled)?;
     Err(crate::error::GetObjectTaggingError::generic(generic))
 }
@@ -2014,7 +2014,7 @@ pub fn parse_get_object_torrent_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetObjectTorrentError::unhandled)?;
     Err(crate::error::GetObjectTorrentError::generic(generic))
 }
@@ -2026,7 +2026,7 @@ pub fn parse_get_public_access_block_error(
     crate::output::GetPublicAccessBlockOutput,
     crate::error::GetPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
     Err(crate::error::GetPublicAccessBlockError::generic(generic))
 }
@@ -2053,7 +2053,7 @@ pub fn parse_get_public_access_block_response(
 pub fn parse_head_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::HeadBucketError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2103,7 +2103,7 @@ pub fn parse_head_bucket_response(
 pub fn parse_head_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::HeadObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2406,7 +2406,7 @@ pub fn parse_list_bucket_analytics_configurations_error(
     crate::output::ListBucketAnalyticsConfigurationsOutput,
     crate::error::ListBucketAnalyticsConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBucketAnalyticsConfigurationsError::unhandled)?;
     Err(crate::error::ListBucketAnalyticsConfigurationsError::generic(generic))
 }
@@ -2439,7 +2439,7 @@ pub fn parse_list_bucket_intelligent_tiering_configurations_error(
     crate::output::ListBucketIntelligentTieringConfigurationsOutput,
     crate::error::ListBucketIntelligentTieringConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBucketIntelligentTieringConfigurationsError::unhandled)?;
     Err(crate::error::ListBucketIntelligentTieringConfigurationsError::generic(generic))
 }
@@ -2473,7 +2473,7 @@ pub fn parse_list_bucket_inventory_configurations_error(
     crate::output::ListBucketInventoryConfigurationsOutput,
     crate::error::ListBucketInventoryConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBucketInventoryConfigurationsError::unhandled)?;
     Err(crate::error::ListBucketInventoryConfigurationsError::generic(generic))
 }
@@ -2506,7 +2506,7 @@ pub fn parse_list_bucket_metrics_configurations_error(
     crate::output::ListBucketMetricsConfigurationsOutput,
     crate::error::ListBucketMetricsConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBucketMetricsConfigurationsError::unhandled)?;
     Err(crate::error::ListBucketMetricsConfigurationsError::generic(
         generic,
@@ -2538,7 +2538,7 @@ pub fn parse_list_bucket_metrics_configurations_response(
 pub fn parse_list_buckets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListBucketsError::unhandled)?;
     Err(crate::error::ListBucketsError::generic(generic))
 }
@@ -2564,7 +2564,7 @@ pub fn parse_list_multipart_uploads_error(
     crate::output::ListMultipartUploadsOutput,
     crate::error::ListMultipartUploadsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMultipartUploadsError::unhandled)?;
     Err(crate::error::ListMultipartUploadsError::generic(generic))
 }
@@ -2593,7 +2593,7 @@ pub fn parse_list_multipart_uploads_response(
 pub fn parse_list_objects_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListObjectsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2645,7 +2645,7 @@ pub fn parse_list_objects_response(
 pub fn parse_list_objects_v2_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListObjectsV2Error::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2701,7 +2701,7 @@ pub fn parse_list_object_versions_error(
     crate::output::ListObjectVersionsOutput,
     crate::error::ListObjectVersionsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListObjectVersionsError::unhandled)?;
     Err(crate::error::ListObjectVersionsError::generic(generic))
 }
@@ -2730,7 +2730,7 @@ pub fn parse_list_object_versions_response(
 pub fn parse_list_parts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPartsError::unhandled)?;
     Err(crate::error::ListPartsError::generic(generic))
 }
@@ -2786,7 +2786,7 @@ pub fn parse_put_bucket_accelerate_configuration_error(
     crate::output::PutBucketAccelerateConfigurationOutput,
     crate::error::PutBucketAccelerateConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketAccelerateConfigurationError::unhandled)?;
     Err(crate::error::PutBucketAccelerateConfigurationError::generic(generic))
 }
@@ -2811,7 +2811,7 @@ pub fn parse_put_bucket_accelerate_configuration_response(
 pub fn parse_put_bucket_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketAclError::unhandled)?;
     Err(crate::error::PutBucketAclError::generic(generic))
 }
@@ -2835,7 +2835,7 @@ pub fn parse_put_bucket_analytics_configuration_error(
     crate::output::PutBucketAnalyticsConfigurationOutput,
     crate::error::PutBucketAnalyticsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketAnalyticsConfigurationError::unhandled)?;
     Err(crate::error::PutBucketAnalyticsConfigurationError::generic(
         generic,
@@ -2862,7 +2862,7 @@ pub fn parse_put_bucket_analytics_configuration_response(
 pub fn parse_put_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketCorsError::unhandled)?;
     Err(crate::error::PutBucketCorsError::generic(generic))
 }
@@ -2886,7 +2886,7 @@ pub fn parse_put_bucket_encryption_error(
     crate::output::PutBucketEncryptionOutput,
     crate::error::PutBucketEncryptionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketEncryptionError::unhandled)?;
     Err(crate::error::PutBucketEncryptionError::generic(generic))
 }
@@ -2913,7 +2913,7 @@ pub fn parse_put_bucket_intelligent_tiering_configuration_error(
     crate::output::PutBucketIntelligentTieringConfigurationOutput,
     crate::error::PutBucketIntelligentTieringConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketIntelligentTieringConfigurationError::unhandled)?;
     Err(crate::error::PutBucketIntelligentTieringConfigurationError::generic(generic))
 }
@@ -2941,7 +2941,7 @@ pub fn parse_put_bucket_inventory_configuration_error(
     crate::output::PutBucketInventoryConfigurationOutput,
     crate::error::PutBucketInventoryConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketInventoryConfigurationError::unhandled)?;
     Err(crate::error::PutBucketInventoryConfigurationError::generic(
         generic,
@@ -2971,7 +2971,7 @@ pub fn parse_put_bucket_lifecycle_configuration_error(
     crate::output::PutBucketLifecycleConfigurationOutput,
     crate::error::PutBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketLifecycleConfigurationError::unhandled)?;
     Err(crate::error::PutBucketLifecycleConfigurationError::generic(
         generic,
@@ -2999,7 +2999,7 @@ pub fn parse_put_bucket_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketLoggingError::unhandled)?;
     Err(crate::error::PutBucketLoggingError::generic(generic))
 }
@@ -3024,7 +3024,7 @@ pub fn parse_put_bucket_metrics_configuration_error(
     crate::output::PutBucketMetricsConfigurationOutput,
     crate::error::PutBucketMetricsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketMetricsConfigurationError::unhandled)?;
     Err(crate::error::PutBucketMetricsConfigurationError::generic(
         generic,
@@ -3053,7 +3053,7 @@ pub fn parse_put_bucket_notification_configuration_error(
     crate::output::PutBucketNotificationConfigurationOutput,
     crate::error::PutBucketNotificationConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketNotificationConfigurationError::unhandled)?;
     Err(crate::error::PutBucketNotificationConfigurationError::generic(generic))
 }
@@ -3081,7 +3081,7 @@ pub fn parse_put_bucket_ownership_controls_error(
     crate::output::PutBucketOwnershipControlsOutput,
     crate::error::PutBucketOwnershipControlsError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketOwnershipControlsError::unhandled)?;
     Err(crate::error::PutBucketOwnershipControlsError::generic(
         generic,
@@ -3107,7 +3107,7 @@ pub fn parse_put_bucket_ownership_controls_response(
 pub fn parse_put_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketPolicyError::unhandled)?;
     Err(crate::error::PutBucketPolicyError::generic(generic))
 }
@@ -3131,7 +3131,7 @@ pub fn parse_put_bucket_replication_error(
     crate::output::PutBucketReplicationOutput,
     crate::error::PutBucketReplicationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketReplicationError::unhandled)?;
     Err(crate::error::PutBucketReplicationError::generic(generic))
 }
@@ -3158,7 +3158,7 @@ pub fn parse_put_bucket_request_payment_error(
     crate::output::PutBucketRequestPaymentOutput,
     crate::error::PutBucketRequestPaymentError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketRequestPaymentError::unhandled)?;
     Err(crate::error::PutBucketRequestPaymentError::generic(generic))
 }
@@ -3183,7 +3183,7 @@ pub fn parse_put_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketTaggingError::unhandled)?;
     Err(crate::error::PutBucketTaggingError::generic(generic))
 }
@@ -3208,7 +3208,7 @@ pub fn parse_put_bucket_versioning_error(
     crate::output::PutBucketVersioningOutput,
     crate::error::PutBucketVersioningError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketVersioningError::unhandled)?;
     Err(crate::error::PutBucketVersioningError::generic(generic))
 }
@@ -3233,7 +3233,7 @@ pub fn parse_put_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutBucketWebsiteError::unhandled)?;
     Err(crate::error::PutBucketWebsiteError::generic(generic))
 }
@@ -3255,7 +3255,7 @@ pub fn parse_put_bucket_website_response(
 pub fn parse_put_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectError::unhandled)?;
     Err(crate::error::PutObjectError::generic(generic))
 }
@@ -3338,7 +3338,7 @@ pub fn parse_put_object_response(
 pub fn parse_put_object_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectAclError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3401,7 +3401,7 @@ pub fn parse_put_object_legal_hold_error(
     crate::output::PutObjectLegalHoldOutput,
     crate::error::PutObjectLegalHoldError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectLegalHoldError::unhandled)?;
     Err(crate::error::PutObjectLegalHoldError::generic(generic))
 }
@@ -3432,7 +3432,7 @@ pub fn parse_put_object_lock_configuration_error(
     crate::output::PutObjectLockConfigurationOutput,
     crate::error::PutObjectLockConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectLockConfigurationError::unhandled)?;
     Err(crate::error::PutObjectLockConfigurationError::generic(
         generic,
@@ -3465,7 +3465,7 @@ pub fn parse_put_object_retention_error(
     crate::output::PutObjectRetentionOutput,
     crate::error::PutObjectRetentionError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectRetentionError::unhandled)?;
     Err(crate::error::PutObjectRetentionError::generic(generic))
 }
@@ -3494,7 +3494,7 @@ pub fn parse_put_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError>
 {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutObjectTaggingError::unhandled)?;
     Err(crate::error::PutObjectTaggingError::generic(generic))
 }
@@ -3523,7 +3523,7 @@ pub fn parse_put_public_access_block_error(
     crate::output::PutPublicAccessBlockOutput,
     crate::error::PutPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutPublicAccessBlockError::unhandled)?;
     Err(crate::error::PutPublicAccessBlockError::generic(generic))
 }
@@ -3547,7 +3547,7 @@ pub fn parse_put_public_access_block_response(
 pub fn parse_restore_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::RestoreObjectError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3605,10 +3605,43 @@ pub fn parse_restore_object_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_select_object_content(
+    op_response: &mut smithy_http::operation::Response,
+) -> std::result::Result<
+    crate::output::SelectObjectContentOutput,
+    crate::error::SelectObjectContentError,
+> {
+    let response = op_response.http_mut();
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::select_object_content_output::Builder::default();
+        let _ = response;
+        output = output.set_payload(
+            Some(crate::http_serde::deser_payload_select_object_content_select_object_content_output_payload(response.body_mut())?)
+        );
+        output
+            .build()
+            .map_err(crate::error::SelectObjectContentError::unhandled)?
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_select_object_content_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::SelectObjectContentOutput,
+    crate::error::SelectObjectContentError,
+> {
+    let generic = crate::xml_deser::parse_http_generic_error(response)
+        .map_err(crate::error::SelectObjectContentError::unhandled)?;
+    Err(crate::error::SelectObjectContentError::generic(generic))
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_upload_part_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadPartError::unhandled)?;
     Err(crate::error::UploadPartError::generic(generic))
 }
@@ -3667,7 +3700,7 @@ pub fn parse_upload_part_response(
 pub fn parse_upload_part_copy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError> {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::UploadPartCopyError::unhandled)?;
     Err(crate::error::UploadPartCopyError::generic(generic))
 }
@@ -3722,7 +3755,7 @@ pub fn parse_write_get_object_response_error(
     crate::output::WriteGetObjectResponseOutput,
     crate::error::WriteGetObjectResponseError,
 > {
-    let generic = crate::xml_deser::parse_generic_error(&response)
+    let generic = crate::xml_deser::parse_http_generic_error(response)
         .map_err(crate::error::WriteGetObjectResponseError::unhandled)?;
     Err(crate::error::WriteGetObjectResponseError::generic(generic))
 }

@@ -6,7 +6,7 @@ pub fn parse_get_routing_control_state_error(
     crate::output::GetRoutingControlStateOutput,
     crate::error::GetRoutingControlStateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetRoutingControlStateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -134,7 +134,7 @@ pub fn parse_update_routing_control_state_error(
     crate::output::UpdateRoutingControlStateOutput,
     crate::error::UpdateRoutingControlStateError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRoutingControlStateError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -271,7 +271,7 @@ pub fn parse_update_routing_control_states_error(
     crate::output::UpdateRoutingControlStatesOutput,
     crate::error::UpdateRoutingControlStatesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateRoutingControlStatesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

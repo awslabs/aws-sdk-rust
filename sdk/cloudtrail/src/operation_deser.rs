@@ -3,7 +3,7 @@
 pub fn parse_add_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -204,7 +204,7 @@ pub fn parse_add_tags_response(
 pub fn parse_create_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTrailOutput, crate::error::CreateTrailError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateTrailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -627,7 +627,7 @@ pub fn parse_create_trail_response(
 pub fn parse_delete_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTrailOutput, crate::error::DeleteTrailError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTrailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -768,7 +768,7 @@ pub fn parse_delete_trail_response(
 pub fn parse_describe_trails_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTrailsOutput, crate::error::DescribeTrailsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeTrailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -859,7 +859,7 @@ pub fn parse_get_event_selectors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetEventSelectorsOutput, crate::error::GetEventSelectorsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEventSelectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -976,7 +976,7 @@ pub fn parse_get_insight_selectors_error(
     crate::output::GetInsightSelectorsOutput,
     crate::error::GetInsightSelectorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetInsightSelectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1112,7 +1112,7 @@ pub fn parse_get_insight_selectors_response(
 pub fn parse_get_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTrailOutput, crate::error::GetTrailError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTrailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1222,7 +1222,7 @@ pub fn parse_get_trail_response(
 pub fn parse_get_trail_status_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTrailStatusOutput, crate::error::GetTrailStatusError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTrailStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1333,7 +1333,7 @@ pub fn parse_get_trail_status_response(
 pub fn parse_list_public_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPublicKeysOutput, crate::error::ListPublicKeysError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPublicKeysError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1444,7 +1444,7 @@ pub fn parse_list_public_keys_response(
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1610,7 +1610,7 @@ pub fn parse_list_tags_response(
 pub fn parse_list_trails_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTrailsOutput, crate::error::ListTrailsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTrailsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1679,7 +1679,7 @@ pub fn parse_list_trails_response(
 pub fn parse_lookup_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::LookupEventsOutput, crate::error::LookupEventsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::LookupEventsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1845,7 +1845,7 @@ pub fn parse_put_event_selectors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutEventSelectorsOutput, crate::error::PutEventSelectorsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutEventSelectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1995,7 +1995,7 @@ pub fn parse_put_insight_selectors_error(
     crate::output::PutInsightSelectorsOutput,
     crate::error::PutInsightSelectorsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutInsightSelectorsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2245,7 +2245,7 @@ pub fn parse_put_insight_selectors_response(
 pub fn parse_remove_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2426,7 +2426,7 @@ pub fn parse_remove_tags_response(
 pub fn parse_start_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartLoggingOutput, crate::error::StartLoggingError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartLoggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2553,7 +2553,7 @@ pub fn parse_start_logging_response(
 pub fn parse_stop_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopLoggingOutput, crate::error::StopLoggingError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StopLoggingError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2680,7 +2680,7 @@ pub fn parse_stop_logging_response(
 pub fn parse_update_trail_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateTrailOutput, crate::error::UpdateTrailError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateTrailError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

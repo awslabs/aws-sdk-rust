@@ -3,7 +3,7 @@
 pub fn parse_invoke_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InvokeEndpointError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -142,7 +142,7 @@ pub fn parse_invoke_endpoint_async_error(
     crate::output::InvokeEndpointAsyncOutput,
     crate::error::InvokeEndpointAsyncError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -6,7 +6,8 @@
 #[tokio::main]
 async fn main() -> Result<(), iam::Error> {
     tracing_subscriber::fmt::init();
-    let client = iam::Client::from_env();
+    let shared_config = aws_config::load_from_env().await;
+    let client = iam::Client::new(&shared_config);
     let rsp = client.list_policies().send().await?;
     for policy in rsp.policies.unwrap_or_default() {
         println!(

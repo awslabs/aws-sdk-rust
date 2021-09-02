@@ -6,7 +6,7 @@ pub fn parse_create_call_analytics_category_error(
     crate::output::CreateCallAnalyticsCategoryOutput,
     crate::error::CreateCallAnalyticsCategoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateCallAnalyticsCategoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -134,7 +134,7 @@ pub fn parse_create_language_model_error(
     crate::output::CreateLanguageModelOutput,
     crate::error::CreateLanguageModelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLanguageModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -258,7 +258,7 @@ pub fn parse_create_medical_vocabulary_error(
     crate::output::CreateMedicalVocabularyOutput,
     crate::error::CreateMedicalVocabularyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateMedicalVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -384,7 +384,7 @@ pub fn parse_create_vocabulary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVocabularyOutput, crate::error::CreateVocabularyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -504,7 +504,7 @@ pub fn parse_create_vocabulary_filter_error(
     crate::output::CreateVocabularyFilterOutput,
     crate::error::CreateVocabularyFilterError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateVocabularyFilterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -632,7 +632,7 @@ pub fn parse_delete_call_analytics_category_error(
     crate::output::DeleteCallAnalyticsCategoryOutput,
     crate::error::DeleteCallAnalyticsCategoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCallAnalyticsCategoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -755,7 +755,7 @@ pub fn parse_delete_call_analytics_job_error(
     crate::output::DeleteCallAnalyticsJobOutput,
     crate::error::DeleteCallAnalyticsJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteCallAnalyticsJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -857,7 +857,7 @@ pub fn parse_delete_language_model_error(
     crate::output::DeleteLanguageModelOutput,
     crate::error::DeleteLanguageModelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLanguageModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -955,7 +955,7 @@ pub fn parse_delete_medical_transcription_job_error(
     crate::output::DeleteMedicalTranscriptionJobOutput,
     crate::error::DeleteMedicalTranscriptionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteMedicalTranscriptionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1057,7 +1057,7 @@ pub fn parse_delete_medical_vocabulary_error(
     crate::output::DeleteMedicalVocabularyOutput,
     crate::error::DeleteMedicalVocabularyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteMedicalVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1180,7 +1180,7 @@ pub fn parse_delete_transcription_job_error(
     crate::output::DeleteTranscriptionJobOutput,
     crate::error::DeleteTranscriptionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteTranscriptionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1280,7 +1280,7 @@ pub fn parse_delete_vocabulary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVocabularyOutput, crate::error::DeleteVocabularyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1397,7 +1397,7 @@ pub fn parse_delete_vocabulary_filter_error(
     crate::output::DeleteVocabularyFilterOutput,
     crate::error::DeleteVocabularyFilterError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteVocabularyFilterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1520,7 +1520,7 @@ pub fn parse_describe_language_model_error(
     crate::output::DescribeLanguageModelOutput,
     crate::error::DescribeLanguageModelError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeLanguageModelError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1644,7 +1644,7 @@ pub fn parse_get_call_analytics_category_error(
     crate::output::GetCallAnalyticsCategoryOutput,
     crate::error::GetCallAnalyticsCategoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCallAnalyticsCategoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1772,7 +1772,7 @@ pub fn parse_get_call_analytics_job_error(
     crate::output::GetCallAnalyticsJobOutput,
     crate::error::GetCallAnalyticsJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetCallAnalyticsJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1896,7 +1896,7 @@ pub fn parse_get_medical_transcription_job_error(
     crate::output::GetMedicalTranscriptionJobOutput,
     crate::error::GetMedicalTranscriptionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMedicalTranscriptionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2024,7 +2024,7 @@ pub fn parse_get_medical_vocabulary_error(
     crate::output::GetMedicalVocabularyOutput,
     crate::error::GetMedicalVocabularyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetMedicalVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2148,7 +2148,7 @@ pub fn parse_get_transcription_job_error(
     crate::output::GetTranscriptionJobOutput,
     crate::error::GetTranscriptionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetTranscriptionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2269,7 +2269,7 @@ pub fn parse_get_transcription_job_response(
 pub fn parse_get_vocabulary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetVocabularyOutput, crate::error::GetVocabularyError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2388,7 +2388,7 @@ pub fn parse_get_vocabulary_filter_error(
     crate::output::GetVocabularyFilterOutput,
     crate::error::GetVocabularyFilterError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetVocabularyFilterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2512,7 +2512,7 @@ pub fn parse_list_call_analytics_categories_error(
     crate::output::ListCallAnalyticsCategoriesOutput,
     crate::error::ListCallAnalyticsCategoriesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCallAnalyticsCategoriesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2619,7 +2619,7 @@ pub fn parse_list_call_analytics_jobs_error(
     crate::output::ListCallAnalyticsJobsOutput,
     crate::error::ListCallAnalyticsJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListCallAnalyticsJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2722,7 +2722,7 @@ pub fn parse_list_language_models_error(
     crate::output::ListLanguageModelsOutput,
     crate::error::ListLanguageModelsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLanguageModelsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2825,7 +2825,7 @@ pub fn parse_list_medical_transcription_jobs_error(
     crate::output::ListMedicalTranscriptionJobsOutput,
     crate::error::ListMedicalTranscriptionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMedicalTranscriptionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2932,7 +2932,7 @@ pub fn parse_list_medical_vocabularies_error(
     crate::output::ListMedicalVocabulariesOutput,
     crate::error::ListMedicalVocabulariesError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListMedicalVocabulariesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3033,13 +3033,137 @@ pub fn parse_list_medical_vocabularies_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_tags_for_resource_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::ListTagsForResourceError {
+            meta: generic,
+            kind: crate::error::ListTagsForResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::ListTagsForResourceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_list_tags_for_resource_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<
+    crate::output::ListTagsForResourceOutput,
+    crate::error::ListTagsForResourceError,
+> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::list_tags_for_resource_output::Builder::default();
+        let _ = response;
+        output = crate::json_deser::deser_operation_list_tags_for_resource(
+            response.body().as_ref(),
+            output,
+        )
+        .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_list_transcription_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::ListTranscriptionJobsOutput,
     crate::error::ListTranscriptionJobsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTranscriptionJobsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3140,7 +3264,7 @@ pub fn parse_list_vocabularies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListVocabulariesOutput, crate::error::ListVocabulariesError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListVocabulariesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3239,7 +3363,7 @@ pub fn parse_list_vocabulary_filters_error(
     crate::output::ListVocabularyFiltersOutput,
     crate::error::ListVocabularyFiltersError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListVocabularyFiltersError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3342,7 +3466,7 @@ pub fn parse_start_call_analytics_job_error(
     crate::output::StartCallAnalyticsJobOutput,
     crate::error::StartCallAnalyticsJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartCallAnalyticsJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3466,7 +3590,7 @@ pub fn parse_start_medical_transcription_job_error(
     crate::output::StartMedicalTranscriptionJobOutput,
     crate::error::StartMedicalTranscriptionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartMedicalTranscriptionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3594,7 +3718,7 @@ pub fn parse_start_transcription_job_error(
     crate::output::StartTranscriptionJobOutput,
     crate::error::StartTranscriptionJobError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::StartTranscriptionJobError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3712,13 +3836,281 @@ pub fn parse_start_transcription_job_response(
 }
 
 #[allow(clippy::unnecessary_wraps)]
+pub fn parse_tag_resource_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::TagResourceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::TagResourceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::TagResourceError {
+            meta: generic,
+            kind: crate::error::TagResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::TagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::TagResourceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_tag_resource_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::tag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_untag_resource_error(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+    let generic = crate::json_deser::parse_http_generic_error(response)
+        .map_err(crate::error::UntagResourceError::unhandled)?;
+    let error_code = match generic.code() {
+        Some(code) => code,
+        None => return Err(crate::error::UntagResourceError::unhandled(generic)),
+    };
+
+    let _error_message = generic.message().map(|msg| msg.to_owned());
+    Err(match error_code {
+        "BadRequestException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::bad_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_bad_request_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "ConflictException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_conflict_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "InternalFailureException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_internal_failure_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "LimitExceededException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_limit_exceeded_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        "NotFoundException" => crate::error::UntagResourceError {
+            meta: generic,
+            kind: crate::error::UntagResourceErrorKind::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_not_found_exceptionjson_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UntagResourceError::unhandled)?;
+                    output.build()
+                };
+                if (&tmp.message).is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            }),
+        },
+        _ => crate::error::UntagResourceError::generic(generic),
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
+pub fn parse_untag_resource_response(
+    response: &http::Response<bytes::Bytes>,
+) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
+    Ok({
+        #[allow(unused_mut)]
+        let mut output = crate::output::untag_resource_output::Builder::default();
+        let _ = response;
+        output.build()
+    })
+}
+
+#[allow(clippy::unnecessary_wraps)]
 pub fn parse_update_call_analytics_category_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<
     crate::output::UpdateCallAnalyticsCategoryOutput,
     crate::error::UpdateCallAnalyticsCategoryError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateCallAnalyticsCategoryError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -3867,7 +4259,7 @@ pub fn parse_update_medical_vocabulary_error(
     crate::output::UpdateMedicalVocabularyOutput,
     crate::error::UpdateMedicalVocabularyError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateMedicalVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4014,7 +4406,7 @@ pub fn parse_update_vocabulary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateVocabularyOutput, crate::error::UpdateVocabularyError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateVocabularyError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -4155,7 +4547,7 @@ pub fn parse_update_vocabulary_filter_error(
     crate::output::UpdateVocabularyFilterOutput,
     crate::error::UpdateVocabularyFilterError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateVocabularyFilterError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -3,7 +3,7 @@
 pub fn parse_get_entitlements_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetEntitlementsOutput, crate::error::GetEntitlementsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEntitlementsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

@@ -25,9 +25,13 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::AssociateTrackerConsumerError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::AssociateTrackerConsumerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::AssociateTrackerConsumerError>,
+        err: smithy_http::result::SdkError<crate::error::AssociateTrackerConsumerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -60,11 +64,13 @@ impl From<smithy_http::result::SdkError<crate::error::AssociateTrackerConsumerEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchDeleteDevicePositionHistoryError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchDeleteDevicePositionHistoryError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::BatchDeleteDevicePositionHistoryError>,
+        err: smithy_http::result::SdkError<crate::error::BatchDeleteDevicePositionHistoryError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
@@ -79,8 +85,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchDeleteDevicePositionH
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchDeleteGeofenceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchDeleteGeofenceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchDeleteGeofenceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::BatchDeleteGeofenceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchDeleteGeofenceErrorKind::AccessDeniedException(inner) => {
@@ -106,8 +115,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchDeleteGeofenceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchEvaluateGeofencesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchEvaluateGeofencesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchEvaluateGeofencesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchEvaluateGeofencesError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchEvaluateGeofencesErrorKind::AccessDeniedException(inner) => {
@@ -133,8 +147,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchEvaluateGeofencesErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchGetDevicePositionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchGetDevicePositionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchGetDevicePositionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::BatchGetDevicePositionError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchGetDevicePositionErrorKind::AccessDeniedException(inner) => {
@@ -160,8 +179,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchGetDevicePositionErro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchPutGeofenceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchPutGeofenceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchPutGeofenceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::BatchPutGeofenceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchPutGeofenceErrorKind::AccessDeniedException(inner) => {
@@ -187,9 +209,13 @@ impl From<smithy_http::result::SdkError<crate::error::BatchPutGeofenceError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchUpdateDevicePositionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchUpdateDevicePositionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::BatchUpdateDevicePositionError>,
+        err: smithy_http::result::SdkError<crate::error::BatchUpdateDevicePositionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -216,8 +242,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchUpdateDevicePositionE
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CalculateRouteError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CalculateRouteError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CalculateRouteError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CalculateRouteError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CalculateRouteErrorKind::AccessDeniedException(inner) => {
@@ -241,9 +270,13 @@ impl From<smithy_http::result::SdkError<crate::error::CalculateRouteError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateGeofenceCollectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateGeofenceCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::CreateGeofenceCollectionError>,
+        err: smithy_http::result::SdkError<crate::error::CreateGeofenceCollectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -270,8 +303,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateGeofenceCollectionEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateMapError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateMapError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateMapError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateMapErrorKind::AccessDeniedException(inner) => {
@@ -295,8 +331,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateMapError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreatePlaceIndexError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreatePlaceIndexError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreatePlaceIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreatePlaceIndexError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreatePlaceIndexErrorKind::AccessDeniedException(inner) => {
@@ -322,8 +361,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreatePlaceIndexError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateRouteCalculatorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateRouteCalculatorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateRouteCalculatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::CreateRouteCalculatorError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateRouteCalculatorErrorKind::AccessDeniedException(inner) => {
@@ -349,8 +393,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateRouteCalculatorError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateTrackerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateTrackerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateTrackerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateTrackerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateTrackerErrorKind::AccessDeniedException(inner) => {
@@ -374,9 +421,13 @@ impl From<smithy_http::result::SdkError<crate::error::CreateTrackerError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteGeofenceCollectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteGeofenceCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DeleteGeofenceCollectionError>,
+        err: smithy_http::result::SdkError<crate::error::DeleteGeofenceCollectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -403,8 +454,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteGeofenceCollectionEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteMapError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteMapError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteMapError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteMapErrorKind::AccessDeniedException(inner) => {
@@ -428,8 +482,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteMapError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeletePlaceIndexError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeletePlaceIndexError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeletePlaceIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeletePlaceIndexError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeletePlaceIndexErrorKind::AccessDeniedException(inner) => {
@@ -455,8 +512,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeletePlaceIndexError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteRouteCalculatorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteRouteCalculatorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteRouteCalculatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::DeleteRouteCalculatorError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteRouteCalculatorErrorKind::AccessDeniedException(inner) => {
@@ -482,8 +544,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteRouteCalculatorError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteTrackerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTrackerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteTrackerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteTrackerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteTrackerErrorKind::AccessDeniedException(inner) => {
@@ -507,9 +572,13 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteTrackerError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeGeofenceCollectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeGeofenceCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeGeofenceCollectionError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeGeofenceCollectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -536,8 +605,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeGeofenceCollection
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeMapError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeMapError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeMapError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeMapErrorKind::AccessDeniedException(inner) => {
@@ -561,8 +633,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeMapError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribePlaceIndexError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribePlaceIndexError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribePlaceIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribePlaceIndexError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribePlaceIndexErrorKind::AccessDeniedException(inner) => {
@@ -588,9 +663,12 @@ impl From<smithy_http::result::SdkError<crate::error::DescribePlaceIndexError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeRouteCalculatorError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeRouteCalculatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DescribeRouteCalculatorError>,
+        err: smithy_http::result::SdkError<crate::error::DescribeRouteCalculatorError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -617,8 +695,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeRouteCalculatorErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTrackerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTrackerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTrackerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTrackerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeTrackerErrorKind::AccessDeniedException(inner) => {
@@ -642,9 +723,13 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTrackerError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DisassociateTrackerConsumerError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::DisassociateTrackerConsumerError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::DisassociateTrackerConsumerError>,
+        err: smithy_http::result::SdkError<crate::error::DisassociateTrackerConsumerError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -671,8 +756,11 @@ impl From<smithy_http::result::SdkError<crate::error::DisassociateTrackerConsume
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDevicePositionError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetDevicePositionError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDevicePositionError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetDevicePositionError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetDevicePositionErrorKind::AccessDeniedException(inner) => {
@@ -698,9 +786,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetDevicePositionError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetDevicePositionHistoryError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetDevicePositionHistoryError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetDevicePositionHistoryError>,
+        err: smithy_http::result::SdkError<crate::error::GetDevicePositionHistoryError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -727,8 +819,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetDevicePositionHistoryEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetGeofenceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetGeofenceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetGeofenceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetGeofenceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetGeofenceErrorKind::AccessDeniedException(inner) => {
@@ -752,8 +847,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetGeofenceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetMapGlyphsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetMapGlyphsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMapGlyphsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMapGlyphsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetMapGlyphsErrorKind::AccessDeniedException(inner) => {
@@ -777,8 +875,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetMapGlyphsError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetMapSpritesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetMapSpritesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMapSpritesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMapSpritesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetMapSpritesErrorKind::AccessDeniedException(inner) => {
@@ -802,8 +903,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetMapSpritesError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetMapStyleDescriptorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetMapStyleDescriptorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMapStyleDescriptorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetMapStyleDescriptorError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetMapStyleDescriptorErrorKind::AccessDeniedException(inner) => {
@@ -829,8 +935,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetMapStyleDescriptorError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetMapTileError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetMapTileError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetMapTileError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetMapTileError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetMapTileErrorKind::AccessDeniedException(inner) => {
@@ -854,8 +963,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetMapTileError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListDevicePositionsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListDevicePositionsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListDevicePositionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListDevicePositionsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListDevicePositionsErrorKind::AccessDeniedException(inner) => {
@@ -878,9 +990,12 @@ impl From<smithy_http::result::SdkError<crate::error::ListDevicePositionsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListGeofenceCollectionsError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListGeofenceCollectionsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::ListGeofenceCollectionsError>,
+        err: smithy_http::result::SdkError<crate::error::ListGeofenceCollectionsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -904,8 +1019,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListGeofenceCollectionsErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListGeofencesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListGeofencesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListGeofencesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListGeofencesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListGeofencesErrorKind::AccessDeniedException(inner) => {
@@ -929,8 +1047,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListGeofencesError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListMapsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListMapsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListMapsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListMapsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListMapsErrorKind::AccessDeniedException(inner) => {
@@ -951,8 +1072,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListMapsError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListPlaceIndexesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListPlaceIndexesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListPlaceIndexesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListPlaceIndexesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListPlaceIndexesErrorKind::AccessDeniedException(inner) => {
@@ -975,8 +1099,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListPlaceIndexesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListRouteCalculatorsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListRouteCalculatorsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListRouteCalculatorsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListRouteCalculatorsError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListRouteCalculatorsErrorKind::AccessDeniedException(inner) => {
@@ -999,8 +1128,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListRouteCalculatorsError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::AccessDeniedException(inner) => {
@@ -1026,8 +1158,13 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTrackerConsumersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTrackerConsumersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTrackerConsumersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::ListTrackerConsumersError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTrackerConsumersErrorKind::AccessDeniedException(inner) => {
@@ -1053,8 +1190,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTrackerConsumersError>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTrackersError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTrackersError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTrackersError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTrackersError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTrackersErrorKind::AccessDeniedException(inner) => {
@@ -1075,8 +1215,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTrackersError>> for Er
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutGeofenceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutGeofenceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutGeofenceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutGeofenceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutGeofenceErrorKind::AccessDeniedException(inner) => {
@@ -1103,9 +1246,13 @@ impl From<smithy_http::result::SdkError<crate::error::PutGeofenceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchPlaceIndexForPositionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchPlaceIndexForPositionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SearchPlaceIndexForPositionError>,
+        err: smithy_http::result::SdkError<crate::error::SearchPlaceIndexForPositionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1132,9 +1279,12 @@ impl From<smithy_http::result::SdkError<crate::error::SearchPlaceIndexForPositio
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::SearchPlaceIndexForTextError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::SearchPlaceIndexForTextError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::SearchPlaceIndexForTextError>,
+        err: smithy_http::result::SdkError<crate::error::SearchPlaceIndexForTextError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1161,8 +1311,11 @@ impl From<smithy_http::result::SdkError<crate::error::SearchPlaceIndexForTextErr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::AccessDeniedException(inner) => {
@@ -1186,8 +1339,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::AccessDeniedException(inner) => {
@@ -1211,9 +1367,13 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateGeofenceCollectionError>> for Error {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateGeofenceCollectionError, R>>
+    for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
     fn from(
-        err: smithy_http::result::SdkError<crate::error::UpdateGeofenceCollectionError>,
+        err: smithy_http::result::SdkError<crate::error::UpdateGeofenceCollectionError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -1240,8 +1400,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateGeofenceCollectionEr
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateMapError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateMapError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateMapError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateMapError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateMapErrorKind::AccessDeniedException(inner) => {
@@ -1265,8 +1428,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateMapError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdatePlaceIndexError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePlaceIndexError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdatePlaceIndexError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdatePlaceIndexError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdatePlaceIndexErrorKind::AccessDeniedException(inner) => {
@@ -1292,8 +1458,13 @@ impl From<smithy_http::result::SdkError<crate::error::UpdatePlaceIndexError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateRouteCalculatorError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateRouteCalculatorError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateRouteCalculatorError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::UpdateRouteCalculatorError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateRouteCalculatorErrorKind::AccessDeniedException(inner) => {
@@ -1319,8 +1490,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateRouteCalculatorError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateTrackerError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTrackerError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateTrackerError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateTrackerError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateTrackerErrorKind::AccessDeniedException(inner) => {

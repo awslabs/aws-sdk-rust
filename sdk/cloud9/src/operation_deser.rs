@@ -6,7 +6,7 @@ pub fn parse_create_environment_ec2_error(
     crate::output::CreateEnvironmentEc2Output,
     crate::error::CreateEnvironmentEC2Error,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEnvironmentEC2Error::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -193,7 +193,7 @@ pub fn parse_create_environment_membership_error(
     crate::output::CreateEnvironmentMembershipOutput,
     crate::error::CreateEnvironmentMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateEnvironmentMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -382,7 +382,7 @@ pub fn parse_delete_environment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteEnvironmentOutput, crate::error::DeleteEnvironmentError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEnvironmentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -562,7 +562,7 @@ pub fn parse_delete_environment_membership_error(
     crate::output::DeleteEnvironmentMembershipOutput,
     crate::error::DeleteEnvironmentMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteEnvironmentMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -748,7 +748,7 @@ pub fn parse_describe_environment_memberships_error(
     crate::output::DescribeEnvironmentMembershipsOutput,
     crate::error::DescribeEnvironmentMembershipsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEnvironmentMembershipsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -937,7 +937,7 @@ pub fn parse_describe_environments_error(
     crate::output::DescribeEnvironmentsOutput,
     crate::error::DescribeEnvironmentsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEnvironmentsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1124,7 +1124,7 @@ pub fn parse_describe_environment_status_error(
     crate::output::DescribeEnvironmentStatusOutput,
     crate::error::DescribeEnvironmentStatusError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeEnvironmentStatusError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1316,7 +1316,7 @@ pub fn parse_list_environments_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListEnvironmentsOutput, crate::error::ListEnvironmentsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListEnvironmentsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1499,7 +1499,7 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1598,7 +1598,7 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1711,7 +1711,7 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1825,7 +1825,7 @@ pub fn parse_update_environment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateEnvironmentOutput, crate::error::UpdateEnvironmentError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateEnvironmentError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2005,7 +2005,7 @@ pub fn parse_update_environment_membership_error(
     crate::output::UpdateEnvironmentMembershipOutput,
     crate::error::UpdateEnvironmentMembershipError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateEnvironmentMembershipError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

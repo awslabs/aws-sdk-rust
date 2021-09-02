@@ -21,8 +21,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::BatchGetTracesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::BatchGetTracesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::BatchGetTracesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::BatchGetTracesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::BatchGetTracesErrorKind::InvalidRequestException(inner) => {
@@ -37,8 +40,11 @@ impl From<smithy_http::result::SdkError<crate::error::BatchGetTracesError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateGroupErrorKind::InvalidRequestException(inner) => {
@@ -53,8 +59,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateGroupError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CreateSamplingRuleError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CreateSamplingRuleError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CreateSamplingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CreateSamplingRuleError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CreateSamplingRuleErrorKind::InvalidRequestException(inner) => {
@@ -74,8 +83,11 @@ impl From<smithy_http::result::SdkError<crate::error::CreateSamplingRuleError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteGroupErrorKind::InvalidRequestException(inner) => {
@@ -90,8 +102,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteGroupError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DeleteSamplingRuleError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DeleteSamplingRuleError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DeleteSamplingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DeleteSamplingRuleError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DeleteSamplingRuleErrorKind::InvalidRequestException(inner) => {
@@ -108,8 +123,11 @@ impl From<smithy_http::result::SdkError<crate::error::DeleteSamplingRuleError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetEncryptionConfigError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetEncryptionConfigError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetEncryptionConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetEncryptionConfigError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetEncryptionConfigErrorKind::InvalidRequestException(inner) => {
@@ -126,8 +144,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetEncryptionConfigError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetGroupErrorKind::InvalidRequestException(inner) => {
@@ -142,8 +163,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetGroupError>> for Error 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetGroupsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetGroupsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetGroupsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetGroupsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetGroupsErrorKind::InvalidRequestException(inner) => {
@@ -158,8 +182,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetGroupsError>> for Error
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetInsightError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInsightError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetInsightErrorKind::InvalidRequestException(inner) => {
@@ -174,8 +201,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetInsightError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetInsightEventsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightEventsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInsightEventsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightEventsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetInsightEventsErrorKind::InvalidRequestException(inner) => {
@@ -192,8 +222,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetInsightEventsError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetInsightImpactGraphError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightImpactGraphError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInsightImpactGraphError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::GetInsightImpactGraphError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetInsightImpactGraphErrorKind::InvalidRequestException(inner) => {
@@ -210,8 +245,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetInsightImpactGraphError
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetInsightSummariesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightSummariesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetInsightSummariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetInsightSummariesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetInsightSummariesErrorKind::InvalidRequestException(inner) => {
@@ -228,8 +266,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetInsightSummariesError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSamplingRulesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetSamplingRulesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSamplingRulesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetSamplingRulesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSamplingRulesErrorKind::InvalidRequestException(inner) => {
@@ -246,11 +287,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetSamplingRulesError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSamplingStatisticSummariesError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSamplingStatisticSummariesError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetSamplingStatisticSummariesError>,
+        err: smithy_http::result::SdkError<crate::error::GetSamplingStatisticSummariesError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -268,8 +311,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetSamplingStatisticSummar
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSamplingTargetsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetSamplingTargetsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSamplingTargetsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetSamplingTargetsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSamplingTargetsErrorKind::InvalidRequestException(inner) => {
@@ -286,8 +332,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetSamplingTargetsError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetServiceGraphError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetServiceGraphError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetServiceGraphError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetServiceGraphError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetServiceGraphErrorKind::InvalidRequestException(inner) => {
@@ -302,11 +351,13 @@ impl From<smithy_http::result::SdkError<crate::error::GetServiceGraphError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTimeSeriesServiceStatisticsError>>
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTimeSeriesServiceStatisticsError, R>>
     for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
 {
     fn from(
-        err: smithy_http::result::SdkError<crate::error::GetTimeSeriesServiceStatisticsError>,
+        err: smithy_http::result::SdkError<crate::error::GetTimeSeriesServiceStatisticsError, R>,
     ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
@@ -324,8 +375,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTimeSeriesServiceStatis
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTraceGraphError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetTraceGraphError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTraceGraphError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetTraceGraphError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTraceGraphErrorKind::InvalidRequestException(inner) => {
@@ -340,8 +394,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTraceGraphError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetTraceSummariesError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetTraceSummariesError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetTraceSummariesError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetTraceSummariesError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetTraceSummariesErrorKind::InvalidRequestException(inner) => {
@@ -358,8 +415,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetTraceSummariesError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
@@ -379,8 +439,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutEncryptionConfigError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutEncryptionConfigError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutEncryptionConfigError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutEncryptionConfigError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutEncryptionConfigErrorKind::InvalidRequestException(inner) => {
@@ -397,8 +460,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutEncryptionConfigError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutTelemetryRecordsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutTelemetryRecordsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutTelemetryRecordsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutTelemetryRecordsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutTelemetryRecordsErrorKind::InvalidRequestException(inner) => {
@@ -415,8 +481,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutTelemetryRecordsError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutTraceSegmentsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutTraceSegmentsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutTraceSegmentsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutTraceSegmentsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutTraceSegmentsErrorKind::InvalidRequestException(inner) => {
@@ -433,8 +502,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutTraceSegmentsError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
@@ -455,8 +527,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
@@ -474,8 +549,11 @@ impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for E
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateGroupError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateGroupError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateGroupError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateGroupError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateGroupErrorKind::InvalidRequestException(inner) => {
@@ -490,8 +568,11 @@ impl From<smithy_http::result::SdkError<crate::error::UpdateGroupError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UpdateSamplingRuleError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UpdateSamplingRuleError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UpdateSamplingRuleError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UpdateSamplingRuleError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UpdateSamplingRuleErrorKind::InvalidRequestException(inner) => {

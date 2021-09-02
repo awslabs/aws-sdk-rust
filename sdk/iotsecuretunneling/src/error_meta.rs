@@ -15,8 +15,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CloseTunnelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CloseTunnelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CloseTunnelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CloseTunnelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CloseTunnelErrorKind::ResourceNotFoundException(inner) => {
@@ -28,8 +31,11 @@ impl From<smithy_http::result::SdkError<crate::error::CloseTunnelError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::DescribeTunnelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTunnelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::DescribeTunnelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::DescribeTunnelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::DescribeTunnelErrorKind::ResourceNotFoundException(inner) => {
@@ -41,8 +47,11 @@ impl From<smithy_http::result::SdkError<crate::error::DescribeTunnelError>> for 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTagsForResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
@@ -56,8 +65,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTagsForResourceError>>
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListTunnelsError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListTunnelsError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListTunnelsError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListTunnelsError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListTunnelsErrorKind::Unhandled(inner) => Error::Unhandled(inner),
@@ -66,8 +78,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListTunnelsError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::OpenTunnelError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::OpenTunnelError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::OpenTunnelError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::OpenTunnelError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::OpenTunnelErrorKind::LimitExceededException(inner) => {
@@ -79,8 +94,11 @@ impl From<smithy_http::result::SdkError<crate::error::OpenTunnelError>> for Erro
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::TagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::TagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
@@ -92,8 +110,11 @@ impl From<smithy_http::result::SdkError<crate::error::TagResourceError>> for Err
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::UntagResourceError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::UntagResourceError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::UntagResourceError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {

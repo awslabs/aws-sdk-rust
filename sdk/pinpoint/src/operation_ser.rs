@@ -595,410 +595,410 @@ pub fn ser_payload_update_voice_template_input(
 
 pub fn serialize_member_create_app_input_create_application_request(
     input: &crate::model::CreateApplicationRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_create_application_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_campaign_input_write_campaign_request(
     input: &crate::model::WriteCampaignRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_campaign_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_email_template_input_email_template_request(
     input: &crate::model::EmailTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_email_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_export_job_input_export_job_request(
     input: &crate::model::ExportJobRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_export_job_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_import_job_input_import_job_request(
     input: &crate::model::ImportJobRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_import_job_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_journey_input_write_journey_request(
     input: &crate::model::WriteJourneyRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_journey_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_push_template_input_push_notification_template_request(
     input: &crate::model::PushNotificationTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_push_notification_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_recommender_configuration_input_create_recommender_configuration(
     input: &crate::model::CreateRecommenderConfigurationShape,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_create_recommender_configuration_shape(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_segment_input_write_segment_request(
     input: &crate::model::WriteSegmentRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_segment_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_sms_template_input_sms_template_request(
     input: &crate::model::SmsTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_sms_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_create_voice_template_input_voice_template_request(
     input: &crate::model::VoiceTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_voice_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_phone_number_validate_input_number_validate_request(
     input: &crate::model::NumberValidateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_number_validate_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_put_events_input_events_request(
     input: &crate::model::EventsRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_events_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_put_event_stream_input_write_event_stream(
     input: &crate::model::WriteEventStream,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_event_stream(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_remove_attributes_input_update_attributes_request(
     input: &crate::model::UpdateAttributesRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_update_attributes_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_send_messages_input_message_request(
     input: &crate::model::MessageRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_message_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_send_users_messages_input_send_users_message_request(
     input: &crate::model::SendUsersMessageRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_send_users_message_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_tag_resource_input_tags_model(
     input: &crate::model::TagsModel,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_tags_model(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_adm_channel_input_adm_channel_request(
     input: &crate::model::AdmChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_adm_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_apns_channel_input_apns_channel_request(
     input: &crate::model::ApnsChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_apns_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_apns_sandbox_channel_input_apns_sandbox_channel_request(
     input: &crate::model::ApnsSandboxChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_apns_sandbox_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_apns_voip_channel_input_apns_voip_channel_request(
     input: &crate::model::ApnsVoipChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_apns_voip_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_apns_voip_sandbox_channel_input_apns_voip_sandbox_channel_request(
     input: &crate::model::ApnsVoipSandboxChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_apns_voip_sandbox_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_application_settings_input_write_application_settings_request(
     input: &crate::model::WriteApplicationSettingsRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_application_settings_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_baidu_channel_input_baidu_channel_request(
     input: &crate::model::BaiduChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_baidu_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_campaign_input_write_campaign_request(
     input: &crate::model::WriteCampaignRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_campaign_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_email_channel_input_email_channel_request(
     input: &crate::model::EmailChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_email_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_email_template_input_email_template_request(
     input: &crate::model::EmailTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_email_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_endpoint_input_endpoint_request(
     input: &crate::model::EndpointRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_endpoint_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_endpoints_batch_input_endpoint_batch_request(
     input: &crate::model::EndpointBatchRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_endpoint_batch_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_gcm_channel_input_gcm_channel_request(
     input: &crate::model::GcmChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_gcm_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_journey_input_write_journey_request(
     input: &crate::model::WriteJourneyRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_journey_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_journey_state_input_journey_state_request(
     input: &crate::model::JourneyStateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_journey_state_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_push_template_input_push_notification_template_request(
     input: &crate::model::PushNotificationTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_push_notification_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_recommender_configuration_input_update_recommender_configuration(
     input: &crate::model::UpdateRecommenderConfigurationShape,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_update_recommender_configuration_shape(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_segment_input_write_segment_request(
     input: &crate::model::WriteSegmentRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_write_segment_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_sms_channel_input_sms_channel_request(
     input: &crate::model::SmsChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_sms_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_sms_template_input_sms_template_request(
     input: &crate::model::SmsTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_sms_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_template_active_version_input_template_active_version_request(
     input: &crate::model::TemplateActiveVersionRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_template_active_version_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_voice_channel_input_voice_channel_request(
     input: &crate::model::VoiceChannelRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_voice_channel_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }
 
 pub fn serialize_member_update_voice_template_input_voice_template_request(
     input: &crate::model::VoiceTemplateRequest,
-) -> Result<smithy_http::body::SdkBody, smithy_types::Error> {
+) -> std::result::Result<std::vec::Vec<u8>, smithy_types::Error> {
     let mut out = String::new();
     let mut object = smithy_json::serialize::JsonObjectWriter::new(&mut out);
     crate::json_ser::serialize_structure_voice_template_request(&mut object, input);
     object.finish();
-    Ok(smithy_http::body::SdkBody::from(out))
+    Ok(out.into_bytes())
 }

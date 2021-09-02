@@ -14,3 +14,4 @@ tokio = { version = "1.6", features = ["time"], optional = true }
 
 [dev-dependencies]
 tokio = { version = "1.6", features = ["rt", "macros"] }
+futures-util = "0.3.16"

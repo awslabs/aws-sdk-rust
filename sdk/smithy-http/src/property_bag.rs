@@ -13,6 +13,8 @@ use std::any::{Any, TypeId};
 use std::collections::HashMap;
 use std::fmt;
 use std::hash::{BuildHasherDefault, Hasher};
+use std::ops::{Deref, DerefMut};
+use std::sync::{Arc, Mutex};
 
 type AnyMap = HashMap<TypeId, Box<dyn Any + Send + Sync>, BuildHasherDefault<IdHasher>>;
 
@@ -64,22 +66,19 @@ impl PropertyBag {
 
     /// Insert a type into this `PropertyBag`.
     ///
-    /// If a extension of this type already existed, it will
-    /// be returned.
-    ///
-    /// Generally, this method should not be called directly. The best practice is
-    /// calling this method via an extension trait on `PropertyBag`.
+    /// If a value of this type already existed, it will be returned.
     ///
     /// # Example
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
-    /// let mut ext = PropertyBag::new();
+    /// let mut props = PropertyBag::new();
+    ///
     /// #[derive(Debug, Eq, PartialEq)]
     /// struct Endpoint(&'static str);
-    /// assert!(ext.insert(Endpoint("dynamo.amazon.com")).is_none());
+    /// assert!(props.insert(Endpoint("dynamo.amazon.com")).is_none());
     /// assert_eq!(
-    ///     ext.insert(Endpoint("kinesis.amazon.com")),
+    ///     props.insert(Endpoint("kinesis.amazon.com")),
     ///     Some(Endpoint("dynamo.amazon.com"))
     /// );
     /// ```
@@ -100,11 +99,11 @@ impl PropertyBag {
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
-    /// let mut ext = PropertyBag::new();
-    /// assert!(ext.get::<i32>().is_none());
-    /// ext.insert(5i32);
+    /// let mut props = PropertyBag::new();
+    /// assert!(props.get::<i32>().is_none());
+    /// props.insert(5i32);
     ///
-    /// assert_eq!(ext.get::<i32>(), Some(&5i32));
+    /// assert_eq!(props.get::<i32>(), Some(&5i32));
     /// ```
     pub fn get<T: Send + Sync + 'static>(&self) -> Option<&T> {
         self.map
@@ -118,11 +117,11 @@ impl PropertyBag {
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
-    /// let mut ext = PropertyBag::new();
-    /// ext.insert(String::from("Hello"));
-    /// ext.get_mut::<String>().unwrap().push_str(" World");
+    /// let mut props = PropertyBag::new();
+    /// props.insert(String::from("Hello"));
+    /// props.get_mut::<String>().unwrap().push_str(" World");
     ///
-    /// assert_eq!(ext.get::<String>().unwrap(), "Hello World");
+    /// assert_eq!(props.get::<String>().unwrap(), "Hello World");
     /// ```
     pub fn get_mut<T: Send + Sync + 'static>(&mut self) -> Option<&mut T> {
         self.map
@@ -132,16 +131,16 @@ impl PropertyBag {
 
     /// Remove a type from this `PropertyBag`.
     ///
-    /// If a extension of this type existed, it will be returned.
+    /// If a value of this type existed, it will be returned.
     ///
     /// # Example
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
-    /// let mut ext = PropertyBag::new();
-    /// ext.insert(5i32);
-    /// assert_eq!(ext.remove::<i32>(), Some(5i32));
-    /// assert!(ext.get::<i32>().is_none());
+    /// let mut props = PropertyBag::new();
+    /// props.insert(5i32);
+    /// assert_eq!(props.remove::<i32>(), Some(5i32));
+    /// assert!(props.get::<i32>().is_none());
     /// ```
     pub fn remove<T: Send + Sync + 'static>(&mut self) -> Option<T> {
         self.map.remove(&TypeId::of::<T>()).and_then(|boxed| {
@@ -158,12 +157,11 @@ impl PropertyBag {
     ///
     /// ```
     /// # use smithy_http::property_bag::PropertyBag;
-    /// let mut ext = PropertyBag::new();
-    /// ext.insert(5i32);
-    /// ext.clear();
+    /// let mut props = PropertyBag::new();
+    /// props.insert(5i32);
+    /// props.clear();
     ///
-    /// assert!(ext.get::<i32>().is_none());
-    /// ```
+    /// assert!(props.get::<i32>().is_none());
     #[inline]
     pub fn clear(&mut self) {
         self.map.clear();
@@ -176,6 +174,59 @@ impl fmt::Debug for PropertyBag {
     }
 }
 
+/// A wrapper of [`PropertyBag`] that can be safely shared across threads and cheaply cloned.
+///
+/// To access properties, use either `acquire` or `acquire_mut`. This can be one line for
+/// single property accesses, for example:
+/// ```rust
+/// # use smithy_http::property_bag::SharedPropertyBag;
+/// # let properties = SharedPropertyBag::new();
+/// let my_string = properties.acquire().get::<String>();
+/// ```
+///
+/// For multiple accesses, the acquire result should be stored as a local since calling
+/// acquire repeatedly will be slower than calling it once:
+/// ```rust
+/// # use smithy_http::property_bag::SharedPropertyBag;
+/// # let properties = SharedPropertyBag::new();
+/// let props = properties.acquire();
+/// let my_string = props.get::<String>();
+/// let my_vec = props.get::<Vec<String>>();
+/// ```
+///
+/// Use `acquire_mut` to insert properties into the bag:
+/// ```rust
+/// # use smithy_http::property_bag::SharedPropertyBag;
+/// # let properties = SharedPropertyBag::new();
+/// properties.acquire_mut().insert("example".to_string());
+/// ```
+#[derive(Clone, Debug, Default)]
+pub struct SharedPropertyBag(Arc<Mutex<PropertyBag>>);
+
+impl SharedPropertyBag {
+    /// Create an empty `SharedPropertyBag`.
+    pub fn new() -> Self {
+        SharedPropertyBag(Arc::new(Mutex::new(PropertyBag::new())))
+    }
+
+    /// Acquire an immutable reference to the property bag.
+    pub fn acquire(&self) -> impl Deref<Target = PropertyBag> + '_ {
+        self.0.lock().unwrap()
+    }
+
+    /// Acquire a mutable reference to the property bag.
+    pub fn acquire_mut(&self) -> impl DerefMut<Target = PropertyBag> + '_ {
+        self.0.lock().unwrap()
+    }
+}
+
+impl From<PropertyBag> for SharedPropertyBag {
+    fn from(bag: PropertyBag) -> Self {
+        SharedPropertyBag(Arc::new(Mutex::new(bag)))
+    }
+}
+
+#[cfg(test)]
 #[test]
 fn test_extensions() {
     #[derive(Debug, PartialEq)]

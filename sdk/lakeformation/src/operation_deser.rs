@@ -6,7 +6,7 @@ pub fn parse_add_lf_tags_to_resource_error(
     crate::output::AddLfTagsToResourceOutput,
     crate::error::AddLFTagsToResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::AddLFTagsToResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -170,7 +170,7 @@ pub fn parse_batch_grant_permissions_error(
     crate::output::BatchGrantPermissionsOutput,
     crate::error::BatchGrantPermissionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchGrantPermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -253,7 +253,7 @@ pub fn parse_batch_revoke_permissions_error(
     crate::output::BatchRevokePermissionsOutput,
     crate::error::BatchRevokePermissionsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::BatchRevokePermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -337,7 +337,7 @@ pub fn parse_batch_revoke_permissions_response(
 pub fn parse_create_lf_tag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLfTagOutput, crate::error::CreateLFTagError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::CreateLFTagError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -490,7 +490,7 @@ pub fn parse_create_lf_tag_response(
 pub fn parse_delete_lf_tag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLfTagOutput, crate::error::DeleteLFTagError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeleteLFTagError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -628,7 +628,7 @@ pub fn parse_deregister_resource_error(
     crate::output::DeregisterResourceOutput,
     crate::error::DeregisterResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DeregisterResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -746,7 +746,7 @@ pub fn parse_describe_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeResourceOutput, crate::error::DescribeResourceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::DescribeResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -867,7 +867,7 @@ pub fn parse_get_data_lake_settings_error(
     crate::output::GetDataLakeSettingsOutput,
     crate::error::GetDataLakeSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetDataLakeSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -970,7 +970,7 @@ pub fn parse_get_effective_permissions_for_path_error(
     crate::output::GetEffectivePermissionsForPathOutput,
     crate::error::GetEffectivePermissionsForPathError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetEffectivePermissionsForPathError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1096,7 +1096,7 @@ pub fn parse_get_effective_permissions_for_path_response(
 pub fn parse_get_lf_tag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLfTagOutput, crate::error::GetLFTagError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetLFTagError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1234,7 +1234,7 @@ pub fn parse_get_resource_lf_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetResourceLfTagsOutput, crate::error::GetResourceLFTagsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GetResourceLFTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1397,7 +1397,7 @@ pub fn parse_grant_permissions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GrantPermissionsOutput, crate::error::GrantPermissionsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::GrantPermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1487,7 +1487,7 @@ pub fn parse_grant_permissions_response(
 pub fn parse_list_lf_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLfTagsOutput, crate::error::ListLFTagsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListLFTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1603,7 +1603,7 @@ pub fn parse_list_lf_tags_response(
 pub fn parse_list_permissions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPermissionsOutput, crate::error::ListPermissionsError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListPermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1699,7 +1699,7 @@ pub fn parse_list_permissions_response(
 pub fn parse_list_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::ListResourcesError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1798,7 +1798,7 @@ pub fn parse_put_data_lake_settings_error(
     crate::output::PutDataLakeSettingsOutput,
     crate::error::PutDataLakeSettingsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::PutDataLakeSettingsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1873,7 +1873,7 @@ pub fn parse_register_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterResourceOutput, crate::error::RegisterResourceError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RegisterResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -1991,7 +1991,7 @@ pub fn parse_remove_lf_tags_from_resource_error(
     crate::output::RemoveLfTagsFromResourceOutput,
     crate::error::RemoveLFTagsFromResourceError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RemoveLFTagsFromResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2180,7 +2180,7 @@ pub fn parse_revoke_permissions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RevokePermissionsOutput, crate::error::RevokePermissionsError>
 {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::RevokePermissionsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2273,7 +2273,7 @@ pub fn parse_search_databases_by_lf_tags_error(
     crate::output::SearchDatabasesByLfTagsOutput,
     crate::error::SearchDatabasesByLFTagsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchDatabasesByLFTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2444,7 +2444,7 @@ pub fn parse_search_tables_by_lf_tags_error(
     crate::output::SearchTablesByLfTagsOutput,
     crate::error::SearchTablesByLFTagsError,
 > {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::SearchTablesByLFTagsError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2608,7 +2608,7 @@ pub fn parse_search_tables_by_lf_tags_response(
 pub fn parse_update_lf_tag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateLfTagOutput, crate::error::UpdateLFTagError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateLFTagError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,
@@ -2761,7 +2761,7 @@ pub fn parse_update_lf_tag_response(
 pub fn parse_update_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateResourceOutput, crate::error::UpdateResourceError> {
-    let generic = crate::json_deser::parse_generic_error(&response)
+    let generic = crate::json_deser::parse_http_generic_error(response)
         .map_err(crate::error::UpdateResourceError::unhandled)?;
     let error_code = match generic.code() {
         Some(code) => code,

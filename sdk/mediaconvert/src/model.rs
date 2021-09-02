@@ -8370,9 +8370,9 @@ pub struct Mpeg2Settings {
     pub framerate_numerator: i32,
     /// Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.
     pub gop_closed_cadence: i32,
-    /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+    /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
     pub gop_size: f64,
-    /// Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+    /// Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
     pub gop_size_units: std::option::Option<crate::model::Mpeg2GopSizeUnits>,
     /// Percentage of the buffer that should initially be filled (HRD buffer model).
     pub hrd_buffer_initial_fill_percentage: i32,
@@ -8386,7 +8386,7 @@ pub struct Mpeg2Settings {
     pub max_bitrate: i32,
     /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub min_i_interval: i32,
-    /// Number of B-frames between reference frames.
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     pub number_b_frames_between_reference_frames: i32,
     /// Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the parNumerator and parDenominator settings.
     pub par_control: std::option::Option<crate::model::Mpeg2ParControl>,
@@ -8629,7 +8629,7 @@ pub mod mpeg2_settings {
             self.gop_closed_cadence = input;
             self
         }
-        /// GOP Length (keyframe interval) in frames or seconds. Must be greater than zero.
+        /// Specify the interval between keyframes, in seconds or frames, for this output. Default: 12 Related settings: When you specify the GOP size in seconds, set GOP mode control (GopSizeUnits) to Specified, seconds (SECONDS). The default value for GOP mode control (GopSizeUnits) is Frames (FRAMES).
         pub fn gop_size(mut self, input: f64) -> Self {
             self.gop_size = Some(input);
             self
@@ -8638,7 +8638,7 @@ pub mod mpeg2_settings {
             self.gop_size = input;
             self
         }
-        /// Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+        /// Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
         pub fn gop_size_units(mut self, input: crate::model::Mpeg2GopSizeUnits) -> Self {
             self.gop_size_units = Some(input);
             self
@@ -8713,7 +8713,7 @@ pub mod mpeg2_settings {
             self.min_i_interval = input;
             self
         }
-        /// Number of B-frames between reference frames.
+        /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
         pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
             self.number_b_frames_between_reference_frames = Some(input);
             self
@@ -9576,7 +9576,7 @@ impl AsRef<str> for Mpeg2InterlaceMode {
     }
 }
 
-/// Indicates if the GOP Size in MPEG2 is specified in frames or seconds. If seconds the system will convert the GOP Size into a frame count at run time.
+/// Specify the units for GOP size (GopSize). If you don't specify a value here, by default the encoder measures GOP size in frames.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -9998,7 +9998,7 @@ pub struct H265Settings {
     pub max_bitrate: i32,
     /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub min_i_interval: i32,
-    /// Number of B-frames between reference frames.
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     pub number_b_frames_between_reference_frames: i32,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     pub number_reference_frames: i32,
@@ -10398,7 +10398,7 @@ pub mod h265_settings {
             self.min_i_interval = input;
             self
         }
-        /// Number of B-frames between reference frames.
+        /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
         pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
             self.number_b_frames_between_reference_frames = Some(input);
             self
@@ -12191,7 +12191,7 @@ pub struct H264Settings {
     pub dynamic_sub_gop: std::option::Option<crate::model::H264DynamicSubGop>,
     /// Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
     pub entropy_encoding: std::option::Option<crate::model::H264EntropyEncoding>,
-    /// Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
+    /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
     pub field_encoding: std::option::Option<crate::model::H264FieldEncoding>,
     /// Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
     pub flicker_adaptive_quantization:
@@ -12223,7 +12223,7 @@ pub struct H264Settings {
     pub max_bitrate: i32,
     /// Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. This setting is only used when Scene Change Detect is enabled. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1
     pub min_i_interval: i32,
-    /// Number of B-frames between reference frames.
+    /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
     pub number_b_frames_between_reference_frames: i32,
     /// Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.
     pub number_reference_frames: i32,
@@ -12455,7 +12455,7 @@ pub mod h264_settings {
             self.entropy_encoding = input;
             self
         }
-        /// Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
+        /// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
         pub fn field_encoding(mut self, input: crate::model::H264FieldEncoding) -> Self {
             self.field_encoding = Some(input);
             self
@@ -12620,7 +12620,7 @@ pub mod h264_settings {
             self.min_i_interval = input;
             self
         }
-        /// Number of B-frames between reference frames.
+        /// Specify the number of B-frames that MediaConvert puts between reference frames in this output. Valid values are whole numbers from 0 through 7. When you don't specify a value, MediaConvert defaults to 2.
         pub fn number_b_frames_between_reference_frames(mut self, input: i32) -> Self {
             self.number_b_frames_between_reference_frames = Some(input);
             self
@@ -13926,7 +13926,7 @@ impl AsRef<str> for H264FlickerAdaptiveQuantization {
     }
 }
 
-/// Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
+/// The video encoding method for your MPEG-4 AVC output. Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields. Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for interlaced outputs.
 #[non_exhaustive]
 #[derive(
     std::clone::Clone,
@@ -13939,6 +13939,7 @@ impl AsRef<str> for H264FlickerAdaptiveQuantization {
 )]
 pub enum H264FieldEncoding {
     ForceField,
+    Mbaff,
     Paff,
     /// Unknown contains new variants that have been added since this code was generated.
     Unknown(String),
@@ -13947,6 +13948,7 @@ impl std::convert::From<&str> for H264FieldEncoding {
     fn from(s: &str) -> Self {
         match s {
             "FORCE_FIELD" => H264FieldEncoding::ForceField,
+            "MBAFF" => H264FieldEncoding::Mbaff,
             "PAFF" => H264FieldEncoding::Paff,
             other => H264FieldEncoding::Unknown(other.to_owned()),
         }
@@ -13963,12 +13965,13 @@ impl H264FieldEncoding {
     pub fn as_str(&self) -> &str {
         match self {
             H264FieldEncoding::ForceField => "FORCE_FIELD",
+            H264FieldEncoding::Mbaff => "MBAFF",
             H264FieldEncoding::Paff => "PAFF",
             H264FieldEncoding::Unknown(s) => s.as_ref(),
         }
     }
     pub fn values() -> &'static [&'static str] {
-        &["FORCE_FIELD", "PAFF"]
+        &["FORCE_FIELD", "MBAFF", "PAFF"]
     }
 }
 impl AsRef<str> for H264FieldEncoding {
@@ -17484,6 +17487,8 @@ pub struct M3u8Settings {
     pub audio_frames_per_pes: i32,
     /// Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation.
     pub audio_pids: std::option::Option<std::vec::Vec<i32>>,
+    /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+    pub data_pts_control: std::option::Option<crate::model::M3u8DataPtsControl>,
     /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
     pub max_pcr_interval: i32,
     /// If INSERT, Nielsen inaudible tones for media tracking will be detected in the input audio and an equivalent ID3 tag will be inserted in the output.
@@ -17521,6 +17526,7 @@ impl std::fmt::Debug for M3u8Settings {
         formatter.field("audio_duration", &self.audio_duration);
         formatter.field("audio_frames_per_pes", &self.audio_frames_per_pes);
         formatter.field("audio_pids", &self.audio_pids);
+        formatter.field("data_pts_control", &self.data_pts_control);
         formatter.field("max_pcr_interval", &self.max_pcr_interval);
         formatter.field("nielsen_id3", &self.nielsen_id3);
         formatter.field("pat_interval", &self.pat_interval);
@@ -17548,6 +17554,7 @@ pub mod m3u8_settings {
         pub(crate) audio_duration: std::option::Option<crate::model::M3u8AudioDuration>,
         pub(crate) audio_frames_per_pes: std::option::Option<i32>,
         pub(crate) audio_pids: std::option::Option<std::vec::Vec<i32>>,
+        pub(crate) data_pts_control: std::option::Option<crate::model::M3u8DataPtsControl>,
         pub(crate) max_pcr_interval: std::option::Option<i32>,
         pub(crate) nielsen_id3: std::option::Option<crate::model::M3u8NielsenId3>,
         pub(crate) pat_interval: std::option::Option<i32>,
@@ -17594,6 +17601,18 @@ pub mod m3u8_settings {
         }
         pub fn set_audio_pids(mut self, input: std::option::Option<std::vec::Vec<i32>>) -> Self {
             self.audio_pids = input;
+            self
+        }
+        /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+        pub fn data_pts_control(mut self, input: crate::model::M3u8DataPtsControl) -> Self {
+            self.data_pts_control = Some(input);
+            self
+        }
+        pub fn set_data_pts_control(
+            mut self,
+            input: std::option::Option<crate::model::M3u8DataPtsControl>,
+        ) -> Self {
+            self.data_pts_control = input;
             self
         }
         /// Specify the maximum time, in milliseconds, between Program Clock References (PCRs) inserted into the transport stream.
@@ -17749,6 +17768,7 @@ pub mod m3u8_settings {
                 audio_duration: self.audio_duration,
                 audio_frames_per_pes: self.audio_frames_per_pes.unwrap_or_default(),
                 audio_pids: self.audio_pids,
+                data_pts_control: self.data_pts_control,
                 max_pcr_interval: self.max_pcr_interval.unwrap_or_default(),
                 nielsen_id3: self.nielsen_id3,
                 pat_interval: self.pat_interval.unwrap_or_default(),
@@ -17979,6 +17999,57 @@ impl AsRef<str> for M3u8NielsenId3 {
     }
 }
 
+/// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum M3u8DataPtsControl {
+    AlignToVideo,
+    Auto,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for M3u8DataPtsControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALIGN_TO_VIDEO" => M3u8DataPtsControl::AlignToVideo,
+            "AUTO" => M3u8DataPtsControl::Auto,
+            other => M3u8DataPtsControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for M3u8DataPtsControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(M3u8DataPtsControl::from(s))
+    }
+}
+impl M3u8DataPtsControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            M3u8DataPtsControl::AlignToVideo => "ALIGN_TO_VIDEO",
+            M3u8DataPtsControl::Auto => "AUTO",
+            M3u8DataPtsControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALIGN_TO_VIDEO", "AUTO"]
+    }
+}
+impl AsRef<str> for M3u8DataPtsControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
 /// Specify this setting only when your output will be consumed by a downstream repackaging workflow that is sensitive to very small duration differences between video and audio. For this situation, choose Match video duration (MATCH_VIDEO_DURATION). In all other cases, keep the default value, Default codec duration (DEFAULT_CODEC_DURATION). When you choose Match video duration, MediaConvert pads the output audio streams with silence or trims them to ensure that the total duration of each audio stream is at least as long as the total duration of the video stream. After padding or trimming, the audio stream duration is no more than one frame longer than the video stream. MediaConvert applies audio padding or trimming only to the end of the last segment of the output. For unsegmented outputs, MediaConvert adds padding only to the end of the file. When you keep the default value, any minor discrepancies between audio and video duration will depend on your output audio codec.
 #[non_exhaustive]
 #[derive(
@@ -18046,6 +18117,8 @@ pub struct M2tsSettings {
     pub bitrate: i32,
     /// Controls what buffer model to use for accurate interleaving. If set to MULTIPLEX, use multiplex  buffer model. If set to NONE, this can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
     pub buffer_model: std::option::Option<crate::model::M2tsBufferModel>,
+    /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+    pub data_pts_control: std::option::Option<crate::model::M2tsDataPtsControl>,
     /// Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
     pub dvb_nit_settings: std::option::Option<crate::model::DvbNitSettings>,
     /// Use these settings to insert a DVB Service Description Table (SDT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
@@ -18118,6 +18191,7 @@ impl std::fmt::Debug for M2tsSettings {
         formatter.field("audio_pids", &self.audio_pids);
         formatter.field("bitrate", &self.bitrate);
         formatter.field("buffer_model", &self.buffer_model);
+        formatter.field("data_pts_control", &self.data_pts_control);
         formatter.field("dvb_nit_settings", &self.dvb_nit_settings);
         formatter.field("dvb_sdt_settings", &self.dvb_sdt_settings);
         formatter.field("dvb_sub_pids", &self.dvb_sub_pids);
@@ -18164,6 +18238,7 @@ pub mod m2ts_settings {
         pub(crate) audio_pids: std::option::Option<std::vec::Vec<i32>>,
         pub(crate) bitrate: std::option::Option<i32>,
         pub(crate) buffer_model: std::option::Option<crate::model::M2tsBufferModel>,
+        pub(crate) data_pts_control: std::option::Option<crate::model::M2tsDataPtsControl>,
         pub(crate) dvb_nit_settings: std::option::Option<crate::model::DvbNitSettings>,
         pub(crate) dvb_sdt_settings: std::option::Option<crate::model::DvbSdtSettings>,
         pub(crate) dvb_sub_pids: std::option::Option<std::vec::Vec<i32>>,
@@ -18260,6 +18335,18 @@ pub mod m2ts_settings {
             input: std::option::Option<crate::model::M2tsBufferModel>,
         ) -> Self {
             self.buffer_model = input;
+            self
+        }
+        /// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+        pub fn data_pts_control(mut self, input: crate::model::M2tsDataPtsControl) -> Self {
+            self.data_pts_control = Some(input);
+            self
+        }
+        pub fn set_data_pts_control(
+            mut self,
+            input: std::option::Option<crate::model::M2tsDataPtsControl>,
+        ) -> Self {
+            self.data_pts_control = input;
             self
         }
         /// Use these settings to insert a DVB Network Information Table (NIT) in the transport stream of this output. When you work directly in your JSON job specification, include this object only when your job has a transport stream output and the container settings contain the object M2tsSettings.
@@ -18599,6 +18686,7 @@ pub mod m2ts_settings {
                 audio_pids: self.audio_pids,
                 bitrate: self.bitrate.unwrap_or_default(),
                 buffer_model: self.buffer_model,
+                data_pts_control: self.data_pts_control,
                 dvb_nit_settings: self.dvb_nit_settings,
                 dvb_sdt_settings: self.dvb_sdt_settings,
                 dvb_sub_pids: self.dvb_sub_pids,
@@ -19493,6 +19581,57 @@ impl DvbNitSettings {
     /// Creates a new builder-style object to manufacture [`DvbNitSettings`](crate::model::DvbNitSettings)
     pub fn builder() -> crate::model::dvb_nit_settings::Builder {
         crate::model::dvb_nit_settings::Builder::default()
+    }
+}
+
+/// If you select ALIGN_TO_VIDEO, MediaConvert writes captions and data packets with Presentation Timestamp (PTS) values greater than or equal to the first video packet PTS (MediaConvert drops captions and data packets with lesser PTS values). Keep the default value (AUTO) to allow all PTS values.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum M2tsDataPtsControl {
+    AlignToVideo,
+    Auto,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for M2tsDataPtsControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "ALIGN_TO_VIDEO" => M2tsDataPtsControl::AlignToVideo,
+            "AUTO" => M2tsDataPtsControl::Auto,
+            other => M2tsDataPtsControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for M2tsDataPtsControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(M2tsDataPtsControl::from(s))
+    }
+}
+impl M2tsDataPtsControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            M2tsDataPtsControl::AlignToVideo => "ALIGN_TO_VIDEO",
+            M2tsDataPtsControl::Auto => "AUTO",
+            M2tsDataPtsControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["ALIGN_TO_VIDEO", "AUTO"]
+    }
+}
+impl AsRef<str> for M2tsDataPtsControl {
+    fn as_ref(&self) -> &str {
+        self.as_str()
     }
 }
 
@@ -30774,8 +30913,10 @@ pub struct MsSmoothGroupSettings {
     pub destination_settings: std::option::Option<crate::model::DestinationSettings>,
     /// If you are using DRM, set DRM System (MsSmoothEncryptionSettings) to specify the value SpekeKeyProvider.
     pub encryption: std::option::Option<crate::model::MsSmoothEncryptionSettings>,
-    /// Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be compatible with GOP size and frame rate.
+    /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
     pub fragment_length: i32,
+    /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub fragment_length_control: std::option::Option<crate::model::MsSmoothFragmentLengthControl>,
     /// Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
     pub manifest_encoding: std::option::Option<crate::model::MsSmoothManifestEncoding>,
 }
@@ -30788,6 +30929,7 @@ impl std::fmt::Debug for MsSmoothGroupSettings {
         formatter.field("destination_settings", &self.destination_settings);
         formatter.field("encryption", &self.encryption);
         formatter.field("fragment_length", &self.fragment_length);
+        formatter.field("fragment_length_control", &self.fragment_length_control);
         formatter.field("manifest_encoding", &self.manifest_encoding);
         formatter.finish()
     }
@@ -30806,6 +30948,8 @@ pub mod ms_smooth_group_settings {
         pub(crate) destination_settings: std::option::Option<crate::model::DestinationSettings>,
         pub(crate) encryption: std::option::Option<crate::model::MsSmoothEncryptionSettings>,
         pub(crate) fragment_length: std::option::Option<i32>,
+        pub(crate) fragment_length_control:
+            std::option::Option<crate::model::MsSmoothFragmentLengthControl>,
         pub(crate) manifest_encoding: std::option::Option<crate::model::MsSmoothManifestEncoding>,
     }
     impl Builder {
@@ -30873,13 +31017,28 @@ pub mod ms_smooth_group_settings {
             self.encryption = input;
             self
         }
-        /// Use Fragment length (FragmentLength) to specify the mp4 fragment sizes in seconds. Fragment length must be compatible with GOP size and frame rate.
+        /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
         pub fn fragment_length(mut self, input: i32) -> Self {
             self.fragment_length = Some(input);
             self
         }
         pub fn set_fragment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.fragment_length = input;
+            self
+        }
+        /// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+        pub fn fragment_length_control(
+            mut self,
+            input: crate::model::MsSmoothFragmentLengthControl,
+        ) -> Self {
+            self.fragment_length_control = Some(input);
+            self
+        }
+        pub fn set_fragment_length_control(
+            mut self,
+            input: std::option::Option<crate::model::MsSmoothFragmentLengthControl>,
+        ) -> Self {
+            self.fragment_length_control = input;
             self
         }
         /// Use Manifest encoding (MsSmoothManifestEncoding) to specify the encoding format for the server and client manifest. Valid options are utf8 and utf16.
@@ -30903,6 +31062,7 @@ pub mod ms_smooth_group_settings {
                 destination_settings: self.destination_settings,
                 encryption: self.encryption,
                 fragment_length: self.fragment_length.unwrap_or_default(),
+                fragment_length_control: self.fragment_length_control,
                 manifest_encoding: self.manifest_encoding,
             }
         }
@@ -30961,6 +31121,57 @@ impl MsSmoothManifestEncoding {
     }
 }
 impl AsRef<str> for MsSmoothManifestEncoding {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify how you want MediaConvert to determine the fragment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Fragment length (FragmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum MsSmoothFragmentLengthControl {
+    Exact,
+    GopMultiple,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for MsSmoothFragmentLengthControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXACT" => MsSmoothFragmentLengthControl::Exact,
+            "GOP_MULTIPLE" => MsSmoothFragmentLengthControl::GopMultiple,
+            other => MsSmoothFragmentLengthControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for MsSmoothFragmentLengthControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(MsSmoothFragmentLengthControl::from(s))
+    }
+}
+impl MsSmoothFragmentLengthControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            MsSmoothFragmentLengthControl::Exact => "EXACT",
+            MsSmoothFragmentLengthControl::GopMultiple => "GOP_MULTIPLE",
+            MsSmoothFragmentLengthControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXACT", "GOP_MULTIPLE"]
+    }
+}
+impl AsRef<str> for MsSmoothFragmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -31236,6 +31447,8 @@ impl S3DestinationSettings {
 pub struct S3EncryptionSettings {
     /// Specify how you want your data keys managed. AWS uses data keys to encrypt your content. AWS also encrypts the data keys themselves, using a customer master key (CMK), and then stores the encrypted data keys alongside your encrypted content. Use this setting to specify which AWS service manages the CMK. For simplest set up, choose Amazon S3 (SERVER_SIDE_ENCRYPTION_S3). If you want your master key to be managed by AWS Key Management Service (KMS), choose AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). By default, when you choose AWS KMS, KMS uses the AWS managed customer master key (CMK) associated with Amazon S3 to encrypt your data keys. You can optionally choose to specify a different, customer managed CMK. Do so by specifying the Amazon Resource Name (ARN) of the key for the setting  KMS ARN (kmsKeyArn).
     pub encryption_type: std::option::Option<crate::model::S3ServerSideEncryptionType>,
+    /// Optionally, specify the encryption context that you want to use alongside your KMS key. AWS KMS uses this encryption context as additional authenticated data (AAD) to support authenticated encryption. This value must be a base64-encoded UTF-8 string holding JSON which represents a string-string map. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption context, see: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+    pub kms_encryption_context: std::option::Option<std::string::String>,
     /// Optionally, specify the customer master key (CMK) that you want to use to encrypt the data key that AWS uses to encrypt your output content. Enter the Amazon Resource Name (ARN) of the CMK. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). If you set Server-side encryption to AWS KMS but don't specify a CMK here, AWS uses the AWS managed CMK associated with Amazon S3.
     pub kms_key_arn: std::option::Option<std::string::String>,
 }
@@ -31243,6 +31456,7 @@ impl std::fmt::Debug for S3EncryptionSettings {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("S3EncryptionSettings");
         formatter.field("encryption_type", &self.encryption_type);
+        formatter.field("kms_encryption_context", &self.kms_encryption_context);
         formatter.field("kms_key_arn", &self.kms_key_arn);
         formatter.finish()
     }
@@ -31254,6 +31468,7 @@ pub mod s3_encryption_settings {
     #[derive(std::default::Default, std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) encryption_type: std::option::Option<crate::model::S3ServerSideEncryptionType>,
+        pub(crate) kms_encryption_context: std::option::Option<std::string::String>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
     }
     impl Builder {
@@ -31269,6 +31484,18 @@ pub mod s3_encryption_settings {
             self.encryption_type = input;
             self
         }
+        /// Optionally, specify the encryption context that you want to use alongside your KMS key. AWS KMS uses this encryption context as additional authenticated data (AAD) to support authenticated encryption. This value must be a base64-encoded UTF-8 string holding JSON which represents a string-string map. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). For more information about encryption context, see: https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context.
+        pub fn kms_encryption_context(mut self, input: impl Into<std::string::String>) -> Self {
+            self.kms_encryption_context = Some(input.into());
+            self
+        }
+        pub fn set_kms_encryption_context(
+            mut self,
+            input: std::option::Option<std::string::String>,
+        ) -> Self {
+            self.kms_encryption_context = input;
+            self
+        }
         /// Optionally, specify the customer master key (CMK) that you want to use to encrypt the data key that AWS uses to encrypt your output content. Enter the Amazon Resource Name (ARN) of the CMK. To use this setting, you must also set Server-side encryption (S3ServerSideEncryptionType) to AWS KMS (SERVER_SIDE_ENCRYPTION_KMS). If you set Server-side encryption to AWS KMS but don't specify a CMK here, AWS uses the AWS managed CMK associated with Amazon S3.
         pub fn kms_key_arn(mut self, input: impl Into<std::string::String>) -> Self {
             self.kms_key_arn = Some(input.into());
@@ -31282,6 +31509,7 @@ pub mod s3_encryption_settings {
         pub fn build(self) -> crate::model::S3EncryptionSettings {
             crate::model::S3EncryptionSettings {
                 encryption_type: self.encryption_type,
+                kms_encryption_context: self.kms_encryption_context,
                 kms_key_arn: self.kms_key_arn,
             }
         }
@@ -31624,8 +31852,10 @@ pub struct HlsGroupSettings {
     pub program_date_time_period: i32,
     /// When set to SINGLE_FILE, emits program as a single media resource (.ts) file, uses #EXT-X-BYTERANGE tags to index segment for playback.
     pub segment_control: std::option::Option<crate::model::HlsSegmentControl>,
-    /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     pub segment_length: i32,
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub segment_length_control: std::option::Option<crate::model::HlsSegmentLengthControl>,
     /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
     pub segments_per_subdirectory: i32,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
@@ -31665,6 +31895,7 @@ impl std::fmt::Debug for HlsGroupSettings {
         formatter.field("program_date_time_period", &self.program_date_time_period);
         formatter.field("segment_control", &self.segment_control);
         formatter.field("segment_length", &self.segment_length);
+        formatter.field("segment_length_control", &self.segment_length_control);
         formatter.field("segments_per_subdirectory", &self.segments_per_subdirectory);
         formatter.field("stream_inf_resolution", &self.stream_inf_resolution);
         formatter.field(
@@ -31713,6 +31944,8 @@ pub mod hls_group_settings {
         pub(crate) program_date_time_period: std::option::Option<i32>,
         pub(crate) segment_control: std::option::Option<crate::model::HlsSegmentControl>,
         pub(crate) segment_length: std::option::Option<i32>,
+        pub(crate) segment_length_control:
+            std::option::Option<crate::model::HlsSegmentLengthControl>,
         pub(crate) segments_per_subdirectory: std::option::Option<i32>,
         pub(crate) stream_inf_resolution: std::option::Option<crate::model::HlsStreamInfResolution>,
         pub(crate) target_duration_compatibility_mode:
@@ -31978,13 +32211,28 @@ pub mod hls_group_settings {
             self.segment_control = input;
             self
         }
-        /// Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.
+        /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (HlsSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
         pub fn segment_length(mut self, input: i32) -> Self {
             self.segment_length = Some(input);
             self
         }
         pub fn set_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_length = input;
+            self
+        }
+        /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+        pub fn segment_length_control(
+            mut self,
+            input: crate::model::HlsSegmentLengthControl,
+        ) -> Self {
+            self.segment_length_control = Some(input);
+            self
+        }
+        pub fn set_segment_length_control(
+            mut self,
+            input: std::option::Option<crate::model::HlsSegmentLengthControl>,
+        ) -> Self {
+            self.segment_length_control = input;
             self
         }
         /// Number of segments to write to a subdirectory before starting a new one. directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
@@ -32084,6 +32332,7 @@ pub mod hls_group_settings {
                 program_date_time_period: self.program_date_time_period.unwrap_or_default(),
                 segment_control: self.segment_control,
                 segment_length: self.segment_length.unwrap_or_default(),
+                segment_length_control: self.segment_length_control,
                 segments_per_subdirectory: self.segments_per_subdirectory.unwrap_or_default(),
                 stream_inf_resolution: self.stream_inf_resolution,
                 target_duration_compatibility_mode: self.target_duration_compatibility_mode,
@@ -32252,6 +32501,57 @@ impl HlsStreamInfResolution {
     }
 }
 impl AsRef<str> for HlsStreamInfResolution {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum HlsSegmentLengthControl {
+    Exact,
+    GopMultiple,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for HlsSegmentLengthControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXACT" => HlsSegmentLengthControl::Exact,
+            "GOP_MULTIPLE" => HlsSegmentLengthControl::GopMultiple,
+            other => HlsSegmentLengthControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for HlsSegmentLengthControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(HlsSegmentLengthControl::from(s))
+    }
+}
+impl HlsSegmentLengthControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            HlsSegmentLengthControl::Exact => "EXACT",
+            HlsSegmentLengthControl::GopMultiple => "GOP_MULTIPLE",
+            HlsSegmentLengthControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXACT", "GOP_MULTIPLE"]
+    }
+}
+impl AsRef<str> for HlsSegmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -33604,8 +33904,10 @@ pub struct DashIsoGroupSettings {
         std::option::Option<crate::model::DashIsoPtsOffsetHandlingForBFrames>,
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     pub segment_control: std::option::Option<crate::model::DashIsoSegmentControl>,
-    /// Length of mpd segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer. When Emit Single File is checked, the segmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     pub segment_length: i32,
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub segment_length_control: std::option::Option<crate::model::DashIsoSegmentLengthControl>,
     /// If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When you don't enable this setting, the service writes approximate segment durations in your DASH manifest.
     pub write_segment_timeline_in_representation:
         std::option::Option<crate::model::DashIsoWriteSegmentTimelineInRepresentation>,
@@ -33634,6 +33936,7 @@ impl std::fmt::Debug for DashIsoGroupSettings {
         );
         formatter.field("segment_control", &self.segment_control);
         formatter.field("segment_length", &self.segment_length);
+        formatter.field("segment_length_control", &self.segment_length_control);
         formatter.field(
             "write_segment_timeline_in_representation",
             &self.write_segment_timeline_in_representation,
@@ -33666,6 +33969,8 @@ pub mod dash_iso_group_settings {
             std::option::Option<crate::model::DashIsoPtsOffsetHandlingForBFrames>,
         pub(crate) segment_control: std::option::Option<crate::model::DashIsoSegmentControl>,
         pub(crate) segment_length: std::option::Option<i32>,
+        pub(crate) segment_length_control:
+            std::option::Option<crate::model::DashIsoSegmentLengthControl>,
         pub(crate) write_segment_timeline_in_representation:
             std::option::Option<crate::model::DashIsoWriteSegmentTimelineInRepresentation>,
     }
@@ -33836,13 +34141,28 @@ pub mod dash_iso_group_settings {
             self.segment_control = input;
             self
         }
-        /// Length of mpd segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer. When Emit Single File is checked, the segmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
+        /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 30. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (DashIsoSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
         pub fn segment_length(mut self, input: i32) -> Self {
             self.segment_length = Some(input);
             self
         }
         pub fn set_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_length = input;
+            self
+        }
+        /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+        pub fn segment_length_control(
+            mut self,
+            input: crate::model::DashIsoSegmentLengthControl,
+        ) -> Self {
+            self.segment_length_control = Some(input);
+            self
+        }
+        pub fn set_segment_length_control(
+            mut self,
+            input: std::option::Option<crate::model::DashIsoSegmentLengthControl>,
+        ) -> Self {
+            self.segment_length_control = input;
             self
         }
         /// If you get an HTTP error in the 400 range when you play back your DASH output, enable this setting and run your transcoding job again. When you enable this setting, the service writes precise segment durations in the DASH manifest. The segment duration information appears inside the SegmentTimeline element, inside SegmentTemplate at the Representation level. When you don't enable this setting, the service writes approximate segment durations in your DASH manifest.
@@ -33878,6 +34198,7 @@ pub mod dash_iso_group_settings {
                 pts_offset_handling_for_b_frames: self.pts_offset_handling_for_b_frames,
                 segment_control: self.segment_control,
                 segment_length: self.segment_length.unwrap_or_default(),
+                segment_length_control: self.segment_length_control,
                 write_segment_timeline_in_representation: self
                     .write_segment_timeline_in_representation,
             }
@@ -33937,6 +34258,57 @@ impl DashIsoWriteSegmentTimelineInRepresentation {
     }
 }
 impl AsRef<str> for DashIsoWriteSegmentTimelineInRepresentation {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum DashIsoSegmentLengthControl {
+    Exact,
+    GopMultiple,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for DashIsoSegmentLengthControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXACT" => DashIsoSegmentLengthControl::Exact,
+            "GOP_MULTIPLE" => DashIsoSegmentLengthControl::GopMultiple,
+            other => DashIsoSegmentLengthControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for DashIsoSegmentLengthControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(DashIsoSegmentLengthControl::from(s))
+    }
+}
+impl DashIsoSegmentLengthControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            DashIsoSegmentLengthControl::Exact => "EXACT",
+            DashIsoSegmentLengthControl::GopMultiple => "GOP_MULTIPLE",
+            DashIsoSegmentLengthControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXACT", "GOP_MULTIPLE"]
+    }
+}
+impl AsRef<str> for DashIsoSegmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }
@@ -34472,7 +34844,7 @@ pub struct CmafGroupSettings {
     pub destination_settings: std::option::Option<crate::model::DestinationSettings>,
     /// DRM settings.
     pub encryption: std::option::Option<crate::model::CmafEncryptionSettings>,
-    /// Length of fragments to generate (in seconds). Fragment length must be compatible with GOP size and Framerate. Note that fragments will end on the next keyframe after this number of seconds, so actual fragment length may be longer. When Emit Single File is checked, the fragmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
+    /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control (FragmentLengthControl) to specify whether the encoder enforces this value strictly.
     pub fragment_length: i32,
     /// Specify whether MediaConvert generates images for trick play. Keep the default value, None (NONE), to not generate any images. Choose Thumbnail (THUMBNAIL) to generate tiled thumbnails. Choose Thumbnail and full frame (THUMBNAIL_AND_FULLFRAME) to generate tiled thumbnails and full-resolution images of single frames. When you enable Write HLS manifest (WriteHlsManifest), MediaConvert creates a child manifest for each set of images that you generate and adds corresponding entries to the parent manifest. When you enable Write DASH manifest (WriteDashManifest), MediaConvert adds an entry in the .mpd manifest for each set of images that you generate. A common application for these images is Roku trick mode. The thumbnails and full-frame images that MediaConvert creates with this feature are compatible with this Roku specification: https://developer.roku.com/docs/developer-program/media-playback/trick-mode/hls-and-dash.md
     pub image_based_trick_play: std::option::Option<crate::model::CmafImageBasedTrickPlay>,
@@ -34491,8 +34863,10 @@ pub struct CmafGroupSettings {
         std::option::Option<crate::model::CmafPtsOffsetHandlingForBFrames>,
     /// When set to SINGLE_FILE, a single output file is generated, which is internally segmented using the Fragment Length and Segment Length. When set to SEGMENTED_FILES, separate segment files will be created.
     pub segment_control: std::option::Option<crate::model::CmafSegmentControl>,
-    /// Use this setting to specify the length, in seconds, of each individual CMAF segment. This value applies to the whole package; that is, to every output in the output group. Note that segments end on the first keyframe after this number of seconds, so the actual segment length might be slightly longer. If you set Segment control (CmafSegmentControl) to single file, the service puts the content of each output in a single file that has metadata that marks these segments. If you set it to segmented files, the service creates multiple files for each output, each with the content of one segment.
+    /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (CmafSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
     pub segment_length: i32,
+    /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+    pub segment_length_control: std::option::Option<crate::model::CmafSegmentLengthControl>,
     /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
     pub stream_inf_resolution: std::option::Option<crate::model::CmafStreamInfResolution>,
     /// When set to LEGACY, the segment target duration is always rounded up to the nearest integer value above its current value in seconds. When set to SPEC\\_COMPLIANT, the segment target duration is rounded up to the nearest integer value if fraction seconds are greater than or equal to 0.5 (>= 0.5) and rounded down if less than 0.5 (< 0.5). You may need to use LEGACY if your client needs to ensure that the target duration is always longer than the actual duration of the segment. Some older players may experience interrupted playback when the actual duration of a track in a segment is longer than the target duration.
@@ -34529,6 +34903,7 @@ impl std::fmt::Debug for CmafGroupSettings {
         );
         formatter.field("segment_control", &self.segment_control);
         formatter.field("segment_length", &self.segment_length);
+        formatter.field("segment_length_control", &self.segment_length_control);
         formatter.field("stream_inf_resolution", &self.stream_inf_resolution);
         formatter.field(
             "target_duration_compatibility_mode",
@@ -34570,6 +34945,8 @@ pub mod cmaf_group_settings {
             std::option::Option<crate::model::CmafPtsOffsetHandlingForBFrames>,
         pub(crate) segment_control: std::option::Option<crate::model::CmafSegmentControl>,
         pub(crate) segment_length: std::option::Option<i32>,
+        pub(crate) segment_length_control:
+            std::option::Option<crate::model::CmafSegmentLengthControl>,
         pub(crate) stream_inf_resolution:
             std::option::Option<crate::model::CmafStreamInfResolution>,
         pub(crate) target_duration_compatibility_mode:
@@ -34662,7 +35039,7 @@ pub mod cmaf_group_settings {
             self.encryption = input;
             self
         }
-        /// Length of fragments to generate (in seconds). Fragment length must be compatible with GOP size and Framerate. Note that fragments will end on the next keyframe after this number of seconds, so actual fragment length may be longer. When Emit Single File is checked, the fragmentation is internal to a single output file and it does not cause the creation of many output files as in other output types.
+        /// Specify the length, in whole seconds, of the mp4 fragments. When you don't specify a value, MediaConvert defaults to 2. Related setting: Use Fragment length control (FragmentLengthControl) to specify whether the encoder enforces this value strictly.
         pub fn fragment_length(mut self, input: i32) -> Self {
             self.fragment_length = Some(input);
             self
@@ -34773,13 +35150,28 @@ pub mod cmaf_group_settings {
             self.segment_control = input;
             self
         }
-        /// Use this setting to specify the length, in seconds, of each individual CMAF segment. This value applies to the whole package; that is, to every output in the output group. Note that segments end on the first keyframe after this number of seconds, so the actual segment length might be slightly longer. If you set Segment control (CmafSegmentControl) to single file, the service puts the content of each output in a single file that has metadata that marks these segments. If you set it to segmented files, the service creates multiple files for each output, each with the content of one segment.
+        /// Specify the length, in whole seconds, of each segment. When you don't specify a value, MediaConvert defaults to 10. Related settings: Use Segment length control (SegmentLengthControl) to specify whether the encoder enforces this value strictly. Use Segment control (CmafSegmentControl) to specify whether MediaConvert creates separate segment files or one content file that has metadata to mark the segment boundaries.
         pub fn segment_length(mut self, input: i32) -> Self {
             self.segment_length = Some(input);
             self
         }
         pub fn set_segment_length(mut self, input: std::option::Option<i32>) -> Self {
             self.segment_length = input;
+            self
+        }
+        /// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+        pub fn segment_length_control(
+            mut self,
+            input: crate::model::CmafSegmentLengthControl,
+        ) -> Self {
+            self.segment_length_control = Some(input);
+            self
+        }
+        pub fn set_segment_length_control(
+            mut self,
+            input: std::option::Option<crate::model::CmafSegmentLengthControl>,
+        ) -> Self {
+            self.segment_length_control = input;
             self
         }
         /// Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.
@@ -34871,6 +35263,7 @@ pub mod cmaf_group_settings {
                 pts_offset_handling_for_b_frames: self.pts_offset_handling_for_b_frames,
                 segment_control: self.segment_control,
                 segment_length: self.segment_length.unwrap_or_default(),
+                segment_length_control: self.segment_length_control,
                 stream_inf_resolution: self.stream_inf_resolution,
                 target_duration_compatibility_mode: self.target_duration_compatibility_mode,
                 write_dash_manifest: self.write_dash_manifest,
@@ -35138,6 +35531,57 @@ impl CmafStreamInfResolution {
     }
 }
 impl AsRef<str> for CmafStreamInfResolution {
+    fn as_ref(&self) -> &str {
+        self.as_str()
+    }
+}
+
+/// Specify how you want MediaConvert to determine the segment length. Choose Exact (EXACT) to have the encoder use the exact length that you specify with the setting Segment length (SegmentLength). This might result in extra I-frames. Choose Multiple of GOP (GOP_MULTIPLE) to have the encoder round up the segment lengths to match the next GOP boundary.
+#[non_exhaustive]
+#[derive(
+    std::clone::Clone,
+    std::cmp::Eq,
+    std::cmp::Ord,
+    std::cmp::PartialEq,
+    std::cmp::PartialOrd,
+    std::fmt::Debug,
+    std::hash::Hash,
+)]
+pub enum CmafSegmentLengthControl {
+    Exact,
+    GopMultiple,
+    /// Unknown contains new variants that have been added since this code was generated.
+    Unknown(String),
+}
+impl std::convert::From<&str> for CmafSegmentLengthControl {
+    fn from(s: &str) -> Self {
+        match s {
+            "EXACT" => CmafSegmentLengthControl::Exact,
+            "GOP_MULTIPLE" => CmafSegmentLengthControl::GopMultiple,
+            other => CmafSegmentLengthControl::Unknown(other.to_owned()),
+        }
+    }
+}
+impl std::str::FromStr for CmafSegmentLengthControl {
+    type Err = std::convert::Infallible;
+
+    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
+        Ok(CmafSegmentLengthControl::from(s))
+    }
+}
+impl CmafSegmentLengthControl {
+    pub fn as_str(&self) -> &str {
+        match self {
+            CmafSegmentLengthControl::Exact => "EXACT",
+            CmafSegmentLengthControl::GopMultiple => "GOP_MULTIPLE",
+            CmafSegmentLengthControl::Unknown(s) => s.as_ref(),
+        }
+    }
+    pub fn values() -> &'static [&'static str] {
+        &["EXACT", "GOP_MULTIPLE"]
+    }
+}
+impl AsRef<str> for CmafSegmentLengthControl {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

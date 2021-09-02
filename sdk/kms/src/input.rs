@@ -9,8 +9,8 @@ pub mod cancel_key_deletion_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the customer master key (CMK) whose deletion is being canceled.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies the KMS key whose deletion is being canceled.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -22,7 +22,7 @@ pub mod cancel_key_deletion_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -62,6 +62,7 @@ impl CancelKeyDeletionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_cancel_key_deletion(&self)
                 .map_err(|err| {
@@ -69,8 +70,10 @@ impl CancelKeyDeletionInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -91,7 +94,7 @@ impl CancelKeyDeletionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -205,6 +208,7 @@ impl ConnectCustomKeyStoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_connect_custom_key_store(&self)
                 .map_err(|err| {
@@ -212,8 +216,10 @@ impl ConnectCustomKeyStoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -234,7 +240,7 @@ impl ConnectCustomKeyStoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -309,7 +315,7 @@ pub mod create_alias_input {
         /// name, such as <code>alias/ExampleAlias</code>. </p>
         /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
         /// forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved
-        /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMKs</a>.</p>
+        /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.alias_name = Some(input.into());
             self
@@ -318,13 +324,15 @@ pub mod create_alias_input {
             self.alias_name = input;
             self
         }
-        /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>. The CMK must be
-        /// in the same AWS Region. </p>
-        /// <p>A valid CMK ID is required. If you supply a null or empty string value, this operation
+        /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be
+        /// in the same Amazon Web Services Region. </p>
+        /// <p>A valid key ID is required. If you supply a null or empty string value, this operation
         /// returns an error.</p>
         /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and
-        /// ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// ARN</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -336,7 +344,7 @@ pub mod create_alias_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_key_id = Some(input.into());
             self
@@ -378,6 +386,7 @@ impl CreateAliasInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_create_alias(&self).map_err(|err| {
@@ -385,8 +394,10 @@ impl CreateAliasInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -407,7 +418,7 @@ impl CreateAliasInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -477,8 +488,7 @@ pub mod create_custom_key_store_input {
         pub(crate) key_store_password: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Specifies a friendly name for the custom key store. The name must be unique in your AWS
-        /// account.</p>
+        /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account.</p>
         pub fn custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_key_store_name = Some(input.into());
             self
@@ -490,8 +500,8 @@ pub mod create_custom_key_store_input {
             self.custom_key_store_name = input;
             self
         }
-        /// <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active
-        /// AWS CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
+        /// <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster ID of any active
+        /// CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
         /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
         pub fn cloud_hsm_cluster_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.cloud_hsm_cluster_id = Some(input.into());
@@ -519,11 +529,11 @@ pub mod create_custom_key_store_input {
         }
         /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
         /// <code>kmsuser</code> crypto user
-        /// (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into the cluster as this
+        /// (CU) account</a> in the specified CloudHSM cluster. KMS logs into the cluster as this
         /// user to manage key material on your behalf.</p>
         /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
-        /// <p>This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change
-        /// the password in the AWS CloudHSM cluster.</p>
+        /// <p>This parameter tells KMS the <code>kmsuser</code> account password; it does not change
+        /// the password in the CloudHSM cluster.</p>
         pub fn key_store_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_store_password = Some(input.into());
             self
@@ -569,6 +579,7 @@ impl CreateCustomKeyStoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_create_custom_key_store(&self)
                 .map_err(|err| {
@@ -576,8 +587,10 @@ impl CreateCustomKeyStoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -598,7 +611,7 @@ impl CreateCustomKeyStoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -674,9 +687,9 @@ pub mod create_grant_input {
         pub(crate) name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the customer master key (CMK) for the grant. The grant gives principals permission to use this CMK.</p>
-        /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-        /// different AWS account, you must use the key ARN.</p>
+        /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -688,7 +701,7 @@ pub mod create_grant_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -698,11 +711,10 @@ pub mod create_grant_input {
             self
         }
         /// <p>The identity that gets the permissions specified in the grant.</p>
-        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS
-        /// principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles, federated
+        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, IAM roles, federated
         /// users, and assumed role users. For examples of the ARN syntax to use for specifying a
-        /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access
-        /// Management (IAM)</a> in the Example ARNs section of the <i>AWS General
+        /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
+        /// Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General
         /// Reference</i>.</p>
         pub fn grantee_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.grantee_principal = Some(input.into());
@@ -715,12 +727,15 @@ pub mod create_grant_input {
             self.grantee_principal = input;
             self
         }
-        /// <p>The principal that is given permission to retire the grant by using <a>RetireGrant</a> operation.</p>
-        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS
-        /// principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and
+        /// <p>The principal that has permission to use the <a>RetireGrant</a> operation to
+        /// retire the grant. </p>
+        /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and
         /// assumed role users. For examples of the ARN syntax to use for specifying a principal, see
-        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the
-        /// <i>AWS General Reference</i>.</p>
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
+        /// <i>Amazon Web Services General Reference</i>.</p>
+        /// <p>The grant determines the retiring principal. Other principals might have permission to
+        /// retire the grant or revoke the grant. For details, see <a>RevokeGrant</a> and
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>. </p>
         pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.retiring_principal = Some(input.into());
             self
@@ -746,21 +761,22 @@ pub mod create_grant_input {
             self
         }
         /// <p>Specifies a grant constraint. </p>
-        /// <p>AWS KMS supports the <code>EncryptionContextEquals</code> and
+        /// <p>KMS supports the <code>EncryptionContextEquals</code> and
         /// <code>EncryptionContextSubset</code> grant constraints. Each constraint value can include up
         /// to 8 encryption context pairs. The encryption context value in each constraint cannot exceed
         /// 384 characters.</p>
-        /// <p>These grant constraints allow a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> only when the encryption context in the
-        /// request matches (<code>EncryptionContextEquals</code>) or includes
+        /// <p>These grant constraints allow the permissions in the grant only when the encryption
+        /// context in the request matches (<code>EncryptionContextEquals</code>) or includes
         /// (<code>EncryptionContextSubset</code>) the encryption context specified in this structure.
-        /// For more information about encryption context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a> in the
-        /// <i>
-        /// <i>AWS Key Management Service Developer Guide</i>
-        /// </i>. For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-        /// grant constraints</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using grant
+        /// constraints</a> in the <i>Key Management Service Developer Guide</i>. For more information about encryption context,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// Context</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>. </p>
         /// <p>The encryption context grant constraints are supported only on operations that include an
         /// encryption context. You cannot use an encryption context grant constraint for cryptographic
-        /// operations with asymmetric CMKs or for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+        /// operations with asymmetric KMS keys or for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
         pub fn constraints(mut self, input: crate::model::GrantConstraints) -> Self {
             self.constraints = Some(input);
             self
@@ -838,6 +854,7 @@ impl CreateGrantInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_create_grant(&self).map_err(|err| {
@@ -845,8 +862,10 @@ impl CreateGrantInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -867,7 +886,7 @@ impl CreateGrantInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -936,6 +955,7 @@ pub mod create_key_input {
         pub(crate) key_usage: std::option::Option<crate::model::KeyUsageType>,
         pub(crate) customer_master_key_spec:
             std::option::Option<crate::model::CustomerMasterKeySpec>,
+        pub(crate) key_spec: std::option::Option<crate::model::KeySpec>,
         pub(crate) origin: std::option::Option<crate::model::OriginType>,
         pub(crate) custom_key_store_id: std::option::Option<std::string::String>,
         pub(crate) bypass_policy_lockout_safety_check: std::option::Option<bool>,
@@ -943,32 +963,31 @@ pub mod create_key_input {
         pub(crate) multi_region: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>The key policy to attach to the CMK.</p>
+        /// <p>The key policy to attach to the KMS key.</p>
         /// <p>If you provide a key policy, it must meet the following criteria:</p>
         /// <ul>
         /// <li>
         /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
         /// must allow the principal that is making the <code>CreateKey</code> request to make a
-        /// subsequent <a>PutKeyPolicy</a> request on the CMK. This reduces the risk that
-        /// the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
-        /// <i>AWS Key Management Service Developer Guide</i>
+        /// subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk that
+        /// the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
+        /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
         /// </li>
         /// <li>
         /// <p>Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
         /// (for example, an IAM user or role), you might need to enforce a delay before including the
         /// new principal in a key policy because the new principal might not be immediately visible
-        /// to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS
-        /// Identity and Access Management User Guide</i>.</p>
+        /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
         /// </li>
         /// </ul>
-        /// <p>If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK. For
+        /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For
         /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default Key Policy</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>. </p>
+        /// <i>Key Management Service Developer Guide</i>. </p>
         /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
         /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>
-        /// <i>IAM User Guide</i>
+        /// <i>Identity and Access Management User Guide</i>
         /// </i>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
@@ -978,9 +997,10 @@ pub mod create_key_input {
             self.policy = input;
             self
         }
-        /// <p>A description of the CMK.</p>
-        /// <p>Use a description that helps you decide whether the CMK is
+        /// <p>A description of the KMS key.</p>
+        /// <p>Use a description that helps you decide whether the KMS key is
         /// appropriate for a task. The default value is an empty string (no description).</p>
+        /// <p>To set or change the description after the key is created, use <a>UpdateKeyDescription</a>.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -989,20 +1009,20 @@ pub mod create_key_input {
             self.description = input;
             self
         }
-        /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK. The default value is
-        /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric CMKs. You can't
-        /// change the <code>KeyUsage</code> value after the CMK is created.</p>
+        /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is
+        /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS keys. You can't
+        /// change the <code>KeyUsage</code> value after the KMS key is created.</p>
         /// <p>Select only one valid value.</p>
         /// <ul>
         /// <li>
-        /// <p>For symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+        /// <p>For symmetric KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
         /// </li>
         /// <li>
-        /// <p>For asymmetric CMKs with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or
+        /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or
         /// <code>SIGN_VERIFY</code>.</p>
         /// </li>
         /// <li>
-        /// <p>For asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+        /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
         /// </li>
         /// </ul>
         pub fn key_usage(mut self, input: crate::model::KeyUsageType) -> Self {
@@ -1016,27 +1036,44 @@ pub mod create_key_input {
             self.key_usage = input;
             self
         }
-        /// <p>Specifies the type of CMK to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
-        /// creates a CMK with a 256-bit symmetric key for encryption and decryption. For help choosing a
-        /// key spec for your CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your CMK
-        /// Configuration</a> in the <i>AWS Key Management Service Developer
-        /// Guide</i>.</p>
-        /// <p>The <code>CustomerMasterKeySpec</code> determines whether the CMK contains a symmetric key
-        /// or an asymmetric key pair. It also determines the encryption algorithms or signing algorithms
-        /// that the CMK supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
-        /// is created. To further restrict the algorithms that can be used with the CMK, use a condition
-        /// key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i>AWS Key Management Service Developer
-        /// Guide</i>.</p>
+        /// <p>Instead, use the <code>KeySpec</code> parameter.</p>      
+        /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+        pub fn customer_master_key_spec(
+            mut self,
+            input: crate::model::CustomerMasterKeySpec,
+        ) -> Self {
+            self.customer_master_key_spec = Some(input);
+            self
+        }
+        pub fn set_customer_master_key_spec(
+            mut self,
+            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
+        ) -> Self {
+            self.customer_master_key_spec = input;
+            self
+        }
+        /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
+        /// creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a
+        /// key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your KMS key
+        /// Configuration</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
+        /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an
+        /// asymmetric key pair. It also determines the encryption algorithms or signing algorithms that
+        /// the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created.
+        /// To further restrict the algorithms that can be used with the KMS key, use a condition key in
+        /// its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i>
+        /// <i>Key Management Service Developer Guide</i>
+        /// </i>.</p>
         /// <important>
         /// <p>
-        /// <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services that
-        /// are integrated with AWS KMS</a> use symmetric CMKs to protect your data. These
-        /// services do not support asymmetric CMKs. For help determining whether a CMK is symmetric or
-        /// asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric
-        /// CMKs</a> in the <i>AWS Key Management Service Developer
+        /// <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that
+        /// are integrated with KMS</a> use symmetric KMS keys to protect your data. These
+        /// services do not support asymmetric KMS keys. For help determining whether a KMS key is symmetric or
+        /// asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
         /// Guide</i>.</p>
         /// </important>
-        /// <p>AWS KMS supports the following key specs for CMKs:</p>
+        /// <p>KMS supports the following key specs for KMS keys:</p>
         /// <ul>
         /// <li>
         /// <p>Symmetric key (default)</p>
@@ -1095,31 +1132,25 @@ pub mod create_key_input {
         /// </ul>
         /// </li>
         /// </ul>
-        pub fn customer_master_key_spec(
-            mut self,
-            input: crate::model::CustomerMasterKeySpec,
-        ) -> Self {
-            self.customer_master_key_spec = Some(input);
+        pub fn key_spec(mut self, input: crate::model::KeySpec) -> Self {
+            self.key_spec = Some(input);
             self
         }
-        pub fn set_customer_master_key_spec(
-            mut self,
-            input: std::option::Option<crate::model::CustomerMasterKeySpec>,
-        ) -> Self {
-            self.customer_master_key_spec = input;
+        pub fn set_key_spec(mut self, input: std::option::Option<crate::model::KeySpec>) -> Self {
+            self.key_spec = input;
             self
         }
-        /// <p>The source of the key material for the CMK. You cannot change the origin after you create
-        /// the CMK. The default is <code>AWS_KMS</code>, which means that AWS KMS creates the key
+        /// <p>The source of the key material for the KMS key. You cannot change the origin after you create
+        /// the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the key
         /// material.</p>
-        /// <p>To create a CMK with no key material (for imported key material), set the value to
-        /// <code>EXTERNAL</code>. For more information about importing key material into AWS KMS, see
+        /// <p>To create a KMS key with no key material (for imported key material), set the value to
+        /// <code>EXTERNAL</code>. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
-        /// Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.</p>
-        /// <p>To create a CMK in an AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the associated
-        /// AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
+        /// Material</a> in the <i>Key Management Service Developer Guide</i>. This value is valid only for symmetric KMS keys.</p>
+        /// <p>To create a KMS key in an KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the associated
+        /// CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
         /// <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
-        /// valid only for symmetric CMKs.</p>
+        /// valid only for symmetric KMS keys.</p>
         pub fn origin(mut self, input: crate::model::OriginType) -> Self {
             self.origin = Some(input);
             self
@@ -1128,17 +1159,17 @@ pub mod create_key_input {
             self.origin = input;
             self
         }
-        /// <p>Creates the CMK in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
-        /// AWS CloudHSM cluster. To create a CMK in a custom key store, you must also specify the
-        /// <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster
+        /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
+        /// CloudHSM cluster. To create a KMS key in a custom key store, you must also specify the
+        /// <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster
         /// that is associated with the custom key store must have at least two active HSMs, each in a
         /// different Availability Zone in the Region.</p>
-        /// <p>This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an
-        /// asymmetric CMK or a multi-Region CMK in a custom key store.</p>
+        /// <p>This parameter is valid only for symmetric KMS keys and regional KMS keys. You cannot create an
+        /// asymmetric KMS key or a multi-Region key in a custom key store.</p>
         /// <p>To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-        /// <p>The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
-        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in AWS KMS, which
-        /// combines the convenience and extensive integration of AWS KMS with the isolation and control of a
+        /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
+        /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which
+        /// combines the convenience and extensive integration of KMS with the isolation and control of a
         /// single-tenant key store.</p>
         pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_key_store_id = Some(input.into());
@@ -1153,14 +1184,14 @@ pub mod create_key_input {
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
         /// <important>
-        /// <p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
         /// set this value to true indiscriminately.</p>
         /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>
-        /// <i>AWS Key Management Service Developer Guide</i>
+        /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
         /// </important>
         /// <p>Use this parameter only when you include a policy in the request and you intend to prevent
-        /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
+        /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the KMS key.</p>
         /// <p>The default value is false.</p>
         pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
             self.bypass_policy_lockout_safety_check = Some(input);
@@ -1186,19 +1217,19 @@ pub mod create_key_input {
             self.tags = input;
             self
         }
-        /// <p>Creates a multi-Region primary key that you can replicate into other AWS Regions. You
-        /// cannot change this value after you create the CMK. </p>
-        /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK,
+        /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You
+        /// cannot change this value after you create the KMS key. </p>
+        /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key,
         /// omit this parameter or set it to <code>False</code>. The default value is
         /// <code>False</code>.</p>
-        /// <p>This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple
-        /// interoperable CMKs in different AWS Regions. Because these CMKs have the same key ID, key
-        /// material, and other metadata, you can use them to encrypt data in one AWS Region and decrypt
-        /// it in a different AWS Region without making a cross-Region call or exposing the plaintext data. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple
+        /// interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key
+        /// material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
+        /// it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
         /// <p>This value creates a <i>primary key</i>, not a replica. To create a
         /// <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p>
-        /// <p>You can create a symmetric or asymmetric multi-Region CMK, and you can create a
-        /// multi-Region CMK with imported key material. However, you cannot create a multi-Region CMK in
+        /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a
+        /// multi-Region key with imported key material. However, you cannot create a multi-Region key in
         /// a custom key store.</p>
         pub fn multi_region(mut self, input: bool) -> Self {
             self.multi_region = Some(input);
@@ -1218,6 +1249,7 @@ pub mod create_key_input {
                 description: self.description,
                 key_usage: self.key_usage,
                 customer_master_key_spec: self.customer_master_key_spec,
+                key_spec: self.key_spec,
                 origin: self.origin,
                 custom_key_store_id: self.custom_key_store_id,
                 bypass_policy_lockout_safety_check: self
@@ -1247,6 +1279,7 @@ impl CreateKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_create_key(&self).map_err(|err| {
@@ -1254,8 +1287,10 @@ impl CreateKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1276,7 +1311,7 @@ impl CreateKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1391,13 +1426,13 @@ pub mod decrypt_input {
             self.grant_tokens = input;
             self
         }
-        /// <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the ciphertext. Enter a
-        /// key ID of the CMK that was used to encrypt the ciphertext.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
-        /// If you used a symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the
+        /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a
+        /// key ID of the KMS key that was used to encrypt the ciphertext. </p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
+        /// If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to the
         /// symmetric ciphertext blob. However, it is always recommended as a best practice. This practice
-        /// ensures that you use the CMK that you intend.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// ensures that you use the KMS key that you intend.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -1417,7 +1452,7 @@ pub mod decrypt_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -1429,9 +1464,9 @@ pub mod decrypt_input {
         /// <p>Specifies the encryption algorithm that will be used to decrypt the ciphertext. Specify
         /// the same algorithm that was used to encrypt the data. If you specify a different algorithm,
         /// the <code>Decrypt</code> operation fails.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
         /// The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported algorithm
-        /// that is valid for symmetric CMKs.</p>
+        /// that is valid for symmetric KMS keys.</p>
         pub fn encryption_algorithm(
             mut self,
             input: crate::model::EncryptionAlgorithmSpec,
@@ -1476,14 +1511,17 @@ impl DecryptInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_decrypt(&self).map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1504,7 +1542,7 @@ impl DecryptInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1608,6 +1646,7 @@ impl DeleteAliasInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_delete_alias(&self).map_err(|err| {
@@ -1615,8 +1654,10 @@ impl DeleteAliasInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1637,7 +1678,7 @@ impl DeleteAliasInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1747,6 +1788,7 @@ impl DeleteCustomKeyStoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_delete_custom_key_store(&self)
                 .map_err(|err| {
@@ -1754,8 +1796,10 @@ impl DeleteCustomKeyStoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1776,7 +1820,7 @@ impl DeleteCustomKeyStoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -1846,9 +1890,9 @@ pub mod delete_imported_key_material_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the CMK from which you are deleting imported key material. The
-        /// <code>Origin</code> of the CMK must be <code>EXTERNAL</code>.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies the KMS key from which you are deleting imported key material. The
+        /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -1860,7 +1904,7 @@ pub mod delete_imported_key_material_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -1901,6 +1945,7 @@ impl DeleteImportedKeyMaterialInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_delete_imported_key_material(&self)
@@ -1909,8 +1954,10 @@ impl DeleteImportedKeyMaterialInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -1931,7 +1978,7 @@ impl DeleteImportedKeyMaterialInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2038,7 +2085,7 @@ pub mod describe_custom_key_stores_input {
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         pub fn limit(mut self, input: i32) -> Self {
             self.limit = Some(input);
@@ -2094,6 +2141,7 @@ impl DescribeCustomKeyStoresInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_describe_custom_key_stores(&self)
                 .map_err(|err| {
@@ -2101,8 +2149,10 @@ impl DescribeCustomKeyStoresInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2123,7 +2173,7 @@ impl DescribeCustomKeyStoresInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2194,12 +2244,11 @@ pub mod describe_key_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Describes the specified customer master key (CMK). </p>
-        /// <p>If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the
-        /// alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
-        /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
+        /// <p>Describes the specified KMS key. </p>
+        /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the
+        /// alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
         /// response.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -2219,7 +2268,7 @@ pub mod describe_key_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2271,6 +2320,7 @@ impl DescribeKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_describe_key(&self).map_err(|err| {
@@ -2278,8 +2328,10 @@ impl DescribeKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2300,7 +2352,7 @@ impl DescribeKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2367,8 +2419,8 @@ pub mod disable_key_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the customer master key (CMK) to disable.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies the KMS key to disable.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -2380,7 +2432,7 @@ pub mod disable_key_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2418,6 +2470,7 @@ impl DisableKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_disable_key(&self).map_err(|err| {
@@ -2425,8 +2478,10 @@ impl DisableKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2447,7 +2502,7 @@ impl DisableKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2514,11 +2569,11 @@ pub mod disable_key_rotation_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic
-        /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric CMKs</a>, CMKs
+        /// <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
+        /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys
         /// with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
-        /// material</a>, or CMKs in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -2530,7 +2585,7 @@ pub mod disable_key_rotation_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2570,6 +2625,7 @@ impl DisableKeyRotationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_disable_key_rotation(&self)
                 .map_err(|err| {
@@ -2577,8 +2633,10 @@ impl DisableKeyRotationInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2599,7 +2657,7 @@ impl DisableKeyRotationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2713,6 +2771,7 @@ impl DisconnectCustomKeyStoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_disconnect_custom_key_store(&self)
                 .map_err(|err| {
@@ -2720,8 +2779,10 @@ impl DisconnectCustomKeyStoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2742,7 +2803,7 @@ impl DisconnectCustomKeyStoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2812,8 +2873,8 @@ pub mod enable_key_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the customer master key (CMK) to enable.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies the KMS key to enable.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -2825,7 +2886,7 @@ pub mod enable_key_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -2863,6 +2924,7 @@ impl EnableKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_enable_key(&self).map_err(|err| {
@@ -2870,8 +2932,10 @@ impl EnableKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -2892,7 +2956,7 @@ impl EnableKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -2957,8 +3021,8 @@ pub mod enable_key_rotation_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or CMKs in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies a symmetric KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -2970,7 +3034,7 @@ pub mod enable_key_rotation_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -3010,6 +3074,7 @@ impl EnableKeyRotationInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_enable_key_rotation(&self)
                 .map_err(|err| {
@@ -3017,8 +3082,10 @@ impl EnableKeyRotationInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3039,7 +3106,7 @@ impl EnableKeyRotationInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3115,8 +3182,8 @@ pub mod encrypt_input {
         pub(crate) encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>Identifies the customer master key (CMK) to use in the encryption operation.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>Identifies the KMS key to use in the encryption operation.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -3136,7 +3203,7 @@ pub mod encrypt_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -3186,11 +3253,11 @@ pub mod encrypt_input {
             self.grant_tokens = input;
             self
         }
-        /// <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the plaintext message.
-        /// The algorithm must be compatible with the CMK that you specify.</p>
-        /// <p>This parameter is required only for asymmetric CMKs. The default value,
-        /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs. If you are using
-        /// an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+        /// <p>Specifies the encryption algorithm that KMS will use to encrypt the plaintext message.
+        /// The algorithm must be compatible with the KMS key that you specify.</p>
+        /// <p>This parameter is required only for asymmetric KMS keys. The default value,
+        /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric KMS keys. If you are using
+        /// an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.</p>
         pub fn encryption_algorithm(
             mut self,
             input: crate::model::EncryptionAlgorithmSpec,
@@ -3235,14 +3302,17 @@ impl EncryptInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_encrypt(&self).map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3263,7 +3333,7 @@ impl EncryptInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3334,8 +3404,8 @@ pub mod generate_data_key_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Identifies the symmetric CMK that encrypts the data key.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>Identifies the symmetric KMS key that encrypts the data key.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -3355,7 +3425,7 @@ pub mod generate_data_key_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -3459,14 +3529,17 @@ impl GenerateDataKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_generate_data_key(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3487,7 +3560,7 @@ impl GenerateDataKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3581,10 +3654,9 @@ pub mod generate_data_key_pair_input {
             self.encryption_context = input;
             self
         }
-        /// <p>Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot
-        /// specify an asymmetric CMK or a CMK in a custom key store. To get the type and origin of your
-        /// CMK, use the <a>DescribeKey</a> operation.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You cannot
+        /// specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -3604,7 +3676,7 @@ pub mod generate_data_key_pair_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -3614,7 +3686,7 @@ pub mod generate_data_key_pair_input {
             self
         }
         /// <p>Determines the type of data key pair that is generated. </p>
-        /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
         pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
             self.key_pair_spec = Some(input);
             self
@@ -3673,6 +3745,7 @@ impl GenerateDataKeyPairInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_generate_data_key_pair(&self)
                 .map_err(|err| {
@@ -3680,8 +3753,10 @@ impl GenerateDataKeyPairInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3702,7 +3777,7 @@ impl GenerateDataKeyPairInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3796,10 +3871,10 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self.encryption_context = input;
             self
         }
-        /// <p>Specifies the CMK that encrypts the private key in the data key pair. You must specify a
-        /// symmetric CMK. You cannot use an asymmetric CMK or a CMK in a custom key store. To get the
-        /// type and origin of your CMK, use the <a>DescribeKey</a> operation. </p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>Specifies the KMS key that encrypts the private key in the data key pair. You must specify a
+        /// symmetric KMS key. You cannot use an asymmetric KMS key or a KMS key in a custom key store. To get the
+        /// type and origin of your KMS key, use the <a>DescribeKey</a> operation. </p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -3819,7 +3894,7 @@ pub mod generate_data_key_pair_without_plaintext_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -3829,7 +3904,7 @@ pub mod generate_data_key_pair_without_plaintext_input {
             self
         }
         /// <p>Determines the type of data key pair that is generated.</p>
-        /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
+        /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
         pub fn key_pair_spec(mut self, input: crate::model::DataKeyPairSpec) -> Self {
             self.key_pair_spec = Some(input);
             self
@@ -3890,6 +3965,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_generate_data_key_pair_without_plaintext(
@@ -3900,8 +3976,10 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -3922,7 +4000,7 @@ impl GenerateDataKeyPairWithoutPlaintextInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -3998,9 +4076,9 @@ pub mod generate_data_key_without_plaintext_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>The identifier of the symmetric customer master key (CMK) that encrypts the data
+        /// <p>The identifier of the symmetric KMS key that encrypts the data
         /// key.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -4020,7 +4098,7 @@ pub mod generate_data_key_without_plaintext_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -4121,6 +4199,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_generate_data_key_without_plaintext(
@@ -4131,8 +4210,10 @@ impl GenerateDataKeyWithoutPlaintextInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4153,7 +4234,7 @@ impl GenerateDataKeyWithoutPlaintextInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4233,7 +4314,7 @@ pub mod generate_random_input {
             self.number_of_bytes = input;
             self
         }
-        /// <p>Generates the random byte string in the AWS CloudHSM cluster that is associated with the
+        /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the
         /// specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
         pub fn custom_key_store_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.custom_key_store_id = Some(input.into());
@@ -4278,14 +4359,17 @@ impl GenerateRandomInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_generate_random(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4306,7 +4390,7 @@ impl GenerateRandomInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4377,8 +4461,8 @@ pub mod get_key_policy_input {
         pub(crate) policy_name: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Gets the key policy for the specified customer master key (CMK).</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Gets the key policy for the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -4390,7 +4474,7 @@ pub mod get_key_policy_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -4439,6 +4523,7 @@ impl GetKeyPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_key_policy(&self).map_err(|err| {
@@ -4446,8 +4531,10 @@ impl GetKeyPolicyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4468,7 +4555,7 @@ impl GetKeyPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4535,9 +4622,9 @@ pub mod get_key_rotation_status_input {
         pub(crate) key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Gets the rotation status for the specified customer master key (CMK).</p>
-        /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-        /// different AWS account, you must use the key ARN.</p>
+        /// <p>Gets the rotation status for the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -4549,7 +4636,7 @@ pub mod get_key_rotation_status_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -4589,6 +4676,7 @@ impl GetKeyRotationStatusInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_key_rotation_status(&self)
                 .map_err(|err| {
@@ -4596,8 +4684,10 @@ impl GetKeyRotationStatusInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4618,7 +4708,7 @@ impl GetKeyRotationStatusInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4690,9 +4780,9 @@ pub mod get_parameters_for_import_input {
         pub(crate) wrapping_key_spec: std::option::Option<crate::model::WrappingKeySpec>,
     }
     impl Builder {
-        /// <p>The identifier of the symmetric CMK into which you will import key material. The
-        /// <code>Origin</code> of the CMK must be <code>EXTERNAL</code>.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>The identifier of the symmetric KMS key into which you will import key material. The
+        /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -4704,7 +4794,7 @@ pub mod get_parameters_for_import_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -4714,7 +4804,7 @@ pub mod get_parameters_for_import_input {
             self
         }
         /// <p>The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a>
-        /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn wrapping_algorithm(mut self, input: crate::model::AlgorithmSpec) -> Self {
             self.wrapping_algorithm = Some(input);
             self
@@ -4772,6 +4862,7 @@ impl GetParametersForImportInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_get_parameters_for_import(&self)
                 .map_err(|err| {
@@ -4779,8 +4870,10 @@ impl GetParametersForImportInput {
             })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4801,7 +4894,7 @@ impl GetParametersForImportInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -4872,8 +4965,8 @@ pub mod get_public_key_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Identifies the asymmetric CMK that includes the public key.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -4893,7 +4986,7 @@ pub mod get_public_key_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -4945,6 +5038,7 @@ impl GetPublicKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_get_public_key(&self).map_err(|err| {
@@ -4952,8 +5046,10 @@ impl GetPublicKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -4974,7 +5070,7 @@ impl GetPublicKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5045,11 +5141,11 @@ pub mod import_key_material_input {
         pub(crate) expiration_model: std::option::Option<crate::model::ExpirationModelType>,
     }
     impl Builder {
-        /// <p>The identifier of the symmetric CMK that receives the imported key material. The CMK's
-        /// <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same CMK specified in
+        /// <p>The identifier of the symmetric KMS key that receives the imported key material. The KMS key's
+        /// <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same KMS key specified in
         /// the <code>KeyID</code> parameter of the corresponding <a>GetParametersForImport</a>
         /// request.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -5061,7 +5157,7 @@ pub mod import_key_material_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -5094,8 +5190,8 @@ pub mod import_key_material_input {
             self.encrypted_key_material = input;
             self
         }
-        /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
-        /// deletes the key material and the CMK becomes unusable. You must omit this parameter when the
+        /// <p>The time at which the imported key material expires. When the key material expires, KMS
+        /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when the
         /// <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>.
         /// Otherwise it is required.</p>
         pub fn valid_to(mut self, input: smithy_types::Instant) -> Self {
@@ -5156,6 +5252,7 @@ impl ImportKeyMaterialInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_import_key_material(&self)
                 .map_err(|err| {
@@ -5163,8 +5260,10 @@ impl ImportKeyMaterialInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5185,7 +5284,7 @@ impl ImportKeyMaterialInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5257,11 +5356,10 @@ pub mod list_aliases_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Lists only aliases that are associated with the specified CMK. Enter a CMK in your AWS
-        /// account. </p>
+        /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
         /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases
         /// in the account and Region.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -5273,7 +5371,7 @@ pub mod list_aliases_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -5283,7 +5381,7 @@ pub mod list_aliases_input {
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -5337,6 +5435,7 @@ impl ListAliasesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_aliases(&self).map_err(|err| {
@@ -5344,8 +5443,10 @@ impl ListAliasesInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5366,7 +5467,7 @@ impl ListAliasesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5438,7 +5539,7 @@ pub mod list_grants_input {
     }
     impl Builder {
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -5461,10 +5562,10 @@ pub mod list_grants_input {
             self.marker = input;
             self
         }
-        /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
+        /// <p>Returns only grants for the specified KMS key. This parameter is
         /// required.</p>
-        /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-        /// different AWS account, you must use the key ARN.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -5476,7 +5577,7 @@ pub mod list_grants_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -5541,6 +5642,7 @@ impl ListGrantsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_grants(&self).map_err(|err| {
@@ -5548,8 +5650,10 @@ impl ListGrantsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5570,7 +5674,7 @@ impl ListGrantsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5639,8 +5743,8 @@ pub mod list_key_policies_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Gets the names of key policies for the specified customer master key (CMK).</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Gets the names of key policies for the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -5652,7 +5756,7 @@ pub mod list_key_policies_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -5662,7 +5766,7 @@ pub mod list_key_policies_input {
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between
         /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -5719,14 +5823,17 @@ impl ListKeyPoliciesInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_key_policies(&self).map_err(
                 |err| smithy_http::operation::BuildError::SerializationError(err.into()),
             )?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5747,7 +5854,7 @@ impl ListKeyPoliciesInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5819,7 +5926,7 @@ pub mod list_keys_input {
     }
     impl Builder {
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between
         /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -5872,6 +5979,7 @@ impl ListKeysInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_list_keys(&self).map_err(|err| {
@@ -5879,8 +5987,10 @@ impl ListKeysInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -5901,7 +6011,7 @@ impl ListKeysInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -5968,8 +6078,8 @@ pub mod list_resource_tags_input {
         pub(crate) marker: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Gets tags on the specified customer master key (CMK).</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Gets tags on the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -5981,7 +6091,7 @@ pub mod list_resource_tags_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -5991,7 +6101,7 @@ pub mod list_resource_tags_input {
             self
         }
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1 and 50, inclusive. If
         /// you do not include a value, it defaults to 50.</p>
@@ -6049,6 +6159,7 @@ impl ListResourceTagsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_resource_tags(&self)
                 .map_err(|err| {
@@ -6056,8 +6167,10 @@ impl ListResourceTagsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6078,7 +6191,7 @@ impl ListResourceTagsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6151,7 +6264,7 @@ pub mod list_retirable_grants_input {
     }
     impl Builder {
         /// <p>Use this parameter to specify the maximum number of items to return. When this
-        /// value is present, AWS KMS does not return more than the specified number of items, but it might
+        /// value is present, KMS does not return more than the specified number of items, but it might
         /// return fewer.</p>
         /// <p>This value is optional. If you include a value, it must be between 1
         /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -6174,12 +6287,9 @@ pub mod list_retirable_grants_input {
             self.marker = input;
             self
         }
-        /// <p>The retiring principal for which to list grants. Enter a principal in your AWS
-        /// account.</p>
-        /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS
-        /// principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and
-        /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-        /// Identity and Access Management (IAM)</a> in the Example ARNs section of the
+        /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
+        /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and
+        /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
         /// <i>Amazon Web Services General Reference</i>.</p>
         pub fn retiring_principal(mut self, input: impl Into<std::string::String>) -> Self {
             self.retiring_principal = Some(input.into());
@@ -6225,6 +6335,7 @@ impl ListRetirableGrantsInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_list_retirable_grants(&self)
                 .map_err(|err| {
@@ -6232,8 +6343,10 @@ impl ListRetirableGrantsInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6254,7 +6367,7 @@ impl ListRetirableGrantsInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6327,8 +6440,8 @@ pub mod put_key_policy_input {
         pub(crate) bypass_policy_lockout_safety_check: std::option::Option<bool>,
     }
     impl Builder {
-        /// <p>Sets the key policy on the specified customer master key (CMK).</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Sets the key policy on the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -6340,7 +6453,7 @@ pub mod put_key_policy_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -6358,26 +6471,24 @@ pub mod put_key_policy_input {
             self.policy_name = input;
             self
         }
-        /// <p>The key policy to attach to the CMK.</p>
+        /// <p>The key policy to attach to the KMS key.</p>
         /// <p>The key policy must meet the following criteria:</p>
         /// <ul>
         /// <li>
         /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
         /// must allow the principal that is making the <code>PutKeyPolicy</code> request to make a
-        /// subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the
-        /// CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p>
         /// </li>
         /// <li>
         /// <p>Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
         /// (for example, an IAM user or role), you might need to enforce a delay before including the
         /// new principal in a key policy because the new principal might not be immediately visible
-        /// to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS
-        /// Identity and Access Management User Guide</i>.</p>
+        /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
         /// </li>
         /// </ul>
         /// <p>The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the
-        /// <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <i>Key Management Service Developer Guide</i>.</p>
         pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
             self.policy = Some(input.into());
             self
@@ -6388,12 +6499,12 @@ pub mod put_key_policy_input {
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
         /// <important>
-        /// <p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
         /// set this value to true indiscriminately.</p>
-        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
         /// </important>
         /// <p>Use this parameter only when you intend to prevent the principal that is making the
-        /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p>
+        /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
         /// <p>The default value is false.</p>
         pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
             self.bypass_policy_lockout_safety_check = Some(input);
@@ -6440,6 +6551,7 @@ impl PutKeyPolicyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_put_key_policy(&self).map_err(|err| {
@@ -6447,8 +6559,10 @@ impl PutKeyPolicyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6469,7 +6583,7 @@ impl PutKeyPolicyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6580,14 +6694,14 @@ pub mod re_encrypt_input {
             self.source_encryption_context = input;
             self
         }
-        /// <p>Specifies the customer master key (CMK) that
-        /// AWS KMS will use to decrypt the ciphertext before it is re-encrypted. Enter a key ID of the CMK
+        /// <p>Specifies the KMS key that
+        /// KMS will use to decrypt the ciphertext before it is re-encrypted. Enter a key ID of the KMS key
         /// that was used to encrypt the ciphertext.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
-        /// If you used a symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
+        /// If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to the
         /// symmetric ciphertext blob. However, it is always recommended as a best practice. This practice
-        /// ensures that you use the CMK that you intend.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// ensures that you use the KMS key that you intend.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -6607,7 +6721,7 @@ pub mod re_encrypt_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn source_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.source_key_id = Some(input.into());
             self
@@ -6619,11 +6733,11 @@ pub mod re_encrypt_input {
             self.source_key_id = input;
             self
         }
-        /// <p>A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or
-        /// asymmetric CMK with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the
-        /// <code>KeyUsage</code> value of a CMK, use the <a>DescribeKey</a>
+        /// <p>A unique identifier for the KMS key that is used to reencrypt the data. Specify a symmetric or
+        /// asymmetric KMS key with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the
+        /// <code>KeyUsage</code> value of a KMS key, use the <a>DescribeKey</a>
         /// operation.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -6643,7 +6757,7 @@ pub mod re_encrypt_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn destination_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.destination_key_id = Some(input.into());
             self
@@ -6674,13 +6788,12 @@ pub mod re_encrypt_input {
             self.destination_encryption_context = input;
             self
         }
-        /// <p>Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it
+        /// <p>Specifies the encryption algorithm that KMS will use to decrypt the ciphertext before it
         /// is reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm
-        /// used for symmetric CMKs.</p>
+        /// used for symmetric KMS keys.</p>
         /// <p>Specify the same algorithm that was used to encrypt the ciphertext. If you specify a
         /// different algorithm, the decrypt attempt fails.</p>
-        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric
-        /// CMK.</p>
+        /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.</p>
         pub fn source_encryption_algorithm(
             mut self,
             input: crate::model::EncryptionAlgorithmSpec,
@@ -6695,10 +6808,10 @@ pub mod re_encrypt_input {
             self.source_encryption_algorithm = input;
             self
         }
-        /// <p>Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has
+        /// <p>Specifies the encryption algorithm that KMS will use to reecrypt the data after it has
         /// decrypted it. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption
-        /// algorithm used for symmetric CMKs.</p>
-        /// <p>This parameter is required only when the destination CMK is an asymmetric CMK.</p>
+        /// algorithm used for symmetric KMS keys.</p>
+        /// <p>This parameter is required only when the destination KMS key is an asymmetric KMS key.</p>
         pub fn destination_encryption_algorithm(
             mut self,
             input: crate::model::EncryptionAlgorithmSpec,
@@ -6762,6 +6875,7 @@ impl ReEncryptInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_re_encrypt(&self).map_err(|err| {
@@ -6769,8 +6883,10 @@ impl ReEncryptInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -6791,7 +6907,7 @@ impl ReEncryptInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -6861,8 +6977,7 @@ pub mod replicate_key_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
-        /// CMK is a multi-Region primary key, use the <a>DescribeKey</a> operation to check
+        /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to check
         /// the value of the <code>MultiRegionKeyType</code> property.</p>
         /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
         /// <p>For example:</p>
@@ -6876,7 +6991,7 @@ pub mod replicate_key_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -6885,15 +7000,15 @@ pub mod replicate_key_input {
             self.key_id = input;
             self
         }
-        /// <p>The Region ID of the AWS Region for this replica key. </p>
+        /// <p>The Region ID of the Amazon Web Services Region for this replica key. </p>
         /// <p>Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. For a
-        /// list of AWS Regions in which AWS KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">AWS KMS service endpoints</a> in the
+        /// list of Amazon Web Services Regions in which KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">KMS service endpoints</a> in the
         /// <i>Amazon Web Services General Reference</i>.</p>
-        /// <p>The replica must be in a different AWS Region than its primary key and other replicas of
-        /// that primary key, but in the same AWS partition. AWS KMS must be available in the replica
-        /// Region. If the Region is not enabled by default, the AWS account must be enabled in the
+        /// <p>The replica must be in a different Amazon Web Services Region than its primary key and other replicas of
+        /// that primary key, but in the same Amazon Web Services partition. KMS must be available in the replica
+        /// Region. If the Region is not enabled by default, the Amazon Web Services account must be enabled in the
         /// Region. </p>
-        /// <p>For information about AWS partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) in the
+        /// <p>For information about Amazon Web Services partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) in the
         /// <i>Amazon Web Services General Reference</i>.</a> For information about enabling and disabling Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling a
         /// Region</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-disable">Disabling a Region</a> in the
         /// <i>Amazon Web Services General Reference</i>.</p>
@@ -6908,27 +7023,28 @@ pub mod replicate_key_input {
             self.replica_region = input;
             self
         }
-        /// <p>The key policy to attach to the CMK. This parameter is optional. If you do not provide a key policy, AWS KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the CMK.</p>
+        /// <p>The key policy to attach to the KMS key. This parameter is optional. If you do not provide a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the KMS key.</p>
         /// <p>The key policy is not a shared property of multi-Region keys. You can specify the same key
-        /// policy or a different key policy for each key in a set of related multi-Region keys. AWS KMS
+        /// policy or a different key policy for each key in a set of related multi-Region keys. KMS
         /// does not synchronize this property.</p>
         /// <p>If you provide a key policy, it must meet the following criteria:</p>
         /// <ul>
         /// <li>
         /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
-        /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica CMK. This reduces the
-        /// risk that the CMK becomes unmanageable. For more information, refer to the scenario in the
+        /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the
+        /// risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
-        /// <i>AWS Key Management Service Developer Guide</i>
+        /// <i>Key Management Service Developer Guide</i>
         /// </i>.</p>
         /// </li>
         /// <li>
         /// <p>Each statement in the key policy must contain one or more principals. The principals
-        /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal
+        /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
         /// (for example, an IAM user or role), you might need to enforce a delay before including the
         /// new principal in a key policy because the new principal might not be immediately visible
-        /// to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS
-        /// Identity and Access Management User Guide</i>.</p>
+        /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>
+        /// <i>Identity and Access Management User Guide</i>
+        /// </i>.</p>
         /// </li>
         /// <li>
         /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
@@ -6944,12 +7060,12 @@ pub mod replicate_key_input {
         }
         /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
         /// <important>
-        /// <p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not
+        /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
         /// set this value to true indiscriminately.</p>
-        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
         /// </important>
         /// <p>Use this parameter only when you intend to prevent the principal that is making the
-        /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p>
+        /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
         /// <p>The default value is false.</p>
         pub fn bypass_policy_lockout_safety_check(mut self, input: bool) -> Self {
             self.bypass_policy_lockout_safety_check = Some(input);
@@ -6962,11 +7078,9 @@ pub mod replicate_key_input {
             self.bypass_policy_lockout_safety_check = input;
             self
         }
-        /// <p>A description of the CMK. Use a description that helps you decide whether the CMK is
-        /// appropriate for a task. The default value is an empty string (no description).</p>
+        /// <p>A description of the KMS key. The default value is an empty string (no description).</p>
         /// <p>The description is not a shared property of multi-Region keys. You can specify the same
-        /// description or a different description for each key in a set of related multi-Region keys. AWS
-        /// KMS does not synchronize this property.</p>
+        /// description or a different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -7024,6 +7138,7 @@ impl ReplicateKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_replicate_key(&self).map_err(|err| {
@@ -7031,8 +7146,10 @@ impl ReplicateKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7053,7 +7170,7 @@ impl ReplicateKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7126,7 +7243,7 @@ pub mod retire_grant_input {
         /// before it has achieved eventual consistency.</p>
         /// <p>Only the <a>CreateGrant</a> operation returns a grant token. For details, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a>
-        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+        /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
         pub fn grant_token(mut self, input: impl Into<std::string::String>) -> Self {
             self.grant_token = Some(input.into());
             self
@@ -7135,7 +7252,7 @@ pub mod retire_grant_input {
             self.grant_token = input;
             self
         }
-        /// <p>The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
+        /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
         /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
         /// </p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
@@ -7193,6 +7310,7 @@ impl RetireGrantInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_retire_grant(&self).map_err(|err| {
@@ -7200,8 +7318,10 @@ impl RetireGrantInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7222,7 +7342,7 @@ impl RetireGrantInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7290,10 +7410,10 @@ pub mod revoke_grant_input {
         pub(crate) grant_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>A unique identifier for the customer master key (CMK) associated with the grant. To get
-        /// the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-        /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-        /// different AWS account, you must use the key ARN.</p>
+        /// <p>A unique identifier for the KMS key associated with the grant. To get
+        /// the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+        /// different Amazon Web Services account, you must use the key ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -7305,7 +7425,7 @@ pub mod revoke_grant_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -7354,6 +7474,7 @@ impl RevokeGrantInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_revoke_grant(&self).map_err(|err| {
@@ -7361,8 +7482,10 @@ impl RevokeGrantInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7383,7 +7506,7 @@ impl RevokeGrantInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7451,8 +7574,8 @@ pub mod schedule_key_deletion_input {
         pub(crate) pending_window_in_days: std::option::Option<i32>,
     }
     impl Builder {
-        /// <p>The unique identifier of the customer master key (CMK) to delete.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>The unique identifier of the KMS key to delete.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -7464,7 +7587,7 @@ pub mod schedule_key_deletion_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -7473,9 +7596,9 @@ pub mod schedule_key_deletion_input {
             self.key_id = input;
             self
         }
-        /// <p>The waiting period, specified in number of days. After the waiting period ends, AWS KMS
-        /// deletes the customer master key (CMK).</p>
-        /// <p>If the CMK is a multi-Region primary key with replicas, the waiting period begins when the
+        /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS
+        /// deletes the KMS key.</p>
+        /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
         /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
         /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If
         /// you do not include a value, it defaults to 30.</p>
@@ -7519,6 +7642,7 @@ impl ScheduleKeyDeletionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_schedule_key_deletion(&self)
                 .map_err(|err| {
@@ -7526,8 +7650,10 @@ impl ScheduleKeyDeletionInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7548,7 +7674,7 @@ impl ScheduleKeyDeletionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7622,10 +7748,10 @@ pub mod sign_input {
         pub(crate) signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     }
     impl Builder {
-        /// <p>Identifies an asymmetric CMK. AWS KMS uses the private key in the asymmetric CMK to sign the
-        /// message. The <code>KeyUsage</code> type of the CMK must be <code>SIGN_VERIFY</code>. To find
-        /// the <code>KeyUsage</code> of a CMK, use the <a>DescribeKey</a> operation.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to sign the
+        /// message. The <code>KeyUsage</code> type of the KMS key must be <code>SIGN_VERIFY</code>. To find
+        /// the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -7645,7 +7771,7 @@ pub mod sign_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -7656,7 +7782,7 @@ pub mod sign_input {
         }
         /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a
         /// larger message, provide the message digest.</p>
-        /// <p>If you provide a message, AWS KMS generates a hash digest of the message and then signs
+        /// <p>If you provide a message, KMS generates a hash digest of the message and then signs
         /// it.</p>
         pub fn message(mut self, input: smithy_types::Blob) -> Self {
             self.message = Some(input);
@@ -7666,7 +7792,7 @@ pub mod sign_input {
             self.message = input;
             self
         }
-        /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
+        /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
         /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
         /// enter <code>DIGEST</code>.</p>
         pub fn message_type(mut self, input: crate::model::MessageType) -> Self {
@@ -7694,8 +7820,7 @@ pub mod sign_input {
             self
         }
         /// <p>Specifies the signing algorithm to use when signing the message. </p>
-        /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric
-        /// CMK.</p>
+        /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
         pub fn signing_algorithm(mut self, input: crate::model::SigningAlgorithmSpec) -> Self {
             self.signing_algorithm = Some(input);
             self
@@ -7737,14 +7862,17 @@ impl SignInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_sign(&self).map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7765,7 +7893,7 @@ impl SignInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7827,8 +7955,8 @@ pub mod tag_resource_input {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
     }
     impl Builder {
-        /// <p>Identifies a customer managed CMK in the account and Region.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies a customer managed key in the account and Region.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -7840,7 +7968,7 @@ pub mod tag_resource_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -7892,6 +8020,7 @@ impl TagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_tag_resource(&self).map_err(|err| {
@@ -7899,8 +8028,10 @@ impl TagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -7921,7 +8052,7 @@ impl TagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -7989,8 +8120,8 @@ pub mod untag_resource_input {
         pub(crate) tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Identifies the CMK from which you are removing tags.</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Identifies the KMS key from which you are removing tags.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -8002,7 +8133,7 @@ pub mod untag_resource_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -8054,6 +8185,7 @@ impl UntagResourceInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_untag_resource(&self).map_err(|err| {
@@ -8061,8 +8193,10 @@ impl UntagResourceInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8083,7 +8217,7 @@ impl UntagResourceInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8154,7 +8288,7 @@ pub mod update_alias_input {
         pub(crate) target_key_id: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the alias that is changing its CMK. This value must begin with
+        /// <p>Identifies the alias that is changing its KMS key. This value must begin with
         /// <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You
         /// cannot use UpdateAlias to change the alias name.</p>
         pub fn alias_name(mut self, input: impl Into<std::string::String>) -> Self {
@@ -8165,12 +8299,12 @@ pub mod update_alias_input {
             self.alias_name = input;
             self
         }
-        /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a> to associate with the alias. You don't have permission to
-        /// associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMK</a>.</p>
-        /// <p>The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK
-        /// must be the same type as the current target CMK (both symmetric or both asymmetric) and they
+        /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission
+        /// to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
+        /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
+        /// must be the same type as the current target KMS key (both symmetric or both asymmetric) and they
         /// must have the same key usage. </p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -8182,9 +8316,9 @@ pub mod update_alias_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         /// <p>To verify that the alias
-        /// is mapped to the correct CMK, use <a>ListAliases</a>.</p>
+        /// is mapped to the correct KMS key, use <a>ListAliases</a>.</p>
         pub fn target_key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.target_key_id = Some(input.into());
             self
@@ -8226,6 +8360,7 @@ impl UpdateAliasInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_update_alias(&self).map_err(|err| {
@@ -8233,8 +8368,10 @@ impl UpdateAliasInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8255,7 +8392,7 @@ impl UpdateAliasInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8339,7 +8476,7 @@ pub mod update_custom_key_store_input {
             self
         }
         /// <p>Changes the friendly name of the custom key store to the value that you specify. The
-        /// custom key store name must be unique in the AWS account.</p>
+        /// custom key store name must be unique in the Amazon Web Services account.</p>
         pub fn new_custom_key_store_name(mut self, input: impl Into<std::string::String>) -> Self {
             self.new_custom_key_store_name = Some(input.into());
             self
@@ -8351,10 +8488,10 @@ pub mod update_custom_key_store_input {
             self.new_custom_key_store_name = input;
             self
         }
-        /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the AWS CloudHSM
+        /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the CloudHSM
         /// cluster that is associated with the custom key store.</p>
-        /// <p>This parameter tells AWS KMS the current password of the <code>kmsuser</code> crypto user
-        /// (CU). It does not set or change the password of any users in the AWS CloudHSM cluster.</p>
+        /// <p>This parameter tells KMS the current password of the <code>kmsuser</code> crypto user
+        /// (CU). It does not set or change the password of any users in the CloudHSM cluster.</p>
         pub fn key_store_password(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_store_password = Some(input.into());
             self
@@ -8366,7 +8503,7 @@ pub mod update_custom_key_store_input {
             self.key_store_password = input;
             self
         }
-        /// <p>Associates the custom key store with a related AWS CloudHSM cluster. </p>
+        /// <p>Associates the custom key store with a related CloudHSM cluster. </p>
         /// <p>Enter the cluster ID of the cluster that you used to create the custom key store or a
         /// cluster that shares a backup history and has the same cluster certificate as the original
         /// cluster. You cannot use this parameter to associate a custom key store with an unrelated
@@ -8418,6 +8555,7 @@ impl UpdateCustomKeyStoreInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_update_custom_key_store(&self)
                 .map_err(|err| {
@@ -8425,8 +8563,10 @@ impl UpdateCustomKeyStoreInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8447,7 +8587,7 @@ impl UpdateCustomKeyStoreInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8518,8 +8658,8 @@ pub mod update_key_description_input {
         pub(crate) description: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Updates the description of the specified customer master key (CMK).</p>
-        /// <p>Specify the key ID or key ARN of the CMK.</p>
+        /// <p>Updates the description of the specified KMS key.</p>
+        /// <p>Specify the key ID or key ARN of the KMS key.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -8531,7 +8671,7 @@ pub mod update_key_description_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -8540,7 +8680,7 @@ pub mod update_key_description_input {
             self.key_id = input;
             self
         }
-        /// <p>New description for the CMK.</p>
+        /// <p>New description for the KMS key.</p>
         pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
             self.description = Some(input.into());
             self
@@ -8581,6 +8721,7 @@ impl UpdateKeyDescriptionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_update_key_description(&self)
                 .map_err(|err| {
@@ -8588,8 +8729,10 @@ impl UpdateKeyDescriptionInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8610,7 +8753,7 @@ impl UpdateKeyDescriptionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8681,7 +8824,7 @@ pub mod update_primary_region_input {
         pub(crate) primary_region: std::option::Option<std::string::String>,
     }
     impl Builder {
-        /// <p>Identifies the current primary key. When the operation completes, this CMK will be a
+        /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a
         /// replica key.</p>
         /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
         /// <p>For example:</p>
@@ -8695,7 +8838,7 @@ pub mod update_primary_region_input {
         /// </p>    
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -8704,7 +8847,7 @@ pub mod update_primary_region_input {
             self.key_id = input;
             self
         }
-        /// <p>The AWS Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code>
+        /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code>
         /// or <code>ap-southeast-2</code>. There must be an existing replica key in this Region. </p>
         /// <p>When the operation completes, the multi-Region key in this Region will be the primary
         /// key.</p>
@@ -8751,6 +8894,7 @@ impl UpdatePrimaryRegionInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_update_primary_region(&self)
                 .map_err(|err| {
@@ -8758,8 +8902,10 @@ impl UpdatePrimaryRegionInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -8780,7 +8926,7 @@ impl UpdatePrimaryRegionInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -8855,10 +9001,10 @@ pub mod verify_input {
         pub(crate) grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     }
     impl Builder {
-        /// <p>Identifies the asymmetric CMK that will be used to verify the signature. This must be the
-        /// same CMK that was used to generate the signature. If you specify a different CMK, the
+        /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the
+        /// same KMS key that was used to generate the signature. If you specify a different KMS key, the
         /// signature verification fails.</p>
-        /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+        /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
         /// <p>For example:</p>
         /// <ul>
         /// <li>
@@ -8878,7 +9024,7 @@ pub mod verify_input {
         /// </p>
         /// </li>
         /// </ul>
-        /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+        /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
         pub fn key_id(mut self, input: impl Into<std::string::String>) -> Self {
             self.key_id = Some(input.into());
             self
@@ -8901,7 +9047,7 @@ pub mod verify_input {
             self.message = input;
             self
         }
-        /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
+        /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
         /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
         /// enter <code>DIGEST</code>.</p>
         /// <important>
@@ -8986,14 +9132,17 @@ impl VerifyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_verify(&self).map_err(|err| {
                 smithy_http::operation::BuildError::SerializationError(err.into())
             })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -9014,7 +9163,7 @@ impl VerifyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -9073,10 +9222,10 @@ impl VerifyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct VerifyInput {
-    /// <p>Identifies the asymmetric CMK that will be used to verify the signature. This must be the
-    /// same CMK that was used to generate the signature. If you specify a different CMK, the
+    /// <p>Identifies the asymmetric KMS key that will be used to verify the signature. This must be the
+    /// same KMS key that was used to generate the signature. If you specify a different KMS key, the
     /// signature verification fails.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9096,7 +9245,7 @@ pub struct VerifyInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the message that was signed. You can submit a raw message of up to 4096 bytes,
     /// or a hash digest of the message. If you submit a digest, use the <code>MessageType</code>
@@ -9105,7 +9254,7 @@ pub struct VerifyInput {
     /// verification fails. A message and its hash digest are considered to be the same
     /// message.</p>
     pub message: std::option::Option<smithy_types::Blob>,
-    /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
+    /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
     /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
     /// enter <code>DIGEST</code>.</p>
     /// <important>
@@ -9120,8 +9269,8 @@ pub struct VerifyInput {
     /// algorithm, the signature verification fails.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for VerifyInput {
@@ -9140,7 +9289,7 @@ impl std::fmt::Debug for VerifyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdatePrimaryRegionInput {
-    /// <p>Identifies the current primary key. When the operation completes, this CMK will be a
+    /// <p>Identifies the current primary key. When the operation completes, this KMS key will be a
     /// replica key.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
@@ -9154,9 +9303,9 @@ pub struct UpdatePrimaryRegionInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The AWS Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code>
+    /// <p>The Amazon Web Services Region of the new primary key. Enter the Region ID, such as <code>us-east-1</code>
     /// or <code>ap-southeast-2</code>. There must be an existing replica key in this Region. </p>
     /// <p>When the operation completes, the multi-Region key in this Region will be the primary
     /// key.</p>
@@ -9174,8 +9323,8 @@ impl std::fmt::Debug for UpdatePrimaryRegionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateKeyDescriptionInput {
-    /// <p>Updates the description of the specified customer master key (CMK).</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Updates the description of the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9187,9 +9336,9 @@ pub struct UpdateKeyDescriptionInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>New description for the CMK.</p>
+    /// <p>New description for the KMS key.</p>
     pub description: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateKeyDescriptionInput {
@@ -9208,14 +9357,14 @@ pub struct UpdateCustomKeyStoreInput {
     /// store. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>Changes the friendly name of the custom key store to the value that you specify. The
-    /// custom key store name must be unique in the AWS account.</p>
+    /// custom key store name must be unique in the Amazon Web Services account.</p>
     pub new_custom_key_store_name: std::option::Option<std::string::String>,
-    /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the AWS CloudHSM
+    /// <p>Enter the current password of the <code>kmsuser</code> crypto user (CU) in the CloudHSM
     /// cluster that is associated with the custom key store.</p>
-    /// <p>This parameter tells AWS KMS the current password of the <code>kmsuser</code> crypto user
-    /// (CU). It does not set or change the password of any users in the AWS CloudHSM cluster.</p>
+    /// <p>This parameter tells KMS the current password of the <code>kmsuser</code> crypto user
+    /// (CU). It does not set or change the password of any users in the CloudHSM cluster.</p>
     pub key_store_password: std::option::Option<std::string::String>,
-    /// <p>Associates the custom key store with a related AWS CloudHSM cluster. </p>
+    /// <p>Associates the custom key store with a related CloudHSM cluster. </p>
     /// <p>Enter the cluster ID of the cluster that you used to create the custom key store or a
     /// cluster that shares a backup history and has the same cluster certificate as the original
     /// cluster. You cannot use this parameter to associate a custom key store with an unrelated
@@ -9238,16 +9387,16 @@ impl std::fmt::Debug for UpdateCustomKeyStoreInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UpdateAliasInput {
-    /// <p>Identifies the alias that is changing its CMK. This value must begin with
+    /// <p>Identifies the alias that is changing its KMS key. This value must begin with
     /// <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You
     /// cannot use UpdateAlias to change the alias name.</p>
     pub alias_name: std::option::Option<std::string::String>,
-    /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a> to associate with the alias. You don't have permission to
-    /// associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMK</a>.</p>
-    /// <p>The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK
-    /// must be the same type as the current target CMK (both symmetric or both asymmetric) and they
+    /// <p>Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission
+    /// to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>
+    /// <p>The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key
+    /// must be the same type as the current target KMS key (both symmetric or both asymmetric) and they
     /// must have the same key usage. </p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9259,9 +9408,9 @@ pub struct UpdateAliasInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     /// <p>To verify that the alias
-    /// is mapped to the correct CMK, use <a>ListAliases</a>.</p>
+    /// is mapped to the correct KMS key, use <a>ListAliases</a>.</p>
     pub target_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for UpdateAliasInput {
@@ -9276,8 +9425,8 @@ impl std::fmt::Debug for UpdateAliasInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct UntagResourceInput {
-    /// <p>Identifies the CMK from which you are removing tags.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies the KMS key from which you are removing tags.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9289,7 +9438,7 @@ pub struct UntagResourceInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>One or more tag keys. Specify only the tag keys, not the tag values.</p>
     pub tag_keys: std::option::Option<std::vec::Vec<std::string::String>>,
@@ -9306,8 +9455,8 @@ impl std::fmt::Debug for UntagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct TagResourceInput {
-    /// <p>Identifies a customer managed CMK in the account and Region.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies a customer managed key in the account and Region.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9319,13 +9468,13 @@ pub struct TagResourceInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>One or more tags. </p>
     /// <p>Each tag consists of a tag key and a tag value. The tag value can be an empty (null)
     /// string. </p>
-    /// <p>You cannot have more than one tag on a CMK with the same tag key. If you specify an
-    /// existing tag key with a different tag value, AWS KMS replaces the current tag value with the
+    /// <p>You cannot have more than one tag on a KMS key with the same tag key. If you specify an
+    /// existing tag key with a different tag value, KMS replaces the current tag value with the
     /// specified one.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -9341,10 +9490,10 @@ impl std::fmt::Debug for TagResourceInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct SignInput {
-    /// <p>Identifies an asymmetric CMK. AWS KMS uses the private key in the asymmetric CMK to sign the
-    /// message. The <code>KeyUsage</code> type of the CMK must be <code>SIGN_VERIFY</code>. To find
-    /// the <code>KeyUsage</code> of a CMK, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>Identifies an asymmetric KMS key. KMS uses the private key in the asymmetric KMS key to sign the
+    /// message. The <code>KeyUsage</code> type of the KMS key must be <code>SIGN_VERIFY</code>. To find
+    /// the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9364,24 +9513,23 @@ pub struct SignInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the message or message digest to sign. Messages can be 0-4096 bytes. To sign a
     /// larger message, provide the message digest.</p>
-    /// <p>If you provide a message, AWS KMS generates a hash digest of the message and then signs
+    /// <p>If you provide a message, KMS generates a hash digest of the message and then signs
     /// it.</p>
     pub message: std::option::Option<smithy_types::Blob>,
-    /// <p>Tells AWS KMS whether the value of the <code>Message</code> parameter is a message or
+    /// <p>Tells KMS whether the value of the <code>Message</code> parameter is a message or
     /// message digest. The default value, RAW, indicates a message. To indicate a message digest,
     /// enter <code>DIGEST</code>.</p>
     pub message_type: std::option::Option<crate::model::MessageType>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>Specifies the signing algorithm to use when signing the message. </p>
-    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric
-    /// CMK.</p>
+    /// <p>Choose an algorithm that is compatible with the type and size of the specified asymmetric KMS key.</p>
     pub signing_algorithm: std::option::Option<crate::model::SigningAlgorithmSpec>,
 }
 impl std::fmt::Debug for SignInput {
@@ -9399,8 +9547,8 @@ impl std::fmt::Debug for SignInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ScheduleKeyDeletionInput {
-    /// <p>The unique identifier of the customer master key (CMK) to delete.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>The unique identifier of the KMS key to delete.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9412,11 +9560,11 @@ pub struct ScheduleKeyDeletionInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The waiting period, specified in number of days. After the waiting period ends, AWS KMS
-    /// deletes the customer master key (CMK).</p>
-    /// <p>If the CMK is a multi-Region primary key with replicas, the waiting period begins when the
+    /// <p>The waiting period, specified in number of days. After the waiting period ends, KMS
+    /// deletes the KMS key.</p>
+    /// <p>If the KMS key is a multi-Region primary key with replicas, the waiting period begins when the
     /// last of its replica keys is deleted. Otherwise, the waiting period begins immediately.</p>
     /// <p>This value is optional. If you include a value, it must be between 7 and 30, inclusive. If
     /// you do not include a value, it defaults to 30.</p>
@@ -9434,10 +9582,10 @@ impl std::fmt::Debug for ScheduleKeyDeletionInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RevokeGrantInput {
-    /// <p>A unique identifier for the customer master key (CMK) associated with the grant. To get
-    /// the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
-    /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-    /// different AWS account, you must use the key ARN.</p>
+    /// <p>A unique identifier for the KMS key associated with the grant. To get
+    /// the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+    /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9449,7 +9597,7 @@ pub struct RevokeGrantInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Identifies the grant to revoke. To get the grant ID, use <a>CreateGrant</a>,
     /// <a>ListGrants</a>, or <a>ListRetirableGrants</a>.</p>
@@ -9471,9 +9619,9 @@ pub struct RetireGrantInput {
     /// before it has achieved eventual consistency.</p>
     /// <p>Only the <a>CreateGrant</a> operation returns a grant token. For details, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a>
-    /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-eventual-consistency">Eventual consistency</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub grant_token: std::option::Option<std::string::String>,
-    /// <p>The key ARN CMK associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
+    /// <p>The key ARN KMS key associated with the grant. To find the key ARN, use the <a>ListKeys</a> operation.</p>
     /// <p>For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
     /// </p>
     pub key_id: std::option::Option<std::string::String>,
@@ -9500,8 +9648,7 @@ impl std::fmt::Debug for RetireGrantInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ReplicateKeyInput {
-    /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a
-    /// CMK is a multi-Region primary key, use the <a>DescribeKey</a> operation to check
+    /// <p>Identifies the multi-Region primary key that is being replicated. To determine whether a KMS key is a multi-Region primary key, use the <a>DescribeKey</a> operation to check
     /// the value of the <code>MultiRegionKeyType</code> property.</p>
     /// <p>Specify the key ID or key ARN of a multi-Region primary key.</p>
     /// <p>For example:</p>
@@ -9515,42 +9662,43 @@ pub struct ReplicateKeyInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
-    /// <p>The Region ID of the AWS Region for this replica key. </p>
+    /// <p>The Region ID of the Amazon Web Services Region for this replica key. </p>
     /// <p>Enter the Region ID, such as <code>us-east-1</code> or <code>ap-southeast-2</code>. For a
-    /// list of AWS Regions in which AWS KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">AWS KMS service endpoints</a> in the
+    /// list of Amazon Web Services Regions in which KMS is supported, see <a href="https://docs.aws.amazon.com/general/latest/gr/kms.html#kms_region">KMS service endpoints</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
-    /// <p>The replica must be in a different AWS Region than its primary key and other replicas of
-    /// that primary key, but in the same AWS partition. AWS KMS must be available in the replica
-    /// Region. If the Region is not enabled by default, the AWS account must be enabled in the
+    /// <p>The replica must be in a different Amazon Web Services Region than its primary key and other replicas of
+    /// that primary key, but in the same Amazon Web Services partition. KMS must be available in the replica
+    /// Region. If the Region is not enabled by default, the Amazon Web Services account must be enabled in the
     /// Region. </p>
-    /// <p>For information about AWS partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) in the
+    /// <p>For information about Amazon Web Services partitions, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) in the
     /// <i>Amazon Web Services General Reference</i>.</a> For information about enabling and disabling Regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Enabling a
     /// Region</a> and <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-disable">Disabling a Region</a> in the
     /// <i>Amazon Web Services General Reference</i>.</p>
     pub replica_region: std::option::Option<std::string::String>,
-    /// <p>The key policy to attach to the CMK. This parameter is optional. If you do not provide a key policy, AWS KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the CMK.</p>
+    /// <p>The key policy to attach to the KMS key. This parameter is optional. If you do not provide a key policy, KMS attaches the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">default key policy</a> to the KMS key.</p>
     /// <p>The key policy is not a shared property of multi-Region keys. You can specify the same key
-    /// policy or a different key policy for each key in a set of related multi-Region keys. AWS KMS
+    /// policy or a different key policy for each key in a set of related multi-Region keys. KMS
     /// does not synchronize this property.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
     /// <li>
     /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
-    /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica CMK. This reduces the
-    /// risk that the CMK becomes unmanageable. For more information, refer to the scenario in the
+    /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key. This reduces the
+    /// risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
-    /// <i>AWS Key Management Service Developer Guide</i>
+    /// <i>Key Management Service Developer Guide</i>
     /// </i>.</p>
     /// </li>
     /// <li>
     /// <p>Each statement in the key policy must contain one or more principals. The principals
-    /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal
+    /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
     /// (for example, an IAM user or role), you might need to enforce a delay before including the
     /// new principal in a key policy because the new principal might not be immediately visible
-    /// to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS
-    /// Identity and Access Management User Guide</i>.</p>
+    /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>
+    /// <i>Identity and Access Management User Guide</i>
+    /// </i>.</p>
     /// </li>
     /// <li>
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
@@ -9559,36 +9707,33 @@ pub struct ReplicateKeyInput {
     pub policy: std::option::Option<std::string::String>,
     /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
     /// <important>
-    /// <p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not
+    /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
     /// set this value to true indiscriminately.</p>
-    /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the
-    /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p>
+    /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
     /// <p>The default value is false.</p>
     pub bypass_policy_lockout_safety_check: bool,
-    /// <p>A description of the CMK. Use a description that helps you decide whether the CMK is
-    /// appropriate for a task. The default value is an empty string (no description).</p>
+    /// <p>A description of the KMS key. The default value is an empty string (no description).</p>
     /// <p>The description is not a shared property of multi-Region keys. You can specify the same
-    /// description or a different description for each key in a set of related multi-Region keys. AWS
-    /// KMS does not synchronize this property.</p>
+    /// description or a different description for each key in a set of related multi-Region keys. KMS does not synchronize this property.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Assigns one or more tags to the replica key. Use this parameter to tag the CMK when it is created.
-    /// To tag an existing CMK, use the <a>TagResource</a> operation.</p>
+    /// <p>Assigns one or more tags to the replica key. Use this parameter to tag the KMS key when it is created.
+    /// To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
     /// <note>
-    /// <p>Tagging or untagging a CMK can allow or deny permission to the
-    /// CMK. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
     /// <p>Tags are not a shared property of multi-Region keys. You can specify the same tags or
-    /// different tags for each key in a set of related multi-Region keys. AWS KMS does not
+    /// different tags for each key in a set of related multi-Region keys. KMS does not
     /// synchronize this property.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
     /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
-    /// on a CMK with the same tag key. If you specify an existing tag key with a different tag value,
-    /// AWS KMS replaces the current tag value with the specified one.</p>
-    /// <p>When you assign tags to an AWS resource, AWS generates a cost allocation
-    /// report with usage and costs aggregated by tags. Tags can also be used to control access to a CMK. For details,
+    /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag value,
+    /// KMS replaces the current tag value with the specified one.</p>
+    /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
+    /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
 }
@@ -9615,20 +9760,20 @@ pub struct ReEncryptInput {
     pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
     /// <p>Specifies the encryption context to use to decrypt the ciphertext. Enter the same
     /// encryption context that was used to encrypt the ciphertext.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub source_encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the customer master key (CMK) that
-    /// AWS KMS will use to decrypt the ciphertext before it is re-encrypted. Enter a key ID of the CMK
+    /// <p>Specifies the KMS key that
+    /// KMS will use to decrypt the ciphertext before it is re-encrypted. Enter a key ID of the KMS key
     /// that was used to encrypt the ciphertext.</p>
-    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
-    /// If you used a symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the
+    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
+    /// If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to the
     /// symmetric ciphertext blob. However, it is always recommended as a best practice. This practice
-    /// ensures that you use the CMK that you intend.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// ensures that you use the KMS key that you intend.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9648,13 +9793,13 @@ pub struct ReEncryptInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub source_key_id: std::option::Option<std::string::String>,
-    /// <p>A unique identifier for the CMK that is used to reencrypt the data. Specify a symmetric or
-    /// asymmetric CMK with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the
-    /// <code>KeyUsage</code> value of a CMK, use the <a>DescribeKey</a>
+    /// <p>A unique identifier for the KMS key that is used to reencrypt the data. Specify a symmetric or
+    /// asymmetric KMS key with a <code>KeyUsage</code> value of <code>ENCRYPT_DECRYPT</code>. To find the
+    /// <code>KeyUsage</code> value of a KMS key, use the <a>DescribeKey</a>
     /// operation.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9674,35 +9819,33 @@ pub struct ReEncryptInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub destination_key_id: std::option::Option<std::string::String>,
     /// <p>Specifies that encryption context to use when the reencrypting the data.</p>
-    /// <p>A destination encryption context is valid only when the destination CMK is a symmetric
-    /// CMK. The standard ciphertext format for asymmetric CMKs does not include fields for
+    /// <p>A destination encryption context is valid only when the destination KMS key is a symmetric KMS key. The standard ciphertext format for asymmetric KMS keys does not include fields for
     /// metadata.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub destination_encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the encryption algorithm that AWS KMS will use to decrypt the ciphertext before it
+    /// <p>Specifies the encryption algorithm that KMS will use to decrypt the ciphertext before it
     /// is reencrypted. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the algorithm
-    /// used for symmetric CMKs.</p>
+    /// used for symmetric KMS keys.</p>
     /// <p>Specify the same algorithm that was used to encrypt the ciphertext. If you specify a
     /// different algorithm, the decrypt attempt fails.</p>
-    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric
-    /// CMK.</p>
+    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.</p>
     pub source_encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
-    /// <p>Specifies the encryption algorithm that AWS KMS will use to reecrypt the data after it has
+    /// <p>Specifies the encryption algorithm that KMS will use to reecrypt the data after it has
     /// decrypted it. The default value, <code>SYMMETRIC_DEFAULT</code>, represents the encryption
-    /// algorithm used for symmetric CMKs.</p>
-    /// <p>This parameter is required only when the destination CMK is an asymmetric CMK.</p>
+    /// algorithm used for symmetric KMS keys.</p>
+    /// <p>This parameter is required only when the destination KMS key is an asymmetric KMS key.</p>
     pub destination_encryption_algorithm:
         std::option::Option<crate::model::EncryptionAlgorithmSpec>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for ReEncryptInput {
@@ -9732,8 +9875,8 @@ impl std::fmt::Debug for ReEncryptInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct PutKeyPolicyInput {
-    /// <p>Sets the key policy on the specified customer master key (CMK).</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Sets the key policy on the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9745,39 +9888,37 @@ pub struct PutKeyPolicyInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The name of the key policy. The only valid value is <code>default</code>.</p>
     pub policy_name: std::option::Option<std::string::String>,
-    /// <p>The key policy to attach to the CMK.</p>
+    /// <p>The key policy to attach to the KMS key.</p>
     /// <p>The key policy must meet the following criteria:</p>
     /// <ul>
     /// <li>
     /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
     /// must allow the principal that is making the <code>PutKeyPolicy</code> request to make a
-    /// subsequent <code>PutKeyPolicy</code> request on the CMK. This reduces the risk that the
-    /// CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>.</p>
     /// </li>
     /// <li>
     /// <p>Each statement in the key policy must contain one or more principals. The principals
-    /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal
+    /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
     /// (for example, an IAM user or role), you might need to enforce a delay before including the
     /// new principal in a key policy because the new principal might not be immediately visible
-    /// to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS
-    /// Identity and Access Management User Guide</i>.</p>
+    /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     /// </li>
     /// </ul>
     /// <p>The key policy cannot exceed 32 kilobytes (32768 bytes). For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/resource-limits.html">Resource Quotas</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub policy: std::option::Option<std::string::String>,
     /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
     /// <important>
-    /// <p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not
+    /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
     /// set this value to true indiscriminately.</p>
-    /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.</p>
     /// </important>
     /// <p>Use this parameter only when you intend to prevent the principal that is making the
-    /// request from making a subsequent <code>PutKeyPolicy</code> request on the CMK.</p>
+    /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.</p>
     /// <p>The default value is false.</p>
     pub bypass_policy_lockout_safety_check: bool,
 }
@@ -9799,7 +9940,7 @@ impl std::fmt::Debug for PutKeyPolicyInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListRetirableGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1
     /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -9808,12 +9949,9 @@ pub struct ListRetirableGrantsInput {
     /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
     /// you just received.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>The retiring principal for which to list grants. Enter a principal in your AWS
-    /// account.</p>
-    /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS
-    /// principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and
-    /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS
-    /// Identity and Access Management (IAM)</a> in the Example ARNs section of the
+    /// <p>The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account.</p>
+    /// <p>To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and
+    /// assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
     /// <i>Amazon Web Services General Reference</i>.</p>
     pub retiring_principal: std::option::Option<std::string::String>,
 }
@@ -9830,8 +9968,8 @@ impl std::fmt::Debug for ListRetirableGrantsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListResourceTagsInput {
-    /// <p>Gets tags on the specified customer master key (CMK).</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Gets tags on the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9843,10 +9981,10 @@ pub struct ListResourceTagsInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1 and 50, inclusive. If
     /// you do not include a value, it defaults to 50.</p>
@@ -9872,7 +10010,7 @@ impl std::fmt::Debug for ListResourceTagsInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeysInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between
     /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -9894,8 +10032,8 @@ impl std::fmt::Debug for ListKeysInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListKeyPoliciesInput {
-    /// <p>Gets the names of key policies for the specified customer master key (CMK).</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Gets the names of key policies for the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9907,10 +10045,10 @@ pub struct ListKeyPoliciesInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between
     /// 1 and 1000, inclusive. If you do not include a value, it defaults to 100.</p>
@@ -9935,7 +10073,7 @@ impl std::fmt::Debug for ListKeyPoliciesInput {
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListGrantsInput {
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1
     /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -9944,10 +10082,10 @@ pub struct ListGrantsInput {
     /// truncated results. Set it to the value of <code>NextMarker</code> from the truncated response
     /// you just received.</p>
     pub marker: std::option::Option<std::string::String>,
-    /// <p>Returns only grants for the specified customer master key (CMK). This parameter is
+    /// <p>Returns only grants for the specified KMS key. This parameter is
     /// required.</p>
-    /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-    /// different AWS account, you must use the key ARN.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+    /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9959,7 +10097,7 @@ pub struct ListGrantsInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Returns only the grant with the specified grant ID. The grant ID uniquely identifies the
     /// grant. </p>
@@ -9983,11 +10121,10 @@ impl std::fmt::Debug for ListGrantsInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ListAliasesInput {
-    /// <p>Lists only aliases that are associated with the specified CMK. Enter a CMK in your AWS
-    /// account. </p>
+    /// <p>Lists only aliases that are associated with the specified KMS key. Enter a KMS key in your Amazon Web Services account. </p>
     /// <p>This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases
     /// in the account and Region.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -9999,10 +10136,10 @@ pub struct ListAliasesInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     /// <p>This value is optional. If you include a value, it must be between 1
     /// and 100, inclusive. If you do not include a value, it defaults to 50.</p>
@@ -10025,11 +10162,11 @@ impl std::fmt::Debug for ListAliasesInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct ImportKeyMaterialInput {
-    /// <p>The identifier of the symmetric CMK that receives the imported key material. The CMK's
-    /// <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same CMK specified in
+    /// <p>The identifier of the symmetric KMS key that receives the imported key material. The KMS key's
+    /// <code>Origin</code> must be <code>EXTERNAL</code>. This must be the same KMS key specified in
     /// the <code>KeyID</code> parameter of the corresponding <a>GetParametersForImport</a>
     /// request.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10041,7 +10178,7 @@ pub struct ImportKeyMaterialInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The import token that you received in the response to a previous <a>GetParametersForImport</a> request. It must be from the same response that contained
     /// the public key that you used to encrypt the key material.</p>
@@ -10050,8 +10187,8 @@ pub struct ImportKeyMaterialInput {
     /// wrapping key that <a>GetParametersForImport</a> returned, using the wrapping
     /// algorithm that you specified in the same <code>GetParametersForImport</code> request.</p>
     pub encrypted_key_material: std::option::Option<smithy_types::Blob>,
-    /// <p>The time at which the imported key material expires. When the key material expires, AWS KMS
-    /// deletes the key material and the CMK becomes unusable. You must omit this parameter when the
+    /// <p>The time at which the imported key material expires. When the key material expires, KMS
+    /// deletes the key material and the KMS key becomes unusable. You must omit this parameter when the
     /// <code>ExpirationModel</code> parameter is set to <code>KEY_MATERIAL_DOES_NOT_EXPIRE</code>.
     /// Otherwise it is required.</p>
     pub valid_to: std::option::Option<smithy_types::Instant>,
@@ -10076,8 +10213,8 @@ impl std::fmt::Debug for ImportKeyMaterialInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetPublicKeyInput {
-    /// <p>Identifies the asymmetric CMK that includes the public key.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>Identifies the asymmetric KMS key that includes the public key.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10097,11 +10234,11 @@ pub struct GetPublicKeyInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for GetPublicKeyInput {
@@ -10116,9 +10253,9 @@ impl std::fmt::Debug for GetPublicKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetParametersForImportInput {
-    /// <p>The identifier of the symmetric CMK into which you will import key material. The
-    /// <code>Origin</code> of the CMK must be <code>EXTERNAL</code>.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>The identifier of the symmetric KMS key into which you will import key material. The
+    /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10130,10 +10267,10 @@ pub struct GetParametersForImportInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt the Key Material</a>
-    /// in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// in the <i>Key Management Service Developer Guide</i>.</p>
     pub wrapping_algorithm: std::option::Option<crate::model::AlgorithmSpec>,
     /// <p>The type of wrapping key (public key) to return in the response. Only 2048-bit RSA public
     /// keys are supported.</p>
@@ -10152,9 +10289,9 @@ impl std::fmt::Debug for GetParametersForImportInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyRotationStatusInput {
-    /// <p>Gets the rotation status for the specified customer master key (CMK).</p>
-    /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-    /// different AWS account, you must use the key ARN.</p>
+    /// <p>Gets the rotation status for the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+    /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10166,7 +10303,7 @@ pub struct GetKeyRotationStatusInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for GetKeyRotationStatusInput {
@@ -10180,8 +10317,8 @@ impl std::fmt::Debug for GetKeyRotationStatusInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GetKeyPolicyInput {
-    /// <p>Gets the key policy for the specified customer master key (CMK).</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Gets the key policy for the specified KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10193,7 +10330,7 @@ pub struct GetKeyPolicyInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the name of the key policy. The only valid name is <code>default</code>. To get
     /// the names of key policies, use <a>ListKeyPolicies</a>.</p>
@@ -10213,7 +10350,7 @@ impl std::fmt::Debug for GetKeyPolicyInput {
 pub struct GenerateRandomInput {
     /// <p>The length of the byte string.</p>
     pub number_of_bytes: std::option::Option<i32>,
-    /// <p>Generates the random byte string in the AWS CloudHSM cluster that is associated with the
+    /// <p>Generates the random byte string in the CloudHSM cluster that is associated with the
     /// specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
 }
@@ -10229,9 +10366,9 @@ impl std::fmt::Debug for GenerateRandomInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyWithoutPlaintextInput {
-    /// <p>The identifier of the symmetric customer master key (CMK) that encrypts the data
+    /// <p>The identifier of the symmetric KMS key that encrypts the data
     /// key.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10251,13 +10388,13 @@ pub struct GenerateDataKeyWithoutPlaintextInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>The length of the data key. Use <code>AES_128</code> to generate a 128-bit symmetric key,
@@ -10268,8 +10405,8 @@ pub struct GenerateDataKeyWithoutPlaintextInput {
     /// we recommend that you use the <code>KeySpec</code> field instead of this one.</p>
     pub number_of_bytes: std::option::Option<i32>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextInput {
@@ -10289,16 +10426,16 @@ impl std::fmt::Debug for GenerateDataKeyWithoutPlaintextInput {
 pub struct GenerateDataKeyPairWithoutPlaintextInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the
     /// data key pair.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the CMK that encrypts the private key in the data key pair. You must specify a
-    /// symmetric CMK. You cannot use an asymmetric CMK or a CMK in a custom key store. To get the
-    /// type and origin of your CMK, use the <a>DescribeKey</a> operation. </p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>Specifies the KMS key that encrypts the private key in the data key pair. You must specify a
+    /// symmetric KMS key. You cannot use an asymmetric KMS key or a KMS key in a custom key store. To get the
+    /// type and origin of your KMS key, use the <a>DescribeKey</a> operation. </p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10318,14 +10455,14 @@ pub struct GenerateDataKeyPairWithoutPlaintextInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Determines the type of data key pair that is generated.</p>
-    /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
+    /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextInput {
@@ -10344,16 +10481,15 @@ impl std::fmt::Debug for GenerateDataKeyPairWithoutPlaintextInput {
 pub struct GenerateDataKeyPairInput {
     /// <p>Specifies the encryption context that will be used when encrypting the private key in the
     /// data key pair.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    /// <p>Specifies the symmetric CMK that encrypts the private key in the data key pair. You cannot
-    /// specify an asymmetric CMK or a CMK in a custom key store. To get the type and origin of your
-    /// CMK, use the <a>DescribeKey</a> operation.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>Specifies the symmetric KMS key that encrypts the private key in the data key pair. You cannot
+    /// specify an asymmetric KMS key or a KMS key in a custom key store. To get the type and origin of your KMS key, use the <a>DescribeKey</a> operation.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10373,14 +10509,14 @@ pub struct GenerateDataKeyPairInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Determines the type of data key pair that is generated. </p>
-    /// <p>The AWS KMS rule that restricts the use of asymmetric RSA CMKs to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC CMKs only to sign and verify, are not effective outside of AWS KMS.</p>
+    /// <p>The KMS rule that restricts the use of asymmetric RSA KMS keys to encrypt and decrypt or to sign and verify (but not both), and the rule that permits you to use ECC KMS keys only to sign and verify, are not effective on data key pairs, which are used outside of KMS.</p>
     pub key_pair_spec: std::option::Option<crate::model::DataKeyPairSpec>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for GenerateDataKeyPairInput {
@@ -10397,8 +10533,8 @@ impl std::fmt::Debug for GenerateDataKeyPairInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct GenerateDataKeyInput {
-    /// <p>Identifies the symmetric CMK that encrypts the data key.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>Identifies the symmetric KMS key that encrypts the data key.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10418,13 +10554,13 @@ pub struct GenerateDataKeyInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the encryption context that will be used when encrypting the data key.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>Specifies the length of the data key in bytes. For example, use the value 64 to generate a
@@ -10439,8 +10575,8 @@ pub struct GenerateDataKeyInput {
     /// parameter (but not both) in every <code>GenerateDataKey</code> request.</p>
     pub key_spec: std::option::Option<crate::model::DataKeySpec>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for GenerateDataKeyInput {
@@ -10458,8 +10594,8 @@ impl std::fmt::Debug for GenerateDataKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EncryptInput {
-    /// <p>Identifies the customer master key (CMK) to use in the encryption operation.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>Identifies the KMS key to use in the encryption operation.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10479,27 +10615,27 @@ pub struct EncryptInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Data to be encrypted.</p>
     pub plaintext: std::option::Option<smithy_types::Blob>,
     /// <p>Specifies the encryption context that will be used to encrypt the data.
-    /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not support an encryption context. </p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context. </p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the encryption algorithm that AWS KMS will use to encrypt the plaintext message.
-    /// The algorithm must be compatible with the CMK that you specify.</p>
-    /// <p>This parameter is required only for asymmetric CMKs. The default value,
-    /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric CMKs. If you are using
-    /// an asymmetric CMK, we recommend RSAES_OAEP_SHA_256.</p>
+    /// <p>Specifies the encryption algorithm that KMS will use to encrypt the plaintext message.
+    /// The algorithm must be compatible with the KMS key that you specify.</p>
+    /// <p>This parameter is required only for asymmetric KMS keys. The default value,
+    /// <code>SYMMETRIC_DEFAULT</code>, is the algorithm used for symmetric KMS keys. If you are using
+    /// an asymmetric KMS key, we recommend RSAES_OAEP_SHA_256.</p>
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
 }
 impl std::fmt::Debug for EncryptInput {
@@ -10517,8 +10653,8 @@ impl std::fmt::Debug for EncryptInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKeyRotationInput {
-    /// <p>Identifies a symmetric customer master key (CMK). You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric CMKs</a>, CMKs with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or CMKs in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies a symmetric KMS key. You cannot enable automatic rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-concepts.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. To enable or disable automatic rotation of a set of related <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html#mrk-replica-key">multi-Region keys</a>, set the property on the primary key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10530,7 +10666,7 @@ pub struct EnableKeyRotationInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EnableKeyRotationInput {
@@ -10544,8 +10680,8 @@ impl std::fmt::Debug for EnableKeyRotationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct EnableKeyInput {
-    /// <p>Identifies the customer master key (CMK) to enable.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies the KMS key to enable.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10557,7 +10693,7 @@ pub struct EnableKeyInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for EnableKeyInput {
@@ -10585,11 +10721,11 @@ impl std::fmt::Debug for DisconnectCustomKeyStoreInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKeyRotationInput {
-    /// <p>Identifies a symmetric customer master key (CMK). You cannot enable or disable automatic
-    /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric CMKs</a>, CMKs
+    /// <p>Identifies a symmetric KMS key. You cannot enable or disable automatic
+    /// rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html#asymmetric-cmks">asymmetric KMS keys</a>, KMS keys
     /// with <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">imported key
-    /// material</a>, or CMKs in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// material</a>, or KMS keys in a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10601,7 +10737,7 @@ pub struct DisableKeyRotationInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisableKeyRotationInput {
@@ -10615,8 +10751,8 @@ impl std::fmt::Debug for DisableKeyRotationInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DisableKeyInput {
-    /// <p>Identifies the customer master key (CMK) to disable.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies the KMS key to disable.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10628,7 +10764,7 @@ pub struct DisableKeyInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DisableKeyInput {
@@ -10642,12 +10778,11 @@ impl std::fmt::Debug for DisableKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DescribeKeyInput {
-    /// <p>Describes the specified customer master key (CMK). </p>
-    /// <p>If you specify a predefined AWS alias (an AWS alias with no key ID), KMS associates the
-    /// alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">AWS
-    /// managed CMK</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
+    /// <p>Describes the specified KMS key. </p>
+    /// <p>If you specify a predefined Amazon Web Services alias (an Amazon Web Services alias with no key ID), KMS associates the
+    /// alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html##aws-managed-cmk">Amazon Web Services managed key</a> and returns its <code>KeyId</code> and <code>Arn</code> in the
     /// response.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10667,11 +10802,11 @@ pub struct DescribeKeyInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>A list of grant tokens.</p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
 }
 impl std::fmt::Debug for DescribeKeyInput {
@@ -10700,7 +10835,7 @@ pub struct DescribeCustomKeyStoresInput {
     /// both.</p>
     pub custom_key_store_name: std::option::Option<std::string::String>,
     /// <p>Use this parameter to specify the maximum number of items to return. When this
-    /// value is present, AWS KMS does not return more than the specified number of items, but it might
+    /// value is present, KMS does not return more than the specified number of items, but it might
     /// return fewer.</p>
     pub limit: std::option::Option<i32>,
     /// <p>Use this parameter in a subsequent request after you receive a response with
@@ -10722,9 +10857,9 @@ impl std::fmt::Debug for DescribeCustomKeyStoresInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct DeleteImportedKeyMaterialInput {
-    /// <p>Identifies the CMK from which you are deleting imported key material. The
-    /// <code>Origin</code> of the CMK must be <code>EXTERNAL</code>.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies the KMS key from which you are deleting imported key material. The
+    /// <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10736,7 +10871,7 @@ pub struct DeleteImportedKeyMaterialInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for DeleteImportedKeyMaterialInput {
@@ -10782,25 +10917,24 @@ pub struct DecryptInput {
     /// <p>Ciphertext to be decrypted. The blob includes metadata.</p>
     pub ciphertext_blob: std::option::Option<smithy_types::Blob>,
     /// <p>Specifies the encryption context to use when decrypting the data.
-    /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric CMK. The standard asymmetric encryption algorithms that AWS KMS uses do not support an encryption context.</p>
-    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric CMK, but it is highly recommended.</p>
+    /// An encryption context is valid only for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> with a symmetric KMS key. The standard asymmetric encryption algorithms that KMS uses do not support an encryption context.</p>
+    /// <p>An <i>encryption context</i> is a collection of non-secret key-value pairs that represents additional authenticated data. When you use an encryption context to encrypt data, you must specify the same (an exact case-sensitive match) encryption context to decrypt the data. An encryption context is optional when encrypting with a symmetric KMS key, but it is highly recommended.</p>
     /// <p>For more information, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-    /// Context</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
     pub encryption_context:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
     /// <p>A list of grant tokens. </p>
-    /// <p>Use a grant token when your permission to call this operation comes from a newly created
-    /// grant that has not yet achieved eventual consistency. Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
-    /// <p>Specifies the customer master key (CMK) that AWS KMS uses to decrypt the ciphertext. Enter a
-    /// key ID of the CMK that was used to encrypt the ciphertext.</p>
-    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
-    /// If you used a symmetric CMK, AWS KMS can get the CMK from metadata that it adds to the
+    /// <p>Specifies the KMS key that KMS uses to decrypt the ciphertext. Enter a
+    /// key ID of the KMS key that was used to encrypt the ciphertext. </p>
+    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
+    /// If you used a symmetric KMS key, KMS can get the KMS key from metadata that it adds to the
     /// symmetric ciphertext blob. However, it is always recommended as a best practice. This practice
-    /// ensures that you use the CMK that you intend.</p>
-    /// <p>To specify a CMK, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a CMK in a different AWS account, you must use the key ARN or alias ARN.</p>
+    /// ensures that you use the KMS key that you intend.</p>
+    /// <p>To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon Web Services account, you must use the key ARN or alias ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -10820,14 +10954,14 @@ pub struct DecryptInput {
     /// </p>
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and alias ARN, use <a>ListAliases</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>Specifies the encryption algorithm that will be used to decrypt the ciphertext. Specify
     /// the same algorithm that was used to encrypt the data. If you specify a different algorithm,
     /// the <code>Decrypt</code> operation fails.</p>
-    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric CMK.
+    /// <p>This parameter is required only when the ciphertext was encrypted under an asymmetric KMS key.
     /// The default value, <code>SYMMETRIC_DEFAULT</code>, represents the only supported algorithm
-    /// that is valid for symmetric CMKs.</p>
+    /// that is valid for symmetric KMS keys.</p>
     pub encryption_algorithm: std::option::Option<crate::model::EncryptionAlgorithmSpec>,
 }
 impl std::fmt::Debug for DecryptInput {
@@ -10845,76 +10979,80 @@ impl std::fmt::Debug for DecryptInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateKeyInput {
-    /// <p>The key policy to attach to the CMK.</p>
+    /// <p>The key policy to attach to the KMS key.</p>
     /// <p>If you provide a key policy, it must meet the following criteria:</p>
     /// <ul>
     /// <li>
     /// <p>If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
     /// must allow the principal that is making the <code>CreateKey</code> request to make a
-    /// subsequent <a>PutKeyPolicy</a> request on the CMK. This reduces the risk that
-    /// the CMK becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
-    /// <i>AWS Key Management Service Developer Guide</i>
+    /// subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk that
+    /// the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>
+    /// <i>Key Management Service Developer Guide</i>
     /// </i>.</p>
     /// </li>
     /// <li>
     /// <p>Each statement in the key policy must contain one or more principals. The principals
-    /// in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal
+    /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal
     /// (for example, an IAM user or role), you might need to enforce a delay before including the
     /// new principal in a key policy because the new principal might not be immediately visible
-    /// to AWS KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>AWS
-    /// Identity and Access Management User Guide</i>.</p>
+    /// to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>.</p>
     /// </li>
     /// </ul>
-    /// <p>If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK. For
+    /// <p>If you do not provide a key policy, KMS attaches a default key policy to the KMS key. For
     /// more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default Key Policy</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>. </p>
+    /// <i>Key Management Service Developer Guide</i>. </p>
     /// <p>The key policy size quota is 32 kilobytes (32768 bytes).</p>
     /// <p>For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i>
-    /// <i>IAM User Guide</i>
+    /// <i>Identity and Access Management User Guide</i>
     /// </i>.</p>
     pub policy: std::option::Option<std::string::String>,
-    /// <p>A description of the CMK.</p>
-    /// <p>Use a description that helps you decide whether the CMK is
+    /// <p>A description of the KMS key.</p>
+    /// <p>Use a description that helps you decide whether the KMS key is
     /// appropriate for a task. The default value is an empty string (no description).</p>
+    /// <p>To set or change the description after the key is created, use <a>UpdateKeyDescription</a>.</p>
     pub description: std::option::Option<std::string::String>,
-    /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the CMK. The default value is
-    /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric CMKs. You can't
-    /// change the <code>KeyUsage</code> value after the CMK is created.</p>
+    /// <p>Determines the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a> for which you can use the KMS key. The default value is
+    /// <code>ENCRYPT_DECRYPT</code>. This parameter is required only for asymmetric KMS keys. You can't
+    /// change the <code>KeyUsage</code> value after the KMS key is created.</p>
     /// <p>Select only one valid value.</p>
     /// <ul>
     /// <li>
-    /// <p>For symmetric CMKs, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
+    /// <p>For symmetric KMS keys, omit the parameter or specify <code>ENCRYPT_DECRYPT</code>.</p>
     /// </li>
     /// <li>
-    /// <p>For asymmetric CMKs with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or
+    /// <p>For asymmetric KMS keys with RSA key material, specify <code>ENCRYPT_DECRYPT</code> or
     /// <code>SIGN_VERIFY</code>.</p>
     /// </li>
     /// <li>
-    /// <p>For asymmetric CMKs with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
+    /// <p>For asymmetric KMS keys with ECC key material, specify <code>SIGN_VERIFY</code>.</p>
     /// </li>
     /// </ul>
     pub key_usage: std::option::Option<crate::model::KeyUsageType>,
-    /// <p>Specifies the type of CMK to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
-    /// creates a CMK with a 256-bit symmetric key for encryption and decryption. For help choosing a
-    /// key spec for your CMK, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your CMK
-    /// Configuration</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
-    /// <p>The <code>CustomerMasterKeySpec</code> determines whether the CMK contains a symmetric key
-    /// or an asymmetric key pair. It also determines the encryption algorithms or signing algorithms
-    /// that the CMK supports. You can't change the <code>CustomerMasterKeySpec</code> after the CMK
-    /// is created. To further restrict the algorithms that can be used with the CMK, use a condition
-    /// key in its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i>AWS Key Management Service Developer
-    /// Guide</i>.</p>
+    /// <p>Instead, use the <code>KeySpec</code> parameter.</p>      
+    /// <p>The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> parameters work the same way. Only the names differ. We recommend that you use <code>KeySpec</code> parameter in your code. However, to avoid breaking changes, KMS will support both parameters.</p>
+    pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
+    /// <p>Specifies the type of KMS key to create. The default value, <code>SYMMETRIC_DEFAULT</code>,
+    /// creates a KMS key with a 256-bit symmetric key for encryption and decryption. For help choosing a
+    /// key spec for your KMS key, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symm-asymm-choose.html">How to Choose Your KMS key
+    /// Configuration</a> in the <i>
+    /// <i>Key Management Service Developer Guide</i>
+    /// </i>.</p>
+    /// <p>The <code>KeySpec</code> determines whether the KMS key contains a symmetric key or an
+    /// asymmetric key pair. It also determines the encryption algorithms or signing algorithms that
+    /// the KMS key supports. You can't change the <code>KeySpec</code> after the KMS key is created.
+    /// To further restrict the algorithms that can be used with the KMS key, use a condition key in
+    /// its key policy or IAM policy. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-algorithm">kms:EncryptionAlgorithm</a> or <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-signing-algorithm">kms:Signing Algorithm</a> in the <i>
+    /// <i>Key Management Service Developer Guide</i>
+    /// </i>.</p>
     /// <important>
     /// <p>
-    /// <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">AWS services that
-    /// are integrated with AWS KMS</a> use symmetric CMKs to protect your data. These
-    /// services do not support asymmetric CMKs. For help determining whether a CMK is symmetric or
-    /// asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric
-    /// CMKs</a> in the <i>AWS Key Management Service Developer
+    /// <a href="http://aws.amazon.com/kms/features/#AWS_Service_Integration">Amazon Web Services services that
+    /// are integrated with KMS</a> use symmetric KMS keys to protect your data. These
+    /// services do not support asymmetric KMS keys. For help determining whether a KMS key is symmetric or
+    /// asymmetric, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/find-symm-asymm.html">Identifying Symmetric and Asymmetric KMS keys</a> in the <i>Key Management Service Developer
     /// Guide</i>.</p>
     /// </important>
-    /// <p>AWS KMS supports the following key specs for CMKs:</p>
+    /// <p>KMS supports the following key specs for KMS keys:</p>
     /// <ul>
     /// <li>
     /// <p>Symmetric key (default)</p>
@@ -10973,72 +11111,71 @@ pub struct CreateKeyInput {
     /// </ul>
     /// </li>
     /// </ul>
-    pub customer_master_key_spec: std::option::Option<crate::model::CustomerMasterKeySpec>,
-    /// <p>The source of the key material for the CMK. You cannot change the origin after you create
-    /// the CMK. The default is <code>AWS_KMS</code>, which means that AWS KMS creates the key
+    pub key_spec: std::option::Option<crate::model::KeySpec>,
+    /// <p>The source of the key material for the KMS key. You cannot change the origin after you create
+    /// the KMS key. The default is <code>AWS_KMS</code>, which means that KMS creates the key
     /// material.</p>
-    /// <p>To create a CMK with no key material (for imported key material), set the value to
-    /// <code>EXTERNAL</code>. For more information about importing key material into AWS KMS, see
+    /// <p>To create a KMS key with no key material (for imported key material), set the value to
+    /// <code>EXTERNAL</code>. For more information about importing key material into KMS, see
     /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key
-    /// Material</a> in the <i>AWS Key Management Service Developer Guide</i>. This value is valid only for symmetric CMKs.</p>
-    /// <p>To create a CMK in an AWS KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the associated
-    /// AWS CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
+    /// Material</a> in the <i>Key Management Service Developer Guide</i>. This value is valid only for symmetric KMS keys.</p>
+    /// <p>To create a KMS key in an KMS <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and create its key material in the associated
+    /// CloudHSM cluster, set this value to <code>AWS_CLOUDHSM</code>. You must also use the
     /// <code>CustomKeyStoreId</code> parameter to identify the custom key store. This value is
-    /// valid only for symmetric CMKs.</p>
+    /// valid only for symmetric KMS keys.</p>
     pub origin: std::option::Option<crate::model::OriginType>,
-    /// <p>Creates the CMK in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
-    /// AWS CloudHSM cluster. To create a CMK in a custom key store, you must also specify the
-    /// <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The AWS CloudHSM cluster
+    /// <p>Creates the KMS key in the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> and the key material in its associated
+    /// CloudHSM cluster. To create a KMS key in a custom key store, you must also specify the
+    /// <code>Origin</code> parameter with a value of <code>AWS_CLOUDHSM</code>. The CloudHSM cluster
     /// that is associated with the custom key store must have at least two active HSMs, each in a
     /// different Availability Zone in the Region.</p>
-    /// <p>This parameter is valid only for symmetric CMKs and regional CMKs. You cannot create an
-    /// asymmetric CMK or a multi-Region CMK in a custom key store.</p>
+    /// <p>This parameter is valid only for symmetric KMS keys and regional KMS keys. You cannot create an
+    /// asymmetric KMS key or a multi-Region key in a custom key store.</p>
     /// <p>To find the ID of a custom key store, use the <a>DescribeCustomKeyStores</a> operation.</p>
-    /// <p>The response includes the custom key store ID and the ID of the AWS CloudHSM cluster.</p>
-    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in AWS KMS, which
-    /// combines the convenience and extensive integration of AWS KMS with the isolation and control of a
+    /// <p>The response includes the custom key store ID and the ID of the CloudHSM cluster.</p>
+    /// <p>This operation is part of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">Custom Key Store feature</a> feature in KMS, which
+    /// combines the convenience and extensive integration of KMS with the isolation and control of a
     /// single-tenant key store.</p>
     pub custom_key_store_id: std::option::Option<std::string::String>,
     /// <p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
     /// <important>
-    /// <p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not
+    /// <p>Setting this value to true increases the risk that the KMS key becomes unmanageable. Do not
     /// set this value to true indiscriminately.</p>
     /// <p>For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <i>
-    /// <i>AWS Key Management Service Developer Guide</i>
+    /// <i>Key Management Service Developer Guide</i>
     /// </i>.</p>
     /// </important>
     /// <p>Use this parameter only when you include a policy in the request and you intend to prevent
-    /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the CMK.</p>
+    /// the principal that is making the request from making a subsequent <a>PutKeyPolicy</a> request on the KMS key.</p>
     /// <p>The default value is false.</p>
     pub bypass_policy_lockout_safety_check: bool,
-    /// <p>Assigns one or more tags to the CMK. Use this parameter to tag the CMK when it is created.
-    /// To tag an existing CMK, use the <a>TagResource</a> operation.</p>
+    /// <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when it is created.
+    /// To tag an existing KMS key, use the <a>TagResource</a> operation.</p>
     /// <note>
-    /// <p>Tagging or untagging a CMK can allow or deny permission to the
-    /// CMK. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">Using ABAC in KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// </note>
     /// <p>To use this parameter, you must have <a href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:TagResource</a> permission in an IAM policy.</p>
     /// <p>Each tag consists of a tag key and a tag value. Both the tag key and the tag value are
     /// required, but the tag value can be an empty (null) string. You cannot have more than one tag
-    /// on a CMK with the same tag key. If you specify an existing tag key with a different tag value,
-    /// AWS KMS replaces the current tag value with the specified one.</p>
-    /// <p>When you assign tags to an AWS resource, AWS generates a cost allocation
-    /// report with usage and costs aggregated by tags. Tags can also be used to control access to a CMK. For details,
+    /// on a KMS key with the same tag key. If you specify an existing tag key with a different tag value,
+    /// KMS replaces the current tag value with the specified one.</p>
+    /// <p>When you add tags to an Amazon Web Services resource, Amazon Web Services generates a cost allocation
+    /// report with usage and costs aggregated by tags. Tags can also be used to control access to a KMS key. For details,
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/tagging-keys.html">Tagging Keys</a>.</p>
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
-    /// <p>Creates a multi-Region primary key that you can replicate into other AWS Regions. You
-    /// cannot change this value after you create the CMK. </p>
-    /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region CMK,
+    /// <p>Creates a multi-Region primary key that you can replicate into other Amazon Web Services Regions. You
+    /// cannot change this value after you create the KMS key. </p>
+    /// <p>For a multi-Region key, set this parameter to <code>True</code>. For a single-Region KMS key,
     /// omit this parameter or set it to <code>False</code>. The default value is
     /// <code>False</code>.</p>
-    /// <p>This operation supports <i>multi-Region keys</i>, an AWS KMS feature that lets you create multiple
-    /// interoperable CMKs in different AWS Regions. Because these CMKs have the same key ID, key
-    /// material, and other metadata, you can use them to encrypt data in one AWS Region and decrypt
-    /// it in a different AWS Region without making a cross-Region call or exposing the plaintext data. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>This operation supports <i>multi-Region keys</i>, an KMS feature that lets you create multiple
+    /// interoperable KMS keys in different Amazon Web Services Regions. Because these KMS keys have the same key ID, key
+    /// material, and other metadata, you can use them interchangeably to encrypt data in one Amazon Web Services Region and decrypt
+    /// it in a different Amazon Web Services Region without re-encrypting the data or making a cross-Region call. For more information about multi-Region keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/multi-region-keys-overview.html">Using multi-Region keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
     /// <p>This value creates a <i>primary key</i>, not a replica. To create a
     /// <i>replica key</i>, use the <a>ReplicateKey</a> operation. </p>
-    /// <p>You can create a symmetric or asymmetric multi-Region CMK, and you can create a
-    /// multi-Region CMK with imported key material. However, you cannot create a multi-Region CMK in
+    /// <p>You can create a symmetric or asymmetric multi-Region key, and you can create a
+    /// multi-Region key with imported key material. However, you cannot create a multi-Region key in
     /// a custom key store.</p>
     pub multi_region: std::option::Option<bool>,
 }
@@ -11049,6 +11186,7 @@ impl std::fmt::Debug for CreateKeyInput {
         formatter.field("description", &self.description);
         formatter.field("key_usage", &self.key_usage);
         formatter.field("customer_master_key_spec", &self.customer_master_key_spec);
+        formatter.field("key_spec", &self.key_spec);
         formatter.field("origin", &self.origin);
         formatter.field("custom_key_store_id", &self.custom_key_store_id);
         formatter.field(
@@ -11064,9 +11202,9 @@ impl std::fmt::Debug for CreateKeyInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateGrantInput {
-    /// <p>Identifies the customer master key (CMK) for the grant. The grant gives principals permission to use this CMK.</p>
-    /// <p>Specify the key ID or key ARN of the CMK. To specify a CMK in a
-    /// different AWS account, you must use the key ARN.</p>
+    /// <p>Identifies the KMS key for the grant. The grant gives principals permission to use this KMS key.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key. To specify a KMS key in a
+    /// different Amazon Web Services account, you must use the key ARN.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -11078,50 +11216,52 @@ pub struct CreateGrantInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
     /// <p>The identity that gets the permissions specified in the grant.</p>
-    /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS
-    /// principal. Valid AWS principals include AWS accounts (root), IAM users, IAM roles, federated
+    /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, IAM roles, federated
     /// users, and assumed role users. For examples of the ARN syntax to use for specifying a
-    /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access
-    /// Management (IAM)</a> in the Example ARNs section of the <i>AWS General
+    /// principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access
+    /// Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General
     /// Reference</i>.</p>
     pub grantee_principal: std::option::Option<std::string::String>,
-    /// <p>The principal that is given permission to retire the grant by using <a>RetireGrant</a> operation.</p>
-    /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an AWS
-    /// principal. Valid AWS principals include AWS accounts (root), IAM users, federated users, and
+    /// <p>The principal that has permission to use the <a>RetireGrant</a> operation to
+    /// retire the grant. </p>
+    /// <p>To specify the principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and
     /// assumed role users. For examples of the ARN syntax to use for specifying a principal, see
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">AWS Identity and Access Management (IAM)</a> in the Example ARNs section of the
-    /// <i>AWS General Reference</i>.</p>
+    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the
+    /// <i>Amazon Web Services General Reference</i>.</p>
+    /// <p>The grant determines the retiring principal. Other principals might have permission to
+    /// retire the grant or revoke the grant. For details, see <a>RevokeGrant</a> and
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring and revoking grants</a> in the <i>Key Management Service Developer Guide</i>. </p>
     pub retiring_principal: std::option::Option<std::string::String>,
     /// <p>A list of operations that the grant permits. </p>
-    /// <p>The operation must be supported on the CMK. For example, you cannot create a grant for a
-    /// symmetric CMK that allows the <a>Sign</a> operation, or a grant for an asymmetric
-    /// CMK that allows the <a>GenerateDataKey</a> operation. If you try, AWS KMS returns a
+    /// <p>The operation must be supported on the KMS key. For example, you cannot create a grant for a
+    /// symmetric KMS key that allows the <a>Sign</a> operation, or a grant for an asymmetric KMS key that allows the <a>GenerateDataKey</a> operation. If you try, KMS returns a
     /// <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant operations</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub operations: std::option::Option<std::vec::Vec<crate::model::GrantOperation>>,
     /// <p>Specifies a grant constraint. </p>
-    /// <p>AWS KMS supports the <code>EncryptionContextEquals</code> and
+    /// <p>KMS supports the <code>EncryptionContextEquals</code> and
     /// <code>EncryptionContextSubset</code> grant constraints. Each constraint value can include up
     /// to 8 encryption context pairs. The encryption context value in each constraint cannot exceed
     /// 384 characters.</p>
-    /// <p>These grant constraints allow a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operation</a> only when the encryption context in the
-    /// request matches (<code>EncryptionContextEquals</code>) or includes
+    /// <p>These grant constraints allow the permissions in the grant only when the encryption
+    /// context in the request matches (<code>EncryptionContextEquals</code>) or includes
     /// (<code>EncryptionContextSubset</code>) the encryption context specified in this structure.
-    /// For more information about encryption context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption Context</a> in the
-    /// <i>
-    /// <i>AWS Key Management Service Developer Guide</i>
-    /// </i>. For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-    /// grant constraints</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// For information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using grant
+    /// constraints</a> in the <i>Key Management Service Developer Guide</i>. For more information about encryption context,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+    /// Context</a> in the <i>
+    /// <i>Key Management Service Developer Guide</i>
+    /// </i>. </p>
     /// <p>The encryption context grant constraints are supported only on operations that include an
     /// encryption context. You cannot use an encryption context grant constraint for cryptographic
-    /// operations with asymmetric CMKs or for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
+    /// operations with asymmetric KMS keys or for management operations, such as <a>DescribeKey</a> or <a>RetireGrant</a>.</p>
     pub constraints: std::option::Option<crate::model::GrantConstraints>,
     /// <p>A list of grant tokens. </p>
-    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#grant_token">Grant token</a> in the
-    /// <i>AWS Key Management Service Developer Guide</i>.</p>
+    /// <p>Use a grant token when your permission to call this operation comes from a new grant that has not yet achieved <i>eventual consistency</i>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">Grant token</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using a grant token</a> in the
+    /// <i>Key Management Service Developer Guide</i>.</p>
     pub grant_tokens: std::option::Option<std::vec::Vec<std::string::String>>,
     /// <p>A friendly name for the grant. Use this value to prevent the unintended
     /// creation of duplicate grants when retrying this request.</p>
@@ -11152,11 +11292,10 @@ impl std::fmt::Debug for CreateGrantInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CreateCustomKeyStoreInput {
-    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your AWS
-    /// account.</p>
+    /// <p>Specifies a friendly name for the custom key store. The name must be unique in your Amazon Web Services account.</p>
     pub custom_key_store_name: std::option::Option<std::string::String>,
-    /// <p>Identifies the AWS CloudHSM cluster for the custom key store. Enter the cluster ID of any active
-    /// AWS CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
+    /// <p>Identifies the CloudHSM cluster for the custom key store. Enter the cluster ID of any active
+    /// CloudHSM cluster that is not already associated with a custom key store. To find the cluster ID,
     /// use the <a href="https://docs.aws.amazon.com/cloudhsm/latest/APIReference/API_DescribeClusters.html">DescribeClusters</a> operation.</p>
     pub cloud_hsm_cluster_id: std::option::Option<std::string::String>,
     /// <p>Enter the content of the trust anchor certificate for the cluster. This is the content of
@@ -11164,11 +11303,11 @@ pub struct CreateCustomKeyStoreInput {
     pub trust_anchor_certificate: std::option::Option<std::string::String>,
     /// <p>Enter the password of the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-store-concepts.html#concept-kmsuser">
     /// <code>kmsuser</code> crypto user
-    /// (CU) account</a> in the specified AWS CloudHSM cluster. AWS KMS logs into the cluster as this
+    /// (CU) account</a> in the specified CloudHSM cluster. KMS logs into the cluster as this
     /// user to manage key material on your behalf.</p>
     /// <p>The password must be a string of 7 to 32 characters. Its value is case sensitive.</p>
-    /// <p>This parameter tells AWS KMS the <code>kmsuser</code> account password; it does not change
-    /// the password in the AWS CloudHSM cluster.</p>
+    /// <p>This parameter tells KMS the <code>kmsuser</code> account password; it does not change
+    /// the password in the CloudHSM cluster.</p>
     pub key_store_password: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateCustomKeyStoreInput {
@@ -11189,15 +11328,17 @@ pub struct CreateAliasInput {
     /// name, such as <code>alias/ExampleAlias</code>. </p>
     /// <p>The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters,
     /// forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved
-    /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMKs</a>.</p>
+    /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</p>
     pub alias_name: std::option::Option<std::string::String>,
-    /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>. The CMK must be
-    /// in the same AWS Region. </p>
-    /// <p>A valid CMK ID is required. If you supply a null or empty string value, this operation
+    /// <p>Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be
+    /// in the same Amazon Web Services Region. </p>
+    /// <p>A valid key ID is required. If you supply a null or empty string value, this operation
     /// returns an error.</p>
     /// <p>For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and
-    /// ARN</a> in the <i>AWS Key Management Service Developer Guide</i>.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// ARN</a> in the <i>
+    /// <i>Key Management Service Developer Guide</i>
+    /// </i>.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -11209,7 +11350,7 @@ pub struct CreateAliasInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub target_key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CreateAliasInput {
@@ -11239,8 +11380,8 @@ impl std::fmt::Debug for ConnectCustomKeyStoreInput {
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct CancelKeyDeletionInput {
-    /// <p>Identifies the customer master key (CMK) whose deletion is being canceled.</p>
-    /// <p>Specify the key ID or key ARN of the CMK.</p>
+    /// <p>Identifies the KMS key whose deletion is being canceled.</p>
+    /// <p>Specify the key ID or key ARN of the KMS key.</p>
     /// <p>For example:</p>
     /// <ul>
     /// <li>
@@ -11252,7 +11393,7 @@ pub struct CancelKeyDeletionInput {
     /// </p>    
     /// </li>
     /// </ul>
-    /// <p>To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
+    /// <p>To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</p>
     pub key_id: std::option::Option<std::string::String>,
 }
 impl std::fmt::Debug for CancelKeyDeletionInput {

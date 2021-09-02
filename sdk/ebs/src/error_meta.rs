@@ -27,8 +27,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::CompleteSnapshotError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::CompleteSnapshotError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::CompleteSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::CompleteSnapshotError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::CompleteSnapshotErrorKind::AccessDeniedException(inner) => {
@@ -57,8 +60,11 @@ impl From<smithy_http::result::SdkError<crate::error::CompleteSnapshotError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GetSnapshotBlockError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GetSnapshotBlockError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GetSnapshotBlockError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GetSnapshotBlockError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GetSnapshotBlockErrorKind::AccessDeniedException(inner) => {
@@ -87,8 +93,11 @@ impl From<smithy_http::result::SdkError<crate::error::GetSnapshotBlockError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListChangedBlocksError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListChangedBlocksError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListChangedBlocksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListChangedBlocksError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListChangedBlocksErrorKind::AccessDeniedException(inner) => {
@@ -117,8 +126,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListChangedBlocksError>> f
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::ListSnapshotBlocksError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::ListSnapshotBlocksError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::ListSnapshotBlocksError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::ListSnapshotBlocksError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::ListSnapshotBlocksErrorKind::AccessDeniedException(inner) => {
@@ -147,8 +159,11 @@ impl From<smithy_http::result::SdkError<crate::error::ListSnapshotBlocksError>> 
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::PutSnapshotBlockError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::PutSnapshotBlockError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::PutSnapshotBlockError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::PutSnapshotBlockError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::PutSnapshotBlockErrorKind::AccessDeniedException(inner) => {
@@ -177,8 +192,11 @@ impl From<smithy_http::result::SdkError<crate::error::PutSnapshotBlockError>> fo
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartSnapshotError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartSnapshotError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartSnapshotError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::StartSnapshotError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::StartSnapshotErrorKind::AccessDeniedException(inner) => {

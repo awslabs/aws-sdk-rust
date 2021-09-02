@@ -13,8 +13,11 @@ impl std::fmt::Display for Error {
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::GenerateDataSetError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::GenerateDataSetError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::GenerateDataSetError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(err: smithy_http::result::SdkError<crate::error::GenerateDataSetError, R>) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, .. } => match err.kind {
                 crate::error::GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException(
@@ -26,8 +29,13 @@ impl From<smithy_http::result::SdkError<crate::error::GenerateDataSetError>> for
         }
     }
 }
-impl From<smithy_http::result::SdkError<crate::error::StartSupportDataExportError>> for Error {
-    fn from(err: smithy_http::result::SdkError<crate::error::StartSupportDataExportError>) -> Self {
+impl<R> From<smithy_http::result::SdkError<crate::error::StartSupportDataExportError, R>> for Error
+where
+    R: Send + Sync + std::fmt::Debug + 'static,
+{
+    fn from(
+        err: smithy_http::result::SdkError<crate::error::StartSupportDataExportError, R>,
+    ) -> Self {
         match err {
             smithy_http::result::SdkError::ServiceError { err, ..} => match err.kind {
                 crate::error::StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException(inner) => Error::MarketplaceCommerceAnalyticsException(inner),

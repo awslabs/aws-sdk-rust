@@ -4,6 +4,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
+use http::{HeaderMap, HeaderValue};
+
 const EXTENDED_REQUEST_ID: &str = "s3_extended_request_id";
 
 pub trait ErrorExt {
@@ -16,13 +18,12 @@ impl ErrorExt for smithy_types::Error {
     }
 }
 
-pub fn parse_extended_error<B>(
+pub fn parse_extended_error(
     error: smithy_types::Error,
-    response: &http::Response<B>,
+    headers: &HeaderMap<HeaderValue>,
 ) -> smithy_types::Error {
     let mut builder = error.into_builder();
-    let host_id = response
-        .headers()
+    let host_id = headers
         .get("x-amz-id-2")
         .and_then(|header_value| header_value.to_str().ok());
     if let Some(host_id) = host_id {
@@ -50,7 +51,7 @@ mod test {
             .request_id("456")
             .build();
 
-        let error = parse_extended_error(error, &resp);
+        let error = parse_extended_error(error, resp.headers());
         assert_eq!(
             error
                 .extended_request_id()
@@ -67,7 +68,7 @@ mod test {
             .request_id("456")
             .build();
 
-        let error = parse_extended_error(error, &resp);
+        let error = parse_extended_error(error, resp.headers());
         assert_eq!(error.extended_request_id(), None);
     }
 }

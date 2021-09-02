@@ -6,9 +6,9 @@
 use crate::signer::{
     OperationSigningConfig, RequestConfig, SigV4Signer, SigningError, SigningRequirements,
 };
-use aws_auth::Credentials;
 use aws_sigv4::http_request::SignableBody;
 use aws_types::region::SigningRegion;
+use aws_types::Credentials;
 use aws_types::SigningService;
 use smithy_http::middleware::MapRequest;
 use smithy_http::operation::Request;
@@ -24,8 +24,10 @@ impl Signature {
     pub fn new(signature: String) -> Self {
         Self(signature)
     }
+}
 
-    pub fn as_str(&self) -> &str {
+impl AsRef<str> for Signature {
+    fn as_ref(&self) -> &str {
         &self.0
     }
 }
@@ -135,10 +137,10 @@ impl MapRequest for SigV4SigningStage {
 mod test {
     use crate::middleware::{SigV4SigningStage, Signature, SigningStageError};
     use crate::signer::{OperationSigningConfig, SigV4Signer};
-    use aws_auth::Credentials;
     use aws_endpoint::partition::endpoint::{Protocol, SignatureVersion};
     use aws_endpoint::{set_endpoint_resolver, AwsEndpointStage};
     use aws_types::region::{Region, SigningRegion};
+    use aws_types::Credentials;
     use aws_types::SigningService;
     use http::header::AUTHORIZATION;
     use smithy_http::body::SdkBody;
@@ -150,7 +152,10 @@ mod test {
 
     #[test]
     fn places_signature_in_property_bag() {
-        let req = http::Request::new(SdkBody::from(""));
+        let req = http::Request::builder()
+            .uri("https://test-service.test-region.amazonaws.com/")
+            .body(SdkBody::from(""))
+            .unwrap();
         let region = Region::new("us-east-1");
         let req = operation::Request::new(req)
             .augment(|req, properties| {

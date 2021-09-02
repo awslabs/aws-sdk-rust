@@ -365,6 +365,84 @@ impl UploadPartOutput {
 }
 
 #[non_exhaustive]
+pub struct SelectObjectContentOutput {
+    /// <p>The array of results.</p>
+    pub payload: smithy_http::event_stream::Receiver<
+        crate::model::SelectObjectContentEventStream,
+        crate::error::SelectObjectContentError,
+    >,
+}
+impl std::fmt::Debug for SelectObjectContentOutput {
+    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+        let mut formatter = f.debug_struct("SelectObjectContentOutput");
+        formatter.field("payload", &self.payload);
+        formatter.finish()
+    }
+}
+/// See [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput)
+pub mod select_object_content_output {
+    /// A builder for [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput)
+    #[non_exhaustive]
+    #[derive(std::default::Default, std::fmt::Debug)]
+    pub struct Builder {
+        pub(crate) payload: std::option::Option<
+            smithy_http::event_stream::Receiver<
+                crate::model::SelectObjectContentEventStream,
+                crate::error::SelectObjectContentError,
+            >,
+        >,
+    }
+    impl Builder {
+        /// <p>The array of results.</p>
+        pub fn payload(
+            mut self,
+            input: smithy_http::event_stream::Receiver<
+                crate::model::SelectObjectContentEventStream,
+                crate::error::SelectObjectContentError,
+            >,
+        ) -> Self {
+            self.payload = Some(input);
+            self
+        }
+        pub fn set_payload(
+            mut self,
+            input: std::option::Option<
+                smithy_http::event_stream::Receiver<
+                    crate::model::SelectObjectContentEventStream,
+                    crate::error::SelectObjectContentError,
+                >,
+            >,
+        ) -> Self {
+            self.payload = input;
+            self
+        }
+        /// Consumes the builder and constructs a [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput)
+        pub fn build(
+            self,
+        ) -> std::result::Result<
+            crate::output::SelectObjectContentOutput,
+            smithy_http::operation::BuildError,
+        > {
+            Ok(
+                crate::output::SelectObjectContentOutput {
+                    payload: self.payload
+                        .ok_or(
+                            smithy_http::operation::BuildError::MissingField { field: "payload", details: "payload was not specified but it is required when building SelectObjectContentOutput"}
+                        )?
+                    ,
+                }
+            )
+        }
+    }
+}
+impl SelectObjectContentOutput {
+    /// Creates a new builder-style object to manufacture [`SelectObjectContentOutput`](crate::output::SelectObjectContentOutput)
+    pub fn builder() -> crate::output::select_object_content_output::Builder {
+        crate::output::select_object_content_output::Builder::default()
+    }
+}
+
+#[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq)]
 pub struct RestoreObjectOutput {
     /// <p>If present, indicates that the requester was successfully charged for the

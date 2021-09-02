@@ -60,10 +60,10 @@ pub mod send_serial_console_ssh_public_key_input {
     }
 }
 #[doc(hidden)]
-pub type SendSerialConsoleSSHPublicKeyInputOperationOutputAlias =
+pub type SendSerialConsoleSshPublicKeyInputOperationOutputAlias =
     crate::operation::SendSerialConsoleSSHPublicKey;
 #[doc(hidden)]
-pub type SendSerialConsoleSSHPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendSerialConsoleSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SendSerialConsoleSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSerialConsoleSSHPublicKey`](crate::operation::SendSerialConsoleSSHPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -78,6 +78,7 @@ impl SendSerialConsoleSshPublicKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body =
                 crate::operation_ser::serialize_operation_send_serial_console_ssh_public_key(&self)
@@ -86,8 +87,10 @@ impl SendSerialConsoleSshPublicKeyInput {
                     })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -108,7 +111,7 @@ impl SendSerialConsoleSshPublicKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
@@ -243,9 +246,9 @@ pub mod send_ssh_public_key_input {
     }
 }
 #[doc(hidden)]
-pub type SendSSHPublicKeyInputOperationOutputAlias = crate::operation::SendSSHPublicKey;
+pub type SendSshPublicKeyInputOperationOutputAlias = crate::operation::SendSSHPublicKey;
 #[doc(hidden)]
-pub type SendSSHPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
+pub type SendSshPublicKeyInputOperationRetryAlias = aws_http::AwsErrorRetryPolicy;
 impl SendSshPublicKeyInput {
     /// Consumes the builder and constructs an Operation<[`SendSSHPublicKey`](crate::operation::SendSSHPublicKey)>
     #[allow(clippy::let_and_return)]
@@ -260,6 +263,7 @@ impl SendSshPublicKeyInput {
         smithy_http::operation::BuildError,
     > {
         Ok({
+            let properties = smithy_http::property_bag::SharedPropertyBag::new();
             let request = self.request_builder_base()?;
             let body = crate::operation_ser::serialize_operation_send_ssh_public_key(&self)
                 .map_err(|err| {
@@ -267,8 +271,10 @@ impl SendSshPublicKeyInput {
                 })?;
             let request = Self::assemble(request, body);
             #[allow(unused_mut)]
-            let mut request =
-                smithy_http::operation::Request::new(request.map(smithy_http::body::SdkBody::from));
+            let mut request = smithy_http::operation::Request::from_parts(
+                request.map(smithy_http::body::SdkBody::from),
+                properties,
+            );
             request.properties_mut().insert(
                 aws_http::user_agent::AwsUserAgent::new_from_environment(
                     crate::API_METADATA.clone(),
@@ -289,7 +295,7 @@ impl SendSshPublicKeyInput {
             if let Some(region) = &_config.region {
                 request.properties_mut().insert(region.clone());
             }
-            aws_auth::provider::set_provider(
+            aws_auth::set_provider(
                 &mut request.properties_mut(),
                 _config.credentials_provider.clone(),
             );
